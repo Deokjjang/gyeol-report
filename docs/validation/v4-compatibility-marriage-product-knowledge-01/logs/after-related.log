@@ -1,0 +1,659 @@
+RUN  v4.1.5 /private/tmp/gyeol-compatibility-marriage-product-knowledge-01
+
+ ❯ tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts (22 tests | 1 failed) 43298ms
+     × scheduler is not consumed by prior layers, six products, UI, calculations or providers 113ms
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts (5 tests | 5 failed) 21146ms
+   × 'comprehensive' customer/evidence/Book stays frozen 8567ms
+   × 'love' customer/evidence/Book stays frozen 2096ms
+   × 'compatibility' customer/evidence/Book stays frozen 4976ms
+   × 'major' customer/evidence/Book stays frozen 2657ms
+   × 'annual' customer/evidence/Book stays frozen 2849ms
+ ❯ tests/unit/report-generation/customerDayunGeneration.test.ts (19 tests | 2 failed) 1646ms
+     × rejects major_fortune bypass before order writes and allows stable input 7ms
+     × rejects annual_fortune bypass before order writes and allows stable input 1ms
+ ❯ tests/unit/interpretation-v4/comprehensiveAllocation.test.ts (44 tests | 2 failed) 352ms
+     × C9 element composite beats a five-element dictionary and balanced yin yang is not a story 3ms
+     × recovery-axis Fusion can serve C9 even when its original application is work 1ms
+ ❯ tests/unit/interpretation-v4/foundationAdapter.test.ts (20 tests | 1 failed) 244ms
+     × only foundation modules reference the foundation; no writer/UI/calculation import 190ms
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts (42 tests | 5 failed) 86716ms
+     × 'comprehensive' previous saved edition remains identical 8416ms
+     × 'love' previous saved edition remains identical 2102ms
+     × 'compatibility' previous saved edition remains identical 5005ms
+     × 'major' previous saved edition remains identical 2640ms
+     × 'annual' previous saved edition remains identical 2823ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 16 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'comprehensive' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "79e6f83b152d9efbeea6ffacbeba6b65682da18728571b1f45457449d3d3b1f0",
+-   "cf6b97069cfda561ca29910da0aa8fbd8276dd6ce8a1a4b11bf35dfc2ca06d3a",
+-   "27cdc93d2473150e53638211d76e46f2d0c193ea1f84fb31835bfae62337d502",
++   "7abeaf415fc6e3987f97d5a23660c44de3b2b0555b17d6e7dd4962251849b6df",
++   "9489bd1889c289bdf0d736bea07f5ca8416c3f3be99703712d711d3e0683ff85",
++   "77f9a788f81c8adce8d60909748af3383af68d6e520afec6a94ca7ec6f923b67",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:50:136
+     48|     return;
+     49|   }
+     50|   expect([v4Digest(result.draft), v4Digest(result.evidencePacket), v4D…
+       |                                                                                                                                        ^
+     51|   expect(result.externalCalls).toEqual([]);
+     52| }, 120000);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'love' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+    "6a9e456862186c8387c25239294742281bb1625d220d34f75672dce3d7ed568b",
+-   "258b6c08fa486ff838638a336bfd89b14b9da2e0e1f24ca115515789c877847d",
+-   "31689af92401bda9724fbff1f92f2ae0227fd2d761d344df212f7d5d68b442ef",
++   "5aa3f85dc2ce7c15c8cffff86489d32ff675cc4774bfad0d0175fb9d3d4b8e4d",
++   "5b756f9299610de087852de1f904be8227ce632bfa71221080da067e3f670a14",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108
+     38|     const { contentDigest: _, ...body } = { ...e, composition }; void …
+     39|     const sealed = { ...body, contentDigest: v4Digest(body) };
+     40|     expect([v4Digest(projectV4Composition(composition)), v4Digest(seal…
+       |                                                                                                            ^
+     41|     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-…
+     42|       productKey: sealed.input.productKey, productSlug: sealed.input.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'compatibility' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+    "10dc7fa3f24adf0c3e90f5f5f951a31a89c9d16b56b07402cf296d65fb3dcb8d",
+-   "1ac3b7f26fbc5c3e83c03055fd172d98aeda4cee736006f40c39db1a2a41b0c3",
+-   "b90fffb36cdfe0a9b648d2390dd61ab9624931d41ecaa41624053f6cfdaaac0b",
++   "a790548d932fa0d28dc5c72ee0f1d8f5254ef8f47c6568e8605b1933354169d3",
++   "6b72bb3315deb01dc30e6c17b3de206bb48136cedd5e17b98d3328d5fea496b3",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108
+     38|     const { contentDigest: _, ...body } = { ...e, composition }; void …
+     39|     const sealed = { ...body, contentDigest: v4Digest(body) };
+     40|     expect([v4Digest(projectV4Composition(composition)), v4Digest(seal…
+       |                                                                                                            ^
+     41|     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-…
+     42|       productKey: sealed.input.productKey, productSlug: sealed.input.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "71465d70a0800b6d7430b45287e47afe5438919c6cb56d99deef9a875d51a15b",
+-   "cf9b8c3aaef4fb7488028e622b023ebe9db3cb677e469bb3c30ec9f82bd56dfd",
+-   "eb31c1fe7addcee764b3df970a892850180cb9751d73c2ecbd5198e96e821204",
++   "793cf165f7979fdca53538ce7e1179dec7420cfbc56d6c9c8850c50bec190e0f",
++   "c8f9971936e1978a23f94be2f0324b586c656c9c3c041b98ad145ad07cefaec5",
++   "9bca83d261e8785699976a73dee286f67967a93280caba648df3c6623524e4e4",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108
+     38|     const { contentDigest: _, ...body } = { ...e, composition }; void …
+     39|     const sealed = { ...body, contentDigest: v4Digest(body) };
+     40|     expect([v4Digest(projectV4Composition(composition)), v4Digest(seal…
+       |                                                                                                            ^
+     41|     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-…
+     42|       productKey: sealed.input.productKey, productSlug: sealed.input.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "8525e0e39cc824c3f1f9cdd763cb33bfd4402c9718f6ba6d1e4a33f69309be5f",
+-   "85e4470a0b5a60c0e89c634dae80915263744f26dbef600e11132092d0c74125",
+-   "d21b5665c2e24402bf37a1a33021e47c5f1ccefa42f22c402c4ed2ee2acba69f",
++   "e15fbecb49542416d6466a31ffaa87e09f7baf3d618faf49ff87d70d0670364e",
++   "30a943c0de301112caaf4ae4589cdfe23a62ab8d71881fbf63db816f2fba8a6a",
++   "c5421a0c7a29fb764f06e0f9037cf452ef55f1bebb7c15f4daf9d3a88ba7b1f7",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108
+     38|     const { contentDigest: _, ...body } = { ...e, composition }; void …
+     39|     const sealed = { ...body, contentDigest: v4Digest(body) };
+     40|     expect([v4Digest(projectV4Composition(composition)), v4Digest(seal…
+       |                                                                                                            ^
+     41|     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-…
+     42|       productKey: sealed.input.productKey, productSlug: sealed.input.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'comprehensive' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "79e6f83b152d9efbeea6ffacbeba6b65682da18728571b1f45457449d3d3b1f0",
+-   "cf6b97069cfda561ca29910da0aa8fbd8276dd6ce8a1a4b11bf35dfc2ca06d3a",
+-   "27cdc93d2473150e53638211d76e46f2d0c193ea1f84fb31835bfae62337d502",
++   "7abeaf415fc6e3987f97d5a23660c44de3b2b0555b17d6e7dd4962251849b6df",
++   "9489bd1889c289bdf0d736bea07f5ca8416c3f3be99703712d711d3e0683ff85",
++   "77f9a788f81c8adce8d60909748af3383af68d6e520afec6a94ca7ec6f923b67",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'love' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "dc65e1cff1fdaef863b242387ca333913335507ca0c3e296eb399150c0f16ae8",
+-   "d2b6fc40dcafd7de79170fb641dc45acf42fcf7749de8e83f766d1105c8d5fce",
+-   "17571a8443a3a6a43c54c2d517ec88c6f2898b07f92b6328a2f591db54ba3978",
++   "8009c7ebb1e39c0b170eca7a3266a2869d8cbcc0b344b405e1e76bdd996bcacd",
++   "2bf558eef40e20df2eed197310879f06934ff31b543b3d56671ca3d55e32d278",
++   "c5c9c7bb29db41aa08b76b81446a7b97e5c05ea460b7503192dc5e75a9a1a774",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'compatibility' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "da6593ae6c10583c2a6f28ee29c26b5609b409b4edcccde35dd512bb1b2454f4",
+-   "d0694ae557383ea3cd0b4cacd3f51cb7ac2d096c3e70ec3cc593b32fe44c6d7e",
+-   "e161afa18d5465c6ff7e4cd46b6c13d7e8e48bcc851ca65dd9d3fbebe24b5696",
++   "bddfc2dc4be673fc2b23b173c95c47c144be6c21be7d4d921a941d9c0e43e749",
++   "715080cd3b2885bc90ecf3699451be739f5f7ef5a980f5fb7cdb8fcc1b1ebcf2",
++   "f9471b5169e4ecf60ee73701e42a1d8575eaf8047ab909fb53f8b82d77fabb44",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'major' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "8c911d6dc3d24f4be969bf7017d1b098a7523078d8018115db7fa5187ce21dde",
+-   "cdb60d8939e2e97cd06840093ada974b11b9369b6b06f881b788eac3f54d1f3a",
+-   "a774832dc671df08d9c2395850a54bfe1e8446d9e72256695d4107244c27752b",
++   "bff2f1ccbc222b5b33e7df9a86ba6907afac782c8afda99de9b47e3b4dfd317d",
++   "9957f1348ea06e4a098dec827a23a4f07f721f41e2cc2d0433f12bff721d89c6",
++   "6e5e255f8400110d10a0230af508f98db941a99936bb363a30a2f2f3957b23cd",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'annual' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "58150101a8224de5ddd09f6fee598e67f39ee0ed8a83a238efbfc43706c1d378",
+-   "fd698806ddf394fd2c3d4c145a1e2471f4b834c1dad3b5596ea37522a8c8a634",
+-   "ba2cf9b612db5290bd1bf55bd639d750364fbe5eb5366bee106e2a4e88284626",
++   "382fe497a223d7f3eff4024ca980d4c521592bf06e8ee56a78f1635895a1da57",
++   "6c885a9c3b98185df7bf7959a4b2cd1fc6e5b4723ed9cfab85b62eacfd546be8",
++   "da933fc11732c159856aeb881d6fe884247e20d0af696f355319f7ab2a27ef08",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > C9 element composite beats a five-element dictionary and balanced yin yang is not a story
+AssertionError: expected [] to include 'composite'
+ ❯ tests/unit/interpretation-v4/comprehensiveAllocation.test.ts:99:73
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > recovery-axis Fusion can serve C9 even when its original application is work
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/interpretation-v4/comprehensiveAllocation.test.ts:113:69
+    111|   it("recovery-axis Fusion can serve C9 even when its original applica…
+    112|     const c = fusion("recover-after-work", "COMPLEMENT", { contexts: […
+    113|     expect(primarySectionEligible(c, "C9", "RECOVERY_ENVIRONMENT")).to…
+       |                                                                     ^
+    114|     const generic = fusion("work-only", "COMPLEMENT", { contexts: ["wo…
+    115|     expect(primarySectionEligible(generic, "C9", "RECOVERY_ENVIRONMENT…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts > actual 12-person review cohort and isolation > scheduler is not consumed by prior layers, six products, UI, calculations or providers
+AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from "…' not to match /["'][^"']*\/…/comprehensivePlanCore["']
+
+- Expected:
+/["'][^"']*\/comprehensivePlanCore["']/
+
++ Received:
+"import type { CareerProfiles } from \"./careerProductSelection\";
+import type { EditorialCandidate } from \"./comprehensivePlanCore\";
+import type { NarrativeInput, NarrativeState, NarrativeBlock, NarrativeProof } from \"./narrativeTypes\";
+import type { CareerNarrative } from \"./careerNarrativeTypes\";
+import { CAREER_RELEASE_VERSION, CAREER_READER_CHAPTERS, type CareerReleaseDraft, type CareerReleaseSentence } from \"./careerReleaseContracts\";
+import { CAREER_RELEASE_MATERIALS } from \"./careerReleaseMaterials\";
+import { collectCareerReleaseSources, careerAtomName, type CareerReleaseSource } from \"./careerReleaseSources\";
+import { careerStatusCopy } from \"./careerReleaseContext\";
+import { careerStudy, CAREER_STUDY_BRIDGES } from \"./careerStudy\";
+import { getMbtiSourceProfile } from \"../report-knowledge/mbti/sourceRuntimeAdapter\";
+import { humanMbtiReason } from \"./narrativeMbtiReason\";
+import { freshNarrativeMemory } from \"./narrativeMemory\";
+import { fortuneReason, planFortuneReasons, positiveReward } from \"./narrativePositiveReward\";
+import { CAREER_TASKS, CAREER_WORKFLOWS } from \"./careerReleaseApplications\";
+import { careerNatalMoney } from \"./careerNatalMoney\";
+import { particle } from \"./copyRealizer\";
+import { materialLabel } from \"./contentEvidence\";
+import { CAREER_ROUTES } from \"./careerRecommendations\";
+import { careerWorkNarrative } from \"./careerWorkNarrative\";
+import { humanOutcome, mbtiHumanBehavior } from \"./narrativeHumanOutcome\";
+import { CAREER_JOB_SCENES, CAREER_JOB_STEPS, CAREER_ECONOMIC_USE, CAREER_WEALTH_APPLICATIONS, CAREER_GROWTH_RISKS } from \"./careerQualityApplications\";
+import { CAREER_STUDY_REMEDIES } from \"./careerReleaseStudy\";
+
+type Refs = { source: string; roots?: string[]; nodes?: string[]; fusion?: string[]; theme: string; material: string; sourceRefs?: readonly string[]; recall?: boolean; row?: CareerReleaseSource };
+type Line = { text: string; refs: Refs };
+type Material = (typeof CAREER_RELEASE_MATERIALS)[string];
+const split = (s: string) => s.match(/[^.!?]+[.!?]+(?:[’”])?|[^.!?]+$/g)?.map(s => s.trim()).filter(Boolean) ?? [];
+const terminal = (s: string) => /[.!?]$/.test(s.trim()) ? s.trim() : `${s.trim()}.`;
+const quote = (s: string) => s.replace(/[.!?]$/, \"\").replace(/입니다$/, \"\");
+/** Only generation calls this independent edition. An incomplete editorial slot
+ * is a diagnostic, never a new payment/Worker failure or a made-up source. */
+export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfiles, candidates: readonly EditorialCandidate[], legacy: CareerNarrative, state: NarrativeState) {
+  const jobFunction = careerWorkNarrative(input).workFunction;
+  const jobSteps = input.context.detailJob ? CAREER_JOB_STEPS[jobFunction] : undefined;
+  const scene = (r: CareerReleaseSource) => (input.context.detailJob && CAREER_JOB_SCENES[jobFunction]?.[r.facet]) || CAREER_RELEASE_MATERIALS[r.facet].scene;
+  const economic = (r: CareerReleaseSource) => CAREER_ECONOMIC_USE[r.facet];
+  const pool = collectCareerReleaseSources(profiles, candidates), used = new Map<string, number>(), roots = new Map<string, number>();
+  const introduced = new Set<string>(), chosen: CareerReleaseSource[] = [], seen = new Set<string>(), terms = new Set<string>();
+  const draft: CareerReleaseDraft = { version: CAREER_RELEASE_VERSION, chapters: [], bodyLength: 0, shortages: [] };
+  const retainedSources: Record<string, readonly string[]> = { \"career-study:natal\": careerStudy(state).proof.sourceRefs };
+  let current: CareerReleaseDraft[\"chapters\"][number];
+  const sourceRefs = (r: CareerReleaseSource): Refs => ({ source: r.candidate.id, roots: [r.atom.id], nodes: [], fusion: [], theme: r.candidate.semanticTheme,
+    material: `career:${r.facet}`, row: r, sourceRefs: [r.candidate.sourceId] });
+  const reason = (r: CareerReleaseSource) => terms.has(`${r.atom.sourceType}:${r.atom.sourceKey}`)
+    ? \"\"
+    : `${careerAtomName(r.atom)}에서 읽는 명리적 뜻은 ‘${quote(r.atom.easyMeaning)}’입니다.`;
+  const rootLine = (text: string, r: CareerReleaseSource, material: string): Line => ({ text, refs: { ...sourceRefs(r), material } });
+  function add(p: number, lines: Line[]) {
+    const contract = CAREER_READER_CHAPTERS.find(c => c.id === current.id)!.paragraphs[p];
+    const id = `${current.id}.${contract.id}`;
+    const actual = lines.filter(l => l.text.trim()).map(l => ({ ...l, text: terminal(l.text) }));
+    if (actual.length < 3 || actual.length > 5 || actual.some(l => split(l.text).length !== 1)) return false;
+    if (actual.some(l => seen.has(l.text))) return false;
+    const sentences = actual.map((l, i): CareerReleaseSentence => ({ chapterId: current.id, paragraphId: contract.id, sentenceRole: `S${i + 1}`, roleDescription: contract.sentences[i] ?? contract.sentences[3], text: l.text,
+      sourceCandidateId: l.refs.source, evidenceIds: [...(l.refs.roots ?? [])], mbtiSourceNodeIds: [...(l.refs.nodes ?? [])], fusionIds: [...(l.refs.fusion ?? [])], semanticTheme: l.refs.theme,
+      lifeStatus: input.context.jobStatus, jobContext: input.context.detailJob,
+      provenance: { materialId: l.refs.material, application: l.refs.recall ? \"RECALL\" : l.refs.row ? \"CONDITIONAL_APPLICATION\" : \"SOURCE\",
+        ...(l.refs.row ? { axis: l.refs.row.axis, direction: l.refs.row.direction } : {}), sourceRefs: [...(l.refs.sourceRefs ?? [])] } }));
+    actual.forEach(l => { seen.add(l.text); l.refs.roots?.forEach(id => introduced.add(id)); });
+    current.paragraphs.push({ id, purpose: contract.purpose, text: actual.map(l => l.text).join(\" \"), sentences });
+    return true;
+  }
+  function eligible(preferred: readonly string[], risk: boolean, recall: boolean) {
+    return pool.filter(r => r.candidate.factBomb === risk && (!recall || chosen.some(s => s.atom.id === r.atom.id && s.facet === r.facet))
+      && (risk || recall || (used.get(r.facet) ?? 0) < 4)
+      && (risk || !current.paragraphs.some(p => p.sentences.some(s => s.provenance.materialId.startsWith(`career:${r.facet}:`)))))
+      .sort((a, b) => Number(preferred.includes(b.facet)) - Number(preferred.includes(a.facet))
+        || (used.get(a.facet) ?? 0) - (used.get(b.facet) ?? 0)
+        || Number(b.candidate.sourceType === \"PERSONAL_RESONANCE\") - Number(a.candidate.sourceType === \"PERSONAL_RESONANCE\")
+        || ((profiles.mbti.generalAxes[b.axis] ?? 0) * b.direction - (profiles.mbti.generalAxes[a.axis] ?? 0) * a.direction)
+        || (roots.get(a.atom.id) ?? 0) - (roots.get(b.atom.id) ?? 0)
+        || b.candidate.priorityScore - a.candidate.priorityScore || b.atom.weight - a.atom.weight || a.atom.id.localeCompare(b.atom.id));
+  }
+  function application(p: number, key: string, make: (m: Material, r: CareerReleaseSource) => string[], preferred: readonly string[] = [], risk = false, recall = false) {
+    const rows = eligible(preferred, risk, recall);
+    // A missing risk is not permission to invent a flaw. Apply a verified
+    // strength conditionally when no eligible fact-bomb exists.
+    const fallback = risk && !rows.length ? eligible(preferred, false, recall).filter(r => !!r.atom.shadowMeaning) : [];
+    for (const row of [...rows, ...fallback]) {
+      const texts = make(CAREER_RELEASE_MATERIALS[row.facet], row);
+      const lines = texts.flatMap(text => split(text).map(text => ({ text, refs: { ...sourceRefs(row), material: `career:${row.facet}:${key}`, recall } })));
+      if (!add(p, lines)) continue;
+      used.set(row.facet, (used.get(row.facet) ?? 0) + 1); roots.set(row.atom.id, (roots.get(row.atom.id) ?? 0) + 1); chosen.push(row);
+      terms.add(`${row.atom.sourceType}:${row.atom.sourceKey}`); return row;
+    }
+    draft.shortages.push(`${current.id}.P${p + 1}:NO_INDEPENDENT_${key.toUpperCase()}_MATERIAL`);
+    return undefined;
+  }
+  function mbtiLine(row: CareerReleaseSource, domains: readonly string[], material: string): Line | undefined {
+    const node = profiles.mbti.annotations.find(a => domains.includes(a.sourceDomain) && a.annotationConfidence !== \"REFERENCE_ONLY\"
+      && (a.axes[row.axis] ?? 0) * row.direction > 0 && profiles.mbti.sourceNodes.some(n => n.id === a.sourceNodeId && n.classification === \"SCORING_SEMANTIC\"));
+    const behavior = node && mbtiHumanBehavior(row.axis, row.direction);
+    if (!node || !behavior || !profiles.mbti.mbtiType) return;
+    return { text: `${profiles.mbti.mbtiType}의 금전 판단에서는 ${behavior}`,
+      refs: { source: node.sourceNodeId, nodes: [node.sourceNodeId], theme: row.candidate.semanticTheme, material, sourceRefs: [node.sourceNodeId] } };
+  }
+  function moneyMbtiLine(): Line | undefined {
+    for (const a of profiles.mbti.annotations.filter(a => a.sourceDomain === \"MONEY\" && a.annotationConfidence !== \"REFERENCE_ONLY\")) {
+      if (!profiles.mbti.sourceNodes.some(n => n.id === a.sourceNodeId && n.classification === \"SCORING_SEMANTIC\")) continue;
+      const axes = Object.entries(a.axes).sort((a, b) => Math.abs(b[1] ?? 0) - Math.abs(a[1] ?? 0));
+      for (const [axis, value] of axes) {
+        if (!value) continue;
+        const behavior = mbtiHumanBehavior(axis as CareerReleaseSource[\"axis\"], value > 0 ? 1 : -1);
+        if (behavior && profiles.mbti.mbtiType) return { text: `금전 자료에서 읽는 ${profiles.mbti.mbtiType}의 선호는 이렇습니다: ${behavior}`,
+          refs: { source: a.sourceNodeId, nodes: [a.sourceNodeId], theme: \"MONEY_DECISION\", material: \"money:actual-mbti\", sourceRefs: [a.sourceNodeId] } };
+      }
+    }
+  }
+  function tensionParagraph(p: number) {
+    for (const c of candidates.filter(c => c.fusionType === \"TENSION\" && !c.invalidReasons.length)) {
+      const f = profiles.fusion.tensions.find(f => f.id === c.sourceId && f.conditionSplit?.resolved && [\"work\", \"learning\"].includes(f.primaryContext));
+      const sides = f?.conditionSplit?.sides;
+      const atom = f && profiles.myeongli.evidence.find(a => f.myeongli.evidenceIds.includes(a.id) && (a.axes[f.myeongli.side.axis] ?? 0) * f.myeongli.side.direction > 0);
+      const n = f && humanMbtiReason(profiles, f, \"C8\", freshNarrativeMemory());
+      if (!f || !sides || !atom || !n) continue;
+      const refs: Refs = { source: c.id, roots: [atom.id], nodes: [n.nodeId], fusion: [f.id], theme: c.semanticTheme, material: \"fusion:current-conditions\", sourceRefs: [f.id] };
+      if (add(p, [
+        { text: `${careerAtomName(atom)}의 근거에서는 ${humanOutcome(f.myeongli.side.axis, f.myeongli.side.direction)}`, refs: { ...refs, nodes: [], fusion: [] } },
+        { text: `${profiles.mbti.mbtiType}에서 읽는 다른 선호는 이렇습니다: ${mbtiHumanBehavior(f.mbti.side.axis, f.mbti.side.direction)}`, refs },
+        { text: `${sides.myeongli}에는 첫 번째 반응을, ${sides.mbti}에는 두 번째 선호를 살펴볼 만합니다.`, refs },
+        { text: jobSteps?.[1] ?? \"작은 과제에서 두 반응을 확인한 뒤, 다음 역할에 필요한 쪽을 선택하세요.\", refs },
+      ])) return true;
+    }
+    return false;
+  }
+  function fusionParagraph(p: number, key: string, preferred: \"REINFORCE\" | \"COMPLEMENT\") {
+    const sources = candidates.filter(c => c.fusionType && c.fusionType !== \"TENSION\" && !c.invalidReasons.length)
+      .sort((a, b) => Number(b.fusionType === preferred) - Number(a.fusionType === preferred) || b.priorityScore - a.priorityScore);
+    for (const c of sources) {
+      const f = [...profiles.fusion.reinforce, ...profiles.fusion.complements].find(f => f.id === c.sourceId);
+      if (!f) continue;
+      const atom = profiles.myeongli.evidence.find(a => f.myeongli.evidenceIds.includes(a.id) && (a.axes[f.myeongli.side.axis] ?? 0) * f.myeongli.side.direction > 0);
+      const n = humanMbtiReason(profiles, f, \"C8\", freshNarrativeMemory());
+      if (!atom || !n) continue;
+      const refs: Refs = { source: c.id, roots: [atom.id], nodes: [n.nodeId], fusion: [f.id], theme: c.semanticTheme, material: `fusion:${key}`, sourceRefs: [c.sourceId] };
+      const texts = key === \"work-basis\" ? [
+        `${particle(careerAtomName(atom), \"이\", \"가\")} 이 업무 방식을 설명하는 실제 명리 근거입니다.`,
+        atom.humanDescription ?? atom.easyMeaning,
+        split(n.text)[0],
+        c.sourceText,
+      ] : [
+        `${careerAtomName(atom)}에는 ‘${quote(atom.easyMeaning)}’이라는 명리적 뜻이 담겨 있습니다.`,
+        n.text,
+        c.sourceText,
+        \"다른 방향의 강점이 만나는 과제인지 작은 결과로 확인하면, 익숙하지 않은 역할에서도 쓸 수 있는 능력의 범위가 보입니다.\",
+      ];
+      const lines = texts.map((text, i) => ({ text, refs: key === \"work-basis\" && i < 2 ? { ...refs, nodes: [], fusion: [] } : refs }));
+      if (add(p, lines)) return;
+    }
+    application(p, key, (m, r) => [m.core, reason(r), scene(r), m.growth], [\"depth\", \"creation\", \"precision\"]);
+  }
+  const contextRefs: Refs = { source: \"input:jobStatus\", theme: \"CURRENT_CAREER_CONTEXT\", material: \"context:status\", sourceRefs: [\"input:jobStatus\", \"input:detailJob\"] };
+  const status = careerStatusCopy(input);
+  let main: CareerReleaseSource | undefined, talent: CareerReleaseSource | undefined;
+  for (const c of CAREER_READER_CHAPTERS) {
+    current = { id: c.id, key: c.key, title: c.title, paragraphs: [] }; draft.chapters.push(current);
+    if (c.id === \"CH01\") {
+      main = application(0, \"work-identity\", (m, r) => [`일에서는 ${particle(m.label, \"이\", \"가\")} 먼저 드러나며, 명리에서 읽은 ‘${quote(r.atom.easyMeaning)}’의 뜻과 연결됩니다.`, scene(r), m.value, m.closing]);
+      fusionParagraph(1, \"work-basis\", \"REINFORCE\");
+      application(2, \"workflow\", (m, r) => [...(CAREER_WORKFLOWS[r.axis] ?? [
+        `처음 일을 받을 때에는 ${particle(CAREER_TASKS[r.facet].task, \"이\", \"가\")} 이번 과제에 필요한지부터 살피는 편이 좋습니다.`,
+        m.process, `진행 중에는 ${particle(CAREER_TASKS[r.facet].trap, \"이\", \"가\")} 없는지 살피면, 처음의 의도와 실제 행동이 어긋나는 부분을 알아차리기 쉽습니다.`,
+        `마무리에서는 ${particle(CAREER_TASKS[r.facet].result, \"이\", \"가\")} 있었는지 결과를 대조하면, 다음에도 쓸 방법과 바꿀 부분이 보입니다.`,
+      ])], [\"structure\", \"persistence\", \"drive\", \"flexibility\"]);
+      application(3, \"work-conditions\", (m, r) => [m.fit, reason(r), m.risk, `일을 고를 때에는 ${particle(m.label, \"이\", \"가\")} 필요한 실제 과제가 있는지 묻고, 그 능력을 쓸 정보와 권한도 확인하세요.`], [\"autonomy\", \"boundary\", \"stability\"]);
+    } else if (c.id === \"CH02\") {
+      talent = application(0, \"talent-primary\", (m, r) => [`업무에서 먼저 꺼내 쓸 재능은 ${m.label}입니다.`, reason(r), scene(r), m.value]);
+      application(1, \"talent-secondary\", (m, r) => [`다른 과제에 쓸 능력은 ${m.label}이며, 자신을 한 가지 방식으로만 설명하지 않게 해 줍니다.`, reason(r), m.collaboration, m.growth]);
+      fusionParagraph(2, \"talent-transfer\", \"COMPLEMENT\");
+      if (talent) {
+        const r = talent, refs = { ...sourceRefs(r), material: `career:${r.facet}:talent-practice`, recall: true };
+        add(3, [
+          `첫 번째 재능인 ${particle(CAREER_RELEASE_MATERIALS[r.facet].label, \"을\", \"를\")} 발전시키려면, 이번 과제에서 그 능력이 바꿀 결과를 먼저 정하세요.`,
+          `연습에서는 ‘${CAREER_TASKS[r.facet].test}’를 해보고, 잘한 부분과 다음에 달리할 부분을 나누어 남길 만합니다.`,
+          `연습을 옮길 과제에도 ${particle(CAREER_TASKS[r.facet].criterion, \"이\", \"가\")} 있는지 먼저 확인하고, 결과를 사용할 사람에게 혼자 놓친 부분을 물어보세요.`,
+          \"강점이 통하는 조건을 알면, 다음에 맡을 과제도 더 정확히 고를 수 있습니다.\",
+        ].map(text => ({ text, refs })));
+      }
+    } else if (c.id === \"CH03\") {
+      application(0, \"aptitude-common\", (m, r) => [`적합한 일의 공통점은 ${particle(CAREER_TASKS[r.facet].task, \"을\", \"를\")} 실제로 필요로 한다는 점이며, 직함만으로 그 조건이 생기지는 않습니다.`, reason(r), m.fit, `업무 소개를 들을 때에는 ${particle(CAREER_TASKS[r.facet].criterion, \"이\", \"가\")} 있는지 묻는 편이, 직함보다 실제 과제를 이해하기 좋습니다.`]);
+      for (const [p, indices] of [[1, [0]], [2, [1, 2]]] as const) {
+        const recs = indices.flatMap(i => legacy.recommendations[i] ? [legacy.recommendations[i]] : []);
+        const lines: Line[] = recs.flatMap(rec => {
+          const refs: Refs = { source: `career-route:${rec.id}`, theme: `CAREER_ROUTE:${rec.id}`, material: `route:${rec.id}`, sourceRefs: rec.proof.sourceRefs,
+            roots: [], fusion: [] };
+          const reasons = split(rec.reason), basis = reasons.find(text => text.includes(\"에서 볼 수 있는 장점을\"));
+          const route = CAREER_ROUTES.find(r => r.id === rec.id);
+          const bridge = reasons.find(text => /의 직업 자료에서도/.test(text));
+          const texts = p === 1 ? [reasons[0], basis ?? reasons[1], ...split(rec.environment),
+            route ? `${route.avoid}에서는 필요한 역량이 있어도 쓰기 어려울 수 있으니, 역할과 환경을 함께 대조하세요.` : \"작은 과제에서 해낸 범위와 어려웠던 부분을 비교한 뒤 준비할 역량을 좁혀 보세요.\", ...(bridge ? [bridge] : [])]
+            : route && basis ? [
+              `탐색 후보인 ${route.roles.join(\"·\")}에는 다음 근거를 적용합니다: ${basis}`,
+              `${route.environment}이 맞는 조건이며, ${route.avoid}에서는 이 강점을 쓰기 어려울 수 있습니다.`,
+            ] : [reasons[0], rec.environment];
+          return texts.filter(Boolean).map(text => ({ text, refs }));
+        });
+        // The full evidence-supported exploration candidates remain in narrative.recommendations.
+        // Select whole sentences, never slice characters or invent a fourth route.
+        if (lines.length > 5) lines.splice(5);
+        if (p === 2 && recs[1] && lines.length === 4) lines.push({ text: split(recs[0].reason).find(text => /의 직업 자료에서도/.test(text)) ?? \"이 후보들은 하나의 객관적 적성 순위가 아니며, 실제로 해볼 과제와 준비할 조건을 비교하는 탐색 방향입니다.\", refs: { source: `career-route:${recs[0].id}`, theme: `CAREER_ROUTE:${recs[0].id}`, material: `route:${recs[0].id}:db-match`, sourceRefs: recs[0].proof.sourceRefs } });
+        if (lines.length < 4) lines.push({ text: \"직업 이름으로 적합성을 확정하지 말고, 실제 과제와 준비할 역량을 대조하세요.\", refs: { ...contextRefs, material: `route:conditions:${p}` } });
+        if (!add(p, lines)) draft.shortages.push(`${c.id}.P${p + 1}:RECOMMENDATION_MATERIAL_SHORTAGE`);
+      }
+      const avoid = legacy.avoidEnvironments.slice(0, 2);
+      const lines: Line[] = avoid.flatMap((a, i) => split(a.text).map(text => ({ text, refs: { source: `career-avoid:${i}`, theme: \"VERIFIED_AVOID_ENVIRONMENT\", material: `avoid:${i}`, sourceRefs: a.proof.sourceRefs } })));
+      lines.push({ text: \"같은 직무라도 이런 조건이 반복되면 대응에 시간을 더 쓰므로, 적성과 환경의 문제를 나누어야 합니다.\", refs: { ...contextRefs, material: \"avoid:cost\" } },
+        { text: \"범위나 검토 순서를 합의해 바꿀 수 있는지 먼저 묻고, 조정할 권한 없이 같은 부담이 반복된다면 피할 조건으로 볼 만합니다.\", refs: { ...contextRefs, material: \"avoid:adjustment\" } });
+      add(3, lines);
+    } else if (c.id === \"CH04\") {
+      application(0, \"collaboration\", (m, r) => [m.collaboration, reason(r), `함께하는 사람에게 줄 기여는 ${CAREER_TASKS[r.facet].result}이며, 내 방식이 상대의 다음 작업을 어떻게 돕는지 보여 줄 수 있습니다.`, `좋은 협업을 위해서는 ${particle(CAREER_TASKS[r.facet].criterion, \"을\", \"를\")} 함께 맞추고, 상대가 내게 기대하는 정보도 들어야 합니다.`], [\"care\", \"expression\", \"boundary\", \"flexibility\"]);
+      application(1, \"team-role\", (m, r) => [`함께하는 과제에서 ${particle(CAREER_TASKS[r.facet].task, \"을\", \"를\")} 맡아 볼 만하며, 직급보다 풀어야 할 문제로 역할을 정하는 편이 좋습니다.`, reason(r), scene(r), `다만 ${particle(CAREER_TASKS[r.facet].trap, \"을\", \"를\")} 경계하며, 내가 결정할 부분과 다른 사람에게 물어야 할 부분을 일찍 나눌 필요가 있습니다.`], [\"leadership\", \"structure\", \"resource\"]);
+      application(2, \"work-risk\", (m, r) => [r.candidate.sourceId === \"F01_STUBBORN\" ? `협업에서 ${particle(CAREER_TASKS[r.facet].trap, \"이\", \"가\")} 반복된다면, 다른 사람과 조정할 선택지가 줄어들 수 있습니다.` : r.candidate.factBomb ? split(r.candidate.sourceText)[0] : `이 강점을 과하게 쓸 경우에는 ${particle(CAREER_TASKS[r.facet].trap, \"이\", \"가\")} 협업을 어렵게 만들 수 있습니다.`, reason(r),
+        r.candidate.sourceId === \"F02_SHARP_SPEECH\" ? \"내용의 오류를 바로잡으려던 말이 상대의 능력을 평가하는 말처럼 들리면, 필요한 지적도 방어적인 반응에 막혀 실제 수정까지 가기 어려워질 수 있습니다.\" : m.risk,
+        r.candidate.sourceId === \"F02_SHARP_SPEECH\" ? \"다음에는 고칠 사실과 상대에 대한 평가를 나누고, 무엇을 바꾸면 되는지 먼저 말하면 정확한 지적을 실제 협력으로 옮기기 좋습니다.\" : `다음 협업에서는 ‘${CAREER_TASKS[r.facet].test}’를 조정의 기준으로 삼으면, 좋은 의도가 일방적인 부담으로 남는 일을 줄일 수 있습니다.`], [], true);
+      application(3, \"culture\", m => [m.fit, `업무 규칙에서는 ${particle(m.label, \"을\", \"를\")} 쓸 권한과, 그 판단을 설명할 대화의 통로도 살펴야 합니다.`, m.risk, \"최근 계획이 바뀐 사례와 그때 누가 결정했는지 물으면, 좋은 분위기라는 말보다 실제 운영 방식이 보입니다.\"], [\"structure\", \"flexibility\", \"autonomy\", \"stability\"]);
+    } else if (c.id === \"CH05\") {
+      const row = eligible([], false, false)[0];
+      if (row) add(0, [
+        { text: input.context.detailJob ? `현재 알려준 일인 ‘${input.context.detailJob}’에 비춰 다음 선택을 살펴보겠습니다.` : status[0], refs: contextRefs },
+        rootLine(`${particle(CAREER_RELEASE_MATERIALS[row.facet].label, \"을\", \"를\")} 지금 맡을 과제에 적용할 범위를 정해 볼 만합니다.`, row, `career:${row.facet}:current-strength`),
+        rootLine(`현재 과제 하나에 ‘${CAREER_TASKS[row.facet].test}’를 적용하고, 그 전후에 달라진 판단을 비교해 보세요.`, row, `career:${row.facet}:current-scene`),
+        { text: jobSteps?.[0] ?? status[3], refs: contextRefs },
+      ]);
+      application(1, \"current-application\", (m, r) => [`지금 활용할 능력은 ${m.label}이며, 직업 이름만으로 적합성이 증명되지는 않습니다.`, reason(r), scene(r), `현재 활동에서 ‘${CAREER_TASKS[r.facet].test}’를 해볼 과제 하나를 고르면, 실제 역할과 재능이 만나는 지점을 알아가기 좋습니다.`]);
+      if (!tensionParagraph(2)) application(2, \"next-capability\", (m, r) => [m.growth, `${careerAtomName(r.atom)}의 성향을 경력으로 넓히려면, 잘해 온 방법이 다른 조건에서도 통하는지 설명할 수 있어야 합니다.`, m.risk, `성장은 ${particle(CAREER_TASKS[r.facet].result, \"이\", \"가\")} 실제로 생겼는지로 확인할 수 있으며, 역할의 이름만 바뀌었다고 실력이 저절로 넓어지지는 않습니다.`]);
+      add(3, [
+        { text: jobSteps?.[3] ?? status[1], refs: contextRefs },
+        { text: jobSteps?.[2] ?? status[2], refs: contextRefs },
+        { text: \"같은 직업도 맡을 문제와 결정할 범위에 따라 다음 선택의 가치가 달라집니다.\", refs: contextRefs },
+        { text: \"혼자 해결한 부분과 도움이 필요한 부분을 나누면, 다음 배움과 요청할 지원이 보입니다.\", refs: contextRefs },
+      ]);
+    } else if (c.id === \"CH06\") {
+      const row = pool.filter(r => !r.candidate.factBomb && r.candidate.contexts.includes(\"money\") && r.atom.contexts.includes(\"money\"))
+        .sort((a, b) => Number(b.atom.sourceType === \"ten_god\" && [\"正財\", \"偏財\"].includes(b.atom.sourceKey)) - Number(a.atom.sourceType === \"ten_god\" && [\"正財\", \"偏財\"].includes(a.atom.sourceKey)) || Number([\"resource\", \"opportunity\"].includes(b.facet)) - Number([\"resource\", \"opportunity\"].includes(a.facet)) || b.atom.weight - a.atom.weight)[0];
+      if (row) {
+        const n = mbtiLine(row, [\"MONEY\"], \"money:mbti\") ?? moneyMbtiLine();
+        const wealth = row.atom.sourceType === \"ten_god\" ? CAREER_WEALTH_APPLICATIONS[row.atom.sourceKey] : undefined;
+        add(0, [rootLine(`${careerAtomName(row.atom)}의 ‘${quote(row.atom.easyMeaning)}’이라는 해석을, 실제로 남길 자원과 수익 활동을 고르는 방식에 연결합니다.`, row, `career:${row.facet}:income`), rootLine(wealth?.[0] ?? economic(row)[0], row, `career:${row.facet}:income-basis`),
+          ...(n ? [n] : [rootLine(\"수입의 크기나 자산을 입력받은 것은 아니므로, 여기서는 실제 재물 관련 성향이 업무의 값으로 이어지는 방식만 읽습니다.\", row, \"money:scope\")]),
+          rootLine(wealth?.[1] ?? economic(row)[1], row, `career:${row.facet}:income-condition`)]);
+      } else {
+        const money = careerNatalMoney(state), texts = split(money.text), feature = money.proof.features[0];
+        const material = state.packet.selected.find(m => m.feature === feature);
+        const refs: Refs = { source: `career-natal-money:${feature}`, theme: \"NATAL_ECONOMIC_VALUE\", material: `money:retained:${feature}`, sourceRefs: money.proof.sourceRefs };
+        retainedSources[refs.source] = money.proof.sourceRefs;
+        const n = moneyMbtiLine();
+        add(0, [
+          { text: texts[0], refs },
+          { text: material ? `기존 명리 자료의 ${particle(materialLabel(material), \"을\", \"를\")} 재물 관련 보조 근거로 읽은 것이며, 실제 재산이나 미래 수입을 확정하는 설명은 아닙니다.` : \"기존 원국의 업무 성향을 경제적 가치에 연결한 해석이며, 재산이나 수입의 크기를 예측한 것은 아닙니다.\", refs },
+          n ?? { text: \"금전 판단에 관한 MBTI 근거가 충분하지 않은 부분은 덧붙이지 않고, 현재 확인된 업무의 값만 살펴봅니다.\", refs },
+          { text: texts[2] ?? texts[1], refs },
+        ]);
+      }
+      application(1, \"economic-value\", (m, r) => [`경제적 가치로 설명할 재능은 ${m.label}이며, 잘하는 행동이 누구의 어떤 문제를 덜어 주는지 보여야 합니다.`, reason(r), economic(r)[0], economic(r)[1]]);
+      application(2, \"money-cost\", (m, r) => [`돈과 시간의 선택에서는 ${particle(CAREER_TASKS[r.facet].trap, \"이\", \"가\")} 비용이 될 수 있습니다.`, `${careerAtomName(r.atom)}의 강점을 과하게 쓸 때의 조건부 주의점으로, 실제 지출이 있었다는 뜻은 아닙니다.`, economic(r)[1], `제안을 받을 때는 ${particle(m.label, \"을\", \"를\")} 쓸 기회와 미루게 될 일의 비용을 함께 보아야 자원을 과하게 쓰지 않습니다.`], [], true);
+      application(3, \"resource-management\", (m, r) => [`자원 관리에서는 ${particle(m.label, \"을\", \"를\")} 쓰는 데 꼭 필요한 투입과, 줄여도 품질이 유지될 투입을 나누어야 합니다.`,
+        input.context.jobStatus === \"freelancer\" || input.context.jobStatus === \"self_employed\" || input.context.jobStatus === \"business_owner\" ? \"운영 비용과 생활비를 나누고, 수입이 줄어든 기간에도 지킬 약속을 살펴야 다음 제안을 급하게 고르지 않을 여유가 생깁니다.\" : \"생활비와 배움에 쓸 자원을 나누고, 새 준비가 늘어날 때 기존 시간표에서 줄일 일도 함께 보는 편이 오래가기 좋습니다.\",
+        economic(r)[1],
+        \"이 관리는 더 큰 수익의 보장이 아니라, 잘하는 일을 다음 선택에도 쓸 수 있게 남기는 기술입니다.\"], [\"resource\", \"stability\", \"boundary\"]);
+    } else if (c.id === \"CH07\") {
+      const study = careerStudy(state), raw = getMbtiSourceProfile(input.mbti);
+      const bridge = raw && CAREER_STUDY_BRIDGES[raw.type];
+      const trait = bridge && raw?.traits?.study?.find(t => t.id === bridge.trait);
+      const r = eligible([\"learning\", \"depth\", \"precision\", \"creation\"], false, false)[0];
+      const node = trait && profiles.mbti.sourceNodes.find(n => n.id.includes(`:traits:study:${trait.id}:plainKo`));
+      const refs: Refs = { source: node?.id ?? \"career-study:natal\", nodes: node ? [node.id] : [], theme: \"STUDY_METHOD\", material: \"study:existing-bridge\", sourceRefs: study.proof.sourceRefs };
+      if (r) {
+        const s = split(study.text);
+        add(0, [{ text: s[0], refs }, { text: s[1], refs }, rootLine(`${careerAtomName(r.atom)}에서 읽은 성향은 ${particle(CAREER_TASKS[r.facet].skill, \"을\", \"를\")} 익히는 데 쓸 자원으로 볼 수 있습니다.`, r, \"study:natal-basis\"), { text: s[2], refs }]);
+        const environment = CAREER_RELEASE_MATERIALS[r.facet];
+        add(1, [
+          { text: \"배운 내용을 직접 확인할 과제와 구체적인 피드백이 있는 환경인지 살펴보세요.\", refs },
+          rootLine(environment.learning, r, \"study:environment-activity\"),
+          { text: jobFunction === \"engineering\" ? \"개발 기술을 익힐 때는 예제를 완성한 뒤 입력 조건을 바꿔 보고, 실패한 이유를 설명할 수 있는지 확인할 만합니다.\" : jobFunction === \"design\" ? \"디자인 기법을 익힐 때는 같은 내용을 다른 매체에 옮겨 보고, 전달이 달라진 이유를 설명하는 연습을 해볼 만합니다.\" : jobFunction === \"sales_operations\" ? \"영업 자료를 학습할 때는 서로 다른 고객 질문에 답을 만들어 보고, 확인이 더 필요한 조건을 따로 남겨 볼 만합니다.\" : \"연습 과제를 고를 때는 익숙한 예제를 푼 뒤 조건을 바꾼 문제도 두어, 도움 없이 사용할 수 있는 범위를 확인할 만합니다.\", refs },
+          { text: \"진도를 채운 양과 혼자 설명할 수 있는 내용을 구분하면, 다음 학습에 필요한 질문도 더 정확해집니다.\", refs },
+        ]);
+        if (trait?.risk && node) {
+          const riskNode = profiles.mbti.sourceNodes.find(n => n.id === node.id.replace(/:plainKo$/, \":risk\"));
+          const riskRefs: Refs = { ...refs, source: riskNode?.id ?? node.id, nodes: [riskNode?.id ?? node.id], material: `study:risk:${trait.id}`, sourceRefs: [...(refs.sourceRefs ?? []), `mbti:${raw!.type}:traits:study:${trait.id}:risk`] };
+          add(2, [...CAREER_STUDY_REMEDIES[raw!.type].map(text => ({ text, refs: riskRefs })),
+            { text: \"처음의 학습 선호가 능력의 한계를 뜻하지는 않으니, 이런 어려움이 실제로 나타나는지 과제의 결과와 함께 점검하세요.\", refs: riskRefs }]);
+        } else application(2, \"learning-risk\", (m, r) => [m.risk, reason(r), m.learning, m.growth], [\"learning\", \"precision\", \"persistence\"]);
+      }
+      application(3, \"professional-skill\", (m, r) => [`자격을 고를 때에는 ${particle(CAREER_TASKS[r.facet].skill, \"을\", \"를\")} 발전시킬 과정인지 살펴야 합니다.`,
+        `이 능력은 ${particle(CAREER_TASKS[r.facet].task, \"을\", \"를\")} 맡을 근거가 되므로, 증서의 이름보다 배운 뒤 할 수 있는 일이 중요합니다.`,
+        input.context.jobStatus === \"student\" ? \"학생이라면 전공 과제에서 같은 기술을 써본 뒤 다른 조건의 프로젝트로 넓혀 보면, 강의에서 배운 내용과 직접 해낼 수 있는 일을 비교하기 좋습니다.\" : input.context.jobStatus === \"freelancer\" ? \"프리랜서라면 실제 의뢰의 빈틈을 메울 기술부터 익히고 작은 견본으로 적용 범위를 보여 주면, 새 서비스에 필요한 준비와 추가 대가를 함께 설명하기 좋습니다.\" : input.context.jobStatus === \"job_seeker\" ? \"구직 중이라면 공고에서 요구하는 기술을 작은 과제로 보여 주고 고른 이유까지 설명하면, 자격 보유와 실제로 맡길 수 있는 능력을 함께 전하기 좋습니다.\" : \"현재 활동에서 막힌 문제 하나를 배운 기술로 다시 풀어 보면, 더 큰 교육 과정을 고르기 전에 실제로 필요한 역량과 준비할 범위를 알아갈 수 있습니다.\",
+        `학습 뒤에는 ${particle(CAREER_TASKS[r.facet].result, \"을\", \"를\")} 보여 줄 결과를 남겨, 배운 시간과 실제 능력을 연결할 만합니다.`], [\"learning\", \"precision\", \"depth\"]);
+    } else if (c.id === \"CH08\") {
+      const fortune = candidates.find(c => c.fortune && c.claimLevel && c.claimLevel >= 2 && /^(M08|S08|S03|S04|P01)/.test(c.sourceId));
+      if (fortune) {
+        const plan = planFortuneReasons(fortune, profiles), atoms = [...plan.primaryReasonEvidenceIds, ...plan.secondaryReasonEvidenceIds].flatMap(id => profiles.myeongli.evidence.find(e => e.id === id) ?? []);
+        const refs: Refs = { source: fortune.id, roots: atoms.map(a => a.id), theme: fortune.semanticTheme, material: \"fortune:approved\", sourceRefs: [fortune.sourceId] };
+        const reasons = atoms.flatMap(a => fortuneReason(a) ? split(fortuneReason(a)!) : []);
+        const texts = [split(fortune.sourceText)[0], reasons[0], split(positiveReward(fortune, atoms) ?? \"\")[0], \"소득이나 성공을 보장하는 신호는 아니므로, 실제 역량과 기회 및 실행할 조건을 함께 확인해야 합니다.\"];
+        if (!add(0, texts.filter(Boolean).map(text => ({ text, refs })))) draft.shortages.push(\"CH08.P1:APPROVED_FORTUNE_REALIZATION_SHORTAGE\");
+      } else application(0, \"positive-capability\", (m, r) => [`좋은 가능성의 출발점은 ${m.label}이며, 확인되지 않은 재물복이나 귀인보다 실제로 쓸 수 있는 능력에서 희망을 읽는 편이 정확합니다.`, reason(r), `긍정적인 면으로는 ${terminal(r.atom.positiveMeaning ?? r.atom.easyMeaning)}`, `기회가 생기면 ${particle(CAREER_TASKS[r.facet].result, \"을\", \"를\")} 보여 줄 수 있는 작은 역할부터 맡아, 기대한 강점과 실제 결과를 대조하세요.`]);
+      application(1, \"recognition\", (m, r) => [`상대가 당신을 다시 찾을 이유는 ${particle(m.label, \"을\", \"를\")} 통해 자기 일이 수월해졌다는 경험에서 만들어집니다.`, reason(r), m.collaboration, `기여를 드러낼 때는 ${particle(CAREER_TASKS[r.facet].result, \"이\", \"가\")} 어떤 결과에 남았는지 설명하면, 막연히 열심히 했다는 말보다 전문성이 분명해집니다.`]);
+      application(2, \"success-risk\", (m, r) => [`성과를 이어 가는 과정에서는 ${particle(CAREER_TASKS[r.facet].trap, \"을\", \"를\")} 특히 경계해야 하며, 업무에서 읽은 약점이 장기 성장에도 비용이 될 수 있습니다.`, reason(r),
+        CAREER_GROWTH_RISKS[r.facet]?.[0] ?? `이 흐름이 반복되면 ${particle(CAREER_TASKS[r.facet].skill, \"을\", \"를\")} 키울 시간이 줄어들어, 지금의 방식에 더 의존하게 되는 악순환이 생길 수 있습니다.`,
+        CAREER_GROWTH_RISKS[r.facet]?.[1] ?? `과사용을 막으려면 ‘${CAREER_TASKS[r.facet].test}’를 결과를 돌아보는 기준으로 삼고, 다른 방법이 필요한 과제도 구분해야 합니다.`], [], true);
+      application(3, \"positive-activation\", m => [`좋은 힘을 오래 쓰려면 ${particle(m.label, \"을\", \"를\")} 계속 증명하려 애쓰기보다, 그 힘이 필요한 과제와 조건을 골라야 합니다.`, m.fit,
+        `새 역할을 고른다면, 익숙한 방식이 통하는지와 부족할 부분을 배울 여지가 있는지도 함께 살펴야 합니다.`, m.closing], [], false, true);
+    } else if (c.id === \"CH09\") {
+      application(0, \"career-choice\", (m, r) => [`직업 선택의 핵심 질문은 ${particle(CAREER_TASKS[r.facet].task, \"을\", \"를\")} 실제로 필요로 하는가입니다.`,
+        `${particle(CAREER_TASKS[r.facet].result, \"이\", \"가\")} 그 자리에서도 가치로 인정돼야, 내 능력과 실제 역할이 만날 수 있습니다.`,
+        `상담에서는 ${particle(CAREER_TASKS[r.facet].criterion, \"이\", \"가\")} 있는지 묻고, 결과를 평가할 기준도 확인할 만합니다.`,
+        \"실제 하루의 과제를 알면, 강점을 쓰기 어려운 자리를 구분할 수 있습니다.\"], main ? [main.facet] : [], false, true);
+      application(1, \"risk-reminder\", (m, r) => [`앞서 읽은 약점을 새 역할의 선택 기준으로 옮겨보면, ${particle(CAREER_TASKS[r.facet].criterion, \"이\", \"가\")} 실제로 주어지는지 물어볼 수 있습니다.`,
+        `${particle(m.label, \"이\", \"가\")} 필요한 일일수록 같은 방식에만 기대기 쉬우므로, 결과와 지금의 부담을 함께 돌아보아야 합니다.`,
+        `면담에서는 ${particle(CAREER_TASKS[r.facet].result, \"을\", \"를\")} 평가하는 방법과, 그 일을 위해 쓸 수 있는 시간을 함께 물어보세요.`,
+        \"잘할 수 있다는 이유만으로 그 역할을 골라야 하는 것은 아니며, 필요한 권한과 시간을 얻기 어려운 조건도 선택에 포함할 만합니다.\"], [], true, true);
+      application(2, \"integrated-growth\", (m, r) => [`${input.context.detailJob ? `입력한 ${input.context.detailJob}의 과제에서도 먼저` : \"먼저\"} ${particle(CAREER_TASKS[r.facet].task, \"을\", \"를\")} 해낸 과정을 남겨, 고른 방법과 결과를 함께 보여 줄 만합니다.`,
+        `장기적으로 ${particle(CAREER_TASKS[r.facet].skill, \"을\", \"를\")} 다른 조건의 과제에도 적용하면, 맡을 범위가 넓어집니다.`,
+        `${particle(CAREER_TASKS[r.facet].result, \"을\", \"를\")} 대가를 이야기할 근거로 남기면, 배운 양보다 제공한 가치로 자신을 설명하기 좋습니다.`,
+        jobFunction === \"engineering\" ? \"다음 개발 과제에서는 비교할 구현 두 가지와 확인할 테스트를 먼저 정하고, 선택 이유를 다른 사람이 이어 쓸 설명으로 남겨 보세요.\" : jobFunction === \"design\" ? \"다음 디자인 과제에서는 시안을 고를 질문 하나와 사용 뒤 확인할 반응을 함께 정해, 제작의 완성과 전달의 효과를 따로 살펴보세요.\" : jobFunction === \"sales_operations\" ? \"다음 영업 제안에서는 고객이 결정할 조건 하나와 내부에서 확인할 약속을 나누어, 먼저 물어볼 질문부터 정해 보세요.\" : `다음 학습은 ${particle(CAREER_TASKS[r.facet].result, \"을\", \"를\")} 막는 빈틈 하나부터 고르면, 이미 잘하는 부분을 반복하는 시간과 새로 익힐 시간을 나눌 수 있습니다.`], talent ? [talent.facet] : [], false, true);
+      const last = main ?? chosen[0];
+      if (last) {
+        const m = CAREER_RELEASE_MATERIALS[last.facet];
+        const refs = { ...sourceRefs(last), recall: true, material: `career:${last.facet}:closing` };
+        add(3, [
+          `이 책에서 읽은 대표적인 힘은 ${m.label}이며, 직업 이름보다 실제 문제를 만났을 때 선명해집니다.`,
+          last.atom.positiveMeaning ?? `다음에는 ${particle(CAREER_TASKS[last.facet].skill, \"을\", \"를\")} 키워, 이미 가진 성향을 새로운 역할의 근거로 넓힐 수 있습니다.`,
+          `${particle(CAREER_TASKS[last.facet].criterion, \"이\", \"가\")} 있는지 살피면, 남들이 좋아하는 자리와 내가 힘을 쓸 자리를 가를 수 있습니다.`,
+          jobSteps ? `다음 선택 전에는 ${particle(CAREER_TASKS[last.facet].result, \"을\", \"를\")} 확인할 작은 과제를 먼저 고르고, 실제 결과가 바뀌었을 때 맡을 범위를 넓혀 보세요.` : \"이 힘이 필요한 곳에 시간을 쓰면, 계속 나를 증명하려 애쓰기보다 내 힘이 쓸모 있는 경력이 남습니다.\",
+        ].map(text => ({ text, refs })));
+      }
+    }
+  }
+  draft.bodyLength = draft.chapters.flatMap(c => c.paragraphs.map(p => p.text)).join(\"\\n\\n\").length;
+  const block = (p: CareerReleaseDraft[\"chapters\"][number][\"paragraphs\"][number]): NarrativeBlock => ({ id: p.id, text: p.text, mode: \"prose\", tone: /CH04.P3|CH06.P3|CH07.P3|CH08.P3/.test(p.id) ? \"shadow\" : \"positive\",
+    proof: { features: [], seedIds: [], fusionIds: [...new Set(p.sentences.flatMap(s => s.fusionIds))], sourceRefs: [...new Set(p.sentences.flatMap(s => [...s.evidenceIds, ...s.mbtiSourceNodeIds, ...s.provenance.sourceRefs]))] } satisfies NarrativeProof });
+  const first = draft.chapters[0], last = draft.chapters.at(-1)?.paragraphs.at(-1);
+  const narrative: CareerNarrative = { ...legacy, headline: legacy.headline, opening: first.paragraphs.map(block),
+    sections: draft.chapters.slice(1).filter(c => c.paragraphs.length).map(c => ({ id: c.key, title: c.title, domain: CAREER_READER_CHAPTERS.find(x => x.id === c.id)!.domain, blocks: c.paragraphs.map(block) })),
+    finalLine: last?.sentences.at(-1)?.text ?? legacy.finalLine, finalProof: last ? block(last).proof : legacy.finalProof };
+  return { draft, narrative, retainedSources };
+}
+"
+
+ ❯ tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts:145:605
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/16]⎯
+
+ FAIL  tests/unit/interpretation-v4/foundationAdapter.test.ts > Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import
+AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/interpretation-v4/foundationAdapter.test.ts:116:44
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/16]⎯
+
+ FAIL  tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input
+ FAIL  tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input
+SyntaxError: Unexpected end of JSON input
+ ❯ tests/unit/report-generation/customerDayunGeneration.test.ts:50:55
+     48|       }));
+     49|       const valid = Object.keys(changes).length === 0;
+     50|       expect(r.status, JSON.stringify(await r.clone().json())).toBe(va…
+       |                                                       ^
+     51|       expect(storage.create).toHaveBeenCalledTimes(valid ? 1 : 0);
+     52|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/16]⎯
+
+
+ Test Files  6 failed | 28 passed (34)
+      Tests  16 failed | 3597 passed | 1 skipped (3614)
+   Start at  00:59:05
+   Duration  672.16s (transform 6.88s, setup 211ms, import 15.34s, tests 1318.26s, environment 2ms)

@@ -1,0 +1,4367 @@
+[
+  {
+    "key": "3e5a71d4f1d3543288c0",
+    "sourceId": "mbti:ISTJ:traits:marriage:fixed_role_and_budget",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/marriage/2",
+    "recordSha256": "cf342a791bcdb1515b83c8fd88c4eb8f2d94ee89a11dc1bd9f02f9afbb763c7e",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "fixed_role_and_budget",
+      "label": "역할·예산 고정",
+      "plainKo": "ISTJ는 결혼 생활에서 누가 무엇을 맡는지, 돈을 어떻게 쓰는지, 가족 책임을 어디까지 나눌지 분명해야 안정된다. 애매한 합의와 즉흥적인 돈 사용은 사랑 문제보다 생활 신뢰 문제로 느껴진다.",
+      "strongLine": "당신의 결혼은 마음보다 먼저 역할, 예산, 약속이 흐트러지지 않을 때 안정됩니다.",
+      "positiveUse": "공동 예산, 고정비, 가사 분담, 가족 행사, 장기 저축 계획을 정확하게 관리한다.",
+      "risk": "규칙이 너무 촘촘하면 배우자는 함께 사는 관계보다 평가받는 생활처럼 느낄 수 있다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "0f0d27792b96a8ad87ad",
+    "sourceId": "mbti:ENFP:traits:marriage:freedom_with_agreement",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "a1f8f566f746bc66220229bdf608b0a718b00a666822b41d38c55dab1e041b85",
+    "originalState": {
+      "type": "ENFP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "freedom_with_agreement",
+      "label": "합의된 자유",
+      "plainKo": "ENFP는 결혼 안에서도 사람, 취미, 프로젝트, 새로운 경험을 탐색할 자유가 있어야 살아난다. 다만 자유가 일정, 돈, 약속의 기준 없이 흘러가면 배우자는 관계가 늘 즉흥에 맡겨진다고 느낀다.",
+      "strongLine": "당신의 자유는 막아야 할 것이 아니라, 함께 정한 기준 안에서 살아나야 관계를 지킵니다.",
+      "positiveUse": "개인 시간, 모임 빈도, 지출 한도, 여행 계획을 합의하면 ENFP의 생동감과 부부의 안정감이 함께 유지된다.",
+      "risk": "설렘을 이유로 합의를 계속 바꾸면 배우자는 사랑보다 불안정함을 먼저 느낀다.",
+      "matchingMyeongliSignals": [
+        "비견",
+        "역마",
+        "정재"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "5b05125a1c9e81d25d44",
+    "sourceId": "mbti-pair:ISTJ>ENFP",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "c686a3d0ed295a9b9f9f8c2cbf1a1aa87da2605b2f8c257ffe7d44847020c417",
+    "originalState": {
+      "sourceType": "ISTJ",
+      "targetType": "ENFP",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "marriagePattern",
+      "lovePatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "ENFP",
+      "label": "상호 보완 관계",
+      "sourceRelationName": "Duality / TRUITY complementary",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "둘 다 진정성 있는 관계를 원하며, 겉치레보다 실제 모습을 확인할 때 신뢰가 생긴다.",
+        "ISTJ의 실행력과 ENFP의 비전이 맞물리면 아이디어를 현실로 내리는 힘이 커진다.",
+        "말보다 행동으로 유대감을 확인하는 경험을 공유하면 관계가 단단해진다."
+      ],
+      "friction": [
+        "ISTJ는 ENFP를 변덕스럽고 비현실적으로 볼 수 있고, ENFP는 ISTJ를 고리타분하고 닫힌 사람으로 볼 수 있다.",
+        "ISTJ의 사실 중심 대화와 ENFP의 의미 중심 대화가 충돌하면 서로 다른 언어를 쓰는 느낌이 난다.",
+        "질서와 즉흥성, 혼자만의 시간과 외부 활동 욕구가 생활에서 계속 부딪힌다."
+      ],
+      "positiveInfluence": [
+        "ENFP는 ISTJ에게 새로운 시야와 정서적 표현을 열어주고, ISTJ는 ENFP에게 체계와 지속력을 준다.",
+        "서로 차이를 인정하면 안정과 혁신이 같이 움직이는 조합이 된다."
+      ],
+      "lovePattern": "끌림은 강하게 생길 수 있지만 속도와 생활 방식이 다르다. ENFP의 열정은 ISTJ에게 신선하고, ISTJ의 안정감은 ENFP에게 믿을 만한 기반이 된다.",
+      "marriagePattern": "장기 관계에서는 일정, 정리정돈, 사회활동, 감정 표현 방식이 핵심 갈등이 된다. 생활 규칙을 너무 늦게 정하면 ISTJ는 독박 어른 역할을 하고 ENFP는 통제받는다고 느낀다.",
+      "repairStrategy": [
+        "ISTJ는 비판 전에 감정 확인을 먼저 하고, ENFP는 약속과 일정 변경을 가볍게 넘기지 않는다.",
+        "공동의 생활 규칙을 최소한으로 정하고, 자유시간과 혼자 있는 시간을 따로 확보한다.",
+        "큰 비전은 ENFP가 열고, 실행 계획은 ISTJ가 닫는 식으로 역할을 나눈다."
+      ],
+      "reportLine": "ISTJ와 ENFP는 안정과 변화가 정면으로 만나는 조합이라, 생활 규칙을 잡으면 서로를 크게 키우고 못 잡으면 서로를 지치게 합니다."
+    }
+  },
+  {
+    "key": "bb5cae1a58466e6ff51a",
+    "sourceId": "mbti:ENTJ:traits:marriage:decision_authority_agreement",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "8ea03cac8228b15a453591ff5d293066ae1f239f7263ad93d06ffeee97c968fd",
+    "originalState": {
+      "type": "ENTJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "decision_authority_agreement",
+      "label": "결정권 합의",
+      "plainKo": "ENTJ는 결혼 생활에서도 빠른 결정과 명확한 책임 구조를 원한다. 돈, 이사, 커리어, 자녀 교육처럼 큰 결정은 누가 결정권을 갖는지보다 어떤 기준으로 함께 합의할지를 먼저 정해야 한다.",
+      "strongLine": "당신의 결혼은 방향을 잡는 힘이 강하지만, 그 방향을 배우자와 함께 정할 때 오래 갑니다.",
+      "positiveUse": "가족 목표, 예산, 역할, 장기 계획을 빠르게 정리해 생활 추진력을 만든다.",
+      "risk": "설명보다 결론이 먼저 나오면 배우자는 협의가 아니라 지시를 받는다고 느낀다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "편관",
+        "정재",
+        "금"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "career"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "04bdba29a1fd1c319537",
+    "sourceId": "mbti:INFP:traits:marriage:inner_world_respect",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFP.json",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "pointer": "/traits/marriage/4",
+    "recordSha256": "c2b3fa8995fd97c1f07ebe066228f207c995f951049dee20c063308346ff51cf",
+    "originalState": {
+      "type": "INFP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "inner_world_respect",
+      "label": "내면 존중",
+      "plainKo": "INFP는 배우자가 자신의 감정, 취향, 신념, 조용한 몰입 시간을 가볍게 다루지 않을 때 깊게 안정된다. 결혼 후에도 혼자 정리하고 꿈꾸는 시간이 있어야 마음이 닫히지 않는다.",
+      "strongLine": "당신에게 좋은 배우자는 당신을 고치려는 사람이 아니라, 당신의 안쪽 세계를 함부로 밟지 않는 사람입니다.",
+      "positiveUse": "개인의 취향과 창작적 여백을 존중하면 부드럽고 충실한 애정이 오래 유지된다.",
+      "risk": "배우자가 현실 기준만 앞세워 내면을 무시하면 INFP는 설명을 멈추고 조용히 멀어진다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "비견",
+        "수"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "a1a68eaef14705c10a5a",
+    "sourceId": "mbti-pair:ENTJ>INFP",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "acb781ad7d08d4619019ec0329ccd1116427128b8d21c85df782d03ba444368b",
+    "originalState": {
+      "sourceType": "ENTJ",
+      "targetType": "INFP",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "marriagePattern",
+      "lovePatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "INFP",
+      "label": "반이중성 관계",
+      "sourceRelationName": "Semi-Duality",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "서로의 의도와 목표를 비교적 잘 이해할 수 있다.",
+        "대화 주제가 많고, ENTJ는 INFP의 깊은 가치감에서 자신에게 부족한 내면의 기준을 본다.",
+        "INFP는 ENTJ의 결단력과 현실 장악력에 끌리며, 서로의 다른 에너지가 강한 열정으로 이어진다."
+      ],
+      "friction": [
+        "안정적인 관계를 위한 노력이 없으면 빈번한 갈등 상황에 놓인다.",
+        "ENTJ는 현실적 추진을 원하고 INFP는 내적 의미와 감정의 진정성을 중시한다.",
+        "ENTJ의 비판과 속도는 INFP에게 정서적 침해로 느껴지고, INFP의 침묵과 거리두기는 ENTJ에게 회피와 비협조로 보인다."
+      ],
+      "positiveInfluence": [
+        "INFP는 ENTJ에게 가치와 내면의 의미를 보완한다.",
+        "ENTJ는 INFP에게 목표를 현실화하는 구조와 실행력을 제공한다.",
+        "서로의 세계를 존중하면 열정과 성장의 조합이 된다."
+      ],
+      "lovePattern": "연애에서는 백열등과 나방처럼 강하게 끌릴 수 있다. ENTJ는 INFP의 깊은 감정과 독특한 가치에 호기심을 느끼고, INFP는 ENTJ의 강한 추진력에 매혹된다. 하지만 ENTJ가 성과와 해결책을 앞세우면 INFP는 자기 마음이 평가받는다고 느낀다.",
+      "marriagePattern": "장기 관계에서는 열정보다 안정 장치가 중요하다. ENTJ는 계획과 결정을 빠르게 내리려 하고 INFP는 의미와 감정의 준비 시간을 필요로 한다. 이 간격을 조율하지 않으면 강한 끌림만큼 갈등도 반복된다.",
+      "repairStrategy": [
+        "ENTJ는 INFP의 감정 설명을 비효율로 보지 않고 관계 데이터로 받아들인다.",
+        "INFP는 필요한 감정과 가치 기준을 구체적인 요청으로 번역한다.",
+        "열정이 높을수록 생활 규칙과 갈등 회복 절차를 미리 정한다."
+      ],
+      "reportLine": "ENTJ와 INFP는 강하게 끌리는 반보완 조합이지만, 열정만으로는 부족하고 감정과 실행의 속도를 따로 맞춰야 합니다."
+    }
+  },
+  {
+    "key": "84d1ddc4aa078aa8fa5f",
+    "sourceId": "rr:combination:yukhap:子丑",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsYukhap.ts",
+    "sourceFileSha256": "0c7326fa0c8ab8976b9b59c9522bd276c13ee4d8c2e29a66af8ab041ebacd8d0",
+    "exportName": "RELATION_COMBINATIONS_YUKHAP",
+    "index": 0,
+    "recordSha256": "4dea97f188169831baa4da4834947255b9af2b2dffaee5b735c26d39bd345219",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "A_HISTORICAL_TEXT",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "육합 목록의 한 쌍이다. 고전의 주객별 평가와 현행 대칭 검출은 다르다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論支元六合"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "子水·丑土가 실제 별도 자리에 있어야 하며 동절 토수의 여력을 검토한다.",
+      "exclusions": [
+        "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:yukhap:子丑",
+      "relation": "yukhap",
+      "targetId": "foundation:relation:yukhap",
+      "members": [
+        "子",
+        "丑"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        },
+        {
+          "symbol": "丑",
+          "element": "EARTH",
+          "yinYang": "yin",
+          "hiddenStems": [
+            "己",
+            "癸",
+            "辛"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "육합 목록의 한 쌍이다. 고전의 주객별 평가와 현행 대칭 검출은 다르다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論支元六合"
+          }
+        ]
+      },
+      "composition": "子:WATER·yang·장간 癸 / 丑:EARTH·yin·장간 己癸辛; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "子水·丑土가 실제 별도 자리에 있어야 하며 동절 토수의 여력을 검토한다.",
+      "exclusions": [
+        "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "월령·각 지지의 장간·주변 기세를 확인하며 화한 오행은 별도 판본 비교가 필요하다. 합을 합화·결혼·동의·평화로 환산하지 않는다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "배합과 본래 토수 제약이 공존하는 조건을 확인할 수 있다.",
+      "risk": "丑의 장간과 계절을 생략하고 합화토를 확정하지 않는다.",
+      "reversal": "느슨한 연결이 원래 기능을 남길 수도 있다.",
+      "distinction": "午未 역시 토 참여 육합이나 상대 오행과 계절이 다르다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "실제 함께 쓰는 자원의 사용 시간이 다르면 운영 규칙을 확인한다.",
+        "action": "사용권과 보관 책임을 나눈다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "고전의 방향별 복 차이를 현행 대칭 표에서 계산한 것처럼 말하지 않는다.",
+        "육합의 화오행은 이 레지스트리에서 새 판정을 만들지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": []
+    }
+  },
+  {
+    "key": "f3c3648ae7632ade1bdb",
+    "sourceId": "mbti:ISFJ:traits:marriage:care_reciprocity_rule",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "74f2d43e7103b436809d5e0d0ae2bb424b7fe42ad9c0efd463f86d87d14abbb5",
+    "originalState": {
+      "type": "ISFJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "care_reciprocity_rule",
+      "label": "돌봄의 상호성",
+      "plainKo": "ISFJ는 배우자와 가족을 챙기는 일을 자연스럽게 떠안기 쉽다. 결혼에서는 돌봄을 혼자 알아서 하는 일이 아니라, 배우자도 일정, 가사, 정서 확인을 함께 맡는 구조로 만들어야 한다.",
+      "strongLine": "당신의 결혼은 당신이 더 참고 더 챙기는 구조가 아니라, 돌봄이 서로 오갈 때 오래 갑니다.",
+      "positiveUse": "가사, 병원, 가족 행사, 생활비, 감정 대화를 함께 나누면 ISFJ의 안정감이 지치지 않는다.",
+      "risk": "필요를 말하지 않고 계속 맞추면 배우자는 괜찮은 줄 알고 책임을 덜 느낄 수 있다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "정재",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "parenting",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "e79993a436c219093ea5",
+    "sourceId": "mbti:ENTP:traits:marriage:promise_money_repeat_system",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "693787a8394b7d5bbbd290176b712bc259785aec77600cd7ade1b97d09bee411",
+    "originalState": {
+      "type": "ENTP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "promise_money_repeat_system",
+      "label": "반복 책임 구조",
+      "plainKo": "ENTP는 큰 대화와 새로운 계획에는 강하지만 약속 시간, 생활비, 가사, 반복 구매 같은 작은 운영을 가볍게 볼 수 있다. 결혼에서는 반복 책임을 캘린더와 예산표로 고정해야 신뢰가 쌓인다.",
+      "strongLine": "당신의 결혼 생활은 멋진 아이디어보다, 약속과 돈과 가사가 반복해서 지켜질 때 안정됩니다.",
+      "positiveUse": "생활비 분담, 가사 루틴, 일정 알림, 공동 체크리스트를 두면 자유와 책임이 함께 유지된다.",
+      "risk": "작은 약속을 계속 즉흥으로 넘기면 배우자는 큰 미래보다 오늘의 신뢰를 먼저 의심한다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "21a2cc4649da9423a26d",
+    "sourceId": "rr:combination:chung:寅申",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsChung.ts",
+    "sourceFileSha256": "37d4801960b9824789f51685207eafc46ce7556ecba4484ef1a96c5b3b90bcb9",
+    "exportName": "RELATION_COMBINATIONS_CHUNG",
+    "index": 2,
+    "recordSha256": "8bc86e5662ba7e4334aac0944e8847d66269ce4944cff4b31275d9d1ce9c0d8a",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "A_HISTORICAL_TEXT",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "대표 목금 충이며 형 표에도 같은 쌍이 있다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論衝擊"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "寅木·申金의 대향과 장간의 여러 생극을 함께 검토한다.",
+      "exclusions": [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:chung:寅申",
+      "relation": "chung",
+      "targetId": "foundation:relation:chung",
+      "members": [
+        "寅",
+        "申"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "寅",
+          "element": "WOOD",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "甲",
+            "丙",
+            "戊"
+          ]
+        },
+        {
+          "symbol": "申",
+          "element": "METAL",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "庚",
+            "壬",
+            "戊"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "대표 목금 충이며 형 표에도 같은 쌍이 있다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論衝擊"
+          }
+        ]
+      },
+      "composition": "寅:WOOD·yang·장간 甲丙戊 / 申:METAL·yang·장간 庚壬戊; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "寅木·申金의 대향과 장간의 여러 생극을 함께 검토한다.",
+      "exclusions": [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "왕쇠·뿌리·노출·장간을 함께 보며 같은 쌍도 계절이 다르면 작용 평가가 다르다. 방향이 대립한다는 구조와 이동·실패라는 생활 결과를 구분한다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "배치 변경의 필요와 보존할 기능을 같이 살필 수 있다.",
+      "risk": "충·형의 겹침을 두 개의 독립 불행으로 세지 않는다.",
+      "reversal": "제약의 조정이 기능을 살릴 수도 있으나 상대의 소멸을 전제하지 않는다.",
+      "distinction": "卯酉의 목금 충보다 寅申은 각 장간이 복수이며 형에도 참여한다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "실제 추진 방식과 검토 방식이 충돌하면 어느 단계에서 문제가 나는지 확인한다.",
+        "action": "제안 단계와 검토 단계를 나눈다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [
+        "rr:combination:hyeong:申寅"
+      ],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "적천수 본문·주석 전사는 층위가 섞여 있으며 후대 주석의 귀속을 단정하지 않는다.",
+        "사고지 개고는 정설로 확정하지 않고 실제 재물과 연결하지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": []
+    }
+  },
+  {
+    "key": "ab15fd60b429d7c073a5",
+    "sourceId": "mbti:ESTJ:traits:marriage:structured_household",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "pointer": "/traits/marriage/0",
+    "recordSha256": "b397131de4de278f264cb27ad007acb5ff3916c2f13ee2fd5be99df2b2ae57e5",
+    "originalState": {
+      "type": "ESTJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "structured_household",
+      "label": "구조적 가정",
+      "plainKo": "ESTJ는 결혼과 가정에서도 질서, 역할, 일정, 경제 안정이 잡혀 있어야 편안하다. 생활이 예측 가능할수록 관계도 안정된다고 느낀다.",
+      "strongLine": "당신에게 좋은 결혼은 사랑만 있는 관계가 아니라 생활이 제대로 굴러가는 관계입니다.",
+      "positiveUse": "가계 관리, 역할 분담, 가족 행사, 장기 계획을 안정적으로 운영한다.",
+      "risk": "가족 구성원의 자율성과 감정적 욕구를 규칙보다 뒤로 밀 수 있다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "b42d6c513c37bfd7f4ee",
+    "sourceId": "mbti:ISFP:traits:marriage:comfort_space_agreement",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "eb112b9170ce7c200e7f54a1f774a34ba65746dee3a5756408b4820486609cfe",
+    "originalState": {
+      "type": "ISFP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "comfort_space_agreement",
+      "label": "편안한 공간 합의",
+      "plainKo": "ISFP는 결혼 생활에서 집의 분위기, 취향, 소리, 냄새, 휴식 리듬처럼 몸으로 느끼는 편안함을 크게 본다. 배우자가 이 감각을 사소하게 여기면 마음이 닫히고, 존중해 주면 애정이 오래 부드럽게 유지된다.",
+      "strongLine": "당신의 결혼 안정감은 거창한 약속보다, 내가 편히 쉴 수 있는 공간이 존중될 때 살아납니다.",
+      "positiveUse": "집 안 분위기, 취향 공유, 휴식 공간, 데이트 리듬을 맞추면 관계의 온도가 안정된다.",
+      "risk": "생활 공간이 계속 침범되면 ISFP는 크게 싸우기보다 조용히 마음을 정리한다.",
+      "matchingMyeongliSignals": [
+        "도화",
+        "식신",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "048c520649d4c0b898cb",
+    "sourceId": "mbti:INTJ:traits:marriage:role_agreement_marriage",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "8fa915357cd26e76fde0e4f1eb2712a3c3fa610f68c2f7160e26c901d77265f5",
+    "originalState": {
+      "type": "INTJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "role_agreement_marriage",
+      "label": "역할 합의",
+      "plainKo": "INTJ는 결혼 생활에서도 감정의 흐름보다 구조와 역할을 먼저 정리하려 한다. 돈, 가사, 가족 일정, 커리어 조율을 말로 합의해 두면 관계가 훨씬 안정된다.",
+      "strongLine": "당신의 결혼은 사랑만으로 굴러가기보다, 돈과 역할과 시간을 어떻게 나눌지 합의할 때 안정됩니다.",
+      "positiveUse": "공동 예산, 가사 분담, 가족 일정, 장기 목표를 체계적으로 정리해 생활의 혼란을 줄인다.",
+      "risk": "합의가 기준표처럼 굳어지면 배우자는 감정과 상황을 설명할 공간이 없다고 느낄 수 있다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정재",
+        "토",
+        "금"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "005c28927dc7664b56c9",
+    "sourceId": "mbti:ESFP:traits:marriage:expression_budget_rhythm",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "4964ab41559728d701342d2f8e679a6c4d525f32cf78710acc06387195e5575e",
+    "originalState": {
+      "type": "ESFP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "expression_budget_rhythm",
+      "label": "표현·지출 리듬",
+      "plainKo": "ESFP는 사랑을 말, 리액션, 선물, 외출, 스킨십, 이벤트로 표현하는 힘이 강하다. 결혼에서는 그 표현이 즐거움으로 남으려면 돈과 시간의 리듬을 정해 감정 결제가 생활비를 밀어내지 않게 해야 한다.",
+      "strongLine": "당신의 표현력은 결혼을 살리지만, 감정이 돈과 시간을 전부 끌고 가면 안정감이 흔들립니다.",
+      "positiveUse": "데이트비, 선물비, 모임비, 생활비를 나누면 즐거움과 현실 책임이 함께 유지된다.",
+      "risk": "기분을 풀기 위한 지출이 반복되면 배우자는 애정 표현보다 부담을 먼저 느낀다.",
+      "matchingMyeongliSignals": [
+        "도화",
+        "식신",
+        "정재"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "love"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "ee40bc5fe87bf352f4b2",
+    "sourceId": "mbti-pair:INTJ>ESFP",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "a8b677e84ed7fb52810a8bdcba694864f0d834fe6235240e4c4bae3444bdd95c",
+    "originalState": {
+      "sourceType": "INTJ",
+      "targetType": "ESFP",
+      "sourceCoverage": "inferred",
+      "lineage": "not_established",
+      "patternField": "marriagePattern",
+      "lovePatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "ESFP",
+      "label": "장단점 역전 관계",
+      "sourceRelationName": "Opposite Strengths",
+      "sourceCoverage": "inferred",
+      "sharedGround": [
+        "서로에게 없는 강점이 뚜렷해 초반에는 강한 신선함을 느낄 수 있다.",
+        "ESFP는 현실의 즐거움과 사람의 반응을, INTJ는 장기 구조와 전략을 제공한다.",
+        "둘 다 자기 방식이 분명해 상대의 강점이 확실할 때 매력을 빠르게 느낀다."
+      ],
+      "friction": [
+        "ESFP는 지금의 경험과 즐거움을 중시하고 INTJ는 미래의 목표와 효율을 중시한다.",
+        "ESFP의 표현과 활동성은 INTJ에게 과하고, INTJ의 분석과 침묵은 ESFP에게 차갑다.",
+        "데이트와 소비에서도 ESFP는 지금 즐거운 선택을 원하고, INTJ는 장기 손익과 의미를 따져 분위기가 꺾일 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFP는 INTJ가 몸과 현재를 느끼게 하고, INTJ는 ESFP가 장기 선택을 생각하게 한다.",
+        "서로를 억누르지 않으면 현재의 생동감과 미래의 설계가 같이 살아난다."
+      ],
+      "lovePattern": "매력은 강하게 생길 수 있지만 데이트 방식에서 차이가 크다. ESFP는 함께 즐기고 표현하길 원하고 INTJ는 조용하고 의미 있는 시간을 원한다.",
+      "marriagePattern": "결혼에서는 소비, 외부 활동, 친구 관계, 생활 속 즐거움의 비중이 갈등이 된다. INTJ가 모든 즐거움을 비효율로 보면 관계가 말라간다. 돈과 일정은 기준을 세우되, 함께 즐기는 시간도 생활의 필수 항목으로 남겨야 한다.",
+      "repairStrategy": [
+        "INTJ는 계획 안에 즐거움과 즉흥성을 일부러 넣는다.",
+        "ESFP는 장기 재정과 목표의 최소 기준을 존중한다.",
+        "사교 일정과 개인 회복 시간을 분리해 잡는다."
+      ],
+      "reportLine": "INTJ와 ESFP는 미래 전략과 현재의 즐거움이 맞서는 조합이라, 서로의 시간을 빼앗지 않고 나눠 쓰는 방식이 필요합니다."
+    }
+  },
+  {
+    "key": "2126ddb8abe0645647b0",
+    "sourceId": "mbti-pair:ESFP>INTJ",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "35a8458b8ea38e6a45401fc1618b7041accd0700035fee3779bbc15e55d99a4f",
+    "originalState": {
+      "sourceType": "ESFP",
+      "targetType": "INTJ",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "marriagePattern",
+      "lovePatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "INTJ",
+      "label": "이중성 관계",
+      "sourceRelationName": "Duality",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "서로가 가진 정서와 계획의 결핍을 강하게 보완할 수 있다.",
+        "INTJ는 ESFP의 친근함, 개방성, 열정, 쾌활함에서 감정적 안정과 매력을 느낄 수 있다.",
+        "ESFP는 INTJ의 침착함, 똑부러짐, 인생 계획 능력을 존경하고 배우고 싶어질 수 있다."
+      ],
+      "friction": [
+        "INTJ의 통제가 적당한 수준을 넘으면 ESFP는 자유를 침해받는다고 느낀다.",
+        "ESFP의 즉흥성과 감정 표현은 INTJ에게 예측하기 어렵고 피곤하게 보일 수 있다.",
+        "서로의 사고방식이 너무 달라 소통 방식에서 자주 부딪힐 수 있다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 ESFP에게 장기 계획과 구조를 제공한다.",
+        "ESFP는 INTJ에게 명확한 정서 인식과 따뜻한 보살핌을 제공한다.",
+        "서로의 차이를 존중하면 자유와 계획, 감정과 전략이 함께 살아난다."
+      ],
+      "lovePattern": "연애 초반에는 서로의 완전히 다른 매력에 강하게 끌린다. ESFP는 INTJ의 침착하고 명확한 태도에 안정감을 느끼고, INTJ는 ESFP의 밝고 친근한 에너지에 감정적으로 열린다. 다만 ESFP가 즉흥적으로 움직이고 INTJ가 계획으로 조정하려 할 때 자유와 통제의 갈등이 생긴다.",
+      "marriagePattern": "결혼에서는 INTJ가 장기 계획, 재정, 방향성을 잡고 ESFP가 생활의 즐거움과 정서적 온도를 살리는 구도가 될 수 있다. 그러나 INTJ의 통제가 과해지면 ESFP는 숨 막힘을 느끼고, ESFP의 즉흥성이 반복되면 INTJ는 신뢰가 흔들린다.",
+      "repairStrategy": [
+        "INTJ는 통제를 명령이 아니라 선택지와 이유로 설명한다.",
+        "ESFP는 즉흥 변경이 필요한 때 미리 알려 INTJ의 불안을 줄인다.",
+        "장기 계획 안에 여행, 문화 생활, 자유 시간을 의도적으로 포함한다."
+      ],
+      "reportLine": "ESFP와 INTJ는 자유로운 감각과 차분한 전략이 맞물리는 강한 보완 조합이지만, 통제가 과해지는 순간 매력이 갈등으로 바뀝니다."
+    }
+  },
+  {
+    "key": "4438f18bddb2caa9cb2c",
+    "sourceId": "mbti:ISFJ:traits:marriage:home_stability_builder",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/traits/marriage/0",
+    "recordSha256": "37b8cc7d7de2adf0f17088e80efc2d4d80a26378d477e56f285cb55aed2c3a0e",
+    "originalState": {
+      "type": "ISFJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "home_stability_builder",
+      "label": "가정 안정 설계",
+      "plainKo": "결혼하면 가정을 역할이 아니라 소명처럼 받아들이기 쉽다. 루틴, 행사, 가족의 필요, 생활 질서를 관리하며 가족 전체의 안정과 조화를 만들려 한다.",
+      "strongLine": "당신은 결혼을 하면 감정만이 아니라 생활 전체를 책임지려는 쪽으로 갑니다.",
+      "positiveUse": "가정의 일정, 비용, 돌봄, 기념일, 가족 관계를 안정적으로 관리한다.",
+      "risk": "가정을 지키려는 마음이 자기 희생과 과보호로 변할 수 있다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정인",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "eb40d39f2065a867ad79",
+    "sourceId": "mbti-pair:ISFJ>ISFJ",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "91bb027f959e53a6247fd2cc87107dc9298146f762e076b054b34f4af28b9ac5",
+    "originalState": {
+      "sourceType": "ISFJ",
+      "targetType": "ISFJ",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "marriagePattern",
+      "lovePatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "ISFJ",
+      "label": "동일 관계",
+      "sourceRelationName": "Identical",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "둘 다 상황과 문제를 비슷하게 인식하고 비슷한 방식으로 대응한다.",
+        "상대가 중요하게 여기는 안정, 배려, 책임의 가치를 쉽게 알아본다.",
+        "두 사람이 서로에게 매력을 느끼면 조용하고 돌봄이 많은 관계가 되며, 작은 약속을 지키는 태도에서 신뢰가 빠르게 쌓인다."
+      ],
+      "friction": [
+        "상호 보완보다 유사성이 크기 때문에 새로운 자극이 부족해질 수 있다.",
+        "한쪽이 불건강해지면 다른 한쪽도 비슷한 불안과 회피 패턴으로 끌려가기 쉽다.",
+        "함께 나눌 정보와 새로운 경험이 줄면 관계가 금방 고갈되고, 둘 다 참기만 하면 서운함을 확인할 기회가 사라진다."
+      ],
+      "positiveInfluence": [
+        "서로의 장단점을 다른 각도에서 보게 만들어 자기 이해를 높인다.",
+        "생활의 안정과 정서적 돌봄을 서로에게 제공한다.",
+        "말하지 않아도 필요한 배려와 루틴을 알아차리는 편안함이 있다."
+      ],
+      "lovePattern": "연애에서는 빠른 설렘보다 안정과 돌봄으로 가까워진다. 서로의 필요를 조용히 챙기지만, 둘 다 불편한 감정을 늦게 말하면 관계가 잔잔하게 식을 수 있다.",
+      "marriagePattern": "결혼에서는 루틴, 가족 행사, 생활 안정이 잘 맞는다. 다만 두 사람 모두 변화를 피하면 생활은 안정적이어도 성장이 느려지고, 문제를 덮어두는 방식이 반복된다.",
+      "repairStrategy": [
+        "정기적으로 새로운 활동이나 외부 접점을 넣어 관계 고갈을 막는다.",
+        "서운한 감정은 쌓아두지 말고 작게 자주 말한다.",
+        "돌봄을 주고받을 때 고마움을 명시적으로 표현한다."
+      ],
+      "reportLine": "ISFJ와 ISFJ는 서로를 가장 편하게 이해하지만, 둘 다 조용히 참기 시작하면 안정이 아니라 정체가 되는 조합입니다."
+    }
+  },
+  {
+    "key": "793ccb7ecbcc8f1751b7",
+    "sourceId": "mbti:ENFJ:traits:marriage:future_planning_partner",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "pointer": "/traits/marriage/0",
+    "recordSha256": "749cef6e591cb7486bb0afdba27be82e6e5c19f877468400ddaa064d7b4361b6",
+    "originalState": {
+      "type": "ENFJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "future_planning_partner",
+      "label": "미래 설계형 배우자",
+      "plainKo": "ENFJ는 결혼과 장기 관계에서 함께할 미래를 자주 생각한다. 관계의 방향, 가치, 생활의 의미를 대화로 확인하며 안정감을 만든다.",
+      "strongLine": "ENFJ의 결혼은 오늘의 감정만이 아니라 함께 갈 미래를 계속 조율하는 관계다.",
+      "positiveUse": "가족의 목표, 자녀 교육, 공동 비전, 관계 의식을 세심하게 설계한다.",
+      "risk": "상대가 현재 중심적이면 미래 질문이 부담으로 느껴질 수 있다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정인",
+        "목"
+      ],
+      "productDomains": [
+        "marriage",
+        "love"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "30b373f5892dd5de9b47",
+    "sourceId": "mbti:ISTP:traits:marriage:space_based_marriage",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "pointer": "/traits/marriage/0",
+    "recordSha256": "9c87a39b77f3a980c984cccbcdc66a691a808b41e0b7326d3d2e0893a3a6729f",
+    "originalState": {
+      "type": "ISTP",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "space_based_marriage",
+      "label": "공간 존중 결혼",
+      "plainKo": "결혼이나 장기 관계에서도 각자의 시간과 공간이 필요하다. 너무 많은 확인, 간섭, 통제는 관계의 피로를 빠르게 키운다.",
+      "strongLine": "당신의 결혼은 붙어 있는 시간보다, 서로의 공간을 얼마나 존중하느냐가 중요합니다.",
+      "positiveUse": "각자 취미와 자유를 인정하는 생활 구조에서 안정된다.",
+      "risk": "상대가 감정적 밀착을 원하면 차갑고 개인주의적으로 보인다.",
+      "matchingMyeongliSignals": [
+        "비견",
+        "정재",
+        "수"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "cbdcf487f0263d4eb781",
+    "sourceId": "external:marriage:safety",
+    "sourceKind": "external_context",
+    "url": "https://www.nhs.uk/live-well/getting-help-for-domestic-violence/",
+    "recordSha256": "ed546b1588162ac8804ba27eab93dd9024a3c85b11ec0a240cd66287a3de2ae8",
+    "originalState": {
+      "url": "https://www.nhs.uk/live-well/getting-help-for-domestic-violence/",
+      "title": "NHS: domestic violence and abuse",
+      "status": "page_actually_accessed",
+      "summary": "위협·감시·경제적 통제를 성격 차이의 공동 조율 문제로 정상화하지 않는다.",
+      "limit": "고객 피해·가해 사실을 유형으로 판정하지 않음. 영국 지원 연락처를 한국 안내로 사용하지 않음.",
+      "accessedAt": "2026-10-14",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "url": "https://www.nhs.uk/live-well/getting-help-for-domestic-violence/",
+      "title": "NHS: domestic violence and abuse",
+      "status": "page_actually_accessed",
+      "summary": "위협·감시·경제적 통제를 성격 차이의 공동 조율 문제로 정상화하지 않는다.",
+      "limit": "고객 피해·가해 사실을 유형으로 판정하지 않음. 영국 지원 연락처를 한국 안내로 사용하지 않음."
+    }
+  },
+  {
+    "key": "4b07fe3f9004cfc8a777",
+    "sourceId": "mbti:ENFJ:traits:marriage:shared_care_responsibility",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "a0659c73fc2615a3acdc6938acbd1cc6bd555c623826e7883b03cdf2e1ad081c",
+    "originalState": {
+      "type": "ENFJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "shared_care_responsibility",
+      "label": "돌봄 책임 분담",
+      "plainKo": "ENFJ는 결혼 생활에서 배우자와 가족의 상태를 먼저 읽고 챙기려 한다. 이 힘은 가정을 따뜻하게 만들지만, 돌봄과 감정 확인이 ENFJ 한 사람의 역할로 굳어지면 서운함이 쌓인다.",
+      "strongLine": "당신의 결혼은 당신만 애쓰는 구조가 아니라, 서로가 관계를 같이 책임질 때 안정됩니다.",
+      "positiveUse": "정서 대화, 집안일, 가족 일정, 돌봄 역할을 함께 나누면 ENFJ의 따뜻함이 지치지 않는다.",
+      "risk": "상대가 알아서 해주겠지라는 태도로 머물면 ENFJ는 사랑받는 감각보다 이용당하는 감각을 먼저 느낀다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "정관",
+        "귀인"
+      ],
+      "productDomains": [
+        "marriage",
+        "parenting",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "d8ee6a6775c1d5a71420",
+    "sourceId": "mbti:INTP:traits:marriage:automated_household_system",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "461895020e434455c214e8e225844d78376e184abdcde3ba5fba64cc25f2d6f7",
+    "originalState": {
+      "type": "INTP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "automated_household_system",
+      "label": "생활 자동화",
+      "plainKo": "INTP는 생각할 공간이 확보될 때 결혼 생활도 안정된다. 공과금, 일정, 가사, 장보기, 저축처럼 반복되는 일은 기억력이나 기분에 맡기기보다 자동화와 분담표로 굴려야 한다.",
+      "strongLine": "당신의 결혼 생활은 마음가짐보다 자동으로 돌아가는 생활 시스템이 있을 때 덜 흔들립니다.",
+      "positiveUse": "캘린더, 자동이체, 가사 분담표, 고정 루틴을 두면 자유 시간과 가족 책임을 동시에 지킨다.",
+      "risk": "반복 관리를 대수롭지 않게 넘기면 배우자는 생활을 혼자 떠안는다고 느낀다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "16a8411e967484ac9826",
+    "sourceId": "fkr:complement:C074",
+    "sourceKind": "individual_fusion_research",
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+    "sourceFileSha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+    "exportName": "COMPLEMENT_FUSION_RESEARCH",
+    "index": 73,
+    "recordSha256": "f93ae2b637fb85ef2315bf69a09a37c00320f53d0dc68d7ada095446dd7d70ea",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "contexts": [
+        "love",
+        "social"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "CARE",
+          "EXPRESSION"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "sourceAssignmentRequired": true,
+      "noAutomaticMarriageTransfer": true
+    },
+    "raw": {
+      "id": "fkr:complement:C074",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "review": "conditional_editorial_not_empirical",
+      "sourceRefs": [
+        "repo:semantic-fusion",
+        "repo:complement-registry",
+        "authored:fusion-research"
+      ],
+      "sourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+      "missingEvidencePolicy": "withhold_no_fallback_fact",
+      "scopeRef": "fkr:scope:individual",
+      "origin": "complement_rule",
+      "existingRuleId": "C074",
+      "existingRuleSha256": "7b34e90442823c827e0818886b7f8d4ecf00da32a645f26a522c80d2e9a47857",
+      "group": "RELATIONSHIP",
+      "researchRelation": "task_complement",
+      "originalMeaning": "좋아하는 마음을 속으로만 가지고 있기보다 말이나 행동으로 보여주려는 사람으로 이어질 수 있습니다.",
+      "originalDomains": [],
+      "contexts": [
+        "love",
+        "social"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "CARE",
+          "EXPRESSION"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "facets": [
+        {
+          "axis": "CARE",
+          "direction": 1,
+          "facetRef": "sar:facet:CARE:practical-support",
+          "definition": "동의한 구체적 부담을 덜어줌",
+          "role": "axisA_role"
+        },
+        {
+          "axis": "EXPRESSION",
+          "direction": 1,
+          "facetRef": "sar:facet:EXPRESSION:channel-choice",
+          "definition": "뜻에 맞는 말·글·행동을 선택",
+          "role": "axisB_role"
+        }
+      ],
+      "orientationPolicy": "both_source_assignments_require_independent_review",
+      "coreMeaning": "도움과 애정 표현의 통로가 상대에게도 적합한가?",
+      "jointReason": "동의한 구체적 부담을 덜어줌 / 뜻에 맞는 말·글·행동을 선택의 서로 다른 기여가 같은 과제에서 필요한지 확인한다.",
+      "positive": "말·행동 중 상대가 원하는 방식으로 마음을 전달",
+      "risk": "제공한 도움을 상대가 반드시 애정으로 받아야 한다고 기대",
+      "goodIntentionMistake": "표현을 잘 하려 필요 없는 선물·지원까지 늘림",
+      "twist": "아무것도 대신하지 않고 경청하는 표현도 가능",
+      "fictionalScene": {
+        "kind": "fictional_not_customer_history",
+        "text": "가상으로 힘든 날의 지원을 조언·식사·경청 중 상대가 고르게 하는 장면"
+      },
+      "behaviorQuestion": "도움과 애정 표현의 통로가 상대에게도 적합한가?",
+      "conditions": [
+        "실제 필요·관계 단계·표현 동의·여력 확인",
+        "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+        "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+      ],
+      "counterexample": "선물보다 개인 시간이 필요한 날도 있음",
+      "exclusions": [
+        "CARE+표현으로 상대의 호감 확정",
+        "축의 점수만으로 facet의 세부 행동을 관찰한 것으로 처리하지 않는다."
+      ],
+      "distinction": "C054의 직설 지원과 달리 여러 애정 통로",
+      "applicabilityRef": "fkr:app:complement:C074",
+      "legacyTagReview": {
+        "relatedTags": [
+          {
+            "tag": "help",
+            "researchRef": "sar:tag:help",
+            "relation": "NOT_EQUIVALENT",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "first-attraction",
+            "researchRef": "sar:tag:first-attraction",
+            "relation": "NOT_EQUIVALENT",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "intimate-attraction",
+            "researchRef": "sar:tag:intimate-attraction",
+            "relation": "NOT_EQUIVALENT",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "expression",
+            "researchRef": "sar:tag:expression",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "expression-gap",
+            "researchRef": "sar:tag:expression-gap",
+            "relation": "NO_TRAIT_INFERENCE",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "reserved-affection",
+            "researchRef": "sar:tag:reserved-affection",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          }
+        ],
+        "use": "reference_only_no_new_semanticConnection"
+      }
+    }
+  },
+  {
+    "key": "fa83818c7308d0737c2f",
+    "sourceId": "fkr:complement:C077",
+    "sourceKind": "individual_fusion_research",
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+    "sourceFileSha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+    "exportName": "COMPLEMENT_FUSION_RESEARCH",
+    "index": 76,
+    "recordSha256": "705ba9e944bd88d45841f5e97b2f5f6d40e10c13b21efcf5c5942d28c5672881",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "contexts": [
+        "love",
+        "social"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "AUTONOMY",
+          "CARE"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "sourceAssignmentRequired": true,
+      "noAutomaticMarriageTransfer": true
+    },
+    "raw": {
+      "id": "fkr:complement:C077",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "review": "conditional_editorial_not_empirical",
+      "sourceRefs": [
+        "repo:semantic-fusion",
+        "repo:complement-registry",
+        "authored:fusion-research"
+      ],
+      "sourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+      "missingEvidencePolicy": "withhold_no_fallback_fact",
+      "scopeRef": "fkr:scope:individual",
+      "origin": "complement_rule",
+      "existingRuleId": "C077",
+      "existingRuleSha256": "3bc7e3de891acd57081d9af56486b2867fe25fc27d3eb8296176d886446c9b62",
+      "group": "RELATIONSHIP",
+      "researchRelation": "task_complement",
+      "originalMeaning": "사람을 아끼고 챙기면서도 자기 시간과 선택권은 필요한 사람으로 이어질 수 있습니다.",
+      "originalDomains": [],
+      "contexts": [
+        "love",
+        "social"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "AUTONOMY",
+          "CARE"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "facets": [
+        {
+          "axis": "AUTONOMY",
+          "direction": 1,
+          "facetRef": "sar:facet:AUTONOMY:chosen-support",
+          "definition": "받을 도움의 방식을 선택",
+          "role": "axisA_role"
+        },
+        {
+          "axis": "CARE",
+          "direction": 1,
+          "facetRef": "sar:facet:CARE:respectful-nonintervention",
+          "definition": "돕지 않을 선택을 존중",
+          "role": "axisB_role"
+        }
+      ],
+      "orientationPolicy": "both_source_assignments_require_independent_review",
+      "coreMeaning": "아끼는 마음과 상대가 고를 권리를 함께 남기는가?",
+      "jointReason": "받을 도움의 방식을 선택 / 돕지 않을 선택을 존중의 서로 다른 기여가 같은 과제에서 필요한지 확인한다.",
+      "positive": "도움을 제안하되 거절과 다른 선택도 인정",
+      "risk": "자율을 핑계로 필요한 공동 책임을 외면",
+      "goodIntentionMistake": "돕기 위해 상대의 선택까지 대신 결정",
+      "twist": "도움받는 선택과 자율성은 공존 가능",
+      "fictionalScene": {
+        "kind": "fictional_not_customer_history",
+        "text": "가상으로 진로 고민에 자료를 주고 결정은 맡기는 장면"
+      },
+      "behaviorQuestion": "아끼는 마음과 상대가 고를 권리를 함께 남기는가?",
+      "conditions": [
+        "실제 관계·보호 의무·선택권·요청 확인",
+        "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+        "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+      ],
+      "counterexample": "도움을 거절해도 관계의 가치가 사라지지 않음",
+      "exclusions": [
+        "돌봄을 받지 않으면 독립적이지 못하다고 단정",
+        "축의 점수만으로 facet의 세부 행동을 관찰한 것으로 처리하지 않는다."
+      ],
+      "distinction": "C053의 지원 한도보다 양측의 선택권",
+      "applicabilityRef": "fkr:app:complement:C077",
+      "legacyTagReview": {
+        "relatedTags": [
+          {
+            "tag": "help",
+            "researchRef": "sar:tag:help",
+            "relation": "NOT_EQUIVALENT",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "intimate-attraction",
+            "researchRef": "sar:tag:intimate-attraction",
+            "relation": "NOT_EQUIVALENT",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "autonomy",
+            "researchRef": "sar:tag:autonomy",
+            "relation": "RELATED_CONDITIONAL",
+            "exactEquivalenceApproved": false
+          }
+        ],
+        "use": "reference_only_no_new_semanticConnection"
+      }
+    }
+  },
+  {
+    "key": "c97137956156f94d70da",
+    "sourceId": "external:marriage:labor",
+    "sourceKind": "external_context",
+    "url": "https://dash.harvard.edu/entities/publication/6d12f9be-79aa-4766-bbd7-4717571a2b87",
+    "recordSha256": "726ac12dc72fdbed35a920f9802e5ea3ac29cf569fc9cb42d0767ac829e2c514",
+    "originalState": {
+      "url": "https://dash.harvard.edu/entities/publication/6d12f9be-79aa-4766-bbd7-4717571a2b87",
+      "title": "Daminger 2022 dissertation abstract",
+      "status": "abstract_actually_accessed",
+      "summary": "필요 예상·선택지 파악·결정·결과 확인을 실행과 구별하는 연구 관점을 참고한다.",
+      "limit": "학위논문 초록만 확인. 유형·성별별 고객 역할 배정 또는 명리/MBTI 인과 검증 아님.",
+      "accessedAt": "2026-10-14",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "url": "https://dash.harvard.edu/entities/publication/6d12f9be-79aa-4766-bbd7-4717571a2b87",
+      "title": "Daminger 2022 dissertation abstract",
+      "status": "abstract_actually_accessed",
+      "summary": "필요 예상·선택지 파악·결정·결과 확인을 실행과 구별하는 연구 관점을 참고한다.",
+      "limit": "학위논문 초록만 확인. 유형·성별별 고객 역할 배정 또는 명리/MBTI 인과 검증 아님."
+    }
+  },
+  {
+    "key": "ca7a14f7190d5daca6c5",
+    "sourceId": "mbti:ISFP:traits:marriage:quiet_budget_and_role",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "pointer": "/traits/marriage/4",
+    "recordSha256": "493f6b153836895a93b31a45d9eb562ead0baa483ad647f13485ef02b6ca0586",
+    "originalState": {
+      "type": "ISFP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "quiet_budget_and_role",
+      "label": "조용한 예산·역할",
+      "plainKo": "ISFP는 강한 통제와 잔소리를 싫어하지만, 결혼 생활에서는 돈과 가사와 일정의 기본 합의가 필요하다. 기준이 없으면 편안함을 지키려다 책임이 흐려지고, 기준이 너무 강하면 숨이 막힌다.",
+      "strongLine": "당신에게 필요한 것은 잔소리가 아니라, 조용히 지켜지는 돈과 역할의 최소 기준입니다.",
+      "positiveUse": "생활비 한도, 집안일 분담, 개인 지출, 휴식 시간을 부드럽게 정하면 감정 소모가 줄어든다.",
+      "risk": "불편하다고 말을 미루면 배우자는 무엇을 같이 조정해야 하는지 알 수 없다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "수"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "ce1defc1af72408fec4a",
+    "sourceId": "deep:ten_god:zheng_guan",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 6,
+    "recordSha256": "02292f2111aaf7b4a4934cecc4b14bbe4f7149241fe5601a054d35e32d7a3d59",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:zheng_guan",
+      "targetId": "foundation:ten_god:zheng_guan",
+      "label": "정관",
+      "definition": "나를 극하는 오행·다른 음양의 제약 관계",
+      "contrastTargetId": "foundation:ten_god:qi_sha",
+      "differentiation": "공식 역할·책임을 급격한 압박 대응과 구별한다.",
+      "prerequisites": [
+        "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다."
+      ],
+      "strengthConditions": [
+        "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:zheng_guan:personality",
+        "deep:application:ten_god:zheng_guan:career",
+        "deep:application:ten_god:zheng_guan:money",
+        "deep:application:ten_god:zheng_guan:study",
+        "deep:application:ten_god:zheng_guan:love",
+        "deep:application:ten_god:zheng_guan:marriage",
+        "deep:application:ten_god:zheng_guan:family",
+        "deep:application:ten_god:zheng_guan:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論正官 / 身旺・財印・月令・官殺",
+          "proposition": "일간을 극하며 다른 음양인 규율 관계. 論正官는 身旺·財印·형충·관살 구성의 조건을 병기한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "657f0a60c702c59fd825",
+    "sourceId": "mbti:ESFJ:traits:marriage:domestic_spouse_pattern",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "pointer": "/traits/marriage/0",
+    "recordSha256": "4581d1cf51b6c1ecd50a9c18e75e34cc32dc273e0ec1ee6bb9abd1d4e4c85c2d",
+    "originalState": {
+      "type": "ESFJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "domestic_spouse_pattern",
+      "label": "가정형 배우자",
+      "plainKo": "결혼 후에는 가정의 루틴, 식사, 행사, 가족 관계, 정서적 분위기를 적극적으로 챙긴다. 가족을 하나의 팀처럼 묶고 안정적인 생활을 만들려 한다.",
+      "strongLine": "ESFJ는 결혼을 두 사람의 감정만이 아니라 가족이라는 생활 공동체를 세우는 일로 받아들입니다.",
+      "positiveUse": "가정 운영, 가족 행사, 배우자 케어, 친인척 관계 관리에서 강하다.",
+      "risk": "가정의 조화를 위해 배우자와 자녀의 개별성을 지나치게 조정하려 한다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정인",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "parenting",
+        "love"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "90e77590d3ea07930ba1",
+    "sourceId": "deep:ten_god:shi_shen",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 2,
+    "recordSha256": "46429fe865e9a25fb4e332aa37e7709375a33374caa139c3857d3ef233b41ffd",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:shi_shen",
+      "targetId": "foundation:ten_god:shi_shen",
+      "label": "식신",
+      "definition": "내가 생하는 오행·동일 음양의 산출 관계",
+      "contrastTargetId": "foundation:ten_god:shang_guan",
+      "differentiation": "숙련·지속적 산출을 규칙에 대한 비판·변경과 구별한다.",
+      "prerequisites": [
+        "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다."
+      ],
+      "strengthConditions": [
+        "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:shi_shen:personality",
+        "deep:application:ten_god:shi_shen:career",
+        "deep:application:ten_god:shi_shen:money",
+        "deep:application:ten_god:shi_shen:study",
+        "deep:application:ten_god:shi_shen:love",
+        "deep:application:ten_god:shi_shen:marriage",
+        "deep:application:ten_god:shi_shen:family",
+        "deep:application:ten_god:shi_shen:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論古人立印食官財名義 / 我生者・致養; 論倒食 / 食神条件",
+          "proposition": "일간이 생하며 같은 음양인 산출 관계. 印食官財 명의는 기르고 되돌려 주는 비유를 사용한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "3ec17287e2091c585ba3",
+    "sourceId": "mbti:ISTP:traits:marriage:personal_time_agreement",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "ad4b2daca513ce6e62d2136898373f5d9efff855882fb4aaa34b613f7683ecc0",
+    "originalState": {
+      "type": "ISTP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "personal_time_agreement",
+      "label": "개인 시간 합의",
+      "plainKo": "ISTP는 결혼 후에도 혼자 정비하는 시간과 취미 공간이 있어야 안정된다. 이 시간을 숨기거나 갑자기 사라지듯 쓰면 회피로 보이니, 미리 빈도와 시간을 합의하는 편이 맞다.",
+      "strongLine": "당신에게 개인 시간은 관계 회피가 아니라, 다시 다정해지기 위해 필요한 정비 시간입니다.",
+      "positiveUse": "개인 취미, 휴식, 부부 시간을 나누면 자유와 책임이 동시에 유지된다.",
+      "risk": "말 없이 거리를 두면 배우자는 버려진 느낌을 받고 감정 확인을 더 강하게 요구할 수 있다.",
+      "matchingMyeongliSignals": [
+        "비견",
+        "편인",
+        "수"
+      ],
+      "productDomains": [
+        "marriage",
+        "compatibility",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "76e292b7c203da2c2773",
+    "sourceId": "mbti:INFJ:traits:marriage:daily_reality_agreement",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "pointer": "/traits/marriage/4",
+    "recordSha256": "20e474d0108c64a0f188fdd56f1f94d113a37a48092fc316903faed3520f5d42",
+    "originalState": {
+      "type": "INFJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "daily_reality_agreement",
+      "label": "생활 현실 합의",
+      "plainKo": "INFJ는 결혼의 의미와 가치관을 중요하게 보지만, 실제 생활은 돈, 가사, 가족 일정, 회복 시간의 합의가 있어야 안정된다. 깊은 대화만으로 생활 피로가 해결되지는 않는다.",
+      "strongLine": "당신의 결혼은 마음의 깊이와 함께 생활의 역할표가 있을 때 덜 흔들립니다.",
+      "positiveUse": "공동 예산, 가사 분담, 가족 행사 기준, 혼자 쉬는 시간을 미리 정해 정서 소모를 줄인다.",
+      "risk": "생활 책임이 흐려지면 INFJ는 사랑이 부족해서가 아니라 안전감이 없어서 지친다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "1a999512214f329e5c2f",
+    "sourceId": "mbti:ESTP:traits:marriage:commitment_structure_need",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "pointer": "/traits/marriage/1",
+    "recordSha256": "ef16d6731766ebafd4b91c8ac19041135b98ce876aee4f98583cc78f06297e8f",
+    "originalState": {
+      "type": "ESTP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "commitment_structure_need",
+      "label": "책임 구조 필요",
+      "plainKo": "ESTP는 자유를 원하지만 장기 관계에서는 최소한의 약속, 재정, 생활 책임 구조가 필요하다. 이 구조가 없으면 순간의 즐거움이 관계의 안정성을 흔든다.",
+      "strongLine": "당신의 결혼이 자유를 지키려면 오히려 최소한의 책임 구조가 필요합니다.",
+      "positiveUse": "활동적이고 유쾌한 관계를 유지하면서도 지켜야 할 약속을 선명하게 만든다.",
+      "risk": "규칙을 모두 구속으로 느끼면 배우자의 불안이 커진다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정재",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "b12fea8ea813649979b7",
+    "sourceId": "mbti:ENTP:traits:marriage:domestic_routine_gap",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "pointer": "/traits/marriage/2",
+    "recordSha256": "13be088f77ac9e168e0f2b5410cf0dc9c4e2519bfe83bce9e4ee7b0b72911c45",
+    "originalState": {
+      "type": "ENTP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "domestic_routine_gap",
+      "label": "생활 루틴 약점",
+      "plainKo": "ENTP는 반복적인 집안 관리, 시간 엄수, 세밀한 일정 유지에서 약점이 드러날 수 있다. 결혼 후에는 생활의 재미보다 운영의 안정성을 챙기는 장치가 필요하다.",
+      "strongLine": "ENTP의 결혼 생활은 아이디어보다 캘린더와 분담표가 관계를 지켜 줄 때가 있다.",
+      "positiveUse": "역할을 명확히 나누고 자동화하면 반복 관리의 부담을 줄일 수 있다.",
+      "risk": "생활 책임을 가볍게 넘기면 배우자가 혼자 관리한다고 느낀다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관"
+      ],
+      "productDomains": [
+        "marriage",
+        "money"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "73f1ae9fb0a7c110106b",
+    "sourceId": "fkr:complement:C095",
+    "sourceKind": "individual_fusion_research",
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+    "sourceFileSha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+    "exportName": "COMPLEMENT_FUSION_RESEARCH",
+    "index": 94,
+    "recordSha256": "50010e390115589a3442750c4947a4ae95b65171630d77eb74ded6f4fa7aab75",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "contexts": [
+        "identity",
+        "recovery",
+        "stress",
+        "work"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "DUTY",
+          "CARE"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "sourceAssignmentRequired": true,
+      "noAutomaticMarriageTransfer": true
+    },
+    "raw": {
+      "id": "fkr:complement:C095",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "review": "conditional_editorial_not_empirical",
+      "sourceRefs": [
+        "repo:semantic-fusion",
+        "repo:complement-registry",
+        "authored:fusion-research"
+      ],
+      "sourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+      "missingEvidencePolicy": "withhold_no_fallback_fact",
+      "scopeRef": "fkr:scope:individual",
+      "origin": "complement_rule",
+      "existingRuleId": "C095",
+      "existingRuleSha256": "83bba3294a3a8c6b4c940f810f750765c64de1b1335c4c360cace58ed785203e",
+      "group": "CHANGE_RECOVERY",
+      "researchRelation": "task_complement",
+      "originalMeaning": "사람을 챙기는 마음을 말로만 두지 않고 맡은 책임까지 실제로 지키려는 사람으로 이어질 수 있습니다.",
+      "originalDomains": [],
+      "contexts": [
+        "identity",
+        "recovery",
+        "stress",
+        "work"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "DUTY",
+          "CARE"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "facets": [
+        {
+          "axis": "DUTY",
+          "direction": 1,
+          "facetRef": "sar:facet:DUTY:promise-update",
+          "definition": "못 지킬 가능성을 미리 알림",
+          "role": "axisA_role"
+        },
+        {
+          "axis": "CARE",
+          "direction": 1,
+          "facetRef": "sar:facet:CARE:practical-support",
+          "definition": "동의한 구체적 부담을 덜어줌",
+          "role": "axisB_role"
+        }
+      ],
+      "orientationPolicy": "both_source_assignments_require_independent_review",
+      "coreMeaning": "합의한 의무와 자발적 도움을 구분하는가?",
+      "jointReason": "못 지킬 가능성을 미리 알림 / 동의한 구체적 부담을 덜어줌의 서로 다른 기여가 같은 과제에서 필요한지 확인한다.",
+      "positive": "맡은 역할을 수행하면서 추가 지원의 한도를 알림",
+      "risk": "타인을 챙긴다는 이유로 자신의 의무를 남에게 넘김",
+      "goodIntentionMistake": "책임 있게 하려 도움을 무기한 의무로 바꿈",
+      "twist": "지원 요청을 거절해도 맡은 약속은 지킬 수 있음",
+      "fictionalScene": {
+        "kind": "fictional_not_customer_history",
+        "text": "가상으로 가사 분담과 추가 돌봄 요청을 별도로 의논하는 장면"
+      },
+      "behaviorQuestion": "합의한 의무와 자발적 도움을 구분하는가?",
+      "conditions": [
+        "실제 역할·보호 의무·추가 요청·동의·여력 확인",
+        "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+        "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+      ],
+      "counterexample": "의무를 다해도 모든 사람에게 도움을 줄 수 없음",
+      "exclusions": [
+        "돌봄·책임으로 좋은 가족·도덕성 확정",
+        "축의 점수만으로 facet의 세부 행동을 관찰한 것으로 처리하지 않는다."
+      ],
+      "distinction": "C073의 지속 지원보다 의무·호의의 분리",
+      "applicabilityRef": "fkr:app:complement:C095",
+      "legacyTagReview": {
+        "relatedTags": [
+          {
+            "tag": "leadership",
+            "researchRef": "sar:tag:leadership",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "help",
+            "researchRef": "sar:tag:help",
+            "relation": "NOT_EQUIVALENT",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "intimate-attraction",
+            "researchRef": "sar:tag:intimate-attraction",
+            "relation": "NOT_EQUIVALENT",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "consistency",
+            "researchRef": "sar:tag:consistency",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          }
+        ],
+        "use": "reference_only_no_new_semanticConnection"
+      }
+    }
+  },
+  {
+    "key": "65948269d71f3a38b299",
+    "sourceId": "mbti:INTJ:traits:marriage:autonomy_in_marriage",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "pointer": "/traits/marriage/1",
+    "recordSha256": "68ceb82ef3cf8e10d7dfe76853d081e3b8dbac4d7d9a3bfb38c2a28bb5146e6a",
+    "originalState": {
+      "type": "INTJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "autonomy_in_marriage",
+      "label": "결혼 속 자율성",
+      "plainKo": "결혼해도 개인의 생각, 일, 시간, 목표는 존중받아야 한다. 모든 것을 함께 결정하고 감정적으로 공유해야 하는 관계는 답답하게 느껴진다.",
+      "strongLine": "당신은 가까운 관계일수록 더 정확한 거리와 자율성이 필요합니다.",
+      "positiveUse": "각자의 전문성과 독립성을 지키는 성숙한 부부 관계를 만들 수 있다.",
+      "risk": "배우자는 독립성을 거리감이나 무관심으로 오해할 수 있다.",
+      "matchingMyeongliSignals": [
+        "비견",
+        "편인",
+        "수"
+      ],
+      "productDomains": [
+        "marriage",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "8670a7cd306dd817250d",
+    "sourceId": "mbti:ESTJ:traits:marriage:joint_finance_authority",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "d51a239f640da3e63334b31ff75a0fa672b59ef5927d7a66ab24e7062d652444",
+    "originalState": {
+      "type": "ESTJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "joint_finance_authority",
+      "label": "공동재정 권한",
+      "plainKo": "ESTJ는 결혼 생활에서 돈, 역할, 일정, 가족 계획이 명확해야 마음이 놓인다. 다만 재정을 잘 관리하는 힘이 강할수록 배우자에게는 협의가 아니라 결재를 받는 구조처럼 느껴질 수 있다.",
+      "strongLine": "당신의 돈 관리 능력은 강점이지만, 결혼에서는 통제권보다 공동 기준이 먼저입니다.",
+      "positiveUse": "예산, 저축, 보험, 주거 계획, 가족 비용을 체계적으로 관리해 생활 안정성을 높인다.",
+      "risk": "수입과 지출 권한을 한쪽이 쥐면 배우자는 책임을 나누는 대신 허락을 구한다고 느낀다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "784d30632e34635a9483",
+    "sourceId": "mbti:ISFP:traits:marriage:freedom_needed_marriage",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "pointer": "/traits/marriage/0",
+    "recordSha256": "ffd9f7afe4fc9afb7372c56e57c4f65b47fe4a3edd853166bb4b4f3d8c924dbf",
+    "originalState": {
+      "type": "ISFP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "freedom_needed_marriage",
+      "label": "자유가 필요한 결혼",
+      "plainKo": "결혼해도 자기 감각, 취향, 개인 시간을 존중받아야 안정된다. 사랑이 있어도 생활 전체가 통제되면 마음이 닫힌다.",
+      "strongLine": "당신은 결혼해도 내 취향과 혼자 있는 시간이 지켜져야 오래 갑니다.",
+      "positiveUse": "서로의 개성을 존중하는 결혼에서 부드럽고 오래 가는 애정을 만든다.",
+      "risk": "상대가 규칙과 통제를 강화하면 조용히 멀어진다.",
+      "matchingMyeongliSignals": [
+        "비견",
+        "수",
+        "도화"
+      ],
+      "productDomains": [
+        "marriage",
+        "love"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "d14789ba6fb57b594e8d",
+    "sourceId": "external:marriage:money",
+    "sourceKind": "external_context",
+    "url": "https://www.moneyhelper.org.uk/en/family-and-care/talk-money/talking-to-your-partner-about-money",
+    "recordSha256": "cce28c009dec75bc0817243a632dff854648651774392389c251c87fa7db75c1",
+    "originalState": {
+      "url": "https://www.moneyhelper.org.uk/en/family-and-care/talk-money/talking-to-your-partner-about-money",
+      "title": "MoneyHelper: talking to your partner about money",
+      "status": "page_actually_accessed",
+      "summary": "공동 목표·지출 범위·소득 변화 때 다시 협의할 생활 질문을 참고한다.",
+      "limit": "영국 일반 생활 안내. 한국 법률·세금·부채 책임·투자 자문으로 전용 금지.",
+      "accessedAt": "2026-10-14",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "url": "https://www.moneyhelper.org.uk/en/family-and-care/talk-money/talking-to-your-partner-about-money",
+      "title": "MoneyHelper: talking to your partner about money",
+      "status": "page_actually_accessed",
+      "summary": "공동 목표·지출 범위·소득 변화 때 다시 협의할 생활 질문을 참고한다.",
+      "limit": "영국 일반 생활 안내. 한국 법률·세금·부채 책임·투자 자문으로 전용 금지."
+    }
+  },
+  {
+    "key": "1b7aeda1752892b8905a",
+    "sourceId": "mbti:ISTJ:traits:marriage:spouse_control_risk",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/marriage/1",
+    "recordSha256": "371287ea2a795fe82ed89d1b7f3ba80ab423476e8036c23d31ccb9c4a51478f4",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "spouse_control_risk",
+      "label": "배우자 통제 주의",
+      "plainKo": "가까운 사람에게 자기 기준을 적용하려는 힘이 강하다. 결혼하면 일정, 돈, 예의, 역할에 대해 잔소리와 통제가 늘어날 수 있다.",
+      "strongLine": "당신은 배우자를 방치하는 사람은 아니지만, 과하면 관리자가 됩니다.",
+      "positiveUse": "생활 기준을 세우고 가족의 안정성을 높인다.",
+      "risk": "상대가 자유로운 유형이면 통제당한다고 느껴 애정이 식는다.",
+      "matchingMyeongliSignals": [
+        "편관",
+        "정관",
+        "겁재"
+      ],
+      "productDomains": [
+        "marriage",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "ede67b716c40fbe4b6c4",
+    "sourceId": "mbti:ISTJ:traits:marriage:change_buffer_marriage",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/marriage/4",
+    "recordSha256": "df80bed4392e9dc5f4e9eef96bea628acfbfe743d1f9929edbb241d2fd87a506",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "change_buffer_marriage",
+      "label": "변화 완충 장치",
+      "plainKo": "ISTJ는 이사, 직장 변화, 가족 계획, 돈의 큰 이동처럼 생활 구조가 바뀌는 상황에서 긴장이 커진다. 결혼에서는 변화 자체를 막기보다 검토 기간, 임시 규칙, 재점검 날짜를 두는 방식이 맞다.",
+      "strongLine": "당신에게 필요한 결혼의 유연성은 갑작스러운 자유가 아니라, 안전하게 바꿔 볼 수 있는 임시 규칙입니다.",
+      "positiveUse": "새로운 생활 방식도 기간과 기준을 정해 검증하면 안정적으로 받아들일 수 있다.",
+      "risk": "검증되지 않았다는 이유로 모든 변화를 미루면 배우자는 자기 삶이 막힌다고 느낀다.",
+      "matchingMyeongliSignals": [
+        "목",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "daeun",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "bbc18a4e615032647a49",
+    "sourceId": "deep:ten_god:pian_cai",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 4,
+    "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:pian_cai",
+      "targetId": "foundation:ten_god:pian_cai",
+      "label": "편재",
+      "definition": "내가 극하는 오행·동일 음양의 자원 관계",
+      "contrastTargetId": "foundation:ten_god:zheng_cai",
+      "differentiation": "외부 자원·거래 범위를 지속적인 보유·관리와 구별한다.",
+      "prerequisites": [
+        "일간의 감당 여력, 재성의 강약·투출, 비겁과 실제 거래 조건을 확인한다."
+      ],
+      "strengthConditions": [
+        "재성이 많아도 일간의 여력과 회수 조건이 다르면 해석이 달라진다. 거래 규모를 부의 양으로 읽지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:pian_cai:personality",
+        "deep:application:ten_god:pian_cai:career",
+        "deep:application:ten_god:pian_cai:money",
+        "deep:application:ten_god:pian_cai:study",
+        "deep:application:ten_god:pian_cai:love",
+        "deep:application:ten_god:pian_cai:marriage",
+        "deep:application:ten_god:pian_cai:family",
+        "deep:application:ten_god:pian_cai:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論偏財 / 衆人之財・身勢勝任・年月日時差",
+          "proposition": "일간이 극하며 같은 음양인 자원 관계. 論偏財의 衆人之財는 고전의 자원 비유이지 타인의 돈을 받을 권리나 횡재 예언이 아니다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "aee3349d23ea4285cd4f",
+    "sourceId": "mbti:ISTP:traits:marriage:practical_responsibility_signal",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "pointer": "/traits/marriage/2",
+    "recordSha256": "eac89e0f5338931695e4ef3df99ab9d5778fa458e156f70f4d86d3ddca5f0246",
+    "originalState": {
+      "type": "ISTP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "practical_responsibility_signal",
+      "label": "실전 책임 표현",
+      "plainKo": "ISTP는 결혼 생활에서 애정을 길게 설명하기보다 필요한 순간에 고치고 해결하고 곁에 있는 방식으로 책임을 보인다. 배우자는 그 행동을 사랑으로 읽을 수 있게, 어떤 도움이 애정 표현인지 말로도 짧게 확인받아야 한다.",
+      "strongLine": "당신의 결혼은 말보다 행동이 강하지만, 그 행동이 사랑이라는 신호를 짧게라도 알려야 덜 오해받습니다.",
+      "positiveUse": "고장, 일정, 이동, 실무 문제처럼 현실적인 장면에서 침착하게 해결책을 만든다.",
+      "risk": "감정 설명을 계속 생략하면 배우자는 필요한 사람일 때만 곁에 있는 느낌을 받을 수 있다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "편관",
+        "금"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "0c283e400d1572c869f6",
+    "sourceId": "mbti:ESFJ:traits:marriage:gratitude_maintenance",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "pointer": "/traits/marriage/2",
+    "recordSha256": "7cbff3be2c620c74087012f1835da9587f771f1856f11612df418fa615caa2c1",
+    "originalState": {
+      "type": "ESFJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "gratitude_maintenance",
+      "label": "감사 유지",
+      "plainKo": "ESFJ는 배우자와 가족을 위해 많은 것을 해도 그 노력이 당연하게 여겨지면 마음이 닫힌다. 작은 고마움과 인정이 결혼 생활의 윤활유가 된다.",
+      "strongLine": "ESFJ의 결혼 생활은 큰 이벤트보다 매일의 고마움이 사라질 때 먼저 금이 갑니다.",
+      "positiveUse": "서로의 역할과 기여를 자주 확인하면 안정적인 장기 관계를 유지한다.",
+      "risk": "감사받지 못했다는 감정이 쌓이면 잔소리와 서운함으로 표현된다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "정인",
+        "비견"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "40735f88ad4496657858",
+    "sourceId": "mbti:INTP:traits:marriage:household_support_need",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/traits/marriage/1",
+    "recordSha256": "42327aa9091efb00d83331e9daf695afd9a6455de14b8fafec607f08b27e2abe",
+    "originalState": {
+      "type": "INTP",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "household_support_need",
+      "label": "생활 지원 필요",
+      "plainKo": "업무와 집안일에서 벗어나 자기 흥미에 집중할 시간이 필요하다. 외부 도움, 역할 분담, 비용 지출을 통해 시간 확보 구조를 만드는 편이 좋다.",
+      "strongLine": "당신의 결혼 생활은 의지보다 시스템이 필요합니다. 혼자 생각할 시간을 확보해야 관계도 유지됩니다.",
+      "positiveUse": "역할을 구조화하면 지적 몰입과 가족 책임을 동시에 지킬 수 있다.",
+      "risk": "생활 관리가 모두 배우자에게 넘어가면 무책임하다는 평가를 받는다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "parenting"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "24baf614208a551324d1",
+    "sourceId": "mbti:ENFJ:traits:marriage:family_social_boundary",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "pointer": "/traits/marriage/4",
+    "recordSha256": "f84ec5149b65bf26cde8ecaf6caaf60b6752f4eb7ae1887b906fcbf97474d095",
+    "originalState": {
+      "type": "ENFJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "family_social_boundary",
+      "label": "가족·사회 경계",
+      "plainKo": "ENFJ는 양가 가족, 친구, 모임, 사회적 평판까지 결혼 생활의 일부처럼 관리하려 한다. 관계망을 잘 챙기는 장점이 있지만, 부부만의 사생활과 쉬는 시간이 밀리면 가정이 계속 공개된 무대처럼 느껴진다.",
+      "strongLine": "당신은 관계를 넓게 챙기는 사람이라, 결혼에서는 바깥 사람보다 우리 둘의 경계를 먼저 세워야 합니다.",
+      "positiveUse": "경조사, 가족 모임, 커뮤니티 관계를 부드럽게 조율해 부부의 사회적 기반을 안정시킨다.",
+      "risk": "모든 사람을 만족시키려 하면 배우자는 우리 관계보다 주변 시선이 먼저라고 느낄 수 있다.",
+      "matchingMyeongliSignals": [
+        "도화",
+        "정관",
+        "식신"
+      ],
+      "productDomains": [
+        "marriage",
+        "general",
+        "love"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "48f610dc9f5d9e5b4404",
+    "sourceId": "fkr:complement:C078",
+    "sourceKind": "individual_fusion_research",
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+    "sourceFileSha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+    "exportName": "COMPLEMENT_FUSION_RESEARCH",
+    "index": 77,
+    "recordSha256": "7d9de3d2edf67520196ad1fb2ca8e59b55bf6b9b2f8dfcae9527b10edc4593ad",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "contexts": [
+        "love",
+        "social"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "RELATION_STYLE",
+          "BOUNDARY"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "sourceAssignmentRequired": true,
+      "noAutomaticMarriageTransfer": true
+    },
+    "raw": {
+      "id": "fkr:complement:C078",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "review": "conditional_editorial_not_empirical",
+      "sourceRefs": [
+        "repo:semantic-fusion",
+        "repo:complement-registry",
+        "authored:fusion-research"
+      ],
+      "sourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+      "missingEvidencePolicy": "withhold_no_fallback_fact",
+      "scopeRef": "fkr:scope:individual",
+      "origin": "complement_rule",
+      "existingRuleId": "C078",
+      "existingRuleSha256": "0a620d4286d8456a1128e7f7183df8e8aa4f5c0a48dfe682a989ee85fd92f6d9",
+      "group": "RELATIONSHIP",
+      "researchRelation": "task_complement",
+      "originalMeaning": "가까운 관계를 좋아해도 넘지 말아야 할 선은 분명히 두고 싶은 사람으로 이어질 수 있습니다.",
+      "originalDomains": [],
+      "contexts": [
+        "love",
+        "social"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "RELATION_STYLE",
+          "BOUNDARY"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "facets": [
+        {
+          "axis": "RELATION_STYLE",
+          "direction": 1,
+          "facetRef": "sar:facet:RELATION_STYLE:contact-range",
+          "definition": "연락·만남의 참여 범위를 정함",
+          "role": "axisA_role"
+        },
+        {
+          "axis": "BOUNDARY",
+          "direction": 1,
+          "facetRef": "sar:facet:BOUNDARY:privacy",
+          "definition": "정보·시간의 사적 범위를 정함",
+          "role": "axisB_role"
+        }
+      ],
+      "orientationPolicy": "both_source_assignments_require_independent_review",
+      "coreMeaning": "가까워져도 공개·연락·접촉의 경계가 남는가?",
+      "jointReason": "연락·만남의 참여 범위를 정함 / 정보·시간의 사적 범위를 정함의 서로 다른 기여가 같은 과제에서 필요한지 확인한다.",
+      "positive": "관계를 넓히되 허락이 필요한 범위를 확인",
+      "risk": "친밀함을 이유로 타인의 정보를 공유",
+      "goodIntentionMistake": "관계를 돕자며 연락·위치 확인을 기본 의무로 만듦",
+      "twist": "공개하지 않는 경계를 지켜 더 편하게 가까워질 수 있음",
+      "fictionalScene": {
+        "kind": "fictional_not_customer_history",
+        "text": "가상으로 함께 찍은 사진의 공개 범위를 묻는 장면"
+      },
+      "behaviorQuestion": "가까워져도 공개·연락·접촉의 경계가 남는가?",
+      "conditions": [
+        "실제 관계·접촉 동의·정보 소유·거절 안전 확인",
+        "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+        "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+      ],
+      "counterexample": "함께하는 것을 좋아해도 공개는 원하지 않을 수 있음",
+      "exclusions": [
+        "가까운 관계이면 사생활 동의가 불필요하다고 주장",
+        "축의 점수만으로 facet의 세부 행동을 관찰한 것으로 처리하지 않는다."
+      ],
+      "distinction": "C059는 참여 선택, 이 규칙은 접촉·공개 경계",
+      "applicabilityRef": "fkr:app:complement:C078",
+      "legacyTagReview": {
+        "relatedTags": [
+          {
+            "tag": "intimate-attraction",
+            "researchRef": "sar:tag:intimate-attraction",
+            "relation": "NOT_EQUIVALENT",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "solitude",
+            "researchRef": "sar:tag:solitude",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "autonomy",
+            "researchRef": "sar:tag:autonomy",
+            "relation": "RELATED_CONDITIONAL",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "sociability",
+            "researchRef": "sar:tag:sociability",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "reserved-affection",
+            "researchRef": "sar:tag:reserved-affection",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          }
+        ],
+        "use": "reference_only_no_new_semanticConnection"
+      }
+    }
+  },
+  {
+    "key": "be9cb942010f0a199f50",
+    "sourceId": "mbti:INFP:traits:marriage:conflict_avoidance_marriage",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFP.json",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "pointer": "/traits/marriage/2",
+    "recordSha256": "d6ccc25156c6f099ee93604627f54b170bfe623e35be2798a99f673424ea6c4f",
+    "originalState": {
+      "type": "INFP",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "conflict_avoidance_marriage",
+      "label": "갈등 회피형 생활",
+      "plainKo": "INFP는 감정 표현에 신중하고 갈등을 피한다. 결혼 생활에서는 불만을 말하지 않고 참고 넘기다가 뒤늦게 크게 무너지지 않도록 작은 감정을 표현하는 연습이 필요하다.",
+      "strongLine": "당신의 평온함이 관계를 편하게 만들지만, 표현하지 않은 마음은 언젠가 관계의 큰 균열이 될 수 있습니다.",
+      "positiveUse": "부드러운 분위기와 배려로 가정의 긴장을 낮춘다.",
+      "risk": "속마음을 계속 숨기면 배우자는 문제를 알지 못하고 같은 행동을 반복한다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "식신",
+        "수"
+      ],
+      "productDomains": [
+        "marriage",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "eca31a528cf641ff4613",
+    "sourceId": "mbti:ESFJ:traits:marriage:event_and_care_budget",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "8ae046d580bbb23c2fa7dbbbec36def568d9caa3ce6d899a554d8adcf598e719",
+    "originalState": {
+      "type": "ESFJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "event_and_care_budget",
+      "label": "행사·돌봄 예산",
+      "plainKo": "ESFJ는 기념일, 경조사, 가족 모임, 선물, 식사처럼 관계를 따뜻하게 만드는 지출에 마음이 약하다. 결혼 후에는 정서 표현과 체면 비용이 생활비를 밀어내지 않도록 예산을 분리해야 한다.",
+      "strongLine": "당신의 챙김은 관계를 살리지만, 한도 없는 관계 지출은 가정의 안정감을 흔듭니다.",
+      "positiveUse": "행사비, 선물비, 가족 지원금, 생활비를 나누면 따뜻함과 재정 안정이 함께 살아난다.",
+      "risk": "좋은 사람으로 보이려는 지출이 반복되면 배우자는 체면이 우리 생활보다 앞선다고 느낄 수 있다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "식신",
+        "도화"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "ded637f612adcf59fb9e",
+    "sourceId": "mbti-pair:ISTJ>ESTJ",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "8ce615a5706c602069d84e8f77ac4ed5c1526a75ce2da70288c115f67a9407c6",
+    "originalState": {
+      "sourceType": "ISTJ",
+      "targetType": "ESTJ",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "marriagePattern",
+      "lovePatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "ESTJ",
+      "label": "거울 관계",
+      "sourceRelationName": "Mirror",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "서로를 실무를 완벽히 수행하는 신뢰 가능한 파트너로 빠르게 인식한다.",
+        "절차, 정확성, 약속 이행, 정리정돈이라는 기준을 공유해 생활의 기본 질서가 빠르게 잡힌다.",
+        "정직하고 직설적인 소통 덕분에 관계 초기에 신뢰 체계가 빠르게 정렬된다."
+      ],
+      "friction": [
+        "ESTJ의 높은 활동성과 빠른 압박은 ISTJ에게 피로가 된다.",
+        "ESTJ가 대화를 주도하고 ISTJ가 듣기만 하는 구도가 굳으면 ISTJ는 묵살당한다고 느낀다.",
+        "서로의 경험 데이터와 전통이 다르면 논리 싸움이 매우 강하게 번진다."
+      ],
+      "positiveInfluence": [
+        "함께 있으면 생활과 업무 시스템이 빠르게 정돈된다.",
+        "불필요한 감정 소모 없이 장기적인 안정 기반을 만들 수 있다.",
+        "목표가 정해지면 실무적 결과를 강하게 밀어붙인다."
+      ],
+      "lovePattern": "연애는 감정보다 신뢰, 약속, 생활 정렬에서 시작된다. 빠르게 불타기보다 서로가 믿을 만한 사람인지 확인하며 가까워지고, 책임을 지키는 행동에서 애정을 느낀다.",
+      "marriagePattern": "장기 관계에서는 일정, 돈, 집안 규칙은 잘 맞지만 감정 표현이 부족하면 건조한 동거처럼 흐를 수 있다. 역할과 재정은 강점이지만, 칭찬과 휴식까지 규칙처럼 챙겨야 관계 온도가 유지된다.",
+      "repairStrategy": [
+        "ESTJ는 해결을 압박하기 전에 ISTJ가 생각할 시간을 준다.",
+        "ISTJ는 침묵으로 버티지 말고 필요한 기준을 말로 꺼낸다.",
+        "집안 규칙은 만들되 감정 확인 시간을 의도적으로 둔다."
+      ],
+      "reportLine": "ISTJ와 ESTJ는 실무와 생활의 질서를 만드는 데 강하지만, 속도와 말의 압박을 조절하지 않으면 신뢰가 피로로 바뀝니다."
+    }
+  },
+  {
+    "key": "89937d49f294229349a1",
+    "sourceId": "mbti-pair:INTJ>ISTP",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "sourceFileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "98ca6088764f954649f35743594f3d46d2f3540095d95426b70100669d0e5c0c",
+    "originalState": {
+      "sourceType": "INTJ",
+      "targetType": "ISTP",
+      "sourceCoverage": "inferred",
+      "lineage": "not_established",
+      "patternField": "marriagePattern",
+      "lovePatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "ISTP",
+      "label": "상호 보완 관계",
+      "sourceRelationName": "Complementary",
+      "sourceCoverage": "inferred",
+      "sharedGround": [
+        "둘 다 독립적이고 불필요한 감정 표현보다 문제 해결을 선호한다.",
+        "각자 자기 영역과 개인 시간을 존중할 수 있다.",
+        "말보다 실제로 작동하는 해결책을 신뢰하기 때문에 과장된 감정극 없이도 관계가 유지될 수 있다.",
+        "서로의 유능함을 행동으로 확인할 때 신뢰가 쌓이는 조합이다."
+      ],
+      "friction": [
+        "INTJ는 장기 전략과 추상 구조를 보고 ISTP는 당장 작동하는 현실과 도구를 본다.",
+        "INTJ의 계획은 ISTP에게 과하게 느껴지고, ISTP의 즉흥 대응은 INTJ에게 불안정하게 보인다.",
+        "갈등이 생기면 INTJ는 원인과 미래 리스크를 따지고, ISTP는 지금 해결하면 된다는 태도로 넘어가려 한다."
+      ],
+      "positiveInfluence": [
+        "ISTP는 INTJ의 전략을 현장에서 시험하게 하고, INTJ는 ISTP의 실용성을 장기 방향에 연결한다.",
+        "이 조합은 이론과 손에 잡히는 실행을 연결할 때 강한 현실 감각을 얻는다."
+      ],
+      "lovePattern": "둘 다 과한 감정 요구가 적어 편할 수 있다. 다만 INTJ가 미래 계획을 강하게 밀고 ISTP가 현재의 자유를 지키려 하면 갈등이 생긴다. 서로 좋아하면서도 애정 표현보다 간섭 문제로 피곤해지는 조합이다.",
+      "marriagePattern": "장기 관계에서는 각자 공간을 보장하면 안정적이다. 집안일과 돈, 진로처럼 장기 합의가 필요한 영역은 INTJ가 구조를 만들고 ISTP가 현실성을 검토하는 방식이 좋다.",
+      "repairStrategy": [
+        "INTJ는 모든 행동을 장기 계획에 묶지 않는다.",
+        "ISTP는 핵심 일정과 약속만큼은 예측 가능하게 지킨다.",
+        "실험과 검토를 분리해 현장 피드백을 계획에 반영한다."
+      ],
+      "reportLine": "INTJ와 ISTP는 독립성과 문제 해결력으로 편하지만, 미래 설계와 현재 자유의 비율을 맞춰야 오래 갑니다."
+    }
+  },
+  {
+    "key": "0f0ff8ddade0c147030c",
+    "sourceId": "mbti:ENTP:traits:marriage:novelty_within_structure",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "pointer": "/traits/marriage/4",
+    "recordSha256": "ff2e4ab5f440297fd90c80b830687833eacfc3dbbb3a8c2deda4cb2b567750fc",
+    "originalState": {
+      "type": "ENTP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "novelty_within_structure",
+      "label": "구조 안의 새로움",
+      "plainKo": "ENTP는 결혼 생활이 너무 반복되면 관계 자체가 낡았다고 느낄 수 있다. 다만 새로움을 밖에서만 찾지 말고, 여행, 프로젝트, 공부, 취미처럼 가정 안에서 함께 바꿔 갈 장치를 만들어야 한다.",
+      "strongLine": "당신에게 좋은 결혼은 고정된 틀이 아니라, 안정된 구조 안에서 계속 새로워지는 관계입니다.",
+      "positiveUse": "공동 프로젝트, 여행 계획, 새로운 배움, 대화 주제를 만들어 관계의 활력을 유지한다.",
+      "risk": "변화를 핑계로 책임과 루틴을 계속 흔들면 배우자는 안정감을 잃는다.",
+      "matchingMyeongliSignals": [
+        "상관",
+        "식신",
+        "역마",
+        "목"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "daeun"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "68c947ef938994a1820b",
+    "sourceId": "mbti-pair:ENTP>ISTJ",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "sourceFileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "5d97ac2459c4f4d2771cc501644ae139ca09f0d79b6539c023b8ca29ba789373",
+    "originalState": {
+      "sourceType": "ENTP",
+      "targetType": "ISTJ",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "marriagePattern",
+      "lovePatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "ISTJ",
+      "label": "반이중성 관계",
+      "sourceRelationName": "Semi-Duality",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "두 유형은 서로의 목표 자체를 이해하는 데에는 큰 문제가 없다.",
+        "계획을 세우는 단계에서는 의도를 비교적 쉽게 파악하고 재미있는 대화도 가능하다.",
+        "연애에서는 ENTP의 말솜씨와 가능성 감각, ISTJ의 안정성과 책임감이 서로에게 낯선 매력으로 들어온다."
+      ],
+      "friction": [
+        "실행 단계로 들어가면 협력 방식이 어긋나고 관계가 갑자기 흔들릴 수 있다.",
+        "ENTP는 ISTJ의 의견에 오래 집중하지 못하고, ISTJ는 ENTP의 변덕스러운 흐름에 당황할 수 있다.",
+        "갈등을 오래 견디기 어려워 행복감과 실망감이 급격히 교차한다."
+      ],
+      "positiveInfluence": [
+        "ISTJ는 ENTP에게 현실적 절차와 지속성을 주고, ENTP는 ISTJ에게 새로운 관점과 대화의 활기를 준다.",
+        "초기 계획과 아이디어 검토에서는 서로 다른 강점이 도움이 된다."
+      ],
+      "lovePattern": "연애에서는 서로 다른 점이 매력으로 들어온다. ENTP는 ISTJ의 안정감과 현실성을 흥미롭게 보고, ISTJ는 ENTP의 말솜씨와 가능성에 끌린다. 그러나 관계가 깊어질수록 ENTP의 즉흥성과 ISTJ의 절차성이 충돌한다.",
+      "marriagePattern": "결혼에서는 계획을 세울 때는 잘 맞는 듯 보이지만, 실제 실행 과정에서 역할과 기준이 어긋난다. ENTP는 변화와 대안을 열고 싶어 하고 ISTJ는 합의된 절차를 지키고 싶어 해 관계가 원점으로 돌아가는 느낌이 반복될 수 있다.",
+      "repairStrategy": [
+        "계획 단계에서 실행 기준, 변경 가능 범위, 최종 책임자를 명확히 정한다.",
+        "ENTP는 ISTJ의 현실적 지적을 지루한 간섭으로만 보지 않는다.",
+        "ISTJ는 ENTP의 대안 제시를 합의 파기가 아니라 개선 제안으로 분리해 듣는다."
+      ],
+      "reportLine": "ENTP와 ISTJ는 목표는 이해해도 실행 리듬이 어긋나기 쉬워, 계획보다 변경 규칙을 먼저 합의해야 한다."
+    }
+  },
+  {
+    "key": "330a2038a4ac4d374d63",
+    "sourceId": "mbti:ESTJ:traits:marriage:emotional_leadership_practice",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "pointer": "/traits/marriage/4",
+    "recordSha256": "ebc37779643f0ad8c33793430db6209e44e8b84cd08ed13904381fd16604953d",
+    "originalState": {
+      "type": "ESTJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "emotional_leadership_practice",
+      "label": "정서적 리더십",
+      "plainKo": "ESTJ는 갈등이 생기면 감정보다 원인과 해결책을 먼저 잡으려 한다. 결혼에서는 문제를 해결하기 전에 배우자가 어떤 감정을 겪었는지 듣는 순서가 있어야 지시처럼 들리지 않는다.",
+      "strongLine": "당신은 문제를 잘 해결하지만, 배우자는 해결책보다 먼저 자기 마음이 이해받았는지 확인합니다.",
+      "positiveUse": "가족 회의, 역할 조정, 금전 계획을 실행력 있게 정리하면서도 정서적 안정감을 보완한다.",
+      "risk": "바로 결론부터 내리면 맞는 말도 명령처럼 들려 친밀감이 약해진다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "정인",
+        "금"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "f540c2b9bd61b95e125b",
+    "sourceId": "mbti:INFJ:traits:marriage:indirect_conflict_expression",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "pointer": "/traits/marriage/2",
+    "recordSha256": "becb48f11e253f9d61f34f2ce800f6830481c7c41e48608fb6cd5872fc49c200",
+    "originalState": {
+      "type": "INFJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "indirect_conflict_expression",
+      "label": "우회적 갈등 표현",
+      "plainKo": "INFJ는 싫은 티를 잘 내지 못하고 속마음을 우회적으로 표현한다. 결혼에서는 불편함을 돌려 말하다가 상대가 알아차리지 못해 서운함이 쌓일 수 있다.",
+      "strongLine": "당신의 갈등은 큰 소리로 시작되지 않고, 말하지 못한 마음이 오래 쌓이면서 깊어집니다.",
+      "positiveUse": "부드러운 언어로 문제를 꺼내면 관계를 해치지 않고 조율할 수 있다.",
+      "risk": "직접 말하지 않으면 상대는 아무 문제 없다고 오해하고 같은 행동을 반복한다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "식신",
+        "수"
+      ],
+      "productDomains": [
+        "marriage",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "1dedd598164db82d6c12",
+    "sourceId": "mbti-pair:ESTJ>INFJ",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "sourceFileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "1fb240d786005e4b9560b68f83fa3e616d9c77252538f0882b8bb8e2c5db307e",
+    "originalState": {
+      "sourceType": "ESTJ",
+      "targetType": "INFJ",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "marriagePattern",
+      "lovePatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "INFJ",
+      "label": "안정과 이상이 만나는 어려운 보완 관계",
+      "sourceRelationName": "Conflict",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "서로에게 부족한 관점을 제공할 가능성은 있다.",
+        "INFJ는 ESTJ가 더 넓은 관점과 변화 가능성을 보도록 돕고, ESTJ는 INFJ의 이상을 현실에 고정시킨다.",
+        "둘 다 의미 있는 책임을 가볍게 보지 않기 때문에 공통의 대의나 가족 과제가 있으면 협력의 접점이 생긴다."
+      ],
+      "friction": [
+        "INFJ는 관계, 가치, 이상, 변화 가능성에 관심이 많고 ESTJ는 전통과 안정, 일관성을 중요하게 본다.",
+        "ESTJ는 INFJ의 아이디어를 비현실적으로 보고, INFJ는 ESTJ를 정체되어 있거나 상상력이 부족하다고 볼 수 있다.",
+        "ESTJ는 사실과 단계에 집중하고 INFJ는 의미와 큰 그림을 말해 서로 다른 언어를 쓰는 느낌이 든다."
+      ],
+      "positiveInfluence": [
+        "INFJ는 ESTJ에게 가치와 큰 그림을 보여준다.",
+        "ESTJ는 INFJ에게 현실적인 실행 기반과 안정성을 제공한다.",
+        "서로를 존중하면 이상은 실행 계획이 되고 현실은 더 넓은 의미를 얻는다."
+      ],
+      "lovePattern": "연애에서는 서로에게 신기한 매력을 느낄 수 있지만 대화 방식이 크게 다르다. ESTJ의 직설적 비판은 INFJ에게 깊은 상처가 되고, INFJ의 의미 중심 대화는 ESTJ에게 비현실적으로 느껴진다.",
+      "marriagePattern": "장기 관계에서는 안정과 이상, 현실과 의미의 충돌이 반복된다. 생활 운영은 ESTJ가 잡을 수 있지만, INFJ가 가치와 정서적 연결을 잃었다고 느끼면 관계가 빠르게 멀어진다.",
+      "repairStrategy": [
+        "ESTJ는 INFJ의 이상을 바로 비현실로 규정하지 않는다.",
+        "INFJ는 추상적 의미를 구체적인 행동 요청으로 번역한다.",
+        "비판은 짧게, 의미 대화는 충분한 시간과 안전감 속에서 나눈다."
+      ],
+      "reportLine": "ESTJ와 INFJ는 서로를 가장 낯설게 느끼는 조합이지만, 이상을 현실로 고정하고 현실을 더 넓게 보는 훈련이 되면 큰 성장 자극이 됩니다."
+    }
+  },
+  {
+    "key": "f0b80324251c43d5445c",
+    "sourceId": "mbti:INFP:traits:marriage:ideal_and_reality_balance",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFP.json",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "18a8e017e672f182b9e13de8db1c677202085b016c2b2e4ff2f97b77b0596cd4",
+    "originalState": {
+      "type": "INFP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "ideal_and_reality_balance",
+      "label": "이상과 현실 균형",
+      "plainKo": "INFP는 결혼을 마음의 진정성과 깊은 이해로 받아들이지만, 매일의 생활은 돈, 가사, 일정, 건강 관리처럼 반복되는 책임으로 굴러간다. 이상적인 마음만 앞서면 현실의 피로가 뒤늦게 크게 쌓인다.",
+      "strongLine": "당신의 결혼은 진심만으로 버티는 관계가 아니라, 생활 책임을 함께 나눌 때 따뜻함이 오래 갑니다.",
+      "positiveUse": "예산, 집안일, 휴식 시간, 개인 작업 시간을 부드럽게 합의하면 내면의 안정과 생활 질서가 함께 살아난다.",
+      "risk": "현실 관리를 계속 미루면 사랑은 깊어도 배우자는 혼자 생활을 책임진다고 느낀다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "62346120b3910d5c9a8d",
+    "sourceId": "mbti-pair:INFP>INTJ",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/INFP.json",
+    "sourceFileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "f2face37a889e91eadb8ce0b1e15c09d29c3cca31a58d1a0841e92d5fc0e404c",
+    "originalState": {
+      "sourceType": "INFP",
+      "targetType": "INTJ",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "marriagePattern",
+      "lovePatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "INTJ",
+      "label": "이익 관계",
+      "sourceRelationName": "Benefit",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "INFP의 Fi는 INTJ의 3차 Fi에 도움을 주고, INTJ의 Te는 INFP의 열등 Te에 도움을 줄 수 있다.",
+        "이질감이 적으면서 상호 보완이 가능하다.",
+        "둘 다 내면의 기준이 강해 얕은 호감보다 '이 사람이 나를 이해하는가'를 중요하게 본다."
+      ],
+      "friction": [
+        "INTJ의 Te 실행 기준은 INFP에게 냉정하게 느껴질 수 있다.",
+        "INFP의 감성적 가치 기준은 INTJ에게 불분명하고 비효율적으로 보일 수 있다.",
+        "INTJ는 문제를 고치려 하고 INFP는 먼저 마음을 존중받길 원해 대화의 순서가 자주 어긋난다."
+      ],
+      "positiveInfluence": [
+        "INTJ는 INFP의 아이디어를 현실 구조로 바꾸고, INFP는 INTJ에게 자기 감정과 가치의 깊이를 열어준다.",
+        "서로의 언어를 번역하면 차가운 전략과 따뜻한 가치가 함께 작동한다."
+      ],
+      "lovePattern": "연애에서는 조용한 깊이와 독립성이 서로에게 매력이다. INTJ는 INFP의 따뜻한 내면에 끌리고, INFP는 INTJ의 선명한 방향성에 안정감을 느낄 수 있다.",
+      "marriagePattern": "장기 관계에서는 INTJ가 계획과 실행을 돕고 INFP가 정서적 의미를 제공한다. 다만 INTJ의 비판이 INFP의 자기 세계를 공격하는 말처럼 들리지 않게 조심해야 한다.",
+      "repairStrategy": [
+        "INTJ는 피드백을 감정 안전감과 함께 전달한다.",
+        "INFP는 구조화 도움을 통제로만 받아들이지 않는다.",
+        "비전과 실행 계획을 별도 단계로 나눈다."
+      ],
+      "reportLine": "INFP와 INTJ는 감정의 깊이와 실행의 구조가 만나는 관계이며, 비판과 통제의 언어만 조심하면 좋은 보완성이 살아납니다."
+    }
+  },
+  {
+    "key": "11b961b29814398740e5",
+    "sourceId": "mbti:INFJ:traits:marriage:private_time_needed",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "sourceFileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "pointer": "/traits/marriage/1",
+    "recordSha256": "0c8d2331162ffcae7502ee7fe2e00d904c4443cc59f7340d2258281c0eb6dc07",
+    "originalState": {
+      "type": "INFJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "private_time_needed",
+      "label": "혼자만의 시간 필수",
+      "plainKo": "INFJ는 혼자만의 시간이 침해당하는 것을 싫어하지만 이를 바로 표현하지 못할 수 있다. 결혼 생활에서는 정서적 친밀감과 개인 공간을 동시에 보장해야 한다.",
+      "strongLine": "당신은 사랑하는 사람과 함께 있어도, 혼자 회복할 수 있는 방이 있어야 오래 따뜻합니다.",
+      "positiveUse": "개인 시간과 부부 시간을 분리하면 정서적 소진 없이 헌신할 수 있다.",
+      "risk": "계속 붙어 있어야 한다는 압박은 애정이 있어도 피로와 회피를 만든다.",
+      "matchingMyeongliSignals": [
+        "편인",
+        "수",
+        "비견"
+      ],
+      "productDomains": [
+        "marriage",
+        "love"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "ddc9ce0a084b0b51c3bf",
+    "sourceId": "mbti:ESTP:traits:marriage:freedom_time_contract",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "pointer": "/traits/marriage/3",
+    "recordSha256": "0ef263c7cde1d15382f8cfbea0802ff93146b2731f8a0bde50f88da80b7afeca",
+    "originalState": {
+      "type": "ESTP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "freedom_time_contract",
+      "label": "자유 시간 계약",
+      "plainKo": "ESTP는 결혼해도 친구, 운동, 외부 활동, 즉흥적인 시간이 있어야 숨통이 트인다. 이 자유를 숨기거나 즉흥으로만 쓰면 배우자의 불안이 커지니, 자주 나가는 시간과 부부 시간을 함께 정해야 한다.",
+      "strongLine": "당신의 자유는 금지할 문제가 아니라, 약속된 범위 안에서 살아야 관계를 덜 흔듭니다.",
+      "positiveUse": "개인 활동과 부부 활동을 분리하면 활력과 책임이 동시에 유지된다.",
+      "risk": "자유를 설명하지 않으면 배우자는 관계보다 바깥 자극이 먼저라고 느낀다.",
+      "matchingMyeongliSignals": [
+        "비견",
+        "역마",
+        "식신"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "69aac2d24f114cdd40fb",
+    "sourceId": "rr:combination:banhap:申子",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsBanhap.ts",
+    "sourceFileSha256": "790add612b2500bb5495248bc7d9122bf9acaeebabf8d7c362b1dd01ffb8eff6",
+    "exportName": "RELATION_COMBINATIONS_BANHAP",
+    "index": 0,
+    "recordSha256": "ce3de3577c501eb53df213c59fffceace976f71b50474af1391bc6ac16413583",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "E_UNVERIFIED",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "E_UNVERIFIED",
+        "text": "삼합 원리의 생왕 부분, 현대 왕지 포함 반합 전승과 저장소12쌍 정책에 모두 속한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "half",
+            "locator": "반합 / 유파 차이"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "수국의 생지申·왕지子 두 자리이며 辰은 실제로 없다면 보충하지 않는다.",
+      "exclusions": [
+        "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:banhap:申子",
+      "relation": "banhap",
+      "targetId": "foundation:relation:banhap",
+      "members": [
+        "申",
+        "子"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "申",
+          "element": "METAL",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "庚",
+            "壬",
+            "戊"
+          ]
+        },
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "E_UNVERIFIED",
+        "text": "삼합 원리의 생왕 부분, 현대 왕지 포함 반합 전승과 저장소12쌍 정책에 모두 속한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "half",
+            "locator": "반합 / 유파 차이"
+          }
+        ]
+      },
+      "composition": "申:METAL·yang·장간 庚壬戊 / 子:WATER·yang·장간 癸; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "수국의 생지申·왕지子 두 자리이며 辰은 실제로 없다면 보충하지 않는다.",
+      "exclusions": [
+        "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "왕지 존재·계절·투출·다른 작용을 확인하되 지장간만으로 없는 왕지를 채우지 않는다. 12쌍은 저장소 정책;8쌍 엄격 전승과4쌍 약한/미채택 전승을 별도 목록으로 보존한다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "시작과 중심의 연결 가능성을 제한적으로 검토한다.",
+      "risk": "갈무리 辰이 있다고 가정해 완성 화국으로 읽지 않는다.",
+      "reversal": "부족한 구성을 인정하는 것이 무리한 완성 선언을 줄일 수 있다.",
+      "distinction": "子辰은 왕고이고 申辰은 왕지 없는 생고다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "시작과 실행은 맞지만 정리 담당이 실제 없다면 마무리 조건을 확인한다.",
+        "action": "종료 담당과 보존할 결과물을 정한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "왕지8쌍/생고4쌍 차이는 확인한 현대 전승이며 모든 학파의 보편 규칙을 확정한 것이 아니다.",
+        "현행12쌍 정책은 변경하지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": [
+        "natal"
+      ]
+    }
+  },
+  {
+    "key": "c72ad7e4dbeab2b8b75f",
+    "sourceId": "mbti:ENFP:traits:marriage:domestic_follow_through_gap",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "sourceFileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "pointer": "/traits/marriage/2",
+    "recordSha256": "bb2be1262557b0fef7b79cf90b22c16bd0a6d8ce28501d2a493c149e39ab68e9",
+    "originalState": {
+      "type": "ENFP",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "domestic_follow_through_gap",
+      "label": "생활 마무리 약점",
+      "plainKo": "ENFP는 건망증, 물건 분실, 주변 정리 약점이 나타날 수 있다. 결혼 생활에서는 감정의 따뜻함만큼 반복 관리와 책임 분담이 중요하다.",
+      "strongLine": "ENFP의 다정함이 생활의 신뢰로 이어지려면 작은 약속과 정리 루틴이 필요하다.",
+      "positiveUse": "자동화, 체크리스트, 역할 분담을 쓰면 관계 에너지를 지키면서 생활 안정성을 높인다.",
+      "risk": "작은 일들이 반복적으로 누락되면 상대는 혼자 책임진다고 느낀다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관"
+      ],
+      "productDomains": [
+        "marriage",
+        "money"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "743668481abf74260870",
+    "sourceId": "fkr:complement:C090",
+    "sourceKind": "individual_fusion_research",
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+    "sourceFileSha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+    "exportName": "COMPLEMENT_FUSION_RESEARCH",
+    "index": 89,
+    "recordSha256": "fbd8cf081d17e3d112c9415959fdcddacbd027beae1013ce34fc8b1d8e7ef0e1",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "contexts": [
+        "identity",
+        "recovery",
+        "stress",
+        "work"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "STRUCTURE_STYLE",
+          "ADAPTABILITY"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "sourceAssignmentRequired": true,
+      "noAutomaticMarriageTransfer": true
+    },
+    "raw": {
+      "id": "fkr:complement:C090",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "review": "conditional_editorial_not_empirical",
+      "sourceRefs": [
+        "repo:semantic-fusion",
+        "repo:complement-registry",
+        "authored:fusion-research"
+      ],
+      "sourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+      "missingEvidencePolicy": "withhold_no_fallback_fact",
+      "scopeRef": "fkr:scope:individual",
+      "origin": "complement_rule",
+      "existingRuleId": "C090",
+      "existingRuleSha256": "205f96b1292408000046f76c589b040e3f4f47ab7a951b6226313fa5f7e6874e",
+      "group": "CHANGE_RECOVERY",
+      "researchRelation": "task_complement",
+      "originalMeaning": "기준과 계획은 분명하지만 상황이 달라지면 방법까지 고집하지는 않는 사람으로 이어질 수 있습니다.",
+      "originalDomains": [],
+      "contexts": [
+        "identity",
+        "recovery",
+        "stress",
+        "work"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "STRUCTURE_STYLE",
+          "ADAPTABILITY"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "facets": [
+        {
+          "axis": "STRUCTURE_STYLE",
+          "direction": 1,
+          "facetRef": "sar:facet:STRUCTURE_STYLE:change-log",
+          "definition": "계획 변경을 서로 확인 가능한 기록으로 남김",
+          "role": "axisA_role"
+        },
+        {
+          "axis": "ADAPTABILITY",
+          "direction": 1,
+          "facetRef": "sar:facet:ADAPTABILITY:method-revision",
+          "definition": "목적 안에서 방법을 바꿈",
+          "role": "axisB_role"
+        }
+      ],
+      "orientationPolicy": "both_source_assignments_require_independent_review",
+      "coreMeaning": "유지할 기준과 갱신할 절차를 구분하는가?",
+      "jointReason": "계획 변경을 서로 확인 가능한 기록으로 남김 / 목적 안에서 방법을 바꿈의 서로 다른 기여가 같은 과제에서 필요한지 확인한다.",
+      "positive": "기준의 목적을 남기면서 바뀐 조건에 절차를 고침",
+      "risk": "계획을 바꿨는데도 공유하지 않아 협업 혼란",
+      "goodIntentionMistake": "일관성을 지키려 낡은 절차를 계속 요구",
+      "twist": "변경 이력을 공개하면 유연함도 예측 가능해짐",
+      "fictionalScene": {
+        "kind": "fictional_not_customer_history",
+        "text": "가상으로 업무 절차의 변경 이유와 시행일을 알리는 장면"
+      },
+      "behaviorQuestion": "유지할 기준과 갱신할 절차를 구분하는가?",
+      "conditions": [
+        "기준 목적·실제 조건 변화·변경권·공유 대상 확인",
+        "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+        "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+      ],
+      "counterexample": "일부 기준은 바꿀 권한이 없을 수 있음",
+      "exclusions": [
+        "계획+적응으로 모든 예외를 해결한다고 단정",
+        "축의 점수만으로 facet의 세부 행동을 관찰한 것으로 처리하지 않는다."
+      ],
+      "distinction": "C024는 생활 기반, 이 규칙은 기준·절차 갱신",
+      "applicabilityRef": "fkr:app:complement:C090",
+      "legacyTagReview": {
+        "relatedTags": [
+          {
+            "tag": "consistency",
+            "researchRef": "sar:tag:consistency",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          }
+        ],
+        "use": "reference_only_no_new_semanticConnection"
+      }
+    }
+  },
+  {
+    "key": "d4a61263d8611202dcef",
+    "sourceId": "mbti:ISFJ:traits:marriage:family_money_boundary",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/traits/marriage/4",
+    "recordSha256": "87cbf9a0cbf1a7548a41f5edf13e88e675ba3975661c454e36536fa049fceec6",
+    "originalState": {
+      "type": "ISFJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "family_money_boundary",
+      "label": "가족 돈 경계",
+      "plainKo": "ISFJ는 가족과 가까운 사람의 필요를 보면 자기 몫을 줄여서라도 챙기려 한다. 결혼 후에는 생활비, 양가 지원, 기념일, 돌봄 비용에 한도를 정해야 따뜻함이 부담으로 변하지 않는다.",
+      "strongLine": "당신은 가족을 위해 쓰는 돈에 약하지만, 한도 없는 배려는 결국 당신의 생활을 압박합니다.",
+      "positiveUse": "가족 지원금, 경조사비, 돌봄 비용, 비상금을 분리하면 안정과 배려를 함께 지킨다.",
+      "risk": "상대와 합의 없이 계속 챙기면 공동재정과 배우자의 신뢰가 흔들릴 수 있다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정인",
+        "겁재"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "e2ed5b09b1f8185708cd",
+    "sourceId": "deep:ten_god:zheng_cai",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 5,
+    "recordSha256": "c5190449e4eac664419b628d879f0413f683ed7418d0a7b136d474d3d19dd59a",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:zheng_cai",
+      "targetId": "foundation:ten_god:zheng_cai",
+      "label": "정재",
+      "definition": "내가 극하는 오행·다른 음양의 자원 관계",
+      "contrastTargetId": "foundation:ten_god:pian_cai",
+      "differentiation": "지속 관리·책임의 범위를 기회의 확장과 구별한다.",
+      "prerequisites": [
+        "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다."
+      ],
+      "strengthConditions": [
+        "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:zheng_cai:personality",
+        "deep:application:ten_god:zheng_cai:career",
+        "deep:application:ten_god:zheng_cai:money",
+        "deep:application:ten_god:zheng_cai:study",
+        "deep:application:ten_god:zheng_cai:love",
+        "deep:application:ten_god:zheng_cai:marriage",
+        "deep:application:ten_god:zheng_cai:family",
+        "deep:application:ten_god:zheng_cai:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論正財 / 財多身弱・財少身強・得時得位有成",
+          "proposition": "일간이 극하며 다른 음양인 자원 관계. 論正財는 일간이 감당할 힘·재성의 적정량·월령을 함께 요구한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "b64fa2920704301bf622",
+    "sourceId": "mbti:ISTJ:traits:money:cost_and_contract_mind",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/money/1",
+    "recordSha256": "d8a5ed526be887f43b38387194f943c17383514807af76b4cdab88dff583c6b8",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "money",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "not_projected_requires_separate_domain_review",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "cost_and_contract_mind",
+      "label": "비용·계약 감각",
+      "plainKo": "손익계산과 절차의 공정성을 중요하게 본다. 돈 문제에서는 감정보다 기준, 계약, 정산, 책임 범위를 먼저 확인해야 마음이 놓인다.",
+      "strongLine": "당신은 돈을 감정으로 풀면 손해 보고, 숫자와 조건으로 고정할 때 강합니다.",
+      "positiveUse": "고정비 관리, 세금, 계약서, 정산, 대출 조건 비교에서 강점이 된다.",
+      "risk": "관계 돈거래에서 정을 앞세우면 본인이 더 크게 스트레스를 받는다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "편재",
+        "금"
+      ],
+      "productDomains": [
+        "money",
+        "investment",
+        "marriage"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "7c9abcce396427f7c18f",
+    "sourceId": "mbti:ESTP:traits:marriage:fast_decision_cooling_rule",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "sourceFileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "pointer": "/traits/marriage/2",
+    "recordSha256": "0308fd2a0b97d336ac6eaceda0aeeac1269035d5e5657269b1dafbc702344fdd",
+    "originalState": {
+      "type": "ESTP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "fast_decision_cooling_rule",
+      "label": "빠른 결정 냉각 규칙",
+      "plainKo": "ESTP는 이사, 여행, 큰 구매, 사람 만남처럼 현장에서 판단하고 바로 움직이는 힘이 강하다. 결혼에서는 속도가 장점이지만, 공동 생활에 영향을 주는 결정은 하루라도 식히고 배우자와 확인하는 규칙이 필요하다.",
+      "strongLine": "당신의 실행력은 강하지만, 결혼에서는 빠른 결정 앞에 짧은 확인 절차가 있어야 신뢰가 지켜집니다.",
+      "positiveUse": "현장 판단과 실행력으로 가족의 문제를 빠르게 풀고 기회를 현실로 만든다.",
+      "risk": "혼자 결정하고 통보하면 배우자는 함께 사는 관계가 아니라 따라가는 관계처럼 느낀다.",
+      "matchingMyeongliSignals": [
+        "편재",
+        "역마",
+        "화"
+      ],
+      "productDomains": [
+        "marriage",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "f8f90022e047bfe61557",
+    "sourceId": "deep:ten_god:qi_sha",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 9,
+    "recordSha256": "2e8310a635977205afbcb0dffde9f5cbe8b140f2adf14e7b5899d4517a7defa3",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:qi_sha",
+      "targetId": "foundation:ten_god:qi_sha",
+      "label": "편관",
+      "definition": "나를 극하는 오행·동일 음양의 제약 관계",
+      "contrastTargetId": "foundation:ten_god:zheng_guan",
+      "differentiation": "강한 요구와 대응 압력을 합의된 공식 규범과 구별한다.",
+      "prerequisites": [
+        "일간의 통근·강약, 식신의 제어, 인성의 연결, 혼잡 여부를 실제 근거로 확인한다."
+      ],
+      "strengthConditions": [
+        "살의 압력을 감당하거나 전환하는 조건과 지나치게 제압된 경우를 따로 본다. 위험·폭력·직업을 단정하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:qi_sha:personality",
+        "deep:application:ten_god:qi_sha:career",
+        "deep:application:ten_god:qi_sha:money",
+        "deep:application:ten_god:qi_sha:study",
+        "deep:application:ten_god:qi_sha:love",
+        "deep:application:ten_god:qi_sha:marriage",
+        "deep:application:ten_god:qi_sha:family",
+        "deep:application:ten_god:qi_sha:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論偏官 / 制合生化・太過不及; 天元坐煞・時上一位貴・年上七煞",
+          "proposition": "일간을 극하며 같은 음양인 압력 관계. 論偏官는 制化·강약·과불급을 함께 보며 偏官/七煞를 단순 선악으로 고정하지 않는다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "422820469afcb4fa68c4",
+    "sourceId": "mbti:ENTJ:traits:marriage:work_family_boundary",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "pointer": "/traits/marriage/4",
+    "recordSha256": "fe5b69c754e660b449a888c37e15e06836f9d5113361a6dc70b391d996135a08",
+    "originalState": {
+      "type": "ENTJ",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "work_family_boundary",
+      "label": "일과 가정 경계",
+      "plainKo": "ENTJ는 가족을 위해 더 크게 성취하려는 마음이 강하지만, 그 과정에서 집까지 성과 관리의 공간처럼 만들 수 있다. 결혼에서는 목표를 밀어붙이는 시간과 쉬는 시간을 분리해야 한다.",
+      "strongLine": "당신에게 가정은 또 하나의 프로젝트가 아니라, 성과를 내려놓고 회복해야 하는 공간이기도 합니다.",
+      "positiveUse": "일정과 목표를 관리하는 힘으로 가족 재정, 커리어, 자녀 교육의 방향을 잡는다.",
+      "risk": "집에서도 평가와 개선만 반복하면 배우자는 사랑보다 압박을 먼저 느낀다.",
+      "matchingMyeongliSignals": [
+        "편관",
+        "정관",
+        "화",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "career",
+        "parenting"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "fe11b875c7ad3a9c8318",
+    "sourceId": "deep:ten_god:zheng_yin",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 8,
+    "recordSha256": "380e3f5f82de6c74467c4321d2e0234a21601692aeb639f6a481481d12941572",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:zheng_yin",
+      "targetId": "foundation:ten_god:zheng_yin",
+      "label": "정인",
+      "definition": "나를 생하는 오행·다른 음양의 지원 관계",
+      "contrastTargetId": "foundation:ten_god:pian_yin",
+      "differentiation": "체계적 수용·지원의 통로를 낯선 관점의 탐색과 구별한다.",
+      "prerequisites": [
+        "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다."
+      ],
+      "strengthConditions": [
+        "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:zheng_yin:personality",
+        "deep:application:ten_god:zheng_yin:career",
+        "deep:application:ten_god:zheng_yin:money",
+        "deep:application:ten_god:zheng_yin:study",
+        "deep:application:ten_god:zheng_yin:love",
+        "deep:application:ten_god:zheng_yin:marriage",
+        "deep:application:ten_god:zheng_yin:family",
+        "deep:application:ten_god:zheng_yin:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論印綬 / 月最要日時次之; 時逢生印",
+          "proposition": "일간을 생하며 다른 음양인 지원 관계. 論印綬는 부모·인장 비유와 月日時·官財·과다의 조건을 나누어 설명한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "78ca1a3776c53c2d0b48",
+    "sourceId": "deep:ten_god:pian_yin",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 7,
+    "recordSha256": "a6d3747f2872f90db9a5075fea446471d0f665fa58ef3d4fb57af24132720b90",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:pian_yin",
+      "targetId": "foundation:ten_god:pian_yin",
+      "label": "편인",
+      "definition": "나를 생하는 오행·동일 음양의 지원 관계",
+      "contrastTargetId": "foundation:ten_god:zheng_yin",
+      "differentiation": "비정형 관점의 탐구를 검증된 지식의 수용과 구별한다.",
+      "prerequisites": [
+        "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다."
+      ],
+      "strengthConditions": [
+        "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:pian_yin:personality",
+        "deep:application:ten_god:pian_yin:career",
+        "deep:application:ten_god:pian_yin:money",
+        "deep:application:ten_god:pian_yin:study",
+        "deep:application:ten_god:pian_yin:love",
+        "deep:application:ten_god:pian_yin:marriage",
+        "deep:application:ten_god:pian_yin:family",
+        "deep:application:ten_god:pian_yin:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論倒食 / 柱中無食只以偏印論; 不可一見倒食便以凶論",
+          "proposition": "일간을 생하며 같은 음양인 지원 관계. 論倒食은 食神을 실제로 해치는 조건과 無食只以偏印論을 구분한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "e880c2158a048d04ef23",
+    "sourceId": "mbti:ESFP:traits:marriage:fun_household_partner",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "sourceFileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "pointer": "/traits/marriage/0",
+    "recordSha256": "a3c7f92d63b2581e183adba10d7adcaa384f5c30a832182dda2d062e963a9fd7",
+    "originalState": {
+      "type": "ESFP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "fun_household_partner",
+      "label": "즐거운 생활 파트너",
+      "plainKo": "결혼에서도 집과 관계를 즐겁게 만들고 싶어 한다. 여행, 문화 생활, 즉흥적인 데이트, 사람들과의 만남이 가정의 활력을 유지하는 요소가 된다.",
+      "strongLine": "ESFP의 결혼 생활은 안정만으로는 부족하고, 함께 웃고 움직이는 장면이 계속 있어야 살아납니다.",
+      "positiveUse": "가정에 생동감과 낙천성을 불어넣고 가족에게 즐거운 경험을 제공한다.",
+      "risk": "생활의 반복 책임이 많아지면 답답함과 회피가 커진다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "도화",
+        "역마"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "parenting"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "3f130780549c6cb7a467",
+    "sourceId": "deep:ten_god:bijian",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 0,
+    "recordSha256": "840c6e6862018b7d5d8a960286c802edb2b4bd6caf5fb9b09164cff7cd8b3bc4",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:bijian",
+      "targetId": "foundation:ten_god:bijian",
+      "label": "비견",
+      "definition": "동일 오행·동일 음양의 동료 관계",
+      "contrastTargetId": "foundation:ten_god:jie_cai",
+      "differentiation": "독립된 기준과 동등한 협업을 자원 분배의 긴장과 구별한다.",
+      "prerequisites": [
+        "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다."
+      ],
+      "strengthConditions": [
+        "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:bijian:personality",
+        "deep:application:ten_god:bijian:career",
+        "deep:application:ten_god:bijian:money",
+        "deep:application:ten_god:bijian:study",
+        "deep:application:ten_god:bijian:love",
+        "deep:application:ten_god:bijian:marriage",
+        "deep:application:ten_god:bijian:family",
+        "deep:application:ten_god:bijian:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論正財 / 財少身強柱有比劫太過不及",
+          "proposition": "같은 오행·같은 음양의 동류 관계. 독립 의지와 대등한 역할을 설명하는 후보이며 비견 자체가 강약 판정은 아니다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "941361dcf854c0c9f213",
+    "sourceId": "rr:combination:chung:子午",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsChung.ts",
+    "sourceFileSha256": "37d4801960b9824789f51685207eafc46ce7556ecba4484ef1a96c5b3b90bcb9",
+    "exportName": "RELATION_COMBINATIONS_CHUNG",
+    "index": 0,
+    "recordSha256": "71d8187b4eb1e7cbe80be0ae4dc99c0236f88b2c42eb07c857236af8c3a7a970",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "A_HISTORICAL_TEXT",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "수화 충이며 적천수는 자왕오쇠와 자쇠오왕을 같은 결과로 보지 않는다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論衝擊"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "子水·午火의 대향과 월령별 왕쇠를 검토한다.",
+      "exclusions": [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:chung:子午",
+      "relation": "chung",
+      "targetId": "foundation:relation:chung",
+      "members": [
+        "子",
+        "午"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        },
+        {
+          "symbol": "午",
+          "element": "FIRE",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "丁",
+            "己"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "수화 충이며 적천수는 자왕오쇠와 자쇠오왕을 같은 결과로 보지 않는다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論衝擊"
+          }
+        ]
+      },
+      "composition": "子:WATER·yang·장간 癸 / 午:FIRE·yang·장간 丁己; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "子水·午火의 대향과 월령별 왕쇠를 검토한다.",
+      "exclusions": [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "왕쇠·뿌리·노출·장간을 함께 보며 같은 쌍도 계절이 다르면 작용 평가가 다르다. 방향이 대립한다는 구조와 이동·실패라는 생활 결과를 구분한다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "필요 없어진 배치를 바꿀 조건인지 검토할 수 있다.",
+      "risk": "충이라는 이유만으로 화·수 중 한쪽이 항상 사라진다고 할 수 없다.",
+      "reversal": "왕한 쪽을 자극하는 것과 쇠한 뿌리를 흔드는 것은 방향이 다르다.",
+      "distinction": "丑未와 달리 대표 오행이 수화의 직접 제어다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "실제 집중 시간과 외부 일정이 맞부딪치면 둘을 동시에 지킬 수 있는지 확인한다.",
+        "action": "보존할 시간과 옮길 시간을 선택한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "적천수 본문·주석 전사는 층위가 섞여 있으며 후대 주석의 귀속을 단정하지 않는다.",
+        "사고지 개고는 정설로 확정하지 않고 실제 재물과 연결하지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": []
+    }
+  },
+  {
+    "key": "e23b027944c5f0d3197a",
+    "sourceId": "rr:combination:hae:子未",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsHae.ts",
+    "sourceFileSha256": "b5fc64fd7a22f65da05b09c24f0f0272ec7ccbb671509841be5cded8502ee007",
+    "exportName": "RELATION_COMBINATIONS_HAE",
+    "index": 0,
+    "recordSha256": "bc9b8234ebd6265493d706d54a563baa70d2a82231df764aa4df97e49dfe3fb2",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "A_HISTORICAL_TEXT",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "육해의 子未는 합·충 매개 설명과 토수 여력 논설을 가진다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論六害"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "子·未 두 실제 글자와 각 계절·장간을 확인한다.",
+      "exclusions": [
+        "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:hae:子未",
+      "relation": "hae",
+      "targetId": "foundation:relation:hae",
+      "members": [
+        "子",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        },
+        {
+          "symbol": "未",
+          "element": "EARTH",
+          "yinYang": "yin",
+          "hiddenStems": [
+            "己",
+            "丁",
+            "乙"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "육해의 子未는 합·충 매개 설명과 토수 여력 논설을 가진다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論六害"
+          }
+        ]
+      },
+      "composition": "子:WATER·yang·장간 癸 / 未:EARTH·yin·장간 己丁乙; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "子·未 두 실제 글자와 각 계절·장간을 확인한다.",
+      "exclusions": [
+        "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "왕쇠·장간·납음 논의가 있으나 현행 표 판정에 모두 들어 있지는 않다. 충·합 매개를 설명하는 그림에서 부재한 매개 지지가 실제 원국에 있다고 가정하지 않는다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "기대가 연결되지 않는 조건을 구체적으로 확인할 질문이 가능하다.",
+      "risk": "원진에도 겹치지만 감정 갈등 두 배로 세지 않는다.",
+      "reversal": "드러난 차이는 실제 약속의 빈칸을 알리는 자료가 될 수 있다.",
+      "distinction": "丑午도 원진·해가 겹치나 기본 수토·화토 구성이 다르다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "받기로 한 도움과 실제 제공된 도움이 다르면 요청 내용을 확인한다.",
+        "action": "도움의 내용·기한·동의를 다시 묻는다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [
+        "rr:combination:wonjin:子未"
+      ],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "납음·주객·궁위 조건이 다른 전승을 현행 대칭 쌍 검출이 모두 지원한다고 말하지 않는다.",
+        "원국의 실제 매개 지지가 없어도 표 일치가 있지만 그 지지의 존재를 창작하지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": [
+        "natal"
+      ]
+    }
+  },
+  {
+    "key": "88af77cc76890045d0ca",
+    "sourceId": "rr:combination:wonjin:子未",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsWonjin.ts",
+    "sourceFileSha256": "0b98f07aaa68388ea33a2358f7ef581904723fc99aaa15287d72ab25e93bcf08",
+    "exportName": "RELATION_COMBINATIONS_WONJIN",
+    "index": 0,
+    "recordSha256": "8e7df60a16274c333fb005d1c75a0442bda7b0ec5df1ce7c926aa2c5ef3ddb61",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "E_UNVERIFIED",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "E_UNVERIFIED",
+        "text": "현대 저자의6쌍 표와 프로젝트 표가 일치한다. 고전 기원·고유 감정 예측은 미확인이다.",
+        "sourceRefs": [
+          {
+            "sourceId": "wonjin",
+            "locator": "적용 / 성립의 여러 방법 / 인접 기준 / 참고자료"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "子·未 실제 두 자리와 facts의 원진살 신호·육해 중복을 확인한다.",
+      "exclusions": [
+        "끌림·집착·혐오·외도·관계 실패를 실제 감정이나 사건으로 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:wonjin:子未",
+      "relation": "wonjin",
+      "targetId": "foundation:relation:wonjin",
+      "members": [
+        "子",
+        "未"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        },
+        {
+          "symbol": "未",
+          "element": "EARTH",
+          "yinYang": "yin",
+          "hiddenStems": [
+            "己",
+            "丁",
+            "乙"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "E_UNVERIFIED",
+        "text": "현대 저자의6쌍 표와 프로젝트 표가 일치한다. 고전 기원·고유 감정 예측은 미확인이다.",
+        "sourceRefs": [
+          {
+            "sourceId": "wonjin",
+            "locator": "적용 / 성립의 여러 방법 / 인접 기준 / 참고자료"
+          }
+        ]
+      },
+      "composition": "子:WATER·yang·장간 癸 / 未:EARTH·yin·장간 己丁乙; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "子·未 실제 두 자리와 facts의 원진살 신호·육해 중복을 확인한다.",
+      "exclusions": [
+        "끌림·집착·혐오·외도·관계 실패를 실제 감정이나 사건으로 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "기존 신호만으로 힘·길흉·감정 집중도를 계산한 것처럼 쓰지 않는다. foundation 투영에는 일치한 쌍이 노출되지 않는다. 쌍을 추측해 설명하지 않는다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "실제 기대 차이가 확인될 때만 검증 질문을 작성할 수 있다.",
+      "risk": "육해와 원진을 독립 위험2개로 더하지 않는다.",
+      "reversal": "관계가 실제 안정적이면 부정적 라벨보다 그 사실을 우선한다.",
+      "distinction": "원진 중 육해와 겹치는2쌍의 하나이고 귀문 쌍은 아니다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "실제로 약속 이해가 달랐다면 누가 무엇을 기대했는지 묻는다.",
+        "action": "기호를 원인으로 지목하지 않고 당사자 설명을 듣는다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [
+        "rr:combination:hae:子未"
+      ],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "고전 전거 미확인; 학술 초록의 참고문헌을 읽은 원전으로 승격하지 않는다.",
+        "현대 저자의 책·팟캐스트 참고는 이번에 직접 열람하지 않아 직접 출처로 채택하지 않는다.",
+        "현대 전승 확인은 개인 사건에 대한 실증이 아니다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "natal",
+        "natal_month"
+      ],
+      "unsupportedProducerScopeRefs": [
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "between_periods"
+      ]
+    }
+  },
+  {
+    "key": "bedf4254e50989e1a90e",
+    "sourceId": "mbti:INTP:traits:marriage:emotional_checkin_frequency",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/traits/marriage/4",
+    "recordSha256": "54f2dd4eee0d92fddf167fe7e03f81999295b1f0423390070ba4074fd8e00d3b",
+    "originalState": {
+      "type": "INTP",
+      "area": "marriage",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "emotional_checkin_frequency",
+      "label": "감정 확인 빈도",
+      "plainKo": "INTP는 매일 긴 감정 대화를 요구받으면 피로해지지만, 배우자는 침묵을 무관심으로 읽을 수 있다. 결혼에서는 감정 확인의 빈도와 방식을 미리 정해 두는 편이 맞다.",
+      "strongLine": "당신에게 필요한 것은 감정을 많이 말하는 사람이 되는 것이 아니라, 상대가 불안해하지 않을 만큼 꾸준히 신호를 주는 일입니다.",
+      "positiveUse": "짧은 안부, 정해진 대화 시간, 문제와 감정의 분리 대화로 관계 피로를 줄인다.",
+      "risk": "필요할 때만 말하면 배우자는 관계가 항상 후순위라고 느낄 수 있다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "정인",
+        "수"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "cd4db85b9a6b894d203d",
+    "sourceId": "mbti:ISFP:traits:marriage:silent_conflict_marriage",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "pointer": "/traits/marriage/2",
+    "recordSha256": "adc316d67e25b86c76ec06283827ce8632265110b04626ac27f5098331820de5",
+    "originalState": {
+      "type": "ISFP",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "silent_conflict_marriage",
+      "label": "침묵 갈등",
+      "plainKo": "결혼 생활에서 불편한 감정을 바로 말하기보다 속으로 삭이기 쉽다. 작은 불만이 쌓이다가 한 번에 마음이 닫히는 패턴을 조심해야 한다.",
+      "strongLine": "당신은 크게 싸우지 않는 대신, 말하지 않은 감정이 조용히 쌓이는 쪽입니다.",
+      "positiveUse": "큰 충돌을 줄이고 부드러운 분위기를 유지한다.",
+      "risk": "갈등을 피하다가 회복할 타이밍을 놓칠 수 있다.",
+      "matchingMyeongliSignals": [
+        "수",
+        "겁재",
+        "정인"
+      ],
+      "productDomains": [
+        "marriage",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "cb3b6a470f6c19c51cb3",
+    "sourceId": "mbti:ISFJ:traits:marriage:gratitude_needed_marriage",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/traits/marriage/2",
+    "recordSha256": "0f1b4edf4a832a4f90749d5c9753e741c93cc24bfffe7a7395b7b38c09a45c4d",
+    "originalState": {
+      "type": "ISFJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "gratitude_needed_marriage",
+      "label": "감사 체감 필요",
+      "plainKo": "헌신을 말없이 이어가지만 그 노력이 계속 간과되면 마음속 불만이 커진다. 결혼 생활에서는 작은 감사 표현이 관계 안정의 핵심 장치다.",
+      "strongLine": "당신에게 감사 표현은 사치가 아니라 관계를 계속 버티게 하는 연료입니다.",
+      "positiveUse": "감사를 주고받는 관계에서는 안정적이고 깊은 동반자가 된다.",
+      "risk": "고마움 없이 의무만 늘어나면 조용한 분노와 거리두기가 생긴다.",
+      "matchingMyeongliSignals": [
+        "정인",
+        "정재",
+        "수"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "d153ad3866c0e6be677b",
+    "sourceId": "mbti:ENTJ:traits:marriage:dominance_marriage_risk",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "pointer": "/traits/marriage/1",
+    "recordSha256": "7cbd5556dc84cb2eadf7382fb519f26664630932ec8dedf429e121c1290c85aa",
+    "originalState": {
+      "type": "ENTJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "dominance_marriage_risk",
+      "label": "통제 리스크",
+      "plainKo": "관계가 미숙할 때는 결정을 빨리 내려 주는 일이 배우자에게 지시나 평가처럼 느껴질 수 있다. 결혼에서는 의사결정권과 감정 존중의 균형이 핵심이다.",
+      "strongLine": "ENTJ가 사랑을 관리와 통제로 착각하는 순간, 관계의 성과는 좋아져도 마음은 멀어집니다.",
+      "positiveUse": "책임과 결정을 회피하지 않아 가족의 방향을 세우는 데 강하다.",
+      "risk": "배우자의 감정과 선택권을 낮게 보면 친밀감이 약해진다.",
+      "matchingMyeongliSignals": [
+        "편관",
+        "겁재",
+        "화"
+      ],
+      "productDomains": [
+        "marriage",
+        "love",
+        "compatibility",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "8656e8de7c812f74bbfc",
+    "sourceId": "mbti:ESFJ:traits:marriage:traditional_role_expectation",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "pointer": "/traits/marriage/1",
+    "recordSha256": "2dbf9d37b4e78e09dfcb47c8da055c26029bddc7c9a1f3f7625c0e1ec7778773",
+    "originalState": {
+      "type": "ESFJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "traditional_role_expectation",
+      "label": "전통 역할 기대",
+      "plainKo": "전통, 예절, 사회적 역할을 중요하게 보므로 결혼에서도 배우자와 가족에게 일정한 역할 기대를 가진다. 안정적이지만 유연성이 부족하면 갈등이 생긴다.",
+      "strongLine": "ESFJ의 결혼관에는 사랑만큼이나 가족 안에서 각자가 지켜야 할 역할과 예의가 크게 들어 있습니다.",
+      "positiveUse": "책임 분담과 가족 질서를 분명하게 해 생활 안정에 도움이 된다.",
+      "risk": "상대가 다른 생활 방식을 원할 때 자기 기준의 정상성을 강요한다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정재",
+        "토"
+      ],
+      "productDomains": [
+        "marriage",
+        "compatibility",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "23f1f8d8786e6f2f0de2",
+    "sourceId": "mbti:ISFJ:traits:marriage:traditional_family_role",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "sourceFileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "pointer": "/traits/marriage/1",
+    "recordSha256": "ab56f57b2d3d8f976609f721930f8a585a550841c575c3416c1a2644e96d49ca",
+    "originalState": {
+      "type": "ISFJ",
+      "area": "marriage",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MARRIAGE",
+      "romanticTransferApproved": false
+    },
+    "raw": {
+      "id": "traditional_family_role",
+      "label": "전통적 가족 역할",
+      "plainKo": "가정 안에서도 역할, 예의, 책임을 중요하게 본다. 이 안정감은 장점이지만 다른 가족 구성원이 더 자유로운 가치관을 가질 때 충돌이 생긴다.",
+      "strongLine": "당신은 가족도 각자 마음대로 사는 공간보다, 서로의 역할을 지키는 공간으로 느끼기 쉽습니다.",
+      "positiveUse": "가족 구성원의 기본 책임과 생활 질서를 세운다.",
+      "risk": "배우자나 자녀가 자유로운 성향이면 통제받는다고 느낄 수 있다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "토",
+        "정인"
+      ],
+      "productDomains": [
+        "marriage",
+        "parenting",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  }
+]

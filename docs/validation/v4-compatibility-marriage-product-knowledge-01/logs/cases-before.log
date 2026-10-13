@@ -1,0 +1,7 @@
+RUN  v4.1.5 /private/tmp/gyeol-compatibility-marriage-knowledge-validation/base
+
+
+ Test Files  1 passed (1)
+      Tests  29 passed (29)
+   Start at  00:45:14
+   Duration  140.86s (transform 1.59s, setup 18ms, import 1.95s, tests 138.73s, environment 0ms)

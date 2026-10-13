@@ -1,0 +1,80 @@
+{
+  "previousLoveMaterials": 80,
+  "marriageMaterials": 112,
+  "meaningComparison": [
+    {
+      "chapters": [
+        "CH01",
+        "CH04"
+      ],
+      "loveMeaning": "호감·관계 속도·표현의 공통점과 차이",
+      "marriageMeaning": "공동 결정의 권한과 유지 비용, 공통 강점을 영구 담당으로 고정하지 않을 조건",
+      "addedCondition": "상대에게 남을 선택·준비·휴식 담당",
+      "example": "cmpr:material:CH04.P1:shared-care-not-default-manager"
+    },
+    {
+      "chapters": [
+        "CH02",
+        "CH03"
+      ],
+      "loveMeaning": "각 개인이 친밀감을 주고받는 방식",
+      "marriageMeaning": "각 개인의 생활 필요·일을 알아차림·완료·재량·휴식 조건",
+      "addedCondition": "A와 B의 원천은 별도이며 현재 능력이나 가사 이력은 미입력",
+      "example": "cmpr:material:CH02.P3:a-complete-task-ownership"
+    },
+    {
+      "chapters": [
+        "CH05",
+        "CH06"
+      ],
+      "loveMeaning": "연락·표현·수신과 부담",
+      "marriageMeaning": "공동 비용의 선점, 외부 약속, 준비가 남는 지원, 변경 후 인수인계",
+      "addedCondition": "실제 recipient 방향과 상대의 권한·남은 업무",
+      "example": "cmpr:material:CH06.P3:ba-change-without-handover"
+    },
+    {
+      "chapters": [
+        "CH07"
+      ],
+      "loveMeaning": "거리두기·확인·해석 차이의 악화",
+      "marriageMeaning": "기준 변경과 재작업, 허락 구조, 관리자 고정, 결정 미응답의 반복",
+      "addedCondition": "반복의 발생 순서 및 상대에게 남는 비용; 사건 이력 아님",
+      "example": "cmpr:material:CH07.P3:care-manager-loop"
+    },
+    {
+      "chapters": [
+        "CH08"
+      ],
+      "loveMeaning": "자발적인 연락·거리·다시 대화할 시점",
+      "marriageMeaning": "공동/개인 항목, 완결 책임, 정보·권한 인계, 예외와 다음 주기 검토",
+      "addedCondition": "실행뿐 아니라 준비·확인·다음 기억의 담당",
+      "example": "cmpr:material:CH08.P1:joint-visible-full-process"
+    },
+    {
+      "chapters": [
+        "CH09"
+      ],
+      "loveMeaning": "도입한 의미를 친밀감의 선택으로 회수",
+      "marriageMeaning": "동일 person/type/root/방향/전제로 도입된 책임·선택·재검토만 회수",
+      "addedCondition": "실제 표시 ledger 필요; 미확인 혼인·미래 사건 새 도입 금지",
+      "example": "cmpr:material:CH09.P3:recall-transition-repair-path"
+    }
+  ],
+  "normalizedIdenticalCorePairs": [],
+  "legitimateReuse": [
+    "same source definitions and IDs",
+    "individual traits with owner/conditions",
+    "same canonical relation definitions",
+    "directed Pair reference inventory",
+    "individual Fusion context constraints"
+  ],
+  "notNewFacts": [
+    "crosswalks",
+    "role links",
+    "theme views",
+    "recalled meanings"
+  ],
+  "noCategoryRanking": true,
+  "review": "human-review.md",
+  "stringUniquenessAloneIsNotQualityProof": true
+}

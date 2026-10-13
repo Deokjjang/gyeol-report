@@ -1,0 +1,137 @@
+{
+  "baseSha": "be3c00ed36c9bb96ab6a104c8241a5137ef27094",
+  "existingRelatedFiles": 34,
+  "baseline": {
+    "passed": 3597,
+    "failed": 16,
+    "conditionalNotRun": 1,
+    "total": 3614
+  },
+  "after": {
+    "passed": 3597,
+    "failed": 16,
+    "conditionalNotRun": 1,
+    "total": 3614
+  },
+  "sameFailureNamesAndFirstMessages": true,
+  "existingFailures": [
+    {
+      "test": " tests/unit/interpretation-v4/careerProductLocks.test.ts > 'comprehensive' customer/evidence/Book stays frozen",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerProductLocks.test.ts > 'love' customer/evidence/Book stays frozen",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerProductLocks.test.ts > 'compatibility' customer/evidence/Book stays frozen",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'comprehensive' previous saved edition remains identical",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'love' previous saved edition remains identical",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'compatibility' previous saved edition remains identical",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'major' previous saved edition remains identical",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'annual' previous saved edition remains identical",
+      "message": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+      "message": "AssertionError: expected [] to include 'composite'"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > recovery-axis Fusion can serve C9 even when its original application is work",
+      "message": "AssertionError: expected false to be true // Object.is equality"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts > actual 12-person review cohort and isolation > scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+      "message": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']"
+    },
+    {
+      "test": " tests/unit/interpretation-v4/foundationAdapter.test.ts > Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import",
+      "message": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality"
+    },
+    {
+      "test": " tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input",
+      "message": "SyntaxError: Unexpected end of JSON input"
+    },
+    {
+      "test": " tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input",
+      "message": "SyntaxError: Unexpected end of JSON input"
+    }
+  ],
+  "failureGroups": {
+    "oldAllowlist": 2,
+    "comprehensiveAllocation": 2,
+    "customerDayunEmptyJsonResponse": 2,
+    "historicalDigestExpectations": 10
+  },
+  "newResearchTests": 626,
+  "newActualGenerationTests": 30,
+  "newPassed": 656,
+  "deduplicatedTotal": {
+    "passed": 4253,
+    "failed": 16,
+    "conditionalNotRun": 1,
+    "total": 4270,
+    "files": 36
+  },
+  "newFailures": 0,
+  "newSkipped": 0,
+  "tsDiagnosticsBefore": 0,
+  "tsDiagnosticsAfter": 0,
+  "lint": {
+    "pass": true,
+    "errors": 0,
+    "warnings": 0
+  },
+  "build": {
+    "pass": true,
+    "staticPages": 47,
+    "nftWarnings": 0,
+    "command": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 npm run build -- --webpack",
+    "deploymentExecuted": false
+  },
+  "actualInputCases": 28,
+  "generatedVariants": 32,
+  "digestSetsUnchanged": 32,
+  "baselineCasesTests": 29,
+  "currentCasesTests": 30,
+  "existingSourceFilesUnchanged": 2531,
+  "otherWorktreesPreserved": 25,
+  "originalDirtyEntriesPreserved": 11,
+  "runtimeConnected": false,
+  "customerApproved": false,
+  "knownRemainingIssues": [
+    "16 baseline failures",
+    "1 conditional not run",
+    "M/N/AB editorial Major fallback",
+    "unconfirmed spouse/cohabitation wording in existing reader",
+    "246 Pair directions common reference only",
+    "no natal-only unknown-MBTI specialized material",
+    "source/domain/context/lineage review required",
+    "actual evidence binding and introduced ledger not implemented"
+  ],
+  "diffCheckPass": true,
+  "stagedScope": "new marriage research, tests and validation files only"
+}

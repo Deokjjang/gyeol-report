@@ -1,0 +1,13685 @@
+/** Offline marriage research; no runtime binding or customer approval. */
+import type { PairReview } from "./researchTypes";
+export const MARRIAGE_PAIR_SOURCE_REVIEWS: readonly PairReview[] = [
+  {
+    "id": "cmpr:pair:ENFJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ENFJ:INTJ",
+    "originalResearchHash": "0d92592f68f53ec587873d8fc6f966c366eac6361a9b2af0f0605251568864c0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "d4627bd77ff529c704845a5195fb8bf33abe8ac77f4402006e2734931010c315",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "d07e061f0276e54945b7fb51a6ca8ac62937b8c71ffde7e4f75debec384458f4",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 INTJ가 방향과 구조를, ENFJ가 관계와 동기를 관리하는 보완이 가능하다. 상호 존중이 있으면 안정적이지만, 감정과 논리를 어느 쪽이 우위에 둘지 경쟁하면 피로가 생긴다.",
+    "sourceFriction": {
+      "condition": "침묵을 참여 거절로 보거나 잦은 확인을 간섭으로 단정할 때",
+      "sourceIntentionCandidate": "함께 미래를 맞추려는 감정 확인",
+      "targetMayMisreadSource": "자율 시간을 계속 침범하는 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "혼자 판단을 정리하려는 거리두기",
+      "sourceMayMisreadTarget": "관계에 관심이 없는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "확인 질문을 거절할 자유도 주었는가?",
+      "targetQuestion": "돌아와 이야기할 때를 알렸는가?",
+      "jointAgreement": "개인 검토 시간 뒤 공동 대화 시간을 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ENFJ:INTP",
+    "originalResearchHash": "cf0d946a9242193c551b496d5771bb90708c55ac271d1d60e9bb5a847938feb1",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "780bf11f043b16c3a15a07cb19574359dd184a82e697a0670ce3e987d65dd3a8",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "14a6596211c2fee58e7fb91272631854b07ae36adf2b2d7c6c265e2a890a82a1",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENFJ가 관계를 적극적으로 관리하고 INTP가 사고의 자유를 지키려 한다. 생활 루틴과 감정 표현의 기준을 합의하지 않으면 열정은 남아도 안정감이 부족해진다.",
+    "sourceFriction": {
+      "condition": "즉답·표현을 거듭 요구하거나 관계 질문을 모두 불필요로 볼 때",
+      "sourceIntentionCandidate": "서로의 상태를 확인하려는 질문",
+      "targetMayMisreadSource": "감정 반응을 강요하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "생각을 정리할 시간을 확보하는 짧은 답",
+      "sourceMayMisreadTarget": "관심이 사라진 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 답하지 않을 권리를 인정했는가?",
+      "targetQuestion": "돌아와 답할 때를 정할 수 있는가?",
+      "jointAgreement": "짧은 상태 확인과 긴 대화 시간을 따로 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ENFJ:ENTJ",
+    "originalResearchHash": "71d21f64e8a0322a56a3f1efa77ddf9373a617429a88511648d412c5c5b16a23",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "9c0d8b50db3e1899b5f343d73f358a8a21d2a003f88d6be7920bdfb4bad1fe0d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "68a9138b14138311b4e3de2ad634f23ddad73545c1143f71fc7f7063bf5a218b",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 공동 목표와 사회적 성취를 함께 추진하기 좋다. 그러나 감정과 성과의 우선순위를 두고 반복적으로 부딪히면 서로의 리더십을 침범한다고 느낄 수 있다.",
+    "sourceFriction": {
+      "condition": "서로의 조율 방식을 비효율 또는 냉정함으로 규정할 때",
+      "sourceIntentionCandidate": "참여자의 마음을 확인하는 대화",
+      "targetMayMisreadSource": "결정을 늦추는 우회로로 읽힐 가능성",
+      "targetIntentionCandidate": "문제를 명료하게 바로잡는 직설",
+      "sourceMayMisreadTarget": "사람을 성과로만 평가하는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "조율 뒤 결정할 기준을 제시했는가?",
+      "targetQuestion": "반대 의견이 나올 통로를 남겼는가?",
+      "jointAgreement": "결과 기준과 참여 조건을 함께 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_DISTINCT_SOCIONICS_TERM_FAMILIES_MAPPING_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ENFJ:ENTP",
+    "originalResearchHash": "8b357478c17338dd4562f16ae3aa09c6d688ba718ebb031e83228404c173288b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "93e218aa8ae609187236a0f943dad345d65cab46e0d77e415acc384adc8ce503",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "982fd4e23e02ee80a316bfb2bac5ee5cde1469cdbd0e7f436795b7061cadee9f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENFJ가 관계의 온도와 의미를 관리하고 ENTP가 변화와 자극을 제공한다. 존중이 유지되면 활기 있지만, 보호와 의존이 고정되면 성숙한 파트너십이 어렵다.",
+    "sourceFriction": {
+      "condition": "공개 반론에 누군가의 체면·선택권이 걸릴 때",
+      "sourceIntentionCandidate": "참여자의 마음을 돌보는 중재",
+      "targetMayMisreadSource": "의견을 막는 분위기 관리로 읽힐 가능성",
+      "targetIntentionCandidate": "생각을 움직이는 장난",
+      "sourceMayMisreadTarget": "관계를 무시하는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "중재가 실제 이견을 지우지 않는가?",
+      "targetQuestion": "반론의 장소와 동의를 골랐는가?",
+      "jointAgreement": "아이디어 평가와 당사자 존중을 따로 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ENFJ:INFJ",
+    "originalResearchHash": "074f3154dd8a1d9c63fcc0b66a9f7747de0d9162c39f03f0d4078fb07b4b1a91",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "c92ef7e96364ac5ba69e404cedc3dccce73a4fbf941dfcc03504a923a5ca3497",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "fcce50086087c3066d2126251c2da437879e03ea925baaaad82592b10909faba",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 비전과 관계의 의미를 함께 다루기 좋다. ENFJ가 외부 관계를 넓히고 INFJ가 내적 방향을 정리하며 보완하지만, 서로의 에너지 사용 방식이 다르면 피로가 생긴다.",
+    "sourceFriction": {
+      "condition": "모임 확장을 모두에게 당연한 선택으로 제시할 때",
+      "sourceIntentionCandidate": "다른 사람도 참여시키려는 초대",
+      "targetMayMisreadSource": "개인 경계를 넓히는 압박으로 읽힐 가능성",
+      "targetIntentionCandidate": "소수와 깊게 나누려는 선택",
+      "sourceMayMisreadTarget": "관계 확장을 거부하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "초대와 의무를 구분했는가?",
+      "targetQuestion": "참여하지 않아도 지지할 방식을 말했는가?",
+      "jointAgreement": "참여 범위와 혼자 정리할 시간을 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ENFJ:INFP",
+    "originalResearchHash": "ea62e4cb13cfcdae6d6f49561375454a6933be4e18661bf67a1945ee239b8bc5",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "a19376126fef3ac86eb240a63eaa67855739c382cf82b3ac42e636625a6d5e0b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "eca981c09641f3ad51204fa380f57288b9e85802ee0daf6711941459949e006c",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENFJ가 관계를 살리려 할수록 더 많이 확인하고, INFP는 그 압박에서 멀어지려 한다. 같은 공간과 책임이 많아질수록 따뜻함이 형식적 조심스러움으로 바뀔 수 있다.",
+    "sourceFriction": {
+      "condition": "좋은 취지라는 이유로 참여를 기대할 때",
+      "sourceIntentionCandidate": "관계를 위해 설득하는 말",
+      "targetMayMisreadSource": "개인 선택을 교정하는 압박으로 읽힐 가능성",
+      "targetIntentionCandidate": "자기 기준을 지키는 유보",
+      "sourceMayMisreadTarget": "모두의 노력을 거부하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "개별 동의를 다시 받았는가?",
+      "targetQuestion": "거절 조건을 분명히 말했는가?",
+      "jointAgreement": "공동 목표와 참여 방식은 따로 동의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ENFJ:ENFJ",
+    "originalResearchHash": "0f746dd61e76532d0108cb253282cec02eef6e3ca1d9d0660793143e97a3aaec",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "e57ee65a5251dc60a686ed66ee4e994deba5c4983b26245e15fa6e057bd1f46f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "e57ee65a5251dc60a686ed66ee4e994deba5c4983b26245e15fa6e057bd1f46f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 가족의 정서와 관계 의식을 잘 챙기는 장점이 있다. 다만 현실적 문제를 냉정하게 분담하거나 비판해야 할 때 서로 미루면 문제가 쌓인다.",
+    "sourceFriction": {
+      "condition": "둘 다 분위기를 위해 반대를 숨길 때",
+      "sourceIntentionCandidate": "관계를 편하게 하려는 양보",
+      "targetMayMisreadSource": "실제 동의로 읽힐 가능성",
+      "targetIntentionCandidate": "함께 해결하려는 반복 확인",
+      "sourceMayMisreadTarget": "혼자 쉴 권리를 줄이는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "내가 맡을 수 있는 선을 말했는가?",
+      "targetQuestion": "상대의 거절도 들었는가?",
+      "jointAgreement": "돌봄과 조율의 담당을 번갈아 맡음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ENFJ:ENFP",
+    "originalResearchHash": "a63dd4cdd7d738dac08fd92df9235aa70dab6fd2835b0333491becc2514c4d8f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "be8b68a042df1e6b4f1c1c3767f383dc36f4513a8bdeddce603499a787439f60",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0576c11bc8317f57dc652e6958144b909f0e60352426558ae519ffa1cbc773a9",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 서로를 경계하지는 않아도 상대가 자기보다 조금 부족하게 느껴지는 미묘한 불만이 쌓인다. 함께 해결해야 할 일이 많아질수록 서로의 판단 방식이 달라 피로가 커진다.",
+    "sourceFriction": {
+      "condition": "관심 표현이 곧 장기 약속으로 취급될 때",
+      "sourceIntentionCandidate": "관계의 다음 방향을 확인하는 질문",
+      "targetMayMisreadSource": "자유로운 탐색을 묶는 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "흥미로운 가능성을 나누는 말",
+      "sourceMayMisreadTarget": "확정을 피하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "제안과 약속을 구분했는가?",
+      "targetQuestion": "맡은 일과 새 흥미를 나눴는가?",
+      "jointAgreement": "확정한 약속과 후보 활동을 따로 적음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ENFJ:ISTJ",
+    "originalResearchHash": "2b2692c5594f9220ec5fb40976769dd5e2ba345091245595acc95a76aea3b81b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "cb5ff1e97985f2d51f50b32904b3f1ecd4dda7c342cdd57702df01b338c0f137",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "7ebe89b60facf72f99aa5a77fe75aa27d03a2e57712d0faf158fc9e0b86297ba",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 기준, 감정 표현, 문제 해결 방식이 크게 다르다. ENFJ는 관계를 살리려 노력할수록 더 많이 다가가고, ISTJ는 압박으로 느껴 물러나면서 갈등이 커질 수 있다.",
+    "sourceFriction": {
+      "condition": "행동했으니 표현은 필요 없거나 표현이 없으니 관심 없다고 볼 때",
+      "sourceIntentionCandidate": "감정을 함께 확인하려는 대화",
+      "targetMayMisreadSource": "책임 외 요구가 늘어나는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "약속을 지켜 지지하는 행동",
+      "sourceMayMisreadTarget": "정서 요구를 무시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원하는 표현을 구체적으로 말했는가?",
+      "targetQuestion": "상대의 수고와 별개로 마음을 들었는가?",
+      "jointAgreement": "실무 점검과 안부를 별도로 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ENFJ:ISFJ",
+    "originalResearchHash": "da40a89efe371ac5eeefdfa6ca837a14582d4f9322c33e888bdcdb8db0dab422",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "6f3f77258e950d4af75b4a63c53d5a16c882fb4918ee548229ad28aa37c99dc7",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "afdfe234ad109aa6cbc55439b9fc590d3f0d6e996a8f4a746a08ee7efde6911d",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 세부 기준과 관계 방향을 누가 정할지가 핵심 갈등이 된다. ISFJ는 안정과 습관을 지키려 하고 ENFJ는 더 넓은 비전과 감정 흐름을 관리하려 한다.",
+    "sourceFriction": {
+      "condition": "개선·참여를 권하며 거절을 놓칠 때",
+      "sourceIntentionCandidate": "더 나은 관계를 위한 설득",
+      "targetMayMisreadSource": "기존 수고를 고치려는 평가로 읽힐 가능성",
+      "targetIntentionCandidate": "마찰을 피하는 조심스러운 답",
+      "sourceMayMisreadTarget": "동의하는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "도움을 요청받았는가?",
+      "targetQuestion": "한계를 직접 알렸는가?",
+      "jointAgreement": "도움받을 범위와 거절 가능한 역할을 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ENFJ:ESTJ",
+    "originalResearchHash": "0ff3b23439b288b509f2d61a6f98efcf2ae7d596e6be1789decbeb8b369d1c06",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "14bcc83711b893596ea9a524e0d31ae995a891c5d588e427bcd382172d4731a3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "d41ffc64fd4388fec02e853b4a1afd5708a77bf4d44ab04cdf73419c68e7259e",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 역할과 규칙은 세울 수 있지만 정서적 대화가 형식적으로 굳을 수 있다. 공통 관심사나 목표가 없으면 생활은 유지돼도 친밀감이 약해진다.",
+    "sourceFriction": {
+      "condition": "피드백을 서로 분위기 관리 또는 냉정한 지시로 볼 때",
+      "sourceIntentionCandidate": "수용을 돕는 완곡한 조율",
+      "targetMayMisreadSource": "문제를 흐리는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "결과를 바로잡는 직접 지적",
+      "sourceMayMisreadTarget": "사람을 평가하는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "수정할 행동을 분명히 했는가?",
+      "targetQuestion": "지적의 영향도 들었는가?",
+      "jointAgreement": "수정 기준과 전달 방식을 각각 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ENFJ:ESFJ",
+    "originalResearchHash": "7ce6900fbea56e56b6a7024165cc54796c77f133c7b002bf2921dab81a170736",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "467419fffdb2215f967065467a6d0db95d77fea0f89ba1dd50d13dc36076a5c3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "567d4b766b3c906dbbcdf4b2a4ee605a34e02a7b96ef8b4051dd7d7001decbf4",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 예의, 가족, 관계 관리라는 공통점이 강하다. 다만 한쪽이 더 높은 권한을 갖거나 생활 기준을 주도하려 하면 같은 관계 중심성 안에서도 의견 충돌이 커진다.",
+    "sourceFriction": {
+      "condition": "둘 다 분위기를 위해 필요한 이견을 미룰 때",
+      "sourceIntentionCandidate": "방향을 바꾸려는 의미 질문",
+      "targetMayMisreadSource": "현재 수고를 낮추는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "안정을 지키려는 세부 확인",
+      "sourceMayMisreadTarget": "큰 방향을 막는 형식으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "수고를 인정하며 목적을 물었는가?",
+      "targetQuestion": "현재 방식이 계속 필요한가?",
+      "jointAgreement": "이견 하나를 공개하고 바꿀 항목을 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ENFJ:ISTP",
+    "originalResearchHash": "e97401305398780611a098add305af0f2418cc6b4916d1802c7e3717f72e4958",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "82a30cbee6954a603592e8e093511bd8d498a5294736f3107e73bcca5597b17e",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "88e65a90aac6efb846e8afbe0890df01aea9b27d8ce01126eb782499c015d8aa",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENFJ가 가족의 정서와 목표를 관리하고 ISTP가 생활의 실제 문제를 해결하는 보완이 가능하다. 공통 관심사가 없으면 관계가 역할 분담만 남고 정서적 연결이 약해질 수 있다.",
+    "sourceFriction": {
+      "condition": "잦은 감정 확인 또는 해결만 주는 답이 반복될 때",
+      "sourceIntentionCandidate": "연결을 확인하는 질문",
+      "targetMayMisreadSource": "개인 시간을 관리하는 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "실제로 도우려는 짧은 해법",
+      "sourceMayMisreadTarget": "마음을 덮는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 대화할 수 있는지 물었는가?",
+      "targetQuestion": "먼저 들어주기를 원하는가?",
+      "jointAgreement": "짧은 상태 확인과 선택한 도움을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ENFJ:ISFP",
+    "originalResearchHash": "5cf2066591be4c047923c22538d15fb1ee070f133a1f23d45b0750ba8191b22d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ecd925b759b02c7808eb3ab019c78371988e6018db867d52ef16446ec141c574",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "16aec1b428f572b47190276a8bba43fb8997fdb7a739aabeb5faa219a2957d58",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENFJ가 관계를 계획하고 의미화하려 하고, ISFP는 자연스러운 흐름과 자기 공간을 원한다. 기대치를 말로 맞추지 않으면 따뜻함은 있어도 서로를 완전히 신뢰하지 못한다.",
+    "sourceFriction": {
+      "condition": "상대가 말하기 전 해석·도움을 정해줄 때",
+      "sourceIntentionCandidate": "관계를 개선하려는 권유",
+      "targetMayMisreadSource": "선택을 교정하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "마음을 정리하는 침묵",
+      "sourceMayMisreadTarget": "더 설득해도 된다는 신호로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대의 답을 기다렸는가?",
+      "targetQuestion": "원치 않는 도움을 말할 수 있는가?",
+      "jointAgreement": "도움은 요청 범위 안에서만 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ENFJ:ESTP",
+    "originalResearchHash": "e1ae7e0e9dafe895973a189c9f34741483e4e71b47010d4ccb2d763765ade0ea",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a4591e42a78343bd5db260f5c33bf6d05f57eaf43d494a42f6d7a93b7da0401a",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "2d89a77cccb2229e5f02a6913edde9a264fdad2c7e1122f1373a7a7a1d1eadc0",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 일상 운영과 협력 방식이 핵심이다. ENFJ는 관계의 의미와 장기 방향을 확인하려 하고, ESTP는 지금의 경험과 자유를 중시해 생활 계획에서 충돌할 수 있다.",
+    "sourceFriction": {
+      "condition": "재미있는 제안을 관계의 동의 없이 실행할 때",
+      "sourceIntentionCandidate": "함께할 의미를 확인하는 질문",
+      "targetMayMisreadSource": "활동을 제한하는 잔소리로 읽힐 가능성",
+      "targetIntentionCandidate": "활력을 나누는 빠른 제안",
+      "sourceMayMisreadTarget": "관계 점검을 피하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "참여자의 실제 선택을 들었는가?",
+      "targetQuestion": "활동 뒤 남을 책임을 정했는가?",
+      "jointAgreement": "활동의 동의·비용·정리를 같이 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ENFJ:ESFP",
+    "originalResearchHash": "3167014a72902af330f7ce7884530b5a6422018493643473f481bd059080f0c7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "c3c084a61cf0db4f8bc28a33d2a0758364f367113f8d2f8cc27eb45588e53a43",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a737c3f5c3f7451c777fd841c0a3b4471c4a5bfdae8823a3b303423dd42b6c8d",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENFJ가 가족의 방향과 의미를 세우고 ESFP가 생활의 즐거움을 만든다. 역할이 존중되면 따뜻하지만, ENFJ가 보호자처럼 굴면 ESFP의 자유가 줄어든다.",
+    "sourceFriction": {
+      "condition": "한쪽이 관계의 방향을 정하고 다른 쪽은 계속 기쁘게 할 때",
+      "sourceIntentionCandidate": "함께 성장하려는 조언",
+      "targetMayMisreadSource": "삶을 관리하는 평가로 읽힐 가능성",
+      "targetIntentionCandidate": "즐거움을 나누는 표현",
+      "sourceMayMisreadTarget": "진지한 문제를 피하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 원한 변화인가?",
+      "targetQuestion": "원하는 관계 방향도 말했는가?",
+      "jointAgreement": "목표와 오늘 원하는 경험을 따로 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ENFP:INTJ",
+    "originalResearchHash": "105db13ca27ec85d875079387a77dafaacd2d3b22e7c6e3f48c3c327c7ed4d8f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "a2a51af3de246694cf24d12ab55d50c2738f7dc483b274213800f2aa9410bf0c",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "ffaaee04cec941d7ece6b3228430b748eb9010baa609b49ce8de51b93d5bc6ef",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ENFP는 삶의 변화와 관계의 활력을 원하고, INTJ는 장기 목표와 시스템을 먼저 세우려 한다. 이 조합은 미래 설계에 강하지만, 일상 감정 표현과 즉흥 지출, 개인 시간의 기준을 명확히 정하지 않으면 한쪽은 갇히고 한쪽은 흔들린다고 느낀다.",
+    "sourceFriction": {
+      "condition": "새 제안을 즉시 약속으로 받거나 미리 정한 계획만 허용할 때",
+      "sourceIntentionCandidate": "관심이 생긴 가능성을 나누는 말",
+      "targetMayMisreadSource": "이미 맡은 일을 바꾸겠다는 통보로 읽힐 가능성",
+      "targetIntentionCandidate": "실행 범위와 일정을 고정하려는 제안",
+      "sourceMayMisreadTarget": "탐색 자체를 부정하는 규제처럼 들릴 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "확정된 일과 떠오른 가능성을 구분했는가?",
+      "targetQuestion": "이 말이 아이디어인지 변경 요청인지 물었는가?",
+      "jointAgreement": "고정할 핵심 하나와 시험할 여백 하나를 함께 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ENFP:INTP",
+    "originalResearchHash": "8216801e8bdf64ebd97755da3d4f00c6fbe3988be37fd08d0f3f09a39a3f9a51",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "5909ece18bf69864110a319d4a897eeba48ff660edd782b5610a95b83356d540",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "18771e01e1b906c47aef415b5cd932fd43cadca8802ba0c5a0b6bf3b49ba4ed0",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 자유로운 분위기는 강하지만 생활 관리가 약해질 수 있다. 결혼하면 일정, 돈, 집안일 같은 현실 항목을 자동으로 흘려보내지 말고, 둘 다 받아들일 수 있는 최소 규칙을 만들어야 안정된다.",
+    "sourceFriction": {
+      "condition": "기쁜 제안을 즉시 반박하거나 검토 중에 주제를 계속 바꿀 때",
+      "sourceIntentionCandidate": "흥미를 함께 나누려는 이야기 전환",
+      "targetMayMisreadSource": "집중을 방해하는 산만함으로 읽힐 가능성",
+      "targetIntentionCandidate": "가능성을 더 정확히 보려는 질문",
+      "sourceMayMisreadTarget": "기쁨을 꺾는 흠잡기로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 붙잡고 있는 질문을 들었는가?",
+      "targetQuestion": "지금은 함께 기뻐할 때인지 물었는가?",
+      "jointAgreement": "반응을 나누는 시간과 검토할 시간을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ENFP:ENTJ",
+    "originalResearchHash": "c2513096cd24859d92fd03a9d565e1ee87833c19dbe7ec41eed9f971af13c9e7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "94f9250fd98f376df0958a393bf114955259c6050d50eb38e55b46d5e7d35b82",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "4549ae103aec96930eb9a754cf424fd05c556373a65bbda2c622d5cd6d04bcab",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ENTJ는 자산, 목표, 역할 분담을 빠르게 정하려 하고 ENFP는 생활의 즐거움과 관계의 생동감을 유지하고 싶어 한다. 이 조합은 같이 성장하기 좋지만, 효율 중심의 운영이 과해지면 ENFP가 정서적으로 마르고, 자유 중심이 과해지면 ENTJ가 불안해진다.",
+    "sourceFriction": {
+      "condition": "확정 전 제안을 성과 약속으로 취급할 때",
+      "sourceIntentionCandidate": "새 맥락을 나누려는 이야기",
+      "targetMayMisreadSource": "이미 맡은 책임을 바꾸는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "목표를 달성하게 도우려는 구체화",
+      "sourceMayMisreadTarget": "자유로운 탐색을 관리하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "확정한 일에 미칠 영향을 알렸는가?",
+      "targetQuestion": "제안인지 약속인지 확인했는가?",
+      "jointAgreement": "아이디어 목록과 실제 약속을 분리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ENFP:ENTP",
+    "originalResearchHash": "82a05c3b15a79d3fc5c1d34e9dd002679594c684e7386072210e44201ff61fc4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "4ac2c0221a57999eb9fbd09fba4ba20571f9801c803767f14ac9d3ac45e8510a",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "a3f43e6b0115a3c66cef254bf2ea68dc36cb096eced85dfc814f8aa023e04dcc",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 재미와 변화는 강하지만 루틴과 책임 관리가 약해질 수 있다. 결혼하면 돈, 일정, 집안일을 즉흥에 맡기지 말고 최소한의 운영 체계를 만들어야 관계가 아이디어만 많고 안정감은 부족한 상태로 흐르지 않는다.",
+    "sourceFriction": {
+      "condition": "기쁜 이야기를 곧바로 반론으로 받을 때",
+      "sourceIntentionCandidate": "흥미를 넓히는 이야기",
+      "targetMayMisreadSource": "결론을 피하는 전환으로 읽힐 가능성",
+      "targetIntentionCandidate": "가설을 다듬는 반박",
+      "sourceMayMisreadTarget": "함께 기뻐하지 않는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "무엇을 함께 결정할지 골랐는가?",
+      "targetQuestion": "지금 검토를 원하는가?",
+      "jointAgreement": "기쁨 공유 뒤 검토 동의를 받음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ENFP:INFJ",
+    "originalResearchHash": "847eb4663df6f389ccec8201fb62b2bb6e26f0c460fb014111cbd2638c488b64",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "213d96b3a70731884e8097152689d742f016c829271371e640be339ae4b8f5b6",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "7eff45c613cbea02e8e00641ff5ea8884a09a964a05a04bb74501092b75a78f0",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENFP가 가정에 재미와 창의성을 주고, INFJ가 구조와 조직을 제공해 균형 잡힌 가정 환경을 만들 수 있다. 역할이 존중되면 풍부하지만, 한쪽이 상대의 방식을 교정하려 하면 긴장이 생긴다.",
+    "sourceFriction": {
+      "condition": "새 만남·활동 제안이 검토 시간 없이 이어질 때",
+      "sourceIntentionCandidate": "즐거움을 나누는 즉각 제안",
+      "targetMayMisreadSource": "마음을 정리할 틈이 없는 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "의미를 숙고하는 유보",
+      "sourceMayMisreadTarget": "흥미를 잃었다는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 선택할 활동량을 물었는가?",
+      "targetQuestion": "생각 뒤 답할 때를 알렸는가?",
+      "jointAgreement": "확정할 한 가지와 열어둘 후보를 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ENFP:INFP",
+    "originalResearchHash": "3564978c928a7a46bf027004bc9877914680176457e52eaeda45bc5f22c3fb73",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "077d3093a2a4c276dc923b882c473ce3f976f7533af9d2cdb8f77ba728910da0",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "7fb41219fa290787bd6b05dec7cccc5f70bb59cb2759009a6b2f7237c67f9562",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 서로의 내적 가치와 개성을 존중하기 쉽다. 하지만 생활 운영, 돈 관리, 마감, 정리 같은 반복 과제를 방치하면 둘 다 좋은 마음은 있어도 현실 피로가 쌓인다.",
+    "sourceFriction": {
+      "condition": "이야기 공개나 모임 참여가 빠르게 확장될 때",
+      "sourceIntentionCandidate": "즐거움을 넓히는 공유",
+      "targetMayMisreadSource": "개인 이야기를 공개하는 부담으로 읽힐 가능성",
+      "targetIntentionCandidate": "사적 의미를 지키는 유보",
+      "sourceMayMisreadTarget": "기쁨을 함께하지 않는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "공개 범위를 먼저 물었는가?",
+      "targetQuestion": "어디까지 공유 가능한지 말했는가?",
+      "jointAgreement": "개인 이야기와 공동 이야기를 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ENFP:ENFJ",
+    "originalResearchHash": "7eb794ca82010688d9c8c5e831c3a0cbfb57e99c7d35609977cc91a4ca06e725",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0576c11bc8317f57dc652e6958144b909f0e60352426558ae519ffa1cbc773a9",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "be8b68a042df1e6b4f1c1c3767f383dc36f4513a8bdeddce603499a787439f60",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ENFJ는 가족과 사회적 관계까지 조화롭게 운영하려 하고 ENFP는 가정 안에서도 변화와 여지를 원한다. 이 조합은 따뜻한 분위기를 잘 만들지만, 외부 사람과 일정이 많아질수록 둘 다 소진될 수 있어 부부만의 회복 시간이 필요하다.",
+    "sourceFriction": {
+      "condition": "관심 표현이 곧 장기 약속으로 취급될 때",
+      "sourceIntentionCandidate": "흥미로운 가능성을 나누는 말",
+      "targetMayMisreadSource": "확정을 피하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "관계의 다음 방향을 확인하는 질문",
+      "sourceMayMisreadTarget": "자유로운 탐색을 묶는 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "맡은 일과 새 흥미를 나눴는가?",
+      "targetQuestion": "제안과 약속을 구분했는가?",
+      "jointAgreement": "확정한 약속과 후보 활동을 따로 적음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ENFP:ENFP",
+    "originalResearchHash": "796e1fe2b4aa051acaea05b4ca73a598c4dc1cd3a32f903fe03ca68aa8ca35fd",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "3c2e244412063515b9a5cefbb86985223cb90ddc80d30ae1c80fe09e30244a2d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "3c2e244412063515b9a5cefbb86985223cb90ddc80d30ae1c80fe09e30244a2d",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 즐겁고 창의적인 가정 분위기를 만들 수 있지만, 재정·정리·반복 루틴을 누가 맡을지 명확하지 않으면 생활 기반이 흔들린다. 자유 시간과 돈 사용 방식은 느슨하게라도 합의해야 안정감이 생긴다.",
+    "sourceFriction": {
+      "condition": "둘 다 즐겁게 동의했지만 담당이 없을 때",
+      "sourceIntentionCandidate": "흥미를 나누는 빠른 제안",
+      "targetMayMisreadSource": "이미 확정된 약속으로 읽힐 가능성",
+      "targetIntentionCandidate": "새 맥락을 추가하는 이야기",
+      "sourceMayMisreadTarget": "앞선 약속을 잊은 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "제안 중 무엇을 실제로 할 것인가?",
+      "targetQuestion": "맡은 일을 분명히 알렸는가?",
+      "jointAgreement": "하나의 확정 약속과 남은 후보를 분리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ENFP:ISTJ",
+    "originalResearchHash": "43440412a6f25e8798eeb8fb021e714492328c7d2da0eaaea736286100228e0a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "733b5e81b47d5cfdf6670a3c315dce43d34fd24376cdb71847aa5651de2d5c46",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "c7ad74a304f3a8f92d951a040b763ad9d37b6f41614a40c80f08db70c77fc097",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ISTJ는 재정, 일정, 가족 의무를 안정적으로 운영하려 하고 ENFP는 집 안의 분위기와 삶의 변화 가능성을 살리고 싶어 한다. 이 조합은 생활 기반을 만들기 좋지만, 지출과 즉흥 약속, 개인 시간의 기준을 정하지 않으면 반복 갈등이 생긴다.",
+    "sourceFriction": {
+      "condition": "확정 일정을 즉흥 변경하거나 제안을 무조건 닫을 때",
+      "sourceIntentionCandidate": "새 경험을 나누는 변경 제안",
+      "targetMayMisreadSource": "신뢰를 가볍게 보는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "약속을 지키려는 재확인",
+      "sourceMayMisreadTarget": "자유를 묶는 통제로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "변경이 줄 부담을 알렸는가?",
+      "targetQuestion": "예외를 허용할 조건을 말했는가?",
+      "jointAgreement": "고정 약속과 유연한 구간을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ENFP:ISFJ",
+    "originalResearchHash": "a69a3f47df7ea37dbd039592fe310934d2c85d8a1732e7032d50f38c294129cb",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "9fde4dc476eadb193156caab28eecbb696582532c6e4c42b57cabc32d3f54efe",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "64ce6132ad4229ce42b798f60e9e19dad9ca345610ac6fb4be79ecdeb9803885",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ISFJ는 가족과 생활 루틴을 안정적으로 돌보려 하고 ENFP는 관계 안에서도 변화와 재미를 원한다. 돈과 가족 행사에서는 ISFJ가 안정 기준을, ENFP가 유연성을 주장하기 쉬우므로 서로의 기준을 미리 문장으로 합의해야 한다.",
+    "sourceFriction": {
+      "condition": "제안이 잦아지며 기존 준비가 반복 취소될 때",
+      "sourceIntentionCandidate": "즐거움을 더하려는 새 제안",
+      "targetMayMisreadSource": "수고를 가볍게 보는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "안정을 지키려는 확인",
+      "sourceMayMisreadTarget": "변화를 막는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "변경 뒤 준비도 맡았는가?",
+      "targetQuestion": "지금 부담을 직접 말했는가?",
+      "jointAgreement": "새 활동은 하나씩 선택하고 준비 책임을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ENFP:ESTJ",
+    "originalResearchHash": "3df4295cfec260c27b87ab9eb2a571d59000e3a86d244655cdf157e64d4b4b0e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "4f7b95ac7142612629b107ea6252379dbcac8b1266ecdd97f5ddcfeb3c006738",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "5448ad65b07e5a98547606e80723e562d29114d39ddbb11485730fe7b234511a",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ESTJ는 돈, 역할, 일정, 가족 의무를 체계적으로 운영하려 하고 ENFP는 집 안의 정서적 활력과 자유로운 선택권을 원한다. 생활력은 강하지만, ESTJ가 모든 기준을 정하고 ENFP가 따라가는 구조가 되면 애정이 관리로 느껴질 수 있다.",
+    "sourceFriction": {
+      "condition": "새 제안을 즉시 약속으로 받거나 기준을 모두 통제로 볼 때",
+      "sourceIntentionCandidate": "가능성을 열려는 이야기",
+      "targetMayMisreadSource": "확정 책임을 회피하는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "진척을 확보하는 기준 제시",
+      "sourceMayMisreadTarget": "자유를 막는 지시로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "맡을 범위를 선택했는가?",
+      "targetQuestion": "방법 재량을 남겼는가?",
+      "jointAgreement": "결과 기준과 탐색 시간을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ENFP:ESFJ",
+    "originalResearchHash": "b412015a754a8cad6e9d271cfce8bc4d69ac47a940821f2996f593c8a123105a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "2932dd55664844a8db89011adadac0e9c2a5bd5336156933d76d49c8e23ae9d3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "0755211201906428d46d74f59d48941e0fec1feb1871957b51f56a0be16f688f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ESFJ가 일상과 관계 의식을 챙기고 ENFP가 가정에 재미와 창의성을 더한다. 서로의 역할을 존중하면 따뜻하지만, ESFJ가 관리자가 되고 ENFP가 자유를 잃었다고 느끼면 긴장이 생긴다.",
+    "sourceFriction": {
+      "condition": "초대·약속이 계속 늘고 정리는 한쪽에 남을 때",
+      "sourceIntentionCandidate": "연결을 넓히는 제안",
+      "targetMayMisreadSource": "기존 관계를 소홀히 하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "일정을 안정시키는 확인",
+      "sourceMayMisreadTarget": "사교를 관리하는 압박으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "약속을 감당할 수 있는가?",
+      "targetQuestion": "거절할 여백을 주었는가?",
+      "jointAgreement": "새 초대 전 기존 담당과 쉬는 날 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ENFP:ISTP",
+    "originalResearchHash": "d21d1c4df9aa5f5919511a39cf22e9748561e933b16e3b97c3ef062391cec47d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "b558d263fdda1a02b750a078f69b4dc675903e81b33cc0e109cbf372e4aa3cdc",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "68c36ed3e74b5f1959d7d33149e30707ec140b2209996136434ae79d847dca44",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ENFP는 대화와 정서적 연결을, ISTP는 개인 시간과 실용적인 생활 방식을 중시한다. 이 조합은 서로의 자유를 존중하면 편해질 수 있지만, 감정 대화와 생활 책임을 명확히 정하지 않으면 한쪽은 외롭고 한쪽은 간섭받는다고 느낀다.",
+    "sourceFriction": {
+      "condition": "반응을 계속 요구하거나 짧은 답을 무관심으로 볼 때",
+      "sourceIntentionCandidate": "관심을 나누는 연속 질문",
+      "targetMayMisreadSource": "집중을 방해하는 간섭으로 읽힐 가능성",
+      "targetIntentionCandidate": "필요한 만큼만 답하는 반응",
+      "sourceMayMisreadTarget": "함께할 마음이 없다는 뜻으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "대화할 여유를 먼저 물었는가?",
+      "targetQuestion": "가능한 응답 시점을 전했는가?",
+      "jointAgreement": "짧은 확인 뒤 긴 대화는 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ENFP:ISFP",
+    "originalResearchHash": "7fa9fc0c9398cc335f7945d47fbcd1cafe37449d09055aa160891e72104b5f0c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "820c9da4b5b22145bbf1eb5157c2ca93a3e1bc34883543ccf1e722fb4dc38b39",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "27913c4d50577fe1720995f273dad675c42fc2d4e6074f2018d41b8165e5b41e",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ENFP는 관계 안의 대화와 변화 가능성을 원하고 ISFP는 편안한 생활감과 개인 시간을 중요하게 본다. 돈과 집안일에서는 둘 다 강하게 통제하고 싶어 하지는 않지만, 정리와 결정이 늦어지면 현실 부담이 쌓인다.",
+    "sourceFriction": {
+      "condition": "말이 빠르게 늘며 답할 틈이 사라질 때",
+      "sourceIntentionCandidate": "함께 흥미를 나누는 이야기",
+      "targetMayMisreadSource": "선택을 재촉하는 압박으로 읽힐 가능성",
+      "targetIntentionCandidate": "느낌을 정리하는 침묵",
+      "sourceMayMisreadTarget": "관심이 적은 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "답할 틈을 남겼는가?",
+      "targetQuestion": "지금 생각할 시간이 필요하다고 말했는가?",
+      "jointAgreement": "후보는 적어두고 선택은 나중에 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ENFP:ESTP",
+    "originalResearchHash": "c8b2b6b38f2e16e71fa3dc89a9c11c70370e95f464a3f7f26fe04ff695be3ae7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "3e221b5e2a3571d5859adf7b9bb078db050833ad9c77c1c2173d6fa58bd16784",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "a98598fa4e1d56416b1bfb4dcbd68d746bb449c8bc3b2d51006a70bb2251ffd7",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 둘 다 활동적인 생활을 만들 수 있지만, 돈과 일정이 즉흥적으로 흐르기 쉽다. ENFP는 관계의 의미와 변화 가능성을, ESTP는 지금의 효율과 즐거움을 중시하므로 장기 계획과 감정 대화를 따로 정례화해야 한다.",
+    "sourceFriction": {
+      "condition": "농담·행동이 마음 확인을 대신할 때",
+      "sourceIntentionCandidate": "경험의 의미를 나누는 이야기",
+      "targetMayMisreadSource": "지금 할 일을 흐리는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "상황을 가볍게 하는 직설 유머",
+      "sourceMayMisreadTarget": "마음을 가볍게 여기는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원하는 반응을 말했는가?",
+      "targetQuestion": "상대가 농담을 원했는가?",
+      "jointAgreement": "활동 전 동의와 활동 후 부담을 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENFP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENFP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ENFP:ESFP",
+    "originalResearchHash": "d6265da666656d5f080845503dc5ca8bfc7d69bad4743a24a836d9bb0ef6558f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "6f7e1ed0caab2799cc7653945331bc4554c2a1f90a35e9afece8fef0d34b5df9",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "54b9dbe17f4059f335a5eea2d06efc96f09cc866591488f27301381f72e3c14a",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 집 안의 분위기는 밝지만 장기 계획과 돈 관리가 느슨해질 수 있다. ENFP는 변화와 가능성을, ESFP는 감각적 만족과 현재의 즐거움을 원하므로 예산, 휴식, 외부 활동의 기준을 함께 정해야 한다.",
+    "sourceFriction": {
+      "condition": "계속 새 제안을 하며 이미 한 약속을 확인하지 않을 때",
+      "sourceIntentionCandidate": "다른 가능성을 나누는 전환",
+      "targetMayMisreadSource": "지금 경험에 몰입하지 않는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "현재 재미를 표현하는 말",
+      "sourceMayMisreadTarget": "큰 방향을 보지 않는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 경험을 먼저 들었는가?",
+      "targetQuestion": "앞선 약속도 확인했는가?",
+      "jointAgreement": "오늘의 선택과 남길 후보를 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ENTJ:INTJ",
+    "originalResearchHash": "98849e3147db7a2dd811422124b70af334412e8a5a4221c1b2e8cf6fd5e122eb",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "22026d31f55ff9e0ece96117745371224a453b5227aae8e8113def4d149841a3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "7c239b12335a21d8e078cd866698abd0d4e57e61725c4ee6279c1e45163f442f",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 전략과 성취 면에서 강하지만, 생활의 온기와 휴식은 의식적으로 챙겨야 한다. ENTJ가 외부 실행을 밀고 INTJ가 내부 계획을 다듬는 조합이 되지만, 최종 목표가 다르면 장기적인 힘겨루기가 된다.",
+    "sourceFriction": {
+      "condition": "서로 상대 검토 없이 자기 안을 실행할 때",
+      "sourceIntentionCandidate": "늦기 전에 행동을 시작하려는 결정",
+      "targetMayMisreadSource": "검토자를 배제한 지시로 읽힐 가능성",
+      "targetIntentionCandidate": "안의 모순을 먼저 막으려는 질문",
+      "sourceMayMisreadTarget": "실행을 막거나 주도권을 빼앗는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "반대 의견을 들을 시점을 남겼는가?",
+      "targetQuestion": "지금 지적이 어떤 선택을 돕는가?",
+      "jointAgreement": "결정 범위와 재검토 조건을 공동 문서로 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ENTJ:INTP",
+    "originalResearchHash": "6f5a80b445d95437f125d4f4d273144e6feec175d6ea31f0f1e3492b15abb738",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "307a3404c5ba218a109e2919131a1341494c5b35cfbbfc6d36bb9c3f314a9aa2",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "697c391f5775aada8a532f208b2785773d7a885974380223b84e5ef56f7a78c6",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 리듬과 사회적 태도에서 차이가 크다. ENTJ는 외부 목표와 지위를 움직이고 싶어 하고, INTP는 생각의 자유와 분석 시간을 원한다. 사회적 장면에서 경쟁과 오해가 생기기 쉽다.",
+    "sourceFriction": {
+      "condition": "회의 중 즉답을 재촉하거나 결정 뒤 질문을 계속 추가할 때",
+      "sourceIntentionCandidate": "기회를 놓치지 않으려는 결정",
+      "targetMayMisreadSource": "생각할 권리를 빼앗는 지시로 읽힐 가능성",
+      "targetIntentionCandidate": "납득할 전제를 확인하는 질문",
+      "sourceMayMisreadTarget": "진행을 방해하는 반대로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "검토할 자료를 미리 주었는가?",
+      "targetQuestion": "결정에 영향을 주는 질문인지 밝혔는가?",
+      "jointAgreement": "사전 검토와 현장 결정을 구분하고 유보 사항 표시",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ENTJ:ENTJ",
+    "originalResearchHash": "4966d9eee6cb57258a804515843ec49f90cec9e1b4072aa5a504ff4b6b5ee256",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "7e0830092b5f9a7d76e0d3e284127838c0683b3055a4556fa6242901a6845475",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "7e0830092b5f9a7d76e0d3e284127838c0683b3055a4556fa6242901a6845475",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 커리어, 자산, 자녀 교육, 가족 운영을 장기 프로젝트처럼 강하게 밀고 갈 수 있다. 그러나 집이 성과 관리의 공간처럼 변하면 쉬어야 할 자리에서도 기준과 평가가 계속되어 정서적 회복이 어려워진다. 공동 목표는 강점이지만 사적인 온기와 휴식도 별도로 설계해야 한다.",
+    "sourceFriction": {
+      "condition": "둘 다 자기 결정이 공동 결정이라 전제할 때",
+      "sourceIntentionCandidate": "기회를 놓치지 않으려는 제안",
+      "targetMayMisreadSource": "내 권한을 대신 행사하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "비판을 통해 안을 개선하려는 말",
+      "sourceMayMisreadTarget": "계속 평가받는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "내 목표와 공동 목표를 나눴는가?",
+      "targetQuestion": "지금 피드백을 받아도 되는지 물었는가?",
+      "jointAgreement": "권한 범위와 이견 처리 순서를 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ENTJ:ENTP",
+    "originalResearchHash": "783a5b2ac85dbb7ea58af0537cd96a38c1f0ae01a497d3f0a2efd5edb9ecb62c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "084db856b56488a4c4f4bf7c5b39c9de57b8b1aab911de83be672b8a5c362300",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "d70ece2ef6d6e8bcb2b4ac4c348780692d14bfe3e89e7e5fb89ea5b6296fa406",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 문제 해결 방식의 차이가 크게 드러난다. ENTJ는 결정을 내리고 움직이려 하고 ENTP는 계속 다른 설명과 가능성을 열어 둔다. 같이 보낸 시간이 낭비였다는 감정이 쌓이면 관계가 후회 없이 깨질 수 있다.",
+    "sourceFriction": {
+      "condition": "결정 뒤에도 반론이 이어지거나 탐색 단계부터 결론을 강요할 때",
+      "sourceIntentionCandidate": "실행을 위해 선택을 마무리하는 정리",
+      "targetMayMisreadSource": "다른 생각을 막는 권위로 읽힐 가능성",
+      "targetIntentionCandidate": "숨은 가능성을 시험하는 반론",
+      "sourceMayMisreadTarget": "공동 결정을 흔드는 경쟁으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "탐색이 충분했는지 들었는가?",
+      "targetQuestion": "재논의가 필요한 새 근거가 있는가?",
+      "jointAgreement": "탐색 종료 조건과 재개 조건을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ENTJ:INFJ",
+    "originalResearchHash": "0962129ed61c6c998d6b49284409e49ba1bc850485b349fdb9863dc9852e432b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "5eb294b19d64bb416e282d099078bc0c975c117b03c20a172a23ca490c0a88a2",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "ff70dcf9818480fa94d6d39ab1d80c1a25c619312886773a66aa93c1ea929ebb",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENTJ가 외부 목표를 밀고 INFJ가 의미와 정서적 방향을 잡을 수 있다. 하지만 ENTJ의 감독적 태도가 반복되면 INFJ는 인정받기보다 평가받는다고 느껴 마음을 닫는다.",
+    "sourceFriction": {
+      "condition": "개선 제안이 요청 없이 반복될 때",
+      "sourceIntentionCandidate": "문제를 빨리 바꾸려는 피드백",
+      "targetMayMisreadSource": "삶의 방향을 교정하는 평가로 읽힐 가능성",
+      "targetIntentionCandidate": "상처를 줄이려는 완곡한 문제 제기",
+      "sourceMayMisreadTarget": "동의하면서 지연하는 태도로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "개선보다 듣기를 원하는지 확인했는가?",
+      "targetQuestion": "수정해 달라는 행동을 직접 밝혔는가?",
+      "jointAgreement": "가치 동의와 실행 동의를 따로 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ENTJ:INFP",
+    "originalResearchHash": "0c9343f0b2df30f8b26ef9d3d00decbc089b391816a7e7e6652963aefde2ae0b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "c6ec53d686f89609621aaedb6745519fb058cbb04dec17ac81457408d2a81d9a",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "bf6165c959305603b02dc6a38d5f2449a53f9f5ba0124431fa25acb24ee269d0",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 열정보다 안정 장치가 중요하다. ENTJ는 계획과 결정을 빠르게 내리려 하고 INFP는 의미와 감정의 준비 시간을 필요로 한다. 이 간격을 조율하지 않으면 강한 끌림만큼 갈등도 반복된다.",
+    "sourceFriction": {
+      "condition": "도움을 이유로 선택을 대신하거나 거절을 설명 없이 숨길 때",
+      "sourceIntentionCandidate": "실현 가능성을 높이려는 제안",
+      "targetMayMisreadSource": "자기 삶을 대신 정하는 압박으로 읽힐 가능성",
+      "targetIntentionCandidate": "내적 기준을 지키려는 유보",
+      "sourceMayMisreadTarget": "실행을 회피하는 비협조로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 원한 목표인지 먼저 물었는가?",
+      "targetQuestion": "가능한 대안과 불가능한 조건을 나눴는가?",
+      "jointAgreement": "거절권을 보존하고 동의한 작은 단계만 실행",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "cmpr:material:CH01.P1:decision-and-influence",
+      "cmpr:material:CH09.P4:recall-decision-with-two-voices"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ENTJ:ENFJ",
+    "originalResearchHash": "d8ca10b9b452eb7869cbba7d379f3d4ffbaf1937970cb8652cd4bddc175859a8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "68a9138b14138311b4e3de2ad634f23ddad73545c1143f71fc7f7063bf5a218b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "9c0d8b50db3e1899b5f343d73f358a8a21d2a003f88d6be7920bdfb4bad1fe0d",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 영향력과 리더십이 겹치므로 역할 분리가 중요하다. ENTJ가 성과를, ENFJ가 관계와 의미를 책임지는 균형이 생기면 강하지만, 둘 다 주도권을 놓지 않으면 권력 싸움이 된다.",
+    "sourceFriction": {
+      "condition": "서로의 조율 방식을 비효율 또는 냉정함으로 규정할 때",
+      "sourceIntentionCandidate": "문제를 명료하게 바로잡는 직설",
+      "targetMayMisreadSource": "사람을 성과로만 평가하는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "참여자의 마음을 확인하는 대화",
+      "sourceMayMisreadTarget": "결정을 늦추는 우회로로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "반대 의견이 나올 통로를 남겼는가?",
+      "targetQuestion": "조율 뒤 결정할 기준을 제시했는가?",
+      "jointAgreement": "결과 기준과 참여 조건을 함께 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_DISTINCT_SOCIONICS_TERM_FAMILIES_MAPPING_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ENTJ:ENFP",
+    "originalResearchHash": "989cb51397d9e20f0fd7f42edf6940a5d996784eb162d52d7c4649b5e125c21a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "4549ae103aec96930eb9a754cf424fd05c556373a65bbda2c622d5cd6d04bcab",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "94f9250fd98f376df0958a393bf114955259c6050d50eb38e55b46d5e7d35b82",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENTJ가 방향을 잡고 ENFP가 가능성과 인간적 분위기를 확장하는 구도가 된다. 그러나 비대칭이 심해지면 ENFP는 무시당한다고 느끼고, ENTJ는 ENFP를 산만하다고 평가한다.",
+    "sourceFriction": {
+      "condition": "확정 전 제안을 성과 약속으로 취급할 때",
+      "sourceIntentionCandidate": "목표를 달성하게 도우려는 구체화",
+      "targetMayMisreadSource": "자유로운 탐색을 관리하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "새 맥락을 나누려는 이야기",
+      "sourceMayMisreadTarget": "이미 맡은 책임을 바꾸는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "제안인지 약속인지 확인했는가?",
+      "targetQuestion": "확정한 일에 미칠 영향을 알렸는가?",
+      "jointAgreement": "아이디어 목록과 실제 약속을 분리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ENTJ:ISTJ",
+    "originalResearchHash": "6c85615d64cf2f85b8938995bcb07c3733d87d9526179bf9b0f65fe361e22b4a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "cd9fdf9c3842cb6fe14e176b15c7e7f73256460ad5bf26167776b78fd09fa0d9",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "bebe69a636f5ceb2354c8eff042951c880a5e32ada58c89d93167c4a7f0d22d6",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 실무와 책임은 강하지만, 누가 기준을 세우느냐가 핵심 갈등이 된다. ISTJ는 규칙과 검증을 원하고 ENTJ는 큰 방향과 지휘권을 원해 서로를 바꾸려는 시도가 반복된다.",
+    "sourceFriction": {
+      "condition": "속도를 이유로 기록을 건너뛰거나 전례만으로 새 안을 닫을 때",
+      "sourceIntentionCandidate": "장기 목표를 위해 바꾸려는 결정",
+      "targetMayMisreadSource": "책임질 과정을 무시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "실수를 막으려는 절차 확인",
+      "sourceMayMisreadTarget": "진행을 막는 보수성으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "변경 후 책임 구조까지 설명했는가?",
+      "targetQuestion": "전례의 적용 조건을 확인했는가?",
+      "jointAgreement": "유지할 절차와 변경 실험을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ENTJ:ISFJ",
+    "originalResearchHash": "4dd949cb83760bde04ba4b7f0dc9587d704a2896aedf0099853b567bd823b936",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "9fe81666223c3778f7a153813d346b7c647409936175b63624848f39ec767e6f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "9b50d1ad0ca37f4700d5545db6e257e3e9789c102861f6ebba60a6aec71af46c",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 안정과 목표 달성의 기준이 계속 충돌한다. ISFJ는 가족 루틴과 정서적 배려를 원하고 ENTJ는 성장과 성과를 원한다. 서로를 고치려는 시도가 반복되면 함께 있어도 평가받고 압박받는 감각이 커진다.",
+    "sourceFriction": {
+      "condition": "공개적인 직설과 말하지 않은 부담이 겹칠 때",
+      "sourceIntentionCandidate": "실수를 줄이려는 즉각 지적",
+      "targetMayMisreadSource": "수고 전체를 부정하는 평가로 읽힐 가능성",
+      "targetIntentionCandidate": "관계를 지키려는 조심스러운 답",
+      "sourceMayMisreadTarget": "문제가 없다는 동의로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "사람과 수정할 작업을 나눠 말했는가?",
+      "targetQuestion": "어려운 조건을 구체적으로 전했는가?",
+      "jointAgreement": "피드백은 동의한 자리에서 한 항목씩 다룸",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ENTJ:ESTJ",
+    "originalResearchHash": "8ff1b92be34375c280257ed1186fcec89d3d33228f7060e861b93834c2bdd960",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "61a29df4fd5c6687183b657b58ddc7347c3c03a43008a38890eaeb9579ef024b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "827d51cd4df1c45ea442b0d795e00e9adbe9914c49decbb6b50855b4d8e6f903",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 책임과 실무는 강하지만, 위계와 결정권이 걸리면 갈등이 무거워진다. 둘 다 자기 방식이 현실적이라고 믿기 때문에 타협이 늦고, 가족 관계에서는 서로의 고유한 의미를 인정하지 못할 수 있다.",
+    "sourceFriction": {
+      "condition": "각자의 기준을 상대의 방식에 일방 적용할 때",
+      "sourceIntentionCandidate": "성과를 위해 구조를 바꾸는 제안",
+      "targetMayMisreadSource": "쓸 수 있는 절차를 무시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "누락을 막는 세부 기준 요구",
+      "sourceMayMisreadTarget": "형식에 갇힌 통제로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "없앨 과정의 역할을 대체했는가?",
+      "targetQuestion": "형식보다 필요한 결과를 설명했는가?",
+      "jointAgreement": "결과는 공유하고 과정은 비교 시험",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ENTJ:ESFJ",
+    "originalResearchHash": "20fde4fed2956a9e69aa4d064cba6346f645b875fe281cc5fa0ab7db8beb0f7c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "78af09919ea691979f428aeb1494e0f51e4e735bdbe903be3cf4c9f7e25f39b9",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ff04d90e9171d15fde7f4c7093e4f75e03d1eff22185bd51285553febdd8cb02",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENTJ가 방향과 성취를 잡고 ESFJ가 가족과 관계의 온도를 챙기려 한다. 하지만 상대의 관심을 충분히 받지 못한다고 느끼면 외향형끼리 주도권과 친밀감 요구가 충돌한다.",
+    "sourceFriction": {
+      "condition": "사소한 안부를 불필요로 보거나 결과 압박을 마음 부족으로 볼 때",
+      "sourceIntentionCandidate": "명확한 선택을 돕는 짧은 지적",
+      "targetMayMisreadSource": "존중을 거두는 차가움으로 읽힐 가능성",
+      "targetIntentionCandidate": "협력 의사를 확인하는 격려",
+      "sourceMayMisreadTarget": "문제를 덮는 형식적 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "실제 수고를 인정한 뒤 바꿀 점을 말했는가?",
+      "targetQuestion": "격려와 수정 요청을 구분했는가?",
+      "jointAgreement": "감사와 작업 수정은 각각 구체적으로 전함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ENTJ:ISTP",
+    "originalResearchHash": "f7f75f06db126863b5f88d64d2f5c59c5ddfda94cbfde780ac9249c7bff9365f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "c8c4d88e10daa17919dd5a6ce781bbdbfcd32ee0ae2b9f209794e25141733eaf",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "fccd4661be4d755acf8a808bffb5aee38fc0a04abb5d735daf6e80b71f986bfb",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 함께 일하는 영역과 따로 움직이는 영역을 분리해야 한다. 같은 프로젝트를 계속 같이 밀면 동기 이해 부족이 반복되고, 서로의 능력을 신뢰하지 못하는 상황이 생긴다.",
+    "sourceFriction": {
+      "condition": "결과 책임에 더해 세부 방법까지 수시 지시할 때",
+      "sourceIntentionCandidate": "진척을 확보하려는 확인",
+      "targetMayMisreadSource": "작업 방식을 통제하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "필요한 수정에 집중하는 간단한 응답",
+      "sourceMayMisreadTarget": "협업을 거부하는 무응답으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "확인 주기를 미리 정했는가?",
+      "targetQuestion": "진척과 막힌 점을 짧게 남겼는가?",
+      "jointAgreement": "목표·점검 시점은 공유하고 방법 재량은 보존",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ENTJ:ISFP",
+    "originalResearchHash": "0ad4fbf10d1a12eb150034fb9f44c784ec6757a138a44a4c1caa30673f2c886e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "d2031b2e2cfccfbb3db01d62bfcc22a7d1bed2ba60b543522cab1aa5da9efeab",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "1a8c474419444785584183b977d70a7902b3bc4f8644a651cb9ff90b8f001f1c",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENTJ가 목표와 자원, 방향을 잡고 ISFP가 생활의 균형과 관계의 적절한 거리를 조정하는 구도가 된다. 성공하면 강한 보완이지만, ENTJ가 가정의 편안함과 감정적 리듬을 무시하면 ISFP는 마음을 닫고 관계 거리를 크게 둔다.",
+    "sourceFriction": {
+      "condition": "허락 없이 고치거나 침묵을 승인으로 취급할 때",
+      "sourceIntentionCandidate": "더 나은 결과를 위한 조언",
+      "targetMayMisreadSource": "자기 취향을 낮추는 평가로 읽힐 가능성",
+      "targetIntentionCandidate": "답을 정리할 시간을 갖는 침묵",
+      "sourceMayMisreadTarget": "책임을 회피하는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "조언을 요청받았는가?",
+      "targetQuestion": "지금은 답하기 어렵다고 알릴 수 있는가?",
+      "jointAgreement": "수정 제안은 동의받고 답변 기한도 함께 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ENTJ:ESTP",
+    "originalResearchHash": "c48b8e9c236639c534e9a6d14d5e2ec3d42797ce1fe1662399b18df690a0d182",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "6c2c1da2f53156d2ec9ee3cc8c64f7ec3a22ca8f44568df75cc12c64c5c6862f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "c5d1960bec1560f57a291e7cf461094a7e73de94a3be7fc529b5821d837419c4",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENTJ가 전략과 장기 계획을 세우고 ESTP가 현장 실행과 즉각 대응을 맡으면 강하다. 다만 의사결정권과 자유도의 기준을 정하지 않으면 한쪽은 통제하려 하고 한쪽은 빠져나가려 하면서 생활 운영이 거칠어진다.",
+    "sourceFriction": {
+      "condition": "계획 밖 행동을 무조건 금지하거나 공동 책임을 알리지 않고 움직일 때",
+      "sourceIntentionCandidate": "목표와 자원을 지키려는 조정",
+      "targetMayMisreadSource": "현장 재량을 빼앗는 통제로 읽힐 가능성",
+      "targetIntentionCandidate": "현재 기회를 확인하려는 시도",
+      "sourceMayMisreadTarget": "장기 부담을 떠넘기는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "현장에서 바꿔도 되는 범위를 남겼는가?",
+      "targetQuestion": "수정 결과를 누구에게 공유할지 알렸는가?",
+      "jointAgreement": "재량 범위와 중단 기준을 먼저 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ENTJ:ESFP",
+    "originalResearchHash": "e838b480c517309bf57ccf24e778dec620724b57885fdbab3cddca84ee1c7266",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "f7ef893ce212d6056ba2a2a3180eb44e9a0b4a364746fa0bea4a8b96783fa820",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "a90068036aa92801ca6411a235be87a72a46489ca693e976f351cbab10126ec1",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 활동과 목표가 많아 생활이 역동적이지만, 매일 붙어 있으면 자극이 과해진다. ENTJ는 계획과 기준을 원하고 ESFP는 즉흥과 즐거움을 원하므로 각자 회복 시간과 역할 분리가 필요하다.",
+    "sourceFriction": {
+      "condition": "휴식까지 개선 목표로 삼거나 즉흥 제안을 약속으로 만들 때",
+      "sourceIntentionCandidate": "공동 시간을 효율적으로 쓰려는 계획",
+      "targetMayMisreadSource": "즐거움까지 관리하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "함께하는 활력을 더하려는 초대",
+      "sourceMayMisreadTarget": "확정 일정의 책임을 무시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 선택할 여백을 남겼는가?",
+      "targetQuestion": "초대를 거절할 수 있게 물었는가?",
+      "jointAgreement": "고정할 약속과 선택 활동을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ENTP:INTJ",
+    "originalResearchHash": "a2bca702fe8d529eb7f6d99cf824dcb263c210af0d0d45af7d9f04b84603b3ec",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "22e2efbb02e16bcc44fbe380e2600265d6d4d84c32d686140c5cd9db9cd1b04e",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "b917e453a20d63c6d3bbb4979ecbddda440c441eb00ac7af089f5c1cebea7ad5",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 개인 공간을 존중하는 장점이 있지만, 생활 방식과 의사결정 기준을 깊게 맞추는 데 어려움이 있다. 함께 일하거나 목표를 나눌 때는 서로의 강점이 보이지만, 감정적 친밀감은 의식적으로 만들어야 한다.",
+    "sourceFriction": {
+      "condition": "이미 끝낸 결론을 농담 섞인 반론으로 다시 열 때",
+      "sourceIntentionCandidate": "다른 전제를 시험하는 장난스러운 반론",
+      "targetMayMisreadSource": "진지한 약속을 가볍게 여기는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "선택한 방향을 책임 있게 유지하려는 정리",
+      "sourceMayMisreadTarget": "재미와 탐색을 막는 완고함으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 지금 토론에 동의했는가?",
+      "targetQuestion": "반박 자체와 약속 변경을 구분했는가?",
+      "jointAgreement": "생각 실험과 실제 변경 요청을 표시하고 변경은 별도 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ENTP:INTP",
+    "originalResearchHash": "745750a3c6bf10ca660b2118221ed0dbeae79f1ba5ad8cc686e86c400772f48f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "1602f8c1ccb9a7dcecee11c230adc2816aef6ca0b3b38f73f823c83389c262bb",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "c13cd91533ac746a418b3a7ee82936abcc3d888df682e72beda7a1409e40622d",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 자유로운 사고와 개인 공간을 서로 존중하기 쉽다. 그러나 생활 운영, 돈 관리, 마감, 집안 루틴을 누가 맡을지 명확하지 않으면 둘 다 미루는 구조가 된다.",
+    "sourceFriction": {
+      "condition": "계속 바뀌는 대화가 개인 검토를 끊거나 침묵을 무반응으로 볼 때",
+      "sourceIntentionCandidate": "생각을 이어가려는 새 반론",
+      "targetMayMisreadSource": "앞선 설명을 듣지 않은 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "논리를 완성하려는 잠깐의 침묵",
+      "sourceMayMisreadTarget": "흥미 없는 대화로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "새 주제 전에 앞선 생각을 마칠 틈을 주었는가?",
+      "targetQuestion": "검토 시간이 필요하다고 말했는가?",
+      "jointAgreement": "떠오른 생각은 기록하고 이번에 다룰 질문을 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ENTP:ENTJ",
+    "originalResearchHash": "df5c5b3b69288f784729cdc823eaf94f85b24c8b6a94574f07459d359ca79c2e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "d70ece2ef6d6e8bcb2b4ac4c348780692d14bfe3e89e7e5fb89ea5b6296fa406",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "084db856b56488a4c4f4bf7c5b39c9de57b8b1aab911de83be672b8a5c362300",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 의사결정 방식의 차이가 크게 드러난다. ENTJ는 목표와 체계를 요구하고, ENTP는 자유와 가능성 탐색을 요구한다. 공동 목표가 분명하면 강력하지만, 서로를 동등하게 인정하지 않으면 경쟁 관계가 된다.",
+    "sourceFriction": {
+      "condition": "결정 뒤에도 반론이 이어지거나 탐색 단계부터 결론을 강요할 때",
+      "sourceIntentionCandidate": "숨은 가능성을 시험하는 반론",
+      "targetMayMisreadSource": "공동 결정을 흔드는 경쟁으로 읽힐 가능성",
+      "targetIntentionCandidate": "실행을 위해 선택을 마무리하는 정리",
+      "sourceMayMisreadTarget": "다른 생각을 막는 권위로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "재논의가 필요한 새 근거가 있는가?",
+      "targetQuestion": "탐색이 충분했는지 들었는가?",
+      "jointAgreement": "탐색 종료 조건과 재개 조건을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ENTP:ENTP",
+    "originalResearchHash": "cdfadb0d98336de8ed62262c27735a8c7cc85ff33717e8704411bc2077308716",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "97236abdcd82b6b9c985caafc46486fc91bb849b764505cdfbd3ee86b85275cc",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "97236abdcd82b6b9c985caafc46486fc91bb849b764505cdfbd3ee86b85275cc",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 아이디어와 변화는 풍부하지만 루틴, 돈, 집안일, 가족 책임을 의식적으로 고정해야 한다. 둘 다 즉흥적으로 새 판을 벌이기 쉬워 생활의 기본 규칙을 만들지 않으면 재미는 있지만 안정은 약해진다.",
+    "sourceFriction": {
+      "condition": "둘 다 새 질문을 내지만 기존 약속을 확인하지 않을 때",
+      "sourceIntentionCandidate": "생각을 넓히는 농담",
+      "targetMayMisreadSource": "진지한 요청을 피하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "결론을 시험하는 반론",
+      "sourceMayMisreadTarget": "계속 우기려는 경쟁으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 장난에 서로 동의했는가?",
+      "targetQuestion": "이번에 끝낼 질문은 무엇인가?",
+      "jointAgreement": "보류 질문과 실행 약속을 다른 목록에 남김",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ENTP:INFJ",
+    "originalResearchHash": "8cfd466126756cb816b960f1e4e7e87904fed98e601403ca89db8a17ef9c72f7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "bb60b61c385a3f88801ccbe64b43db181694f1fdfd83920104659aff8ba2ed3b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "f98ecc5a611179b860643540f8584f3985b3688f69674d97bfbdbbc1c37411dc",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 INFJ가 관계의 의미와 방향을 묻고, ENTP는 현실적인 실험과 선택지를 넓힌다. 서로의 차이를 존중하면 비전과 실행이 결합되지만, 감정과 논리의 우선순위를 놓고 반복적으로 엇갈릴 수 있다.",
+    "sourceFriction": {
+      "condition": "개인 고민까지 반론 놀이로 다룰 때",
+      "sourceIntentionCandidate": "전제를 시험하는 비유",
+      "targetMayMisreadSource": "마음을 가볍게 여기는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "상처를 줄이려는 우회 요청",
+      "sourceMayMisreadTarget": "동의 없는 암시로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 반론을 원하는가?",
+      "targetQuestion": "원하는 수정 행동을 말했는가?",
+      "jointAgreement": "생각 실험과 개인 요청을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ENTP:INFP",
+    "originalResearchHash": "d734eef1c528c58794703f9ccb41e2de63f3eb7a2c3d24dd4a07d61c6251b697",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0c70470f086b3706d9621299777cf2baddd2f68547e5f8e290b6b547f1f151d9",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "b31d04ae7da482276c74c6cc25d6090556aa73b089718e09a7768990deb77243",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ENTP는 자유로운 변화와 실험을 원하고 INFP는 관계의 진정성과 정서적 안전을 원한다. 돈과 생활에서는 ENTP의 즉흥적 시도와 INFP의 감정적 선택이 겹칠 수 있어 현실 기준을 따로 잡아야 한다.",
+    "sourceFriction": {
+      "condition": "소중한 가치가 요청 없이 논쟁 대상이 될 때",
+      "sourceIntentionCandidate": "아이디어를 흔들어 보는 반론",
+      "targetMayMisreadSource": "자기 존재를 낮추는 공격으로 읽힐 가능성",
+      "targetIntentionCandidate": "가치의 선을 지키는 거절",
+      "sourceMayMisreadTarget": "토론 자체를 막는 통제로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "논쟁해도 되는 주제인가?",
+      "targetQuestion": "내게 불편한 행동을 특정했는가?",
+      "jointAgreement": "개인 경계는 승패 없이 존중",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ENTP:ENFJ",
+    "originalResearchHash": "5897880ada8784830c153bee4fd990244c12a4a4b051756c1cfbc05999455acf",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "982fd4e23e02ee80a316bfb2bac5ee5cde1469cdbd0e7f436795b7061cadee9f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "93e218aa8ae609187236a0f943dad345d65cab46e0d77e415acc384adc8ce503",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENFJ가 관계의 온도와 공동의 의미를 관리하고, ENTP는 변화와 새로운 선택지를 제공한다. ENTP가 ENFJ의 배려를 당연하게 여기거나 ENFJ가 ENTP의 자유를 관계 소홀로 해석하면 균형이 깨진다.",
+    "sourceFriction": {
+      "condition": "공개 반론에 누군가의 체면·선택권이 걸릴 때",
+      "sourceIntentionCandidate": "생각을 움직이는 장난",
+      "targetMayMisreadSource": "관계를 무시하는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "참여자의 마음을 돌보는 중재",
+      "sourceMayMisreadTarget": "의견을 막는 분위기 관리로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "반론의 장소와 동의를 골랐는가?",
+      "targetQuestion": "중재가 실제 이견을 지우지 않는가?",
+      "jointAgreement": "아이디어 평가와 당사자 존중을 따로 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ENTP:ENFP",
+    "originalResearchHash": "bb0d6dad775457913986aed41b2de4c6cd97b6a0a17d6507eb2f24d9e256afec",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "a3f43e6b0115a3c66cef254bf2ea68dc36cb096eced85dfc814f8aa023e04dcc",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "4ac2c0221a57999eb9fbd09fba4ba20571f9801c803767f14ac9d3ac45e8510a",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 재미와 변화는 강하지만 루틴과 책임 관리가 약해질 수 있다. 결혼하면 돈, 일정, 집안일을 즉흥에 맡기지 말고 최소한의 운영 체계를 만들어야 관계가 아이디어만 많고 안정감은 부족한 상태로 흐르지 않는다.",
+    "sourceFriction": {
+      "condition": "기쁜 이야기를 곧바로 반론으로 받을 때",
+      "sourceIntentionCandidate": "가설을 다듬는 반박",
+      "targetMayMisreadSource": "함께 기뻐하지 않는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "흥미를 넓히는 이야기",
+      "sourceMayMisreadTarget": "결론을 피하는 전환으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 검토를 원하는가?",
+      "targetQuestion": "무엇을 함께 결정할지 골랐는가?",
+      "jointAgreement": "기쁨 공유 뒤 검토 동의를 받음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ENTP:ISTJ",
+    "originalResearchHash": "4dff240871bcd3dcbd3083d218e62fa46e8b8e491517a0a8294cc85f91d997a8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "df6da54047e33b60a6ce9445aa8a2a783c40e9b658045c91e895132935f74b2f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "bb153f3c5ac0da22e342acf9f01cc9aca46bbdf73a135a8e62f7dadc1732ff8e",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 계획을 세울 때는 잘 맞는 듯 보이지만, 실제 실행 과정에서 역할과 기준이 어긋난다. ENTP는 변화와 대안을 열고 싶어 하고 ISTJ는 합의된 절차를 지키고 싶어 해 관계가 원점으로 돌아가는 느낌이 반복될 수 있다.",
+    "sourceFriction": {
+      "condition": "합의된 절차를 농담으로 무효화할 때",
+      "sourceIntentionCandidate": "다른 방법을 찾는 제안",
+      "targetMayMisreadSource": "약속을 가볍게 여기는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "누락을 막는 재확인",
+      "sourceMayMisreadTarget": "새 시도를 막는 고집으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "변경 비용을 설명했는가?",
+      "targetQuestion": "기존 방식의 이유를 전했는가?",
+      "jointAgreement": "변경 요청 시점과 검증 항목을 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "cmpr:material:CH04.P2:novelty-with-maintenance-owner"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ENTP:ISFJ",
+    "originalResearchHash": "e28af68eaf743c36df7ca7781c665a5a3fbbffcf74c003ab8130178f82c85fa0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "e9a4383e38b4eeb1eda3f28e53390f7601113934b649d1f1de647f32ed7d4714",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "65a331d9123350c3b46423f16e8560e601cec4de08b941dc1c29206bd0d33178",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENTP가 새 기회와 변화의 방향을 열고 ISFJ가 생활 루틴과 가족의 안정감을 지킨다. 역할이 존중되면 강한 보완 관계가 되지만, ENTP가 반복 책임을 가볍게 여기거나 ISFJ가 자유를 과하게 관리하려 하면 충돌한다.",
+    "sourceFriction": {
+      "condition": "잦은 변경 뒤 정리를 한쪽에게 맡길 때",
+      "sourceIntentionCandidate": "더 나은 가능성을 찾는 수정",
+      "targetMayMisreadSource": "수고를 무시하는 번복으로 읽힐 가능성",
+      "targetIntentionCandidate": "일정을 지키려는 확인",
+      "sourceMayMisreadTarget": "자유를 통제하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "변경 뒤 맡을 일을 정했는가?",
+      "targetQuestion": "도움의 한계를 전했는가?",
+      "jointAgreement": "변경안에는 담당과 영향도 같이 적음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ENTP:ESTJ",
+    "originalResearchHash": "1bd471c5ddb6ceede3e57549e43591e99b506cbf55e39d409c14422ccaf07c55",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "856952eb9f9bfe70d22887bfc467d99c2ab8f62271583c2488d181a2a4e7fa03",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "e474363d2e9bc6e9c3108db24865a11606ea6c004977c528b32d3782b9c8e909",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ESTJ는 돈, 일정, 가족 책임을 체계적으로 관리하려 하고 ENTP는 새 시도와 유연한 방식을 원한다. 이 조합은 실행력은 강해질 수 있지만, ENTP가 마무리를 피하거나 ESTJ가 모든 기준을 정하면 피로가 커진다.",
+    "sourceFriction": {
+      "condition": "결정 뒤 같은 논쟁을 새 근거 없이 반복할 때",
+      "sourceIntentionCandidate": "모순을 찾는 반박",
+      "targetMayMisreadSource": "실행 책임을 피하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "결론을 고정하는 요구",
+      "sourceMayMisreadTarget": "말할 권리를 막는 지시로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "반론이 무엇을 바꾸는가?",
+      "targetQuestion": "방법의 재량을 남겼는가?",
+      "jointAgreement": "결과 기준과 재논의 조건을 함께 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ENTP:ESFJ",
+    "originalResearchHash": "af5ab99827e18ad17ce175b56e5bd8c32f610944aaa9bdd39cd4e3bd0491f2a2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "7e0fc2bb5a9461b8bb77e1906200112fa02e42cc527f43de0f13e09a64819b77",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "c26f81d3777558f874f519448689e1a79fe67fb9f3e4f14a138976994dc9c825",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 방식과 감정 표현의 빈도가 핵심 이슈가 된다. ESFJ는 관계의 확인과 일상적 교류를 원하고, ENTP는 자유와 변화의 여지를 원한다. 공간을 설계하지 않으면 서로를 좋아하면서도 지치기 쉽다.",
+    "sourceFriction": {
+      "condition": "농담으로 기존 준비를 가볍게 평가할 때",
+      "sourceIntentionCandidate": "생각을 넓히는 장난",
+      "targetMayMisreadSource": "수고를 인정하지 않는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "소속감을 지키는 확인",
+      "sourceMayMisreadTarget": "형식에 묶는 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "농담의 대상이 동의했는가?",
+      "targetQuestion": "실제 반대 의견을 허용했는가?",
+      "jointAgreement": "변경 비용과 감사는 따로 말함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ENTP:ISTP",
+    "originalResearchHash": "9e53f9bcca3a9131f101f52bfa7fc36941318f0dc74bdbe8c16a58c8238a16b9",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "8b599bc341bcde8e9918cfe9d5a95a6f492f19ea5a6e9a4c5ccd1f1ee3ff9c97",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "61f5ffbf6e6c25c77b0e52f445320aeda955c060911ffdd959150dd353bb10f7",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 두 사람 모두 자유로운 생활을 원하지만 운영 책임은 약해질 수 있다. 돈, 집안일, 장기 일정은 재미가 없더라도 규칙을 만들어야 하고, 감정 문제는 농담이나 침묵으로 넘기지 않는 장치가 필요하다.",
+    "sourceFriction": {
+      "condition": "계속 설명을 바꾸거나 시험 결과를 공유하지 않을 때",
+      "sourceIntentionCandidate": "대안을 늘리는 질문",
+      "targetMayMisreadSource": "쓸모없는 논쟁으로 읽힐 가능성",
+      "targetIntentionCandidate": "작동을 먼저 보는 짧은 답",
+      "sourceMayMisreadTarget": "생각을 듣지 않는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 시험할 한 가지가 무엇인가?",
+      "targetQuestion": "시험 결과를 설명할 시간을 주었는가?",
+      "jointAgreement": "시험 하나 뒤 질문을 다시 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ENTP:ISFP",
+    "originalResearchHash": "15e89c476bb1badf6833f2ac8200a3e75431dca252e47c2083564980b6f15e7b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "41c2cfb63fc60751886140755bbed3219845825f6241044af7739e83b8c393b5",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "a846eb755532f134b3b0dd54e1712eb0e9653ada7c723c225079ebdd5396e528",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 리듬, 대화 방식, 갈등 처리 방식이 모두 어긋난다. ENTP는 말로 풀려고 하고 ISFP는 감정이 상하면 물러나며, 서로가 평화롭게 협동할 수 있다고 믿었던 기대가 반복적으로 깨질 수 있다.",
+    "sourceFriction": {
+      "condition": "침묵을 반박 성공으로 여기며 말을 이어갈 때",
+      "sourceIntentionCandidate": "생각을 흔드는 유머",
+      "targetMayMisreadSource": "마음을 낮추는 놀림으로 읽힐 가능성",
+      "targetIntentionCandidate": "감정을 정리하는 거리두기",
+      "sourceMayMisreadTarget": "대화를 끊는 처벌로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 계속 이야기하고 싶은가?",
+      "targetQuestion": "멈추고 싶은 때를 알릴 수 있는가?",
+      "jointAgreement": "토론 중단 신호를 정하고 거절을 논박하지 않음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ENTP:ESTP",
+    "originalResearchHash": "fee6a52f5c2c8cbf71859954c2cd0995e50f4ba2e38be1232c945581e972495b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "34899f89139164d8db0504b0fb058b00ea44c22e48545ab1fbda2da7cf0dab24",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "833e4a031a737746b638db4f0f0174e5e0b67e1bd5e715e86a0286688936c6cd",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 활동성과 변화는 풍부하지만 생활 운영이 즉흥적으로 흐르기 쉽다. 돈, 가족 일정, 장기 목표는 재미와 자극만으로 해결되지 않으므로 반복 가능한 규칙을 따로 세워야 한다.",
+    "sourceFriction": {
+      "condition": "생각 실험이 합의 없이 실제 시도로 바뀔 때",
+      "sourceIntentionCandidate": "가능성을 시험하는 도발",
+      "targetMayMisreadSource": "바로 행동하라는 요청으로 읽힐 가능성",
+      "targetIntentionCandidate": "현재 기회를 확인하는 행동",
+      "sourceMayMisreadTarget": "검토를 무시하는 성급함으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "가상 제안인지 실행 요청인지 말했는가?",
+      "targetQuestion": "실제 참여 동의를 받았는가?",
+      "jointAgreement": "아이디어·시험·실행 단계를 표시",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ENTP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ENTP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ENTP:ESFP",
+    "originalResearchHash": "d2c1e295fdd313ae19313ecd3780277f8a6c7172e728dae2ec9de2b3974e71e2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "858d958b607f70e470e5bc2ecb66e35a2006711601f86a32712c354305cf421c",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "5334f001d00787bdf2172f9f8e788a1a21483302cb7dec7c99d4a06d97fac25e",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 집 안의 분위기는 밝고 변화가 많지만, 돈과 장기 계획은 느슨해지기 쉽다. ENTP는 새로운 아이디어와 실험을, ESFP는 현재의 즐거움과 표현을 중시하므로 예산, 일정, 가족 책임을 의식적으로 고정해야 한다.",
+    "sourceFriction": {
+      "condition": "자기 이야기를 반론 놀이로만 받아칠 때",
+      "sourceIntentionCandidate": "생각을 전환하는 유머",
+      "targetMayMisreadSource": "경험을 웃음거리로 만드는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "경험을 나누는 자기표현",
+      "sourceMayMisreadTarget": "논점을 벗어난 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "이야기를 평가해 달라는 요청이 있었는가?",
+      "targetQuestion": "지금 원하는 반응을 말했는가?",
+      "jointAgreement": "경험을 먼저 듣고 분석은 동의받음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ESFJ:INTJ",
+    "originalResearchHash": "fdf2f2ac2b8ae96889592aa0a73a1856a8973aa9d0cc317f3f78244e5b09986e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "341b6d52284bd38b539ba4be14da0e4679e793a2cb84dd8edb894e39812df125",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "0456f86bf6c647ae6a76ca4d223bbc50004f354235f453e01ec355181da446dd",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 기준과 감정 처리 방식이 계속 부딪힌다. ESFJ는 가족과 주변 관계를 건강하게 바로잡으려 하고, INTJ는 효율적인 자기 방식과 개인 영역을 지키려 한다. 서로를 고치려는 시도는 갈등을 더 키운다.",
+    "sourceFriction": {
+      "condition": "작은 대화를 낭비로 부르거나 침묵을 무례로 확정할 때",
+      "sourceIntentionCandidate": "참여감과 친밀감을 확인하려는 안부",
+      "targetMayMisreadSource": "업무·사생활 경계 침범으로 읽힐 가능성",
+      "targetIntentionCandidate": "집중 시간을 확보하려는 대화 축소",
+      "sourceMayMisreadTarget": "상대를 귀찮아하는 신호로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 원하는 참여 방식을 물었는가?",
+      "targetQuestion": "지금 말할 수 없는 이유와 대안을 전했는가?",
+      "jointAgreement": "안부 방식과 집중 시간대를 서로 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ESFJ:INTP",
+    "originalResearchHash": "dee164feaaf4971eb1475ff1b07a44cb5bcc81111e67a573af361653290b180c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "91f5afbc183a6c78c382b889b6d7e892c76e5ccdb9185561783d2cdfbfe1a221",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "b05461de872df2fdc82681df0fe3da281935874b512f294ee9a07c34eff75fb7",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+    "sourceFriction": {
+      "condition": "안부를 시간 낭비로 부르거나 응답을 친밀감 시험으로 쓸 때",
+      "sourceIntentionCandidate": "소속감을 나누려는 가벼운 대화",
+      "targetMayMisreadSource": "원하지 않는 사교를 강요하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "집중을 유지하려는 대화 축소",
+      "sourceMayMisreadTarget": "자신을 밀어내는 태도로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 선택할 참여 형태를 남겼는가?",
+      "targetQuestion": "짧게라도 가능한 응답을 골랐는가?",
+      "jointAgreement": "안부 빈도와 개인 시간을 서로 정하고 생활 책임은 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ESFJ:ENTJ",
+    "originalResearchHash": "ad4382ca3aa159422e4f89dfc920b3181b66153efbde3c655fb04549a11d4839",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ff04d90e9171d15fde7f4c7093e4f75e03d1eff22185bd51285553febdd8cb02",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "78af09919ea691979f428aeb1494e0f51e4e735bdbe903be3cf4c9f7e25f39b9",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENTJ가 큰 방향과 성취를 잡고 ESFJ가 가족과 관계의 온도를 잡는 구도가 생길 수 있다. 하지만 ENTJ가 효율만 앞세우고 ESFJ가 평판과 감정만 앞세우면 서로의 핵심 가치를 무시하는 싸움이 반복된다.",
+    "sourceFriction": {
+      "condition": "사소한 안부를 불필요로 보거나 결과 압박을 마음 부족으로 볼 때",
+      "sourceIntentionCandidate": "협력 의사를 확인하는 격려",
+      "targetMayMisreadSource": "문제를 덮는 형식적 말로 읽힐 가능성",
+      "targetIntentionCandidate": "명확한 선택을 돕는 짧은 지적",
+      "sourceMayMisreadTarget": "존중을 거두는 차가움으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "격려와 수정 요청을 구분했는가?",
+      "targetQuestion": "실제 수고를 인정한 뒤 바꿀 점을 말했는가?",
+      "jointAgreement": "감사와 작업 수정은 각각 구체적으로 전함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ESFJ:ENTP",
+    "originalResearchHash": "1a095fe77cbc9a2ecb9c7474d4a7c5b9af47a3b803c3abbad8a4800af4c2e7c0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "c26f81d3777558f874f519448689e1a79fe67fb9f3e4f14a138976994dc9c825",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "7e0fc2bb5a9461b8bb77e1906200112fa02e42cc527f43de0f13e09a64819b77",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 즐거움과 자극은 많지만 생활 안정에는 별도 장치가 필요하다. 둘 다 활동을 늘리는 데는 강하지만 반복되는 집안일, 일정, 책임 분배를 명확히 하지 않으면 대화만 많고 해결은 늦어진다.",
+    "sourceFriction": {
+      "condition": "농담으로 기존 준비를 가볍게 평가할 때",
+      "sourceIntentionCandidate": "소속감을 지키는 확인",
+      "targetMayMisreadSource": "형식에 묶는 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "생각을 넓히는 장난",
+      "sourceMayMisreadTarget": "수고를 인정하지 않는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "실제 반대 의견을 허용했는가?",
+      "targetQuestion": "농담의 대상이 동의했는가?",
+      "jointAgreement": "변경 비용과 감사는 따로 말함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ESFJ:INFJ",
+    "originalResearchHash": "beb0dcdf442bc2f826ad586209ab095cad0e7e791965e69093f3ff6acc60ec01",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "3c7c5f8891484b480e9142c16d89cc0a886ed2f9b6999e7712bd474038d330d5",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "d11c82dc495ec6891a71ccf175de825027259223821c5039e9fa3fd7549555e5",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 ESFJ가 가족 행사, 생활 루틴, 주변 관계를 챙기고 INFJ가 부부의 가치와 장기 방향을 붙잡는 구도가 좋다. 하지만 ESFJ가 외부 시선과 즉각 반응에 치우치고 INFJ가 내면의 의미만 붙잡으면 돈, 가족, 역할 문제에서 서로의 우선순위를 이해하지 못한다.",
+    "sourceFriction": {
+      "condition": "안부 참여를 예의로 고정하거나 일상 대화를 얕다고 볼 때",
+      "sourceIntentionCandidate": "참여감을 살피는 소개·초대",
+      "targetMayMisreadSource": "개인 사생활을 공개하는 부담으로 읽힐 가능성",
+      "targetIntentionCandidate": "조용히 정리할 공간을 구하는 말",
+      "sourceMayMisreadTarget": "관계에서 빠지려는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "소개·공개에 동의를 받았는가?",
+      "targetQuestion": "원하는 연결 방식을 알렸는가?",
+      "jointAgreement": "안부 빈도와 공개 범위를 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ESFJ:INFP",
+    "originalResearchHash": "4902bac0c8bc7127316ea68a3bc187bb10c82eb55139bcfa97d22e764fd4536e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "b8354baf8fd1c77cfc37a349caea448b5d3cc006b506b848e83408c4d6a06504",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "53be18c8f56a8e3c48f27700800807e9415aa28a6086ddc1b3e4d6e9b8354de5",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 운영과 감정의 의미를 어디까지 맞출지가 핵심이다. ESFJ가 집과 관계를 꾸리려 할수록 INFP는 자기만의 리듬을 원하고, INFP가 꿈과 감정을 이야기할수록 ESFJ는 실제 계획을 묻는다.",
+    "sourceFriction": {
+      "condition": "예의를 이유로 원치 않는 모임을 권할 때",
+      "sourceIntentionCandidate": "소속감을 주려는 초대",
+      "targetMayMisreadSource": "개인 선택을 좁히는 압박으로 읽힐 가능성",
+      "targetIntentionCandidate": "자기 경계를 지키는 불참",
+      "sourceMayMisreadTarget": "관계를 소홀히 하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "빠져도 불이익이 없는가?",
+      "targetQuestion": "거절과 관계 지지를 나눠 말했는가?",
+      "jointAgreement": "참여 방식·공개 범위를 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ESFJ:ENFJ",
+    "originalResearchHash": "2601c6d0b06c08ca90c85af0598c113b06cde17d0955ee34ea1b2d3743921669",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "567d4b766b3c906dbbcdf4b2a4ee605a34e02a7b96ef8b4051dd7d7001decbf4",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "467419fffdb2215f967065467a6d0db95d77fea0f89ba1dd50d13dc36076a5c3",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENFJ의 비전과 ESFJ의 생활 운영이 균형을 이루면 안정과 성장 모두 가능하다. 그러나 ENFJ가 밖의 사명에 치우치고 ESFJ가 집과 주변 관계에만 집중하면 서로의 기여를 낮게 본다.",
+    "sourceFriction": {
+      "condition": "둘 다 분위기를 위해 필요한 이견을 미룰 때",
+      "sourceIntentionCandidate": "안정을 지키려는 세부 확인",
+      "targetMayMisreadSource": "큰 방향을 막는 형식으로 읽힐 가능성",
+      "targetIntentionCandidate": "방향을 바꾸려는 의미 질문",
+      "sourceMayMisreadTarget": "현재 수고를 낮추는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "현재 방식이 계속 필요한가?",
+      "targetQuestion": "수고를 인정하며 목적을 물었는가?",
+      "jointAgreement": "이견 하나를 공개하고 바꿀 항목을 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ESFJ:ENFP",
+    "originalResearchHash": "d2235245b578c08df5b7f424d6bde2409443653afb865baa1ac35b21d227e7af",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "0755211201906428d46d74f59d48941e0fec1feb1871957b51f56a0be16f688f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "2932dd55664844a8db89011adadac0e9c2a5bd5336156933d76d49c8e23ae9d3",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 누가 돌보고 누가 받는지의 균형이 중요하다. ESFJ가 관계를 운영하고 ENFP가 활력을 주는 구도가 되기 쉽지만, ENFP의 필요가 충족되지 않으면 갑자기 관계에서 빠져나갈 수 있다.",
+    "sourceFriction": {
+      "condition": "초대·약속이 계속 늘고 정리는 한쪽에 남을 때",
+      "sourceIntentionCandidate": "일정을 안정시키는 확인",
+      "targetMayMisreadSource": "사교를 관리하는 압박으로 읽힐 가능성",
+      "targetIntentionCandidate": "연결을 넓히는 제안",
+      "sourceMayMisreadTarget": "기존 관계를 소홀히 하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "거절할 여백을 주었는가?",
+      "targetQuestion": "약속을 감당할 수 있는가?",
+      "jointAgreement": "새 초대 전 기존 담당과 쉬는 날 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ESFJ:ISTJ",
+    "originalResearchHash": "a5990a84f6ee6e2f587c6ebe875c9a3db315c7da9e2026cad7e4555ba5c5457c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "a1cba90cd92422ee98e8831d434ae7d4d2b3f3c48db3aa001d6dc57ac67e3f88",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "7b423047419c0a03b067eddeda5be37bd10c9a032b1073b94f4bdfe17f769566",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 안정과 책임감이 맞아 실무는 강하다. 다만 ESFJ가 가족과 관계까지 세밀하게 챙기려 하고 ISTJ가 개인적 질서와 독립성을 지키려 하면 통제와 무심함의 싸움이 생긴다.",
+    "sourceFriction": {
+      "condition": "약속을 했으니 표현은 불필요하다고 볼 때",
+      "sourceIntentionCandidate": "관계 확인을 위한 대화",
+      "targetMayMisreadSource": "집중을 방해하는 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "책임을 지키는 조용한 행동",
+      "sourceMayMisreadTarget": "안부를 피하는 무관심으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원하는 연락량을 물었는가?",
+      "targetQuestion": "가능한 표현을 골랐는가?",
+      "jointAgreement": "실무 일정과 안부 방식을 따로 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ESFJ:ISFJ",
+    "originalResearchHash": "084a142f987912a359a9e5cf5d300e74a449a05c31f088eb1ac86f797c361fcf",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "9836e0aabf05765eabb1f462707cc08c2c1fb5ae9a0331873a786d16d6c6aed3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "149d963716412543a683ce103a896c26d04e2aac3b57aae29aed13e1ec6b7dbf",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 가족 행사, 예의, 생활 루틴, 친인척 관계를 함께 잘 관리한다. 그러나 두 사람 모두 남의 시선과 가족의 기대를 의식하면 부부만의 기준보다 외부 기준이 강해지고, 작은 서운함을 오래 쌓는다.",
+    "sourceFriction": {
+      "condition": "초대가 이어지고 거절을 예의 문제로 볼 때",
+      "sourceIntentionCandidate": "소속감을 나누는 초대",
+      "targetMayMisreadSource": "쉬는 시간을 빼앗는 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "회복 시간을 확보하는 유보",
+      "sourceMayMisreadTarget": "관계를 멀리하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "빠질 권리를 남겼는가?",
+      "targetQuestion": "가능한 참여량을 말했는가?",
+      "jointAgreement": "참여 범위와 준비 부담을 각각 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ESFJ:ESTJ",
+    "originalResearchHash": "2f8ed9e2359793bade713250a54a26dea43bc8cff65a8e3eaf666ae56836ea63",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "d870b0ebdbb912ebb804abf8ead12956ecb2a0b6af35bdb32a7f7180951a1457",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "62998f44351b352111e95ba2bc4dfed4478f17e1a42bbd8cd385a4a9524eabba",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 관리, 재정, 일정, 가족 의무를 함께 잘 처리한다. 그러나 감정보다 업무 분담과 역할 평가가 앞서면 관계가 사무적인 동맹처럼 굳는다.",
+    "sourceFriction": {
+      "condition": "수고를 인정하지 않은 수정 지적이 반복될 때",
+      "sourceIntentionCandidate": "협력을 돕는 격려",
+      "targetMayMisreadSource": "문제를 덮는 형식으로 읽힐 가능성",
+      "targetIntentionCandidate": "문제를 빨리 고치는 직접 말",
+      "sourceMayMisreadTarget": "존중이 없는 평가로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "격려 뒤 실제 요청도 말했는가?",
+      "targetQuestion": "수고와 작업 오류를 나눴는가?",
+      "jointAgreement": "감사·수정·담당은 따로 구체화",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ESFJ:ESFJ",
+    "originalResearchHash": "303b2befd85eee61635c8b5df94e6ac6f6d1a4c554694edde8aaf1583a598caf",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "0bb3e1e5d7b7385526a30f224a31d841d181b707346f2243fcd645c57a953143",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "0bb3e1e5d7b7385526a30f224a31d841d181b707346f2243fcd645c57a953143",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 가족 행사와 사회적 관계를 능숙하게 관리하지만, 외부 평판과 체면을 지나치게 의식할 수 있다. 생활은 안정적이나 새로운 자극이 부족하면 관계가 의무와 일정 관리로만 남는다.",
+    "sourceFriction": {
+      "condition": "둘 다 표현하지만 받았다고 느끼지 못할 때",
+      "sourceIntentionCandidate": "관계 확인을 위한 잦은 안부",
+      "targetMayMisreadSource": "응답을 요구하는 압박으로 읽힐 가능성",
+      "targetIntentionCandidate": "서로 돕기 위한 역할 제안",
+      "sourceMayMisreadTarget": "이미 정해진 의무로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "내가 원하는 표현을 말했는가?",
+      "targetQuestion": "상대가 역할을 선택했는가?",
+      "jointAgreement": "감사 방식과 담당은 직접 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ESFJ:ISTP",
+    "originalResearchHash": "92bc538416752e7a288db1c63b72b57b0d211f6b14f6e78bda01c47f0f9765c4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "d4e0e7a5f15cfe50998e0e35f6173242322939db886273d4ad106acc1c06922d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "ad258c69529c20bdde58a78217f758925a668d52fe465ea2924d840546c2b568",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ESFJ가 관계 회복을 더 많이 시도하는 편이다. 갈등이 오래 지속되면 둘 다 견디기 힘들어하지만, 원인이 해결되지 않은 채 다시 가까워지면 행복과 실망이 반복된다.",
+    "sourceFriction": {
+      "condition": "잦은 확인과 짧은 거절이 서로 반복될 때",
+      "sourceIntentionCandidate": "소속감을 확인하는 질문",
+      "targetMayMisreadSource": "사적 공간을 관리하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "자율을 지키는 짧은 답",
+      "sourceMayMisreadTarget": "친밀감을 거절하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 대화할 수 있는가?",
+      "targetQuestion": "가능한 응답 형태를 알렸는가?",
+      "jointAgreement": "안부 시간과 집중 시간을 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ESFJ:ISFP",
+    "originalResearchHash": "22a721e7c4c40085177a8cc706cd7642c53b7f3d68e3efdb202ea434e93d152f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "eb1400e28f0baec45cb8bac41c8b4e604584f60f3dccd705d5709e7dddda2306",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "ec95800b75453943f0d6de3bf04e8df98e98b04f3823253af7e3151d373593a1",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 방식의 비슷함만 믿고 들어가면 갈등이 커진다. ESFJ는 가족 규칙과 예의를 세우려 하고 ISFP는 개인 공간과 자율성을 지키려 한다. 함께 일하거나 생활 책임이 겹치면 관계가 형식적이고 조심스러워질 수 있다.",
+    "sourceFriction": {
+      "condition": "좋은 취지로 원치 않는 모임에 포함할 때",
+      "sourceIntentionCandidate": "소속감을 주려는 소개",
+      "targetMayMisreadSource": "사생활을 넓히는 간섭으로 읽힐 가능성",
+      "targetIntentionCandidate": "개인 선을 지키는 침묵",
+      "sourceMayMisreadTarget": "더 설득하면 되는 망설임으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "소개에 동의를 받았는가?",
+      "targetQuestion": "거절할 범위를 말했는가?",
+      "jointAgreement": "참여와 공개 범위는 개인이 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ESFJ:ESTP",
+    "originalResearchHash": "ea3e03242e1b86ab4616ddf9bb608c2e45c464e86839538619378ff224396bd0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "12b91028b2cc871720e8c51ca0e65f39559eed458bd187d9c9e9ed52571e76fc",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "0920a9497186f64e048104b5c6d9438e790fa65296f735a0d0dfaf711ccfcd42",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ESFJ가 관계와 생활을 관리하고 ESTP가 현장 문제를 빠르게 처리하는 구도가 생긴다. 그러나 ESTP가 ESFJ의 정서적 요구를 가볍게 넘기면 ESFJ는 자신이 이용당한다고 느낀다.",
+    "sourceFriction": {
+      "condition": "새 활동 후 정리·연락을 한쪽에 남길 때",
+      "sourceIntentionCandidate": "관계를 유지하는 재확인",
+      "targetMayMisreadSource": "자유를 관리하는 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "새 경험을 나누는 제안",
+      "sourceMayMisreadTarget": "기존 수고를 잊는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원하는 보답을 직접 말했는가?",
+      "targetQuestion": "정리와 연락도 맡았는가?",
+      "jointAgreement": "활동 전후 책임과 연락 방식을 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ESFJ:ESFP",
+    "originalResearchHash": "892371d0cb4e87541703dff01cbd0942f95d71f96fd58be45e6b88edec298fa8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "021269527af2b17d175528c6a263d620df10502ba09eb6d8433233bd7b0290b3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "ca0c16adafb5b09701cb65af780a02de48cd1a0e406ed82d6b59c05c92242877",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 사람들과 어울리는 능력은 좋지만 생활 기준과 책임 분담에서 충돌한다. ESFJ는 루틴과 예의를 세우려 하고 ESFP는 유연한 즐거움을 원해 같은 문제를 전혀 다른 방식으로 본다.",
+    "sourceFriction": {
+      "condition": "정해진 일정이 자주 바뀌고 준비가 남을 때",
+      "sourceIntentionCandidate": "모두의 참여를 확인하는 질문",
+      "targetMayMisreadSource": "즐거움을 규칙으로 묶는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "지금 경험을 넓히는 초대",
+      "sourceMayMisreadTarget": "기존 책임을 가볍게 보는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "선택할 자유를 남겼는가?",
+      "targetQuestion": "변경 비용을 확인했는가?",
+      "jointAgreement": "필수 약속과 선택 활동을 분리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ESFP:INTJ",
+    "originalResearchHash": "a0f7d13da2afeef6eab4820e3e3c0040b5666d6b710ecd23a5a9b29a168b3b66",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "df675c709b51b5c9128cc4deb0971fd3f22f860f55fb6a1044e1868ec9c52eeb",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "c83ed4aee18250f38d0b604d2396ce85c4ea575a2dbd8929b9d03404ae41ada9",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 INTJ가 장기 계획, 재정, 방향성을 잡고 ESFP가 생활의 즐거움과 정서적 온도를 살리는 구도가 될 수 있다. 그러나 INTJ의 통제가 과해지면 ESFP는 숨 막힘을 느끼고, ESFP의 즉흥성이 반복되면 INTJ는 신뢰가 흔들린다.",
+    "sourceFriction": {
+      "condition": "즉흥 초대를 모두 거절하거나 개인 검토 시간을 강제로 사교에 쓸 때",
+      "sourceIntentionCandidate": "함께 즐길 기회를 나누는 초대",
+      "targetMayMisreadSource": "자기 계획을 존중하지 않는 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "집중과 일정 일관성을 지키려는 거절",
+      "sourceMayMisreadTarget": "함께 있고 싶지 않다는 뜻으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "초대를 부담 없이 거절할 수 있게 했는가?",
+      "targetQuestion": "거절과 상대에 대한 호감을 구분해 말했는가?",
+      "jointAgreement": "고정 일정과 선택 가능한 활동을 나누고 동의받음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "cmpr:material:CH01.P3:marriage-pattern-not-love-label"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ESFP:INTP",
+    "originalResearchHash": "81241cfe86a3a3f7ac29c4ee11b3c7e91f7ec0d28937bcab31325955db8d1c79",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "1d8de7191593d49b4a3886fc5e2c03019a130c0e1008a7c10eb56145140655d4",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "57b0d14af8614f5518631b68e1fa8be9429e44e745db719bd0c0d56bce7729be",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 리듬과 소통 방식이 크게 다르다. ESFP는 경험과 반응을 원하고 INTP는 분석과 고립 시간을 원한다. 문제를 고치려는 시도마저 서로에게 간섭이나 무시로 전달될 수 있다.",
+    "sourceFriction": {
+      "condition": "이야기에 곧바로 논리 평가를 붙이거나 설명 중 참여를 재촉할 때",
+      "sourceIntentionCandidate": "자신의 경험을 나누려는 긴 이야기",
+      "targetMayMisreadSource": "결론 없는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "경험의 원인을 확인하는 질문",
+      "sourceMayMisreadTarget": "즐거움을 평가절하하는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대에게 생각할 틈을 주었는가?",
+      "targetQuestion": "지금 질문이 경험 공유를 막고 있지 않은가?",
+      "jointAgreement": "경험 공유 뒤 원하는 경우에만 분석 시간을 가짐",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ESFP:ENTJ",
+    "originalResearchHash": "d94daa57819cc119c8477390dc0619ae5e046bfbf700bebeafeb5f0dc394c9e8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "a90068036aa92801ca6411a235be87a72a46489ca693e976f351cbab10126ec1",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "f7ef893ce212d6056ba2a2a3180eb44e9a0b4a364746fa0bea4a8b96783fa820",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 활동성과 목표가 많아 생활이 역동적이다. 다만 함께 있는 시간이 너무 많으면 ENTJ는 ESFP를 관리하려 하고, ESFP는 ENTJ를 딱딱하고 압박적인 사람으로 느낀다. 거리와 역할 구분이 있어야 관계가 안정된다.",
+    "sourceFriction": {
+      "condition": "휴식까지 개선 목표로 삼거나 즉흥 제안을 약속으로 만들 때",
+      "sourceIntentionCandidate": "함께하는 활력을 더하려는 초대",
+      "targetMayMisreadSource": "확정 일정의 책임을 무시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "공동 시간을 효율적으로 쓰려는 계획",
+      "sourceMayMisreadTarget": "즐거움까지 관리하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "초대를 거절할 수 있게 물었는가?",
+      "targetQuestion": "상대가 선택할 여백을 남겼는가?",
+      "jointAgreement": "고정할 약속과 선택 활동을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ESFP:ENTP",
+    "originalResearchHash": "121f0997a666029dd9b63a4be07186ca01baecbb95a1e9c69e4df973753c7b6b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "5334f001d00787bdf2172f9f8e788a1a21483302cb7dec7c99d4a06d97fac25e",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "858d958b607f70e470e5bc2ecb66e35a2006711601f86a32712c354305cf421c",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 집 안의 분위기는 밝고 변화가 많지만, 돈과 장기 계획은 느슨해지기 쉽다. ENTP는 새로운 아이디어와 실험을, ESFP는 현재의 즐거움과 표현을 중시하므로 예산, 일정, 가족 책임을 의식적으로 고정해야 한다.",
+    "sourceFriction": {
+      "condition": "자기 이야기를 반론 놀이로만 받아칠 때",
+      "sourceIntentionCandidate": "경험을 나누는 자기표현",
+      "targetMayMisreadSource": "논점을 벗어난 말로 읽힐 가능성",
+      "targetIntentionCandidate": "생각을 전환하는 유머",
+      "sourceMayMisreadTarget": "경험을 웃음거리로 만드는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 원하는 반응을 말했는가?",
+      "targetQuestion": "이야기를 평가해 달라는 요청이 있었는가?",
+      "jointAgreement": "경험을 먼저 듣고 분석은 동의받음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ESFP:INFJ",
+    "originalResearchHash": "2460810375f429e3ccbf53ee051e763fd7906b086e61fc906b264d184983d50c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "ce58ac131537053c6ab97faf449a0b4711c183e951405a7603f3575de57f2850",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "20d4c39ef86dccc8c3aab3eeb61b25e7147868635b2b98bf1f9984035d40beda",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 INFJ는 조용한 안정과 의미 있는 대화를 원하고, ESFP는 생활 속 즐거움과 사람 만남을 유지하고 싶어 한다. 돈과 일정에서는 INFJ의 장기 방향과 ESFP의 현재 만족이 부딪히기 쉬우므로 예산과 회복 시간을 함께 정해야 한다.",
+    "sourceFriction": {
+      "condition": "활동 참여를 재촉하거나 경험을 깊이 없는 것으로 평가할 때",
+      "sourceIntentionCandidate": "경험을 함께 나누는 초대",
+      "targetMayMisreadSource": "자기 리듬을 침범하는 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "생각할 공간을 지키는 유보",
+      "sourceMayMisreadTarget": "함께할 마음이 없다는 뜻으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "거절할 수 있는 초대였는가?",
+      "targetQuestion": "가능한 참여 방식을 말했는가?",
+      "jointAgreement": "활동과 조용한 시간을 모두 선택 가능하게 둠",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ESFP:INFP",
+    "originalResearchHash": "2c679b1e51ba7d95307e73cb065d6964dcc773231c0800b6d2412e2638dd65e5",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "4e52bf84122597abbd14452fbc85ba1d860b84619276d5933494442f6d311673",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "581eabd5368af0780169ddd8a9ad495591f73e6018a5d7982df531760aef33c2",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 INFP는 관계의 가치와 정서적 안전을, ESFP는 밝은 생활 리듬과 경험을 중시한다. 돈과 생활에서는 ESFP의 경험 소비와 INFP의 감정적 선택이 겹칠 수 있어 현실 기준을 따로 세워야 한다.",
+    "sourceFriction": {
+      "condition": "활동 참여를 재촉하거나 즐거움을 얕음으로 볼 때",
+      "sourceIntentionCandidate": "현재 즐거움을 나누는 초대",
+      "targetMayMisreadSource": "생각할 틈을 없애는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "혼자 정리하려는 유보",
+      "sourceMayMisreadTarget": "함께 있고 싶지 않다는 뜻으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "혼자 있을 선택권을 남겼는가?",
+      "targetQuestion": "가능한 만남 형태를 말했는가?",
+      "jointAgreement": "활동과 조용한 공유 시간을 따로 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ESFP:ENFJ",
+    "originalResearchHash": "963b904aa5fced64ff7864fdab0018d6190152ddebd12749ed93315d0de7897f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a737c3f5c3f7451c777fd841c0a3b4471c4a5bfdae8823a3b303423dd42b6c8d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "c3c084a61cf0db4f8bc28a33d2a0758364f367113f8d2f8cc27eb45588e53a43",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENFJ가 관계의 방향과 성장 목표를 잡고 ESFP가 가정의 활력과 즐거움을 채우는 구도가 생긴다. 하지만 ESFP가 계속 맞추기만 하면 자유를 잃고, ENFJ가 계속 이끌기만 하면 보호가 통제로 바뀐다.",
+    "sourceFriction": {
+      "condition": "한쪽이 관계의 방향을 정하고 다른 쪽은 계속 기쁘게 할 때",
+      "sourceIntentionCandidate": "즐거움을 나누는 표현",
+      "targetMayMisreadSource": "진지한 문제를 피하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "함께 성장하려는 조언",
+      "sourceMayMisreadTarget": "삶을 관리하는 평가로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원하는 관계 방향도 말했는가?",
+      "targetQuestion": "상대가 원한 변화인가?",
+      "jointAgreement": "목표와 오늘 원하는 경험을 따로 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ESFP:ENFP",
+    "originalResearchHash": "720fd2b8607d000ccb7586ea5368ac26943b12fbd7682f2738d803fe4122951d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "54b9dbe17f4059f335a5eea2d06efc96f09cc866591488f27301381f72e3c14a",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "6f7e1ed0caab2799cc7653945331bc4554c2a1f90a35e9afece8fef0d34b5df9",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 집 안의 분위기는 밝지만 장기 계획과 돈 관리가 느슨해질 수 있다. ENFP는 변화와 가능성을, ESFP는 감각적 만족과 현재의 즐거움을 원하므로 예산, 휴식, 외부 활동의 기준을 함께 정해야 한다.",
+    "sourceFriction": {
+      "condition": "계속 새 제안을 하며 이미 한 약속을 확인하지 않을 때",
+      "sourceIntentionCandidate": "현재 재미를 표현하는 말",
+      "targetMayMisreadSource": "큰 방향을 보지 않는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "다른 가능성을 나누는 전환",
+      "sourceMayMisreadTarget": "지금 경험에 몰입하지 않는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "앞선 약속도 확인했는가?",
+      "targetQuestion": "지금 경험을 먼저 들었는가?",
+      "jointAgreement": "오늘의 선택과 남길 후보를 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ESFP:ISTJ",
+    "originalResearchHash": "2fa44308b0fe2db045a93102be83fda27beb1e0f5143426c68b682882115910a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "2a99e5a4ed20052e1a20d09dd6fbf0fe34e9922ffff12355341815fffe0a3c14",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "4e1143ef30cd546b8e11e3c70dae10c71d4666568569b172597d51ed9fb9b036",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ISTJ는 예산, 일정, 가족 의무를 체계적으로 관리하려 하고 ESFP는 집 안의 분위기와 경험의 즐거움을 살리려 한다. 돈과 외부 활동의 기준이 맞지 않으면 한쪽은 불안하고 한쪽은 통제받는다고 느낀다.",
+    "sourceFriction": {
+      "condition": "예고 없는 활동이 기존 준비를 바꿀 때",
+      "sourceIntentionCandidate": "즐거움을 나누는 초대",
+      "targetMayMisreadSource": "약속을 가볍게 여기는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "일관성을 지키려는 거절",
+      "sourceMayMisreadTarget": "함께할 마음이 없는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "먼저 일정 동의를 받았는가?",
+      "targetQuestion": "대신 가능한 활동을 말했는가?",
+      "jointAgreement": "고정 약속 뒤 선택 활동을 둠",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ESFP:ISFJ",
+    "originalResearchHash": "4612780bf87817e23666386f29ccfe1cbdf111c8a23123387fea30461bd40cea",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "24d07254bfcf86fbfad140d80a8c859ab805fcd69f2e725f84545e0a8967b047",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "31497f79d3c059a631677e3f5cc465d2ee1c37574ca8b52001fe00869ecd5501",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ISFJ는 가족, 기념일, 집안 루틴을 챙기고 ESFP는 관계의 즐거움과 외부 활동을 유지하려 한다. 돈과 생활 리듬에서는 안정 저축과 경험 소비가 부딪히기 쉬우므로 기준을 미리 정해야 한다.",
+    "sourceFriction": {
+      "condition": "초대가 늘며 준비와 비용이 한쪽에 남을 때",
+      "sourceIntentionCandidate": "기쁨을 나누는 초대",
+      "targetMayMisreadSource": "기존 책임을 잊는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "생활 부담을 줄이는 확인",
+      "sourceMayMisreadTarget": "재미를 막는 관리로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "준비와 정리를 함께 맡았는가?",
+      "targetQuestion": "감당할 범위를 말했는가?",
+      "jointAgreement": "활동 선택 전에 담당·비용을 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ESFP:ESTJ",
+    "originalResearchHash": "27d30fa30ad573b04e2dfb6ba40ffc2f7eecf50cb5fbedfea35fc74e295adc1e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "78ac7b30a0664f322a8ce6bf06dffbd4a088a7ff1c5ef82fd404abfd960eda34",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "692f4c6a8626d6ca3cbce39c70b26e40d9330271487f48966256ba0f003c83cf",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ESTJ는 돈, 일정, 가족 책임을 체계화하고 ESFP는 집 안의 분위기와 즐거운 경험을 중요하게 본다. 이 조합은 생활 운영은 강하지만, ESTJ가 모든 기준을 정하면 ESFP는 표현과 자유를 잃었다고 느낀다.",
+    "sourceFriction": {
+      "condition": "즉흥 활동이 기존 담당을 바꾸거나 휴식까지 관리할 때",
+      "sourceIntentionCandidate": "활기를 나누는 제안",
+      "targetMayMisreadSource": "책임을 가볍게 보는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "약속을 지키려는 직접 확인",
+      "sourceMayMisreadTarget": "즐거움을 통제하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "기존 약속에 미칠 영향을 물었는가?",
+      "targetQuestion": "선택 가능한 여백을 남겼는가?",
+      "jointAgreement": "고정 약속 뒤 활동은 자율 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ESFP:ESFJ",
+    "originalResearchHash": "d370d55d60afc2cafb3aa224e334f8bc71bf3561b802283f0b238137e0af9093",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "ca0c16adafb5b09701cb65af780a02de48cd1a0e406ed82d6b59c05c92242877",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "021269527af2b17d175528c6a263d620df10502ba09eb6d8433233bd7b0290b3",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 방식의 충돌이 분명해진다. ESFJ는 가족 행사, 예의, 안정적인 루틴을 세우려 하고 ESFP는 즉흥적 경험과 자유로운 분위기를 원한다. 감정 표현, 돈 사용, 생활 리듬, 가족·사회관계 관리 방식이 맞지 않으면 서운함과 피로가 누적된다.",
+    "sourceFriction": {
+      "condition": "정해진 일정이 자주 바뀌고 준비가 남을 때",
+      "sourceIntentionCandidate": "지금 경험을 넓히는 초대",
+      "targetMayMisreadSource": "기존 책임을 가볍게 보는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "모두의 참여를 확인하는 질문",
+      "sourceMayMisreadTarget": "즐거움을 규칙으로 묶는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "변경 비용을 확인했는가?",
+      "targetQuestion": "선택할 자유를 남겼는가?",
+      "jointAgreement": "필수 약속과 선택 활동을 분리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ESFP:ISTP",
+    "originalResearchHash": "310466f3a1932dd1973944e312d7faf2510f4ace137ab435bfbd2468d96b8a49",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "5d89166714cfa7c36c99bcaafe4d1030a7c3fb5af85b460a32c6248ff5cea1c4",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "6ec4e8230764f3f3c46a19a19b0a5ff057475d8796e28ab7c0715129f7be49c3",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 활동적이고 실용적인 생활은 만들 수 있지만 돈과 장기 계획이 즉흥적으로 흐르기 쉽다. ESFP는 즐거운 경험을, ISTP는 효율과 자유를 중시하므로 지출 기준과 개인 시간을 함께 정해야 한다.",
+    "sourceFriction": {
+      "condition": "상세 반응을 계속 요구하거나 이야기를 곧바로 줄일 때",
+      "sourceIntentionCandidate": "경험을 나누는 자기표현",
+      "targetMayMisreadSource": "집중을 방해하는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "핵심만 말하는 응답",
+      "sourceMayMisreadTarget": "관심을 거두는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 이야기할 여유가 있는가?",
+      "targetQuestion": "가능한 응답 방식을 말했는가?",
+      "jointAgreement": "함께할 활동과 개인 시간을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ESFP:ISFP",
+    "originalResearchHash": "b4fb8cba61a9c5fac4c65b4557f97f41fab78693254299cf38add8530dfd5cb4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "19679c639f31c07206b00c257c78f7e724401111683675f29820605ef5a55441",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "fc42963e3aaaf19109b43ee279d47bc13a62dff1303b6249857a1b81ec454d2f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 둘 다 지나친 규칙은 싫어하지만 생활 운영을 방치하면 돈과 집안일이 흐트러질 수 있다. ESFP는 외부 활동과 즐거운 소비를, ISFP는 편안한 공간과 개인 시간을 중시하므로 예산과 휴식 기준을 함께 정해야 한다.",
+    "sourceFriction": {
+      "condition": "계속 함께 표현하거나 공개하길 기대할 때",
+      "sourceIntentionCandidate": "즐거움을 넓히는 초대",
+      "targetMayMisreadSource": "사적 취향을 공개하는 압박으로 읽힐 가능성",
+      "targetIntentionCandidate": "혼자 즐길 시간을 갖는 유보",
+      "sourceMayMisreadTarget": "공유를 거절하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "공개 전에 허락을 받았는가?",
+      "targetQuestion": "어디까지 나누고 싶은가?",
+      "jointAgreement": "함께 경험해도 공개·표현은 각자 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ESFP:ESTP",
+    "originalResearchHash": "14a621a90f5be2db019585cf92c24453e37dea71283e68e0b24faa774a7e3be0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "7817acf34e0e48673391c6d3e3a6564219a69fbca107e2c8bdf66be210a0d8c9",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "901a0b1de84c836b5c150fd295ac437fde8962bcc41c73c62d4b1a186eeb35e5",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 집 안의 분위기는 활기차지만 돈과 장기 계획이 느슨해지기 쉽다. 경험 소비, 외부 약속, 친구 관계가 많아질 수 있으므로 둘만의 안정 시간과 예산 기준을 따로 정해야 한다.",
+    "sourceFriction": {
+      "condition": "경험담을 농담으로만 받거나 핵심만 요구할 때",
+      "sourceIntentionCandidate": "경험을 생생히 나누는 말",
+      "targetMayMisreadSource": "실제 선택을 늦추는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "상황을 가볍게 하는 짧은 농담",
+      "sourceMayMisreadTarget": "개인 이야기를 낮추는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원하는 반응을 말했는가?",
+      "targetQuestion": "지금 농담을 원하는가?",
+      "jointAgreement": "경험을 먼저 듣고 다음 활동의 책임을 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESFP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESFP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ESFP:ESFP",
+    "originalResearchHash": "7f4ccd5a3de44292ae80f28a1907a45803d22142c20529338e2030023d6e68f9",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "2eb58f7a5410e1d214f08747c47cd87bc35dc7319884492c39370937f0996a7a",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "2eb58f7a5410e1d214f08747c47cd87bc35dc7319884492c39370937f0996a7a",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 집 안의 분위기는 밝지만 예산, 저축, 가족 책임, 장기 계획을 의식적으로 세워야 한다. 즉흥성과 경험 소비가 겹치면 생활 안정이 흔들릴 수 있으므로 현실 점검 장치를 따로 만들어야 한다.",
+    "sourceFriction": {
+      "condition": "둘 다 좋다고 반응하지만 부담은 말하지 않을 때",
+      "sourceIntentionCandidate": "즐거움을 함께 나누는 초대",
+      "targetMayMisreadSource": "꼭 참여해야 하는 요청으로 읽힐 가능성",
+      "targetIntentionCandidate": "친밀감을 위한 자기 이야기",
+      "sourceMayMisreadTarget": "상대가 말할 틈을 줄이는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "초대를 거절할 여백을 주었는가?",
+      "targetQuestion": "상대의 이야기도 들었는가?",
+      "jointAgreement": "참여와 쉬는 날을 고르고 준비를 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ESTJ:INTJ",
+    "originalResearchHash": "40f55c7f70c9d2e52d729c45bfc38be0beef9a2eb41aea6bdc273d18222a416a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "3f49841298b241ea98454f2f62537d03b71f39335cd4add060f0428e8132c948",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "ca6e3a337a4f552d210ddb9345681a5ce90cff73a0a2effea036cdcfdaf4f21b",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 구조를 잘 만들 수 있지만, 변화와 전통을 두고 장기적 갈등이 생긴다. 집의 운영 방식, 돈, 커리어 선택에서 검증과 혁신의 우선순위를 합의해야 한다.",
+    "sourceFriction": {
+      "condition": "방식 변경을 일방 지시하거나 기존 형식을 절대 기준으로 삼을 때",
+      "sourceIntentionCandidate": "누락 없는 결과를 확보하려는 세부 요구",
+      "targetMayMisreadSource": "성과보다 형식 통제를 앞세우는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "구조를 목적에 맞게 바꾸려는 반론",
+      "sourceMayMisreadTarget": "실무 기준을 깨는 예외 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "새 방식이 같은 책임 기준을 충족하는가?",
+      "targetQuestion": "버릴 절차가 맡던 기능을 대체했는가?",
+      "jointAgreement": "결과 기준은 공유하고 방법 변경은 작은 범위에서 시험",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ESTJ:INTP",
+    "originalResearchHash": "a06e59a917b96a3f8ae53fe82d2909b2ddc41be851cac06df4518b8170633627",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "a8cb7aac585cf2c96f8ddab7a51008491fbbead476e40cb7aad962ec9e589e4a",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "062c81179613424d3593bc1b684eec2841bf0d580772e9cf1332874c2629d6da",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 루틴, 집안일, 시간 약속에서 큰 차이가 드러난다. ESTJ는 구조를 원하고 INTP는 자율적 탐구 시간을 원하므로 각자의 책임 경계를 명확히 해야 한다.",
+    "sourceFriction": {
+      "condition": "방법까지 세세히 지시하거나 정한 기한을 말없이 넘길 때",
+      "sourceIntentionCandidate": "완료 책임을 분명히 하는 확인",
+      "targetMayMisreadSource": "사고 과정을 통제하는 감시로 읽힐 가능성",
+      "targetIntentionCandidate": "원리를 이해한 뒤 방법을 고르는 질문",
+      "sourceMayMisreadTarget": "지시를 피하는 변명으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "결과 기준과 방법의 재량을 구분했는가?",
+      "targetQuestion": "검토가 끝날 때와 납품 가능한 범위를 알렸는가?",
+      "jointAgreement": "중간 산출물 하나와 최종 기준을 정하고 방법은 협의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ESTJ:ENTJ",
+    "originalResearchHash": "c4260b95eb6a2ad51c8992237602fa0c21b816f8b47bca7c01f891ae9e298bca",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "827d51cd4df1c45ea442b0d795e00e9adbe9914c49decbb6b50855b4d8e6f903",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "61a29df4fd5c6687183b657b58ddc7347c3c03a43008a38890eaeb9579ef024b",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 목표 달성과 사회적 성취에 강한 부부가 될 수 있다. 그러나 ENTJ의 미래 전략과 ESTJ의 전통적 운영 방식이 충돌하면 집이 공동 프로젝트처럼 긴장된다.",
+    "sourceFriction": {
+      "condition": "각자의 기준을 상대의 방식에 일방 적용할 때",
+      "sourceIntentionCandidate": "누락을 막는 세부 기준 요구",
+      "targetMayMisreadSource": "형식에 갇힌 통제로 읽힐 가능성",
+      "targetIntentionCandidate": "성과를 위해 구조를 바꾸는 제안",
+      "sourceMayMisreadTarget": "쓸 수 있는 절차를 무시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "형식보다 필요한 결과를 설명했는가?",
+      "targetQuestion": "없앨 과정의 역할을 대체했는가?",
+      "jointAgreement": "결과는 공유하고 과정은 비교 시험",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ESTJ:ENTP",
+    "originalResearchHash": "6375554905fa6a2a4d73bed826457b87be9ffaf44e34738ca803aefd09166231",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "e474363d2e9bc6e9c3108db24865a11606ea6c004977c528b32d3782b9c8e909",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "856952eb9f9bfe70d22887bfc467d99c2ab8f62271583c2488d181a2a4e7fa03",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 한쪽은 아이디어를 던지고 한쪽은 운영을 맡는 식으로 강한 팀이 될 수 있다. 다만 ENTP가 생활 책임을 가볍게 보고 ESTJ가 모든 실험을 막으면 관계가 막힌다.",
+    "sourceFriction": {
+      "condition": "결정 뒤 같은 논쟁을 새 근거 없이 반복할 때",
+      "sourceIntentionCandidate": "결론을 고정하는 요구",
+      "targetMayMisreadSource": "말할 권리를 막는 지시로 읽힐 가능성",
+      "targetIntentionCandidate": "모순을 찾는 반박",
+      "sourceMayMisreadTarget": "실행 책임을 피하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "방법의 재량을 남겼는가?",
+      "targetQuestion": "반론이 무엇을 바꾸는가?",
+      "jointAgreement": "결과 기준과 재논의 조건을 함께 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ESTJ:INFJ",
+    "originalResearchHash": "1020106aea055a5b5db92b41b4cde3e6bb8e5375192a913ba9d35017871c5320",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "8fcba510d201a8781e92bb12166c009462c9e073fedccf53d31c0d723ad463d5",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "4a4c65bcc02c4ae40656203f7508ae08f0ff902736647a4214641bdb25efef24",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 안정과 이상, 현실과 의미의 충돌이 반복된다. 생활 운영은 ESTJ가 잡을 수 있지만, INFJ가 가치와 정서적 연결을 잃었다고 느끼면 관계가 빠르게 멀어진다.",
+    "sourceFriction": {
+      "condition": "직설적 수정 요구와 간접적 이견이 맞물릴 때",
+      "sourceIntentionCandidate": "결과를 바로잡는 명확한 지적",
+      "targetMayMisreadSource": "내 의미를 낮추는 평가로 읽힐 가능성",
+      "targetIntentionCandidate": "사람의 부담을 알리는 완곡한 말",
+      "sourceMayMisreadTarget": "실행을 미루는 모호함으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지적 전에 영향과 이유를 들었는가?",
+      "targetQuestion": "바꿔 달라는 행동을 특정했는가?",
+      "jointAgreement": "사실 확인·영향 확인·수정 약속을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "cmpr:material:CH04.P2:directness-with-checkable-dissent"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ESTJ:INFP",
+    "originalResearchHash": "b3a7cc1583054e1c9d758e616195cdfb58f7910f0b19269b4c530517cf512f42",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "a7d4674f712bc896bbe9bda3c0ce526fd398b7c632b6d55db6fb22ca1fbb6282",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "a325368869a08a7f2c55fc5cae185789ead0de92b523214d5992629a229ec513",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 안정과 감정적 의미를 동시에 다뤄야 한다. ESTJ가 현실을 책임지고 INFP가 관계의 마음을 돌볼 수 있지만, 서로의 언어를 번역하지 않으면 가장 큰 피로를 만든다.",
+    "sourceFriction": {
+      "condition": "거절을 비효율로 평가하거나 기준 요청을 무정함으로 볼 때",
+      "sourceIntentionCandidate": "문제를 해결하려는 직접 조언",
+      "targetMayMisreadSource": "개인의 가치를 고치는 지시로 읽힐 가능성",
+      "targetIntentionCandidate": "맞지 않는 수단을 거절하는 말",
+      "sourceMayMisreadTarget": "실행 책임을 피하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "해결책을 요청받았는가?",
+      "targetQuestion": "선택할 수단과 금지 조건을 말했는가?",
+      "jointAgreement": "목적·제약·방법 선택권을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ESTJ:ENFJ",
+    "originalResearchHash": "fcca62e79aabdffc93d3a482321fcf5a757e71b7c6a2bcff6de950c158e7f8c0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "d41ffc64fd4388fec02e853b4a1afd5708a77bf4d44ab04cdf73419c68e7259e",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "14bcc83711b893596ea9a524e0d31ae995a891c5d588e427bcd382172d4731a3",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENFJ가 가족의 마음을 돌보고 ESTJ가 구조와 책임을 세우면 보완된다. 그러나 서로의 리더십 방식을 틀렸다고 보면 집 안에서도 주도권 경쟁이 생긴다.",
+    "sourceFriction": {
+      "condition": "피드백을 서로 분위기 관리 또는 냉정한 지시로 볼 때",
+      "sourceIntentionCandidate": "결과를 바로잡는 직접 지적",
+      "targetMayMisreadSource": "사람을 평가하는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "수용을 돕는 완곡한 조율",
+      "sourceMayMisreadTarget": "문제를 흐리는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지적의 영향도 들었는가?",
+      "targetQuestion": "수정할 행동을 분명히 했는가?",
+      "jointAgreement": "수정 기준과 전달 방식을 각각 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ESTJ:ENFP",
+    "originalResearchHash": "8921844fd05cf07da3fb2fcf6e4836375acb322d4903271de03a598a2f6ec667",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "5448ad65b07e5a98547606e80723e562d29114d39ddbb11485730fe7b234511a",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "4f7b95ac7142612629b107ea6252379dbcac8b1266ecdd97f5ddcfeb3c006738",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 안정된 생활과 새로운 가능성을 동시에 다뤄야 한다. ESTJ가 경제와 구조를 잡고 ENFP가 관계의 생기와 변화성을 더하면 좋지만, 서로의 핵심 욕구를 낮게 평가하면 오래 버티기 어렵다.",
+    "sourceFriction": {
+      "condition": "새 제안을 즉시 약속으로 받거나 기준을 모두 통제로 볼 때",
+      "sourceIntentionCandidate": "진척을 확보하는 기준 제시",
+      "targetMayMisreadSource": "자유를 막는 지시로 읽힐 가능성",
+      "targetIntentionCandidate": "가능성을 열려는 이야기",
+      "sourceMayMisreadTarget": "확정 책임을 회피하는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "방법 재량을 남겼는가?",
+      "targetQuestion": "맡을 범위를 선택했는가?",
+      "jointAgreement": "결과 기준과 탐색 시간을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ESTJ:ISTJ",
+    "originalResearchHash": "b54c5cfefbcb9f1af7319a9f1f8a5198276333464d1666c74d33a6f6d44ae202",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "98e3bc76b19ee8d4b3e0594d42a32833e5a86000e2d9d70036130930cecf79f2",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "81ba48a16ef57cf19989f7d86c26af0a9e13d515a0118ee1afefa72252dea9fe",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 정리, 일정, 규칙, 의무 분담이 잘 맞는다. 감정 표현이 부족해도 서로가 책임을 다하면 안정적이지만, 정서적 온기는 의식적으로 만들어야 한다.",
+    "sourceFriction": {
+      "condition": "확인 중인 사람에게 계속 즉답을 요구할 때",
+      "sourceIntentionCandidate": "진척을 확보하는 직접 질문",
+      "targetMayMisreadSource": "신뢰하지 않는 감시로 읽힐 가능성",
+      "targetIntentionCandidate": "오류를 줄이는 추가 확인",
+      "sourceMayMisreadTarget": "불필요한 지연으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "점검 시점을 미리 합의했는가?",
+      "targetQuestion": "확인이 끝날 때를 알렸는가?",
+      "jointAgreement": "사전 검토와 중간 확인 주기를 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ESTJ:ISFJ",
+    "originalResearchHash": "ad11baea37ebbdc51e40fd12a6e423ffe3b9facea82e4c61090e5197b49324c6",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "c44b1899e7cb04e88a7fb9991b7ea86d28497d3e38031e42b52431f8b679e93d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "2777e6c03162f2e0767272c46c69445d0cb3c462316374d8b9e7c85cbc95a90d",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 가정 운영과 책임 분담이 안정적이다. 그러나 ESTJ가 정서적 수고를 당연하게 여기거나 ISFJ가 상처를 숨기면 관계가 조용히 멀어진다.",
+    "sourceFriction": {
+      "condition": "공개 지적에 어려움을 말하지 못할 때",
+      "sourceIntentionCandidate": "결과를 고치는 직접 지적",
+      "targetMayMisreadSource": "수고 전체를 낮추는 평가로 읽힐 가능성",
+      "targetIntentionCandidate": "관계를 지키려는 완곡한 답",
+      "sourceMayMisreadTarget": "문제없다는 동의로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "먼저 수고와 제약을 들었는가?",
+      "targetQuestion": "어려운 조건을 특정했는가?",
+      "jointAgreement": "수정 항목은 하나씩 동의한 자리에서 말함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ESTJ:ESTJ",
+    "originalResearchHash": "609c613d3d84694aab21c10bb35108f8742625cf0fa8438873a28abf264b9de9",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "f7e01df398da5d15c287fdbf8a0be706b82ba1a10bb445a114423e6614ae453f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "f7e01df398da5d15c287fdbf8a0be706b82ba1a10bb445a114423e6614ae453f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 가계, 역할, 가족 행사, 장기 계획이 잘 정리된다. 그러나 감정 표현을 의도적으로 보완하지 않으면 안정적이지만 차갑고 형식적인 관계가 된다.",
+    "sourceFriction": {
+      "condition": "자기 방식을 공동 규칙으로 일방 적용할 때",
+      "sourceIntentionCandidate": "누락을 줄이는 세부 지시",
+      "targetMayMisreadSource": "권한을 침범하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "결과를 바로잡는 반론",
+      "sourceMayMisreadTarget": "내 책임을 평가하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "목적과 형식을 구분했는가?",
+      "targetQuestion": "상대 방식의 이유를 들었는가?",
+      "jointAgreement": "공동 결과 기준을 먼저 정하고 방법 비교",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ESTJ:ESFJ",
+    "originalResearchHash": "d99e235e723a78acce3821b4ac920192ea88966df6681dba372419e532b9b240",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "62998f44351b352111e95ba2bc4dfed4478f17e1a42bbd8cd385a4a9524eabba",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "d870b0ebdbb912ebb804abf8ead12956ecb2a0b6af35bdb32a7f7180951a1457",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 가족 행사, 책임, 생활 운영이 잘 맞는다. 다만 가족 분위기와 정서적 조율을 ESFJ가 혼자 떠안고, ESTJ가 기준만 세우면 균형이 깨진다.",
+    "sourceFriction": {
+      "condition": "수고를 인정하지 않은 수정 지적이 반복될 때",
+      "sourceIntentionCandidate": "문제를 빨리 고치는 직접 말",
+      "targetMayMisreadSource": "존중이 없는 평가로 읽힐 가능성",
+      "targetIntentionCandidate": "협력을 돕는 격려",
+      "sourceMayMisreadTarget": "문제를 덮는 형식으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "수고와 작업 오류를 나눴는가?",
+      "targetQuestion": "격려 뒤 실제 요청도 말했는가?",
+      "jointAgreement": "감사·수정·담당은 따로 구체화",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ESTJ:ISTP",
+    "originalResearchHash": "1401a63b3960ee2cdbfb1481beaafaacb6d04c3181abcee2346f85fc2e4bcd50",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "b1cf7047b561a65d93e9361a78ea44cb9bd539f6c0fd1f7ac0e4cf70710083df",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "c844cc722b8b214101ede6af8c208d6c9075bba5c2b5f23ad3ba7b27bc60012b",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 집안 운영과 개인 자유의 경계가 핵심이다. ESTJ가 생활 규칙을 모두 정하려 하면 ISTP는 숨 막힘을 느끼고, ISTP의 느슨함은 ESTJ에게 무책임으로 보인다.",
+    "sourceFriction": {
+      "condition": "결과와 무관한 과정까지 수시 지시할 때",
+      "sourceIntentionCandidate": "누락을 막는 중간 확인",
+      "targetMayMisreadSource": "방법을 감시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "작동에 집중하는 짧은 응답",
+      "sourceMayMisreadTarget": "진척을 숨기는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "방법까지 정할 필요가 있는가?",
+      "targetQuestion": "상태를 짧게 공유했는가?",
+      "jointAgreement": "결과·안전·점검 시점만 먼저 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ESTJ:ISFP",
+    "originalResearchHash": "ee9f78d55d4a868563af6a36f88000cd08084f491c21f2cbc6de7d64d5f27dd7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "4a4276a0317d433063de025b1ba842a859adc1d1934af2af507877e83adeb4f4",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "bc1188a20c703cb9b46e7f443b324deab6e4c94b10b8a2e2cc58c47ea1a576db",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 구조와 개인 취향의 경계가 핵심이다. ESTJ가 모든 기준을 정하고 ISFP가 감정을 말하지 않으면 관계는 통제와 회피로 굳어진다.",
+    "sourceFriction": {
+      "condition": "침묵을 승인으로 받아 세부를 계속 정할 때",
+      "sourceIntentionCandidate": "도움을 주려는 조언",
+      "targetMayMisreadSource": "취향을 교정하는 지시로 읽힐 가능성",
+      "targetIntentionCandidate": "느낌을 정리하는 유보",
+      "sourceMayMisreadTarget": "책임을 피하는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "조언을 요청받았는가?",
+      "targetQuestion": "원치 않는 조건을 말할 수 있는가?",
+      "jointAgreement": "필수 규칙과 개인 선택을 분리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ESTJ:ESTP",
+    "originalResearchHash": "f136b8a3a67be005a750216ae7b9bd18d6faf8334f9f55698c017ed17f4f443e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "eaba39767fb89815571382185573f8019d9fe187a5caa7d5ce57aae2f265d2f1",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "a42a2a3e92e4b4afe4b5b72d194df8ce076cb8df4b4982fb1937e39ce7c722e8",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ESTJ가 생활 구조와 책임을 세우고 ESTP가 활력을 더한다. 단, ESTJ가 모든 일정을 관리하려 들면 ESTP는 자유를 빼앗긴다고 느낀다.",
+    "sourceFriction": {
+      "condition": "합의 없는 변경과 즉각적인 재통제가 이어질 때",
+      "sourceIntentionCandidate": "결과 일관성을 지키는 확인",
+      "targetMayMisreadSource": "현장 판단을 막는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "현재 문제를 고치는 변경",
+      "sourceMayMisreadTarget": "책임을 무시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "예외 처리 범위를 남겼는가?",
+      "targetQuestion": "변경 이유와 결과를 알렸는가?",
+      "jointAgreement": "안전·기한은 고정하고 현장 예외는 기록",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ESTJ:ESFP",
+    "originalResearchHash": "6d3b3c6aa33a2bc691cb3b80568768766df3aef4ef4cdbcbcb400b7b2a3caae9",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "692f4c6a8626d6ca3cbce39c70b26e40d9330271487f48966256ba0f003c83cf",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "78ac7b30a0664f322a8ce6bf06dffbd4a088a7ff1c5ef82fd404abfd960eda34",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 ESTJ가 생활 구조를 잡고 ESFP가 활기를 더한다. 단, ESTJ가 즐거움을 사치로 보고 ESFP가 책임을 부담으로 보면 갈등이 반복된다.",
+    "sourceFriction": {
+      "condition": "즉흥 활동이 기존 담당을 바꾸거나 휴식까지 관리할 때",
+      "sourceIntentionCandidate": "약속을 지키려는 직접 확인",
+      "targetMayMisreadSource": "즐거움을 통제하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "활기를 나누는 제안",
+      "sourceMayMisreadTarget": "책임을 가볍게 보는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "선택 가능한 여백을 남겼는가?",
+      "targetQuestion": "기존 약속에 미칠 영향을 물었는가?",
+      "jointAgreement": "고정 약속 뒤 활동은 자율 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ESTP:INTJ",
+    "originalResearchHash": "04e9980452d0cbd1e90cb1d7e862cc5149918bfc48e1b141c54fa01f26cdbaab",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "52ff85368acaf47f2213da71cc6da4b77ae4c4862eb33195719f24413f4af260",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "38db4b484df50dbdb38f56cdf023ebae140fbf63fd9db2c6630a204f733501a7",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 INTJ는 장기 계획과 자산 구조를 만들고 ESTP는 현재의 기회와 활동성을 유지하려 한다. 이 조합은 돈과 생활에서 장기 안정과 즉각 만족이 부딪히기 쉬우므로 지출 한도와 위험 기준을 먼저 정해야 한다.",
+    "sourceFriction": {
+      "condition": "시험 범위 없이 먼저 행동하거나 현장 자료 없이 계획만 고수할 때",
+      "sourceIntentionCandidate": "현재 자료를 얻으려는 직접 시도",
+      "targetMayMisreadSource": "합의되지 않은 위험 부담 전가로 읽힐 가능성",
+      "targetIntentionCandidate": "손실을 줄이려는 사전 검토",
+      "sourceMayMisreadTarget": "행동 자체를 막는 과도한 걱정으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "시험 범위와 중단 조건을 합의했는가?",
+      "targetQuestion": "안전한 시험으로 확인할 부분을 남겼는가?",
+      "jointAgreement": "작은 시험의 범위·책임·중단 조건을 먼저 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ESTP:INTP",
+    "originalResearchHash": "2e0cb0f6f4fecd98cc4179d3f0a99d0f9cc298ed58ce8009d3de21c56a1cb7f3",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "63d0fafe27d2351e2a6fe67a2becc1a226564bd296f3fbdd4e759526fd49636d",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "cb23ccc5f6218191b3fffeb97713625e7d5efe0d790ff71bb995c4ddbd76a48b",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 자유로운 분위기는 만들 수 있지만 생활 루틴과 감정 확인이 약해질 수 있다. 돈과 일정은 ESTP의 즉흥성과 INTP의 미루기가 합쳐지지 않도록 최소 규칙을 세워야 한다.",
+    "sourceFriction": {
+      "condition": "시험 전에 합의가 없거나 설명을 듣기 전에 움직일 때",
+      "sourceIntentionCandidate": "직접 확인하려는 빠른 제안",
+      "targetMayMisreadSource": "공동 부담을 가볍게 보는 행동으로 읽힐 가능성",
+      "targetIntentionCandidate": "안전하고 타당한 시험을 위한 검토",
+      "sourceMayMisreadTarget": "시도를 막는 망설임으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "시도에 필요한 동의를 받았는가?",
+      "targetQuestion": "확인하고 싶은 핵심 한 가지는 무엇인가?",
+      "jointAgreement": "안전한 소규모 시험과 결과 검토를 한 묶음으로 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ESTP:ENTJ",
+    "originalResearchHash": "921ea1c6e71801c4947eb0f3ca8bfafbd0a3b9db2e511bcb433251e5dc7de3a3",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "c5d1960bec1560f57a291e7cf461094a7e73de94a3be7fc529b5821d837419c4",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "6c2c1da2f53156d2ec9ee3cc8c64f7ec3a22ca8f44568df75cc12c64c5c6862f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ENTJ는 자산, 목표, 역할 분담을 체계화하려 하고 ESTP는 현재의 기회와 생활의 활력을 유지하려 한다. 돈과 위험 감수에서는 강한 추진력이 장점이지만, 충동과 압박이 겹치면 큰 결정에서 갈등이 커진다.",
+    "sourceFriction": {
+      "condition": "계획 밖 행동을 무조건 금지하거나 공동 책임을 알리지 않고 움직일 때",
+      "sourceIntentionCandidate": "현재 기회를 확인하려는 시도",
+      "targetMayMisreadSource": "장기 부담을 떠넘기는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "목표와 자원을 지키려는 조정",
+      "sourceMayMisreadTarget": "현장 재량을 빼앗는 통제로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "수정 결과를 누구에게 공유할지 알렸는가?",
+      "targetQuestion": "현장에서 바꿔도 되는 범위를 남겼는가?",
+      "jointAgreement": "재량 범위와 중단 기준을 먼저 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ESTP:ENTP",
+    "originalResearchHash": "6e8f499ec47d3e350dce6c5c305bdf4a2fad960167783364c3d8deb519d65c77",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "833e4a031a737746b638db4f0f0174e5e0b67e1bd5e715e86a0286688936c6cd",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "34899f89139164d8db0504b0fb058b00ea44c22e48545ab1fbda2da7cf0dab24",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 활동성과 변화는 풍부하지만 생활 운영이 즉흥적으로 흐르기 쉽다. 돈, 가족 일정, 장기 목표는 재미와 자극만으로 해결되지 않으므로 반복 가능한 규칙을 따로 세워야 한다.",
+    "sourceFriction": {
+      "condition": "생각 실험이 합의 없이 실제 시도로 바뀔 때",
+      "sourceIntentionCandidate": "현재 기회를 확인하는 행동",
+      "targetMayMisreadSource": "검토를 무시하는 성급함으로 읽힐 가능성",
+      "targetIntentionCandidate": "가능성을 시험하는 도발",
+      "sourceMayMisreadTarget": "바로 행동하라는 요청으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "실제 참여 동의를 받았는가?",
+      "targetQuestion": "가상 제안인지 실행 요청인지 말했는가?",
+      "jointAgreement": "아이디어·시험·실행 단계를 표시",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ESTP:INFJ",
+    "originalResearchHash": "395ee2e8b90cfe5a9cac94b8382a1a1c2f9695d8727862aa4d53b598edbaa863",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "5ab345f1eb82e8871f7e21871185ac93502a0b1b3bbbe299388a5d249b13f738",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "953872c6f5ff4bedb10a5f58d19fccf156de03ed94e4c1a0363184c43de4e187",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ESTP가 생활의 움직임을 만들고 INFJ가 관계의 의미를 붙인다. 다만 ESTP가 깊은 대화를 회피하고 INFJ가 행동보다 해석에 머무르면 서로 멀어진다.",
+    "sourceFriction": {
+      "condition": "충분한 동의 없이 활동을 재촉하거나 경험 전 해석을 고정할 때",
+      "sourceIntentionCandidate": "현장을 확인하려는 즉시 제안",
+      "targetMayMisreadSource": "자극을 강요하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "의미를 검토하는 유보",
+      "sourceMayMisreadTarget": "행동을 막는 망설임으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "참여 범위와 중단권을 물었는가?",
+      "targetQuestion": "작은 경험으로 확인할 부분이 있는가?",
+      "jointAgreement": "선택 가능한 작은 활동 뒤 각자 해석을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ESTP:INFP",
+    "originalResearchHash": "9489f84fc04b0e11f45e687f134cbce1769e5f401c1554ffd78efe276f94c80a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "75e269c84b07c86ddc6e74883be4446abd65a3522784d4db74874fd544d1d3d0",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "626ddd0a44ca3dbaae251a928ec09d09fa8aceab9ee0d176f1a6b05e2a672677",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 자유, 감정, 책임의 정의가 크게 갈린다. ESTP는 활동과 현재를 살고 싶어 하고 INFP는 관계의 의미와 정서적 안전감을 원하므로, 둘 다 상대의 핵심 욕구를 낮게 평가하면 충돌이 커진다.",
+    "sourceFriction": {
+      "condition": "농담·활동이 동의 없이 선을 넘을 때",
+      "sourceIntentionCandidate": "상황을 가볍게 하는 유머",
+      "targetMayMisreadSource": "마음을 무시하는 놀림으로 읽힐 가능성",
+      "targetIntentionCandidate": "소중한 선을 설명하는 진지한 말",
+      "sourceMayMisreadTarget": "재미를 막는 규제로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "장난에 동의를 받았는가?",
+      "targetQuestion": "원치 않는 행동을 특정했는가?",
+      "jointAgreement": "거절은 논쟁 없이 수용하고 대안을 물음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ESTP:ENFJ",
+    "originalResearchHash": "c68f29be425145c618c9b9b3b7b553366d94074bde5994a3a86117ff0f73e08a",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "2d89a77cccb2229e5f02a6913edde9a264fdad2c7e1122f1373a7a7a1d1eadc0",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a4591e42a78343bd5db260f5c33bf6d05f57eaf43d494a42f6d7a93b7da0401a",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENFJ가 관계의 마음을 돌보고 ESTP가 생활의 활력을 만든다. 그러나 ESTP가 자유만 강조하고 ENFJ가 감정 확인을 계속 요구하면 서로를 통제적이거나 가볍게 느낀다.",
+    "sourceFriction": {
+      "condition": "재미있는 제안을 관계의 동의 없이 실행할 때",
+      "sourceIntentionCandidate": "활력을 나누는 빠른 제안",
+      "targetMayMisreadSource": "관계 점검을 피하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "함께할 의미를 확인하는 질문",
+      "sourceMayMisreadTarget": "활동을 제한하는 잔소리로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "활동 뒤 남을 책임을 정했는가?",
+      "targetQuestion": "참여자의 실제 선택을 들었는가?",
+      "jointAgreement": "활동의 동의·비용·정리를 같이 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ESTP:ENFP",
+    "originalResearchHash": "577e2b71b79125d0f622079dff3297c7562918d786a3fd7faa5b08e3d9b063f4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "a98598fa4e1d56416b1bfb4dcbd68d746bb449c8bc3b2d51006a70bb2251ffd7",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "3e221b5e2a3571d5859adf7b9bb078db050833ad9c77c1c2173d6fa58bd16784",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 둘 다 활동적인 생활을 만들 수 있지만, 돈과 일정이 즉흥적으로 흐르기 쉽다. ENFP는 관계의 의미와 변화 가능성을, ESTP는 지금의 효율과 즐거움을 중시하므로 장기 계획과 감정 대화를 따로 정례화해야 한다.",
+    "sourceFriction": {
+      "condition": "농담·행동이 마음 확인을 대신할 때",
+      "sourceIntentionCandidate": "상황을 가볍게 하는 직설 유머",
+      "targetMayMisreadSource": "마음을 가볍게 여기는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "경험의 의미를 나누는 이야기",
+      "sourceMayMisreadTarget": "지금 할 일을 흐리는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 농담을 원했는가?",
+      "targetQuestion": "원하는 반응을 말했는가?",
+      "jointAgreement": "활동 전 동의와 활동 후 부담을 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ESTP:ISTJ",
+    "originalResearchHash": "6f8fe026b038a95db8dbc3a637b2805271638cc8f6467bda01342b7c8eeba28f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "35283fcc0e8e9a347475e4679de6c0623dbcc6c2a86ff6fea9fa1ce07bef5850",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "3ed2b3159d0fd78588677673f1b2960ae10bd9810806ef43b5c85db9f6ca5a34",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ISTJ는 예산, 일정, 가족 책임을 안정적으로 관리하려 하고 ESTP는 활동성과 현재의 즐거움을 유지하려 한다. 돈과 위험 감수의 기준을 맞추지 않으면 한쪽은 불안하고 한쪽은 통제받는다고 느낀다.",
+    "sourceFriction": {
+      "condition": "합의 없이 현장 변경을 실행할 때",
+      "sourceIntentionCandidate": "현재 문제를 고치는 시도",
+      "targetMayMisreadSource": "앞선 준비를 무시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "약속을 지키려는 재확인",
+      "sourceMayMisreadTarget": "행동을 막는 통제로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "변경의 영향을 알렸는가?",
+      "targetQuestion": "바꿔도 되는 범위를 말했는가?",
+      "jointAgreement": "필수 안전·일정과 현장 재량을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ESTP:ISFJ",
+    "originalResearchHash": "86b086e8f0d731d8330f54442ab4eb3e42922e7d102a8c839f0b179f1243f7f2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "ea7eba76a7902b1020a75b809b6a4dce4712c46eca021097309573857a55c93b",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "ec1679edbd76a27151de162502500e0598f5277514ba21dfb738c66686ad71e3",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ISFJ는 가족, 집안일, 기념일, 안정된 생활을 챙기고 ESTP는 활동과 외부 교류를 유지하려 한다. 돈과 생활 리듬에서 안정 저축과 경험 소비가 충돌할 수 있어 기준을 미리 정해야 한다.",
+    "sourceFriction": {
+      "condition": "잦은 변경이 예고 없이 준비를 바꿀 때",
+      "sourceIntentionCandidate": "경험을 제안하는 빠른 말",
+      "targetMayMisreadSource": "기존 수고를 무시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "안정을 확인하는 질문",
+      "sourceMayMisreadTarget": "자유를 막는 걱정으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "변경 뒤 정리도 맡았는가?",
+      "targetQuestion": "실제 걱정 항목을 말했는가?",
+      "jointAgreement": "준비 비용과 변경 가능 구간을 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ESTP:ESTJ",
+    "originalResearchHash": "77f5e4c80664cffac42fc9ce9950b468dc5a5c83723c8dd978a36a17a307e552",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "a42a2a3e92e4b4afe4b5b72d194df8ce076cb8df4b4982fb1937e39ce7c722e8",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "eaba39767fb89815571382185573f8019d9fe187a5caa7d5ce57aae2f265d2f1",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ESTJ는 가정의 규칙과 장기 계획을 잡고 ESTP는 생활의 활력과 외부 활동을 유지하려 한다. 돈과 가족 책임에서는 ESTJ의 안정 기준과 ESTP의 경험 지출이 충돌할 수 있다.",
+    "sourceFriction": {
+      "condition": "합의 없는 변경과 즉각적인 재통제가 이어질 때",
+      "sourceIntentionCandidate": "현재 문제를 고치는 변경",
+      "targetMayMisreadSource": "책임을 무시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "결과 일관성을 지키는 확인",
+      "sourceMayMisreadTarget": "현장 판단을 막는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "변경 이유와 결과를 알렸는가?",
+      "targetQuestion": "예외 처리 범위를 남겼는가?",
+      "jointAgreement": "안전·기한은 고정하고 현장 예외는 기록",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ESTP:ESFJ",
+    "originalResearchHash": "fa7446f515b907d3079081532902c3ea23071d2c54ef48e8bdcf83f1526fd913",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "0920a9497186f64e048104b5c6d9438e790fa65296f735a0d0dfaf711ccfcd42",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "12b91028b2cc871720e8c51ca0e65f39559eed458bd187d9c9e9ed52571e76fc",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ESFJ는 가족 관계, 집안 분위기, 기념일을 챙기고 ESTP는 활동성과 외부 네트워크를 유지하려 한다. 이 조합은 활기찬 가정을 만들 수 있지만, 외부 일정과 돈 지출을 조율하지 않으면 ESFJ는 불안하고 ESTP는 묶인다고 느낀다.",
+    "sourceFriction": {
+      "condition": "새 활동 후 정리·연락을 한쪽에 남길 때",
+      "sourceIntentionCandidate": "새 경험을 나누는 제안",
+      "targetMayMisreadSource": "기존 수고를 잊는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "관계를 유지하는 재확인",
+      "sourceMayMisreadTarget": "자유를 관리하는 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "정리와 연락도 맡았는가?",
+      "targetQuestion": "원하는 보답을 직접 말했는가?",
+      "jointAgreement": "활동 전후 책임과 연락 방식을 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ESTP:ISTP",
+    "originalResearchHash": "df57c079b9535fef808676d16503bea05931167252ecbc3fc0faeea6216b8cf8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "aa178379a840e48686e96d0e8b98ae29604682f05d5d4382fcf81d60b9146e62",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "3b598a6ba88682e67bb16c2cfd71e91c8e1589e3aa8dcbbf27b0bcc5eea9251d",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 자유와 개인 공간을 충분히 주면 편하다. 생활 책임과 감정 대화가 모두 약해질 수 있어 최소한의 약속과 점검 루틴이 필요하다. 돈 사용, 집안일, 외부 활동의 기준은 짧고 명확하게 정해야 흔들리지 않는다.",
+    "sourceFriction": {
+      "condition": "참여를 재촉하거나 짧은 답을 흥미 부족으로 볼 때",
+      "sourceIntentionCandidate": "활동을 넓히는 초대",
+      "targetMayMisreadSource": "개인 시간을 침범하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "집중을 유지하는 간결한 답",
+      "sourceMayMisreadTarget": "함께할 마음이 적다고 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "불참할 선택권을 남겼는가?",
+      "targetQuestion": "가능한 활동량을 말했는가?",
+      "jointAgreement": "작업 범위와 참여 시간을 직접 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ESTP:ISFP",
+    "originalResearchHash": "95ecddb9a174328cb4eeaf6822ee828ff1112aec33923ae31009848313153954",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "186b1abd20140fcd5e54d6f5543c860721bb90584b8bfb3db736e839b2a9eab7",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "68efa0e9386ea5ee2aa947e81775dd2acb08b80b324ef2d38fa2db0e8fb9fe4f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 두 사람 모두 지나친 규칙은 싫어하지만 생활 운영을 미루면 돈과 집안일이 흐트러질 수 있다. ESTP는 활동과 경험 소비를, ISFP는 편안한 공간과 감정적 안전을 중시하므로 예산과 개인 공간 기준이 필요하다.",
+    "sourceFriction": {
+      "condition": "직설 유머에 답할 틈 없이 활동이 이어질 때",
+      "sourceIntentionCandidate": "상황을 가볍게 하는 농담",
+      "targetMayMisreadSource": "마음을 낮추는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "불편을 정리하는 거리두기",
+      "sourceMayMisreadTarget": "장난을 받아주는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "농담에 동의를 받았는가?",
+      "targetQuestion": "원치 않는 행동을 말할 수 있는가?",
+      "jointAgreement": "중단 요청은 바로 수용하고 대안은 나중에 묻기",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ESTP:ESTP",
+    "originalResearchHash": "387e93dc79252dd74ec02e6f582deda31b47af056600f241d75fc1e12d83f84d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "3d216232fe216880ffff6163ea20715e8bb15704b70739ac570964ba4f57af6c",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "3d216232fe216880ffff6163ea20715e8bb15704b70739ac570964ba4f57af6c",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 활동적이고 자유로운 생활은 가능하지만 예산, 저축, 가족 책임, 장기 계획을 의식적으로 세워야 한다. 둘 다 즉흥성이 강해 생활 기반이 흔들리지 않도록 현실 점검 역할을 외부 시스템이나 규칙으로 보완하는 것이 좋다.",
+    "sourceFriction": {
+      "condition": "서로의 활기를 참여 동의로 취급할 때",
+      "sourceIntentionCandidate": "즉시 확인하려는 제안",
+      "targetMayMisreadSource": "거절하기 어려운 도전으로 읽힐 가능성",
+      "targetIntentionCandidate": "분위기를 가볍게 하는 유머",
+      "sourceMayMisreadTarget": "불편을 넘기는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "실제 동의를 받았는가?",
+      "targetQuestion": "중단하고 싶은 점을 말했는가?",
+      "jointAgreement": "참여·비용·정리를 각자 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ESTP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ESTP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ESTP:ESFP",
+    "originalResearchHash": "45a9e55cce05aa975e39a8edfbda7ce10ae46494840afc1adb2179b5a0f664f3",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "901a0b1de84c836b5c150fd295ac437fde8962bcc41c73c62d4b1a186eeb35e5",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "7817acf34e0e48673391c6d3e3a6564219a69fbca107e2c8bdf66be210a0d8c9",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 집 안의 분위기는 활기차지만 돈과 장기 계획이 느슨해지기 쉽다. 경험 소비, 외부 약속, 친구 관계가 많아질 수 있으므로 둘만의 안정 시간과 예산 기준을 따로 정해야 한다.",
+    "sourceFriction": {
+      "condition": "경험담을 농담으로만 받거나 핵심만 요구할 때",
+      "sourceIntentionCandidate": "상황을 가볍게 하는 짧은 농담",
+      "targetMayMisreadSource": "개인 이야기를 낮추는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "경험을 생생히 나누는 말",
+      "sourceMayMisreadTarget": "실제 선택을 늦추는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 농담을 원하는가?",
+      "targetQuestion": "원하는 반응을 말했는가?",
+      "jointAgreement": "경험을 먼저 듣고 다음 활동의 책임을 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:INFJ:INTJ",
+    "originalResearchHash": "778bbf144d2a99c6ed79422a46d2475337ace6587a16209808d76360a56be1c5",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "588a7e6213e213faeca707ea4f7a017f4fd53b5e4f62d6b6887d70c98c56a1bf",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "c948ae01b5aa0f13cf9f6fd4093afe520bb5544f07eaf87460f7c0cbbf26ce41",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 조용하고 전략적인 생활 설계가 가능하지만, 감정 대화를 미루면 부부라기보다 공동 프로젝트처럼 건조해질 수 있다. 돈과 미래 계획은 잘 맞추기 쉽지만, 일상적인 다정함과 갈등 후 회복 의식은 의도적으로 만들어야 한다.",
+    "sourceFriction": {
+      "condition": "의미 설명을 근거 없는 감정으로 줄이거나 논리를 냉정함으로 규정할 때",
+      "sourceIntentionCandidate": "계획의 정서적 영향을 우회적으로 알리는 말",
+      "targetMayMisreadSource": "결정을 피하는 모호한 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "정확하지 않은 설명을 정리하려는 말",
+      "sourceMayMisreadTarget": "내 가치나 경험을 지우는 평가로 들릴 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 바꿀 수 있는 요청을 직접 말했는가?",
+      "targetQuestion": "논리 오류와 상대가 중요하게 여기는 가치를 나눴는가?",
+      "jointAgreement": "자료 확인과 영향 확인을 각각 한 번 하고 수정점을 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:INFJ:INTP",
+    "originalResearchHash": "bb45425bc96f29672fc1fa5f68c4aebedc98607a96637e471f9880e8c0617e1d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "f542efda509cfe4d1d15b6bc574fe829e7b12119fd2aaed86089f489031a7a20",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "c65ff13e2f26d1b50a95645b36d6f127feabb0da4250b62701dbf89c8e4e9134",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 지적 유대가 큰 자산이다. 그러나 생활 운영과 감정 공유에서 INFJ는 더 많은 정서적 연결을 원하고, INTP는 혼자 생각할 시간과 자율성을 원하므로 명확한 기대 조율이 필요하다.",
+    "sourceFriction": {
+      "condition": "고민에 즉시 분석을 붙이거나 우회 표현을 정답 맞히기로 바꿀 때",
+      "sourceIntentionCandidate": "상처를 줄이려는 간접 요청",
+      "targetMayMisreadSource": "해결할 것이 없는 모호한 말로 읽힐 가능성",
+      "targetIntentionCandidate": "문제의 원인을 정리하려는 질문",
+      "sourceMayMisreadTarget": "마음을 평가하는 시험으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원하는 행동을 한 가지 직접 전했는가?",
+      "targetQuestion": "설명과 공감 중 무엇이 필요한지 물었는가?",
+      "jointAgreement": "감정 확인 뒤 분석 동의를 받고 구체 요청 정리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:INFJ:ENTJ",
+    "originalResearchHash": "0da68d00323371a9b05ab9cf28078c06d2e056291f6180dcfc1b2ba0a4511a4f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "ff70dcf9818480fa94d6d39ab1d80c1a25c619312886773a66aa93c1ea929ebb",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "5eb294b19d64bb416e282d099078bc0c975c117b03c20a172a23ca490c0a88a2",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ENTJ는 목표, 자산, 생활 시스템을 빠르게 정리하려 하고 INFJ는 부부의 정서적 방향과 가치 일치를 확인하려 한다. 이 조합은 성장 동력이 크지만, 효율만 앞서면 INFJ가 소진되고 감정만 길어지면 ENTJ가 답답해진다.",
+    "sourceFriction": {
+      "condition": "개선 제안이 요청 없이 반복될 때",
+      "sourceIntentionCandidate": "상처를 줄이려는 완곡한 문제 제기",
+      "targetMayMisreadSource": "동의하면서 지연하는 태도로 읽힐 가능성",
+      "targetIntentionCandidate": "문제를 빨리 바꾸려는 피드백",
+      "sourceMayMisreadTarget": "삶의 방향을 교정하는 평가로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "수정해 달라는 행동을 직접 밝혔는가?",
+      "targetQuestion": "개선보다 듣기를 원하는지 확인했는가?",
+      "jointAgreement": "가치 동의와 실행 동의를 따로 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:INFJ:ENTP",
+    "originalResearchHash": "f2b36aea5bf9678ada2023f191d12332dca39942929fc6af3c889c344f33adb0",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "f98ecc5a611179b860643540f8584f3985b3688f69674d97bfbdbbc1c37411dc",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "bb60b61c385a3f88801ccbe64b43db181694f1fdfd83920104659aff8ba2ed3b",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 아이디어와 비전이 풍부하지만 생활의 안정성과 감정 대화 방식이 숙제다. ENTP는 자유로운 탐험을 원하고 INFJ는 의미 있는 안정감을 원하므로, 공동 비전과 일상 규칙을 분리해 설계해야 한다.",
+    "sourceFriction": {
+      "condition": "개인 고민까지 반론 놀이로 다룰 때",
+      "sourceIntentionCandidate": "상처를 줄이려는 우회 요청",
+      "targetMayMisreadSource": "동의 없는 암시로 읽힐 가능성",
+      "targetIntentionCandidate": "전제를 시험하는 비유",
+      "sourceMayMisreadTarget": "마음을 가볍게 여기는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원하는 수정 행동을 말했는가?",
+      "targetQuestion": "지금 반론을 원하는가?",
+      "jointAgreement": "생각 실험과 개인 요청을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:INFJ:INFJ",
+    "originalResearchHash": "752f9a6c517c18cf4fcd652881ed8595d7bd55cb223e62c1b401953dbf17878b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "0e5b312a541488f503381a5ca6030bd0a43211421c16736b5e9ebdaf505bddab",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "0e5b312a541488f503381a5ca6030bd0a43211421c16736b5e9ebdaf505bddab",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 조용하고 의미 있는 생활을 만들기 쉽지만, 현실 운영을 감정적 분위기에 맡겨 두면 집안일, 돈, 가족 행사 같은 문제가 뒤늦게 부담으로 올라온다. 결혼 생활은 서로의 이상을 확인하는 것만큼 생활 규칙을 명확히 정할 때 안정된다.",
+    "sourceFriction": {
+      "condition": "둘 다 불편함을 완곡하게만 알릴 때",
+      "sourceIntentionCandidate": "상처를 줄이려는 암시",
+      "targetMayMisreadSource": "문제가 크지 않다는 뜻으로 읽힐 가능성",
+      "targetIntentionCandidate": "혼자 마음을 정리하는 거리두기",
+      "sourceMayMisreadTarget": "관계를 끝내려는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원하는 행동을 직접 말했는가?",
+      "targetQuestion": "상대 해석을 확인했는가?",
+      "jointAgreement": "관찰·해석·요청을 나눠 한 가지씩 말함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:INFJ:INFP",
+    "originalResearchHash": "77d3e3932123c674d7191409a739b410acd667d6fb287e984d9a75614cc02027",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "ef22cfc0099e3112fdebc0a72413b411223357c13070405b42430067654a6481",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "1af171fa69178cf3bdb28dc9f081dbc71401a8732a8254b256224d0dc045cf9d",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 감정과 가치관의 언어를 계속 번역해야 한다. 둘 다 깊이를 원하지만 INFJ는 관계의 방향을, INFP는 개인의 내면 정렬을 더 중시하므로 생활 문제에서 엇갈릴 수 있다.",
+    "sourceFriction": {
+      "condition": "서로가 상대의 진심을 대신 설명할 때",
+      "sourceIntentionCandidate": "관계의 의미를 읽으려는 질문",
+      "targetMayMisreadSource": "내 가치를 교정하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "내적 기준을 지키는 유보",
+      "sourceMayMisreadTarget": "공동 방향을 거절하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 말한 사실과 내 해석을 나눴는가?",
+      "targetQuestion": "나의 선을 구체적으로 알렸는가?",
+      "jointAgreement": "상대 의도는 질문으로 확인하고 자기 경계만 설명",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:INFJ:ENFJ",
+    "originalResearchHash": "da706ee61e63b1d95c3337ff09598fb4d0e1f749657e73e70a1215486ac15ce7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "fcce50086087c3066d2126251c2da437879e03ea925baaaad82592b10909faba",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "c92ef7e96364ac5ba69e404cedc3dccce73a4fbf941dfcc03504a923a5ca3497",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 사회적 활동량과 대의 실천 방식이 조율 포인트다. 둘 다 좋은 목적을 말하지만, ENFJ는 넓은 관계망 속에서, INFJ는 제한된 깊은 관계 속에서 의미를 찾는다.",
+    "sourceFriction": {
+      "condition": "모임 확장을 모두에게 당연한 선택으로 제시할 때",
+      "sourceIntentionCandidate": "소수와 깊게 나누려는 선택",
+      "targetMayMisreadSource": "관계 확장을 거부하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "다른 사람도 참여시키려는 초대",
+      "sourceMayMisreadTarget": "개인 경계를 넓히는 압박으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "참여하지 않아도 지지할 방식을 말했는가?",
+      "targetQuestion": "초대와 의무를 구분했는가?",
+      "jointAgreement": "참여 범위와 혼자 정리할 시간을 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:INFJ:ENFP",
+    "originalResearchHash": "2e1daf624c60d265e6853a2f2a5b1d2ab34191f2c1b4b5bc0c14984d0e880234",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "7eff45c613cbea02e8e00641ff5ea8884a09a964a05a04bb74501092b75a78f0",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "213d96b3a70731884e8097152689d742f016c829271371e640be339ae4b8f5b6",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENFP가 즐거움과 확장을 담당하고 INFJ가 구조와 정서적 안정감을 담당하는 조합이 된다. 자녀와 가정에서는 창의성과 조직성이 균형을 만들지만, 일정·돈·사회적 활동의 속도는 명확히 합의해야 한다.",
+    "sourceFriction": {
+      "condition": "새 만남·활동 제안이 검토 시간 없이 이어질 때",
+      "sourceIntentionCandidate": "의미를 숙고하는 유보",
+      "targetMayMisreadSource": "흥미를 잃었다는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "즐거움을 나누는 즉각 제안",
+      "sourceMayMisreadTarget": "마음을 정리할 틈이 없는 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "생각 뒤 답할 때를 알렸는가?",
+      "targetQuestion": "상대가 선택할 활동량을 물었는가?",
+      "jointAgreement": "확정할 한 가지와 열어둘 후보를 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:INFJ:ISTJ",
+    "originalResearchHash": "f62745ed5364d557085bc93490b28b7229edf286c5d62ee68521658d7850baf1",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "ac93723ce3512f2005be749bf6f70f767b08e9387af2dc0e85ea87465768c55a",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "e14b21308426f8f51817c5b4600d8b2e3f1e4034cf7d6473de2b6228c6699257",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ISTJ는 생활 규칙, 돈 관리, 가족 의무를 분명히 하려 하고 INFJ는 관계의 분위기와 서로의 성장 방향을 챙기려 한다. 이 조합은 안정성은 강하지만 감정 대화가 빠지면 한쪽은 외롭고 한쪽은 억울해질 수 있다.",
+    "sourceFriction": {
+      "condition": "의미를 공상으로 부르거나 전례를 낡음으로 취급할 때",
+      "sourceIntentionCandidate": "방향을 재검토하려는 질문",
+      "targetMayMisreadSource": "지킨 책임을 무시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "경험의 안전 장치를 지키는 말",
+      "sourceMayMisreadTarget": "변화를 막는 단정으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "제안의 실제 단계를 말했는가?",
+      "targetQuestion": "전례가 맞는 조건을 설명했는가?",
+      "jointAgreement": "관찰 자료와 가치 목표를 각각 적음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:INFJ:ISFJ",
+    "originalResearchHash": "f45736db5502a58a649a3e929337e6e7713680392edc24ca96668c3b9b5ef1ae",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "0f6bcbe167d41659fa7ab68740cc4a4543be5f4e434039dd2a4fb725036a47ce",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "353b066044f5137280ce4a33151f55e9d2a2cfa1bd167312812fcafaa3e7b957",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 안정과 정서적 배려가 강점이다. 하지만 가족 운영 방식에서 ISFJ는 검증된 루틴을, INFJ는 의미와 방향성을 더 중시하므로 자녀 교육이나 생활 변화에서 기준 차이가 생긴다.",
+    "sourceFriction": {
+      "condition": "서로 추측해서 돕고 실제 요청은 묻지 않을 때",
+      "sourceIntentionCandidate": "의미를 더 살피려는 대화",
+      "targetMayMisreadSource": "실제 수고를 못 알아보는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "기억한 필요를 챙기는 행동",
+      "sourceMayMisreadTarget": "지난 기준에 묶는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "어떤 도움이 필요한지 물었는가?",
+      "targetQuestion": "예전 필요가 지금도 같은지 확인했는가?",
+      "jointAgreement": "현재 요청과 기억에 근거한 도움을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:INFJ:ESTJ",
+    "originalResearchHash": "86490c5244aa5c1571be936eff6f73ee37e40cab6ee8ab246be7d363dd50faaf",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "4a4c65bcc02c4ae40656203f7508ae08f0ff902736647a4214641bdb25efef24",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "8fcba510d201a8781e92bb12166c009462c9e073fedccf53d31c0d723ad463d5",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 규칙, 돈, 시간, 가족 역할에서 충돌이 크다. ESTJ는 명확한 기준과 실행을 원하고 INFJ는 관계의 정서와 의미를 보장받고 싶어 하므로 서로의 언어가 계속 엇갈린다.",
+    "sourceFriction": {
+      "condition": "직설적 수정 요구와 간접적 이견이 맞물릴 때",
+      "sourceIntentionCandidate": "사람의 부담을 알리는 완곡한 말",
+      "targetMayMisreadSource": "실행을 미루는 모호함으로 읽힐 가능성",
+      "targetIntentionCandidate": "결과를 바로잡는 명확한 지적",
+      "sourceMayMisreadTarget": "내 의미를 낮추는 평가로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "바꿔 달라는 행동을 특정했는가?",
+      "targetQuestion": "지적 전에 영향과 이유를 들었는가?",
+      "jointAgreement": "사실 확인·영향 확인·수정 약속을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:INFJ:ESFJ",
+    "originalResearchHash": "b601ef1b7100737f25ab53e732e65c927ea334cfbd888b9e09be2ef6f4ec61d8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "d11c82dc495ec6891a71ccf175de825027259223821c5039e9fa3fd7549555e5",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "3c7c5f8891484b480e9142c16d89cc0a886ed2f9b6999e7712bd474038d330d5",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ESFJ는 가족 행사, 생활 루틴, 주변 관계를 적극적으로 챙기고 INFJ는 부부 사이의 의미와 정서적 균형을 중시한다. 이 조합은 따뜻한 가정을 만들 수 있지만, 외부 가족과 지인 문제에 INFJ가 과부하를 느끼지 않도록 경계가 필요하다.",
+    "sourceFriction": {
+      "condition": "안부 참여를 예의로 고정하거나 일상 대화를 얕다고 볼 때",
+      "sourceIntentionCandidate": "조용히 정리할 공간을 구하는 말",
+      "targetMayMisreadSource": "관계에서 빠지려는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "참여감을 살피는 소개·초대",
+      "sourceMayMisreadTarget": "개인 사생활을 공개하는 부담으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원하는 연결 방식을 알렸는가?",
+      "targetQuestion": "소개·공개에 동의를 받았는가?",
+      "jointAgreement": "안부 빈도와 공개 범위를 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:INFJ:ISTP",
+    "originalResearchHash": "d43deb13ab22284687f1e85266901eb14b2e310890428944a3333d3c1d552c1b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d70fbd7d4751cbe56d672d5fe437aab969a78e03628e607613ce1c48d624fd3f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "d7242d380106b34a6fe888ad12bd3d7376a28734915fa912468844fac8bad042",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 문제 처리 방식이 과제다. ISTP는 직접적이고 실용적으로 해결하려 하고 INFJ는 감정과 의미까지 함께 다루려 하므로 문제 해결의 범위를 맞춰야 한다.",
+    "sourceFriction": {
+      "condition": "긴 감정 설명에 해결만 답하거나 짧은 답을 마음 부족으로 볼 때",
+      "sourceIntentionCandidate": "경험의 의미를 나누는 이야기",
+      "targetMayMisreadSource": "당장 할 일이 없는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "불편을 줄이는 간단한 해법",
+      "sourceMayMisreadTarget": "감정을 끝내려는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금은 들어주기를 원하는지 말했는가?",
+      "targetQuestion": "해결책을 원한 요청인지 확인했는가?",
+      "jointAgreement": "경청과 해결 시간을 별도로 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:INFJ:ISFP",
+    "originalResearchHash": "f4b27df0b9dfb98f3abf5015d738407699fe6f9856b64be5ce67c30ac923610e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "4ba2bc087fc5a2535ed65513ef44981e22b251097196527381672030ea10d01c",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "d4d6a238cd93d7af0b072f88ec458e40b9e941b0a11a477c00953af451571cbc",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 조용하고 따뜻한 집을 만들 수 있지만, 현실 결정은 늦어지기 쉽다. INFJ는 의미와 방향을, ISFP는 일상 감각과 자유를 중시하므로 집안일, 지출, 가족 관계의 기준을 아주 구체적으로 합의해야 한다.",
+    "sourceFriction": {
+      "condition": "상대의 침묵에 의미를 대신 붙일 때",
+      "sourceIntentionCandidate": "의도를 이해하려는 조심스러운 해석",
+      "targetMayMisreadSource": "마음을 정해버리는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "느낌을 정리하는 침묵",
+      "sourceMayMisreadTarget": "동의 또는 거절로 잘못 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "추측을 사실처럼 말하지 않았는가?",
+      "targetQuestion": "짧게라도 필요한 시간을 알렸는가?",
+      "jointAgreement": "해석 대신 확인 질문 하나를 사용",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:INFJ:ESTP",
+    "originalResearchHash": "5259a8346469141f78c6b1abf0b2be29d8002a9c7acd490f01040db58ee5248c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "953872c6f5ff4bedb10a5f58d19fccf156de03ed94e4c1a0363184c43de4e187",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "5ab345f1eb82e8871f7e21871185ac93502a0b1b3bbbe299388a5d249b13f738",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 속도와 자극 수준이 핵심이다. ESTP는 경험과 행동을 늘리고 싶어 하고 INFJ는 조용한 의미와 정서적 안전을 원하므로, 외부 활동과 회복 시간을 명확히 나눠야 한다.",
+    "sourceFriction": {
+      "condition": "충분한 동의 없이 활동을 재촉하거나 경험 전 해석을 고정할 때",
+      "sourceIntentionCandidate": "의미를 검토하는 유보",
+      "targetMayMisreadSource": "행동을 막는 망설임으로 읽힐 가능성",
+      "targetIntentionCandidate": "현장을 확인하려는 즉시 제안",
+      "sourceMayMisreadTarget": "자극을 강요하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "작은 경험으로 확인할 부분이 있는가?",
+      "targetQuestion": "참여 범위와 중단권을 물었는가?",
+      "jointAgreement": "선택 가능한 작은 활동 뒤 각자 해석을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:INFJ:ESFP",
+    "originalResearchHash": "c5e4d2beb5c168c28ea10b765735a33503b9ef262489c48dc58d7eb30387f59b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "20d4c39ef86dccc8c3aab3eeb61b25e7147868635b2b98bf1f9984035d40beda",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "ce58ac131537053c6ab97faf449a0b4711c183e951405a7603f3575de57f2850",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 INFJ는 조용한 안정과 의미 있는 대화를 원하고, ESFP는 생활 속 즐거움과 사람을 만나는 흐름을 유지하고 싶어 한다. 돈과 일정에서는 INFJ가 장기 방향을, ESFP가 현재 만족을 중시하므로 예산과 휴식 방식을 미리 맞춰야 한다.",
+    "sourceFriction": {
+      "condition": "활동 참여를 재촉하거나 경험을 깊이 없는 것으로 평가할 때",
+      "sourceIntentionCandidate": "생각할 공간을 지키는 유보",
+      "targetMayMisreadSource": "함께할 마음이 없다는 뜻으로 읽힐 가능성",
+      "targetIntentionCandidate": "경험을 함께 나누는 초대",
+      "sourceMayMisreadTarget": "자기 리듬을 침범하는 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "가능한 참여 방식을 말했는가?",
+      "targetQuestion": "거절할 수 있는 초대였는가?",
+      "jointAgreement": "활동과 조용한 시간을 모두 선택 가능하게 둠",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:INFP:INTJ",
+    "originalResearchHash": "5afa250a1566d53ce2d24baca849d96a3c8dfa6fbce0d6de3dad3f23a2a3a26b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ca77c6281545f314c0053b1080189d168507ec50a5ec956f414588ccc0726cda",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "ac68d3f0da9cc32dfb105f6b59f20cd41d30f5f6989117f7a86a997e7bc2c635",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 INTJ가 계획과 실행을 돕고 INFP가 정서적 의미를 제공한다. 다만 INTJ의 비판이 INFP의 자기 세계를 공격하는 말처럼 들리지 않게 조심해야 한다.",
+    "sourceFriction": {
+      "condition": "목표 달성 이유로 상대의 가치 거부를 비합리적이라 부를 때",
+      "sourceIntentionCandidate": "내게 맞지 않는 조건을 지키려는 유보",
+      "targetMayMisreadSource": "계획을 방해하는 비협조로 읽힐 가능성",
+      "targetIntentionCandidate": "실행 가능한 해법을 찾으려는 제안",
+      "sourceMayMisreadTarget": "마음을 교정하려는 지시로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "거절 이유와 가능한 대안을 함께 전했는가?",
+      "targetQuestion": "효율을 위해 양보할 수 없는 선을 들었는가?",
+      "jointAgreement": "목적·금지 조건·실행 수단을 분리해 두 사람의 선택권 보존",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "cmpr:material:CH04.P2:values-meet-operating-detail"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:INFP:INTP",
+    "originalResearchHash": "9eac24bc1aed6cf1bb7cb8b93a0889816c0d6a19c9474cd5dd693c297c0b2e65",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "d1c14ea3860d2e65819b292a1ee9b9e9d82ea1ce96253feed8c307f0fc23335f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "12496d46192eed232178d20491d539bcf3f4f7495b6ca1627682623f3222dc7d",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 개인 공간과 지적 대화가 강점이다. 하지만 감정 표현, 생활 실행, 돈 관리가 모두 약해질 수 있어 구조가 필요하다. 둘 다 미루기 시작하면 아무도 현실을 닫지 않으므로 책임표를 따로 만들어야 한다.",
+    "sourceFriction": {
+      "condition": "가치 표현을 논증 부족으로 지적하거나 반론을 악의로 단정할 때",
+      "sourceIntentionCandidate": "자신의 경계를 지키는 거절",
+      "targetMayMisreadSource": "합리적 대화를 거부하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "일관성을 검토하려는 질문",
+      "sourceMayMisreadTarget": "자기 신념을 비웃는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "거절할 조건을 구체적으로 말했는가?",
+      "targetQuestion": "질문이 가치 선택권을 침범하지 않는가?",
+      "jointAgreement": "설명 가능한 이유와 양보할 수 없는 선을 함께 적음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:INFP:ENTJ",
+    "originalResearchHash": "699839ce73fd05100ee9399ba7f28c8e9fec83fc0971ed226fd807f518fe302e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "bf6165c959305603b02dc6a38d5f2449a53f9f5ba0124431fa25acb24ee269d0",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "c6ec53d686f89609621aaedb6745519fb058cbb04dec17ac81457408d2a81d9a",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENTJ가 계획과 성취를, INFP가 정서와 의미를 담당하기 쉽다. 하지만 결정권이 ENTJ에게 쏠리면 INFP는 자기 삶이 통제된다고 느낀다.",
+    "sourceFriction": {
+      "condition": "도움을 이유로 선택을 대신하거나 거절을 설명 없이 숨길 때",
+      "sourceIntentionCandidate": "내적 기준을 지키려는 유보",
+      "targetMayMisreadSource": "실행을 회피하는 비협조로 읽힐 가능성",
+      "targetIntentionCandidate": "실현 가능성을 높이려는 제안",
+      "sourceMayMisreadTarget": "자기 삶을 대신 정하는 압박으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "가능한 대안과 불가능한 조건을 나눴는가?",
+      "targetQuestion": "상대가 원한 목표인지 먼저 물었는가?",
+      "jointAgreement": "거절권을 보존하고 동의한 작은 단계만 실행",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:INFP:ENTP",
+    "originalResearchHash": "5fa30ebe1080fc0b061b01e000b265e1c36751f088b070b82e55e15851eeeb03",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "b31d04ae7da482276c74c6cc25d6090556aa73b089718e09a7768990deb77243",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0c70470f086b3706d9621299777cf2baddd2f68547e5f8e290b6b547f1f151d9",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 자유로운 아이디어는 풍부하지만 책임과 감정 기준이 부딪힌다. INFP는 진정성을 원하고 ENTP는 가능성과 토론의 자유를 원한다.",
+    "sourceFriction": {
+      "condition": "소중한 가치가 요청 없이 논쟁 대상이 될 때",
+      "sourceIntentionCandidate": "가치의 선을 지키는 거절",
+      "targetMayMisreadSource": "토론 자체를 막는 통제로 읽힐 가능성",
+      "targetIntentionCandidate": "아이디어를 흔들어 보는 반론",
+      "sourceMayMisreadTarget": "자기 존재를 낮추는 공격으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "내게 불편한 행동을 특정했는가?",
+      "targetQuestion": "논쟁해도 되는 주제인가?",
+      "jointAgreement": "개인 경계는 승패 없이 존중",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:INFP:INFJ",
+    "originalResearchHash": "fb36e22a665344f3e033567dffe783d48f476e2aec94c210dc3ed36928631a0d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "1af171fa69178cf3bdb28dc9f081dbc71401a8732a8254b256224d0dc045cf9d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "ef22cfc0099e3112fdebc0a72413b411223357c13070405b42430067654a6481",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 두 사람 모두 깊은 의미를 원하지만 의사결정 기준이 다르다. INFJ는 방향성과 조화를, INFP는 개인 진정성과 자유를 더 중시해 생활 문제에서 엇갈릴 수 있다.",
+    "sourceFriction": {
+      "condition": "서로가 상대의 진심을 대신 설명할 때",
+      "sourceIntentionCandidate": "내적 기준을 지키는 유보",
+      "targetMayMisreadSource": "공동 방향을 거절하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "관계의 의미를 읽으려는 질문",
+      "sourceMayMisreadTarget": "내 가치를 교정하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "나의 선을 구체적으로 알렸는가?",
+      "targetQuestion": "상대가 말한 사실과 내 해석을 나눴는가?",
+      "jointAgreement": "상대 의도는 질문으로 확인하고 자기 경계만 설명",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:INFP:INFP",
+    "originalResearchHash": "3154eadac02c27168338a5805ea7c91fbdd8d12ba0754c36b36546c2d9e43b05",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "a5728cee5136c4b88da4d7f6303f479a723819316d856a62ecc8e9aae1cb3a9b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "a5728cee5136c4b88da4d7f6303f479a723819316d856a62ecc8e9aae1cb3a9b",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 자유와 감정적 이해가 강점이지만 생활 규칙, 돈 관리, 역할 분담을 명확히 하지 않으면 현실 문제가 쌓인다. 사랑만으로 버티려 하지 말고 비용, 집안일, 가족 의무를 숫자와 일정으로 고정해야 한다.",
+    "sourceFriction": {
+      "condition": "둘 다 배려하며 실제 거절을 말하지 않을 때",
+      "sourceIntentionCandidate": "상처를 줄이는 완곡한 표현",
+      "targetMayMisreadSource": "별문제 없다는 동의로 읽힐 가능성",
+      "targetIntentionCandidate": "혼자 의미를 정리하는 거리두기",
+      "sourceMayMisreadTarget": "관심이 줄었다고 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "내가 원하는 행동을 말했는가?",
+      "targetQuestion": "상대 뜻을 확인했는가?",
+      "jointAgreement": "감정 공감 뒤 맡을 행동 하나씩 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:INFP:ENFJ",
+    "originalResearchHash": "9752f9866b1972fb0321faee12a7884e9dc744435a9fd1c8353100f381ff1c81",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "eca981c09641f3ad51204fa380f57288b9e85802ee0daf6711941459949e006c",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "a19376126fef3ac86eb240a63eaa67855739c382cf82b3ac42e636625a6d5e0b",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENFJ가 가족과 사회적 관계를 조율하고 INFP가 개인의 감정과 가치를 지키려 한다. 공동체 기준과 개인 진정성의 충돌을 계속 번역해야 한다.",
+    "sourceFriction": {
+      "condition": "좋은 취지라는 이유로 참여를 기대할 때",
+      "sourceIntentionCandidate": "자기 기준을 지키는 유보",
+      "targetMayMisreadSource": "모두의 노력을 거부하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "관계를 위해 설득하는 말",
+      "sourceMayMisreadTarget": "개인 선택을 교정하는 압박으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "거절 조건을 분명히 말했는가?",
+      "targetQuestion": "개별 동의를 다시 받았는가?",
+      "jointAgreement": "공동 목표와 참여 방식은 따로 동의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:INFP:ENFP",
+    "originalResearchHash": "2f58438d45a40217cef0b4a27356b9ff55df60362491d8a1dbfb5936dd6d0331",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "7fb41219fa290787bd6b05dec7cccc5f70bb59cb2759009a6b2f7237c67f9562",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "077d3093a2a4c276dc923b882c473ce3f976f7533af9d2cdb8f77ba728910da0",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 창의성과 가치관이 잘 맞는다. 다만 ENFP가 일을 벌리고 INFP가 정리 없이 감정적으로 지치면 생활과 돈 관리가 흐트러질 수 있다.",
+    "sourceFriction": {
+      "condition": "이야기 공개나 모임 참여가 빠르게 확장될 때",
+      "sourceIntentionCandidate": "사적 의미를 지키는 유보",
+      "targetMayMisreadSource": "기쁨을 함께하지 않는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "즐거움을 넓히는 공유",
+      "sourceMayMisreadTarget": "개인 이야기를 공개하는 부담으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "어디까지 공유 가능한지 말했는가?",
+      "targetQuestion": "공개 범위를 먼저 물었는가?",
+      "jointAgreement": "개인 이야기와 공동 이야기를 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:INFP:ISTJ",
+    "originalResearchHash": "f6b7f63ad923043f8f75d22776d9a5dd6437673a97c367fd0e11dde09cda5a3f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "d2d408505f9625d420d68fa1795fc7c3d48c6bbf0123ee9f38ebe9c4946f3b41",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "880add597de553f386c1a41dfc2fd9646a09e2cbc9108824caf35c435c189b33",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ISTJ가 생활 구조를 만들고 INFP가 정서적 의미를 채울 수 있다. 하지만 규칙, 돈, 가족 의무에서 ISTJ의 통제와 INFP의 자유 욕구가 충돌한다.",
+    "sourceFriction": {
+      "condition": "의미를 비현실로 부르거나 규칙을 마음 부족으로 볼 때",
+      "sourceIntentionCandidate": "맞지 않는 조건을 거절하는 말",
+      "targetMayMisreadSource": "책임을 피하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "일정을 지키려는 확인",
+      "sourceMayMisreadTarget": "개인 선택을 통제하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "불편한 조건과 가능한 대안을 나눴는가?",
+      "targetQuestion": "기준의 이유를 전했는가?",
+      "jointAgreement": "목적과 일정의 필수 조건을 같이 적음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:INFP:ISFJ",
+    "originalResearchHash": "6bc97d1cd4e3bec41dfb5ad54a13deb086fd450291a8c7d33332ce51e1573ebd",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "e24c200461f9ee61ed6a459801199cfc733d1be5fe15ce2f017d4abc9b424e33",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "b849eb2b334b8cace272470cc0f79da4e9fda4f147877c732c7c82970d8d1d04",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 안정과 정서적 부드러움이 강점이다. 하지만 가사, 가족 의무, 자녀 교육에서 ISFJ의 전통성과 INFP의 자율성이 충돌할 수 있다.",
+    "sourceFriction": {
+      "condition": "상대가 원치 않는 도움을 계속 맞춰줄 때",
+      "sourceIntentionCandidate": "자유와 의미를 지키는 거절",
+      "targetMayMisreadSource": "수고를 밀어내는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "기억한 필요를 챙기는 제안",
+      "sourceMayMisreadTarget": "기존 역할에 묶는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "고마움과 거절을 함께 말했는가?",
+      "targetQuestion": "지금도 필요한 도움인가?",
+      "jointAgreement": "도움 항목은 요청하고 책임은 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:INFP:ESTJ",
+    "originalResearchHash": "243c9c5b7e86bf81370742b0a975d438d1243ac95fd64e1214e2b8629144f7cc",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "a325368869a08a7f2c55fc5cae185789ead0de92b523214d5992629a229ec513",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "a7d4674f712bc896bbe9bda3c0ce526fd398b7c632b6d55db6fb22ca1fbb6282",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활·돈·계획은 ESTJ가, 정서·가치·관계의 부드러움은 INFP가 담당하기 쉽다. 그러나 역할이 고정되면 한쪽은 통제하고 한쪽은 회피하는 구조가 된다.",
+    "sourceFriction": {
+      "condition": "거절을 비효율로 평가하거나 기준 요청을 무정함으로 볼 때",
+      "sourceIntentionCandidate": "맞지 않는 수단을 거절하는 말",
+      "targetMayMisreadSource": "실행 책임을 피하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "문제를 해결하려는 직접 조언",
+      "sourceMayMisreadTarget": "개인의 가치를 고치는 지시로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "선택할 수단과 금지 조건을 말했는가?",
+      "targetQuestion": "해결책을 요청받았는가?",
+      "jointAgreement": "목적·제약·방법 선택권을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:INFP:ESFJ",
+    "originalResearchHash": "2791c226261fccabcd67d4a6aba44f6d96f53107d621cd1375945652e35b9717",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "53be18c8f56a8e3c48f27700800807e9415aa28a6086ddc1b3e4d6e9b8354de5",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "b8354baf8fd1c77cfc37a349caea448b5d3cc006b506b848e83408c4d6a06504",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ESFJ가 가족과 일상 돌봄을 조율하고 INFP가 정서적 의미를 채운다. 다만 친척·사회적 의무·가정 내 규범에서 Fe-Fi 충돌이 생긴다.",
+    "sourceFriction": {
+      "condition": "예의를 이유로 원치 않는 모임을 권할 때",
+      "sourceIntentionCandidate": "자기 경계를 지키는 불참",
+      "targetMayMisreadSource": "관계를 소홀히 하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "소속감을 주려는 초대",
+      "sourceMayMisreadTarget": "개인 선택을 좁히는 압박으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "거절과 관계 지지를 나눠 말했는가?",
+      "targetQuestion": "빠져도 불이익이 없는가?",
+      "jointAgreement": "참여 방식·공개 범위를 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:INFP:ISTP",
+    "originalResearchHash": "bf57b263de2168d789b4e794fcac5e5a56c93d7432e3e282e17d816f932a0249",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "dfabda27c77c48532c2c14770bf11b12b357a24b3ac7be8843a5163513afbd88",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "ba5429f6e8b79e430fe73417fde5321c479d5f9457d01a6eb673337abd402045",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 자유와 사생활은 잘 맞지만 정서적 교류의 양이 과제다. INFP가 깊은 교감을 원할 때 ISTP가 짧게 반응하면 외로움이 쌓인다.",
+    "sourceFriction": {
+      "condition": "고민에 실용 해법만 주거나 간결함을 무관심으로 볼 때",
+      "sourceIntentionCandidate": "경험의 의미를 나누는 말",
+      "targetMayMisreadSource": "해결할 것이 없는 이야기로 읽힐 가능성",
+      "targetIntentionCandidate": "불편을 줄이는 짧은 해결책",
+      "sourceMayMisreadTarget": "마음을 닫으라는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "듣기와 해결 중 원하는 것을 말했는가?",
+      "targetQuestion": "해결이 필요한 요청인지 물었는가?",
+      "jointAgreement": "도움의 형태를 먼저 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:INFP:ISFP",
+    "originalResearchHash": "376906faf7aaf97dddb85dd566e8706c781fde7cf7c8406beb80838d9c05fdba",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "fe762a34d6ecb3120dbed06b0f6852678f426993c0413ebc212a075c419175e2",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "121074ee3a1bfba44886ee9e934aff9e03dc261cf5159b2e97dd213fd9a16cbb",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 서로의 감정과 자유를 존중하지만 실행과 생활 관리가 모두 약해질 수 있다. 돈, 일정, 집안일은 별도 구조가 필요하다. 서로를 배려한다는 이유로 책임을 미루면 감정만 좋고 생활은 흔들린다.",
+    "sourceFriction": {
+      "condition": "둘 다 불편을 완곡하게 넘길 때",
+      "sourceIntentionCandidate": "가능한 이야기를 더 펼치는 말",
+      "targetMayMisreadSource": "현재 느낌을 놓치는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "지금의 느낌을 조용히 정리하는 반응",
+      "sourceMayMisreadTarget": "관심이 적은 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 지금 어떤 경험을 말하는가?",
+      "targetQuestion": "생각할 시간을 알렸는가?",
+      "jointAgreement": "감상과 실제 선택을 나눠 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:INFP:ESTP",
+    "originalResearchHash": "4f617c300e5241c82c42b9bb7e9da595af4a1d5850fa2e2f62ade265873974c6",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "626ddd0a44ca3dbaae251a928ec09d09fa8aceab9ee0d176f1a6b05e2a672677",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "75e269c84b07c86ddc6e74883be4446abd65a3522784d4db74874fd544d1d3d0",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 속도, 자극 수준, 돈과 활동 방식에서 충돌한다. ESTP는 현재의 경험을 원하고 INFP는 의미와 정서적 안전을 원한다. 큰 소비와 외부 활동은 기준을 정하고, 감정 회복 시간은 반드시 남겨야 한다.",
+    "sourceFriction": {
+      "condition": "농담·활동이 동의 없이 선을 넘을 때",
+      "sourceIntentionCandidate": "소중한 선을 설명하는 진지한 말",
+      "targetMayMisreadSource": "재미를 막는 규제로 읽힐 가능성",
+      "targetIntentionCandidate": "상황을 가볍게 하는 유머",
+      "sourceMayMisreadTarget": "마음을 무시하는 놀림으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원치 않는 행동을 특정했는가?",
+      "targetQuestion": "장난에 동의를 받았는가?",
+      "jointAgreement": "거절은 논쟁 없이 수용하고 대안을 물음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INFP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INFP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:INFP:ESFP",
+    "originalResearchHash": "180683c02c77db4b849aa3bb20e1788bab9607317c54b26589d345d653ee9a55",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "581eabd5368af0780169ddd8a9ad495591f73e6018a5d7982df531760aef33c2",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "4e52bf84122597abbd14452fbc85ba1d860b84619276d5933494442f6d311673",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 현재의 즐거움과 내면의 의미가 균형을 이뤄야 한다. 갈등을 피하기만 하면 생활 문제와 감정 문제가 동시에 쌓인다. 돈, 외부 활동, 가족 일정은 기준을 정하고, INFP의 회복 시간도 존중해야 한다.",
+    "sourceFriction": {
+      "condition": "활동 참여를 재촉하거나 즐거움을 얕음으로 볼 때",
+      "sourceIntentionCandidate": "혼자 정리하려는 유보",
+      "targetMayMisreadSource": "함께 있고 싶지 않다는 뜻으로 읽힐 가능성",
+      "targetIntentionCandidate": "현재 즐거움을 나누는 초대",
+      "sourceMayMisreadTarget": "생각할 틈을 없애는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "가능한 만남 형태를 말했는가?",
+      "targetQuestion": "혼자 있을 선택권을 남겼는가?",
+      "jointAgreement": "활동과 조용한 공유 시간을 따로 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:INTJ:INTJ",
+    "originalResearchHash": "8978b7213fa528bea3329c70cf9893f51ec3e700d753df2d18d844f83db19b64",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "b5ad4d0b14cd32671129f10d239a0de4ecde508caf385701d6ae5205ca357dc7",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "b5ad4d0b14cd32671129f10d239a0de4ecde508caf385701d6ae5205ca357dc7",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 공간, 일정, 지적 관심을 존중하기 쉽지만, 집안일과 현실 과제는 서로 미루거나 전략만 말하고 실행이 늦어질 수 있다. 돈과 책임 분담도 감정이 아니라 기준표로 정해야 관계가 덜 건조해진다.",
+    "sourceFriction": {
+      "condition": "서로의 완성안을 먼저 정답으로 선언할 때",
+      "sourceIntentionCandidate": "잘못된 전제를 줄이려는 반론",
+      "targetMayMisreadSource": "내 판단 전체를 낮추는 평가로 읽힐 가능성",
+      "targetIntentionCandidate": "자기 논리의 일관성을 지키려는 설명",
+      "sourceMayMisreadTarget": "수정 의사가 전혀 없는 태도로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "내 결론을 바꿀 자료는 무엇인가?",
+      "targetQuestion": "상대가 반대하는 전제를 정확히 들었는가?",
+      "jointAgreement": "각자 가정과 수정 조건을 적고 대안을 한 번씩 검토",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:INTJ:INTP",
+    "originalResearchHash": "891ffd04c34bc1d3d9a95c7f2425c9b55dbe97272bf3f5aa95b8e1d4c717351f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "5a125cc720eaf22fa36b6ecabde8d5fcbb7c2a53b37eb15e22673e3445ca377e",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "42db8402f72f7d4efd266db9a0ef824cf0c3f27d739d902520aa08371430ca7f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 각자의 연구와 개인 공간을 존중하기 쉽다. 하지만 집안일, 돈, 일정처럼 닫아야 할 문제를 계속 미루면 INTJ가 피로해진다. 책임 분담을 말로만 합의하지 말고 실제 마감과 담당자로 고정해야 한다.",
+    "sourceFriction": {
+      "condition": "확정된 일정 직전에 새로운 가설이 추가될 때",
+      "sourceIntentionCandidate": "실행할 선택지를 좁히려는 정리",
+      "targetMayMisreadSource": "생각을 더 하지 말라는 통제로 들릴 가능성",
+      "targetIntentionCandidate": "아직 검토하지 못한 가능성을 남기는 질문",
+      "sourceMayMisreadTarget": "이미 한 합의를 피하는 태도로 들릴 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "이번 결정에 꼭 필요한 검토만 골랐는가?",
+      "targetQuestion": "추가 질문이 마감에 주는 부담을 알렸는가?",
+      "jointAgreement": "탐색 시간과 확정 시간을 구분하고 미해결 가설은 별도 기록",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:INTJ:ENTJ",
+    "originalResearchHash": "da193bdb3664cce46d39b04a3353dccc082b10e9a5d0c6a22feeca566ac684f4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "7c239b12335a21d8e078cd866698abd0d4e57e61725c4ee6279c1e45163f442f",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "22026d31f55ff9e0ece96117745371224a453b5227aae8e8113def4d149841a3",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 커리어와 자산 목표를 함께 설계하기 좋다. 그러나 둘 다 강한 기준을 갖기 때문에 역할과 권한을 명확히 나누지 않으면 권력 싸움이 생긴다.",
+    "sourceFriction": {
+      "condition": "서로 상대 검토 없이 자기 안을 실행할 때",
+      "sourceIntentionCandidate": "안의 모순을 먼저 막으려는 질문",
+      "targetMayMisreadSource": "실행을 막거나 주도권을 빼앗는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "늦기 전에 행동을 시작하려는 결정",
+      "sourceMayMisreadTarget": "검토자를 배제한 지시로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 지적이 어떤 선택을 돕는가?",
+      "targetQuestion": "반대 의견을 들을 시점을 남겼는가?",
+      "jointAgreement": "결정 범위와 재검토 조건을 공동 문서로 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:INTJ:ENTP",
+    "originalResearchHash": "d8261864a03c1a0e46e81b2517618c0f9d33679ac998f09ecea25f2b06ff55cb",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "b917e453a20d63c6d3bbb4979ecbddda440c441eb00ac7af089f5c1cebea7ad5",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "22e2efbb02e16bcc44fbe380e2600265d6d4d84c32d686140c5cd9db9cd1b04e",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 자유 시간, 일정, 정리정돈, 목표 몰입도가 핵심 갈등이다. INTJ가 모든 생활을 전략화하고 ENTP가 모든 구조를 느슨하게 만들면 피로가 쌓인다.",
+    "sourceFriction": {
+      "condition": "이미 끝낸 결론을 농담 섞인 반론으로 다시 열 때",
+      "sourceIntentionCandidate": "선택한 방향을 책임 있게 유지하려는 정리",
+      "targetMayMisreadSource": "재미와 탐색을 막는 완고함으로 읽힐 가능성",
+      "targetIntentionCandidate": "다른 전제를 시험하는 장난스러운 반론",
+      "sourceMayMisreadTarget": "진지한 약속을 가볍게 여기는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "반박 자체와 약속 변경을 구분했는가?",
+      "targetQuestion": "상대가 지금 토론에 동의했는가?",
+      "jointAgreement": "생각 실험과 실제 변경 요청을 표시하고 변경은 별도 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:INTJ:INFJ",
+    "originalResearchHash": "e02255d2636390c73a9404d980d396227eb18c27865b19a723e3f39ee4bb2c8b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "c948ae01b5aa0f13cf9f6fd4093afe520bb5544f07eaf87460f7c0cbbf26ce41",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "588a7e6213e213faeca707ea4f7a017f4fd53b5e4f62d6b6887d70c98c56a1bf",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 삶의 의미와 큰 방향을 공유하기 좋지만, 가족 문제와 정서적 돌봄에서 INTJ가 해결책만 제시하면 INFJ가 외로움을 느낀다. 돈과 역할은 합리적으로 정하되, 정서 확인은 별도 루틴으로 남겨야 한다.",
+    "sourceFriction": {
+      "condition": "의미 설명을 근거 없는 감정으로 줄이거나 논리를 냉정함으로 규정할 때",
+      "sourceIntentionCandidate": "정확하지 않은 설명을 정리하려는 말",
+      "targetMayMisreadSource": "내 가치나 경험을 지우는 평가로 들릴 가능성",
+      "targetIntentionCandidate": "계획의 정서적 영향을 우회적으로 알리는 말",
+      "sourceMayMisreadTarget": "결정을 피하는 모호한 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "논리 오류와 상대가 중요하게 여기는 가치를 나눴는가?",
+      "targetQuestion": "상대가 바꿀 수 있는 요청을 직접 말했는가?",
+      "jointAgreement": "자료 확인과 영향 확인을 각각 한 번 하고 수정점을 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:INTJ:INFP",
+    "originalResearchHash": "3714271760948571217697ec04f6dcdd8f4980c284995d58f1a146286e8c048f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "ac68d3f0da9cc32dfb105f6b59f20cd41d30f5f6989117f7a86a997e7bc2c635",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ca77c6281545f314c0053b1080189d168507ec50a5ec956f414588ccc0726cda",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 정리정돈, 생활 리듬, 일하는 분위기, 목표 몰입도에서 차이가 드러난다. INTJ가 구조를 잡고 INFP가 의미를 살리되, 어느 한쪽이 상대를 교정 대상으로 보면 관계가 굳는다.",
+    "sourceFriction": {
+      "condition": "목표 달성 이유로 상대의 가치 거부를 비합리적이라 부를 때",
+      "sourceIntentionCandidate": "실행 가능한 해법을 찾으려는 제안",
+      "targetMayMisreadSource": "마음을 교정하려는 지시로 읽힐 가능성",
+      "targetIntentionCandidate": "내게 맞지 않는 조건을 지키려는 유보",
+      "sourceMayMisreadTarget": "계획을 방해하는 비협조로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "효율을 위해 양보할 수 없는 선을 들었는가?",
+      "targetQuestion": "거절 이유와 가능한 대안을 함께 전했는가?",
+      "jointAgreement": "목적·금지 조건·실행 수단을 분리해 두 사람의 선택권 보존",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:INTJ:ENFJ",
+    "originalResearchHash": "1874f74e319112dec40785d48528cd66984576a91e586b1d87febcb12045d782",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "d07e061f0276e54945b7fb51a6ca8ac62937b8c71ffde7e4f75debec384458f4",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "d4627bd77ff529c704845a5195fb8bf33abe8ac77f4402006e2734931010c315",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 사회적 관계, 가족 행사, 감정 표현 빈도가 핵심 갈등이다. INTJ는 에너지 한계를 설명하고 ENFJ는 정서적 확인 욕구를 구체화해야 한다.",
+    "sourceFriction": {
+      "condition": "침묵을 참여 거절로 보거나 잦은 확인을 간섭으로 단정할 때",
+      "sourceIntentionCandidate": "혼자 판단을 정리하려는 거리두기",
+      "targetMayMisreadSource": "관계에 관심이 없는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "함께 미래를 맞추려는 감정 확인",
+      "sourceMayMisreadTarget": "자율 시간을 계속 침범하는 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "돌아와 이야기할 때를 알렸는가?",
+      "targetQuestion": "확인 질문을 거절할 자유도 주었는가?",
+      "jointAgreement": "개인 검토 시간 뒤 공동 대화 시간을 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:INTJ:ENFP",
+    "originalResearchHash": "19c19b13d7044ad634f95ab11a311b03e1d06fc1d3968f6382e99080e16eab15",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "ffaaee04cec941d7ece6b3228430b748eb9010baa609b49ce8de51b93d5bc6ef",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "a2a51af3de246694cf24d12ab55d50c2738f7dc483b274213800f2aa9410bf0c",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 자유로운 탐색과 안정적 계획을 동시에 담을 그릇이 필요하다. 한쪽이 상대를 무책임하거나 차갑다고 단정하면 갈등이 커진다. 돈과 생활 리듬은 최소 기준을 정하고, 감정 표현은 ENFP의 언어로도 남겨야 한다.",
+    "sourceFriction": {
+      "condition": "새 제안을 즉시 약속으로 받거나 미리 정한 계획만 허용할 때",
+      "sourceIntentionCandidate": "실행 범위와 일정을 고정하려는 제안",
+      "targetMayMisreadSource": "탐색 자체를 부정하는 규제처럼 들릴 가능성",
+      "targetIntentionCandidate": "관심이 생긴 가능성을 나누는 말",
+      "sourceMayMisreadTarget": "이미 맡은 일을 바꾸겠다는 통보로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "이 말이 아이디어인지 변경 요청인지 물었는가?",
+      "targetQuestion": "확정된 일과 떠오른 가능성을 구분했는가?",
+      "jointAgreement": "고정할 핵심 하나와 시험할 여백 하나를 함께 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:INTJ:ISTJ",
+    "originalResearchHash": "a83eed6bdbca10d505b535f6b3c022733af1c4e5cf95af7fcbb52097acaeba99",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "1de2fde7842d8448ac51501eb6c6f64f6b88ab4a2e13d8169c133733b80147a0",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d904c447ebc6c781116138c5157316b554699823d41542a67650a735c65c7d09",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 질서와 책임감이 잘 맞는다. 다만 주거, 직업, 자녀 교육의 변화가 필요할 때 ISTJ의 신중함과 INTJ의 재설계 욕구가 부딪힌다.",
+    "sourceFriction": {
+      "condition": "전례를 낡았다고 버리거나 새 안을 경험 없다고 닫을 때",
+      "sourceIntentionCandidate": "더 넓게 적용되는 구조를 찾으려는 수정",
+      "targetMayMisreadSource": "축적한 경험을 무시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "이미 검증된 안전 장치를 지키려는 질문",
+      "sourceMayMisreadTarget": "아무것도 바꾸지 않으려는 저항으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "새 안이 기존 문제를 줄인다는 자료가 있는가?",
+      "targetQuestion": "전례가 지금도 맞는 조건을 확인했는가?",
+      "jointAgreement": "보존할 절차와 시험할 변경을 구분해 비교 기록",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:INTJ:ISFJ",
+    "originalResearchHash": "1d05cca4ce699ea774fe055b5541ccd638b84e8d9772f6fd1c35c70a23987925",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "08c7651aa71adf50b82fff5db721ca950b4f05aab01c639815a0d66e2128a839",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "7c3471fd8bb1e16068489e80b03a47f8585ecf01f4b56d2e08a667625827abed",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 가족 행사, 전통, 돌봄, 생활 루틴을 둘러싼 차이가 커진다. ISFJ는 정서적 안정, INTJ는 효율과 자율성을 원한다. 돈과 역할 분담은 차분히 맞출 수 있지만, 정서 표현을 빼면 한쪽은 계속 서운해진다.",
+    "sourceFriction": {
+      "condition": "요청하지 않은 돌봄을 계속하거나 개선안으로 돌봄을 평가할 때",
+      "sourceIntentionCandidate": "불필요한 절차를 줄이려는 조정",
+      "targetMayMisreadSource": "수고와 애정을 무시하는 비판으로 읽힐 가능성",
+      "targetIntentionCandidate": "기억한 필요를 챙기려는 확인",
+      "sourceMayMisreadTarget": "개인 선택을 관리하는 간섭으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대의 수고를 인정한 뒤 바꿀 점을 말했는가?",
+      "targetQuestion": "도움이 필요한지 먼저 물었는가?",
+      "jointAgreement": "도움받을 항목과 각자 맡을 항목을 따로 표시",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:INTJ:ESTJ",
+    "originalResearchHash": "bda2641269c32504828c3c37237b4ef61581d6bfa8dd8200161cfba7af6cb556",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "ca6e3a337a4f552d210ddb9345681a5ce90cff73a0a2effea036cdcfdaf4f21b",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "3f49841298b241ea98454f2f62537d03b71f39335cd4add060f0428e8132c948",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 돈, 역할, 집안 규칙은 빠르게 잡히지만 감정 표현과 변화 수용에서 건조함이 생길 수 있다. 재정과 책임은 강점이지만, 휴식과 정서 확인을 따로 설계하지 않으면 집이 관리 회의처럼 느껴진다.",
+    "sourceFriction": {
+      "condition": "방식 변경을 일방 지시하거나 기존 형식을 절대 기준으로 삼을 때",
+      "sourceIntentionCandidate": "구조를 목적에 맞게 바꾸려는 반론",
+      "targetMayMisreadSource": "실무 기준을 깨는 예외 요구로 읽힐 가능성",
+      "targetIntentionCandidate": "누락 없는 결과를 확보하려는 세부 요구",
+      "sourceMayMisreadTarget": "성과보다 형식 통제를 앞세우는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "버릴 절차가 맡던 기능을 대체했는가?",
+      "targetQuestion": "새 방식이 같은 책임 기준을 충족하는가?",
+      "jointAgreement": "결과 기준은 공유하고 방법 변경은 작은 범위에서 시험",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:INTJ:ESFJ",
+    "originalResearchHash": "093fc227fe85e8e1dd862b457bf692bc6ca5365c51867ec0e1da646e808aabb1",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "0456f86bf6c647ae6a76ca4d223bbc50004f354235f453e01ec355181da446dd",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "341b6d52284bd38b539ba4be14da0e4679e793a2cb84dd8edb894e39812df125",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 가족 모임, 의례, 친척 관계, 감정 표현이 핵심 갈등이다. INTJ가 필요성을 납득해야 움직이고, ESFJ는 그 과정을 무정함으로만 보지 않아야 한다.",
+    "sourceFriction": {
+      "condition": "작은 대화를 낭비로 부르거나 침묵을 무례로 확정할 때",
+      "sourceIntentionCandidate": "집중 시간을 확보하려는 대화 축소",
+      "targetMayMisreadSource": "상대를 귀찮아하는 신호로 읽힐 가능성",
+      "targetIntentionCandidate": "참여감과 친밀감을 확인하려는 안부",
+      "sourceMayMisreadTarget": "업무·사생활 경계 침범으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 말할 수 없는 이유와 대안을 전했는가?",
+      "targetQuestion": "상대가 원하는 참여 방식을 물었는가?",
+      "jointAgreement": "안부 방식과 집중 시간대를 서로 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:INTJ:ISTP",
+    "originalResearchHash": "4453b136f4f2291fe9f99ca1c45b66063953d91bdce3c9f88a89513771ab58e2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "da41d37cc99ba0fa2278ff395ccf6b56bee87d449fd5e2e215a329bcea97bcb2",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "9b9988e4001d57223f651e2e892a7e07d6c550379c9141818116cb73ee86204e",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 각자 공간을 보장하면 안정적이다. 집안일과 돈, 진로처럼 장기 합의가 필요한 영역은 INTJ가 구조를 만들고 ISTP가 현실성을 검토하는 방식이 좋다.",
+    "sourceFriction": {
+      "condition": "장기 계획으로 모든 방법을 정하거나 현장 수정 내용을 알리지 않을 때",
+      "sourceIntentionCandidate": "전체 구조를 맞추려는 설계",
+      "targetMayMisreadSource": "방법까지 통제하려는 간섭으로 읽힐 가능성",
+      "targetIntentionCandidate": "현재 문제를 간단히 해결하려는 변경",
+      "sourceMayMisreadTarget": "공유 설계를 무시한 임시방편으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 재량을 가질 범위를 남겼는가?",
+      "targetQuestion": "현장 변경이 전체 계획에 주는 영향을 알렸는가?",
+      "jointAgreement": "고정할 목적과 바꿀 수 있는 방법을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty",
+      "cmpr:material:CH08.P4:agreement-common-space-private-time",
+      "cmpr:material:CH09.P1:recall-autonomy-with-common-duty",
+      "cmpr:material:CH09.P4:recall-space-and-common-work"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:INTJ:ISFP",
+    "originalResearchHash": "fe7381a99c37beef4ce2e32da29196ea0c4afa0b781898ea8508e52743c57bce",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "d2e3cf0cc843a253a6f74be4267a7b6715e827c3590ecba3735046fa3b603273",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a15ee85dbfaa4d39150cdf0b46be5ca785bb0cc9abae24d0c8292aa4b3efc977",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 INTJ가 목표와 구조를 잡고 ISFP가 생활의 감각과 정서를 살리는 식으로 보완된다. 다만 비판의 온도와 감정 회복 시간이 핵심 갈등 지점이다.",
+    "sourceFriction": {
+      "condition": "요청 전 비판하거나 침묵을 수용으로 처리할 때",
+      "sourceIntentionCandidate": "선택의 오류를 줄이려는 피드백",
+      "targetMayMisreadSource": "취향이나 마음을 낮추는 평가로 읽힐 가능성",
+      "targetIntentionCandidate": "감정을 정리하며 말할 시간을 갖는 침묵",
+      "sourceMayMisreadTarget": "문제 제기를 회피하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "피드백을 듣고 싶은지 먼저 확인했는가?",
+      "targetQuestion": "지금 답이 어렵다는 점을 알려줄 수 있는가?",
+      "jointAgreement": "취향의 선택권과 실무 제약을 분리하고 답변 시점은 함께 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:INTJ:ESTP",
+    "originalResearchHash": "c410006dddc023668b89bd81c7a462a2e93277375eae97c55516961cda36cc48",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "38db4b484df50dbdb38f56cdf023ebae140fbf63fd9db2c6630a204f733501a7",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "52ff85368acaf47f2213da71cc6da4b77ae4c4862eb33195719f24413f4af260",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 사교 일정, 소비, 위험 감수, 생활 규칙이 핵심 갈등이다. 즉흥 영역과 계획 영역을 명확히 나눠야 한다. 큰돈, 투자, 가족 일정은 INTJ의 사전 검토와 ESTP의 현장 판단을 같이 써야 한다.",
+    "sourceFriction": {
+      "condition": "시험 범위 없이 먼저 행동하거나 현장 자료 없이 계획만 고수할 때",
+      "sourceIntentionCandidate": "손실을 줄이려는 사전 검토",
+      "targetMayMisreadSource": "행동 자체를 막는 과도한 걱정으로 읽힐 가능성",
+      "targetIntentionCandidate": "현재 자료를 얻으려는 직접 시도",
+      "sourceMayMisreadTarget": "합의되지 않은 위험 부담 전가로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "안전한 시험으로 확인할 부분을 남겼는가?",
+      "targetQuestion": "시험 범위와 중단 조건을 합의했는가?",
+      "jointAgreement": "작은 시험의 범위·책임·중단 조건을 먼저 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:INTJ:ESFP",
+    "originalResearchHash": "dfe85e4da0b45ae851588948dedb45ac6ddbf81381ce954380d880fc5de9489b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "c83ed4aee18250f38d0b604d2396ce85c4ea575a2dbd8929b9d03404ae41ada9",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "df675c709b51b5c9128cc4deb0971fd3f22f860f55fb6a1044e1868ec9c52eeb",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 소비, 외부 활동, 친구 관계, 생활 속 즐거움의 비중이 갈등이 된다. INTJ가 모든 즐거움을 비효율로 보면 관계가 말라간다. 돈과 일정은 기준을 세우되, 함께 즐기는 시간도 생활의 필수 항목으로 남겨야 한다.",
+    "sourceFriction": {
+      "condition": "즉흥 초대를 모두 거절하거나 개인 검토 시간을 강제로 사교에 쓸 때",
+      "sourceIntentionCandidate": "집중과 일정 일관성을 지키려는 거절",
+      "targetMayMisreadSource": "함께 있고 싶지 않다는 뜻으로 읽힐 가능성",
+      "targetIntentionCandidate": "함께 즐길 기회를 나누는 초대",
+      "sourceMayMisreadTarget": "자기 계획을 존중하지 않는 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "거절과 상대에 대한 호감을 구분해 말했는가?",
+      "targetQuestion": "초대를 부담 없이 거절할 수 있게 했는가?",
+      "jointAgreement": "고정 일정과 선택 가능한 활동을 나누고 동의받음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_unresolved",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "cmpr:material:CH01.P3:marriage-pattern-not-love-label"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:INTP:INTJ",
+    "originalResearchHash": "9d47ac9bdec0e160ff0d0a2fcf5da060649b0f55f6a34b24d941680cd18da1ca",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "42db8402f72f7d4efd266db9a0ef824cf0c3f27d739d902520aa08371430ca7f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "5a125cc720eaf22fa36b6ecabde8d5fcbb7c2a53b37eb15e22673e3445ca377e",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 일정, 정리정돈, 책임감에서 INTJ가 더 많은 부담을 느낄 수 있다. INTP는 잔소리로 느끼고 INTJ는 자신이 더 어른스럽다고 느끼기 쉽다.",
+    "sourceFriction": {
+      "condition": "확정된 일정 직전에 새로운 가설이 추가될 때",
+      "sourceIntentionCandidate": "아직 검토하지 못한 가능성을 남기는 질문",
+      "targetMayMisreadSource": "이미 한 합의를 피하는 태도로 들릴 가능성",
+      "targetIntentionCandidate": "실행할 선택지를 좁히려는 정리",
+      "sourceMayMisreadTarget": "생각을 더 하지 말라는 통제로 들릴 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "추가 질문이 마감에 주는 부담을 알렸는가?",
+      "targetQuestion": "이번 결정에 꼭 필요한 검토만 골랐는가?",
+      "jointAgreement": "탐색 시간과 확정 시간을 구분하고 미해결 가설은 별도 기록",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:INTP:INTP",
+    "originalResearchHash": "b43b3d005809226c423c373677bd9c42c3bd3b68127993b688a97eb7d0b234f6",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "f3c3ca726a9e76e07a9a8ef23f154e6b265f0273c2d5c76cebf83a2ad2f253f9",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "f3c3ca726a9e76e07a9a8ef23f154e6b265f0273c2d5c76cebf83a2ad2f253f9",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 각자 공간을 잘 존중하지만, 집안일과 마감, 돈 관리처럼 닫아야 할 영역이 둘 다 약해질 수 있다. 생활 운영을 자동화하지 않으면 편한 관계가 느슨한 동거로 흐른다.",
+    "sourceFriction": {
+      "condition": "둘 다 생각할 시간을 원하지만 공동 일정은 다가올 때",
+      "sourceIntentionCandidate": "납득할 설명을 더 찾는 유보",
+      "targetMayMisreadSource": "약속을 맡을 의사가 없다고 읽힐 가능성",
+      "targetIntentionCandidate": "개인 탐구 공간을 지키는 거리두기",
+      "sourceMayMisreadTarget": "관계 자체에 관심이 없다고 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "생각 중인 일과 맡은 일을 구분했는가?",
+      "targetQuestion": "지금 가능한 응답과 나중에 할 검토를 나눴는가?",
+      "jointAgreement": "탐구는 열어두고 공동 과제 완료는 각자 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:INTP:ENTJ",
+    "originalResearchHash": "8ef4da366b3e1bf4ef642724d23d1e6298c8ca31414f0aabdc048e9541c0d1fb",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "697c391f5775aada8a532f208b2785773d7a885974380223b84e5ef56f7a78c6",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "307a3404c5ba218a109e2919131a1341494c5b35cfbbfc6d36bb9c3f314a9aa2",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENTJ가 실행과 관리의 주도권을 잡으려 하고 INTP가 자율성을 지키려 하면서 권한 갈등이 생긴다. 돈, 일정, 가족 책임은 ENTJ가 몰아붙이기 전에 INTP가 맡을 범위를 명확히 정해야 한다.",
+    "sourceFriction": {
+      "condition": "회의 중 즉답을 재촉하거나 결정 뒤 질문을 계속 추가할 때",
+      "sourceIntentionCandidate": "납득할 전제를 확인하는 질문",
+      "targetMayMisreadSource": "진행을 방해하는 반대로 읽힐 가능성",
+      "targetIntentionCandidate": "기회를 놓치지 않으려는 결정",
+      "sourceMayMisreadTarget": "생각할 권리를 빼앗는 지시로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "결정에 영향을 주는 질문인지 밝혔는가?",
+      "targetQuestion": "검토할 자료를 미리 주었는가?",
+      "jointAgreement": "사전 검토와 현장 결정을 구분하고 유보 사항 표시",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:INTP:ENTP",
+    "originalResearchHash": "2be105fa8d60cea13153b02669c8e8988a4739d8fcd1bdacda55952f554b99b8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "c13cd91533ac746a418b3a7ee82936abcc3d888df682e72beda7a1409e40622d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "1602f8c1ccb9a7dcecee11c230adc2816aef6ca0b3b38f73f823c83389c262bb",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 자유로운 대화와 지적 자극은 풍부하지만, 생활 책임과 결정을 누가 닫을지 정하지 않으면 흐트러진다. 돈, 일정, 집안일은 토론이 아니라 확정된 규칙으로 내려야 안정된다.",
+    "sourceFriction": {
+      "condition": "계속 바뀌는 대화가 개인 검토를 끊거나 침묵을 무반응으로 볼 때",
+      "sourceIntentionCandidate": "논리를 완성하려는 잠깐의 침묵",
+      "targetMayMisreadSource": "흥미 없는 대화로 읽힐 가능성",
+      "targetIntentionCandidate": "생각을 이어가려는 새 반론",
+      "sourceMayMisreadTarget": "앞선 설명을 듣지 않은 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "검토 시간이 필요하다고 말했는가?",
+      "targetQuestion": "새 주제 전에 앞선 생각을 마칠 틈을 주었는가?",
+      "jointAgreement": "떠오른 생각은 기록하고 이번에 다룰 질문을 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:INTP:INFJ",
+    "originalResearchHash": "c954ffd4e75027fb63cf73d3f98dcc76f32c20a3f730eef72f6b40e603a1b2df",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "c65ff13e2f26d1b50a95645b36d6f127feabb0da4250b62701dbf89c8e4e9134",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "f542efda509cfe4d1d15b6bc574fe829e7b12119fd2aaed86089f489031a7a20",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 감정 공유의 빈도와 방식이 핵심이다. INTP는 해결책을 주고 싶고 INFJ는 마음의 떨림을 이해받고 싶어 한다. 돈과 생활 책임은 차분히 정리하되, 정서 확인을 일정에서 빼면 관계가 건조해진다.",
+    "sourceFriction": {
+      "condition": "고민에 즉시 분석을 붙이거나 우회 표현을 정답 맞히기로 바꿀 때",
+      "sourceIntentionCandidate": "문제의 원인을 정리하려는 질문",
+      "targetMayMisreadSource": "마음을 평가하는 시험으로 읽힐 가능성",
+      "targetIntentionCandidate": "상처를 줄이려는 간접 요청",
+      "sourceMayMisreadTarget": "해결할 것이 없는 모호한 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "설명과 공감 중 무엇이 필요한지 물었는가?",
+      "targetQuestion": "원하는 행동을 한 가지 직접 전했는가?",
+      "jointAgreement": "감정 확인 뒤 분석 동의를 받고 구체 요청 정리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:INTP:INFP",
+    "originalResearchHash": "27e4f32fb07ca63aa1982fe21bc351582aa3eb647bb26c0b1e36dc4280a833ef",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "12496d46192eed232178d20491d539bcf3f4f7495b6ca1627682623f3222dc7d",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "d1c14ea3860d2e65819b292a1ee9b9e9d82ea1ce96253feed8c307f0fc23335f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 자유와 개인 세계는 존중하기 쉽지만, 갈등 해결에서 한쪽은 논리적 결론을 원하고 한쪽은 정서적 의미를 원한다. 돈과 생활 책임을 감정 흐름에 맡기면 둘 다 미루거나 상처받기 쉽다.",
+    "sourceFriction": {
+      "condition": "가치 표현을 논증 부족으로 지적하거나 반론을 악의로 단정할 때",
+      "sourceIntentionCandidate": "일관성을 검토하려는 질문",
+      "targetMayMisreadSource": "자기 신념을 비웃는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "자신의 경계를 지키는 거절",
+      "sourceMayMisreadTarget": "합리적 대화를 거부하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "질문이 가치 선택권을 침범하지 않는가?",
+      "targetQuestion": "거절할 조건을 구체적으로 말했는가?",
+      "jointAgreement": "설명 가능한 이유와 양보할 수 없는 선을 함께 적음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:INTP:ENFJ",
+    "originalResearchHash": "463da0ee0f896b17c7418f32676e0ac6914230d625603c329e98041d87f5ea8f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "14a6596211c2fee58e7fb91272631854b07ae36adf2b2d7c6c265e2a890a82a1",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "780bf11f043b16c3a15a07cb19574359dd184a82e697a0670ce3e987d65dd3a8",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENFJ가 가족의 정서와 관계망을 챙기고 INTP가 분석, 판단, 문제 해결을 맡는 구도가 가능하다. 하지만 집안일, 돈, 가족 행사에서 ENFJ가 실행과 관계 부담을 혼자 떠안고 INTP가 생각만 하면 불균형이 커진다.",
+    "sourceFriction": {
+      "condition": "즉답·표현을 거듭 요구하거나 관계 질문을 모두 불필요로 볼 때",
+      "sourceIntentionCandidate": "생각을 정리할 시간을 확보하는 짧은 답",
+      "targetMayMisreadSource": "관심이 사라진 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "서로의 상태를 확인하려는 질문",
+      "sourceMayMisreadTarget": "감정 반응을 강요하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "돌아와 답할 때를 정할 수 있는가?",
+      "targetQuestion": "지금 답하지 않을 권리를 인정했는가?",
+      "jointAgreement": "짧은 상태 확인과 긴 대화 시간을 따로 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:INTP:ENFP",
+    "originalResearchHash": "2205ca21ee1a4537a324391d591cf5a9029516a301a87dc0bbbb464863169aa5",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "18771e01e1b906c47aef415b5cd932fd43cadca8802ba0c5a0b6bf3b49ba4ed0",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "5909ece18bf69864110a319d4a897eeba48ff660edd782b5610a95b83356d540",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENFP가 관계의 에너지와 경험을 열고 INTP가 분석과 구조를 제공한다. 감정적 반응과 논리적 지적의 균형이 핵심이고, 돈과 일정은 자유로운 분위기와 별개로 명확한 기준이 필요하다.",
+    "sourceFriction": {
+      "condition": "기쁜 제안을 즉시 반박하거나 검토 중에 주제를 계속 바꿀 때",
+      "sourceIntentionCandidate": "가능성을 더 정확히 보려는 질문",
+      "targetMayMisreadSource": "기쁨을 꺾는 흠잡기로 읽힐 가능성",
+      "targetIntentionCandidate": "흥미를 함께 나누려는 이야기 전환",
+      "sourceMayMisreadTarget": "집중을 방해하는 산만함으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금은 함께 기뻐할 때인지 물었는가?",
+      "targetQuestion": "상대가 붙잡고 있는 질문을 들었는가?",
+      "jointAgreement": "반응을 나누는 시간과 검토할 시간을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:INTP:ISTJ",
+    "originalResearchHash": "d2302be1aba51c93176f95f6f00b7c314eb7a0f410875dee5cd34029e8dfaacc",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "86924c5271768aac3abb6060479ff0b7a760a185b3a7afd3f6bd6be023c65bc6",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "60b55b4ce8ffa96674534d7cfec574f5dceafe681e92b5d8bf6509603f49b455",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 ISTJ가 생활 질서를 많이 맡게 되고 INTP는 이를 통제로 느낄 수 있다. 역할과 기준을 문장으로 정하고, 돈·집안일·가족 일정은 감정이 쌓이기 전에 체크리스트로 닫아야 한다.",
+    "sourceFriction": {
+      "condition": "이유 없는 절차 강요와 설명 없는 일정 지연이 겹칠 때",
+      "sourceIntentionCandidate": "불필요한 노력을 줄이려는 질문",
+      "targetMayMisreadSource": "책임을 회피하는 핑계로 읽힐 가능성",
+      "targetIntentionCandidate": "약속을 유지하려는 일정 확인",
+      "sourceMayMisreadTarget": "개인 탐구를 감시하는 잔소리로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "질문과 맡은 책임의 이행을 분리했는가?",
+      "targetQuestion": "절차가 필요한 실제 이유를 설명했는가?",
+      "jointAgreement": "완료 조건과 방법 선택권을 같이 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:INTP:ISFJ",
+    "originalResearchHash": "69c7c4c43f77b86fa7fcea60b5b9f8c2d45233f85b80f39b39a07fda027804bf",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "8a0d4e9bbbed765af00787eb2c9365184a556f81a594d38151b5a8021986f5e5",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "b32045d0fedbf990073d4cc106edb0e5f0c43d24cc58b9cf2e9738794914ac2b",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ISFJ가 생활 기반을 잡고 INTP가 아이디어와 지적 자극을 제공할 수 있다. 그러나 집안 루틴과 감정 확인을 ISFJ만 떠안으면 불균형이 생긴다.",
+    "sourceFriction": {
+      "condition": "돌봄을 당연히 받거나 확인을 모두 간섭으로 볼 때",
+      "sourceIntentionCandidate": "혼자 해결할 공간을 확보하려는 유보",
+      "targetMayMisreadSource": "챙김을 거절하는 냉정함으로 읽힐 가능성",
+      "targetIntentionCandidate": "필요를 기억하고 확인하는 도움",
+      "sourceMayMisreadTarget": "독립성을 인정하지 않는 통제로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "도움의 수고와 거절할 부분을 함께 말했는가?",
+      "targetQuestion": "상대가 직접 맡고 싶은 일을 물었는가?",
+      "jointAgreement": "돌봄 항목을 요청제로 바꾸고 공동 책임은 각자 맡음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:INTP:ESTJ",
+    "originalResearchHash": "98b66858f926c3ad7ec4ea5fe8bfc23a19e4e4f25de6303ed190278e2898e669",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "062c81179613424d3593bc1b684eec2841bf0d580772e9cf1332874c2629d6da",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "a8cb7aac585cf2c96f8ddab7a51008491fbbead476e40cb7aad962ec9e589e4a",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 돈, 일정, 집안일, 책임 분배가 빠르게 갈등이 된다. INTP는 자유 시간을, ESTJ는 예측 가능한 실행을 원하므로 역할과 마감 기준을 숫자와 일정으로 합의해야 한다.",
+    "sourceFriction": {
+      "condition": "방법까지 세세히 지시하거나 정한 기한을 말없이 넘길 때",
+      "sourceIntentionCandidate": "원리를 이해한 뒤 방법을 고르는 질문",
+      "targetMayMisreadSource": "지시를 피하는 변명으로 읽힐 가능성",
+      "targetIntentionCandidate": "완료 책임을 분명히 하는 확인",
+      "sourceMayMisreadTarget": "사고 과정을 통제하는 감시로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "검토가 끝날 때와 납품 가능한 범위를 알렸는가?",
+      "targetQuestion": "결과 기준과 방법의 재량을 구분했는가?",
+      "jointAgreement": "중간 산출물 하나와 최종 기준을 정하고 방법은 협의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:INTP:ESFJ",
+    "originalResearchHash": "4d2c712211adfd3d7cd6ce22ea18af310611bd8409a2c6676e965b7a15ec3a9e",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "b05461de872df2fdc82681df0fe3da281935874b512f294ee9a07c34eff75fb7",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "91f5afbc183a6c78c382b889b6d7e892c76e5ccdb9185561783d2cdfbfe1a221",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+    "sourceFriction": {
+      "condition": "안부를 시간 낭비로 부르거나 응답을 친밀감 시험으로 쓸 때",
+      "sourceIntentionCandidate": "집중을 유지하려는 대화 축소",
+      "targetMayMisreadSource": "자신을 밀어내는 태도로 읽힐 가능성",
+      "targetIntentionCandidate": "소속감을 나누려는 가벼운 대화",
+      "sourceMayMisreadTarget": "원하지 않는 사교를 강요하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "짧게라도 가능한 응답을 골랐는가?",
+      "targetQuestion": "상대가 선택할 참여 형태를 남겼는가?",
+      "jointAgreement": "안부 빈도와 개인 시간을 서로 정하고 생활 책임은 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:INTP:ISTP",
+    "originalResearchHash": "42dacbacf78215cf55d1501a9ee566d69100e25615960dbf3fe89951aa394ca4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "9dc65ec0487a31d043647278f92336b1fb772b733cf2068ba93d37bf226b2ce0",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d82f2e82f5949e40fe317c71c81650f4c9c4b3ac24fd15c91d4984585898d1fa",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 개인 시간과 공동 책임의 경계를 명확히 해야 한다. 두 사람 모두 자유와 자율을 원하기 때문에 생활비, 청소, 가족 행사, 장기 계획을 자동으로 굴러갈 것처럼 두면 책임 공백이 생긴다.",
+    "sourceFriction": {
+      "condition": "설명이 계속 길어지거나 현장 변경이 공유되지 않을 때",
+      "sourceIntentionCandidate": "적용 범위를 확인하는 추가 설명",
+      "targetMayMisreadSource": "쓸모없는 이론을 붙이는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "필요한 부분만 해결하는 간단한 답",
+      "sourceMayMisreadTarget": "생각을 무시하는 반응으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "설명이 지금의 시험에 필요한가?",
+      "targetQuestion": "어디까지 해결했는지 알려주었는가?",
+      "jointAgreement": "짧은 시험 뒤 필요할 때 원리 설명을 이어감",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:INTP:ISFP",
+    "originalResearchHash": "c2c5fd7c4eeb3b034072691cbdeb47b2445bf8450c9d68c343315d4ac7e3ec84",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "d66732c9d6009d09ab19008ab6853b43be4dfaa4bfc2be1bda5b23c8ed8b0609",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "05a695f46896c69219628444548b307de823c62acf85dbe14e43690eb92b85c1",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 각자 공간을 보장하면 유지가 쉽지만, 감정 표현과 의사결정 기준에서 계속 번역이 필요하다. 돈과 집안일도 느낌으로 넘기지 말고 최소 규칙을 정해야 서운함이 쌓이지 않는다.",
+    "sourceFriction": {
+      "condition": "감정을 분석 대상으로만 보거나 침묵을 답으로 확정할 때",
+      "sourceIntentionCandidate": "이유를 이해하려는 질문",
+      "targetMayMisreadSource": "마음을 논박하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "감정을 정리하며 답을 늦추는 침묵",
+      "sourceMayMisreadTarget": "논의할 의사가 없는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "질문을 받고 싶은지 확인했는가?",
+      "targetQuestion": "답이 어렵다는 신호를 줄 수 있는가?",
+      "jointAgreement": "분석 동의를 먼저 받고 거절 조건은 설명 없이도 존중",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:INTP:ESTP",
+    "originalResearchHash": "6dea787aa91ced629d9966c8fe02ece4de9e110b90a2c467bceba6297c63dbd4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "cb23ccc5f6218191b3fffeb97713625e7d5efe0d790ff71bb995c4ddbd76a48b",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "63d0fafe27d2351e2a6fe67a2becc1a226564bd296f3fbdd4e759526fd49636d",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 활동량, 소비, 개인 시간, 책임 마감에서 기준을 맞춰야 한다. ESTP는 지금 즐기고 해결하려 하고 INTP는 생각과 관심사에 빠지기 쉬워, 장기 계획과 가족 책임을 별도 시스템으로 세워야 안정된다.",
+    "sourceFriction": {
+      "condition": "시험 전에 합의가 없거나 설명을 듣기 전에 움직일 때",
+      "sourceIntentionCandidate": "안전하고 타당한 시험을 위한 검토",
+      "targetMayMisreadSource": "시도를 막는 망설임으로 읽힐 가능성",
+      "targetIntentionCandidate": "직접 확인하려는 빠른 제안",
+      "sourceMayMisreadTarget": "공동 부담을 가볍게 보는 행동으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "확인하고 싶은 핵심 한 가지는 무엇인가?",
+      "targetQuestion": "시도에 필요한 동의를 받았는가?",
+      "jointAgreement": "안전한 소규모 시험과 결과 검토를 한 묶음으로 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:INTP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "INTP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:INTP:ESFP",
+    "originalResearchHash": "4b38c8b31fb64092252aeab8ee411adc4532e9c85113c4ac8d23d8792ab8f37f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "57b0d14af8614f5518631b68e1fa8be9429e44e745db719bd0c0d56bce7729be",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "1d8de7191593d49b4a3886fc5e2c03019a130c0e1008a7c10eb56145140655d4",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 사교, 소비, 감정 표현, 즉흥 활동, 혼자 있는 시간의 비율이 핵심 갈등이다. 생활비와 약속을 즉흥으로 처리하면 ESFP는 답답하고 INTP는 소진되는 구조가 반복된다.",
+    "sourceFriction": {
+      "condition": "이야기에 곧바로 논리 평가를 붙이거나 설명 중 참여를 재촉할 때",
+      "sourceIntentionCandidate": "경험의 원인을 확인하는 질문",
+      "targetMayMisreadSource": "즐거움을 평가절하하는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "자신의 경험을 나누려는 긴 이야기",
+      "sourceMayMisreadTarget": "결론 없는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 질문이 경험 공유를 막고 있지 않은가?",
+      "targetQuestion": "상대에게 생각할 틈을 주었는가?",
+      "jointAgreement": "경험 공유 뒤 원하는 경우에만 분석 시간을 가짐",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ISFJ:INTJ",
+    "originalResearchHash": "9ef39f5dd3267ac662f4e02912c4e9e83fcf8d1ec1b0c2a388a3c79b76b23f64",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "7c3471fd8bb1e16068489e80b03a47f8585ecf01f4b56d2e08a667625827abed",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "08c7651aa71adf50b82fff5db721ca950b4f05aab01c639815a0d66e2128a839",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 공통 관심사와 생활 기준, 돈과 역할에 대한 합의가 없으면 매우 형식적이 된다. 조용히 지내는 것은 가능하지만 따뜻한 교류와 감사 표현을 의식적으로 만들지 않으면 관계가 건조해진다.",
+    "sourceFriction": {
+      "condition": "요청하지 않은 돌봄을 계속하거나 개선안으로 돌봄을 평가할 때",
+      "sourceIntentionCandidate": "기억한 필요를 챙기려는 확인",
+      "targetMayMisreadSource": "개인 선택을 관리하는 간섭으로 읽힐 가능성",
+      "targetIntentionCandidate": "불필요한 절차를 줄이려는 조정",
+      "sourceMayMisreadTarget": "수고와 애정을 무시하는 비판으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "도움이 필요한지 먼저 물었는가?",
+      "targetQuestion": "상대의 수고를 인정한 뒤 바꿀 점을 말했는가?",
+      "jointAgreement": "도움받을 항목과 각자 맡을 항목을 따로 표시",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ISFJ:INTP",
+    "originalResearchHash": "9094b58b8605fe7ed861d6506b0fa0290879cf92c926c904ecdd2de5d170f598",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "b32045d0fedbf990073d4cc106edb0e5f0c43d24cc58b9cf2e9738794914ac2b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "8a0d4e9bbbed765af00787eb2c9365184a556f81a594d38151b5a8021986f5e5",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 각자의 혼자 있는 시간과 역할 구분, 돈 관리 기준을 분명히 정해야 한다. 붙어 있어야만 안정된다는 방식은 이 관계를 빨리 지치게 만들고, 정서 확인이 너무 적으면 ISFJ는 혼자 버티는 관계처럼 느낀다.",
+    "sourceFriction": {
+      "condition": "돌봄을 당연히 받거나 확인을 모두 간섭으로 볼 때",
+      "sourceIntentionCandidate": "필요를 기억하고 확인하는 도움",
+      "targetMayMisreadSource": "독립성을 인정하지 않는 통제로 읽힐 가능성",
+      "targetIntentionCandidate": "혼자 해결할 공간을 확보하려는 유보",
+      "sourceMayMisreadTarget": "챙김을 거절하는 냉정함으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 직접 맡고 싶은 일을 물었는가?",
+      "targetQuestion": "도움의 수고와 거절할 부분을 함께 말했는가?",
+      "jointAgreement": "돌봄 항목을 요청제로 바꾸고 공동 책임은 각자 맡음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ISFJ:ENTJ",
+    "originalResearchHash": "0ff5a02d43ccba24fe4159ad28895250c4c8f7a493dfc97d8564df5bb86a1d06",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "9b50d1ad0ca37f4700d5545db6e257e3e9789c102861f6ebba60a6aec71af46c",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "9fe81666223c3778f7a153813d346b7c647409936175b63624848f39ec767e6f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 싸울 때의 언어와 역할 통제가 가장 큰 위험이다. ENTJ가 지시처럼 말하고 ISFJ가 참고 맞추기만 하면 상처가 누적되며, 돈과 가족 책임을 명확히 나눠야 재반격보다 회복이 빨라진다.",
+    "sourceFriction": {
+      "condition": "공개적인 직설과 말하지 않은 부담이 겹칠 때",
+      "sourceIntentionCandidate": "관계를 지키려는 조심스러운 답",
+      "targetMayMisreadSource": "문제가 없다는 동의로 읽힐 가능성",
+      "targetIntentionCandidate": "실수를 줄이려는 즉각 지적",
+      "sourceMayMisreadTarget": "수고 전체를 부정하는 평가로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "어려운 조건을 구체적으로 전했는가?",
+      "targetQuestion": "사람과 수정할 작업을 나눠 말했는가?",
+      "jointAgreement": "피드백은 동의한 자리에서 한 항목씩 다룸",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ISFJ:ENTP",
+    "originalResearchHash": "bdea7c344a32d935bead2ee2c024042b9e70541ebbe30278e5cc14dba6152f67",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "65a331d9123350c3b46423f16e8560e601cec4de08b941dc1c29206bd0d33178",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "e9a4383e38b4eeb1eda3f28e53390f7601113934b649d1f1de647f32ed7d4714",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 공통 목표가 핵심이다. 같은 방향을 바라보면 ISFJ가 기반을 만들고 ENTP가 가능성을 열지만, 목표가 다르면 한쪽은 불안하고 한쪽은 묶인다고 느낀다.",
+    "sourceFriction": {
+      "condition": "잦은 변경 뒤 정리를 한쪽에게 맡길 때",
+      "sourceIntentionCandidate": "일정을 지키려는 확인",
+      "targetMayMisreadSource": "자유를 통제하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "더 나은 가능성을 찾는 수정",
+      "sourceMayMisreadTarget": "수고를 무시하는 번복으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "도움의 한계를 전했는가?",
+      "targetQuestion": "변경 뒤 맡을 일을 정했는가?",
+      "jointAgreement": "변경안에는 담당과 영향도 같이 적음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ISFJ:INFJ",
+    "originalResearchHash": "a5bb14992ce3c07930a2ba5c1fc3ec21e022e1a615c69f7be6e6981e087fb833",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "353b066044f5137280ce4a33151f55e9d2a2cfa1bd167312812fcafaa3e7b957",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "0f6bcbe167d41659fa7ab68740cc4a4543be5f4e434039dd2a4fb725036a47ce",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활 루틴과 정서적 의미를 동시에 챙겨야 한다. ISFJ가 가정의 실무와 돈 관리를 붙잡고 INFJ가 관계의 방향과 가치 대화를 맡으면 보완되지만, 한쪽이 현실만 보고 다른 한쪽이 의미만 보면 책임의 무게가 불균형해진다.",
+    "sourceFriction": {
+      "condition": "서로 추측해서 돕고 실제 요청은 묻지 않을 때",
+      "sourceIntentionCandidate": "기억한 필요를 챙기는 행동",
+      "targetMayMisreadSource": "지난 기준에 묶는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "의미를 더 살피려는 대화",
+      "sourceMayMisreadTarget": "실제 수고를 못 알아보는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "예전 필요가 지금도 같은지 확인했는가?",
+      "targetQuestion": "어떤 도움이 필요한지 물었는가?",
+      "jointAgreement": "현재 요청과 기억에 근거한 도움을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ISFJ:INFP",
+    "originalResearchHash": "cdb479a276c6f929101367489af45cc1f1861d58f163986a3cb82720e734d23f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "b849eb2b334b8cace272470cc0f79da4e9fda4f147877c732c7c82970d8d1d04",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "e24c200461f9ee61ed6a459801199cfc733d1be5fe15ce2f017d4abc9b424e33",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 루틴과 감정의 의미, 돈과 집안 책임을 둘 다 챙겨야 한다. ISFJ가 현실을 전부 맡고 INFP가 마음만 말하면 균형이 깨지고, 따뜻한 관계도 서운함으로 무거워진다.",
+    "sourceFriction": {
+      "condition": "상대가 원치 않는 도움을 계속 맞춰줄 때",
+      "sourceIntentionCandidate": "기억한 필요를 챙기는 제안",
+      "targetMayMisreadSource": "기존 역할에 묶는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "자유와 의미를 지키는 거절",
+      "sourceMayMisreadTarget": "수고를 밀어내는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금도 필요한 도움인가?",
+      "targetQuestion": "고마움과 거절을 함께 말했는가?",
+      "jointAgreement": "도움 항목은 요청하고 책임은 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ISFJ:ENFJ",
+    "originalResearchHash": "16ccc818f5b89eb4d59286c5b4f076483e0e9b0deafd2e9496a36246efceadda",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "afdfe234ad109aa6cbc55439b9fc590d3f0d6e996a8f4a746a08ee7efde6911d",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "6f3f77258e950d4af75b4a63c53d5a16c882fb4918ee548229ad28aa37c99dc7",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 ENFJ가 가족의 방향과 관계 분위기를 이끌고 ISFJ가 생활 루틴과 세부 돌봄을 맡는 구도가 잘 맞을 수 있다. 그러나 정서 노동과 집안 실무가 특정 한쪽에게 몰리면 둘 다 좋은 사람으로 남으려다 조용히 소진된다.",
+    "sourceFriction": {
+      "condition": "개선·참여를 권하며 거절을 놓칠 때",
+      "sourceIntentionCandidate": "마찰을 피하는 조심스러운 답",
+      "targetMayMisreadSource": "동의하는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "더 나은 관계를 위한 설득",
+      "sourceMayMisreadTarget": "기존 수고를 고치려는 평가로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "한계를 직접 알렸는가?",
+      "targetQuestion": "도움을 요청받았는가?",
+      "jointAgreement": "도움받을 범위와 거절 가능한 역할을 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ISFJ:ENFP",
+    "originalResearchHash": "7ee3994dcf33432b9c3bc3f1dec0bef87cc8adb2afe700f98edb7fa6ce22419d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "64ce6132ad4229ce42b798f60e9e19dad9ca345610ac6fb4be79ecdeb9803885",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "9fde4dc476eadb193156caab28eecbb696582532c6e4c42b57cabc32d3f54efe",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 기준과 변화 허용 범위, 돈과 약속의 우선순위를 구체적으로 합의해야 한다. 그렇지 않으면 ISFJ는 불안하고 ENFP는 통제받는다고 느끼며, 애정이 있어도 생활 리듬에서 흔들린다.",
+    "sourceFriction": {
+      "condition": "제안이 잦아지며 기존 준비가 반복 취소될 때",
+      "sourceIntentionCandidate": "안정을 지키려는 확인",
+      "targetMayMisreadSource": "변화를 막는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "즐거움을 더하려는 새 제안",
+      "sourceMayMisreadTarget": "수고를 가볍게 보는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 부담을 직접 말했는가?",
+      "targetQuestion": "변경 뒤 준비도 맡았는가?",
+      "jointAgreement": "새 활동은 하나씩 선택하고 준비 책임을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ISFJ:ISTJ",
+    "originalResearchHash": "838558a750ee9bfaee887784e34a838114ef182ff6a175d6a075ef507f72c0d7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "560d5c03968fb504f6817007f328bd347dcdafe6415c556724431478ba5151ca",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0f61c1c6495946766f1801bd5aad6ae5467ae17065ac41e3726500f057cc0bd3",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 저축, 일정, 가족 행사, 역할 분담이 안정적으로 굴러갈 가능성이 크다. 하지만 정서적 위로와 낭만을 생활 관리의 부속처럼 다루면 서로는 책임을 다하면서도 마음이 외로워질 수 있다.",
+    "sourceFriction": {
+      "condition": "수고를 당연히 받거나 불편을 모두 참을 때",
+      "sourceIntentionCandidate": "관계를 지키려는 조용한 양보",
+      "targetMayMisreadSource": "아무 부담 없다는 동의로 읽힐 가능성",
+      "targetIntentionCandidate": "정확한 완료를 위한 점검",
+      "sourceMayMisreadTarget": "노력을 인정하지 않는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "감당할 선을 말했는가?",
+      "targetQuestion": "수고와 수정 요청을 나눴는가?",
+      "jointAgreement": "정기 책임과 도움 요청을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ISFJ:ISFJ",
+    "originalResearchHash": "5ccaf92d75ab2d28d909987c2476eed3eba2903aedea6fc37459ff8f250fefc7",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "ce3d4c7af0a0956049bfe95f3d0a60f062858a3d0592173a1d9031aee789dfd4",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "ce3d4c7af0a0956049bfe95f3d0a60f062858a3d0592173a1d9031aee789dfd4",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 루틴, 가족 행사, 생활 안정이 잘 맞는다. 다만 두 사람 모두 변화를 피하면 생활은 안정적이어도 성장이 느려지고, 문제를 덮어두는 방식이 반복된다.",
+    "sourceFriction": {
+      "condition": "둘 다 말없이 추가 일을 맡을 때",
+      "sourceIntentionCandidate": "관계를 지키려는 양보",
+      "targetMayMisreadSource": "계속 맡아도 된다는 동의로 읽힐 가능성",
+      "targetIntentionCandidate": "기억한 취향을 챙기는 행동",
+      "sourceMayMisreadTarget": "변한 필요를 놓치는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 감당할 수 있는가?",
+      "targetQuestion": "지난 필요가 지금도 같은가?",
+      "jointAgreement": "도움 전 질문하고 담당을 재분배",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "cmpr:material:CH01.P3:same-type-separate-workload"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ISFJ:ESTJ",
+    "originalResearchHash": "2042eb0cff4b14d5a899f271e4a48db5679fa63727f39ae4613064a1cc7a2ab4",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "2777e6c03162f2e0767272c46c69445d0cb3c462316374d8b9e7c85cbc95a90d",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "c44b1899e7cb04e88a7fb9991b7ea86d28497d3e38031e42b52431f8b679e93d",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활비, 가족 행사, 집안 역할을 체계적으로 정리하기 좋다. 다만 ESTJ가 관리자로 서고 ISFJ가 돌봄 담당으로 굳어지면 관계가 효율적이지만 정서적으로 불평등해질 수 있다.",
+    "sourceFriction": {
+      "condition": "공개 지적에 어려움을 말하지 못할 때",
+      "sourceIntentionCandidate": "관계를 지키려는 완곡한 답",
+      "targetMayMisreadSource": "문제없다는 동의로 읽힐 가능성",
+      "targetIntentionCandidate": "결과를 고치는 직접 지적",
+      "sourceMayMisreadTarget": "수고 전체를 낮추는 평가로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "어려운 조건을 특정했는가?",
+      "targetQuestion": "먼저 수고와 제약을 들었는가?",
+      "jointAgreement": "수정 항목은 하나씩 동의한 자리에서 말함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ISFJ:ESFJ",
+    "originalResearchHash": "42215ffb74b3e3280f9e26cc07a13d0a42a76a113482aacaf59f9477d6975a63",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "149d963716412543a683ce103a896c26d04e2aac3b57aae29aed13e1ec6b7dbf",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "9836e0aabf05765eabb1f462707cc08c2c1fb5ae9a0331873a786d16d6c6aed3",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 가족 행사, 생활 루틴, 관계 예절이 잘 맞는다. 다만 외부 활동량과 사교 범위, 집안 책임의 기준을 조율하지 않으면 한쪽은 피곤하고 한쪽은 답답하다.",
+    "sourceFriction": {
+      "condition": "초대가 이어지고 거절을 예의 문제로 볼 때",
+      "sourceIntentionCandidate": "회복 시간을 확보하는 유보",
+      "targetMayMisreadSource": "관계를 멀리하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "소속감을 나누는 초대",
+      "sourceMayMisreadTarget": "쉬는 시간을 빼앗는 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "가능한 참여량을 말했는가?",
+      "targetQuestion": "빠질 권리를 남겼는가?",
+      "jointAgreement": "참여 범위와 준비 부담을 각각 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ISFJ:ISTP",
+    "originalResearchHash": "c1aba80afef7f26a3624fc73810821e7343ea8a1f491f3f96996b4968c935078",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "bce7a22425237ed9678da6e1bd6ee9a62d2da94d924de6a9e16dc6eab8308b48",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "522e6e34dab54621393ad0fc40e5667bbf030f75bc3c7f9985c2568d29148e5f",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 집안 루틴과 개인 자유의 경계를 분명히 해야 한다. ISFJ가 모든 생활을 챙기고 ISTP가 필요할 때만 움직이면 서운함이 쌓이고, ISTP가 자유만 주장하면 ISFJ는 안정이 무너졌다고 느낀다.",
+    "sourceFriction": {
+      "condition": "요청 전 도움을 반복하거나 응답을 생략할 때",
+      "sourceIntentionCandidate": "필요를 챙기는 질문",
+      "targetMayMisreadSource": "개인 영역을 관리하는 간섭으로 읽힐 가능성",
+      "targetIntentionCandidate": "혼자 처리하려는 짧은 답",
+      "sourceMayMisreadTarget": "도움을 밀어내는 무관심으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 도움이 필요한가?",
+      "targetQuestion": "혼자 할 일과 공유할 일을 알렸는가?",
+      "jointAgreement": "요청할 도움과 공동 책임을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ISFJ:ISFP",
+    "originalResearchHash": "5a3bfa4e541c52048942815a49a960789600cb6c587a9ae8668a46d776b5acc2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "9f53a627802bb00449d86b547b91d39e8eae1179c9f8b33f1f381b20818a094c",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "b05dba3dac94b770031a759e79036b3c692a2fe78f52e6e13a91e7e7caf34a76",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 규칙과 개인 자유의 기준, 돈과 집안 책임의 분배를 따로 합의해야 한다. 정하지 않으면 ISFJ는 불안해지고 ISFP는 숨 막히며, 둘 다 말없이 마음을 닫는다.",
+    "sourceFriction": {
+      "condition": "챙김을 거절하지 못해 부담이 쌓일 때",
+      "sourceIntentionCandidate": "기억한 기준을 지키는 도움",
+      "targetMayMisreadSource": "선택을 대신하는 간섭으로 읽힐 가능성",
+      "targetIntentionCandidate": "감정을 정리하는 침묵",
+      "sourceMayMisreadTarget": "계속 도와도 된다는 신호로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대가 실제로 원하는가?",
+      "targetQuestion": "원치 않는 도움을 말할 수 있는가?",
+      "jointAgreement": "도움 항목과 개인 취향을 따로 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ISFJ:ESTP",
+    "originalResearchHash": "62adbcdb7bc5e43048626552d32f9fa5e2e7bcff6c42fb842d97e387fa7366ee",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "ec1679edbd76a27151de162502500e0598f5277514ba21dfb738c66686ad71e3",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "ea7eba76a7902b1020a75b809b6a4dce4712c46eca021097309573857a55c93b",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 목표와 역할을 분리해야 한다. 모든 일을 같이 해결하려 하면 서로를 무력하게 만들고, 각자 맡은 영역이 있을 때만 따뜻함이 살아난다.",
+    "sourceFriction": {
+      "condition": "잦은 변경이 예고 없이 준비를 바꿀 때",
+      "sourceIntentionCandidate": "안정을 확인하는 질문",
+      "targetMayMisreadSource": "자유를 막는 걱정으로 읽힐 가능성",
+      "targetIntentionCandidate": "경험을 제안하는 빠른 말",
+      "sourceMayMisreadTarget": "기존 수고를 무시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "실제 걱정 항목을 말했는가?",
+      "targetQuestion": "변경 뒤 정리도 맡았는가?",
+      "jointAgreement": "준비 비용과 변경 가능 구간을 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ISFJ:ESFP",
+    "originalResearchHash": "fab0bb0312d31ff541b6edc333548dda6e437ab0375e8128ea092fcf61443c2f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "31497f79d3c059a631677e3f5cc465d2ee1c37574ca8b52001fe00869ecd5501",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "24d07254bfcf86fbfad140d80a8c859ab805fcd69f2e725f84545e0a8967b047",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 생활비, 가족 일정, 놀이와 휴식의 예산을 따로 합의해야 한다. ISFJ가 모든 안정 책임을 맡고 ESFP가 즐거움만 맡으면 균형이 무너지고, ESFP가 활력을 잃으면 관계가 의무만 남는다.",
+    "sourceFriction": {
+      "condition": "초대가 늘며 준비와 비용이 한쪽에 남을 때",
+      "sourceIntentionCandidate": "생활 부담을 줄이는 확인",
+      "targetMayMisreadSource": "재미를 막는 관리로 읽힐 가능성",
+      "targetIntentionCandidate": "기쁨을 나누는 초대",
+      "sourceMayMisreadTarget": "기존 책임을 잊는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "감당할 범위를 말했는가?",
+      "targetQuestion": "준비와 정리를 함께 맡았는가?",
+      "jointAgreement": "활동 선택 전에 담당·비용을 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ISFP:INTJ",
+    "originalResearchHash": "b3ee46d3605138ed7acee1d40812204d2df64975e028a1e34a96c1286dbe4021",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "a15ee85dbfaa4d39150cdf0b46be5ca785bb0cc9abae24d0c8292aa4b3efc977",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "d2e3cf0cc843a253a6f74be4267a7b6715e827c3590ecba3735046fa3b603273",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 감정 표현과 계획 구조를 모두 챙겨야 한다. INTJ가 너무 분석적으로만 말하면 ISFP는 닫히고, ISFP가 너무 감정만 숨기면 INTJ는 방향을 잡기 어렵다.",
+    "sourceFriction": {
+      "condition": "요청 전 비판하거나 침묵을 수용으로 처리할 때",
+      "sourceIntentionCandidate": "감정을 정리하며 말할 시간을 갖는 침묵",
+      "targetMayMisreadSource": "문제 제기를 회피하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "선택의 오류를 줄이려는 피드백",
+      "sourceMayMisreadTarget": "취향이나 마음을 낮추는 평가로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 답이 어렵다는 점을 알려줄 수 있는가?",
+      "targetQuestion": "피드백을 듣고 싶은지 먼저 확인했는가?",
+      "jointAgreement": "취향의 선택권과 실무 제약을 분리하고 답변 시점은 함께 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ISFP:INTP",
+    "originalResearchHash": "a1e67125c1672878ddebb32c796d99e799bfdedf4e29c85700eeb891d8a5da91",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "05a695f46896c69219628444548b307de823c62acf85dbe14e43690eb92b85c1",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "d66732c9d6009d09ab19008ab6853b43be4dfaa4bfc2be1bda5b23c8ed8b0609",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 공통 관심사가 없으면 매우 형식적이 된다. 함께 있는 시간이 평온해도 감정 교류를 의식적으로 만들지 않으면 멀어진다. 돈과 생활 책임도 자동으로 굴러가지 않으므로 담당과 마감을 분명히 둬야 한다.",
+    "sourceFriction": {
+      "condition": "감정을 분석 대상으로만 보거나 침묵을 답으로 확정할 때",
+      "sourceIntentionCandidate": "감정을 정리하며 답을 늦추는 침묵",
+      "targetMayMisreadSource": "논의할 의사가 없는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "이유를 이해하려는 질문",
+      "sourceMayMisreadTarget": "마음을 논박하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "답이 어렵다는 신호를 줄 수 있는가?",
+      "targetQuestion": "질문을 받고 싶은지 확인했는가?",
+      "jointAgreement": "분석 동의를 먼저 받고 거절 조건은 설명 없이도 존중",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ISFP:ENTJ",
+    "originalResearchHash": "831ec9e2f9a527e6f1cbab136f753544becad83ca7985c1c6e1b921ad7c4c060",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "1a8c474419444785584183b977d70a7902b3bc4f8644a651cb9ff90b8f001f1c",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "d2031b2e2cfccfbb3db01d62bfcc22a7d1bed2ba60b543522cab1aa5da9efeab",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 ENTJ가 구조를 잡고 ISFP가 정서와 감각을 채우는 방식이 가능하다. 하지만 비판이 반복되면 ISFP는 조용히 상처받고 마음을 닫는다.",
+    "sourceFriction": {
+      "condition": "허락 없이 고치거나 침묵을 승인으로 취급할 때",
+      "sourceIntentionCandidate": "답을 정리할 시간을 갖는 침묵",
+      "targetMayMisreadSource": "책임을 회피하는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "더 나은 결과를 위한 조언",
+      "sourceMayMisreadTarget": "자기 취향을 낮추는 평가로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금은 답하기 어렵다고 알릴 수 있는가?",
+      "targetQuestion": "조언을 요청받았는가?",
+      "jointAgreement": "수정 제안은 동의받고 답변 기한도 함께 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ISFP:ENTP",
+    "originalResearchHash": "12ed267563896c96f61a8a6fd76e86b30b8ba72407815acffae5587ed16536f1",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "a846eb755532f134b3b0dd54e1712eb0e9653ada7c723c225079ebdd5396e528",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "41c2cfb63fc60751886140755bbed3219845825f6241044af7739e83b8c393b5",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 논쟁의 규칙이 없으면 어렵다. ENTP는 말로 풀려 하고 ISFP는 말로 다치기 쉬워, 싸움이 반복될수록 손절 욕구가 커진다. 생활비와 책임 분담까지 즉흥으로 두면 감정 소모가 더 빨라진다.",
+    "sourceFriction": {
+      "condition": "침묵을 반박 성공으로 여기며 말을 이어갈 때",
+      "sourceIntentionCandidate": "감정을 정리하는 거리두기",
+      "targetMayMisreadSource": "대화를 끊는 처벌로 읽힐 가능성",
+      "targetIntentionCandidate": "생각을 흔드는 유머",
+      "sourceMayMisreadTarget": "마음을 낮추는 놀림으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "멈추고 싶은 때를 알릴 수 있는가?",
+      "targetQuestion": "상대가 계속 이야기하고 싶은가?",
+      "jointAgreement": "토론 중단 신호를 정하고 거절을 논박하지 않음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ISFP:INFJ",
+    "originalResearchHash": "d49ba053dd7437fac4bb902e431dc79dd051e4aa3aa2c1f0ed30b395b5479793",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "d4d6a238cd93d7af0b072f88ec458e40b9e941b0a11a477c00953af451571cbc",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "4ba2bc087fc5a2535ed65513ef44981e22b251097196527381672030ea10d01c",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 INFJ의 비전과 ISFP의 생활 감각이 모두 필요하다. 한쪽이 미래만 말하고 한쪽이 현재만 살면 방향이 어긋난다. 돈과 생활 루틴은 현실적으로 정하고, 정서 대화는 압박 없이 열어야 한다.",
+    "sourceFriction": {
+      "condition": "상대의 침묵에 의미를 대신 붙일 때",
+      "sourceIntentionCandidate": "느낌을 정리하는 침묵",
+      "targetMayMisreadSource": "동의 또는 거절로 잘못 읽힐 가능성",
+      "targetIntentionCandidate": "의도를 이해하려는 조심스러운 해석",
+      "sourceMayMisreadTarget": "마음을 정해버리는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "짧게라도 필요한 시간을 알렸는가?",
+      "targetQuestion": "추측을 사실처럼 말하지 않았는가?",
+      "jointAgreement": "해석 대신 확인 질문 하나를 사용",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ISFP:INFP",
+    "originalResearchHash": "fa34cc7ad08d1ac35d44fe966c6c7bbc2f3eb806e113e80e6b07f102cccc1d03",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "121074ee3a1bfba44886ee9e934aff9e03dc261cf5159b2e97dd213fd9a16cbb",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "fe762a34d6ecb3120dbed06b0f6852678f426993c0413ebc212a075c419175e2",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 돈, 일정, 역할 같은 현실 구조를 의식적으로 정해야 한다. 감정과 취향은 잘 맞아도 생활은 따로 관리해야 한다. 각자의 창작, 취미, 회복 시간을 존중하되 공동 책임은 숫자로 남겨야 한다.",
+    "sourceFriction": {
+      "condition": "둘 다 불편을 완곡하게 넘길 때",
+      "sourceIntentionCandidate": "지금의 느낌을 조용히 정리하는 반응",
+      "targetMayMisreadSource": "관심이 적은 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "가능한 이야기를 더 펼치는 말",
+      "sourceMayMisreadTarget": "현재 느낌을 놓치는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "생각할 시간을 알렸는가?",
+      "targetQuestion": "상대가 지금 어떤 경험을 말하는가?",
+      "jointAgreement": "감상과 실제 선택을 나눠 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ISFP:ENFJ",
+    "originalResearchHash": "ea5ad6515f3db704718df1fd6db885d946bf4b9ba0ea0e5df0d4c04e37c542c8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "16aec1b428f572b47190276a8bba43fb8997fdb7a739aabeb5faa219a2957d58",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "ecd925b759b02c7808eb3ab019c78371988e6018db867d52ef16446ec141c574",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 보호와 간섭의 경계를 맞추는 것이 핵심이다. ENFJ가 맡아주는 것이 고맙지만 ISFP의 취향과 영역을 존중해야 한다. 가족 행사, 돈, 역할 분담도 ENFJ 혼자 정하지 말고 ISFP의 리듬을 반영해야 한다.",
+    "sourceFriction": {
+      "condition": "상대가 말하기 전 해석·도움을 정해줄 때",
+      "sourceIntentionCandidate": "마음을 정리하는 침묵",
+      "targetMayMisreadSource": "더 설득해도 된다는 신호로 읽힐 가능성",
+      "targetIntentionCandidate": "관계를 개선하려는 권유",
+      "sourceMayMisreadTarget": "선택을 교정하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원치 않는 도움을 말할 수 있는가?",
+      "targetQuestion": "상대의 답을 기다렸는가?",
+      "jointAgreement": "도움은 요청 범위 안에서만 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ISFP:ENFP",
+    "originalResearchHash": "d52f9d7a064c84099c12c5b4de5242669d5e703ce7f91ba9e58b4b8bdfc30011",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "27913c4d50577fe1720995f273dad675c42fc2d4e6074f2018d41b8165e5b41e",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "820c9da4b5b22145bbf1eb5157c2ca93a3e1bc34883543ccf1e722fb4dc38b39",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 가치관과 관심사를 계속 확인해야 한다. 둘 다 자기 가치가 중요하기 때문에, 다름을 틀림으로 보는 순간 싸움이 잦아진다. 돈과 생활 책임은 감정 흐름에 맡기지 말고 최소 규칙으로 고정해야 한다.",
+    "sourceFriction": {
+      "condition": "말이 빠르게 늘며 답할 틈이 사라질 때",
+      "sourceIntentionCandidate": "느낌을 정리하는 침묵",
+      "targetMayMisreadSource": "관심이 적은 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "함께 흥미를 나누는 이야기",
+      "sourceMayMisreadTarget": "선택을 재촉하는 압박으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 생각할 시간이 필요하다고 말했는가?",
+      "targetQuestion": "답할 틈을 남겼는가?",
+      "jointAgreement": "후보는 적어두고 선택은 나중에 확인",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ISFP:ISTJ",
+    "originalResearchHash": "d6c005c84ce324d724996e2d815f35e980d87abdb373ad201097a8ea1ba94261",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "4e4c7e6d05f0e34d08fb944b6e7502d745bdee77986391fce6fb9e26808c90ae",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "354fc95bb1c1aea3be75c935dd66f10fb6b3e8bd88a426524f1c092f20c1f5ce",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 피드백 방식이 중요하다. ISTJ는 말의 강도를 낮추고 ISFP는 건설적 조언과 공격을 구분해야 안정된다. 돈과 생활 책임은 ISTJ식 구조를 쓰되, ISFP의 취향과 휴식 시간을 보장해야 한다.",
+    "sourceFriction": {
+      "condition": "피드백이 생활 전체의 평가로 넓어질 때",
+      "sourceIntentionCandidate": "답을 정리하는 침묵",
+      "targetMayMisreadSource": "문제를 외면하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "약속을 지키려는 지적",
+      "sourceMayMisreadTarget": "취향을 부정하는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "대화가 어려운 때를 알렸는가?",
+      "targetQuestion": "행동 한 가지에 대해 말했는가?",
+      "jointAgreement": "공동 규칙과 개인 취향을 분리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ISFP:ISFJ",
+    "originalResearchHash": "a770dc689ab096a63eb0b20cc0f806589eb5451bd330bccfb470bafb7d7d8144",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "b05dba3dac94b770031a759e79036b3c692a2fe78f52e6e13a91e7e7caf34a76",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "9f53a627802bb00449d86b547b91d39e8eae1179c9f8b33f1f381b20818a094c",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 규칙과 자유의 경계를 명확히 해야 한다. ISFJ가 생활을 관리하려 하고 ISFP가 벗어나려 하면 챙김이 통제로 바뀐다. 돈, 가족 의무, 집안일 기준을 정하되 ISFP의 취향과 개인 공간은 침범하지 않아야 한다.",
+    "sourceFriction": {
+      "condition": "챙김을 거절하지 못해 부담이 쌓일 때",
+      "sourceIntentionCandidate": "감정을 정리하는 침묵",
+      "targetMayMisreadSource": "계속 도와도 된다는 신호로 읽힐 가능성",
+      "targetIntentionCandidate": "기억한 기준을 지키는 도움",
+      "sourceMayMisreadTarget": "선택을 대신하는 간섭으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원치 않는 도움을 말할 수 있는가?",
+      "targetQuestion": "상대가 실제로 원하는가?",
+      "jointAgreement": "도움 항목과 개인 취향을 따로 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ISFP:ESTJ",
+    "originalResearchHash": "aae96a8763ce6a5333ee8a4b096ce602beae5404b719a79a1a82fee82bb09027",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "bc1188a20c703cb9b46e7f443b324deab6e4c94b10b8a2e2cc58c47ea1a576db",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "4a4276a0317d433063de025b1ba842a859adc1d1934af2af507877e83adeb4f4",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 문제 해결 속도를 맞춰야 한다. ESTJ가 몰아붙이면 ISFP는 닫히고, ISFP가 계속 숨기면 ESTJ는 더 강하게 밀어붙인다.",
+    "sourceFriction": {
+      "condition": "침묵을 승인으로 받아 세부를 계속 정할 때",
+      "sourceIntentionCandidate": "느낌을 정리하는 유보",
+      "targetMayMisreadSource": "책임을 피하는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "도움을 주려는 조언",
+      "sourceMayMisreadTarget": "취향을 교정하는 지시로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원치 않는 조건을 말할 수 있는가?",
+      "targetQuestion": "조언을 요청받았는가?",
+      "jointAgreement": "필수 규칙과 개인 선택을 분리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ISFP:ESFJ",
+    "originalResearchHash": "4df20a54ede26633cb17b330bc062003ffff216b046404f39f5caf38ecab2701",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "ec95800b75453943f0d6de3bf04e8df98e98b04f3823253af7e3151d373593a1",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "eb1400e28f0baec45cb8bac41c8b4e604584f60f3dccd705d5709e7dddda2306",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 동거가 가장 큰 시험이다. 생활 규칙을 ESFJ 방식으로만 정하면 ISFP는 구속감을 느끼고, ISFP가 계속 피하면 ESFJ는 불안해진다.",
+    "sourceFriction": {
+      "condition": "좋은 취지로 원치 않는 모임에 포함할 때",
+      "sourceIntentionCandidate": "개인 선을 지키는 침묵",
+      "targetMayMisreadSource": "더 설득하면 되는 망설임으로 읽힐 가능성",
+      "targetIntentionCandidate": "소속감을 주려는 소개",
+      "sourceMayMisreadTarget": "사생활을 넓히는 간섭으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "거절할 범위를 말했는가?",
+      "targetQuestion": "소개에 동의를 받았는가?",
+      "jointAgreement": "참여와 공개 범위는 개인이 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ISFP:ISTP",
+    "originalResearchHash": "dd9ce4d8ae5475590c5781eb5b542b01b41a80df0c1379a1dc133abcd2db42a3",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "410a894925fdffe4c4549576996f3e1169f1be232a60b5b9e1c1639980cfb40b",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "00a86f5cadcbcde239e129ab873628a38eed3042ec2f99e07f123a5fc9e4ad28",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 감정 번역이 중요하다. ISTP가 해결책만 주고 ISFP가 침묵하면 서로가 노력하지 않는다고 느낀다. 돈, 집안일, 각자 취미 시간은 말로 정해두지 않으면 자연스럽게 방치된다.",
+    "sourceFriction": {
+      "condition": "고민에 해결만 답하거나 침묵을 승인으로 볼 때",
+      "sourceIntentionCandidate": "마음을 정리하는 침묵",
+      "targetMayMisreadSource": "문제가 해결됐다는 신호로 읽힐 가능성",
+      "targetIntentionCandidate": "실제 도움을 주는 짧은 답",
+      "sourceMayMisreadTarget": "느낌을 끝내라는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "아직 정리 중이라고 알릴 수 있는가?",
+      "targetQuestion": "듣기와 해결 중 원하는가?",
+      "jointAgreement": "도움의 종류와 답할 때를 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ISFP:ISFP",
+    "originalResearchHash": "d990b8436c6b31ebc13857956b68570f0b10b6dbbe116f805b1d4e82106b427d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "a76605be55356caeb5af7cfa078d7e212ffe6f27831ee5cbb1824bf8d0504cda",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "a76605be55356caeb5af7cfa078d7e212ffe6f27831ee5cbb1824bf8d0504cda",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 취향과 자유를 존중하는 장점이 크다. 대신 돈, 일정, 책임 같은 현실 구조를 의식적으로 만들어야 관계가 흘러내리지 않는다. 동거에서는 사적인 공간과 생활비 기준을 따로 세워야 감정 소모가 줄어든다.",
+    "sourceFriction": {
+      "condition": "둘 다 불편을 말하지 않고 거리를 둘 때",
+      "sourceIntentionCandidate": "마음을 정리하는 침묵",
+      "targetMayMisreadSource": "상대에게 불만을 알리는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "갈등을 키우지 않는 유보",
+      "sourceMayMisreadTarget": "이미 동의한 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "지금 필요한 시간을 알렸는가?",
+      "targetQuestion": "상대 뜻을 물었는가?",
+      "jointAgreement": "짧은 거절·보류 신호와 재대화 시점 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ISFP:ESTP",
+    "originalResearchHash": "4b44145f97632b56c43c00f1af328fdfbc38e69b5a554b26adba687945c79a22",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "68efa0e9386ea5ee2aa947e81775dd2acb08b80b324ef2d38fa2db0e8fb9fe4f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "186b1abd20140fcd5e54d6f5543c860721bb90584b8bfb3db736e839b2a9eab7",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 활동 범위와 말의 강도를 조절해야 한다. ESTP가 계속 자극하고 ISFP가 계속 참으면 감정적으로 빨리 지친다. 소비, 외부 일정, 집에서 쉬는 시간을 따로 합의해야 생활 피로가 줄어든다.",
+    "sourceFriction": {
+      "condition": "직설 유머에 답할 틈 없이 활동이 이어질 때",
+      "sourceIntentionCandidate": "불편을 정리하는 거리두기",
+      "targetMayMisreadSource": "장난을 받아주는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "상황을 가볍게 하는 농담",
+      "sourceMayMisreadTarget": "마음을 낮추는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "원치 않는 행동을 말할 수 있는가?",
+      "targetQuestion": "농담에 동의를 받았는가?",
+      "jointAgreement": "중단 요청은 바로 수용하고 대안은 나중에 묻기",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISFP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISFP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ISFP:ESFP",
+    "originalResearchHash": "a8318454ea718950da9e58382a187fa1b841b5b8004b4c86924c7d6f50709a8b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "fc42963e3aaaf19109b43ee279d47bc13a62dff1303b6249857a1b81ec454d2f",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "19679c639f31c07206b00c257c78f7e724401111683675f29820605ef5a55441",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼에서는 사회생활과 개인 시간을 나누는 기준이 필요하다. 즐거움은 잘 맞지만 생활 책임을 누가 구조화할지 정하지 않으면 흐트러질 수 있다. 돈과 약속 시간을 감정에 맡기면 서운함이 쌓이므로 최소 규칙을 정해야 한다.",
+    "sourceFriction": {
+      "condition": "계속 함께 표현하거나 공개하길 기대할 때",
+      "sourceIntentionCandidate": "혼자 즐길 시간을 갖는 유보",
+      "targetMayMisreadSource": "공유를 거절하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "즐거움을 넓히는 초대",
+      "sourceMayMisreadTarget": "사적 취향을 공개하는 압박으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "어디까지 나누고 싶은가?",
+      "targetQuestion": "공개 전에 허락을 받았는가?",
+      "jointAgreement": "함께 경험해도 공개·표현은 각자 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ISTJ:INTJ",
+    "originalResearchHash": "20483dcf84ca3204f30c1f7fce5d746e5e01f9243f5ab851a61a6d876bd05814",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d904c447ebc6c781116138c5157316b554699823d41542a67650a735c65c7d09",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "1de2fde7842d8448ac51501eb6c6f64f6b88ab4a2e13d8169c133733b80147a0",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 생활 질서와 장기 비전을 동시에 다뤄야 한다. 한쪽이 너무 현실만, 다른 한쪽이 너무 설계만 말하면 거리감이 생긴다. 돈과 역할은 ISTJ가 안정화하고, 변화 계획은 INTJ가 단계화하면 좋다.",
+    "sourceFriction": {
+      "condition": "전례를 낡았다고 버리거나 새 안을 경험 없다고 닫을 때",
+      "sourceIntentionCandidate": "이미 검증된 안전 장치를 지키려는 질문",
+      "targetMayMisreadSource": "아무것도 바꾸지 않으려는 저항으로 읽힐 가능성",
+      "targetIntentionCandidate": "더 넓게 적용되는 구조를 찾으려는 수정",
+      "sourceMayMisreadTarget": "축적한 경험을 무시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "전례가 지금도 맞는 조건을 확인했는가?",
+      "targetQuestion": "새 안이 기존 문제를 줄인다는 자료가 있는가?",
+      "jointAgreement": "보존할 절차와 시험할 변경을 구분해 비교 기록",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ISTJ:INTP",
+    "originalResearchHash": "5ea10d0a9a99ed2de8e155119417221b9900deaf1f65fb9ba964249cb3ca6f34",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "60b55b4ce8ffa96674534d7cfec574f5dceafe681e92b5d8bf6509603f49b455",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "86924c5271768aac3abb6060479ff0b7a760a185b3a7afd3f6bd6be023c65bc6",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ISTJ는 생활 루틴과 돈 관리를 안정적으로 세우려 하고 INTP는 개인의 사고 시간과 유연한 생활을 원한다. 이 조합은 조용하고 실용적일 수 있지만, 감정 표현과 집안일 분담을 자동으로 기대하면 불만이 쌓인다.",
+    "sourceFriction": {
+      "condition": "이유 없는 절차 강요와 설명 없는 일정 지연이 겹칠 때",
+      "sourceIntentionCandidate": "약속을 유지하려는 일정 확인",
+      "targetMayMisreadSource": "개인 탐구를 감시하는 잔소리로 읽힐 가능성",
+      "targetIntentionCandidate": "불필요한 노력을 줄이려는 질문",
+      "sourceMayMisreadTarget": "책임을 회피하는 핑계로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "절차가 필요한 실제 이유를 설명했는가?",
+      "targetQuestion": "질문과 맡은 책임의 이행을 분리했는가?",
+      "jointAgreement": "완료 조건과 방법 선택권을 같이 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ISTJ:ENTJ",
+    "originalResearchHash": "bdc88d5714502fbf06fae81a623e5b2c6f5f62b69cc4b98fa49c06ac7e9ea6d9",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "bebe69a636f5ceb2354c8eff042951c880a5e32ada58c89d93167c4a7f0d22d6",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "cd9fdf9c3842cb6fe14e176b15c7e7f73256460ad5bf26167776b78fd09fa0d9",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ENTJ는 자산, 목표, 역할 분담을 빠르게 설계하려 하고 ISTJ는 생활 규칙과 안정적인 운영을 세밀하게 다지려 한다. 이 조합은 성과와 안정성이 강하지만, 감정 표현이 적고 일 중심으로 흐르면 부부 관계가 공동 프로젝트처럼 건조해질 수 있다.",
+    "sourceFriction": {
+      "condition": "속도를 이유로 기록을 건너뛰거나 전례만으로 새 안을 닫을 때",
+      "sourceIntentionCandidate": "실수를 막으려는 절차 확인",
+      "targetMayMisreadSource": "진행을 막는 보수성으로 읽힐 가능성",
+      "targetIntentionCandidate": "장기 목표를 위해 바꾸려는 결정",
+      "sourceMayMisreadTarget": "책임질 과정을 무시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "전례의 적용 조건을 확인했는가?",
+      "targetQuestion": "변경 후 책임 구조까지 설명했는가?",
+      "jointAgreement": "유지할 절차와 변경 실험을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ISTJ:ENTP",
+    "originalResearchHash": "92ed534906bbf1f1902e3bf7e6cfd6160ac3346f2575033192d162942799d730",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "bb153f3c5ac0da22e342acf9f01cc9aca46bbdf73a135a8e62f7dadc1732ff8e",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "df6da54047e33b60a6ce9445aa8a2a783c40e9b658045c91e895132935f74b2f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ISTJ는 돈, 일정, 가족 책임을 안정적으로 관리하려 하고 ENTP는 변화와 실험을 생활 안에 넣고 싶어 한다. 이 조합은 새 시도와 안정 운영을 모두 얻을 수 있지만, ENTP가 마무리를 피하거나 ISTJ가 변화를 막으면 피로가 커진다.",
+    "sourceFriction": {
+      "condition": "합의된 절차를 농담으로 무효화할 때",
+      "sourceIntentionCandidate": "누락을 막는 재확인",
+      "targetMayMisreadSource": "새 시도를 막는 고집으로 읽힐 가능성",
+      "targetIntentionCandidate": "다른 방법을 찾는 제안",
+      "sourceMayMisreadTarget": "약속을 가볍게 여기는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "기존 방식의 이유를 전했는가?",
+      "targetQuestion": "변경 비용을 설명했는가?",
+      "jointAgreement": "변경 요청 시점과 검증 항목을 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "semi_duality",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ISTJ:INFJ",
+    "originalResearchHash": "58114cae59f5ed3988280b1bde3c9c0743aafd3d5dafd94dd4deb47bed79212b",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "e14b21308426f8f51817c5b4600d8b2e3f1e4034cf7d6473de2b6228c6699257",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "ac93723ce3512f2005be749bf6f70f767b08e9387af2dc0e85ea87465768c55a",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ISTJ는 생활 규칙, 돈 관리, 가족 의무를 분명히 하려 하고 INFJ는 관계의 분위기와 서로의 성장 방향을 챙기려 한다. 안정성은 강하지만 감정 대화가 빠지면 한쪽은 외롭고 한쪽은 억울해질 수 있다.",
+    "sourceFriction": {
+      "condition": "의미를 공상으로 부르거나 전례를 낡음으로 취급할 때",
+      "sourceIntentionCandidate": "경험의 안전 장치를 지키는 말",
+      "targetMayMisreadSource": "변화를 막는 단정으로 읽힐 가능성",
+      "targetIntentionCandidate": "방향을 재검토하려는 질문",
+      "sourceMayMisreadTarget": "지킨 책임을 무시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "전례가 맞는 조건을 설명했는가?",
+      "targetQuestion": "제안의 실제 단계를 말했는가?",
+      "jointAgreement": "관찰 자료와 가치 목표를 각각 적음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "superego",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ISTJ:INFP",
+    "originalResearchHash": "e1368a8cd0f902996a9eef24b99300b29d4f89beda0a667458149fedeed38742",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "880add597de553f386c1a41dfc2fd9646a09e2cbc9108824caf35c435c189b33",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "d2d408505f9625d420d68fa1795fc7c3d48c6bbf0123ee9f38ebe9c4946f3b41",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 돈, 일정, 집안 역할을 ISTJ가 잡고 정서적 의미와 관계 분위기를 INFP가 살리는 식의 역할 분담이 필요하다. 다만 ISTJ가 기준만 말하고 INFP가 서운함만 숨기면 책임과 감정이 따로 논다.",
+    "sourceFriction": {
+      "condition": "의미를 비현실로 부르거나 규칙을 마음 부족으로 볼 때",
+      "sourceIntentionCandidate": "일정을 지키려는 확인",
+      "targetMayMisreadSource": "개인 선택을 통제하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "맞지 않는 조건을 거절하는 말",
+      "sourceMayMisreadTarget": "책임을 피하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "기준의 이유를 전했는가?",
+      "targetQuestion": "불편한 조건과 가능한 대안을 나눴는가?",
+      "jointAgreement": "목적과 일정의 필수 조건을 같이 적음",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "activation",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ISTJ:ENFJ",
+    "originalResearchHash": "d3e022352cfa03a9cabbd59cd1267fa7e8b45fc5885dca0baa41c791546aed21",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "7ebe89b60facf72f99aa5a77fe75aa27d03a2e57712d0faf158fc9e0b86297ba",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "cb5ff1e97985f2d51f50b32904b3f1ecd4dda7c342cdd57702df01b338c0f137",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼에서는 가족 분위기, 사회적 역할, 현실 비용, 감정 표현 방식이 계속 충돌한다. 생활 기준과 감정 확인 방식을 따로 정하고, 가족 책임은 행동으로, 관계 온도는 말로 확인해야 한다.",
+    "sourceFriction": {
+      "condition": "행동했으니 표현은 필요 없거나 표현이 없으니 관심 없다고 볼 때",
+      "sourceIntentionCandidate": "약속을 지켜 지지하는 행동",
+      "targetMayMisreadSource": "정서 요구를 무시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "감정을 함께 확인하려는 대화",
+      "sourceMayMisreadTarget": "책임 외 요구가 늘어나는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상대의 수고와 별개로 마음을 들었는가?",
+      "targetQuestion": "원하는 표현을 구체적으로 말했는가?",
+      "jointAgreement": "실무 점검과 안부를 별도로 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ISTJ:ENFP",
+    "originalResearchHash": "c2192ce02e5c717ec9cbe64a9ef4cf6f0cd32de6553ae4290edf16af41d72745",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "c7ad74a304f3a8f92d951a040b763ad9d37b6f41614a40c80f08db70c77fc097",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "733b5e81b47d5cfdf6670a3c315dce43d34fd24376cdb71847aa5651de2d5c46",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 일정, 정리정돈, 사회활동, 감정 표현 방식이 핵심 갈등이 된다. 생활 규칙을 너무 늦게 정하면 ISTJ는 독박 어른 역할을 하고 ENFP는 통제받는다고 느낀다.",
+    "sourceFriction": {
+      "condition": "확정 일정을 즉흥 변경하거나 제안을 무조건 닫을 때",
+      "sourceIntentionCandidate": "약속을 지키려는 재확인",
+      "targetMayMisreadSource": "자유를 묶는 통제로 읽힐 가능성",
+      "targetIntentionCandidate": "새 경험을 나누는 변경 제안",
+      "sourceMayMisreadTarget": "신뢰를 가볍게 보는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "예외를 허용할 조건을 말했는가?",
+      "targetQuestion": "변경이 줄 부담을 알렸는가?",
+      "jointAgreement": "고정 약속과 유연한 구간을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "mixed_named_sources_unverified",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "cmpr:material:CH01.P1:predictability-and-revision"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ISTJ:ISTJ",
+    "originalResearchHash": "c52e041fe7c5622380f49f3737a6a2903f5b9d4c6b4ffcca4f66e88616e40a82",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "280f855190a73ee46bda41e89d04797155766f274b45cfa7e6d0ef2ddb3ccabf",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "280f855190a73ee46bda41e89d04797155766f274b45cfa7e6d0ef2ddb3ccabf",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "가계, 일정, 집안 규칙은 잘 맞지만 감정 표현과 변화 대응을 의식적으로 보완해야 한다. 돈과 역할은 안정적으로 굴러가도, 따뜻한 말과 새로운 경험을 넣지 않으면 관계가 관리 체계처럼 건조해진다.",
+    "sourceFriction": {
+      "condition": "서로의 익숙한 방식을 공통 규칙으로 전제할 때",
+      "sourceIntentionCandidate": "실수를 막는 기준 확인",
+      "targetMayMisreadSource": "내 경험을 무시하는 지적으로 읽힐 가능성",
+      "targetIntentionCandidate": "신뢰를 행동으로 보여주는 태도",
+      "sourceMayMisreadTarget": "마음을 말하지 않는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "내 기준의 이유를 설명했는가?",
+      "targetQuestion": "표현이 필요한 요청도 들었는가?",
+      "jointAgreement": "기존 방식 두 개를 비교해 공동 규칙 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ISTJ:ISFJ",
+    "originalResearchHash": "a79304ce95bbb3fbf9f0f48b29d174e2545093aa6640dee25064aedb21bcc09f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "0f61c1c6495946766f1801bd5aad6ae5467ae17065ac41e3726500f057cc0bd3",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "560d5c03968fb504f6817007f328bd347dcdafe6415c556724431478ba5151ca",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 가정 운영, 돈 관리, 가족 의무는 비교적 안정적으로 굴러갈 수 있다. 그러나 감정 표현이 부족하거나 한쪽의 헌신이 당연해지면 관계가 조용히 건조해질 수 있어 감사 표현과 휴식 분담이 필요하다.",
+    "sourceFriction": {
+      "condition": "수고를 당연히 받거나 불편을 모두 참을 때",
+      "sourceIntentionCandidate": "정확한 완료를 위한 점검",
+      "targetMayMisreadSource": "노력을 인정하지 않는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "관계를 지키려는 조용한 양보",
+      "sourceMayMisreadTarget": "아무 부담 없다는 동의로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "수고와 수정 요청을 나눴는가?",
+      "targetQuestion": "감당할 선을 말했는가?",
+      "jointAgreement": "정기 책임과 도움 요청을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "kindred",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ISTJ:ESTJ",
+    "originalResearchHash": "94f5b41cfd92ef45bf9b4478acb7d5c328ab6c8a2404ddf4d629ef32fb0c7982",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "81ba48a16ef57cf19989f7d86c26af0a9e13d515a0118ee1afefa72252dea9fe",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "98e3bc76b19ee8d4b3e0594d42a32833e5a86000e2d9d70036130930cecf79f2",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 일정, 돈, 집안 규칙은 잘 맞지만 감정 표현이 부족하면 건조한 동거처럼 흐를 수 있다. 역할과 재정은 강점이지만, 칭찬과 휴식까지 규칙처럼 챙겨야 관계 온도가 유지된다.",
+    "sourceFriction": {
+      "condition": "확인 중인 사람에게 계속 즉답을 요구할 때",
+      "sourceIntentionCandidate": "오류를 줄이는 추가 확인",
+      "targetMayMisreadSource": "불필요한 지연으로 읽힐 가능성",
+      "targetIntentionCandidate": "진척을 확보하는 직접 질문",
+      "sourceMayMisreadTarget": "신뢰하지 않는 감시로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "확인이 끝날 때를 알렸는가?",
+      "targetQuestion": "점검 시점을 미리 합의했는가?",
+      "jointAgreement": "사전 검토와 중간 확인 주기를 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirror",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [
+      "cmpr:material:CH04.P1:shared-budget-clarity",
+      "cmpr:material:CH09.P1:recall-shared-budget-clarity"
+    ],
+    "coverageClass": "selected_conditional_candidate",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ISTJ:ESFJ",
+    "originalResearchHash": "6799a0532c49551830786814fe7cc75a593890718818e3b95051e29c922d8f64",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "7b423047419c0a03b067eddeda5be37bd10c9a032b1073b94f4bdfe17f769566",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "a1cba90cd92422ee98e8831d434ae7d4d2b3f3c48db3aa001d6dc57ac67e3f88",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 집안일, 가족 행사, 돈 관리가 비교적 체계적으로 돌아갈 수 있다. 그러나 ESFJ가 정서와 관계를 지나치게 혼자 챙기고 ISTJ가 실무만 담당하면, 한쪽은 외롭고 한쪽은 충분히 하고 있다고 느끼는 엇갈림이 생긴다.",
+    "sourceFriction": {
+      "condition": "약속을 했으니 표현은 불필요하다고 볼 때",
+      "sourceIntentionCandidate": "책임을 지키는 조용한 행동",
+      "targetMayMisreadSource": "안부를 피하는 무관심으로 읽힐 가능성",
+      "targetIntentionCandidate": "관계 확인을 위한 대화",
+      "sourceMayMisreadTarget": "집중을 방해하는 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "가능한 표현을 골랐는가?",
+      "targetQuestion": "원하는 연락량을 물었는가?",
+      "jointAgreement": "실무 일정과 안부 방식을 따로 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "supervision",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ISTJ:ISTP",
+    "originalResearchHash": "7347407cd7222d820c097d46ee79850be46867ef511fff53ba79174fc1893e6c",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "cbe8bed640d9fe97216e9bd253f4ce615178389f9fda151ea5ea17c4a7e7b468",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "831cdc4c03e8a31f9669146e6831f3584fdc6d1fca151da4ece805e3492e8f72",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ISTJ는 생활의 규칙과 장기 계획을 세우려 하고, ISTP는 그때그때 가장 효율적인 방식을 택하려 한다. 이 조합은 실용성은 강하지만 감정 표현이 적어 관계가 건조해질 수 있으므로, 정기적인 대화 루틴이 필요하다.",
+    "sourceFriction": {
+      "condition": "정해진 방법을 말없이 바꾸거나 모든 방법을 강제할 때",
+      "sourceIntentionCandidate": "누락을 막는 절차 확인",
+      "targetMayMisreadSource": "재량을 없애는 관리로 읽힐 가능성",
+      "targetIntentionCandidate": "현재 문제를 간단히 고치는 변경",
+      "sourceMayMisreadTarget": "책임 절차를 무시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "필수와 선택 절차를 나눴는가?",
+      "targetQuestion": "변경 내용을 남겼는가?",
+      "jointAgreement": "목적·안전 조건은 고정하고 방법은 협의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "quasi_identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ISTJ:ISFP",
+    "originalResearchHash": "bcd2ff459f86ada13526da59fc54aedf1e86d520d89b5419d1ed373eb2f401ca",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "354fc95bb1c1aea3be75c935dd66f10fb6b3e8bd88a426524f1c092f20c1f5ce",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "4e4c7e6d05f0e34d08fb944b6e7502d745bdee77986391fce6fb9e26808c90ae",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 개인 공간을 존중하는 장점이 있으나, 결정 기준이 논리와 감정으로 갈라져 생활 선택에서 부딪힌다. 돈과 역할은 명확히 하되, ISFP의 취향과 회복 공간을 존중해야 안정된다.",
+    "sourceFriction": {
+      "condition": "피드백이 생활 전체의 평가로 넓어질 때",
+      "sourceIntentionCandidate": "약속을 지키려는 지적",
+      "targetMayMisreadSource": "취향을 부정하는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "답을 정리하는 침묵",
+      "sourceMayMisreadTarget": "문제를 외면하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "행동 한 가지에 대해 말했는가?",
+      "targetQuestion": "대화가 어려운 때를 알렸는가?",
+      "jointAgreement": "공동 규칙과 개인 취향을 분리",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "benefit",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ISTJ:ESTP",
+    "originalResearchHash": "e5f637b7ca052e52329423b37e2c678aa30c3a1d10f47f8b51951b2809137328",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "3ed2b3159d0fd78588677673f1b2960ae10bd9810806ef43b5c85db9f6ca5a34",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "35283fcc0e8e9a347475e4679de6c0623dbcc6c2a86ff6fea9fa1ce07bef5850",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 사교 일정, 돈 사용, 즉흥 결정, 집안 질서가 핵심 갈등이 된다. 예산과 가족 책임은 ISTJ식 기준으로 닫고, 활동과 휴식은 ESTP의 현장 감각을 남겨야 한다.",
+    "sourceFriction": {
+      "condition": "합의 없이 현장 변경을 실행할 때",
+      "sourceIntentionCandidate": "약속을 지키려는 재확인",
+      "targetMayMisreadSource": "행동을 막는 통제로 읽힐 가능성",
+      "targetIntentionCandidate": "현재 문제를 고치는 시도",
+      "sourceMayMisreadTarget": "앞선 준비를 무시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "바꿔도 되는 범위를 말했는가?",
+      "targetQuestion": "변경의 영향을 알렸는가?",
+      "jointAgreement": "필수 안전·일정과 현장 재량을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "extinguishment",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTJ>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTJ",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ISTJ:ESFP",
+    "originalResearchHash": "b670dc8d5a04f30ede7f7ccf1d51f20a742f5f9ff004b9d3c495385bb042f936",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "4e1143ef30cd546b8e11e3c70dae10c71d4666568569b172597d51ed9fb9b036",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "2a99e5a4ed20052e1a20d09dd6fbf0fe34e9922ffff12355341815fffe0a3c14",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ISTJ는 예산, 일정, 가족 의무를 체계적으로 관리하려 하고 ESFP는 집 안의 분위기와 경험의 즐거움을 살리려 한다. 돈과 외부 활동의 기준이 맞지 않으면 한쪽은 불안하고 한쪽은 통제받는다고 느낀다.",
+    "sourceFriction": {
+      "condition": "예고 없는 활동이 기존 준비를 바꿀 때",
+      "sourceIntentionCandidate": "일관성을 지키려는 거절",
+      "targetMayMisreadSource": "함께할 마음이 없는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "즐거움을 나누는 초대",
+      "sourceMayMisreadTarget": "약속을 가볍게 여기는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "대신 가능한 활동을 말했는가?",
+      "targetQuestion": "먼저 일정 동의를 받았는가?",
+      "jointAgreement": "고정 약속 뒤 선택 활동을 둠",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "mirage",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>INTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "INTJ",
+    "originalResearchId": "mpr:ISTP:INTJ",
+    "originalResearchHash": "71a9a991d418503ff303d420a6d1817b9dd897de603f70708bac368a16f6d3fd",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "9b9988e4001d57223f651e2e892a7e07d6c550379c9141818116cb73ee86204e",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "da41d37cc99ba0fa2278ff395ccf6b56bee87d449fd5e2e215a329bcea97bcb2",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 INTJ는 장기 계획, 자산, 목표를 먼저 정리하려 하고 ISTP는 생활의 효율과 개인 시간을 중시한다. 집안일과 돈은 체계화할 수 있지만 감정 표현이 적어 관계가 업무처럼 건조해지지 않도록 정기적인 확인이 필요하다.",
+    "sourceFriction": {
+      "condition": "장기 계획으로 모든 방법을 정하거나 현장 수정 내용을 알리지 않을 때",
+      "sourceIntentionCandidate": "현재 문제를 간단히 해결하려는 변경",
+      "targetMayMisreadSource": "공유 설계를 무시한 임시방편으로 읽힐 가능성",
+      "targetIntentionCandidate": "전체 구조를 맞추려는 설계",
+      "sourceMayMisreadTarget": "방법까지 통제하려는 간섭으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "현장 변경이 전체 계획에 주는 영향을 알렸는가?",
+      "targetQuestion": "상대가 재량을 가질 범위를 남겼는가?",
+      "jointAgreement": "고정할 목적과 바꿀 수 있는 방법을 나눔",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>INTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "INTP",
+    "originalResearchId": "mpr:ISTP:INTP",
+    "originalResearchHash": "d0f4ded46078d0457cb06bd573215cb67461b34b214d7323a4e929eed3029b5f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d82f2e82f5949e40fe317c71c81650f4c9c4b3ac24fd15c91d4984585898d1fa",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "9dc65ec0487a31d043647278f92336b1fb772b733cf2068ba93d37bf226b2ce0",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 자유로운 개인 시간은 확보되지만 생활 루틴과 책임 분담이 느슨해질 수 있다. 돈, 집안일, 가족 일정은 자연스럽게 굴러가기를 기대하지 말고 최소한의 규칙을 만들어야 한다.",
+    "sourceFriction": {
+      "condition": "설명이 계속 길어지거나 현장 변경이 공유되지 않을 때",
+      "sourceIntentionCandidate": "필요한 부분만 해결하는 간단한 답",
+      "targetMayMisreadSource": "생각을 무시하는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "적용 범위를 확인하는 추가 설명",
+      "sourceMayMisreadTarget": "쓸모없는 이론을 붙이는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "어디까지 해결했는지 알려주었는가?",
+      "targetQuestion": "설명이 지금의 시험에 필요한가?",
+      "jointAgreement": "짧은 시험 뒤 필요할 때 원리 설명을 이어감",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ENTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ENTJ",
+    "originalResearchId": "mpr:ISTP:ENTJ",
+    "originalResearchHash": "9b073abaceb18aeeaabc88d229bf73aaab9c5997ee56d2e6e1589b40bd928b16",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "fccd4661be4d755acf8a808bffb5aee38fc0a04abb5d735daf6e80b71f986bfb",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "c8c4d88e10daa17919dd5a6ce781bbdbfcd32ee0ae2b9f209794e25141733eaf",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ENTJ는 장기 목표와 자산 계획을 세우려 하고 ISTP는 현재 생활의 효율과 개인 시간을 지키려 한다. 이 조합은 성과 지향은 강하지만 정서 표현이 적어, 부부 관계가 목표 관리처럼 굳지 않게 해야 한다.",
+    "sourceFriction": {
+      "condition": "결과 책임에 더해 세부 방법까지 수시 지시할 때",
+      "sourceIntentionCandidate": "필요한 수정에 집중하는 간단한 응답",
+      "targetMayMisreadSource": "협업을 거부하는 무응답으로 읽힐 가능성",
+      "targetIntentionCandidate": "진척을 확보하려는 확인",
+      "sourceMayMisreadTarget": "작업 방식을 통제하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "진척과 막힌 점을 짧게 남겼는가?",
+      "targetQuestion": "확인 주기를 미리 정했는가?",
+      "jointAgreement": "목표·점검 시점은 공유하고 방법 재량은 보존",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ENTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ENTP",
+    "originalResearchId": "mpr:ISTP:ENTP",
+    "originalResearchHash": "aeb68c640915660c0be9797d3fb55acc1d6e193823a742f85d76e5e8feb30071",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "61f5ffbf6e6c25c77b0e52f445320aeda955c060911ffdd959150dd353bb10f7",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "8b599bc341bcde8e9918cfe9d5a95a6f492f19ea5a6e9a4c5ccd1f1ee3ff9c97",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 두 사람 모두 자유로운 생활을 원하지만 운영 책임은 약해질 수 있다. 돈, 집안일, 장기 일정은 재미가 없더라도 규칙을 만들어야 하고, 감정 문제는 농담이나 침묵으로 넘기지 않는 장치가 필요하다.",
+    "sourceFriction": {
+      "condition": "계속 설명을 바꾸거나 시험 결과를 공유하지 않을 때",
+      "sourceIntentionCandidate": "작동을 먼저 보는 짧은 답",
+      "targetMayMisreadSource": "생각을 듣지 않는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "대안을 늘리는 질문",
+      "sourceMayMisreadTarget": "쓸모없는 논쟁으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "시험 결과를 설명할 시간을 주었는가?",
+      "targetQuestion": "지금 시험할 한 가지가 무엇인가?",
+      "jointAgreement": "시험 하나 뒤 질문을 다시 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>INFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "INFJ",
+    "originalResearchId": "mpr:ISTP:INFJ",
+    "originalResearchHash": "3589ff7cf9662890af1fe721ec36cb7fa7b181c32e28c354b3f009739ad7ed09",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/3",
+      "sha256": "d7242d380106b34a6fe888ad12bd3d7376a28734915fa912468844fac8bad042",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "d70fbd7d4751cbe56d672d5fe437aab969a78e03628e607613ce1c48d624fd3f",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 INFJ는 관계의 의미와 미래 방향을, ISTP는 생활의 효율과 자율성을 중시한다. 이 조합은 조용하고 실용적인 가정을 만들 수 있지만, 감정 대화를 미루면 한쪽은 외롭고 한쪽은 압박받는 구조가 된다.",
+    "sourceFriction": {
+      "condition": "긴 감정 설명에 해결만 답하거나 짧은 답을 마음 부족으로 볼 때",
+      "sourceIntentionCandidate": "불편을 줄이는 간단한 해법",
+      "targetMayMisreadSource": "감정을 끝내려는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "경험의 의미를 나누는 이야기",
+      "sourceMayMisreadTarget": "당장 할 일이 없는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "해결책을 원한 요청인지 확인했는가?",
+      "targetQuestion": "지금은 들어주기를 원하는지 말했는가?",
+      "jointAgreement": "경청과 해결 시간을 별도로 고름",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>INFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "INFP",
+    "originalResearchId": "mpr:ISTP:INFP",
+    "originalResearchHash": "1a327b689dc51342c5b01faa5a3b52f15a3468f3ded2be9c001caf7cad6867dc",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "ba5429f6e8b79e430fe73417fde5321c479d5f9457d01a6eb673337abd402045",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/7",
+      "sha256": "dfabda27c77c48532c2c14770bf11b12b357a24b3ac7be8843a5163513afbd88",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 개인 공간을 확보하기 쉽지만 정서 대화와 생활 책임을 따로 챙겨야 한다. 결혼하면 ISTP는 효율과 자유를, INFP는 관계의 의미와 가치 일치를 원하므로 돈과 가족 문제를 감정과 현실로 나누어 협의해야 한다.",
+    "sourceFriction": {
+      "condition": "고민에 실용 해법만 주거나 간결함을 무관심으로 볼 때",
+      "sourceIntentionCandidate": "불편을 줄이는 짧은 해결책",
+      "targetMayMisreadSource": "마음을 닫으라는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "경험의 의미를 나누는 말",
+      "sourceMayMisreadTarget": "해결할 것이 없는 이야기로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "해결이 필요한 요청인지 물었는가?",
+      "targetQuestion": "듣기와 해결 중 원하는 것을 말했는가?",
+      "jointAgreement": "도움의 형태를 먼저 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ENFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ENFJ",
+    "originalResearchId": "mpr:ISTP:ENFJ",
+    "originalResearchHash": "0786a4610cf9770b45775a9a4df13dc05163f58c87f5ae4fa6073775af9fe248",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/1",
+      "sha256": "88e65a90aac6efb846e8afbe0890df01aea9b27d8ce01126eb782499c015d8aa",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "82a30cbee6954a603592e8e093511bd8d498a5294736f3107e73bcca5597b17e",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ENFJ는 가족 분위기와 공동의 방향을 만들려 하고 ISTP는 생활의 효율과 개인 시간을 지키려 한다. 이 조합은 사람 문제와 현실 문제를 나눠 처리하면 좋지만, ENFJ가 모든 감정을 관리하고 ISTP가 침묵하면 균형이 무너진다.",
+    "sourceFriction": {
+      "condition": "잦은 감정 확인 또는 해결만 주는 답이 반복될 때",
+      "sourceIntentionCandidate": "실제로 도우려는 짧은 해법",
+      "targetMayMisreadSource": "마음을 덮는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "연결을 확인하는 질문",
+      "sourceMayMisreadTarget": "개인 시간을 관리하는 요구로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "먼저 들어주기를 원하는가?",
+      "targetQuestion": "지금 대화할 수 있는지 물었는가?",
+      "jointAgreement": "짧은 상태 확인과 선택한 도움을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ENFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ENFP",
+    "originalResearchId": "mpr:ISTP:ENFP",
+    "originalResearchHash": "42ebb02e49b5c497857fc5588fef168dad7493138e7c1c68766c8e6516b5f48d",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/4",
+      "sha256": "68c36ed3e74b5f1959d7d33149e30707ec140b2209996136434ae79d847dca44",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/5",
+      "sha256": "b558d263fdda1a02b750a078f69b4dc675903e81b33cc0e109cbf372e4aa3cdc",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ENFP는 대화와 정서적 연결을, ISTP는 개인 시간과 실용적인 생활 방식을 중시한다. 이 조합은 서로의 자유를 존중하면 편해질 수 있지만, 감정 대화와 생활 책임을 명확히 정하지 않으면 한쪽은 외롭고 한쪽은 간섭받는다고 느낀다.",
+    "sourceFriction": {
+      "condition": "반응을 계속 요구하거나 짧은 답을 무관심으로 볼 때",
+      "sourceIntentionCandidate": "필요한 만큼만 답하는 반응",
+      "targetMayMisreadSource": "함께할 마음이 없다는 뜻으로 읽힐 가능성",
+      "targetIntentionCandidate": "관심을 나누는 연속 질문",
+      "sourceMayMisreadTarget": "집중을 방해하는 간섭으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "가능한 응답 시점을 전했는가?",
+      "targetQuestion": "대화할 여유를 먼저 물었는가?",
+      "jointAgreement": "짧은 확인 뒤 긴 대화는 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "conflict",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ISTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ISTJ",
+    "originalResearchId": "mpr:ISTP:ISTJ",
+    "originalResearchHash": "b214b4eb6bc351c510bc83aa1e8bd7daa5bcd89e5132a4b91d76a8f60c382c27",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/10",
+      "sha256": "831cdc4c03e8a31f9669146e6831f3584fdc6d1fca151da4ece805e3492e8f72",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/9",
+      "sha256": "cbe8bed640d9fe97216e9bd253f4ce615178389f9fda151ea5ea17c4a7e7b468",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ISTJ는 생활의 규칙과 장기 계획을 세우려 하고, ISTP는 그때그때 가장 효율적인 방식을 택하려 한다. 이 조합은 실용성은 강하지만 감정 표현이 적어 관계가 건조해질 수 있으므로, 정기적인 대화 루틴이 필요하다.",
+    "sourceFriction": {
+      "condition": "정해진 방법을 말없이 바꾸거나 모든 방법을 강제할 때",
+      "sourceIntentionCandidate": "현재 문제를 간단히 고치는 변경",
+      "targetMayMisreadSource": "책임 절차를 무시하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "누락을 막는 절차 확인",
+      "sourceMayMisreadTarget": "재량을 없애는 관리로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "변경 내용을 남겼는가?",
+      "targetQuestion": "필수와 선택 절차를 나눴는가?",
+      "jointAgreement": "목적·안전 조건은 고정하고 방법은 협의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ISFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ISFJ",
+    "originalResearchId": "mpr:ISTP:ISFJ",
+    "originalResearchHash": "2a77058a801a785e058b72add2491c95c6340e848b73b9d010750da5f56e0e21",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/11",
+      "sha256": "522e6e34dab54621393ad0fc40e5667bbf030f75bc3c7f9985c2568d29148e5f",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "bce7a22425237ed9678da6e1bd6ee9a62d2da94d924de6a9e16dc6eab8308b48",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 ISFJ는 가족과 생활 루틴을 챙기고 ISTP는 현실 문제를 효율적으로 처리하려 한다. 돈과 집안일은 실용적으로 운영할 수 있지만, 감사 표현과 정서적 확인이 부족하면 한쪽의 헌신이 당연한 일이 되어 버릴 수 있다.",
+    "sourceFriction": {
+      "condition": "요청 전 도움을 반복하거나 응답을 생략할 때",
+      "sourceIntentionCandidate": "혼자 처리하려는 짧은 답",
+      "targetMayMisreadSource": "도움을 밀어내는 무관심으로 읽힐 가능성",
+      "targetIntentionCandidate": "필요를 챙기는 질문",
+      "sourceMayMisreadTarget": "개인 영역을 관리하는 간섭으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "혼자 할 일과 공유할 일을 알렸는가?",
+      "targetQuestion": "지금 도움이 필요한가?",
+      "jointAgreement": "요청할 도움과 공동 책임을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ESTJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ESTJ",
+    "originalResearchId": "mpr:ISTP:ESTJ",
+    "originalResearchHash": "b7a15abe862fa9571ad735a2c2bd4f510e553a97a6d7721104237b4710f2bd69",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/12",
+      "sha256": "c844cc722b8b214101ede6af8c208d6c9075bba5c2b5f23ad3ba7b27bc60012b",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/6",
+      "sha256": "b1cf7047b561a65d93e9361a78ea44cb9bd539f6c0fd1f7ac0e4cf70710083df",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ESTJ는 예산, 일정, 가족 책임을 체계적으로 관리하려 하고 ISTP는 필요한 순간에 효율적으로 처리하려 한다. 이 조합은 생활 운영 능력은 있지만, ESTJ가 모든 기준을 정하고 ISTP가 따르는 구조가 되면 감정적 거리가 커진다.",
+    "sourceFriction": {
+      "condition": "결과와 무관한 과정까지 수시 지시할 때",
+      "sourceIntentionCandidate": "작동에 집중하는 짧은 응답",
+      "targetMayMisreadSource": "진척을 숨기는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "누락을 막는 중간 확인",
+      "sourceMayMisreadTarget": "방법을 감시하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "상태를 짧게 공유했는가?",
+      "targetQuestion": "방법까지 정할 필요가 있는가?",
+      "jointAgreement": "결과·안전·점검 시점만 먼저 합의",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ESFJ",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ESFJ",
+    "originalResearchId": "mpr:ISTP:ESFJ",
+    "originalResearchHash": "3ee0d4f7194638a74d8488fad5a8fcd1e07de6c2ca688e63fdff6fc1c008a705",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "ad258c69529c20bdde58a78217f758925a668d52fe465ea2924d840546c2b568",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "d4e0e7a5f15cfe50998e0e35f6173242322939db886273d4ad106acc1c06922d",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "결혼하면 ESFJ는 가족 행사, 주변 관계, 생활 루틴을 적극적으로 챙기고 ISTP는 효율과 개인 시간을 중요하게 본다. 외부 약속과 가족 관계의 빈도를 조절하지 않으면 ISTP는 지치고 ESFJ는 혼자 애쓴다고 느낀다.",
+    "sourceFriction": {
+      "condition": "잦은 확인과 짧은 거절이 서로 반복될 때",
+      "sourceIntentionCandidate": "자율을 지키는 짧은 답",
+      "targetMayMisreadSource": "친밀감을 거절하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "소속감을 확인하는 질문",
+      "sourceMayMisreadTarget": "사적 공간을 관리하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "가능한 응답 형태를 알렸는가?",
+      "targetQuestion": "지금 대화할 수 있는가?",
+      "jointAgreement": "안부 시간과 집중 시간을 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "D_SOURCE_LOCAL_COVERAGE_DIFFERS",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ISTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ISTP",
+    "originalResearchId": "mpr:ISTP:ISTP",
+    "originalResearchHash": "d76e14733f822c14c3d44b7798c2982f438859030e65b5f3e0627797c101f82f",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "94ab792742d5c6e0ee1e0b424d69b2874cea933f7b6b60577bd5b52a6fd929b6",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/14",
+      "sha256": "94ab792742d5c6e0ee1e0b424d69b2874cea933f7b6b60577bd5b52a6fd929b6",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 개인 시간과 실용성은 잘 보장되지만 가정 운영의 루틴이 약해질 수 있다. 돈, 집안일, 가족 행사는 흘러가는 대로 두지 말고 최소 기준을 정해야 한다.",
+    "sourceFriction": {
+      "condition": "서로 말하지 않아 미완료 책임이 남을 때",
+      "sourceIntentionCandidate": "혼자 처리하려는 거리두기",
+      "targetMayMisreadSource": "협업을 거절하는 것으로 읽힐 가능성",
+      "targetIntentionCandidate": "간결하게 끝내려는 답",
+      "sourceMayMisreadTarget": "설명할 마음이 없는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "끝낸 일과 남은 일을 알렸는가?",
+      "targetQuestion": "지금 도움을 원하는가?",
+      "jointAgreement": "짧은 인계와 도움 요청 신호를 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "identity",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ISFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ISFP",
+    "originalResearchId": "mpr:ISTP:ISFP",
+    "originalResearchHash": "a6102fea90dfcc5ea00e7b9b119ada41b548cd7e1811bc9f19b38c4c9cbf5dc8",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "00a86f5cadcbcde239e129ab873628a38eed3042ec2f99e07f123a5fc9e4ad28",
+      "sourceCoverage": "direct"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/8",
+      "sha256": "410a894925fdffe4c4549576996f3e1169f1be232a60b5b9e1c1639980cfb40b",
+      "sourceCoverage": "direct"
+    },
+    "sourceMarriagePattern": "장기 관계에서는 개인 공간과 취미는 잘 맞지만, 감정 표현과 결정 기준이 갈등이 된다. ISTP는 해결책을 내고, ISFP는 마음을 알아주길 원한다.",
+    "sourceFriction": {
+      "condition": "고민에 해결만 답하거나 침묵을 승인으로 볼 때",
+      "sourceIntentionCandidate": "실제 도움을 주는 짧은 답",
+      "targetMayMisreadSource": "느낌을 끝내라는 말로 읽힐 가능성",
+      "targetIntentionCandidate": "마음을 정리하는 침묵",
+      "sourceMayMisreadTarget": "문제가 해결됐다는 신호로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "듣기와 해결 중 원하는가?",
+      "targetQuestion": "아직 정리 중이라고 알릴 수 있는가?",
+      "jointAgreement": "도움의 종류와 답할 때를 선택",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": "business",
+      "system": "socionics_term_family",
+      "reasonClasses": [
+        "B_TERM_ALIAS_OR_LABEL_VARIANT",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ESTP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ESTP",
+    "originalResearchId": "mpr:ISTP:ESTP",
+    "originalResearchHash": "fb0959fcf87fba589facd1b4d0fbd825398136d89fd98fab0ba715d397e553d2",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/2",
+      "sha256": "3b598a6ba88682e67bb16c2cfd71e91c8e1589e3aa8dcbbf27b0bcc5eea9251d",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/0",
+      "sha256": "aa178379a840e48686e96d0e8b98ae29604682f05d5d4382fcf81d60b9146e62",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 두 사람 모두 실용적이고 문제 해결은 빠르지만 장기 운영과 정서 표현이 약해질 수 있다. 돈과 생활 규칙은 느슨하게 두면 충동적 선택으로 흐르기 쉬워, 최소한의 예산과 책임 분담을 정해야 한다.",
+    "sourceFriction": {
+      "condition": "참여를 재촉하거나 짧은 답을 흥미 부족으로 볼 때",
+      "sourceIntentionCandidate": "집중을 유지하는 간결한 답",
+      "targetMayMisreadSource": "함께할 마음이 적다고 읽힐 가능성",
+      "targetIntentionCandidate": "활동을 넓히는 초대",
+      "sourceMayMisreadTarget": "개인 시간을 침범하는 것으로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "가능한 활동량을 말했는가?",
+      "targetQuestion": "불참할 선택권을 남겼는가?",
+      "jointAgreement": "작업 범위와 참여 시간을 직접 정함",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "quadra_style_label_not_pair_relation",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  },
+  {
+    "id": "cmpr:pair:ISTP>ESFP",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "sourceType": "ISTP",
+    "targetType": "ESFP",
+    "originalResearchId": "mpr:ISTP:ESFP",
+    "originalResearchHash": "2664c260b4dc7717154adc3fb746bdc727328556036030c5b624226a6406e3f3",
+    "forward": {
+      "pointer": "/relationshipHints/notablePairs/15",
+      "sha256": "6ec4e8230764f3f3c46a19a19b0a5ff057475d8796e28ab7c0715129f7be49c3",
+      "sourceCoverage": "inferred"
+    },
+    "reverse": {
+      "pointer": "/relationshipHints/notablePairs/13",
+      "sha256": "5d89166714cfa7c36c99bcaafe4d1030a7c3fb5af85b460a32c6248ff5cea1c4",
+      "sourceCoverage": "inferred"
+    },
+    "sourceMarriagePattern": "결혼하면 활동적이고 실용적인 생활은 만들 수 있지만 돈과 장기 계획이 즉흥적으로 흐르기 쉽다. ESFP는 즐거운 경험을, ISTP는 효율과 자유를 중시하므로 지출 기준과 개인 시간을 함께 정해야 한다.",
+    "sourceFriction": {
+      "condition": "상세 반응을 계속 요구하거나 이야기를 곧바로 줄일 때",
+      "sourceIntentionCandidate": "핵심만 말하는 응답",
+      "targetMayMisreadSource": "관심을 거두는 반응으로 읽힐 가능성",
+      "targetIntentionCandidate": "경험을 나누는 자기표현",
+      "sourceMayMisreadTarget": "집중을 방해하는 말로 읽힐 가능성"
+    },
+    "sourceRepair": {
+      "sourceQuestion": "가능한 응답 방식을 말했는가?",
+      "targetQuestion": "지금 이야기할 여유가 있는가?",
+      "jointAgreement": "함께할 활동과 개인 시간을 구분",
+      "timingLimit": "회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다."
+    },
+    "relationNameReview": {
+      "termFamily": null,
+      "system": "source_local_inference_label",
+      "reasonClasses": [
+        "C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED",
+        "F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED"
+      ],
+      "mappingStatus": "not_established",
+      "approvedForCustomer": false
+    },
+    "materialRefs": [],
+    "coverageClass": "common_reference_only",
+    "status": "conditional_reference_not_predictive",
+    "noScore": true,
+    "notNewInterpretation": true,
+    "applicationGate": "marriagePattern 원문은 기존 참고 inventory다. 두 개인의 입력 유형·원천·현재 적용 context를 별도 확인한다. lovePattern·Socionics 이름·유형 조합만으로 결혼의 좋고 나쁨이나 생활 실태를 판정하지 않는다. 전체 36문단을 충족한다는 뜻이 아니다."
+  }
+];

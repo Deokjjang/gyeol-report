@@ -1,0 +1,2466 @@
+[
+  {
+    "id": "cmpr:role:CH01.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S1",
+    "originalRole": "특징적인 조합",
+    "materialIds": [
+      "cmpr:material:CH01.P1:predictability-and-revision",
+      "cmpr:material:CH01.P1:decision-and-influence"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S2",
+    "originalRole": "대표 성향 대비",
+    "materialIds": [
+      "cmpr:material:CH01.P1:predictability-and-revision",
+      "cmpr:material:CH01.P1:decision-and-influence"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S3",
+    "originalRole": "함께하는 장면",
+    "materialIds": [
+      "cmpr:material:CH01.P1:predictability-and-revision",
+      "cmpr:material:CH01.P1:decision-and-influence"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S4",
+    "originalRole": "관계의 상징",
+    "materialIds": [
+      "cmpr:material:CH01.P1:predictability-and-revision",
+      "cmpr:material:CH01.P1:decision-and-influence"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S1",
+    "originalRole": "실제 명리 관계",
+    "materialIds": [
+      "cmpr:material:CH01.P2:harmony-and-household-terms",
+      "cmpr:material:CH01.P2:clash-and-two-standards"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S2",
+    "originalRole": "쉬운 의미",
+    "materialIds": [
+      "cmpr:material:CH01.P2:harmony-and-household-terms",
+      "cmpr:material:CH01.P2:clash-and-two-standards"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S3",
+    "originalRole": "상호 영향",
+    "materialIds": [
+      "cmpr:material:CH01.P2:harmony-and-household-terms",
+      "cmpr:material:CH01.P2:clash-and-two-standards"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S4",
+    "originalRole": "강점과 주의 조건",
+    "materialIds": [
+      "cmpr:material:CH01.P2:harmony-and-household-terms",
+      "cmpr:material:CH01.P2:clash-and-two-standards"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S1",
+    "originalRole": "A의 실제 MBTI",
+    "materialIds": [
+      "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+      "cmpr:material:CH01.P3:same-type-separate-workload"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S2",
+    "originalRole": "B의 실제 MBTI",
+    "materialIds": [
+      "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+      "cmpr:material:CH01.P3:same-type-separate-workload"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S3",
+    "originalRole": "공통점과 차이",
+    "materialIds": [
+      "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+      "cmpr:material:CH01.P3:same-type-separate-workload"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S4",
+    "originalRole": "상호작용",
+    "materialIds": [
+      "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+      "cmpr:material:CH01.P3:same-type-separate-workload"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S1",
+    "originalRole": "좋은 점",
+    "materialIds": [
+      "cmpr:material:CH01.P4:category-is-not-marital-fact",
+      "cmpr:material:CH01.P4:shared-strength-not-shared-score"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S2",
+    "originalRole": "조심할 차이",
+    "materialIds": [
+      "cmpr:material:CH01.P4:category-is-not-marital-fact",
+      "cmpr:material:CH01.P4:shared-strength-not-shared-score"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S3",
+    "originalRole": "관계별 조건",
+    "materialIds": [
+      "cmpr:material:CH01.P4:category-is-not-marital-fact",
+      "cmpr:material:CH01.P4:shared-strength-not-shared-score"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH01.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S4",
+    "originalRole": "앞으로의 질문",
+    "materialIds": [
+      "cmpr:material:CH01.P4:category-is-not-marital-fact",
+      "cmpr:material:CH01.P4:shared-strength-not-shared-score"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S1",
+    "originalRole": "대표 행동",
+    "materialIds": [
+      "cmpr:material:CH02.P1:a-operating-standards",
+      "cmpr:material:CH02.P1:a-quiet-system-support"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S2",
+    "originalRole": "명리 근거",
+    "materialIds": [
+      "cmpr:material:CH02.P1:a-operating-standards",
+      "cmpr:material:CH02.P1:a-quiet-system-support"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S3",
+    "originalRole": "MBTI 선호",
+    "materialIds": [
+      "cmpr:material:CH02.P1:a-operating-standards",
+      "cmpr:material:CH02.P1:a-quiet-system-support"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S4",
+    "originalRole": "B와의 관계",
+    "materialIds": [
+      "cmpr:material:CH02.P1:a-operating-standards",
+      "cmpr:material:CH02.P1:a-quiet-system-support"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S1",
+    "originalRole": "관계 조건",
+    "materialIds": [
+      "cmpr:material:CH02.P2:a-rest-is-a-resource",
+      "cmpr:material:CH02.P2:a-meaning-needs-operations"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S2",
+    "originalRole": "실제 이유",
+    "materialIds": [
+      "cmpr:material:CH02.P2:a-rest-is-a-resource",
+      "cmpr:material:CH02.P2:a-meaning-needs-operations"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S3",
+    "originalRole": "B와의 장면",
+    "materialIds": [
+      "cmpr:material:CH02.P2:a-rest-is-a-resource",
+      "cmpr:material:CH02.P2:a-meaning-needs-operations"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S4",
+    "originalRole": "충족될 때",
+    "materialIds": [
+      "cmpr:material:CH02.P2:a-rest-is-a-resource",
+      "cmpr:material:CH02.P2:a-meaning-needs-operations"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S1",
+    "originalRole": "특징적 강점",
+    "materialIds": [
+      "cmpr:material:CH02.P3:a-complete-task-ownership",
+      "cmpr:material:CH02.P3:a-notice-with-permission"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "cmpr:material:CH02.P3:a-complete-task-ownership",
+      "cmpr:material:CH02.P3:a-notice-with-permission"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S3",
+    "originalRole": "B에게 좋은 상황",
+    "materialIds": [
+      "cmpr:material:CH02.P3:a-complete-task-ownership",
+      "cmpr:material:CH02.P3:a-notice-with-permission"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S4",
+    "originalRole": "유지 조건",
+    "materialIds": [
+      "cmpr:material:CH02.P3:a-complete-task-ownership",
+      "cmpr:material:CH02.P3:a-notice-with-permission"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S1",
+    "originalRole": "과사용 위험",
+    "materialIds": [
+      "cmpr:material:CH02.P4:a-management-becomes-permission",
+      "cmpr:material:CH02.P4:a-corrects-unagreed-standard"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S2",
+    "originalRole": "원인",
+    "materialIds": [
+      "cmpr:material:CH02.P4:a-management-becomes-permission",
+      "cmpr:material:CH02.P4:a-corrects-unagreed-standard"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S3",
+    "originalRole": "B가 받는 뜻",
+    "materialIds": [
+      "cmpr:material:CH02.P4:a-management-becomes-permission",
+      "cmpr:material:CH02.P4:a-corrects-unagreed-standard"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH02.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S4",
+    "originalRole": "조절 행동",
+    "materialIds": [
+      "cmpr:material:CH02.P4:a-management-becomes-permission",
+      "cmpr:material:CH02.P4:a-corrects-unagreed-standard"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S1",
+    "originalRole": "독립적 행동",
+    "materialIds": [
+      "cmpr:material:CH03.P1:b-adaptable-day-plan",
+      "cmpr:material:CH03.P1:b-visible-practical-support"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S2",
+    "originalRole": "명리 근거",
+    "materialIds": [
+      "cmpr:material:CH03.P1:b-adaptable-day-plan",
+      "cmpr:material:CH03.P1:b-visible-practical-support"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S3",
+    "originalRole": "MBTI 선호",
+    "materialIds": [
+      "cmpr:material:CH03.P1:b-adaptable-day-plan",
+      "cmpr:material:CH03.P1:b-visible-practical-support"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S4",
+    "originalRole": "A와의 관계",
+    "materialIds": [
+      "cmpr:material:CH03.P1:b-adaptable-day-plan",
+      "cmpr:material:CH03.P1:b-visible-practical-support"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S1",
+    "originalRole": "관계 조건",
+    "materialIds": [
+      "cmpr:material:CH03.P2:b-sensory-common-space",
+      "cmpr:material:CH03.P2:b-acknowledgement-not-assignment"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S2",
+    "originalRole": "독립적 이유",
+    "materialIds": [
+      "cmpr:material:CH03.P2:b-sensory-common-space",
+      "cmpr:material:CH03.P2:b-acknowledgement-not-assignment"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S3",
+    "originalRole": "A와의 장면",
+    "materialIds": [
+      "cmpr:material:CH03.P2:b-sensory-common-space",
+      "cmpr:material:CH03.P2:b-acknowledgement-not-assignment"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S4",
+    "originalRole": "충족될 때",
+    "materialIds": [
+      "cmpr:material:CH03.P2:b-sensory-common-space",
+      "cmpr:material:CH03.P2:b-acknowledgement-not-assignment"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S1",
+    "originalRole": "특징적 강점",
+    "materialIds": [
+      "cmpr:material:CH03.P3:b-family-boundary-contribution",
+      "cmpr:material:CH03.P3:b-useful-simplification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S2",
+    "originalRole": "독립적 근거",
+    "materialIds": [
+      "cmpr:material:CH03.P3:b-family-boundary-contribution",
+      "cmpr:material:CH03.P3:b-useful-simplification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S3",
+    "originalRole": "A에게 좋은 상황",
+    "materialIds": [
+      "cmpr:material:CH03.P3:b-family-boundary-contribution",
+      "cmpr:material:CH03.P3:b-useful-simplification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S4",
+    "originalRole": "유지 조건",
+    "materialIds": [
+      "cmpr:material:CH03.P3:b-family-boundary-contribution",
+      "cmpr:material:CH03.P3:b-useful-simplification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S1",
+    "originalRole": "과사용 위험",
+    "materialIds": [
+      "cmpr:material:CH03.P4:b-avoids-budget-answer",
+      "cmpr:material:CH03.P4:b-expands-social-cost"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S2",
+    "originalRole": "원인",
+    "materialIds": [
+      "cmpr:material:CH03.P4:b-avoids-budget-answer",
+      "cmpr:material:CH03.P4:b-expands-social-cost"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S3",
+    "originalRole": "A가 받는 뜻",
+    "materialIds": [
+      "cmpr:material:CH03.P4:b-avoids-budget-answer",
+      "cmpr:material:CH03.P4:b-expands-social-cost"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH03.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S4",
+    "originalRole": "조절 행동",
+    "materialIds": [
+      "cmpr:material:CH03.P4:b-avoids-budget-answer",
+      "cmpr:material:CH03.P4:b-expands-social-cost"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S1",
+    "originalRole": "검증된 공통점 또는 다른 기여",
+    "materialIds": [
+      "cmpr:material:CH04.P1:shared-budget-clarity",
+      "cmpr:material:CH04.P1:shared-care-not-default-manager",
+      "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S2",
+    "originalRole": "각자 근거",
+    "materialIds": [
+      "cmpr:material:CH04.P1:shared-budget-clarity",
+      "cmpr:material:CH04.P1:shared-care-not-default-manager",
+      "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S3",
+    "originalRole": "함께하는 행동",
+    "materialIds": [
+      "cmpr:material:CH04.P1:shared-budget-clarity",
+      "cmpr:material:CH04.P1:shared-care-not-default-manager",
+      "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S4",
+    "originalRole": "강점의 조건",
+    "materialIds": [
+      "cmpr:material:CH04.P1:shared-budget-clarity",
+      "cmpr:material:CH04.P1:shared-care-not-default-manager",
+      "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S1",
+    "originalRole": "검증된 보완 또는 다른 장점",
+    "materialIds": [
+      "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+      "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+      "cmpr:material:CH04.P2:values-meet-operating-detail"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+      "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+      "cmpr:material:CH04.P2:values-meet-operating-detail"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S3",
+    "originalRole": "도움의 장면",
+    "materialIds": [
+      "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+      "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+      "cmpr:material:CH04.P2:values-meet-operating-detail"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S4",
+    "originalRole": "좋은 차이의 경계",
+    "materialIds": [
+      "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+      "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+      "cmpr:material:CH04.P2:values-meet-operating-detail"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S1",
+    "originalRole": "관계별 상황",
+    "materialIds": [
+      "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+      "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+      "cmpr:material:CH04.P3:two-rest-windows"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S2",
+    "originalRole": "A의 기여",
+    "materialIds": [
+      "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+      "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+      "cmpr:material:CH04.P3:two-rest-windows"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S3",
+    "originalRole": "B의 기여",
+    "materialIds": [
+      "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+      "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+      "cmpr:material:CH04.P3:two-rest-windows"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S4",
+    "originalRole": "함께 얻는 결과",
+    "materialIds": [
+      "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+      "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+      "cmpr:material:CH04.P3:two-rest-windows"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S1",
+    "originalRole": "가치 있는 특징",
+    "materialIds": [
+      "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+      "cmpr:material:CH04.P4:competence-with-rotation",
+      "cmpr:material:CH04.P4:family-choice-not-family-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S2",
+    "originalRole": "좋은 관계의 조건",
+    "materialIds": [
+      "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+      "cmpr:material:CH04.P4:competence-with-rotation",
+      "cmpr:material:CH04.P4:family-choice-not-family-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S3",
+    "originalRole": "과사용 위험",
+    "materialIds": [
+      "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+      "cmpr:material:CH04.P4:competence-with-rotation",
+      "cmpr:material:CH04.P4:family-choice-not-family-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH04.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S4",
+    "originalRole": "활용 방향",
+    "materialIds": [
+      "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+      "cmpr:material:CH04.P4:competence-with-rotation",
+      "cmpr:material:CH04.P4:family-choice-not-family-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S1",
+    "originalRole": "A→B 영향",
+    "materialIds": [
+      "cmpr:material:CH05.P1:ab-rule-with-revision",
+      "cmpr:material:CH05.P1:ab-resource-explanation",
+      "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+      "cmpr:material:CH05.P1:ab-standards-without-performance-review"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S2",
+    "originalRole": "받는 사람 기준 십성",
+    "materialIds": [
+      "cmpr:material:CH05.P1:ab-rule-with-revision",
+      "cmpr:material:CH05.P1:ab-resource-explanation",
+      "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+      "cmpr:material:CH05.P1:ab-standards-without-performance-review"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S3",
+    "originalRole": "구체적 행동",
+    "materialIds": [
+      "cmpr:material:CH05.P1:ab-rule-with-revision",
+      "cmpr:material:CH05.P1:ab-resource-explanation",
+      "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+      "cmpr:material:CH05.P1:ab-standards-without-performance-review"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S4",
+    "originalRole": "B에게 남는 의미",
+    "materialIds": [
+      "cmpr:material:CH05.P1:ab-rule-with-revision",
+      "cmpr:material:CH05.P1:ab-resource-explanation",
+      "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+      "cmpr:material:CH05.P1:ab-standards-without-performance-review"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S1",
+    "originalRole": "도움 되는 강점",
+    "materialIds": [
+      "cmpr:material:CH05.P2:ab-advance-plan-information",
+      "cmpr:material:CH05.P2:ab-care-with-whole-task",
+      "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+      "cmpr:material:CH05.P2:ab-support-before-family-contact"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "cmpr:material:CH05.P2:ab-advance-plan-information",
+      "cmpr:material:CH05.P2:ab-care-with-whole-task",
+      "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+      "cmpr:material:CH05.P2:ab-support-before-family-contact"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S3",
+    "originalRole": "관계별 장면",
+    "materialIds": [
+      "cmpr:material:CH05.P2:ab-advance-plan-information",
+      "cmpr:material:CH05.P2:ab-care-with-whole-task",
+      "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+      "cmpr:material:CH05.P2:ab-support-before-family-contact"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S4",
+    "originalRole": "발휘 조건",
+    "materialIds": [
+      "cmpr:material:CH05.P2:ab-advance-plan-information",
+      "cmpr:material:CH05.P2:ab-care-with-whole-task",
+      "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+      "cmpr:material:CH05.P2:ab-support-before-family-contact"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S1",
+    "originalRole": "부담 행동",
+    "materialIds": [
+      "cmpr:material:CH05.P3:ab-unilateral-budget",
+      "cmpr:material:CH05.P3:ab-holiday-finality",
+      "cmpr:material:CH05.P3:ab-care-as-debt",
+      "cmpr:material:CH05.P3:ab-standard-remakes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S2",
+    "originalRole": "검증된 차이",
+    "materialIds": [
+      "cmpr:material:CH05.P3:ab-unilateral-budget",
+      "cmpr:material:CH05.P3:ab-holiday-finality",
+      "cmpr:material:CH05.P3:ab-care-as-debt",
+      "cmpr:material:CH05.P3:ab-standard-remakes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S3",
+    "originalRole": "의도와 경험",
+    "materialIds": [
+      "cmpr:material:CH05.P3:ab-unilateral-budget",
+      "cmpr:material:CH05.P3:ab-holiday-finality",
+      "cmpr:material:CH05.P3:ab-care-as-debt",
+      "cmpr:material:CH05.P3:ab-standard-remakes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S4",
+    "originalRole": "악화 조건",
+    "materialIds": [
+      "cmpr:material:CH05.P3:ab-unilateral-budget",
+      "cmpr:material:CH05.P3:ab-holiday-finality",
+      "cmpr:material:CH05.P3:ab-care-as-debt",
+      "cmpr:material:CH05.P3:ab-standard-remakes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S1",
+    "originalRole": "조정할 행동",
+    "materialIds": [
+      "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "cmpr:material:CH05.P4:ab-own-one-whole-process",
+      "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+      "cmpr:material:CH05.P4:ab-check-impact-before-correction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S2",
+    "originalRole": "B의 필요",
+    "materialIds": [
+      "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "cmpr:material:CH05.P4:ab-own-one-whole-process",
+      "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+      "cmpr:material:CH05.P4:ab-check-impact-before-correction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S3",
+    "originalRole": "확인할 실천",
+    "materialIds": [
+      "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "cmpr:material:CH05.P4:ab-own-one-whole-process",
+      "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+      "cmpr:material:CH05.P4:ab-check-impact-before-correction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH05.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S4",
+    "originalRole": "A→B 가능성",
+    "materialIds": [
+      "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "cmpr:material:CH05.P4:ab-own-one-whole-process",
+      "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+      "cmpr:material:CH05.P4:ab-check-impact-before-correction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S1",
+    "originalRole": "B→A 영향",
+    "materialIds": [
+      "cmpr:material:CH06.P1:ba-receivable-help",
+      "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+      "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+      "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S2",
+    "originalRole": "받는 사람 기준 십성",
+    "materialIds": [
+      "cmpr:material:CH06.P1:ba-receivable-help",
+      "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+      "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+      "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S3",
+    "originalRole": "다른 방향 행동",
+    "materialIds": [
+      "cmpr:material:CH06.P1:ba-receivable-help",
+      "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+      "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+      "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S4",
+    "originalRole": "A에게 남는 의미",
+    "materialIds": [
+      "cmpr:material:CH06.P1:ba-receivable-help",
+      "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+      "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+      "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S1",
+    "originalRole": "도움 되는 강점",
+    "materialIds": [
+      "cmpr:material:CH06.P2:ba-update-family-information",
+      "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+      "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+      "cmpr:material:CH06.P2:ba-new-routine-small-test"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S2",
+    "originalRole": "독립적 근거",
+    "materialIds": [
+      "cmpr:material:CH06.P2:ba-update-family-information",
+      "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+      "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+      "cmpr:material:CH06.P2:ba-new-routine-small-test"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S3",
+    "originalRole": "관계별 장면",
+    "materialIds": [
+      "cmpr:material:CH06.P2:ba-update-family-information",
+      "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+      "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+      "cmpr:material:CH06.P2:ba-new-routine-small-test"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S4",
+    "originalRole": "발휘 조건",
+    "materialIds": [
+      "cmpr:material:CH06.P2:ba-update-family-information",
+      "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+      "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+      "cmpr:material:CH06.P2:ba-new-routine-small-test"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S1",
+    "originalRole": "부담 행동",
+    "materialIds": [
+      "cmpr:material:CH06.P3:ba-visible-only-finish",
+      "cmpr:material:CH06.P3:ba-kinship-commitment",
+      "cmpr:material:CH06.P3:ba-change-without-handover",
+      "cmpr:material:CH06.P3:ba-unanswered-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S2",
+    "originalRole": "검증된 차이",
+    "materialIds": [
+      "cmpr:material:CH06.P3:ba-visible-only-finish",
+      "cmpr:material:CH06.P3:ba-kinship-commitment",
+      "cmpr:material:CH06.P3:ba-change-without-handover",
+      "cmpr:material:CH06.P3:ba-unanswered-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S3",
+    "originalRole": "의도와 경험",
+    "materialIds": [
+      "cmpr:material:CH06.P3:ba-visible-only-finish",
+      "cmpr:material:CH06.P3:ba-kinship-commitment",
+      "cmpr:material:CH06.P3:ba-change-without-handover",
+      "cmpr:material:CH06.P3:ba-unanswered-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S4",
+    "originalRole": "악화 조건",
+    "materialIds": [
+      "cmpr:material:CH06.P3:ba-visible-only-finish",
+      "cmpr:material:CH06.P3:ba-kinship-commitment",
+      "cmpr:material:CH06.P3:ba-change-without-handover",
+      "cmpr:material:CH06.P3:ba-unanswered-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S1",
+    "originalRole": "조정할 행동",
+    "materialIds": [
+      "cmpr:material:CH06.P4:ba-state-completion-boundary",
+      "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+      "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+      "cmpr:material:CH06.P4:ba-name-pending-answer"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S2",
+    "originalRole": "A의 필요",
+    "materialIds": [
+      "cmpr:material:CH06.P4:ba-state-completion-boundary",
+      "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+      "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+      "cmpr:material:CH06.P4:ba-name-pending-answer"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S3",
+    "originalRole": "확인할 실천",
+    "materialIds": [
+      "cmpr:material:CH06.P4:ba-state-completion-boundary",
+      "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+      "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+      "cmpr:material:CH06.P4:ba-name-pending-answer"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH06.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S4",
+    "originalRole": "B→A 가능성",
+    "materialIds": [
+      "cmpr:material:CH06.P4:ba-state-completion-boundary",
+      "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+      "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+      "cmpr:material:CH06.P4:ba-name-pending-answer"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S1",
+    "originalRole": "불일치 또는 확인할 조건",
+    "materialIds": [
+      "cmpr:material:CH07.P1:money-purpose-difference",
+      "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+      "cmpr:material:CH07.P1:rest-order-and-waiting",
+      "cmpr:material:CH07.P1:family-request-vs-common-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S2",
+    "originalRole": "각자의 성향",
+    "materialIds": [
+      "cmpr:material:CH07.P1:money-purpose-difference",
+      "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+      "cmpr:material:CH07.P1:rest-order-and-waiting",
+      "cmpr:material:CH07.P1:family-request-vs-common-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S3",
+    "originalRole": "다른 이해",
+    "materialIds": [
+      "cmpr:material:CH07.P1:money-purpose-difference",
+      "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+      "cmpr:material:CH07.P1:rest-order-and-waiting",
+      "cmpr:material:CH07.P1:family-request-vs-common-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S4",
+    "originalRole": "답답함의 이유",
+    "materialIds": [
+      "cmpr:material:CH07.P1:money-purpose-difference",
+      "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+      "cmpr:material:CH07.P1:rest-order-and-waiting",
+      "cmpr:material:CH07.P1:family-request-vs-common-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S1",
+    "originalRole": "실제 충돌 또는 부재",
+    "materialIds": [
+      "cmpr:material:CH07.P2:detected-clash-shared-timing",
+      "cmpr:material:CH07.P2:clash-not-decision-cause",
+      "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+      "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S2",
+    "originalRole": "쉬운 의미",
+    "materialIds": [
+      "cmpr:material:CH07.P2:detected-clash-shared-timing",
+      "cmpr:material:CH07.P2:clash-not-decision-cause",
+      "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+      "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S3",
+    "originalRole": "다른 반응",
+    "materialIds": [
+      "cmpr:material:CH07.P2:detected-clash-shared-timing",
+      "cmpr:material:CH07.P2:clash-not-decision-cause",
+      "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+      "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S4",
+    "originalRole": "긍정적 여지",
+    "materialIds": [
+      "cmpr:material:CH07.P2:detected-clash-shared-timing",
+      "cmpr:material:CH07.P2:clash-not-decision-cause",
+      "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+      "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S1",
+    "originalRole": "반복 문제",
+    "materialIds": [
+      "cmpr:material:CH07.P3:criteria-revision-loop",
+      "cmpr:material:CH07.P3:budget-permission-loop",
+      "cmpr:material:CH07.P3:care-manager-loop",
+      "cmpr:material:CH07.P3:decision-silence-loop"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S2",
+    "originalRole": "방향별 원인",
+    "materialIds": [
+      "cmpr:material:CH07.P3:criteria-revision-loop",
+      "cmpr:material:CH07.P3:budget-permission-loop",
+      "cmpr:material:CH07.P3:care-manager-loop",
+      "cmpr:material:CH07.P3:decision-silence-loop"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S3",
+    "originalRole": "악화 장면",
+    "materialIds": [
+      "cmpr:material:CH07.P3:criteria-revision-loop",
+      "cmpr:material:CH07.P3:budget-permission-loop",
+      "cmpr:material:CH07.P3:care-manager-loop",
+      "cmpr:material:CH07.P3:decision-silence-loop"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S4",
+    "originalRole": "직설적 결론",
+    "materialIds": [
+      "cmpr:material:CH07.P3:criteria-revision-loop",
+      "cmpr:material:CH07.P3:budget-permission-loop",
+      "cmpr:material:CH07.P3:care-manager-loop",
+      "cmpr:material:CH07.P3:decision-silence-loop"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S1",
+    "originalRole": "주의 상황",
+    "materialIds": [
+      "cmpr:material:CH07.P4:scores-of-past-work",
+      "cmpr:material:CH07.P4:family-image-becomes-cost",
+      "cmpr:material:CH07.P4:old-fairness-after-change",
+      "cmpr:material:CH07.P4:coercion-is-outside-style"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S2",
+    "originalRole": "A의 기대",
+    "materialIds": [
+      "cmpr:material:CH07.P4:scores-of-past-work",
+      "cmpr:material:CH07.P4:family-image-becomes-cost",
+      "cmpr:material:CH07.P4:old-fairness-after-change",
+      "cmpr:material:CH07.P4:coercion-is-outside-style"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S3",
+    "originalRole": "B의 기대",
+    "materialIds": [
+      "cmpr:material:CH07.P4:scores-of-past-work",
+      "cmpr:material:CH07.P4:family-image-becomes-cost",
+      "cmpr:material:CH07.P4:old-fairness-after-change",
+      "cmpr:material:CH07.P4:coercion-is-outside-style"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH07.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S4",
+    "originalRole": "다르게 전달되는 뜻",
+    "materialIds": [
+      "cmpr:material:CH07.P4:scores-of-past-work",
+      "cmpr:material:CH07.P4:family-image-becomes-cost",
+      "cmpr:material:CH07.P4:old-fairness-after-change",
+      "cmpr:material:CH07.P4:coercion-is-outside-style"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S1",
+    "originalRole": "앞선 갈등 질문",
+    "materialIds": [
+      "cmpr:material:CH08.P1:joint-revise-completion-standard",
+      "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+      "cmpr:material:CH08.P1:joint-visible-full-process",
+      "cmpr:material:CH08.P1:joint-pending-decision-return"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S2",
+    "originalRole": "실제 원인",
+    "materialIds": [
+      "cmpr:material:CH08.P1:joint-revise-completion-standard",
+      "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+      "cmpr:material:CH08.P1:joint-visible-full-process",
+      "cmpr:material:CH08.P1:joint-pending-decision-return"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S3",
+    "originalRole": "각자 필요",
+    "materialIds": [
+      "cmpr:material:CH08.P1:joint-revise-completion-standard",
+      "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+      "cmpr:material:CH08.P1:joint-visible-full-process",
+      "cmpr:material:CH08.P1:joint-pending-decision-return"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S4",
+    "originalRole": "조정 기준",
+    "materialIds": [
+      "cmpr:material:CH08.P1:joint-revise-completion-standard",
+      "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+      "cmpr:material:CH08.P1:joint-visible-full-process",
+      "cmpr:material:CH08.P1:joint-pending-decision-return"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S1",
+    "originalRole": "A의 전략",
+    "materialIds": [
+      "cmpr:material:CH08.P2:a-return-budget-authority",
+      "cmpr:material:CH08.P2:a-leave-family-choice-open",
+      "cmpr:material:CH08.P2:a-release-care-debt",
+      "cmpr:material:CH08.P2:a-stop-remaking-method"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S2",
+    "originalRole": "필요한 이유",
+    "materialIds": [
+      "cmpr:material:CH08.P2:a-return-budget-authority",
+      "cmpr:material:CH08.P2:a-leave-family-choice-open",
+      "cmpr:material:CH08.P2:a-release-care-debt",
+      "cmpr:material:CH08.P2:a-stop-remaking-method"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S3",
+    "originalRole": "실천 방법",
+    "materialIds": [
+      "cmpr:material:CH08.P2:a-return-budget-authority",
+      "cmpr:material:CH08.P2:a-leave-family-choice-open",
+      "cmpr:material:CH08.P2:a-release-care-debt",
+      "cmpr:material:CH08.P2:a-stop-remaking-method"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S4",
+    "originalRole": "B에게 남는 변화",
+    "materialIds": [
+      "cmpr:material:CH08.P2:a-return-budget-authority",
+      "cmpr:material:CH08.P2:a-leave-family-choice-open",
+      "cmpr:material:CH08.P2:a-release-care-debt",
+      "cmpr:material:CH08.P2:a-stop-remaking-method"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S1",
+    "originalRole": "B의 전략",
+    "materialIds": [
+      "cmpr:material:CH08.P3:b-own-unseen-preparation",
+      "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+      "cmpr:material:CH08.P3:b-handover-before-change",
+      "cmpr:material:CH08.P3:b-answer-pending-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S2",
+    "originalRole": "필요한 이유",
+    "materialIds": [
+      "cmpr:material:CH08.P3:b-own-unseen-preparation",
+      "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+      "cmpr:material:CH08.P3:b-handover-before-change",
+      "cmpr:material:CH08.P3:b-answer-pending-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S3",
+    "originalRole": "다른 실천 방법",
+    "materialIds": [
+      "cmpr:material:CH08.P3:b-own-unseen-preparation",
+      "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+      "cmpr:material:CH08.P3:b-handover-before-change",
+      "cmpr:material:CH08.P3:b-answer-pending-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S4",
+    "originalRole": "A에게 남는 변화",
+    "materialIds": [
+      "cmpr:material:CH08.P3:b-own-unseen-preparation",
+      "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+      "cmpr:material:CH08.P3:b-handover-before-change",
+      "cmpr:material:CH08.P3:b-answer-pending-plan"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S1",
+    "originalRole": "공동 목표",
+    "materialIds": [
+      "cmpr:material:CH08.P4:agreement-shared-private-money",
+      "cmpr:material:CH08.P4:agreement-review-after-life-change",
+      "cmpr:material:CH08.P4:agreement-common-space-private-time",
+      "cmpr:material:CH08.P4:agreement-two-family-boundaries"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S2",
+    "originalRole": "A의 역할",
+    "materialIds": [
+      "cmpr:material:CH08.P4:agreement-shared-private-money",
+      "cmpr:material:CH08.P4:agreement-review-after-life-change",
+      "cmpr:material:CH08.P4:agreement-common-space-private-time",
+      "cmpr:material:CH08.P4:agreement-two-family-boundaries"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S3",
+    "originalRole": "B의 역할",
+    "materialIds": [
+      "cmpr:material:CH08.P4:agreement-shared-private-money",
+      "cmpr:material:CH08.P4:agreement-review-after-life-change",
+      "cmpr:material:CH08.P4:agreement-common-space-private-time",
+      "cmpr:material:CH08.P4:agreement-two-family-boundaries"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH08.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S4",
+    "originalRole": "관계별 원칙",
+    "materialIds": [
+      "cmpr:material:CH08.P4:agreement-shared-private-money",
+      "cmpr:material:CH08.P4:agreement-review-after-life-change",
+      "cmpr:material:CH08.P4:agreement-common-space-private-time",
+      "cmpr:material:CH08.P4:agreement-two-family-boundaries"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S1",
+    "originalRole": "긍정적 특징",
+    "materialIds": [
+      "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+      "cmpr:material:CH09.P1:recall-care-without-default-manager",
+      "cmpr:material:CH09.P1:recall-autonomy-with-common-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S2",
+    "originalRole": "실제 명리·MBTI",
+    "materialIds": [
+      "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+      "cmpr:material:CH09.P1:recall-care-without-default-manager",
+      "cmpr:material:CH09.P1:recall-autonomy-with-common-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S3",
+    "originalRole": "함께하는 장점",
+    "materialIds": [
+      "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+      "cmpr:material:CH09.P1:recall-care-without-default-manager",
+      "cmpr:material:CH09.P1:recall-autonomy-with-common-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S4",
+    "originalRole": "지속 조건",
+    "materialIds": [
+      "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+      "cmpr:material:CH09.P1:recall-care-without-default-manager",
+      "cmpr:material:CH09.P1:recall-autonomy-with-common-duty"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S1",
+    "originalRole": "검증된 좋은 기운",
+    "materialIds": [
+      "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+      "cmpr:material:CH09.P2:recall-competence-with-rotation",
+      "cmpr:material:CH09.P2:recall-family-choice-boundaries"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S2",
+    "originalRole": "근거와 의미",
+    "materialIds": [
+      "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+      "cmpr:material:CH09.P2:recall-competence-with-rotation",
+      "cmpr:material:CH09.P2:recall-family-choice-boundaries"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S3",
+    "originalRole": "관계의 가능성",
+    "materialIds": [
+      "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+      "cmpr:material:CH09.P2:recall-competence-with-rotation",
+      "cmpr:material:CH09.P2:recall-family-choice-boundaries"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S4",
+    "originalRole": "현실적 활용",
+    "materialIds": [
+      "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+      "cmpr:material:CH09.P2:recall-competence-with-rotation",
+      "cmpr:material:CH09.P2:recall-family-choice-boundaries"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S1",
+    "originalRole": "조율 원칙",
+    "materialIds": [
+      "cmpr:material:CH09.P3:recall-money-repair-path",
+      "cmpr:material:CH09.P3:recall-care-repair-path",
+      "cmpr:material:CH09.P3:recall-transition-repair-path"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S2",
+    "originalRole": "개인별 이유",
+    "materialIds": [
+      "cmpr:material:CH09.P3:recall-money-repair-path",
+      "cmpr:material:CH09.P3:recall-care-repair-path",
+      "cmpr:material:CH09.P3:recall-transition-repair-path"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S3",
+    "originalRole": "실천 행동",
+    "materialIds": [
+      "cmpr:material:CH09.P3:recall-money-repair-path",
+      "cmpr:material:CH09.P3:recall-care-repair-path",
+      "cmpr:material:CH09.P3:recall-transition-repair-path"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S4",
+    "originalRole": "지속 조건",
+    "materialIds": [
+      "cmpr:material:CH09.P3:recall-money-repair-path",
+      "cmpr:material:CH09.P3:recall-care-repair-path",
+      "cmpr:material:CH09.P3:recall-transition-repair-path"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S1",
+    "originalRole": "특징적인 상호작용",
+    "materialIds": [
+      "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+      "cmpr:material:CH09.P4:recall-space-and-common-work",
+      "cmpr:material:CH09.P4:recall-family-with-common-choice"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S2",
+    "originalRole": "함께 만드는 가치",
+    "materialIds": [
+      "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+      "cmpr:material:CH09.P4:recall-space-and-common-work",
+      "cmpr:material:CH09.P4:recall-family-with-common-choice"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S3",
+    "originalRole": "기억할 기준",
+    "materialIds": [
+      "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+      "cmpr:material:CH09.P4:recall-space-and-common-work",
+      "cmpr:material:CH09.P4:recall-family-with-common-choice"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "cmpr:role:CH09.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S4",
+    "originalRole": "관계별 결론",
+    "materialIds": [
+      "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+      "cmpr:material:CH09.P4:recall-space-and-common-work",
+      "cmpr:material:CH09.P4:recall-family-with-common-choice"
+    ],
+    "independentFactCount": 0
+  }
+]

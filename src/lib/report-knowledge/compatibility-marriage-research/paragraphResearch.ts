@@ -1,0 +1,728 @@
+/** Offline marriage research; no runtime binding or customer approval. */
+import type { ParagraphResearch } from "./researchTypes";
+export const MARRIAGE_PARAGRAPHS: readonly ParagraphResearch[] = [
+  {
+    "id": "cmpr:paragraph:CH01.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1",
+    "originalPurpose": "두 사람을 한마디로 설명하면",
+    "titleTemplate": "두 사람을 한마디로 설명하면",
+    "readerQuestion": "두 사람의 계획·가치 확인 방식은 공동 결정을 어떻게 도울 수 있는가?",
+    "materialIds": [
+      "cmpr:material:CH01.P1:predictability-and-revision",
+      "cmpr:material:CH01.P1:decision-and-influence"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH01.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2",
+    "originalPurpose": "명리에서 보는 두 사람의 관계",
+    "titleTemplate": "명리에서 보는 두 사람의 관계",
+    "readerQuestion": "실제 양쪽 기둥의 관계를 공동생활 질문으로 사용할 조건은 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH01.P2:harmony-and-household-terms",
+      "cmpr:material:CH01.P2:clash-and-two-standards"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH01.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3",
+    "originalPurpose": "MBTI가 보여주는 우리",
+    "titleTemplate": "MBTI가 보여주는 우리",
+    "readerQuestion": "각자 입력한 MBTI가 생활 운영에서 무엇을 확인하게 하는가?",
+    "materialIds": [
+      "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+      "cmpr:material:CH01.P3:same-type-separate-workload"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH01.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4",
+    "originalPurpose": "이 관계를 이해하는 가장 중요한 기준",
+    "titleTemplate": "이 관계를 이해하는 가장 중요한 기준",
+    "readerQuestion": "혼인 여부를 모르는 상태에서 무엇을 함께 확인해야 하는가?",
+    "materialIds": [
+      "cmpr:material:CH01.P4:category-is-not-marital-fact",
+      "cmpr:material:CH01.P4:shared-strength-not-shared-score"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH02.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1",
+    "originalPurpose": "A의 관계 성향",
+    "titleTemplate": "{{A}}의 관계 성향",
+    "readerQuestion": "A가 실제로 가진 성향 중 공동생활 운영에 쓸 조건은 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH02.P1:a-operating-standards",
+      "cmpr:material:CH02.P1:a-quiet-system-support"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH02.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2",
+    "originalPurpose": "A가 관계에서 중요하게 여기는 것",
+    "titleTemplate": "{{A:subject}} 관계에서 중요하게 여기는 것",
+    "readerQuestion": "A가 중요하게 여길 필요와 공동 책임은 어떻게 다른가?",
+    "materialIds": [
+      "cmpr:material:CH02.P2:a-rest-is-a-resource",
+      "cmpr:material:CH02.P2:a-meaning-needs-operations"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH02.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3",
+    "originalPurpose": "A가 관계에 가져오는 장점",
+    "titleTemplate": "{{A:subject}} 관계에 가져오는 장점",
+    "readerQuestion": "A의 강점이 상대의 일을 대신 정하지 않으려면 무엇이 필요한가?",
+    "materialIds": [
+      "cmpr:material:CH02.P3:a-complete-task-ownership",
+      "cmpr:material:CH02.P3:a-notice-with-permission"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH02.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4",
+    "originalPurpose": "A가 조심해야 할 부분",
+    "titleTemplate": "{{A:subject}} 조심해야 할 부분",
+    "readerQuestion": "A의 좋은 의도가 상대의 시간과 재량을 줄이는 조건은 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH02.P4:a-management-becomes-permission",
+      "cmpr:material:CH02.P4:a-corrects-unagreed-standard"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH03.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1",
+    "originalPurpose": "B의 관계 성향",
+    "titleTemplate": "{{B}}의 관계 성향",
+    "readerQuestion": "B의 독립적인 원천은 생활 운영의 어떤 질문을 만드는가?",
+    "materialIds": [
+      "cmpr:material:CH03.P1:b-adaptable-day-plan",
+      "cmpr:material:CH03.P1:b-visible-practical-support"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH03.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2",
+    "originalPurpose": "B가 관계에서 중요하게 여기는 것",
+    "titleTemplate": "{{B:subject}} 관계에서 중요하게 여기는 것",
+    "readerQuestion": "B가 중요하게 여길 필요를 A의 기준과 어떻게 구분하는가?",
+    "materialIds": [
+      "cmpr:material:CH03.P2:b-sensory-common-space",
+      "cmpr:material:CH03.P2:b-acknowledgement-not-assignment"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH03.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3",
+    "originalPurpose": "B가 관계에 가져오는 장점",
+    "titleTemplate": "{{B:subject}} 관계에 가져오는 장점",
+    "readerQuestion": "B가 제공할 가능성이 있는 지원의 적용 조건은 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH03.P3:b-family-boundary-contribution",
+      "cmpr:material:CH03.P3:b-useful-simplification"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH03.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4",
+    "originalPurpose": "B가 조심해야 할 부분",
+    "titleTemplate": "{{B:subject}} 조심해야 할 부분",
+    "readerQuestion": "B의 방식이 공동 준비나 확인을 생략하는 조건은 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH03.P4:b-avoids-budget-answer",
+      "cmpr:material:CH03.P4:b-expands-social-cost"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH04.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1",
+    "originalPurpose": "두 사람의 공통점",
+    "titleTemplate": "두 사람의 공통점",
+    "readerQuestion": "공통 성향은 실제 선택권과 완결 책임을 어떻게 도울 수 있는가?",
+    "materialIds": [
+      "cmpr:material:CH04.P1:shared-budget-clarity",
+      "cmpr:material:CH04.P1:shared-care-not-default-manager",
+      "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH04.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2",
+    "originalPurpose": "서로 다른 장점이 만날 때",
+    "titleTemplate": "서로 다른 장점이 만날 때",
+    "readerQuestion": "다른 방식이 보완으로 작동하려면 어떤 유지 조건이 필요한가?",
+    "materialIds": [
+      "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+      "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+      "cmpr:material:CH04.P2:values-meet-operating-detail"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH04.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3",
+    "originalPurpose": "함께 있을 때 좋은 순간",
+    "titleTemplate": "함께 있을 때 좋은 순간",
+    "readerQuestion": "서로의 수고를 덜어줄 생활 장면은 어떤 조건에서 가능한가?",
+    "materialIds": [
+      "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+      "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+      "cmpr:material:CH04.P3:two-rest-windows"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH04.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4",
+    "originalPurpose": "이 관계에서 키울 수 있는 좋은 힘",
+    "titleTemplate": "이 관계에서 키울 수 있는 좋은 힘",
+    "readerQuestion": "강점을 영구 역할이나 혼인 보장으로 만들지 않으려면 무엇이 필요한가?",
+    "materialIds": [
+      "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+      "cmpr:material:CH04.P4:competence-with-rotation",
+      "cmpr:material:CH04.P4:family-choice-not-family-duty"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH05.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1",
+    "originalPurpose": "A는 B에게 어떤 자극을 주는가",
+    "titleTemplate": "{{A:topic}} {{B}}에게 어떤 자극을 주는가",
+    "readerQuestion": "B가 수신자인 실제 십성 및 A의 원천은 어떤 도움 질문을 만드는가?",
+    "materialIds": [
+      "cmpr:material:CH05.P1:ab-rule-with-revision",
+      "cmpr:material:CH05.P1:ab-resource-explanation",
+      "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+      "cmpr:material:CH05.P1:ab-standards-without-performance-review"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH05.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2",
+    "originalPurpose": "A가 B에게 주는 좋은 영향",
+    "titleTemplate": "{{A:subject}} {{B}}에게 주는 좋은 영향",
+    "readerQuestion": "A의 제안이 B의 생활 선택을 넓힐 조건은 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH05.P2:ab-advance-plan-information",
+      "cmpr:material:CH05.P2:ab-care-with-whole-task",
+      "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+      "cmpr:material:CH05.P2:ab-support-before-family-contact"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH05.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3",
+    "originalPurpose": "A의 행동이 B에게 부담이 되는 순간",
+    "titleTemplate": "{{A}}의 행동이 {{B}}에게 부담이 되는 순간",
+    "readerQuestion": "A의 편리함 때문에 B에게 남는 비용은 무엇일 수 있는가?",
+    "materialIds": [
+      "cmpr:material:CH05.P3:ab-unilateral-budget",
+      "cmpr:material:CH05.P3:ab-holiday-finality",
+      "cmpr:material:CH05.P3:ab-care-as-debt",
+      "cmpr:material:CH05.P3:ab-standard-remakes"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH05.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4",
+    "originalPurpose": "A가 영향력을 잘 사용하는 방법",
+    "titleTemplate": "{{A:subject}} 영향력을 잘 사용하는 방법",
+    "readerQuestion": "A가 먼저 바꿀 행동과 B에게 남겨야 할 권한은 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "cmpr:material:CH05.P4:ab-own-one-whole-process",
+      "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+      "cmpr:material:CH05.P4:ab-check-impact-before-correction"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH06.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1",
+    "originalPurpose": "B는 A에게 어떤 자극을 주는가",
+    "titleTemplate": "{{B:topic}} {{A}}에게 어떤 자극을 주는가",
+    "readerQuestion": "A가 수신자인 실제 십성 및 B의 원천은 어떤 도움 질문을 만드는가?",
+    "materialIds": [
+      "cmpr:material:CH06.P1:ba-receivable-help",
+      "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+      "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+      "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH06.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2",
+    "originalPurpose": "B가 A에게 주는 좋은 영향",
+    "titleTemplate": "{{B:subject}} {{A}}에게 주는 좋은 영향",
+    "readerQuestion": "B의 지원이 A의 준비와 유지까지 덜어주려면 무엇이 필요한가?",
+    "materialIds": [
+      "cmpr:material:CH06.P2:ba-update-family-information",
+      "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+      "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+      "cmpr:material:CH06.P2:ba-new-routine-small-test"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH06.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3",
+    "originalPurpose": "B의 행동이 A에게 부담이 되는 순간",
+    "titleTemplate": "{{B}}의 행동이 {{A}}에게 부담이 되는 순간",
+    "readerQuestion": "B의 방식 때문에 A에게 남는 기다림과 뒤처리는 무엇일 수 있는가?",
+    "materialIds": [
+      "cmpr:material:CH06.P3:ba-visible-only-finish",
+      "cmpr:material:CH06.P3:ba-kinship-commitment",
+      "cmpr:material:CH06.P3:ba-change-without-handover",
+      "cmpr:material:CH06.P3:ba-unanswered-plan"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH06.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4",
+    "originalPurpose": "B가 영향력을 잘 사용하는 방법",
+    "titleTemplate": "{{B:subject}} 영향력을 잘 사용하는 방법",
+    "readerQuestion": "B가 먼저 확인할 범위와 A에게 남길 선택은 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH06.P4:ba-state-completion-boundary",
+      "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+      "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+      "cmpr:material:CH06.P4:ba-name-pending-answer"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH07.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1",
+    "originalPurpose": "가장 중요한 차이",
+    "titleTemplate": "가장 중요한 차이",
+    "readerQuestion": "돈·공간·휴식·친족 요청에서 기준이 달라질 조건은 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH07.P1:money-purpose-difference",
+      "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+      "cmpr:material:CH07.P1:rest-order-and-waiting",
+      "cmpr:material:CH07.P1:family-request-vs-common-consent"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH07.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2",
+    "originalPurpose": "명리에서 보이는 충돌",
+    "titleTemplate": "명리에서 보이는 충돌",
+    "readerQuestion": "실제 검출 관계와 생활 차이를 혼동하지 않으려면 무엇이 필요한가?",
+    "materialIds": [
+      "cmpr:material:CH07.P2:detected-clash-shared-timing",
+      "cmpr:material:CH07.P2:clash-not-decision-cause",
+      "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+      "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH07.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3",
+    "originalPurpose": "이 관계의 팩폭",
+    "titleTemplate": "이 관계의 팩폭",
+    "readerQuestion": "기준·허락·관리·미응답이 반복을 키우는 순서는 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH07.P3:criteria-revision-loop",
+      "cmpr:material:CH07.P3:budget-permission-loop",
+      "cmpr:material:CH07.P3:care-manager-loop",
+      "cmpr:material:CH07.P3:decision-silence-loop"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH07.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4",
+    "originalPurpose": "갈등이 커지는 조건",
+    "titleTemplate": "갈등이 커지는 조건",
+    "readerQuestion": "편리함이 상대에게 넘기는 부담과 안전 경계는 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH07.P4:scores-of-past-work",
+      "cmpr:material:CH07.P4:family-image-becomes-cost",
+      "cmpr:material:CH07.P4:old-fairness-after-change",
+      "cmpr:material:CH07.P4:coercion-is-outside-style"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH08.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1",
+    "originalPurpose": "우리에게 필요한 조율",
+    "titleTemplate": "우리에게 필요한 조율",
+    "readerQuestion": "앞선 반복 조건을 어떤 공동 완료·권한·미결 절차로 바꿀 수 있는가?",
+    "materialIds": [
+      "cmpr:material:CH08.P1:joint-revise-completion-standard",
+      "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+      "cmpr:material:CH08.P1:joint-visible-full-process",
+      "cmpr:material:CH08.P1:joint-pending-decision-return"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH08.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2",
+    "originalPurpose": "A가 바꾸면 좋은 행동",
+    "titleTemplate": "{{A:subject}} 바꾸면 좋은 행동",
+    "readerQuestion": "A는 앞서 만든 부담을 어떤 행동과 권한 조정으로 줄일 수 있는가?",
+    "materialIds": [
+      "cmpr:material:CH08.P2:a-return-budget-authority",
+      "cmpr:material:CH08.P2:a-leave-family-choice-open",
+      "cmpr:material:CH08.P2:a-release-care-debt",
+      "cmpr:material:CH08.P2:a-stop-remaking-method"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH08.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3",
+    "originalPurpose": "B가 바꾸면 좋은 행동",
+    "titleTemplate": "{{B:subject}} 바꾸면 좋은 행동",
+    "readerQuestion": "B는 앞서 만든 부담을 어떤 준비·동의·인수인계로 줄일 수 있는가?",
+    "materialIds": [
+      "cmpr:material:CH08.P3:b-own-unseen-preparation",
+      "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+      "cmpr:material:CH08.P3:b-handover-before-change",
+      "cmpr:material:CH08.P3:b-answer-pending-plan"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH08.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4",
+    "originalPurpose": "둘이 함께 지킬 약속",
+    "titleTemplate": "둘이 함께 지킬 약속",
+    "readerQuestion": "조건이 바뀌어도 다시 열 수 있는 합의 항목과 검토 계기는 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH08.P4:agreement-shared-private-money",
+      "cmpr:material:CH08.P4:agreement-review-after-life-change",
+      "cmpr:material:CH08.P4:agreement-common-space-private-time",
+      "cmpr:material:CH08.P4:agreement-two-family-boundaries"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH09.P1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1",
+    "originalPurpose": "두 사람이 가진 좋은 힘",
+    "titleTemplate": "두 사람이 가진 좋은 힘",
+    "readerQuestion": "앞서 도입된 공통 강점을 어떤 책임·선택 조건과 함께 회수하는가?",
+    "materialIds": [
+      "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+      "cmpr:material:CH09.P1:recall-care-without-default-manager",
+      "cmpr:material:CH09.P1:recall-autonomy-with-common-duty"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH09.P2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2",
+    "originalPurpose": "함께 활용할 수 있는 좋은 기운",
+    "titleTemplate": "함께 활용할 수 있는 좋은 기운",
+    "readerQuestion": "실제로 도입된 연결·지원 가능성을 어떤 경계와 함께 남기는가?",
+    "materialIds": [
+      "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+      "cmpr:material:CH09.P2:recall-competence-with-rotation",
+      "cmpr:material:CH09.P2:recall-family-choice-boundaries"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH09.P3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3",
+    "originalPurpose": "관계를 오래 지키는 선택",
+    "titleTemplate": "관계를 오래 지키는 선택",
+    "readerQuestion": "앞선 부담과 조정에서 유지할 실천은 무엇인가?",
+    "materialIds": [
+      "cmpr:material:CH09.P3:recall-money-repair-path",
+      "cmpr:material:CH09.P3:recall-care-repair-path",
+      "cmpr:material:CH09.P3:recall-transition-repair-path"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  },
+  {
+    "id": "cmpr:paragraph:CH09.P4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "marriage",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4",
+    "originalPurpose": "우리라는 관계의 마지막 메시지",
+    "titleTemplate": "우리라는 관계의 마지막 메시지",
+    "readerQuestion": "앞서 확인한 강점과 합의만으로 어떤 긍정적 선택을 남기는가?",
+    "materialIds": [
+      "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+      "cmpr:material:CH09.P4:recall-space-and-common-work",
+      "cmpr:material:CH09.P4:recall-family-with-common-choice"
+    ],
+    "missingEvidence": "withhold_not_fill",
+    "needsActualBinding": true
+  }
+];
