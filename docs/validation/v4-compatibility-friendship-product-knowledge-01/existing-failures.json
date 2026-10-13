@@ -1,0 +1,244 @@
+{
+  "baseSha": "1e836a5606745d5f2d1d7972afdca6cd2ae9f86a",
+  "knownFailuresReproduced": 27,
+  "additionalBaselineHashLockFailures": 6,
+  "uniqueExistingFailures": 33,
+  "knownFailureSetAndFirstErrorEqual": true,
+  "inheritedFailureSetAndFirstErrorEqual": true,
+  "newFailures": 0,
+  "failures": [
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'career': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'compatibility': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'love': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-02-marriage': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-03-parent': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-04-coworker': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-05-manager': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-06-business': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-07-friend': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 'pair-08-love': every original paragraph and final line in original order",
+      "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose 14 years, 10 future years, all ages, transitions and clickable full narratives",
+      "firstError": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'annual' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'compatibility' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'comprehensive' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'love' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'major' customer/evidence/Book stays frozen",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'annual' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'compatibility' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'comprehensive' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'love' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition 'major' previous saved edition remains identical",
+      "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "name": "section-specific allocations, reservations, fallback and budgets C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+      "firstError": "AssertionError: expected [] to include 'composite'",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "name": "section-specific allocations, reservations, fallback and budgets recovery-axis Fusion can serve C9 even when its original application is work",
+      "firstError": "AssertionError: expected false to be true // Object.is equality",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+      "name": "actual 12-person review cohort and isolation scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+      "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+      "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+      "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "name": "customer Dayun production boundaries rejects annual_fortune bypass before order writes and allows stable input",
+      "firstError": "SyntaxError: Unexpected end of JSON input",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "name": "customer Dayun production boundaries rejects major_fortune bypass before order writes and allows stable input",
+      "firstError": "SyntaxError: Unexpected end of JSON input",
+      "classification": "previously_known_27",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+      "name": "preserves all 3073 pre-existing source/test/knowledge/report files byte for byte",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_hash_lock_predates_authorized_Vercel_SQL_path_fix",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+      "name": "preserves all 2755 pre-existing tracked source/test/knowledge/report files byte for byte",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_hash_lock_predates_authorized_Vercel_SQL_path_fix",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+      "name": "preserves all 2435 existing tracked source, research, Book and fixture hashes",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_hash_lock_predates_authorized_Vercel_SQL_path_fix",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+      "name": "preserves all 2904 pre-existing tracked source/test/knowledge/report files byte for byte",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_hash_lock_predates_authorized_Vercel_SQL_path_fix",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+      "name": "preserves 2531 original tracked source, research, UI, Book, contract and fixture files",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_hash_lock_predates_authorized_Vercel_SQL_path_fix",
+      "beforeAndAfter": true
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+      "name": "preserves 2639 original tracked source/research/Book/UI/test hashes",
+      "firstError": "AssertionError: src/lib/tickets/localDatabase.ts: expected '931e1eba5d0bd46190d8a4e7eba1a45b376fd…' to be 'c0f8846755d800153ca048cd3f4c445d514a3…' // Object.is equality",
+      "classification": "historical_hash_lock_predates_authorized_Vercel_SQL_path_fix",
+      "beforeAndAfter": true
+    }
+  ],
+  "existingTestsChanged": false,
+  "existingTestsSkipped": false
+}

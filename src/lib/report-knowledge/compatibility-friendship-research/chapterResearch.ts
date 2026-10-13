@@ -1,0 +1,175 @@
+/** Static offline friendship research. No runtime registration or customer approval. */
+import type { Chapter } from "./researchTypes";
+export const FRIENDSHIP_CHAPTERS: readonly Chapter[] = [
+  {
+    "id": "frpr:chapter:CH01",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "originalKey": "core",
+    "originalTitle": "우리라는 관계의 핵심",
+    "researchFocus": "두 사람의 우정에서 중요한 특징",
+    "paragraphAddresses": [
+      "CH01.P1",
+      "CH01.P2",
+      "CH01.P3",
+      "CH01.P4"
+    ],
+    "originalContractUnchanged": true
+  },
+  {
+    "id": "frpr:chapter:CH02",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "originalKey": "person-a",
+    "originalTitle": "A는 이 관계에서 어떤 사람인가",
+    "researchFocus": "A가 친구 관계에 가져오는 특징",
+    "paragraphAddresses": [
+      "CH02.P1",
+      "CH02.P2",
+      "CH02.P3",
+      "CH02.P4"
+    ],
+    "originalContractUnchanged": true
+  },
+  {
+    "id": "frpr:chapter:CH03",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH03",
+    "originalKey": "person-b",
+    "originalTitle": "B는 이 관계에서 어떤 사람인가",
+    "researchFocus": "B가 친구 관계에 가져오는 특징",
+    "paragraphAddresses": [
+      "CH03.P1",
+      "CH03.P2",
+      "CH03.P3",
+      "CH03.P4"
+    ],
+    "originalContractUnchanged": true
+  },
+  {
+    "id": "frpr:chapter:CH04",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH04",
+    "originalKey": "delight",
+    "originalTitle": "우리가 잘 맞는 이유",
+    "researchFocus": "함께할 때 나타날 수 있는 좋은 영향",
+    "paragraphAddresses": [
+      "CH04.P1",
+      "CH04.P2",
+      "CH04.P3",
+      "CH04.P4"
+    ],
+    "originalContractUnchanged": true
+  },
+  {
+    "id": "frpr:chapter:CH05",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH05",
+    "originalKey": "direction-ab",
+    "originalTitle": "A가 B에게 주는 영향",
+    "researchFocus": "A가 B에게 주는 조건부 영향",
+    "paragraphAddresses": [
+      "CH05.P1",
+      "CH05.P2",
+      "CH05.P3",
+      "CH05.P4"
+    ],
+    "originalContractUnchanged": true
+  },
+  {
+    "id": "frpr:chapter:CH06",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH06",
+    "originalKey": "direction-ba",
+    "originalTitle": "B가 A에게 주는 영향",
+    "researchFocus": "B가 A에게 주는 조건부 영향",
+    "paragraphAddresses": [
+      "CH06.P1",
+      "CH06.P2",
+      "CH06.P3",
+      "CH06.P4"
+    ],
+    "originalContractUnchanged": true
+  },
+  {
+    "id": "frpr:chapter:CH07",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "originalKey": "friction",
+    "originalTitle": "우리가 부딪히는 이유",
+    "researchFocus": "서운함과 갈등이 발생할 수 있는 조건",
+    "paragraphAddresses": [
+      "CH07.P1",
+      "CH07.P2",
+      "CH07.P3",
+      "CH07.P4"
+    ],
+    "originalContractUnchanged": true
+  },
+  {
+    "id": "frpr:chapter:CH08",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "originalKey": "repair",
+    "originalTitle": "우리가 다시 잘 지내는 방법",
+    "researchFocus": "오해를 풀고 관계를 회복하는 방법",
+    "paragraphAddresses": [
+      "CH08.P1",
+      "CH08.P2",
+      "CH08.P3",
+      "CH08.P4"
+    ],
+    "originalContractUnchanged": true
+  },
+  {
+    "id": "frpr:chapter:CH09",
+    "relationshipType": "friendship",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "originalKey": "fortune",
+    "originalTitle": "오래 이어갈 수 있는 우리의 좋은 힘",
+    "researchFocus": "각자의 삶을 존중하며 우정을 이어가는 조건",
+    "paragraphAddresses": [
+      "CH09.P1",
+      "CH09.P2",
+      "CH09.P3",
+      "CH09.P4"
+    ],
+    "originalContractUnchanged": true
+  }
+];

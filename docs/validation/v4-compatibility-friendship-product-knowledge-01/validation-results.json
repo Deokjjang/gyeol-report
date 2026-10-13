@@ -1,0 +1,73 @@
+{
+  "baseSha": "1e836a5606745d5f2d1d7972afdca6cd2ae9f86a",
+  "tests": {
+    "baseline-regression": {
+      "passed": 225,
+      "failed": 27,
+      "pending": 0,
+      "success": false
+    },
+    "after-regression": {
+      "passed": 225,
+      "failed": 27,
+      "pending": 0,
+      "success": false
+    },
+    "inherited-research-base-sha": {
+      "passed": 5583,
+      "failed": 6,
+      "pending": 0,
+      "success": false
+    },
+    "inherited-research-after": {
+      "passed": 5583,
+      "failed": 6,
+      "pending": 0,
+      "success": false
+    },
+    "static-final": {
+      "passed": 3715,
+      "failed": 0,
+      "pending": 0,
+      "success": true
+    },
+    "generation-verified-final-tests": {
+      "passed": 21,
+      "failed": 0,
+      "pending": 0,
+      "success": true
+    }
+  },
+  "uniqueRelatedFiles": 17,
+  "newTestPasses": 3736,
+  "newFailures": 0,
+  "existingFailures": 33,
+  "existingKnown27BeforeAfterEqual": true,
+  "historicalHashLock6BeforeAfterEqual": true,
+  "existingTestsModified": 0,
+  "fullProjectSuiteRerun": false,
+  "typescriptDiagnostics": 0,
+  "lint": "PASS",
+  "defaultTurbopackBuild": "PASS",
+  "buildWarnings": 0,
+  "diffCheck": "PASS",
+  "friendshipCalculationEvidenceNarrativeIntegrationPersonABBookDigests": "140/140 identical",
+  "sixProductFrozenRegression": 64,
+  "allBaseFilesUnchanged": 3537,
+  "originalDirtyFilesPreserved": 11,
+  "existingWorktreesPreserved": 31,
+  "vercelTracePreserved": true,
+  "previewResult": "Exact pushed SHA deployment receipt recorded in final response and external preview-receipt.json",
+  "productionWrites": 0,
+  "paidExternalWriterCalls": 0,
+  "commitScope": "new friendship research, tests and validation only",
+  "unresolvedResearchItems": [
+    "CHILDREN mixed ancestry in current friendship output",
+    "Actual source-to-sentence binding not implemented",
+    "Current non-romantic domain exclusions",
+    "Canonical unsupported relation and historical verification boundaries",
+    "No empirical MBTI-pair or personalized friendship-duration validation",
+    "Two existing legacy publication fallbacks retained",
+    "Known 27 failures and additional 6 historical hash-lock failures unchanged"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "domains": [
+    "RELATIONSHIPS",
+    "COMMUNICATION",
+    "IDENTITY",
+    "STRENGTHS",
+    "RISKS",
+    "GROWTH"
+  ],
+  "axes": [
+    "RELATION_STYLE",
+    "CARE",
+    "EXPRESSION",
+    "SOCIAL_ATTUNEMENT",
+    "COMMUNICATION_STYLE",
+    "AUTONOMY",
+    "BOUNDARY",
+    "RECOVERY_NEED",
+    "STABILITY",
+    "MEANING",
+    "DUTY",
+    "CHARISMA"
+  ],
+  "traitsAudited": 1213,
+  "projectedTraits": 336,
+  "domainsNotAutomaticallyExpanded": true
+}

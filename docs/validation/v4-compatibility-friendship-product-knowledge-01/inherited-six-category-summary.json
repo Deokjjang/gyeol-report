@@ -1,0 +1,32 @@
+[
+  {
+    "category": "love",
+    "recordsAudited": 851,
+    "chapterCandidates": 80
+  },
+  {
+    "category": "marriage",
+    "recordsAudited": 1133,
+    "chapterCandidates": 112
+  },
+  {
+    "category": "parent-child",
+    "recordsAudited": 1209,
+    "chapterCandidates": 120
+  },
+  {
+    "category": "coworker",
+    "recordsAudited": 1948,
+    "chapterCandidates": 172
+  },
+  {
+    "category": "manager-report",
+    "recordsAudited": 1741,
+    "chapterCandidates": 96
+  },
+  {
+    "category": "business-partner",
+    "recordsAudited": 1917,
+    "chapterCandidates": 96
+  }
+]
