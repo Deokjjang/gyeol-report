@@ -1,0 +1,23 @@
+{
+  "oldWorktrees": 23,
+  "totalWithNew": 24,
+  "oldWorktreeHeadsBranchesStatusesAndFileHashesUnchanged": true,
+  "originalBranch": "v4/annual-editorial-quality-fix-01",
+  "originalHead": "c048218cc5961e0f53a1deab2603511e17559fc3",
+  "originalDirtyFiles": [
+    " M .gitignore",
+    " M AGENTS.md",
+    "?? supabase/.temp/cli-latest",
+    "?? supabase/.temp/gotrue-version",
+    "?? supabase/.temp/linked-project.json",
+    "?? supabase/.temp/pooler-url",
+    "?? supabase/.temp/postgres-version",
+    "?? supabase/.temp/project-ref",
+    "?? supabase/.temp/rest-version",
+    "?? supabase/.temp/storage-migration",
+    "?? supabase/.temp/storage-version"
+  ],
+  "originalDirtyFileCount": 11,
+  "method": "all tracked and nonignored untracked file SHA256 + branch/HEAD/status for each old worktree, compared before and after; external snapshots remain under /tmp/gyeol-love-knowledge-validation",
+  "destructiveCommandsUsed": false
+}

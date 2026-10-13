@@ -1,0 +1,592 @@
+/** Static A-W audit scenarios. Existing offline generation is exercised only in tests. */
+import type { InputCase } from "./researchTypes";
+export const LOVE_INPUT_CASES: readonly InputCase[] = [
+  {
+    "id": "lkr:case:A",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "A",
+    "description": "MBTI 기지·솔로",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "none",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:B",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "B",
+    "description": "MBTI 미상·솔로",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "missing_mbti",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:C",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "C",
+    "description": "썸의 관찰과 해석",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "some",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "none",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:D",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "D",
+    "description": "연애 중 현재 표현",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "dating",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "none",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:E",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "E",
+    "description": "결혼 준비의 과제와 애정",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "marriage_preparing",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "none",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:F",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "F",
+    "description": "기혼의 생활과 관심",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "married",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "none",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:G",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "G",
+    "description": "관계 상태 미입력",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "none",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:H",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "H",
+    "description": "정확한 출생시간",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "actual_natal",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:I",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "I",
+    "description": "출생시간 미상",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "single",
+        "unknownTime": true
+      }
+    ],
+    "requiredPredicate": "unknown_hour",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:J",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "J",
+    "description": "실제 원국 십성 근거 확인",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "actual_natal",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:K",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "K",
+    "description": "미상 시주 근거 보류",
+    "variants": [
+      {
+        "fixtureIndex": 2,
+        "mbtiType": "ISFP",
+        "relationshipStatus": "dating",
+        "unknownTime": true
+      }
+    ],
+    "requiredPredicate": "unknown_hour",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:L",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "L",
+    "description": "실제 love REINFORCE 존재",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "reinforce_love",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:M",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "M",
+    "description": "실제 love TENSION 존재",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "tension_love",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:N",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "N",
+    "description": "MBTI 부재로 Fusion 조건 미충족",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "missing_mbti",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:O",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "O",
+    "description": "본인의 parenting trait 존재",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "parenting_own",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:P",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "P",
+    "description": "본인의 parenting source 부족",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "missing_mbti",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:Q",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "Q",
+    "description": "자녀 MBTI·나이·존재 미입력",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "married",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "parenting_own",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:R",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "R",
+    "description": "배우자 MBTI·사주 미입력",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "married",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "none",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:S",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "S",
+    "description": "같은 원국·유형의 관계 상태만 6종 변경",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "",
+        "unknownTime": false
+      },
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      },
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "some",
+        "unknownTime": false
+      },
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "dating",
+        "unknownTime": false
+      },
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "marriage_preparing",
+        "unknownTime": false
+      },
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "married",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "none",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:T",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "T",
+    "description": "같은 상태·다른 원국과 유형",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "dating",
+        "unknownTime": false
+      },
+      {
+        "fixtureIndex": 1,
+        "mbtiType": "ENFP",
+        "relationshipStatus": "dating",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "none",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:U",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "U",
+    "description": "실제 DOHWA/HONGYEOM 연애 상징 미검출; 모든 긍정 근거의 부재라는 뜻 아님",
+    "variants": [
+      {
+        "fixtureIndex": 2,
+        "mbtiType": "ISFP",
+        "relationshipStatus": "dating",
+        "unknownTime": true
+      }
+    ],
+    "requiredPredicate": "no_romantic_marker",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:V",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "V",
+    "description": "실제 DOHWA 계산 상징 존재; 인기·동의 사실 아님",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "actual_dohwa",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  },
+  {
+    "id": "lkr:case:W",
+    "productKey": "love_marriage_child",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "letter": "W",
+    "description": "같은 뜻의 챕터 간 중복 점검",
+    "variants": [
+      {
+        "fixtureIndex": 0,
+        "mbtiType": "ENTJ",
+        "relationshipStatus": "single",
+        "unknownTime": false
+      }
+    ],
+    "requiredPredicate": "none",
+    "invariant": "기존 실제 원국·MBTI·Fusion·9장 계약을 사용. 관계 상태는 적용 맥락이며 점수·파트너·자녀 source를 생성하지 않음.",
+    "forbidden": "모의 입력은 가상 인물. 실제 관계 경험·아이·배우자 성향·없는 명리 Evidence·미입력 유형 보충 금지.",
+    "isFictional": true,
+    "notCustomerHistory": true
+  }
+];

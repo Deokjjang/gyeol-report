@@ -1,0 +1,2562 @@
+[
+  {
+    "owner": "INTJ",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "f0a254b588e6bc04d169b5295759090379c49e9f37d9ccbf8fc9ea1e4f98c707",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "81a530d7b2be86d10753ca07bfe2d80cb83c378e4f5f244bbd44a9a82868145b",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "318ce163cecb6383cd6d3dd68e5d598b2312bf8c58e9a380354c4a12e4181626",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "a04c0249271fed6d7d03f8f644aef4bb6dd691d511127e783e236be03a9e72b0",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "cea10459c4d76acaa7590910b2ad95d1a3a81238a918e98625308d547a40133f",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "c72f73433005446abd9d3ab2c03d753b33d36b1da6fed1697c99adc2d7ee9c60",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "dc88ae6f9fd777d9a9303652b45c10464a4876b8720792838b7490a9f371a5c5",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "f7ae0d6c03e55e1725ac4818d7560164514330fd264bc7fcb21cf28766ae77ce",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "56107e7b9bd4698270d2586d4820d9d761cff8de315ca56158e910000b114732",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "98ca6088764f954649f35743594f3d46d2f3540095d95426b70100669d0e5c0c",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "075bf0cc7a86d569a8264746aa81b41ffc4e68f1c215d733cac32821912e34b3",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "f34c00f7dcaff163e7af6cefc6d3ee10ebea9122eea8ae742955a1693b4e78e1",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "af34aaa63f8fe6270a8a0162850933791372362aa0ef8a50c9d0dfe8d4c5078d",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "7515d25270146fca804c29940898b1dafd10913a07d6f4d9df7c836b31e6346b",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "a8b677e84ed7fb52810a8bdcba694864f0d834fe6235240e4c4bae3444bdd95c",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTJ",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/INTJ.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "dece6ffe645cafc020ab1d0dae9a51bf2963ccf79882bac42b89414ccfd24d89",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "75f4cdac7d69891bcc3314398f163885f5ac405d5b3235a006ad84b594c4b804",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "268d33016ac096992a08985460115a7b1725d657a1e10ef7c4f47bb3bd961662",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "61fad77d49babc848265fd6327b2e64d7042bf42d8ae7d5070e9fc434a5ac500",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "c9561f145688a2c635a823c2ef47c1c7e3cfb606fcc530a4685ba2e17e06aad0",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "633fc8cae8c60c5abad5dcf9be17e0c2e761fd6cd09b1eef23d5be977d232f6a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "d0adafd4a0dd1a0aac11fe28df2b16e4d4bba5ca957aba30141c61a59454e6fb",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "4607dd02a9e0631debd51828d01340fad3d052caba9ef73fdb86585c2acb411a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "57b02751398a601301a50dcdfdd4d421043b6bc2736cafa0d9b017950d176e78",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "b6a5ac47d91fa225ab36d391e72e42011d3c1c82850ccb851a7c6e6079b49ecc",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "24ed9409ce6996a67714c6fa63d988704354ae4a7813d797aa0ef855c61459a5",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "54f407e485b0c475627a47f94d69c68f2cb8a2baca0197249081e7ff3fad2792",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "87638086088b3861a8f847cd8370d5d7e1d999175a2964afba2adcb3286f2508",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "03c0c2f2d88cba34eadee4a5be19be101f6ac0174afb8689c8305f418219df32",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "2ec518809052f1f42cf3f1c99650d213094e88a9f60dfc8939de5fdfd0c74b4c",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "efccc27b24581edc4a0230d9b556b7866154f6ddaa12584d27757abb9c433cc8",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INTP",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/INTP.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "4625105d72f4c752b92fbacb4c92e35d2f50b0ae551ff26e4c20135599d0dfbd",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "1bc38e70c5d53398469c6bbc4eb09891881857b2afd4742a7089eec761a1c7f8",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "5791c0437768e09ad6b115a8a5bce0bbeddf0c946077763c8a895b9cc74461de",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "8b0a834c061f9b1d4bb14e37c573a4da1af28bfd99eb874094f7438c3f3b0095",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "acb781ad7d08d4619019ec0329ccd1116427128b8d21c85df782d03ba444368b",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "215b461a7566902bbd2227dbcf9f21f50ada5f819788679d5e138249131f77a8",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "95f5072a45b806497fd7f9c9e93ac738b12fe3408b46092e1bcb80e32c4ddc4d",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "9d7dc9af5083ddf36c7c472dc5d5a31e019888fb94ae47a9a761892704b6589a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "25ec42fa25671fed4a9584a3e899602ec50a15d0d7acf04f65e9fb92ea96b6e7",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "a720559132e6f9c15786b43d2cdc912d61f5a1d5fd59f0bd091202730854b21a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "e1c4eb8e6712d77698ba2f5f39776ad979e9a49c9707cf8b40a3dc1f0144b43a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "899a08be63e0a57791962596f566a0edf013522b3b0f72d1893d955a55703380",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "a9a837c0d2d3a60baf4243cf97e0a99214adfd38f5b719ce6953c1e9e673f5ac",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "766d5cc394c0f1fa967bc6123c00ecfbee31e7b4cfba3448f03566c5b4bb3b3d",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "1148bf12841a6ccced20183f8cd76bc68f32b6e87cd4f0ed0c736a696241f457",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "9a6435b96005b1228d795842cb89f1604a54e35b24281848e569f51c8376bbdd",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTJ",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "120a26b4fa7fbdd172711b8aad878c217e50abce365bf6137c32142fdc05cf51",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "cc69ae961d2ede1e94d53d7d34288e4873372addbf2cc541e75e8e25c4825890",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "486f948c932bb90b0e9f2e7691de0388a9389008f8fc918ab4069c1d5ff92a9a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "4aea77a88bd1d80ad72cd40031858aaba4b67507c1b037c1753e187f037668f0",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "93c346f94814e4850b34607f98efe21327596d31505834eeb38917b2587e2c7e",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "62de6f2e19688270e4a8fb3d2a6483d643a666859b62e3724ca3ff6ac11741ab",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "6b8ba7c1d237d3f0402f225c38ba87d89b38fb1bdd30485d9acfe47eff4e0c3c",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "86d728d9cbbfa96681535ac59cb3a4a4408ab7a3c8542d4e2c5a1b04a88bab6a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "5d97ac2459c4f4d2771cc501644ae139ca09f0d79b6539c023b8ca29ba789373",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "77549ce8a578bdfb0f03477c513ab78c8882a061adb470ad059d19a2d333300d",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "a77b866aa8e4ee6fc19a449c63ef33d76bf5f820b72c5c3c0bc1c43e56c98ebd",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "7a8287ad65d20cfce296872f899c4b39b4dacf82a488d11e773c58f1636559f9",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "a0f6edb8f5f49d377f91784e8d679fb71dd84b9774910df950b42575c274830e",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "2ed653e1afdd0f6a1b03a30cbf2f9491e7bec52ac5b588610d6c8606f428e601",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "8c486d5d8d6041377000846af7fb2d779e5ef37d405ee09ca6961cb0728c5707",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "1f898dfc52011e02e1b6a360122cd25a03e41d1f9837babadd058016b573e32d",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENTP",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ENTP.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "cd7c463c6634f97f19551543f60beceda81e5088e6ce5ea608168a05313724b4",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "635df1fad8fd8dcb10b1ca5bab13efaf0089c25de91c8e8051d9df37631bc180",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "795fdff34f60c932c8c2b7d1d5f8aed8b14593461339427ec5fe33d57b2d54a5",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "b95f1450426c9f25eb25d810fd08b5d525919bf1a68b02b503c4215f5b624430",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "71eb736a894d78b6fcf97f7dfaf9c67eff7de34d4cb238779544847e3fea7fac",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "8f713cd566bed664e6968fceefa429b668a56d74bc9f14cbe2d514491c4f802c",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "fb336cb9b471d3feb27d6bbdf2bd152a3f7c812779696f8fde342f429b1f8553",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "069b52b4d5d9b616d130477f4e569a859acb98f2487452874eb6e4618f8a2957",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "244eeecefea43c4de0766434f635576e048577f1ad4534f4e5cbc40c1bbaaf25",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "b2a7d8c027167369c591eecb1f246b70a049b2763d880ecb77f97513435e4930",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "9d365beb1cad4755f0e8cceb6a4050e9b31237c0a70d5407f230aef7c886fdf6",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "389ad178921040a7a29d1b241f103f0298a60186e3662e24bb6c5259392edbb2",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "67376b0b37616948ea62ae5319be318fccbde4a3e80e63c895f57887700ba90b",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "fd8517024a4a04e9e6d449d3e0401e02d4fc027f506133f7422f8ca969686979",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "6d795ad2e839e4f657eb7ac42785484c92637d42d2c93a7693611f492e352ae8",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "3e5ba338596368798208a02229e3c1f74164575e63acb6b80f024b8fdc053519",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFJ",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/INFJ.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "659e5c04add9d2eb921b9c468d066082c801aebed2f15dbdb7dbe7a9877af2fb",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "0f35737ee524ee466f3ed46fab4aefaa2864a676e2cf5c97f7887b27f98e7b83",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "b6184cb5111fca661d32e3536c5fdba1f8caece8095505d033fde5ee27ed146b",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "fc1dfef425741e10c06aba1769046a3b20336c4405c79562b93105e46f27f4a0",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "9834f4ceb3995b8ad0a1199345113cb92aabecdfb28b8646381553dd09f34887",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "f71c77a726f1d4b10c875ca836b389356522318d9e99c25156d23a73f393069c",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "98fb52fbbbd078ee2bc51336dd624f4b8b1ae7b25e2e433ed522a12696b5e2e0",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "610ae9e8ef759a81420e52c107f2eab3a896c9f00c7415a8b86fd569d44428d1",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "a217c37f7d96d51460886ce0e7d763698c15edb512df0d01361a8f305b1216d0",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "ca9f4a37984b150fb1bedda764840c4f8a8f967728977115745d6c4c795456f3",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "53e52eb3f3c83efd19f0136af39703216a5a9a459f4a0e6e285c7f6aadc911b1",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "e24f919b2872dd5957ef9dba6866c9fe79ed5bba20ddbbd4ab014161f7e4afb4",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "09066d6496c123f6abb01721937813b91482f3e8bb02ff5155976af1f8d997ef",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "32b8fcb4a385e8de1a6d2eb60ecffbc872d7b7e1c226186b948060f0f8713501",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "3e3f2efdbae8702e2628dd8fd4167fe6d4770310eecd7c65647d776a1412c711",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "f2face37a889e91eadb8ce0b1e15c09d29c3cca31a58d1a0841e92d5fc0e404c",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "INFP",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/INFP.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "591ae1831e99446bb46506c0ebcbce70e3492c7097d45313bc5e2110357ef0bf",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "017e65b33ec7f0c838c02d695edb2c02dc7e2baf6a43b62dbdca52f2aed6e184",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "b547d41bcffe38715411f9343f3b0330a7ea1a9c9bc0b91b68ab267b667ffd0b",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "c8417f61b5f3cad6b0a5dbc2d47833d83a27c5faa10906411832ed53abb144fa",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "423c570f5d8ffe8f1d6c5e0d5dd2ba947d7f08db317738a64a087d49db492e03",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "5e44c04ddf4fb4d74596f9c0a738bfea548604a37a124a15204d1b46bf2af8eb",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "952963e45a53932d85a6b9a1e0f55d3bbbc4b259fc63495fa21505a0ecceb8b6",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "ad09672a453197d71d7cc774396fd4e4de064bf5350e2bbfa50e1f6308046cc6",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "8b8191484661d777ad3468ae3e14603ae03e97eeddbf2e4877c7597f0defa644",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "04bb8b5b147e603c4ae0dfb8ad69af2b1b7f193df9fb21e548515eb7c989eb1d",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "f8d5f62e27bc24818b0f7112773f6771b0b3245cb3a731d1637280e77750701f",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "9703282a6763e1e7409c113449fbaed6edc32bed7392c446c7a0ca8dda3de14d",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "6e54e121c389cfb17eda0137946e05811afb96ceca20450ad78443bbd0ba9779",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "1c9646fa2cb8e9ce3d886cd434f406ab6e306487a82367a212b460a67d5ccf92",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "4bd3384cf4306c95473ccc948a2c9150b8e2b3d1bd98829275037cc5162e5d2a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "8557e7eb28d2d2ec506cf53b81efcc998e9493575c3ef6c855d56e6a4eb61c30",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFJ",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "61b18e31f5cc73ca6e69ebbb5c0df45e7dfecb08c3d6c233e4160a27bb857979",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "137c50b5413b84daa2e9dedc836530a49e6bd8d11504aec44ce626013d578ecb",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "ca91c5ca904f7d56a4ea720b044700ab472522b49c38e6ed5b0c46e5353a8e5e",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "fa6c0fb28f51d75958be2328e964bdebec0c50710d4d13fc7b90626b5ec903ce",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "8db08cb22dd61667862e1baba10466aa45e92df890a45df37ddcb530d098c5da",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "0ea7c64dfb1439aa8a9a8c7042b54ad8d9700bc3c04efb332eb8b7644bad6eab",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "b1279c3a73af3bbe4f48111a1ae0f7fe5d65ca8b8e8bc5c3df1e38da0667b3eb",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "7ba8f698bb7ff4482977bec4a643c86890e2db631ef916630dfe916ed1d5a7cf",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "27e29c2a7cfd29b13c29cc12cd6410cc98d98e4404cc360d1b90d473d6e49fba",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "38e93fd2142e5ef45a27f37f688976a44ca62ed9f2eeea0dca1b24667bea7320",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "d1b622ad60f64776f5dfde27d865683be6b3d1b40e2c48e250d930b1f46149a4",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "ea053d8ed56d67697ef66de8ce2933ea26ba3b12ecee14c9958f8f71d5245f4e",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "19c2841de1895fa0ba3496d155ff16b34205706578338a5e1fabac946c72aa1a",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "00b7071fd60cfd60300736f1e9e178ca2fa2f5b21dcd80ebec8f4d8d8ce913ca",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "5e4c9cdc83b3daae2b81490396964150efbcdf8cef4540aa13b6e7d1546425ed",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "1e3c99ed8421706040cfe1b18de5d1a1f5e79a0cae8c25a6284d534aa0597c6f",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ENFP",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ENFP.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "d8cfbb18e449c51c06476a069527a2c7d4e899199aed4187bd9e0f9bb31a764f",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "c686a3d0ed295a9b9f9f8c2cbf1a1aa87da2605b2f8c257ffe7d44847020c417",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "336fed2cb17ed88f30d0a4532ac0350963fa7defc634a6f44ddc3a265d73f0a4",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "43d4e8e1ee532c7df9e9a32f28ec3daf48aae2bd45bac569adec96032b3083aa",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "8ce615a5706c602069d84e8f77ac4ed5c1526a75ce2da70288c115f67a9407c6",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "1158e64abeadbf1ef06dae8a8c83cecf7684732a5b4a20dc105a4e452f0a7485",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "9b2887bd4fd8294cfd469d6fefc987801ac87b59a12051f9dbea62173a229afd",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "23b6341b1958b06ed41b17fdc2dcda1159c2826c9d216336c65dedc03fd17402",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "89e4351f44e944c245d271e47749543a058d6feaaf7ba738dba775e20d47cf76",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "4a2326fa485e6139880a22c2ef1edfd606023727dc7ed35a899107f438c8d3d5",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "937c7c90097ab55953c24ef16e2384f7d5e49555c93f92fc722252c45326ae12",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "7a389358dbff729ca3918c15b7513c7e33359467d2502df58919f87a7997b44e",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "12fcbcd379262b04239989f9cadd4835061f0bfeae512717987250fc03f966d8",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "a0191ae52c372de979ef112f46d48dc08d371dd9d260a3e92b0c8a9a6533e941",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "30fc3fa072017b70b85d8946e73f7cb4cdc9902908e115bde4ae01a63f0aaf2d",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "360997a7580065540c8744640b58082e97c755659c56d09e1f87680d6e93320e",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTJ",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "1e78bc4398d2cad21f469b958f0f411eaf816e6246a15a010bd65688f586aab3",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "91bb027f959e53a6247fd2cc87107dc9298146f762e076b054b34f4af28b9ac5",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "69e4a69e2b37a3e90b6bcc638a103be13316f10b8ea5a97ea7632924b5d56c9d",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "f827c81d5510056d6c0c7cd94c0d268a65754d4084ecea6b9d55493f6351f722",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "d9068538f2e52f264c04ece1fd3c20276cb735edb39c7d1e05fb16d6f805dfec",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "0d3b2403382f2b2f23c29b4f7bc4661b750caeda2e97d4380d3bdd7734e128a0",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "3ec7cd853ce27199708e10a105837dbb1cd04c03b8d9125fc0a58b07cd54d69f",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "a87f61a79804e0a6292a4ab60787b0edc4f7cea1726e5b65802aa699de5b60be",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "0ac29336d26d6e4dec54251ac9ae77957ed144a428daf02ecfa5a3851b5198bf",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "b864cf1bfd10d559771041ca3658dcbb4e3f62d9f2b62ae4b300e1f4a559fce6",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "40b22f005c22cc22057c0435647dc106c35dd9cf041b7d8a46b25300d293fbfe",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "24d1722d2f6a42c40519415d032a9d261cc569ea703947d9e37622c59e4db17d",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "62b092cd3d2911d896e0af96c22cb8190bfee22a83b72e68865f316616b6d879",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "d65821484bbe565ae36524630ea84ace60edce7dac2aad7c4aa97bdaf58c0a96",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "36bb6984350a2cfbe8b6c216a7f02397487388d9ef8aaf817de5e90556ad36a0",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "5057fe983f923170703485a74b6f04aafcf7aea7e0903a9727ff8ade0c300149",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFJ",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "7435ccb909f63884f100a0a1d663a8e0b65246f250e37ce7891acdff3c3dccbd",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "33b899b053112ffa7396823ef033a8418f322f136240fc145c6086f86e366c30",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "f95cdf2e71c01f34ea0b82ee5d0bb15176d39f00bd6aca38ac79bf0e2d2f1275",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "6aec9480d47b373fc8dda8697dbea2e0fbcfdfddc5c69a9aceafa1906f06645a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "57feadb4786728caa8846a8af72e2e8f461c5e958d1044c9e22834081443033b",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "a13ab9f2feb298014940b87c5ef29c09a0660531901c4704ecc98954fc078895",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "7379d16fb1cad4c6c6e4c8eded53cb9ace0ffc222e9dd72b59ae8f7c6d53ff48",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "190da637a7285bf0a0da9043d291f585a713011b23db0d0f579b86a2c0fc6248",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "f386bd60c4993fc7abbece2735ef5193bf5a2b2dd97ce4e7341786b50c9165cf",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "b3e5c71f810a3fbcf8bb9fe0d1c9254ced2954560d9669260d3b4ff580ebf22d",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "1fb240d786005e4b9560b68f83fa3e616d9c77252538f0882b8bb8e2c5db307e",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "f704f9665be001b9e3864b5ffded90e53f43e5a1800fd6303a736acca062c0c6",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "74a56033e36780f84fbbea6e2fe91613b3b2aef9d72c02e984b693f2be254e9a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "6d075773d4fc66b22e40014d27d6f1427600d3c46a6a31778e4c605bb3f16f36",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "4702d833dabe93a747fdd59c26fa8f41b6807a82363554f8cc742bcbb1d0ef01",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "2b4469fc538de1d23e55335e358d7c4242a8c70a7299432ebb2ff2eb880ee282",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTJ",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "1a48bfe960f11e59a6c8dda013f6ce2d9746274272c687fb09cc23091f23b4f9",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "8c5b15e5c1d6b1c138a59eb42a668a0063848c13bbf13978ecc4a39eddbe7a58",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "68e7700be17523fbab1582638e43a0a3230af8b200025ec255143579bc72711a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "8f34d9e52ed3700609415860a662d2276e9f946cce5078f7f5bfff5fea171b50",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "29d76c6cdcf559c52db203ed0f2c6ef9b027fb9bfbe7ba3f944a6f050f8a9e4a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "66e89d93cb0b00001a56b4b9f518c73d8ce857dc79ecbbfe09dbd8d72385d4d5",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "94a0ae93014b2b54960d18f26d9c7e231f1156e81d84cb8f1c301e42987d972c",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "9866c2b05b56c59864919e2e7725fb4793cfdfd2c775d898e0a155c53363ad3d",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "459132b601d332abd2d14364fcc1986601b21931c9823c5c7d81f469ce91b3fa",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "6f3b8dc8647be77c8a46e9f4a71b2c170cbe93822a01e937b8fc6700d516109d",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "ff157e4fc64dcce69bc09d699797f0cec374b9fbee7797f55c307d9f71ede02f",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "4f60652c913d97a928a68b80262815c723f3d25ebfe080791e969005fb6a2fee",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "63ac0ec5ecc69b9ebb0ca78e39f9f04b44f387e7960d8822f067419f3fdd09d8",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "07f25cf2135b579ef4eded91988eaf4e372fe91e7d21e8ec3d468aaf79843767",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "8f50bd889fd67f30bfdf57ffaa31d2c7f0b37ee02844c1fb0ef99e12bcaded68",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "a5b24a58c7991e84865d31e79b295cf20933616e8c914313d949b249b9828c08",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFJ",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "5aa7423d54ec8e548233d9582148dc5e48eca40eef55dfd2d5575afc8e612b84",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "59a7d0ee18b4a8bcf15dc71205282ef8ca7cf4b8a6055f91579fc792878e0585",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "9be5f77b471955316a78ffaec4720c0e8e031cdad201f672e9439b696903e5a3",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "9eaf0d4a9cb3160c9cb9c0eb2a7f9a5df7248180375fd69dfe144ce31e679459",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "5d1ebe9ec80fc20b6754beed45a76a3b6c508f8750d60b2f361fb683d9b711fd",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "84505b69d7e658543ca2c51e40d5892d2f6df3eada0b824604d157f0f877c401",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "8621834d02836f75747306402517c097fbf3fd3460cf6406058f2d0290ceaba8",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "bd0669c4d2fb743b50150891491a53adda624837da1323dd67d7459c908b9b74",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "eca481ab24fe70636d9c9b35fde821093dcf271dfedc930bde646bd61b735c90",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "68ef6976b489f34550103f9e19e91105610dccf7f3c3db029bd1e5109ff4c530",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "b54eaa28e421e93ea0dcc974f02a3418a1eedac2a7c16be338cc52a7a8497bf5",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "cb003749e24f15751f811dc1145836b01d47f80c559852170a37a9385ab386a3",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "fd45784e9a88d16f7934081a2ab717f2b00ba35a8dbd42f20d398a0e3134fa68",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "514c43f2aab5981ff4a9eba3dbc4e18b3514c3556360a606d676795c612d967a",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "670aed21622abeed161fb6c8e9631aea990d9dbe84ef2fae60675f77a17c9c67",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "e8112c3aeae7e301b1549bfefdb5841373febee5e7f931bd4c5d120b9004c594",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISTP",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "4918b2b3e356e33e97fe98944fa27c4ad7131a02b97155397c91e5348a3e4407",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "94a26c154bef4fbced60231202d6e335cb266d87db7e4c386d06b8b0ab1ba5ac",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "bc1f48e7a91c650383fb856089229eb9e48cc86f20b15f228918958412d1e361",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "3aa2b1877b7161da9aae078343a53a696de56dfe9ca8229a27d06907d8c92f63",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "e753afffb324e2d8d0133231fe909c8ed838d7d3d904f52fe2b91f63a425b0c9",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "c405facab59a17f72066bcc84b034f9005d9944cc17a6cb6aef4ebe85e38c0f1",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "b573ad637fd38f2de055361b1a57104f4b8946586df76fb4036fd97d21a94994",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "b7db9830e429c622b47324f6c1c3aec543530ca67755c40eb5f2cdf3417b240a",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "0ea48ce9901aad0e3a8c1dd443c6a84d471762fb4967c595866f9914f23a4457",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "282ecf12ee14a9fc8279b93aa3fd6ad01f9f24976a265a66dcae17596f36de4f",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "78683a94a2844d59019064634391df429e30f2e2e79a22b3cb9e932595a8a37f",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "af8c0dcdfd54b3f1b4cf1484530f4e839936e7b2c5471dbc73e78cc15bd05b36",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "a74d567af48a9d03aac6c16f99a0f58396ff43c687a04b67065573da472c96ec",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "326cbbc335a1ab565f58ac4ca37e08015016115c01400942c8c809bd085d333c",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "41c4290f055897265acd9a7a48a01d33612f18726a513d7a7e637d4884711722",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "615a2548410d06349ba64199e312a83a4c1887f5dfc5ad2f9bfd0b5cb452e354",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ISFP",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "c12e307aec895fd17595f86ee2ff86a9f49520f7a92fd2211382148a7fcd4ee4",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "3dd92339e098746f5445b2190b9d5dc24cc619ad1af7b4d67013b786ed27a4d2",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "def0252eb821c1d7eca1b96d0acdc9cce44e35857f0d56162c5a326704f40662",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "3559bbeed83698231e398d36e9d28ff4345125fc12daedd79f7174d7c4d00527",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "09ab87e718b331bf39c0ddd6bce90bd8f854d2c9d876ec89c472e4e308008709",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "2e22178d596649a2e82c69fde9f1d715751ac6c2021f348cc986faf75474cbe0",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "b84af7900334d5b7c6b54d431c3419b3034a8e66030e7d0f20caa45079a21140",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "dec7d20701f18661f41fb27d3d7abb0ffaea0ee50567716d6fc042afc4c7334a",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "e430559b002e41b3ea3d6286419f62502bd7027e6350d2bc861ad72205288f3d",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "2f353fa797344612c301fa30c4cdbd722f1410eaa30bb9ed77c24fbada9507d0",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "ce638ed013b8c353c67123f372d0608717a640956c48bdf02aec1725565d6e17",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "65a0ed819986afd3a4996b8a0aecf7e560a238167e0228f0b66f9cfda32db50e",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "7203f31d246621a113d981674f1eada359151985f28a9085fa1bde806b682df5",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "6e844613954ddd58a80d2448b6d3c75b8e3c2eb1976e5a0c2ce4fb2d759ee061",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "e320ce4404d4a277d683705efcd03e6b5b7b6b6e45c53397f178946e4d79b1d7",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "268a97704232f81d599d27f831994d4a646c866362196f8591edd21c89f83d09",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESTP",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ESTP.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "88226d8ada241718be8a2f68fb74341bd21baeb4c0709b1ed6090abf511c3a9e",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "INTJ",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/0",
+    "recordSha256": "35a8458b8ea38e6a45401fc1618b7041accd0700035fee3779bbc15e55d99a4f",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ENTJ",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "6577ad57623eba12d91c6030276c5487e3029218c54e963e0374899bae1a161c",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ENFJ",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/2",
+    "recordSha256": "37c32007ca95b524a07835d467cbd963c3ad1e327c00354a3891a84c9caa48e3",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ESTP",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "a7594fadbeabe5050b668d521284aba830246af4829dbddf8390c8aa0511acf1",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ESFJ",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/4",
+    "recordSha256": "5f2497f7131ecc55c771d16417cc431b217603a0a175f144de0aa0957a25eda6",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "INTP",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/5",
+    "recordSha256": "31800078498ed4ebac785c31e5dc8ff729325cd5f6866a129b6bcda627eebe50",
+    "sourceCoverage": "direct",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ENTP",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/6",
+    "recordSha256": "882bc0e8f647d1802c4d79bc10f7ee0c6d8498924a5acd64d491fe509cc1cfea",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "INFJ",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/7",
+    "recordSha256": "5ff3d3bc8c5e2c1486c5975024adb73f09d4d111acdc463cd8b2f6e28cb57aeb",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "INFP",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/8",
+    "recordSha256": "ec9862685e9a81922d99a2ab9455e3a5662dc90a81a3ff962772479341fe0568",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ENFP",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/9",
+    "recordSha256": "25feab67ecb40714ffc922cacd6e7ba5955bdb6cb32005fa8fa80bf5a8a167da",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ISTJ",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/10",
+    "recordSha256": "22c875c302c61a8bee554c4a11bd8029f5865d5ffd2eb415c92bc9b9067fef43",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ISFJ",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/11",
+    "recordSha256": "46cac501e309d5323892ca6c05fd0aa37d55878f6bba4b4be7c69b11b50ed1c9",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ESTJ",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/12",
+    "recordSha256": "40ab56a0496b12b358c14e7fe096cce71580eef2324753d0728342cf2a836804",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ISTP",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/13",
+    "recordSha256": "a3796028a5c7430d56cd1680b7e8224097468676b54cef926273e60b5d528b54",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ISFP",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/14",
+    "recordSha256": "7ff6e445a83854bbbd0a5036b4d72c18631e0d47ebc981480d41be84877a3c2f",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  },
+  {
+    "owner": "ESFP",
+    "peer": "ESFP",
+    "file": "docs/product/mbti/source/ESFP.json",
+    "pointer": "/relationshipHints/notablePairs/15",
+    "recordSha256": "05138b2040eb9d24b221bce665ed601463f5f5bc0a3e2c65f441ed5a56bcc162",
+    "sourceCoverage": "inferred",
+    "sourceOwnerPolicy": "directional_reference_not_actual_partner_evidence",
+    "singlePersonAutomaticUse": false
+  }
+]

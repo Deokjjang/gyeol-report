@@ -1,0 +1,52 @@
+{
+  "newTests": {
+    "pass": 398,
+    "fail": 0
+  },
+  "relatedCombined25Files": {
+    "pass": 2478,
+    "fail": 17,
+    "existingConditionalNotRun": 1
+  },
+  "relatedAfterIsolatedTimeoutRerun": {
+    "pass": 2479,
+    "existingFail": 16,
+    "conditionalNotRun": 1
+  },
+  "sixProductIntegrationBefore": {
+    "pass": 64,
+    "fail": 0
+  },
+  "sixProductIntegrationAfter": {
+    "pass": 64,
+    "fail": 0
+  },
+  "deduplicatedFinal27Files": {
+    "pass": 2941,
+    "existingFail": 16,
+    "conditionalNotRun": 1,
+    "newFail": 0
+  },
+  "baseline16Reproduced": true,
+  "conditionalFixture": "comprehensiveRelease.test.ts: EDITORIAL_LEGACY_SNAPSHOT absent; existing it.runIf preserved",
+  "typeScript": {
+    "before": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "productionBuild": {
+    "status": "PASS",
+    "staticPages": 47,
+    "nftWarnings": 0,
+    "newWarningTypes": 0,
+    "command": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 npm run build -- --webpack",
+    "externalGenerationOrPaymentCalls": 0,
+    "envFilesChanged": false
+  },
+  "newResearchRuntimeConnection": false,
+  "existingFilesMatched": 2354,
+  "caseHashSetsMatched": 29,
+  "gitDiffCheck": "PASS; cached stage check performed before commit",
+  "salesApproval": "NOT_GRANTED; not evaluated in this static research task"
+}

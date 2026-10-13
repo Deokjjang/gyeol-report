@@ -1,0 +1,1010 @@
+[
+  {
+    "address": "CH01.P1.S1",
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "대표 성향"
+  },
+  {
+    "address": "CH01.P1.S2",
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "친밀감의 행동"
+  },
+  {
+    "address": "CH01.P1.S3",
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "긍정적인 면"
+  },
+  {
+    "address": "CH01.P1.S4",
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "핵심 연애 방식"
+  },
+  {
+    "address": "CH01.P2.S1",
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 명리 근거"
+  },
+  {
+    "address": "CH01.P2.S2",
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "쉬운 의미"
+  },
+  {
+    "address": "CH01.P2.S3",
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 관계 MBTI"
+  },
+  {
+    "address": "CH01.P2.S4",
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "검증된 결합"
+  },
+  {
+    "address": "CH01.P3.S1",
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "애정 행동"
+  },
+  {
+    "address": "CH01.P3.S2",
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "근거"
+  },
+  {
+    "address": "CH01.P3.S3",
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "오해 조건"
+  },
+  {
+    "address": "CH01.P3.S4",
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "잘 전달되는 상황"
+  },
+  {
+    "address": "CH01.P4.S1",
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "중요 조건"
+  },
+  {
+    "address": "CH01.P4.S2",
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "개인적 이유"
+  },
+  {
+    "address": "CH01.P4.S3",
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "충족 여부의 차이"
+  },
+  {
+    "address": "CH01.P4.S4",
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "핵심 특징"
+  },
+  {
+    "address": "CH02.P1.S1",
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "첫 매력"
+  },
+  {
+    "address": "CH02.P1.S2",
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "근거"
+  },
+  {
+    "address": "CH02.P1.S3",
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "생활 장면"
+  },
+  {
+    "address": "CH02.P1.S4",
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "좋게 작동할 조건"
+  },
+  {
+    "address": "CH02.P2.S1",
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "친밀한 매력"
+  },
+  {
+    "address": "CH02.P2.S2",
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "개인 근거"
+  },
+  {
+    "address": "CH02.P2.S3",
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "함께하는 행동"
+  },
+  {
+    "address": "CH02.P2.S4",
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "상대에게 주는 가치"
+  },
+  {
+    "address": "CH02.P3.S1",
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 장점"
+  },
+  {
+    "address": "CH02.P3.S2",
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "독립 근거와 결합"
+  },
+  {
+    "address": "CH02.P3.S3",
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "도움이 되는 순간"
+  },
+  {
+    "address": "CH02.P3.S4",
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "유지 조건"
+  },
+  {
+    "address": "CH02.P4.S1",
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "대표 매력"
+  },
+  {
+    "address": "CH02.P4.S2",
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "과사용 위험"
+  },
+  {
+    "address": "CH02.P4.S3",
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "자연스러운 행동"
+  },
+  {
+    "address": "CH02.P4.S4",
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "긍정적 결론"
+  },
+  {
+    "address": "CH03.P1.S1",
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "끌리는 특징"
+  },
+  {
+    "address": "CH03.P1.S2",
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "매력의 이유"
+  },
+  {
+    "address": "CH03.P1.S3",
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "호감 장면"
+  },
+  {
+    "address": "CH03.P1.S4",
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "조건과 관계의 구분"
+  },
+  {
+    "address": "CH03.P2.S1",
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "편안한 조건"
+  },
+  {
+    "address": "CH03.P2.S2",
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "자신의 근거"
+  },
+  {
+    "address": "CH03.P2.S3",
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "맞춰갈 행동"
+  },
+  {
+    "address": "CH03.P2.S4",
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "안정감의 요소"
+  },
+  {
+    "address": "CH03.P3.S1",
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "도움 되는 차이"
+  },
+  {
+    "address": "CH03.P3.S2",
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "검증된 근거"
+  },
+  {
+    "address": "CH03.P3.S3",
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "긍정적 영향"
+  },
+  {
+    "address": "CH03.P3.S4",
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "갈등으로 변할 조건"
+  },
+  {
+    "address": "CH03.P4.S1",
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "관계 기준"
+  },
+  {
+    "address": "CH03.P4.S2",
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "필요한 이유"
+  },
+  {
+    "address": "CH03.P4.S3",
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 살필 행동"
+  },
+  {
+    "address": "CH03.P4.S4",
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "알아보는 방법"
+  },
+  {
+    "address": "CH04.P1.S1",
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "상태에 맞는 관심"
+  },
+  {
+    "address": "CH04.P1.S2",
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거"
+  },
+  {
+    "address": "CH04.P1.S3",
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "만남과 대화"
+  },
+  {
+    "address": "CH04.P1.S4",
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "매력의 조건"
+  },
+  {
+    "address": "CH04.P2.S1",
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "방식과 속도"
+  },
+  {
+    "address": "CH04.P2.S2",
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "근거"
+  },
+  {
+    "address": "CH04.P2.S3",
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "속도 차이"
+  },
+  {
+    "address": "CH04.P2.S4",
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "편안한 표현"
+  },
+  {
+    "address": "CH04.P3.S1",
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "초기 약점"
+  },
+  {
+    "address": "CH04.P3.S2",
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거"
+  },
+  {
+    "address": "CH04.P3.S3",
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "오해의 장면"
+  },
+  {
+    "address": "CH04.P3.S4",
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "조정 행동"
+  },
+  {
+    "address": "CH04.P4.S1",
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "좋은 힘"
+  },
+  {
+    "address": "CH04.P4.S2",
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "서두름과 주저함"
+  },
+  {
+    "address": "CH04.P4.S3",
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "선택의 여지"
+  },
+  {
+    "address": "CH04.P4.S4",
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "긍정적 메시지"
+  },
+  {
+    "address": "CH05.P1.S1",
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "친밀한 행동"
+  },
+  {
+    "address": "CH05.P1.S2",
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거"
+  },
+  {
+    "address": "CH05.P1.S3",
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "긍정적 가치"
+  },
+  {
+    "address": "CH05.P1.S4",
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "첫인상과 차이"
+  },
+  {
+    "address": "CH05.P2.S1",
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "유지 조건"
+  },
+  {
+    "address": "CH05.P2.S2",
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "성향적 이유"
+  },
+  {
+    "address": "CH05.P2.S3",
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "이해받을 때"
+  },
+  {
+    "address": "CH05.P2.S4",
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "충족되지 않을 때"
+  },
+  {
+    "address": "CH05.P3.S1",
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "친밀감과 공간"
+  },
+  {
+    "address": "CH05.P3.S2",
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "명리와 MBTI"
+  },
+  {
+    "address": "CH05.P3.S3",
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "서로 다른 필요"
+  },
+  {
+    "address": "CH05.P3.S4",
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "거리와 소통"
+  },
+  {
+    "address": "CH05.P4.S1",
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "지속 강점"
+  },
+  {
+    "address": "CH05.P4.S2",
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거"
+  },
+  {
+    "address": "CH05.P4.S3",
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "오랜 관계의 행동"
+  },
+  {
+    "address": "CH05.P4.S4",
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "과사용 방지"
+  },
+  {
+    "address": "CH06.P1.S1",
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "실제 약점"
+  },
+  {
+    "address": "CH06.P1.S2",
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "구체적 행동"
+  },
+  {
+    "address": "CH06.P1.S3",
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "의도와 행동 차이"
+  },
+  {
+    "address": "CH06.P1.S4",
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "인상적인 팩폭"
+  },
+  {
+    "address": "CH06.P2.S1",
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "명리 근거"
+  },
+  {
+    "address": "CH06.P2.S2",
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "쉬운 의미"
+  },
+  {
+    "address": "CH06.P2.S3",
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "MBTI 조건"
+  },
+  {
+    "address": "CH06.P2.S4",
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "개인별 원인"
+  },
+  {
+    "address": "CH06.P3.S1",
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "문제 상황"
+  },
+  {
+    "address": "CH06.P3.S2",
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "의도"
+  },
+  {
+    "address": "CH06.P3.S3",
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "상대의 해석"
+  },
+  {
+    "address": "CH06.P3.S4",
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "반복 조건"
+  },
+  {
+    "address": "CH06.P4.S1",
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "개인별 행동"
+  },
+  {
+    "address": "CH06.P4.S2",
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "대화 방식"
+  },
+  {
+    "address": "CH06.P4.S3",
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "실제 시도"
+  },
+  {
+    "address": "CH06.P4.S4",
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "장점 회복"
+  },
+  {
+    "address": "CH07.P1.S1",
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "상태별 생활 성향"
+  },
+  {
+    "address": "CH07.P1.S2",
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거"
+  },
+  {
+    "address": "CH07.P1.S3",
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "생활 행동"
+  },
+  {
+    "address": "CH07.P1.S4",
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "장점과 조건"
+  },
+  {
+    "address": "CH07.P2.S1",
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "생활 강점"
+  },
+  {
+    "address": "CH07.P2.S2",
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거"
+  },
+  {
+    "address": "CH07.P2.S3",
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "책임 돌봄 운영"
+  },
+  {
+    "address": "CH07.P2.S4",
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "안정적 생활"
+  },
+  {
+    "address": "CH07.P3.S1",
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "생활 위험"
+  },
+  {
+    "address": "CH07.P3.S2",
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "성향적 이유"
+  },
+  {
+    "address": "CH07.P3.S3",
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "역할 돈 습관"
+  },
+  {
+    "address": "CH07.P3.S4",
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "조정 방법"
+  },
+  {
+    "address": "CH07.P4.S1",
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "생활 기준"
+  },
+  {
+    "address": "CH07.P4.S2",
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "필요한 이유"
+  },
+  {
+    "address": "CH07.P4.S3",
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "함께 조정할 부분"
+  },
+  {
+    "address": "CH07.P4.S4",
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "편안한 생활"
+  },
+  {
+    "address": "CH08.P1.S1",
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "조건부 부모 강점"
+  },
+  {
+    "address": "CH08.P1.S2",
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 본인 근거"
+  },
+  {
+    "address": "CH08.P1.S3",
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "돌봄 행동"
+  },
+  {
+    "address": "CH08.P1.S4",
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "좋은 적용 조건"
+  },
+  {
+    "address": "CH08.P2.S1",
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 양육 강점"
+  },
+  {
+    "address": "CH08.P2.S2",
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 근거"
+  },
+  {
+    "address": "CH08.P2.S3",
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "함께하는 상황"
+  },
+  {
+    "address": "CH08.P2.S4",
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "양육 조건"
+  },
+  {
+    "address": "CH08.P3.S1",
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "과해질 성향"
+  },
+  {
+    "address": "CH08.P3.S2",
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "부담의 이유"
+  },
+  {
+    "address": "CH08.P3.S3",
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "보호 교육 기대"
+  },
+  {
+    "address": "CH08.P3.S4",
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "의도와 필요 구분"
+  },
+  {
+    "address": "CH08.P4.S1",
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "긍정적 역할"
+  },
+  {
+    "address": "CH08.P4.S2",
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "주의점 보완"
+  },
+  {
+    "address": "CH08.P4.S3",
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "일상 행동"
+  },
+  {
+    "address": "CH08.P4.S4",
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "따뜻한 마무리"
+  },
+  {
+    "address": "CH09.P1.S1",
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S1",
+    "roleDescription": "검증된 좋은 힘"
+  },
+  {
+    "address": "CH09.P1.S2",
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S2",
+    "roleDescription": "실제 명리 근거"
+  },
+  {
+    "address": "CH09.P1.S3",
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S3",
+    "roleDescription": "좋은 가능성"
+  },
+  {
+    "address": "CH09.P1.S4",
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "sentenceRole": "S4",
+    "roleDescription": "활용 조건"
+  },
+  {
+    "address": "CH09.P2.S1",
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S1",
+    "roleDescription": "다른 강점"
+  },
+  {
+    "address": "CH09.P2.S2",
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S2",
+    "roleDescription": "명리와 MBTI 근거"
+  },
+  {
+    "address": "CH09.P2.S3",
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S3",
+    "roleDescription": "상대에게 주는 가치"
+  },
+  {
+    "address": "CH09.P2.S4",
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "sentenceRole": "S4",
+    "roleDescription": "지속 조건"
+  },
+  {
+    "address": "CH09.P3.S1",
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S1",
+    "roleDescription": "소개한 원칙"
+  },
+  {
+    "address": "CH09.P3.S2",
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S2",
+    "roleDescription": "앞선 위험과 연결"
+  },
+  {
+    "address": "CH09.P3.S3",
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S3",
+    "roleDescription": "작은 행동"
+  },
+  {
+    "address": "CH09.P3.S4",
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "sentenceRole": "S4",
+    "roleDescription": "긍정적 변화"
+  },
+  {
+    "address": "CH09.P4.S1",
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S1",
+    "roleDescription": "대표 사랑의 특징"
+  },
+  {
+    "address": "CH09.P4.S2",
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S2",
+    "roleDescription": "긍정적 강점"
+  },
+  {
+    "address": "CH09.P4.S3",
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S3",
+    "roleDescription": "앞으로의 기준"
+  },
+  {
+    "address": "CH09.P4.S4",
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "sentenceRole": "S4",
+    "roleDescription": "개인별 마무리"
+  }
+]

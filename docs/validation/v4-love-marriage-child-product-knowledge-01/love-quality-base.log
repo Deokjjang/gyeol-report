@@ -1,0 +1,8 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-love-knowledge-validation/base
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  22:40:38
+   Duration  45.64s (transform 1.69s, setup 18ms, import 2.10s, tests 43.35s, environment 0ms)

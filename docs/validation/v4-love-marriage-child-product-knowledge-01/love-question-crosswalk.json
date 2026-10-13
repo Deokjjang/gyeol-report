@@ -1,0 +1,318 @@
+{
+  "source": "src/lib/interpretation-v4/relationshipProductView.ts:selectLoveProductSources; loveProductAdapter.ts:integration.questions",
+  "internalQuestions": {
+    "L1": "core",
+    "L2": "attraction/partner retained legacy path; no take(L2) in current selector",
+    "L3": "expression",
+    "L4": "intimacy",
+    "L5": "repair",
+    "L6": "intimacy/balance",
+    "L7": "shadow",
+    "L8": "home",
+    "L9": "direction"
+  },
+  "mapping": [
+    {
+      "readerAddress": "CH01.P1",
+      "originalPurpose": "나의 기본적인 연애 스타일",
+      "loveQuestionRefs": [
+        "L1",
+        "L3",
+        "L6"
+      ]
+    },
+    {
+      "readerAddress": "CH01.P2",
+      "originalPurpose": "명리와 MBTI가 설명하는 사랑",
+      "loveQuestionRefs": [
+        "L1",
+        "L3"
+      ]
+    },
+    {
+      "readerAddress": "CH01.P3",
+      "originalPurpose": "마음을 표현하고 받아들이는 방식",
+      "loveQuestionRefs": [
+        "L3",
+        "L5"
+      ]
+    },
+    {
+      "readerAddress": "CH01.P4",
+      "originalPurpose": "나에게 사랑이란 무엇인가",
+      "loveQuestionRefs": [
+        "L1",
+        "L2",
+        "L6"
+      ]
+    },
+    {
+      "readerAddress": "CH02.P1",
+      "originalPurpose": "처음 만날 때의 매력",
+      "loveQuestionRefs": [
+        "L1",
+        "L2"
+      ]
+    },
+    {
+      "readerAddress": "CH02.P2",
+      "originalPurpose": "가까워질수록 살아나는 매력",
+      "loveQuestionRefs": [
+        "L2",
+        "L4"
+      ]
+    },
+    {
+      "readerAddress": "CH02.P3",
+      "originalPurpose": "나만의 특별한 연애 장점",
+      "loveQuestionRefs": [
+        "L2",
+        "L3"
+      ]
+    },
+    {
+      "readerAddress": "CH02.P4",
+      "originalPurpose": "내 매력을 가장 잘 활용하는 방법",
+      "loveQuestionRefs": [
+        "L2",
+        "L5",
+        "L7"
+      ]
+    },
+    {
+      "readerAddress": "CH03.P1",
+      "originalPurpose": "내가 끌리기 쉬운 사람",
+      "loveQuestionRefs": [
+        "L2"
+      ]
+    },
+    {
+      "readerAddress": "CH03.P2",
+      "originalPurpose": "나와 편안한 사람",
+      "loveQuestionRefs": [
+        "L2",
+        "L6"
+      ]
+    },
+    {
+      "readerAddress": "CH03.P3",
+      "originalPurpose": "서로 다른 모습이 도움이 될 때",
+      "loveQuestionRefs": [
+        "L2",
+        "L5",
+        "L6"
+      ]
+    },
+    {
+      "readerAddress": "CH03.P4",
+      "originalPurpose": "관계를 선택할 때 중요한 기준",
+      "loveQuestionRefs": [
+        "L2",
+        "L5",
+        "L7"
+      ]
+    },
+    {
+      "readerAddress": "CH04.P1",
+      "originalPurpose": "호감이 생겼을 때의 나",
+      "loveQuestionRefs": [
+        "L2",
+        "L3"
+      ]
+    },
+    {
+      "readerAddress": "CH04.P2",
+      "originalPurpose": "마음을 표현하는 속도",
+      "loveQuestionRefs": [
+        "L3",
+        "L5"
+      ]
+    },
+    {
+      "readerAddress": "CH04.P3",
+      "originalPurpose": "썸에서 반복하기 쉬운 실수",
+      "loveQuestionRefs": [
+        "L3",
+        "L7"
+      ]
+    },
+    {
+      "readerAddress": "CH04.P4",
+      "originalPurpose": "관계를 시작할 때 기억할 것",
+      "loveQuestionRefs": [
+        "L2",
+        "L5",
+        "L9"
+      ]
+    },
+    {
+      "readerAddress": "CH05.P1",
+      "originalPurpose": "가까운 사람에게 보여주는 모습",
+      "loveQuestionRefs": [
+        "L3",
+        "L4"
+      ]
+    },
+    {
+      "readerAddress": "CH05.P2",
+      "originalPurpose": "깊은 관계에서 원하는 것",
+      "loveQuestionRefs": [
+        "L4",
+        "L6"
+      ]
+    },
+    {
+      "readerAddress": "CH05.P3",
+      "originalPurpose": "애정과 독립성의 균형",
+      "loveQuestionRefs": [
+        "L4",
+        "L6"
+      ]
+    },
+    {
+      "readerAddress": "CH05.P4",
+      "originalPurpose": "오래 관계를 유지하는 힘",
+      "loveQuestionRefs": [
+        "L4",
+        "L5",
+        "L9"
+      ]
+    },
+    {
+      "readerAddress": "CH06.P1",
+      "originalPurpose": "연애에서 가장 아픈 단점",
+      "loveQuestionRefs": [
+        "L7"
+      ]
+    },
+    {
+      "readerAddress": "CH06.P2",
+      "originalPurpose": "왜 그런 문제가 생기는가",
+      "loveQuestionRefs": [
+        "L1",
+        "L7"
+      ]
+    },
+    {
+      "readerAddress": "CH06.P3",
+      "originalPurpose": "갈등이 커지는 순간",
+      "loveQuestionRefs": [
+        "L5",
+        "L7"
+      ]
+    },
+    {
+      "readerAddress": "CH06.P4",
+      "originalPurpose": "다툰 뒤 다시 가까워지는 방법",
+      "loveQuestionRefs": [
+        "L5",
+        "L7",
+        "L9"
+      ]
+    },
+    {
+      "readerAddress": "CH07.P1",
+      "originalPurpose": "결혼생활에서의 나",
+      "loveQuestionRefs": [
+        "L6",
+        "L8"
+      ]
+    },
+    {
+      "readerAddress": "CH07.P2",
+      "originalPurpose": "함께 사는 사람에게 줄 수 있는 힘",
+      "loveQuestionRefs": [
+        "L3",
+        "L8"
+      ]
+    },
+    {
+      "readerAddress": "CH07.P3",
+      "originalPurpose": "결혼생활에서의 팩폭",
+      "loveQuestionRefs": [
+        "L7",
+        "L8"
+      ]
+    },
+    {
+      "readerAddress": "CH07.P4",
+      "originalPurpose": "오래 함께할 수 있는 생활의 조건",
+      "loveQuestionRefs": [
+        "L5",
+        "L6",
+        "L8"
+      ]
+    },
+    {
+      "readerAddress": "CH08.P1",
+      "originalPurpose": "내가 부모가 된다면",
+      "loveQuestionRefs": [
+        "L6",
+        "L8"
+      ]
+    },
+    {
+      "readerAddress": "CH08.P2",
+      "originalPurpose": "아이에게 줄 수 있는 좋은 영향",
+      "loveQuestionRefs": [
+        "L3",
+        "L8"
+      ]
+    },
+    {
+      "readerAddress": "CH08.P3",
+      "originalPurpose": "부모 역할에서 조심할 점",
+      "loveQuestionRefs": [
+        "L7",
+        "L8"
+      ]
+    },
+    {
+      "readerAddress": "CH08.P4",
+      "originalPurpose": "나에게 맞는 부모 역할",
+      "loveQuestionRefs": [
+        "L5",
+        "L6",
+        "L8",
+        "L9"
+      ]
+    },
+    {
+      "readerAddress": "CH09.P1",
+      "originalPurpose": "내가 가진 좋은 사랑의 기운",
+      "loveQuestionRefs": [
+        "L1",
+        "L2",
+        "L9"
+      ]
+    },
+    {
+      "readerAddress": "CH09.P2",
+      "originalPurpose": "나만의 관계 재능",
+      "loveQuestionRefs": [
+        "L1",
+        "L3",
+        "L9"
+      ]
+    },
+    {
+      "readerAddress": "CH09.P3",
+      "originalPurpose": "더 좋은 관계를 위한 선택",
+      "loveQuestionRefs": [
+        "L5",
+        "L7",
+        "L9"
+      ]
+    },
+    {
+      "readerAddress": "CH09.P4",
+      "originalPurpose": "마지막 메시지",
+      "loveQuestionRefs": [
+        "L1",
+        "L6",
+        "L9"
+      ]
+    }
+  ],
+  "policy": "reader CH01-CH09 and L1-L9 are separate many-to-many references; no number equality allocation"
+}

@@ -1,0 +1,1496 @@
+[
+  {
+    "id": "lkr:material:CH01.P1:care-asked",
+    "address": "CH01.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "6e846060eca8b8a32399"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P1:quiet-concentration",
+    "address": "CH01.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "ed6c765a89a6653fbe49"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P1:self-retained",
+    "address": "CH01.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "2f90ecfe06a11bd76f98"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P1:shared-meaning",
+    "address": "CH01.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "1ad75d65f36179f32968"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P2:saju-output-context",
+    "address": "CH01.P2",
+    "kind": "conditional_cross_source",
+    "sourceKeys": [
+      "90e77590d3ea07930ba1",
+      "9a582309fae56a95316b",
+      "22219e4de369178b0387"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P2:saju-equality-context",
+    "address": "CH01.P2",
+    "kind": "conditional_cross_source",
+    "sourceKeys": [
+      "3f130780549c6cb7a467",
+      "5a745f7c32242de3a71e",
+      "2f90ecfe06a11bd76f98"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P2:fusion-visible-care",
+    "address": "CH01.P2",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "16a8411e967484ac9826"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P2:fusion-care-space",
+    "address": "CH01.P2",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "fa83818c7308d0737c2f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P3:expression-and-receipt",
+    "address": "CH01.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "22219e4de369178b0387"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P3:practical-not-substitute",
+    "address": "CH01.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "8e927df60c470175a28b"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P3:quiet-request",
+    "address": "CH01.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "4d4a080342aae90654f6"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P3:memory-updated",
+    "address": "CH01.P3",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "c2b4165c3415338f558a"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P4:trust-as-condition",
+    "address": "CH01.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "5190684455c102b45097"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P4:meaning-not-sameness",
+    "address": "CH01.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "829aba7d8c1c08596ec1"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P4:reciprocal-care",
+    "address": "CH01.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "78cdb2e803560073a1c5"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH01.P4:safe-dissent",
+    "address": "CH01.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "0893c89cb6a0f134a6d6"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-invitation",
+    "address": "CH02.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "071798fc5431dbcf7bcc"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-clear-choice",
+    "address": "CH02.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "3c4908e2cedec63d2de9"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-quiet-room",
+    "address": "CH02.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "8a3b104ce2a794e55b60"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-warm-humor",
+    "address": "CH02.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "ebfb52ae727700f5083f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-remembering",
+    "address": "CH02.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "471b73edd84a2be883e2"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-playfulness",
+    "address": "CH02.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "ed6c765a89a6653fbe49"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-listening-depth",
+    "address": "CH02.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "9d19fa78e4846ba01bef"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-calm-help",
+    "address": "CH02.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "90de97440a025970e638"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P3:difference-welcomed",
+    "address": "CH02.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "8c257adb6000e17c121d"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P3:new-experience-design",
+    "address": "CH02.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "ba4aed5f58e7de310848"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P3:mutual-growth-question",
+    "address": "CH02.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "25d739dcf45ad93cec8a"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P3:reliable-attention",
+    "address": "CH02.P3",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "0cd0bd812b5a8be66358"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P4:warmth-with-refusal",
+    "address": "CH02.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "cbf1428b3d23661a2472"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P4:humor-stop-signal",
+    "address": "CH02.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "792c101d29cd3707902d"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P4:honesty-with-listening",
+    "address": "CH02.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "9157cb32f6c4c40c5336"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH02.P4:depth-small-dose",
+    "address": "CH02.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "f4b08443773729cee364"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-dialogue",
+    "address": "CH03.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "6710f0f66fdf88a7a033"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-direction",
+    "address": "CH03.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "829aba7d8c1c08596ec1"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-liveliness",
+    "address": "CH03.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "e49363e69d48e0771b10"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-safe-kindness",
+    "address": "CH03.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "d048a1db929d8e81a67f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-space",
+    "address": "CH03.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "f3a71de74732acc8d4fd"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-explained-change",
+    "address": "CH03.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "5190684455c102b45097"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-emotional-answer",
+    "address": "CH03.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "8a6e798d5bb288c958fa"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-unforced-self",
+    "address": "CH03.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "04bdba29a1fd1c319537"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-new-and-stable",
+    "address": "CH03.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "dfc34b2596abcc59968f",
+      "c72ad7e4dbeab2b8b75f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-listening-and-solution",
+    "address": "CH03.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "d35d738ef528ee981728"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-direct-gentle",
+    "address": "CH03.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "e8152f5a228dde8da538"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-rest-and-company",
+    "address": "CH03.P3",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "1be2f30bf579c8de2ede"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-no-test",
+    "address": "CH03.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "00a52eadb4c1c9dbf9d1"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-refusal",
+    "address": "CH03.P4",
+    "kind": "legacy_application",
+    "sourceKeys": [
+      "86ce278eca349b89b4d4"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-response-over-image",
+    "address": "CH03.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "46657b0a756f0987de92"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-reciprocity",
+    "address": "CH03.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "7dd6ccfe702fb492ef5e",
+      "78cdb2e803560073a1c5"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P1:single-interest",
+    "address": "CH04.P1",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "dfc34b2596abcc59968f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P1:some-observed",
+    "address": "CH04.P1",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "8a6e798d5bb288c958fa"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P1:dating-current-interest",
+    "address": "CH04.P1",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "1004e6a907ac24e91902"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P1:preparing-affection-not-task",
+    "address": "CH04.P1",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "793ccb7ecbcc8f1751b7"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P1:married-person-interest",
+    "address": "CH04.P1",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "6689bf3aa131cde10ea0"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P1:unknown-open-context",
+    "address": "CH04.P1",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "ed0c5d1ef8da661c9fde"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P2:single-small-invite",
+    "address": "CH04.P2",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "3f713efd6c7ca838b2f8"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P2:some-response-window",
+    "address": "CH04.P2",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "f4b08443773729cee364"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P2:dating-expression-update",
+    "address": "CH04.P2",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "99d6728eeef28d090237"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P2:preparing-decision-pace",
+    "address": "CH04.P2",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "63e067b6cec4f0da1ffe"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P2:married-talk-not-demand",
+    "address": "CH04.P2",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "bedf4254e50989e1a90e"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P2:unknown-channel-choice",
+    "address": "CH04.P2",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "b750d95ce60a2ec5ba58"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P3:single-overhelp",
+    "address": "CH04.P3",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "6e846060eca8b8a32399"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P3:some-reading-delay",
+    "address": "CH04.P3",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "8a6e798d5bb288c958fa"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P3:dating-unspoken-score",
+    "address": "CH04.P3",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "78cdb2e803560073a1c5"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P3:preparing-finance-consent",
+    "address": "CH04.P3",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "8670a7cd306dd817250d"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P3:married-labor-invisible",
+    "address": "CH04.P3",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "d43c7946bfba7c3d5f9a"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P3:unknown-no-stage-script",
+    "address": "CH04.P3",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "2b973ff1bebbfb3da944"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P4:single-open-choice",
+    "address": "CH04.P4",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "d49fb42c265aa76d5310"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P4:some-answer-not-label",
+    "address": "CH04.P4",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "00a52eadb4c1c9dbf9d1"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P4:dating-renew-small",
+    "address": "CH04.P4",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "5cee60f48e9d45ace3fb"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P4:preparing-both-directions",
+    "address": "CH04.P4",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "048c520649d4c0b898cb"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P4:married-current-choice",
+    "address": "CH04.P4",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "61b30ec0831489592e05"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH04.P4:unknown-no-deficit",
+    "address": "CH04.P4",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "3571efa2a1cfc06f784f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-unguarded-detail",
+    "address": "CH05.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "7262748ae842a059b4fc"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-attuned-question",
+    "address": "CH05.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "6e846060eca8b8a32399"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-practical-trust",
+    "address": "CH05.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "1cb30f8035bfd0a67e8e"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-shared-story",
+    "address": "CH05.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "62e33b4e8bf4f9071748"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-acknowledged-care",
+    "address": "CH05.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "0c283e400d1572c869f6"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-deep-understood",
+    "address": "CH05.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "a469049c0715564eddeb"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-not-changed-person",
+    "address": "CH05.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "61214d91803abc1b85d2"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-return-signal",
+    "address": "CH05.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "2f90ecfe06a11bd76f98"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-chosen-company",
+    "address": "CH05.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "bab526a6c2566c56931d"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-not-passcode",
+    "address": "CH05.P3",
+    "kind": "legacy_application",
+    "sourceKeys": [
+      "86ce278eca349b89b4d4"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-care-fusion",
+    "address": "CH05.P3",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "fa83818c7308d0737c2f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-recovery-attunement",
+    "address": "CH05.P3",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "1be2f30bf579c8de2ede"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-small-promises",
+    "address": "CH05.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "5190684455c102b45097"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-current-person",
+    "address": "CH05.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "96a809889e7203550ec2"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-repair-access",
+    "address": "CH05.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "855363fd8de29e58adea"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-reciprocal-expression",
+    "address": "CH05.P4",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "5cee60f48e9d45ace3fb"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P1:solution-over-listen",
+    "address": "CH06.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "d35d738ef528ee981728"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P1:silent-agreement-cost",
+    "address": "CH06.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "fbf6075c276ff0b58116"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P1:care-ledger",
+    "address": "CH06.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "78cdb2e803560073a1c5"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P1:precision-not-person",
+    "address": "CH06.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "09f88fe7ec21e62f0659"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P2:natal-rule-not-control",
+    "address": "CH06.P2",
+    "kind": "natal_application",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a",
+      "cf50142dddc360c3324a"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P2:mbti-speed-not-motive",
+    "address": "CH06.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "3f713efd6c7ca838b2f8"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P2:fusion-meaning-care",
+    "address": "CH06.P2",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "10f1b188eaa3ff171bee"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P2:attune-interpretation-loop",
+    "address": "CH06.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "6e846060eca8b8a32399"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P3:pace-escalation",
+    "address": "CH06.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "16577eb313d7ad41b01b"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P3:avoidance-escalation",
+    "address": "CH06.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "be9cb942010f0a199f50"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P3:unasked-help-escalation",
+    "address": "CH06.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "1f40e8e8931a7e80cec7"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P3:broken-promise-loop",
+    "address": "CH06.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "c72ad7e4dbeab2b8b75f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-heard-first",
+    "address": "CH06.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "f1a63049534f1dfb09b7"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-action-not-apology",
+    "address": "CH06.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "6a97973055bda9994161"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-space-with-return",
+    "address": "CH06.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "c0d70c49b5a928ce5a82"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-boundary-safety",
+    "address": "CH06.P4",
+    "kind": "legacy_application",
+    "sourceKeys": [
+      "86ce278eca349b89b4d4"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-self-choice",
+    "address": "CH07.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "30b373f5892dd5de9b47"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-planned-not-fixed",
+    "address": "CH07.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "f3061cb47601ea867c4f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-warm-rhythm",
+    "address": "CH07.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "657f0a60c702c59fd825"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-conditional-rule",
+    "address": "CH07.P1",
+    "kind": "natal_application",
+    "sourceKeys": [
+      "e08794b5eb33c746679f",
+      "e2ed5b09b1f8185708cd"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-care-rotation",
+    "address": "CH07.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "4b07fe3f9004cfc8a777"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-minimum-system",
+    "address": "CH07.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "d8ee6a6775c1d5a71420"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-change-buffer",
+    "address": "CH07.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "ede67b716c40fbe4b6c4"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-kin-information",
+    "address": "CH07.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "24baf614208a551324d1"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-money-power",
+    "address": "CH07.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "8670a7cd306dd817250d"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-correction-fatigue",
+    "address": "CH07.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "048c520649d4c0b898cb"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-novelty-cost",
+    "address": "CH07.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "c72ad7e4dbeab2b8b75f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-peace-not-consent",
+    "address": "CH07.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "cd4db85b9a6b894d203d"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-revision-meeting",
+    "address": "CH07.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "048c520649d4c0b898cb"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-spending-threshold",
+    "address": "CH07.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "d4a61263d8611202dcef"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-rest-fairness",
+    "address": "CH07.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "060272ee97676577841a"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-optout-legitimate",
+    "address": "CH07.P4",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "3571efa2a1cfc06f784f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-intj-reasoning",
+    "address": "CH08.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "825fd4e9a742a121464b"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-intp-patience",
+    "address": "CH08.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "96124cd17e5740ab238f"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-entj-responsibility",
+    "address": "CH08.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "41f807794a6c25d13e93"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-entp-experiment",
+    "address": "CH08.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "1ff3e720872ec12c58db"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-infj-opinion",
+    "address": "CH08.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "89f7385eacb614219d5c"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-infp-choice",
+    "address": "CH08.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "10d4177606458102491b"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-enfj-emotional-base",
+    "address": "CH08.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "cb9ee7415c4e3089e7f9"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-enfp-encouragement",
+    "address": "CH08.P1",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "caa9d371cf4fbf58585d"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-istj-predictability",
+    "address": "CH08.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "63aa4d746575e86c7743"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-isfj-security",
+    "address": "CH08.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "f9709a2aaf92c814cb26"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-estj-rules-explained",
+    "address": "CH08.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "d2987b5b1ad27d7ff7dc"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-esfj-belonging",
+    "address": "CH08.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "59af620140e08fabfd3e"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-istp-help-access",
+    "address": "CH08.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "63356dc69674fed27d17"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-isfp-warm-limit",
+    "address": "CH08.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "ed69b25578fd3caf28c9"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-estp-activity-choice",
+    "address": "CH08.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "15008cf38f6d07145c5e"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-esfp-shared-interest",
+    "address": "CH08.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "1efb6b1d8473aa2560f6"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-high-expectation",
+    "address": "CH08.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "46eb373ed8de497e1ba3"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-overprotection",
+    "address": "CH08.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "3888aa2e5b9fb179e218"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-emotion-reading",
+    "address": "CH08.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "ea9519a12540624c4823"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-results-only",
+    "address": "CH08.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "d34d165d4966692ca6cb"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-debate-as-listen",
+    "address": "CH08.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "1de5594bb3cc1a883744"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-monopoly-fatigue",
+    "address": "CH08.P3",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "31fe578398dda7ed2b7e"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-age-aware-question",
+    "address": "CH08.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "825fd4e9a742a121464b"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-model-commitment",
+    "address": "CH08.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "d2987b5b1ad27d7ff7dc"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-consent-respect",
+    "address": "CH08.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "10d4177606458102491b"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-support-channel",
+    "address": "CH08.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "5d03c8ad1c25fc371767"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-care-sustainable",
+    "address": "CH08.P4",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "ff09b3cb5318045846ad"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-optout-warmth",
+    "address": "CH08.P4",
+    "kind": "input_context",
+    "sourceKeys": [
+      "d4e7f0e0e2cbaab22aa7",
+      "7dd6ccfe702fb492ef5e"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P1:good-dohwa-symbol",
+    "address": "CH09.P1",
+    "kind": "natal_application",
+    "sourceKeys": [
+      "beca248f566aa61effd2"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P1:good-help-access",
+    "address": "CH09.P1",
+    "kind": "natal_application",
+    "sourceKeys": [
+      "8404eadd074651539efa"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P1:good-output-joy",
+    "address": "CH09.P1",
+    "kind": "natal_application",
+    "sourceKeys": [
+      "9a582309fae56a95316b"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P1:held-hongyeom-expansion",
+    "address": "CH09.P1",
+    "kind": "natal_application",
+    "sourceKeys": [
+      "209a3219dab16ceb0e58"
+    ],
+    "review": "held_source_or_conditions"
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-care-with-choice",
+    "address": "CH09.P2",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "16a8411e967484ac9826"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-meaningful-listen",
+    "address": "CH09.P2",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "376e1bd05d115df434fd"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-trust-expression",
+    "address": "CH09.P2",
+    "kind": "registered_fusion_application",
+    "sourceKeys": [
+      "5cee60f48e9d45ace3fb"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-autonomy-respect",
+    "address": "CH09.P2",
+    "kind": "mbti_application",
+    "sourceKeys": [
+      "f3a71de74732acc8d4fd"
+    ],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-care-request",
+    "address": "CH09.P3",
+    "kind": "recall",
+    "sourceKeys": [],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-pace-choice",
+    "address": "CH09.P3",
+    "kind": "recall",
+    "sourceKeys": [],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-space-return",
+    "address": "CH09.P3",
+    "kind": "recall",
+    "sourceKeys": [],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-care-with-safety",
+    "address": "CH09.P3",
+    "kind": "recall",
+    "sourceKeys": [],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-quiet-visible",
+    "address": "CH09.P4",
+    "kind": "recall",
+    "sourceKeys": [],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-choice-care",
+    "address": "CH09.P4",
+    "kind": "recall",
+    "sourceKeys": [],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-meaning-difference",
+    "address": "CH09.P4",
+    "kind": "recall",
+    "sourceKeys": [],
+    "review": "conditional_editorial_research"
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-trust-current",
+    "address": "CH09.P4",
+    "kind": "recall",
+    "sourceKeys": [],
+    "review": "conditional_editorial_research"
+  }
+]
