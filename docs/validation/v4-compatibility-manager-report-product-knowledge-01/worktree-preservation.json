@@ -1,0 +1,12 @@
+{
+  "originalBranch": "v4/annual-editorial-quality-fix-01",
+  "originalHead": "c048218cc5961e0f53a1deab2603511e17559fc3",
+  "originalStatus": " M .gitignore\n M AGENTS.md\n?? supabase/.temp/\n",
+  "existingTrees": 28,
+  "allTrackedAndNonignoredUntrackedFileHashesEqual": true,
+  "fullExternalSnapshots": [
+    "/tmp/gyeol-compatibility-manager-report-knowledge-validation/git-before.json",
+    "/tmp/gyeol-compatibility-manager-report-knowledge-validation/git-after.json"
+  ],
+  "newWorktree": "/private/tmp/gyeol-compatibility-manager-report-product-knowledge-01"
+}

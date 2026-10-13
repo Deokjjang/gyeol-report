@@ -1,0 +1,285 @@
+{
+  "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+  "caseLetters": [
+    "AJ",
+    "AK"
+  ],
+  "actualTypes": {
+    "A": "INTP",
+    "B": "ESFJ"
+  },
+  "category": "managerReport",
+  "roleVersion": "compatibility-fixed-ab-v1",
+  "childNode": {
+    "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+    "owner": "A",
+    "sourceDomain": "CHILDREN",
+    "sourcePath": "/traits/child/1/plainKo",
+    "sourceRecordSha256": "bdf0dd336a7a8345a93cf81b56c9fab562e693593d6d64c1d6d1d6c7a3c23bbb",
+    "rawText": "친구 사귀는 일에 큰 관심이 없어 교우관계가 소홀할 수 있다. 혼자 노는 것을 선호하고 관심사에 집중하는 모습이 또래와 다르게 보인다."
+  },
+  "actualContribution": {
+    "axis": "RELATION_STYLE",
+    "sourceNodeId": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+    "mbtiType": "INTP",
+    "sourceDomain": "CHILDREN",
+    "sourceType": "domain_trait",
+    "weightClass": "DOMAIN_SPECIFIC",
+    "rawValue": -2,
+    "effectiveValue": -3,
+    "annotationConfidence": "DIRECT",
+    "contexts": [
+      "social"
+    ],
+    "sourcePath": "/traits/child/1/plainKo",
+    "sourceCoverage": "direct"
+  },
+  "generalSourceSupportIncludesChild": false,
+  "generalNet": -7,
+  "socialContextSupportIncludesChild": true,
+  "socialNet": -7.5,
+  "adaptedSocialSide": {
+    "system": "mbti",
+    "axis": "RELATION_STYLE",
+    "direction": -1,
+    "scope": "social",
+    "band": "STRONG",
+    "axisRank": 4,
+    "score": -9.5,
+    "priorScore": -0.5,
+    "evidenceIds": [
+      "mbti:INTP:traits:child:socially_detached_child:plainKo",
+      "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+      "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+      "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+    ],
+    "candidateIds": [],
+    "annotationIds": [
+      "mbti:INTP:traits:child:socially_detached_child:plainKo:annotation",
+      "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo:annotation",
+      "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo:annotation",
+      "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo:annotation"
+    ],
+    "priorEvidenceIds": [
+      "mbti:INTP:prior:I"
+    ],
+    "families": [
+      "mbti:INTP:traits:child:socially_detached_child:plainKo",
+      "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+      "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+      "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+    ],
+    "domains": [
+      "CHILDREN",
+      "IDENTITY",
+      "RELATIONSHIPS"
+    ],
+    "proofs": [
+      {
+        "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "axis": "RELATION_STYLE",
+        "value": -3,
+        "contexts": [
+          "social"
+        ],
+        "family": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "domain": "CHILDREN",
+        "quality": "DOMAIN_SPECIFIC"
+      },
+      {
+        "id": "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+        "axis": "RELATION_STYLE",
+        "value": -2,
+        "contexts": [
+          "identity"
+        ],
+        "family": "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+        "domain": "IDENTITY",
+        "quality": "GENERAL_TRAIT"
+      },
+      {
+        "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+        "axis": "RELATION_STYLE",
+        "value": -3,
+        "contexts": [
+          "social"
+        ],
+        "family": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+        "domain": "RELATIONSHIPS",
+        "quality": "SPECIFIC_TRAIT"
+      },
+      {
+        "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+        "axis": "RELATION_STYLE",
+        "value": -1.5,
+        "contexts": [
+          "social"
+        ],
+        "family": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+        "domain": "RELATIONSHIPS",
+        "quality": "SPECIFIC_TRAIT"
+      }
+    ],
+    "exactEvidenceIds": [
+      "mbti:INTP:traits:child:socially_detached_child:plainKo",
+      "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+      "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+    ],
+    "amplifierOnly": false,
+    "priorHeavy": false
+  },
+  "projectionNodesIncludeChild": false,
+  "projectionRetainsMixedSide": true,
+  "readerSelectedOutOfProjectionNode": {
+    "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+    "domain": "CHILDREN"
+  },
+  "actualDisplayedSentences": [
+    {
+      "chapterId": "CH07",
+      "paragraphId": "CH07.P1",
+      "role": "S1",
+      "text": "늦어진 보고의 원인보다 태도부터 평가할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다.",
+      "sourceRefs": [
+        "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+        "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+      ],
+      "nodeIds": [
+        "mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+        "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+        "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+        "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+        "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+      ]
+    },
+    {
+      "chapterId": "CH07",
+      "paragraphId": "CH07.P1",
+      "role": "S2",
+      "text": "현우님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다.",
+      "sourceRefs": [
+        "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+        "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+      ],
+      "nodeIds": [
+        "mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+        "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+        "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+        "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+        "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+      ]
+    },
+    {
+      "chapterId": "CH07",
+      "paragraphId": "CH07.P1",
+      "role": "S3",
+      "text": "소연님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다.",
+      "sourceRefs": [
+        "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+        "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+      ],
+      "nodeIds": [
+        "mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+        "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+        "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+        "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+        "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+      ]
+    },
+    {
+      "chapterId": "CH07",
+      "paragraphId": "CH07.P1",
+      "role": "S4",
+      "text": "상사의 확인 질문이 팀원에게는 불신으로, 팀원의 짧은 보고가 상사에게는 진행을 알 수 없다는 불안으로 전달될 수 있습니다.",
+      "sourceRefs": [
+        "personA:mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "personA:mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+        "personA:mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+        "personB:mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+      ],
+      "nodeIds": [
+        "mbti:INTP:traits:child:socially_detached_child:plainKo",
+        "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+        "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+        "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+        "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+        "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+      ]
+    }
+  ],
+  "rawChildTextDisplayed": false,
+  "scoringMeaning": "RELATION_STYLE social contribution -3 exists before relationship projection. Adapted side sums actual contextual+general supporting contributions (-9.5), preserves CHILDREN proof. Pair comparisons use signed bands and exact IDs, not a new sum of A/B raw scores.",
+  "canonicalIndexMeaning": "Existing canonicalIndex is a separate existing calculation and notablePairs/category rules. This trace does not claim CHILDREN directly changes that index; no counterfactual calculation or source removal performed.",
+  "path": [
+    {
+      "file": "src/lib/interpretation-v4/mbtiSemanticCore.ts",
+      "boundary": "GENERAL_MBTI_DOMAINS excludes CHILDREN; actual child annotation contexts social remains in context contributions."
+    },
+    {
+      "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+      "boundary": "generalSupport separates general eligible domains; social contextSupport can include CHILDREN."
+    },
+    {
+      "file": "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+      "lines": "55–80",
+      "boundary": "Actual annotations/contributions retained; contextual rows plus general rows form side; no managerReport domain-specific exclusion here."
+    },
+    {
+      "file": "src/lib/interpretation-v4/relationshipProductView.ts",
+      "lines": "41–55",
+      "boundary": "nodes excludes CHILDREN; candidate some(allowed) and sides exactEvidenceIds.some(allowed) are existential checks, retain whole mixed references."
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityProductView.ts",
+      "lines": "11–20",
+      "boundary": "strongest-band matched sides aggregate every exactEvidenceId, including child ID."
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+      "boundary": "comparison registry combines both person source IDs without a single person slot. CH07.P1 S1–S4 uses comparison provenance."
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityReleaseValidator.ts",
+      "lines": "12,31–45",
+      "boundary": "all scoring nodes include CHILDREN. source.slot-specific owner/domain check applies only with slot; mixed comparison does not establish every-ancestor ownership/domain eligibility."
+    }
+  ],
+  "currentGuarantees": {
+    "sourceExists": true,
+    "classificationIsScoring": true,
+    "contributionAnnotationMatches": true,
+    "fullOwnerDomainAncestryForComparison": false,
+    "rawChildTextCopied": false
+  },
+  "status": "EXISTING_RUNTIME_BOUNDARY_GAP_INHERITED_UNCHANGED",
+  "futureBinding": {
+    "everyAncestorReview": true,
+    "ownerAndPersonId": true,
+    "classificationDomainContext": true,
+    "sourceHashState": true,
+    "ruleAndSamePersonFusionBothRoots": true,
+    "allDirectGroupSources": true,
+    "onlyCompatibleActuallyDisplayedRecallGroup": true,
+    "rootDedup": true,
+    "unknownWithhold": true,
+    "engineImplemented": false
+  },
+  "fixedInThisTask": false
+}

@@ -1,0 +1,2462 @@
+{
+  "priorMaterials": 484,
+  "exactNormalizedMeaningOrSceneDuplicates": [],
+  "method": "Korean character trigram Jaccard; finding candidates only, not semantic proof",
+  "nearest": [
+    {
+      "materialId": "mrpr:material:CH05.P1:manager-to-report-constraint",
+      "meaning": "A의 기준 제시가 B에게 도착하는 조건",
+      "closest": [
+        {
+          "id": "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+          "category": "parent-child",
+          "meaning": "부모의 기대가 자녀에게 결과로 보답할 빚이 되는 조건을 연구한다.",
+          "similarity": 0.25
+        },
+        {
+          "id": "pcpr:material:CH05.P3:ab-care-asks-for-parent-comfort",
+          "category": "parent-child",
+          "meaning": "부모의 가까움 기대가 자녀에게 성인 감정의 위로를 요구하는 조건을 연구한다.",
+          "similarity": 0.2222222222222222
+        },
+        {
+          "id": "pcpr:material:CH06.P3:ba-interest-changes-parent-plan",
+          "category": "parent-child",
+          "meaning": "자녀의 관심 변화가 부모에게 준비의 불확실함으로 전달되는 조건을 연구한다.",
+          "similarity": 0.1956521739130435
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+      "meaning": "B의 가까운 반응 정보와 A의 판단",
+      "closest": [
+        {
+          "id": "cwpr:material:CH02.P4:a-sprint-dependency",
+          "category": "coworker",
+          "meaning": "A의 가까운 마감에 몰입할 선호와 B가 기다릴 중간 결과를 구분한다.",
+          "similarity": 0.21951219512195122
+        },
+        {
+          "id": "pcpr:material:CH05.P3:ab-care-asks-for-parent-comfort",
+          "category": "parent-child",
+          "meaning": "부모의 가까움 기대가 자녀에게 성인 감정의 위로를 요구하는 조건을 연구한다.",
+          "similarity": 0.15555555555555556
+        },
+        {
+          "id": "cwpr:material:CH03.P1:b-value-filter",
+          "category": "coworker",
+          "meaning": "B의 가치 확인을 공동 과제의 사용 목적 질문으로 연구한다.",
+          "similarity": 0.15384615384615385
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH06.P2:report-propose-bounded-method",
+      "meaning": "B의 대안이 A의 검토를 돕는 조건",
+      "closest": [
+        {
+          "id": "cwpr:material:CH06.P3:ba-late-change-after-start",
+          "category": "coworker",
+          "meaning": "B의 새 대안이 A의 이미 확정한 작업을 다시 열 조건을 연구한다.",
+          "similarity": 0.20512820512820512
+        },
+        {
+          "id": "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+          "category": "parent-child",
+          "meaning": "A의 가정 조화 관심이 자녀의 다른 의견을 닫는 조건을 연구한다.",
+          "similarity": 0.1794871794871795
+        },
+        {
+          "id": "clr:material:CH05.P2:ab-clear-invite",
+          "category": "love",
+          "meaning": "A의 분명한 제안이 B에게 생각할 정보를 줄 조건을 연구한다.",
+          "similarity": 0.175
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH03.P2:report-private-feedback-space",
+      "meaning": "B가 수정에 필요한 공간·시간",
+      "closest": [
+        {
+          "id": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+          "category": "coworker",
+          "meaning": "B의 긴 이유 질문을 현재 결정에 필요한 한 전제로 좁힌다.",
+          "similarity": 0.19444444444444445
+        },
+        {
+          "id": "cwpr:material:CH03.P2:b-time-to-answer",
+          "category": "coworker",
+          "meaning": "B의 사전 사고 시간을 결정에 필요한 검토 창으로 연구한다.",
+          "similarity": 0.1891891891891892
+        },
+        {
+          "id": "cmpr:material:CH05.P4:ab-check-impact-before-correction",
+          "category": "marriage",
+          "meaning": "A가 수정 요구 전에 B의 실제 결과와 들은 뜻을 확인하는 조정을 연구한다.",
+          "similarity": 0.1590909090909091
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P2:manager-close-revision",
+      "meaning": "A가 추가 기준과 오류 수정을 구분",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P2:a-request-full-impact",
+          "category": "coworker",
+          "meaning": "A가 추가 요청 전에 연결된 검토·인계 작업을 묻는다.",
+          "similarity": 0.19444444444444445
+        },
+        {
+          "id": "cwpr:material:CH06.P4:ba-decline-addition",
+          "category": "coworker",
+          "meaning": "B가 추가 지원을 조절하며 A의 기존 일정 영향을 함께 묻는다.",
+          "similarity": 0.175
+        },
+        {
+          "id": "cwpr:material:CH03.P4:b-hidden-disagreement",
+          "category": "coworker",
+          "meaning": "B가 반대를 늦게 드러낼 때 동의와 미응답을 구분한다.",
+          "similarity": 0.16216216216216217
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH05.P2:manager-resource-removal",
+      "meaning": "A의 지원이 B의 막힌 단계에 맞는 조건",
+      "closest": [
+        {
+          "id": "cwpr:material:CH05.P3:ab-help-replaces-work",
+          "category": "coworker",
+          "meaning": "A의 대신 처리하려는 지원이 B의 작업 통로를 끊을 조건을 연구한다.",
+          "similarity": 0.18604651162790697
+        },
+        {
+          "id": "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+          "category": "parent-child",
+          "meaning": "A의 가정 조화 관심이 자녀의 다른 의견을 닫는 조건을 연구한다.",
+          "similarity": 0.17073170731707318
+        },
+        {
+          "id": "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+          "category": "marriage",
+          "meaning": "B가 친족에게 먼저 한 약속이 A의 부담이 되는 조건을 조정한다.",
+          "similarity": 0.16279069767441862
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P2:manager-set-report-time",
+      "meaning": "A가 판단 시한과 중간 정보 수준을 먼저 정하기",
+      "closest": [
+        {
+          "id": "cmpr:material:CH02.P1:a-operating-standards",
+          "category": "marriage",
+          "meaning": "A가 생활의 기준을 먼저 정하려는 가능성을 실제 책임·권한의 합의와 구분한다.",
+          "similarity": 0.18
+        },
+        {
+          "id": "cmpr:material:CH05.P3:ab-unilateral-budget",
+          "category": "marriage",
+          "meaning": "A가 공동 비용의 기준을 먼저 확정할 때 B의 동의가 형식이 될 조건을 연구한다.",
+          "similarity": 0.1346153846153846
+        },
+        {
+          "id": "cmpr:material:CH08.P2:a-leave-family-choice-open",
+          "category": "marriage",
+          "meaning": "A가 친족 일정의 결론을 먼저 내리는 부담을 줄일 확인 순서를 연구한다.",
+          "similarity": 0.12244897959183673
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH02.P3:manager-correct-own-error",
+      "meaning": "관리자가 자기 지시 오류를 고칠 여지",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P3:b-state-integration-limit",
+          "category": "coworker",
+          "meaning": "B가 자기 수정의 대상·버전·통합 상태를 A에게 표시한다.",
+          "similarity": 0.1794871794871795
+        },
+        {
+          "id": "cwpr:material:CH08.P2:a-separate-observation",
+          "category": "coworker",
+          "meaning": "A가 작업 관찰과 능력 평가를 구별해 피드백한다.",
+          "similarity": 0.14285714285714285
+        },
+        {
+          "id": "cwpr:material:CH08.P3:b-limit-invisible-help",
+          "category": "coworker",
+          "meaning": "B가 반복 지원 때문에 밀리는 담당을 자료로 남긴다.",
+          "similarity": 0.1388888888888889
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+      "meaning": "B가 계획과 다른 사실을 A에게 보여주는 자극",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P3:b-make-blocker-visible",
+          "category": "coworker",
+          "meaning": "B가 다음 작업을 막는 최소 자료와 필요 시점을 A에게 알린다.",
+          "similarity": 0.17777777777777778
+        },
+        {
+          "id": "cwpr:material:CH06.P4:ba-confirm-receipt",
+          "category": "coworker",
+          "meaning": "B가 받을 자료의 접근·미완료·다음 행동을 A에게 되확인한다.",
+          "similarity": 0.1702127659574468
+        },
+        {
+          "id": "cmpr:material:CH06.P3:ba-change-without-handover",
+          "category": "marriage",
+          "meaning": "B가 계획을 바꾸면서 남은 일을 넘기지 않을 때 A에게 유지 부담이 생길 조건을 연구한다.",
+          "similarity": 0.16363636363636364
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH05.P4:manager-feedback-recheck",
+      "meaning": "A의 구체적 수정 요청과 재확인 책임",
+      "closest": [
+        {
+          "id": "cwpr:material:CH05.P3:ab-review-scope-creep",
+          "category": "coworker",
+          "meaning": "A의 즉시 수정 요청이 B의 남은 시간을 줄일 조건을 연구한다.",
+          "similarity": 0.175
+        },
+        {
+          "id": "cwpr:material:CH03.P2:b-bounded-autonomy",
+          "category": "coworker",
+          "meaning": "B의 방법 재량과 공동 산출물 경계를 구별한다.",
+          "similarity": 0.1388888888888889
+        },
+        {
+          "id": "cwpr:material:CH02.P4:a-public-critique-cost",
+          "category": "coworker",
+          "meaning": "A의 허점 지적이 공개 평가로 바뀔 조건을 연구한다.",
+          "similarity": 0.13157894736842105
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH06.P4:report-feedback-clarification",
+      "meaning": "B가 평가어를 수정 조건 질문으로 바꾸기",
+      "closest": [
+        {
+          "id": "cwpr:material:CH02.P1:a-logical-model",
+          "category": "coworker",
+          "meaning": "A의 내부 논리 정리를 공유 가능한 가정과 질문으로 바꾸는 조건을 연구한다.",
+          "similarity": 0.1702127659574468
+        },
+        {
+          "id": "cwpr:material:CH02.P1:a-shared-purpose",
+          "category": "coworker",
+          "meaning": "A가 공동 목표에 의미를 찾는 선호를 현재 결과물의 질문으로 연결한다.",
+          "similarity": 0.15217391304347827
+        },
+        {
+          "id": "clr:material:CH06.P4:ba-name-own-need",
+          "category": "love",
+          "meaning": "B가 알아주길 기다리는 마음을 A에게 답할 수 있는 요청으로 바꾸는 연구다.",
+          "similarity": 0.14285714285714285
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH09.P2:recall-personal-fusion",
+      "meaning": "표시된 B의 실제 정보 기여만 활용",
+      "closest": [
+        {
+          "id": "pcpr:material:CH05.P2:ab-notice-without-mind-reading",
+          "category": "parent-child",
+          "meaning": "부모가 표정에 관심을 갖는 지원을 자녀의 실제 필요 확인으로 연결한다.",
+          "similarity": 0.16666666666666666
+        },
+        {
+          "id": "cmpr:material:CH05.P4:ab-check-impact-before-correction",
+          "category": "marriage",
+          "meaning": "A가 수정 요구 전에 B의 실제 결과와 들은 뜻을 확인하는 조정을 연구한다.",
+          "similarity": 0.15555555555555556
+        },
+        {
+          "id": "pcpr:material:CH04.P1:opportunity-with-child-voice",
+          "category": "parent-child",
+          "meaning": "부모의 실제 기회 지원 관심과 자녀의 생각을 인정받을 참고를 조건부로 연결한다.",
+          "similarity": 0.15555555555555556
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH05.P1:manager-to-report-exploration",
+      "meaning": "A의 대안 탐색이 B의 실행을 자극하는 조건",
+      "closest": [
+        {
+          "id": "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+          "category": "parent-child",
+          "meaning": "A의 가정 조화 관심이 자녀의 다른 의견을 닫는 조건을 연구한다.",
+          "similarity": 0.16279069767441862
+        },
+        {
+          "id": "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+          "category": "marriage",
+          "meaning": "B가 친족에게 먼저 한 약속이 A의 부담이 되는 조건을 조정한다.",
+          "similarity": 0.15555555555555556
+        },
+        {
+          "id": "pcpr:material:CH05.P3:ab-debate-overwhelms-child",
+          "category": "parent-child",
+          "meaning": "부모의 토론 관심이 자녀의 설명을 이기는 대화로 바뀌는 조건을 연구한다.",
+          "similarity": 0.15217391304347827
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH05.P2:manager-recognize-evidence",
+      "meaning": "A가 기여를 사실로 인정하는 조건",
+      "closest": [
+        {
+          "id": "pcpr:material:CH06.P4:ba-option-to-question-safely",
+          "category": "parent-child",
+          "meaning": "자녀가 질문을 고를 수 있게 부모가 수신과 안전을 마련하는 조건을 연구한다.",
+          "similarity": 0.16279069767441862
+        },
+        {
+          "id": "cwpr:material:CH03.P1:b-procedure-memory",
+          "category": "coworker",
+          "meaning": "B가 구체 사례와 순서를 받아들이는 조건을 연구한다.",
+          "similarity": 0.16216216216216217
+        },
+        {
+          "id": "cmpr:material:CH03.P2:b-acknowledgement-not-assignment",
+          "category": "marriage",
+          "meaning": "B가 수고를 알아주길 원하는 조건과 실제 담당을 다시 나눌 필요를 구분한다.",
+          "similarity": 0.15555555555555556
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH03.P1:report-procedure-understanding",
+      "meaning": "B가 실행 과정을 묻는 독립적 이유",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P2:a-request-full-impact",
+          "category": "coworker",
+          "meaning": "A가 추가 요청 전에 연결된 검토·인계 작업을 묻는다.",
+          "similarity": 0.16216216216216217
+        },
+        {
+          "id": "cwpr:material:CH05.P4:ab-propose-reversible-test",
+          "category": "coworker",
+          "meaning": "A가 새 방법을 제안할 때 되돌릴 범위와 B의 기준을 묻는다.",
+          "similarity": 0.15
+        },
+        {
+          "id": "cwpr:material:CH05.P4:ab-capacity-query",
+          "category": "coworker",
+          "meaning": "A가 도움을 제안할 때 B에게 필요한 일부와 양쪽 여력을 묻는다.",
+          "similarity": 0.14285714285714285
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH01.P1:goal-method-interface",
+      "meaning": "목표를 정리하는 상사와 실행 경로를 확인하는 팀원의 접점",
+      "closest": [
+        {
+          "id": "clr:material:CH03.P1:b-reaction-as-participation",
+          "category": "love",
+          "meaning": "B가 반응을 주고받으며 참여를 확인하는 방식과 A의 몰입을 구분한다.",
+          "similarity": 0.16
+        },
+        {
+          "id": "pcpr:material:CH03.P2:b-quiet-route-to-help",
+          "category": "parent-child",
+          "meaning": "B의 글로 정리하는 참고를 안전한 의견 통로의 후보로 연구한다.",
+          "similarity": 0.14893617021276595
+        },
+        {
+          "id": "cwpr:material:CH05.P4:ab-request-with-acceptance",
+          "category": "coworker",
+          "meaning": "A의 명료한 요청을 B의 이해와 수락을 따로 확인하는 절차로 연구한다.",
+          "similarity": 0.14
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+      "meaning": "관리 판단을 팀원의 책임으로 넘기는 조건",
+      "closest": [
+        {
+          "id": "cmpr:material:CH02.P3:a-complete-task-ownership",
+          "category": "marriage",
+          "meaning": "A의 책임 관심을 업무 하나의 준비부터 확인까지 맡을 수 있는 조건부 기여로 연구한다.",
+          "similarity": 0.16
+        },
+        {
+          "id": "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+          "category": "parent-child",
+          "meaning": "A의 함께 파고드는 관심을 자녀의 질문을 따라가는 조건부 기여로 연구한다.",
+          "similarity": 0.15217391304347827
+        },
+        {
+          "id": "pcpr:material:CH09.P1:recall-opportunity-with-voice",
+          "category": "parent-child",
+          "meaning": "앞서 도입된 활동 지원을 보호 책임과 자녀의 목적을 남기는 조건으로 회수한다.",
+          "similarity": 0.14893617021276595
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH05.P4:manager-delegation-confirm",
+      "meaning": "A가 선택 범위를 확인 가능한 약속으로 바꾸기",
+      "closest": [
+        {
+          "id": "cwpr:material:CH03.P2:b-meaning-and-contact",
+          "category": "coworker",
+          "meaning": "B가 질문과 시험이 가능한 조건을 요청할 때 열린 범위를 연구한다.",
+          "similarity": 0.15217391304347827
+        },
+        {
+          "id": "cwpr:material:CH08.P2:a-limit-revision",
+          "category": "coworker",
+          "meaning": "A가 새 수정 의견을 필수·선호·후속으로 분리한다.",
+          "similarity": 0.14285714285714285
+        },
+        {
+          "id": "cwpr:material:CH02.P1:a-logical-model",
+          "category": "coworker",
+          "meaning": "A의 내부 논리 정리를 공유 가능한 가정과 질문으로 바꾸는 조건을 연구한다.",
+          "similarity": 0.14
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH04.P3:feedback-credit-visible",
+      "meaning": "기여를 구체적으로 알아보는 피드백",
+      "closest": [
+        {
+          "id": "pcpr:material:CH04.P3:effort-not-comparison",
+          "category": "parent-child",
+          "meaning": "작은 시도를 알아보는 피드백과 다른 사람과의 비교를 구분한다.",
+          "similarity": 0.15151515151515152
+        },
+        {
+          "id": "cwpr:material:CH04.P3:recognize-integration-labor",
+          "category": "coworker",
+          "meaning": "최종 발표와 자료 통합의 기여를 다른 작업으로 알아보는 조건을 연구한다.",
+          "similarity": 0.13513513513513514
+        },
+        {
+          "id": "cmpr:material:CH05.P1:ab-resource-explanation",
+          "category": "marriage",
+          "meaning": "A→B의 정재 관계를 공동 비용의 범위를 구체적으로 묻는 조건부 자극으로 연구한다.",
+          "similarity": 0.08163265306122448
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH02.P1:manager-model-goal",
+      "meaning": "A의 큰 구조 설명은 실행 조건을 풀어야 전달됨",
+      "closest": [
+        {
+          "id": "cwpr:material:CH02.P4:a-public-critique-cost",
+          "category": "coworker",
+          "meaning": "A의 허점 지적이 공개 평가로 바뀔 조건을 연구한다.",
+          "similarity": 0.14634146341463414
+        },
+        {
+          "id": "clr:material:CH07.P4:assumption-grows-with-meaning",
+          "category": "love",
+          "meaning": "A의 큰 의미 해석과 B의 짧은 설명이 서로 다른 기대를 남길 조건을 연구한다.",
+          "similarity": 0.14
+        },
+        {
+          "id": "clr:material:CH05.P2:ab-care-with-autonomy",
+          "category": "love",
+          "meaning": "A의 관심이 B가 고른 지원으로 도착할 조건을 연구한다.",
+          "similarity": 0.13636363636363635
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH06.P2:report-capacity-information",
+      "meaning": "B의 업무량 정보가 A의 배분 결정을 돕기",
+      "closest": [
+        {
+          "id": "cwpr:material:CH06.P3:ba-observe-is-judge",
+          "category": "coworker",
+          "meaning": "B가 A의 말투에서 숨은 의도를 확정할 위험을 연구한다.",
+          "similarity": 0.14285714285714285
+        },
+        {
+          "id": "cwpr:material:CH05.P3:ab-ideas-become-obligation",
+          "category": "coworker",
+          "meaning": "A의 아이디어가 B의 추가 실행 의무로 읽힐 조건을 연구한다.",
+          "similarity": 0.13953488372093023
+        },
+        {
+          "id": "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+          "category": "parent-child",
+          "meaning": "부모의 기대가 자녀에게 결과로 보답할 빚이 되는 조건을 연구한다.",
+          "similarity": 0.13636363636363635
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH09.P3:recall-delegation-principle",
+      "meaning": "실제로 소개된 결정 경계만 지속",
+      "closest": [
+        {
+          "id": "cwpr:material:CH09.P2:recall-handoff-interface",
+          "category": "coworker",
+          "meaning": "실제로 소개된 방법 재량과 인계 규격을 함께 회수한다.",
+          "similarity": 0.14285714285714285
+        },
+        {
+          "id": "clr:material:CH09.P1:recall-trust-as-choice",
+          "category": "love",
+          "meaning": "실제로 소개된 신뢰의 접점을 변화에 수정할 수 있는 기준으로 회수한다.",
+          "similarity": 0.11428571428571428
+        },
+        {
+          "id": "cwpr:material:CH09.P1:recall-different-checks",
+          "category": "coworker",
+          "meaning": "실제로 소개된 절차 관심과 서로 다른 검토 항목만 다음 작업에 회수한다.",
+          "similarity": 0.11428571428571428
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P2:manager-explain-evaluation",
+      "meaning": "A가 추상 평가어를 관찰 행동과 기준으로 바꾸기",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P2:a-request-full-impact",
+          "category": "coworker",
+          "meaning": "A가 추가 요청 전에 연결된 검토·인계 작업을 묻는다.",
+          "similarity": 0.13953488372093023
+        },
+        {
+          "id": "clr:material:CH06.P4:ba-name-own-need",
+          "category": "love",
+          "meaning": "B가 알아주길 기다리는 마음을 A에게 답할 수 있는 요청으로 바꾸는 연구다.",
+          "similarity": 0.1346153846153846
+        },
+        {
+          "id": "clr:material:CH08.P2:a-change-unasked-care",
+          "category": "love",
+          "meaning": "A가 스스로 맡은 수고를 B에게 청구하지 않고 다음 부탁으로 바꾸는 회복 연구다.",
+          "similarity": 0.12962962962962962
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+      "meaning": "B의 절차·데이터 검토가 관리 판단에 제공할 정보",
+      "closest": [
+        {
+          "id": "cwpr:material:CH06.P2:ba-rule-explanation",
+          "category": "coworker",
+          "meaning": "A 수신 정관과 B의 절차 관심을 필요한 최소 확인의 질문으로 연구한다.",
+          "similarity": 0.13725490196078433
+        },
+        {
+          "id": "clr:material:CH05.P2:ab-clear-invite",
+          "category": "love",
+          "meaning": "A의 분명한 제안이 B에게 생각할 정보를 줄 조건을 연구한다.",
+          "similarity": 0.125
+        },
+        {
+          "id": "cwpr:material:CH03.P2:b-bounded-autonomy",
+          "category": "coworker",
+          "meaning": "B의 방법 재량과 공동 산출물 경계를 구별한다.",
+          "similarity": 0.11904761904761904
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH03.P2:report-definition-before-work",
+      "meaning": "B가 문제 정의를 확인해야 하는 이유",
+      "closest": [
+        {
+          "id": "cwpr:material:CH06.P1:ba-new-connection-with-limits",
+          "category": "coworker",
+          "meaning": "A 수신 편재 정의를 B가 가져올 다른 연결의 검토 조건과 분리한다.",
+          "similarity": 0.13636363636363635
+        },
+        {
+          "id": "cwpr:material:CH08.P2:a-separate-observation",
+          "category": "coworker",
+          "meaning": "A가 작업 관찰과 능력 평가를 구별해 피드백한다.",
+          "similarity": 0.13513513513513514
+        },
+        {
+          "id": "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+          "category": "marriage",
+          "meaning": "B가 외부에 약속하기 전에 A의 비용·시간·정보 공개 동의를 확인하는 조정을 연구한다.",
+          "similarity": 0.1320754716981132
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH03.P3:report-participation-signal",
+      "meaning": "참여 상태를 알아채는 B의 강점과 관리 책임",
+      "closest": [
+        {
+          "id": "cmpr:material:CH07.P3:care-manager-loop",
+          "category": "marriage",
+          "meaning": "A의 알아서 챙김과 B의 지시 대기가 생활 관리 책임을 한쪽에 남길 조건을 연구한다.",
+          "similarity": 0.1346153846153846
+        },
+        {
+          "id": "cwpr:material:CH03.P2:b-bounded-autonomy",
+          "category": "coworker",
+          "meaning": "B의 방법 재량과 공동 산출물 경계를 구별한다.",
+          "similarity": 0.1282051282051282
+        },
+        {
+          "id": "cwpr:material:CH02.P4:a-public-critique-cost",
+          "category": "coworker",
+          "meaning": "A의 허점 지적이 공개 평가로 바뀔 조건을 연구한다.",
+          "similarity": 0.12195121951219512
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+      "meaning": "A가 빠른 판단을 원할 때 필요한 정보 수준",
+      "closest": [
+        {
+          "id": "pcpr:material:CH08.P2:a-reduce-unnecessary-restriction",
+          "category": "parent-child",
+          "meaning": "부모가 필요한 보호와 바꾸어도 되는 제한을 구분해 수정하는 연구다.",
+          "similarity": 0.13333333333333333
+        },
+        {
+          "id": "cwpr:material:CH05.P4:ab-capacity-query",
+          "category": "coworker",
+          "meaning": "A가 도움을 제안할 때 B에게 필요한 일부와 양쪽 여력을 묻는다.",
+          "similarity": 0.13333333333333333
+        },
+        {
+          "id": "pcpr:material:CH08.P3:child-short-request-parent-supports",
+          "category": "parent-child",
+          "meaning": "자녀가 짧게 요청해도 부모가 필요한 안전과 지원을 확인하는 회복 자료다.",
+          "similarity": 0.13043478260869565
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P2:manager-record-priority",
+      "meaning": "A가 변경 이유·중단 작업·새 기한을 함께 설명",
+      "closest": [
+        {
+          "id": "cwpr:material:CH05.P4:ab-pass-uncertainty",
+          "category": "coworker",
+          "meaning": "A가 인계할 때 확정분과 미완료·불확실성을 함께 남긴다.",
+          "similarity": 0.13333333333333333
+        },
+        {
+          "id": "cwpr:material:CH06.P4:ba-decline-addition",
+          "category": "coworker",
+          "meaning": "B가 추가 지원을 조절하며 A의 기존 일정 영향을 함께 묻는다.",
+          "similarity": 0.1276595744680851
+        },
+        {
+          "id": "cmpr:material:CH03.P1:b-adaptable-day-plan",
+          "category": "marriage",
+          "meaning": "B가 생활의 선택을 넓힐 가능성과 변경 뒤 남는 책임을 함께 연구한다.",
+          "similarity": 0.12244897959183673
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH02.P3:manager-support-limit",
+      "meaning": "팀원의 어려움을 알아채는 강점과 배분 책임",
+      "closest": [
+        {
+          "id": "cwpr:material:CH03.P2:b-bounded-autonomy",
+          "category": "coworker",
+          "meaning": "B의 방법 재량과 공동 산출물 경계를 구별한다.",
+          "similarity": 0.13157894736842105
+        },
+        {
+          "id": "cwpr:material:CH02.P4:a-public-critique-cost",
+          "category": "coworker",
+          "meaning": "A의 허점 지적이 공개 평가로 바뀔 조건을 연구한다.",
+          "similarity": 0.125
+        },
+        {
+          "id": "clr:material:CH05.P1:ab-rule-as-option",
+          "category": "love",
+          "meaning": "A→B의 정관 관계를 약속의 기준을 알아보는 조건부 자극으로 연구한다.",
+          "similarity": 0.12244897959183673
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH01.P1:support-execution-interface",
+      "meaning": "관심을 주는 상사와 집중할 구간이 필요한 팀원",
+      "closest": [
+        {
+          "id": "pcpr:material:CH02.P3:a-space-with-available-help",
+          "category": "parent-child",
+          "meaning": "A의 사생활 존중 관심이 필요한 지원을 함께 남길 조건을 연구한다.",
+          "similarity": 0.13043478260869565
+        },
+        {
+          "id": "pcpr:material:CH02.P4:a-insight-needs-verification",
+          "category": "parent-child",
+          "meaning": "A가 자녀의 이유를 잘 안다고 느낄 때 실제 확인이 필요한 조건을 연구한다.",
+          "similarity": 0.12244897959183673
+        },
+        {
+          "id": "cwpr:material:CH06.P2:ba-rule-explanation",
+          "category": "coworker",
+          "meaning": "A 수신 정관과 B의 절차 관심을 필요한 최소 확인의 질문으로 연구한다.",
+          "similarity": 0.12244897959183673
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH09.P3:recall-safe-voice",
+      "meaning": "실제로 소개된 안전한 지원 선택을 유지",
+      "closest": [
+        {
+          "id": "cwpr:material:CH09.P2:recall-handoff-interface",
+          "category": "coworker",
+          "meaning": "실제로 소개된 방법 재량과 인계 규격을 함께 회수한다.",
+          "similarity": 0.12903225806451613
+        },
+        {
+          "id": "clr:material:CH09.P1:recall-trust-as-choice",
+          "category": "love",
+          "meaning": "실제로 소개된 신뢰의 접점을 변화에 수정할 수 있는 기준으로 회수한다.",
+          "similarity": 0.10526315789473684
+        },
+        {
+          "id": "cwpr:material:CH09.P1:recall-different-checks",
+          "category": "coworker",
+          "meaning": "실제로 소개된 절차 관심과 서로 다른 검토 항목만 다음 작업에 회수한다.",
+          "similarity": 0.10526315789473684
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+      "meaning": "완성본을 기다리는 보고가 A의 결정 시점을 놓칠 위험",
+      "closest": [
+        {
+          "id": "cwpr:material:CH06.P3:ba-observe-is-judge",
+          "category": "coworker",
+          "meaning": "B가 A의 말투에서 숨은 의도를 확정할 위험을 연구한다.",
+          "similarity": 0.1276595744680851
+        },
+        {
+          "id": "pcpr:material:CH08.P1:repair-parent-emotional-responsibility",
+          "category": "parent-child",
+          "meaning": "자녀의 위로를 기다리는 반복을 부모의 반응 조절·사과·성인 지원으로 바꾸는 절차다.",
+          "similarity": 0.125
+        },
+        {
+          "id": "cwpr:material:CH05.P3:ab-ideas-become-obligation",
+          "category": "coworker",
+          "meaning": "A의 아이디어가 B의 추가 실행 의무로 읽힐 조건을 연구한다.",
+          "similarity": 0.125
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P2:manager-confirm-final-authority",
+      "meaning": "A가 최종 결정자와 상충 지시 확인 경로를 설명",
+      "closest": [
+        {
+          "id": "cwpr:material:CH02.P3:a-reroute-proposal",
+          "category": "coworker",
+          "meaning": "A가 막힌 작업의 다른 경로를 제안할 때 공동 변경 조건을 연구한다.",
+          "similarity": 0.1276595744680851
+        },
+        {
+          "id": "cwpr:material:CH08.P2:a-separate-observation",
+          "category": "coworker",
+          "meaning": "A가 작업 관찰과 능력 평가를 구별해 피드백한다.",
+          "similarity": 0.12195121951219512
+        },
+        {
+          "id": "cwpr:material:CH08.P3:b-limit-invisible-help",
+          "category": "coworker",
+          "meaning": "B가 반복 지원 때문에 밀리는 담당을 자료로 남긴다.",
+          "similarity": 0.11904761904761904
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P3:report-name-blocked-resource",
+      "meaning": "B는 막힌 단계와 필요한 자원을 구체적으로 알림",
+      "closest": [
+        {
+          "id": "cmpr:material:CH05.P1:ab-resource-explanation",
+          "category": "marriage",
+          "meaning": "A→B의 정재 관계를 공동 비용의 범위를 구체적으로 묻는 조건부 자극으로 연구한다.",
+          "similarity": 0.125
+        },
+        {
+          "id": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+          "category": "coworker",
+          "meaning": "B의 긴 이유 질문을 현재 결정에 필요한 한 전제로 좁힌다.",
+          "similarity": 0.1111111111111111
+        },
+        {
+          "id": "cwpr:material:CH02.P2:a-focus-window",
+          "category": "coworker",
+          "meaning": "A의 조용한 작업 선호를 동료의 필요한 접점과 함께 연구한다.",
+          "similarity": 0.10869565217391304
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P3:report-request-specific-feedback",
+      "meaning": "B는 안전이 확인될 때 수정 항목을 구체적으로 요청",
+      "closest": [
+        {
+          "id": "cmpr:material:CH05.P1:ab-resource-explanation",
+          "category": "marriage",
+          "meaning": "A→B의 정재 관계를 공동 비용의 범위를 구체적으로 묻는 조건부 자극으로 연구한다.",
+          "similarity": 0.12280701754385964
+        },
+        {
+          "id": "cwpr:material:CH08.P3:b-name-pending-review",
+          "category": "coworker",
+          "meaning": "B가 깊은 검토의 미확정 질문과 현재 답할 항목을 나눈다.",
+          "similarity": 0.10869565217391304
+        },
+        {
+          "id": "cwpr:material:CH02.P3:a-system-review",
+          "category": "coworker",
+          "meaning": "A의 모순 탐색을 다른 사람이 확인할 수 있는 검토 메모로 연구한다.",
+          "similarity": 0.1
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH03.P4:report-late-synthesis",
+      "meaning": "집중이 늦게 붙는 B와 중간 상태 공유",
+      "closest": [
+        {
+          "id": "pcpr:material:CH01.P1:autonomy-with-adult-responsibility",
+          "category": "parent-child",
+          "meaning": "자율성을 주려는 부모와 공정한 기준을 묻는 자녀 사이에서 설명과 보호의 책임을 연구한다.",
+          "similarity": 0.11764705882352941
+        },
+        {
+          "id": "cmpr:material:CH05.P4:ab-own-one-whole-process",
+          "category": "marriage",
+          "meaning": "A가 덜 맡고 싶은 일을 끝까지 넘길 조건을 B와 협의하는 조정 연구다.",
+          "similarity": 0.10869565217391304
+        },
+        {
+          "id": "cwpr:material:CH03.P2:b-bounded-autonomy",
+          "category": "coworker",
+          "meaning": "B의 방법 재량과 공동 산출물 경계를 구별한다.",
+          "similarity": 0.10810810810810811
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P3:report-state-contribution",
+      "meaning": "B는 수행·검토·지원 받은 범위를 사실로 구분",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P2:a-request-full-impact",
+          "category": "coworker",
+          "meaning": "A가 추가 요청 전에 연결된 검토·인계 작업을 묻는다.",
+          "similarity": 0.11363636363636363
+        },
+        {
+          "id": "cwpr:material:CH02.P2:a-feedback-dignity",
+          "category": "coworker",
+          "meaning": "A가 피드백을 받을 장소와 범위를 구분할 조건을 연구한다.",
+          "similarity": 0.10869565217391304
+        },
+        {
+          "id": "cwpr:material:CH03.P1:b-current-observation",
+          "category": "coworker",
+          "meaning": "B가 현재 관찰한 조건을 설명할 때 자료의 범위를 연구한다.",
+          "similarity": 0.10869565217391304
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH03.P1:report-independent-focus",
+      "meaning": "간결한 점검을 원하는 B와 보고 의무의 구분",
+      "closest": [
+        {
+          "id": "pcpr:material:CH01.P1:autonomy-with-adult-responsibility",
+          "category": "parent-child",
+          "meaning": "자율성을 주려는 부모와 공정한 기준을 묻는 자녀 사이에서 설명과 보호의 책임을 연구한다.",
+          "similarity": 0.1111111111111111
+        },
+        {
+          "id": "cwpr:material:CH06.P3:ba-social-participation-duty",
+          "category": "coworker",
+          "meaning": "B가 원하는 반응이 A에게 비업무 참여 의무가 될 조건을 연구한다.",
+          "similarity": 0.10416666666666667
+        },
+        {
+          "id": "cmpr:material:CH05.P4:ab-own-one-whole-process",
+          "category": "marriage",
+          "meaning": "A가 덜 맡고 싶은 일을 끝까지 넘길 조건을 B와 협의하는 조정 연구다.",
+          "similarity": 0.10204081632653061
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P3:report-safe-support-route",
+      "meaning": "B는 직접 이견이 위험하면 적절한 지원 통로를 확인",
+      "closest": [
+        {
+          "id": "cwpr:material:CH03.P3:b-practical-assistance",
+          "category": "coworker",
+          "meaning": "B의 담백한 지원을 특정 막힌 작업의 도움으로 연구한다.",
+          "similarity": 0.10869565217391304
+        },
+        {
+          "id": "pcpr:material:CH08.P3:child-question-route-parent-receives",
+          "category": "parent-child",
+          "meaning": "자녀가 질문할 통로를 고르고 부모가 권한 반응을 수정할 회복 자료다.",
+          "similarity": 0.10204081632653061
+        },
+        {
+          "id": "pcpr:material:CH02.P3:a-space-with-available-help",
+          "category": "parent-child",
+          "meaning": "A의 사생활 존중 관심이 필요한 지원을 함께 남길 조건을 연구한다.",
+          "similarity": 0.1
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P4:late-risk-report",
+      "meaning": "문제 보고가 늦어지는 조건",
+      "closest": [
+        {
+          "id": "cwpr:material:CH07.P1:responsibility-border",
+          "category": "coworker",
+          "meaning": "한 번 도운 일이 계속 담당으로 굳어지는 조건을 연구한다.",
+          "similarity": 0.10714285714285714
+        },
+        {
+          "id": "cwpr:material:CH04.P4:learning-after-work",
+          "category": "coworker",
+          "meaning": "잘된 작업을 다음에 다시 사용할 절차로 남기는 조건을 연구한다.",
+          "similarity": 0.030303030303030304
+        },
+        {
+          "id": "cwpr:material:CH03.P1:b-procedure-memory",
+          "category": "coworker",
+          "meaning": "B가 구체 사례와 순서를 받아들이는 조건을 연구한다.",
+          "similarity": 0.029411764705882353
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P3:report-state-capacity",
+      "meaning": "B는 작업량·충돌 시각·가능 범위를 사실로 알림",
+      "closest": [
+        {
+          "id": "cwpr:material:CH02.P2:a-feedback-dignity",
+          "category": "coworker",
+          "meaning": "A가 피드백을 받을 장소와 범위를 구분할 조건을 연구한다.",
+          "similarity": 0.10638297872340426
+        },
+        {
+          "id": "cwpr:material:CH03.P1:b-current-observation",
+          "category": "coworker",
+          "meaning": "B가 현재 관찰한 조건을 설명할 때 자료의 범위를 연구한다.",
+          "similarity": 0.10638297872340426
+        },
+        {
+          "id": "cwpr:material:CH03.P2:b-meaning-and-contact",
+          "category": "coworker",
+          "meaning": "B가 질문과 시험이 가능한 조건을 요청할 때 열린 범위를 연구한다.",
+          "similarity": 0.1
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P3:fear-of-retaliation",
+      "meaning": "말하지 않는 이유를 유형으로 고정하지 않기",
+      "closest": [
+        {
+          "id": "cwpr:material:CH01.P3:unknown-type-no-substitution",
+          "category": "coworker",
+          "meaning": "MBTI 미상인 사람의 업무 선호는 상대 유형으로 보충하지 않는다.",
+          "similarity": 0.10526315789473684
+        },
+        {
+          "id": "cmpr:material:CH09.P1:recall-care-without-default-manager",
+          "category": "marriage",
+          "meaning": "앞서 도입된 서로 살피는 강점을 관리 책임을 한쪽에 고정하지 않는 조건으로 회수한다.",
+          "similarity": 0.08888888888888889
+        },
+        {
+          "id": "pcpr:material:CH07.P2:clash-without-family-blame",
+          "category": "parent-child",
+          "meaning": "실제 子午 충과 대화의 어려움을 인과로 확정하지 않는 자료다.",
+          "similarity": 0.08333333333333333
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH09.P2:recall-supported-possibility",
+      "meaning": "실제 소개된 지원 가능성을 활용하기",
+      "closest": [
+        {
+          "id": "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+          "category": "marriage",
+          "meaning": "앞서 확인한 실제 양쪽 관계와 지원 가능성을 참여 조건까지 함께 회수한다.",
+          "similarity": 0.10526315789473684
+        },
+        {
+          "id": "clr:material:CH09.P1:recall-mutual-care-limit",
+          "category": "love",
+          "meaning": "실제 소개된 두 사람의 돌봄을 무한한 담당이 아닌 선택 가능한 기여로 회수한다.",
+          "similarity": 0.07317073170731707
+        },
+        {
+          "id": "pcpr:material:CH04.P4:change-rules-with-development",
+          "category": "parent-child",
+          "meaning": "역할과 상황 변화에 맞춰 규칙을 다시 볼 가능성을 연구한다.",
+          "similarity": 0.058823529411764705
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P1:excess-report-frequency",
+      "meaning": "점검이 반복 설명 업무로 바뀌는 조건",
+      "closest": [
+        {
+          "id": "pcpr:material:CH05.P3:ab-debate-overwhelms-child",
+          "category": "parent-child",
+          "meaning": "부모의 토론 관심이 자녀의 설명을 이기는 대화로 바뀌는 조건을 연구한다.",
+          "similarity": 0.0975609756097561
+        },
+        {
+          "id": "cwpr:material:CH07.P1:responsibility-border",
+          "category": "coworker",
+          "meaning": "한 번 도운 일이 계속 담당으로 굳어지는 조건을 연구한다.",
+          "similarity": 0.029411764705882353
+        },
+        {
+          "id": "cwpr:material:CH04.P4:learning-after-work",
+          "category": "coworker",
+          "meaning": "잘된 작업을 다음에 다시 사용할 절차로 남기는 조건을 연구한다.",
+          "similarity": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P1:separate-method",
+      "meaning": "앞서 표시된 방법 간섭을 필수·선호 구분으로 조정",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P2:a-limit-revision",
+          "category": "coworker",
+          "meaning": "A가 새 수정 의견을 필수·선호·후속으로 분리한다.",
+          "similarity": 0.0975609756097561
+        },
+        {
+          "id": "cwpr:material:CH09.P3:recall-actual-done",
+          "category": "coworker",
+          "meaning": "앞서 표시된 완료 상태의 합의를 다음 전달에 재사용한다.",
+          "similarity": 0.07894736842105263
+        },
+        {
+          "id": "cwpr:material:CH09.P1:recall-scope-of-help",
+          "category": "coworker",
+          "meaning": "앞서 표시된 작은 지원과 담당 복귀를 지속 가능한 기여로 회수한다.",
+          "similarity": 0.07142857142857142
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P1:make-discretion-visible",
+      "meaning": "앞서 표시된 자율 모순을 선택 가능한 항목으로 바꾸기",
+      "closest": [
+        {
+          "id": "cwpr:material:CH09.P1:recall-scope-of-help",
+          "category": "coworker",
+          "meaning": "앞서 표시된 작은 지원과 담당 복귀를 지속 가능한 기여로 회수한다.",
+          "similarity": 0.09523809523809523
+        },
+        {
+          "id": "cwpr:material:CH09.P3:recall-actual-done",
+          "category": "coworker",
+          "meaning": "앞서 표시된 완료 상태의 합의를 다음 전달에 재사용한다.",
+          "similarity": 0.07692307692307693
+        },
+        {
+          "id": "clr:material:CH04.P4:mutual-chosen-strength",
+          "category": "love",
+          "meaning": "각자의 강점을 의무가 아닌 선택 가능한 기여로 유지할 조건을 연구한다.",
+          "similarity": 0.06666666666666667
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH01.P3:same-type-different-role",
+      "meaning": "같은 유형이라도 기준 설명 책임은 같지 않음",
+      "closest": [
+        {
+          "id": "cmpr:material:CH01.P3:same-type-separate-workload",
+          "category": "marriage",
+          "meaning": "같은 유형이어도 실제 여력과 알아차린 일이 같지 않은 공동생활 조건을 연구한다.",
+          "similarity": 0.09090909090909091
+        },
+        {
+          "id": "pcpr:material:CH01.P3:same-type-not-same-power",
+          "category": "parent-child",
+          "meaning": "같은 유형의 규칙 관심이 있어도 부모 권한과 자녀의 발언권은 같지 않은 조건을 연구한다.",
+          "similarity": 0.0784313725490196
+        },
+        {
+          "id": "clr:material:CH01.P3:same-type-no-same-person",
+          "category": "love",
+          "meaning": "같은 유형이어도 실제 기준과 현재 여건은 같다고 볼 수 없음을 연구한다.",
+          "similarity": 0.07317073170731707
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P1:delegate-decision",
+      "meaning": "앞서 표시된 권한 공백을 결정 목록으로 확인",
+      "closest": [
+        {
+          "id": "cwpr:material:CH09.P3:recall-actual-done",
+          "category": "coworker",
+          "meaning": "앞서 표시된 완료 상태의 합의를 다음 전달에 재사용한다.",
+          "similarity": 0.08571428571428572
+        },
+        {
+          "id": "cwpr:material:CH09.P1:recall-scope-of-help",
+          "category": "coworker",
+          "meaning": "앞서 표시된 작은 지원과 담당 복귀를 지속 가능한 기여로 회수한다.",
+          "similarity": 0.07692307692307693
+        },
+        {
+          "id": "cwpr:material:CH08.P1:repair-unowned-integration",
+          "category": "coworker",
+          "meaning": "앞서 실제 소개한 통합 공백을 빈 담당 확인 절차로 연결한다.",
+          "similarity": 0.02631578947368421
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P1:reduce-duplicate-report",
+      "meaning": "앞서 표시된 중복 보고를 정보 사용처로 조정",
+      "closest": [
+        {
+          "id": "cwpr:material:CH09.P3:recall-actual-done",
+          "category": "coworker",
+          "meaning": "앞서 표시된 완료 상태의 합의를 다음 전달에 재사용한다.",
+          "similarity": 0.08571428571428572
+        },
+        {
+          "id": "cwpr:material:CH09.P1:recall-scope-of-help",
+          "category": "coworker",
+          "meaning": "앞서 표시된 작은 지원과 담당 복귀를 지속 가능한 기여로 회수한다.",
+          "similarity": 0.07692307692307693
+        },
+        {
+          "id": "cmpr:material:CH05.P2:ab-advance-plan-information",
+          "category": "marriage",
+          "meaning": "A의 앞선 계획이 B에게 변경을 고를 정보를 줄 조건을 연구한다.",
+          "similarity": 0.044444444444444446
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P1:clarify-output",
+      "meaning": "앞서 표시된 목표 공백을 결과물 확인 질문으로 바꾸기",
+      "closest": [
+        {
+          "id": "pcpr:material:CH04.P4:harmony-needs-child-consent",
+          "category": "parent-child",
+          "meaning": "실제 반합 연결을 좋은 관계의 보장 대신 지원과 선택의 확인 질문으로 연구한다.",
+          "similarity": 0.0851063829787234
+        },
+        {
+          "id": "cwpr:material:CH02.P1:a-logical-model",
+          "category": "coworker",
+          "meaning": "A의 내부 논리 정리를 공유 가능한 가정과 질문으로 바꾸는 조건을 연구한다.",
+          "similarity": 0.0784313725490196
+        },
+        {
+          "id": "cwpr:material:CH09.P3:recall-actual-done",
+          "category": "coworker",
+          "meaning": "앞서 표시된 완료 상태의 합의를 다음 전달에 재사용한다.",
+          "similarity": 0.07692307692307693
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH05.P3:manager-care-as-surveillance",
+      "meaning": "챙김이 설명 감시로 전달될 수 있는 조건",
+      "closest": [
+        {
+          "id": "cmpr:material:CH03.P4:b-avoids-budget-answer",
+          "category": "marriage",
+          "meaning": "B가 불편한 재정 논의를 미룰 때 동의하지 않은 선택이 확정될 수 있는 조건을 연구한다.",
+          "similarity": 0.08163265306122448
+        },
+        {
+          "id": "pcpr:material:CH06.P4:ba-change-can-be-reported-not-defended",
+          "category": "parent-child",
+          "meaning": "자녀가 관심 변화를 변명 대신 현재 정보로 말할 수 있는 조건을 연구한다.",
+          "similarity": 0.06976744186046512
+        },
+        {
+          "id": "cmpr:material:CH02.P3:a-complete-task-ownership",
+          "category": "marriage",
+          "meaning": "A의 책임 관심을 업무 하나의 준비부터 확인까지 맡을 수 있는 조건부 기여로 연구한다.",
+          "similarity": 0.06
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+      "meaning": "수정에서 배우되 관리 책임을 남기기",
+      "closest": [
+        {
+          "id": "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+          "category": "parent-child",
+          "meaning": "앞서 도입된 배려 가능성을 성인의 책임을 남기는 조건으로 회수한다.",
+          "similarity": 0.08108108108108109
+        },
+        {
+          "id": "cmpr:material:CH09.P1:recall-care-without-default-manager",
+          "category": "marriage",
+          "meaning": "앞서 도입된 서로 살피는 강점을 관리 책임을 한쪽에 고정하지 않는 조건으로 회수한다.",
+          "similarity": 0.06818181818181818
+        },
+        {
+          "id": "cmpr:material:CH07.P3:care-manager-loop",
+          "category": "marriage",
+          "meaning": "A의 알아서 챙김과 B의 지시 대기가 생활 관리 책임을 한쪽에 남길 조건을 연구한다.",
+          "similarity": 0.0625
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+      "meaning": "관계 미검출이어도 평가 기준을 물을 필요",
+      "closest": [
+        {
+          "id": "cwpr:material:CH07.P2:no-relation-current-issue",
+          "category": "coworker",
+          "meaning": "관계 미검출에도 있을 수 있는 업무 문제를 실제 조건으로만 확인한다.",
+          "similarity": 0.07692307692307693
+        },
+        {
+          "id": "pcpr:material:CH06.P1:ba-question-not-parent-evaluation",
+          "category": "parent-child",
+          "meaning": "A 수신 상관 정의와 자녀의 질문을 부모가 기준을 돌아볼 정보로 연구한다.",
+          "similarity": 0.0425531914893617
+        },
+        {
+          "id": "cwpr:material:CH07.P4:disagreement-becomes-competence",
+          "category": "coworker",
+          "meaning": "다른 우선 기준을 상대의 낮은 실력으로 읽을 위험을 연구한다.",
+          "similarity": 0.02631578947368421
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH01.P4:discretion-as-condition",
+      "meaning": "통제 필요와 방식 재량을 나누는 기준",
+      "closest": [
+        {
+          "id": "cwpr:material:CH02.P2:a-method-discretion",
+          "category": "coworker",
+          "meaning": "A에게 결과의 경계와 방법의 재량을 나누어 설명할 조건을 연구한다.",
+          "similarity": 0.07142857142857142
+        },
+        {
+          "id": "pcpr:material:CH06.P4:ba-brief-help-request-is-enough",
+          "category": "parent-child",
+          "meaning": "자녀가 짧게도 도움을 요청할 수 있게 부모가 필요한 내용을 나누는 조건을 연구한다.",
+          "similarity": 0.0425531914893617
+        },
+        {
+          "id": "cwpr:material:CH04.P3:draft-before-polish",
+          "category": "coworker",
+          "meaning": "초안과 최종 완성도의 다른 목적을 나누어 연결한다.",
+          "similarity": 0.03125
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH01.P2:harmony-not-approval",
+      "meaning": "실제 합의 정의와 실제 승인권의 분리",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P4:joint-common-not-conflict",
+          "category": "coworker",
+          "meaning": "공통 의미를 보존하고 실제 합의 항목은 별도 확인한다.",
+          "similarity": 0.0625
+        },
+        {
+          "id": "clr:material:CH08.P2:a-change-delivery",
+          "category": "love",
+          "meaning": "A가 교정에 앞서 B의 동의와 실제 받은 영향을 묻는 회복을 연구한다.",
+          "similarity": 0.045454545454545456
+        },
+        {
+          "id": "cwpr:material:CH03.P3:b-contradiction-question",
+          "category": "coworker",
+          "meaning": "B의 정의 확인이 A의 다른 가정을 드러낼 조건을 연구한다.",
+          "similarity": 0.025
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P4:missing-change-history",
+      "meaning": "바뀐 지시의 기록이 사라지는 조건",
+      "closest": [
+        {
+          "id": "cwpr:material:CH07.P1:responsibility-border",
+          "category": "coworker",
+          "meaning": "한 번 도운 일이 계속 담당으로 굳어지는 조건을 연구한다.",
+          "similarity": 0.0625
+        },
+        {
+          "id": "cwpr:material:CH04.P4:learning-after-work",
+          "category": "coworker",
+          "meaning": "잘된 작업을 다음에 다시 사용할 절차로 남기는 조건을 연구한다.",
+          "similarity": 0.027777777777777776
+        },
+        {
+          "id": "cwpr:material:CH03.P1:b-procedure-memory",
+          "category": "coworker",
+          "meaning": "B가 구체 사례와 순서를 받아들이는 조건을 연구한다.",
+          "similarity": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH02.P2:manager-standard-evidence",
+      "meaning": "검증된 사례를 기준으로 쓸 때 적용 범위를 설명",
+      "closest": [
+        {
+          "id": "pcpr:material:CH05.P4:ab-explain-protection-and-try",
+          "category": "parent-child",
+          "meaning": "부모가 안전을 맡으면서 자녀에게 남길 시도 범위를 설명하는 조정을 연구한다.",
+          "similarity": 0.061224489795918366
+        },
+        {
+          "id": "cwpr:material:CH09.P3:recall-safe-support",
+          "category": "coworker",
+          "meaning": "실제 도입된 안전·지원 경계를 지속 기준으로 회수한다.",
+          "similarity": 0.05405405405405406
+        },
+        {
+          "id": "cwpr:material:CH09.P4:recall-difference-with-output",
+          "category": "coworker",
+          "meaning": "도입된 서로 다른 검토와 결정 상태를 다음 결과물의 기준으로 묶는다.",
+          "similarity": 0.047619047619047616
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+      "meaning": "분석 성향이 같아도 검토 범위는 다름",
+      "closest": [
+        {
+          "id": "cwpr:material:CH04.P1:shared-space-different-questions",
+          "category": "coworker",
+          "meaning": "원리를 묻는 관심이 같아도 질문의 순서와 결론을 따로 남긴다.",
+          "similarity": 0.05714285714285714
+        },
+        {
+          "id": "cmpr:material:CH07.P1:family-request-vs-common-consent",
+          "category": "marriage",
+          "meaning": "가족을 챙길 관심이 같아도 참석·지원 범위의 합의가 다를 조건을 연구한다.",
+          "similarity": 0.04878048780487805
+        },
+        {
+          "id": "cwpr:material:CH07.P1:deadline-dependency",
+          "category": "coworker",
+          "meaning": "최종 마감은 같아도 중간 결과를 받아야 할 시점이 다른 조건을 연구한다.",
+          "similarity": 0.025
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH05.P3:manager-speed-pressure",
+      "meaning": "즉답 요구가 검토 시간을 빼앗는 부담",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P1:repair-dependency-time",
+          "category": "coworker",
+          "meaning": "마감 의존성 문제를 부분 인계와 수신 검토 시간으로 연결한다.",
+          "similarity": 0.05714285714285714
+        },
+        {
+          "id": "cwpr:material:CH03.P2:b-time-to-answer",
+          "category": "coworker",
+          "meaning": "B의 사전 사고 시간을 결정에 필요한 검토 창으로 연구한다.",
+          "similarity": 0.025
+        },
+        {
+          "id": "cwpr:material:CH06.P4:ba-prioritize-review",
+          "category": "coworker",
+          "meaning": "B가 검토 의견을 중요도와 범위로 묶어 A에게 전달한다.",
+          "similarity": 0.025
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P2:priority-change-harm",
+      "meaning": "실제 해와 업무 우선순위 변경을 구분",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P1:repair-priority-escalation",
+          "category": "coworker",
+          "meaning": "상충한 우선순위를 사실·영향·결정 필요 자료로 정리한다.",
+          "similarity": 0.05714285714285714
+        },
+        {
+          "id": "cwpr:material:CH05.P3:ab-changing-priority",
+          "category": "coworker",
+          "meaning": "A가 우선순위를 바꿀 때 B의 이미 시작한 작업을 확인한다.",
+          "similarity": 0.05
+        },
+        {
+          "id": "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+          "category": "marriage",
+          "meaning": "子未가 등장해도 실제 해와 연구에만 있는 원진을 다른 지원 상태로 연구한다.",
+          "similarity": 0.04878048780487805
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P1:responsibility-without-delegation",
+      "meaning": "수행 책임과 결정권의 불균형",
+      "closest": [
+        {
+          "id": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+          "category": "marriage",
+          "meaning": "생활 조건이 바뀌면 업무량과 결정 권한을 다시 보는 공동 합의를 연구한다.",
+          "similarity": 0.05405405405405406
+        },
+        {
+          "id": "cmpr:material:CH09.P2:recall-competence-with-rotation",
+          "category": "marriage",
+          "meaning": "앞서 도입된 책임과 변화의 강점을 부담 점검과 역할 교대 조건으로 회수한다.",
+          "similarity": 0.02564102564102564
+        },
+        {
+          "id": "cmpr:material:CH09.P1:recall-autonomy-with-common-duty",
+          "category": "marriage",
+          "meaning": "앞서 도입된 독립적인 시간을 존중하는 강점을 공동 유지 책임과 함께 회수한다.",
+          "similarity": 0.025
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+      "meaning": "끝까지 하려는 공통 선호와 다른 책임",
+      "closest": [
+        {
+          "id": "cwpr:material:CH01.P3:pace-and-done",
+          "category": "coworker",
+          "meaning": "핵심만 듣고 시험하려는 선호와 일정 약속을 먼저 보는 선호를 구분한다.",
+          "similarity": 0.05263157894736842
+        },
+        {
+          "id": "pcpr:material:CH01.P1:predictability-with-room-to-try",
+          "category": "parent-child",
+          "meaning": "부모가 바라는 꾸준함과 자녀의 관심 탐색을 서로 다른 책임의 질문으로 연구한다.",
+          "similarity": 0.0425531914893617
+        },
+        {
+          "id": "cwpr:material:CH01.P3:spoken-versus-private",
+          "category": "coworker",
+          "meaning": "대화하며 가설을 바꾸는 선호와 혼자 답을 다듬는 선호의 정보 차이를 연구한다.",
+          "similarity": 0.023809523809523808
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+      "meaning": "새 아이디어와 기준 검토의 연결",
+      "closest": [
+        {
+          "id": "cwpr:material:CH05.P3:ab-ideas-become-obligation",
+          "category": "coworker",
+          "meaning": "A의 아이디어가 B의 추가 실행 의무로 읽힐 조건을 연구한다.",
+          "similarity": 0.05263157894736842
+        },
+        {
+          "id": "cmpr:material:CH03.P3:b-useful-simplification",
+          "category": "marriage",
+          "meaning": "B가 반복 업무의 절차를 줄일 아이디어를 실제 인수인계와 연결할 조건을 연구한다.",
+          "similarity": 0.0425531914893617
+        },
+        {
+          "id": "cmpr:material:CH06.P2:ba-new-routine-small-test",
+          "category": "marriage",
+          "meaning": "B의 새로운 생활 아이디어가 A의 안정 조건을 유지하며 시험될 가능성을 연구한다.",
+          "similarity": 0.0425531914893617
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P1:vague-instructions",
+      "meaning": "구체화되지 않은 목표의 정보 공백",
+      "closest": [
+        {
+          "id": "cwpr:material:CH02.P4:a-fast-fix-without-notice",
+          "category": "coworker",
+          "meaning": "A의 현장 타협이 공유되지 않은 변경이 될 조건을 연구한다.",
+          "similarity": 0.05263157894736842
+        },
+        {
+          "id": "cmpr:material:CH05.P3:ab-holiday-finality",
+          "category": "marriage",
+          "meaning": "A가 생활 결정을 빠르게 확정할 때 B의 아직 정리되지 않은 조건이 빠질 위험을 연구한다.",
+          "similarity": 0.0392156862745098
+        },
+        {
+          "id": "cwpr:material:CH07.P1:division-gap",
+          "category": "coworker",
+          "meaning": "분담 목록에서 아무도 맡지 않은 통합 작업의 부담을 연구한다.",
+          "similarity": 0.02857142857142857
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P3:insufficient-resources",
+      "meaning": "결과 책임에 필요한 접근·자원 공백",
+      "closest": [
+        {
+          "id": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+          "category": "coworker",
+          "meaning": "B의 긴 이유 질문을 현재 결정에 필요한 한 전제로 좁힌다.",
+          "similarity": 0.05263157894736842
+        },
+        {
+          "id": "cwpr:material:CH02.P2:a-focus-window",
+          "category": "coworker",
+          "meaning": "A의 조용한 작업 선호를 동료의 필요한 접점과 함께 연구한다.",
+          "similarity": 0.05128205128205128
+        },
+        {
+          "id": "cwpr:material:CH03.P2:b-time-to-answer",
+          "category": "coworker",
+          "meaning": "B의 사전 사고 시간을 결정에 필요한 검토 창으로 연구한다.",
+          "similarity": 0.05128205128205128
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P2:final-authority-unsupported",
+      "meaning": "미지원 명리 정의로 최종 결정자를 정하지 않기",
+      "closest": [
+        {
+          "id": "pcpr:material:CH07.P2:clash-without-family-blame",
+          "category": "parent-child",
+          "meaning": "실제 子午 충과 대화의 어려움을 인과로 확정하지 않는 자료다.",
+          "similarity": 0.05128205128205128
+        },
+        {
+          "id": "cwpr:material:CH01.P3:shared-precision-not-proof",
+          "category": "coworker",
+          "meaning": "둘 다 정확성을 중시해도 확인하는 오류가 같다고 가정하지 않는다.",
+          "similarity": 0.04878048780487805
+        },
+        {
+          "id": "clr:material:CH04.P1:same-care-different-help",
+          "category": "love",
+          "meaning": "둘 다 돌봄 자료가 있을 때 같은 도움을 원한다고 가정하지 않는 긍정 연구다.",
+          "similarity": 0.045454545454545456
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH04.P2:big-picture-field-interface",
+      "meaning": "큰 구조와 실제 작동 정보의 조건부 연결",
+      "closest": [
+        {
+          "id": "cwpr:material:CH09.P4:recall-change-without-history",
+          "category": "coworker",
+          "meaning": "도입된 변경 확인과 최소 약속을 미래의 조건부 협업 선택으로 회수한다.",
+          "similarity": 0.05
+        },
+        {
+          "id": "pcpr:material:CH09.P2:recall-harmony-needs-support",
+          "category": "parent-child",
+          "meaning": "앞서 도입된 실제 반합을 지원과 선택의 조건과 함께 회수한다.",
+          "similarity": 0.02702702702702703
+        },
+        {
+          "id": "pcpr:material:CH07.P2:harmony-and-disagreement-coexist",
+          "category": "parent-child",
+          "meaning": "합과 충이 실제로 함께 있어도 다른 대상의 조건을 구분해 연구한다.",
+          "similarity": 0.02564102564102564
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P4:agree-report-purpose",
+      "meaning": "둘은 업무 판단에 필요한 정보 범위를 확인",
+      "closest": [
+        {
+          "id": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+          "category": "coworker",
+          "meaning": "B의 긴 이유 질문을 현재 결정에 필요한 한 전제로 좁힌다.",
+          "similarity": 0.05
+        },
+        {
+          "id": "cwpr:material:CH07.P1:review-depth-gap",
+          "category": "coworker",
+          "meaning": "항목 오류 검토와 원인 탐색의 깊이가 다를 때 필요한 범위를 연구한다.",
+          "similarity": 0.05
+        },
+        {
+          "id": "cwpr:material:CH03.P2:b-time-to-answer",
+          "category": "coworker",
+          "meaning": "B의 사전 사고 시간을 결정에 필요한 검토 창으로 연구한다.",
+          "similarity": 0.04878048780487805
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH02.P4:manager-avoid-feedback",
+      "meaning": "배려 때문에 필요한 수정 기준을 늦추는 위험",
+      "closest": [
+        {
+          "id": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+          "category": "coworker",
+          "meaning": "B의 긴 이유 질문을 현재 결정에 필요한 한 전제로 좁힌다.",
+          "similarity": 0.04878048780487805
+        },
+        {
+          "id": "cwpr:material:CH03.P2:b-time-to-answer",
+          "category": "coworker",
+          "meaning": "B의 사전 사고 시간을 결정에 필요한 검토 창으로 연구한다.",
+          "similarity": 0.047619047619047616
+        },
+        {
+          "id": "cwpr:material:CH04.P2:direct-and-receivable",
+          "category": "coworker",
+          "meaning": "명료한 수정 요청과 수신하기 편한 범위를 연결한다.",
+          "similarity": 0.02857142857142857
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P2:rework-with-half-harmony",
+      "meaning": "접점이 있어도 수정 기준이 계속 바뀌면 재작업",
+      "closest": [
+        {
+          "id": "cwpr:material:CH07.P2:half-harmony-not-agreement",
+          "category": "coworker",
+          "meaning": "실제 반합이 있어도 업무 합의의 누락을 대신하지 못함을 연구한다.",
+          "similarity": 0.04878048780487805
+        },
+        {
+          "id": "pcpr:material:CH01.P3:same-type-not-same-power",
+          "category": "parent-child",
+          "meaning": "같은 유형의 규칙 관심이 있어도 부모 권한과 자녀의 발언권은 같지 않은 조건을 연구한다.",
+          "similarity": 0.037037037037037035
+        },
+        {
+          "id": "cwpr:material:CH07.P1:responsibility-border",
+          "category": "coworker",
+          "meaning": "한 번 도운 일이 계속 담당으로 굳어지는 조건을 연구한다.",
+          "similarity": 0.02631578947368421
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P4:excluded-team-voice",
+      "meaning": "즉답자 위주 회의에서 빠지는 실행 정보",
+      "closest": [
+        {
+          "id": "cwpr:material:CH07.P4:meeting-closure-gap",
+          "category": "coworker",
+          "meaning": "회의에서 의견만 늘고 결정 질문·담당·후속이 남지 않을 부담을 연구한다.",
+          "similarity": 0.047619047619047616
+        },
+        {
+          "id": "cmpr:material:CH08.P3:b-own-unseen-preparation",
+          "category": "marriage",
+          "meaning": "B의 눈에 보이는 실행만으로 A의 준비 부담이 남는 조건을 조정한다.",
+          "similarity": 0.022222222222222223
+        },
+        {
+          "id": "cmpr:material:CH06.P3:ba-visible-only-finish",
+          "category": "marriage",
+          "meaning": "B가 보이는 실행만 끝낼 때 A에게 확인·기억 업무가 남을 위험을 연구한다.",
+          "similarity": 0.02040816326530612
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+      "meaning": "명확한 위임이 불필요한 보고를 줄일 가능성",
+      "closest": [
+        {
+          "id": "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+          "category": "marriage",
+          "meaning": "새 생활 방식을 찾는 제안과 유지할 조건의 검토가 함께 쓰일 가능성을 연구한다.",
+          "similarity": 0.044444444444444446
+        },
+        {
+          "id": "pcpr:material:CH08.P2:a-reduce-unnecessary-restriction",
+          "category": "parent-child",
+          "meaning": "부모가 필요한 보호와 바꾸어도 되는 제한을 구분해 수정하는 연구다.",
+          "similarity": 0.044444444444444446
+        },
+        {
+          "id": "pcpr:material:CH04.P4:change-rules-with-development",
+          "category": "parent-child",
+          "meaning": "역할과 상황 변화에 맞춰 규칙을 다시 볼 가능성을 연구한다.",
+          "similarity": 0.02631578947368421
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH06.P4:report-decision-ready-brief",
+      "meaning": "간결함을 결정 가능한 정보로 바꾸기",
+      "closest": [
+        {
+          "id": "cwpr:material:CH02.P1:a-logical-model",
+          "category": "coworker",
+          "meaning": "A의 내부 논리 정리를 공유 가능한 가정과 질문으로 바꾸는 조건을 연구한다.",
+          "similarity": 0.043478260869565216
+        },
+        {
+          "id": "cwpr:material:CH04.P3:help-with-explicit-return",
+          "category": "coworker",
+          "meaning": "서로 가능한 도움을 일부 교환하되 담당 복귀 지점을 남긴다.",
+          "similarity": 0.02857142857142857
+        },
+        {
+          "id": "cwpr:material:CH04.P4:dissent-as-testable-choice",
+          "category": "coworker",
+          "meaning": "다른 의견을 사람의 우열보다 비교 가능한 선택으로 남긴다.",
+          "similarity": 0.02857142857142857
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+      "meaning": "자율이라는 말과 실제 선택지의 차이",
+      "closest": [
+        {
+          "id": "pcpr:material:CH08.P2:a-change-expectation-before-enrollment",
+          "category": "parent-child",
+          "meaning": "부모가 지원을 대가로 삼은 기대를 확정 전의 실제 선택권으로 조정하는 연구다.",
+          "similarity": 0.043478260869565216
+        },
+        {
+          "id": "cmpr:material:CH05.P1:ab-rule-with-revision",
+          "category": "marriage",
+          "meaning": "A→B의 정관 관계를 생활 약속의 기준과 B의 실제 선택권을 함께 살필 조건으로 연구한다.",
+          "similarity": 0.03773584905660377
+        },
+        {
+          "id": "cwpr:material:CH08.P1:repair-review-level",
+          "category": "coworker",
+          "meaning": "검토 깊이의 차이를 이번 오류 수정과 후속 원인 검토로 나눈다.",
+          "similarity": 0.027777777777777776
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P4:agree-early-risk-response",
+      "meaning": "둘은 잠정 위험과 확정 결과를 구별하는 목표를 정함",
+      "closest": [
+        {
+          "id": "clr:material:CH02.P4:a-read-response",
+          "category": "love",
+          "meaning": "A가 짧은 반응에 큰 의미를 붙일 위험과 확인할 정보를 연구한다.",
+          "similarity": 0.0425531914893617
+        },
+        {
+          "id": "cwpr:material:CH02.P4:a-sprint-dependency",
+          "category": "coworker",
+          "meaning": "A의 가까운 마감에 몰입할 선호와 B가 기다릴 중간 결과를 구분한다.",
+          "similarity": 0.04
+        },
+        {
+          "id": "cwpr:material:CH04.P3:parallel-review-rejoin",
+          "category": "coworker",
+          "meaning": "나누어 검토한 결과를 다시 합칠 통합 확인을 연구한다.",
+          "similarity": 0.02564102564102564
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH09.P4:recall-decision-responsibility",
+      "meaning": "표시된 정보와 결정의 다른 역할로 마무리",
+      "closest": [
+        {
+          "id": "clr:material:CH09.P4:closing-response-with-choice",
+          "category": "love",
+          "meaning": "실제로 읽은 반응과 정리의 접점을 같은 방식의 사랑을 강요하지 않는 기준으로 마무리한다.",
+          "similarity": 0.04081632653061224
+        },
+        {
+          "id": "cwpr:material:CH04.P3:draft-before-polish",
+          "category": "coworker",
+          "meaning": "초안과 최종 완성도의 다른 목적을 나누어 연결한다.",
+          "similarity": 0.029411764705882353
+        },
+        {
+          "id": "cwpr:material:CH09.P3:recall-actual-done",
+          "category": "coworker",
+          "meaning": "앞서 표시된 완료 상태의 합의를 다음 전달에 재사용한다.",
+          "similarity": 0.027777777777777776
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+      "meaning": "둘은 결정 전 필요한 실행 정보를 놓치지 않기로 정함",
+      "closest": [
+        {
+          "id": "clr:material:CH02.P2:a-space-with-connection",
+          "category": "love",
+          "meaning": "A가 개인 공간을 지키려는 조건과 B에게 필요한 재연결 정보를 연구한다.",
+          "similarity": 0.038461538461538464
+        },
+        {
+          "id": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+          "category": "coworker",
+          "meaning": "B의 긴 이유 질문을 현재 결정에 필요한 한 전제로 좁힌다.",
+          "similarity": 0.022222222222222223
+        },
+        {
+          "id": "cwpr:material:CH07.P1:review-depth-gap",
+          "category": "coworker",
+          "meaning": "항목 오류 검토와 원인 탐색의 깊이가 다를 때 필요한 범위를 연구한다.",
+          "similarity": 0.022222222222222223
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+      "meaning": "둘은 수행과 최종 결정의 경계를 유지하는 목표를 정함",
+      "closest": [
+        {
+          "id": "cmpr:material:CH08.P4:agreement-two-family-boundaries",
+          "category": "marriage",
+          "meaning": "양쪽 가족 요청에 답할 권한과 시간·비용·정보의 경계를 함께 정하는 합의를 연구한다.",
+          "similarity": 0.03773584905660377
+        },
+        {
+          "id": "pcpr:material:CH01.P4:fixed-role-not-age-diagnosis",
+          "category": "parent-child",
+          "meaning": "A=부모·B=자녀 고정 역할과 실제 발달 단계 미확인을 함께 유지하는 기준을 연구한다.",
+          "similarity": 0.03508771929824561
+        },
+        {
+          "id": "cwpr:material:CH04.P3:draft-before-polish",
+          "category": "coworker",
+          "meaning": "초안과 최종 완성도의 다른 목적을 나누어 연결한다.",
+          "similarity": 0.02564102564102564
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+      "meaning": "판단 정보와 상시 행동 감시의 경계",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P1:repair-support-exit",
+          "category": "coworker",
+          "meaning": "반복 지원의 경계 문제를 종료·복귀 확인으로 연결한다.",
+          "similarity": 0.030303030303030304
+        },
+        {
+          "id": "cwpr:material:CH02.P2:a-method-discretion",
+          "category": "coworker",
+          "meaning": "A에게 결과의 경계와 방법의 재량을 나누어 설명할 조건을 연구한다.",
+          "similarity": 0.023255813953488372
+        },
+        {
+          "id": "pcpr:material:CH04.P3:adult-resource-with-consent",
+          "category": "parent-child",
+          "meaning": "성인 대학생 맥락에서 요청한 정보와 본인의 문제 해결을 함께 남길 조건을 연구한다.",
+          "similarity": 0.022727272727272728
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P3:insufficient-credit",
+      "meaning": "기여가 기록에서 사라지는 비용",
+      "closest": [
+        {
+          "id": "cwpr:material:CH07.P1:division-gap",
+          "category": "coworker",
+          "meaning": "분담 목록에서 아무도 맡지 않은 통합 작업의 부담을 연구한다.",
+          "similarity": 0.029411764705882353
+        },
+        {
+          "id": "cwpr:material:CH07.P4:credit-erasure",
+          "category": "coworker",
+          "meaning": "발표·작성·검토의 기여가 한 사람의 성과로만 남을 조건을 연구한다.",
+          "similarity": 0.02631578947368421
+        },
+        {
+          "id": "cmpr:material:CH05.P2:ab-care-with-whole-task",
+          "category": "marriage",
+          "meaning": "A의 돌봄 기여가 B의 반복 업무 하나를 실제로 덜어줄 조건을 연구한다.",
+          "similarity": 0.023255813953488372
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH09.P1:recall-goal-execution",
+      "meaning": "표시된 목표·실행 접점을 지속하기",
+      "closest": [
+        {
+          "id": "cwpr:material:CH09.P3:recall-actual-done",
+          "category": "coworker",
+          "meaning": "앞서 표시된 완료 상태의 합의를 다음 전달에 재사용한다.",
+          "similarity": 0.029411764705882353
+        },
+        {
+          "id": "cwpr:material:CH04.P4:sustainable-help",
+          "category": "coworker",
+          "meaning": "기여를 지속하려면 추가 지원의 한도까지 말할 조건을 연구한다.",
+          "similarity": 0.02702702702702703
+        },
+        {
+          "id": "cwpr:material:CH09.P1:recall-scope-of-help",
+          "category": "coworker",
+          "meaning": "앞서 표시된 작은 지원과 담당 복귀를 지속 가능한 기여로 회수한다.",
+          "similarity": 0.02631578947368421
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+      "meaning": "성향보다 먼저 확인할 업무 조건",
+      "closest": [
+        {
+          "id": "cwpr:material:CH01.P1:focus-and-contact",
+          "category": "coworker",
+          "meaning": "혼자 정리할 시간과 함께 목표를 확인할 접점의 공존을 연구한다.",
+          "similarity": 0.02857142857142857
+        },
+        {
+          "id": "cwpr:material:CH08.P2:a-change-with-record",
+          "category": "coworker",
+          "meaning": "A가 바꾼 정보를 B가 확인할 수 있는 변경 기록으로 남긴다.",
+          "similarity": 0.02631578947368421
+        },
+        {
+          "id": "pcpr:material:CH05.P4:ab-listen-before-answer",
+          "category": "parent-child",
+          "meaning": "부모의 빠른 반박을 멈추고 자녀의 설명을 확인할 조정을 연구한다.",
+          "similarity": 0.02564102564102564
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH09.P1:recall-shared-completion",
+      "meaning": "표시된 공통 완결 선호의 역할 차이 유지",
+      "closest": [
+        {
+          "id": "cwpr:material:CH09.P3:recall-actual-done",
+          "category": "coworker",
+          "meaning": "앞서 표시된 완료 상태의 합의를 다음 전달에 재사용한다.",
+          "similarity": 0.02857142857142857
+        },
+        {
+          "id": "cwpr:material:CH09.P1:recall-scope-of-help",
+          "category": "coworker",
+          "meaning": "앞서 표시된 작은 지원과 담당 복귀를 지속 가능한 기여로 회수한다.",
+          "similarity": 0.02564102564102564
+        },
+        {
+          "id": "cwpr:material:CH01.P3:spoken-versus-private",
+          "category": "coworker",
+          "meaning": "대화하며 가설을 바꾸는 선호와 혼자 답을 다듬는 선호의 정보 차이를 연구한다.",
+          "similarity": 0.023255813953488372
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH09.P4:recall-contribution-learning",
+      "meaning": "표시된 인정·수정·지원의 좋은 방향",
+      "closest": [
+        {
+          "id": "cwpr:material:CH08.P1:repair-support-exit",
+          "category": "coworker",
+          "meaning": "반복 지원의 경계 문제를 종료·복귀 확인으로 연결한다.",
+          "similarity": 0.02857142857142857
+        },
+        {
+          "id": "cwpr:material:CH09.P3:recall-actual-done",
+          "category": "coworker",
+          "meaning": "앞서 표시된 완료 상태의 합의를 다음 전달에 재사용한다.",
+          "similarity": 0.02857142857142857
+        },
+        {
+          "id": "cwpr:material:CH09.P3:recall-safe-support",
+          "category": "coworker",
+          "meaning": "실제 도입된 안전·지원 경계를 지속 기준으로 회수한다.",
+          "similarity": 0.02857142857142857
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH01.P2:half-harmony-not-completion",
+      "meaning": "부분 연결과 결과 완성의 비동일성",
+      "closest": [
+        {
+          "id": "cwpr:material:CH04.P1:shared-values-usable-output",
+          "category": "coworker",
+          "meaning": "의미를 중요시하는 두 선호를 실제 사용할 사람과 결과물로 좁힌다.",
+          "similarity": 0.02702702702702703
+        },
+        {
+          "id": "clr:material:CH01.P1:response-and-thought",
+          "category": "love",
+          "meaning": "반응으로 관심을 확인하는 필요와 생각할 시간을 지키는 필요의 접점을 연구한다.",
+          "similarity": 0
+        },
+        {
+          "id": "clr:material:CH01.P1:steady-and-new",
+          "category": "love",
+          "meaning": "약속의 반복과 새 경험의 제안이 만나는 연애의 핵심 조건을 연구한다.",
+          "similarity": 0
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P1:goal-method-confusion",
+      "meaning": "결과 목표와 개인 선호 방법의 혼동",
+      "closest": [
+        {
+          "id": "cwpr:material:CH01.P1:standard-and-experiment",
+          "category": "coworker",
+          "meaning": "지킬 기준과 새 방법의 탐색을 같은 목표 안의 다른 기여로 연구한다.",
+          "similarity": 0.02702702702702703
+        },
+        {
+          "id": "cmpr:material:CH08.P4:agreement-common-space-private-time",
+          "category": "marriage",
+          "meaning": "공동 공간의 결과와 개인 시간의 보호 범위를 함께 정하는 합의를 연구한다.",
+          "similarity": 0.025
+        },
+        {
+          "id": "cwpr:material:CH02.P2:a-method-discretion",
+          "category": "coworker",
+          "meaning": "A에게 결과의 경계와 방법의 재량을 나누어 설명할 조건을 연구한다.",
+          "similarity": 0.023255813953488372
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P3:overload-allocation",
+      "meaning": "업무량 초과와 배분 결정의 책임",
+      "closest": [
+        {
+          "id": "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+          "category": "parent-child",
+          "meaning": "앞서 도입된 배려 가능성을 성인의 책임을 남기는 조건으로 회수한다.",
+          "similarity": 0.02702702702702703
+        },
+        {
+          "id": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+          "category": "marriage",
+          "meaning": "생활 조건이 바뀌면 업무량과 결정 권한을 다시 보는 공동 합의를 연구한다.",
+          "similarity": 0.02564102564102564
+        },
+        {
+          "id": "cmpr:material:CH03.P1:b-visible-practical-support",
+          "category": "marriage",
+          "meaning": "B의 직접 해결하는 표현을 생활 업무의 책임 범위와 구분하는 연구다.",
+          "similarity": 0.023809523809523808
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P2:report-time-clash",
+      "meaning": "실제 충과 보고 시점 불일치의 구분",
+      "closest": [
+        {
+          "id": "clr:material:CH01.P2:clash-without-prophecy",
+          "category": "love",
+          "meaning": "실제 충의 참여 위치와 연애에서 선택 속도가 엇갈릴 조건을 구분한다.",
+          "similarity": 0.02631578947368421
+        },
+        {
+          "id": "cwpr:material:CH08.P1:repair-done-state",
+          "category": "coworker",
+          "meaning": "완료 뜻의 불일치를 초안·검토중·사용가능 상태 확인으로 바꾼다.",
+          "similarity": 0.02631578947368421
+        },
+        {
+          "id": "cwpr:material:CH08.P4:joint-change-review",
+          "category": "coworker",
+          "meaning": "실제 충 분류와 별도로 합의한 변경의 결과를 다음 작업 전에 확인한다.",
+          "similarity": 0.02631578947368421
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH02.P1:manager-people-purpose",
+      "meaning": "참여를 이끄는 설명과 실제 지원은 별개",
+      "closest": [
+        {
+          "id": "pcpr:material:CH09.P3:recall-protection-repair",
+          "category": "parent-child",
+          "meaning": "앞선 정답 질문의 반복과 실제 위험·선택을 나눈 조정을 회수한다.",
+          "similarity": 0.02564102564102564
+        },
+        {
+          "id": "cmpr:material:CH04.P1:shared-care-not-default-manager",
+          "category": "marriage",
+          "meaning": "양쪽 돌봄 원천이 있을 때 도움을 주는 두 사람과 실제 책임을 맡은 두 사람을 구분한다.",
+          "similarity": 0.022222222222222223
+        },
+        {
+          "id": "clr:material:CH03.P1:b-reaction-as-participation",
+          "category": "love",
+          "meaning": "B가 반응을 주고받으며 참여를 확인하는 방식과 A의 몰입을 구분한다.",
+          "similarity": 0.02127659574468085
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+      "meaning": "문제 공유에 대한 관리 반응을 키우기",
+      "closest": [
+        {
+          "id": "clr:material:CH05.P4:ab-offer-not-reservation",
+          "category": "love",
+          "meaning": "A의 적극적인 제안을 B의 일정에 대한 예약권과 구분한다.",
+          "similarity": 0.025
+        },
+        {
+          "id": "pcpr:material:CH03.P1:b-fairness-question-not-rebellion",
+          "category": "parent-child",
+          "meaning": "B의 공정한 기준 관심을 규칙에 대한 질문의 조건으로 연구한다.",
+          "similarity": 0.023809523809523808
+        },
+        {
+          "id": "pcpr:material:CH08.P3:child-question-route-parent-receives",
+          "category": "parent-child",
+          "meaning": "자녀가 질문할 통로를 고르고 부모가 권한 반응을 수정할 회복 자료다.",
+          "similarity": 0.023809523809523808
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH01.P3:model-and-procedure",
+      "meaning": "원리 납득과 적용 절차의 독립적 요구",
+      "closest": [
+        {
+          "id": "cmpr:material:CH09.P1:recall-autonomy-with-common-duty",
+          "category": "marriage",
+          "meaning": "앞서 도입된 독립적인 시간을 존중하는 강점을 공동 유지 책임과 함께 회수한다.",
+          "similarity": 0.023255813953488372
+        },
+        {
+          "id": "cwpr:material:CH06.P1:ba-change-the-premise",
+          "category": "coworker",
+          "meaning": "A 수신 상관 정의와 B의 허점 질문을 현행 절차의 확인으로 연구한다.",
+          "similarity": 0.022222222222222223
+        },
+        {
+          "id": "pcpr:material:CH01.P4:adult-child-has-own-life",
+          "category": "parent-child",
+          "meaning": "성인 자녀 맥락이 확인됐다면 도움과 독립적 결정을 구분하는 관계 기준을 연구한다.",
+          "similarity": 0.02040816326530612
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH02.P4:manager-overcontrol",
+      "meaning": "기준 유지가 방식 간섭으로 번지는 경계",
+      "closest": [
+        {
+          "id": "pcpr:material:CH02.P4:a-rule-correction-without-humiliation",
+          "category": "parent-child",
+          "meaning": "A의 규칙 관심이 자녀의 인격 평가로 번지지 않을 조건을 연구한다.",
+          "similarity": 0.023255813953488372
+        },
+        {
+          "id": "clr:material:CH07.P4:safety-outside-type",
+          "category": "love",
+          "meaning": "거절에 대한 불이익과 감시가 있을 때 유형 차이로 조율하지 않는 경계를 연구한다.",
+          "similarity": 0.022222222222222223
+        },
+        {
+          "id": "cmpr:material:CH07.P4:coercion-is-outside-style",
+          "category": "marriage",
+          "meaning": "거절에 대한 위협·감시·필수 자원 차단은 일반 생활 방식 차이로 조율하지 않는 경계를 연구한다.",
+          "similarity": 0.019230769230769232
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH08.P4:agree-change-log",
+      "meaning": "둘은 지시 변경의 출처와 영향을 남기기로 정함",
+      "closest": [
+        {
+          "id": "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+          "category": "parent-child",
+          "meaning": "앞서 도입된 배려 가능성을 성인의 책임을 남기는 조건으로 회수한다.",
+          "similarity": 0.023255813953488372
+        },
+        {
+          "id": "cwpr:material:CH08.P4:joint-change-review",
+          "category": "coworker",
+          "meaning": "실제 충 분류와 별도로 합의한 변경의 결과를 다음 작업 전에 확인한다.",
+          "similarity": 0.023255813953488372
+        },
+        {
+          "id": "cmpr:material:CH07.P2:detected-clash-shared-timing",
+          "category": "marriage",
+          "meaning": "실제 교차 子午 충의 대상과 생활 변경의 개인 조건을 분리해 설명하는 연구다.",
+          "similarity": 0.021739130434782608
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH03.P4:report-overacceptance",
+      "meaning": "인정받으려는 수락이 업무량을 숨기는 위험",
+      "closest": [
+        {
+          "id": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+          "category": "marriage",
+          "meaning": "생활 조건이 바뀌면 업무량과 결정 권한을 다시 보는 공동 합의를 연구한다.",
+          "similarity": 0.022727272727272728
+        },
+        {
+          "id": "cwpr:material:CH03.P4:b-praise-without-scope",
+          "category": "coworker",
+          "meaning": "B가 인정받기 위해 추가 요청을 받을 조건과 선택을 연구한다.",
+          "similarity": 0.022727272727272728
+        },
+        {
+          "id": "pcpr:material:CH04.P1:opportunity-with-child-voice",
+          "category": "parent-child",
+          "meaning": "부모의 실제 기회 지원 관심과 자녀의 생각을 인정받을 참고를 조건부로 연결한다.",
+          "similarity": 0.02
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH06.P3:report-question-as-final-decision",
+      "meaning": "질문이 늘어도 승인 책임은 넘어가지 않음",
+      "closest": [
+        {
+          "id": "clr:material:CH06.P3:ba-asking-becomes-monitoring",
+          "category": "love",
+          "meaning": "B의 확인 질문이 A의 개인 시간에 대한 보고 요구가 될 조건을 연구한다.",
+          "similarity": 0.02127659574468085
+        },
+        {
+          "id": "clr:material:CH01.P1:response-and-thought",
+          "category": "love",
+          "meaning": "반응으로 관심을 확인하는 필요와 생각할 시간을 지키는 필요의 접점을 연구한다.",
+          "similarity": 0
+        },
+        {
+          "id": "clr:material:CH01.P1:steady-and-new",
+          "category": "love",
+          "meaning": "약속의 반복과 새 경험의 제안이 만나는 연애의 핵심 조건을 연구한다.",
+          "similarity": 0
+        }
+      ]
+    },
+    {
+      "materialId": "mrpr:material:CH07.P3:public-personal-judgment",
+      "meaning": "공개 지적에서 행동과 인격을 섞는 문제",
+      "closest": [
+        {
+          "id": "clr:material:CH01.P1:response-and-thought",
+          "category": "love",
+          "meaning": "반응으로 관심을 확인하는 필요와 생각할 시간을 지키는 필요의 접점을 연구한다.",
+          "similarity": 0
+        },
+        {
+          "id": "clr:material:CH01.P1:steady-and-new",
+          "category": "love",
+          "meaning": "약속의 반복과 새 경험의 제안이 만나는 연애의 핵심 조건을 연구한다.",
+          "similarity": 0
+        },
+        {
+          "id": "clr:material:CH01.P2:detected-harmony-context",
+          "category": "love",
+          "meaning": "실제 교차 육합과 두 사람의 개인 원국을 구별해 함께 고를 조건을 연구한다.",
+          "similarity": 0
+        }
+      ]
+    }
+  ],
+  "manualReviewRequired": false,
+  "independentTraditionalFactsAdded": 0,
+  "independentEmpiricalFactsAdded": 0,
+  "roleLinksAreNotNewFacts": true,
+  "manualNearestReview": [
+    {
+      "materialId": "mrpr:material:CH05.P1:manager-to-report-constraint",
+      "closestPrior": {
+        "id": "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+        "category": "parent-child",
+        "meaning": "부모의 기대가 자녀에게 결과로 보답할 빚이 되는 조건을 연구한다.",
+        "similarity": 0.25
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "부모 기대·보답의 빚이 아니라 관리자의 필수 결과·방법 재량·실제 승인권을 분리한다. 수신 B 기준 십성은 지시의 정당성을 증명하지 않는다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+      "closestPrior": {
+        "id": "cwpr:material:CH02.P4:a-sprint-dependency",
+        "category": "coworker",
+        "meaning": "A의 가까운 마감에 몰입할 선호와 B가 기다릴 중간 결과를 구분한다.",
+        "similarity": 0.21951219512195122
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "가까운 마감의 몰입이 아니라 제한된 고객 반응의 관찰·해석·표본 범위를 A의 결정 정보로 전달한다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH06.P2:report-propose-bounded-method",
+      "closestPrior": {
+        "id": "cwpr:material:CH06.P3:ba-late-change-after-start",
+        "category": "coworker",
+        "meaning": "B의 새 대안이 A의 이미 확정한 작업을 다시 열 조건을 연구한다.",
+        "similarity": 0.20512820512820512
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "새 대안·변경 비용이라는 공통 주제는 있지만 A가 검토 기준·시험 승인·자원을 결정하고 B가 가정·검증·되돌림을 제안하는 관리 인터페이스다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH03.P2:report-private-feedback-space",
+      "closestPrior": {
+        "id": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+        "category": "coworker",
+        "meaning": "B의 긴 이유 질문을 현재 결정에 필요한 한 전제로 좁힌다.",
+        "similarity": 0.19444444444444445
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "이유 질문을 좁히는 일이 아니라 공개 판단을 중단하고 수정 공간·시간·기준을 제공할 A 책임을 남긴다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH08.P2:manager-close-revision",
+      "closestPrior": {
+        "id": "cwpr:material:CH08.P2:a-request-full-impact",
+        "category": "coworker",
+        "meaning": "A가 추가 요청 전에 연결된 검토·인계 작업을 묻는다.",
+        "similarity": 0.19444444444444445
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "추가 요청의 동료 인계 영향이 아니라 A가 기준 변경과 오류 수정을 구분하고 수정 종료선을 설명하는 책임이다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH05.P2:manager-resource-removal",
+      "closestPrior": {
+        "id": "cwpr:material:CH05.P3:ab-help-replaces-work",
+        "category": "coworker",
+        "meaning": "A의 대신 처리하려는 지원이 B의 작업 통로를 끊을 조건을 연구한다.",
+        "similarity": 0.18604651162790697
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "지원 범위라는 공통 주제는 있지만 대신 처리의 침범보다 필요한 접근·연결 담당·응답 시점을 A가 확인하는 지원 책임이다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH08.P2:manager-set-report-time",
+      "closestPrior": {
+        "id": "cmpr:material:CH02.P1:a-operating-standards",
+        "category": "marriage",
+        "meaning": "A가 생활의 기준을 먼저 정하려는 가능성을 실제 책임·권한의 합의와 구분한다.",
+        "similarity": 0.18
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "생활 책임 합의가 아니라 실제 관리 판단 시한·잠정 정보 수용·응답을 A가 먼저 명시하는 보고 조건이다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH02.P3:manager-correct-own-error",
+      "closestPrior": {
+        "id": "cwpr:material:CH08.P3:b-state-integration-limit",
+        "category": "coworker",
+        "meaning": "B가 자기 수정의 대상·버전·통합 상태를 A에게 표시한다.",
+        "similarity": 0.1794871794871795
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "개인의 수정 버전만이 아니라 A의 잘못된 지시·기준 변경이 B의 실수 기록으로 남지 않도록 원인·일정·자원을 정정한다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+      "closestPrior": {
+        "id": "cwpr:material:CH08.P3:b-make-blocker-visible",
+        "category": "coworker",
+        "meaning": "B가 다음 작업을 막는 최소 자료와 필요 시점을 A에게 알린다.",
+        "similarity": 0.17777777777777778
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "최소 자료 전달과 공통 정보 주제는 있지만 B의 계획 반례를 A의 변경·지원 판단으로 연결하고 최종 책임은 A에게 남긴다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH05.P4:manager-feedback-recheck",
+      "closestPrior": {
+        "id": "cwpr:material:CH05.P3:ab-review-scope-creep",
+        "category": "coworker",
+        "meaning": "A의 즉시 수정 요청이 B의 남은 시간을 줄일 조건을 연구한다.",
+        "similarity": 0.175
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "수정 시간이라는 공통 주제는 있지만 A가 관찰·영향·종료 기준·검토 응답을 명시하고 B는 이해·가능 시간을 확인한다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH06.P4:report-feedback-clarification",
+      "closestPrior": {
+        "id": "cwpr:material:CH02.P1:a-logical-model",
+        "category": "coworker",
+        "meaning": "A의 내부 논리 정리를 공유 가능한 가정과 질문으로 바꾸는 조건을 연구한다.",
+        "similarity": 0.1702127659574468
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "내부 논리 공유가 아니라 A가 설명할 모호한 평가어를 B가 안전한 통로로 수정 조건 질문으로 바꾸는 과정이다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    },
+    {
+      "materialId": "mrpr:material:CH09.P2:recall-personal-fusion",
+      "closestPrior": {
+        "id": "pcpr:material:CH05.P2:ab-notice-without-mind-reading",
+        "category": "parent-child",
+        "meaning": "부모가 표정에 관심을 갖는 지원을 자녀의 실제 필요 확인으로 연결한다.",
+        "similarity": 0.16666666666666666
+      },
+      "assessment": "shared_terms_or_reusable_general_concept_not_role_label_copy",
+      "managerSpecificInformation": "자녀 지원 필요가 아니라 동일 B의 실제 원국·MBTI Fusion 두 root·BA방향·실제 표시 이력을 요구하는 회수다.",
+      "newTraditionalOrEmpiricalFacts": 0
+    }
+  ],
+  "reviewLimit": "정확·trigram 중복 검사와 상위12 의미 독해. 전체 의미 동등성을 자동으로 증명하지 않으며 연구 승인≠고객 승인."
+}

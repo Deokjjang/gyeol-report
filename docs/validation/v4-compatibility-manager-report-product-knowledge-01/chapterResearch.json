@@ -1,0 +1,173 @@
+[
+  {
+    "id": "mrpr:chapter:CH01",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH01",
+    "originalTitle": "우리라는 관계의 핵심",
+    "originalKey": "core",
+    "paragraphs": [
+      "CH01.P1",
+      "CH01.P2",
+      "CH01.P3",
+      "CH01.P4"
+    ],
+    "noOneToOneInternalMapping": true
+  },
+  {
+    "id": "mrpr:chapter:CH02",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH02",
+    "originalTitle": "A는 이 관계에서 어떤 사람인가",
+    "originalKey": "person-a",
+    "paragraphs": [
+      "CH02.P1",
+      "CH02.P2",
+      "CH02.P3",
+      "CH02.P4"
+    ],
+    "noOneToOneInternalMapping": true
+  },
+  {
+    "id": "mrpr:chapter:CH03",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH03",
+    "originalTitle": "B는 이 관계에서 어떤 사람인가",
+    "originalKey": "person-b",
+    "paragraphs": [
+      "CH03.P1",
+      "CH03.P2",
+      "CH03.P3",
+      "CH03.P4"
+    ],
+    "noOneToOneInternalMapping": true
+  },
+  {
+    "id": "mrpr:chapter:CH04",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH04",
+    "originalTitle": "우리가 잘 맞는 이유",
+    "originalKey": "delight",
+    "paragraphs": [
+      "CH04.P1",
+      "CH04.P2",
+      "CH04.P3",
+      "CH04.P4"
+    ],
+    "noOneToOneInternalMapping": true
+  },
+  {
+    "id": "mrpr:chapter:CH05",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH05",
+    "originalTitle": "A가 B에게 주는 영향",
+    "originalKey": "direction-ab",
+    "paragraphs": [
+      "CH05.P1",
+      "CH05.P2",
+      "CH05.P3",
+      "CH05.P4"
+    ],
+    "noOneToOneInternalMapping": true
+  },
+  {
+    "id": "mrpr:chapter:CH06",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH06",
+    "originalTitle": "B가 A에게 주는 영향",
+    "originalKey": "direction-ba",
+    "paragraphs": [
+      "CH06.P1",
+      "CH06.P2",
+      "CH06.P3",
+      "CH06.P4"
+    ],
+    "noOneToOneInternalMapping": true
+  },
+  {
+    "id": "mrpr:chapter:CH07",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH07",
+    "originalTitle": "우리가 부딪히는 이유",
+    "originalKey": "friction",
+    "paragraphs": [
+      "CH07.P1",
+      "CH07.P2",
+      "CH07.P3",
+      "CH07.P4"
+    ],
+    "noOneToOneInternalMapping": true
+  },
+  {
+    "id": "mrpr:chapter:CH08",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH08",
+    "originalTitle": "우리가 다시 잘 지내는 방법",
+    "originalKey": "repair",
+    "paragraphs": [
+      "CH08.P1",
+      "CH08.P2",
+      "CH08.P3",
+      "CH08.P4"
+    ],
+    "noOneToOneInternalMapping": true
+  },
+  {
+    "id": "mrpr:chapter:CH09",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapterId": "CH09",
+    "originalTitle": "오래 이어갈 수 있는 우리의 좋은 힘",
+    "originalKey": "fortune",
+    "paragraphs": [
+      "CH09.P1",
+      "CH09.P2",
+      "CH09.P3",
+      "CH09.P4"
+    ],
+    "noOneToOneInternalMapping": true
+  }
+]

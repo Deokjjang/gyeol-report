@@ -1,0 +1,70 @@
+/** Static offline managerReport research. No runtime registration or customer approval. */
+import type { MaterialView } from "./researchTypes";
+export const MR_FEEDBACK_RESEARCH: readonly MaterialView[] = [
+  {
+    "id": "mrpr:view:feedbackResearch:material:CH02.P4:manager-avoid-feedback",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH02.P4:manager-avoid-feedback",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackResearch:material:CH03.P2:report-private-feedback-space",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH03.P2:report-private-feedback-space",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackResearch:material:CH04.P3:feedback-credit-visible",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P3:feedback-credit-visible",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackResearch:material:CH05.P3:manager-speed-pressure",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH05.P3:manager-speed-pressure",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackResearch:material:CH05.P4:manager-feedback-recheck",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH05.P4:manager-feedback-recheck",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:feedbackResearch:material:CH06.P4:report-feedback-clarification",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH06.P4:report-feedback-clarification",
+    "notAdditionalIndependentFact": true
+  }
+];

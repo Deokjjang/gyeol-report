@@ -1,0 +1,733 @@
+{
+  "productKey": "saju_mbti_compatibility",
+  "relationshipCategory": "managerReport",
+  "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+  "chapters": 9,
+  "paragraphs": 36,
+  "originalSentenceRoles": 144,
+  "mainMaterials": 96,
+  "conditionalMaterials": 88,
+  "recalls": 8,
+  "materialRoleLinks": 384,
+  "independentTraditionalFactsAdded": 0,
+  "independentEmpiricalFactsAdded": 0,
+  "managementConcepts": 16,
+  "modes": {
+    "JOINT": 46,
+    "SELF_A": 8,
+    "SELF_B": 8,
+    "AB": 13,
+    "BA": 13,
+    "RECALL": 8
+  },
+  "paragraphCoverage": [
+    {
+      "address": "CH01.P1",
+      "originalPurpose": "두 사람을 한마디로 설명하면",
+      "roles": [
+        "특징적인 조합",
+        "대표 성향 대비",
+        "함께하는 장면",
+        "관계의 상징"
+      ],
+      "readerQuestion": "목표와 실행 방법의 접점은 무엇인가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH01.P1:goal-method-interface",
+        "mrpr:material:CH01.P1:support-execution-interface"
+      ]
+    },
+    {
+      "address": "CH01.P2",
+      "originalPurpose": "명리에서 보는 두 사람의 관계",
+      "roles": [
+        "실제 명리 관계",
+        "쉬운 의미",
+        "상호 영향",
+        "강점과 주의 조건"
+      ],
+      "readerQuestion": "실제 명리 관계와 승인권을 어떻게 구분하는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH01.P2:harmony-not-approval",
+        "mrpr:material:CH01.P2:half-harmony-not-completion"
+      ]
+    },
+    {
+      "address": "CH01.P3",
+      "originalPurpose": "MBTI가 보여주는 우리",
+      "roles": [
+        "A의 실제 MBTI",
+        "B의 실제 MBTI",
+        "공통점과 차이",
+        "상호작용"
+      ],
+      "readerQuestion": "각자의 정보 선호는 어떤 다른 질문을 만드는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH01.P3:model-and-procedure",
+        "mrpr:material:CH01.P3:same-type-different-role"
+      ]
+    },
+    {
+      "address": "CH01.P4",
+      "originalPurpose": "이 관계를 이해하는 가장 중요한 기준",
+      "roles": [
+        "좋은 점",
+        "조심할 차이",
+        "관계별 조건",
+        "앞으로의 질문"
+      ],
+      "readerQuestion": "권한·기준·자원에서 무엇을 먼저 확인하는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH01.P4:discretion-as-condition",
+        "mrpr:material:CH01.P4:management-facts-before-compatibility"
+      ]
+    },
+    {
+      "address": "CH02.P1",
+      "originalPurpose": "A의 관계 성향",
+      "roles": [
+        "대표 행동",
+        "명리 근거",
+        "MBTI 선호",
+        "B와의 관계"
+      ],
+      "readerQuestion": "A는 목표를 어떤 정보로 설명하는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH02.P1:manager-model-goal",
+        "mrpr:material:CH02.P1:manager-people-purpose"
+      ]
+    },
+    {
+      "address": "CH02.P2",
+      "originalPurpose": "A가 관계에서 중요하게 여기는 것",
+      "roles": [
+        "관계 조건",
+        "실제 이유",
+        "B와의 장면",
+        "충족될 때"
+      ],
+      "readerQuestion": "A가 판단·점검에 필요한 조건은 무엇인가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH02.P2:manager-standard-evidence",
+        "mrpr:material:CH02.P2:manager-checkpoint-intent"
+      ]
+    },
+    {
+      "address": "CH02.P3",
+      "originalPurpose": "A가 관계에 가져오는 장점",
+      "roles": [
+        "특징적 강점",
+        "실제 근거",
+        "B에게 좋은 상황",
+        "유지 조건"
+      ],
+      "readerQuestion": "A의 자기 수정·지원이 도움이 될 조건은 무엇인가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH02.P3:manager-correct-own-error",
+        "mrpr:material:CH02.P3:manager-support-limit"
+      ]
+    },
+    {
+      "address": "CH02.P4",
+      "originalPurpose": "A가 조심해야 할 부분",
+      "roles": [
+        "과사용 위험",
+        "원인",
+        "B가 받는 뜻",
+        "조절 행동"
+      ],
+      "readerQuestion": "A의 간섭·지적 회피가 어떤 부담을 남기는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH02.P4:manager-overcontrol",
+        "mrpr:material:CH02.P4:manager-avoid-feedback"
+      ]
+    },
+    {
+      "address": "CH03.P1",
+      "originalPurpose": "B의 관계 성향",
+      "roles": [
+        "독립적 행동",
+        "명리 근거",
+        "MBTI 선호",
+        "A와의 관계"
+      ],
+      "readerQuestion": "B는 어떤 정보로 과제를 이해하는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH03.P1:report-procedure-understanding",
+        "mrpr:material:CH03.P1:report-independent-focus"
+      ]
+    },
+    {
+      "address": "CH03.P2",
+      "originalPurpose": "B가 관계에서 중요하게 여기는 것",
+      "roles": [
+        "관계 조건",
+        "독립적 이유",
+        "A와의 장면",
+        "충족될 때"
+      ],
+      "readerQuestion": "B에게 필요한 정의·수정 환경은 무엇인가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH03.P2:report-private-feedback-space",
+        "mrpr:material:CH03.P2:report-definition-before-work"
+      ]
+    },
+    {
+      "address": "CH03.P3",
+      "originalPurpose": "B가 관계에 가져오는 장점",
+      "roles": [
+        "특징적 강점",
+        "독립적 근거",
+        "A에게 좋은 상황",
+        "유지 조건"
+      ],
+      "readerQuestion": "B의 검토·참여 정보는 언제 유용한가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH03.P3:report-detect-procedure-gap",
+        "mrpr:material:CH03.P3:report-participation-signal"
+      ]
+    },
+    {
+      "address": "CH03.P4",
+      "originalPurpose": "B가 조심해야 할 부분",
+      "roles": [
+        "과사용 위험",
+        "원인",
+        "A가 받는 뜻",
+        "조절 행동"
+      ],
+      "readerQuestion": "B의 과수락·늦은 상태 공유는 무엇을 확인해야 하는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH03.P4:report-overacceptance",
+        "mrpr:material:CH03.P4:report-late-synthesis"
+      ]
+    },
+    {
+      "address": "CH04.P1",
+      "originalPurpose": "두 사람의 공통점",
+      "roles": [
+        "검증된 공통점 또는 다른 기여",
+        "각자 근거",
+        "함께하는 행동",
+        "강점의 조건"
+      ],
+      "readerQuestion": "공통 선호에서도 상사와 팀원의 다른 책임은 무엇인가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "mrpr:material:CH04.P1:shared-analysis-different-scope"
+      ]
+    },
+    {
+      "address": "CH04.P2",
+      "originalPurpose": "서로 다른 장점이 만날 때",
+      "roles": [
+        "검증된 보완 또는 다른 장점",
+        "실제 근거",
+        "도움의 장면",
+        "좋은 차이의 경계"
+      ],
+      "readerQuestion": "서로 다른 장점을 잇는 검토·결정 조건은 무엇인가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH04.P2:big-picture-field-interface",
+        "mrpr:material:CH04.P2:idea-review-not-personal-approval"
+      ]
+    },
+    {
+      "address": "CH04.P3",
+      "originalPurpose": "함께 있을 때 좋은 순간",
+      "roles": [
+        "관계별 상황",
+        "A의 기여",
+        "B의 기여",
+        "함께 얻는 결과"
+      ],
+      "readerQuestion": "좋은 위임·피드백을 가능하게 할 실제 인터페이스는 무엇인가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH04.P3:feedback-credit-visible"
+      ]
+    },
+    {
+      "address": "CH04.P4",
+      "originalPurpose": "이 관계에서 키울 수 있는 좋은 힘",
+      "roles": [
+        "가치 있는 특징",
+        "좋은 관계의 조건",
+        "과사용 위험",
+        "활용 방향"
+      ],
+      "readerQuestion": "조기 공유·학습에서도 상사가 남길 책임은 무엇인가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "mrpr:material:CH04.P4:learning-with-retained-accountability"
+      ]
+    },
+    {
+      "address": "CH05.P1",
+      "originalPurpose": "A는 B에게 어떤 자극을 주는가",
+      "roles": [
+        "A→B 영향",
+        "받는 사람 기준 십성",
+        "구체적 행동",
+        "B에게 남는 의미"
+      ],
+      "readerQuestion": "B 수신 십성의 정의와 A의 기준·탐색은 무엇이 다른가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "mrpr:material:CH05.P1:manager-to-report-exploration"
+      ]
+    },
+    {
+      "address": "CH05.P2",
+      "originalPurpose": "A가 B에게 주는 좋은 영향",
+      "roles": [
+        "도움 되는 강점",
+        "실제 근거",
+        "관계별 장면",
+        "발휘 조건"
+      ],
+      "readerQuestion": "A의 지원·인정이 B에게 도움 될 조건은 무엇인가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH05.P2:manager-resource-removal",
+        "mrpr:material:CH05.P2:manager-recognize-evidence"
+      ]
+    },
+    {
+      "address": "CH05.P3",
+      "originalPurpose": "A의 행동이 B에게 부담이 되는 순간",
+      "roles": [
+        "부담 행동",
+        "검증된 차이",
+        "의도와 경험",
+        "악화 조건"
+      ],
+      "readerQuestion": "A의 즉답·잦은 점검은 어떤 비용이 되는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH05.P3:manager-speed-pressure",
+        "mrpr:material:CH05.P3:manager-care-as-surveillance"
+      ]
+    },
+    {
+      "address": "CH05.P4",
+      "originalPurpose": "A가 영향력을 잘 사용하는 방법",
+      "roles": [
+        "조정할 행동",
+        "B의 필요",
+        "확인할 실천",
+        "A→B 가능성"
+      ],
+      "readerQuestion": "A는 위임·수정 기준을 어떻게 확인하는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "mrpr:material:CH05.P4:manager-feedback-recheck"
+      ]
+    },
+    {
+      "address": "CH06.P1",
+      "originalPurpose": "B는 A에게 어떤 자극을 주는가",
+      "roles": [
+        "B→A 영향",
+        "받는 사람 기준 십성",
+        "다른 방향 행동",
+        "A에게 남는 의미"
+      ],
+      "readerQuestion": "A 수신 십성과 B의 실행 정보는 어떤 질문인가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH06.P1:report-to-manager-reality-check",
+        "mrpr:material:CH06.P1:report-to-manager-customer-observation"
+      ]
+    },
+    {
+      "address": "CH06.P2",
+      "originalPurpose": "B가 A에게 주는 좋은 영향",
+      "roles": [
+        "도움 되는 강점",
+        "독립적 근거",
+        "관계별 장면",
+        "발휘 조건"
+      ],
+      "readerQuestion": "B의 대안·용량 정보는 언제 관리 결정을 돕는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH06.P2:report-propose-bounded-method",
+        "mrpr:material:CH06.P2:report-capacity-information"
+      ]
+    },
+    {
+      "address": "CH06.P3",
+      "originalPurpose": "B의 행동이 A에게 부담이 되는 순간",
+      "roles": [
+        "부담 행동",
+        "검증된 차이",
+        "의도와 경험",
+        "악화 조건"
+      ],
+      "readerQuestion": "B의 늦은 보고·질문은 언제 결정 공백이 되는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH06.P3:report-unclear-risk-timing",
+        "mrpr:material:CH06.P3:report-question-as-final-decision"
+      ]
+    },
+    {
+      "address": "CH06.P4",
+      "originalPurpose": "B가 영향력을 잘 사용하는 방법",
+      "roles": [
+        "조정할 행동",
+        "A의 필요",
+        "확인할 실천",
+        "B→A 가능성"
+      ],
+      "readerQuestion": "B는 결정·수정에 필요한 정보를 어떻게 요청하는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH06.P4:report-feedback-clarification"
+      ]
+    },
+    {
+      "address": "CH07.P1",
+      "originalPurpose": "가장 중요한 차이",
+      "roles": [
+        "불일치 또는 확인할 조건",
+        "각자의 성향",
+        "다른 이해",
+        "답답함의 이유"
+      ],
+      "readerQuestion": "목표·방법·권한·재량·보고 비용은 무엇이 다른가?",
+      "candidateCount": 5,
+      "materialIds": [
+        "mrpr:material:CH07.P1:vague-instructions",
+        "mrpr:material:CH07.P1:goal-method-confusion",
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+        "mrpr:material:CH07.P1:excess-report-frequency"
+      ]
+    },
+    {
+      "address": "CH07.P2",
+      "originalPurpose": "명리에서 보이는 충돌",
+      "roles": [
+        "실제 충돌 또는 부재",
+        "쉬운 의미",
+        "다른 반응",
+        "긍정적 여지"
+      ],
+      "readerQuestion": "실제 관계·미검출·미지원과 보고·변경·평가·승인 문제를 어떻게 나누는가?",
+      "candidateCount": 5,
+      "materialIds": [
+        "mrpr:material:CH07.P2:report-time-clash",
+        "mrpr:material:CH07.P2:priority-change-harm",
+        "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+        "mrpr:material:CH07.P2:final-authority-unsupported"
+      ]
+    },
+    {
+      "address": "CH07.P3",
+      "originalPurpose": "이 관계의 팩폭",
+      "roles": [
+        "반복 문제",
+        "방향별 원인",
+        "악화 장면",
+        "직설적 결론"
+      ],
+      "readerQuestion": "공개 판단·보복 우려·기여 누락·과부하·자원 공백은 무엇을 요구하는가?",
+      "candidateCount": 5,
+      "materialIds": [
+        "mrpr:material:CH07.P3:public-personal-judgment",
+        "mrpr:material:CH07.P3:fear-of-retaliation",
+        "mrpr:material:CH07.P3:insufficient-credit",
+        "mrpr:material:CH07.P3:overload-allocation",
+        "mrpr:material:CH07.P3:insufficient-resources"
+      ]
+    },
+    {
+      "address": "CH07.P4",
+      "originalPurpose": "갈등이 커지는 조건",
+      "roles": [
+        "주의 상황",
+        "A의 기대",
+        "B의 기대",
+        "다르게 전달되는 뜻"
+      ],
+      "readerQuestion": "늦은 위험 정보·의견 배제·책임 전가·변경 이력·정보 사용은 어떤 다른 문제인가?",
+      "candidateCount": 5,
+      "materialIds": [
+        "mrpr:material:CH07.P4:late-risk-report",
+        "mrpr:material:CH07.P4:excluded-team-voice",
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH07.P4:missing-change-history",
+        "mrpr:material:CH07.P4:reporting-versus-surveillance"
+      ]
+    },
+    {
+      "address": "CH08.P1",
+      "originalPurpose": "우리에게 필요한 조율",
+      "roles": [
+        "앞선 갈등 질문",
+        "실제 원인",
+        "각자 필요",
+        "조정 기준"
+      ],
+      "readerQuestion": "실제로 소개된 공백을 어떤 사실·필요·결정 질문으로 바꾸는가?",
+      "candidateCount": 5,
+      "materialIds": [
+        "mrpr:material:CH08.P1:clarify-output",
+        "mrpr:material:CH08.P1:separate-method",
+        "mrpr:material:CH08.P1:delegate-decision",
+        "mrpr:material:CH08.P1:make-discretion-visible",
+        "mrpr:material:CH08.P1:reduce-duplicate-report"
+      ]
+    },
+    {
+      "address": "CH08.P2",
+      "originalPurpose": "A가 바꾸면 좋은 행동",
+      "roles": [
+        "A의 전략",
+        "필요한 이유",
+        "실천 방법",
+        "B에게 남는 변화"
+      ],
+      "readerQuestion": "A는 시점·변경·수정·평가·승인 책임을 어떻게 먼저 조정하는가?",
+      "candidateCount": 5,
+      "materialIds": [
+        "mrpr:material:CH08.P2:manager-set-report-time",
+        "mrpr:material:CH08.P2:manager-record-priority",
+        "mrpr:material:CH08.P2:manager-close-revision",
+        "mrpr:material:CH08.P2:manager-explain-evaluation",
+        "mrpr:material:CH08.P2:manager-confirm-final-authority"
+      ]
+    },
+    {
+      "address": "CH08.P3",
+      "originalPurpose": "B가 바꾸면 좋은 행동",
+      "roles": [
+        "B의 전략",
+        "필요한 이유",
+        "다른 실천 방법",
+        "A에게 남는 변화"
+      ],
+      "readerQuestion": "B는 안전·사실·용량·자원 안에서 무엇을 확인할 수 있는가?",
+      "candidateCount": 5,
+      "materialIds": [
+        "mrpr:material:CH08.P3:report-request-specific-feedback",
+        "mrpr:material:CH08.P3:report-safe-support-route",
+        "mrpr:material:CH08.P3:report-state-contribution",
+        "mrpr:material:CH08.P3:report-state-capacity",
+        "mrpr:material:CH08.P3:report-name-blocked-resource"
+      ]
+    },
+    {
+      "address": "CH08.P4",
+      "originalPurpose": "둘이 함께 지킬 약속",
+      "roles": [
+        "공동 목표",
+        "A의 역할",
+        "B의 역할",
+        "관계별 원칙"
+      ],
+      "readerQuestion": "둘은 보고·의견·결정·변경·정보 경계를 어떻게 확인하는가?",
+      "candidateCount": 5,
+      "materialIds": [
+        "mrpr:material:CH08.P4:agree-early-risk-response",
+        "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "mrpr:material:CH08.P4:agree-change-log",
+        "mrpr:material:CH08.P4:agree-report-purpose"
+      ]
+    },
+    {
+      "address": "CH09.P1",
+      "originalPurpose": "두 사람이 가진 좋은 힘",
+      "roles": [
+        "긍정적 특징",
+        "실제 명리·MBTI",
+        "함께하는 장점",
+        "지속 조건"
+      ],
+      "readerQuestion": "실제로 표시된 접점·공통 완료 조건만 어떻게 지속하는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH09.P1:recall-goal-execution",
+        "mrpr:material:CH09.P1:recall-shared-completion"
+      ]
+    },
+    {
+      "address": "CH09.P2",
+      "originalPurpose": "함께 활용할 수 있는 좋은 기운",
+      "roles": [
+        "검증된 좋은 기운",
+        "근거와 의미",
+        "관계의 가능성",
+        "현실적 활용"
+      ],
+      "readerQuestion": "표시된 지원·개인 Fusion의 호환 의미를 어떻게 활용하는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH09.P2:recall-supported-possibility",
+        "mrpr:material:CH09.P2:recall-personal-fusion"
+      ]
+    },
+    {
+      "address": "CH09.P3",
+      "originalPurpose": "관계를 오래 지키는 선택",
+      "roles": [
+        "조율 원칙",
+        "개인별 이유",
+        "실천 행동",
+        "지속 조건"
+      ],
+      "readerQuestion": "표시된 위임·안전 원칙을 어떤 조건에서 유지하는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH09.P3:recall-delegation-principle",
+        "mrpr:material:CH09.P3:recall-safe-voice"
+      ]
+    },
+    {
+      "address": "CH09.P4",
+      "originalPurpose": "우리라는 관계의 마지막 메시지",
+      "roles": [
+        "특징적인 상호작용",
+        "함께 만드는 가치",
+        "기억할 기준",
+        "관계별 결론"
+      ],
+      "readerQuestion": "정보·결정·기여·수정·지원의 다른 책임을 어떻게 남기는가?",
+      "candidateCount": 2,
+      "materialIds": [
+        "mrpr:material:CH09.P4:recall-decision-responsibility",
+        "mrpr:material:CH09.P4:recall-contribution-learning"
+      ]
+    }
+  ],
+  "selectedSourceKinds": {
+    "individual_mbti": 34,
+    "external_context": 15,
+    "relation_definition": 5,
+    "mbti_pair_reference": 2,
+    "natal_definition": 9,
+    "individual_fusion_research": 3
+  },
+  "actualWorkplace": "UNKNOWN",
+  "actualJobRoles": "UNKNOWN",
+  "actualAuthority": "UNKNOWN",
+  "actualPerformance": "UNKNOWN",
+  "workTraitsAudited": 603,
+  "primaryTraitsReverified": 1213,
+  "inheritedResearchReverified": 2991,
+  "semanticAxesAvailable": 36,
+  "semanticFacetsAvailable": 109,
+  "axesReferenced": [
+    "STRUCTURE_STYLE",
+    "CARE",
+    "BOUNDARY",
+    "PERSISTENCE",
+    "DEPTH",
+    "DUTY",
+    "AUTONOMY",
+    "PRECISION",
+    "INITIATIVE",
+    "SOCIAL_ATTUNEMENT",
+    "ACTION_TEMPO",
+    "STRATEGY",
+    "CREATION",
+    "RISK_STYLE",
+    "LEARNING",
+    "CURIOSITY",
+    "PRACTICALITY",
+    "EXPRESSION",
+    "RECOVERY_NEED",
+    "ADAPTABILITY",
+    "STATUS_DRIVE",
+    "RESOURCE_SENSE"
+  ],
+  "facetsReferenced": [
+    "sar:facet:STRUCTURE_STYLE:fixed-minimum",
+    "sar:facet:CARE:need-check",
+    "sar:facet:BOUNDARY:refusal",
+    "sar:facet:PERSISTENCE:repeat-practice",
+    "sar:facet:DEPTH:cause-tracing",
+    "sar:facet:DUTY:role-fulfilment",
+    "sar:facet:AUTONOMY:choice-ownership",
+    "sar:facet:PRECISION:error-detection",
+    "sar:facet:INITIATIVE:opening-proposal",
+    "sar:facet:CARE:practical-support",
+    "sar:facet:SOCIAL_ATTUNEMENT:cue-observation",
+    "sar:facet:ACTION_TEMPO:start-latency",
+    "sar:facet:STRATEGY:route-comparison",
+    "sar:facet:CREATION:prototype",
+    "sar:facet:RISK_STYLE:loss-limit",
+    "sar:facet:LEARNING:acquisition",
+    "sar:facet:CURIOSITY:question-making",
+    "sar:facet:PRACTICALITY:use-test",
+    "sar:facet:EXPRESSION:channel-choice",
+    "sar:facet:RECOVERY_NEED:load-recognition",
+    "sar:facet:ADAPTABILITY:method-revision",
+    "sar:facet:STATUS_DRIVE:recognition-target",
+    "sar:facet:RESOURCE_SENSE:flow-account"
+  ],
+  "pairSourceDirections": 256,
+  "pairDirect158Inferred98": true,
+  "pairCandidateDirections": 2,
+  "noManagerSpecificPattern": true,
+  "sourceLenses": 16,
+  "mainCandidateMbtiTypesByOwner": {
+    "A": [
+      "INTP",
+      "ENFJ",
+      "ISTJ",
+      "ENTJ"
+    ],
+    "B": [
+      "ESFJ",
+      "ISTP",
+      "ISTJ",
+      "ISFP",
+      "INTP"
+    ]
+  },
+  "workProcesses": 14,
+  "jobContexts": 23,
+  "contextIsNotPayload": true,
+  "scenarios": 40,
+  "compatibilityVariantExecutions": 42,
+  "expectedRoleRejections": 2,
+  "sixProductScenarioAM": "tests/unit/interpretation-v4/sixProductIntegration.test.ts; separate actual suite, no empty variant counted as generation PASS",
+  "connectedToRuntime": false,
+  "approvedForCustomer": false,
+  "existingScoreContribution": false,
+  "runtimeEvidenceIds": [],
+  "newBindingEngine": false,
+  "newDomainApproval": false,
+  "newLedger": false,
+  "validationSummary": {
+    "newTests": 1165,
+    "newFailures": 0,
+    "baselineFailures": 27,
+    "conditionalNotRun": 1,
+    "typeDiagnostics": 0,
+    "buildPages": 47
+  }
+}

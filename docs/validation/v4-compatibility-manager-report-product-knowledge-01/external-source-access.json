@@ -1,0 +1,308 @@
+[
+  {
+    "sourceId": "external:managerReport:role",
+    "url": "https://www.hse.gov.uk/stress/standards/role.htm",
+    "metadata": {
+      "author": "Health and Safety Executive",
+      "title": "Management Standards – Role",
+      "url": "https://www.hse.gov.uk/stress/standards/role.htm",
+      "reviewed": "2021-05-11",
+      "access": "web_page_text_actually_opened",
+      "checkedSection": "48–59",
+      "summary": "역할·책임의 명확성, 요구의 정합성, 우려를 알릴 체계를 확인하는 관리 안내.",
+      "scope": "영국 직무 스트레스 관리 안내. 한국 법 판단·실제 권한·유형별 효과를 확정하지 않음.",
+      "accessedAt": "2026-10-14",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:support",
+    "url": "https://www.hse.gov.uk/stress/standards/support.htm",
+    "metadata": {
+      "author": "Health and Safety Executive",
+      "title": "Management Standards – Support",
+      "url": "https://www.hse.gov.uk/stress/standards/support.htm",
+      "reviewed": "2021-05-11",
+      "access": "web_page_text_actually_opened",
+      "checkedSection": "48–62",
+      "summary": "업무 수행에 필요한 자원·관리자 지원·정보 접근·건설적 피드백을 확인하는 안내.",
+      "scope": "조직 조건 지침. 입력 인물의 실제 지원 이력·권한·성과는 입증하지 않음.",
+      "accessedAt": "2026-10-14",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:control",
+    "url": "https://www.hse.gov.uk/stress/standards/control.htm",
+    "metadata": {
+      "author": "Health and Safety Executive",
+      "title": "Management Standards – Control",
+      "url": "https://www.hse.gov.uk/stress/standards/control.htm",
+      "reviewed": "2021-05-11",
+      "access": "web_page_text_actually_opened",
+      "checkedSection": "48–63",
+      "summary": "작업 방식·속도에 대한 의견과 가능한 재량·기술 활용을 확인하는 관리 안내.",
+      "scope": "영국 직무 조건 지침. 모든 조직의 재량 보장이나 안전 규칙 해제를 뜻하지 않음.",
+      "accessedAt": "2026-10-14",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:safety",
+    "url": "https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness",
+    "metadata": {
+      "author": "re:Work Editorial Team / Google",
+      "title": "Understand team effectiveness",
+      "url": "https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness",
+      "published": "2015 (page metadata)",
+      "access": "web_page_text_actually_opened",
+      "checkedSection": "31–107",
+      "summary": "Google 내부 팀 연구의 맥락에서 질문·실수·이견의 대인 위험과 역할·목표 명료성을 논의한다.",
+      "scope": "조직 한정 관찰. Big Five 조사와 MBTI는 다름. 모든 조직의 인과 법칙·법적 보호·보복 없음 보장이 아니다.",
+      "accessedAt": "2026-10-14",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:type",
+    "url": "https://www.myersbriggs.org/type-in-my-life/personality-type-and-organizations/",
+    "metadata": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "author": "Myers & Briggs Foundation",
+      "title": "Personality Type and Organizations",
+      "url": "https://www.myersbriggs.org/type-in-my-life/personality-type-and-organizations/",
+      "published": null,
+      "reviewed": null,
+      "checkedSection": "lines 543–560",
+      "summary": "유형은 선호를 다루며 능력·기술·역량이나 채용·직무 선발 판단으로 사용하지 않는다.",
+      "scope": "도구 제공 측의 사용 원칙·유형 설명. 저장소 Pair 계보나 유형별 협업 성과의 독립 실증 검증을 뜻하지 않는다.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:accountability",
+    "url": "https://www.ccl.org/articles/leading-effectively-articles/yes-you-can-increase-accountability/",
+    "metadata": {
+      "author": "Center for Creative Leadership",
+      "title": "Yes, Your Leaders Can Increase Accountability",
+      "url": "https://www.ccl.org/articles/leading-effectively-articles/yes-you-can-increase-accountability/",
+      "published": "2026-02-16",
+      "access": "web_page_text_actually_opened",
+      "checkedSection": "224–261",
+      "summary": "관리자가 명확한 목표·정보·자원·지원·가능한 자유를 제공하고 자기 행동도 돌아보는 실무 안내.",
+      "scope": "제공기관의 리더십 실무 모델. 책·유료 과정 전체를 열람하지 않았으며 유형 조합 성과 법칙이 아님.",
+      "accessedAt": "2026-10-14",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:feedback",
+    "url": "https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/",
+    "metadata": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "author": "Center for Creative Leadership",
+      "title": "Use Situation-Behavior-Impact to Inquire About Intent",
+      "url": "https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/",
+      "published": "2025-08-19",
+      "reviewed": null,
+      "checkedSection": "lines 210–269",
+      "summary": "특정 상황의 관찰 행동과 영향을 구분하고 의도는 당사자에게 질문한다.",
+      "scope": "일반 피드백 실무 모델. 특정 유형 조합 효과의 검증이나 동료에게 평가 권한을 주는 근거가 아니다.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:huddle",
+    "url": "https://www.ahrq.gov/teamstepps-program/curriculum/team/tools/huddle.html",
+    "metadata": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "author": "Agency for Healthcare Research and Quality",
+      "title": "Monitoring and Modifying the Plan: Huddle",
+      "url": "https://www.ahrq.gov/teamstepps-program/curriculum/team/tools/huddle.html",
+      "published": "2023-05",
+      "reviewed": "2023-05",
+      "checkedSection": "lines 35–39",
+      "summary": "기존 계획을 바꿔야 할 변화나 작업량이 생기면 갱신 내용을 공유하는 교육 도구.",
+      "scope": "의료 계획 변경 지침. 일반 마감·범위 조정은 가상 응용이며 최종 변경 승인 권한은 별도 확인.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:task",
+    "url": "https://www.ahrq.gov/teamstepps-program/curriculum/mutual/tools/task.html",
+    "metadata": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "author": "Agency for Healthcare Research and Quality",
+      "title": "Tool: Task Assistance",
+      "url": "https://www.ahrq.gov/teamstepps-program/curriculum/mutual/tools/task.html",
+      "published": "2023-05",
+      "reviewed": "2023-05",
+      "checkedSection": "lines 40–59,74–83",
+      "summary": "도움은 관찰 가능한 업무와 구체적인 가용 시간·범위를 확인하며 요청·제공한다.",
+      "scope": "의료 업무 지원 자료. 자격·안전·조직 절차를 대체하지 않으며 도움 제안은 상대 능력 판정이 아니다.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:brief",
+    "url": "https://www.ahrq.gov/teamstepps-program/curriculum/team/tools/briefs.html",
+    "metadata": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "author": "Agency for Healthcare Research and Quality",
+      "title": "Sharing the Care Plan: Brief",
+      "url": "https://www.ahrq.gov/teamstepps-program/curriculum/team/tools/briefs.html",
+      "published": "2023-05",
+      "reviewed": "2023-12",
+      "checkedSection": "lines 35–49",
+      "summary": "목표·역할·기대·가용 자원을 시작 전에 함께 확인하는 의료 팀 교육 자료.",
+      "scope": "일반 프로젝트 착수 질문은 별도 편집 응용. 원문의 팀 리더 역할을 입력 A에게 자동 부여하지 않는다.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:debrief",
+    "url": "https://www.ahrq.gov/teamstepps-program/curriculum/team/tools/debrief.html",
+    "metadata": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "author": "Agency for Healthcare Research and Quality",
+      "title": "Reviewing the Team’s Performance: Debrief",
+      "url": "https://www.ahrq.gov/teamstepps-program/curriculum/team/tools/debrief.html",
+      "published": "2023-05",
+      "reviewed": "2023-12",
+      "checkedSection": "lines 35–53",
+      "summary": "사실 경과와 잘된 점·개선할 절차를 돌아보고 다음 계획에 반영하도록 안내한다.",
+      "scope": "의료 팀 교육. 개인 인사 평가나 실제 고객의 과거 실적 자료로 사용하지 않는다.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:check",
+    "url": "https://www.ahrq.gov/teamstepps-program/curriculum/communication/tools/checkback.html",
+    "metadata": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "author": "Agency for Healthcare Research and Quality",
+      "title": "Tool: Check-Back",
+      "url": "https://www.ahrq.gov/teamstepps-program/curriculum/communication/tools/checkback.html",
+      "published": "2023-05",
+      "reviewed": "2023-07",
+      "checkedSection": "lines 41–50",
+      "summary": "정보의 발신·수신·되확인을 구분해 같은 의미로 이해했는지 확인하는 교육 도구.",
+      "scope": "의료 소통 도구. 업무 요청을 자기 말로 확인하는 응용은 연구용이며 수신 확인을 업무 수락·승인으로 바꾸지 않는다.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:performance",
+    "url": "https://www.acas.org.uk/performance-management",
+    "metadata": {
+      "author": "Acas",
+      "title": "Performance management",
+      "url": "https://www.acas.org.uk/performance-management",
+      "reviewed": "2026-06-23",
+      "access": "search_cached_article_text_read_direct_open_503",
+      "checkedSection": "search result article: reviews, objectives, support, written record",
+      "summary": "합의한 목표·업무·지원·훈련·검토·공유 기록을 함께 확인하는 운영 지침.",
+      "scope": "검색 캐시 본문을 확인했으며 직접 페이지는503. 영국 고용 지침을 한국 법·인사 권한으로 전용하지 않음.",
+      "accessedAt": "2026-10-14",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:hse",
+    "url": "https://www.hse.gov.uk/stress/standards/overview.htm",
+    "metadata": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "author": "Health and Safety Executive",
+      "title": "What are the Management Standards?",
+      "url": "https://www.hse.gov.uk/stress/standards/overview.htm",
+      "published": null,
+      "reviewed": "page updated 2025-01-14",
+      "checkedSection": "lines 47–64",
+      "summary": "업무 요구·재량·지원·관계·역할·변화는 조직의 작업 조건으로 확인한다.",
+      "scope": "영국 직무 스트레스 관리 안내. 한국 법률 판단이나 유형별 질병 예측에 전용하지 않는다. 부당행위는 성향 차이로 정당화하지 않는다.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  },
+  {
+    "sourceId": "external:managerReport:handoff",
+    "url": "https://www.ahrq.gov/teamstepps-program/curriculum/communication/tools/handoff.html",
+    "metadata": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "author": "Agency for Healthcare Research and Quality",
+      "title": "Tool: Handoff",
+      "url": "https://www.ahrq.gov/teamstepps-program/curriculum/communication/tools/handoff.html",
+      "published": "2023-05",
+      "reviewed": "2023-05",
+      "checkedSection": "lines 41–60, 78–82",
+      "summary": "의료 인수인계에서는 불확실성·변경·계획을 전하고 수신자의 이해·수락·질문 기회를 확인한다.",
+      "scope": "의료 팀 교육 지침. 일반 업무의 파일·미완료·수신 확인 질문은 편집자의 조건부 전이이며 법적 책임이나 자동 권한 이전 규칙이 아니다.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "summaryIsParaphrase": true,
+    "fullArticleNotCopied": true
+  }
+]

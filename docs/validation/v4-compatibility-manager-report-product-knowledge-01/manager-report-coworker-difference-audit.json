@@ -1,0 +1,1274 @@
+[
+  {
+    "address": "CH01.P1",
+    "originalPurpose": "두 사람을 한마디로 설명하면",
+    "sharedGenericConcept": [
+      "goal",
+      "delegation"
+    ],
+    "managerQuestion": "목표와 실행 방법의 접점은 무엇인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH01.P1:goal-method-interface",
+        "managerResponsibility": "목적·필수 조건·변경 가능한 방법을 구분",
+        "reportAvailableAction": "이해한 결과와 필요한 절차 정보를 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "goal_setting",
+        "difference": "CH05의 개별 지시 영향 전에 대표 접점만 소개"
+      },
+      {
+        "id": "mrpr:material:CH01.P1:support-execution-interface",
+        "managerResponsibility": "중단 없는 시간과 지원 가능 시간을 설명",
+        "reportAvailableAction": "막힌 항목과 요청 자원을 짧게 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "resource_support",
+        "difference": "목표·방법 접점과 달리 지원 빈도·집중 접점"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH01.P2",
+    "originalPurpose": "명리에서 보는 두 사람의 관계",
+    "sharedGenericConcept": [
+      "canonical",
+      "authority"
+    ],
+    "managerQuestion": "실제 명리 관계와 승인권을 어떻게 구분하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH01.P2:harmony-not-approval",
+        "managerResponsibility": "결정자와 검토 범위를 실제 규정으로 확인",
+        "reportAvailableAction": "동의한 내용과 승인 필요한 항목 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "approval",
+        "difference": "CH07 충돌 해석과 달리 연결 상징의 권한 경계"
+      },
+      {
+        "id": "mrpr:material:CH01.P2:half-harmony-not-completion",
+        "managerResponsibility": "완료와 추가 확인을 별도 표시",
+        "reportAvailableAction": "확인 완료·추정·미확인을 나눠 보고",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "review_standard",
+        "difference": "육합 권한 질문과 다른 부분 연결·완료 기준"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH01.P3",
+    "originalPurpose": "MBTI가 보여주는 우리",
+    "sharedGenericConcept": [
+      "mbti",
+      "information"
+    ],
+    "managerQuestion": "각자의 정보 선호는 어떤 다른 질문을 만드는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH01.P3:model-and-procedure",
+        "managerResponsibility": "핵심 원리와 실행 예시를 함께 제시",
+        "reportAvailableAction": "어느 단계가 아직 모호한지 질문",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "information_access",
+        "difference": "CH02·03의 개인 특징 전에 두 정보 형식만 대비"
+      },
+      {
+        "id": "mrpr:material:CH01.P3:same-type-different-role",
+        "managerResponsibility": "현재 유효한 기준과 변경자를 확인",
+        "reportAvailableAction": "참조한 규칙 버전을 명시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "goal_setting",
+        "difference": "다른 유형의 원리·절차 대비와 다른 공유 전제 점검"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH01.P4",
+    "originalPurpose": "이 관계를 이해하는 가장 중요한 기준",
+    "sharedGenericConcept": [
+      "autonomy",
+      "delegation"
+    ],
+    "managerQuestion": "권한·기준·자원에서 무엇을 먼저 확인하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH01.P4:discretion-as-condition",
+        "managerResponsibility": "필수 규칙과 선택 범위를 분리",
+        "reportAvailableAction": "선택 가능한 방법을 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "method_discretion",
+        "difference": "CH08 조정 절차 전 기본 판단 기준"
+      },
+      {
+        "id": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+        "managerResponsibility": "확인된 권한만 설명하고 지원 절차 안내",
+        "reportAvailableAction": "필요한 기준·담당자 확인 요청",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "UNKNOWN",
+        "difference": "개인 정보 방식과 다른 전체 적용 한계"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH02.P1",
+    "originalPurpose": "A의 관계 성향",
+    "sharedGenericConcept": [
+      "goal",
+      "information"
+    ],
+    "managerQuestion": "A는 목표를 어떤 정보로 설명하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH02.P1:manager-model-goal",
+        "managerResponsibility": "목표에서 필요한 결과물까지 연결",
+        "reportAvailableAction": "모호한 결과 예시를 요청",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "goal_setting",
+        "difference": "관리자의 대표 설명 방식"
+      },
+      {
+        "id": "mrpr:material:CH02.P1:manager-people-purpose",
+        "managerResponsibility": "참여 요구보다 필요한 지원을 확인",
+        "reportAvailableAction": "가능 시간·지원 필요를 사실로 전달",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "resource_support",
+        "difference": "논리 구조와 다른 참여·지원 분리"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH02.P2",
+    "originalPurpose": "A가 관계에서 중요하게 여기는 것",
+    "sharedGenericConcept": [
+      "evaluation",
+      "criteria"
+    ],
+    "managerQuestion": "A가 판단·점검에 필요한 조건은 무엇인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH02.P2:manager-standard-evidence",
+        "managerResponsibility": "선례 중 필수·선호 항목을 구분",
+        "reportAvailableAction": "새 방식이 충족하는 항목을 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "review_standard",
+        "difference": "CH02.P1 목표 설명과 다른 판단 근거"
+      },
+      {
+        "id": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+        "managerResponsibility": "필요 정보와 결정 시한을 먼저 명시",
+        "reportAvailableAction": "확인된 것·조사 중인 것을 분리",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "선례 기준과 다른 점검의 목적·시한"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH02.P3",
+    "originalPurpose": "A가 관계에 가져오는 장점",
+    "sharedGenericConcept": [
+      "responsibility",
+      "change"
+    ],
+    "managerQuestion": "A의 자기 수정·지원이 도움이 될 조건은 무엇인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH02.P3:manager-correct-own-error",
+        "managerResponsibility": "변경 출처·일정·담당 영향을 명시",
+        "reportAvailableAction": "이미 수행한 작업과 추가 소요 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "priority_change",
+        "difference": "A의 장점 중 자기 수정 책임"
+      },
+      {
+        "id": "mrpr:material:CH02.P3:manager-support-limit",
+        "managerResponsibility": "담당·일정·자원 중 조정할 항목 결정",
+        "reportAvailableAction": "막힌 단계와 필요한 자원 설명",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "resource_support",
+        "difference": "오류 정정과 다른 지원 연결 책임"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH02.P4",
+    "originalPurpose": "A가 조심해야 할 부분",
+    "sharedGenericConcept": [
+      "overmanagement",
+      "autonomy"
+    ],
+    "managerQuestion": "A의 간섭·지적 회피가 어떤 부담을 남기는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH02.P4:manager-overcontrol",
+        "managerResponsibility": "필수 조건 밖 방식 개입을 줄임",
+        "reportAvailableAction": "선택한 방법의 이유·결과를 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "method_discretion",
+        "difference": "A 과용의 통제 범위"
+      },
+      {
+        "id": "mrpr:material:CH02.P4:manager-avoid-feedback",
+        "managerResponsibility": "인격 대신 산출물의 수정 기준 제시",
+        "reportAvailableAction": "요청된 수정과 완료 기준 재확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "feedback",
+        "difference": "통제 과용과 다른 지적 회피의 비용"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH03.P1",
+    "originalPurpose": "B의 관계 성향",
+    "sharedGenericConcept": [
+      "instruction",
+      "information"
+    ],
+    "managerQuestion": "B는 어떤 정보로 과제를 이해하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH03.P1:report-procedure-understanding",
+        "managerResponsibility": "필수 정보와 선택 가능한 부분을 설명",
+        "reportAvailableAction": "정해진 정보 안에서 먼저 할 작업 제안",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "method_discretion",
+        "difference": "팀원 독립적 이해 형식"
+      },
+      {
+        "id": "mrpr:material:CH03.P1:report-independent-focus",
+        "managerResponsibility": "점검 목적·긴급 보고 조건을 정함",
+        "reportAvailableAction": "상태·위험·결정 필요를 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "절차 질문과 다른 집중·보고 인터페이스"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH03.P2",
+    "originalPurpose": "B가 관계에서 중요하게 여기는 것",
+    "sharedGenericConcept": [
+      "feedback",
+      "safety"
+    ],
+    "managerQuestion": "B에게 필요한 정의·수정 환경은 무엇인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH03.P2:report-private-feedback-space",
+        "managerResponsibility": "공개 인격 판단을 중단하고 기준 설명",
+        "reportAvailableAction": "안전한 방식으로 수정 사항·시간 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "feedback",
+        "difference": "팀원의 수정 환경 요구"
+      },
+      {
+        "id": "mrpr:material:CH03.P2:report-definition-before-work",
+        "managerResponsibility": "현재 해결 목표와 제외 범위 답변",
+        "reportAvailableAction": "확인한 범위 안의 첫 검토안 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "goal_setting",
+        "difference": "피드백 공간과 다른 과제 정의 요구"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH03.P3",
+    "originalPurpose": "B가 관계에 가져오는 장점",
+    "sharedGenericConcept": [
+      "risk",
+      "information"
+    ],
+    "managerQuestion": "B의 검토·참여 정보는 언제 유용한가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+        "managerResponsibility": "판단·지원·우선순위 조정 필요를 검토",
+        "reportAvailableAction": "관찰 사실과 추정을 구분해 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "information_access",
+        "difference": "팀원 강점의 정보 공급 역할"
+      },
+      {
+        "id": "mrpr:material:CH03.P3:report-participation-signal",
+        "managerResponsibility": "공통 정보·지원 창구를 보완",
+        "reportAvailableAction": "확인된 질문만 전달하고 감정 추정 보류",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "resource_support",
+        "difference": "수치 오류와 다른 참여 정보"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH03.P4",
+    "originalPurpose": "B가 조심해야 할 부분",
+    "sharedGenericConcept": [
+      "allocation",
+      "overload"
+    ],
+    "managerQuestion": "B의 과수락·늦은 상태 공유는 무엇을 확인해야 하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH03.P4:report-overacceptance",
+        "managerResponsibility": "추가 요청의 우선순위·중단할 작업 결정",
+        "reportAvailableAction": "실제 소요와 충돌 시간을 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "work_allocation",
+        "difference": "팀원의 과수락 비용"
+      },
+      {
+        "id": "mrpr:material:CH03.P4:report-late-synthesis",
+        "managerResponsibility": "중간 상태 공유를 최종 평가와 구분",
+        "reportAvailableAction": "완료·진행·막힘과 다음 확인 시각 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "과수락과 다른 진행 가시성"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH04.P1",
+    "originalPurpose": "두 사람의 공통점",
+    "sharedGenericConcept": [
+      "completion",
+      "responsibility"
+    ],
+    "managerQuestion": "공통 선호에서도 상사와 팀원의 다른 책임은 무엇인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+        "managerResponsibility": "필수·추가 품질과 일정 구분",
+        "reportAvailableAction": "남은 수행과 검토 필요 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "review_standard",
+        "difference": "공통 선호의 역할 분리"
+      },
+      {
+        "id": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+        "managerResponsibility": "결정과 관련된 검토 범위 설정",
+        "reportAvailableAction": "검증 가능·미확인 자료 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "goal_setting",
+        "difference": "마무리 공통성과 다른 분석 대상 분담"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH04.P2",
+    "originalPurpose": "서로 다른 장점이 만날 때",
+    "sharedGenericConcept": [
+      "planning",
+      "information"
+    ],
+    "managerQuestion": "서로 다른 장점을 잇는 검토·결정 조건은 무엇인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH04.P2:big-picture-field-interface",
+        "managerResponsibility": "반례를 검토하고 수정 여부 결정",
+        "reportAvailableAction": "측정 사실·해석·대안을 분리",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "priority_change",
+        "difference": "공통 분석과 다른 계획·현장 접점"
+      },
+      {
+        "id": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+        "managerResponsibility": "필수 기준·시험 승인 범위 명시",
+        "reportAvailableAction": "비교할 결과와 되돌림 조건 제안",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "method_discretion",
+        "difference": "큰 구조·현장 정보와 다른 대안 검토 인터페이스"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH04.P3",
+    "originalPurpose": "함께 있을 때 좋은 순간",
+    "sharedGenericConcept": [
+      "delegation",
+      "reporting"
+    ],
+    "managerQuestion": "좋은 위임·피드백을 가능하게 할 실제 인터페이스는 무엇인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "managerResponsibility": "재량·점검·지원 응답 시점 명시",
+        "reportAvailableAction": "예외 조건과 현재 상태 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "delegation",
+        "difference": "보완 성향을 실제 위임 조건으로 전환"
+      },
+      {
+        "id": "mrpr:material:CH04.P3:feedback-credit-visible",
+        "managerResponsibility": "기여 출처와 추가 요청을 분리",
+        "reportAvailableAction": "기여 사실과 가용 범위 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "recognition",
+        "difference": "위임 설계와 다른 인정·피드백 장면"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH04.P4",
+    "originalPurpose": "이 관계에서 키울 수 있는 좋은 힘",
+    "sharedGenericConcept": [
+      "risk",
+      "safety"
+    ],
+    "managerQuestion": "조기 공유·학습에서도 상사가 남길 책임은 무엇인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+        "managerResponsibility": "보고와 인격 평가를 분리하고 지원 검토",
+        "reportAvailableAction": "확인된 사실·불확실성을 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "resource_support",
+        "difference": "긍정적 관계를 관리 반응으로 정의"
+      },
+      {
+        "id": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "managerResponsibility": "자기 지시·지원 조건도 수정 대상에 포함",
+        "reportAvailableAction": "확인한 실행상의 개선점을 제안",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "resource_support",
+        "difference": "조기 공유와 다른 학습·관리 책임"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH05.P1",
+    "originalPurpose": "A는 B에게 어떤 자극을 주는가",
+    "sharedGenericConcept": [
+      "direction",
+      "criteria"
+    ],
+    "managerQuestion": "B 수신 십성의 정의와 A의 기준·탐색은 무엇이 다른가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH05.P1:manager-to-report-constraint",
+        "managerResponsibility": "필수 기준·지원·질문 통로 설명",
+        "reportAvailableAction": "방법 선택 범위 재확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "delegation",
+        "difference": "방향 정의와 기준의 전달"
+      },
+      {
+        "id": "mrpr:material:CH05.P1:manager-to-report-exploration",
+        "managerResponsibility": "아이디어·검토 요청·확정 지시를 구분",
+        "reportAvailableAction": "현재 수행할 안과 보류안을 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "goal_setting",
+        "difference": "기준 제시와 다른 탐색 자극"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH05.P2",
+    "originalPurpose": "A가 B에게 주는 좋은 영향",
+    "sharedGenericConcept": [
+      "direction",
+      "support"
+    ],
+    "managerQuestion": "A의 지원·인정이 B에게 도움 될 조건은 무엇인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH05.P2:manager-resource-removal",
+        "managerResponsibility": "지원 담당·시점·권한을 확인",
+        "reportAvailableAction": "막힌 작업과 필요한 정보 명시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "resource_support",
+        "difference": "지원의 구체적 전달 경로"
+      },
+      {
+        "id": "mrpr:material:CH05.P2:manager-recognize-evidence",
+        "managerResponsibility": "관찰된 기여와 다음 업무 범위 분리",
+        "reportAvailableAction": "수행 사실·가용 시간 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "recognition",
+        "difference": "지원 연결과 다른 관찰 기여 인정"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH05.P3",
+    "originalPurpose": "A의 행동이 B에게 부담이 되는 순간",
+    "sharedGenericConcept": [
+      "direction",
+      "feedback"
+    ],
+    "managerQuestion": "A의 즉답·잦은 점검은 어떤 비용이 되는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH05.P3:manager-speed-pressure",
+        "managerResponsibility": "질문·결정 시한을 미리 주고 반응 기다림",
+        "reportAvailableAction": "확인된 것과 추가 검토 필요를 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "A의 속도가 수신자에게 주는 비용"
+      },
+      {
+        "id": "mrpr:material:CH05.P3:manager-care-as-surveillance",
+        "managerResponsibility": "점검을 결정·지원과 연결하고 중복 질문 축소",
+        "reportAvailableAction": "보고에 드는 시간과 필요한 지원 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "A 과용의 점검 비용"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH05.P4",
+    "originalPurpose": "A가 영향력을 잘 사용하는 방법",
+    "sharedGenericConcept": [
+      "direction",
+      "delegation"
+    ],
+    "managerQuestion": "A는 위임·수정 기준을 어떻게 확인하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH05.P4:manager-delegation-confirm",
+        "managerResponsibility": "위임 범위·자원·자기 검토 책임 명시",
+        "reportAvailableAction": "실행 선택과 예외를 구분해 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "delegation",
+        "difference": "앞선 부담의 예방을 행동 계약으로 구체화"
+      },
+      {
+        "id": "mrpr:material:CH05.P4:manager-feedback-recheck",
+        "managerResponsibility": "관찰·영향·수정 기준·검토 시점을 제시",
+        "reportAvailableAction": "수정 이해와 예상 완료 시점 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "feedback",
+        "difference": "위임 범위와 다른 수정 종료 인터페이스"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH06.P1",
+    "originalPurpose": "B는 A에게 어떤 자극을 주는가",
+    "sharedGenericConcept": [
+      "direction",
+      "risk"
+    ],
+    "managerQuestion": "A 수신 십성과 B의 실행 정보는 어떤 질문인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+        "managerResponsibility": "정보를 검토하고 변경 여부·지원 결정",
+        "reportAvailableAction": "관찰·영향·필요 결정 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "priority_change",
+        "difference": "A→B 기준 자극과 다른 실행 사실의 역방향"
+      },
+      {
+        "id": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+        "managerResponsibility": "표본 범위·추가 확인·대응 우선순위 판단",
+        "reportAvailableAction": "관찰 사실과 추정·제안 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "information_access",
+        "difference": "수치 불일치와 다른 반응 정보의 범위"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH06.P2",
+    "originalPurpose": "B가 A에게 주는 좋은 영향",
+    "sharedGenericConcept": [
+      "direction",
+      "proposal"
+    ],
+    "managerQuestion": "B의 대안·용량 정보는 언제 관리 결정을 돕는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH06.P2:report-propose-bounded-method",
+        "managerResponsibility": "검토 기준과 허용 범위를 설명",
+        "reportAvailableAction": "가정·비교 지표·시험 범위 제안",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "approval",
+        "difference": "B의 아이디어를 관리 결정 입력으로 변환"
+      },
+      {
+        "id": "mrpr:material:CH06.P2:report-capacity-information",
+        "managerResponsibility": "중단·연기·지원할 항목 결정",
+        "reportAvailableAction": "작업량·소요 근거·충돌 시점 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "work_allocation",
+        "difference": "아이디어와 다른 배분 정보"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH06.P3",
+    "originalPurpose": "B의 행동이 A에게 부담이 되는 순간",
+    "sharedGenericConcept": [
+      "direction",
+      "delay"
+    ],
+    "managerQuestion": "B의 늦은 보고·질문은 언제 결정 공백이 되는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+        "managerResponsibility": "보고 통로·시한·지원 응답을 명확히 함",
+        "reportAvailableAction": "상태·영향·다음 확인을 전달",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "BA 정보 시점의 비용"
+      },
+      {
+        "id": "mrpr:material:CH06.P3:report-question-as-final-decision",
+        "managerResponsibility": "결정 근거와 변경 가능 여부 설명",
+        "reportAvailableAction": "확인 질문·제안·승인 요청 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "decision_rights",
+        "difference": "늦은 보고와 다른 질문 상태 혼동"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH06.P4",
+    "originalPurpose": "B가 영향력을 잘 사용하는 방법",
+    "sharedGenericConcept": [
+      "direction",
+      "reporting"
+    ],
+    "managerQuestion": "B는 결정·수정에 필요한 정보를 어떻게 요청하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "managerResponsibility": "결정과 미결 항목을 답변",
+        "reportAvailableAction": "사실·선택지·결정 요청을 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "decision_rights",
+        "difference": "BA 보고를 결정 인터페이스로 정리"
+      },
+      {
+        "id": "mrpr:material:CH06.P4:report-feedback-clarification",
+        "managerResponsibility": "행동 기준·수정 시간·지원 설명",
+        "reportAvailableAction": "관찰 예시와 수정 우선순위를 요청",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "feedback",
+        "difference": "결정 보고와 다른 수정 조건 확인"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH07.P1",
+    "originalPurpose": "가장 중요한 차이",
+    "sharedGenericConcept": [
+      "vague_instructions",
+      "goal"
+    ],
+    "managerQuestion": "목표·방법·권한·재량·보고 비용은 무엇이 다른가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH07.P1:vague-instructions",
+        "managerResponsibility": "결과·제외 범위·기준 예시 설명",
+        "reportAvailableAction": "모호한 항목을 확인 질문으로 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "goal_setting",
+        "difference": "CH01 접점 소개와 달리 실제 불일치 비용"
+      },
+      {
+        "id": "mrpr:material:CH07.P1:goal-method-confusion",
+        "managerResponsibility": "필수 결과와 선호 방법을 구분",
+        "reportAvailableAction": "방법 선택 이유·결과를 설명",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "method_discretion",
+        "difference": "모호한 목표와 다른 사후 방법 간섭"
+      },
+      {
+        "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "managerResponsibility": "실제 결정 범위·응답 책임·지원 확인",
+        "reportAvailableAction": "승인 대기·영향·필요 시점 보고",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "delegation",
+        "difference": "방법 취향이 아닌 결정권 공백"
+      },
+      {
+        "id": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+        "managerResponsibility": "필수 제약과 실제 재량을 공개",
+        "reportAvailableAction": "변경 가능한 선택을 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "method_discretion",
+        "difference": "결정권 대기와 다른 선택 가능성 모순"
+      },
+      {
+        "id": "mrpr:material:CH07.P1:excess-report-frequency",
+        "managerResponsibility": "보고 목적·빈도·중복 채널 정리",
+        "reportAvailableAction": "보고 시간·중단 비용을 사실로 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "재량 혼동과 다른 보고의 작업 비용"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH07.P2",
+    "originalPurpose": "명리에서 보이는 충돌",
+    "sharedGenericConcept": [
+      "report_timing",
+      "canonical"
+    ],
+    "managerQuestion": "실제 관계·미검출·미지원과 보고·변경·평가·승인 문제를 어떻게 나누는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH07.P2:report-time-clash",
+        "managerResponsibility": "결정 시한과 중간 보고 범위 설명",
+        "reportAvailableAction": "미확인 항목·다음 확인 시간 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "보고 비용과 다른 보고 시점·전통 정의 경계"
+      },
+      {
+        "id": "mrpr:material:CH07.P2:priority-change-harm",
+        "managerResponsibility": "변경 사유·우선순위·기한 재조정",
+        "reportAvailableAction": "현재 수행과 변경 영향 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "priority_change",
+        "difference": "시점 차이와 다른 계획 변경 책임"
+      },
+      {
+        "id": "mrpr:material:CH07.P2:rework-with-half-harmony",
+        "managerResponsibility": "수정 이유·범위·기한 설명",
+        "reportAvailableAction": "기존 기준 충족 항목과 추가 소요 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "review_standard",
+        "difference": "충·해와 다른 연결 관계 속 업무 마찰"
+      },
+      {
+        "id": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+        "managerResponsibility": "관찰 행동·업무 영향·수정 기준 설명",
+        "reportAvailableAction": "예시·우선순위·수정 시점 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "evaluation",
+        "difference": "미검출과 업무 문제의 독립성"
+      },
+      {
+        "id": "mrpr:material:CH07.P2:final-authority-unsupported",
+        "managerResponsibility": "실제 최종 결정자·대리 범위 확인",
+        "reportAvailableAction": "상충 지시와 결정 필요 시점 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "decision_rights",
+        "difference": "평가 기준 모호함과 다른 승인 구조"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH07.P3",
+    "originalPurpose": "이 관계의 팩폭",
+    "sharedGenericConcept": [
+      "public_personal_judgment",
+      "safety"
+    ],
+    "managerQuestion": "공개 판단·보복 우려·기여 누락·과부하·자원 공백은 무엇을 요구하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH07.P3:public-personal-judgment",
+        "managerResponsibility": "공개 인격 판단 중단·구체적 수정 기준 제공",
+        "reportAvailableAction": "안전할 때 사실·수정 조건 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "feedback",
+        "difference": "평가 기준 부재와 다른 공개 인격화"
+      },
+      {
+        "id": "mrpr:material:CH07.P3:fear-of-retaliation",
+        "managerResponsibility": "위험 신호를 정상화하지 않고 조직 지원 확인",
+        "reportAvailableAction": "안전한 통로와 필요한 보호 조건 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "safety_support",
+        "difference": "공개 지적과 다른 발언 위험"
+      },
+      {
+        "id": "mrpr:material:CH07.P3:insufficient-credit",
+        "managerResponsibility": "기여 사실을 확인해 정확히 남김",
+        "reportAvailableAction": "수행·지원 받은 범위를 구분해 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "recognition",
+        "difference": "공개 판단과 다른 기여 정보 손실"
+      },
+      {
+        "id": "mrpr:material:CH07.P3:overload-allocation",
+        "managerResponsibility": "우선순위·기한·자원 중 조정 결정",
+        "reportAvailableAction": "실제 작업량·충돌 범위 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "work_allocation",
+        "difference": "기여 누락과 다른 가용 용량 문제"
+      },
+      {
+        "id": "mrpr:material:CH07.P3:insufficient-resources",
+        "managerResponsibility": "지원 담당·가능 시점·대안 결정",
+        "reportAvailableAction": "필요 자원·대기 영향·기한 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "resource_support",
+        "difference": "업무량과 다른 접근·자원 결핍"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH07.P4",
+    "originalPurpose": "갈등이 커지는 조건",
+    "sharedGenericConcept": [
+      "delayed_risk_report",
+      "reporting"
+    ],
+    "managerQuestion": "늦은 위험 정보·의견 배제·책임 전가·변경 이력·정보 사용은 어떤 다른 문제인가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH07.P4:late-risk-report",
+        "managerResponsibility": "불확실 보고의 사용·응답 조건 명시",
+        "reportAvailableAction": "확인된 영향과 다음 검토 시점 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "CH06 시점 부담을 관계 조건으로 확장"
+      },
+      {
+        "id": "mrpr:material:CH07.P4:excluded-team-voice",
+        "managerResponsibility": "사전 질문·응답 시간·대체 통로 마련",
+        "reportAvailableAction": "안전한 방식으로 검토 의견 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "safety_support",
+        "difference": "위험 보고와 다른 회의 참여 구조"
+      },
+      {
+        "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "managerResponsibility": "실제 권한 안에서 결정·상위 확인·지원 수행",
+        "reportAvailableAction": "확인 필요한 결정과 영향 정리",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "decision_rights",
+        "difference": "자원 결핍과 다른 결정 책임 전가"
+      },
+      {
+        "id": "mrpr:material:CH07.P4:missing-change-history",
+        "managerResponsibility": "변경자·이유·시점·영향 기록",
+        "reportAvailableAction": "이전 수행과 추가 소요를 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "priority_change",
+        "difference": "빈번한 변경과 다른 변경 이력의 소실"
+      },
+      {
+        "id": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+        "managerResponsibility": "보고 목적·수집 범위·사용처 명시",
+        "reportAvailableAction": "업무 상태와 무관 정보의 경계 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "빈도 비용과 다른 정보 사용 목적"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH08.P1",
+    "originalPurpose": "우리에게 필요한 조율",
+    "sharedGenericConcept": [
+      "vague_instructions",
+      "goal"
+    ],
+    "managerQuestion": "실제로 소개된 공백을 어떤 사실·필요·결정 질문으로 바꾸는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH08.P1:clarify-output",
+        "managerResponsibility": "필수 기준·목적·지원 설명",
+        "reportAvailableAction": "이해한 범위와 빈칸 질문",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "goal_setting",
+        "difference": "수행 전 정보 공백 복구"
+      },
+      {
+        "id": "mrpr:material:CH08.P1:separate-method",
+        "managerResponsibility": "선호와 필수 기준 구분",
+        "reportAvailableAction": "선택한 방식·결과·위험 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "method_discretion",
+        "difference": "재량을 실제 품질 기준에 연결"
+      },
+      {
+        "id": "mrpr:material:CH08.P1:delegate-decision",
+        "managerResponsibility": "실제 권한·지원·응답 책임 확인",
+        "reportAvailableAction": "대기 영향·필요 시각 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "delegation",
+        "difference": "선호 방법이 아닌 승인 대기 복구"
+      },
+      {
+        "id": "mrpr:material:CH08.P1:make-discretion-visible",
+        "managerResponsibility": "선택 범위·지원·예외 설명",
+        "reportAvailableAction": "선택할 항목과 확인할 예외 재진술",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "method_discretion",
+        "difference": "승인 권한과 다른 실행 선택 복구"
+      },
+      {
+        "id": "mrpr:material:CH08.P1:reduce-duplicate-report",
+        "managerResponsibility": "정보 목적·주기·응답을 정함",
+        "reportAvailableAction": "중복 준비 시간·긴급 조건 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "보고 비용을 실제 정보 흐름으로 복구"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH08.P2",
+    "originalPurpose": "A가 바꾸면 좋은 행동",
+    "sharedGenericConcept": [
+      "report_timing",
+      "canonical"
+    ],
+    "managerQuestion": "A는 시점·변경·수정·평가·승인 책임을 어떻게 먼저 조정하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH08.P2:manager-set-report-time",
+        "managerResponsibility": "판단 시한·중간 정보·지원 응답 설명",
+        "reportAvailableAction": "잠정·확정·미확인을 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "시간 불일치에 대한 A의 선행 조정"
+      },
+      {
+        "id": "mrpr:material:CH08.P2:manager-record-priority",
+        "managerResponsibility": "변경자·이유·기한·지원 결정",
+        "reportAvailableAction": "현재 수행·추가 소요 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "priority_change",
+        "difference": "A의 우선순위 변경 책임"
+      },
+      {
+        "id": "mrpr:material:CH08.P2:manager-close-revision",
+        "managerResponsibility": "수정 출처·범위·기한·재검토 정리",
+        "reportAvailableAction": "기존 기준 충족·추가 소요 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "review_standard",
+        "difference": "A의 검토 종료 책임"
+      },
+      {
+        "id": "mrpr:material:CH08.P2:manager-explain-evaluation",
+        "managerResponsibility": "관찰 항목·기준·지원·재검토 설명",
+        "reportAvailableAction": "수정 이해·우선순위 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "evaluation",
+        "difference": "A의 기준 설명 책임"
+      },
+      {
+        "id": "mrpr:material:CH08.P2:manager-confirm-final-authority",
+        "managerResponsibility": "실제 결정 경로·대리 범위 확인",
+        "reportAvailableAction": "상충 조건·필요 결정 시점 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "decision_rights",
+        "difference": "A의 조직 결정 경로 설명"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH08.P3",
+    "originalPurpose": "B가 바꾸면 좋은 행동",
+    "sharedGenericConcept": [
+      "public_personal_judgment",
+      "safety"
+    ],
+    "managerQuestion": "B는 안전·사실·용량·자원 안에서 무엇을 확인할 수 있는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH08.P3:report-request-specific-feedback",
+        "managerResponsibility": "공개 인격 판단 중단·기준 설명",
+        "reportAvailableAction": "안전한 통로에서 구체적 수정 항목 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "feedback",
+        "difference": "B 행동을 안전 조건 안의 확인 요청으로 제한"
+      },
+      {
+        "id": "mrpr:material:CH08.P3:report-safe-support-route",
+        "managerResponsibility": "위험을 정상화하지 않고 적절한 지원 확인",
+        "reportAvailableAction": "안전·동의·지원 필요를 우선 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "safety_support",
+        "difference": "B의 발언 안전과 선택권"
+      },
+      {
+        "id": "mrpr:material:CH08.P3:report-state-contribution",
+        "managerResponsibility": "수행 사실 확인·기여 기록 정리",
+        "reportAvailableAction": "수행 범위·지원 받은 항목 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "recognition",
+        "difference": "B의 사실 기록 요청"
+      },
+      {
+        "id": "mrpr:material:CH08.P3:report-state-capacity",
+        "managerResponsibility": "우선순위·자원 조정 결정",
+        "reportAvailableAction": "소요·충돌·가능 범위 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "work_allocation",
+        "difference": "B의 용량 정보와 A의 배분 결정을 구분"
+      },
+      {
+        "id": "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "managerResponsibility": "지원 담당·가능 시점·대안 결정",
+        "reportAvailableAction": "필요 자원·막힘·영향 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "resource_support",
+        "difference": "B의 지원 요청을 수행 정보로 정리"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH08.P4",
+    "originalPurpose": "둘이 함께 지킬 약속",
+    "sharedGenericConcept": [
+      "delayed_risk_report",
+      "reporting"
+    ],
+    "managerQuestion": "둘은 보고·의견·결정·변경·정보 경계를 어떻게 확인하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH08.P4:agree-early-risk-response",
+        "managerResponsibility": "초기 정보 수용·지원 응답 명시",
+        "reportAvailableAction": "상태 변화·영향·다음 확인 전달",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "공동 목표 속 다른 보고·응답 책임"
+      },
+      {
+        "id": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+        "managerResponsibility": "응답 경로·검토 시점·결정 이유 설명",
+        "reportAvailableAction": "검토 의견·미확인 항목 전달",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "safety_support",
+        "difference": "공동 의견 통로와 책임 구분"
+      },
+      {
+        "id": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "managerResponsibility": "결정 결과·보류 이유·다음 응답 시점 명시",
+        "reportAvailableAction": "실행 가능 범위·결정 요청 구분",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "decision_rights",
+        "difference": "공동 절차 속 관리 결정 보존"
+      },
+      {
+        "id": "mrpr:material:CH08.P4:agree-change-log",
+        "managerResponsibility": "변경 사유·지원·일정 책임 명시",
+        "reportAvailableAction": "추가 수행·영향 사실 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "priority_change",
+        "difference": "합의 변경의 버전·이력 확인"
+      },
+      {
+        "id": "mrpr:material:CH08.P4:agree-report-purpose",
+        "managerResponsibility": "목적·범위·사용·지원 통로 명시",
+        "reportAvailableAction": "업무 상태와 개인 정보 경계 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "reporting",
+        "difference": "공동 보고 원칙의 정보 경계"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH09.P1",
+    "originalPurpose": "두 사람이 가진 좋은 힘",
+    "sharedGenericConcept": [
+      "recall",
+      "goal"
+    ],
+    "managerQuestion": "실제로 표시된 접점·공통 완료 조건만 어떻게 지속하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH09.P1:recall-goal-execution",
+        "managerResponsibility": "목표·지원 조건을 설명",
+        "reportAvailableAction": "실행 질문·미확인 항목 제시",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "goal_setting",
+        "difference": "새 강점 아닌 핵심 접점 회수"
+      },
+      {
+        "id": "mrpr:material:CH09.P1:recall-shared-completion",
+        "managerResponsibility": "완료 기준·지원 확인",
+        "reportAvailableAction": "남은 수행·검토 필요 공유",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "review_standard",
+        "difference": "공통점의 재진술보다 지속 조건 회수"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH09.P2",
+    "originalPurpose": "함께 활용할 수 있는 좋은 기운",
+    "sharedGenericConcept": [
+      "recall",
+      "support"
+    ],
+    "managerQuestion": "표시된 지원·개인 Fusion의 호환 의미를 어떻게 활용하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH09.P2:recall-supported-possibility",
+        "managerResponsibility": "확인 가능한 지원·연결 책임 명시",
+        "reportAvailableAction": "막힌 단계·필요 자원 설명",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "resource_support",
+        "difference": "AB 실제 지원 의미 회수"
+      },
+      {
+        "id": "mrpr:material:CH09.P2:recall-personal-fusion",
+        "managerResponsibility": "실제 정보를 검토해 결정·지원",
+        "reportAvailableAction": "관찰·영향·미확인을 분리",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "priority_change",
+        "difference": "계산된 개인 연결의 출처를 보존한 회수"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH09.P3",
+    "originalPurpose": "관계를 오래 지키는 선택",
+    "sharedGenericConcept": [
+      "recall",
+      "delegation"
+    ],
+    "managerQuestion": "표시된 위임·안전 원칙을 어떤 조건에서 유지하는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH09.P3:recall-delegation-principle",
+        "managerResponsibility": "실제 범위·지원·응답을 재확인",
+        "reportAvailableAction": "변경된 수행 조건을 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "delegation",
+        "difference": "강점 요약 아닌 결정 원칙 회수"
+      },
+      {
+        "id": "mrpr:material:CH09.P3:recall-safe-voice",
+        "managerResponsibility": "위험을 정상화하지 않고 지원 확인",
+        "reportAvailableAction": "안전·동의·선택 가능한 통로 확인",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "safety_support",
+        "difference": "실제 소개된 안전 원칙의 회수"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  },
+  {
+    "address": "CH09.P4",
+    "originalPurpose": "우리라는 관계의 마지막 메시지",
+    "sharedGenericConcept": [
+      "recall",
+      "authority"
+    ],
+    "managerQuestion": "정보·결정·기여·수정·지원의 다른 책임을 어떻게 남기는가?",
+    "managerSpecificChanges": [
+      {
+        "id": "mrpr:material:CH09.P4:recall-decision-responsibility",
+        "managerResponsibility": "결정 결과·미결·지원 책임 설명",
+        "reportAvailableAction": "실행 상태·결정 필요 전달",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "decision_rights",
+        "difference": "추상 신뢰 대신 역할별 책임 회수"
+      },
+      {
+        "id": "mrpr:material:CH09.P4:recall-contribution-learning",
+        "managerResponsibility": "기여 기록과 자기 지원 개선을 구분",
+        "reportAvailableAction": "수행·미완료·지원 필요를 알림",
+        "actualAuthority": "UNKNOWN",
+        "authorityKind": "recognition",
+        "difference": "상호작용을 인정·학습의 경계로 마무리"
+      }
+    ],
+    "coworker": "A/B는 대칭 개인 슬롯. 상호 요청·인계의 공통 질문은 재사용 가능하나 managerReport의 고정 관리 역할·관리 책임을 부여하지 않음.",
+    "businessPartner": "공동 사업의 결정·계약·자원 분담 맥락. 보고·평가권·지분·고용관계를 서로 전용하지 않음.",
+    "newFactCount": 0
+  }
+]

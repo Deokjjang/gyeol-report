@@ -1,0 +1,178 @@
+[
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH04.P1:shared-completion-distinct-duty",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH04.P1:shared-analysis-different-scope",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH04.P2:big-picture-field-interface",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P2:big-picture-field-interface",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH04.P2:idea-review-not-personal-approval",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH04.P3:delegation-with-checkpoints",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH04.P3:feedback-credit-visible",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P3:feedback-credit-visible",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH04.P4:manager-response-to-early-risk",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH04.P4:learning-with-retained-accountability",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH09.P1:recall-goal-execution",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P1:recall-goal-execution",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH09.P1:recall-shared-completion",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P1:recall-shared-completion",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH09.P2:recall-supported-possibility",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P2:recall-supported-possibility",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH09.P2:recall-personal-fusion",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P2:recall-personal-fusion",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH09.P3:recall-delegation-principle",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P3:recall-delegation-principle",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH09.P3:recall-safe-voice",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P3:recall-safe-voice",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH09.P4:recall-decision-responsibility",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P4:recall-decision-responsibility",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:positiveCollaborationResearch:material:CH09.P4:recall-contribution-learning",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P4:recall-contribution-learning",
+    "notAdditionalIndependentFact": true
+  }
+]

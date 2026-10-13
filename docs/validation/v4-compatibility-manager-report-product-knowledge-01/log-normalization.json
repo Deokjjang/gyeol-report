@@ -1,0 +1,36 @@
+{
+  "changes": [
+    {
+      "file": "docs/validation/v4-compatibility-manager-report-product-knowledge-01/actual-reader-excerpts.md",
+      "beforeSha256": "059d9b105b9b80cc01d27baa3caaef0198466dc555c1b6e69e7d6bb54a04aab5",
+      "afterSha256": "0c1e4451d5ebd2c3041cd1b3d26e249ad4dbc4445fb57836e0448d8e3fc1a131",
+      "change": "CR/trailing space/terminal blank lines only;original raw execution logs remain external"
+    },
+    {
+      "file": "docs/validation/v4-compatibility-manager-report-product-knowledge-01/logs/build-after.log",
+      "beforeSha256": "b959124f14175889a218de524bb4123c2b323c6fc5d71015c9c2ee650e59067a",
+      "afterSha256": "2c9e00d038fadf3022a34128a5566b8b22c0096fcd5e747075dcc83324dc4ca0",
+      "change": "CR/trailing space/terminal blank lines only;original raw execution logs remain external"
+    },
+    {
+      "file": "docs/validation/v4-compatibility-manager-report-product-knowledge-01/logs/book-before.log",
+      "beforeSha256": "4668b0e798808bd29f3d85770815d8aa5de39c5f1620d8b0128eeb1d577d2f03",
+      "afterSha256": "9109d34f0ee670634c94e375324e39a82a9be176d63e438b9228dd9269e63484",
+      "change": "CR/trailing space/terminal blank lines only;original raw execution logs remain external"
+    },
+    {
+      "file": "docs/validation/v4-compatibility-manager-report-product-knowledge-01/logs/lint-after.log",
+      "beforeSha256": "457d7be458a044c21dd077d658fc62f301be48824954976002fcf9d431c5c175",
+      "afterSha256": "16eb6b77c28139bc38a28a522d3a5f793d05a21eea33f7ff7bd4188b713000bf",
+      "change": "CR/trailing space/terminal blank lines only;original raw execution logs remain external"
+    },
+    {
+      "file": "docs/validation/v4-compatibility-manager-report-product-knowledge-01/logs/baseline-related.log",
+      "beforeSha256": "f6de36e696bd7c4a03b23ba10e78d7622d73103e76afbbdddb44cc140e65a8fa",
+      "afterSha256": "90bcae9e5eb32cd0a5c36cb1e7c23716492fd35ab2e8067663b3a2afbc3e8899",
+      "change": "CR/trailing space/terminal blank lines only;original raw execution logs remain external"
+    }
+  ],
+  "rawLogDirectory": "/tmp/gyeol-compatibility-manager-report-knowledge-validation/",
+  "testMessagesChanged": false
+}

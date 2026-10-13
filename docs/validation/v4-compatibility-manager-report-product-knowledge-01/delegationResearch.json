@@ -1,0 +1,134 @@
+[
+  {
+    "id": "mrpr:view:delegationResearch:material:CH01.P1:goal-method-interface",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH01.P1:goal-method-interface",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH01.P4:discretion-as-condition",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH01.P4:discretion-as-condition",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH02.P4:manager-overcontrol",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH02.P4:manager-overcontrol",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH04.P3:delegation-with-checkpoints",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH05.P4:manager-delegation-confirm",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH05.P4:manager-delegation-confirm",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH07.P1:goal-method-confusion",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH07.P1:goal-method-confusion",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH07.P1:responsibility-without-delegation",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH07.P1:responsibility-without-delegation",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH07.P1:autonomy-with-no-discretion",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH08.P1:separate-method",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P1:separate-method",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH08.P1:delegate-decision",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P1:delegate-decision",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH08.P1:make-discretion-visible",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH08.P1:make-discretion-visible",
+    "notAdditionalIndependentFact": true
+  },
+  {
+    "id": "mrpr:view:delegationResearch:material:CH09.P3:recall-delegation-principle",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "managerReport",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "materialRef": "mrpr:material:CH09.P3:recall-delegation-principle",
+    "notAdditionalIndependentFact": true
+  }
+]

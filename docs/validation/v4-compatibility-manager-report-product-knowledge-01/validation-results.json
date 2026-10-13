@@ -1,0 +1,367 @@
+{
+  "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+  "writerDisabled": true,
+  "fixedTime": "2026-10-12T12:00:00+09:00",
+  "before": {
+    "designated": {
+      "files": 40,
+      "passed": 6244,
+      "failed": 16,
+      "conditionalNotRun": 1
+    },
+    "supplementaryBook": {
+      "files": 5,
+      "passed": 99,
+      "failed": 11
+    }
+  },
+  "after": {
+    "designated": {
+      "files": 40,
+      "passed": 6244,
+      "failed": 16,
+      "conditionalNotRun": 1
+    },
+    "book": {
+      "files": 5,
+      "passed": 99,
+      "failed": 11,
+      "conditionalNotRun": 0
+    },
+    "research": {
+      "files": 1,
+      "passed": 1123,
+      "failed": 0,
+      "conditionalNotRun": 0
+    },
+    "generation": {
+      "files": 1,
+      "passed": 42,
+      "failed": 0,
+      "conditionalNotRun": 0
+    }
+  },
+  "combinedDisjointFiles": 47,
+  "combinedPassed": 7508,
+  "combinedFailed": 27,
+  "combinedConditionalNotRun": 1,
+  "newTestsPassed": 1165,
+  "newRegressions": 0,
+  "existingFailureNameAndFirstMessageMatches": 27,
+  "conditional": "comprehensiveRelease.test.ts legacy snapshot probe; EDITORIAL_LEGACY_SNAPSHOT absent; not counted PASS",
+  "typescriptBefore": 0,
+  "typescriptAfter": 0,
+  "lintErrors": 0,
+  "lintWarnings": 0,
+  "productionBuild": "PASS 47/47 webpack, writer/Toss/reliability execution flags disabled",
+  "nftWarnings": 0,
+  "trackedExistingFileHashes": 2904,
+  "workspaceTreesPreserved": 28,
+  "originalDirtyEntriesPreserved": 11,
+  "generationDigestVariants": 42,
+  "generationSuccess": 40,
+  "expectedRoleRejections": 2,
+  "sourceChangeScope": "new offline research, docs and two tests only",
+  "productionDeployed": false,
+  "databaseOrPaymentActions": false,
+  "existingFailures": [
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'comprehensive' customer/evidence/Book stays frozen",
+      "firstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'love' customer/evidence/Book stays frozen",
+      "firstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'compatibility' customer/evidence/Book stays frozen",
+      "firstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'major' customer/evidence/Book stays frozen",
+      "firstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "name": "'annual' customer/evidence/Book stays frozen",
+      "firstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition > 'comprehensive' previous saved edition remains identical",
+      "firstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition > 'love' previous saved edition remains identical",
+      "firstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition > 'compatibility' previous saved edition remains identical",
+      "firstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition > 'major' previous saved edition remains identical",
+      "firstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "name": "Career editorial reader edition > 'annual' previous saved edition remains identical",
+      "firstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "name": "section-specific allocations, reservations, fallback and budgets > C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+      "firstMessage": "AssertionError: expected [] to include 'composite'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [] to include 'composite'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "name": "section-specific allocations, reservations, fallback and budgets > recovery-axis Fusion can serve C9 even when its original application is work",
+      "firstMessage": "AssertionError: expected false to be true // Object.is equality",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected false to be true // Object.is equality",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+      "name": "actual 12-person review cohort and isolation > scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+      "firstMessage": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+      "name": "Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import",
+      "firstMessage": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "name": "customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input",
+      "firstMessage": "SyntaxError: Unexpected end of JSON input",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "SyntaxError: Unexpected end of JSON input",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "designated_40_files",
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "name": "customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input",
+      "firstMessage": "SyntaxError: Unexpected end of JSON input",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "SyntaxError: Unexpected end of JSON input",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 'career': every original paragraph and final line in original order",
+      "firstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 'love': every original paragraph and final line in original order",
+      "firstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 'compatibility': every original paragraph and final line in original order",
+      "firstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 'pair-02-marriage': every original paragraph and final line in original order",
+      "firstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 'pair-03-parent': every original paragraph and final line in original order",
+      "firstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 'pair-04-coworker': every original paragraph and final line in original order",
+      "firstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 'pair-05-manager': every original paragraph and final line in original order",
+      "firstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 'pair-06-business': every original paragraph and final line in original order",
+      "firstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 'pair-07-friend': every original paragraph and final line in original order",
+      "firstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 'pair-08-love': every original paragraph and final line in original order",
+      "firstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'",
+      "sameNameAndFirstMessage": true
+    },
+    {
+      "group": "supplementary_5_files",
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "name": "actual V4 packet → book pages; no new calculation or prose > 14 years, 10 future years, all ages, transitions and clickable full narratives",
+      "firstMessage": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]",
+      "condition": "기준 SHA의 기존 fixture·현재 환경. writer disabled. 테스트 본체 미변경.",
+      "baseSha": "4f39cfaf339ca030069a44f240ed774cd77b4969",
+      "reproduced": true,
+      "afterFirstMessage": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]",
+      "sameNameAndFirstMessage": true
+    }
+  ],
+  "diffCheck": "PASS after normalizing new documentation log whitespace only"
+}
