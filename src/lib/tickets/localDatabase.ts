@@ -1,6 +1,7 @@
 import "server-only";
 import { createHash } from "node:crypto";
 import { readFile, readdir } from "node:fs/promises";
+import { join } from "node:path";
 import type { PGlite } from "@electric-sql/pglite";
 import type { TicketResult, TicketStore } from "./service";
 
@@ -11,8 +12,12 @@ export async function createTicketTestDatabase(): Promise<PGlite> {
   const db = new Database();
   await db.exec("create role anon; create role authenticated; create role service_role bypassrls; create schema auth; create table auth.users(id uuid primary key); grant usage on schema public,auth to anon,authenticated,service_role;");
   await db.exec("create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;");
-  for (const file of (await readdir("supabase/migrations")).filter(n => /^\d{4}_.*\.sql$/.test(n)).sort()) await db.exec((await readFile(`supabase/migrations/${file}`, "utf8")).replace(/^\uFEFF/, ""));
-  for (const file of ["supabase/migrations/20260920163924_production_reliability_reconcile.sql", "scripts/paid_report_quarantine_recovery_patch.sql", "scripts/paid_payment_confirm_recovery_queue_patch.sql", "scripts/paid_report_publish_expiry_patch.sql", "supabase/migrations/20261003094827_v4_account_foundation.sql", "supabase/migrations/20261003104500_v4_report_library.sql", "supabase/migrations/20261003114045_v4_report_tickets.sql"]) await db.exec(await readFile(file, "utf8"));
+  // Keep dynamic fixture reads inside known SQL folders for output-file tracing.
+  const migrations = join(process.cwd(), "supabase", "migrations");
+  for (const file of (await readdir(migrations)).filter(n => /^\d{4}_.*\.sql$/.test(n)).sort()) await db.exec((await readFile(join(migrations, file), "utf8")).replace(/^\uFEFF/, ""));
+  await db.exec(await readFile(join(migrations, "20260920163924_production_reliability_reconcile.sql"), "utf8"));
+  for (const file of ["paid_report_quarantine_recovery_patch.sql", "paid_payment_confirm_recovery_queue_patch.sql", "paid_report_publish_expiry_patch.sql"]) await db.exec(await readFile(join(process.cwd(), "scripts", file), "utf8"));
+  for (const file of ["20261003094827_v4_account_foundation.sql", "20261003104500_v4_report_library.sql", "20261003114045_v4_report_tickets.sql"]) await db.exec(await readFile(join(migrations, file), "utf8"));
   return db;
 }
 export function sqlTicketStore(db: PGlite): TicketStore {

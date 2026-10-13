@@ -1,0 +1,818 @@
+{
+  "baseSha": "ab67b555609876a0e5520c741716c5236b973c51",
+  "commands": {
+    "build": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 pnpm run build",
+    "typecheck": "pnpm exec tsc --noEmit --incremental false",
+    "lint": "pnpm run lint",
+    "diffCheck": "git diff --check"
+  },
+  "results": {
+    "productionBuildBefore": "PASS with 9 whole-project tracing warnings",
+    "productionBuildAfter": "PASS, 0 warnings; repeated final build identical NFT",
+    "typescriptAfter": {
+      "exitCode": 0,
+      "diagnostics": 0
+    },
+    "lint": {
+      "exitCode": 0
+    },
+    "diffCheck": {
+      "exitCode": 0
+    },
+    "tests": {
+      "tests-before": {
+        "numTotalTests": 96,
+        "numPassedTests": 96,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "success": true
+      },
+      "tests-after": {
+        "numTotalTests": 98,
+        "numPassedTests": 98,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "success": true
+      },
+      "books-before": {
+        "numTotalTests": 110,
+        "numPassedTests": 110,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "success": true
+      },
+      "books-after": {
+        "numTotalTests": 110,
+        "numPassedTests": 110,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "success": true
+      }
+    },
+    "totalRelatedAfter": 208,
+    "newRegressionTestBaseline": "1 PASS / 1 FAIL (expected absolute bounded path failure)",
+    "newRegressionTestAfter": "2 PASS",
+    "fullSuiteRerun": false
+  },
+  "testsRun": [
+    "tests/unit/account/tickets.test.ts",
+    "tests/unit/payment/ticketShopLocal.test.ts",
+    "tests/unit/account/accountFoundation.test.ts",
+    "tests/unit/payment/ticketShopRoutes.test.tsx",
+    "tests/unit/payment/ticketPublicationRoutes.test.ts",
+    "tests/unit/account/localDatabaseTracing.test.ts",
+    "tests/unit/report-knowledge/compatibilityBusinessPartnerGenerationPreservation.test.ts",
+    "tests/unit/interpretation-v4/sixProductIntegration.test.ts"
+  ],
+  "sql": {
+    "files": [
+      "supabase/migrations/0001_create_reports_table.sql",
+      "supabase/migrations/0002_reports_insert_rls_policy.sql",
+      "supabase/migrations/0003_find_paid_report_by_access_token_hash_rpc.sql",
+      "supabase/migrations/0004_create_payment_orders_table.sql",
+      "supabase/migrations/0005_create_ready_payment_order_rpc.sql",
+      "supabase/migrations/0006_update_ready_payment_order_rpc_launch_price.sql",
+      "supabase/migrations/0007_mark_toss_payment_order_paid_rpc.sql",
+      "supabase/migrations/0008_fulfill_paid_saju_mbti_report_rpc.sql",
+      "supabase/migrations/0009_get_paid_saju_mbti_report_result_rpc.sql",
+      "supabase/migrations/0010_save_comprehensive_report_draft_snapshot_rpc.sql",
+      "supabase/migrations/0011_get_generated_comprehensive_report_result_rpc.sql",
+      "supabase/migrations/0012_support_comprehensive_v2_report_snapshot.sql",
+      "supabase/migrations/0013_paid_report_reliability.sql",
+      "supabase/migrations/20260920163924_production_reliability_reconcile.sql",
+      "scripts/paid_report_quarantine_recovery_patch.sql",
+      "scripts/paid_payment_confirm_recovery_queue_patch.sql",
+      "scripts/paid_report_publish_expiry_patch.sql",
+      "supabase/migrations/20261003094827_v4_account_foundation.sql",
+      "supabase/migrations/20261003104500_v4_report_library.sql",
+      "supabase/migrations/20261003114045_v4_report_tickets.sql"
+    ],
+    "sqlDigest": "5d12baa1db3a63db4211a82f2f728060649a47aa858301a84d61139bf8c64237",
+    "exactContentOrderAndBootstrapPreserved": true
+  },
+  "bookEvidence": {
+    "fixedNow": "2026-10-12T12:00:00+09:00",
+    "sixProductFrozenTests": 64,
+    "businessPartnerGenerationTests": 46,
+    "successfulObservationCount": 44,
+    "expectedRejectedInputCount": 2,
+    "hashCount": 308,
+    "allObservationsIdentical": true,
+    "domainObservationsIdentical": true,
+    "generationDigestBefore": "2c71e717fe3ecb71b5e26aa92284b1d24032ba7b0afc2be0ce58d1a50bdaaeeb",
+    "generationDigestAfter": "2c71e717fe3ecb71b5e26aa92284b1d24032ba7b0afc2be0ce58d1a50bdaaeeb",
+    "domainDigestBefore": "9786efd0e89abd81fcede8686465dc16ab89d7fc4eb6f91339cd0e8711a3039e",
+    "domainDigestAfter": "9786efd0e89abd81fcede8686465dc16ab89d7fc4eb6f91339cd0e8711a3039e",
+    "pairedDigests": [
+      {
+        "case": "A",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "B",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "9693836e9395a53d26434ba0cd5c48c72ed897b615a5020a2f95acb99b2910ac",
+          "narrative": "5105d1543d89cc90ff5309f606aed29575cdc00edf609bae062ff4626bcb3295",
+          "integration": "bf4927ee37a0425907c829ba72d6248b99aa08aa5242da8f463c6f06d55dbaeb",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+          "book": "1410c8e1994d0b281402d0241fcf5f92bce1e9f3508d7a31e69f066ceb13a51d"
+        }
+      },
+      {
+        "case": "C",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "13631f8b873dfb5f0f7602aa58e70a960f1aaabe7f7058e6bb7fe375cba6df6c",
+          "narrative": "17aa11a58d2e38acaf7bfe0de11a922973a686d8752ca73c162634b3723a9176",
+          "integration": "d1daa7783e0d13d51a0b3d13bd67daf35c1fa776ac20744644fa65aa00e996e1",
+          "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "de66e952dadbb9d77f1b1572dca3c3fd223507ff96f56bed59231ce46f3333a6"
+        }
+      },
+      {
+        "case": "D",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "7ea019d96a8cef2870c556eef2aac239c6c216d7e91e59bf42a3178c8c874491",
+          "narrative": "023e9922a14c967ad517df9449cefdb3a21113a9a36b1c18f921317eccc891a9",
+          "integration": "dfdc14c4d5f25d924be16e7cad0958f981b87c595215888e7cc0577e5dd0b864",
+          "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+          "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+          "book": "c91773e00859a4246cbeab55e180f69499ae0434d75590702f24fe1ddd1c1919"
+        }
+      },
+      {
+        "case": "E",
+        "variant": 0,
+        "hashes": {
+          "calculation": "9846b96d06bfacbee5f0d6b2719e1d8e1a0cbad93f5c007e8a940da71a762f5f",
+          "fullEvidence": "772d2a3f14792da078315fafc93dd95a7fa8d6495958a4da5210ad863e8d516c",
+          "narrative": "b3c805955b038f9a8b8533e4aa5580b7f5ad324acda54a67695b57f26126afcb",
+          "integration": "aea10616796c0f340af40d5496dbfaea83493645139cd3ea65bf86a630cd5ee8",
+          "personA": "01782df46b3e7834a400702d09be2962133368104502d4dfa73195beba41bcc4",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "308da88b91e7c7aaf5a2990b36894eca9ca401c7d8fb3274fe87d423d07df36c"
+        }
+      },
+      {
+        "case": "F",
+        "variant": 0,
+        "hashes": {
+          "calculation": "622072c9764dff2b0ff4e3239862d4330ae31f30f46cd0d6340cbfc6d3bf1845",
+          "fullEvidence": "bf93292be7fe6e43208fde7a6047712333d771084d6ea1d391ad134d9e2162fd",
+          "narrative": "2e57e9092abcd9a8653d745d191b5e3b2d5933c41219c7092ef08940706ae03a",
+          "integration": "6691d235fb4d69921a0acab6a770c17de887b4ae8bf37921f86280d24c08fb3a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "85a8309d53973d26c680db1700c17329eff0558c479e254c0a933cfa30d81ac2",
+          "book": "aa9a36b1445421ae361a108b53765db2d6309427a4ee04ee2b9a0fe7a02dfa9a"
+        }
+      },
+      {
+        "case": "G",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "H",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "ba26ac012ef9e71bd0ba2d9e2cf87bcffe7f6183f3d81eff69e2de2cfeafc1c6",
+          "narrative": "78038db3f1810d005fba1d266c76281dfce0eb000cbc3367b302f3c5c99fe93f",
+          "integration": "61313acec1dbeb8d64259b290dd9b2eb67f014ee959c17d7860a3f9b2bac24dc",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "23c45e1a9189871bfa8fd58e912d0da55af1af80d115cd8e23085d53ded36926",
+          "book": "08724b440db515a7d9f73ac167795c02043ba0b30bb81aaaf3c3c3b743ef63bf"
+        }
+      },
+      {
+        "case": "I",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "J",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "K",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "L",
+        "variant": 0,
+        "hashes": {
+          "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+          "fullEvidence": "43cc6981df0c7634a80c23196f427dd7a7adddfd0ac2655a746e827b88a88da3",
+          "narrative": "8ce3257fb645406f03ca35efeba1a31a467c896858731da2d25673774a7b6366",
+          "integration": "4fed18962f86e660f854f92a7b1e5f81a14407356cbcea184afb40a9747decc1",
+          "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+          "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+          "book": "2c40de3bdc438b5b74b7ed13a69b239b65a91854290b82a22e0d78083fd2dce4"
+        }
+      },
+      {
+        "case": "M",
+        "variant": 0,
+        "hashes": {
+          "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+          "fullEvidence": "43cc6981df0c7634a80c23196f427dd7a7adddfd0ac2655a746e827b88a88da3",
+          "narrative": "8ce3257fb645406f03ca35efeba1a31a467c896858731da2d25673774a7b6366",
+          "integration": "4fed18962f86e660f854f92a7b1e5f81a14407356cbcea184afb40a9747decc1",
+          "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+          "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+          "book": "2c40de3bdc438b5b74b7ed13a69b239b65a91854290b82a22e0d78083fd2dce4"
+        }
+      },
+      {
+        "case": "N",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "O",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cb81fb5048f956f3cb34034d61d96621c6ce9d3499342d081e88370a8ec4d0d7",
+          "fullEvidence": "b9b04544bc04ab3d2749f484f11baa8edf04a49b979f06af19cde8c28ce81be3",
+          "narrative": "1172809886ddd36b13895b6f9eedda216e98091c0271012ad3fb8f96cc5fd4eb",
+          "integration": "eba78ac523130df402fa2999c28df72b28cb0858374d44142cb9f80323ed1ab4",
+          "personA": "5af4130eb30aff6ae8e7d1553c18c098c0d9a4c32f7c411162dc1bd64af4c4c8",
+          "personB": "262bf7ccbfd396d7b0a51819898564ae9cf7748da4d7b3173ac872899ad86901",
+          "book": "923dc402ca62b2f96ee62156afedb24ab3829879fb4b7c0bfe4bb1313f67ac65"
+        }
+      },
+      {
+        "case": "P",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "P",
+        "variant": 1,
+        "hashes": {
+          "calculation": "21b7b87c4fba0182ba44ab0007f42d0d1019416c8dd548d46f94394ecf620eb7",
+          "fullEvidence": "d6929c7dceb3a1fb6d262585ba1ce380897604b585e9997d42029b625868a0f9",
+          "narrative": "d254322000d618eb846c9443510fa6a4d062774d787af1b69b8c6c3a15eae524",
+          "integration": "aae2924e628094158e57186d413c50983a87356d27212e4459b19f8920ff2510",
+          "personA": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "personB": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "book": "8656c530c9ae676e91471081ce686ca596c13264057090b6bfb7b3ae6fb7dfad"
+        }
+      },
+      {
+        "case": "Q",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "Q",
+        "variant": 1,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "a4d08a03cd01c03de3a6c9251af83094685425940ad0d3806e46697587c0af56",
+          "narrative": "a487ccc794bc51199df88b3867d145934a4226845a8c5b464d3434d01a483b99",
+          "integration": "dff2a4df4ccf0ee9ed1a9bc87f6649472bc08021400ba93e81bb5768b44c4fff",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "1fa9823f46084608a3360cd245863532f60c38e5d78ba90e838b83834903bdf4"
+        }
+      },
+      {
+        "case": "R",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "U",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "V",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "W",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "X",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "Y",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "Z",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AA",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AB",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AC",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AD",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AE",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AF",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AG",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AH",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AI",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AJ",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "79d1b1230b5e588111f6bba127cc6bb06edf776d4946e52275674dbe42b02d8c",
+          "narrative": "98339ef2d7b55144ce7378697874a712c4e9b26c3480424a037f81300f7796a0",
+          "integration": "be0e9f02978347568e634a83387f59f34fdf0a835c4f8df3686deea225dbc312",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "fd666b0ff509299796162ee00d9e121fc1be82846b24277de9bad2fc56582d05"
+        }
+      },
+      {
+        "case": "AK",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+          "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+          "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+        }
+      },
+      {
+        "case": "AL",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "246960eefcc0b82c94bb718809f51ce79923d11e6a5d008dc59f51372b798d53",
+          "narrative": "2c10558daa3aad319d2d1df11e70c0f067bfb1eadce1a78ebdc93d51527e822e",
+          "integration": "478b03f2aada55fc65f1115a8bfec73a826610ab1be3d1ac7dc9ac3a8ba5fe26",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "ab9f37fa26b5207bf2a34247a1f27a555416acb54a21f3477a7741e454c5f49b"
+        }
+      },
+      {
+        "case": "AM",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AN",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AO",
+        "variant": 0,
+        "hashes": {
+          "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+          "fullEvidence": "43cc6981df0c7634a80c23196f427dd7a7adddfd0ac2655a746e827b88a88da3",
+          "narrative": "8ce3257fb645406f03ca35efeba1a31a467c896858731da2d25673774a7b6366",
+          "integration": "4fed18962f86e660f854f92a7b1e5f81a14407356cbcea184afb40a9747decc1",
+          "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+          "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+          "book": "2c40de3bdc438b5b74b7ed13a69b239b65a91854290b82a22e0d78083fd2dce4"
+        }
+      },
+      {
+        "case": "AP",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "7ea019d96a8cef2870c556eef2aac239c6c216d7e91e59bf42a3178c8c874491",
+          "narrative": "023e9922a14c967ad517df9449cefdb3a21113a9a36b1c18f921317eccc891a9",
+          "integration": "dfdc14c4d5f25d924be16e7cad0958f981b87c595215888e7cc0577e5dd0b864",
+          "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+          "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+          "book": "c91773e00859a4246cbeab55e180f69499ae0434d75590702f24fe1ddd1c1919"
+        }
+      },
+      {
+        "case": "AR",
+        "variant": 0,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      },
+      {
+        "case": "AR",
+        "variant": 1,
+        "hashes": {
+          "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+          "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+          "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+          "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+          "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+          "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+          "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+        }
+      }
+    ]
+  },
+  "sourcePreservation": {
+    "baseSha": "ab67b555609876a0e5520c741716c5236b973c51",
+    "trackedFiles": 3532,
+    "preservedTrackedFiles": 3531,
+    "allowedChangedFile": [
+      "src/lib/tickets/localDatabase.ts"
+    ],
+    "researchSourceFilesPreserved": 532,
+    "priorValidationFilesPreserved": 1257,
+    "researchSourceBytes": 41173625,
+    "priorValidationBytes": 171108965,
+    "nextConfigUnchanged": true,
+    "twoDevRoutesUnchanged": true,
+    "bundleLocalReviewUnchanged": true
+  },
+  "workspacePreservation": {
+    "existingWorktrees": 30,
+    "originalDirtyFiles": 11,
+    "headBranchStatusAndTrackedUntrackedHashesIdentical": true,
+    "snapshotsEqual": true
+  },
+  "httpProduction": [
+    {
+      "path": "/dev/account/api/session",
+      "method": "GET",
+      "host": "localhost:3186",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/api/session",
+      "method": "GET",
+      "host": "127.0.0.1:3186",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/api/session",
+      "method": "GET",
+      "host": "example.com",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/api/session",
+      "method": "POST",
+      "host": "localhost:3186",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/api/session",
+      "method": "POST",
+      "host": "127.0.0.1:3186",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/api/session",
+      "method": "POST",
+      "host": "example.com",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/tickets/api/state",
+      "method": "GET",
+      "host": "localhost:3186",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/tickets/api/state",
+      "method": "GET",
+      "host": "127.0.0.1:3186",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/tickets/api/state",
+      "method": "GET",
+      "host": "example.com",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/tickets/api/state",
+      "method": "POST",
+      "host": "localhost:3186",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/tickets/api/state",
+      "method": "POST",
+      "host": "127.0.0.1:3186",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/tickets/api/state",
+      "method": "POST",
+      "host": "example.com",
+      "status": 404
+    }
+  ],
+  "httpDevelopment": [
+    {
+      "path": "/dev/account/api/session",
+      "host": "localhost:3187",
+      "status": 200
+    },
+    {
+      "path": "/dev/account/api/session",
+      "host": "127.0.0.1:3187",
+      "status": 200
+    },
+    {
+      "path": "/dev/account/api/session",
+      "host": "example.com",
+      "status": 404
+    },
+    {
+      "path": "/dev/account/tickets/api/state",
+      "host": "localhost:3187",
+      "status": 401
+    },
+    {
+      "path": "/dev/account/tickets/api/state",
+      "host": "127.0.0.1:3187",
+      "status": 401
+    },
+    {
+      "path": "/dev/account/tickets/api/state",
+      "host": "example.com",
+      "status": 404
+    }
+  ],
+  "baselinePreview": {
+    "id": "dpl_7JVzsQfBYVJ2EW9gw6gkmiqT4ffw",
+    "url": "gyeol-report-d25hqwi23-gyeol-report-s-projects.vercel.app",
+    "state": "ERROR",
+    "target": null,
+    "errorCode": "NOW_SANDBOX_WORKER_MAX_UNCOMPRESSED_FUNCTION_SIZE",
+    "errorMessage": "The Vercel Function \"dev/account/api/[action]\" is 255.74mb uncompressed which exceeds the maximum uncompressed size limit of 250mb. Your project is eligible for the large functions beta, which raises this limit — set VERCEL_SUPPORT_LARGE_FUNCTIONS=1 in your environment variables and redeploy. To view a detailed report, set VERCEL_ANALYZE_BUILD_OUTPUT=1 in your environment variables and redeploy."
+  },
+  "artifactsExternalPath": "/tmp/gyeol-vercel-function-trace-fix-01-validation",
+  "previewFinalReceipt": "Exact pushed commit Preview result will be recorded in final response and external preview-receipt.json; no Production deployment."
+}

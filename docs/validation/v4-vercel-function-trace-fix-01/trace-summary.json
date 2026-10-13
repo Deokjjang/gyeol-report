@@ -1,0 +1,2298 @@
+{
+  "measurement": "Local default Next 16.2.4 Turbopack NFT file sums; bytes, not the remote Vercel package size",
+  "baseSha": "ab67b555609876a0e5520c741716c5236b973c51",
+  "traceCount": 88,
+  "publicTraceCount": 48,
+  "developmentTraceCount": 40,
+  "finalBuildMatchesFirstAfterBuild": true,
+  "missingFiles": 0,
+  "beforeWholeProjectWarnings": 9,
+  "afterWholeProjectWarnings": 0,
+  "maxBeforePathBytes": 287941831,
+  "maxAfterPathBytes": 54618281,
+  "routes": [
+    {
+      "routeTrace": ".next/server/app/_global-error/page.js.nft.json",
+      "before": {
+        "fileCount": 106,
+        "pathBytes": 1709578,
+        "uniqueRealFileBytes": 1708874,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 435039
+        }
+      },
+      "after": {
+        "fileCount": 106,
+        "pathBytes": 1708841,
+        "uniqueRealFileBytes": 1708137,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 434302
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/_not-found/page.js.nft.json",
+      "before": {
+        "fileCount": 127,
+        "pathBytes": 2111992,
+        "uniqueRealFileBytes": 2111288,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 837453
+        }
+      },
+      "after": {
+        "fileCount": 127,
+        "pathBytes": 2110533,
+        "uniqueRealFileBytes": 2109829,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 835994
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/account/page.js.nft.json",
+      "before": {
+        "fileCount": 131,
+        "pathBytes": 2179157,
+        "uniqueRealFileBytes": 2178453,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 904618
+        }
+      },
+      "after": {
+        "fileCount": 131,
+        "pathBytes": 2177600,
+        "uniqueRealFileBytes": 2176896,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 903061
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/account/tickets/checkout/[result]/page.js.nft.json",
+      "before": {
+        "fileCount": 132,
+        "pathBytes": 2195447,
+        "uniqueRealFileBytes": 2194743,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 920908
+        }
+      },
+      "after": {
+        "fileCount": 132,
+        "pathBytes": 2193877,
+        "uniqueRealFileBytes": 2193173,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 919338
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/account/tickets/page.js.nft.json",
+      "before": {
+        "fileCount": 132,
+        "pathBytes": 2195315,
+        "uniqueRealFileBytes": 2194611,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 920776
+        }
+      },
+      "after": {
+        "fileCount": 132,
+        "pathBytes": 2193741,
+        "uniqueRealFileBytes": 2193037,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 919202
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/analytics/purchase/route.js.nft.json",
+      "before": {
+        "fileCount": 133,
+        "pathBytes": 7322034,
+        "uniqueRealFileBytes": 7321330,
+        "contributionBytes": {
+          ".next": 3377547,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 133,
+        "pathBytes": 7321221,
+        "uniqueRealFileBytes": 7320517,
+        "contributionBytes": {
+          ".next": 3376734,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/book-referral/route.js.nft.json",
+      "before": {
+        "fileCount": 134,
+        "pathBytes": 7343095,
+        "uniqueRealFileBytes": 7342391,
+        "contributionBytes": {
+          ".next": 3398608,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 134,
+        "pathBytes": 7342254,
+        "uniqueRealFileBytes": 7341550,
+        "contributionBytes": {
+          ".next": 3397767,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/book-share/route.js.nft.json",
+      "before": {
+        "fileCount": 137,
+        "pathBytes": 7383095,
+        "uniqueRealFileBytes": 7382391,
+        "contributionBytes": {
+          ".next": 3438608,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 137,
+        "pathBytes": 7382160,
+        "uniqueRealFileBytes": 7381456,
+        "contributionBytes": {
+          ".next": 3437673,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/campaign-entry/route.js.nft.json",
+      "before": {
+        "fileCount": 134,
+        "pathBytes": 7343101,
+        "uniqueRealFileBytes": 7342397,
+        "contributionBytes": {
+          ".next": 3398614,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 134,
+        "pathBytes": 7342261,
+        "uniqueRealFileBytes": 7341557,
+        "contributionBytes": {
+          ".next": 3397774,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/dev/paid-report-qa/route.js.nft.json",
+      "before": {
+        "fileCount": 123,
+        "pathBytes": 6755172,
+        "uniqueRealFileBytes": 6754468,
+        "contributionBytes": {
+          ".next": 2810685,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 123,
+        "pathBytes": 6754571,
+        "uniqueRealFileBytes": 6753867,
+        "contributionBytes": {
+          ".next": 2810084,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/internal/report-jobs/route.js.nft.json",
+      "before": {
+        "fileCount": 137,
+        "pathBytes": 9438230,
+        "uniqueRealFileBytes": 9437526,
+        "contributionBytes": {
+          ".next": 5493743,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 137,
+        "pathBytes": 9437171,
+        "uniqueRealFileBytes": 9436467,
+        "contributionBytes": {
+          ".next": 5492684,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/internal/report-retry/route.js.nft.json",
+      "before": {
+        "fileCount": 133,
+        "pathBytes": 7325588,
+        "uniqueRealFileBytes": 7324884,
+        "contributionBytes": {
+          ".next": 3381101,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 133,
+        "pathBytes": 7324761,
+        "uniqueRealFileBytes": 7324057,
+        "contributionBytes": {
+          ".next": 3380274,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/internal/report-ticket-jobs/route.js.nft.json",
+      "before": {
+        "fileCount": 129,
+        "pathBytes": 9031182,
+        "uniqueRealFileBytes": 9030478,
+        "contributionBytes": {
+          ".next": 5086695,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 129,
+        "pathBytes": 9030395,
+        "uniqueRealFileBytes": 9029691,
+        "contributionBytes": {
+          ".next": 5085908,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/launch-event/route.js.nft.json",
+      "before": {
+        "fileCount": 134,
+        "pathBytes": 7328266,
+        "uniqueRealFileBytes": 7327562,
+        "contributionBytes": {
+          ".next": 3383779,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 134,
+        "pathBytes": 7327412,
+        "uniqueRealFileBytes": 7326708,
+        "contributionBytes": {
+          ".next": 3382925,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/payment-checkout/prepare/route.js.nft.json",
+      "before": {
+        "fileCount": 136,
+        "pathBytes": 7366157,
+        "uniqueRealFileBytes": 7365453,
+        "contributionBytes": {
+          ".next": 3421670,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 136,
+        "pathBytes": 7365271,
+        "uniqueRealFileBytes": 7364567,
+        "contributionBytes": {
+          ".next": 3420784,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/payment-orders/create-ready/route.js.nft.json",
+      "before": {
+        "fileCount": 102,
+        "pathBytes": 1838303,
+        "uniqueRealFileBytes": 1837599,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 394531
+        }
+      },
+      "after": {
+        "fileCount": 102,
+        "pathBytes": 1838113,
+        "uniqueRealFileBytes": 1837409,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 394341
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/payments/toss/confirm/route.js.nft.json",
+      "before": {
+        "fileCount": 135,
+        "pathBytes": 7350701,
+        "uniqueRealFileBytes": 7349997,
+        "contributionBytes": {
+          ".next": 3406214,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 135,
+        "pathBytes": 7349823,
+        "uniqueRealFileBytes": 7349119,
+        "contributionBytes": {
+          ".next": 3405336,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/payments/toss/webhook/route.js.nft.json",
+      "before": {
+        "fileCount": 101,
+        "pathBytes": 1643123,
+        "uniqueRealFileBytes": 1642419,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 199351
+        }
+      },
+      "after": {
+        "fileCount": 101,
+        "pathBytes": 1642947,
+        "uniqueRealFileBytes": 1642243,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 199175
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/reports/create/route.js.nft.json",
+      "before": {
+        "fileCount": 125,
+        "pathBytes": 6940591,
+        "uniqueRealFileBytes": 6939887,
+        "contributionBytes": {
+          ".next": 2996104,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 125,
+        "pathBytes": 6939987,
+        "uniqueRealFileBytes": 6939283,
+        "contributionBytes": {
+          ".next": 2995500,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/reports/mock-paid-complete/route.js.nft.json",
+      "before": {
+        "fileCount": 103,
+        "pathBytes": 1991331,
+        "uniqueRealFileBytes": 1990627,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 547559
+        }
+      },
+      "after": {
+        "fileCount": 103,
+        "pathBytes": 1991103,
+        "uniqueRealFileBytes": 1990399,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 547331
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/reports/unlock/route.js.nft.json",
+      "before": {
+        "fileCount": 101,
+        "pathBytes": 1643112,
+        "uniqueRealFileBytes": 1642408,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 199340
+        }
+      },
+      "after": {
+        "fileCount": 101,
+        "pathBytes": 1642936,
+        "uniqueRealFileBytes": 1642232,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 199164
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/reports/validate-input/route.js.nft.json",
+      "before": {
+        "fileCount": 102,
+        "pathBytes": 1903345,
+        "uniqueRealFileBytes": 1902641,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 459573
+        }
+      },
+      "after": {
+        "fileCount": 102,
+        "pathBytes": 1903240,
+        "uniqueRealFileBytes": 1902536,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 459468
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/api/ticket-bundles/[action]/route.js.nft.json",
+      "before": {
+        "fileCount": 129,
+        "pathBytes": 6968220,
+        "uniqueRealFileBytes": 6967516,
+        "contributionBytes": {
+          ".next": 3023733,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 129,
+        "pathBytes": 6967584,
+        "uniqueRealFileBytes": 6966880,
+        "contributionBytes": {
+          ".next": 3023097,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/apple-icon.png/route.js.nft.json",
+      "before": {
+        "fileCount": 100,
+        "pathBytes": 1645095,
+        "uniqueRealFileBytes": 1644391,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 201323
+        }
+      },
+      "after": {
+        "fileCount": 100,
+        "pathBytes": 1644920,
+        "uniqueRealFileBytes": 1644216,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 201148
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/auth/[action]/route.js.nft.json",
+      "before": {
+        "fileCount": 145,
+        "pathBytes": 9492390,
+        "uniqueRealFileBytes": 9491686,
+        "contributionBytes": {
+          ".next": 5547903,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 145,
+        "pathBytes": 9491198,
+        "uniqueRealFileBytes": 9490494,
+        "contributionBytes": {
+          ".next": 5546711,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/business/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2119892,
+        "uniqueRealFileBytes": 2119188,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 845353
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2118394,
+        "uniqueRealFileBytes": 2117690,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 843855
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/campaign/[slug]/page.js.nft.json",
+      "before": {
+        "fileCount": 170,
+        "pathBytes": 7917317,
+        "uniqueRealFileBytes": 7916613,
+        "contributionBytes": {
+          ".next": 4142063,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 170,
+        "pathBytes": 7914736,
+        "uniqueRealFileBytes": 7914032,
+        "contributionBytes": {
+          ".next": 4139482,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/campaign/[slug]/state/route.js.nft.json",
+      "before": {
+        "fileCount": 136,
+        "pathBytes": 7348195,
+        "uniqueRealFileBytes": 7347491,
+        "contributionBytes": {
+          ".next": 3403708,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 136,
+        "pathBytes": 7347325,
+        "uniqueRealFileBytes": 7346621,
+        "contributionBytes": {
+          ".next": 3402838,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/account/api/[action]/route.js.nft.json",
+      "before": {
+        "fileCount": 3847,
+        "pathBytes": 268088634,
+        "uniqueRealFileBytes": 268087930,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5677573,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 430,
+        "pathBytes": 31731151,
+        "uniqueRealFileBytes": 31730447,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5676538,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/account/library-preview/page.js.nft.json",
+      "before": {
+        "fileCount": 131,
+        "pathBytes": 2186135,
+        "uniqueRealFileBytes": 2185431,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 911596
+        }
+      },
+      "after": {
+        "fileCount": 131,
+        "pathBytes": 2184547,
+        "uniqueRealFileBytes": 2183843,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 910008
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/account/page.js.nft.json",
+      "before": {
+        "fileCount": 132,
+        "pathBytes": 2204288,
+        "uniqueRealFileBytes": 2203584,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 929749
+        }
+      },
+      "after": {
+        "fileCount": 132,
+        "pathBytes": 2202677,
+        "uniqueRealFileBytes": 2201973,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 928138
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/account/tickets/api/[action]/route.js.nft.json",
+      "before": {
+        "fileCount": 3814,
+        "pathBytes": 265222407,
+        "uniqueRealFileBytes": 265221703,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 2811346,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 396,
+        "pathBytes": 28865459,
+        "uniqueRealFileBytes": 28864755,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 2810846,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/account/tickets/checkout/[result]/page.js.nft.json",
+      "before": {
+        "fileCount": 133,
+        "pathBytes": 2218190,
+        "uniqueRealFileBytes": 2217486,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 943651
+        }
+      },
+      "after": {
+        "fileCount": 133,
+        "pathBytes": 2216568,
+        "uniqueRealFileBytes": 2215864,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 942029
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/account/tickets/mock/page.js.nft.json",
+      "before": {
+        "fileCount": 131,
+        "pathBytes": 2180427,
+        "uniqueRealFileBytes": 2179723,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 905888
+        }
+      },
+      "after": {
+        "fileCount": 131,
+        "pathBytes": 2178848,
+        "uniqueRealFileBytes": 2178144,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 904309
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/account/tickets/page.js.nft.json",
+      "before": {
+        "fileCount": 133,
+        "pathBytes": 2218077,
+        "uniqueRealFileBytes": 2217373,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 943538
+        }
+      },
+      "after": {
+        "fileCount": 133,
+        "pathBytes": 2216449,
+        "uniqueRealFileBytes": 2215745,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 941910
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/annual-fortune-preview/page.js.nft.json",
+      "before": {
+        "fileCount": 166,
+        "pathBytes": 8060023,
+        "uniqueRealFileBytes": 8059319,
+        "contributionBytes": {
+          ".next": 4284769,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 166,
+        "pathBytes": 8057309,
+        "uniqueRealFileBytes": 8056605,
+        "contributionBytes": {
+          ".next": 4282055,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/annual-v3-preview/page.js.nft.json",
+      "before": {
+        "fileCount": 166,
+        "pathBytes": 8048929,
+        "uniqueRealFileBytes": 8048225,
+        "contributionBytes": {
+          ".next": 4273675,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 166,
+        "pathBytes": 8046202,
+        "uniqueRealFileBytes": 8045498,
+        "contributionBytes": {
+          ".next": 4270948,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/api/route.js.nft.json",
+      "before": {
+        "fileCount": 101,
+        "pathBytes": 1642370,
+        "uniqueRealFileBytes": 1641666,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 198598
+        }
+      },
+      "after": {
+        "fileCount": 101,
+        "pathBytes": 1642198,
+        "uniqueRealFileBytes": 1641494,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 198426
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/input/page.js.nft.json",
+      "before": {
+        "fileCount": 130,
+        "pathBytes": 2153304,
+        "uniqueRealFileBytes": 2152600,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 878765
+        }
+      },
+      "after": {
+        "fileCount": 130,
+        "pathBytes": 2151789,
+        "uniqueRealFileBytes": 2151085,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 877250
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/legal/[document]/page.js.nft.json",
+      "before": {
+        "fileCount": 130,
+        "pathBytes": 2153589,
+        "uniqueRealFileBytes": 2152885,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 879050
+        }
+      },
+      "after": {
+        "fileCount": 130,
+        "pathBytes": 2152072,
+        "uniqueRealFileBytes": 2151368,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 877533
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/page.js.nft.json",
+      "before": {
+        "fileCount": 130,
+        "pathBytes": 2153285,
+        "uniqueRealFileBytes": 2152581,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 878746
+        }
+      },
+      "after": {
+        "fileCount": 130,
+        "pathBytes": 2151770,
+        "uniqueRealFileBytes": 2151066,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 877231
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/r/[token]/book-data/route.js.nft.json",
+      "before": {
+        "fileCount": 3830,
+        "pathBytes": 267579906,
+        "uniqueRealFileBytes": 267579202,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5168845,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 412,
+        "pathBytes": 31222545,
+        "uniqueRealFileBytes": 31221841,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5167932,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/r/[token]/book-og/route.js.nft.json",
+      "before": {
+        "fileCount": 3909,
+        "pathBytes": 287941831,
+        "uniqueRealFileBytes": 287939783,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "node_modules": 42388097,
+          "src/lib/report-knowledge": 41173625,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5638264,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 492,
+        "pathBytes": 54618281,
+        "uniqueRealFileBytes": 54616233,
+        "contributionBytes": {
+          "node_modules": 42388097,
+          ".next": 5637010,
+          "src": 3034152,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/r/[token]/page.js.nft.json",
+      "before": {
+        "fileCount": 3866,
+        "pathBytes": 269080866,
+        "uniqueRealFileBytes": 269080162,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22326358,
+          "src": 10401962,
+          "tests": 8957789,
+          ".next": 6839038,
+          "docs": 5719918,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 448,
+        "pathBytes": 32721516,
+        "uniqueRealFileBytes": 32720812,
+        "contributionBytes": {
+          "node_modules": 22326358,
+          ".next": 6836136,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/referral/route.js.nft.json",
+      "before": {
+        "fileCount": 3832,
+        "pathBytes": 267916198,
+        "uniqueRealFileBytes": 267915494,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5505137,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 414,
+        "pathBytes": 31558719,
+        "uniqueRealFileBytes": 31558015,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5504106,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/report/[reportId]/page.js.nft.json",
+      "before": {
+        "fileCount": 3879,
+        "pathBytes": 270791080,
+        "uniqueRealFileBytes": 270790376,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22326358,
+          "src": 10401962,
+          "tests": 8957789,
+          ".next": 8549252,
+          "docs": 5719918,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 461,
+        "pathBytes": 34431550,
+        "uniqueRealFileBytes": 34430846,
+        "contributionBytes": {
+          "node_modules": 22326358,
+          ".next": 8546170,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/share/route.js.nft.json",
+      "before": {
+        "fileCount": 3835,
+        "pathBytes": 267967673,
+        "uniqueRealFileBytes": 267966969,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5556612,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 417,
+        "pathBytes": 31610045,
+        "uniqueRealFileBytes": 31609341,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5555432,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-flow/share-fixture/route.js.nft.json",
+      "before": {
+        "fileCount": 3832,
+        "pathBytes": 267930339,
+        "uniqueRealFileBytes": 267929635,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5519278,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 414,
+        "pathBytes": 31572799,
+        "uniqueRealFileBytes": 31572095,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5518186,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/book-preview/page.js.nft.json",
+      "before": {
+        "fileCount": 159,
+        "pathBytes": 9408050,
+        "uniqueRealFileBytes": 9407346,
+        "contributionBytes": {
+          ".next": 5632796,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 159,
+        "pathBytes": 9405634,
+        "uniqueRealFileBytes": 9404930,
+        "contributionBytes": {
+          ".next": 5630380,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/campaign/[slug]/page.js.nft.json",
+      "before": {
+        "fileCount": 3872,
+        "pathBytes": 270179152,
+        "uniqueRealFileBytes": 270178448,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22326358,
+          "src": 10401962,
+          "tests": 8957789,
+          ".next": 7937324,
+          "docs": 5719918,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 454,
+        "pathBytes": 33819514,
+        "uniqueRealFileBytes": 33818810,
+        "contributionBytes": {
+          "node_modules": 22326358,
+          ".next": 7934134,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/campaign/[slug]/state/route.js.nft.json",
+      "before": {
+        "fileCount": 3837,
+        "pathBytes": 267990479,
+        "uniqueRealFileBytes": 267989775,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5579418,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 419,
+        "pathBytes": 31632883,
+        "uniqueRealFileBytes": 31632179,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5578270,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/campaign/entry/route.js.nft.json",
+      "before": {
+        "fileCount": 3838,
+        "pathBytes": 267985885,
+        "uniqueRealFileBytes": 267985181,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5574824,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 420,
+        "pathBytes": 31628305,
+        "uniqueRealFileBytes": 31627601,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5573692,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/campaign/setup/route.js.nft.json",
+      "before": {
+        "fileCount": 3837,
+        "pathBytes": 267987687,
+        "uniqueRealFileBytes": 267986983,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5576626,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 419,
+        "pathBytes": 31630109,
+        "uniqueRealFileBytes": 31629405,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5575496,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/career-report-preview/page.js.nft.json",
+      "before": {
+        "fileCount": 166,
+        "pathBytes": 8044924,
+        "uniqueRealFileBytes": 8044220,
+        "contributionBytes": {
+          ".next": 4269670,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 166,
+        "pathBytes": 8042230,
+        "uniqueRealFileBytes": 8041526,
+        "contributionBytes": {
+          ".next": 4266976,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/compatibility-preview/page.js.nft.json",
+      "before": {
+        "fileCount": 167,
+        "pathBytes": 8047800,
+        "uniqueRealFileBytes": 8047096,
+        "contributionBytes": {
+          ".next": 4272546,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 167,
+        "pathBytes": 8045070,
+        "uniqueRealFileBytes": 8044366,
+        "contributionBytes": {
+          ".next": 4269816,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/comprehensive-preview/page.js.nft.json",
+      "before": {
+        "fileCount": 167,
+        "pathBytes": 8055718,
+        "uniqueRealFileBytes": 8055014,
+        "contributionBytes": {
+          ".next": 4280464,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 167,
+        "pathBytes": 8052976,
+        "uniqueRealFileBytes": 8052272,
+        "contributionBytes": {
+          ".next": 4277722,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/content-review/api/route.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 8791703,
+        "uniqueRealFileBytes": 8790999,
+        "contributionBytes": {
+          ".next": 4847216,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 8790990,
+        "uniqueRealFileBytes": 8790286,
+        "contributionBytes": {
+          ".next": 4846503,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/content-review/book/page.js.nft.json",
+      "before": {
+        "fileCount": 134,
+        "pathBytes": 2195589,
+        "uniqueRealFileBytes": 2194885,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 921050
+        }
+      },
+      "after": {
+        "fileCount": 134,
+        "pathBytes": 2193951,
+        "uniqueRealFileBytes": 2193247,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 919412
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/content-review/experience/page.js.nft.json",
+      "before": {
+        "fileCount": 133,
+        "pathBytes": 2185453,
+        "uniqueRealFileBytes": 2184749,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 910914
+        }
+      },
+      "after": {
+        "fileCount": 133,
+        "pathBytes": 2183860,
+        "uniqueRealFileBytes": 2183156,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 909321
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/content-review/page.js.nft.json",
+      "before": {
+        "fileCount": 133,
+        "pathBytes": 2202548,
+        "uniqueRealFileBytes": 2201844,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 928009
+        }
+      },
+      "after": {
+        "fileCount": 133,
+        "pathBytes": 2200921,
+        "uniqueRealFileBytes": 2200217,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 926382
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/launch-event/route.js.nft.json",
+      "before": {
+        "fileCount": 3837,
+        "pathBytes": 267990680,
+        "uniqueRealFileBytes": 267989976,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5579619,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 419,
+        "pathBytes": 31633077,
+        "uniqueRealFileBytes": 31632373,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5578464,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/love-marriage-child-report-preview/page.js.nft.json",
+      "before": {
+        "fileCount": 165,
+        "pathBytes": 8047076,
+        "uniqueRealFileBytes": 8046372,
+        "contributionBytes": {
+          ".next": 4271822,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 165,
+        "pathBytes": 8044379,
+        "uniqueRealFileBytes": 8043675,
+        "contributionBytes": {
+          ".next": 4269125,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/major-fortune-preview/export/route.js.nft.json",
+      "before": {
+        "fileCount": 120,
+        "pathBytes": 5192146,
+        "uniqueRealFileBytes": 5191442,
+        "contributionBytes": {
+          "docs": 2500715,
+          "node_modules": 1443772,
+          ".next": 1247659
+        }
+      },
+      "after": {
+        "fileCount": 120,
+        "pathBytes": 5191819,
+        "uniqueRealFileBytes": 5191115,
+        "contributionBytes": {
+          "docs": 2500715,
+          "node_modules": 1443772,
+          ".next": 1247332
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/major-fortune-preview/page.js.nft.json",
+      "before": {
+        "fileCount": 168,
+        "pathBytes": 8110924,
+        "uniqueRealFileBytes": 8110220,
+        "contributionBytes": {
+          ".next": 4335670,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 168,
+        "pathBytes": 8108181,
+        "uniqueRealFileBytes": 8107477,
+        "contributionBytes": {
+          ".next": 4332927,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/measurement/route.js.nft.json",
+      "before": {
+        "fileCount": 3832,
+        "pathBytes": 267622970,
+        "uniqueRealFileBytes": 267622266,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5211909,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 414,
+        "pathBytes": 31265584,
+        "uniqueRealFileBytes": 31264880,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5210971,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/measurement/setup/route.js.nft.json",
+      "before": {
+        "fileCount": 3832,
+        "pathBytes": 267626182,
+        "uniqueRealFileBytes": 267625478,
+        "contributionBytes": {
+          "docs/validation": 171108965,
+          "src/lib/report-knowledge": 41173625,
+          "node_modules": 22495591,
+          "src": 10401962,
+          "tests": 8957789,
+          "docs": 5719918,
+          ".next": 5215121,
+          "public": 1336423,
+          "scripts": 788553,
+          "supabase": 269754,
+          "pnpm-lock.yaml": 154429,
+          "package.json": 815,
+          "tsconfig.json": 670,
+          "next.config.ts": 641,
+          "eslint.config.mjs": 465,
+          "README.md": 454,
+          "vitest.config.ts": 354,
+          "AGENTS.md": 327,
+          "vercel.json": 167,
+          "postcss.config.mjs": 94,
+          "pnpm-workspace.yaml": 54,
+          "CLAUDE.md": 11
+        }
+      },
+      "after": {
+        "fileCount": 414,
+        "pathBytes": 31268793,
+        "uniqueRealFileBytes": 31268089,
+        "contributionBytes": {
+          "node_modules": 22495591,
+          ".next": 5214180,
+          "docs": 2500715,
+          "scripts": 788553,
+          "supabase": 269754
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/dev/v3-editorial-preview/page.js.nft.json",
+      "before": {
+        "fileCount": 167,
+        "pathBytes": 8052564,
+        "uniqueRealFileBytes": 8051860,
+        "contributionBytes": {
+          ".next": 4277310,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 167,
+        "pathBytes": 8049825,
+        "uniqueRealFileBytes": 8049121,
+        "contributionBytes": {
+          ".next": 4274571,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/favicon.ico/route.js.nft.json",
+      "before": {
+        "fileCount": 100,
+        "pathBytes": 1644429,
+        "uniqueRealFileBytes": 1643725,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 200657
+        }
+      },
+      "after": {
+        "fileCount": 100,
+        "pathBytes": 1644255,
+        "uniqueRealFileBytes": 1643551,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 200483
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/icon.svg/route.js.nft.json",
+      "before": {
+        "fileCount": 100,
+        "pathBytes": 1642500,
+        "uniqueRealFileBytes": 1641796,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 198728
+        }
+      },
+      "after": {
+        "fileCount": 100,
+        "pathBytes": 1642326,
+        "uniqueRealFileBytes": 1641622,
+        "contributionBytes": {
+          "node_modules": 1443772,
+          ".next": 198554
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/legal/business-info/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2120129,
+        "uniqueRealFileBytes": 2119425,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 845590
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2118628,
+        "uniqueRealFileBytes": 2117924,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 844089
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/legal/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2119137,
+        "uniqueRealFileBytes": 2118433,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 844598
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2117645,
+        "uniqueRealFileBytes": 2116941,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 843106
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/legal/privacy/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2125455,
+        "uniqueRealFileBytes": 2124751,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 850916
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2123950,
+        "uniqueRealFileBytes": 2123246,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 849411
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/legal/refund/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2123874,
+        "uniqueRealFileBytes": 2123170,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 849335
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2122369,
+        "uniqueRealFileBytes": 2121665,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 847830
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/legal/terms/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2127951,
+        "uniqueRealFileBytes": 2127247,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 853412
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2126446,
+        "uniqueRealFileBytes": 2125742,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 851907
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/login/page.js.nft.json",
+      "before": {
+        "fileCount": 131,
+        "pathBytes": 2181414,
+        "uniqueRealFileBytes": 2180710,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 906875
+        }
+      },
+      "after": {
+        "fileCount": 131,
+        "pathBytes": 2179851,
+        "uniqueRealFileBytes": 2179147,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 905312
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/page.js.nft.json",
+      "before": {
+        "fileCount": 130,
+        "pathBytes": 2146333,
+        "uniqueRealFileBytes": 2145629,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 871794
+        }
+      },
+      "after": {
+        "fileCount": 130,
+        "pathBytes": 2144809,
+        "uniqueRealFileBytes": 2144105,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 870270
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/payments/toss/fail/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2118263,
+        "uniqueRealFileBytes": 2117559,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 843724
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2116777,
+        "uniqueRealFileBytes": 2116073,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 842238
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/payments/toss/success/page.js.nft.json",
+      "before": {
+        "fileCount": 164,
+        "pathBytes": 7899689,
+        "uniqueRealFileBytes": 7898985,
+        "contributionBytes": {
+          ".next": 4124435,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 164,
+        "pathBytes": 7897142,
+        "uniqueRealFileBytes": 7896438,
+        "contributionBytes": {
+          ".next": 4121888,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/privacy/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2125261,
+        "uniqueRealFileBytes": 2124557,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 850722
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2123759,
+        "uniqueRealFileBytes": 2123055,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 849220
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/products/page.js.nft.json",
+      "before": {
+        "fileCount": 129,
+        "pathBytes": 2139395,
+        "uniqueRealFileBytes": 2138691,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 864856
+        }
+      },
+      "after": {
+        "fileCount": 129,
+        "pathBytes": 2137897,
+        "uniqueRealFileBytes": 2137193,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 863358
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/products/saju-mbti-full/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2135161,
+        "uniqueRealFileBytes": 2134457,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 860622
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2133668,
+        "uniqueRealFileBytes": 2132964,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 859129
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/r/[token]/book-data/route.js.nft.json",
+      "before": {
+        "fileCount": 133,
+        "pathBytes": 7324595,
+        "uniqueRealFileBytes": 7323891,
+        "contributionBytes": {
+          ".next": 3380108,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      },
+      "after": {
+        "fileCount": 133,
+        "pathBytes": 7323775,
+        "uniqueRealFileBytes": 7323071,
+        "contributionBytes": {
+          ".next": 3379288,
+          "docs": 2500715,
+          "node_modules": 1443772
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/r/[token]/book-og/route.js.nft.json",
+      "before": {
+        "fileCount": 211,
+        "pathBytes": 30369939,
+        "uniqueRealFileBytes": 30367891,
+        "contributionBytes": {
+          "node_modules": 21336278,
+          ".next": 3498794,
+          "src": 3034152,
+          "docs": 2500715
+        }
+      },
+      "after": {
+        "fileCount": 211,
+        "pathBytes": 30368952,
+        "uniqueRealFileBytes": 30366904,
+        "contributionBytes": {
+          "node_modules": 21336278,
+          ".next": 3497807,
+          "src": 3034152,
+          "docs": 2500715
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/r/[token]/page.js.nft.json",
+      "before": {
+        "fileCount": 183,
+        "pathBytes": 8342510,
+        "uniqueRealFileBytes": 8341806,
+        "contributionBytes": {
+          ".next": 4567256,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 183,
+        "pathBytes": 8339288,
+        "uniqueRealFileBytes": 8338584,
+        "contributionBytes": {
+          ".next": 4564034,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/refund/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2123682,
+        "uniqueRealFileBytes": 2122978,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 849143
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2122180,
+        "uniqueRealFileBytes": 2121476,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 847641
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/report/new/page.js.nft.json",
+      "before": {
+        "fileCount": 132,
+        "pathBytes": 2204524,
+        "uniqueRealFileBytes": 2203820,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 929985
+        }
+      },
+      "after": {
+        "fileCount": 132,
+        "pathBytes": 2203008,
+        "uniqueRealFileBytes": 2202304,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 928469
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/reports/[reportId]/page.js.nft.json",
+      "before": {
+        "fileCount": 179,
+        "pathBytes": 8311491,
+        "uniqueRealFileBytes": 8310787,
+        "contributionBytes": {
+          ".next": 4536237,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      },
+      "after": {
+        "fileCount": 179,
+        "pathBytes": 8308374,
+        "uniqueRealFileBytes": 8307670,
+        "contributionBytes": {
+          ".next": 4533120,
+          "docs": 2500715,
+          "node_modules": 1274539
+        }
+      }
+    },
+    {
+      "routeTrace": ".next/server/app/terms/page.js.nft.json",
+      "before": {
+        "fileCount": 128,
+        "pathBytes": 2127759,
+        "uniqueRealFileBytes": 2127055,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 853220
+        }
+      },
+      "after": {
+        "fileCount": 128,
+        "pathBytes": 2126255,
+        "uniqueRealFileBytes": 2125551,
+        "contributionBytes": {
+          "node_modules": 1274539,
+          ".next": 851716
+        }
+      }
+    }
+  ]
+}
