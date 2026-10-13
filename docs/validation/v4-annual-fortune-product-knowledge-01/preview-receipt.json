@@ -1,0 +1,16 @@
+{
+  "implementationSha": "97f257475eb10979329d69040abbdc19d35b8712",
+  "branch": "v4/annual-fortune-product-knowledge-01",
+  "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "deploymentId": "dpl_HqYPtuziEmzypZQGnH1MAJkSrTnD",
+  "url": "https://gyeol-report-b4td93bk2-gyeol-report-s-projects.vercel.app",
+  "state": "READY",
+  "target": "Preview",
+  "readyAt": 1791934443189,
+  "checkedUsing": "Vercel authenticated deployment metadata; exact SHA/branch and null target verified",
+  "buildCompletedObserved": true,
+  "buildEventToolResponseTruncated": true,
+  "allRemoteWarningsNotClaimedZero": true,
+  "productionChanged": false,
+  "finalDocumentationCommit": "A following docs-only commit records this receipt; final exact SHA READY is checked after its push and reported separately to avoid self-referential commit content."
+}
