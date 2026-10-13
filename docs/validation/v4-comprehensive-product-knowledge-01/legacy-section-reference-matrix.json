@@ -1,0 +1,475 @@
+[
+  {
+    "legacySectionId": "C1",
+    "original": {
+      "purpose": "나는 한마디로 어떤 사람인가",
+      "kind": "IDENTITY",
+      "maxPrimary": 1,
+      "target": [
+        1,
+        1
+      ],
+      "maxSupport": 2,
+      "sources": [
+        "CORE_GYEOL",
+        "PERSONAL_RESONANCE",
+        "CLAIM",
+        "FUSION",
+        "TRAIT_ARC",
+        "MYEONGLI_PATTERN"
+      ],
+      "contexts": [
+        "identity"
+      ],
+      "slots": [],
+      "emotions": [
+        "RELATABLE"
+      ],
+      "score": 30,
+      "depth": "DEEP",
+      "units": [
+        2,
+        3
+      ],
+      "bridge": "IDENTITY_TO_REINFORCE",
+      "maxExplicit": 1
+    },
+    "readerChapterReferences": [
+      "CH01",
+      "CH04"
+    ],
+    "mapping": "many_to_many_research_reference_not_actual_placement",
+    "actualPlacement": "reader paragraphs derive legacySections from actual plan.evidenceOwnership; this table does not alter placement"
+  },
+  {
+    "legacySectionId": "C2",
+    "original": {
+      "purpose": "명리와 MBTI가 같은 곳",
+      "kind": "REINFORCE",
+      "maxPrimary": 2,
+      "target": [
+        1,
+        2
+      ],
+      "maxSupport": 1,
+      "sources": [
+        "FUSION",
+        "MYEONGLI_PATTERN"
+      ],
+      "contexts": [
+        "identity"
+      ],
+      "slots": [],
+      "emotions": [
+        "SURPRISING"
+      ],
+      "score": 45,
+      "depth": "NORMAL",
+      "units": [
+        2,
+        3
+      ],
+      "bridge": "REINFORCE_TO_TENSION",
+      "maxExplicit": 2
+    },
+    "readerChapterReferences": [
+      "CH01",
+      "CH03"
+    ],
+    "mapping": "many_to_many_research_reference_not_actual_placement",
+    "actualPlacement": "reader paragraphs derive legacySections from actual plan.evidenceOwnership; this table does not alter placement"
+  },
+  {
+    "legacySectionId": "C3",
+    "original": {
+      "purpose": "둘이 다르게 말해서 생기는 나의 반전",
+      "kind": "TENSION",
+      "maxPrimary": 2,
+      "target": [
+        1,
+        2
+      ],
+      "maxSupport": 1,
+      "sources": [
+        "FUSION",
+        "PERSONAL_RESONANCE",
+        "MYEONGLI_PATTERN"
+      ],
+      "contexts": [
+        "identity",
+        "stress"
+      ],
+      "slots": [],
+      "emotions": [
+        "DISCOVERY",
+        "REASSURING"
+      ],
+      "score": 20,
+      "depth": "DEEP",
+      "units": [
+        1,
+        2
+      ],
+      "bridge": "TENSION_TO_STRENGTH",
+      "maxExplicit": 2
+    },
+    "readerChapterReferences": [
+      "CH03",
+      "CH04"
+    ],
+    "mapping": "many_to_many_research_reference_not_actual_placement",
+    "actualPlacement": "reader paragraphs derive legacySections from actual plan.evidenceOwnership; this table does not alter placement"
+  },
+  {
+    "legacySectionId": "C4",
+    "original": {
+      "purpose": "내가 가장 잘하는 것",
+      "kind": "STRENGTH",
+      "maxPrimary": 3,
+      "target": [
+        2,
+        3
+      ],
+      "maxSupport": 1,
+      "sources": [
+        "PERSONAL_RESONANCE",
+        "CLAIM",
+        "FUSION",
+        "TRAIT_ARC",
+        "MYEONGLI_PATTERN"
+      ],
+      "contexts": [
+        "identity",
+        "learning",
+        "work",
+        "social"
+      ],
+      "slots": [],
+      "emotions": [
+        "CONFIDENCE",
+        "UPLIFTING"
+      ],
+      "score": 55,
+      "depth": "NORMAL",
+      "units": [
+        2,
+        3
+      ],
+      "bridge": "STRENGTH_TO_FORTUNE",
+      "maxExplicit": 0
+    },
+    "readerChapterReferences": [
+      "CH04",
+      "CH05"
+    ],
+    "mapping": "many_to_many_research_reference_not_actual_placement",
+    "actualPlacement": "reader paragraphs derive legacySections from actual plan.evidenceOwnership; this table does not alter placement"
+  },
+  {
+    "legacySectionId": "C5",
+    "original": {
+      "purpose": "내가 가진 좋은 패",
+      "kind": "GOOD_FORTUNE",
+      "maxPrimary": 3,
+      "target": [
+        1,
+        3
+      ],
+      "maxSupport": 1,
+      "sources": [
+        "CLAIM",
+        "TRAIT_ARC",
+        "MYEONGLI_PATTERN",
+        "PERSONAL_RESONANCE"
+      ],
+      "contexts": [
+        "identity",
+        "money",
+        "social",
+        "work",
+        "love",
+        "learning"
+      ],
+      "slots": [],
+      "emotions": [
+        "FORTUNE_REWARD",
+        "UPLIFTING"
+      ],
+      "score": 80,
+      "depth": "NORMAL",
+      "units": [
+        1,
+        3
+      ],
+      "bridge": "FORTUNE_TO_SHADOW",
+      "maxExplicit": 0
+    },
+    "readerChapterReferences": [
+      "CH07",
+      "CH09"
+    ],
+    "mapping": "many_to_many_research_reference_not_actual_placement",
+    "actualPlacement": "reader paragraphs derive legacySections from actual plan.evidenceOwnership; this table does not alter placement"
+  },
+  {
+    "legacySectionId": "C6",
+    "original": {
+      "purpose": "나도 인정하기 싫은 팩폭",
+      "kind": "FACT_BOMB",
+      "maxPrimary": 4,
+      "target": [
+        2,
+        4
+      ],
+      "maxSupport": 2,
+      "sources": [
+        "CLAIM",
+        "TRAIT_ARC",
+        "PERSONAL_RESONANCE",
+        "GUIDANCE"
+      ],
+      "contexts": [
+        "stress",
+        "identity",
+        "work",
+        "social",
+        "money"
+      ],
+      "slots": [],
+      "emotions": [
+        "FACT_BOMB"
+      ],
+      "score": -25,
+      "depth": "SHORT",
+      "units": [
+        1,
+        2
+      ],
+      "bridge": "SHADOW_TO_RELATION",
+      "maxExplicit": 0
+    },
+    "readerChapterReferences": [
+      "CH06",
+      "CH09",
+      "CH12"
+    ],
+    "mapping": "many_to_many_research_reference_not_actual_placement",
+    "actualPlacement": "reader paragraphs derive legacySections from actual plan.evidenceOwnership; this table does not alter placement"
+  },
+  {
+    "legacySectionId": "C7",
+    "original": {
+      "purpose": "사람과 사랑에서의 나",
+      "kind": "RELATION",
+      "maxPrimary": 4,
+      "target": [
+        3,
+        4
+      ],
+      "maxSupport": 2,
+      "sources": [
+        "PERSONAL_RESONANCE",
+        "CLAIM",
+        "FUSION",
+        "TRAIT_ARC",
+        "MYEONGLI_PATTERN",
+        "GUIDANCE"
+      ],
+      "contexts": [
+        "social",
+        "love"
+      ],
+      "slots": [
+        "OTHERS_SEE_ME",
+        "LOVE_STYLE",
+        "CLOSE_RELATION_CHANGE",
+        "RELATION_RISK",
+        "RELATION_STRENGTH",
+        "RELATION_GUIDANCE"
+      ],
+      "emotions": [
+        "RELATABLE",
+        "WARM"
+      ],
+      "score": 20,
+      "depth": "NORMAL",
+      "units": [
+        2,
+        3
+      ],
+      "bridge": "RELATION_TO_WORK",
+      "maxExplicit": 1
+    },
+    "readerChapterReferences": [
+      "CH04",
+      "CH10",
+      "CH11",
+      "CH12"
+    ],
+    "mapping": "many_to_many_research_reference_not_actual_placement",
+    "actualPlacement": "reader paragraphs derive legacySections from actual plan.evidenceOwnership; this table does not alter placement"
+  },
+  {
+    "legacySectionId": "C8",
+    "original": {
+      "purpose": "일과 돈에서의 나",
+      "kind": "WORK_MONEY",
+      "maxPrimary": 5,
+      "target": [
+        3,
+        5
+      ],
+      "maxSupport": 2,
+      "sources": [
+        "PERSONAL_RESONANCE",
+        "CLAIM",
+        "FUSION",
+        "TRAIT_ARC",
+        "MYEONGLI_PATTERN",
+        "GUIDANCE"
+      ],
+      "contexts": [
+        "work",
+        "money",
+        "learning"
+      ],
+      "slots": [
+        "WORK_STYLE",
+        "MONEY_STYLE",
+        "CURRENT_CONTEXT",
+        "RESULT_STYLE",
+        "SUCCESS_DESIRE",
+        "WORK_GUIDANCE",
+        "MONEY_GUIDANCE"
+      ],
+      "emotions": [
+        "PRACTICAL",
+        "DESIRE"
+      ],
+      "score": 30,
+      "depth": "NORMAL",
+      "units": [
+        3,
+        4
+      ],
+      "bridge": "WORK_TO_RECOVERY",
+      "maxExplicit": 1
+    },
+    "readerChapterReferences": [
+      "CH08",
+      "CH09"
+    ],
+    "mapping": "many_to_many_research_reference_not_actual_placement",
+    "actualPlacement": "reader paragraphs derive legacySections from actual plan.evidenceOwnership; this table does not alter placement"
+  },
+  {
+    "legacySectionId": "C9",
+    "original": {
+      "purpose": "내가 편해지는 환경과 회복법",
+      "kind": "RECOVERY_ENVIRONMENT",
+      "maxPrimary": 3,
+      "target": [
+        2,
+        3
+      ],
+      "maxSupport": 2,
+      "sources": [
+        "PERSONAL_RESONANCE",
+        "CLAIM",
+        "FUSION",
+        "TRAIT_ARC",
+        "MYEONGLI_PATTERN",
+        "GUIDANCE"
+      ],
+      "contexts": [
+        "recovery",
+        "stress"
+      ],
+      "slots": [
+        "ELEMENT_COMPOSITE",
+        "YIN_YANG",
+        "RECOVERY_STYLE",
+        "RECOVERY_GUIDANCE",
+        "OVERUSED_PATTERN",
+        "UNDERUSED_PATTERN",
+        "ENVIRONMENT"
+      ],
+      "emotions": [
+        "REASSURING"
+      ],
+      "score": 25,
+      "depth": "NORMAL",
+      "units": [
+        2,
+        3
+      ],
+      "bridge": "RECOVERY_TO_MANUAL",
+      "maxExplicit": 1
+    },
+    "readerChapterReferences": [
+      "CH02",
+      "CH04",
+      "CH05",
+      "CH13"
+    ],
+    "mapping": "many_to_many_research_reference_not_actual_placement",
+    "actualPlacement": "reader paragraphs derive legacySections from actual plan.evidenceOwnership; this table does not alter placement"
+  },
+  {
+    "legacySectionId": "C10",
+    "original": {
+      "purpose": "이런 나를 잘 쓰는 방법",
+      "kind": "OPERATING_MANUAL",
+      "maxPrimary": 5,
+      "target": [
+        3,
+        5
+      ],
+      "maxSupport": 0,
+      "sources": [
+        "GUIDANCE"
+      ],
+      "contexts": [
+        "identity",
+        "work",
+        "money",
+        "social",
+        "love",
+        "recovery",
+        "learning"
+      ],
+      "slots": [
+        "THINKING",
+        "EXECUTION",
+        "WORK_MONEY",
+        "RELATIONSHIP",
+        "RECOVERY"
+      ],
+      "emotions": [
+        "PRACTICAL",
+        "CONFIDENCE"
+      ],
+      "score": 65,
+      "depth": "SHORT",
+      "units": [
+        3,
+        5
+      ],
+      "maxExplicit": 0
+    },
+    "readerChapterReferences": [
+      "CH02",
+      "CH05",
+      "CH06",
+      "CH07",
+      "CH08",
+      "CH09",
+      "CH10",
+      "CH11",
+      "CH12",
+      "CH13"
+    ],
+    "mapping": "many_to_many_research_reference_not_actual_placement",
+    "actualPlacement": "reader paragraphs derive legacySections from actual plan.evidenceOwnership; this table does not alter placement"
+  }
+]

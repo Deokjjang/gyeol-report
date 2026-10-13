@@ -1,0 +1,17 @@
+{
+  "materials": 179,
+  "allPairsConsidered": 15931,
+  "sharedSourceOrFacetPairs": 1466,
+  "duplicateFields": {
+    "coreMeaning": [],
+    "positive": [],
+    "shadow": [],
+    "factBomb": [],
+    "twist": [],
+    "application": []
+  },
+  "countingPolicy": "문구 차이를 새 사실로 세지 않는다. 역할 링크·재사용·scope·source inventory는 별도 해석 재료 수가 아니다.",
+  "mechanicalComparisonLimit": "공유 원천·facet 전수 구조 비교이며 모든 쌍의 의미 동등성에 대한 사람의 승인이 아니다.",
+  "qualitativeChapterComparisons": 15,
+  "universalIndividualFactClaimsApproved": 0
+}

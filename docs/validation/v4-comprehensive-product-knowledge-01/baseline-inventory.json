@@ -1,0 +1,323 @@
+{
+  "baseSha": "6d220856fbfa9a681a74625680387f855b5e77f0",
+  "fileLocks": 2201,
+  "chapters": 13,
+  "paragraphs": 52,
+  "roles": 208,
+  "existingFacets": [
+    "action",
+    "order",
+    "research",
+    "flexible",
+    "care",
+    "steady",
+    "self",
+    "voice",
+    "resources",
+    "growth",
+    "chance",
+    "quiet",
+    "direct",
+    "gentle",
+    "craft"
+  ],
+  "facetContextCoverage": {
+    "action": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "order": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "research": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "flexible": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "care": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "steady": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "self": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "voice": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "resources": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "growth": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "chance": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "quiet": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "direct": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "gentle": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ],
+    "craft": [
+      "identity",
+      "inner",
+      "strength",
+      "stress",
+      "work",
+      "learning",
+      "money",
+      "love",
+      "family",
+      "social",
+      "direction"
+    ]
+  },
+  "collections": [
+    {
+      "name": "RELEASE_FACETS",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_RISKS",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_RISK_SCENES",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_SOCIAL_INTENT",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_CLOSINGS",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_POSITIVE",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_SOCIAL_VALUE",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_SOCIAL_FIT",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_POSITIVE_ACTIVATION",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_MONEY_AXES",
+      "count": 10,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_MONEY_VALUE",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_SOCIAL_REPAIR",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "RELEASE_SOCIAL_LEARNING_FIT",
+      "count": 3,
+      "kind": "tuple"
+    },
+    {
+      "name": "RELEASE_SOCIAL_BOUNDARY_RISK",
+      "count": 3,
+      "kind": "tuple"
+    },
+    {
+      "name": "READER_FIRST_IMPRESSION",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "READER_PRIORITIES",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "READER_TALENT_PRACTICE",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "READER_FRIEND_VALUE",
+      "count": 15,
+      "kind": "map"
+    },
+    {
+      "name": "READER_MONEY_VALUE",
+      "count": 2,
+      "kind": "map"
+    },
+    {
+      "name": "READER_TALENT_SELECTION",
+      "count": 15,
+      "kind": "map"
+    }
+  ]
+}

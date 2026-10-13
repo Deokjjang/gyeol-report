@@ -1,0 +1,2800 @@
+[
+  {
+    "id": "sar:facet:ACTION_TEMPO:start-latency",
+    "axis": "ACTION_TEMPO",
+    "definition": "결론과 첫 행동 사이의 간격",
+    "originalCondition": "결론이 실제로 난 뒤의 간격을 비교",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P3:resource-excess-application",
+      "cpr:material:CH13.P1:understand-then-try"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P3",
+        "question": "부재·편중은 실제로 무엇까지 말해 주는가?"
+      },
+      {
+        "address": "CH13.P1",
+        "question": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:ACTION_TEMPO:review-window",
+    "axis": "ACTION_TEMPO",
+    "definition": "행동 전 검토 시간을 배정",
+    "originalCondition": "오류 비용과 기한이 모두 주어진 상황",
+    "selectedMaterialIds": [
+      "cpr:material:CH03.P3:learn-before-try"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P3",
+        "question": "부재·편중은 실제로 무엇까지 말해 주는가?"
+      },
+      {
+        "address": "CH13.P1",
+        "question": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:ACTION_TEMPO:paced-handoff",
+    "axis": "ACTION_TEMPO",
+    "definition": "자기 착수와 타인의 준비 속도를 조정",
+    "originalCondition": "공동 과제의 의존 단계가 있을 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P3",
+        "question": "부재·편중은 실제로 무엇까지 말해 주는가?"
+      },
+      {
+        "address": "CH13.P1",
+        "question": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:ENERGY_DIRECTION:private-processing",
+    "axis": "ENERGY_DIRECTION",
+    "definition": "생각을 먼저 사적으로 정리",
+    "originalCondition": "혼자 정리할 접근성과 응답 기한 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH03.P3:private-social-channel",
+      "cpr:material:CH04.P1:quiet-first-contact",
+      "cpr:material:CH04.P2:private-criteria",
+      "cpr:material:CH04.P2:inner-values-not-secret",
+      "cpr:material:CH04.P2:private-reading-window",
+      "cpr:material:CH05.P3:quiet-lead"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P2",
+        "question": "혼자 정리할 때 어떤 여건이 필요한가?"
+      },
+      {
+        "address": "CH03.P3",
+        "question": "두 신호는 반대인가 다른 상황인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:ENERGY_DIRECTION:dialogic-processing",
+    "axis": "ENERGY_DIRECTION",
+    "definition": "대화 속에서 생각을 발전",
+    "originalCondition": "대화 상대가 참여에 동의할 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P2",
+        "question": "혼자 정리할 때 어떤 여건이 필요한가?"
+      },
+      {
+        "address": "CH03.P3",
+        "question": "두 신호는 반대인가 다른 상황인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:ENERGY_DIRECTION:channel-switch",
+    "axis": "ENERGY_DIRECTION",
+    "definition": "장면에 따른 정리 통로의 전환",
+    "originalCondition": "여러 장면의 실제 관찰이 있을 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P2",
+        "question": "혼자 정리할 때 어떤 여건이 필요한가?"
+      },
+      {
+        "address": "CH03.P3",
+        "question": "두 신호는 반대인가 다른 상황인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STRUCTURE_STYLE:fixed-minimum",
+    "axis": "STRUCTURE_STYLE",
+    "definition": "반드시 지킬 최소 절차를 선택",
+    "originalCondition": "법·안전상 필수와 취향을 분리",
+    "selectedMaterialIds": [
+      "cpr:material:CH05.P3:standards-open-way",
+      "cpr:material:CH08.P3:control-without-method-space"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH08.P3",
+        "question": "어떤 환경 조건이 기능을 막을 수 있는가?"
+      },
+      {
+        "address": "CH05.P3",
+        "question": "예상과 다른 장점은 어떤 조합에서 가능한가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STRUCTURE_STYLE:flexible-method",
+    "axis": "STRUCTURE_STYLE",
+    "definition": "목적 안에서 방법을 열어둠",
+    "originalCondition": "결과 기준과 변경 권한이 확인될 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH08.P3",
+        "question": "어떤 환경 조건이 기능을 막을 수 있는가?"
+      },
+      {
+        "address": "CH05.P3",
+        "question": "예상과 다른 장점은 어떤 조합에서 가능한가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STRUCTURE_STYLE:change-log",
+    "axis": "STRUCTURE_STYLE",
+    "definition": "계획 변경을 서로 확인 가능한 기록으로 남김",
+    "originalCondition": "공동 일정이나 담당이 바뀔 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH08.P3:changing-standard-without-log"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH08.P3",
+        "question": "어떤 환경 조건이 기능을 막을 수 있는가?"
+      },
+      {
+        "address": "CH05.P3",
+        "question": "예상과 다른 장점은 어떤 조합에서 가능한가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:COMMUNICATION_STYLE:direct-request",
+    "axis": "COMMUNICATION_STYLE",
+    "definition": "원하는 행동을 명시",
+    "originalCondition": "거절 가능한 실제 선택권이 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P1:clear-request-first",
+      "cpr:material:CH06.P1:correction-before-request",
+      "cpr:material:CH06.P4:correction-to-agreement",
+      "cpr:material:CH06.P1:overused-output-standard",
+      "cpr:material:CH11.P2:clear-shared-logistics",
+      "cpr:material:CH12.P3:repair-not-correct-person",
+      "cpr:material:CH12.P3:critique-without-invitation",
+      "cpr:material:CH13.P3:one-request-in-work"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH06.P3",
+        "question": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?"
+      },
+      {
+        "address": "CH10.P3",
+        "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?"
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?"
+      },
+      {
+        "address": "CH12.P3",
+        "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:COMMUNICATION_STYLE:contextual-delivery",
+    "axis": "COMMUNICATION_STYLE",
+    "definition": "맥락과 관계를 고려해 전달",
+    "originalCondition": "민감한 피드백의 장소와 수신자 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P4:soft-precise-request"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH06.P3",
+        "question": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?"
+      },
+      {
+        "address": "CH10.P3",
+        "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?"
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?"
+      },
+      {
+        "address": "CH12.P3",
+        "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+    "axis": "COMMUNICATION_STYLE",
+    "definition": "표현과 이해된 뜻을 다시 확인",
+    "originalCondition": "해석 차이를 당사자가 확인할 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH06.P3:feedback-as-evaluation",
+      "cpr:material:CH10.P1:ask-about-direction",
+      "cpr:material:CH10.P3:space-without-signal",
+      "cpr:material:CH10.P3:own-criteria-without-message",
+      "cpr:material:CH11.P1:own-choice-near-family",
+      "cpr:material:CH11.P4:coordinate-with-privacy",
+      "cpr:material:CH12.P3:quiet-without-disappearance",
+      "cpr:material:CH12.P4:friendship-with-voluntary-answers",
+      "cpr:material:CH13.P2:agreement-before-answer"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH06.P3",
+        "question": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?"
+      },
+      {
+        "address": "CH10.P3",
+        "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?"
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?"
+      },
+      {
+        "address": "CH12.P3",
+        "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CHANGE_ORIENTATION:preserve-value",
+    "axis": "CHANGE_ORIENTATION",
+    "definition": "유지할 이유를 선택적으로 확인",
+    "originalCondition": "유지 효과의 실제 자료가 있을 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P4",
+        "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CHANGE_ORIENTATION:novelty-trial",
+    "axis": "CHANGE_ORIENTATION",
+    "definition": "새 방식의 일부를 시험",
+    "originalCondition": "시험을 되돌릴 수 있는 상황",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P1:metal-wood-constraint"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P4",
+        "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CHANGE_ORIENTATION:chosen-change",
+    "axis": "CHANGE_ORIENTATION",
+    "definition": "스스로 선택한 변화와 강제 변화를 구별",
+    "originalCondition": "변경 권한과 실제 제약이 확인될 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P4:change-keeps-purpose",
+      "cpr:material:CH13.P2:reversible-before-bigger"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P4",
+        "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:DECISION_STYLE:closure-criteria",
+    "axis": "DECISION_STYLE",
+    "definition": "어떤 정보면 결론을 닫을지 정의",
+    "originalCondition": "결정의 영향과 정보 범위가 명시될 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P4:precision-has-a-stop",
+      "cpr:material:CH04.P2:private-criteria",
+      "cpr:material:CH13.P2:proof-before-more-search"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P4",
+        "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:DECISION_STYLE:option-hold",
+    "axis": "DECISION_STYLE",
+    "definition": "가능성을 남길 이유와 기한을 설명",
+    "originalCondition": "보류의 이익과 비용을 비교할 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P4",
+        "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:DECISION_STYLE:reopen-trigger",
+    "axis": "DECISION_STYLE",
+    "definition": "결정을 다시 볼 새 근거를 정함",
+    "originalCondition": "기존 결정과 변경 권한을 확인",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P4",
+        "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RELATION_STYLE:contact-range",
+    "axis": "RELATION_STYLE",
+    "definition": "연락·만남의 참여 범위를 정함",
+    "originalCondition": "실제 관계와 생활 제약이 주어진 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH10.P1:ask-about-direction",
+      "cpr:material:CH10.P3:confirmation-pressure",
+      "cpr:material:CH10.P4:space-with-agreed-return",
+      "cpr:material:CH12.P1:reliable-invitation",
+      "cpr:material:CH12.P3:quiet-without-disappearance",
+      "cpr:material:CH12.P4:contact-not-counter",
+      "cpr:material:CH12.P2:promise-as-choice"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P1",
+        "question": "관심을 어떤 통로와 속도로 전하고 싶은가?"
+      },
+      {
+        "address": "CH12.P4",
+        "question": "나와 다르면서도 편할 관계는 어떤 조건인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RELATION_STYLE:shared-participation",
+    "axis": "RELATION_STYLE",
+    "definition": "함께할 활동의 참여 방식을 선택",
+    "originalCondition": "참여·공개 동의가 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH03.P3:private-social-channel",
+      "cpr:material:CH04.P3:playful-after-trust",
+      "cpr:material:CH10.P2:curiosity-as-intimacy",
+      "cpr:material:CH12.P1:open-a-voluntary-meeting",
+      "cpr:material:CH12.P2:shared-making-not-performance",
+      "cpr:material:CH12.P4:questions-without-tests",
+      "cpr:material:CH12.P1:share-a-chosen-story",
+      "cpr:material:CH12.P4:friendship-with-voluntary-answers"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P1",
+        "question": "관심을 어떤 통로와 속도로 전하고 싶은가?"
+      },
+      {
+        "address": "CH12.P4",
+        "question": "나와 다르면서도 편할 관계는 어떤 조건인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RELATION_STYLE:private-space",
+    "axis": "RELATION_STYLE",
+    "definition": "공동 관계 안의 사적 영역을 유지",
+    "originalCondition": "공동 책임과 사적 권한을 구분",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P3:selective-warmth",
+      "cpr:material:CH10.P1:space-and-return",
+      "cpr:material:CH10.P3:space-without-signal",
+      "cpr:material:CH12.P2:space-with-respect"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P1",
+        "question": "관심을 어떤 통로와 속도로 전하고 싶은가?"
+      },
+      {
+        "address": "CH12.P4",
+        "question": "나와 다르면서도 편할 관계는 어떤 조건인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RISK_STYLE:loss-limit",
+    "axis": "RISK_STYLE",
+    "definition": "감당 가능한 손실 범위를 정함",
+    "originalCondition": "돈·시간·안전의 실제 한계 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH09.P3:small-tests-big-costs",
+      "cpr:material:CH13.P3:resource-check-in-daily-choice"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P3",
+        "question": "어떤 판단이 자원 부담을 가릴 수 있는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RISK_STYLE:reversible-probe",
+    "axis": "RISK_STYLE",
+    "definition": "되돌릴 수 있는 시험을 선택",
+    "originalCondition": "복구 비용과 선택권이 확인될 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P4:recall-boundaries-for-trials",
+      "cpr:material:CH13.P2:reversible-before-bigger"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P3",
+        "question": "어떤 판단이 자원 부담을 가릴 수 있는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RISK_STYLE:hazard-check",
+    "axis": "RISK_STYLE",
+    "definition": "위험의 종류와 정보 부족을 구별",
+    "originalCondition": "건강·법적 문제는 별도 전문 판단 필요",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P3",
+        "question": "어떤 판단이 자원 부담을 가릴 수 있는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:INITIATIVE:opening-proposal",
+    "axis": "INITIATIVE",
+    "definition": "멈춘 상황에 첫 선택지를 제시",
+    "originalCondition": "제안과 실행 권한을 분리",
+    "selectedMaterialIds": [
+      "cpr:material:CH12.P1:open-a-voluntary-meeting"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P1",
+        "question": "나는 어떤 일을 먼저 확인하는 사람인가?"
+      },
+      {
+        "address": "CH07.P4",
+        "question": "지금 활용할 좋은 패를 어떻게 고르는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:INITIATIVE:help-initiation",
+    "axis": "INITIATIVE",
+    "definition": "필요한 도움을 먼저 요청",
+    "originalCondition": "상대의 거절·자원 조건을 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH07.P1:help-has-a-door",
+      "cpr:material:CH07.P4:use-support-not-wait"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P1",
+        "question": "나는 어떤 일을 먼저 확인하는 사람인가?"
+      },
+      {
+        "address": "CH07.P4",
+        "question": "지금 활용할 좋은 패를 어떻게 고르는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:INITIATIVE:small-first-step",
+    "axis": "INITIATIVE",
+    "definition": "큰 승인 전 허용된 작은 단계를 수행",
+    "originalCondition": "되돌릴 수 있고 재량이 있는 일",
+    "selectedMaterialIds": [
+      "cpr:material:CH13.P4:map-and-next-step"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P1",
+        "question": "나는 어떤 일을 먼저 확인하는 사람인가?"
+      },
+      {
+        "address": "CH07.P4",
+        "question": "지금 활용할 좋은 패를 어떻게 고르는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:GOAL_DRIVE:priority-focus",
+    "axis": "GOAL_DRIVE",
+    "definition": "목적에 따라 우선 과제를 고름",
+    "originalCondition": "목표의 실제 소유자·동의를 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH06.P1:goal-eats-capacity",
+      "cpr:material:CH06.P2:wealth-and-load",
+      "cpr:material:CH09.P1:money-as-project-resource"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH06.P1",
+        "question": "좋은 기능이 언제 비용이 되는가?"
+      },
+      {
+        "address": "CH13.P1",
+        "question": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:GOAL_DRIVE:progress-feedback",
+    "axis": "GOAL_DRIVE",
+    "definition": "진행 결과와 목적의 차이를 확인",
+    "originalCondition": "목표와 지표의 관계가 명확할 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH03.P2:resource-versus-goal",
+      "cpr:material:CH09.P4:purpose-and-cost-ledger"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH06.P1",
+        "question": "좋은 기능이 언제 비용이 되는가?"
+      },
+      {
+        "address": "CH13.P1",
+        "question": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:GOAL_DRIVE:goal-release",
+    "axis": "GOAL_DRIVE",
+    "definition": "목적을 위해 불필요한 과제를 내려놓음",
+    "originalCondition": "목적·비용이 바뀌었는지 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH06.P4:goal-to-operable-scope",
+      "cpr:material:CH13.P1:goal-with-operating-room"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH06.P1",
+        "question": "좋은 기능이 언제 비용이 되는가?"
+      },
+      {
+        "address": "CH13.P1",
+        "question": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:EXPANSION:scope-extension",
+    "axis": "EXPANSION",
+    "definition": "같은 기능의 적용 범위를 넓힘",
+    "originalCondition": "새 대상의 요구가 실제 확인될 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P3",
+        "question": "어떤 판단이 자원 부담을 가릴 수 있는가?"
+      },
+      {
+        "address": "CH12.P3",
+        "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:EXPANSION:network-reach",
+    "axis": "EXPANSION",
+    "definition": "연결할 사람·영역을 확대",
+    "originalCondition": "실제 접근·동의·역할 확인",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P3",
+        "question": "어떤 판단이 자원 부담을 가릴 수 있는가?"
+      },
+      {
+        "address": "CH12.P3",
+        "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:EXPANSION:capacity-check",
+    "axis": "EXPANSION",
+    "definition": "확대 전에 운영 여력을 점검",
+    "originalCondition": "실제 운영 비용과 담당이 주어질 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P1:wood-earth-map",
+      "cpr:material:CH06.P1:goal-eats-capacity",
+      "cpr:material:CH06.P4:goal-to-operable-scope",
+      "cpr:material:CH09.P3:small-tests-big-costs",
+      "cpr:material:CH12.P3:invite-without-oversubscription",
+      "cpr:material:CH13.P1:goal-with-operating-room"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P3",
+        "question": "어떤 판단이 자원 부담을 가릴 수 있는가?"
+      },
+      {
+        "address": "CH12.P3",
+        "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PERSISTENCE:repeat-practice",
+    "axis": "PERSISTENCE",
+    "definition": "정한 연습을 반복",
+    "originalCondition": "피드백을 받을 수 있는 과제",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P4",
+        "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?"
+      },
+      {
+        "address": "CH07.P2",
+        "question": "첫 좋은 패와 다른 힘은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PERSISTENCE:maintenance-effort",
+    "axis": "PERSISTENCE",
+    "definition": "시작 후 필요한 관리를 지속",
+    "originalCondition": "담당과 기간이 합의된 상황",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P4:invisible-maintenance",
+      "cpr:material:CH05.P2:maintain-an-independent-function"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P4",
+        "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?"
+      },
+      {
+        "address": "CH07.P2",
+        "question": "첫 좋은 패와 다른 힘은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PERSISTENCE:stop-rule",
+    "axis": "PERSISTENCE",
+    "definition": "지속의 종료 조건을 정함",
+    "originalCondition": "효과·비용을 다시 볼 자료가 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH07.P2:start-and-finish-card"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P4",
+        "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?"
+      },
+      {
+        "address": "CH07.P2",
+        "question": "첫 좋은 패와 다른 힘은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:ADAPTABILITY:method-revision",
+    "axis": "ADAPTABILITY",
+    "definition": "목적 안에서 방법을 바꿈",
+    "originalCondition": "방법의 재량이 실제 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH05.P3:standards-open-way"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P1",
+        "question": "내 원국의 구성과 유효성은 어떻게 다른가?"
+      },
+      {
+        "address": "CH08.P3",
+        "question": "어떤 환경 조건이 기능을 막을 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:ADAPTABILITY:feedback-uptake",
+    "axis": "ADAPTABILITY",
+    "definition": "받은 정보의 유효 부분을 반영",
+    "originalCondition": "정보의 신뢰성과 권한을 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH05.P4:feedback-windows"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P1",
+        "question": "내 원국의 구성과 유효성은 어떻게 다른가?"
+      },
+      {
+        "address": "CH08.P3",
+        "question": "어떤 환경 조건이 기능을 막을 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:ADAPTABILITY:constraint-response",
+    "axis": "ADAPTABILITY",
+    "definition": "새 제약에 가능한 행동을 재배치",
+    "originalCondition": "거절의 불이익과 안전을 먼저 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P2:water-pressure-support",
+      "cpr:material:CH01.P4:change-keeps-purpose"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P1",
+        "question": "내 원국의 구성과 유효성은 어떻게 다른가?"
+      },
+      {
+        "address": "CH08.P3",
+        "question": "어떤 환경 조건이 기능을 막을 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:DEPTH:cause-tracing",
+    "axis": "DEPTH",
+    "definition": "표면 결과 뒤의 과정을 탐색",
+    "originalCondition": "실제 과정 정보가 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P1:understand-before-answer",
+      "cpr:material:CH03.P1:question-roots",
+      "cpr:material:CH03.P4:from-question-to-small-proof",
+      "cpr:material:CH05.P1:analysis-that-decides",
+      "cpr:material:CH05.P1:learn-and-transfer",
+      "cpr:material:CH13.P2:proof-before-more-search"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH03.P1",
+        "question": "정확히 같은 대상·방향을 가리키는가?"
+      },
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:DEPTH:context-layer",
+    "axis": "DEPTH",
+    "definition": "같은 행동의 다른 조건을 검토",
+    "originalCondition": "행동 사실과 해석을 구분",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P1:fire-water-map",
+      "cpr:material:CH04.P2:private-reading-window",
+      "cpr:material:CH12.P1:curious-listener"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH03.P1",
+        "question": "정확히 같은 대상·방향을 가리키는가?"
+      },
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:DEPTH:compact-explanation",
+    "axis": "DEPTH",
+    "definition": "깊게 검토한 내용을 짧게 전달",
+    "originalCondition": "수신자가 필요한 정보 범위를 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P1:quiet-first-contact",
+      "cpr:material:CH05.P2:make-visible",
+      "cpr:material:CH07.P3:day-pillar-resource-question"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH03.P1",
+        "question": "정확히 같은 대상·방향을 가리키는가?"
+      },
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CURIOSITY:question-making",
+    "axis": "CURIOSITY",
+    "definition": "모르는 지점을 질문으로 구체화",
+    "originalCondition": "정보 요청의 목적과 동의를 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P3:criteria-and-questions",
+      "cpr:material:CH03.P1:question-roots",
+      "cpr:material:CH10.P2:curiosity-as-intimacy",
+      "cpr:material:CH10.P4:curiosity-not-verdict",
+      "cpr:material:CH12.P1:curious-listener",
+      "cpr:material:CH12.P4:questions-without-tests"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH03.P1",
+        "question": "정확히 같은 대상·방향을 가리키는가?"
+      },
+      {
+        "address": "CH12.P1",
+        "question": "자발적인 우정에서 어떤 참여를 제안하는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CURIOSITY:alternative-search",
+    "axis": "CURIOSITY",
+    "definition": "기존 답 밖의 자료를 찾아봄",
+    "originalCondition": "조사 시간과 종료 조건 확인",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH03.P1",
+        "question": "정확히 같은 대상·방향을 가리키는가?"
+      },
+      {
+        "address": "CH12.P1",
+        "question": "자발적인 우정에서 어떤 참여를 제안하는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CURIOSITY:question-parking",
+    "axis": "CURIOSITY",
+    "definition": "당장 필요 없는 질문을 보관",
+    "originalCondition": "다시 볼 시점을 정할 수 있을 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH03.P1",
+        "question": "정확히 같은 대상·방향을 가리키는가?"
+      },
+      {
+        "address": "CH12.P1",
+        "question": "자발적인 우정에서 어떤 참여를 제안하는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PATTERN_SENSE:recurrence",
+    "axis": "PATTERN_SENSE",
+    "definition": "같은 조건에서 반복된 현상을 비교",
+    "originalCondition": "비교 가능한 관찰이 여럿 있을 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P3",
+        "question": "MBTI를 함께 보면 어떤 질문이 추가되는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PATTERN_SENSE:cross-link",
+    "axis": "PATTERN_SENSE",
+    "definition": "다른 영역의 관계를 가설로 연결",
+    "originalCondition": "공통점과 차이를 모두 명시",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P3",
+        "question": "MBTI를 함께 보면 어떤 질문이 추가되는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PATTERN_SENSE:counterpattern",
+    "axis": "PATTERN_SENSE",
+    "definition": "맞지 않는 사례를 적극 확인",
+    "originalCondition": "자료의 출처·범위를 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P3:criteria-and-questions"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P3",
+        "question": "MBTI를 함께 보면 어떤 질문이 추가되는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PRECISION:error-detection",
+    "axis": "PRECISION",
+    "definition": "작은 오류를 기준에 비추어 발견",
+    "originalCondition": "검증 기준이 합의된 상황",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P4:precision-has-a-stop",
+      "cpr:material:CH06.P1:correction-before-request",
+      "cpr:material:CH06.P4:correction-to-agreement",
+      "cpr:material:CH13.P3:one-request-in-work"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?"
+      },
+      {
+        "address": "CH06.P1",
+        "question": "좋은 기능이 언제 비용이 되는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PRECISION:standard-consistency",
+    "axis": "PRECISION",
+    "definition": "상황 사이 기준 적용의 일관성을 확인",
+    "originalCondition": "같은 기준을 적용해도 되는 조건 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH08.P1:criteria-before-delivery"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?"
+      },
+      {
+        "address": "CH06.P1",
+        "question": "좋은 기능이 언제 비용이 되는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PRECISION:completion-quality",
+    "axis": "PRECISION",
+    "definition": "최종 결과물의 누락을 점검",
+    "originalCondition": "완료 수준과 마감이 명시된 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P2:metal-output-context",
+      "cpr:material:CH02.P2:metal-use-finish",
+      "cpr:material:CH05.P4:feedback-windows",
+      "cpr:material:CH08.P4:learn-with-feedback"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?"
+      },
+      {
+        "address": "CH06.P1",
+        "question": "좋은 기능이 언제 비용이 되는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PRECISION:argument-coherence",
+    "axis": "PRECISION",
+    "definition": "설명의 전제와 결론 사이 모순 확인",
+    "originalCondition": "주장 사실과 감정 경험을 구분",
+    "selectedMaterialIds": [
+      "cpr:material:CH05.P1:analysis-that-decides",
+      "cpr:material:CH06.P2:output-authority-collision",
+      "cpr:material:CH06.P1:overused-output-standard",
+      "cpr:material:CH08.P2:diagnose-assumptions"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?"
+      },
+      {
+        "address": "CH06.P1",
+        "question": "좋은 기능이 언제 비용이 되는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:LEARNING:acquisition",
+    "axis": "LEARNING",
+    "definition": "새 내용을 이해하고 익힘",
+    "originalCondition": "연습·피드백 기회가 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P1:understand-before-answer",
+      "cpr:material:CH01.P2:wood-learning-condition",
+      "cpr:material:CH02.P2:wood-use-learning",
+      "cpr:material:CH03.P3:learn-before-try",
+      "cpr:material:CH07.P1:learning-support-card",
+      "cpr:material:CH07.P4:use-support-not-wait",
+      "cpr:material:CH08.P4:return-from-manageable-step",
+      "cpr:material:CH08.P3:learning-without-access"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P2",
+        "question": "실제 확인된 기운을 어떤 조건에서 잘 쓸 수 있는가?"
+      },
+      {
+        "address": "CH08.P4",
+        "question": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:LEARNING:retrieval",
+    "axis": "LEARNING",
+    "definition": "익힌 내용을 다시 꺼내 사용",
+    "originalCondition": "현재 조건이 배운 조건과 맞는지 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P3:resource-excess-application",
+      "cpr:material:CH03.P1:learn-with-practice",
+      "cpr:material:CH05.P2:translate-for-learner",
+      "cpr:material:CH06.P3:offered-explanation-not-asked",
+      "cpr:material:CH07.P1:munchang-held-study-symbol",
+      "cpr:material:CH08.P4:learn-with-feedback",
+      "cpr:material:CH13.P1:understand-then-try"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P2",
+        "question": "실제 확인된 기운을 어떤 조건에서 잘 쓸 수 있는가?"
+      },
+      {
+        "address": "CH08.P4",
+        "question": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:LEARNING:transfer",
+    "axis": "LEARNING",
+    "definition": "다른 문제에 배운 구조를 시험",
+    "originalCondition": "다른 점을 비교하고 시험할 수 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P2:water-pressure-support",
+      "cpr:material:CH02.P2:wood-use-learning",
+      "cpr:material:CH02.P4:recall-grow-with-support",
+      "cpr:material:CH03.P4:from-question-to-small-proof",
+      "cpr:material:CH05.P1:learn-and-transfer",
+      "cpr:material:CH07.P3:day-pillar-resource-question",
+      "cpr:material:CH08.P2:explain-use-for-people",
+      "cpr:material:CH08.P4:independent-delivery-learning",
+      "cpr:material:CH13.P4:map-and-next-step"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P2",
+        "question": "실제 확인된 기운을 어떤 조건에서 잘 쓸 수 있는가?"
+      },
+      {
+        "address": "CH08.P4",
+        "question": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STRATEGY:route-comparison",
+    "axis": "STRATEGY",
+    "definition": "목적에 이르는 여러 경로를 비교",
+    "originalCondition": "목적·자원·기한이 명시된 상황",
+    "selectedMaterialIds": [
+      "cpr:material:CH08.P2:diagnose-assumptions",
+      "cpr:material:CH10.P3:romance-as-problem-set"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH08.P2",
+        "question": "어떤 역할에 내 기능을 배정할 수 있는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STRATEGY:sequence-design",
+    "axis": "STRATEGY",
+    "definition": "의존 관계에 맞게 순서를 배치",
+    "originalCondition": "담당자의 재량·동의 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH05.P2:resource-route"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH08.P2",
+        "question": "어떤 역할에 내 기능을 배정할 수 있는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STRATEGY:contingency",
+    "axis": "STRATEGY",
+    "definition": "조건이 바뀔 때의 대안을 준비",
+    "originalCondition": "실제 가능한 대안의 비용 확인",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH08.P2",
+        "question": "어떤 역할에 내 기능을 배정할 수 있는가?"
+      },
+      {
+        "address": "CH13.P2",
+        "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CREATION:prototype",
+    "axis": "CREATION",
+    "definition": "아이디어를 시험 가능한 형태로 만듦",
+    "originalCondition": "미완성 상태와 시험 목적을 알릴 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P1:open-small-door",
+      "cpr:material:CH02.P3:low-output-is-not-silence",
+      "cpr:material:CH04.P4:useful-small-making",
+      "cpr:material:CH05.P2:make-visible",
+      "cpr:material:CH08.P1:try-in-real-use",
+      "cpr:material:CH13.P4:small-door-with-finish"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P2",
+        "question": "첫 강점과 다른 두 번째 기능은 무엇인가?"
+      },
+      {
+        "address": "CH07.P1",
+        "question": "원국에서 실제 확인되는 좋은 상징은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CREATION:recombination",
+    "axis": "CREATION",
+    "definition": "알고 있는 재료를 다른 방식으로 결합",
+    "originalCondition": "사용 목적과 저작 권리 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P3:playful-after-trust",
+      "cpr:material:CH12.P2:shared-making-not-performance"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P2",
+        "question": "첫 강점과 다른 두 번째 기능은 무엇인가?"
+      },
+      {
+        "address": "CH07.P1",
+        "question": "원국에서 실제 확인되는 좋은 상징은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CREATION:finish-output",
+    "axis": "CREATION",
+    "definition": "산출물을 전달 가능한 상태로 정리",
+    "originalCondition": "완료 기준이 합의된 상황",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P2:metal-output-context",
+      "cpr:material:CH04.P4:small-output-shows-value",
+      "cpr:material:CH07.P1:made-value-can-travel",
+      "cpr:material:CH07.P4:use-created-value",
+      "cpr:material:CH08.P4:independent-delivery-learning",
+      "cpr:material:CH08.P2:finish-before-handoff",
+      "cpr:material:CH09.P2:output-price-maintenance"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P2",
+        "question": "첫 강점과 다른 두 번째 기능은 무엇인가?"
+      },
+      {
+        "address": "CH07.P1",
+        "question": "원국에서 실제 확인되는 좋은 상징은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:EXPRESSION:channel-choice",
+    "axis": "EXPRESSION",
+    "definition": "뜻에 맞는 말·글·행동을 선택",
+    "originalCondition": "상대가 전달 통로에 접근할 수 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P3:values-and-expression",
+      "cpr:material:CH02.P1:fire-water-map",
+      "cpr:material:CH02.P3:low-output-is-not-silence",
+      "cpr:material:CH03.P2:output-and-meaning",
+      "cpr:material:CH04.P3:selective-warmth",
+      "cpr:material:CH04.P1:expression-not-mind-reading",
+      "cpr:material:CH07.P1:munchang-held-study-symbol",
+      "cpr:material:CH10.P2:warmth-in-chosen-details",
+      "cpr:material:CH10.P1:chosen-expression-in-closeness",
+      "cpr:material:CH12.P1:share-a-chosen-story"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P1",
+        "question": "처음 드러난 행동에서 무엇을 알 수 있는가?"
+      },
+      {
+        "address": "CH10.P2",
+        "question": "어떤 표현이 관계에서 가치가 될 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:EXPRESSION:visibility-control",
+    "axis": "EXPRESSION",
+    "definition": "드러낼 범위와 대상을 고름",
+    "originalCondition": "공개 동의를 별도로 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P4:recall-expression-audience",
+      "cpr:material:CH04.P3:chosen-disclosure-with-trust"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P1",
+        "question": "처음 드러난 행동에서 무엇을 알 수 있는가?"
+      },
+      {
+        "address": "CH10.P2",
+        "question": "어떤 표현이 관계에서 가치가 될 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:EXPRESSION:receipt-check",
+    "axis": "EXPRESSION",
+    "definition": "표현이 어떻게 전달됐는지 확인",
+    "originalCondition": "확인 질문을 거절할 여지도 보장",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P1:open-small-door",
+      "cpr:material:CH02.P4:recall-expression-audience",
+      "cpr:material:CH04.P1:clear-request-first",
+      "cpr:material:CH04.P1:invite-into-conversation",
+      "cpr:material:CH05.P2:translate-for-learner",
+      "cpr:material:CH07.P3:attention-has-a-message",
+      "cpr:material:CH07.P4:use-created-value",
+      "cpr:material:CH08.P2:explain-use-for-people",
+      "cpr:material:CH10.P4:interest-and-clear-consent",
+      "cpr:material:CH10.P2:expression-as-agreed-offer",
+      "cpr:material:CH10.P4:closeness-with-chosen-space",
+      "cpr:material:CH13.P4:small-door-with-finish"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P1",
+        "question": "처음 드러난 행동에서 무엇을 알 수 있는가?"
+      },
+      {
+        "address": "CH10.P2",
+        "question": "어떤 표현이 관계에서 가치가 될 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:SOCIAL_ATTUNEMENT:cue-observation",
+    "axis": "SOCIAL_ATTUNEMENT",
+    "definition": "말·표정·참여의 변화를 관찰",
+    "originalCondition": "추측과 관찰을 명확히 분리",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P2:after-help-load"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P1",
+        "question": "처음 드러난 행동에서 무엇을 알 수 있는가?"
+      },
+      {
+        "address": "CH12.P3",
+        "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:SOCIAL_ATTUNEMENT:context-adjustment",
+    "axis": "SOCIAL_ATTUNEMENT",
+    "definition": "상황에 맞게 전달·참여를 조절",
+    "originalCondition": "안전하게 이견을 말할 통로가 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P1:invite-into-conversation",
+      "cpr:material:CH08.P3:feedback-never-reaches-work"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P1",
+        "question": "처음 드러난 행동에서 무엇을 알 수 있는가?"
+      },
+      {
+        "address": "CH12.P3",
+        "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:SOCIAL_ATTUNEMENT:interpretation-check",
+    "axis": "SOCIAL_ATTUNEMENT",
+    "definition": "관찰한 뜻을 당사자에게 묻기",
+    "originalCondition": "말하지 않을 선택권을 보장",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P1:expression-not-mind-reading",
+      "cpr:material:CH05.P1:support-need-not-guess",
+      "cpr:material:CH06.P3:feedback-as-evaluation",
+      "cpr:material:CH10.P2:respond-with-room",
+      "cpr:material:CH10.P3:romance-as-problem-set",
+      "cpr:material:CH10.P4:curiosity-not-verdict",
+      "cpr:material:CH12.P2:remember-and-check"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P1",
+        "question": "처음 드러난 행동에서 무엇을 알 수 있는가?"
+      },
+      {
+        "address": "CH12.P3",
+        "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CARE:need-check",
+    "axis": "CARE",
+    "definition": "상대가 원하는 도움을 확인",
+    "originalCondition": "요청·거절·실제 역할 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P4:care-with-choice",
+      "cpr:material:CH03.P2:support-received-and-given",
+      "cpr:material:CH04.P3:firm-boundary-close",
+      "cpr:material:CH05.P1:support-need-not-guess",
+      "cpr:material:CH06.P3:care-without-request",
+      "cpr:material:CH06.P3:offered-explanation-not-asked",
+      "cpr:material:CH10.P2:warmth-in-chosen-details",
+      "cpr:material:CH10.P4:interest-and-clear-consent",
+      "cpr:material:CH10.P2:expression-as-agreed-offer",
+      "cpr:material:CH11.P1:protect-with-permission",
+      "cpr:material:CH12.P2:remember-and-check",
+      "cpr:material:CH12.P3:repair-not-correct-person",
+      "cpr:material:CH13.P1:care-and-choice-together",
+      "cpr:material:CH13.P2:agreement-before-answer"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P2",
+        "question": "어떤 표현이 관계에서 가치가 될 수 있는가?"
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?"
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CARE:practical-support",
+    "axis": "CARE",
+    "definition": "동의한 구체적 부담을 덜어줌",
+    "originalCondition": "역할과 감당할 자원 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH10.P1:affection-through-small-actions",
+      "cpr:material:CH11.P2:practical-care-with-agreement"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P2",
+        "question": "어떤 표현이 관계에서 가치가 될 수 있는가?"
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?"
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CARE:sustainable-care",
+    "axis": "CARE",
+    "definition": "자기 한계를 포함해 도움을 설계",
+    "originalCondition": "상호 기대를 다시 합의할 수 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P1:keep-room-for-others",
+      "cpr:material:CH03.P4:choose-support-mode",
+      "cpr:material:CH05.P3:boundaries-enable-support",
+      "cpr:material:CH06.P1:help-with-hidden-expectation",
+      "cpr:material:CH06.P2:support-versus-obligation",
+      "cpr:material:CH06.P4:help-to-clear-offer",
+      "cpr:material:CH09.P3:generosity-has-a-budget",
+      "cpr:material:CH11.P3:care-load-becomes-default",
+      "cpr:material:CH11.P4:renegotiate-care",
+      "cpr:material:CH13.P4:steady-care-with-room"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P2",
+        "question": "어떤 표현이 관계에서 가치가 될 수 있는가?"
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?"
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CARE:respectful-nonintervention",
+    "axis": "CARE",
+    "definition": "돕지 않을 선택을 존중",
+    "originalCondition": "보호 의무와 선택 지원을 구분",
+    "selectedMaterialIds": [
+      "cpr:material:CH03.P2:support-received-and-given",
+      "cpr:material:CH05.P4:keep-choice-in-care",
+      "cpr:material:CH06.P3:care-without-request",
+      "cpr:material:CH10.P2:respond-with-room",
+      "cpr:material:CH11.P3:protection-becomes-decision",
+      "cpr:material:CH12.P3:critique-without-invitation"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P2",
+        "question": "어떤 표현이 관계에서 가치가 될 수 있는가?"
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?"
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CHARISMA:situated-attention",
+    "axis": "CHARISMA",
+    "definition": "특정 장면에서 타인이 주목한 현상",
+    "originalCondition": "실제 관찰자와 장면이 필요",
+    "selectedMaterialIds": [
+      "cpr:material:CH07.P3:attention-has-a-message"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH07.P3",
+        "question": "이 좋은 기운을 어떤 행동으로 드러낼 수 있는가?"
+      },
+      {
+        "address": "CH04.P4",
+        "question": "처음에 놓칠 수 있는 가치는 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:CHARISMA:memorable-signal",
+    "axis": "CHARISMA",
+    "definition": "기억에 남는 표현·행동을 확인",
+    "originalCondition": "기억되는 이유를 따로 확인",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH07.P3",
+        "question": "이 좋은 기운을 어떤 행동으로 드러낼 수 있는가?"
+      },
+      {
+        "address": "CH04.P4",
+        "question": "처음에 놓칠 수 있는 가치는 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:DUTY:role-fulfilment",
+    "axis": "DUTY",
+    "definition": "합의한 담당을 이행",
+    "originalCondition": "담당·권한·기한이 확인될 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P1:keep-room-for-others",
+      "cpr:material:CH03.P1:promise-and-regularity",
+      "cpr:material:CH07.P1:learning-support-card",
+      "cpr:material:CH07.P3:recognition-by-role",
+      "cpr:material:CH08.P1:criteria-before-delivery",
+      "cpr:material:CH08.P2:finish-before-handoff",
+      "cpr:material:CH10.P1:affection-through-small-actions",
+      "cpr:material:CH11.P2:practical-care-with-agreement",
+      "cpr:material:CH11.P2:agreed-responsibility",
+      "cpr:material:CH12.P1:reliable-invitation",
+      "cpr:material:CH13.P4:steady-care-with-room"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH11.P1",
+        "question": "가까운 관계에서 실제 맡은 몫은 무엇인가?"
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:DUTY:promise-update",
+    "axis": "DUTY",
+    "definition": "못 지킬 가능성을 미리 알림",
+    "originalCondition": "대안·인수인계를 협의할 수 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P2:earth-use-continuity",
+      "cpr:material:CH04.P4:invisible-maintenance",
+      "cpr:material:CH05.P2:maintain-an-independent-function",
+      "cpr:material:CH08.P2:handoff-continuity",
+      "cpr:material:CH08.P3:changing-standard-without-log",
+      "cpr:material:CH11.P2:clear-shared-logistics",
+      "cpr:material:CH11.P3:privacy-and-coordination",
+      "cpr:material:CH11.P4:shared-duty-with-return",
+      "cpr:material:CH12.P3:invite-without-oversubscription",
+      "cpr:material:CH12.P4:contact-not-counter",
+      "cpr:material:CH12.P2:promise-as-choice",
+      "cpr:material:CH13.P3:update-a-shared-duty"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH11.P1",
+        "question": "가까운 관계에서 실제 맡은 몫은 무엇인가?"
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:DUTY:scope-responsibility",
+    "axis": "DUTY",
+    "definition": "책임의 경계를 구분",
+    "originalCondition": "실제 계약과 동의 우선",
+    "selectedMaterialIds": [
+      "cpr:material:CH05.P1:start-with-consent",
+      "cpr:material:CH05.P4:role-and-rest",
+      "cpr:material:CH07.P2:center-of-shared-work",
+      "cpr:material:CH11.P1:position-is-not-duty-roster",
+      "cpr:material:CH11.P3:same-duty-different-expectations"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH11.P1",
+        "question": "가까운 관계에서 실제 맡은 몫은 무엇인가?"
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:LEADERSHIP:direction-proposal",
+    "axis": "LEADERSHIP",
+    "definition": "공동 목적을 제안하고 조율",
+    "originalCondition": "참여자의 동의와 공식 권한 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P3:lead-and-listen",
+      "cpr:material:CH05.P1:start-with-consent",
+      "cpr:material:CH05.P3:quiet-lead",
+      "cpr:material:CH08.P1:work-through-shared-purpose"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?"
+      },
+      {
+        "address": "CH07.P2",
+        "question": "첫 좋은 패와 다른 힘은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:LEADERSHIP:delegation",
+    "axis": "LEADERSHIP",
+    "definition": "역할에 맞는 권한과 책임을 나눔",
+    "originalCondition": "담당자의 자원과 거절 가능성 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH06.P3:decide-for-everyone",
+      "cpr:material:CH07.P2:center-of-shared-work",
+      "cpr:material:CH07.P3:banan-held-status",
+      "cpr:material:CH07.P4:use-role-with-room"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?"
+      },
+      {
+        "address": "CH07.P2",
+        "question": "첫 좋은 패와 다른 힘은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:LEADERSHIP:dissent-channel",
+    "axis": "LEADERSHIP",
+    "definition": "이견이 들어올 통로를 만듦",
+    "originalCondition": "권력·평가 관계를 먼저 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P3:lead-and-listen"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P1",
+        "question": "이 기능은 무엇을 가능하게 하는가?"
+      },
+      {
+        "address": "CH07.P2",
+        "question": "첫 좋은 패와 다른 힘은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:AUTONOMY:choice-ownership",
+    "axis": "AUTONOMY",
+    "definition": "자신에게 속한 선택을 확인",
+    "originalCondition": "영향받는 사람과 권한 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P3:chosen-disclosure-with-trust",
+      "cpr:material:CH05.P3:boundaries-enable-support",
+      "cpr:material:CH06.P3:decide-for-everyone",
+      "cpr:material:CH10.P1:chosen-expression-in-closeness",
+      "cpr:material:CH10.P3:own-criteria-without-message",
+      "cpr:material:CH10.P4:closeness-with-chosen-space",
+      "cpr:material:CH11.P1:own-choice-near-family",
+      "cpr:material:CH11.P3:protection-becomes-decision",
+      "cpr:material:CH12.P2:space-with-respect",
+      "cpr:material:CH12.P4:choice-with-a-warm-no"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P1",
+        "question": "관심을 어떤 통로와 속도로 전하고 싶은가?"
+      },
+      {
+        "address": "CH11.P1",
+        "question": "가까운 관계에서 실제 맡은 몫은 무엇인가?"
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:AUTONOMY:method-discretion",
+    "axis": "AUTONOMY",
+    "definition": "합의된 결과 안에서 방법을 고름",
+    "originalCondition": "업무·계약의 실제 재량 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH08.P3:control-without-method-space"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P1",
+        "question": "관심을 어떤 통로와 속도로 전하고 싶은가?"
+      },
+      {
+        "address": "CH11.P1",
+        "question": "가까운 관계에서 실제 맡은 몫은 무엇인가?"
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:AUTONOMY:chosen-support",
+    "axis": "AUTONOMY",
+    "definition": "받을 도움의 방식을 선택",
+    "originalCondition": "도움 수용·거절 모두 가능할 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P4:care-with-choice",
+      "cpr:material:CH02.P4:recall-grow-with-support",
+      "cpr:material:CH03.P4:choose-support-mode",
+      "cpr:material:CH05.P4:keep-choice-in-care",
+      "cpr:material:CH07.P1:help-has-a-door",
+      "cpr:material:CH08.P3:learning-without-access"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P1",
+        "question": "관심을 어떤 통로와 속도로 전하고 싶은가?"
+      },
+      {
+        "address": "CH11.P1",
+        "question": "가까운 관계에서 실제 맡은 몫은 무엇인가?"
+      },
+      {
+        "address": "CH12.P2",
+        "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:COMPETITION:reference-choice",
+    "axis": "COMPETITION",
+    "definition": "비교할 기준을 목적에 맞게 선택",
+    "originalCondition": "공정하고 자발적인 비교일 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P4",
+        "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?"
+      },
+      {
+        "address": "CH08.P4",
+        "question": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:COMPETITION:self-comparison",
+    "axis": "COMPETITION",
+    "definition": "지난 수행과 현재 수행을 비교",
+    "originalCondition": "조건의 차이를 함께 기록",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P4",
+        "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?"
+      },
+      {
+        "address": "CH08.P4",
+        "question": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:COMPETITION:cooperative-challenge",
+    "axis": "COMPETITION",
+    "definition": "공동 과제의 외부 기준에 도전",
+    "originalCondition": "팀이 비교 방식에 합의할 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH05.P4",
+        "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?"
+      },
+      {
+        "address": "CH08.P4",
+        "question": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:BOUNDARY:refusal",
+    "axis": "BOUNDARY",
+    "definition": "받지 않을 요청을 명시",
+    "originalCondition": "거절의 안전과 실제 의무 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P3:firm-boundary-close",
+      "cpr:material:CH06.P1:help-with-hidden-expectation",
+      "cpr:material:CH12.P4:choice-with-a-warm-no"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P3",
+        "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?"
+      },
+      {
+        "address": "CH11.P3",
+        "question": "가까움 때문에 어떤 기대를 생략하기 쉬운가?"
+      },
+      {
+        "address": "CH12.P4",
+        "question": "나와 다르면서도 편할 관계는 어떤 조건인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:BOUNDARY:role-border",
+    "axis": "BOUNDARY",
+    "definition": "자기 담당과 타인 담당을 구분",
+    "originalCondition": "합의된 업무·가족 역할 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P1:metal-wood-constraint",
+      "cpr:material:CH02.P4:recall-boundaries-for-trials",
+      "cpr:material:CH06.P2:output-authority-collision",
+      "cpr:material:CH06.P2:support-versus-obligation",
+      "cpr:material:CH09.P3:expertise-price-silence",
+      "cpr:material:CH09.P4:scope-before-price",
+      "cpr:material:CH11.P1:protect-with-permission",
+      "cpr:material:CH11.P1:position-is-not-duty-roster",
+      "cpr:material:CH13.P1:care-and-choice-together"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P3",
+        "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?"
+      },
+      {
+        "address": "CH11.P3",
+        "question": "가까움 때문에 어떤 기대를 생략하기 쉬운가?"
+      },
+      {
+        "address": "CH12.P4",
+        "question": "나와 다르면서도 편할 관계는 어떤 조건인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:BOUNDARY:privacy",
+    "axis": "BOUNDARY",
+    "definition": "정보·시간의 사적 범위를 정함",
+    "originalCondition": "공개 동의와 공유 의무 구분",
+    "selectedMaterialIds": [
+      "cpr:material:CH10.P1:space-and-return",
+      "cpr:material:CH10.P4:space-with-agreed-return",
+      "cpr:material:CH11.P3:privacy-and-coordination",
+      "cpr:material:CH11.P4:coordinate-with-privacy"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P3",
+        "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?"
+      },
+      {
+        "address": "CH11.P3",
+        "question": "가까움 때문에 어떤 기대를 생략하기 쉬운가?"
+      },
+      {
+        "address": "CH12.P4",
+        "question": "나와 다르면서도 편할 관계는 어떤 조건인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:BOUNDARY:renegotiation",
+    "axis": "BOUNDARY",
+    "definition": "상황 변화에 맞게 선을 다시 합의",
+    "originalCondition": "바뀐 영향과 기존 약속을 설명",
+    "selectedMaterialIds": [
+      "cpr:material:CH04.P4:soft-precise-request",
+      "cpr:material:CH06.P4:help-to-clear-offer",
+      "cpr:material:CH10.P3:confirmation-pressure",
+      "cpr:material:CH11.P3:care-load-becomes-default",
+      "cpr:material:CH11.P4:renegotiate-care",
+      "cpr:material:CH11.P3:same-duty-different-expectations",
+      "cpr:material:CH13.P3:update-a-shared-duty"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH10.P3",
+        "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?"
+      },
+      {
+        "address": "CH11.P3",
+        "question": "가까움 때문에 어떤 기대를 생략하기 쉬운가?"
+      },
+      {
+        "address": "CH12.P4",
+        "question": "나와 다르면서도 편할 관계는 어떤 조건인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PRACTICALITY:use-test",
+    "axis": "PRACTICALITY",
+    "definition": "실제 사용 환경에서 작동 여부를 확인",
+    "originalCondition": "사용 목적과 사용자가 확인될 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH03.P1:learn-with-practice",
+      "cpr:material:CH04.P4:useful-small-making",
+      "cpr:material:CH04.P4:small-output-shows-value",
+      "cpr:material:CH08.P1:try-in-real-use",
+      "cpr:material:CH08.P3:feedback-never-reaches-work"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH08.P1",
+        "question": "실제 일에서 나는 무엇부터 맞추는가?"
+      },
+      {
+        "address": "CH09.P2",
+        "question": "재물 관련 상징은 어떤 현실 조건이 필요한가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PRACTICALITY:feasible-step",
+    "axis": "PRACTICALITY",
+    "definition": "현재 자원으로 가능한 단계를 고름",
+    "originalCondition": "현재 제약과 변경 가능성을 구분",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH08.P1",
+        "question": "실제 일에서 나는 무엇부터 맞추는가?"
+      },
+      {
+        "address": "CH09.P2",
+        "question": "재물 관련 상징은 어떤 현실 조건이 필요한가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:PRACTICALITY:outcome-check",
+    "axis": "PRACTICALITY",
+    "definition": "실행 뒤 남은 결과를 확인",
+    "originalCondition": "평가 기간과 기준을 명시",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P2:metal-use-finish"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH08.P1",
+        "question": "실제 일에서 나는 무엇부터 맞추는가?"
+      },
+      {
+        "address": "CH09.P2",
+        "question": "재물 관련 상징은 어떤 현실 조건이 필요한가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RESOURCE_SENSE:flow-account",
+    "axis": "RESOURCE_SENSE",
+    "definition": "자원 유입과 소모를 구분",
+    "originalCondition": "실제 돈·시간 자료가 주어질 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH03.P2:resource-versus-goal",
+      "cpr:material:CH07.P1:made-value-can-travel",
+      "cpr:material:CH07.P2:jaego-held-storehouse",
+      "cpr:material:CH09.P1:money-as-meaning",
+      "cpr:material:CH09.P2:retained-value-conditions",
+      "cpr:material:CH09.P2:output-price-maintenance",
+      "cpr:material:CH09.P3:expertise-price-silence",
+      "cpr:material:CH09.P4:purpose-and-cost-ledger",
+      "cpr:material:CH09.P4:scope-before-price",
+      "cpr:material:CH09.P1:resource-purpose-before-style",
+      "cpr:material:CH13.P3:resource-check-in-daily-choice"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P1",
+        "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?"
+      },
+      {
+        "address": "CH09.P4",
+        "question": "내 자원을 지킬 다음 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RESOURCE_SENSE:reserve",
+    "axis": "RESOURCE_SENSE",
+    "definition": "예비 여력을 남김",
+    "originalCondition": "실제 부양·생활 제약 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH03.P3:save-and-experience",
+      "cpr:material:CH03.P4:keep-joy-and-reserve",
+      "cpr:material:CH07.P2:reserve-with-purpose",
+      "cpr:material:CH07.P2:jaego-held-storehouse",
+      "cpr:material:CH07.P4:use-role-with-room",
+      "cpr:material:CH09.P1:money-as-experience",
+      "cpr:material:CH09.P2:retained-value-conditions",
+      "cpr:material:CH09.P3:generosity-has-a-budget",
+      "cpr:material:CH09.P4:joy-with-room"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P1",
+        "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?"
+      },
+      {
+        "address": "CH09.P4",
+        "question": "내 자원을 지킬 다음 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RESOURCE_SENSE:allocation",
+    "axis": "RESOURCE_SENSE",
+    "definition": "중요한 목적에 자원을 배정",
+    "originalCondition": "자원 소유자·동의 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P3:wealth-overload-condition",
+      "cpr:material:CH05.P2:resource-route",
+      "cpr:material:CH06.P2:wealth-and-load",
+      "cpr:material:CH09.P1:money-as-project-resource",
+      "cpr:material:CH09.P2:exchange-options-screening",
+      "cpr:material:CH09.P1:resource-purpose-before-style"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P1",
+        "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?"
+      },
+      {
+        "address": "CH09.P4",
+        "question": "내 자원을 지킬 다음 기준은 무엇인가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:OPPORTUNITY_SENSE:option-discovery",
+    "axis": "OPPORTUNITY_SENSE",
+    "definition": "새 연결에서 가능한 선택을 찾음",
+    "originalCondition": "접근 가능성과 조건 확인",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P2",
+        "question": "재물 관련 상징은 어떤 현실 조건이 필요한가?"
+      },
+      {
+        "address": "CH01.P4",
+        "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:OPPORTUNITY_SENSE:screening",
+    "axis": "OPPORTUNITY_SENSE",
+    "definition": "발견한 선택의 실행 조건을 검토",
+    "originalCondition": "필요 자원과 답변 기한 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH09.P2:exchange-options-screening"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P2",
+        "question": "재물 관련 상징은 어떤 현실 조건이 필요한가?"
+      },
+      {
+        "address": "CH01.P4",
+        "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:OPPORTUNITY_SENSE:decline-option",
+    "axis": "OPPORTUNITY_SENSE",
+    "definition": "지금 하지 않을 기회를 선택",
+    "originalCondition": "기회의 기간과 대안 확인",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH09.P2",
+        "question": "재물 관련 상징은 어떤 현실 조건이 필요한가?"
+      },
+      {
+        "address": "CH01.P4",
+        "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STABILITY:minimum-security",
+    "axis": "STABILITY",
+    "definition": "유지할 최소 생활 조건을 정함",
+    "originalCondition": "실제 위험과 선호를 분리",
+    "selectedMaterialIds": [
+      "cpr:material:CH07.P2:reserve-with-purpose"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P1",
+        "question": "내 원국의 구성과 유효성은 어떻게 다른가?"
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STABILITY:continuity",
+    "axis": "STABILITY",
+    "definition": "유지·인수인계 체계를 갖춤",
+    "originalCondition": "기능·담당·검토 주기 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P2:wood-learning-condition",
+      "cpr:material:CH02.P1:wood-earth-map",
+      "cpr:material:CH02.P2:earth-use-continuity",
+      "cpr:material:CH03.P1:promise-and-regularity",
+      "cpr:material:CH08.P2:handoff-continuity",
+      "cpr:material:CH11.P2:agreed-responsibility",
+      "cpr:material:CH11.P4:shared-duty-with-return"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P1",
+        "question": "내 원국의 구성과 유효성은 어떻게 다른가?"
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STABILITY:protective-change",
+    "axis": "STABILITY",
+    "definition": "지속을 위해 필요한 변경을 수용",
+    "originalCondition": "유지할 가치와 바꿀 방법을 구분",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH02.P1",
+        "question": "내 원국의 구성과 유효성은 어떻게 다른가?"
+      },
+      {
+        "address": "CH11.P2",
+        "question": "가까운 사람에게 어떤 도움이 실제로 남는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STATUS_DRIVE:recognition-target",
+    "axis": "STATUS_DRIVE",
+    "definition": "무엇을 인정받고 싶은지 명시",
+    "originalCondition": "본인이 말한 평가 기대가 있을 때",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH07.P3",
+        "question": "이 좋은 기운을 어떤 행동으로 드러낼 수 있는가?"
+      },
+      {
+        "address": "CH08.P2",
+        "question": "어떤 역할에 내 기능을 배정할 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:STATUS_DRIVE:formal-role",
+    "axis": "STATUS_DRIVE",
+    "definition": "공식 위치의 책임과 기준을 검토",
+    "originalCondition": "실제 조직·계약의 권한 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH07.P3:recognition-by-role",
+      "cpr:material:CH07.P3:banan-held-status"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH07.P3",
+        "question": "이 좋은 기운을 어떤 행동으로 드러낼 수 있는가?"
+      },
+      {
+        "address": "CH08.P2",
+        "question": "어떤 역할에 내 기능을 배정할 수 있는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:MEANING:value-articulation",
+    "axis": "MEANING",
+    "definition": "자기에게 중요한 이유를 말함",
+    "originalCondition": "본인이 밝힌 가치가 있을 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH01.P3:values-and-expression",
+      "cpr:material:CH03.P2:output-and-meaning",
+      "cpr:material:CH04.P2:inner-values-not-secret"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P3",
+        "question": "MBTI를 함께 보면 어떤 질문이 추가되는가?"
+      },
+      {
+        "address": "CH09.P1",
+        "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:MEANING:purpose-check",
+    "axis": "MEANING",
+    "definition": "목표와 중요한 이유의 연결을 확인",
+    "originalCondition": "작은 일의 현실 필요도 함께 고려",
+    "selectedMaterialIds": [
+      "cpr:material:CH03.P3:save-and-experience",
+      "cpr:material:CH03.P4:keep-joy-and-reserve",
+      "cpr:material:CH07.P2:start-and-finish-card",
+      "cpr:material:CH08.P1:work-through-shared-purpose",
+      "cpr:material:CH09.P1:money-as-experience",
+      "cpr:material:CH09.P4:joy-with-room"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P3",
+        "question": "MBTI를 함께 보면 어떤 질문이 추가되는가?"
+      },
+      {
+        "address": "CH09.P1",
+        "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:MEANING:value-practice",
+    "axis": "MEANING",
+    "definition": "중요한 가치를 구체적 선택으로 옮김",
+    "originalCondition": "자원·권한의 제약을 먼저 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH09.P1:money-as-meaning"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH01.P3",
+        "question": "MBTI를 함께 보면 어떤 질문이 추가되는가?"
+      },
+      {
+        "address": "CH09.P1",
+        "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RECOVERY_NEED:load-recognition",
+    "axis": "RECOVERY_NEED",
+    "definition": "현재 부담과 쉬는 필요를 알아봄",
+    "originalCondition": "실제 생활·업무 부하가 확인될 때",
+    "selectedMaterialIds": [
+      "cpr:material:CH02.P3:wealth-overload-condition",
+      "cpr:material:CH04.P2:after-help-load"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P2",
+        "question": "혼자 정리할 때 어떤 여건이 필요한가?"
+      },
+      {
+        "address": "CH05.P4",
+        "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RECOVERY_NEED:rest-access",
+    "axis": "RECOVERY_NEED",
+    "definition": "쉬는 방식과 가능한 공간을 확보",
+    "originalCondition": "선호·돌봄·경제 제약을 확인",
+    "selectedMaterialIds": [
+      "cpr:material:CH05.P4:role-and-rest",
+      "cpr:material:CH08.P4:return-from-manageable-step"
+    ],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P2",
+        "question": "혼자 정리할 때 어떤 여건이 필요한가?"
+      },
+      {
+        "address": "CH05.P4",
+        "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:facet:RECOVERY_NEED:return-agreement",
+    "axis": "RECOVERY_NEED",
+    "definition": "회복 뒤 다시 응답할 시점을 합의",
+    "originalCondition": "완료 보장 대신 현재 가능한 연락만 합의",
+    "selectedMaterialIds": [],
+    "possibleParagraphQuestions": [
+      {
+        "address": "CH04.P2",
+        "question": "혼자 정리할 때 어떤 여건이 필요한가?"
+      },
+      {
+        "address": "CH05.P4",
+        "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?"
+      }
+    ],
+    "use": "conditional_task_question_not_evidence_or_score",
+    "requires": "원래 facet 조건·실제 원천·과제 대상 확인; 축 점수만으로 세부 행동을 확정하지 않음",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  }
+]

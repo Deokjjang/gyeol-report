@@ -1,0 +1,179 @@
+[
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveReleaseContracts.ts",
+    "sha256": "e8d105999376cb61b6da101fe236ba60e7af47708dfdcf81f894622ef1d956d3",
+    "lineCount": 645,
+    "imports": [
+      "./types",
+      "./semanticCore"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveReleaseMaterials.ts",
+    "sha256": "be7707cd4d6cec66ddd89e4746b2b6d106b3df956e15c990d26beaf4597505de",
+    "lineCount": 410,
+    "imports": [
+      "./semanticCore"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveReaderApplications.ts",
+    "sha256": "cddf85e053c25ffa9860962c1177977d51811c6d1b3366f4f88be52c0b312138",
+    "lineCount": 104,
+    "imports": [
+      "./comprehensiveReleaseMaterials"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveReleaseSources.ts",
+    "sha256": "d22eff5186d6182c7d2f79e96180cf111a7394f10211732afa088fecd93432e6",
+    "lineCount": 139,
+    "imports": [
+      "./comprehensivePlanCore",
+      "./semanticCore",
+      "./foundationRanking",
+      "./comprehensiveReleaseMaterials",
+      "./foundationTenGods"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveReleaseRenderer.ts",
+    "sha256": "4489b26a4ad16b1e2498f99441b7cb7274793acec22ce2916fb7ee265c44163e",
+    "lineCount": 410,
+    "imports": [
+      "./narrativeTypes",
+      "./comprehensivePlanCore",
+      "./comprehensiveManuscriptCore",
+      "./semanticCore",
+      "./comprehensiveReleaseContracts",
+      "./comprehensiveReleaseMaterials",
+      "./comprehensiveReleaseSources",
+      "./narrativeHumanOutcome",
+      "./comprehensiveManuscriptPolish",
+      "./narrativeMbtiReason",
+      "./narrativeMemory",
+      "../report-knowledge/koreanCopyUtils",
+      "./comprehensiveReaderApplications"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveReleaseValidator.ts",
+    "sha256": "3bd16b450ac98c08b2d889fafc4c1ca04ccc620f583800f929a604c774f95b90",
+    "lineCount": 73,
+    "imports": [
+      "./comprehensiveReleaseRenderer",
+      "./comprehensivePlanCore"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveProductAdapter.ts",
+    "sha256": "ece7c58bcd7d28a1d6fee0ff0567a5de2be8953590e17966667d64787b0debef",
+    "lineCount": 96,
+    "imports": [
+      "node:crypto",
+      "./foundationIntegratedProfile",
+      "./mbtiSemanticProfile",
+      "./fusionSemanticProfile",
+      "./claimProfile",
+      "./personalResonanceProfile",
+      "./guidanceProfile",
+      "./comprehensiveEditorialPlan",
+      "./comprehensiveManuscriptRenderer",
+      "./comprehensivePlanCore",
+      "./materialPacket",
+      "./narrativeTypes",
+      "./comprehensiveReleaseRenderer",
+      "./comprehensiveReleaseValidator"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensivePlan.ts",
+    "sha256": "b00e2d489833a7b628d48a8ee1ad08a1350f2b9610388c6d5673ca3da967a689",
+    "lineCount": 154,
+    "imports": [
+      "../report-knowledge/mbti/sourceRuntimeAdapter",
+      "../saju/constants",
+      "../saju/tenGods",
+      "../saju/types",
+      "./contentEvidence",
+      "./contentMbti",
+      "./materialRegistry",
+      "./copyRealizer",
+      "./productRhythm",
+      "./narrativePortraits",
+      "./narrativeTypes",
+      "./types",
+      "./materialPacket"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensivePlanCore.ts",
+    "sha256": "01ee6dba632646c58b5ddf9cbf72a0e79bfbccb46e14dd9d2bde718a941d953e",
+    "lineCount": 93,
+    "imports": [
+      "./guidanceCore",
+      "./semanticCore",
+      "./fusionCore"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveSectionContracts.ts",
+    "sha256": "36076fb4a125cf33562101546e74db8989a6afaad33eff8abf21e99c1db44fe1",
+    "lineCount": 46,
+    "imports": [
+      "./comprehensivePlanCore",
+      "./semanticCore",
+      "./narrativeRecovery"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveEvidenceOwnership.ts",
+    "sha256": "5fb21bfeefd14ac760ab6b98684570574d3381bc2b8536b508bd179f5d4647a7",
+    "lineCount": 102,
+    "imports": [
+      "./comprehensivePlanCore",
+      "./comprehensiveSectionContracts",
+      "./comprehensiveCandidateAdapter"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveManuscriptCore.ts",
+    "sha256": "845b01da3edcdcc31f235aa8f53d584ae4517604466e1c048fe897587e771714",
+    "lineCount": 31,
+    "imports": [
+      "./comprehensivePlanCore",
+      "./narrativeCore",
+      "./narrativeSceneCore",
+      "./narrativeTitleCore",
+      "./narrativeMeaningSignature",
+      "./operatingRuleCore",
+      "./narrativeRhythm"
+    ]
+  },
+  {
+    "file": "src/lib/interpretation-v4/comprehensiveComposer.ts",
+    "sha256": "c2621b278ffecb87f65707d733a612cee87743d5e4fde0eccb99b465eb124679",
+    "lineCount": 212,
+    "imports": [
+      "../report-generation/reportInputTypes",
+      "./materialPacket",
+      "./materialDepth",
+      "./copyRealizer",
+      "./narrativeSignatures",
+      "./narrativeComposer",
+      "./narrativeStories",
+      "./narrativeFusionScenes",
+      "./narrativeContext",
+      "./narrativeNatalTexture",
+      "./narrativePortraits",
+      "./editorialGuard",
+      "./narrativeTypes",
+      "./types",
+      "./narrativeVariation",
+      "./narrativeAtomicFortune",
+      "./contentSynthesis",
+      "./comprehensivePlan",
+      "./contentEvidence"
+    ]
+  }
+]
