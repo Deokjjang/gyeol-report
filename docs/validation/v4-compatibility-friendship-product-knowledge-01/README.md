@@ -98,4 +98,6 @@ L0/M0는 기존 `compatibility-product-13d-7b-v1` fallback을 유지한다. 새 
 
 관련 신규 연구·테스트·검증 파일만 commit/push한다. 정확한 신규 SHA의 자동 Vercel Preview READY는 최종 응답과 외부 `/tmp/gyeol-compatibility-friendship-product-knowledge-01-validation/preview-receipt.json`으로 확인한다. 로컬 build 성공을 Preview READY로 대신하지 않는다.
 
+연구 구현 커밋 `c2e23f0fc6119efd14cbc7d7d2e1be0a12f8a43d`의 [Vercel Preview](https://gyeol-report-7bfc5lncm-gyeol-report-s-projects.vercel.app)는 **READY**다. 동일 project·작업 branch·정확한 SHA·Preview 환경을 확인했고, 컴파일·TypeScript·47/47 static 생성·함수 출력 배포가 완료됐으며 경고 0건이었다. [구현 Preview 실측 기록](preview-implementation-receipt.json)에 메타데이터와 수집한 로그를 남겼다. 이 결과를 기록하는 마지막 문서 커밋의 SHA·Preview도 별도로 확인하여 최종 응답과 외부 receipt에 남긴다. 이번 확인은 Production 배포나 판매 승인을 의미하지 않는다.
+
 기존 worktree31개·미커밋11개·Vercel 추적 수정·원본 checkout·master·Production·운영 DB·결제·인증·기존 Book을 보존한다. 대운/세운 전문 DB·한국어 표현 DB·Evidence Binding 구현·원고 생성기 수정은 시작하지 않는다.
