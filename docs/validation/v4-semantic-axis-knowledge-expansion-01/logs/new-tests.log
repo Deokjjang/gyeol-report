@@ -1,0 +1,12 @@
+
+> gyeol-report@0.1.0 test
+> vitest run tests/unit/report-knowledge/semanticAxisResearch.test.ts
+
+
+ RUN  v4.1.5 /private/tmp/gyeol-semantic-axis-knowledge-expansion-01
+
+
+ Test Files  1 passed (1)
+      Tests  53 passed (53)
+   Start at  08:05:07
+   Duration  709ms (transform 212ms, setup 17ms, import 255ms, tests 266ms, environment 0ms)

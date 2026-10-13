@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "sar:app:ACTION_TEMPO",
+    "axis": "ACTION_TEMPO",
+    "products": {
+      "comprehensive": {
+        "question": "결정 뒤 착수 간격이 다른 특성과 어떻게 맞물리는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "마감과 검토 비용 사이 첫 작업은 언제 가능한가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "호감 표현을 시작할 시점과 상대 준비가 맞는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "두 사람의 착수 속도 차이는 어떤 대기 비용을 만드는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 전환에서 시험과 검토의 순서를 어떻게 나눌까?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "월별 기한 안에서 되돌릴 작은 행동은 무엇인가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:ENERGY_DIRECTION",
+    "axis": "ENERGY_DIRECTION",
+    "products": {
+      "comprehensive": {
+        "question": "안에서 정리하는 시간과 밖에서 교환하는 때는 어떻게 다른가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "발표 전 혼자 준비할 시간과 협의 시간을 확보했는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "애정은 사적 정리와 공개 표현 중 어디서 편해지는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "겉의 활동량과 안의 처리 방향을 구별했는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "역할이 바뀌어도 필요한 정리 통로는 무엇인가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 공개 활동 뒤 정리 여백을 둘 수 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:STRUCTURE_STYLE",
+    "axis": "STRUCTURE_STYLE",
+    "products": {
+      "comprehensive": {
+        "question": "계획 선호와 상황 대응은 어떤 조건에서 바뀌는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "반복 운영과 탐색 업무에 같은 절차가 필요한가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "관계의 약속과 즉흥적인 즐거움은 어디서 조율할까?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "서로 다른 계획 수준을 어떤 합의로 연결할까?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 배경 변화 때 유지할 기준과 바꿀 절차는 무엇인가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "달라진 조건에 일정표를 갱신할 필요가 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:COMMUNICATION_STYLE",
+    "axis": "COMMUNICATION_STYLE",
+    "products": {
+      "comprehensive": {
+        "question": "명료함과 관계 온도를 어떤 통로로 함께 전하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "피드백의 내용과 전달 형식을 구분하는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "이견과 애정 요청이 상대에게 알아듣게 전달되는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "직설·완곡 차이가 실제 뜻의 차이인가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "오래된 소통 방식이 새 역할에도 적합한가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "민감한 협의에 메시지와 대면 중 무엇이 맞는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:CHANGE_ORIENTATION",
+    "axis": "CHANGE_ORIENTATION",
+    "products": {
+      "comprehensive": {
+        "question": "익숙함과 새로움의 선호는 능력과 어떻게 다른가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "운영을 유지할 부분과 실험할 부분은 무엇인가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "새 경험의 욕구와 관계의 예측 가능성을 나눌까?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "새로움의 양을 한쪽 기준으로 정하지 않는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "기간 변화의 계산과 개인의 변화 선호를 구별했는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "새 계획은 월별 여력과 일치하는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:DECISION_STYLE",
+    "axis": "DECISION_STYLE",
+    "products": {
+      "comprehensive": {
+        "question": "선택을 닫는 기준과 다시 여는 조건은 무엇인가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "결정권자와 추가 정보의 마감은 누구에게 있는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "관계 결정을 서두르거나 무기한 미루는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "두 사람의 결정 시점이 실제로 충돌하는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 선택을 재검토할 조건을 남겼는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 결정이 다음 달 수정 가능한가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:RELATION_STYLE",
+    "axis": "RELATION_STYLE",
+    "products": {
+      "comprehensive": {
+        "question": "개인 공간과 연결 욕구를 애정과 분리해 설명할까?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "협업에 필요한 연결과 개인 집중의 경계는 어디인가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "연락·친밀감·사생활의 기대가 합의됐는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "거리 선호가 서로의 거절로 오독되는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 역할 변화가 기존 관계의 공간에 미치는 조건은?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "월별 만남량이 실제 여력과 맞는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:RISK_STYLE",
+    "axis": "RISK_STYLE",
+    "products": {
+      "comprehensive": {
+        "question": "불확실성 감수와 목표의 크기를 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "허용 손실과 중단 조건이 있는 시도인가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "친밀감의 속도에 안전과 동의가 확보됐는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "누가 감수하는 위험이며 누가 동의해야 하는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 전환에서 생계 안전판을 어떻게 유지할까?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "짧은 시험이 되돌릴 수 있는 범위인가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:INITIATIVE",
+    "axis": "INITIATIVE",
+    "products": {
+      "comprehensive": {
+        "question": "먼저 시작하는 행동과 속도·리더십은 어떻게 다른가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "문제 제안 뒤 실제 맡을 범위는 무엇인가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "먼저 표현해도 상대의 답을 기다릴 수 있는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "한쪽만 관계의 시작을 맡고 있지는 않은가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "새 배경에서 먼저 시험할 작은 선택은 무엇인가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 스스로 시작할 수 있는 범위는 어디인가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:GOAL_DRIVE",
+    "axis": "GOAL_DRIVE",
+    "products": {
+      "comprehensive": {
+        "question": "목표 지향성과 의미·경쟁은 어떻게 다르게 움직이는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "성과 목표가 직무·학습의 현실 조건과 맞는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "관계의 진도를 성과 목표처럼 취급하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "두 사람의 목표가 같아도 우선순위가 다른가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 목표는 새 조건에서 유효한가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "올해 목표를 월별 가능한 단위로 나눌 수 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:EXPANSION",
+    "axis": "EXPANSION",
+    "products": {
+      "comprehensive": {
+        "question": "범위를 넓히는 욕구와 유지 능력은 어떻게 다른가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "고객·업무·학습 범위를 늘릴 여력이 있는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "만남을 늘리는 것과 친밀감을 깊게 하는 것은 다른가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "한쪽의 확대가 상대의 부담을 늘리는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "새 장기 기회와 유지할 기반을 함께 보는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 확장에 필요한 시간과 비용은 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:PERSISTENCE",
+    "axis": "PERSISTENCE",
+    "products": {
+      "comprehensive": {
+        "question": "오래 이어감과 바꿀 때를 아는 판단은 어떻게 공존하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "반복 연습과 손실 누적의 경계를 어디에 둘까?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "관계의 지속을 상대의 동의 없이 미덕으로 삼는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "계속하는 이유와 멈출 기준을 함께 말할 수 있는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 노력에서 유지할 가치와 매몰비용은 무엇인가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 반복이 실제 개선으로 이어지는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:ADAPTABILITY",
+    "axis": "ADAPTABILITY",
+    "products": {
+      "comprehensive": {
+        "question": "변화에 맞추는 능력과 새로움 선호를 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "바뀐 조건에 방법을 수정할 여지가 있는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "상대에게 맞추면서 자기 요구도 남기는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "상호 조정인가 한쪽만 참는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "전환의 전후 조건을 나누어 조정하는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 바뀐 일정에 수정할 방법이 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:DEPTH",
+    "axis": "DEPTH",
+    "products": {
+      "comprehensive": {
+        "question": "깊이 확인하는 대상과 멈출 기준은 무엇인가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "원인 분석이 의사결정에 필요한 깊이인가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "상대의 말을 깊게 듣는 것과 추측을 구별하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "같은 대화에서 서로 원하는 깊이가 다른가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 흐름의 원인과 삶의 실제 사건을 구별하는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 분석으로 새 정보가 생기는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:CURIOSITY",
+    "axis": "CURIOSITY",
+    "products": {
+      "comprehensive": {
+        "question": "질문의 폭과 끝까지 이해하는 깊이는 어떻게 다른가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "새 질문이 업무·학습 목표와 연결되는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "관심 질문이 상대의 사생활을 침범하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "서로 궁금해하는 대상이 다른가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 관심의 변화와 실제 기간 근거를 구분하는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 확인할 질문과 미룰 질문은 무엇인가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:PATTERN_SENSE",
+    "axis": "PATTERN_SENSE",
+    "products": {
+      "comprehensive": {
+        "question": "반복 발견과 원인 확정을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "고객·업무 데이터의 패턴에 반례가 있는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "한번의 반응을 관계 패턴으로 확대하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "서로 관찰한 반복의 표본과 맥락이 같은가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "기간의 반복과 개인의 고정 성격을 혼동하는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "월별 관찰이 충분해 반복이라 부를 수 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:PRECISION",
+    "axis": "PRECISION",
+    "products": {
+      "comprehensive": {
+        "question": "오류 탐지·일관성·완성도는 어디서 따로 나타나는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "중요 오류와 사소한 차이에 다른 검토량을 쓰는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "말의 차이를 바로잡을 때 관계의 요청도 듣는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "둘의 정확성 기준이 같은 대상에 적용되는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 계획의 전제와 검토 범위를 갱신하는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 수치·기한·문서의 실제 차이를 확인했는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:LEARNING",
+    "axis": "LEARNING",
+    "products": {
+      "comprehensive": {
+        "question": "지식 축적과 질문·성적을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "배운 내용을 실제 과제에 전이할 수 있는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "관계에서 배운 표현이 상대에게도 유효한가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "서로 다른 학습 통로를 설명할 수 있는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "긴 기간에 배움을 쌓을 환경이 있는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 연습과 피드백의 주기가 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:STRATEGY",
+    "axis": "STRATEGY",
+    "products": {
+      "comprehensive": {
+        "question": "목표와 경로·제약을 연결하는 사고는 무엇인가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "우선순위와 대안 경로가 현실 자원과 맞는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "상대를 얻기 위한 조작과 상호 계획을 구별하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "두 사람의 계획에서 누가 비용을 부담하는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 경로의 분기와 수정 조건이 있는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "올해 계획을 이번 달 실행 순서로 좁힐 수 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:CREATION",
+    "axis": "CREATION",
+    "products": {
+      "comprehensive": {
+        "question": "기존 것을 익히는 일과 새 결과를 만드는 일은 어떻게 다른가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "새 산출물의 용도와 검증 기준은 무엇인가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "표현 방식의 새로움이 상대에게도 편안한가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "각자의 결과물에 공동 저작의 동의가 있는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 창작을 유지할 기반은 무엇인가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 만들 수 있는 작은 결과물은 무엇인가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:EXPRESSION",
+    "axis": "EXPRESSION",
+    "products": {
+      "comprehensive": {
+        "question": "생각을 꺼내는 양·매체·명료함을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "말·글·시연 중 어떤 매체가 과제에 적합한가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "애정 표현의 통로와 상대가 받는 방식은 같은가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "서로 다른 표현량을 마음의 크기로 읽지 않는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "기간 변화 속 표현 환경이 달라지는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 내용을 전달할 청자와 매체가 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:SOCIAL_ATTUNEMENT",
+    "axis": "SOCIAL_ATTUNEMENT",
+    "products": {
+      "comprehensive": {
+        "question": "상대 신호를 알아차리는 일과 마음을 아는 일은 어떻게 다른가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "고객 반응과 실제 요구를 확인하는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "표정을 읽은 뒤 뜻을 직접 물어보는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "상대의 감정을 추측으로 확정하지 않는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 역할 변화 때 주변 기대를 재확인하는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 신호가 상황 때문인지 확인했는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:CARE",
+    "axis": "CARE",
+    "products": {
+      "comprehensive": {
+        "question": "돌봄의 필요·동의·지속 가능성을 나눌까?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "지원이 상대의 업무 자율성을 지키는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "챙김이 원한 방식인지 확인하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "주는 돌봄과 받는 부담이 비대칭인가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "오랜 돌봄의 역할과 지원 자원이 있는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 가능한 도움과 한계를 알릴 수 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:CHARISMA",
+    "axis": "CHARISMA",
+    "products": {
+      "comprehensive": {
+        "question": "주목·설득·동의를 서로 구분하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "발표의 존재감과 실제 업무 능력을 구분하는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "눈길을 끄는 것과 상호 호감을 구별하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "한 사람의 존재감이 다른 사람의 발언을 가리는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 역할에서 주목을 분담할 수 있는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 공개 기회의 조건과 여력이 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:DUTY",
+    "axis": "DUTY",
+    "products": {
+      "comprehensive": {
+        "question": "맡은 역할·약속·경계가 어떻게 다른가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "책임에 필요한 권한과 자원이 있는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "애정과 의무를 구별해 합의하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "성실한 한 사람에게 책임이 몰리는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 책임을 유지·수정할 조건은 무엇인가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 약속의 범위를 갱신해야 하는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:LEADERSHIP",
+    "axis": "LEADERSHIP",
+    "products": {
+      "comprehensive": {
+        "question": "이끄는 행동과 직함·시작을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "방향 조율과 결정권의 범위가 맞는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "상대를 이끄는 말에 선택권이 남는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "주도권을 상황에 따라 교환할 수 있는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "새 역할에서 권한과 책임이 달라지는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 조율해야 할 실제 공동 목표가 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:AUTONOMY",
+    "axis": "AUTONOMY",
+    "products": {
+      "comprehensive": {
+        "question": "자기 선택과 타인에게 미치는 책임을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "직무 재량과 협업의 의존성이 명확한가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "친밀감 속 개인 공간을 합의했는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "두 사람의 독립 영역과 공동 영역은 어디인가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 역할 변경에 실제 선택권이 있는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 자율적으로 바꿀 수 있는 부분은 무엇인가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:COMPETITION",
+    "axis": "COMPETITION",
+    "products": {
+      "comprehensive": {
+        "question": "비교의 자극과 적대감을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "성과 비교가 성장 정보인가 불공정한 압박인가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "관계를 승패나 소유로 다루지 않는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "두 사람의 경쟁이 협력을 침해하는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 비교 기준이 자신의 가치와 맞는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 비교 지표가 실제로 유효한가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:BOUNDARY",
+    "axis": "BOUNDARY",
+    "products": {
+      "comprehensive": {
+        "question": "범위·동의·거절과 정확성을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "업무 범위와 추가 요청의 승인 기준은 무엇인가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "사적 정보와 접촉에 동의가 있는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "서로의 경계가 다를 때 합의를 찾는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 역할 변화 때 기존 경계를 재협의하는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 추가 요청을 거절할 통로가 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:PRACTICALITY",
+    "axis": "PRACTICALITY",
+    "products": {
+      "comprehensive": {
+        "question": "실행 가능한 선택과 가치 판단을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "비용·도구·기한을 고려한 적용인가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "효율이 관계의 감정 요청을 지우지 않는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "한쪽의 편리함이 다른 쪽의 수고인가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 목표를 유지할 현실 기반은 무엇인가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 실행 가능한 단위와 비용은 무엇인가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:RESOURCE_SENSE",
+    "axis": "RESOURCE_SENSE",
+    "products": {
+      "comprehensive": {
+        "question": "흐름·보유·배분과 실제 부를 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "현금·시간·도구의 흐름을 볼 수 있는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "데이트 지출에 여력과 동의가 반영되는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "자원을 주고받는 방향이 공정한가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 비축과 사용의 목적을 구별하는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 한도와 실제 지출을 확인하는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:OPPORTUNITY_SENSE",
+    "axis": "OPPORTUNITY_SENSE",
+    "products": {
+      "comprehensive": {
+        "question": "가능성 발견과 실제 실현 가능성을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "기회에 필요한 역량·자원·검증이 있는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "새 만남의 가능성과 상대의 선택은 다른가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "한쪽의 기회가 상대에게 의무가 되는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 배경에서 열릴 선택을 조건부로 보는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 기회의 기한과 확인할 정보는 무엇인가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:STABILITY",
+    "axis": "STABILITY",
+    "products": {
+      "comprehensive": {
+        "question": "연속성·예측 가능성과 변화 거부를 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "운영 안전망과 개선 시험을 함께 둘 수 있는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "안심할 약속과 관계 통제를 구별하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "서로 안정감을 느끼는 조건이 다른가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 변화 속 유지할 기반은 무엇인가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 기본 생활을 지킬 여력이 있는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:STATUS_DRIVE",
+    "axis": "STATUS_DRIVE",
+    "products": {
+      "comprehensive": {
+        "question": "인정 욕구와 실제 지위·역량을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "평가 기준과 본인이 원하는 인정이 일치하는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "상대의 지위를 관계 가치로 대체하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "두 사람의 인정 욕구가 발언권에 영향을 주는가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 역할 변화의 인정 기준이 달라지는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 가시적 성과와 실제 기여를 구분하는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:MEANING",
+    "axis": "MEANING",
+    "products": {
+      "comprehensive": {
+        "question": "가치·이유와 목표 성과를 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "보상과 일이 지닌 개인 가치가 어떻게 다른가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "관계의 의미를 상대에게 같은 답으로 요구하는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "두 사람이 중요하게 여기는 이유가 다른가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 선택에서 지키고 싶은 가치는 무엇인가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 선택이 실제 가치와 연결되는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  },
+  {
+    "id": "sar:app:RECOVERY_NEED",
+    "axis": "RECOVERY_NEED",
+    "products": {
+      "comprehensive": {
+        "question": "휴식 필요와 내향성·진단을 구별하는가?",
+        "gateRef": "sar:gate:product:comprehensive"
+      },
+      "career": {
+        "question": "업무 부하와 회복 가능한 여백을 확인하는가?",
+        "gateRef": "sar:gate:product:career"
+      },
+      "love": {
+        "question": "연락을 쉬는 요청을 거절로 읽지 않는가?",
+        "gateRef": "sar:gate:product:love"
+      },
+      "compatibility": {
+        "question": "두 사람의 회복 시간과 돌봄 부담이 다른가?",
+        "gateRef": "sar:gate:product:compatibility"
+      },
+      "major_fortune": {
+        "question": "장기 책임을 버틸 지원과 휴식 조건이 있는가?",
+        "gateRef": "sar:gate:product:major_fortune"
+      },
+      "annual_fortune": {
+        "question": "이번 달 실제 피로와 휴식 여건을 확인하는가?",
+        "gateRef": "sar:gate:product:annual_fortune"
+      }
+    }
+  }
+]

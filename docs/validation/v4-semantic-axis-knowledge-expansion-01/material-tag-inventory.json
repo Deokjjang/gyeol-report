@@ -1,0 +1,2778 @@
+[
+  {
+    "feature": "day_master_byeonghwa",
+    "label": "병화",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses"
+    ],
+    "sourceRefs": [
+      "sajuKnowledgeBase:day_master_byeonghwa"
+    ]
+  },
+  {
+    "feature": "day_master_eulmok",
+    "label": "을목",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses"
+    ],
+    "sourceRefs": [
+      "sajuKnowledgeBase:day_master_eulmok"
+    ]
+  },
+  {
+    "feature": "day_master_gabmok",
+    "label": "갑목",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses"
+    ],
+    "sourceRefs": [
+      "sajuKnowledgeBase:day_master_gabmok"
+    ]
+  },
+  {
+    "feature": "day_master_gito",
+    "label": "기토",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses"
+    ],
+    "sourceRefs": [
+      "sajuKnowledgeBase:day_master_gito"
+    ]
+  },
+  {
+    "feature": "day_master_gyeonggeum",
+    "label": "경금",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses"
+    ],
+    "sourceRefs": [
+      "sajuKnowledgeBase:day_master_gyeonggeum"
+    ]
+  },
+  {
+    "feature": "day_master_gyesu",
+    "label": "계수",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses"
+    ],
+    "sourceRefs": [
+      "sajuKnowledgeBase:day_master_gyesu"
+    ]
+  },
+  {
+    "feature": "day_master_imsu",
+    "label": "임수",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses"
+    ],
+    "sourceRefs": [
+      "sajuKnowledgeBase:day_master_imsu"
+    ]
+  },
+  {
+    "feature": "day_master_jeonghwa",
+    "label": "정화",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses"
+    ],
+    "sourceRefs": [
+      "sajuKnowledgeBase:day_master_jeonghwa"
+    ]
+  },
+  {
+    "feature": "day_master_muto",
+    "label": "무토",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses"
+    ],
+    "sourceRefs": [
+      "sajuKnowledgeBase:day_master_muto"
+    ]
+  },
+  {
+    "feature": "day_master_singeum",
+    "label": "신금",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses"
+    ],
+    "sourceRefs": [
+      "sajuKnowledgeBase:day_master_singeum"
+    ]
+  },
+  {
+    "feature": "day_pillar_byeongin",
+    "label": "병인일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_byeongin"
+    ]
+  },
+  {
+    "feature": "day_pillar_byeongja",
+    "label": "병자일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_byeongja"
+    ]
+  },
+  {
+    "feature": "day_pillar_byeongjin",
+    "label": "병진일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "money",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_byeongjin"
+    ]
+  },
+  {
+    "feature": "day_pillar_byeongo",
+    "label": "병오일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "success/fortune",
+      "work"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_byeongo",
+      "sajuKnowledgeBase:day_pillar_byeongoh"
+    ]
+  },
+  {
+    "feature": "day_pillar_byeongsin",
+    "label": "병신일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_byeongsin"
+    ]
+  },
+  {
+    "feature": "day_pillar_byeongsul",
+    "label": "병술일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_byeongsul"
+    ]
+  },
+  {
+    "feature": "day_pillar_eulchuk",
+    "label": "을축일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_eulchuk"
+    ]
+  },
+  {
+    "feature": "day_pillar_eulhae",
+    "label": "을해일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "relationships",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_eulhae"
+    ]
+  },
+  {
+    "feature": "day_pillar_eulmi",
+    "label": "을미일주",
+    "semanticTags": [],
+    "domains": [
+      "love",
+      "relationships",
+      "work"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_eulmi"
+    ]
+  },
+  {
+    "feature": "day_pillar_eulmyo",
+    "label": "을묘일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_eulmyo"
+    ]
+  },
+  {
+    "feature": "day_pillar_eulsa",
+    "label": "을사일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "love"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_eulsa",
+      "sajuKnowledgeBase:day_pillar_eulsa"
+    ]
+  },
+  {
+    "feature": "day_pillar_eulyu",
+    "label": "을유일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_eulyu"
+    ]
+  },
+  {
+    "feature": "day_pillar_gabin",
+    "label": "갑인일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gabin"
+    ]
+  },
+  {
+    "feature": "day_pillar_gabo",
+    "label": "갑오일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "love"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gabo"
+    ]
+  },
+  {
+    "feature": "day_pillar_gapja",
+    "label": "갑자일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gapja",
+      "sajuKnowledgeBase:day_pillar_gabja"
+    ]
+  },
+  {
+    "feature": "day_pillar_gapjin",
+    "label": "갑진일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "money"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gapjin",
+      "sajuKnowledgeBase:day_pillar_gapjin"
+    ]
+  },
+  {
+    "feature": "day_pillar_gapsin",
+    "label": "갑신일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gapsin",
+      "sajuKnowledgeBase:day_pillar_gapsin"
+    ]
+  },
+  {
+    "feature": "day_pillar_gapsul",
+    "label": "갑술일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gapsul"
+    ]
+  },
+  {
+    "feature": "day_pillar_gichuk",
+    "label": "기축일주",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "money",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gichuk"
+    ]
+  },
+  {
+    "feature": "day_pillar_gihae",
+    "label": "기해일주",
+    "semanticTags": [],
+    "domains": [
+      "relationships",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gihae",
+      "sajuKnowledgeBase:day_pillar_gihae"
+    ]
+  },
+  {
+    "feature": "day_pillar_gimi",
+    "label": "기미일주",
+    "semanticTags": [],
+    "domains": [
+      "relationships",
+      "money"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gimi"
+    ]
+  },
+  {
+    "feature": "day_pillar_gimyo",
+    "label": "기묘일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gimyo"
+    ]
+  },
+  {
+    "feature": "day_pillar_gisa",
+    "label": "기사일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gisa"
+    ]
+  },
+  {
+    "feature": "day_pillar_giyu",
+    "label": "기유일주",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "money",
+      "love"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_giyu"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyechuk",
+    "label": "계축일주",
+    "semanticTags": [],
+    "domains": [
+      "study",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyechuk"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyehae",
+    "label": "계해일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "study",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyehae"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyemi",
+    "label": "계미일주",
+    "semanticTags": [],
+    "domains": [
+      "relationships",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyemi"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyemyo",
+    "label": "계묘일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyemyo",
+      "sajuKnowledgeBase:day_pillar_gyemyo"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyeongin",
+    "label": "경인일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyeongin"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyeongja",
+    "label": "경자일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyeongja"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyeongjin",
+    "label": "경진일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "money",
+      "work"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyeongjin"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyeongo",
+    "label": "경오일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyeongo"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyeongsin",
+    "label": "경신일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyeongsin",
+      "sajuKnowledgeBase:day_pillar_gyeongsin"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyeongsul",
+    "label": "경술일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyeongsul"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyesa",
+    "label": "계사일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "study",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyesa"
+    ]
+  },
+  {
+    "feature": "day_pillar_gyeyu",
+    "label": "계유일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "study",
+      "love"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_gyeyu"
+    ]
+  },
+  {
+    "feature": "day_pillar_imin",
+    "label": "임인일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_imin"
+    ]
+  },
+  {
+    "feature": "day_pillar_imja",
+    "label": "임자일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "study",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_imja",
+      "sajuKnowledgeBase:day_pillar_imja"
+    ]
+  },
+  {
+    "feature": "day_pillar_imjin",
+    "label": "임진일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "money",
+      "work"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_imjin"
+    ]
+  },
+  {
+    "feature": "day_pillar_imo",
+    "label": "임오일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_imo"
+    ]
+  },
+  {
+    "feature": "day_pillar_imsin",
+    "label": "임신일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_imsin"
+    ]
+  },
+  {
+    "feature": "day_pillar_imsul",
+    "label": "임술일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_imsul"
+    ]
+  },
+  {
+    "feature": "day_pillar_jeongchuk",
+    "label": "정축일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_jeongchuk"
+    ]
+  },
+  {
+    "feature": "day_pillar_jeonghae",
+    "label": "정해일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_jeonghae",
+      "sajuKnowledgeBase:day_pillar_jeonghae"
+    ]
+  },
+  {
+    "feature": "day_pillar_jeongmi",
+    "label": "정미일주",
+    "semanticTags": [],
+    "domains": [
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_jeongmi"
+    ]
+  },
+  {
+    "feature": "day_pillar_jeongmyo",
+    "label": "정묘일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_jeongmyo"
+    ]
+  },
+  {
+    "feature": "day_pillar_jeongsa",
+    "label": "정사일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "love"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_jeongsa"
+    ]
+  },
+  {
+    "feature": "day_pillar_jeongyu",
+    "label": "정유일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_jeongyu"
+    ]
+  },
+  {
+    "feature": "day_pillar_muin",
+    "label": "무인일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_muin"
+    ]
+  },
+  {
+    "feature": "day_pillar_muja",
+    "label": "무자일주",
+    "semanticTags": [],
+    "domains": [
+      "money",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_muja"
+    ]
+  },
+  {
+    "feature": "day_pillar_mujin",
+    "label": "무진일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "money",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_mujin",
+      "sajuKnowledgeBase:day_pillar_mujin"
+    ]
+  },
+  {
+    "feature": "day_pillar_muo",
+    "label": "무오일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_muo"
+    ]
+  },
+  {
+    "feature": "day_pillar_musin",
+    "label": "무신일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "money"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_musin"
+    ]
+  },
+  {
+    "feature": "day_pillar_musul",
+    "label": "무술일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_musul"
+    ]
+  },
+  {
+    "feature": "day_pillar_sinchuk",
+    "label": "신축일주",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "money",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_sinchuk"
+    ]
+  },
+  {
+    "feature": "day_pillar_sinhae",
+    "label": "신해일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "study",
+      "love"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_sinhae"
+    ]
+  },
+  {
+    "feature": "day_pillar_sinmi",
+    "label": "신미일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "work"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_sinmi"
+    ]
+  },
+  {
+    "feature": "day_pillar_sinmyo",
+    "label": "신묘일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_sinmyo"
+    ]
+  },
+  {
+    "feature": "day_pillar_sinsa",
+    "label": "신사일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "love"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_sinsa"
+    ]
+  },
+  {
+    "feature": "day_pillar_sinyu",
+    "label": "신유일주",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "love",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:day_pillar_sinyu",
+      "sajuKnowledgeBase:day_pillar_sinyu"
+    ]
+  },
+  {
+    "feature": "distribution:output-low",
+    "label": "표현 신호가 적은 분포",
+    "semanticTags": [
+      "expression-gap"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "work",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "v4:semantic-meaning:distribution:output-low"
+    ]
+  },
+  {
+    "feature": "element_earth",
+    "label": "토",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:element_earth"
+    ]
+  },
+  {
+    "feature": "element_earth_excess",
+    "label": "토 과다",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "money",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:element_earth_excess",
+      "sajuKnowledgeBase:element_earth_excess"
+    ]
+  },
+  {
+    "feature": "element_earth_missing",
+    "label": "토 부족",
+    "semanticTags": [],
+    "domains": [
+      "money",
+      "work",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:element_earth_missing"
+    ]
+  },
+  {
+    "feature": "element_fire",
+    "label": "화",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:element_fire"
+    ]
+  },
+  {
+    "feature": "element_fire_excess",
+    "label": "화 과다",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:element_fire_excess"
+    ]
+  },
+  {
+    "feature": "element_fire_missing",
+    "label": "화 부족",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:element_fire_missing",
+      "sajuKnowledgeBase:element_fire_missing"
+    ]
+  },
+  {
+    "feature": "element_metal",
+    "label": "금",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:element_metal"
+    ]
+  },
+  {
+    "feature": "element_metal_excess",
+    "label": "금 과다",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:element_metal_excess"
+    ]
+  },
+  {
+    "feature": "element_metal_missing",
+    "label": "금 부족",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "money",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:element_metal_missing"
+    ]
+  },
+  {
+    "feature": "element_metal_strong",
+    "label": "금 강함",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:element_metal_strong"
+    ]
+  },
+  {
+    "feature": "element_water",
+    "label": "수",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:element_water"
+    ]
+  },
+  {
+    "feature": "element_water_excess",
+    "label": "수 과다",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "study",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:element_water_excess"
+    ]
+  },
+  {
+    "feature": "element_water_missing",
+    "label": "수 부족",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:element_water_missing",
+      "sajuKnowledgeBase:element_water_missing"
+    ]
+  },
+  {
+    "feature": "element_wood",
+    "label": "목",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:element_wood"
+    ]
+  },
+  {
+    "feature": "element_wood_excess",
+    "label": "목 과다",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:element_wood_excess"
+    ]
+  },
+  {
+    "feature": "element_wood_missing",
+    "label": "목 부족",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:element_wood_missing",
+      "sajuKnowledgeBase:element_wood_missing"
+    ]
+  },
+  {
+    "feature": "gwiin_amrok",
+    "label": "암록",
+    "semanticTags": [],
+    "domains": [
+      "money",
+      "work",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_amrok"
+    ]
+  },
+  {
+    "feature": "gwiin_bokseong",
+    "label": "복성귀인",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_bokseong"
+    ]
+  },
+  {
+    "feature": "gwiin_cheondeok",
+    "label": "천덕귀인",
+    "semanticTags": [
+      "help"
+    ],
+    "domains": [
+      "strengths",
+      "relationships",
+      "marriage",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_cheondeok",
+      "sajuKnowledgeBase:nobleman_cheondeok",
+      "v4:semantic-meaning:gwiin_cheondeok"
+    ]
+  },
+  {
+    "feature": "gwiin_cheoneuiseong",
+    "label": "천의성",
+    "semanticTags": [],
+    "domains": [
+      "relationships",
+      "success/fortune",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_cheoneuiseong"
+    ]
+  },
+  {
+    "feature": "gwiin_cheoneul",
+    "label": "천을귀인",
+    "semanticTags": [
+      "help"
+    ],
+    "domains": [
+      "strengths",
+      "work",
+      "love",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_cheoneul",
+      "sajuKnowledgeBase:nobleman_cheoneul",
+      "v4:semantic-meaning:gwiin_cheoneul"
+    ]
+  },
+  {
+    "feature": "gwiin_geumyeorok",
+    "label": "금여록",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "money",
+      "love",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_geumyeorok"
+    ]
+  },
+  {
+    "feature": "gwiin_hakdang",
+    "label": "학당귀인",
+    "semanticTags": [
+      "learning"
+    ],
+    "domains": [
+      "strengths",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_hakdang",
+      "v4:semantic-meaning:gwiin_hakdang"
+    ]
+  },
+  {
+    "feature": "gwiin_jaego",
+    "label": "재고귀인",
+    "semanticTags": [
+      "accumulation",
+      "wealth"
+    ],
+    "domains": [
+      "strengths",
+      "work",
+      "money",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_jaego",
+      "sajuKnowledgeBase:nobleman_jaego",
+      "sajuKnowledgeBase:gwiin_jaego",
+      "v4:semantic-meaning:gwiin_jaego"
+    ]
+  },
+  {
+    "feature": "gwiin_munchang",
+    "label": "문창귀인",
+    "semanticTags": [
+      "learning",
+      "expression"
+    ],
+    "domains": [
+      "strengths",
+      "work",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_munchang",
+      "sajuKnowledgeBase:nobleman_munchang",
+      "v4:semantic-meaning:gwiin_munchang"
+    ]
+  },
+  {
+    "feature": "gwiin_mungok",
+    "label": "문곡귀인",
+    "semanticTags": [],
+    "domains": [
+      "study",
+      "work",
+      "identity"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_mungok"
+    ]
+  },
+  {
+    "feature": "gwiin_taegeuk",
+    "label": "태극귀인",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_taegeuk",
+      "sajuKnowledgeBase:nobleman_taegeuk"
+    ]
+  },
+  {
+    "feature": "gwiin_woldeok",
+    "label": "월덕귀인",
+    "semanticTags": [
+      "help"
+    ],
+    "domains": [
+      "strengths",
+      "work",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:gwiin_woldeok",
+      "sajuKnowledgeBase:nobleman_woldeok",
+      "v4:semantic-meaning:gwiin_woldeok"
+    ]
+  },
+  {
+    "feature": "pattern_geumda_mokjeol",
+    "label": "금다목절",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_geumda_mokjeol"
+    ]
+  },
+  {
+    "feature": "pattern_gwansal_honjob",
+    "label": "관살혼잡",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_gwansal_honjob"
+    ]
+  },
+  {
+    "feature": "pattern_jaeda_sinyak",
+    "label": "재다신약",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_jaeda_sinyak"
+    ]
+  },
+  {
+    "feature": "pattern_jaesaenggwan",
+    "label": "재생관",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_jaesaenggwan"
+    ]
+  },
+  {
+    "feature": "pattern_mokda_hwasik",
+    "label": "목다화식",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_mokda_hwasik"
+    ]
+  },
+  {
+    "feature": "pattern_no_output",
+    "label": "무식상",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_no_output"
+    ]
+  },
+  {
+    "feature": "pattern_no_resource",
+    "label": "무인성",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_no_resource"
+    ]
+  },
+  {
+    "feature": "pattern_salin_sangsaeng",
+    "label": "살인상생",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_salin_sangsaeng"
+    ]
+  },
+  {
+    "feature": "pattern_siksang_saengjae",
+    "label": "식상생재",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_siksang_saengjae"
+    ]
+  },
+  {
+    "feature": "pattern_singang",
+    "label": "신강",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_singang"
+    ]
+  },
+  {
+    "feature": "pattern_sinyak",
+    "label": "신약",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_sinyak"
+    ]
+  },
+  {
+    "feature": "pattern_suda_mokbu",
+    "label": "수다목부",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_suda_mokbu"
+    ]
+  },
+  {
+    "feature": "pattern_toda_maegeum",
+    "label": "토다매금",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:pattern_toda_maegeum"
+    ]
+  },
+  {
+    "feature": "sinsal_baekho",
+    "label": "백호대살",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:sinsal_baekho",
+      "sajuKnowledgeBase:sinsal_baekho"
+    ]
+  },
+  {
+    "feature": "sinsal_banan",
+    "label": "반안살",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:sinsal_banan"
+    ]
+  },
+  {
+    "feature": "sinsal_cheonmun",
+    "label": "천문성",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:sinsal_cheonmun"
+    ]
+  },
+  {
+    "feature": "sinsal_cheonmunseong",
+    "label": "천문성",
+    "semanticTags": [],
+    "domains": [
+      "study",
+      "identity",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:sinsal_cheonmunseong"
+    ]
+  },
+  {
+    "feature": "sinsal_dohwa",
+    "label": "도화살",
+    "semanticTags": [
+      "first-attraction",
+      "sociability"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "love",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:sinsal_dohwa",
+      "sajuKnowledgeBase:sinsal_dohwa",
+      "v4:semantic-meaning:sinsal_dohwa"
+    ]
+  },
+  {
+    "feature": "sinsal_goegang",
+    "label": "괴강살",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:sinsal_goegang",
+      "sajuKnowledgeBase:sinsal_goegang"
+    ]
+  },
+  {
+    "feature": "sinsal_gongmang",
+    "label": "공망",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:sinsal_gongmang"
+    ]
+  },
+  {
+    "feature": "sinsal_gwimun",
+    "label": "귀문관살",
+    "semanticTags": [
+      "inquiry",
+      "precision"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "study",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:sinsal_gwimun",
+      "sajuKnowledgeBase:sinsal_gwimun",
+      "v4:semantic-meaning:sinsal_gwimun"
+    ]
+  },
+  {
+    "feature": "sinsal_hongyeom",
+    "label": "홍염살",
+    "semanticTags": [
+      "intimate-attraction",
+      "expression"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "love",
+      "marriage",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:sinsal_hongyeom",
+      "sajuKnowledgeBase:sinsal_hongyeom",
+      "v4:semantic-meaning:sinsal_hongyeom"
+    ]
+  },
+  {
+    "feature": "sinsal_hyeonchim",
+    "label": "현침살",
+    "semanticTags": [
+      "precision"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "study",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:sinsal_hyeonchim",
+      "sajuKnowledgeBase:sinsal_hyeonchim",
+      "v4:semantic-meaning:sinsal_hyeonchim"
+    ]
+  },
+  {
+    "feature": "sinsal_wolsal",
+    "label": "월살",
+    "semanticTags": [],
+    "domains": [],
+    "sourceRefs": [
+      "sajuKnowledgeBase:sinsal_wolsal"
+    ]
+  },
+  {
+    "feature": "sinsal_wonjin",
+    "label": "원진살",
+    "semanticTags": [],
+    "domains": [
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:sinsal_wonjin",
+      "sajuKnowledgeBase:sinsal_wonjin"
+    ]
+  },
+  {
+    "feature": "sinsal_yangin",
+    "label": "양인살",
+    "semanticTags": [
+      "autonomy",
+      "leadership"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:sinsal_yangin",
+      "sajuKnowledgeBase:sinsal_yangin",
+      "v4:semantic-meaning:sinsal_yangin"
+    ]
+  },
+  {
+    "feature": "structure_bigeop_many",
+    "label": "비겁다자",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "relationships",
+      "money"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:structure_bigeop_many"
+    ]
+  },
+  {
+    "feature": "structure_gwansal_mixed",
+    "label": "관살혼잡",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:structure_gwansal_mixed"
+    ]
+  },
+  {
+    "feature": "structure_jaeda_sinyak",
+    "label": "재다신약",
+    "semanticTags": [],
+    "domains": [
+      "money",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:structure_jaeda_sinyak"
+    ]
+  },
+  {
+    "feature": "structure_jaesaenggwan",
+    "label": "재생관",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "money",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:structure_jaesaenggwan"
+    ]
+  },
+  {
+    "feature": "structure_no_output",
+    "label": "무식상",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:structure_no_output"
+    ]
+  },
+  {
+    "feature": "structure_no_resource",
+    "label": "무인성",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "study",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:structure_no_resource"
+    ]
+  },
+  {
+    "feature": "structure_resource_many",
+    "label": "인성다자",
+    "semanticTags": [],
+    "domains": [
+      "study",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:structure_resource_many"
+    ]
+  },
+  {
+    "feature": "structure_salin_sangsaeng",
+    "label": "살인상생",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:structure_salin_sangsaeng"
+    ]
+  },
+  {
+    "feature": "structure_sanggwan_gyeongwan",
+    "label": "상관견관",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:structure_sanggwan_gyeongwan"
+    ]
+  },
+  {
+    "feature": "structure_siksang_saengjae",
+    "label": "식상생재",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "money",
+      "study"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:structure_siksang_saengjae"
+    ]
+  },
+  {
+    "feature": "ten_god_bijian",
+    "label": "비견",
+    "semanticTags": [
+      "autonomy"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "love",
+      "relationships",
+      "marriage"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:ten_god_bijian",
+      "sajuKnowledgeBase:ten_god_bijian",
+      "v4:semantic-meaning:ten_god_bijian"
+    ]
+  },
+  {
+    "feature": "ten_god_jie_cai",
+    "label": "겁재",
+    "semanticTags": [
+      "leadership",
+      "sociability"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:ten_god_jie_cai",
+      "sajuKnowledgeBase:ten_god_jie_cai",
+      "v4:semantic-meaning:ten_god_jie_cai"
+    ]
+  },
+  {
+    "feature": "ten_god_pian_cai",
+    "label": "편재",
+    "semanticTags": [
+      "wealth",
+      "mobility"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "work",
+      "money",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:ten_god_pian_cai",
+      "sajuKnowledgeBase:ten_god_pian_cai",
+      "v4:semantic-meaning:ten_god_pian_cai"
+    ]
+  },
+  {
+    "feature": "ten_god_pian_yin",
+    "label": "편인",
+    "semanticTags": [
+      "inquiry",
+      "solitude"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "study",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:ten_god_pian_yin",
+      "sajuKnowledgeBase:ten_god_pian_yin",
+      "v4:semantic-meaning:ten_god_pian_yin"
+    ]
+  },
+  {
+    "feature": "ten_god_qi_sha",
+    "label": "편관",
+    "semanticTags": [
+      "leadership",
+      "decisive-correction"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:ten_god_qi_sha",
+      "sajuKnowledgeBase:ten_god_qi_sha",
+      "v4:semantic-meaning:ten_god_qi_sha"
+    ]
+  },
+  {
+    "feature": "ten_god_shang_guan",
+    "label": "상관",
+    "semanticTags": [
+      "expression",
+      "precision",
+      "experimentation"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "study",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:ten_god_shang_guan",
+      "sajuKnowledgeBase:ten_god_shang_guan",
+      "v4:semantic-meaning:ten_god_shang_guan"
+    ]
+  },
+  {
+    "feature": "ten_god_shi_shen",
+    "label": "식신",
+    "semanticTags": [
+      "expression",
+      "practical-learning"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "work",
+      "study",
+      "love",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:ten_god_shi_shen",
+      "sajuKnowledgeBase:ten_god_shi_shen",
+      "v4:semantic-meaning:ten_god_shi_shen"
+    ]
+  },
+  {
+    "feature": "ten_god_zheng_cai",
+    "label": "정재",
+    "semanticTags": [
+      "wealth",
+      "accumulation",
+      "consistency"
+    ],
+    "domains": [
+      "strengths",
+      "work",
+      "money",
+      "marriage",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:ten_god_zheng_cai",
+      "sajuKnowledgeBase:ten_god_zheng_cai",
+      "v4:semantic-meaning:ten_god_zheng_cai"
+    ]
+  },
+  {
+    "feature": "ten_god_zheng_guan",
+    "label": "정관",
+    "semanticTags": [
+      "consistency",
+      "status"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "work",
+      "love",
+      "marriage",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:ten_god_zheng_guan",
+      "sajuKnowledgeBase:ten_god_zheng_guan",
+      "v4:semantic-meaning:ten_god_zheng_guan"
+    ]
+  },
+  {
+    "feature": "ten_god_zheng_yin",
+    "label": "정인",
+    "semanticTags": [
+      "learning",
+      "help",
+      "consistency"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "work",
+      "study",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:ten_god_zheng_yin",
+      "sajuKnowledgeBase:ten_god_zheng_yin",
+      "v4:semantic-meaning:ten_god_zheng_yin"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_banan",
+    "label": "반안살",
+    "semanticTags": [
+      "status"
+    ],
+    "domains": [
+      "strengths",
+      "work",
+      "money",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_banan",
+      "v4:semantic-meaning:twelve_sinsal_banan"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_cheonsal",
+    "label": "천살",
+    "semanticTags": [],
+    "domains": [
+      "success/fortune",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_cheonsal"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_geopsal",
+    "label": "겁살",
+    "semanticTags": [],
+    "domains": [
+      "money",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_geopsal"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_hwagae",
+    "label": "화개살",
+    "semanticTags": [
+      "solitude",
+      "inquiry"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "study",
+      "love",
+      "marriage",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_hwagae",
+      "sajuKnowledgeBase:sinsal_hwagae",
+      "v4:semantic-meaning:twelve_sinsal_hwagae"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_jaesal",
+    "label": "재살",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_jaesal"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_jangseong",
+    "label": "장성살",
+    "semanticTags": [
+      "leadership",
+      "status"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "work",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_jangseong",
+      "sajuKnowledgeBase:sinsal_jangseong",
+      "v4:semantic-meaning:twelve_sinsal_jangseong"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_jisal",
+    "label": "지살",
+    "semanticTags": [],
+    "domains": [
+      "work",
+      "success/fortune",
+      "relationships"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_jisal"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_mangsin",
+    "label": "망신살",
+    "semanticTags": [],
+    "domains": [
+      "relationships",
+      "success/fortune",
+      "love"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_mangsin",
+      "sajuKnowledgeBase:sinsal_mangsin"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_nyeonsal",
+    "label": "년살",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "love",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_nyeonsal"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_wolsal",
+    "label": "월살",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_wolsal"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_yeokma",
+    "label": "역마살",
+    "semanticTags": [
+      "mobility"
+    ],
+    "domains": [
+      "identity",
+      "work",
+      "study",
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_yeokma",
+      "sajuKnowledgeBase:sinsal_yeokma",
+      "v4:semantic-meaning:twelve_sinsal_yeokma"
+    ]
+  },
+  {
+    "feature": "twelve_sinsal_yukhae",
+    "label": "육해살",
+    "semanticTags": [],
+    "domains": [
+      "relationships",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "sajuFeatureTaxonomy:twelve_sinsal_yukhae"
+    ]
+  },
+  {
+    "feature": "v4_structure:wealthHeavyWeakDaymaster",
+    "label": "재다신약 후보",
+    "semanticTags": [
+      "wealth"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:wealthHeavyWeakDaymaster",
+      "v4:structure-material:wealthHeavyWeakDaymaster"
+    ]
+  },
+  {
+    "feature": "v4_structure:outputCreatesWealth",
+    "label": "식상생재 흐름",
+    "semanticTags": [
+      "wealth",
+      "expression"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:outputCreatesWealth",
+      "v4:structure-material:outputCreatesWealth"
+    ]
+  },
+  {
+    "feature": "v4_structure:wealthCreatesOfficer",
+    "label": "재생관 흐름",
+    "semanticTags": [
+      "wealth",
+      "status",
+      "consistency"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:wealthCreatesOfficer",
+      "v4:structure-material:wealthCreatesOfficer"
+    ]
+  },
+  {
+    "feature": "v4_structure:officerResourceFlow",
+    "label": "관인상생 흐름",
+    "semanticTags": [
+      "learning",
+      "consistency",
+      "help"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:officerResourceFlow",
+      "v4:structure-material:officerResourceFlow"
+    ]
+  },
+  {
+    "feature": "v4_structure:killingResourceFlow",
+    "label": "살인상생 흐름",
+    "semanticTags": [
+      "inquiry",
+      "learning"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:killingResourceFlow",
+      "v4:structure-material:killingResourceFlow"
+    ]
+  },
+  {
+    "feature": "v4_structure:hurtingOfficerMeetsOfficer",
+    "label": "상관견관 긴장",
+    "semanticTags": [
+      "precision",
+      "experimentation"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:hurtingOfficerMeetsOfficer",
+      "v4:structure-material:hurtingOfficerMeetsOfficer"
+    ]
+  },
+  {
+    "feature": "v4_structure:mixedOfficers",
+    "label": "관살혼잡 후보",
+    "semanticTags": [
+      "consistency",
+      "leadership"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:mixedOfficers",
+      "v4:structure-material:mixedOfficers"
+    ]
+  },
+  {
+    "feature": "v4_structure:peerHeavy",
+    "label": "비겁 강함",
+    "semanticTags": [
+      "autonomy",
+      "leadership"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:peerHeavy",
+      "v4:structure-material:peerHeavy"
+    ]
+  },
+  {
+    "feature": "v4_structure:outputHeavy",
+    "label": "식상 강함",
+    "semanticTags": [
+      "expression"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:outputHeavy",
+      "v4:structure-material:outputHeavy"
+    ]
+  },
+  {
+    "feature": "v4_structure:wealthHeavy",
+    "label": "재성 강함",
+    "semanticTags": [
+      "wealth",
+      "accumulation"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:wealthHeavy",
+      "v4:structure-material:wealthHeavy"
+    ]
+  },
+  {
+    "feature": "v4_structure:officerHeavy",
+    "label": "관성 강함",
+    "semanticTags": [
+      "leadership",
+      "consistency",
+      "status"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:officerHeavy",
+      "v4:structure-material:officerHeavy"
+    ]
+  },
+  {
+    "feature": "v4_structure:resourceHeavy",
+    "label": "인성 강함",
+    "semanticTags": [
+      "learning",
+      "inquiry",
+      "help"
+    ],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:resourceHeavy",
+      "v4:structure-material:resourceHeavy"
+    ]
+  },
+  {
+    "feature": "v4_structure:noResource",
+    "label": "원국 인성 신호 없음",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:noResource",
+      "v4:structure-material:noResource"
+    ]
+  },
+  {
+    "feature": "v4_structure:noOutput",
+    "label": "원국 식상 신호 없음",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money",
+      "love",
+      "marriage",
+      "relationships",
+      "study",
+      "success/fortune"
+    ],
+    "sourceRefs": [
+      "v4:structure-rule:noOutput",
+      "v4:structure-material:noOutput"
+    ]
+  },
+  {
+    "feature": "element:WOOD:high",
+    "label": "element:WOOD:high",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:WOOD",
+      "v4:symbolic-lifestyle:WOOD:high",
+      "v4:material-depth:element:WOOD:high"
+    ]
+  },
+  {
+    "feature": "element:WOOD:low",
+    "label": "element:WOOD:low",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "study",
+      "relationships",
+      "marriage"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:WOOD",
+      "v4:symbolic-lifestyle:WOOD:low",
+      "v4:material-depth:element:WOOD:low"
+    ]
+  },
+  {
+    "feature": "element:WOOD:balanced",
+    "label": "element:WOOD:balanced",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "study"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:WOOD",
+      "v4:symbolic-lifestyle:WOOD:balanced",
+      "v4:material-depth:element:WOOD:balanced"
+    ]
+  },
+  {
+    "feature": "element:FIRE:high",
+    "label": "element:FIRE:high",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "love"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:FIRE",
+      "v4:symbolic-lifestyle:FIRE:high",
+      "v4:material-depth:element:FIRE:high"
+    ]
+  },
+  {
+    "feature": "element:FIRE:low",
+    "label": "element:FIRE:low",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "relationships",
+      "marriage",
+      "love"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:FIRE",
+      "v4:symbolic-lifestyle:FIRE:low",
+      "v4:material-depth:element:FIRE:low"
+    ]
+  },
+  {
+    "feature": "element:FIRE:balanced",
+    "label": "element:FIRE:balanced",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "relationships",
+      "marriage"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:FIRE",
+      "v4:symbolic-lifestyle:FIRE:balanced",
+      "v4:material-depth:element:FIRE:balanced"
+    ]
+  },
+  {
+    "feature": "element:EARTH:high",
+    "label": "element:EARTH:high",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "money"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:EARTH",
+      "v4:symbolic-lifestyle:EARTH:high",
+      "v4:material-depth:element:EARTH:high"
+    ]
+  },
+  {
+    "feature": "element:EARTH:low",
+    "label": "element:EARTH:low",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "money"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:EARTH",
+      "v4:symbolic-lifestyle:EARTH:low",
+      "v4:material-depth:element:EARTH:low"
+    ]
+  },
+  {
+    "feature": "element:EARTH:balanced",
+    "label": "element:EARTH:balanced",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "money"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:EARTH",
+      "v4:symbolic-lifestyle:EARTH:balanced",
+      "v4:material-depth:element:EARTH:balanced"
+    ]
+  },
+  {
+    "feature": "element:METAL:high",
+    "label": "element:METAL:high",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:METAL",
+      "v4:symbolic-lifestyle:METAL:high",
+      "v4:material-depth:element:METAL:high"
+    ]
+  },
+  {
+    "feature": "element:METAL:low",
+    "label": "element:METAL:low",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "relationships",
+      "marriage"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:METAL",
+      "v4:symbolic-lifestyle:METAL:low",
+      "v4:material-depth:element:METAL:low"
+    ]
+  },
+  {
+    "feature": "element:METAL:balanced",
+    "label": "element:METAL:balanced",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:METAL",
+      "v4:symbolic-lifestyle:METAL:balanced",
+      "v4:material-depth:element:METAL:balanced"
+    ]
+  },
+  {
+    "feature": "element:WATER:high",
+    "label": "element:WATER:high",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "study"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:WATER",
+      "v4:symbolic-lifestyle:WATER:high",
+      "v4:material-depth:element:WATER:high"
+    ]
+  },
+  {
+    "feature": "element:WATER:low",
+    "label": "element:WATER:low",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "study",
+      "relationships",
+      "marriage"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:WATER",
+      "v4:symbolic-lifestyle:WATER:low",
+      "v4:material-depth:element:WATER:low"
+    ]
+  },
+  {
+    "feature": "element:WATER:balanced",
+    "label": "element:WATER:balanced",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "study"
+    ],
+    "sourceRefs": [
+      "saju/analyze.ts:createElementLabels",
+      "SajuCalcResult:elements:WATER",
+      "v4:symbolic-lifestyle:WATER:balanced",
+      "v4:material-depth:element:WATER:balanced"
+    ]
+  },
+  {
+    "feature": "shinsal:GOSINSAL",
+    "label": "고신살",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "work",
+      "love",
+      "relationships",
+      "marriage"
+    ],
+    "sourceRefs": [
+      "saju/shinsalConstants:GOSINSAL",
+      "v4:material-depth:shinsal:GOSINSAL"
+    ]
+  },
+  {
+    "feature": "shinsal:GWASUKSAL",
+    "label": "과숙살",
+    "semanticTags": [],
+    "domains": [
+      "identity",
+      "strengths",
+      "weaknesses",
+      "love",
+      "relationships",
+      "marriage"
+    ],
+    "sourceRefs": [
+      "saju/shinsalConstants:GWASUKSAL",
+      "v4:material-depth:shinsal:GWASUKSAL"
+    ]
+  }
+]

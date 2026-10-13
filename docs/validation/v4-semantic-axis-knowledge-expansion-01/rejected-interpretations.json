@@ -1,0 +1,114 @@
+[
+  {
+    "id": "sar:rejected:low-care",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:safety-review"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "claim": "CARE 값이 낮으니 배려가 없다",
+    "reason": "관측 경로의 신호 약함은 반대 성격 증거가 아님"
+  },
+  {
+    "id": "sar:rejected:slow-failure",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:safety-review"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "claim": "느리므로 실행 능력이 없다",
+    "reason": "속도 방향과 능력은 다름"
+  },
+  {
+    "id": "sar:rejected:marker-talent",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:safety-review"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "claim": "현침이 있으므로 정밀 분석가다",
+    "reason": "자형 상징에서 실제 능력으로 건너뛴 추론"
+  },
+  {
+    "id": "sar:rejected:wealth-profit",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:safety-review"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "claim": "wealth가 강하니 투자 수익이 난다",
+    "reason": "행동·상징으로 금전 결과 예측 불가"
+  },
+  {
+    "id": "sar:rejected:pair-defect",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:safety-review"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "claim": "관계 페어에 마찰이 있어 A는 배려가 없다",
+    "reason": "상대·역할·조건이 사라진 개인 평가"
+  },
+  {
+    "id": "sar:rejected:transit-identity",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:safety-review"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "claim": "세운 충 때문에 타고난 불안정 성격이다",
+    "reason": "기간 관계와 원국 출처 혼동"
+  },
+  {
+    "id": "sar:rejected:source-direct",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:safety-review"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "claim": "source direct이므로 실증적으로 검증됐다",
+    "reason": "원천 수록 여부와 경험적 검증은 다름"
+  },
+  {
+    "id": "sar:rejected:power-axis",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "rejected",
+    "sourceRefs": [
+      "authored:safety-review"
+    ],
+    "sourceStatus": "repository_checked_not_empirical",
+    "claim": "권력 불균형을 개인 성향 축 점수로 해결한다",
+    "reason": "권한·거절 불이익은 관계의 적용 조건으로 우선 다룸"
+  }
+]

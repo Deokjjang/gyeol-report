@@ -1,0 +1,8 @@
+{
+  "existingResearchRecordsResolvedAndDigestMatched": 2991,
+  "legacySajuRecordsResolvedAndDigestMatched": 221,
+  "allNewRecordIds": 4818,
+  "uniqueNewRecordIds": 4818,
+  "errors": 0,
+  "method": "Actual original array export/index/id and JSON.stringify SHA-256; all new static registry IDs plus all new survey/rejection IDs; no network"
+}

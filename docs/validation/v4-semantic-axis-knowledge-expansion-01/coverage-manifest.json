@@ -1,0 +1,1105 @@
+{
+  "version": "semantic-axis-research-01",
+  "baseSha": "afb8c3aa798ae3da0ede7ee7ae68b6adb04718bd",
+  "connectedToRuntime": false,
+  "approvedForCustomer": false,
+  "existingScoreContribution": false,
+  "counts": {
+    "axes": 36,
+    "bipolar": 8,
+    "strength": 28,
+    "facets": 109,
+    "directionProfiles": 16,
+    "strengthSignalStates": 5,
+    "legacyTags": 22,
+    "themes": 16,
+    "contexts": 8,
+    "domains": 10,
+    "contextDomainCells": 80,
+    "compoundCandidates": 12,
+    "newAxisCandidates": 2,
+    "productQuestions": 216,
+    "relationshipQuestions": 252,
+    "authoredPositiveMaterials": 173,
+    "authoredRiskMaterials": 173,
+    "axisTwists": 36,
+    "independentFacetMeanings": 109,
+    "independentUnderlyingEvidenceAdded": 0
+  },
+  "countingPolicy": "36 profiles +109 facet positives/risks +16 direction positives/risks +12 compound positives/risks =173 per material role. Shared parent twist/counterexample and 468 scope questions are not counted as independent new meanings. New axis candidates2 are proposals, not confirmed dimensions.",
+  "axes": [
+    {
+      "axis": "ACTION_TEMPO",
+      "kind": "bipolar",
+      "facetIds": [
+        "sar:facet:ACTION_TEMPO:start-latency",
+        "sar:facet:ACTION_TEMPO:review-window",
+        "sar:facet:ACTION_TEMPO:paced-handoff"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Direction-specific subfacet validation remains context-dependent",
+      "annotationCount": 84
+    },
+    {
+      "axis": "ENERGY_DIRECTION",
+      "kind": "bipolar",
+      "facetIds": [
+        "sar:facet:ENERGY_DIRECTION:private-processing",
+        "sar:facet:ENERGY_DIRECTION:dialogic-processing",
+        "sar:facet:ENERGY_DIRECTION:channel-switch"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Direction-specific subfacet validation remains context-dependent",
+      "annotationCount": 65
+    },
+    {
+      "axis": "STRUCTURE_STYLE",
+      "kind": "bipolar",
+      "facetIds": [
+        "sar:facet:STRUCTURE_STYLE:fixed-minimum",
+        "sar:facet:STRUCTURE_STYLE:flexible-method",
+        "sar:facet:STRUCTURE_STYLE:change-log"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Direction-specific subfacet validation remains context-dependent",
+      "annotationCount": 100
+    },
+    {
+      "axis": "COMMUNICATION_STYLE",
+      "kind": "bipolar",
+      "facetIds": [
+        "sar:facet:COMMUNICATION_STYLE:direct-request",
+        "sar:facet:COMMUNICATION_STYLE:contextual-delivery",
+        "sar:facet:COMMUNICATION_STYLE:intent-check"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Direction-specific subfacet validation remains context-dependent",
+      "annotationCount": 64
+    },
+    {
+      "axis": "CHANGE_ORIENTATION",
+      "kind": "bipolar",
+      "facetIds": [
+        "sar:facet:CHANGE_ORIENTATION:preserve-value",
+        "sar:facet:CHANGE_ORIENTATION:novelty-trial",
+        "sar:facet:CHANGE_ORIENTATION:chosen-change"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Direction-specific subfacet validation remains context-dependent",
+      "annotationCount": 77
+    },
+    {
+      "axis": "DECISION_STYLE",
+      "kind": "bipolar",
+      "facetIds": [
+        "sar:facet:DECISION_STYLE:closure-criteria",
+        "sar:facet:DECISION_STYLE:option-hold",
+        "sar:facet:DECISION_STYLE:reopen-trigger"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Direction-specific subfacet validation remains context-dependent",
+      "annotationCount": 33
+    },
+    {
+      "axis": "RELATION_STYLE",
+      "kind": "bipolar",
+      "facetIds": [
+        "sar:facet:RELATION_STYLE:contact-range",
+        "sar:facet:RELATION_STYLE:shared-participation",
+        "sar:facet:RELATION_STYLE:private-space"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Direction-specific subfacet validation remains context-dependent",
+      "annotationCount": 95
+    },
+    {
+      "axis": "RISK_STYLE",
+      "kind": "bipolar",
+      "facetIds": [
+        "sar:facet:RISK_STYLE:loss-limit",
+        "sar:facet:RISK_STYLE:reversible-probe",
+        "sar:facet:RISK_STYLE:hazard-check"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Direction-specific subfacet validation remains context-dependent",
+      "annotationCount": 27
+    },
+    {
+      "axis": "INITIATIVE",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:INITIATIVE:opening-proposal",
+        "sar:facet:INITIATIVE:help-initiation",
+        "sar:facet:INITIATIVE:small-first-step"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 30
+    },
+    {
+      "axis": "GOAL_DRIVE",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:GOAL_DRIVE:priority-focus",
+        "sar:facet:GOAL_DRIVE:progress-feedback",
+        "sar:facet:GOAL_DRIVE:goal-release"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 44
+    },
+    {
+      "axis": "EXPANSION",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:EXPANSION:scope-extension",
+        "sar:facet:EXPANSION:network-reach",
+        "sar:facet:EXPANSION:capacity-check"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 10
+    },
+    {
+      "axis": "PERSISTENCE",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:PERSISTENCE:repeat-practice",
+        "sar:facet:PERSISTENCE:maintenance-effort",
+        "sar:facet:PERSISTENCE:stop-rule"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 30
+    },
+    {
+      "axis": "ADAPTABILITY",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:ADAPTABILITY:method-revision",
+        "sar:facet:ADAPTABILITY:feedback-uptake",
+        "sar:facet:ADAPTABILITY:constraint-response"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 48
+    },
+    {
+      "axis": "DEPTH",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:DEPTH:cause-tracing",
+        "sar:facet:DEPTH:context-layer",
+        "sar:facet:DEPTH:compact-explanation"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 68
+    },
+    {
+      "axis": "CURIOSITY",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:CURIOSITY:question-making",
+        "sar:facet:CURIOSITY:alternative-search",
+        "sar:facet:CURIOSITY:question-parking"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 48
+    },
+    {
+      "axis": "PATTERN_SENSE",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:PATTERN_SENSE:recurrence",
+        "sar:facet:PATTERN_SENSE:cross-link",
+        "sar:facet:PATTERN_SENSE:counterpattern"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 35
+    },
+    {
+      "axis": "PRECISION",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:PRECISION:error-detection",
+        "sar:facet:PRECISION:standard-consistency",
+        "sar:facet:PRECISION:completion-quality",
+        "sar:facet:PRECISION:argument-coherence"
+      ],
+      "facetCount": 4,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 66
+    },
+    {
+      "axis": "LEARNING",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:LEARNING:acquisition",
+        "sar:facet:LEARNING:retrieval",
+        "sar:facet:LEARNING:transfer"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 45
+    },
+    {
+      "axis": "STRATEGY",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:STRATEGY:route-comparison",
+        "sar:facet:STRATEGY:sequence-design",
+        "sar:facet:STRATEGY:contingency"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 35
+    },
+    {
+      "axis": "CREATION",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:CREATION:prototype",
+        "sar:facet:CREATION:recombination",
+        "sar:facet:CREATION:finish-output"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 31
+    },
+    {
+      "axis": "EXPRESSION",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:EXPRESSION:channel-choice",
+        "sar:facet:EXPRESSION:visibility-control",
+        "sar:facet:EXPRESSION:receipt-check"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 81
+    },
+    {
+      "axis": "SOCIAL_ATTUNEMENT",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:SOCIAL_ATTUNEMENT:cue-observation",
+        "sar:facet:SOCIAL_ATTUNEMENT:context-adjustment",
+        "sar:facet:SOCIAL_ATTUNEMENT:interpretation-check"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 92
+    },
+    {
+      "axis": "CARE",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:CARE:need-check",
+        "sar:facet:CARE:practical-support",
+        "sar:facet:CARE:sustainable-care",
+        "sar:facet:CARE:respectful-nonintervention"
+      ],
+      "facetCount": 4,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 158
+    },
+    {
+      "axis": "CHARISMA",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:CHARISMA:situated-attention",
+        "sar:facet:CHARISMA:memorable-signal"
+      ],
+      "facetCount": 2,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 2
+    },
+    {
+      "axis": "DUTY",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:DUTY:role-fulfilment",
+        "sar:facet:DUTY:promise-update",
+        "sar:facet:DUTY:scope-responsibility"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 82
+    },
+    {
+      "axis": "LEADERSHIP",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:LEADERSHIP:direction-proposal",
+        "sar:facet:LEADERSHIP:delegation",
+        "sar:facet:LEADERSHIP:dissent-channel"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 22
+    },
+    {
+      "axis": "AUTONOMY",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:AUTONOMY:choice-ownership",
+        "sar:facet:AUTONOMY:method-discretion",
+        "sar:facet:AUTONOMY:chosen-support"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 106
+    },
+    {
+      "axis": "COMPETITION",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:COMPETITION:reference-choice",
+        "sar:facet:COMPETITION:self-comparison",
+        "sar:facet:COMPETITION:cooperative-challenge"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 16
+    },
+    {
+      "axis": "BOUNDARY",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:BOUNDARY:refusal",
+        "sar:facet:BOUNDARY:role-border",
+        "sar:facet:BOUNDARY:privacy",
+        "sar:facet:BOUNDARY:renegotiation"
+      ],
+      "facetCount": 4,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 59
+    },
+    {
+      "axis": "PRACTICALITY",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:PRACTICALITY:use-test",
+        "sar:facet:PRACTICALITY:feasible-step",
+        "sar:facet:PRACTICALITY:outcome-check"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 86
+    },
+    {
+      "axis": "RESOURCE_SENSE",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:RESOURCE_SENSE:flow-account",
+        "sar:facet:RESOURCE_SENSE:reserve",
+        "sar:facet:RESOURCE_SENSE:allocation"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 27
+    },
+    {
+      "axis": "OPPORTUNITY_SENSE",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:OPPORTUNITY_SENSE:option-discovery",
+        "sar:facet:OPPORTUNITY_SENSE:screening",
+        "sar:facet:OPPORTUNITY_SENSE:decline-option"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 18
+    },
+    {
+      "axis": "STABILITY",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:STABILITY:minimum-security",
+        "sar:facet:STABILITY:continuity",
+        "sar:facet:STABILITY:protective-change"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 58
+    },
+    {
+      "axis": "STATUS_DRIVE",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:STATUS_DRIVE:recognition-target",
+        "sar:facet:STATUS_DRIVE:formal-role"
+      ],
+      "facetCount": 2,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 31
+    },
+    {
+      "axis": "MEANING",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:MEANING:value-articulation",
+        "sar:facet:MEANING:purpose-check",
+        "sar:facet:MEANING:value-practice"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 78
+    },
+    {
+      "axis": "RECOVERY_NEED",
+      "kind": "strength",
+      "facetIds": [
+        "sar:facet:RECOVERY_NEED:load-recognition",
+        "sar:facet:RECOVERY_NEED:rest-access",
+        "sar:facet:RECOVERY_NEED:return-agreement"
+      ],
+      "facetCount": 3,
+      "sourceRefs": [
+        "repo:semanticCore",
+        "repo:fusionMeanings"
+      ],
+      "positive": true,
+      "risk": true,
+      "twist": true,
+      "conditions": true,
+      "counterexample": true,
+      "productQuestionCount": 6,
+      "relationshipQuestionCount": 7,
+      "adequacy": "authored_semantic_decomposition_reviewed; application_evidence_pending",
+      "gap": "Low signal is not contrary behavior; independent observed behavior required",
+      "annotationCount": 32
+    }
+  ],
+  "themes": [
+    {
+      "theme": "DEEP_UNDERSTANDING",
+      "axes": [
+        "DEPTH",
+        "PATTERN_SENSE",
+        "MEANING"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "PRECISION_AND_STANDARDS",
+      "axes": [
+        "PRECISION",
+        "BOUNDARY",
+        "STRUCTURE_STYLE",
+        "COMMUNICATION_STYLE"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "ACTION_AND_INITIATIVE",
+      "axes": [
+        "INITIATIVE",
+        "ACTION_TEMPO",
+        "DECISION_STYLE"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "GROWTH_AND_EXPANSION",
+      "axes": [
+        "EXPANSION",
+        "GOAL_DRIVE"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "STABILITY_AND_MAINTENANCE",
+      "axes": [
+        "STABILITY",
+        "PERSISTENCE"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "EXPRESSION_AND_VISIBILITY",
+      "axes": [
+        "EXPRESSION",
+        "CHARISMA",
+        "ENERGY_DIRECTION"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "LEADERSHIP_AND_RESPONSIBILITY",
+      "axes": [
+        "LEADERSHIP",
+        "DUTY"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "AUTONOMY_AND_SELF_DIRECTION",
+      "axes": [
+        "AUTONOMY",
+        "COMPETITION"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "MONEY_AND_REALITY",
+      "axes": [
+        "RESOURCE_SENSE",
+        "PRACTICALITY"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "LEARNING_AND_EXPERTISE",
+      "axes": [
+        "LEARNING",
+        "CURIOSITY"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "SOCIAL_ATTUNEMENT_AND_CARE",
+      "axes": [
+        "SOCIAL_ATTUNEMENT",
+        "CARE",
+        "RELATION_STYLE"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "CHANGE_AND_ADAPTATION",
+      "axes": [
+        "CHANGE_ORIENTATION",
+        "ADAPTABILITY"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "OPPORTUNITY_AND_MOVEMENT",
+      "axes": [
+        "OPPORTUNITY_SENSE",
+        "RISK_STYLE"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "RECOVERY_AND_INNER_PROCESS",
+      "axes": [
+        "RECOVERY_NEED"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "STATUS_AND_RECOGNITION",
+      "axes": [
+        "STATUS_DRIVE"
+      ],
+      "overlap": []
+    },
+    {
+      "theme": "CREATION_AND_OUTPUT",
+      "axes": [
+        "CREATION",
+        "STRATEGY"
+      ],
+      "overlap": []
+    }
+  ],
+  "survey": {
+    "researchFiles": 117,
+    "researchRecords": 2991,
+    "knowledgeOrApplicationRecords": 2566,
+    "controlRecords": 425,
+    "perFamily": {
+      "foundation": 213,
+      "completion": 173,
+      "deep": 838,
+      "composite": 301,
+      "relation": 246,
+      "temporal": 410,
+      "mbtiIndividual": 531,
+      "mbtiPair": 279
+    },
+    "classes": {
+      "A": 0,
+      "B": 1210,
+      "C": 634,
+      "D": 421,
+      "E": 53,
+      "F": 673
+    },
+    "traits": 1213,
+    "traitUnscored": 143,
+    "oldPairs": 256,
+    "annotations": 19741,
+    "leaves": 25750,
+    "annotationConvergence": {
+      "ACTION_TEMPO": 84,
+      "ENERGY_DIRECTION": 65,
+      "STRUCTURE_STYLE": 100,
+      "COMMUNICATION_STYLE": 64,
+      "CHANGE_ORIENTATION": 77,
+      "DECISION_STYLE": 33,
+      "RELATION_STYLE": 95,
+      "RISK_STYLE": 27,
+      "INITIATIVE": 30,
+      "GOAL_DRIVE": 44,
+      "EXPANSION": 10,
+      "PERSISTENCE": 30,
+      "ADAPTABILITY": 48,
+      "DEPTH": 68,
+      "CURIOSITY": 48,
+      "PATTERN_SENSE": 35,
+      "PRECISION": 66,
+      "LEARNING": 45,
+      "STRATEGY": 35,
+      "CREATION": 31,
+      "EXPRESSION": 81,
+      "SOCIAL_ATTUNEMENT": 92,
+      "CARE": 158,
+      "CHARISMA": 2,
+      "DUTY": 82,
+      "LEADERSHIP": 22,
+      "AUTONOMY": 106,
+      "COMPETITION": 16,
+      "BOUNDARY": 59,
+      "PRACTICALITY": 86,
+      "RESOURCE_SENSE": 27,
+      "OPPORTUNITY_SENSE": 18,
+      "STABILITY": 58,
+      "STATUS_DRIVE": 31,
+      "MEANING": 78,
+      "RECOVERY_NEED": 32
+    }
+  },
+  "sourceCatalog": {
+    "total": 20,
+    "repositoryChecked": 14,
+    "primaryChecked": 3,
+    "authored": 3
+  },
+  "preservationFileCount": 2074
+}

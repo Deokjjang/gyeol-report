@@ -1,0 +1,65 @@
+{
+  "baseSha": "afb8c3aa798ae3da0ede7ee7ae68b6adb04718bd",
+  "branch": "v4/semantic-axis-knowledge-expansion-01",
+  "baseline": {
+    "testsPassed": 36,
+    "testsFailed": 3,
+    "typescriptDiagnostics": 0
+  },
+  "final": {
+    "relatedFiles": 25,
+    "relatedPassed": 1963,
+    "relatedFailed": 3,
+    "sixProductPassed": 64,
+    "sixProductFailed": 0,
+    "totalPassed": 2027,
+    "totalFailed": 3,
+    "newResearchTests": 55,
+    "newFailures": 0,
+    "typescriptDiagnostics": 0,
+    "newTypeErrors": 0,
+    "lintExitCode": 0,
+    "productionBuildExitCode": 0,
+    "staticPages": 47,
+    "nftWarnings": 0,
+    "newWarningTypes": 0,
+    "diffCheck": "PASS"
+  },
+  "existingFailures": [
+    {
+      "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+      "line": 116,
+      "reason": "careerReleaseMaterials.ts imports foundation; old isolation expectation already fails at exact base"
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "line": 50,
+      "case": "major_fortune",
+      "reason": "Unexpected end of JSON input in cloned Response assertion"
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "line": 50,
+      "case": "annual_fortune",
+      "reason": "Unexpected end of JSON input in cloned Response assertion"
+    }
+  ],
+  "intermediateIsolationFailures": {
+    "count": 3,
+    "cause": "Literal source-file paths were matched by legacy whole-src regular-expression isolation tests, despite no import",
+    "resolution": "Full source paths kept in audit JSON, src catalog uses explicit auditRef; no existing tests modified",
+    "recheckPassed": 411
+  },
+  "commands": {
+    "related": "same 25 explicit test paths recorded in logs/related-tests-final.log",
+    "sixProduct": "npm test -- tests/unit/interpretation-v4/sixProductIntegration.test.ts",
+    "typescript": "npx tsc --noEmit --incremental false",
+    "lint": "npm run lint",
+    "build": "OPENAI_REPORT_WRITER_ENABLED=0 TOSS_CONFIRM_API_ENABLED=0 PAID_REPORT_RELIABILITY_ENABLED=0 npm run build -- --webpack",
+    "diff": "git diff --check and git diff --cached --check after explicit staging"
+  },
+  "runtimeConnected": false,
+  "customerApproved": false,
+  "productionDeployed": false,
+  "saleQualityApproved": false
+}

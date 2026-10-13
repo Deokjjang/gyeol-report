@@ -1,0 +1,12 @@
+
+> gyeol-report@0.1.0 test
+> vitest run tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts tests/unit/report-knowledge/mbtiPairResearch.test.ts tests/unit/report-knowledge/semanticAxisResearch.test.ts
+
+
+ RUN  v4.1.5 /private/tmp/gyeol-semantic-axis-knowledge-expansion-01
+
+
+ Test Files  4 passed (4)
+      Tests  411 passed (411)
+   Start at  08:06:07
+   Duration  5.96s (transform 3.50s, setup 73ms, import 4.10s, tests 5.12s, environment 0ms)

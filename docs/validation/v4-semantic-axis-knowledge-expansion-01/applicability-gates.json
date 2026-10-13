@@ -1,0 +1,127 @@
+{
+  "products": {
+    "comprehensive": {
+      "requires": [
+        "개인 성향의 독립 근거",
+        "여러 특성의 공존·긴장"
+      ],
+      "excludes": [
+        "하나의 축으로 전체 인물 확정"
+      ],
+      "duplicationRisk": "하나의 서명을 여러 챕터의 독립 사실로 세지 않음"
+    },
+    "career": {
+      "requires": [
+        "직무·과제·학업·자원 맥락"
+      ],
+      "excludes": [
+        "직업 적합·소득·합격 보장"
+      ],
+      "duplicationRisk": "생활 일반 조언을 직무 질문으로 이름만 바꾸지 않음"
+    },
+    "love": {
+      "requires": [
+        "실제 관계 상태",
+        "동의",
+        "양육은 실제 역할·발달 단계"
+      ],
+      "excludes": [
+        "상대 호감·혼인·자녀 존재 추정"
+      ],
+      "duplicationRisk": "돌봄·호감·생활 의무를 각각 구분"
+    },
+    "compatibility": {
+      "requires": [
+        "A/B 양쪽 근거",
+        "관계 유형",
+        "방향별 조건"
+      ],
+      "excludes": [
+        "개인 한쪽 근거로 상대 감정 판단"
+      ],
+      "duplicationRisk": "A→B와 B→A를 반전 복사로 처리하지 않음"
+    },
+    "major_fortune": {
+      "requires": [
+        "실제 기간 계산",
+        "원국·대운 구분",
+        "전환 전후 구간"
+      ],
+      "excludes": [
+        "고정 성향을 장기 운 변화로 재명명"
+      ],
+      "duplicationRisk": "같은 원국 근거를 14년 독립 근거로 늘리지 않음"
+    },
+    "annual_fortune": {
+      "requires": [
+        "선택 연도",
+        "실제 세운·월운 범위",
+        "생활 맥락"
+      ],
+      "excludes": [
+        "원국 서명으로 연월의 사건 예측"
+      ],
+      "duplicationRisk": "연도·월만 바꿔 같은 조언을 반복하지 않음"
+    }
+  },
+  "relationships": {
+    "love": {
+      "requires": [
+        "교제 상태와 상호 동의"
+      ],
+      "excludes": [
+        "호감·성적 동의 추정"
+      ]
+    },
+    "marriage": {
+      "requires": [
+        "실제 공동생활·역할·예산"
+      ],
+      "excludes": [
+        "혼인 성립·가사 성별 배정"
+      ]
+    },
+    "parentChild": {
+      "requires": [
+        "보호자·자녀 구별",
+        "발달 단계",
+        "안전과 선택권"
+      ],
+      "excludes": [
+        "성인 유형으로 자녀 존재·유형 추정"
+      ]
+    },
+    "coworker": {
+      "requires": [
+        "공동 과제·기한·역할"
+      ],
+      "excludes": [
+        "업무 차이를 사적 친밀감으로 해석"
+      ]
+    },
+    "managerReport": {
+      "requires": [
+        "공식 권한·평가·거절 불이익"
+      ],
+      "excludes": [
+        "권력·강압 문제를 성향 차이로 면책"
+      ]
+    },
+    "businessPartner": {
+      "requires": [
+        "계약·출자·의결권·책임"
+      ],
+      "excludes": [
+        "지분·법률·수익의 결론"
+      ]
+    },
+    "friendship": {
+      "requires": [
+        "자발적 참여·연락·공개 동의"
+      ],
+      "excludes": [
+        "만남 빈도를 우정의 가치로 확정"
+      ]
+    }
+  }
+}
