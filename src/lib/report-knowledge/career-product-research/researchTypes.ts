@@ -1,0 +1,41 @@
+/** Offline knowledge contracts only. No runtime producer, resolver or scoring. */
+import type { JobStatus, MbtiType } from "../../report-generation/reportInputTypes";
+export type ChapterId = "CH01" | "CH02" | "CH03" | "CH04" | "CH05" | "CH06" | "CH07" | "CH08" | "CH09";
+export type ParagraphId = "P1" | "P2" | "P3" | "P4";
+export type SentenceRole = "S1" | "S2" | "S3" | "S4";
+export type Address = `${ChapterId}.${ParagraphId}`;
+export type RoleAddress = `${Address}.${SentenceRole}`;
+export type ResearchId = `ckr:${string}`;
+declare const producer: unique symbol;
+export type CalculatedEvidenceId = string & { readonly [producer]: "existing_producer_only" };
+export type Offline = { id: ResearchId; productKey: "career_money_study"; connectedToRuntime: false; approvedForCustomer: false; existingScoreContribution: false; runtimeEvidenceIds: readonly []; empiricalVerification: "not_established" };
+export type SourceRef = Offline & { sourceVersion: string; key: string; sourceId: string; sourceKind: "natal_research" | "mbti_trait" | "fusion_research" | "input_contract"; auditRef: string; recordSha256: string; sourceFileSha256: string; originalState: Readonly<Record<string, unknown>> };
+export type FacetRef = { id: string; axis: string; definition: string; condition: string; notIndependentEvidence: true };
+export type Material = Offline & {
+ chapterId: ChapterId; paragraphId: ParagraphId; address: Address; readerQuestion: string;
+ researchKind: "natal_application" | "mbti_application" | "conditional_cross_source" | "registered_fusion_application" | "input_context" | "recall";
+ coreMeaning: string; roleContributions: Readonly<Record<SentenceRole, { address: RoleAddress; originalRole: string; knowledge: string; roleKind: "research_not_final_customer_sentence" }>>;
+ sourceKeys: readonly string[]; semanticFacets: readonly FacetRef[]; jobStatuses: readonly JobStatus[]; detailJobRefs: readonly ResearchId[];
+ positive: string; risk: string; factBomb: string; twist: string;
+ workScene: { status: "fictional_not_customer_history"; text: string }; economicScene: string; learningScene: string; action: string;
+ counterexample: string; distinctFromOtherParagraphs: string;
+ review: "conditional_editorial_research" | "held_source_or_conditions"; holdReason: string | null;
+ prerequisites: { sourceOwner: "same_person_natal_only"; saju: string; mbti: string; fusion: string; input: string; requiresExistingRecommendation: boolean; requiresExistingAvoidProof: boolean; requiresCustomerApprovedPositiveSource: boolean };
+ missingMbti: "withhold_mbti_and_fusion_no_invented_type"; unknownBirthTime: "no_synthetic_hour_recheck_actual_support";
+ precedingMeaningRefs: readonly ResearchId[]; precedingMeaningPolicy: "actual_introduced_compatible_subset_only";
+ disallowed: readonly string[]; newCalculatedFacts: 0; recommendationRankChange: false;
+};
+export type ParagraphResearch = Offline & { address: Address; chapterId: ChapterId; paragraphId: ParagraphId; originalPurpose: string; domain: string; readerQuestion: string; requiredProfessionalKnowledge: string; independentInformation: string; economicCondition: string; learningCondition: string; reusePolicy: string; forbidden: string; careerQuestionRefs: readonly string[]; materialIds: readonly ResearchId[]; sourceCandidateKeys: readonly string[]; needs: { saju: string; mbti: string; fusion: string; status: string; function: string }; unresolvedBinding: true };
+export type RoleResearch = Offline & { address: RoleAddress; originalRole: string; materialIds: readonly ResearchId[]; contributionAddresses: readonly RoleAddress[]; absentEvidence: "withhold_not_fill"; independentMaterialCount: false };
+export type ChapterResearch = Offline & { chapterId: ChapterId; originalTitle: string; domain: string; intent: string; paragraphs: readonly Address[]; careerQuestionRefs: readonly string[]; noOneToOneCareerQuestionMapping: true; newPersonFactsInFinalChapter: 0 };
+export type JobResearch = Offline & { key: string; label: string; jobStatuses: readonly JobStatus[]; existingRouteRefs: readonly string[]; testedInputText: string; observedFunction: string; baseClassifierFunction: string; observedVariants: readonly { jobStatus: JobStatus; baseFunction: string; effectiveFunction: string; workMode: string | null }[]; observedContext: Readonly<Record<string, unknown>>; occupationIsAbilityProof: false; task: string; workflow: readonly string[]; outputs: string; collaboration: string; difficulty: string; comfortable: string; uncomfortable: string; learn: string; validateResult: string; economic: string; smallExperiment: string; fictionalScene: string; taskBasis: string; restrictions: string; materialRefs: readonly ResearchId[]; adapterImplemented: false };
+export type FacetAudit = Offline & { facet: string; actualLabel: string; existingAxes: readonly (readonly [string, number])[]; meaning: string; jobRefs: readonly ResearchId[]; prerequisites: string; overuse: string; actualOutput: string; difference: string; crossChapterUse: string; existingValuePreserved: true; existingMaterialHash: string };
+export type StatusResearch = Offline & { actualValue: JobStatus; sourceMaterial: ResearchId; currentTask: string; constraints: string; strengthUse: string; nextChoice: string; learning: string; moneyTime: string; environmentDifference: string; smallExperiment: string; disallowed: string; statusIsScore: false; candidateRefs: readonly ResearchId[] };
+export type InputCase = Offline & { letter: string; description: string; inputs: readonly { jobStatus: JobStatus; detailJob: string; mbtiType: MbtiType; birthTimePrecision: "exact" | "unknown" }[]; observedFunctions: readonly string[]; invariant: string; questions: readonly string[]; forbidden: string; isFictional: true; notCustomerHistory: true };
+export type ReuseResearch = Offline & { chapters: readonly ChapterId[]; sharedMeaning: string; distinctQuestions: readonly string[]; sameClaimForbidden: string; reuseCondition: string; independentFactsAdded: 0 };
+export type RejectedResearch = Offline & { rejectedClaim: string; reason: string; requiredBeforeReconsidering: string; status: "rejected" | "held"; preservesOriginalSource: true };
+export type FunctionResearch = Offline & { existingFunction: string; actualSceneFacetKeys: readonly string[]; actualStepsSupported: boolean; observedParserExamples: readonly { text: string; observedFunction: string }[]; jobResearchRefs: readonly ResearchId[]; existingSourceHash: string; classifierAndSceneAreSeparate: true };
+export type RouteResearch = Offline & { existingRouteId: string; existingRouteHash: string; taskMeaning: string; jobResearchRefs: readonly ResearchId[]; validate: string; eligibility: string; rankingUnchanged: true; researchIsRecommendation: false };
+export type ResearchIndex = Offline & { address: Address; materialId: ResearchId; kind: Material["researchKind"]; isDistinctNewTraditionalFact: false; roleContributionCount: 4; reusedFromComprehensive: false };
+
+export type DetailApplication = Offline & { jobRef: ResearchId; question: string; requiredEnteredFacts: string; contrast: string; materialRefs: readonly ResearchId[]; fictionalScene: string; economicCondition: string; skillVerification: string; counterexample: string; missingInput: string; adapterImplemented: false; sceneStatus: "fictional_not_customer_history"; independentSourceFactsAdded: 0; review: "conditional_task_application" | "held_personal_source_link"; additionalEvidenceNeed: string };

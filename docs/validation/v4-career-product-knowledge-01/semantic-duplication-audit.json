@@ -1,0 +1,256 @@
+[
+  {
+    "id": "ckr:reuse:01",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH01",
+      "CH02"
+    ],
+    "sharedMeaning": "정확성",
+    "distinctQuestions": [
+      "처음 필요한 정보",
+      "중요 오류를 구분하는 결과"
+    ],
+    "sameClaimForbidden": "꼼꼼함을 재능으로 다시 이름만 바꾸기",
+    "reuseCondition": "착수 순서와 수행 결과를 구별",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:02",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH02",
+      "CH03"
+    ],
+    "sharedMeaning": "분석",
+    "distinctQuestions": [
+      "무엇을 설명하는 기능인가",
+      "어떤 대상·산출물을 다룰 직무인가"
+    ],
+    "sameClaimForbidden": "분석적이라 연구원이 맞다는 결론",
+    "reuseCondition": "대상·자료·준비·검증 추가",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:03",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH03",
+      "CH05"
+    ],
+    "sharedMeaning": "사진 작업",
+    "distinctQuestions": [
+      "탐색 후보의 하루",
+      "현재 입력의 실제 수행과 다음 범위"
+    ],
+    "sameClaimForbidden": "추천 직업을 이미 하는 일로 전환",
+    "reuseCondition": "직업 희망·현재 상태·경력 사실 구분",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:04",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH04",
+      "CH05"
+    ],
+    "sharedMeaning": "권한",
+    "distinctQuestions": [
+      "함께 일할 역할 경계",
+      "다음 역할에서 무엇이 바뀌는가"
+    ],
+    "sameClaimForbidden": "같은 권한 설명을 다음 선택이라고 반복",
+    "reuseCondition": "협업과 경력 제안의 다른 판단",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:05",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH05",
+      "CH09"
+    ],
+    "sharedMeaning": "작은 시도",
+    "distinctQuestions": [
+      "현재 상태의 첫 확인",
+      "소개된 일·돈·학습의 실행 순서"
+    ],
+    "sameClaimForbidden": "같은 계획을 한 번 더 말하기",
+    "reuseCondition": "도입된 호환 의미를 순서로 통합",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:06",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH06",
+      "CH08"
+    ],
+    "sharedMeaning": "가치",
+    "distinctQuestions": [
+      "제공·비용·대가의 성립 조건",
+      "기여를 어떻게 정확히 드러내는가"
+    ],
+    "sameClaimForbidden": "돈과 인정을 같은 성공으로 묶기",
+    "reuseCondition": "시장·자원 조건과 기여 관찰 구분",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:07",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH07",
+      "CH09"
+    ],
+    "sharedMeaning": "실력 확인",
+    "distinctQuestions": [
+      "새 조건에서 혼자 수행",
+      "이번 선택의 다음 검증으로 회수"
+    ],
+    "sameClaimForbidden": "학습 방법을 다시 소개",
+    "reuseCondition": "실제 도입된 방법을 선택 순서에 연결",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:08",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH04",
+      "CH06",
+      "CH08"
+    ],
+    "sharedMeaning": "강점 과용",
+    "distinctQuestions": [
+      "즉시 협업 정보 손실",
+      "시간·자원의 비용",
+      "장기 전문성 축적 제한"
+    ],
+    "sameClaimForbidden": "세 장에서 같은 조언으로 끝내기",
+    "reuseCondition": "동일 root를 유지하고 비용의 대상과 시점 구분",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:09",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH01",
+      "CH07"
+    ],
+    "sharedMeaning": "단계",
+    "distinctQuestions": [
+      "업무의 착수·진행·완료",
+      "이해·연습·새 조건 적용"
+    ],
+    "sameClaimForbidden": "공부와 업무를 모두 꾸준함으로 환원",
+    "reuseCondition": "다른 목표와 완료 기준 명시",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:10",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH02",
+      "CH06"
+    ],
+    "sharedMeaning": "재능의 가치",
+    "distinctQuestions": [
+      "무엇을 잘할 가능성인가",
+      "누가 쓸 결과·제공 범위인가"
+    ],
+    "sameClaimForbidden": "재능이 있으니 수익이 난다는 인과",
+    "reuseCondition": "수요·검증·가격 합의는 독립 조건",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:11",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH03",
+      "CH04"
+    ],
+    "sharedMeaning": "환경",
+    "distinctQuestions": [
+      "직무 회피와 조정 가능",
+      "현재 협업의 운영 통로"
+    ],
+    "sameClaimForbidden": "모든 불편을 이직 이유로 해석",
+    "reuseCondition": "직무·환경·개인 행동을 분리",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "ckr:reuse:12",
+    "productKey": "career_money_study",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "empiricalVerification": "not_established",
+    "chapters": [
+      "CH08",
+      "CH09"
+    ],
+    "sharedMeaning": "좋은 상징",
+    "distinctQuestions": [
+      "전거와 현대 활용 조건",
+      "실제로 소개한 긍정 의미의 선택 원칙"
+    ],
+    "sameClaimForbidden": "마무리에 새 행운·기간 예언 추가",
+    "reuseCondition": "실제 도입 ledger에 없는 사실은 보류",
+    "independentFactsAdded": 0
+  }
+]

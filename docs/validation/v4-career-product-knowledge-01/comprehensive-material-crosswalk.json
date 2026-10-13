@@ -1,0 +1,1792 @@
+[
+  {
+    "id": "cpr:material:CH01.P1:understand-before-answer",
+    "recordSha256": "d5c8c83b8a93f53cdfbca3486e37add6093d216dbc463108043f5f23ddd06687",
+    "question": "나는 어떤 일을 먼저 확인하는 사람인가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P1:open-small-door",
+    "recordSha256": "da566c8fd9ef8c705d6f067717f4e158cf74c59254f7fbe0e1df3779791083e2",
+    "question": "나는 어떤 일을 먼저 확인하는 사람인가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P1:keep-room-for-others",
+    "recordSha256": "f525f368cec3dae56559a4bb598cb3d057678e3b70ab3143bb5c86431769d3b7",
+    "question": "나는 어떤 일을 먼저 확인하는 사람인가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P2:wood-learning-condition",
+    "recordSha256": "259ef8c8783947b3c444ca0179d3ca4bb5a784fa00c13aa5c00b92e1aac4fc76",
+    "question": "이 인물상은 무엇을 근거로 설명할 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P2:metal-output-context",
+    "recordSha256": "2e7abc5b722aa49af753e3dca4a5559bee9b33e51871e629a1229a589af675cf",
+    "question": "이 인물상은 무엇을 근거로 설명할 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P2:water-pressure-support",
+    "recordSha256": "35a14b7f860a0f4b5f811dbf8b3b324a0370dd16da2669d8c5dad0fa23e077f4",
+    "question": "이 인물상은 무엇을 근거로 설명할 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P3:criteria-and-questions",
+    "recordSha256": "8228f80e35531b447f061d71d27b338f7dcf7abd5e66b342ad34823fbc89c73d",
+    "question": "MBTI를 함께 보면 어떤 질문이 추가되는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P3:lead-and-listen",
+    "recordSha256": "a2e5abb560b4f9393af354cd60c553d9c877a6d155afd5f93b41393ce8644c45",
+    "question": "MBTI를 함께 보면 어떤 질문이 추가되는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P3:values-and-expression",
+    "recordSha256": "a711b93af187321d18c6fa5a935432b9a7952ad4ff212ba95d19c8c081efd9f6",
+    "question": "MBTI를 함께 보면 어떤 질문이 추가되는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P4:precision-has-a-stop",
+    "recordSha256": "2c41ca876dd134946b7f3507a41c22753707d8384e456dbaa9ceeb3d4de6bf96",
+    "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P4:care-with-choice",
+    "recordSha256": "ca76572e210e650e29166db0eeb76b8f688603c9b9912643b0a4ecff8121b899",
+    "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH01.P4:change-keeps-purpose",
+    "recordSha256": "70d61b1ad12f45bcece4fa141e327d1ea2e07397b0faf8f2d569aa58be42ed74",
+    "question": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P1:wood-earth-map",
+    "recordSha256": "d851198e873415b65ce25d0ca4facd38095e1d9585544fc71425b7daeb61b2d6",
+    "question": "내 원국의 구성과 유효성은 어떻게 다른가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P1:fire-water-map",
+    "recordSha256": "6525348f6402a5bca2c9893442d0ff79d8cffccf280dbcdef334a70599ef1845",
+    "question": "내 원국의 구성과 유효성은 어떻게 다른가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P1:metal-wood-constraint",
+    "recordSha256": "a68e8eaa79c624881a210ee366f11f5cb5608fffc9f3628b2a39869c20435503",
+    "question": "내 원국의 구성과 유효성은 어떻게 다른가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P2:wood-use-learning",
+    "recordSha256": "189513c96930612e2d60089427cccf06647ad26d399b1b524b6e7bacf7fc5e0d",
+    "question": "실제 확인된 기운을 어떤 조건에서 잘 쓸 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P2:earth-use-continuity",
+    "recordSha256": "9d830fc7113e33c34ddf856a76d6391a2225cd83c3ed93e69978a941f7904b01",
+    "question": "실제 확인된 기운을 어떤 조건에서 잘 쓸 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P2:metal-use-finish",
+    "recordSha256": "b7189c897f1d95a51b2cd7774cbeb3c255b741e34380d3f9e37443a2ac38d8fa",
+    "question": "실제 확인된 기운을 어떤 조건에서 잘 쓸 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P3:low-output-is-not-silence",
+    "recordSha256": "680722c66876b75304b9ce595e854b9c607c9755594336b92d94b255f57594d2",
+    "question": "부재·편중은 실제로 무엇까지 말해 주는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P3:wealth-overload-condition",
+    "recordSha256": "7e734b6bdf021de7b4eca7b347571a1aa590099049080dc20a18d0cd51a024df",
+    "question": "부재·편중은 실제로 무엇까지 말해 주는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P3:resource-excess-application",
+    "recordSha256": "f360a5993894441fe170812a51b0e518985f38a007ad3bd0e409653e75e24780",
+    "question": "부재·편중은 실제로 무엇까지 말해 주는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P4:recall-grow-with-support",
+    "recordSha256": "794d99e9685b7af3c6da9aa15d6d23770a8306c08ceefa84b68f4c860367612d",
+    "question": "확인된 구성에서 지금 어떤 선택을 해볼 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P4:recall-expression-audience",
+    "recordSha256": "8340a10de14101b81e081b8b35831ef0ca2db3198cd3b22fa04feb6b2bf71a85",
+    "question": "확인된 구성에서 지금 어떤 선택을 해볼 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH02.P4:recall-boundaries-for-trials",
+    "recordSha256": "0431819979c68844d7548e1593bbedb66e10ce4d0b62600cff5d73d5138b825b",
+    "question": "확인된 구성에서 지금 어떤 선택을 해볼 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P1:question-roots",
+    "recordSha256": "e645098c2d950c29d2a2b3057a4d7ec21197eb6208fb362fc235ea0871acc4f9",
+    "question": "정확히 같은 대상·방향을 가리키는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P1:learn-with-practice",
+    "recordSha256": "7e1fd57af639dfcd412b4ad6394657609fea24c70e66bc41cae94451147dd2bc",
+    "question": "정확히 같은 대상·방향을 가리키는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P1:promise-and-regularity",
+    "recordSha256": "e97bf57d170ac85571c5067e8a973a7a6062e9d3ce95acff72d3b097e11af1e2",
+    "question": "정확히 같은 대상·방향을 가리키는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P2:resource-versus-goal",
+    "recordSha256": "dcb544932b98444ed4d5d2a8c292be0334aeaf66bf990f9685fc3065c363fc02",
+    "question": "비슷한 장점의 원인은 정말 같은가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P2:support-received-and-given",
+    "recordSha256": "08036fe933edad03d99cef2f545dac1c66f835de42cc11a1c438f366c170c30a",
+    "question": "비슷한 장점의 원인은 정말 같은가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P2:output-and-meaning",
+    "recordSha256": "d760008b46b7db3f183d7d0f1a65b5047e59bcdb561ae42b03c24bb1216c1b02",
+    "question": "비슷한 장점의 원인은 정말 같은가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P3:private-social-channel",
+    "recordSha256": "2c7edb91a631c79eee322745851de2134fa86c6a76a12341b6906262dda5a697",
+    "question": "두 신호는 반대인가 다른 상황인가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P3:learn-before-try",
+    "recordSha256": "d3fd1eb4669aea3f96e253363ea061ae3cc1fecbab5af3ee4f547040fd439abf",
+    "question": "두 신호는 반대인가 다른 상황인가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P3:save-and-experience",
+    "recordSha256": "06aaa720b3f29bf8288d2dd075764fd1e53dfaee8d0078241c6d46bff47f1767",
+    "question": "두 신호는 반대인가 다른 상황인가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P4:from-question-to-small-proof",
+    "recordSha256": "e7b65a8092fcf637ed0b23b675c8dc9b422bdab1b722cda5354c8453e3fdfe01",
+    "question": "검토한 차이를 어떻게 입체적으로 사용할 수 있는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P4:choose-support-mode",
+    "recordSha256": "9efe8ab13e8ddd96d98ce656656632792810cabee223300c5dfe4c3f190fa5a8",
+    "question": "검토한 차이를 어떻게 입체적으로 사용할 수 있는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH03.P4:keep-joy-and-reserve",
+    "recordSha256": "a2ebfef35942ffd16c1fafb4b55d60c8a7428e7a49771da4f038229d993924a6",
+    "question": "검토한 차이를 어떻게 입체적으로 사용할 수 있는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P1:clear-request-first",
+    "recordSha256": "0b3dc5c1ef0bccc4c795f46a137786f5b6899a48ee228bb0d2f5c64f7a134201",
+    "question": "처음 드러난 행동에서 무엇을 알 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P1:quiet-first-contact",
+    "recordSha256": "f61f5c0432c2282a0e58c885991cd4b7b584a694635dfb59584fa9e708129172",
+    "question": "처음 드러난 행동에서 무엇을 알 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P1:invite-into-conversation",
+    "recordSha256": "763a54f0a27068be2e03261a429e2681dc80e3ac6296541f321a8da60ccf0e93",
+    "question": "처음 드러난 행동에서 무엇을 알 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P2:private-criteria",
+    "recordSha256": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+    "question": "혼자 정리할 때 어떤 여건이 필요한가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P2:inner-values-not-secret",
+    "recordSha256": "462ab8d2d85a51265e4f67cf8f4586f6d404aa505c1a6526bc69dac69af646ac",
+    "question": "혼자 정리할 때 어떤 여건이 필요한가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P2:after-help-load",
+    "recordSha256": "2a1b4f25c53ca5000752bf4e9373c6455fcc0ad891f6c4ec36cf2d9ddc95b4ff",
+    "question": "혼자 정리할 때 어떤 여건이 필요한가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P3:selective-warmth",
+    "recordSha256": "214ff147a615edb08753a7919c6880734148db3288a83613a4ef7d69066e8cf8",
+    "question": "가까워지면 어떤 표현 선택이 달라질 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P3:playful-after-trust",
+    "recordSha256": "76d4ca10a8182530f40e252522e01def8c0cc2bc6739792421ced4156815504a",
+    "question": "가까워지면 어떤 표현 선택이 달라질 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P3:firm-boundary-close",
+    "recordSha256": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+    "question": "가까워지면 어떤 표현 선택이 달라질 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P4:invisible-maintenance",
+    "recordSha256": "2d1db0a7e4a9ba8ddbcdd1b61318b72eebff8b3b2ba2abcc085a2feb4d1ffb2c",
+    "question": "처음에 놓칠 수 있는 가치는 무엇인가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P4:soft-precise-request",
+    "recordSha256": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+    "question": "처음에 놓칠 수 있는 가치는 무엇인가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P4:useful-small-making",
+    "recordSha256": "d68fb2783d5adf1d2592afa68d86125d8bfcb42af3d8186d43ac7b3441c44736",
+    "question": "처음에 놓칠 수 있는 가치는 무엇인가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P1:expression-not-mind-reading",
+    "recordSha256": "04c237ff4167bb0549462fa57aa525831c2026aad0fd8dbe702082c40bc78e36",
+    "question": "처음 드러난 행동에서 무엇을 알 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P2:private-reading-window",
+    "recordSha256": "3658b1ef90a529248c8c62bce77ec6b4253834a8cefcc197501b105b88ed36e3",
+    "question": "혼자 정리할 때 어떤 여건이 필요한가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P3:chosen-disclosure-with-trust",
+    "recordSha256": "a6101618762f0ad7c615f8a724c5ad0a2eef70ccf4be3a59972914d3e64cbbb8",
+    "question": "가까워지면 어떤 표현 선택이 달라질 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH04.P4:small-output-shows-value",
+    "recordSha256": "c64ea7a1d40789feb89119991b728f9c8babb850af23aa09ce8ec050efdc21ba",
+    "question": "처음에 놓칠 수 있는 가치는 무엇인가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P1:analysis-that-decides",
+    "recordSha256": "d94fd3e369d0f0daa28b3cd38a38fab8282754393b2344c3081e496733bc6df8",
+    "question": "이 기능은 무엇을 가능하게 하는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P1:start-with-consent",
+    "recordSha256": "9144007ec04c4322107a0d0cd816d0def6f2c0be1c15486180415bd32fc76acb",
+    "question": "이 기능은 무엇을 가능하게 하는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P1:support-need-not-guess",
+    "recordSha256": "fb2ff6532be44360c1ee588d87fcd15a6cf92bbe847b3280ea301cfdcad69f4e",
+    "question": "이 기능은 무엇을 가능하게 하는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P2:make-visible",
+    "recordSha256": "2251f1465c170a351b693746b0fa8f2b294fb3c2ecf90dbc17a2a99903ccbeab",
+    "question": "첫 강점과 다른 두 번째 기능은 무엇인가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P2:resource-route",
+    "recordSha256": "c2526a49b878a5b26738036aef7e2f0aaf134554256d791bd707b249cf8afa32",
+    "question": "첫 강점과 다른 두 번째 기능은 무엇인가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P2:translate-for-learner",
+    "recordSha256": "21590951f3f97e045d0e085a8c52fdff42b858cb8c3f65348e67a19cb5365dfc",
+    "question": "첫 강점과 다른 두 번째 기능은 무엇인가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P3:quiet-lead",
+    "recordSha256": "7d60977901e0d777a3746a4992675f884914e46288316302e5ff69411fbe597e",
+    "question": "예상과 다른 장점은 어떤 조합에서 가능한가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P3:standards-open-way",
+    "recordSha256": "cec6f4cd1c50d13b1bcf0ba549fe8ffb3ca78efe3e353dd965043a44d4db5152",
+    "question": "예상과 다른 장점은 어떤 조합에서 가능한가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P3:boundaries-enable-support",
+    "recordSha256": "247ab87d0e3b202f60cc82f4ab4cf4925294051061dcfe9ae10254c076627122",
+    "question": "예상과 다른 장점은 어떤 조합에서 가능한가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P4:feedback-windows",
+    "recordSha256": "db4cde334c80deaffab49c7f4bb36630dd6f9e436288f09fde9008aad0f82365",
+    "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P4:role-and-rest",
+    "recordSha256": "1a97a0da02ee8d8900a871ab7feaa180e5d7b603c26a1e7cecc30c74f2f28041",
+    "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P4:keep-choice-in-care",
+    "recordSha256": "4a6ea2b951ac2e8677f539c1ce3a97e642cbcca8a00db1686a9535e29936c787",
+    "question": "재능을 오래 쓰려면 무엇을 지켜야 하는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P1:learn-and-transfer",
+    "recordSha256": "3f6132c94c1f8b8d2b2fd77b2563ad002c114a884da97f071db10d66960a3f73",
+    "question": "이 기능은 무엇을 가능하게 하는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH05.P2:maintain-an-independent-function",
+    "recordSha256": "d95962b2b37be448d58b562f1a041700b047ffc3c2b3b22a9e72c079450bb789",
+    "question": "첫 강점과 다른 두 번째 기능은 무엇인가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P1:correction-before-request",
+    "recordSha256": "3dc3ff7143f2b3f7da3def8a6c6ebfbbefa38b597b90fffb7ff6555991d12126",
+    "question": "좋은 기능이 언제 비용이 되는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P1:goal-eats-capacity",
+    "recordSha256": "39ba9db67d5b02e8896c4c29b199611f15f4e67fbfe31c79f39cf83752884951",
+    "question": "좋은 기능이 언제 비용이 되는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P1:help-with-hidden-expectation",
+    "recordSha256": "56a4f56f8fd93cfafa980adf8dc90ddef1be57f3b4bee54fa783d99413397aed",
+    "question": "좋은 기능이 언제 비용이 되는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P2:output-authority-collision",
+    "recordSha256": "04a6febd29f30ef515f4b4c866b51c5d202871afb39f89cf482af33903b80abe",
+    "question": "그 비용을 무엇으로 설명할 수 있는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P2:wealth-and-load",
+    "recordSha256": "f8433d2f99afe8f2ebe0e295be7444003fe591e8bdd9d4e4c01bba1afbaac8dd",
+    "question": "그 비용을 무엇으로 설명할 수 있는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P2:support-versus-obligation",
+    "recordSha256": "19f75fa79ccd940de1e26498dadcca9b56cb11311960c709ec08fb4ac7409c60",
+    "question": "그 비용을 무엇으로 설명할 수 있는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P3:feedback-as-evaluation",
+    "recordSha256": "20da119835c898f75446bcb32801915287ececa4bded6adc10d3d14b95c45a21",
+    "question": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P3:decide-for-everyone",
+    "recordSha256": "85d755250747d19483fb0e5b2fb6cf84973a67a340ccd3f51a50c4168f360389",
+    "question": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P3:care-without-request",
+    "recordSha256": "95af7d67de36d0e7253698a466285e4ebd97fb913c3395ce755ffa92eb745776",
+    "question": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P4:correction-to-agreement",
+    "recordSha256": "9e437f552690e65063414afff996eb9909d9521febf025a240dd7a947a9755e5",
+    "question": "기능을 버리지 않고 무엇을 조정할 수 있는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P4:goal-to-operable-scope",
+    "recordSha256": "8beb1e49aa26c04ecf2a1ee4eed23848cdc4de5ef060e54bff3657b1af62cef9",
+    "question": "기능을 버리지 않고 무엇을 조정할 수 있는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P4:help-to-clear-offer",
+    "recordSha256": "643e617619232e431030f681e304144f2320830d5c8b5f80f1d52ab80475e79f",
+    "question": "기능을 버리지 않고 무엇을 조정할 수 있는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P1:overused-output-standard",
+    "recordSha256": "0bb67d1bb71c90842a6a4a0015c763312029708c03de7d9b3eca82ba562dc09a",
+    "question": "좋은 기능이 언제 비용이 되는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH06.P3:offered-explanation-not-asked",
+    "recordSha256": "3a1a12332f04a6d3ed5e8acbc2d311d01683f3cd7a0e19154871620f3af540ba",
+    "question": "내 의도와 받은 뜻은 어디에서 달라질 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P1:help-has-a-door",
+    "recordSha256": "036f671c65f4086c31cbb51448e2f5efccde395364a08996f0a612777904a3f3",
+    "question": "원국에서 실제 확인되는 좋은 상징은 무엇인가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P1:learning-support-card",
+    "recordSha256": "e647e55de6d7c0c3e1bb594a2081a67fb4c819c2eefd902d37087987664232ff",
+    "question": "원국에서 실제 확인되는 좋은 상징은 무엇인가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P1:made-value-can-travel",
+    "recordSha256": "47bd176586369fa69a93a04126ff244763ad3a5a37f15166cd369bde9552d089",
+    "question": "원국에서 실제 확인되는 좋은 상징은 무엇인가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P1:munchang-held-study-symbol",
+    "recordSha256": "2205a6284d7db44fdd738a69d9cfb573cc2e4ad3a7f4259e28e87248b5aa4ba4",
+    "question": "원국에서 실제 확인되는 좋은 상징은 무엇인가?",
+    "kind": "natal",
+    "originalReview": "source_or_condition_insufficient",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P2:reserve-with-purpose",
+    "recordSha256": "28181165aa9af53098ffddd755558c7f4d31a75cc37699d5bc20597584c7cf73",
+    "question": "첫 좋은 패와 다른 힘은 무엇인가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P2:start-and-finish-card",
+    "recordSha256": "f1d3f46571d7529834f88c2275b7eb587d79866f338f664bceceec4016aafd19",
+    "question": "첫 좋은 패와 다른 힘은 무엇인가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P2:center-of-shared-work",
+    "recordSha256": "9181330cc1936927359ce993c037599f0e28fba4f26824d06caba70d75c703db",
+    "question": "첫 좋은 패와 다른 힘은 무엇인가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P2:jaego-held-storehouse",
+    "recordSha256": "ae0d67c3d0323eefae0773910a6778fb494e7229771a80eb23d6d6a1c4a3166c",
+    "question": "첫 좋은 패와 다른 힘은 무엇인가?",
+    "kind": "natal",
+    "originalReview": "source_or_condition_insufficient",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P3:attention-has-a-message",
+    "recordSha256": "a2119ec0fba56d454b7d137627de4d600d00ee09ded00bf967e68a23792dbc3f",
+    "question": "이 좋은 기운을 어떤 행동으로 드러낼 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P3:recognition-by-role",
+    "recordSha256": "e4f83f182c990758139812c77b2eba34f04090e1d92628660e180737cdb5df26",
+    "question": "이 좋은 기운을 어떤 행동으로 드러낼 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P3:day-pillar-resource-question",
+    "recordSha256": "57bc06534b067eca049e830638ff49713eec01168adf6ed8159e9ae6a47bb783",
+    "question": "이 좋은 기운을 어떤 행동으로 드러낼 수 있는가?",
+    "kind": "natal",
+    "originalReview": "source_or_condition_insufficient",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P3:banan-held-status",
+    "recordSha256": "f7ca606713401eb2805c2d088bf633373af4509fcf9714aea308234a871ad23f",
+    "question": "이 좋은 기운을 어떤 행동으로 드러낼 수 있는가?",
+    "kind": "natal",
+    "originalReview": "source_or_condition_insufficient",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P4:use-support-not-wait",
+    "recordSha256": "81f934b0ef40fdb3b45b270b4013344aa8b96f791d82bc38c69866971304a6d5",
+    "question": "지금 활용할 좋은 패를 어떻게 고르는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P4:use-created-value",
+    "recordSha256": "02764afef1617baddef771d6cbbca5e171713d93437e01608b9d8d3cb857a762",
+    "question": "지금 활용할 좋은 패를 어떻게 고르는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH07.P4:use-role-with-room",
+    "recordSha256": "5dab567499b0dfc9f566f82d00db59bb7939c63db16b163aba79cd93968b29b1",
+    "question": "지금 활용할 좋은 패를 어떻게 고르는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P1:criteria-before-delivery",
+    "recordSha256": "0256c4c50d805ba04aa54ce80f690e39a7779b1ca86a9e194e083b60f5d6e070",
+    "question": "실제 일에서 나는 무엇부터 맞추는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P1:try-in-real-use",
+    "recordSha256": "b8a608f48e69b387a5f236b52fe864445440a09fe4c543fdc8e410a650a643d8",
+    "question": "실제 일에서 나는 무엇부터 맞추는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P1:work-through-shared-purpose",
+    "recordSha256": "904336b1788052077520ab199a676559baed709c7b6aa6942cc9d9ed23c911c8",
+    "question": "실제 일에서 나는 무엇부터 맞추는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P2:diagnose-assumptions",
+    "recordSha256": "55bcc37067661ce0964ba7c453c896a3672cb1815bacde9f9c4e5db2338bcf51",
+    "question": "어떤 역할에 내 기능을 배정할 수 있는가?",
+    "kind": "fusion",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P2:handoff-continuity",
+    "recordSha256": "14c8752b7ddfdbc06821ee20989e3a7b35f14322025d8ff6a59428f8792a3c41",
+    "question": "어떤 역할에 내 기능을 배정할 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P2:explain-use-for-people",
+    "recordSha256": "390f6125c0112a348bc5a7a3ada1f3751d4503dcc874fb265244911a06156882",
+    "question": "어떤 역할에 내 기능을 배정할 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P3:control-without-method-space",
+    "recordSha256": "248f3be6a99bf00b5a28e7435153eac6323e291b56e8478afd655926be0b7494",
+    "question": "어떤 환경 조건이 기능을 막을 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P3:changing-standard-without-log",
+    "recordSha256": "52bab841ff6babe8fd1d40586ae6fdb0fe253439af7162644a51eb5d2f87edd3",
+    "question": "어떤 환경 조건이 기능을 막을 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P3:feedback-never-reaches-work",
+    "recordSha256": "2303748d358b0cc0b86e9f6b4ab823459b08aee733bd42d9b8a27bd0830d68d8",
+    "question": "어떤 환경 조건이 기능을 막을 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P4:learn-with-feedback",
+    "recordSha256": "28c6ffad818395dcb826c4f076248bb8b0a18f6f03ad3e1ba5b1c0369007b249",
+    "question": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P4:independent-delivery-learning",
+    "recordSha256": "9e1c535c60d4534bb51e6e190ea745a8bb2709039d0439c8e998702da61d9358",
+    "question": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P4:return-from-manageable-step",
+    "recordSha256": "a54895235192760df494f44c1b677d73b0adca078f906bfdbe4508f8e0ac638e",
+    "question": "현재 상태에서 무엇을 어떻게 익힐 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P2:finish-before-handoff",
+    "recordSha256": "a3622ebd3726f5299f10cc378233115a564bac831a680cabe460b5934c4e0782",
+    "question": "어떤 역할에 내 기능을 배정할 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH08.P3:learning-without-access",
+    "recordSha256": "69f35e804248156b720640b12b4d829ac4509c265f3d380f295f702602cd21c4",
+    "question": "어떤 환경 조건이 기능을 막을 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P1:money-as-project-resource",
+    "recordSha256": "8ea3d6c73a4355d81e2e3c6219cf08e48d5770fd25c6b6329e4340a94283b833",
+    "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P1:money-as-experience",
+    "recordSha256": "82a6e30085227fbbbedfcddf2dbd61bd5f11926c8a1308810c29bfd3afc199e1",
+    "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P1:money-as-meaning",
+    "recordSha256": "a5da05dbca4710bcb49490d0cf1e7c6ce48b6aa4ca1bf1f81f76f01e748d735c",
+    "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P2:retained-value-conditions",
+    "recordSha256": "8b970eceac4a027893d20681d94d7560d393cb568b4ba68272ef9047e919e22f",
+    "question": "재물 관련 상징은 어떤 현실 조건이 필요한가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P2:exchange-options-screening",
+    "recordSha256": "e9dfdcfffb3a1317f4599473b80c551099fb8010226b0883127468cc171e871f",
+    "question": "재물 관련 상징은 어떤 현실 조건이 필요한가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P2:output-price-maintenance",
+    "recordSha256": "1249a5fdf9312b1111e00a0b05e793fbf558b2344283ead9f6e3610fbf9fea9a",
+    "question": "재물 관련 상징은 어떤 현실 조건이 필요한가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P3:generosity-has-a-budget",
+    "recordSha256": "d2e4d33d5d37c86ab52ed06bb58d5cf8f63755e1d35baa61cce10c44fe578cb7",
+    "question": "어떤 판단이 자원 부담을 가릴 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P3:expertise-price-silence",
+    "recordSha256": "d09afc4a9efbeb2e3a41359c42b3d9ca0b6b1a4dc829292f96dfe6aae477e82b",
+    "question": "어떤 판단이 자원 부담을 가릴 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P3:small-tests-big-costs",
+    "recordSha256": "1b2317ed75b65c3776fd9271ee5e295672b6b25c3f53ec2dd59bd40d10e73496",
+    "question": "어떤 판단이 자원 부담을 가릴 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P4:purpose-and-cost-ledger",
+    "recordSha256": "efc137af0b54a9a8ac7e1dfded02fc79c1b6da0878760d0785296ab229cedaa3",
+    "question": "내 자원을 지킬 다음 기준은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P4:joy-with-room",
+    "recordSha256": "b3f48d7f0fc0562f9b0115b08b818438204106c0a6f0e2ed38312c199e77a1f8",
+    "question": "내 자원을 지킬 다음 기준은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P4:scope-before-price",
+    "recordSha256": "28926d7b07244592e96f175b5d618dfad0275b6292e310e1534e992dafc61226",
+    "question": "내 자원을 지킬 다음 기준은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH09.P1:resource-purpose-before-style",
+    "recordSha256": "7993d6744b5fc5cc487d0c5bdd0b030afe7ca6c4c317a5f89d8e6183c1b20387",
+    "question": "돈을 선택할 때 어떤 목적을 중요하게 보는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "일반 의미의 조건 참고; 커리어 과제·산출물·학습·경제 질문을 독립 작성해야 함",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P1:affection-through-small-actions",
+    "recordSha256": "0b57082b3801beb3524fb65caff97c28595b7b72eb0870aea9b82a1be03d3aab",
+    "question": "관심을 어떤 통로와 속도로 전하고 싶은가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P1:space-and-return",
+    "recordSha256": "4a6f84d055d29f700fac0bececf4cc71c9f39af9a5a31ead6400d7f24ddb7c09",
+    "question": "관심을 어떤 통로와 속도로 전하고 싶은가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P1:ask-about-direction",
+    "recordSha256": "c168a8a77232b17f13d66513036ae550a3835d4722284becf969fe3e89f64716",
+    "question": "관심을 어떤 통로와 속도로 전하고 싶은가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P2:warmth-in-chosen-details",
+    "recordSha256": "a4b775eaa5040f7b05ada9ecb2c6f966a9419d82664e5d6af27db2ab3d387618",
+    "question": "어떤 표현이 관계에서 가치가 될 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P2:curiosity-as-intimacy",
+    "recordSha256": "814d182382984074264fbc2fddab6f657a0c8cd611f1f441eee3b1fd24dfe21c",
+    "question": "어떤 표현이 관계에서 가치가 될 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P2:respond-with-room",
+    "recordSha256": "65a43d04351d3b10367e345da8ec8e04d357916ff40eeb617bee0986133c35a1",
+    "question": "어떤 표현이 관계에서 가치가 될 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P3:romance-as-problem-set",
+    "recordSha256": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+    "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P3:confirmation-pressure",
+    "recordSha256": "d0b666b36513f46bb4e0d86fd3f4142e26e162c25433bb9d4e2b74f17f44b444",
+    "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P3:space-without-signal",
+    "recordSha256": "4ddcce00e1e870342e94d5e4bd2309818a1c3d46f918559e5324cd8d62150d13",
+    "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P4:interest-and-clear-consent",
+    "recordSha256": "cf95f3ba5828f8cf321a3621f4e138d082ba1df20579b40210073e228d95a6f5",
+    "question": "다른 선택이 있어도 편한 관계의 조건은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P4:space-with-agreed-return",
+    "recordSha256": "6e5a130b36979f4d03fd836695e64baec35efcd9e7be882f91b9a33fb8935cb3",
+    "question": "다른 선택이 있어도 편한 관계의 조건은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P4:curiosity-not-verdict",
+    "recordSha256": "de48963179faba183326510001cbb8241f105623f5cdd252228b6bd55b4d79a2",
+    "question": "다른 선택이 있어도 편한 관계의 조건은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P1:chosen-expression-in-closeness",
+    "recordSha256": "8ae06f2a7330fbceecdb194a35d6e1fef6ccaa3280d3dd43ba7804cad4fac77d",
+    "question": "관심을 어떤 통로와 속도로 전하고 싶은가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P2:expression-as-agreed-offer",
+    "recordSha256": "3160c2212a60f2cb3449ff854d2a7e1b6c1da8cbccacfcf107fbf3eba59dc0e3",
+    "question": "어떤 표현이 관계에서 가치가 될 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P3:own-criteria-without-message",
+    "recordSha256": "281605959ee7e17cb819688d6ff68fe6e4cbbe42bbcd3c5a79a490d6f838e63b",
+    "question": "내 방식이 어떤 상황에서 오해를 만들 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH10.P4:closeness-with-chosen-space",
+    "recordSha256": "b90feafeaf208dfc71c24851e7346d876fdaf6fcd7b10832553ca588bc37e62a",
+    "question": "다른 선택이 있어도 편한 관계의 조건은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P1:protect-with-permission",
+    "recordSha256": "003b31a1fc678fde7532ad1322821e2a0a29ebd1083ae2971294f7b02ea92597",
+    "question": "가까운 관계에서 실제 맡은 몫은 무엇인가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P1:own-choice-near-family",
+    "recordSha256": "79ceabf190fa14ee1154b47f2dc1ec245d4d976601a686e4519e8643e4880bfc",
+    "question": "가까운 관계에서 실제 맡은 몫은 무엇인가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P1:position-is-not-duty-roster",
+    "recordSha256": "b3b5f75f5edd62cc89543ba3a0db3e41dd282416468426fac8491053bf79dd3a",
+    "question": "가까운 관계에서 실제 맡은 몫은 무엇인가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P2:practical-care-with-agreement",
+    "recordSha256": "88106d0a9dabf4dcdd976c2d01c91f89854bf75f0846fc8a2d55d3c1d0a3c801",
+    "question": "가까운 사람에게 어떤 도움이 실제로 남는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P2:clear-shared-logistics",
+    "recordSha256": "abdd9184b4e8be9dbd5c0ebb7de31ef95f62de9659b34759facf0fbf156f0bd7",
+    "question": "가까운 사람에게 어떤 도움이 실제로 남는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P2:agreed-responsibility",
+    "recordSha256": "875e23a41608bab22762b1eecdc0327fd4780e76e4c806523dffb6b3d13050e7",
+    "question": "가까운 사람에게 어떤 도움이 실제로 남는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P3:care-load-becomes-default",
+    "recordSha256": "2281f1e85a43a8c64ff7147ab42f57fbe2c87761a6a0eb8e8d495c9ca0f7fc2f",
+    "question": "가까움 때문에 어떤 기대를 생략하기 쉬운가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P3:protection-becomes-decision",
+    "recordSha256": "5bbcfaf270f04ea75b10404b8db20b0d246ad4db7b1e3674f927f048981bcc1c",
+    "question": "가까움 때문에 어떤 기대를 생략하기 쉬운가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P3:privacy-and-coordination",
+    "recordSha256": "db295746473ba7fb92228f52325a73887ce696bf232d4cda8eec3867a10e4b72",
+    "question": "가까움 때문에 어떤 기대를 생략하기 쉬운가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P4:renegotiate-care",
+    "recordSha256": "be7a98544ff1d183fdbc84791570aacae55e4b905e8c68079455fb05b3304de6",
+    "question": "역할과 거리를 어떻게 함께 조정할 수 있는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P4:coordinate-with-privacy",
+    "recordSha256": "c4099deeecfd6d0371152bfc5929f87567c4b0b7ead5e7ed40a4cdebb4d75c1c",
+    "question": "역할과 거리를 어떻게 함께 조정할 수 있는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P4:shared-duty-with-return",
+    "recordSha256": "f1bff4e2ae8d352f1198754f0549ddd8b0fd5eac1808fdaab3ebcaa9fc204c6d",
+    "question": "역할과 거리를 어떻게 함께 조정할 수 있는가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH11.P3:same-duty-different-expectations",
+    "recordSha256": "525eeff0f2dfaaf48145b981fc16bfeb4af4c748cfad8a46b10f6db946807f70",
+    "question": "가까움 때문에 어떤 기대를 생략하기 쉬운가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P1:open-a-voluntary-meeting",
+    "recordSha256": "706c54fc4ff183a736b8007d6227f662461e1e83629d31fdf2c72c0b9ac6b329",
+    "question": "자발적인 우정에서 어떤 참여를 제안하는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P1:reliable-invitation",
+    "recordSha256": "810125d67afa4134a97da84c37f3a35bafcdf6a94ed63cb86582e4b7db87f5ee",
+    "question": "자발적인 우정에서 어떤 참여를 제안하는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P1:curious-listener",
+    "recordSha256": "34a029dca1a603a0ff67a7b9d90974111b24cb029a923ed6b4225f8d74bad085",
+    "question": "자발적인 우정에서 어떤 참여를 제안하는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P2:space-with-respect",
+    "recordSha256": "1c6a48ba4bcb42fee0d93d0e9adb57edbe0ac200f0ed3642b429df9222c5ad55",
+    "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P2:remember-and-check",
+    "recordSha256": "5d61c8a497e4a0cf3f6d79fbb515bf881206ddcc35207ddf17db441afecdb395",
+    "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P2:shared-making-not-performance",
+    "recordSha256": "46d59aa1b7ba83aa83bdbe8410597737e904c528689b8146dca01790e7f0ff96",
+    "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P3:repair-not-correct-person",
+    "recordSha256": "c4ca93a7bc6fd09fb03589073ed9c2728a82ded5bab28c8722071994cadb5d8e",
+    "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P3:invite-without-oversubscription",
+    "recordSha256": "b7f053e1ce75dfd2f862bd8d522cef004cca893434a3fc1adf329ca6ef7df3df",
+    "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P3:quiet-without-disappearance",
+    "recordSha256": "a3e61ba80b17b292fb8d661aac0f4c5c4aee1f3b008e4c5cbc4575f2c4fa75ac",
+    "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?",
+    "kind": "mbti",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P4:questions-without-tests",
+    "recordSha256": "85cfa193105fab0b250d0b4d01541fefb8b830b343eda092e82a979057f18d14",
+    "question": "나와 다르면서도 편할 관계는 어떤 조건인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P4:contact-not-counter",
+    "recordSha256": "d840e6e07646aa6214c0e39c866211d980e74808bdde9b6ba47828910740a788",
+    "question": "나와 다르면서도 편할 관계는 어떤 조건인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P4:choice-with-a-warm-no",
+    "recordSha256": "a96ad2ff94bed92a4356ef89b49c8bcf091ddb753b45a32316766d60a1ad6279",
+    "question": "나와 다르면서도 편할 관계는 어떤 조건인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P1:share-a-chosen-story",
+    "recordSha256": "4d66f6bd400233a108b320e4bd514dbd57c604e8b2f90624359c957c3559a291",
+    "question": "자발적인 우정에서 어떤 참여를 제안하는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P2:promise-as-choice",
+    "recordSha256": "5959d94367fb95c2889fc9f09d103a98fcb0569cbfa9890a5adcfc5da3c6770c",
+    "question": "친구가 선택할 여지를 남기며 무엇을 나눌 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P3:critique-without-invitation",
+    "recordSha256": "2d66d7b4baeb916db336a8630c11b97a57c54b51ccf67f2cc749aae377e1a8e5",
+    "question": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?",
+    "kind": "natal",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH12.P4:friendship-with-voluntary-answers",
+    "recordSha256": "7d8f320331d4506cfba8b23f00c2bdf6d38432f06507d446f66be35be29de504",
+    "question": "나와 다르면서도 편할 관계는 어떤 조건인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "친밀·가족·친구 의미는 직장 상대의 사실로 자동 전환 금지",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P1:understand-then-try",
+    "recordSha256": "e86024037d931822fc99559e077c65f4fc03042d584e84e3ae666637980f7e81",
+    "question": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P1:goal-with-operating-room",
+    "recordSha256": "5c7dcd14f58fe2b4aa6f64036b9d56530ea2c49e7cabc6f25eaf55c3c1cae218",
+    "question": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P1:care-and-choice-together",
+    "recordSha256": "a8f1cf060eaa36b4e5282cfd68ca71e60902422395a8de517eec7ab8b3f8fc6f",
+    "question": "앞선 발견에서 어떤 선택 기준을 기억할 것인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P2:proof-before-more-search",
+    "recordSha256": "90b31e1a1f058fc49ebb9c195b5feeaf517797d33b5890d7df9540fc4f189ce1",
+    "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P2:reversible-before-bigger",
+    "recordSha256": "c0de1af8493dcf31fbd796f6aad207d1695718a434939e024500f39de4631e0f",
+    "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P2:agreement-before-answer",
+    "recordSha256": "f8dfcde354f0b1e9cf24b66cdfd1a0b59fddd9f7d0876aec5ea5e69f4d56ed36",
+    "question": "생각을 더 할 때와 선택할 때의 기준은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P3:one-request-in-work",
+    "recordSha256": "342c5f190285775814e8a3363df28648fb32bda43d39d299542c5ab162a8ba8a",
+    "question": "일상에서 오늘 바꿀 작은 선택은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P3:resource-check-in-daily-choice",
+    "recordSha256": "61c9831fc0c11131132b89db85ed4520507f444bcc1061dc0c935c7a901dd95f",
+    "question": "일상에서 오늘 바꿀 작은 선택은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P3:update-a-shared-duty",
+    "recordSha256": "72b711cb58215dd6b38547cc5fb038c5ddf21becc83d1917207c101a2686a5be",
+    "question": "일상에서 오늘 바꿀 작은 선택은 무엇인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P4:map-and-next-step",
+    "recordSha256": "89ec95a7a8e64d95bdf42ed9fa97c005b2ab3deca46c021d8660b0e8e28d849f",
+    "question": "나를 잘 쓸 다음 방향을 어떤 이미지로 기억할 것인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P4:small-door-with-finish",
+    "recordSha256": "6d1b6a553c82da09294f8d7635fe821218cc3d32df8cdc53ac606da958786b24",
+    "question": "나를 잘 쓸 다음 방향을 어떤 이미지로 기억할 것인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  },
+  {
+    "id": "cpr:material:CH13.P4:steady-care-with-room",
+    "recordSha256": "a150fba079658703cfe533a263d5bcce4ace1fa27e2b2ee48c0189973196579c",
+    "question": "나를 잘 쓸 다음 방향을 어떤 이미지로 기억할 것인가?",
+    "kind": "recall",
+    "originalReview": "conditional_editorial_research",
+    "careerUse": "회수 방식 참고; 전문 원고 재료로 복사하지 않음",
+    "directCopy": false,
+    "newCustomerFact": false
+  }
+]

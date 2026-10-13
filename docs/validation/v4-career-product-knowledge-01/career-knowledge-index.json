@@ -1,0 +1,2733 @@
+[
+  {
+    "id": "ckr:material:CH01.P1:request-framing",
+    "address": "CH01.P1",
+    "coreMeaning": "요청의 목적·완료 조건을 구분하는 착수 기능",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a"
+    ],
+    "jobRefs": [
+      "ckr:job:administration"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P1:hypothesis-first",
+    "address": "CH01.P1",
+    "coreMeaning": "원인 가설을 나누고 필요한 자료를 고르는 업무 출발점",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "f666c10a6db231abcc92"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P1:draft-as-question",
+    "address": "CH01.P1",
+    "coreMeaning": "말로 모호한 요청을 작은 시안으로 확인하는 시작 방식",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "90e77590d3ea07930ba1"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P1:people-entry",
+    "address": "CH01.P1",
+    "coreMeaning": "상대가 어디서 막혔는지 듣고 과제의 입구를 정하는 방식",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "cdc60c6b316ee8a858c1"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P1:capacity-entry",
+    "address": "CH01.P1",
+    "coreMeaning": "가능한 투입과 지킬 결과를 동시에 확인하는 시작 방식",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd"
+    ],
+    "jobRefs": [
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P2:source-review-link",
+    "address": "CH01.P2",
+    "coreMeaning": "오류 확인과 원인 모델을 서로 다른 단계로 연결하는 조건부 Fusion",
+    "kind": "registered_fusion_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "78ca1a3776c53c2d0b48",
+      "7ff3a8b05b74a93b59af",
+      "bfcb541ba28cf9dd0cce"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P2:source-expression-link",
+    "address": "CH01.P2",
+    "coreMeaning": "식상 표현 상징과 창작 선호를 구분한 전달 연구",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "6047f491aa9082328a86",
+      "cf6e4b6c104165d3fff3"
+    ],
+    "jobRefs": [
+      "ckr:job:writing"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P2:source-resource-link",
+    "address": "CH01.P2",
+    "coreMeaning": "재성의 전통 상징과 보상 판단 선호의 역할 구별",
+    "kind": "registered_fusion_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "bbc18a4e615032647a49",
+      "66a9cd49cd16d86ca992",
+      "f7a5e64e8b2f2d997bb1"
+    ],
+    "jobRefs": [
+      "ckr:job:small_business"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P2:source-help-boundary",
+    "address": "CH01.P2",
+    "coreMeaning": "지원받는 인성 상징과 돌봄 직무 선호는 서로 다른 의미",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "fe11b875c7ad3a9c8318",
+      "5d8f68e414bf0c19b5ed"
+    ],
+    "jobRefs": [
+      "ckr:job:care"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P2:source-two-sided-tempo",
+    "address": "CH01.P2",
+    "coreMeaning": "알고 시작하려는 근거와 해보며 배우는 선호의 조건부 차이",
+    "kind": "registered_fusion_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "fe11b875c7ad3a9c8318",
+      "6293cdd44ddf08f38c74",
+      "b02ceb60ba64a77dc688"
+    ],
+    "jobRefs": [
+      "ckr:job:hands_on_service"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P3:start-finish-contract",
+    "address": "CH01.P3",
+    "coreMeaning": "착수 정의·진행 확인·완료 검증을 서로 다른 행동으로 구별",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P3:iterate-selected-idea",
+    "address": "CH01.P3",
+    "coreMeaning": "탐색을 닫는 시점과 제작을 이어갈 시점을 구분",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "cd19631fd0781dd2ef4c"
+    ],
+    "jobRefs": [
+      "ckr:job:video"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P3:handoff-finish",
+    "address": "CH01.P3",
+    "coreMeaning": "자기 작업 완료와 다음 작업 가능의 차이",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "51a36ebd6ebe0593251c"
+    ],
+    "jobRefs": [
+      "ckr:job:logistics"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P3:timeboxed-inquiry",
+    "address": "CH01.P3",
+    "coreMeaning": "조사 착수·반례 검토·한계 보고의 구별",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1c5899365d6cd736a8"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P3:feedback-loop-entry",
+    "address": "CH01.P3",
+    "coreMeaning": "반응을 받을 시점을 업무 단계 안에 두는 방식",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "0b4c5f82e25554523be7"
+    ],
+    "jobRefs": [
+      "ckr:job:customer_support"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P4:permission-to-correct",
+    "address": "CH01.P4",
+    "coreMeaning": "검토할 자료와 수정 권한이 함께 있어야 정확성을 활용",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a"
+    ],
+    "jobRefs": [
+      "ckr:job:accounting"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P4:autonomy-with-checkpoint",
+    "address": "CH01.P4",
+    "coreMeaning": "방법 재량과 연결부 확인을 함께 갖춘 자율성",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "1decd822e13cf76d8f8e"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P4:protected-depth-window",
+    "address": "CH01.P4",
+    "coreMeaning": "집중 시간과 필요한 응답 시간을 구분하는 환경",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "248692af90259c9eebe4"
+    ],
+    "jobRefs": [
+      "ckr:job:writing"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P4:change-with-baseline",
+    "address": "CH01.P4",
+    "coreMeaning": "빠른 대응에 필요한 내부 확인 통로",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "c92cbae7d0a74770dee8"
+    ],
+    "jobRefs": [
+      "ckr:job:sales"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH01.P4:mission-with-basics",
+    "address": "CH01.P4",
+    "coreMeaning": "일의 의미와 반복 기초 업무를 이어 보는 환경",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "0cc422b5a853b4a67ac0"
+    ],
+    "jobRefs": [
+      "ckr:job:counsel_support"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P1:detect-mismatch",
+    "address": "CH02.P1",
+    "coreMeaning": "기준과 자료 사이의 불일치를 찾는 검토 기능",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a"
+    ],
+    "jobRefs": [
+      "ckr:job:accounting"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P1:causal-model",
+    "address": "CH02.P1",
+    "coreMeaning": "원인 후보를 비교하고 설명의 한계를 남기는 분석 기능",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "78ca1a3776c53c2d0b48"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P1:make-alternative",
+    "address": "CH02.P1",
+    "coreMeaning": "모호한 요구를 비교 가능한 대안으로 만드는 창작 기능",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "90e77590d3ea07930ba1"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P1:explain-to-use",
+    "address": "CH02.P1",
+    "coreMeaning": "듣는 사람이 스스로 행동할 설명을 만드는 기능",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "25034b1d3583cb77b7ab"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P1:reliable-execution",
+    "address": "CH02.P1",
+    "coreMeaning": "반복되는 조건에서도 합의한 품질을 이어가는 실행 기능",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd"
+    ],
+    "jobRefs": [
+      "ckr:job:logistics"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P2:coordination-distinct",
+    "address": "CH02.P2",
+    "coreMeaning": "직접 잘하는 능력과 다른 사람이 끝내게 하는 조정의 차이",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce00081ce37c25f1db93"
+    ],
+    "jobRefs": [
+      "ckr:job:small_business"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P2:resource-distinct",
+    "address": "CH02.P2",
+    "coreMeaning": "자료를 분석하는 힘과 투입 선택을 비교하는 힘의 차이",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P2:care-distinct",
+    "address": "CH02.P2",
+    "coreMeaning": "정확히 설명하는 기능과 상대의 막힌 단계를 돕는 기능의 차이",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "d1d38d962c1cc346bc86"
+    ],
+    "jobRefs": [
+      "ckr:job:customer_support"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P2:opportunity-distinct",
+    "address": "CH02.P2",
+    "coreMeaning": "새 수요를 찾는 기능과 이미 있는 자원을 관리하는 기능의 차이",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "bbc18a4e615032647a49"
+    ],
+    "jobRefs": [
+      "ckr:job:sales"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P2:technical-distinct",
+    "address": "CH02.P2",
+    "coreMeaning": "개념을 이해하는 능력과 조건에 맞춰 도구를 다루는 기능의 차이",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "aaccdefbe9afed4f9db6"
+    ],
+    "jobRefs": [
+      "ckr:job:hands_on_service"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P3:precision-to-visual",
+    "address": "CH02.P3",
+    "coreMeaning": "검토 기능을 시각 결과의 정보 정확성에 옮기는 후보",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a",
+      "53113e9ff18319b22c8a"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P3:analysis-to-teaching",
+    "address": "CH02.P3",
+    "coreMeaning": "깊이 이해한 구조를 다른 사람이 따라갈 설명으로 바꾸는 조합",
+    "kind": "registered_fusion_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "78ca1a3776c53c2d0b48",
+      "67821ba0891eef23e2a5",
+      "f5d39e081aa424e96817"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P3:care-to-process",
+    "address": "CH02.P3",
+    "coreMeaning": "사람을 돕는 감각을 개인 호의에서 안내 절차로 옮기는 활용",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "d12ffea3e7e02bd3f478"
+    ],
+    "jobRefs": [
+      "ckr:job:administration"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P3:execution-to-experiment",
+    "address": "CH02.P3",
+    "coreMeaning": "현장 대응을 작은 검증 실험으로 옮기는 활용",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "db6c7a28d75b72af5336"
+    ],
+    "jobRefs": [
+      "ckr:job:ux"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P3:meaning-to-proposal",
+    "address": "CH02.P3",
+    "coreMeaning": "목적을 깊이 보는 성향을 선택 근거가 있는 기획으로 옮기는 활용",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "c2b9d32b8dc32f41a677"
+    ],
+    "jobRefs": [
+      "ckr:job:project_planning"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P4:criterion-before-practice",
+    "address": "CH02.P4",
+    "coreMeaning": "재능 연습의 성공 기준을 먼저 정하는 조건",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a"
+    ],
+    "jobRefs": [
+      "ckr:job:accounting"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P4:feedback-not-praise",
+    "address": "CH02.P4",
+    "coreMeaning": "칭찬과 개선할 수 있는 구체 피드백의 차이",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "1288e7c671389c17eb7d"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P4:transfer-test",
+    "address": "CH02.P4",
+    "coreMeaning": "익숙한 예제 수행과 새 조건 적용을 분리하는 실력 확인",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "4b48516cd55d06412f8a"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P4:two-skill-complement",
+    "address": "CH02.P4",
+    "coreMeaning": "본인 수행과 위임 설명을 함께 발전시키는 조건",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce00081ce37c25f1db93"
+    ],
+    "jobRefs": [
+      "ckr:job:small_business"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH02.P4:value-trace",
+    "address": "CH02.P4",
+    "coreMeaning": "좋은 작업을 다른 사람이 사용할 수 있는 흔적으로 남기는 조건",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "1d7da5209fe3284e2d3e"
+    ],
+    "jobRefs": [
+      "ckr:job:project_planning"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P1:task-not-title",
+    "address": "CH03.P1",
+    "coreMeaning": "같은 직함에서도 검토할 대상과 고칠 권한이 다르다",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a"
+    ],
+    "jobRefs": [
+      "ckr:job:accounting",
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P1:investigation-object",
+    "address": "CH03.P1",
+    "coreMeaning": "조사 기능이 쓰이는 대상과 완료 기준을 구별",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e0f1223ff781ce157244"
+    ],
+    "jobRefs": [
+      "ckr:job:research",
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P1:output-audience",
+    "address": "CH03.P1",
+    "coreMeaning": "창작 분야의 공통점은 매체보다 전달 목적과 독자",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "d3f1d896063ae672f97b"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design",
+      "ckr:job:writing",
+      "ckr:job:video"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P1:help-task-scope",
+    "address": "CH03.P1",
+    "coreMeaning": "돕는 직무는 대상·권한·종결 기준이 다르다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "d1d38d962c1cc346bc86"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching",
+      "ckr:job:care",
+      "ckr:job:counsel_support"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P1:repeat-vs-search",
+    "address": "CH03.P1",
+    "coreMeaning": "반복 품질 유지와 새 수요 탐색은 다른 하루를 만든다",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd"
+    ],
+    "jobRefs": [
+      "ckr:job:retail",
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P2:route-review-finance",
+    "address": "CH03.P2",
+    "coreMeaning": "검토 경로의 재무기획 후보를 실제 작업으로 설명",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a",
+      "53113e9ff18319b22c8a"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P2:route-investigate-dev",
+    "address": "CH03.P2",
+    "coreMeaning": "조사 경로의 개발 후보를 오류 재현과 구현으로 설명",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "78ca1a3776c53c2d0b48",
+      "d92063c1e7fc9ba8b4dd"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P2:route-create-photo",
+    "address": "CH03.P2",
+    "coreMeaning": "창작 경로의 사진 분야를 촬영·선별·납품으로 구체화",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "90e77590d3ea07930ba1",
+      "ba9c4a59def3be6ff655"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P2:route-teach-instruction",
+    "address": "CH03.P2",
+    "coreMeaning": "교육 경로의 설명·실습·피드백 기능",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "fe11b875c7ad3a9c8318",
+      "8bf155c8bcdbb54b9142"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P2:route-lead-project",
+    "address": "CH03.P2",
+    "coreMeaning": "리드 경로의 결정·역할 연결 기능",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "f8f90022e047bfe61557",
+      "56954437569c5ef8f1f1"
+    ],
+    "jobRefs": [
+      "ckr:job:project_planning"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P2:route-manage-admin",
+    "address": "CH03.P2",
+    "coreMeaning": "운영 경로의 반복 기준·인계 기능",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd",
+      "f25b06eb266a5bc7f915"
+    ],
+    "jobRefs": [
+      "ckr:job:administration"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P2:route-market-sales",
+    "address": "CH03.P2",
+    "coreMeaning": "시장 경로의 수요·제안·제공 조건 연결",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "bbc18a4e615032647a49",
+      "fac606c7c6c40893bc49"
+    ],
+    "jobRefs": [
+      "ckr:job:sales"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P2:route-experience-service",
+    "address": "CH03.P2",
+    "coreMeaning": "체험 경로의 현장 반응·다음 행동 개선",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "0447fe32a9bb113f3855"
+    ],
+    "jobRefs": [
+      "ckr:job:customer_support"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P3:alternative-translation",
+    "address": "CH03.P3",
+    "coreMeaning": "분석 능력의 다른 후보는 언어 의미·용어 대조",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e0f1223ff781ce157244"
+    ],
+    "jobRefs": [
+      "ckr:job:translation"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P3:alternative-video",
+    "address": "CH03.P3",
+    "coreMeaning": "콘텐츠 후보에서 영상의 이야기와 출력 조건 구별",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "428155544a315487e6a6"
+    ],
+    "jobRefs": [
+      "ckr:job:video"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P3:alternative-ux",
+    "address": "CH03.P3",
+    "coreMeaning": "혁신 후보에서 사용 흐름을 검증하는 다른 역할",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "be18df3416f4583503eb"
+    ],
+    "jobRefs": [
+      "ckr:job:ux"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P3:alternative-support",
+    "address": "CH03.P3",
+    "coreMeaning": "지원 후보에서 뒤편의 기록과 절차 정비",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "b2d2427cbee48429f3e8"
+    ],
+    "jobRefs": [
+      "ckr:job:administration"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P3:alternative-operations",
+    "address": "CH03.P3",
+    "coreMeaning": "운영 후보에서 개인 숙련을 위임 구조로 바꾸는 역할",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "5b8d6b11c49970419712"
+    ],
+    "jobRefs": [
+      "ckr:job:small_business"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P3:alternative-retail",
+    "address": "CH03.P3",
+    "coreMeaning": "판매 후보에서 반복 경험과 재고 약속을 잇는 역할",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "9c00dd07d98a425ce1c5"
+    ],
+    "jobRefs": [
+      "ckr:job:retail"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P3:alternative-field",
+    "address": "CH03.P3",
+    "coreMeaning": "현장 후보에서 상태 확인과 공정 연결 기능",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "17481957d3ad7c46239e"
+    ],
+    "jobRefs": [
+      "ckr:job:logistics"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P3:alternative-business-analysis",
+    "address": "CH03.P3",
+    "coreMeaning": "사업 후보에서 선택지와 운영 제약을 연결하는 역할",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "a8c6b85971d9f1208b22"
+    ],
+    "jobRefs": [
+      "ckr:job:project_planning"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P4:blocked-review",
+    "address": "CH03.P4",
+    "coreMeaning": "자료와 수정 통로 없는 검토는 적성보다 환경 문제",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P4:creative-scope-chaos",
+    "address": "CH03.P4",
+    "coreMeaning": "기준 없는 취향 변경은 창작의 과제 범위를 흐린다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "1668268fb9233e277c7b"
+    ],
+    "jobRefs": [
+      "ckr:job:photography",
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P4:care-always-on",
+    "address": "CH03.P4",
+    "coreMeaning": "준비와 회복을 인정하지 않는 상시 지원 조건",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "5b778076e2f7f6a60f75"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching",
+      "ckr:job:counsel_support"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P4:false-speed",
+    "address": "CH03.P4",
+    "coreMeaning": "속도만 평가하고 검증·안전 투입을 빼는 조건",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "932f48a511820a551fae"
+    ],
+    "jobRefs": [
+      "ckr:job:logistics",
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH03.P4:purpose-mismatch",
+    "address": "CH03.P4",
+    "coreMeaning": "실제 목적과 보고 지표가 어긋난 환경",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "9adba86c70d3adba42da"
+    ],
+    "jobRefs": [
+      "ckr:job:marketing"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P1:shared-vocabulary",
+    "address": "CH04.P1",
+    "coreMeaning": "협업은 같은 단어를 다른 뜻으로 쓰는지 확인하는 일",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "8a3b104ce2a794e55b60"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P1:handoff-observation",
+    "address": "CH04.P1",
+    "coreMeaning": "관찰과 해석을 구분해서 넘기는 협업",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "9a241cbad4de6e655789"
+    ],
+    "jobRefs": [
+      "ckr:job:care"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P1:parallel-constraints",
+    "address": "CH04.P1",
+    "coreMeaning": "협업자의 다른 제약을 같은 목적 아래 비교",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "392a9907c29658c54cc8"
+    ],
+    "jobRefs": [
+      "ckr:job:project_planning"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P1:client-brief",
+    "address": "CH04.P1",
+    "coreMeaning": "의뢰인과 창작자의 협업은 목적·승인·수정 기준을 나누는 일",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "1668268fb9233e277c7b"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P1:student-role-dialogue",
+    "address": "CH04.P1",
+    "coreMeaning": "팀 과제의 역할·산출물을 맞추는 협업",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "cdc60c6b316ee8a858c1"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P2:decision-owner",
+    "address": "CH04.P2",
+    "coreMeaning": "결정할 권한과 결과 책임을 같은 범위로 맞추는 역할",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "f8f90022e047bfe61557"
+    ],
+    "jobRefs": [
+      "ckr:job:small_business"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P2:quality-gate-role",
+    "address": "CH04.P2",
+    "coreMeaning": "검수 역할은 발견·수정·승인을 구분해야 한다",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P2:instruction-role",
+    "address": "CH04.P2",
+    "coreMeaning": "설명 역할은 다른 사람의 다음 행동까지 연결",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "8bf155c8bcdbb54b9142"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P2:operations-bridge",
+    "address": "CH04.P2",
+    "coreMeaning": "작업 사이의 선행 조건을 연결하는 운영 역할",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "5b8d6b11c49970419712"
+    ],
+    "jobRefs": [
+      "ckr:job:logistics"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P2:independent-contributor",
+    "address": "CH04.P2",
+    "coreMeaning": "전문 기여자는 독립 판단과 확인이 필요한 범위를 나눈다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "c782e08817e7f4ae8cd7"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P3:sharp-correction-cost",
+    "address": "CH04.P3",
+    "coreMeaning": "오류를 지적하는 말이 수정 협력을 막는 조건",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "76d4c68e32d1662f8abf"
+    ],
+    "jobRefs": [
+      "ckr:job:accounting"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P3:take-back-work",
+    "address": "CH04.P3",
+    "coreMeaning": "늦은 결과를 되가져오는 과용이 위임을 약하게 한다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce00081ce37c25f1db93"
+    ],
+    "jobRefs": [
+      "ckr:job:small_business"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P3:silent-disagreement",
+    "address": "CH04.P3",
+    "coreMeaning": "갈등을 줄이려다 중요한 이견을 전달하지 않는 비용",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "59ee9c7408ed5dac4efe"
+    ],
+    "jobRefs": [
+      "ckr:job:administration"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P3:invisible-change",
+    "address": "CH04.P3",
+    "coreMeaning": "현장 변경을 알리지 않으면 다른 사람이 옛 약속대로 움직인다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "f93bf80f81c4305dbee6"
+    ],
+    "jobRefs": [
+      "ckr:job:sales"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P3:scope-refusal-cost",
+    "address": "CH04.P3",
+    "coreMeaning": "비합리적 요청을 거절할 때 연결 대안을 남기는 조건",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "caf2f3ef4f21ea3ad88f"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P4:culture-exception-path",
+    "address": "CH04.P4",
+    "coreMeaning": "좋은 문화는 규칙과 예외 질의 통로를 함께 갖춘다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "01b252c15ec6d3cc4064"
+    ],
+    "jobRefs": [
+      "ckr:job:administration"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P4:culture-feedback-safety",
+    "address": "CH04.P4",
+    "coreMeaning": "피드백을 사람 평가와 작업 기준으로 나누는 문화",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "1668268fb9233e277c7b"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P4:culture-recovery",
+    "address": "CH04.P4",
+    "coreMeaning": "준비·집중·회복이 역할의 일부로 인정되는 문화",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "248692af90259c9eebe4"
+    ],
+    "jobRefs": [
+      "ckr:job:counsel_support"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P4:culture-evidence-decision",
+    "address": "CH04.P4",
+    "coreMeaning": "근거가 실제 결정에 쓰이는 문화인지 확인",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ab11baeaebb982a96e"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH04.P4:culture-frontline-voice",
+    "address": "CH04.P4",
+    "coreMeaning": "현장의 반응을 다음 운영에 반영할 통로",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "0b4c5f82e25554523be7"
+    ],
+    "jobRefs": [
+      "ckr:job:retail",
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P1:status-student",
+    "address": "CH05.P1",
+    "coreMeaning": "학생의 현재 과제는 전공 이름과 실제 수행을 비교하는 것",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P1:status-seeker",
+    "address": "CH05.P1",
+    "coreMeaning": "구직자의 현재 과제는 공고 요구와 보여줄 수행 근거의 연결",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P1:status-employee",
+    "address": "CH05.P1",
+    "coreMeaning": "직장인의 현재 과제는 맡은 역할과 다음 판단 범위를 구분",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P1:status-freelancer",
+    "address": "CH05.P1",
+    "coreMeaning": "프리랜서는 제작과 계약·응대·회수의 과제를 나누어 볼 수 있다",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P1:status-self-employed",
+    "address": "CH05.P1",
+    "coreMeaning": "자영업은 직접 제공할 품질과 반복 운영의 부담을 나눈다",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P1:status-owner",
+    "address": "CH05.P1",
+    "coreMeaning": "사업 운영자는 개인 능력과 조직이 이어갈 방식을 구별",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [
+      "ckr:job:small_business"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P1:status-homemaker",
+    "address": "CH05.P1",
+    "coreMeaning": "가사·돌봄 중심 생활에서는 현재 역할과 새 탐색을 나눈다",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P1:status-resting",
+    "address": "CH05.P1",
+    "coreMeaning": "일을 쉬는 상태에서는 회복과 새 탐색의 목적을 나눈다",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P1:status-other",
+    "address": "CH05.P1",
+    "coreMeaning": "기타 상태는 직업 틀보다 실제 맡은 과제를 먼저 묻는다",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P1:status-empty",
+    "address": "CH05.P1",
+    "coreMeaning": "직업 상태 미입력에서는 특정 현재 생활을 전제로 하지 않는다",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P2:current-photo-selection",
+    "address": "CH05.P2",
+    "coreMeaning": "사진가의 현재 검토 과제는 좋은 컷과 쓸 수 있는 컷을 나누는 것",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P2:current-finance-variance",
+    "address": "CH05.P2",
+    "coreMeaning": "재무기획의 현재 활용은 숫자 차이를 판단 질문으로 바꾸는 것",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "f25b06eb266a5bc7f915"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P2:current-design-student",
+    "address": "CH05.P2",
+    "coreMeaning": "디자인 학생은 기법을 배운 것과 전달 목적을 푼 것을 나눈다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "a78eebeaa12bff33d79b"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P2:current-cafe-flow",
+    "address": "CH05.P2",
+    "coreMeaning": "카페 운영은 상품 품질과 주문 흐름의 다른 과제를 본다",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd"
+    ],
+    "jobRefs": [
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P2:current-care-record",
+    "address": "CH05.P2",
+    "coreMeaning": "돌봄 직무의 현재 활용은 관찰을 이어갈 수 있는 기록으로 남기는 것",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "9a241cbad4de6e655789"
+    ],
+    "jobRefs": [
+      "ckr:job:care"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P3:grow-photo-client-fit",
+    "address": "CH05.P3",
+    "coreMeaning": "작품 취향과 의뢰 목적을 함께 설명하는 전문성",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "f23be8c338fde8896938"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P3:grow-dev-maintain",
+    "address": "CH05.P3",
+    "coreMeaning": "혼자 구현하는 능력에서 다른 사람이 유지할 결과로 발전",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "81f5a3a397cd43e89959"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P3:grow-finance-communication",
+    "address": "CH05.P3",
+    "coreMeaning": "정확한 자료를 다른 부서가 판단할 설명으로 발전",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "f25b06eb266a5bc7f915"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P3:grow-teaching-transfer",
+    "address": "CH05.P3",
+    "coreMeaning": "같은 설명을 늘리는 대신 다른 조건의 학습 전이를 확인",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "746762687f99d3e36684"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P3:grow-owner-question",
+    "address": "CH05.P3",
+    "coreMeaning": "위임한 결과를 질문으로 확인하는 운영 능력",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "47ce8c7dff225ae9a200"
+    ],
+    "jobRefs": [
+      "ckr:job:small_business"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P4:next-photo-brief",
+    "address": "CH05.P4",
+    "coreMeaning": "다음 의뢰의 기준은 좋은 결과와 감당할 조건이 함께 남는 것",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P4:next-employee-role",
+    "address": "CH05.P4",
+    "coreMeaning": "다음 역할은 직함보다 맡을 판단·자료·권한을 비교",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P4:next-seeker-sample",
+    "address": "CH05.P4",
+    "coreMeaning": "구직자의 작은 시도는 공고를 실제 과제로 바꾸는 것",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P4:next-cafe-test",
+    "address": "CH05.P4",
+    "coreMeaning": "운영 확대 전 작은 구간을 바꿔 감당할 부담을 확인",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH05.P4:next-unknown-question",
+    "address": "CH05.P4",
+    "coreMeaning": "상태 정보가 부족하거나 전환 중이면 선택할 과제를 먼저 확인",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P1:wealth-not-balance",
+    "address": "CH06.P1",
+    "coreMeaning": "재성 상징·수입 선호·실제 자산 정보는 서로 다르다",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd",
+      "9742bfa47ad032c7c9f8"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P1:opportunity-to-demand",
+    "address": "CH06.P1",
+    "coreMeaning": "새 기회 상징을 실제 수요를 묻는 과정으로 제한",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "bbc18a4e615032647a49",
+      "51b0bd2bbf8f57a25a91"
+    ],
+    "jobRefs": [
+      "ckr:job:marketing"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P1:expertise-value",
+    "address": "CH06.P1",
+    "coreMeaning": "전문성을 돈으로 설명하려면 다른 사람의 판단에 쓸 결과가 필요",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "58333fe1ce51da5e5389"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P1:service-value",
+    "address": "CH06.P1",
+    "coreMeaning": "지원의 경제적 가치는 대신한 양보다 해결한 막힘에서 설명",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ede4c870287adb0ff868"
+    ],
+    "jobRefs": [
+      "ckr:job:customer_support"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P1:skill-to-use",
+    "address": "CH06.P1",
+    "coreMeaning": "기술을 안다는 사실과 사용할 결과를 제공하는 것은 다르다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "58f001425acf022b0d6b"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P2:photo-use-value",
+    "address": "CH06.P2",
+    "coreMeaning": "사진 결과의 가치는 촬영량보다 실제 사용할 목적과 조건",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "90e77590d3ea07930ba1"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P2:employee-contribution",
+    "address": "CH06.P2",
+    "coreMeaning": "직장인 기여는 수행량과 의사결정 변화의 차이",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "f25b06eb266a5bc7f915"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P2:cafe-unit-value",
+    "address": "CH06.P2",
+    "coreMeaning": "자영업의 상품 가치는 판매 뒤 남는 자원과 반복 품질을 함께 본다",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd"
+    ],
+    "jobRefs": [
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P2:learning-investment-value",
+    "address": "CH06.P2",
+    "coreMeaning": "배움에 쓴 자원은 제공 가능한 수행이 달라질 때 가치로 연결",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "dc4c6fa772a27851195b"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P2:business-repeat-value",
+    "address": "CH06.P2",
+    "coreMeaning": "운영 전문성의 값은 대표 없이도 이어질 결과에서 설명",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "3c2b6472c0c4d3051d9f"
+    ],
+    "jobRefs": [
+      "ckr:job:small_business"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P3:unpriced-revision",
+    "address": "CH06.P3",
+    "coreMeaning": "호의로 남긴 추가 수정이 보이지 않는 작업 범위가 될 수 있다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "5697e5371d9b4b34d523"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P3:tool-demand-gap",
+    "address": "CH06.P3",
+    "coreMeaning": "장비·도구를 갖추는 것과 실제 수요를 충족하는 것은 다르다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "8c7eb0318961ed4e1cce"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P3:fast-commitment",
+    "address": "CH06.P3",
+    "coreMeaning": "속도를 얻는 지출은 검증·변경 비용도 함께 비교",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "cd6db5be5e62ed3b4f56"
+    ],
+    "jobRefs": [
+      "ckr:job:project_planning"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P3:many-opportunities-cost",
+    "address": "CH06.P3",
+    "coreMeaning": "새 기회마다 준비하면 미룬 약속과 시간이 비용이 된다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "2ca38b805cc09d2e2625"
+    ],
+    "jobRefs": [
+      "ckr:job:marketing"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P3:help-hidden-cost",
+    "address": "CH06.P3",
+    "coreMeaning": "지원 범위가 없으면 돈보다 먼저 시간이 소진될 수 있다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "c3e0328ac10371fa55ab"
+    ],
+    "jobRefs": [
+      "ckr:job:counsel_support"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P4:cashflow-timing",
+    "address": "CH06.P4",
+    "coreMeaning": "예상 의뢰·합의한 대가·실제 확보한 자원은 다르다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "2f83590d0543224f2684"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P4:fixed-variable-time",
+    "address": "CH06.P4",
+    "coreMeaning": "고정 부담·상품별 투입·보이지 않는 시간은 다른 자원 항목",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd"
+    ],
+    "jobRefs": [
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P4:value-not-cheapest",
+    "address": "CH06.P4",
+    "coreMeaning": "싼 선택과 전체 부담이 적은 선택은 다를 수 있다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "b64fa2920704301bf622"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P4:learning-budget-question",
+    "address": "CH06.P4",
+    "coreMeaning": "배움의 지출은 적용할 과제와 연습 시간을 함께 정한다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "53f96587bbaa900e8b0e"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH06.P4:reserve-options",
+    "address": "CH06.P4",
+    "coreMeaning": "관리의 목적은 큰돈의 예측보다 다음 선택의 여지를 남기는 것",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "563ac17bf788fce06e6f"
+    ],
+    "jobRefs": [],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P1:concept-structure",
+    "address": "CH07.P1",
+    "coreMeaning": "개념을 연결해 이해하는 방식과 실제 적용을 구분",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "fe11b875c7ad3a9c8318",
+      "042ffda8801ebeaf2c6d"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P1:learn-by-doing",
+    "address": "CH07.P1",
+    "coreMeaning": "실습으로 익힌 요령을 원리와 적용 조건으로 남기는 학습",
+    "kind": "registered_fusion_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "90e77590d3ea07930ba1",
+      "130ebac8873e64f99e23",
+      "c009e50b177f9c93ca31"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P1:learn-by-explain",
+    "address": "CH07.P1",
+    "coreMeaning": "함께 설명하며 배운 이해를 혼자 쓸 수 있는지 확인",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "fe11b875c7ad3a9c8318",
+      "6aac2c369ca11d84cf6b"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P1:story-to-rule",
+    "address": "CH07.P1",
+    "coreMeaning": "이야기로 붙인 관심을 정확한 개념과 풀이로 연결",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "90e77590d3ea07930ba1",
+      "d5a3f16c5cef50521cd4"
+    ],
+    "jobRefs": [
+      "ckr:job:writing"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P1:structured-practice",
+    "address": "CH07.P1",
+    "coreMeaning": "분량의 완료와 이해의 확인을 다른 학습 기록으로 남기기",
+    "kind": "conditional_cross_source",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a",
+      "4d87fbb51867b1899de4"
+    ],
+    "jobRefs": [
+      "ckr:job:administration"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P2:photo-light-comparison",
+    "address": "CH07.P2",
+    "coreMeaning": "사진 기술은 조명 선택과 납품 목적을 같은 과제로 비교",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "a78eebeaa12bff33d79b"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P2:dev-new-input",
+    "address": "CH07.P2",
+    "coreMeaning": "개발 학습 환경은 실패 입력을 시험하고 이유를 물을 수 있어야 함",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "0559dd6941aec884dc1a"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P2:design-constraint-learning",
+    "address": "CH07.P2",
+    "coreMeaning": "디자인 학습은 매체 제약을 바꿔 표현의 이유를 확인",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "76c5466694297d1a36cf"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P2:finance-scenario-learning",
+    "address": "CH07.P2",
+    "coreMeaning": "재무 학습은 같은 합계에서 다른 가정을 구별하는 과제",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "eb4b0b7bcdda51afcf86"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P2:field-anomaly-learning",
+    "address": "CH07.P2",
+    "coreMeaning": "현장 학습은 정상 순서와 이상을 전달할 조건을 같이 익히기",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "46b1ab895711e38e6215"
+    ],
+    "jobRefs": [
+      "ckr:job:logistics"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P3:collecting-not-learning",
+    "address": "CH07.P3",
+    "coreMeaning": "새 자료 수집의 즐거움이 실제 수행 연습을 밀 수 있다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "cca22a892a0cdcc5f2e8"
+    ],
+    "jobRefs": [
+      "ckr:job:writing"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P3:familiarity-trap",
+    "address": "CH07.P3",
+    "coreMeaning": "익숙함과 원리 이해의 차이를 확인하는 약점 연구",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ed5c3e422134873cef0d"
+    ],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P3:perfection-start",
+    "address": "CH07.P3",
+    "coreMeaning": "충분히 이해해야 시작한다는 기준이 수행 기회를 늦출 수 있다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "b7cf3c6e7279367349b5"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P3:activity-to-language",
+    "address": "CH07.P3",
+    "coreMeaning": "직접 했던 선택을 용어와 이유로 남겨 다른 조건에 옮기기",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "331d66e109fedda15aa9"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P3:social-solo-gap",
+    "address": "CH07.P3",
+    "coreMeaning": "함께 잘 설명해도 혼자 꺼낼 지식은 따로 확인해야 한다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "b8b1788be86a366e0070"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P4:certificate-requirement",
+    "address": "CH07.P4",
+    "coreMeaning": "자격의 이름과 맡을 업무에 필요한 조건을 분리",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "b846da55e4e5cf6a302b"
+    ],
+    "jobRefs": [
+      "ckr:job:accounting"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P4:portfolio-decision",
+    "address": "CH07.P4",
+    "coreMeaning": "포트폴리오는 좋은 화면뿐 아니라 판단 과정을 보여주는 자료",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "1d7da5209fe3284e2d3e"
+    ],
+    "jobRefs": [
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P4:work-based-upskill",
+    "address": "CH07.P4",
+    "coreMeaning": "일하면서 배울 기술은 실제 빈틈과 안전한 연습을 연결",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "4b48516cd55d06412f8a"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P4:career-change-learning",
+    "address": "CH07.P4",
+    "coreMeaning": "전환을 위한 배움은 현재 생활과 다시 할 수 있는 범위를 먼저 확인",
+    "kind": "input_context",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "079248d9db39848db6cd"
+    ],
+    "jobRefs": [],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH07.P4:skill-repeatability",
+    "address": "CH07.P4",
+    "coreMeaning": "전문성은 한 번의 성공보다 조건과 한계를 설명하며 다시 수행하는 것",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "b211b5d3637a2f223e18"
+    ],
+    "jobRefs": [
+      "ckr:job:logistics"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P1:cheoneul-help-network",
+    "address": "CH08.P1",
+    "coreMeaning": "천을귀인의 전통 도움 상징은 질문·지원 기회로 조건부 읽기",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "8404eadd074651539efa"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P1:jangseong-responsibility",
+    "address": "CH08.P1",
+    "coreMeaning": "장성의 전통 위상 상징을 작은 책임의 수행 조건으로 제한",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "2bc77a6b7aac71ca7b44"
+    ],
+    "jobRefs": [
+      "ckr:job:project_planning"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P1:taegeuk-understanding",
+    "address": "CH08.P1",
+    "coreMeaning": "태극의 전통 이해 상징은 근본 질문과 실제 검증을 구별",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "a6a27c42f6bd298906a4"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P1:siksang-output-potential",
+    "address": "CH08.P1",
+    "coreMeaning": "식신 표현의 긍정 상징은 사용할 결과를 만드는 조건과 연결",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "90e77590d3ea07930ba1"
+    ],
+    "jobRefs": [
+      "ckr:job:writing"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P1:resource-foundation-positive",
+    "address": "CH08.P1",
+    "coreMeaning": "정재 축적의 긍정성은 반복해서 남길 결과와 부담을 같이 보는 조건",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd"
+    ],
+    "jobRefs": [
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P1:held-munchang-exam",
+    "address": "CH08.P1",
+    "coreMeaning": "문창의 배치 전거와 현행 표 대조가 남은 보류 연구",
+    "kind": "natal_application",
+    "review": "held_source_or_conditions",
+    "sourceKeys": [
+      "47fcf46be449c285af54"
+    ],
+    "jobRefs": [],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P2:recognized-prevention",
+    "address": "CH08.P2",
+    "coreMeaning": "예방 기여는 실제 발견·수정과 줄인 재처리를 구분해 드러낸다",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "ce1defc1af72408fec4a"
+    ],
+    "jobRefs": [
+      "ckr:job:accounting"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P2:recognized-translation",
+    "address": "CH08.P2",
+    "coreMeaning": "복잡한 의미를 되짚을 수 있게 전달하는 전문 기여",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e0f1223ff781ce157244"
+    ],
+    "jobRefs": [
+      "ckr:job:translation"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P2:recognized-enablement",
+    "address": "CH08.P2",
+    "coreMeaning": "남이 스스로 할 수 있게 된 범위를 드러내는 지원 기여",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "b2d2427cbee48429f3e8"
+    ],
+    "jobRefs": [
+      "ckr:job:administration"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P2:recognized-clarity",
+    "address": "CH08.P2",
+    "coreMeaning": "직접 피드백은 사람이 아니라 다음 선택을 명확히 할 때 가치",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "300c56cfaf4d8929142e"
+    ],
+    "jobRefs": [
+      "ckr:job:project_planning"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P2:recognized-experience",
+    "address": "CH08.P2",
+    "coreMeaning": "사람의 반응을 사용 경험에 반영한 기여를 드러내기",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "1949199fcd8a2e08e71e"
+    ],
+    "jobRefs": [
+      "ckr:job:video"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P3:career-precision-lock",
+    "address": "CH08.P3",
+    "coreMeaning": "매번 직접 검토만 하면 다음에도 같은 확인에 묶일 수 있다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "6de6be185ee5f6ecec9b"
+    ],
+    "jobRefs": [
+      "ckr:job:accounting"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P3:career-depth-without-use",
+    "address": "CH08.P3",
+    "coreMeaning": "깊은 이해가 사용 가능한 결과로 나오지 않으면 맡길 범위가 좁아질 수 있다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "81f5a3a397cd43e89959"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P3:career-help-overload",
+    "address": "CH08.P3",
+    "coreMeaning": "개인 지원만 늘면 전문성을 정리할 시간이 줄 수 있다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "5b778076e2f7f6a60f75"
+    ],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P3:career-drive-repeat-fire",
+    "address": "CH08.P3",
+    "coreMeaning": "급한 수습만 인정받으려 하면 원인과 기준을 남길 시간이 줄 수 있다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "120b3da73ae37f6baf51"
+    ],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P3:career-boundary-isolation",
+    "address": "CH08.P3",
+    "coreMeaning": "독립 영역을 지키다 다른 분야의 조건을 배울 통로까지 닫을 수 있다",
+    "kind": "mbti_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "a4e17745da4f51f467aa"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P4:positive-conditions-to-proof",
+    "address": "CH08.P4",
+    "coreMeaning": "좋은 상징을 현실에서 쓰려면 확인할 도움과 수행이 필요",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "8404eadd074651539efa"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P4:positive-to-client-use",
+    "address": "CH08.P4",
+    "coreMeaning": "좋은 표현을 사용할 결과로 이어가려면 목적과 선택 기준이 필요",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "90e77590d3ea07930ba1"
+    ],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P4:positive-to-repeat-system",
+    "address": "CH08.P4",
+    "coreMeaning": "좋은 반복은 바뀐 조건에서도 품질과 부담을 조정할 수 있어야 한다",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "e2ed5b09b1f8185708cd"
+    ],
+    "jobRefs": [
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P4:positive-to-shared-decision",
+    "address": "CH08.P4",
+    "coreMeaning": "책임의 좋은 힘은 다른 사람도 결정할 기준이 생길 때 커질 수 있다",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "2bc77a6b7aac71ca7b44"
+    ],
+    "jobRefs": [
+      "ckr:job:project_planning"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH08.P4:positive-to-learning-humility",
+    "address": "CH08.P4",
+    "coreMeaning": "깊이 이해하려는 좋은 힘은 모르는 범위를 인정할 때 더 정확히 쓰인다",
+    "kind": "natal_application",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [
+      "a6a27c42f6bd298906a4"
+    ],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": []
+  },
+  {
+    "id": "ckr:material:CH09.P1:choose-task-rights",
+    "address": "CH09.P1",
+    "coreMeaning": "소개된 검토 의미를 과제·자료·권한의 선택 기준으로 회수",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:accounting"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH01.P4:permission-to-correct",
+      "ckr:material:CH03.P4:blocked-review"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P1:choose-freelance-purpose",
+    "address": "CH09.P1",
+    "coreMeaning": "목적과 지속 조건이 함께 있는 작업인지 고르는 기준",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH05.P4:next-photo-brief",
+      "ckr:material:CH06.P2:photo-use-value"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P1:choose-learning-sample",
+    "address": "CH09.P1",
+    "coreMeaning": "새 역할을 고르기 전에 작은 과제로 질문을 좁히는 기준",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH05.P4:next-seeker-sample",
+      "ckr:material:CH07.P2:dev-new-input"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P1:choose-repeat-burden",
+    "address": "CH09.P1",
+    "coreMeaning": "반복할 수 있는 품질과 부담을 동시에 고르는 기준",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH05.P4:next-cafe-test",
+      "ckr:material:CH06.P4:fixed-variable-time"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P1:choose-known-context",
+    "address": "CH09.P1",
+    "coreMeaning": "현재 상태가 확인되기 전에는 결정 질문부터 좁히는 기준",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [],
+    "precedingMeaningRefs": [
+      "ckr:material:CH05.P1:status-empty",
+      "ckr:material:CH05.P1:status-other"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P2:guard-precision-loop",
+    "address": "CH09.P2",
+    "coreMeaning": "검토 과용의 다른 비용을 이번 행동에서 분리해 회수",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:accounting"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH08.P3:career-precision-lock",
+      "ckr:material:CH04.P3:sharp-correction-cost"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P2:guard-depth-delay",
+    "address": "CH09.P2",
+    "coreMeaning": "준비 지연과 결과 미전달을 구분해 확인하는 기준",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH08.P3:career-depth-without-use",
+      "ckr:material:CH07.P3:perfection-start"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P2:guard-help-responsibility",
+    "address": "CH09.P2",
+    "coreMeaning": "도움의 범위와 전문 준비의 자원을 함께 지키는 기준",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:teaching"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH08.P3:career-help-overload",
+      "ckr:material:CH06.P3:help-hidden-cost"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P2:guard-drive-review",
+    "address": "CH09.P2",
+    "coreMeaning": "속도의 과용은 필수 검증 생략과 책임 회수로 나눠 점검",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:software",
+      "ckr:job:small_business"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH08.P3:career-drive-repeat-fire",
+      "ckr:material:CH04.P3:take-back-work"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P2:guard-boundary-isolation",
+    "address": "CH09.P2",
+    "coreMeaning": "집중 경계를 지키며 다른 전문 조건을 들을 통로 남기기",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:research",
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH08.P3:career-boundary-isolation",
+      "ckr:material:CH04.P3:scope-refusal-cost"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P3:strategy-photo-cycle",
+    "address": "CH09.P3",
+    "coreMeaning": "작은 촬영 과제에서 목적·기술·투입을 함께 검증하는 순서",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:photography"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH05.P3:grow-photo-client-fit",
+      "ckr:material:CH07.P2:photo-light-comparison",
+      "ckr:material:CH06.P3:tool-demand-gap"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P3:strategy-dev-cycle",
+    "address": "CH09.P3",
+    "coreMeaning": "작은 구현을 검증·설명·다음 역할의 자료로 잇는 순서",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:software"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH05.P3:grow-dev-maintain",
+      "ckr:material:CH07.P2:dev-new-input",
+      "ckr:material:CH06.P1:skill-to-use"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P3:strategy-finance-cycle",
+    "address": "CH09.P3",
+    "coreMeaning": "가정 비교를 설명·기여·다음 학습 질문으로 잇기",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:finance"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH05.P3:grow-finance-communication",
+      "ckr:material:CH06.P2:employee-contribution",
+      "ckr:material:CH07.P2:finance-scenario-learning"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P3:strategy-cafe-cycle",
+    "address": "CH09.P3",
+    "coreMeaning": "운영 한 구간의 품질·부담을 비교해 다음 시도를 고르기",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:cafe"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH05.P2:current-cafe-flow",
+      "ckr:material:CH06.P2:cafe-unit-value",
+      "ckr:material:CH08.P4:positive-to-repeat-system"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P3:strategy-context-before-plan",
+    "address": "CH09.P3",
+    "coreMeaning": "현재 조건을 확인한 뒤 부담 낮은 배움을 선택하는 순서",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [],
+    "precedingMeaningRefs": [
+      "ckr:material:CH05.P4:next-unknown-question",
+      "ckr:material:CH07.P4:career-change-learning"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P4:closing-precision-value",
+    "address": "CH09.P4",
+    "coreMeaning": "소개된 정확성을 중요한 차이를 실제로 바꾸는 원칙으로 마무리",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:accounting"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH02.P1:detect-mismatch",
+      "ckr:material:CH09.P1:choose-task-rights"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P4:closing-creative-purpose",
+    "address": "CH09.P4",
+    "coreMeaning": "소개된 표현의 힘을 목적과 사용 가능한 결과의 원칙으로 마무리",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:photography",
+      "ckr:job:brand_design"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH02.P1:make-alternative",
+      "ckr:material:CH09.P1:choose-freelance-purpose"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P4:closing-depth-use",
+    "address": "CH09.P4",
+    "coreMeaning": "소개된 깊이를 사용할 답과 정직한 한계의 원칙으로 마무리",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:research"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH02.P1:causal-model",
+      "ckr:material:CH09.P2:guard-depth-delay"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P4:closing-help-sustainable",
+    "address": "CH09.P4",
+    "coreMeaning": "소개된 도움을 상대의 다음 행동과 지속 범위의 원칙으로 마무리",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [
+      "ckr:job:teaching",
+      "ckr:job:customer_support"
+    ],
+    "precedingMeaningRefs": [
+      "ckr:material:CH02.P2:care-distinct",
+      "ckr:material:CH09.P2:guard-help-responsibility"
+    ]
+  },
+  {
+    "id": "ckr:material:CH09.P4:closing-self-chosen-scope",
+    "address": "CH09.P4",
+    "coreMeaning": "입력이 부족해도 없는 현재를 만들지 않는 탐색 원칙으로 마무리",
+    "kind": "recall",
+    "review": "conditional_editorial_research",
+    "sourceKeys": [],
+    "jobRefs": [],
+    "precedingMeaningRefs": [
+      "ckr:material:CH05.P1:status-empty",
+      "ckr:material:CH09.P3:strategy-context-before-plan"
+    ]
+  }
+]
