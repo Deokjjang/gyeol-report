@@ -1,0 +1,147 @@
+[
+  {
+    "id": "fkr:facet-study:ACTION_TEMPO:review-window",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:semantic-research"
+    ],
+    "facetRef": "sar:facet:ACTION_TEMPO:review-window",
+    "relatedResearchRefs": [
+      "fkr:complement:C021",
+      "fkr:candidate:intp-review-window"
+    ],
+    "definition": "빠른 행동 앞의 검토 구간",
+    "jointQuestion": "작은 첫 행동 전에 반드시 확인할 것은 무엇인가?",
+    "positive": "필수 검토를 미리 정하면 착수 뒤 재작업을 줄일 수 있음",
+    "risk": "빠르게 움직였다는 이유로 확인을 생략하거나 검토를 무기한 늘림",
+    "twist": "검토 시간을 짧게 공지하는 것이 상대의 대기를 줄일 수 있음",
+    "fictionalScene": "가상으로 초안 전달 전 필수 수치 한 개와 검토 종료 시점을 정하는 장면",
+    "conditions": [
+      "오류 비용·기한·가역 행동·실제 검토 자료 확인"
+    ],
+    "counterexample": "오래 검토해도 오류를 놓칠 수 있음",
+    "forbidden": "검토가 길면 정확하거나 실행력이 없다고 단정",
+    "newFusionRule": false
+  },
+  {
+    "id": "fkr:facet-study:STRUCTURE_STYLE:flexible-method",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:semantic-research"
+    ],
+    "facetRef": "sar:facet:STRUCTURE_STYLE:flexible-method",
+    "relatedResearchRefs": [
+      "fkr:complement:C090",
+      "fkr:candidate:entp-accountable-method"
+    ],
+    "definition": "기준 안에서 방법을 선택하는 재량",
+    "jointQuestion": "공통 결과를 유지하되 각자 고를 수 있는 방법은 어디인가?",
+    "positive": "고정할 기준과 바꿀 방법을 분리해 계획과 재량을 보전",
+    "risk": "유연함을 이유로 공동 기한까지 바꾸거나 계획을 이유로 모든 방법을 통제",
+    "twist": "작은 재량을 명시하면 절차도 더 일관되게 유지될 수 있음",
+    "fictionalScene": "가상으로 공통 검수 기준 아래 개인 작업 순서를 다르게 정하는 장면",
+    "conditions": [
+      "결과 기준·변경권·실제 방법 선호 확인; 양극 방향을 새로 추정하지 않음"
+    ],
+    "counterexample": "방법 선택권이 없는 안전 절차도 있음",
+    "forbidden": "facet의 유연한 방법으로 기존 STRUCTURE 양극 방향을 뒤집음",
+    "newFusionRule": false
+  },
+  {
+    "id": "fkr:facet-study:CHANGE_ORIENTATION:preserve-value",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:semantic-research"
+    ],
+    "facetRef": "sar:facet:CHANGE_ORIENTATION:preserve-value",
+    "relatedResearchRefs": [
+      "fkr:split:START_MAINTAIN",
+      "fkr:complement:C084"
+    ],
+    "definition": "유지할 이유를 확인하는 변화 선택",
+    "jointQuestion": "원래 방식에서 실제로 유효한 것은 무엇인가?",
+    "positive": "바꾸기 전에 유지 효과를 확인해 필요한 자원을 남김",
+    "risk": "익숙함을 항상 안전으로 읽거나 새로움만 개선이라 여김",
+    "twist": "일부를 유지하는 것이 더 유효한 변화의 조건일 수 있음",
+    "fictionalScene": "가상으로 새 도구 도입 전에 기존 도구의 유효 기능을 기록하는 장면",
+    "conditions": [
+      "유지 효과 자료·비교 조건·실제 변화 선택권 확인; 음의 방향은 별도 실제 근거 필요"
+    ],
+    "counterexample": "익숙한 방식이 현재 위험을 만들 수도 있음",
+    "forbidden": "양의 변화 신호만으로 음의 안정 방향도 있다고 생성",
+    "newFusionRule": false
+  },
+  {
+    "id": "fkr:facet-study:INITIATIVE:help-initiation",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:semantic-research"
+    ],
+    "facetRef": "sar:facet:INITIATIVE:help-initiation",
+    "relatedResearchRefs": [
+      "fkr:complement:C013",
+      "fkr:complement:C017"
+    ],
+    "definition": "도움을 요청하는 첫 행동",
+    "jointQuestion": "혼자 실행하기 전에 누구에게 어떤 도움을 요청할 수 있는가?",
+    "positive": "현재 권한 밖 과제에서 필요한 지원 요청을 먼저 시작",
+    "risk": "요청을 했으니 실행 책임도 넘겼다고 착각",
+    "twist": "실행을 멈추고 도움을 요청하는 것이 더 적절한 주도성일 수 있음",
+    "fictionalScene": "가상으로 새 과제를 맡기 전 부족한 도구와 설명을 요청하는 장면",
+    "conditions": [
+      "실제 지원 필요·요청 통로·상대 여력·거절권 확인"
+    ],
+    "counterexample": "도움 요청이 불가능한 권력 상황에서는 보호 경로가 먼저일 수 있음",
+    "forbidden": "도움을 받으면 주도성이나 능력이 낮다고 단정",
+    "newFusionRule": false
+  },
+  {
+    "id": "fkr:facet-study:PERSISTENCE:maintenance-effort",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "review": "conditional_editorial_not_empirical",
+    "sourceRefs": [
+      "authored:fusion-research",
+      "repo:semantic-research"
+    ],
+    "facetRef": "sar:facet:PERSISTENCE:maintenance-effort",
+    "relatedResearchRefs": [
+      "fkr:complement:C014",
+      "fkr:complement:C022"
+    ],
+    "definition": "시작 뒤 실제로 필요한 유지 노동",
+    "jointQuestion": "시작한 결과를 계속 쓰기 위해 누가 무엇을 관리해야 하는가?",
+    "positive": "반복 비용·역할·종료 조건을 정해 초기 결과를 유지",
+    "risk": "이미 시작했으니 언제까지나 책임져야 한다고 여김",
+    "twist": "담당을 바꾸거나 종료하는 선택이 남은 결과를 보전할 수 있음",
+    "fictionalScene": "가상으로 공개한 안내 도구의 업데이트 담당과 종료일을 정하는 장면",
+    "conditions": [
+      "합의한 담당·기간·유지비·종료권·실제 반복 근거 확인"
+    ],
+    "counterexample": "유지 책임이 타인에게 있거나 중단이 타당할 수 있음",
+    "forbidden": "오래 했다는 이유로 끝까지 할 의무·성공 확정",
+    "newFusionRule": false
+  }
+]

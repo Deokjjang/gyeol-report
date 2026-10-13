@@ -1,0 +1,224 @@
+{
+  "checkedAt": "2026-10-13",
+  "repository": [
+    {
+      "id": "repo:fusion",
+      "file": "src/lib/interpretation-v4/fusion.ts",
+      "sha256": "1a19f133ac68a36740b1ae9eb57fd7bc3f0fb1f4e224f1f2dbeace2322bfa2a0",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:fusionRules",
+      "file": "src/lib/interpretation-v4/fusionRules.ts",
+      "sha256": "562045161572ad8a440157b23557657c6f9a4621748e9b54217e89adfb7fc6ae",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:fusionCore",
+      "file": "src/lib/interpretation-v4/fusionCore.ts",
+      "sha256": "e9f531c4e7477ae6008abf301678f7b151a7e0e9bf58d0910ea9cc7e3745dcd6",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:fusionSemanticProfile",
+      "file": "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "sha256": "180e4343baba50532c878d89772eeec8d95fd008cfba46469479cb8ce58bfd17",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:fusionComplementRegistry",
+      "file": "src/lib/interpretation-v4/fusionComplementRegistry.ts",
+      "sha256": "f1fcdee0ffcc7e7eb3946c293e4967f2d7ce274f33fa24c6934ae8b2b324880d",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:fusionContext",
+      "file": "src/lib/interpretation-v4/fusionContext.ts",
+      "sha256": "7657cb04c78c78fb3716e02746f56c3673ee7a152f438c9f1cc09990ea41521d",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:fusionProfileAdapter",
+      "file": "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+      "sha256": "ef0b2a217a4643dd936ebc7f9a21bce5a707dde3d5474d2cc8088d8e3cf56825",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:fusionTension",
+      "file": "src/lib/interpretation-v4/fusionTension.ts",
+      "sha256": "0f0eabce50251367a656393a4167c1283357dee03852b1fd918bc800efc7aca2",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:fusionMeanings",
+      "file": "src/lib/interpretation-v4/fusionMeanings.ts",
+      "sha256": "f5b55048d0ea564a4716fece30602fab50bc12fe1c7cb08c53049fc7579b3514",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:fusionRanking",
+      "file": "src/lib/interpretation-v4/fusionRanking.ts",
+      "sha256": "ccfb23251703b2174efc0740e330cdbe6f384ce54936cce0b117d1178f5153e5",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:fusionDiagnostics",
+      "file": "src/lib/interpretation-v4/fusionDiagnostics.ts",
+      "sha256": "094eb19b98e17cb60eafe47e4c156a3442b137788707181ae57b743afdc45da0",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:materialRegistry",
+      "file": "src/lib/interpretation-v4/materialRegistry.ts",
+      "sha256": "5f208d3e5805e767a8ac51a98338e08962fb3ca4f55a9c90e0e661916ec52fa7",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:materialPacket",
+      "file": "src/lib/interpretation-v4/materialPacket.ts",
+      "sha256": "f6a1b3c7c263c4fea973565a98afa3690866254f071924c94bd8daf326db46db",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:foundationIntegratedProfile",
+      "file": "src/lib/interpretation-v4/foundationIntegratedProfile.ts",
+      "sha256": "b6640f2021a9919159611bd5a52552d26cbffbe64c35e845d74b60cbe1ebcc30",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:mbtiSemanticProfile",
+      "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+      "sha256": "b95f7c05b61f27f42f9a2e5ecccf2811610095afaf08737fb269f6b2dbbca96f",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:semanticCore",
+      "file": "src/lib/interpretation-v4/semanticCore.ts",
+      "sha256": "6be9b1fdc3f07ad7c74a38a165349c80d9b3f32af5c7fae2d0d8dbabfd22abab",
+      "status": "implementation_read"
+    },
+    {
+      "id": "repo:personalResonanceProfile",
+      "file": "src/lib/interpretation-v4/personalResonanceProfile.ts",
+      "sha256": "b5a854e34c657e5fe045335cde20abc6b838005a463b123c7fcaceed1b71ea9d",
+      "status": "implementation_read"
+    }
+  ],
+  "inheritedStudies": "Original source IDs/states/hash retained; not all historical sources newly re-accessed, no empirical promotion.",
+  "primary": [
+    {
+      "id": "primary:mbti-relationships",
+      "url": "https://www.myersbriggs.org/type-in-my-life/personality-type-and-relationships/home.htm",
+      "status": "accessed",
+      "supports": "No best/more successful type combination; not every relationship difficulty is type-related; does not validate Fusion."
+    }
+  ],
+  "unavailable": [
+    {
+      "url": "https://www.myersbriggs.org/my-mbti-personality-type/mbti-basics/ethical-use-of-the-mbti-instrument/",
+      "status": "tool_access_failed",
+      "supports": "none; no claim attributed"
+    }
+  ],
+  "authored": "All added meanings are conditional editorial research; no new empirical or traditional fact.",
+  "researchSourceAliases": [
+    {
+      "id": "repo:legacy-fusion",
+      "status": "repository_reference_checked_not_empirical",
+      "files": [
+        {
+          "file": "src/lib/interpretation-v4/fusion.ts",
+          "sha256": "1a19f133ac68a36740b1ae9eb57fd7bc3f0fb1f4e224f1f2dbeace2322bfa2a0"
+        },
+        {
+          "file": "src/lib/interpretation-v4/fusionRules.ts",
+          "sha256": "562045161572ad8a440157b23557657c6f9a4621748e9b54217e89adfb7fc6ae"
+        }
+      ]
+    },
+    {
+      "id": "repo:semantic-fusion",
+      "status": "repository_reference_checked_not_empirical",
+      "files": [
+        {
+          "file": "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+          "sha256": "180e4343baba50532c878d89772eeec8d95fd008cfba46469479cb8ce58bfd17"
+        },
+        {
+          "file": "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+          "sha256": "ef0b2a217a4643dd936ebc7f9a21bce5a707dde3d5474d2cc8088d8e3cf56825"
+        }
+      ]
+    },
+    {
+      "id": "repo:complement-registry",
+      "status": "repository_reference_checked_not_empirical",
+      "files": [
+        {
+          "file": "src/lib/interpretation-v4/fusionComplementRegistry.ts",
+          "sha256": "f1fcdee0ffcc7e7eb3946c293e4967f2d7ce274f33fa24c6934ae8b2b324880d"
+        }
+      ]
+    },
+    {
+      "id": "repo:tension",
+      "status": "repository_reference_checked_not_empirical",
+      "files": [
+        {
+          "file": "src/lib/interpretation-v4/fusionTension.ts",
+          "sha256": "0f0eabce50251367a656393a4167c1283357dee03852b1fd918bc800efc7aca2"
+        }
+      ]
+    },
+    {
+      "id": "repo:material-registry",
+      "status": "repository_reference_checked_not_empirical",
+      "files": [
+        {
+          "file": "src/lib/interpretation-v4/materialRegistry.ts",
+          "sha256": "5f208d3e5805e767a8ac51a98338e08962fb3ca4f55a9c90e0e661916ec52fa7"
+        }
+      ]
+    },
+    {
+      "id": "repo:mbti-source",
+      "status": "repository_reference_checked_not_empirical",
+      "files": [
+        {
+          "file": "src/lib/interpretation-v4/mbtiSourceAdapter.ts",
+          "sha256": "6081bf903a1fecc464155d69d1fcf68ecd5076cd5b3e71400c3513cf3af39c32"
+        }
+      ]
+    },
+    {
+      "id": "repo:saju-research",
+      "status": "repository_reference_checked_not_empirical",
+      "files": [
+        {
+          "file": "docs/validation/v4-semantic-axis-knowledge-expansion-01/research-source-inventory.json",
+          "sha256": "d98a034abfa413daf955f2b9ac00d62cd1d0d588dc7c00a0bf5d36715046b5f9"
+        }
+      ]
+    },
+    {
+      "id": "repo:semantic-research",
+      "status": "repository_reference_checked_not_empirical",
+      "files": [
+        {
+          "file": "docs/validation/v4-semantic-axis-knowledge-expansion-01/semantic-ontology.json",
+          "sha256": "ba1a6e2430eb6694956d1c8105699ff42b5848c2a3b488289bc55120d60cedf9"
+        }
+      ]
+    },
+    {
+      "id": "repo:binding-blueprint",
+      "status": "repository_reference_checked_not_empirical",
+      "files": [
+        {
+          "file": "docs/validation/v4-semantic-axis-knowledge-expansion-01/evidence-binding-blueprint.md",
+          "sha256": "4be24fb56224e8c1c10b7a88a2c51a089ae31d3b942cf87391429e25c00bd0fb"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "fusion": {
+    "file": "src/lib/interpretation-v4/fusion.ts",
+    "sha256": "1a19f133ac68a36740b1ae9eb57fd7bc3f0fb1f4e224f1f2dbeace2322bfa2a0",
+    "consumers": [
+      "src/lib/interpretation-v3/comprehensive.ts",
+      "src/lib/interpretation-v3/comprehensiveStorytelling.ts",
+      "src/lib/interpretation-v3/engine.ts",
+      "src/lib/interpretation-v4/materialPacket.ts"
+    ]
+  },
+  "fusionRules": {
+    "file": "src/lib/interpretation-v4/fusionRules.ts",
+    "sha256": "562045161572ad8a440157b23557657c6f9a4621748e9b54217e89adfb7fc6ae",
+    "consumers": [
+      "src/lib/interpretation-v4/contentEvidence.ts",
+      "src/lib/interpretation-v4/fusion.ts"
+    ]
+  },
+  "fusionCore": {
+    "file": "src/lib/interpretation-v4/fusionCore.ts",
+    "sha256": "e9f531c4e7477ae6008abf301678f7b151a7e0e9bf58d0910ea9cc7e3745dcd6",
+    "consumers": [
+      "src/lib/interpretation-v4/claimCore.ts",
+      "src/lib/interpretation-v4/claimDiagnostics.ts",
+      "src/lib/interpretation-v4/claimEvaluator.ts",
+      "src/lib/interpretation-v4/claimEvidence.ts",
+      "src/lib/interpretation-v4/claimProfile.ts",
+      "src/lib/interpretation-v4/compatibilityProductView.ts",
+      "src/lib/interpretation-v4/comprehensivePlanCore.ts",
+      "src/lib/interpretation-v4/coreGyeol.ts",
+      "src/lib/interpretation-v4/fusionComplementRegistry.ts",
+      "src/lib/interpretation-v4/fusionContext.ts",
+      "src/lib/interpretation-v4/fusionDiagnostics.ts",
+      "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+      "src/lib/interpretation-v4/fusionRanking.ts",
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "src/lib/interpretation-v4/fusionTension.ts",
+      "src/lib/interpretation-v4/guidanceCore.ts",
+      "src/lib/interpretation-v4/guidanceEvidence.ts",
+      "src/lib/interpretation-v4/narrativeConnectors.ts",
+      "src/lib/interpretation-v4/narrativeCore.ts",
+      "src/lib/interpretation-v4/narrativeMbtiReason.ts",
+      "src/lib/interpretation-v4/narrativeSceneCore.ts",
+      "src/lib/interpretation-v4/personalResonanceCore.ts",
+      "src/lib/interpretation-v4/personalResonanceDiagnostics.ts",
+      "src/lib/interpretation-v4/personalResonanceEvaluator.ts",
+      "src/lib/interpretation-v4/personalResonanceEvidence.ts",
+      "src/lib/interpretation-v4/personalResonanceProfile.ts",
+      "src/lib/interpretation-v4/personalResonanceRanking.ts",
+      "src/lib/interpretation-v4/personalResonanceRules.ts",
+      "src/lib/interpretation-v4/traitArc.ts"
+    ]
+  },
+  "fusionSemanticProfile": {
+    "file": "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+    "sha256": "180e4343baba50532c878d89772eeec8d95fd008cfba46469479cb8ce58bfd17",
+    "consumers": [
+      "src/lib/interpretation-v4/careerProductAdapter.ts",
+      "src/lib/interpretation-v4/claimDiagnostics.ts",
+      "src/lib/interpretation-v4/comprehensiveProductAdapter.ts",
+      "src/lib/interpretation-v4/relationshipProductView.ts"
+    ]
+  },
+  "fusionComplementRegistry": {
+    "file": "src/lib/interpretation-v4/fusionComplementRegistry.ts",
+    "sha256": "f1fcdee0ffcc7e7eb3946c293e4967f2d7ce274f33fa24c6934ae8b2b324880d",
+    "consumers": [
+      "src/lib/interpretation-v4/claimDiagnostics.ts",
+      "src/lib/interpretation-v4/fusionDiagnostics.ts",
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "src/lib/interpretation-v4/personalResonanceDiagnostics.ts"
+    ]
+  },
+  "fusionContext": {
+    "file": "src/lib/interpretation-v4/fusionContext.ts",
+    "sha256": "7657cb04c78c78fb3716e02746f56c3673ee7a152f438c9f1cc09990ea41521d",
+    "consumers": [
+      "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+      "src/lib/interpretation-v4/fusionRanking.ts",
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts"
+    ]
+  },
+  "fusionProfileAdapter": {
+    "file": "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+    "sha256": "ef0b2a217a4643dd936ebc7f9a21bce5a707dde3d5474d2cc8088d8e3cf56825",
+    "consumers": [
+      "src/lib/interpretation-v4/claimDiagnostics.ts",
+      "src/lib/interpretation-v4/claimEvidence.ts",
+      "src/lib/interpretation-v4/fusionDiagnostics.ts",
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "src/lib/interpretation-v4/fusionTension.ts",
+      "src/lib/interpretation-v4/relationshipProductView.ts"
+    ]
+  },
+  "fusionTension": {
+    "file": "src/lib/interpretation-v4/fusionTension.ts",
+    "sha256": "0f0eabce50251367a656393a4167c1283357dee03852b1fd918bc800efc7aca2",
+    "consumers": [
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts"
+    ]
+  },
+  "fusionMeanings": {
+    "file": "src/lib/interpretation-v4/fusionMeanings.ts",
+    "sha256": "f5b55048d0ea564a4716fece30602fab50bc12fe1c7cb08c53049fc7579b3514",
+    "consumers": [
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "src/lib/interpretation-v4/fusionTension.ts"
+    ]
+  },
+  "fusionRanking": {
+    "file": "src/lib/interpretation-v4/fusionRanking.ts",
+    "sha256": "ccfb23251703b2174efc0740e330cdbe6f384ce54936cce0b117d1178f5153e5",
+    "consumers": [
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts"
+    ]
+  },
+  "fusionDiagnostics": {
+    "file": "src/lib/interpretation-v4/fusionDiagnostics.ts",
+    "sha256": "094eb19b98e17cb60eafe47e4c156a3442b137788707181ae57b743afdc45da0",
+    "consumers": [
+      "src/lib/interpretation-v4/claimDiagnostics.ts",
+      "src/lib/interpretation-v4/claimProfile.ts",
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "src/lib/interpretation-v4/personalResonanceDiagnostics.ts",
+      "src/lib/interpretation-v4/personalResonanceProfile.ts"
+    ]
+  },
+  "materialRegistry": {
+    "file": "src/lib/interpretation-v4/materialRegistry.ts",
+    "sha256": "5f208d3e5805e767a8ac51a98338e08962fb3ca4f55a9c90e0e661916ec52fa7",
+    "consumers": [
+      "src/app/dev/book-preview/bookProjection.ts",
+      "src/lib/interpretation-v4/annualEvidence.ts",
+      "src/lib/interpretation-v4/assertionCopy.ts",
+      "src/lib/interpretation-v4/careerRecommendations.ts",
+      "src/lib/interpretation-v4/careerStudy.ts",
+      "src/lib/interpretation-v4/comprehensivePlan.ts",
+      "src/lib/interpretation-v4/contentEvidence.ts",
+      "src/lib/interpretation-v4/evidencePolicy.ts",
+      "src/lib/interpretation-v4/fusion.ts",
+      "src/lib/interpretation-v4/majorYearPersonalization.ts",
+      "src/lib/interpretation-v4/productRhythm.ts"
+    ]
+  },
+  "materialPacket": {
+    "file": "src/lib/interpretation-v4/materialPacket.ts",
+    "sha256": "f6a1b3c7c263c4fea973565a98afa3690866254f071924c94bd8daf326db46db",
+    "consumers": [
+      "src/lib/interpretation-v4/annualEvidence.ts",
+      "src/lib/interpretation-v4/careerComposer.ts",
+      "src/lib/interpretation-v4/careerProductAdapter.ts",
+      "src/lib/interpretation-v4/compatibilityEvidence.ts",
+      "src/lib/interpretation-v4/comprehensiveComposer.ts",
+      "src/lib/interpretation-v4/comprehensivePlan.ts",
+      "src/lib/interpretation-v4/comprehensiveProductAdapter.ts",
+      "src/lib/interpretation-v4/contentEvidence.ts",
+      "src/lib/interpretation-v4/contentMbti.ts",
+      "src/lib/interpretation-v4/contentRelationshipMbti.ts",
+      "src/lib/interpretation-v4/contentWhy.ts",
+      "src/lib/interpretation-v4/copyRealizer.ts",
+      "src/lib/interpretation-v4/loveComposer.ts",
+      "src/lib/interpretation-v4/majorEvidence.ts",
+      "src/lib/interpretation-v4/narrativeComposer.ts",
+      "src/lib/interpretation-v4/narrativeTypes.ts"
+    ]
+  },
+  "foundationIntegratedProfile": {
+    "file": "src/lib/interpretation-v4/foundationIntegratedProfile.ts",
+    "sha256": "b6640f2021a9919159611bd5a52552d26cbffbe64c35e845d74b60cbe1ebcc30",
+    "consumers": [
+      "src/lib/interpretation-v4/careerProductAdapter.ts",
+      "src/lib/interpretation-v4/claimDiagnostics.ts",
+      "src/lib/interpretation-v4/claimEvaluator.ts",
+      "src/lib/interpretation-v4/claimEvidence.ts",
+      "src/lib/interpretation-v4/claimProfile.ts",
+      "src/lib/interpretation-v4/comprehensiveProductAdapter.ts",
+      "src/lib/interpretation-v4/foundationDiagnostics.ts",
+      "src/lib/interpretation-v4/fusionDiagnostics.ts",
+      "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "src/lib/interpretation-v4/guidanceCore.ts",
+      "src/lib/interpretation-v4/personalResonanceEvidence.ts",
+      "src/lib/interpretation-v4/personalResonanceProfile.ts",
+      "src/lib/interpretation-v4/relationshipProductView.ts"
+    ]
+  },
+  "mbtiSemanticProfile": {
+    "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+    "sha256": "b95f7c05b61f27f42f9a2e5ecccf2811610095afaf08737fb269f6b2dbbca96f",
+    "consumers": [
+      "src/lib/interpretation-v4/careerProductAdapter.ts",
+      "src/lib/interpretation-v4/claimDiagnostics.ts",
+      "src/lib/interpretation-v4/claimEvidence.ts",
+      "src/lib/interpretation-v4/claimProfile.ts",
+      "src/lib/interpretation-v4/comprehensiveProductAdapter.ts",
+      "src/lib/interpretation-v4/fusionDiagnostics.ts",
+      "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "src/lib/interpretation-v4/guidanceCore.ts",
+      "src/lib/interpretation-v4/mbtiSemanticDiagnostics.ts",
+      "src/lib/interpretation-v4/personalResonanceEvidence.ts",
+      "src/lib/interpretation-v4/personalResonanceProfile.ts",
+      "src/lib/interpretation-v4/relationshipProductView.ts"
+    ]
+  },
+  "semanticCore": {
+    "file": "src/lib/interpretation-v4/semanticCore.ts",
+    "sha256": "6be9b1fdc3f07ad7c74a38a165349c80d9b3f32af5c7fae2d0d8dbabfd22abab",
+    "consumers": [
+      "src/lib/interpretation-v4/careerProductAdapter.ts",
+      "src/lib/interpretation-v4/careerProductNarrative.ts",
+      "src/lib/interpretation-v4/careerProductSelection.ts",
+      "src/lib/interpretation-v4/careerReleaseMaterials.ts",
+      "src/lib/interpretation-v4/careerReleaseSources.ts",
+      "src/lib/interpretation-v4/claimCore.ts",
+      "src/lib/interpretation-v4/claimDiagnostics.ts",
+      "src/lib/interpretation-v4/claimEvaluator.ts",
+      "src/lib/interpretation-v4/claimEvidence.ts",
+      "src/lib/interpretation-v4/compatibilityProductView.ts",
+      "src/lib/interpretation-v4/compatibilityReleaseApplications.ts",
+      "src/lib/interpretation-v4/compatibilityReleaseMaterials.ts",
+      "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+      "src/lib/interpretation-v4/comprehensiveConflictGraph.ts",
+      "src/lib/interpretation-v4/comprehensiveManuscriptPolish.ts",
+      "src/lib/interpretation-v4/comprehensiveNarrativeAdapter.ts",
+      "src/lib/interpretation-v4/comprehensivePlanCore.ts",
+      "src/lib/interpretation-v4/comprehensiveReleaseContracts.ts",
+      "src/lib/interpretation-v4/comprehensiveReleaseMaterials.ts",
+      "src/lib/interpretation-v4/comprehensiveReleaseRenderer.ts",
+      "src/lib/interpretation-v4/comprehensiveReleaseSources.ts",
+      "src/lib/interpretation-v4/comprehensiveSectionContracts.ts",
+      "src/lib/interpretation-v4/foundationDiagnostics.ts",
+      "src/lib/interpretation-v4/foundationElements.ts",
+      "src/lib/interpretation-v4/foundationIntegratedProfile.ts",
+      "src/lib/interpretation-v4/foundationNatalProfile.ts",
+      "src/lib/interpretation-v4/foundationPillars.ts",
+      "src/lib/interpretation-v4/foundationProfile.ts",
+      "src/lib/interpretation-v4/foundationRanking.ts",
+      "src/lib/interpretation-v4/foundationRelations.ts",
+      "src/lib/interpretation-v4/foundationShinsal.ts",
+      "src/lib/interpretation-v4/foundationShinsalFamilies.ts",
+      "src/lib/interpretation-v4/foundationSupplement.ts",
+      "src/lib/interpretation-v4/foundationSynthesis.ts",
+      "src/lib/interpretation-v4/foundationTenGodSynthesis.ts",
+      "src/lib/interpretation-v4/foundationTension.ts",
+      "src/lib/interpretation-v4/foundationTwelveStages.ts",
+      "src/lib/interpretation-v4/foundationYinYang.ts",
+      "src/lib/interpretation-v4/fusionComplementRegistry.ts",
+      "src/lib/interpretation-v4/fusionContext.ts",
+      "src/lib/interpretation-v4/fusionCore.ts",
+      "src/lib/interpretation-v4/fusionDiagnostics.ts",
+      "src/lib/interpretation-v4/fusionMeanings.ts",
+      "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+      "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "src/lib/interpretation-v4/fusionTension.ts",
+      "src/lib/interpretation-v4/guidanceCore.ts",
+      "src/lib/interpretation-v4/guidanceEvidence.ts",
+      "src/lib/interpretation-v4/guidanceProblems.ts",
+      "src/lib/interpretation-v4/loveReleaseMaterials.ts",
+      "src/lib/interpretation-v4/loveReleaseSources.ts",
+      "src/lib/interpretation-v4/mbtiDimensionPriors.ts",
+      "src/lib/interpretation-v4/mbtiSemanticAnnotations.ts",
+      "src/lib/interpretation-v4/mbtiSemanticCore.ts",
+      "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+      "src/lib/interpretation-v4/narrativeCausality.ts",
+      "src/lib/interpretation-v4/narrativeCore.ts",
+      "src/lib/interpretation-v4/narrativeHumanOutcome.ts",
+      "src/lib/interpretation-v4/narrativeHumanSurface.ts",
+      "src/lib/interpretation-v4/narrativeMeaningSignature.ts",
+      "src/lib/interpretation-v4/narrativePositiveReward.ts",
+      "src/lib/interpretation-v4/narrativeSceneCore.ts",
+      "src/lib/interpretation-v4/narrativeVocabulary.ts",
+      "src/lib/interpretation-v4/operatingRuleRegistry.ts",
+      "src/lib/interpretation-v4/personalResonanceCore.ts",
+      "src/lib/interpretation-v4/personalResonanceDiagnostics.ts",
+      "src/lib/interpretation-v4/personalResonanceEvidence.ts",
+      "src/lib/interpretation-v4/personalResonanceRules.ts",
+      "src/lib/interpretation-v4/relationshipProductNarrative.ts",
+      "src/lib/interpretation-v4/relationshipProductView.ts",
+      "src/lib/interpretation-v4/timeProductContext.ts",
+      "src/lib/report-knowledge/semantic-axis-research/evidenceBindingResearchTypes.ts",
+      "src/lib/report-knowledge/semantic-axis-research/semanticResearchTypes.ts"
+    ]
+  },
+  "personalResonanceProfile": {
+    "file": "src/lib/interpretation-v4/personalResonanceProfile.ts",
+    "sha256": "b5a854e34c657e5fe045335cde20abc6b838005a463b123c7fcaceed1b71ea9d",
+    "consumers": [
+      "src/lib/interpretation-v4/careerProductAdapter.ts",
+      "src/lib/interpretation-v4/comprehensiveProductAdapter.ts",
+      "src/lib/interpretation-v4/guidanceDiagnostics.ts",
+      "src/lib/interpretation-v4/relationshipProductView.ts"
+    ]
+  }
+}

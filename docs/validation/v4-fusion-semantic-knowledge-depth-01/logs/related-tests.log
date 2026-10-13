@@ -1,0 +1,46 @@
+> gyeol-report@0.1.0 test
+> vitest run tests/unit/report-knowledge/sajuFoundationKnowledge.test.ts tests/unit/report-knowledge/sajuFoundationCompletion.test.ts tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts tests/unit/report-knowledge/sajuCompositeStructureResearch.test.ts tests/unit/report-knowledge/sajuRelationResearch.test.ts tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts tests/unit/report-knowledge/mbtiFoundationResearch.test.ts tests/unit/report-knowledge/mbtiPairResearch.test.ts tests/unit/report-knowledge/mbtiTypeKnowledgeBase.test.ts tests/unit/report-knowledge/mbtiKnowledgeBase.test.ts tests/unit/report-knowledge/mbtiProductRouting.test.ts tests/unit/report-knowledge/mbtiCompatibilityCandidateEngine.test.ts tests/unit/report-knowledge/mbti/sourceRuntimeAdapter.test.ts tests/unit/interpretation-v4/semanticFoundation.test.ts tests/unit/interpretation-v4/foundationNatal.test.ts tests/unit/interpretation-v4/foundationTenGodSynthesis.test.ts tests/unit/interpretation-v4/foundationSupplement.test.ts tests/unit/interpretation-v4/foundationSupplementRegistry.test.ts tests/unit/interpretation-v4/foundationIntegratedProfile.test.ts tests/unit/interpretation-v4/mbtiSemanticProfile.test.ts tests/unit/interpretation-v4/fusionCore.test.ts tests/unit/interpretation-v4/fusionSemanticProfile.test.ts tests/unit/interpretation-v4/foundationAdapter.test.ts tests/unit/report-generation/customerDayunGeneration.test.ts tests/unit/report-knowledge/semanticAxisResearch.test.ts tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts tests/unit/report-knowledge/fusionKnowledgeBase.test.ts tests/unit/report-knowledge/sajuMbtiBridgeScorer.test.ts tests/unit/report-knowledge/bridge/myeongliMbtiBridgeEngine.test.ts tests/unit/report-knowledge/bridge/productBridgeAdapter.test.ts tests/unit/report-generation/fusionBridgeFactRegression.test.ts tests/unit/interpretation-v4/personalResonanceProfile.test.ts tests/unit/interpretation-v4/personalResonance.test.ts tests/unit/report-knowledge/compatibilityTypes.test.ts tests/unit/report-knowledge/compatibilityScoreEngine.test.ts tests/unit/report-knowledge/compatibilitySajuBridge.test.ts tests/unit/report-knowledge/compatibilityMbtiBridge.test.ts tests/unit/report-knowledge/compatibilityRelationRules.test.ts tests/unit/interpretation-v4/compatibilitySafety.test.ts tests/unit/interpretation-v4/compatibilityTitleSafety.test.ts
+
+
+ RUN  v4.1.5 /private/tmp/gyeol-fusion-semantic-knowledge-depth-01
+
+ ❯ tests/unit/interpretation-v4/foundationAdapter.test.ts (20 tests | 1 failed) 281ms
+     × only foundation modules reference the foundation; no writer/UI/calculation import 201ms
+ ❯ tests/unit/report-generation/customerDayunGeneration.test.ts (19 tests | 2 failed) 2551ms
+     × rejects major_fortune bypass before order writes and allows stable input 10ms
+     × rejects annual_fortune bypass before order writes and allows stable input 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/interpretation-v4/foundationAdapter.test.ts > Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import
+AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/interpretation-v4/foundationAdapter.test.ts:116:44
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input
+ FAIL  tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input
+SyntaxError: Unexpected end of JSON input
+ ❯ tests/unit/report-generation/customerDayunGeneration.test.ts:50:55
+     48|       }));
+     49|       const valid = Object.keys(changes).length === 0;
+     50|       expect(r.status, JSON.stringify(await r.clone().json())).toBe(va…
+       |                                                       ^
+     51|       expect(storage.create).toHaveBeenCalledTimes(valid ? 1 : 0);
+     52|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+
+ Test Files  2 failed | 38 passed (40)
+      Tests  3 failed | 2544 passed (2547)
+   Start at  18:35:32
+   Duration  42.64s (transform 63.35s, setup 1.15s, import 81.58s, tests 84.17s, environment 3ms)

@@ -1,0 +1,1905 @@
+[
+  {
+    "id": "sar:composite:reviewed-start",
+    "axes": [
+      "PRECISION",
+      "ACTION_TEMPO"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:entp-question-authority-structure",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:entj-needle",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:entp-needle",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:infp-needle",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istj-needle",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:estj-needle",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:isfp-needle",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C001",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C002",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C003",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C004",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C008",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C009",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C012",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C020",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C021",
+        "sharedAxes": [
+          "ACTION_TEMPO"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C022",
+        "sharedAxes": [
+          "ACTION_TEMPO"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C036",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C051",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C060",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C062",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C081",
+        "sharedAxes": [
+          "PRECISION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:estp-check-act",
+        "sharedAxes": [
+          "ACTION_TEMPO"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:sustainable-support",
+    "axes": [
+      "CARE",
+      "BOUNDARY"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:entp-question-authority-structure",
+        "sharedAxes": [
+          "BOUNDARY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:infj-marriage",
+        "sharedAxes": [
+          "BOUNDARY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:enfj-help",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:esfj-help",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istp-love",
+        "sharedAxes": [
+          "BOUNDARY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istp-marriage",
+        "sharedAxes": [
+          "BOUNDARY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C001",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C012",
+        "sharedAxes": [
+          "BOUNDARY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C025",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C028",
+        "sharedAxes": [
+          "BOUNDARY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C049",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C052",
+        "sharedAxes": [
+          "BOUNDARY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C053",
+        "sharedAxes": [
+          "CARE",
+          "BOUNDARY"
+        ],
+        "exactPair": true
+      },
+      {
+        "id": "fkr:complement:C054",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C055",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C073",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C074",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C075",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C077",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C078",
+        "sharedAxes": [
+          "BOUNDARY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C079",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C081",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C095",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:intj-official-process",
+        "sharedAxes": [
+          "BOUNDARY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:infj-fair-role",
+        "sharedAxes": [
+          "BOUNDARY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:enfj-care-budget",
+        "sharedAxes": [
+          "CARE"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:private-expression",
+    "axes": [
+      "ENERGY_DIRECTION",
+      "EXPRESSION"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:entj-alone",
+        "sharedAxes": [
+          "ENERGY_DIRECTION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:intj-charm",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:intp-expression",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:infj-depth",
+        "sharedAxes": [
+          "ENERGY_DIRECTION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:enfj-expression",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:enfp-expression",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:isfp-love",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:esfp-charm",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:esfp-expression",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C050",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C056",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C057",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C061",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C066",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C074",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C082",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C087",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C088",
+        "sharedAxes": [
+          "ENERGY_DIRECTION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C089",
+        "sharedAxes": [
+          "ENERGY_DIRECTION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:intp-review-window",
+        "sharedAxes": [
+          "ENERGY_DIRECTION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:istj-safe-question",
+        "sharedAxes": [
+          "EXPRESSION"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:adaptive-base",
+    "axes": [
+      "STABILITY",
+      "ADAPTABILITY"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:istj-love",
+        "sharedAxes": [
+          "STABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:isfj-love",
+        "sharedAxes": [
+          "STABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C017",
+        "sharedAxes": [
+          "ADAPTABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C019",
+        "sharedAxes": [
+          "ADAPTABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C024",
+        "sharedAxes": [
+          "STABILITY",
+          "ADAPTABILITY"
+        ],
+        "exactPair": true
+      },
+      {
+        "id": "fkr:complement:C038",
+        "sharedAxes": [
+          "STABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C044",
+        "sharedAxes": [
+          "ADAPTABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C073",
+        "sharedAxes": [
+          "STABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C076",
+        "sharedAxes": [
+          "STABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C082",
+        "sharedAxes": [
+          "STABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C084",
+        "sharedAxes": [
+          "ADAPTABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C085",
+        "sharedAxes": [
+          "STABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C090",
+        "sharedAxes": [
+          "ADAPTABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C096",
+        "sharedAxes": [
+          "STABILITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:estp-small-goal-base",
+        "sharedAxes": [
+          "STABILITY"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:focused-range",
+    "axes": [
+      "GOAL_DRIVE",
+      "EXPANSION"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:entj-wealth-pressure-structure",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:entj-wealth",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C013",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C014",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C015",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C016",
+        "sharedAxes": [
+          "GOAL_DRIVE",
+          "EXPANSION"
+        ],
+        "exactPair": true
+      },
+      {
+        "id": "fkr:complement:C023",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C032",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C034",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C042",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C043",
+        "sharedAxes": [
+          "EXPANSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C048",
+        "sharedAxes": [
+          "EXPANSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C068",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C096",
+        "sharedAxes": [
+          "EXPANSION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:estp-small-goal-base",
+        "sharedAxes": [
+          "GOAL_DRIVE"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:allocated-responsibility",
+    "axes": [
+      "DUTY",
+      "LEADERSHIP"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:entj-pressure",
+        "sharedAxes": [
+          "DUTY",
+          "LEADERSHIP"
+        ],
+        "exactPair": true
+      },
+      {
+        "id": "fkr:legacy:entp-rules",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istj-love",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istj-marriage",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:estj-status",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C025",
+        "sharedAxes": [
+          "LEADERSHIP"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C026",
+        "sharedAxes": [
+          "LEADERSHIP"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C027",
+        "sharedAxes": [
+          "LEADERSHIP",
+          "DUTY"
+        ],
+        "exactPair": true
+      },
+      {
+        "id": "fkr:complement:C028",
+        "sharedAxes": [
+          "LEADERSHIP"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C029",
+        "sharedAxes": [
+          "LEADERSHIP"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C030",
+        "sharedAxes": [
+          "LEADERSHIP"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C031",
+        "sharedAxes": [
+          "LEADERSHIP"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C035",
+        "sharedAxes": [
+          "LEADERSHIP"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C036",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C089",
+        "sharedAxes": [
+          "LEADERSHIP"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C095",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:intj-official-process",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:intp-review-window",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:entp-accountable-method",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:infj-fair-role",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:enfp-renewable-routine",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:estj-learning-handoff",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:isfp-exit-notice",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:esfp-procedure-choice",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:curious-method",
+    "axes": [
+      "CURIOSITY",
+      "LEARNING"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:intp-pressure-learning-structure",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:intp-inquiry",
+        "sharedAxes": [
+          "CURIOSITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:intp-expression",
+        "sharedAxes": [
+          "CURIOSITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:infp-expression",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:enfp-connection",
+        "sharedAxes": [
+          "CURIOSITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:isfj-learning",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istp-study",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:estp-study",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C004",
+        "sharedAxes": [
+          "CURIOSITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C006",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C011",
+        "sharedAxes": [
+          "CURIOSITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C033",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C064",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C066",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C067",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C068",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C069",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C070",
+        "sharedAxes": [
+          "CURIOSITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:entj-resource-learning",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:entj-score-question",
+        "sharedAxes": [
+          "CURIOSITY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:infp-chosen-learning",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:enfp-question-practice",
+        "sharedAxes": [
+          "LEARNING",
+          "CURIOSITY"
+        ],
+        "exactPair": true
+      },
+      {
+        "id": "fkr:candidate:estj-learning-handoff",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:estp-check-act",
+        "sharedAxes": [
+          "LEARNING"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:clear-warmth",
+    "axes": [
+      "COMMUNICATION_STYLE",
+      "SOCIAL_ATTUNEMENT"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:infp-needle",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:enfj-expression",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:enfp-expression",
+        "sharedAxes": [
+          "COMMUNICATION_STYLE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:estj-needle",
+        "sharedAxes": [
+          "COMMUNICATION_STYLE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:esfj-alone",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:isfp-needle",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:estp-needle",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C026",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C049",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C050",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C051",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C052",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C054",
+        "sharedAxes": [
+          "COMMUNICATION_STYLE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C055",
+        "sharedAxes": [
+          "COMMUNICATION_STYLE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C058",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C060",
+        "sharedAxes": [
+          "COMMUNICATION_STYLE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C076",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C080",
+        "sharedAxes": [
+          "SOCIAL_ATTUNEMENT"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:funded-option",
+    "axes": [
+      "OPPORTUNITY_SENSE",
+      "RESOURCE_SENSE"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:entj-wealth-pressure-structure",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:entj-made-value-structure",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:entj-wealth",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:intj-money",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:enfp-budget",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istj-marriage",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C037",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C038",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C039",
+        "sharedAxes": [
+          "RESOURCE_SENSE",
+          "OPPORTUNITY_SENSE"
+        ],
+        "exactPair": true
+      },
+      {
+        "id": "fkr:complement:C040",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C041",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C042",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C043",
+        "sharedAxes": [
+          "OPPORTUNITY_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C044",
+        "sharedAxes": [
+          "OPPORTUNITY_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C046",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C047",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C083",
+        "sharedAxes": [
+          "OPPORTUNITY_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C092",
+        "sharedAxes": [
+          "OPPORTUNITY_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:intj-expertise-price",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:entj-resource-learning",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:infj-value-budget",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:infp-paid-output",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:enfj-care-budget",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:isfj-budgeted-making",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:esfj-shared-budget",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:istp-tool-understanding",
+        "sharedAxes": [
+          "RESOURCE_SENSE"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:valued-effort",
+    "axes": [
+      "MEANING",
+      "PERSISTENCE"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:enfp-budget",
+        "sharedAxes": [
+          "MEANING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C010",
+        "sharedAxes": [
+          "MEANING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C014",
+        "sharedAxes": [
+          "PERSISTENCE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C022",
+        "sharedAxes": [
+          "PERSISTENCE"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C040",
+        "sharedAxes": [
+          "MEANING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C045",
+        "sharedAxes": [
+          "MEANING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C057",
+        "sharedAxes": [
+          "MEANING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C063",
+        "sharedAxes": [
+          "MEANING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C079",
+        "sharedAxes": [
+          "MEANING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C093",
+        "sharedAxes": [
+          "MEANING"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:infj-value-budget",
+        "sharedAxes": [
+          "MEANING"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:accountable-choice",
+    "axes": [
+      "AUTONOMY",
+      "DUTY"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:entj-pressure",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:intp-space",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:entp-rules",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:enfj-help",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istj-love",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istj-marriage",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:estj-status",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:esfj-help",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istp-love",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C027",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C036",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C041",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C059",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C069",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C077",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C093",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C094",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C095",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:intj-official-process",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:intp-review-window",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:entp-accountable-method",
+        "sharedAxes": [
+          "DUTY",
+          "AUTONOMY"
+        ],
+        "exactPair": true
+      },
+      {
+        "id": "fkr:candidate:infj-fair-role",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:infp-chosen-learning",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:enfj-shared-choice",
+        "sharedAxes": [
+          "AUTONOMY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:enfp-renewable-routine",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:estj-learning-handoff",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:isfp-exit-notice",
+        "sharedAxes": [
+          "DUTY"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:esfp-procedure-choice",
+        "sharedAxes": [
+          "DUTY",
+          "AUTONOMY"
+        ],
+        "exactPair": true
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  },
+  {
+    "id": "sar:composite:restored-output",
+    "axes": [
+      "CREATION",
+      "RECOVERY_NEED"
+    ],
+    "relatedFusion": [
+      {
+        "id": "fkr:legacy:entj-made-value-structure",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:infp-expression",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:enfp-alone",
+        "sharedAxes": [
+          "RECOVERY_NEED"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:esfj-alone",
+        "sharedAxes": [
+          "RECOVERY_NEED"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:legacy:istp-study",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C061",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C062",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C063",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C064",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C065",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C070",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C071",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C072",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C080",
+        "sharedAxes": [
+          "RECOVERY_NEED"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C085",
+        "sharedAxes": [
+          "RECOVERY_NEED"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C086",
+        "sharedAxes": [
+          "RECOVERY_NEED"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:complement:C087",
+        "sharedAxes": [
+          "RECOVERY_NEED"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:infp-paid-output",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      },
+      {
+        "id": "fkr:candidate:isfj-budgeted-making",
+        "sharedAxes": [
+          "CREATION"
+        ],
+        "exactPair": false
+      }
+    ],
+    "classification": "prior_authored_compound_is_not_new_source_fact",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false
+  }
+]

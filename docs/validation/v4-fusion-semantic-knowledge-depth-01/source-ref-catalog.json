@@ -1,0 +1,376 @@
+[
+  {
+    "key": "csr:profile:jaeda_sinyak:15d7e48a153974db45c1571ea95cd900f0e3af28ab6f387a24629cd051ce82fb",
+    "id": "csr:profile:jaeda_sinyak",
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureStrength.ts",
+    "exportName": "COMPOSITE_STRENGTH",
+    "index": 0,
+    "recordSha256": "15d7e48a153974db45c1571ea95cd900f0e3af28ab6f387a24629cd051ce82fb",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": false,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "csr:profile:siksang_saengjae:db31bcd17d9ffa13b894a36c61b85fe807a91c339d1cc18c24a925730826a9e4",
+    "id": "csr:profile:siksang_saengjae",
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureFlow.ts",
+    "exportName": "COMPOSITE_FLOW",
+    "index": 0,
+    "recordSha256": "db31bcd17d9ffa13b894a36c61b85fe807a91c339d1cc18c24a925730826a9e4",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": false,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "csr:profile:salin_sangsaeng:9e8d17765c83a731a9b2d940f31b815d2ee4fadf7a5a0e197e3bb747c1be52aa",
+    "id": "csr:profile:salin_sangsaeng",
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureFlow.ts",
+    "exportName": "COMPOSITE_FLOW",
+    "index": 3,
+    "recordSha256": "9e8d17765c83a731a9b2d940f31b815d2ee4fadf7a5a0e197e3bb747c1be52aa",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": false,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "csr:profile:sanggwan_gyeongwan:6d6468e0184917932513807b1deb39f4ed577a6998b9d182525cfa6cdaf32f92",
+    "id": "csr:profile:sanggwan_gyeongwan",
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureTension.ts",
+    "exportName": "COMPOSITE_TENSION",
+    "index": 0,
+    "recordSha256": "6d6468e0184917932513807b1deb39f4ed577a6998b9d182525cfa6cdaf32f92",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": false,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:ten_god:pian_cai:b2ced2072ff8bd848e6ff31903bbcde59b742102f5f3893e8b72bf8ea21dd966",
+    "id": "foundation:ten_god:pian_cai",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 103,
+    "recordSha256": "b2ced2072ff8bd848e6ff31903bbcde59b742102f5f3893e8b72bf8ea21dd966",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:ten_god:zheng_cai:7f13e36ff2725cf74251e1ae66f401e14415b1063f4f5990577568e60602866f",
+    "id": "foundation:ten_god:zheng_cai",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 104,
+    "recordSha256": "7f13e36ff2725cf74251e1ae66f401e14415b1063f4f5990577568e60602866f",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:ten_god:qi_sha:772e2f835195bbd7ae171796d6507aa2ec10a4efdb9dd0be7535729ef4a3b80d",
+    "id": "foundation:ten_god:qi_sha",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 105,
+    "recordSha256": "772e2f835195bbd7ae171796d6507aa2ec10a4efdb9dd0be7535729ef4a3b80d",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:shinsal_gwiin:hyeonchim:4f0df2ce604a6fcf28cf05fe29a6a2ac18a977d51fae3c9b4db7a7f403bd20dc",
+    "id": "foundation:shinsal_gwiin:hyeonchim",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 137,
+    "recordSha256": "4f0df2ce604a6fcf28cf05fe29a6a2ac18a977d51fae3c9b4db7a7f403bd20dc",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:shinsal_gwiin:hwagae:401eedba03ea2b79fd316c6ccc4f9fe3ee06bd34b80ec968efb13778cda3d319",
+    "id": "foundation:shinsal_gwiin:hwagae",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 145,
+    "recordSha256": "401eedba03ea2b79fd316c6ccc4f9fe3ee06bd34b80ec968efb13778cda3d319",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:ten_god:pian_yin:8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+    "id": "foundation:ten_god:pian_yin",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 107,
+    "recordSha256": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:shinsal_gwiin:gwimun:e197ee96e2a8d171cc1d925453cafb5ebf277d82666f23192db395cc967b7e03",
+    "id": "foundation:shinsal_gwiin:gwimun",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 142,
+    "recordSha256": "e197ee96e2a8d171cc1d925453cafb5ebf277d82666f23192db395cc967b7e03",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:shinsal_gwiin:hongyeom:dc1aea5623b68e37576e8634fafa3908869cb2c6e31a92e8aebe16e383d8c822",
+    "id": "foundation:shinsal_gwiin:hongyeom",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 138,
+    "recordSha256": "dc1aea5623b68e37576e8634fafa3908869cb2c6e31a92e8aebe16e383d8c822",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:ten_god:bijian:bdcbc44a5a262791cabcfd3165daad55831189de4069200af638a4dedf667e6e",
+    "id": "foundation:ten_god:bijian",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 99,
+    "recordSha256": "bdcbc44a5a262791cabcfd3165daad55831189de4069200af638a4dedf667e6e",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "csr:profile:no_output:bb27f41515884753e1533f43b383ceac7d88d7629a5e3355d62efd98f8ec0ff4",
+    "id": "csr:profile:no_output",
+    "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureAbsence.ts",
+    "exportName": "COMPOSITE_ABSENCE",
+    "index": 1,
+    "recordSha256": "bb27f41515884753e1533f43b383ceac7d88d7629a5e3355d62efd98f8ec0ff4",
+    "relation": "related_not_equivalent",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": false,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:ten_god:zheng_guan:94995b8c136aa8e30fd19773f8b71c5711beb46091f3f80e01e4c5af1152ce71",
+    "id": "foundation:ten_god:zheng_guan",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 106,
+    "recordSha256": "94995b8c136aa8e30fd19773f8b71c5711beb46091f3f80e01e4c5af1152ce71",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:ten_god:shi_shen:1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+    "id": "foundation:ten_god:shi_shen",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 101,
+    "recordSha256": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:ten_god:zheng_yin:7098bd99043e8c73d05217bc8908293875ca89dc07cd2ff70af16b065b32f339",
+    "id": "foundation:ten_god:zheng_yin",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 108,
+    "recordSha256": "7098bd99043e8c73d05217bc8908293875ca89dc07cd2ff70af16b065b32f339",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:shinsal_gwiin:cheoneul:043b49a5e791c3a4e8c18e3984d9f996649a0dbb486aa1ff980837539bac8998",
+    "id": "foundation:shinsal_gwiin:cheoneul",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 152,
+    "recordSha256": "043b49a5e791c3a4e8c18e3984d9f996649a0dbb486aa1ff980837539bac8998",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:shinsal_gwiin:jangseong:32e09231866902c37b2db529935baa2e5982deea821635fa2c8c0044217d0f3d",
+    "id": "foundation:shinsal_gwiin:jangseong",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 150,
+    "recordSha256": "32e09231866902c37b2db529935baa2e5982deea821635fa2c8c0044217d0f3d",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:shinsal_gwiin:yangin:185b6bfd05f46fdb401e75ba619d195179cbb69a20a6c410e9e61be5d2f96ad4",
+    "id": "foundation:shinsal_gwiin:yangin",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 147,
+    "recordSha256": "185b6bfd05f46fdb401e75ba619d195179cbb69a20a6c410e9e61be5d2f96ad4",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:shinsal_gwiin:dohwa:debf8f8fa431fed9978dc8fe01062dc0db3454c93d48fc519c1896c7cdc5049a",
+    "id": "foundation:shinsal_gwiin:dohwa",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 144,
+    "recordSha256": "debf8f8fa431fed9978dc8fe01062dc0db3454c93d48fc519c1896c7cdc5049a",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  },
+  {
+    "key": "foundation:ten_god:shang_guan:bc99009644343d85b0161b881f90ac0fc7e9954cfd65f69a4f187d4e08344c3b",
+    "id": "foundation:ten_god:shang_guan",
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "index": 102,
+    "recordSha256": "bc99009644343d85b0161b881f90ac0fc7e9954cfd65f69a4f187d4e08344c3b",
+    "relation": "existing_feature_reference",
+    "originalStatus": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null
+    }
+  }
+]
