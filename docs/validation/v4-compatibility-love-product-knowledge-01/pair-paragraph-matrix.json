@@ -1,0 +1,506 @@
+[
+  {
+    "address": "CH01.P1",
+    "chapterId": "CH01",
+    "paragraphId": "P1",
+    "title": "우리라는 관계의 핵심",
+    "purpose": "두 사람을 한마디로 설명하면",
+    "titleTemplate": "두 사람을 한마디로 설명하면",
+    "roles": [
+      "특징적인 조합",
+      "대표 성향 대비",
+      "함께하는 장면",
+      "관계의 상징"
+    ]
+  },
+  {
+    "address": "CH01.P2",
+    "chapterId": "CH01",
+    "paragraphId": "P2",
+    "title": "우리라는 관계의 핵심",
+    "purpose": "명리에서 보는 두 사람의 관계",
+    "titleTemplate": "명리에서 보는 두 사람의 관계",
+    "roles": [
+      "실제 명리 관계",
+      "쉬운 의미",
+      "상호 영향",
+      "강점과 주의 조건"
+    ]
+  },
+  {
+    "address": "CH01.P3",
+    "chapterId": "CH01",
+    "paragraphId": "P3",
+    "title": "우리라는 관계의 핵심",
+    "purpose": "MBTI가 보여주는 우리",
+    "titleTemplate": "MBTI가 보여주는 우리",
+    "roles": [
+      "A의 실제 MBTI",
+      "B의 실제 MBTI",
+      "공통점과 차이",
+      "상호작용"
+    ]
+  },
+  {
+    "address": "CH01.P4",
+    "chapterId": "CH01",
+    "paragraphId": "P4",
+    "title": "우리라는 관계의 핵심",
+    "purpose": "이 관계를 이해하는 가장 중요한 기준",
+    "titleTemplate": "이 관계를 이해하는 가장 중요한 기준",
+    "roles": [
+      "좋은 점",
+      "조심할 차이",
+      "관계별 조건",
+      "앞으로의 질문"
+    ]
+  },
+  {
+    "address": "CH02.P1",
+    "chapterId": "CH02",
+    "paragraphId": "P1",
+    "title": "A는 이 관계에서 어떤 사람인가",
+    "purpose": "A의 관계 성향",
+    "titleTemplate": "{{A}}의 관계 성향",
+    "roles": [
+      "대표 행동",
+      "명리 근거",
+      "MBTI 선호",
+      "B와의 관계"
+    ]
+  },
+  {
+    "address": "CH02.P2",
+    "chapterId": "CH02",
+    "paragraphId": "P2",
+    "title": "A는 이 관계에서 어떤 사람인가",
+    "purpose": "A가 관계에서 중요하게 여기는 것",
+    "titleTemplate": "{{A:subject}} 관계에서 중요하게 여기는 것",
+    "roles": [
+      "관계 조건",
+      "실제 이유",
+      "B와의 장면",
+      "충족될 때"
+    ]
+  },
+  {
+    "address": "CH02.P3",
+    "chapterId": "CH02",
+    "paragraphId": "P3",
+    "title": "A는 이 관계에서 어떤 사람인가",
+    "purpose": "A가 관계에 가져오는 장점",
+    "titleTemplate": "{{A:subject}} 관계에 가져오는 장점",
+    "roles": [
+      "특징적 강점",
+      "실제 근거",
+      "B에게 좋은 상황",
+      "유지 조건"
+    ]
+  },
+  {
+    "address": "CH02.P4",
+    "chapterId": "CH02",
+    "paragraphId": "P4",
+    "title": "A는 이 관계에서 어떤 사람인가",
+    "purpose": "A가 조심해야 할 부분",
+    "titleTemplate": "{{A:subject}} 조심해야 할 부분",
+    "roles": [
+      "과사용 위험",
+      "원인",
+      "B가 받는 뜻",
+      "조절 행동"
+    ]
+  },
+  {
+    "address": "CH03.P1",
+    "chapterId": "CH03",
+    "paragraphId": "P1",
+    "title": "B는 이 관계에서 어떤 사람인가",
+    "purpose": "B의 관계 성향",
+    "titleTemplate": "{{B}}의 관계 성향",
+    "roles": [
+      "독립적 행동",
+      "명리 근거",
+      "MBTI 선호",
+      "A와의 관계"
+    ]
+  },
+  {
+    "address": "CH03.P2",
+    "chapterId": "CH03",
+    "paragraphId": "P2",
+    "title": "B는 이 관계에서 어떤 사람인가",
+    "purpose": "B가 관계에서 중요하게 여기는 것",
+    "titleTemplate": "{{B:subject}} 관계에서 중요하게 여기는 것",
+    "roles": [
+      "관계 조건",
+      "독립적 이유",
+      "A와의 장면",
+      "충족될 때"
+    ]
+  },
+  {
+    "address": "CH03.P3",
+    "chapterId": "CH03",
+    "paragraphId": "P3",
+    "title": "B는 이 관계에서 어떤 사람인가",
+    "purpose": "B가 관계에 가져오는 장점",
+    "titleTemplate": "{{B:subject}} 관계에 가져오는 장점",
+    "roles": [
+      "특징적 강점",
+      "독립적 근거",
+      "A에게 좋은 상황",
+      "유지 조건"
+    ]
+  },
+  {
+    "address": "CH03.P4",
+    "chapterId": "CH03",
+    "paragraphId": "P4",
+    "title": "B는 이 관계에서 어떤 사람인가",
+    "purpose": "B가 조심해야 할 부분",
+    "titleTemplate": "{{B:subject}} 조심해야 할 부분",
+    "roles": [
+      "과사용 위험",
+      "원인",
+      "A가 받는 뜻",
+      "조절 행동"
+    ]
+  },
+  {
+    "address": "CH04.P1",
+    "chapterId": "CH04",
+    "paragraphId": "P1",
+    "title": "우리가 잘 맞는 이유",
+    "purpose": "두 사람의 공통점",
+    "titleTemplate": "두 사람의 공통점",
+    "roles": [
+      "검증된 공통점 또는 다른 기여",
+      "각자 근거",
+      "함께하는 행동",
+      "강점의 조건"
+    ]
+  },
+  {
+    "address": "CH04.P2",
+    "chapterId": "CH04",
+    "paragraphId": "P2",
+    "title": "우리가 잘 맞는 이유",
+    "purpose": "서로 다른 장점이 만날 때",
+    "titleTemplate": "서로 다른 장점이 만날 때",
+    "roles": [
+      "검증된 보완 또는 다른 장점",
+      "실제 근거",
+      "도움의 장면",
+      "좋은 차이의 경계"
+    ]
+  },
+  {
+    "address": "CH04.P3",
+    "chapterId": "CH04",
+    "paragraphId": "P3",
+    "title": "우리가 잘 맞는 이유",
+    "purpose": "함께 있을 때 좋은 순간",
+    "titleTemplate": "함께 있을 때 좋은 순간",
+    "roles": [
+      "관계별 상황",
+      "A의 기여",
+      "B의 기여",
+      "함께 얻는 결과"
+    ]
+  },
+  {
+    "address": "CH04.P4",
+    "chapterId": "CH04",
+    "paragraphId": "P4",
+    "title": "우리가 잘 맞는 이유",
+    "purpose": "이 관계에서 키울 수 있는 좋은 힘",
+    "titleTemplate": "이 관계에서 키울 수 있는 좋은 힘",
+    "roles": [
+      "가치 있는 특징",
+      "좋은 관계의 조건",
+      "과사용 위험",
+      "활용 방향"
+    ]
+  },
+  {
+    "address": "CH05.P1",
+    "chapterId": "CH05",
+    "paragraphId": "P1",
+    "title": "A가 B에게 주는 영향",
+    "purpose": "A는 B에게 어떤 자극을 주는가",
+    "titleTemplate": "{{A:topic}} {{B}}에게 어떤 자극을 주는가",
+    "roles": [
+      "A→B 영향",
+      "받는 사람 기준 십성",
+      "구체적 행동",
+      "B에게 남는 의미"
+    ]
+  },
+  {
+    "address": "CH05.P2",
+    "chapterId": "CH05",
+    "paragraphId": "P2",
+    "title": "A가 B에게 주는 영향",
+    "purpose": "A가 B에게 주는 좋은 영향",
+    "titleTemplate": "{{A:subject}} {{B}}에게 주는 좋은 영향",
+    "roles": [
+      "도움 되는 강점",
+      "실제 근거",
+      "관계별 장면",
+      "발휘 조건"
+    ]
+  },
+  {
+    "address": "CH05.P3",
+    "chapterId": "CH05",
+    "paragraphId": "P3",
+    "title": "A가 B에게 주는 영향",
+    "purpose": "A의 행동이 B에게 부담이 되는 순간",
+    "titleTemplate": "{{A}}의 행동이 {{B}}에게 부담이 되는 순간",
+    "roles": [
+      "부담 행동",
+      "검증된 차이",
+      "의도와 경험",
+      "악화 조건"
+    ]
+  },
+  {
+    "address": "CH05.P4",
+    "chapterId": "CH05",
+    "paragraphId": "P4",
+    "title": "A가 B에게 주는 영향",
+    "purpose": "A가 영향력을 잘 사용하는 방법",
+    "titleTemplate": "{{A:subject}} 영향력을 잘 사용하는 방법",
+    "roles": [
+      "조정할 행동",
+      "B의 필요",
+      "확인할 실천",
+      "A→B 가능성"
+    ]
+  },
+  {
+    "address": "CH06.P1",
+    "chapterId": "CH06",
+    "paragraphId": "P1",
+    "title": "B가 A에게 주는 영향",
+    "purpose": "B는 A에게 어떤 자극을 주는가",
+    "titleTemplate": "{{B:topic}} {{A}}에게 어떤 자극을 주는가",
+    "roles": [
+      "B→A 영향",
+      "받는 사람 기준 십성",
+      "다른 방향 행동",
+      "A에게 남는 의미"
+    ]
+  },
+  {
+    "address": "CH06.P2",
+    "chapterId": "CH06",
+    "paragraphId": "P2",
+    "title": "B가 A에게 주는 영향",
+    "purpose": "B가 A에게 주는 좋은 영향",
+    "titleTemplate": "{{B:subject}} {{A}}에게 주는 좋은 영향",
+    "roles": [
+      "도움 되는 강점",
+      "독립적 근거",
+      "관계별 장면",
+      "발휘 조건"
+    ]
+  },
+  {
+    "address": "CH06.P3",
+    "chapterId": "CH06",
+    "paragraphId": "P3",
+    "title": "B가 A에게 주는 영향",
+    "purpose": "B의 행동이 A에게 부담이 되는 순간",
+    "titleTemplate": "{{B}}의 행동이 {{A}}에게 부담이 되는 순간",
+    "roles": [
+      "부담 행동",
+      "검증된 차이",
+      "의도와 경험",
+      "악화 조건"
+    ]
+  },
+  {
+    "address": "CH06.P4",
+    "chapterId": "CH06",
+    "paragraphId": "P4",
+    "title": "B가 A에게 주는 영향",
+    "purpose": "B가 영향력을 잘 사용하는 방법",
+    "titleTemplate": "{{B:subject}} 영향력을 잘 사용하는 방법",
+    "roles": [
+      "조정할 행동",
+      "A의 필요",
+      "확인할 실천",
+      "B→A 가능성"
+    ]
+  },
+  {
+    "address": "CH07.P1",
+    "chapterId": "CH07",
+    "paragraphId": "P1",
+    "title": "우리가 부딪히는 이유",
+    "purpose": "가장 중요한 차이",
+    "titleTemplate": "가장 중요한 차이",
+    "roles": [
+      "불일치 또는 확인할 조건",
+      "각자의 성향",
+      "다른 이해",
+      "답답함의 이유"
+    ]
+  },
+  {
+    "address": "CH07.P2",
+    "chapterId": "CH07",
+    "paragraphId": "P2",
+    "title": "우리가 부딪히는 이유",
+    "purpose": "명리에서 보이는 충돌",
+    "titleTemplate": "명리에서 보이는 충돌",
+    "roles": [
+      "실제 충돌 또는 부재",
+      "쉬운 의미",
+      "다른 반응",
+      "긍정적 여지"
+    ]
+  },
+  {
+    "address": "CH07.P3",
+    "chapterId": "CH07",
+    "paragraphId": "P3",
+    "title": "우리가 부딪히는 이유",
+    "purpose": "이 관계의 팩폭",
+    "titleTemplate": "이 관계의 팩폭",
+    "roles": [
+      "반복 문제",
+      "방향별 원인",
+      "악화 장면",
+      "직설적 결론"
+    ]
+  },
+  {
+    "address": "CH07.P4",
+    "chapterId": "CH07",
+    "paragraphId": "P4",
+    "title": "우리가 부딪히는 이유",
+    "purpose": "갈등이 커지는 조건",
+    "titleTemplate": "갈등이 커지는 조건",
+    "roles": [
+      "주의 상황",
+      "A의 기대",
+      "B의 기대",
+      "다르게 전달되는 뜻"
+    ]
+  },
+  {
+    "address": "CH08.P1",
+    "chapterId": "CH08",
+    "paragraphId": "P1",
+    "title": "우리가 다시 잘 지내는 방법",
+    "purpose": "우리에게 필요한 조율",
+    "titleTemplate": "우리에게 필요한 조율",
+    "roles": [
+      "앞선 갈등 질문",
+      "실제 원인",
+      "각자 필요",
+      "조정 기준"
+    ]
+  },
+  {
+    "address": "CH08.P2",
+    "chapterId": "CH08",
+    "paragraphId": "P2",
+    "title": "우리가 다시 잘 지내는 방법",
+    "purpose": "A가 바꾸면 좋은 행동",
+    "titleTemplate": "{{A:subject}} 바꾸면 좋은 행동",
+    "roles": [
+      "A의 전략",
+      "필요한 이유",
+      "실천 방법",
+      "B에게 남는 변화"
+    ]
+  },
+  {
+    "address": "CH08.P3",
+    "chapterId": "CH08",
+    "paragraphId": "P3",
+    "title": "우리가 다시 잘 지내는 방법",
+    "purpose": "B가 바꾸면 좋은 행동",
+    "titleTemplate": "{{B:subject}} 바꾸면 좋은 행동",
+    "roles": [
+      "B의 전략",
+      "필요한 이유",
+      "다른 실천 방법",
+      "A에게 남는 변화"
+    ]
+  },
+  {
+    "address": "CH08.P4",
+    "chapterId": "CH08",
+    "paragraphId": "P4",
+    "title": "우리가 다시 잘 지내는 방법",
+    "purpose": "둘이 함께 지킬 약속",
+    "titleTemplate": "둘이 함께 지킬 약속",
+    "roles": [
+      "공동 목표",
+      "A의 역할",
+      "B의 역할",
+      "관계별 원칙"
+    ]
+  },
+  {
+    "address": "CH09.P1",
+    "chapterId": "CH09",
+    "paragraphId": "P1",
+    "title": "오래 이어갈 수 있는 우리의 좋은 힘",
+    "purpose": "두 사람이 가진 좋은 힘",
+    "titleTemplate": "두 사람이 가진 좋은 힘",
+    "roles": [
+      "긍정적 특징",
+      "실제 명리·MBTI",
+      "함께하는 장점",
+      "지속 조건"
+    ]
+  },
+  {
+    "address": "CH09.P2",
+    "chapterId": "CH09",
+    "paragraphId": "P2",
+    "title": "오래 이어갈 수 있는 우리의 좋은 힘",
+    "purpose": "함께 활용할 수 있는 좋은 기운",
+    "titleTemplate": "함께 활용할 수 있는 좋은 기운",
+    "roles": [
+      "검증된 좋은 기운",
+      "근거와 의미",
+      "관계의 가능성",
+      "현실적 활용"
+    ]
+  },
+  {
+    "address": "CH09.P3",
+    "chapterId": "CH09",
+    "paragraphId": "P3",
+    "title": "오래 이어갈 수 있는 우리의 좋은 힘",
+    "purpose": "관계를 오래 지키는 선택",
+    "titleTemplate": "관계를 오래 지키는 선택",
+    "roles": [
+      "조율 원칙",
+      "개인별 이유",
+      "실천 행동",
+      "지속 조건"
+    ]
+  },
+  {
+    "address": "CH09.P4",
+    "chapterId": "CH09",
+    "paragraphId": "P4",
+    "title": "오래 이어갈 수 있는 우리의 좋은 힘",
+    "purpose": "우리라는 관계의 마지막 메시지",
+    "titleTemplate": "우리라는 관계의 마지막 메시지",
+    "roles": [
+      "특징적인 상호작용",
+      "함께 만드는 가치",
+      "기억할 기준",
+      "관계별 결론"
+    ]
+  }
+]

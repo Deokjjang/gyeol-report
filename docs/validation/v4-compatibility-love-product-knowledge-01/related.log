@@ -1,0 +1,3079 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-compatibility-love-product-knowledge-01
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts (42 tests | 5 failed) 86448ms
+     × 'comprehensive' previous saved edition remains identical 8404ms
+     × 'love' previous saved edition remains identical 2061ms
+     × 'compatibility' previous saved edition remains identical 4873ms
+     × 'major' previous saved edition remains identical 2591ms
+     × 'annual' previous saved edition remains identical 2770ms
+ ❯ tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts (22 tests | 1 failed) 42962ms
+     × scheduler is not consumed by prior layers, six products, UI, calculations or providers 118ms
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts (5 tests | 5 failed) 21032ms
+   × 'comprehensive' customer/evidence/Book stays frozen 8479ms
+   × 'love' customer/evidence/Book stays frozen 2091ms
+   × 'compatibility' customer/evidence/Book stays frozen 4969ms
+   × 'major' customer/evidence/Book stays frozen 2644ms
+   × 'annual' customer/evidence/Book stays frozen 2849ms
+ ❯ tests/unit/report-generation/customerDayunGeneration.test.ts (19 tests | 2 failed) 1647ms
+     × rejects major_fortune bypass before order writes and allows stable input 7ms
+     × rejects annual_fortune bypass before order writes and allows stable input 1ms
+ ❯ tests/unit/interpretation-v4/comprehensiveAllocation.test.ts (44 tests | 2 failed) 344ms
+     × C9 element composite beats a five-element dictionary and balanced yin yang is not a story 3ms
+     × recovery-axis Fusion can serve C9 even when its original application is work 1ms
+ ❯ tests/unit/interpretation-v4/foundationAdapter.test.ts (20 tests | 1 failed) 237ms
+     × only foundation modules reference the foundation; no writer/UI/calculation import 184ms
+ ❯ tests/unit/report-knowledge/mbtiPairResearch.test.ts (41 tests | 1 failed) 4426ms
+     × keeps every new registry file static, type-only and absent from runtime consumers 69ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 17 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'comprehensive' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "79e6f83b152d9efbeea6ffacbeba6b65682da18728571b1f45457449d3d3b1f0",
+-   "cf6b97069cfda561ca29910da0aa8fbd8276dd6ce8a1a4b11bf35dfc2ca06d3a",
+-   "27cdc93d2473150e53638211d76e46f2d0c193ea1f84fb31835bfae62337d502",
++   "7abeaf415fc6e3987f97d5a23660c44de3b2b0555b17d6e7dd4962251849b6df",
++   "9489bd1889c289bdf0d736bea07f5ca8416c3f3be99703712d711d3e0683ff85",
++   "77f9a788f81c8adce8d60909748af3383af68d6e520afec6a94ca7ec6f923b67",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:50:136
+     48|     return;
+     49|   }
+     50|   expect([v4Digest(result.draft), v4Digest(result.evidencePacket), v4D…
+       |                                                                                                                                        ^
+     51|   expect(result.externalCalls).toEqual([]);
+     52| }, 120000);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'love' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+    "6a9e456862186c8387c25239294742281bb1625d220d34f75672dce3d7ed568b",
+-   "258b6c08fa486ff838638a336bfd89b14b9da2e0e1f24ca115515789c877847d",
+-   "31689af92401bda9724fbff1f92f2ae0227fd2d761d344df212f7d5d68b442ef",
++   "5aa3f85dc2ce7c15c8cffff86489d32ff675cc4774bfad0d0175fb9d3d4b8e4d",
++   "5b756f9299610de087852de1f904be8227ce632bfa71221080da067e3f670a14",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108
+     38|     const { contentDigest: _, ...body } = { ...e, composition }; void …
+     39|     const sealed = { ...body, contentDigest: v4Digest(body) };
+     40|     expect([v4Digest(projectV4Composition(composition)), v4Digest(seal…
+       |                                                                                                            ^
+     41|     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-…
+     42|       productKey: sealed.input.productKey, productSlug: sealed.input.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'compatibility' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+    "10dc7fa3f24adf0c3e90f5f5f951a31a89c9d16b56b07402cf296d65fb3dcb8d",
+-   "1ac3b7f26fbc5c3e83c03055fd172d98aeda4cee736006f40c39db1a2a41b0c3",
+-   "b90fffb36cdfe0a9b648d2390dd61ab9624931d41ecaa41624053f6cfdaaac0b",
++   "a790548d932fa0d28dc5c72ee0f1d8f5254ef8f47c6568e8605b1933354169d3",
++   "6b72bb3315deb01dc30e6c17b3de206bb48136cedd5e17b98d3328d5fea496b3",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108
+     38|     const { contentDigest: _, ...body } = { ...e, composition }; void …
+     39|     const sealed = { ...body, contentDigest: v4Digest(body) };
+     40|     expect([v4Digest(projectV4Composition(composition)), v4Digest(seal…
+       |                                                                                                            ^
+     41|     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-…
+     42|       productKey: sealed.input.productKey, productSlug: sealed.input.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'major' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "71465d70a0800b6d7430b45287e47afe5438919c6cb56d99deef9a875d51a15b",
+-   "cf9b8c3aaef4fb7488028e622b023ebe9db3cb677e469bb3c30ec9f82bd56dfd",
+-   "eb31c1fe7addcee764b3df970a892850180cb9751d73c2ecbd5198e96e821204",
++   "793cf165f7979fdca53538ce7e1179dec7420cfbc56d6c9c8850c50bec190e0f",
++   "c8f9971936e1978a23f94be2f0324b586c656c9c3c041b98ad145ad07cefaec5",
++   "9bca83d261e8785699976a73dee286f67967a93280caba648df3c6623524e4e4",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108
+     38|     const { contentDigest: _, ...body } = { ...e, composition }; void …
+     39|     const sealed = { ...body, contentDigest: v4Digest(body) };
+     40|     expect([v4Digest(projectV4Composition(composition)), v4Digest(seal…
+       |                                                                                                            ^
+     41|     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-…
+     42|       productKey: sealed.input.productKey, productSlug: sealed.input.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerProductLocks.test.ts > 'annual' customer/evidence/Book stays frozen
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "8525e0e39cc824c3f1f9cdd763cb33bfd4402c9718f6ba6d1e4a33f69309be5f",
+-   "85e4470a0b5a60c0e89c634dae80915263744f26dbef600e11132092d0c74125",
+-   "d21b5665c2e24402bf37a1a33021e47c5f1ccefa42f22c402c4ed2ee2acba69f",
++   "e15fbecb49542416d6466a31ffaa87e09f7baf3d618faf49ff87d70d0670364e",
++   "30a943c0de301112caaf4ae4589cdfe23a62ab8d71881fbf63db816f2fba8a6a",
++   "c5421a0c7a29fb764f06e0f9037cf452ef55f1bebb7c15f4daf9d3a88ba7b1f7",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerProductLocks.test.ts:40:108
+     38|     const { contentDigest: _, ...body } = { ...e, composition }; void …
+     39|     const sealed = { ...body, contentDigest: v4Digest(body) };
+     40|     expect([v4Digest(projectV4Composition(composition)), v4Digest(seal…
+       |                                                                                                            ^
+     41|     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-…
+     42|       productKey: sealed.input.productKey, productSlug: sealed.input.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'comprehensive' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "79e6f83b152d9efbeea6ffacbeba6b65682da18728571b1f45457449d3d3b1f0",
+-   "cf6b97069cfda561ca29910da0aa8fbd8276dd6ce8a1a4b11bf35dfc2ca06d3a",
+-   "27cdc93d2473150e53638211d76e46f2d0c193ea1f84fb31835bfae62337d502",
++   "7abeaf415fc6e3987f97d5a23660c44de3b2b0555b17d6e7dd4962251849b6df",
++   "9489bd1889c289bdf0d736bea07f5ca8416c3f3be99703712d711d3e0683ff85",
++   "77f9a788f81c8adce8d60909748af3383af68d6e520afec6a94ca7ec6f923b67",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'love' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "dc65e1cff1fdaef863b242387ca333913335507ca0c3e296eb399150c0f16ae8",
+-   "d2b6fc40dcafd7de79170fb641dc45acf42fcf7749de8e83f766d1105c8d5fce",
+-   "17571a8443a3a6a43c54c2d517ec88c6f2898b07f92b6328a2f591db54ba3978",
++   "8009c7ebb1e39c0b170eca7a3266a2869d8cbcc0b344b405e1e76bdd996bcacd",
++   "2bf558eef40e20df2eed197310879f06934ff31b543b3d56671ca3d55e32d278",
++   "c5c9c7bb29db41aa08b76b81446a7b97e5c05ea460b7503192dc5e75a9a1a774",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'compatibility' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "da6593ae6c10583c2a6f28ee29c26b5609b409b4edcccde35dd512bb1b2454f4",
+-   "d0694ae557383ea3cd0b4cacd3f51cb7ac2d096c3e70ec3cc593b32fe44c6d7e",
+-   "e161afa18d5465c6ff7e4cd46b6c13d7e8e48bcc851ca65dd9d3fbebe24b5696",
++   "bddfc2dc4be673fc2b23b173c95c47c144be6c21be7d4d921a941d9c0e43e749",
++   "715080cd3b2885bc90ecf3699451be739f5f7ef5a980f5fb7cdb8fcc1b1ebcf2",
++   "f9471b5169e4ecf60ee73701e42a1d8575eaf8047ab909fb53f8b82d77fabb44",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'major' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "8c911d6dc3d24f4be969bf7017d1b098a7523078d8018115db7fa5187ce21dde",
+-   "cdb60d8939e2e97cd06840093ada974b11b9369b6b06f881b788eac3f54d1f3a",
+-   "a774832dc671df08d9c2395850a54bfe1e8446d9e72256695d4107244c27752b",
++   "bff2f1ccbc222b5b33e7df9a86ba6907afac782c8afda99de9b47e3b4dfd317d",
++   "9957f1348ea06e4a098dec827a23a4f07f721f41e2cc2d0433f12bff721d89c6",
++   "6e5e255f8400110d10a0230af508f98db941a99936bb363a30a2f2f3957b23cd",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/careerRelease.test.ts > Career editorial reader edition > 'annual' previous saved edition remains identical
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+-   "58150101a8224de5ddd09f6fee598e67f39ee0ed8a83a238efbfc43706c1d378",
+-   "fd698806ddf394fd2c3d4c145a1e2471f4b834c1dad3b5596ea37522a8c8a634",
+-   "ba2cf9b612db5290bd1bf55bd639d750364fbe5eb5366bee106e2a4e88284626",
++   "382fe497a223d7f3eff4024ca980d4c521592bf06e8ee56a78f1635895a1da57",
++   "6c885a9c3b98185df7bf7959a4b2cd1fc6e5b4723ed9cfab85b62eacfd546be8",
++   "da933fc11732c159856aeb881d6fe884247e20d0af696f355319f7ab2a27ef08",
+  ]
+
+ ❯ tests/unit/interpretation-v4/careerRelease.test.ts:122:149
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > C9 element composite beats a five-element dictionary and balanced yin yang is not a story
+AssertionError: expected [] to include 'composite'
+ ❯ tests/unit/interpretation-v4/comprehensiveAllocation.test.ts:99:73
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/comprehensiveAllocation.test.ts > section-specific allocations, reservations, fallback and budgets > recovery-axis Fusion can serve C9 even when its original application is work
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/interpretation-v4/comprehensiveAllocation.test.ts:113:69
+    111|   it("recovery-axis Fusion can serve C9 even when its original applica…
+    112|     const c = fusion("recover-after-work", "COMPLEMENT", { contexts: […
+    113|     expect(primarySectionEligible(c, "C9", "RECOVERY_ENVIRONMENT")).to…
+       |                                                                     ^
+    114|     const generic = fusion("work-only", "COMPLEMENT", { contexts: ["wo…
+    115|     expect(primarySectionEligible(generic, "C9", "RECOVERY_ENVIRONMENT…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts > actual 12-person review cohort and isolation > scheduler is not consumed by prior layers, six products, UI, calculations or providers
+AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from "…' not to match /["'][^"']*\/…/comprehensivePlanCore["']
+
+- Expected:
+/["'][^"']*\/comprehensivePlanCore["']/
+
++ Received:
+"import type { CareerProfiles } from \"./careerProductSelection\";
+import type { EditorialCandidate } from \"./comprehensivePlanCore\";
+import type { NarrativeInput, NarrativeState, NarrativeBlock, NarrativeProof } from \"./narrativeTypes\";
+import type { CareerNarrative } from \"./careerNarrativeTypes\";
+import { CAREER_RELEASE_VERSION, CAREER_READER_CHAPTERS, type CareerReleaseDraft, type CareerReleaseSentence } from \"./careerReleaseContracts\";
+import { CAREER_RELEASE_MATERIALS } from \"./careerReleaseMaterials\";
+import { collectCareerReleaseSources, careerAtomName, type CareerReleaseSource } from \"./careerReleaseSources\";
+import { careerStatusCopy } from \"./careerReleaseContext\";
+import { careerStudy, CAREER_STUDY_BRIDGES } from \"./careerStudy\";
+import { getMbtiSourceProfile } from \"../report-knowledge/mbti/sourceRuntimeAdapter\";
+import { humanMbtiReason } from \"./narrativeMbtiReason\";
+import { freshNarrativeMemory } from \"./narrativeMemory\";
+import { fortuneReason, planFortuneReasons, positiveReward } from \"./narrativePositiveReward\";
+import { CAREER_TASKS, CAREER_WORKFLOWS } from \"./careerReleaseApplications\";
+import { careerNatalMoney } from \"./careerNatalMoney\";
+import { particle } from \"./copyRealizer\";
+import { materialLabel } from \"./contentEvidence\";
+import { CAREER_ROUTES } from \"./careerRecommendations\";
+import { careerWorkNarrative } from \"./careerWorkNarrative\";
+import { humanOutcome, mbtiHumanBehavior } from \"./narrativeHumanOutcome\";
+import { CAREER_JOB_SCENES, CAREER_JOB_STEPS, CAREER_ECONOMIC_USE, CAREER_WEALTH_APPLICATIONS, CAREER_GROWTH_RISKS } from \"./careerQualityApplications\";
+import { CAREER_STUDY_REMEDIES } from \"./careerReleaseStudy\";
+
+type Refs = { source: string; roots?: string[]; nodes?: string[]; fusion?: string[]; theme: string; material: string; sourceRefs?: readonly string[]; recall?: boolean; row?: CareerReleaseSource };
+type Line = { text: string; refs: Refs };
+type Material = (typeof CAREER_RELEASE_MATERIALS)[string];
+const split = (s: string) => s.match(/[^.!?]+[.!?]+(?:[’”])?|[^.!?]+$/g)?.map(s => s.trim()).filter(Boolean) ?? [];
+const terminal = (s: string) => /[.!?]$/.test(s.trim()) ? s.trim() : `${s.trim()}.`;
+const quote = (s: string) => s.replace(/[.!?]$/, \"\").replace(/입니다$/, \"\");
+/** Only generation calls this independent edition. An incomplete editorial slot
+ * is a diagnostic, never a new payment/Worker failure or a made-up source. */
+export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfiles, candidates: readonly EditorialCandidate[], legacy: CareerNarrative, state: NarrativeState) {
+  const jobFunction = careerWorkNarrative(input).workFunction;
+  const jobSteps = input.context.detailJob ? CAREER_JOB_STEPS[jobFunction] : undefined;
+  const scene = (r: CareerReleaseSource) => (input.context.detailJob && CAREER_JOB_SCENES[jobFunction]?.[r.facet]) || CAREER_RELEASE_MATERIALS[r.facet].scene;
+  const economic = (r: CareerReleaseSource) => CAREER_ECONOMIC_USE[r.facet];
+  const pool = collectCareerReleaseSources(profiles, candidates), used = new Map<string, number>(), roots = new Map<string, number>();
+  const introduced = new Set<string>(), chosen: CareerReleaseSource[] = [], seen = new Set<string>(), terms = new Set<string>();
+  const draft: CareerReleaseDraft = { version: CAREER_RELEASE_VERSION, chapters: [], bodyLength: 0, shortages: [] };
+  const retainedSources: Record<string, readonly string[]> = { \"career-study:natal\": careerStudy(state).proof.sourceRefs };
+  let current: CareerReleaseDraft[\"chapters\"][number];
+  const sourceRefs = (r: CareerReleaseSource): Refs => ({ source: r.candidate.id, roots: [r.atom.id], nodes: [], fusion: [], theme: r.candidate.semanticTheme,
+    material: `career:${r.facet}`, row: r, sourceRefs: [r.candidate.sourceId] });
+  const reason = (r: CareerReleaseSource) => terms.has(`${r.atom.sourceType}:${r.atom.sourceKey}`)
+    ? \"\"
+    : `${careerAtomName(r.atom)}에서 읽는 명리적 뜻은 ‘${quote(r.atom.easyMeaning)}’입니다.`;
+  const rootLine = (text: string, r: CareerReleaseSource, material: string): Line => ({ text, refs: { ...sourceRefs(r), material } });
+  function add(p: number, lines: Line[]) {
+    const contract = CAREER_READER_CHAPTERS.find(c => c.id === current.id)!.paragraphs[p];
+    const id = `${current.id}.${contract.id}`;
+    const actual = lines.filter(l => l.text.trim()).map(l => ({ ...l, text: terminal(l.text) }));
+    if (actual.length < 3 || actual.length > 5 || actual.some(l => split(l.text).length !== 1)) return false;
+    if (actual.some(l => seen.has(l.text))) return false;
+    const sentences = actual.map((l, i): CareerReleaseSentence => ({ chapterId: current.id, paragraphId: contract.id, sentenceRole: `S${i + 1}`, roleDescription: contract.sentences[i] ?? contract.sentences[3], text: l.text,
+      sourceCandidateId: l.refs.source, evidenceIds: [...(l.refs.roots ?? [])], mbtiSourceNodeIds: [...(l.refs.nodes ?? [])], fusionIds: [...(l.refs.fusion ?? [])], semanticTheme: l.refs.theme,
+      lifeStatus: input.context.jobStatus, jobContext: input.context.detailJob,
+      provenance: { materialId: l.refs.material, application: l.refs.recall ? \"RECALL\" : l.refs.row ? \"CONDITIONAL_APPLICATION\" : \"SOURCE\",
+        ...(l.refs.row ? { axis: l.refs.row.axis, direction: l.refs.row.direction } : {}), sourceRefs: [...(l.refs.sourceRefs ?? [])] } }));
+    actual.forEach(l => { seen.add(l.text); l.refs.roots?.forEach(id => introduced.add(id)); });
+    current.paragraphs.push({ id, purpose: contract.purpose, text: actual.map(l => l.text).join(\" \"), sentences });
+    return true;
+  }
+  function eligible(preferred: readonly string[], risk: boolean, recall: boolean) {
+    return pool.filter(r => r.candidate.factBomb === risk && (!recall || chosen.some(s => s.atom.id === r.atom.id && s.facet === r.facet))
+      && (risk || recall || (used.get(r.facet) ?? 0) < 4)
+      && (risk || !current.paragraphs.some(p => p.sentences.some(s => s.provenance.materialId.startsWith(`career:${r.facet}:`)))))
+      .sort((a, b) => Number(preferred.includes(b.facet)) - Number(preferred.includes(a.facet))
+        || (used.get(a.facet) ?? 0) - (used.get(b.facet) ?? 0)
+        || Number(b.candidate.sourceType === \"PERSONAL_RESONANCE\") - Number(a.candidate.sourceType === \"PERSONAL_RESONANCE\")
+        || ((profiles.mbti.generalAxes[b.axis] ?? 0) * b.direction - (profiles.mbti.generalAxes[a.axis] ?? 0) * a.direction)
+        || (roots.get(a.atom.id) ?? 0) - (roots.get(b.atom.id) ?? 0)
+        || b.candidate.priorityScore - a.candidate.priorityScore || b.atom.weight - a.atom.weight || a.atom.id.localeCompare(b.atom.id));
+  }
+  function application(p: number, key: string, make: (m: Material, r: CareerReleaseSource) => string[], preferred: readonly string[] = [], risk = false, recall = false) {
+    const rows = eligible(preferred, risk, recall);
+    // A missing risk is not permission to invent a flaw. Apply a verified
+    // strength conditionally when no eligible fact-bomb exists.
+    const fallback = risk && !rows.length ? eligible(preferred, false, recall).filter(r => !!r.atom.shadowMeaning) : [];
+    for (const row of [...rows, ...fallback]) {
+      const texts = make(CAREER_RELEASE_MATERIALS[row.facet], row);
+      const lines = texts.flatMap(text => split(text).map(text => ({ text, refs: { ...sourceRefs(row), material: `career:${row.facet}:${key}`, recall } })));
+      if (!add(p, lines)) continue;
+      used.set(row.facet, (used.get(row.facet) ?? 0) + 1); roots.set(row.atom.id, (roots.get(row.atom.id) ?? 0) + 1); chosen.push(row);
+      terms.add(`${row.atom.sourceType}:${row.atom.sourceKey}`); return row;
+    }
+    draft.shortages.push(`${current.id}.P${p + 1}:NO_INDEPENDENT_${key.toUpperCase()}_MATERIAL`);
+    return undefined;
+  }
+  function mbtiLine(row: CareerReleaseSource, domains: readonly string[], material: string): Line | undefined {
+    const node = profiles.mbti.annotations.find(a => domains.includes(a.sourceDomain) && a.annotationConfidence !== \"REFERENCE_ONLY\"
+      && (a.axes[row.axis] ?? 0) * row.direction > 0 && profiles.mbti.sourceNodes.some(n => n.id === a.sourceNodeId && n.classification === \"SCORING_SEMANTIC\"));
+    const behavior = node && mbtiHumanBehavior(row.axis, row.direction);
+    if (!node || !behavior || !profiles.mbti.mbtiType) return;
+    return { text: `${profiles.mbti.mbtiType}의 금전 판단에서는 ${behavior}`,
+      refs: { source: node.sourceNodeId, nodes: [node.sourceNodeId], theme: row.candidate.semanticTheme, material, sourceRefs: [node.sourceNodeId] } };
+  }
+  function moneyMbtiLine(): Line | undefined {
+    for (const a of profiles.mbti.annotations.filter(a => a.sourceDomain === \"MONEY\" && a.annotationConfidence !== \"REFERENCE_ONLY\")) {
+      if (!profiles.mbti.sourceNodes.some(n => n.id === a.sourceNodeId && n.classification === \"SCORING_SEMANTIC\")) continue;
+      const axes = Object.entries(a.axes).sort((a, b) => Math.abs(b[1] ?? 0) - Math.abs(a[1] ?? 0));
+      for (const [axis, value] of axes) {
+        if (!value) continue;
+        const behavior = mbtiHumanBehavior(axis as CareerReleaseSource[\"axis\"], value > 0 ? 1 : -1);
+        if (behavior && profiles.mbti.mbtiType) return { text: `금전 자료에서 읽는 ${profiles.mbti.mbtiType}의 선호는 이렇습니다: ${behavior}`,
+          refs: { source: a.sourceNodeId, nodes: [a.sourceNodeId], theme: \"MONEY_DECISION\", material: \"money:actual-mbti\", sourceRefs: [a.sourceNodeId] } };
+      }
+    }
+  }
+  function tensionParagraph(p: number) {
+    for (const c of candidates.filter(c => c.fusionType === \"TENSION\" && !c.invalidReasons.length)) {
+      const f = profiles.fusion.tensions.find(f => f.id === c.sourceId && f.conditionSplit?.resolved && [\"work\", \"learning\"].includes(f.primaryContext));
+      const sides = f?.conditionSplit?.sides;
+      const atom = f && profiles.myeongli.evidence.find(a => f.myeongli.evidenceIds.includes(a.id) && (a.axes[f.myeongli.side.axis] ?? 0) * f.myeongli.side.direction > 0);
+      const n = f && humanMbtiReason(profiles, f, \"C8\", freshNarrativeMemory());
+      if (!f || !sides || !atom || !n) continue;
+      const refs: Refs = { source: c.id, roots: [atom.id], nodes: [n.nodeId], fusion: [f.id], theme: c.semanticTheme, material: \"fusion:current-conditions\", sourceRefs: [f.id] };
+      if (add(p, [
+        { text: `${careerAtomName(atom)}의 근거에서는 ${humanOutcome(f.myeongli.side.axis, f.myeongli.side.direction)}`, refs: { ...refs, nodes: [], fusion: [] } },
+        { text: `${profiles.mbti.mbtiType}에서 읽는 다른 선호는 이렇습니다: ${mbtiHumanBehavior(f.mbti.side.axis, f.mbti.side.direction)}`, refs },
+        { text: `${sides.myeongli}에는 첫 번째 반응을, ${sides.mbti}에는 두 번째 선호를 살펴볼 만합니다.`, refs },
+        { text: jobSteps?.[1] ?? \"작은 과제에서 두 반응을 확인한 뒤, 다음 역할에 필요한 쪽을 선택하세요.\", refs },
+      ])) return true;
+    }
+    return false;
+  }
+  function fusionParagraph(p: number, key: string, preferred: \"REINFORCE\" | \"COMPLEMENT\") {
+    const sources = candidates.filter(c => c.fusionType && c.fusionType !== \"TENSION\" && !c.invalidReasons.length)
+      .sort((a, b) => Number(b.fusionType === preferred) - Number(a.fusionType === preferred) || b.priorityScore - a.priorityScore);
+    for (const c of sources) {
+      const f = [...profiles.fusion.reinforce, ...profiles.fusion.complements].find(f => f.id === c.sourceId);
+      if (!f) continue;
+      const atom = profiles.myeongli.evidence.find(a => f.myeongli.evidenceIds.includes(a.id) && (a.axes[f.myeongli.side.axis] ?? 0) * f.myeongli.side.direction > 0);
+      const n = humanMbtiReason(profiles, f, \"C8\", freshNarrativeMemory());
+      if (!atom || !n) continue;
+      const refs: Refs = { source: c.id, roots: [atom.id], nodes: [n.nodeId], fusion: [f.id], theme: c.semanticTheme, material: `fusion:${key}`, sourceRefs: [c.sourceId] };
+      const texts = key === \"work-basis\" ? [
+        `${particle(careerAtomName(atom), \"이\", \"가\")} 이 업무 방식을 설명하는 실제 명리 근거입니다.`,
+        atom.humanDescription ?? atom.easyMeaning,
+        split(n.text)[0],
+        c.sourceText,
+      ] : [
+        `${careerAtomName(atom)}에는 ‘${quote(atom.easyMeaning)}’이라는 명리적 뜻이 담겨 있습니다.`,
+        n.text,
+        c.sourceText,
+        \"다른 방향의 강점이 만나는 과제인지 작은 결과로 확인하면, 익숙하지 않은 역할에서도 쓸 수 있는 능력의 범위가 보입니다.\",
+      ];
+      const lines = texts.map((text, i) => ({ text, refs: key === \"work-basis\" && i < 2 ? { ...refs, nodes: [], fusion: [] } : refs }));
+      if (add(p, lines)) return;
+    }
+    application(p, key, (m, r) => [m.core, reason(r), scene(r), m.growth], [\"depth\", \"creation\", \"precision\"]);
+  }
+  const contextRefs: Refs = { source: \"input:jobStatus\", theme: \"CURRENT_CAREER_CONTEXT\", material: \"context:status\", sourceRefs: [\"input:jobStatus\", \"input:detailJob\"] };
+  const status = careerStatusCopy(input);
+  let main: CareerReleaseSource | undefined, talent: CareerReleaseSource | undefined;
+  for (const c of CAREER_READER_CHAPTERS) {
+    current = { id: c.id, key: c.key, title: c.title, paragraphs: [] }; draft.chapters.push(current);
+    if (c.id === \"CH01\") {
+      main = application(0, \"work-identity\", (m, r) => [`일에서는 ${particle(m.label, \"이\", \"가\")} 먼저 드러나며, 명리에서 읽은 ‘${quote(r.atom.easyMeaning)}’의 뜻과 연결됩니다.`, scene(r), m.value, m.closing]);
+      fusionParagraph(1, \"work-basis\", \"REINFORCE\");
+      application(2, \"workflow\", (m, r) => [...(CAREER_WORKFLOWS[r.axis] ?? [
+        `처음 일을 받을 때에는 ${particle(CAREER_TASKS[r.facet].task, \"이\", \"가\")} 이번 과제에 필요한지부터 살피는 편이 좋습니다.`,
+        m.process, `진행 중에는 ${particle(CAREER_TASKS[r.facet].trap, \"이\", \"가\")} 없는지 살피면, 처음의 의도와 실제 행동이 어긋나는 부분을 알아차리기 쉽습니다.`,
+        `마무리에서는 ${particle(CAREER_TASKS[r.facet].result, \"이\", \"가\")} 있었는지 결과를 대조하면, 다음에도 쓸 방법과 바꿀 부분이 보입니다.`,
+      ])], [\"structure\", \"persistence\", \"drive\", \"flexibility\"]);
+      application(3, \"work-conditions\", (m, r) => [m.fit, reason(r), m.risk, `일을 고를 때에는 ${particle(m.label, \"이\", \"가\")} 필요한 실제 과제가 있는지 묻고, 그 능력을 쓸 정보와 권한도 확인하세요.`], [\"autonomy\", \"boundary\", \"stability\"]);
+    } else if (c.id === \"CH02\") {
+      talent = application(0, \"talent-primary\", (m, r) => [`업무에서 먼저 꺼내 쓸 재능은 ${m.label}입니다.`, reason(r), scene(r), m.value]);
+      application(1, \"talent-secondary\", (m, r) => [`다른 과제에 쓸 능력은 ${m.label}이며, 자신을 한 가지 방식으로만 설명하지 않게 해 줍니다.`, reason(r), m.collaboration, m.growth]);
+      fusionParagraph(2, \"talent-transfer\", \"COMPLEMENT\");
+      if (talent) {
+        const r = talent, refs = { ...sourceRefs(r), material: `career:${r.facet}:talent-practice`, recall: true };
+        add(3, [
+          `첫 번째 재능인 ${particle(CAREER_RELEASE_MATERIALS[r.facet].label, \"을\", \"를\")} 발전시키려면, 이번 과제에서 그 능력이 바꿀 결과를 먼저 정하세요.`,
+          `연습에서는 ‘${CAREER_TASKS[r.facet].test}’를 해보고, 잘한 부분과 다음에 달리할 부분을 나누어 남길 만합니다.`,
+          `연습을 옮길 과제에도 ${particle(CAREER_TASKS[r.facet].criterion, \"이\", \"가\")} 있는지 먼저 확인하고, 결과를 사용할 사람에게 혼자 놓친 부분을 물어보세요.`,
+          \"강점이 통하는 조건을 알면, 다음에 맡을 과제도 더 정확히 고를 수 있습니다.\",
+        ].map(text => ({ text, refs })));
+      }
+    } else if (c.id === \"CH03\") {
+      application(0, \"aptitude-common\", (m, r) => [`적합한 일의 공통점은 ${particle(CAREER_TASKS[r.facet].task, \"을\", \"를\")} 실제로 필요로 한다는 점이며, 직함만으로 그 조건이 생기지는 않습니다.`, reason(r), m.fit, `업무 소개를 들을 때에는 ${particle(CAREER_TASKS[r.facet].criterion, \"이\", \"가\")} 있는지 묻는 편이, 직함보다 실제 과제를 이해하기 좋습니다.`]);
+      for (const [p, indices] of [[1, [0]], [2, [1, 2]]] as const) {
+        const recs = indices.flatMap(i => legacy.recommendations[i] ? [legacy.recommendations[i]] : []);
+        const lines: Line[] = recs.flatMap(rec => {
+          const refs: Refs = { source: `career-route:${rec.id}`, theme: `CAREER_ROUTE:${rec.id}`, material: `route:${rec.id}`, sourceRefs: rec.proof.sourceRefs,
+            roots: [], fusion: [] };
+          const reasons = split(rec.reason), basis = reasons.find(text => text.includes(\"에서 볼 수 있는 장점을\"));
+          const route = CAREER_ROUTES.find(r => r.id === rec.id);
+          const bridge = reasons.find(text => /의 직업 자료에서도/.test(text));
+          const texts = p === 1 ? [reasons[0], basis ?? reasons[1], ...split(rec.environment),
+            route ? `${route.avoid}에서는 필요한 역량이 있어도 쓰기 어려울 수 있으니, 역할과 환경을 함께 대조하세요.` : \"작은 과제에서 해낸 범위와 어려웠던 부분을 비교한 뒤 준비할 역량을 좁혀 보세요.\", ...(bridge ? [bridge] : [])]
+            : route && basis ? [
+              `탐색 후보인 ${route.roles.join(\"·\")}에는 다음 근거를 적용합니다: ${basis}`,
+              `${route.environment}이 맞는 조건이며, ${route.avoid}에서는 이 강점을 쓰기 어려울 수 있습니다.`,
+            ] : [reasons[0], rec.environment];
+          return texts.filter(Boolean).map(text => ({ text, refs }));
+        });
+        // The full evidence-supported exploration candidates remain in narrative.recommendations.
+        // Select whole sentences, never slice characters or invent a fourth route.
+        if (lines.length > 5) lines.splice(5);
+        if (p === 2 && recs[1] && lines.length === 4) lines.push({ text: split(recs[0].reason).find(text => /의 직업 자료에서도/.test(text)) ?? \"이 후보들은 하나의 객관적 적성 순위가 아니며, 실제로 해볼 과제와 준비할 조건을 비교하는 탐색 방향입니다.\", refs: { source: `career-route:${recs[0].id}`, theme: `CAREER_ROUTE:${recs[0].id}`, material: `route:${recs[0].id}:db-match`, sourceRefs: recs[0].proof.sourceRefs } });
+        if (lines.length < 4) lines.push({ text: \"직업 이름으로 적합성을 확정하지 말고, 실제 과제와 준비할 역량을 대조하세요.\", refs: { ...contextRefs, material: `route:conditions:${p}` } });
+        if (!add(p, lines)) draft.shortages.push(`${c.id}.P${p + 1}:RECOMMENDATION_MATERIAL_SHORTAGE`);
+      }
+      const avoid = legacy.avoidEnvironments.slice(0, 2);
+      const lines: Line[] = avoid.flatMap((a, i) => split(a.text).map(text => ({ text, refs: { source: `career-avoid:${i}`, theme: \"VERIFIED_AVOID_ENVIRONMENT\", material: `avoid:${i}`, sourceRefs: a.proof.sourceRefs } })));
+      lines.push({ text: \"같은 직무라도 이런 조건이 반복되면 대응에 시간을 더 쓰므로, 적성과 환경의 문제를 나누어야 합니다.\", refs: { ...contextRefs, material: \"avoid:cost\" } },
+        { text: \"범위나 검토 순서를 합의해 바꿀 수 있는지 먼저 묻고, 조정할 권한 없이 같은 부담이 반복된다면 피할 조건으로 볼 만합니다.\", refs: { ...contextRefs, material: \"avoid:adjustment\" } });
+      add(3, lines);
+    } else if (c.id === \"CH04\") {
+      application(0, \"collaboration\", (m, r) => [m.collaboration, reason(r), `함께하는 사람에게 줄 기여는 ${CAREER_TASKS[r.facet].result}이며, 내 방식이 상대의 다음 작업을 어떻게 돕는지 보여 줄 수 있습니다.`, `좋은 협업을 위해서는 ${particle(CAREER_TASKS[r.facet].criterion, \"을\", \"를\")} 함께 맞추고, 상대가 내게 기대하는 정보도 들어야 합니다.`], [\"care\", \"expression\", \"boundary\", \"flexibility\"]);
+      application(1, \"team-role\", (m, r) => [`함께하는 과제에서 ${particle(CAREER_TASKS[r.facet].task, \"을\", \"를\")} 맡아 볼 만하며, 직급보다 풀어야 할 문제로 역할을 정하는 편이 좋습니다.`, reason(r), scene(r), `다만 ${particle(CAREER_TASKS[r.facet].trap, \"을\", \"를\")} 경계하며, 내가 결정할 부분과 다른 사람에게 물어야 할 부분을 일찍 나눌 필요가 있습니다.`], [\"leadership\", \"structure\", \"resource\"]);
+      application(2, \"work-risk\", (m, r) => [r.candidate.sourceId === \"F01_STUBBORN\" ? `협업에서 ${particle(CAREER_TASKS[r.facet].trap, \"이\", \"가\")} 반복된다면, 다른 사람과 조정할 선택지가 줄어들 수 있습니다.` : r.candidate.factBomb ? split(r.candidate.sourceText)[0] : `이 강점을 과하게 쓸 경우에는 ${particle(CAREER_TASKS[r.facet].trap, \"이\", \"가\")} 협업을 어렵게 만들 수 있습니다.`, reason(r),
+        r.candidate.sourceId === \"F02_SHARP_SPEECH\" ? \"내용의 오류를 바로잡으려던 말이 상대의 능력을 평가하는 말처럼 들리면, 필요한 지적도 방어적인 반응에 막혀 실제 수정까지 가기 어려워질 수 있습니다.\" : m.risk,
+        r.candidate.sourceId === \"F02_SHARP_SPEECH\" ? \"다음에는 고칠 사실과 상대에 대한 평가를 나누고, 무엇을 바꾸면 되는지 먼저 말하면 정확한 지적을 실제 협력으로 옮기기 좋습니다.\" : `다음 협업에서는 ‘${CAREER_TASKS[r.facet].test}’를 조정의 기준으로 삼으면, 좋은 의도가 일방적인 부담으로 남는 일을 줄일 수 있습니다.`], [], true);
+      application(3, \"culture\", m => [m.fit, `업무 규칙에서는 ${particle(m.label, \"을\", \"를\")} 쓸 권한과, 그 판단을 설명할 대화의 통로도 살펴야 합니다.`, m.risk, \"최근 계획이 바뀐 사례와 그때 누가 결정했는지 물으면, 좋은 분위기라는 말보다 실제 운영 방식이 보입니다.\"], [\"structure\", \"flexibility\", \"autonomy\", \"stability\"]);
+    } else if (c.id === \"CH05\") {
+      const row = eligible([], false, false)[0];
+      if (row) add(0, [
+        { text: input.context.detailJob ? `현재 알려준 일인 ‘${input.context.detailJob}’에 비춰 다음 선택을 살펴보겠습니다.` : status[0], refs: contextRefs },
+        rootLine(`${particle(CAREER_RELEASE_MATERIALS[row.facet].label, \"을\", \"를\")} 지금 맡을 과제에 적용할 범위를 정해 볼 만합니다.`, row, `career:${row.facet}:current-strength`),
+        rootLine(`현재 과제 하나에 ‘${CAREER_TASKS[row.facet].test}’를 적용하고, 그 전후에 달라진 판단을 비교해 보세요.`, row, `career:${row.facet}:current-scene`),
+        { text: jobSteps?.[0] ?? status[3], refs: contextRefs },
+      ]);
+      application(1, \"current-application\", (m, r) => [`지금 활용할 능력은 ${m.label}이며, 직업 이름만으로 적합성이 증명되지는 않습니다.`, reason(r), scene(r), `현재 활동에서 ‘${CAREER_TASKS[r.facet].test}’를 해볼 과제 하나를 고르면, 실제 역할과 재능이 만나는 지점을 알아가기 좋습니다.`]);
+      if (!tensionParagraph(2)) application(2, \"next-capability\", (m, r) => [m.growth, `${careerAtomName(r.atom)}의 성향을 경력으로 넓히려면, 잘해 온 방법이 다른 조건에서도 통하는지 설명할 수 있어야 합니다.`, m.risk, `성장은 ${particle(CAREER_TASKS[r.facet].result, \"이\", \"가\")} 실제로 생겼는지로 확인할 수 있으며, 역할의 이름만 바뀌었다고 실력이 저절로 넓어지지는 않습니다.`]);
+      add(3, [
+        { text: jobSteps?.[3] ?? status[1], refs: contextRefs },
+        { text: jobSteps?.[2] ?? status[2], refs: contextRefs },
+        { text: \"같은 직업도 맡을 문제와 결정할 범위에 따라 다음 선택의 가치가 달라집니다.\", refs: contextRefs },
+        { text: \"혼자 해결한 부분과 도움이 필요한 부분을 나누면, 다음 배움과 요청할 지원이 보입니다.\", refs: contextRefs },
+      ]);
+    } else if (c.id === \"CH06\") {
+      const row = pool.filter(r => !r.candidate.factBomb && r.candidate.contexts.includes(\"money\") && r.atom.contexts.includes(\"money\"))
+        .sort((a, b) => Number(b.atom.sourceType === \"ten_god\" && [\"正財\", \"偏財\"].includes(b.atom.sourceKey)) - Number(a.atom.sourceType === \"ten_god\" && [\"正財\", \"偏財\"].includes(a.atom.sourceKey)) || Number([\"resource\", \"opportunity\"].includes(b.facet)) - Number([\"resource\", \"opportunity\"].includes(a.facet)) || b.atom.weight - a.atom.weight)[0];
+      if (row) {
+        const n = mbtiLine(row, [\"MONEY\"], \"money:mbti\") ?? moneyMbtiLine();
+        const wealth = row.atom.sourceType === \"ten_god\" ? CAREER_WEALTH_APPLICATIONS[row.atom.sourceKey] : undefined;
+        add(0, [rootLine(`${careerAtomName(row.atom)}의 ‘${quote(row.atom.easyMeaning)}’이라는 해석을, 실제로 남길 자원과 수익 활동을 고르는 방식에 연결합니다.`, row, `career:${row.facet}:income`), rootLine(wealth?.[0] ?? economic(row)[0], row, `career:${row.facet}:income-basis`),
+          ...(n ? [n] : [rootLine(\"수입의 크기나 자산을 입력받은 것은 아니므로, 여기서는 실제 재물 관련 성향이 업무의 값으로 이어지는 방식만 읽습니다.\", row, \"money:scope\")]),
+          rootLine(wealth?.[1] ?? economic(row)[1], row, `career:${row.facet}:income-condition`)]);
+      } else {
+        const money = careerNatalMoney(state), texts = split(money.text), feature = money.proof.features[0];
+        const material = state.packet.selected.find(m => m.feature === feature);
+        const refs: Refs = { source: `career-natal-money:${feature}`, theme: \"NATAL_ECONOMIC_VALUE\", material: `money:retained:${feature}`, sourceRefs: money.proof.sourceRefs };
+        retainedSources[refs.source] = money.proof.sourceRefs;
+        const n = moneyMbtiLine();
+        add(0, [
+          { text: texts[0], refs },
+          { text: material ? `기존 명리 자료의 ${particle(materialLabel(material), \"을\", \"를\")} 재물 관련 보조 근거로 읽은 것이며, 실제 재산이나 미래 수입을 확정하는 설명은 아닙니다.` : \"기존 원국의 업무 성향을 경제적 가치에 연결한 해석이며, 재산이나 수입의 크기를 예측한 것은 아닙니다.\", refs },
+          n ?? { text: \"금전 판단에 관한 MBTI 근거가 충분하지 않은 부분은 덧붙이지 않고, 현재 확인된 업무의 값만 살펴봅니다.\", refs },
+          { text: texts[2] ?? texts[1], refs },
+        ]);
+      }
+      application(1, \"economic-value\", (m, r) => [`경제적 가치로 설명할 재능은 ${m.label}이며, 잘하는 행동이 누구의 어떤 문제를 덜어 주는지 보여야 합니다.`, reason(r), economic(r)[0], economic(r)[1]]);
+      application(2, \"money-cost\", (m, r) => [`돈과 시간의 선택에서는 ${particle(CAREER_TASKS[r.facet].trap, \"이\", \"가\")} 비용이 될 수 있습니다.`, `${careerAtomName(r.atom)}의 강점을 과하게 쓸 때의 조건부 주의점으로, 실제 지출이 있었다는 뜻은 아닙니다.`, economic(r)[1], `제안을 받을 때는 ${particle(m.label, \"을\", \"를\")} 쓸 기회와 미루게 될 일의 비용을 함께 보아야 자원을 과하게 쓰지 않습니다.`], [], true);
+      application(3, \"resource-management\", (m, r) => [`자원 관리에서는 ${particle(m.label, \"을\", \"를\")} 쓰는 데 꼭 필요한 투입과, 줄여도 품질이 유지될 투입을 나누어야 합니다.`,
+        input.context.jobStatus === \"freelancer\" || input.context.jobStatus === \"self_employed\" || input.context.jobStatus === \"business_owner\" ? \"운영 비용과 생활비를 나누고, 수입이 줄어든 기간에도 지킬 약속을 살펴야 다음 제안을 급하게 고르지 않을 여유가 생깁니다.\" : \"생활비와 배움에 쓸 자원을 나누고, 새 준비가 늘어날 때 기존 시간표에서 줄일 일도 함께 보는 편이 오래가기 좋습니다.\",
+        economic(r)[1],
+        \"이 관리는 더 큰 수익의 보장이 아니라, 잘하는 일을 다음 선택에도 쓸 수 있게 남기는 기술입니다.\"], [\"resource\", \"stability\", \"boundary\"]);
+    } else if (c.id === \"CH07\") {
+      const study = careerStudy(state), raw = getMbtiSourceProfile(input.mbti);
+      const bridge = raw && CAREER_STUDY_BRIDGES[raw.type];
+      const trait = bridge && raw?.traits?.study?.find(t => t.id === bridge.trait);
+      const r = eligible([\"learning\", \"depth\", \"precision\", \"creation\"], false, false)[0];
+      const node = trait && profiles.mbti.sourceNodes.find(n => n.id.includes(`:traits:study:${trait.id}:plainKo`));
+      const refs: Refs = { source: node?.id ?? \"career-study:natal\", nodes: node ? [node.id] : [], theme: \"STUDY_METHOD\", material: \"study:existing-bridge\", sourceRefs: study.proof.sourceRefs };
+      if (r) {
+        const s = split(study.text);
+        add(0, [{ text: s[0], refs }, { text: s[1], refs }, rootLine(`${careerAtomName(r.atom)}에서 읽은 성향은 ${particle(CAREER_TASKS[r.facet].skill, \"을\", \"를\")} 익히는 데 쓸 자원으로 볼 수 있습니다.`, r, \"study:natal-basis\"), { text: s[2], refs }]);
+        const environment = CAREER_RELEASE_MATERIALS[r.facet];
+        add(1, [
+          { text: \"배운 내용을 직접 확인할 과제와 구체적인 피드백이 있는 환경인지 살펴보세요.\", refs },
+          rootLine(environment.learning, r, \"study:environment-activity\"),
+          { text: jobFunction === \"engineering\" ? \"개발 기술을 익힐 때는 예제를 완성한 뒤 입력 조건을 바꿔 보고, 실패한 이유를 설명할 수 있는지 확인할 만합니다.\" : jobFunction === \"design\" ? \"디자인 기법을 익힐 때는 같은 내용을 다른 매체에 옮겨 보고, 전달이 달라진 이유를 설명하는 연습을 해볼 만합니다.\" : jobFunction === \"sales_operations\" ? \"영업 자료를 학습할 때는 서로 다른 고객 질문에 답을 만들어 보고, 확인이 더 필요한 조건을 따로 남겨 볼 만합니다.\" : \"연습 과제를 고를 때는 익숙한 예제를 푼 뒤 조건을 바꾼 문제도 두어, 도움 없이 사용할 수 있는 범위를 확인할 만합니다.\", refs },
+          { text: \"진도를 채운 양과 혼자 설명할 수 있는 내용을 구분하면, 다음 학습에 필요한 질문도 더 정확해집니다.\", refs },
+        ]);
+        if (trait?.risk && node) {
+          const riskNode = profiles.mbti.sourceNodes.find(n => n.id === node.id.replace(/:plainKo$/, \":risk\"));
+          const riskRefs: Refs = { ...refs, source: riskNode?.id ?? node.id, nodes: [riskNode?.id ?? node.id], material: `study:risk:${trait.id}`, sourceRefs: [...(refs.sourceRefs ?? []), `mbti:${raw!.type}:traits:study:${trait.id}:risk`] };
+          add(2, [...CAREER_STUDY_REMEDIES[raw!.type].map(text => ({ text, refs: riskRefs })),
+            { text: \"처음의 학습 선호가 능력의 한계를 뜻하지는 않으니, 이런 어려움이 실제로 나타나는지 과제의 결과와 함께 점검하세요.\", refs: riskRefs }]);
+        } else application(2, \"learning-risk\", (m, r) => [m.risk, reason(r), m.learning, m.growth], [\"learning\", \"precision\", \"persistence\"]);
+      }
+      application(3, \"professional-skill\", (m, r) => [`자격을 고를 때에는 ${particle(CAREER_TASKS[r.facet].skill, \"을\", \"를\")} 발전시킬 과정인지 살펴야 합니다.`,
+        `이 능력은 ${particle(CAREER_TASKS[r.facet].task, \"을\", \"를\")} 맡을 근거가 되므로, 증서의 이름보다 배운 뒤 할 수 있는 일이 중요합니다.`,
+        input.context.jobStatus === \"student\" ? \"학생이라면 전공 과제에서 같은 기술을 써본 뒤 다른 조건의 프로젝트로 넓혀 보면, 강의에서 배운 내용과 직접 해낼 수 있는 일을 비교하기 좋습니다.\" : input.context.jobStatus === \"freelancer\" ? \"프리랜서라면 실제 의뢰의 빈틈을 메울 기술부터 익히고 작은 견본으로 적용 범위를 보여 주면, 새 서비스에 필요한 준비와 추가 대가를 함께 설명하기 좋습니다.\" : input.context.jobStatus === \"job_seeker\" ? \"구직 중이라면 공고에서 요구하는 기술을 작은 과제로 보여 주고 고른 이유까지 설명하면, 자격 보유와 실제로 맡길 수 있는 능력을 함께 전하기 좋습니다.\" : \"현재 활동에서 막힌 문제 하나를 배운 기술로 다시 풀어 보면, 더 큰 교육 과정을 고르기 전에 실제로 필요한 역량과 준비할 범위를 알아갈 수 있습니다.\",
+        `학습 뒤에는 ${particle(CAREER_TASKS[r.facet].result, \"을\", \"를\")} 보여 줄 결과를 남겨, 배운 시간과 실제 능력을 연결할 만합니다.`], [\"learning\", \"precision\", \"depth\"]);
+    } else if (c.id === \"CH08\") {
+      const fortune = candidates.find(c => c.fortune && c.claimLevel && c.claimLevel >= 2 && /^(M08|S08|S03|S04|P01)/.test(c.sourceId));
+      if (fortune) {
+        const plan = planFortuneReasons(fortune, profiles), atoms = [...plan.primaryReasonEvidenceIds, ...plan.secondaryReasonEvidenceIds].flatMap(id => profiles.myeongli.evidence.find(e => e.id === id) ?? []);
+        const refs: Refs = { source: fortune.id, roots: atoms.map(a => a.id), theme: fortune.semanticTheme, material: \"fortune:approved\", sourceRefs: [fortune.sourceId] };
+        const reasons = atoms.flatMap(a => fortuneReason(a) ? split(fortuneReason(a)!) : []);
+        const texts = [split(fortune.sourceText)[0], reasons[0], split(positiveReward(fortune, atoms) ?? \"\")[0], \"소득이나 성공을 보장하는 신호는 아니므로, 실제 역량과 기회 및 실행할 조건을 함께 확인해야 합니다.\"];
+        if (!add(0, texts.filter(Boolean).map(text => ({ text, refs })))) draft.shortages.push(\"CH08.P1:APPROVED_FORTUNE_REALIZATION_SHORTAGE\");
+      } else application(0, \"positive-capability\", (m, r) => [`좋은 가능성의 출발점은 ${m.label}이며, 확인되지 않은 재물복이나 귀인보다 실제로 쓸 수 있는 능력에서 희망을 읽는 편이 정확합니다.`, reason(r), `긍정적인 면으로는 ${terminal(r.atom.positiveMeaning ?? r.atom.easyMeaning)}`, `기회가 생기면 ${particle(CAREER_TASKS[r.facet].result, \"을\", \"를\")} 보여 줄 수 있는 작은 역할부터 맡아, 기대한 강점과 실제 결과를 대조하세요.`]);
+      application(1, \"recognition\", (m, r) => [`상대가 당신을 다시 찾을 이유는 ${particle(m.label, \"을\", \"를\")} 통해 자기 일이 수월해졌다는 경험에서 만들어집니다.`, reason(r), m.collaboration, `기여를 드러낼 때는 ${particle(CAREER_TASKS[r.facet].result, \"이\", \"가\")} 어떤 결과에 남았는지 설명하면, 막연히 열심히 했다는 말보다 전문성이 분명해집니다.`]);
+      application(2, \"success-risk\", (m, r) => [`성과를 이어 가는 과정에서는 ${particle(CAREER_TASKS[r.facet].trap, \"을\", \"를\")} 특히 경계해야 하며, 업무에서 읽은 약점이 장기 성장에도 비용이 될 수 있습니다.`, reason(r),
+        CAREER_GROWTH_RISKS[r.facet]?.[0] ?? `이 흐름이 반복되면 ${particle(CAREER_TASKS[r.facet].skill, \"을\", \"를\")} 키울 시간이 줄어들어, 지금의 방식에 더 의존하게 되는 악순환이 생길 수 있습니다.`,
+        CAREER_GROWTH_RISKS[r.facet]?.[1] ?? `과사용을 막으려면 ‘${CAREER_TASKS[r.facet].test}’를 결과를 돌아보는 기준으로 삼고, 다른 방법이 필요한 과제도 구분해야 합니다.`], [], true);
+      application(3, \"positive-activation\", m => [`좋은 힘을 오래 쓰려면 ${particle(m.label, \"을\", \"를\")} 계속 증명하려 애쓰기보다, 그 힘이 필요한 과제와 조건을 골라야 합니다.`, m.fit,
+        `새 역할을 고른다면, 익숙한 방식이 통하는지와 부족할 부분을 배울 여지가 있는지도 함께 살펴야 합니다.`, m.closing], [], false, true);
+    } else if (c.id === \"CH09\") {
+      application(0, \"career-choice\", (m, r) => [`직업 선택의 핵심 질문은 ${particle(CAREER_TASKS[r.facet].task, \"을\", \"를\")} 실제로 필요로 하는가입니다.`,
+        `${particle(CAREER_TASKS[r.facet].result, \"이\", \"가\")} 그 자리에서도 가치로 인정돼야, 내 능력과 실제 역할이 만날 수 있습니다.`,
+        `상담에서는 ${particle(CAREER_TASKS[r.facet].criterion, \"이\", \"가\")} 있는지 묻고, 결과를 평가할 기준도 확인할 만합니다.`,
+        \"실제 하루의 과제를 알면, 강점을 쓰기 어려운 자리를 구분할 수 있습니다.\"], main ? [main.facet] : [], false, true);
+      application(1, \"risk-reminder\", (m, r) => [`앞서 읽은 약점을 새 역할의 선택 기준으로 옮겨보면, ${particle(CAREER_TASKS[r.facet].criterion, \"이\", \"가\")} 실제로 주어지는지 물어볼 수 있습니다.`,
+        `${particle(m.label, \"이\", \"가\")} 필요한 일일수록 같은 방식에만 기대기 쉬우므로, 결과와 지금의 부담을 함께 돌아보아야 합니다.`,
+        `면담에서는 ${particle(CAREER_TASKS[r.facet].result, \"을\", \"를\")} 평가하는 방법과, 그 일을 위해 쓸 수 있는 시간을 함께 물어보세요.`,
+        \"잘할 수 있다는 이유만으로 그 역할을 골라야 하는 것은 아니며, 필요한 권한과 시간을 얻기 어려운 조건도 선택에 포함할 만합니다.\"], [], true, true);
+      application(2, \"integrated-growth\", (m, r) => [`${input.context.detailJob ? `입력한 ${input.context.detailJob}의 과제에서도 먼저` : \"먼저\"} ${particle(CAREER_TASKS[r.facet].task, \"을\", \"를\")} 해낸 과정을 남겨, 고른 방법과 결과를 함께 보여 줄 만합니다.`,
+        `장기적으로 ${particle(CAREER_TASKS[r.facet].skill, \"을\", \"를\")} 다른 조건의 과제에도 적용하면, 맡을 범위가 넓어집니다.`,
+        `${particle(CAREER_TASKS[r.facet].result, \"을\", \"를\")} 대가를 이야기할 근거로 남기면, 배운 양보다 제공한 가치로 자신을 설명하기 좋습니다.`,
+        jobFunction === \"engineering\" ? \"다음 개발 과제에서는 비교할 구현 두 가지와 확인할 테스트를 먼저 정하고, 선택 이유를 다른 사람이 이어 쓸 설명으로 남겨 보세요.\" : jobFunction === \"design\" ? \"다음 디자인 과제에서는 시안을 고를 질문 하나와 사용 뒤 확인할 반응을 함께 정해, 제작의 완성과 전달의 효과를 따로 살펴보세요.\" : jobFunction === \"sales_operations\" ? \"다음 영업 제안에서는 고객이 결정할 조건 하나와 내부에서 확인할 약속을 나누어, 먼저 물어볼 질문부터 정해 보세요.\" : `다음 학습은 ${particle(CAREER_TASKS[r.facet].result, \"을\", \"를\")} 막는 빈틈 하나부터 고르면, 이미 잘하는 부분을 반복하는 시간과 새로 익힐 시간을 나눌 수 있습니다.`], talent ? [talent.facet] : [], false, true);
+      const last = main ?? chosen[0];
+      if (last) {
+        const m = CAREER_RELEASE_MATERIALS[last.facet];
+        const refs = { ...sourceRefs(last), recall: true, material: `career:${last.facet}:closing` };
+        add(3, [
+          `이 책에서 읽은 대표적인 힘은 ${m.label}이며, 직업 이름보다 실제 문제를 만났을 때 선명해집니다.`,
+          last.atom.positiveMeaning ?? `다음에는 ${particle(CAREER_TASKS[last.facet].skill, \"을\", \"를\")} 키워, 이미 가진 성향을 새로운 역할의 근거로 넓힐 수 있습니다.`,
+          `${particle(CAREER_TASKS[last.facet].criterion, \"이\", \"가\")} 있는지 살피면, 남들이 좋아하는 자리와 내가 힘을 쓸 자리를 가를 수 있습니다.`,
+          jobSteps ? `다음 선택 전에는 ${particle(CAREER_TASKS[last.facet].result, \"을\", \"를\")} 확인할 작은 과제를 먼저 고르고, 실제 결과가 바뀌었을 때 맡을 범위를 넓혀 보세요.` : \"이 힘이 필요한 곳에 시간을 쓰면, 계속 나를 증명하려 애쓰기보다 내 힘이 쓸모 있는 경력이 남습니다.\",
+        ].map(text => ({ text, refs })));
+      }
+    }
+  }
+  draft.bodyLength = draft.chapters.flatMap(c => c.paragraphs.map(p => p.text)).join(\"\\n\\n\").length;
+  const block = (p: CareerReleaseDraft[\"chapters\"][number][\"paragraphs\"][number]): NarrativeBlock => ({ id: p.id, text: p.text, mode: \"prose\", tone: /CH04.P3|CH06.P3|CH07.P3|CH08.P3/.test(p.id) ? \"shadow\" : \"positive\",
+    proof: { features: [], seedIds: [], fusionIds: [...new Set(p.sentences.flatMap(s => s.fusionIds))], sourceRefs: [...new Set(p.sentences.flatMap(s => [...s.evidenceIds, ...s.mbtiSourceNodeIds, ...s.provenance.sourceRefs]))] } satisfies NarrativeProof });
+  const first = draft.chapters[0], last = draft.chapters.at(-1)?.paragraphs.at(-1);
+  const narrative: CareerNarrative = { ...legacy, headline: legacy.headline, opening: first.paragraphs.map(block),
+    sections: draft.chapters.slice(1).filter(c => c.paragraphs.length).map(c => ({ id: c.key, title: c.title, domain: CAREER_READER_CHAPTERS.find(x => x.id === c.id)!.domain, blocks: c.paragraphs.map(block) })),
+    finalLine: last?.sentences.at(-1)?.text ?? legacy.finalLine, finalProof: last ? block(last).proof : legacy.finalProof };
+  return { draft, narrative, retainedSources };
+}
+"
+
+ ❯ tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts:145:605
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/17]⎯
+
+ FAIL  tests/unit/interpretation-v4/foundationAdapter.test.ts > Phase13D-1A stays off all six product paths > only foundation modules reference the foundation; no writer/UI/calculation import
+AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ tests/unit/interpretation-v4/foundationAdapter.test.ts:116:44
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/17]⎯
+
+ FAIL  tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects major_fortune bypass before order writes and allows stable input
+ FAIL  tests/unit/report-generation/customerDayunGeneration.test.ts > customer Dayun production boundaries > rejects annual_fortune bypass before order writes and allows stable input
+SyntaxError: Unexpected end of JSON input
+ ❯ tests/unit/report-generation/customerDayunGeneration.test.ts:50:55
+     48|       }));
+     49|       const valid = Object.keys(changes).length === 0;
+     50|       expect(r.status, JSON.stringify(await r.clone().json())).toBe(va…
+       |                                                       ^
+     51|       expect(storage.create).toHaveBeenCalledTimes(valid ? 1 : 0);
+     52|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/17]⎯
+
+ FAIL  tests/unit/report-knowledge/mbtiPairResearch.test.ts > offline MBTI directed pair research and preservation > keeps every new registry file static, type-only and absent from runtime consumers
+AssertionError: /private/tmp/gyeol-compatibility-love-product-knowledge-01/src/lib/report-knowledge/compatibility-love-research/mbtiPairResearch.ts: expected '/** Static offline research only. No …' not to match /mbti-pair-research|MBTI_PAIR_RESEARCH/
+
+- Expected:
+/mbti-pair-research|MBTI_PAIR_RESEARCH/
+
++ Received:
+"/** Static offline research only. No scoring, resolution or customer output. */
+import type { PairReview } from \"./researchTypes\";
+export const LOVE_MBTI_PAIR_RESEARCH: readonly PairReview[] = [
+  {
+    \"id\": \"clr:mbti-pair:ENFJ>INTJ\",
+    \"productKey\": \"saju_mbti_compatibility\",
+    \"relationshipCategory\": \"love\",
+    \"connectedToRuntime\": false,
+    \"approvedForCustomer\": false,
+    \"existingScoreContribution\": false,
+    \"runtimeEvidenceIds\": [],
+    \"sourceType\": \"ENFJ\",
+    \"targetType\": \"INTJ\",
+    \"originalResearchId\": \"mpr:ENFJ:INTJ\",
+    \"originalResearchHash\": \"0d92592f68f53ec587873d8fc6f966c366eac6361a9b2af0f0605251568864c0\",
+    \"forward\": {
+      \"pointer\": \"/relationshipHints/notablePairs/7\",
+      \"sha256\": \"d4627bd77ff529c704845a5195fb8bf33abe8ac77f4402006e2734931010c315\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"reverse\": {
+      \"pointer\": \"/relationshipHints/notablePairs/8\",
+      \"sha256\": \"d07e061f0276e54945b7fb51a6ca8ac62937b8c71ffde7e4f75debec384458f4\",
+      \"sourceCoverage\": \"inferred\"
+    },
+    \"sourceLovePattern\": \"연애에서는 ENFJ가 INTJ의 깊은 통찰에 끌리고, INTJ는 ENFJ의 따뜻함과 사람을 향한 에너지에 영향을 받는다. 다만 한쪽이 가르치고 한쪽이 배우는 구조가 굳어지면 친밀감보다 역할감이 커질 수 있다.\",
+    \"sourceFriction\": {
+      \"condition\": \"침묵을 참여 거절로 보거나 잦은 확인을 간섭으로 단정할 때\",
+      \"sourceIntentionCandidate\": \"함께 미래를 맞추려는 감정 확인\",
+      \"targetMayMisreadSource\": \"자율 시간을 계속 침범하는 요구로 읽힐 가능성\",
+      \"targetIntentionCandidate\": \"혼자 판단을 정리하려는 거리두기\",
+      \"sourceMayMisreadTarget\": \"관계에 관심이 없는 반응으로 읽힐 가능성\"
+    },
+    \"sourceRepair\": {
+      \"sourceQuestion\": \"확인 질문을 거절할 자유도 주었는가?\",
+      \"targetQuestion\": \"돌아와 이야기할 때를 알렸는가?\",
+      \"jointAgreement\": \"개인 검토 시간 뒤 공동 대화 시간을 합의\",
+      \"timingLimit\": \"회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다.\"
+    },
+    \"relationNameReview\": {
+      \"termFamily\": null,
+      \"system\": \"source_local_unresolved\",
+      \"reasonClasses\": [
+        \"C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED\",
+        \"D_SOURCE_LOCAL_COVERAGE_DIFFERS\",
+        \"F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED\"
+      ],
+      \"mappingStatus\": \"not_established\",
+      \"approvedForCustomer\": false
+    },
+    \"sourceTraitRefs\": [
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fe_first_judgment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c6030aafd9c16492de89cb5c9fa9334df09745b55a98cc2445aad8998a44458\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"future_meaning_orientation\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a035c8afc59a1a9ee0227da808331ad4904bcc08386c6d6b98d62ff13527f162\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"eloquent_social_speech\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_feedback\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7caedd4e21b4c08fcc9641bfefb82142b7f8d69ded45ba48e8199ce91bd1ec61\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"collaborative_environment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"tension_sensitive_work\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"47a6337072621b148225d69a4f66872362d2b2c52ef9508c3df3d664041f20f8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_social_bonding\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9fbe0e46ca9e757aab955191a1fa1957019f279f5714e7ac50e528268ea2dee6\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"warm_but_selective_cutoff\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4ad522286f5879c16f8b08c6970dc960415c3a8710300eb9be25c549666c846d\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"full_hearted_love\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"39bc693833b926655020899ebdd8ab19004fa730aaaea41075b46bd81ada45ae\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"emotional_confirmation_need\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b4420ecef332272c62209875c8d45f0a5fa226436d0ebe61283614c0a6d2f2f5\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planning_partner\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e66fe2e6b6dfd321cbc8c1bf767c462ec4858c0a45e0e1cad3889178958cbcf8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marital_emotional_labor\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"9bc3b87411148aeda32372eee9d07d004762db61a4a916a812f8c1aee30a2326\"
+      }
+    ],
+    \"targetTraitRefs\": [
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"system_first_thinking\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7fbbc908f57f42701222f1021bc8736ed0b4be9dcad1909c0d891cc88e2b5cbf\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"evidence_based_vision\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"03e4174903caada3bc9807ecd158b46ea5d0aa30c2633b24468345f5cf1547f7\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"blunt_fact_delivery\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"de0d58fbdb68bc4a9cf09c634eb49adf09f4e3ebec3fe6b0105e5c6bb25ffc68\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"sarcastic_humor\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"2e9be37803751d5684a0498d9463024d80f5b5840ba694acca47d824dd3b6830\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"anti_politics_work_style\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"2cd4a099223cd20b305ce9054b48bdfb6b498f80b12c21d7984bbad52054a38d\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"boss_challenge_risk\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"385df267e89d781ddc83f6704b83f3abfde843f462730a2061b8d764a672ec80\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"selective_friendship\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"5e5de3fe3528494dbc2767a0629148bd8782bda4a4dfb80661cc42342740138a\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"deep_idea_bond\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4984e4fccb37946c367134b57e0a4e9d56875f32518a05eb566107d87638edb9\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"slow_high_standard_love\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"0b9cfffe4bbb1b70d2e853bddec5a469cd194f10e753064e06aa13e228722df0\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"strategic_romance_awkwardness\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"90026a393f8a22d8af4164b5e13f3bc52aa55449177e446ff9a0d1a1e911eb22\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planned_marriage\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"dac6f0b12971fd4111dc12014f107e624374b4c41fc1f8f9077c8ae4f56c949b\"
+      },
+      {
+        \"type\": \"INTJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"autonomy_in_marriage\",
+        \"file\": \"docs/product/mbti/source/INTJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"358f42349b40aa31061d30acafcec5530d079f8dedf0fcba902b006c3cc9b5c6\"
+      }
+    ],
+    \"materialRefs\": [],
+    \"status\": \"conditional_reference_not_predictive\",
+    \"noScore\": true,
+    \"notNewInterpretation\": true,
+    \"applicationGate\": \"두 사람 모두 인용한 원천 성향이 실제로 맞는지 확인한다. 맞지 않거나 역할·환경·경험이 더 적절한 설명이면 적용하지 않는다. 도움·질문·활동은 상대 동의가 있을 때만 선택한다. love/relationships/communication 자료만 연애로 재검토한다. 직장·결혼 문맥은 자동 전용하지 않는다. sourceType은 원문 관점이며 모든 절의 행동 주어를 A로 해석하지 않는다.\"
+  },
+  {
+    \"id\": \"clr:mbti-pair:ENFJ>INTP\",
+    \"productKey\": \"saju_mbti_compatibility\",
+    \"relationshipCategory\": \"love\",
+    \"connectedToRuntime\": false,
+    \"approvedForCustomer\": false,
+    \"existingScoreContribution\": false,
+    \"runtimeEvidenceIds\": [],
+    \"sourceType\": \"ENFJ\",
+    \"targetType\": \"INTP\",
+    \"originalResearchId\": \"mpr:ENFJ:INTP\",
+    \"originalResearchHash\": \"cf0d946a9242193c551b496d5771bb90708c55ac271d1d60e9bb5a847938feb1\",
+    \"forward\": {
+      \"pointer\": \"/relationshipHints/notablePairs/1\",
+      \"sha256\": \"780bf11f043b16c3a15a07cb19574359dd184a82e697a0670ce3e987d65dd3a8\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"reverse\": {
+      \"pointer\": \"/relationshipHints/notablePairs/13\",
+      \"sha256\": \"14a6596211c2fee58e7fb91272631854b07ae36adf2b2d7c6c265e2a890a82a1\",
+      \"sourceCoverage\": \"inferred\"
+    },
+    \"sourceLovePattern\": \"초반에는 강한 호기심과 대화의 매력으로 빠르게 끌린다. ENFJ는 INTP의 독특한 사고를 신선하게 느끼고, INTP는 ENFJ의 따뜻한 몰입에 끌린다. 하지만 관계의 안정 장치를 만들지 않으면 감정 속도와 개인 공간에서 자주 부딪친다.\",
+    \"sourceFriction\": {
+      \"condition\": \"즉답·표현을 거듭 요구하거나 관계 질문을 모두 불필요로 볼 때\",
+      \"sourceIntentionCandidate\": \"서로의 상태를 확인하려는 질문\",
+      \"targetMayMisreadSource\": \"감정 반응을 강요하는 것으로 읽힐 가능성\",
+      \"targetIntentionCandidate\": \"생각을 정리할 시간을 확보하는 짧은 답\",
+      \"sourceMayMisreadTarget\": \"관심이 사라진 것으로 읽힐 가능성\"
+    },
+    \"sourceRepair\": {
+      \"sourceQuestion\": \"지금 답하지 않을 권리를 인정했는가?\",
+      \"targetQuestion\": \"돌아와 답할 때를 정할 수 있는가?\",
+      \"jointAgreement\": \"짧은 상태 확인과 긴 대화 시간을 따로 합의\",
+      \"timingLimit\": \"회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다.\"
+    },
+    \"relationNameReview\": {
+      \"termFamily\": \"semi_duality\",
+      \"system\": \"socionics_term_family\",
+      \"reasonClasses\": [
+        \"C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED\",
+        \"D_SOURCE_LOCAL_COVERAGE_DIFFERS\",
+        \"F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED\"
+      ],
+      \"mappingStatus\": \"not_established\",
+      \"approvedForCustomer\": false
+    },
+    \"sourceTraitRefs\": [
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fe_first_judgment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c6030aafd9c16492de89cb5c9fa9334df09745b55a98cc2445aad8998a44458\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"future_meaning_orientation\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a035c8afc59a1a9ee0227da808331ad4904bcc08386c6d6b98d62ff13527f162\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"eloquent_social_speech\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_feedback\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7caedd4e21b4c08fcc9641bfefb82142b7f8d69ded45ba48e8199ce91bd1ec61\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"collaborative_environment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"tension_sensitive_work\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"47a6337072621b148225d69a4f66872362d2b2c52ef9508c3df3d664041f20f8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_social_bonding\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9fbe0e46ca9e757aab955191a1fa1957019f279f5714e7ac50e528268ea2dee6\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"warm_but_selective_cutoff\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4ad522286f5879c16f8b08c6970dc960415c3a8710300eb9be25c549666c846d\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"full_hearted_love\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"39bc693833b926655020899ebdd8ab19004fa730aaaea41075b46bd81ada45ae\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"emotional_confirmation_need\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b4420ecef332272c62209875c8d45f0a5fa226436d0ebe61283614c0a6d2f2f5\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planning_partner\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e66fe2e6b6dfd321cbc8c1bf767c462ec4858c0a45e0e1cad3889178958cbcf8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marital_emotional_labor\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"9bc3b87411148aeda32372eee9d07d004762db61a4a916a812f8c1aee30a2326\"
+      }
+    ],
+    \"targetTraitRefs\": [
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"ti_internal_model\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"ecaaf5978080fd93a4bda1fefbb5f126099d00fde9192e330604671a60792e7f\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"ne_possibility_storm\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9c2c08d51b2d3391c93a8fcf2dfb62629f31b89e631b1e2faf789888c6e94664\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"communication\",
+        \"traitId\": \"direct_everyday_speech\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"36b08e13d5cabc4d9845ccd0034921c67843665f15f1c14290bf005bfea97a0e\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"communication\",
+        \"traitId\": \"learned_social_reactions\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b45c17fe3d55e0f680f5b84d622315fc46e3dded5c68c684280949890aa1a74d\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"needs_thinking_time\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"0744f9e46934b3bbe67347f67d651f543e9c3fff29270f033ae5b79e6da8aef8\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"anti_bureaucracy_work\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"43199257fe7f7ea5a67938b1fed708729433cdc207ab7a09347431ff7c6bd8cd\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"low_need_for_human_ties\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"f629f48fa5791411b7252b5b584b26277126eff16094a875bf68f0db916b3046\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"respect_for_listening_mind\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"16db1fe88d711b1379e8459a2afcc36768111a861c2ba1c408b44fa0d8cccd6d\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"love\",
+        \"traitId\": \"careful_narrow_love\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"f29a444a19ae84609d23fe8291c2cc05ca0b1f2ef5e552aabec4f85d18b78e95\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"love\",
+        \"traitId\": \"witty_intellectual_attraction\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a0e070449d65ebb08f7dda163971485e8010ffb991a567b8b843d4ffb5a25ec1\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marriage_with_space\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7a2eead72df2616d3f8a2503c2a98bfdf4cc52c857a52d4988e9995cb31f3b33\"
+      },
+      {
+        \"type\": \"INTP\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"household_support_need\",
+        \"file\": \"docs/product/mbti/source/INTP.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"718f751dbed3bfe42f4ee2f6bf791c5454a4accdc9c9bbdc3e4350bb018659cb\"
+      }
+    ],
+    \"materialRefs\": [],
+    \"status\": \"conditional_reference_not_predictive\",
+    \"noScore\": true,
+    \"notNewInterpretation\": true,
+    \"applicationGate\": \"두 사람 모두 인용한 원천 성향이 실제로 맞는지 확인한다. 맞지 않거나 역할·환경·경험이 더 적절한 설명이면 적용하지 않는다. 도움·질문·활동은 상대 동의가 있을 때만 선택한다. love/relationships/communication 자료만 연애로 재검토한다. 직장·결혼 문맥은 자동 전용하지 않는다. sourceType은 원문 관점이며 모든 절의 행동 주어를 A로 해석하지 않는다.\"
+  },
+  {
+    \"id\": \"clr:mbti-pair:ENFJ>ENTJ\",
+    \"productKey\": \"saju_mbti_compatibility\",
+    \"relationshipCategory\": \"love\",
+    \"connectedToRuntime\": false,
+    \"approvedForCustomer\": false,
+    \"existingScoreContribution\": false,
+    \"runtimeEvidenceIds\": [],
+    \"sourceType\": \"ENFJ\",
+    \"targetType\": \"ENTJ\",
+    \"originalResearchId\": \"mpr:ENFJ:ENTJ\",
+    \"originalResearchHash\": \"71d21f64e8a0322a56a3f1efa77ddf9373a617429a88511648d412c5c5b16a23\",
+    \"forward\": {
+      \"pointer\": \"/relationshipHints/notablePairs/8\",
+      \"sha256\": \"9c0d8b50db3e1899b5f343d73f358a8a21d2a003f88d6be7920bdfb4bad1fe0d\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"reverse\": {
+      \"pointer\": \"/relationshipHints/notablePairs/7\",
+      \"sha256\": \"68a9138b14138311b4e3de2ad634f23ddad73545c1143f71fc7f7063bf5a218b\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"sourceLovePattern\": \"연애에서는 강한 리더십과 대화의 속도 때문에 빠르게 가까워진다. ENFJ는 ENTJ의 추진력에, ENTJ는 ENFJ의 사회적 설득력에 끌린다. 다만 서로 주도권을 잡으려 하면 관계가 협력보다 경쟁으로 흐른다.\",
+    \"sourceFriction\": {
+      \"condition\": \"서로의 조율 방식을 비효율 또는 냉정함으로 규정할 때\",
+      \"sourceIntentionCandidate\": \"참여자의 마음을 확인하는 대화\",
+      \"targetMayMisreadSource\": \"결정을 늦추는 우회로로 읽힐 가능성\",
+      \"targetIntentionCandidate\": \"문제를 명료하게 바로잡는 직설\",
+      \"sourceMayMisreadTarget\": \"사람을 성과로만 평가하는 말로 읽힐 가능성\"
+    },
+    \"sourceRepair\": {
+      \"sourceQuestion\": \"조율 뒤 결정할 기준을 제시했는가?\",
+      \"targetQuestion\": \"반대 의견이 나올 통로를 남겼는가?\",
+      \"jointAgreement\": \"결과 기준과 참여 조건을 함께 정함\",
+      \"timingLimit\": \"회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다.\"
+    },
+    \"relationNameReview\": {
+      \"termFamily\": \"business\",
+      \"system\": \"socionics_term_family\",
+      \"reasonClasses\": [
+        \"C_DISTINCT_SOCIONICS_TERM_FAMILIES_MAPPING_UNVERIFIED\",
+        \"F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED\"
+      ],
+      \"mappingStatus\": \"not_established\",
+      \"approvedForCustomer\": false
+    },
+    \"sourceTraitRefs\": [
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fe_first_judgment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c6030aafd9c16492de89cb5c9fa9334df09745b55a98cc2445aad8998a44458\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"future_meaning_orientation\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a035c8afc59a1a9ee0227da808331ad4904bcc08386c6d6b98d62ff13527f162\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"eloquent_social_speech\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_feedback\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7caedd4e21b4c08fcc9641bfefb82142b7f8d69ded45ba48e8199ce91bd1ec61\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"collaborative_environment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"tension_sensitive_work\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"47a6337072621b148225d69a4f66872362d2b2c52ef9508c3df3d664041f20f8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_social_bonding\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9fbe0e46ca9e757aab955191a1fa1957019f279f5714e7ac50e528268ea2dee6\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"warm_but_selective_cutoff\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4ad522286f5879c16f8b08c6970dc960415c3a8710300eb9be25c549666c846d\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"full_hearted_love\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"39bc693833b926655020899ebdd8ab19004fa730aaaea41075b46bd81ada45ae\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"emotional_confirmation_need\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b4420ecef332272c62209875c8d45f0a5fa226436d0ebe61283614c0a6d2f2f5\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planning_partner\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e66fe2e6b6dfd321cbc8c1bf767c462ec4858c0a45e0e1cad3889178958cbcf8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marital_emotional_labor\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"9bc3b87411148aeda32372eee9d07d004762db61a4a916a812f8c1aee30a2326\"
+      }
+    ],
+    \"targetTraitRefs\": [
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"te_ni_strategy\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"33aa6cad52d860affad5c8489cc5ad41b753aace827d395e9a8fc9105d172e9a\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"criticism_as_growth\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"3517258f96261d5f668e9f536f86bdc59b515eeea4ef644af4cf68ce55872c53\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"clear_assertive_language\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a0248d69af85d74881be3f9c2f625cd37d19f4b318b68682bd4b96cf6abea050\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"challenge_communication\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"d3f4faeef8849d855d837dfef1bf8e07cfef05cde733074b15cd8e9ff60bbba9\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"direct_feedback_leader\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7af999ce803069473e2ec5c697c973d575433cac1847558a48170a00b49680e3\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"turnaround_reformer\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"fd60ffe9bdddf0f4442a749160fb8b7480b4a1fd202a2b8775f08ef733b10392\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"strategic_friend_filter\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"01fcc77ca4ce559b21cf746573befd1641975fecdea321daa4c051d271469f6e\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"debate_as_bonding\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"0fb1bf00dbe6db1f36ea90599ab849df3fa442480574ca08925a783eefb5afad\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"planned_intense_romance\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"5a9c3977e1561297a9f5039c26c63bd2a4f7a800fe0814779bf3011d8a941510\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"long_term_filter\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"3bbd7bf1d25d4570138ca8ef6e96e95a223c80de63d8a9dc73ead2ef845ac8b1\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"achievement_partner_marriage\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"49518905f307060c5ab2216a972c217b8de4a2bf9316a819ce6f6340313cf086\"
+      },
+      {
+        \"type\": \"ENTJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"dominance_marriage_risk\",
+        \"file\": \"docs/product/mbti/source/ENTJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"55b73917f839fb0f0b902b00986050a3f4e4e81ba96db4dfc5c0bc977745cf1d\"
+      }
+    ],
+    \"materialRefs\": [],
+    \"status\": \"conditional_reference_not_predictive\",
+    \"noScore\": true,
+    \"notNewInterpretation\": true,
+    \"applicationGate\": \"두 사람 모두 인용한 원천 성향이 실제로 맞는지 확인한다. 맞지 않거나 역할·환경·경험이 더 적절한 설명이면 적용하지 않는다. 도움·질문·활동은 상대 동의가 있을 때만 선택한다. love/relationships/communication 자료만 연애로 재검토한다. 직장·결혼 문맥은 자동 전용하지 않는다. sourceType은 원문 관점이며 모든 절의 행동 주어를 A로 해석하지 않는다.\"
+  },
+  {
+    \"id\": \"clr:mbti-pair:ENFJ>ENTP\",
+    \"productKey\": \"saju_mbti_compatibility\",
+    \"relationshipCategory\": \"love\",
+    \"connectedToRuntime\": false,
+    \"approvedForCustomer\": false,
+    \"existingScoreContribution\": false,
+    \"runtimeEvidenceIds\": [],
+    \"sourceType\": \"ENFJ\",
+    \"targetType\": \"ENTP\",
+    \"originalResearchId\": \"mpr:ENFJ:ENTP\",
+    \"originalResearchHash\": \"8b357478c17338dd4562f16ae3aa09c6d688ba718ebb031e83228404c173288b\",
+    \"forward\": {
+      \"pointer\": \"/relationshipHints/notablePairs/4\",
+      \"sha256\": \"93e218aa8ae609187236a0f943dad345d65cab46e0d77e415acc384adc8ce503\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"reverse\": {
+      \"pointer\": \"/relationshipHints/notablePairs/8\",
+      \"sha256\": \"982fd4e23e02ee80a316bfb2bac5ee5cde1469cdbd0e7f436795b7061cadee9f\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"sourceLovePattern\": \"연애에서는 ENFJ가 ENTP의 재치와 능력에 끌리고, ENTP는 ENFJ의 따뜻한 반응과 헌신을 편안하게 느낀다. 그러나 ENFJ가 계속 기쁘게 해주려 하고 ENTP가 그것을 당연하게 여기면 관계가 기울어진다.\",
+    \"sourceFriction\": {
+      \"condition\": \"공개 반론에 누군가의 체면·선택권이 걸릴 때\",
+      \"sourceIntentionCandidate\": \"참여자의 마음을 돌보는 중재\",
+      \"targetMayMisreadSource\": \"의견을 막는 분위기 관리로 읽힐 가능성\",
+      \"targetIntentionCandidate\": \"생각을 움직이는 장난\",
+      \"sourceMayMisreadTarget\": \"관계를 무시하는 말로 읽힐 가능성\"
+    },
+    \"sourceRepair\": {
+      \"sourceQuestion\": \"중재가 실제 이견을 지우지 않는가?\",
+      \"targetQuestion\": \"반론의 장소와 동의를 골랐는가?\",
+      \"jointAgreement\": \"아이디어 평가와 당사자 존중을 따로 확인\",
+      \"timingLimit\": \"회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다.\"
+    },
+    \"relationNameReview\": {
+      \"termFamily\": \"benefit\",
+      \"system\": \"socionics_term_family\",
+      \"reasonClasses\": [
+        \"A_ASYMMETRIC_FAMILY_ROLES_UNVERIFIED\",
+        \"F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED\"
+      ],
+      \"mappingStatus\": \"not_established\",
+      \"approvedForCustomer\": false
+    },
+    \"sourceTraitRefs\": [
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fe_first_judgment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c6030aafd9c16492de89cb5c9fa9334df09745b55a98cc2445aad8998a44458\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"future_meaning_orientation\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a035c8afc59a1a9ee0227da808331ad4904bcc08386c6d6b98d62ff13527f162\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"eloquent_social_speech\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_feedback\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7caedd4e21b4c08fcc9641bfefb82142b7f8d69ded45ba48e8199ce91bd1ec61\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"collaborative_environment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"tension_sensitive_work\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"47a6337072621b148225d69a4f66872362d2b2c52ef9508c3df3d664041f20f8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_social_bonding\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9fbe0e46ca9e757aab955191a1fa1957019f279f5714e7ac50e528268ea2dee6\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"warm_but_selective_cutoff\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4ad522286f5879c16f8b08c6970dc960415c3a8710300eb9be25c549666c846d\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"full_hearted_love\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"39bc693833b926655020899ebdd8ab19004fa730aaaea41075b46bd81ada45ae\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"emotional_confirmation_need\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b4420ecef332272c62209875c8d45f0a5fa226436d0ebe61283614c0a6d2f2f5\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planning_partner\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e66fe2e6b6dfd321cbc8c1bf767c462ec4858c0a45e0e1cad3889178958cbcf8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marital_emotional_labor\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"9bc3b87411148aeda32372eee9d07d004762db61a4a916a812f8c1aee30a2326\"
+      }
+    ],
+    \"targetTraitRefs\": [
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"possibility_scanning\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"679603cb68926194d9f090465587172a616d7e1d2f72506ef2a1d0ed40dea019\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"logical_core_detection\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c7941890b2256ab54623e8791c2d2057dc5021486ca311f6ea3145e994ce4e33\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"communication\",
+        \"traitId\": \"direct_speech\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"fbd5a624bd9e5f78abf102b4d48763f125ed92dd7ea3b754ed915d7e7b5aa9c4\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"communication\",
+        \"traitId\": \"charming_argument\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c21e460b5a0de6c088525e3ec29842b0ea1df2edef70bd82cea9681834cc28dd\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"autonomy_required\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"3f3a7056b94a574fd3b2182b4ffb6bd1a73c3c4b8b840f93061bb269f47b0e5d\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"brainstorming_leader\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"65e50ce5b0b31b4dd242b778c5d6b511ceedc16462a244e8a156ad3ea8f26441\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"quick_connection\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"2440e71e0d5116715b908d08629688637dc40451ba1e3eea24c5c13453d49439\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"selective_loyalty\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"3f6f017758bafe5ee9e54e8e325016a9be3b41ff5e5ca1445a43ff40fafb7481\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"love\",
+        \"traitId\": \"ideal_type_filter\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6e49b535cd5d30be962498ffb519c78640395ddeecfeb1518ea9a3aead42ade3\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"love\",
+        \"traitId\": \"fast_start_romance\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e53ce89296e310e8f012af1b4a8f0e78740f6c31b6e003c906e3ba67623f9767\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marriage_needs_space\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"6788b02ac7018068c5964933bce94233edf1ef3825b4638d468f725e27d250a9\"
+      },
+      {
+        \"type\": \"ENTP\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"shared_growth_marriage\",
+        \"file\": \"docs/product/mbti/source/ENTP.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"49a4d315f179197f03adf2268ac6371a625f1e484bbb61efc555552b36bcf188\"
+      }
+    ],
+    \"materialRefs\": [],
+    \"status\": \"conditional_reference_not_predictive\",
+    \"noScore\": true,
+    \"notNewInterpretation\": true,
+    \"applicationGate\": \"두 사람 모두 인용한 원천 성향이 실제로 맞는지 확인한다. 맞지 않거나 역할·환경·경험이 더 적절한 설명이면 적용하지 않는다. 도움·질문·활동은 상대 동의가 있을 때만 선택한다. love/relationships/communication 자료만 연애로 재검토한다. 직장·결혼 문맥은 자동 전용하지 않는다. sourceType은 원문 관점이며 모든 절의 행동 주어를 A로 해석하지 않는다.\"
+  },
+  {
+    \"id\": \"clr:mbti-pair:ENFJ>INFJ\",
+    \"productKey\": \"saju_mbti_compatibility\",
+    \"relationshipCategory\": \"love\",
+    \"connectedToRuntime\": false,
+    \"approvedForCustomer\": false,
+    \"existingScoreContribution\": false,
+    \"runtimeEvidenceIds\": [],
+    \"sourceType\": \"ENFJ\",
+    \"targetType\": \"INFJ\",
+    \"originalResearchId\": \"mpr:ENFJ:INFJ\",
+    \"originalResearchHash\": \"074f3154dd8a1d9c63fcc0b66a9f7747de0d9162c39f03f0d4078fb07b4b1a91\",
+    \"forward\": {
+      \"pointer\": \"/relationshipHints/notablePairs/15\",
+      \"sha256\": \"c92ef7e96364ac5ba69e404cedc3dccce73a4fbf941dfcc03504a923a5ca3497\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"reverse\": {
+      \"pointer\": \"/relationshipHints/notablePairs/8\",
+      \"sha256\": \"fcce50086087c3066d2126251c2da437879e03ea925baaaad82592b10909faba\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"sourceLovePattern\": \"연애에서는 가치관과 의미 있는 대화가 잘 통한다. ENFJ는 INFJ의 깊이를 존중하고, INFJ는 ENFJ의 따뜻한 표현과 실천력을 좋게 본다. 다만 외부 활동량과 내면 몰입의 차이를 조율해야 한다.\",
+    \"sourceFriction\": {
+      \"condition\": \"모임 확장을 모두에게 당연한 선택으로 제시할 때\",
+      \"sourceIntentionCandidate\": \"다른 사람도 참여시키려는 초대\",
+      \"targetMayMisreadSource\": \"개인 경계를 넓히는 압박으로 읽힐 가능성\",
+      \"targetIntentionCandidate\": \"소수와 깊게 나누려는 선택\",
+      \"sourceMayMisreadTarget\": \"관계 확장을 거부하는 것으로 읽힐 가능성\"
+    },
+    \"sourceRepair\": {
+      \"sourceQuestion\": \"초대와 의무를 구분했는가?\",
+      \"targetQuestion\": \"참여하지 않아도 지지할 방식을 말했는가?\",
+      \"jointAgreement\": \"참여 범위와 혼자 정리할 시간을 선택\",
+      \"timingLimit\": \"회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다.\"
+    },
+    \"relationNameReview\": {
+      \"termFamily\": \"mirror\",
+      \"system\": \"socionics_term_family\",
+      \"reasonClasses\": [
+        \"B_TERM_ALIAS_OR_LABEL_VARIANT\",
+        \"F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED\"
+      ],
+      \"mappingStatus\": \"not_established\",
+      \"approvedForCustomer\": false
+    },
+    \"sourceTraitRefs\": [
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fe_first_judgment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c6030aafd9c16492de89cb5c9fa9334df09745b55a98cc2445aad8998a44458\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"future_meaning_orientation\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a035c8afc59a1a9ee0227da808331ad4904bcc08386c6d6b98d62ff13527f162\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"eloquent_social_speech\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_feedback\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7caedd4e21b4c08fcc9641bfefb82142b7f8d69ded45ba48e8199ce91bd1ec61\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"collaborative_environment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"tension_sensitive_work\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"47a6337072621b148225d69a4f66872362d2b2c52ef9508c3df3d664041f20f8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_social_bonding\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9fbe0e46ca9e757aab955191a1fa1957019f279f5714e7ac50e528268ea2dee6\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"warm_but_selective_cutoff\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4ad522286f5879c16f8b08c6970dc960415c3a8710300eb9be25c549666c846d\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"full_hearted_love\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"39bc693833b926655020899ebdd8ab19004fa730aaaea41075b46bd81ada45ae\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"emotional_confirmation_need\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b4420ecef332272c62209875c8d45f0a5fa226436d0ebe61283614c0a6d2f2f5\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planning_partner\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e66fe2e6b6dfd321cbc8c1bf767c462ec4858c0a45e0e1cad3889178958cbcf8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marital_emotional_labor\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"9bc3b87411148aeda32372eee9d07d004762db61a4a916a812f8c1aee30a2326\"
+      }
+    ],
+    \"targetTraitRefs\": [
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"ni_pattern_prediction\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"ea06cfc35c8a2555b1390ee29a24f2ad9ee4cdbe6073d0de9d334552855c7014\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"private_analysis_loop\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6f3cd6efacc501dc5aebe73fc78d77089398317eb5a48d59d81f0445f7df1def\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"indirect_expression\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e76bbabae0ef6468208cc5fae3eb326df28f876496591fcb439c5f9d56e9a1e8\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_language\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6e9b1e8b17eaf6e294ee0ebeb1cb63ca4f605a30a89f15cd4f1c272320af57c7\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"horizontal_structure_fit\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7920656d5923663f214c95918124951f6ad41a598843fa163a57bcb474339669\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"calm_deep_work\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"eaab4d63e08442fa220b97122228953789da0ecba916c6dadc2b7578a5f8504e\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"deep_true_connection\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c3221eabc6fd2beb5514ce735fa8efaaa90fddacf58087b2b22758241d59fa4\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"door_slam_boundary\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b070ef71b86aa6542547a434e52bf5ae802bd1d89aaf66dbb6e7523f74aa2b16\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"careful_start_deep_love\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"ec288950c077a7f02b78c2af28f8bd1187dba9de684b156e2405c686fdd48ccf\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"romantic_ideal_love\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9b07e701d371327ec24d0443017b4179d186d7f2e4e1fda63cfa50422bda9992\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"meaningful_long_bond\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"685232f2b1de304288b617d7a656c0f937cfafe74917cf544b8e10d8e9ae252e\"
+      },
+      {
+        \"type\": \"INFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"private_time_needed\",
+        \"file\": \"docs/product/mbti/source/INFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4e13217a80bfa20d60992d1d50149ff2ebf9af095110ca0362f81ae63436d1ff\"
+      }
+    ],
+    \"materialRefs\": [],
+    \"status\": \"conditional_reference_not_predictive\",
+    \"noScore\": true,
+    \"notNewInterpretation\": true,
+    \"applicationGate\": \"두 사람 모두 인용한 원천 성향이 실제로 맞는지 확인한다. 맞지 않거나 역할·환경·경험이 더 적절한 설명이면 적용하지 않는다. 도움·질문·활동은 상대 동의가 있을 때만 선택한다. love/relationships/communication 자료만 연애로 재검토한다. 직장·결혼 문맥은 자동 전용하지 않는다. sourceType은 원문 관점이며 모든 절의 행동 주어를 A로 해석하지 않는다.\"
+  },
+  {
+    \"id\": \"clr:mbti-pair:ENFJ>INFP\",
+    \"productKey\": \"saju_mbti_compatibility\",
+    \"relationshipCategory\": \"love\",
+    \"connectedToRuntime\": false,
+    \"approvedForCustomer\": false,
+    \"existingScoreContribution\": false,
+    \"runtimeEvidenceIds\": [],
+    \"sourceType\": \"ENFJ\",
+    \"targetType\": \"INFP\",
+    \"originalResearchId\": \"mpr:ENFJ:INFP\",
+    \"originalResearchHash\": \"ea62e4cb13cfcdae6d6f49561375454a6933be4e18661bf67a1945ee239b8bc5\",
+    \"forward\": {
+      \"pointer\": \"/relationshipHints/notablePairs/12\",
+      \"sha256\": \"a19376126fef3ac86eb240a63eaa67855739c382cf82b3ac42e636625a6d5e0b\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"reverse\": {
+      \"pointer\": \"/relationshipHints/notablePairs/4\",
+      \"sha256\": \"eca981c09641f3ad51204fa380f57288b9e85802ee0daf6711941459949e006c\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"sourceLovePattern\": \"초반에는 서로의 가치 지향과 감성에 끌릴 수 있다. 그러나 ENFJ는 적극적으로 관계를 정착시키려 하고 INFP는 심리적 거리를 두려 해, ENFJ가 거절과 배신처럼 느끼기 쉽다.\",
+    \"sourceFriction\": {
+      \"condition\": \"좋은 취지라는 이유로 참여를 기대할 때\",
+      \"sourceIntentionCandidate\": \"관계를 위해 설득하는 말\",
+      \"targetMayMisreadSource\": \"개인 선택을 교정하는 압박으로 읽힐 가능성\",
+      \"targetIntentionCandidate\": \"자기 기준을 지키는 유보\",
+      \"sourceMayMisreadTarget\": \"모두의 노력을 거부하는 것으로 읽힐 가능성\"
+    },
+    \"sourceRepair\": {
+      \"sourceQuestion\": \"개별 동의를 다시 받았는가?\",
+      \"targetQuestion\": \"거절 조건을 분명히 말했는가?\",
+      \"jointAgreement\": \"공동 목표와 참여 방식은 따로 동의\",
+      \"timingLimit\": \"회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다.\"
+    },
+    \"relationNameReview\": {
+      \"termFamily\": \"extinguishment\",
+      \"system\": \"socionics_term_family\",
+      \"reasonClasses\": [
+        \"B_TERM_ALIAS_OR_LABEL_VARIANT\",
+        \"F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED\"
+      ],
+      \"mappingStatus\": \"not_established\",
+      \"approvedForCustomer\": false
+    },
+    \"sourceTraitRefs\": [
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fe_first_judgment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c6030aafd9c16492de89cb5c9fa9334df09745b55a98cc2445aad8998a44458\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"future_meaning_orientation\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a035c8afc59a1a9ee0227da808331ad4904bcc08386c6d6b98d62ff13527f162\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"eloquent_social_speech\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_feedback\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7caedd4e21b4c08fcc9641bfefb82142b7f8d69ded45ba48e8199ce91bd1ec61\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"collaborative_environment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"tension_sensitive_work\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"47a6337072621b148225d69a4f66872362d2b2c52ef9508c3df3d664041f20f8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_social_bonding\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9fbe0e46ca9e757aab955191a1fa1957019f279f5714e7ac50e528268ea2dee6\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"warm_but_selective_cutoff\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4ad522286f5879c16f8b08c6970dc960415c3a8710300eb9be25c549666c846d\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"full_hearted_love\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"39bc693833b926655020899ebdd8ab19004fa730aaaea41075b46bd81ada45ae\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"emotional_confirmation_need\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b4420ecef332272c62209875c8d45f0a5fa226436d0ebe61283614c0a6d2f2f5\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planning_partner\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e66fe2e6b6dfd321cbc8c1bf767c462ec4858c0a45e0e1cad3889178958cbcf8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marital_emotional_labor\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"9bc3b87411148aeda32372eee9d07d004762db61a4a916a812f8c1aee30a2326\"
+      }
+    ],
+    \"targetTraitRefs\": [
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fi_inner_alignment\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"18e2b43db4b9ff2ce0e19f44e786caf50868b835062ee8a10ceff79019d7024c\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"ne_branching_imagination\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"0c0a9af711c2f78cc2d20463ef414125d76bf81838802685d18975c2673e5256\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_metaphoric_speech\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"df4cdeaaa1a74b28431f02996a88501a038de73d0bdcbd20ccb3083982b635ab\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"communication\",
+        \"traitId\": \"slow_to_show_affection\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c8ecbafb18102e625149745af922b3ea3439095ca0bc15409a738ec89df46741\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"autonomy_required\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"74580027ae5ad27e773634ec2a08d5d721bdfcf9645f255fcbf4bc8eb869d876\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"low_competition_environment\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e48dcda440160dac9e61b5b85d258dc47f36283442fa47bb004650767a08e4c6\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"deep_value_based_bonds\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"826efadffc1a0ba755998d9bb8bca1aa13beff6a80593ba6924139924e3ec79e\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"boundary_against_cruelty\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b111109947fa925e547ccbb3490355bb11f27c55f75a9b9217b4a7fa968dd714\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"love\",
+        \"traitId\": \"deep_emotional_bond\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b173c89dc731ef040729f411d74e9b8f49db7ef6c4829f1fe17fe9365fc878c8\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"love\",
+        \"traitId\": \"artistic_dates\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"1d7e23a6951530d95ab4913cf1b736cec11ff7456cad3d3354beb54aee986b6c\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"freedom_romance_marriage\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"f877ea71112bea8f36ed19194d8b223613ced4831a87b45f761c6052b4766d7c\"
+      },
+      {
+        \"type\": \"INFP\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"devotion_and_boundary\",
+        \"file\": \"docs/product/mbti/source/INFP.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c0adf46bd9d3ec72786d2d61d151db1108c6c389287d6bdfbf78d687b89e2ee5\"
+      }
+    ],
+    \"materialRefs\": [],
+    \"status\": \"conditional_reference_not_predictive\",
+    \"noScore\": true,
+    \"notNewInterpretation\": true,
+    \"applicationGate\": \"두 사람 모두 인용한 원천 성향이 실제로 맞는지 확인한다. 맞지 않거나 역할·환경·경험이 더 적절한 설명이면 적용하지 않는다. 도움·질문·활동은 상대 동의가 있을 때만 선택한다. love/relationships/communication 자료만 연애로 재검토한다. 직장·결혼 문맥은 자동 전용하지 않는다. sourceType은 원문 관점이며 모든 절의 행동 주어를 A로 해석하지 않는다.\"
+  },
+  {
+    \"id\": \"clr:mbti-pair:ENFJ>ENFJ\",
+    \"productKey\": \"saju_mbti_compatibility\",
+    \"relationshipCategory\": \"love\",
+    \"connectedToRuntime\": false,
+    \"approvedForCustomer\": false,
+    \"existingScoreContribution\": false,
+    \"runtimeEvidenceIds\": [],
+    \"sourceType\": \"ENFJ\",
+    \"targetType\": \"ENFJ\",
+    \"originalResearchId\": \"mpr:ENFJ:ENFJ\",
+    \"originalResearchHash\": \"0f746dd61e76532d0108cb253282cec02eef6e3ca1d9d0660793143e97a3aaec\",
+    \"forward\": {
+      \"pointer\": \"/relationshipHints/notablePairs/3\",
+      \"sha256\": \"e57ee65a5251dc60a686ed66ee4e994deba5c4983b26245e15fa6e057bd1f46f\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"reverse\": {
+      \"pointer\": \"/relationshipHints/notablePairs/3\",
+      \"sha256\": \"e57ee65a5251dc60a686ed66ee4e994deba5c4983b26245e15fa6e057bd1f46f\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"sourceLovePattern\": \"연애에서는 서로의 마음을 빠르게 이해하고 다정한 확인이 많다. 둘 다 관계를 소중히 여기므로 초반 안정감이 크지만, 같은 불안을 동시에 키우면 과한 확인과 감정 소모가 반복될 수 있다.\",
+    \"sourceFriction\": {
+      \"condition\": \"둘 다 분위기를 위해 반대를 숨길 때\",
+      \"sourceIntentionCandidate\": \"관계를 편하게 하려는 양보\",
+      \"targetMayMisreadSource\": \"실제 동의로 읽힐 가능성\",
+      \"targetIntentionCandidate\": \"함께 해결하려는 반복 확인\",
+      \"sourceMayMisreadTarget\": \"혼자 쉴 권리를 줄이는 것으로 읽힐 가능성\"
+    },
+    \"sourceRepair\": {
+      \"sourceQuestion\": \"내가 맡을 수 있는 선을 말했는가?\",
+      \"targetQuestion\": \"상대의 거절도 들었는가?\",
+      \"jointAgreement\": \"돌봄과 조율의 담당을 번갈아 맡음\",
+      \"timingLimit\": \"회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다.\"
+    },
+    \"relationNameReview\": {
+      \"termFamily\": \"identity\",
+      \"system\": \"socionics_term_family\",
+      \"reasonClasses\": [
+        \"B_TERM_ALIAS_OR_LABEL_VARIANT\",
+        \"F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED\"
+      ],
+      \"mappingStatus\": \"not_established\",
+      \"approvedForCustomer\": false
+    },
+    \"sourceTraitRefs\": [
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fe_first_judgment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c6030aafd9c16492de89cb5c9fa9334df09745b55a98cc2445aad8998a44458\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"future_meaning_orientation\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a035c8afc59a1a9ee0227da808331ad4904bcc08386c6d6b98d62ff13527f162\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"eloquent_social_speech\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_feedback\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7caedd4e21b4c08fcc9641bfefb82142b7f8d69ded45ba48e8199ce91bd1ec61\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"collaborative_environment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"tension_sensitive_work\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"47a6337072621b148225d69a4f66872362d2b2c52ef9508c3df3d664041f20f8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_social_bonding\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9fbe0e46ca9e757aab955191a1fa1957019f279f5714e7ac50e528268ea2dee6\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"warm_but_selective_cutoff\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4ad522286f5879c16f8b08c6970dc960415c3a8710300eb9be25c549666c846d\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"full_hearted_love\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"39bc693833b926655020899ebdd8ab19004fa730aaaea41075b46bd81ada45ae\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"emotional_confirmation_need\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b4420ecef332272c62209875c8d45f0a5fa226436d0ebe61283614c0a6d2f2f5\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planning_partner\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e66fe2e6b6dfd321cbc8c1bf767c462ec4858c0a45e0e1cad3889178958cbcf8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marital_emotional_labor\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"9bc3b87411148aeda32372eee9d07d004762db61a4a916a812f8c1aee30a2326\"
+      }
+    ],
+    \"targetTraitRefs\": [
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fe_first_judgment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c6030aafd9c16492de89cb5c9fa9334df09745b55a98cc2445aad8998a44458\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"future_meaning_orientation\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a035c8afc59a1a9ee0227da808331ad4904bcc08386c6d6b98d62ff13527f162\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"eloquent_social_speech\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_feedback\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7caedd4e21b4c08fcc9641bfefb82142b7f8d69ded45ba48e8199ce91bd1ec61\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"collaborative_environment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"tension_sensitive_work\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"47a6337072621b148225d69a4f66872362d2b2c52ef9508c3df3d664041f20f8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_social_bonding\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9fbe0e46ca9e757aab955191a1fa1957019f279f5714e7ac50e528268ea2dee6\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"warm_but_selective_cutoff\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4ad522286f5879c16f8b08c6970dc960415c3a8710300eb9be25c549666c846d\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"full_hearted_love\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"39bc693833b926655020899ebdd8ab19004fa730aaaea41075b46bd81ada45ae\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"emotional_confirmation_need\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b4420ecef332272c62209875c8d45f0a5fa226436d0ebe61283614c0a6d2f2f5\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planning_partner\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e66fe2e6b6dfd321cbc8c1bf767c462ec4858c0a45e0e1cad3889178958cbcf8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marital_emotional_labor\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"9bc3b87411148aeda32372eee9d07d004762db61a4a916a812f8c1aee30a2326\"
+      }
+    ],
+    \"materialRefs\": [],
+    \"status\": \"conditional_reference_not_predictive\",
+    \"noScore\": true,
+    \"notNewInterpretation\": true,
+    \"applicationGate\": \"두 사람 모두 인용한 원천 성향이 실제로 맞는지 확인한다. 맞지 않거나 역할·환경·경험이 더 적절한 설명이면 적용하지 않는다. 도움·질문·활동은 상대 동의가 있을 때만 선택한다. love/relationships/communication 자료만 연애로 재검토한다. 직장·결혼 문맥은 자동 전용하지 않는다. sourceType은 원문 관점이며 모든 절의 행동 주어를 A로 해석하지 않는다.\"
+  },
+  {
+    \"id\": \"clr:mbti-pair:ENFJ>ENFP\",
+    \"productKey\": \"saju_mbti_compatibility\",
+    \"relationshipCategory\": \"love\",
+    \"connectedToRuntime\": false,
+    \"approvedForCustomer\": false,
+    \"existingScoreContribution\": false,
+    \"runtimeEvidenceIds\": [],
+    \"sourceType\": \"ENFJ\",
+    \"targetType\": \"ENFP\",
+    \"originalResearchId\": \"mpr:ENFJ:ENFP\",
+    \"originalResearchHash\": \"a63dd4cdd7d738dac08fd92df9235aa70dab6fd2835b0333491becc2514c4d8f\",
+    \"forward\": {
+      \"pointer\": \"/relationshipHints/notablePairs/11\",
+      \"sha256\": \"be8b68a042df1e6b4f1c1c3767f383dc36f4513a8bdeddce603499a787439f60\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"reverse\": {
+      \"pointer\": \"/relationshipHints/notablePairs/10\",
+      \"sha256\": \"0576c11bc8317f57dc652e6958144b909f0e60352426558ae519ffa1cbc773a9\",
+      \"sourceCoverage\": \"inferred\"
+    },
+    \"sourceLovePattern\": \"연애 초반에는 비슷한 따뜻함과 활기 때문에 잘 맞는 듯 보인다. 하지만 ENFJ는 관계의 방향과 합의를 원하고, ENFP는 가능성과 자유로운 흐름을 중시해 문제 해결 방식에서 어긋난다.\",
+    \"sourceFriction\": {
+      \"condition\": \"관심 표현이 곧 장기 약속으로 취급될 때\",
+      \"sourceIntentionCandidate\": \"관계의 다음 방향을 확인하는 질문\",
+      \"targetMayMisreadSource\": \"자유로운 탐색을 묶는 요구로 읽힐 가능성\",
+      \"targetIntentionCandidate\": \"흥미로운 가능성을 나누는 말\",
+      \"sourceMayMisreadTarget\": \"확정을 피하는 것으로 읽힐 가능성\"
+    },
+    \"sourceRepair\": {
+      \"sourceQuestion\": \"제안과 약속을 구분했는가?\",
+      \"targetQuestion\": \"맡은 일과 새 흥미를 나눴는가?\",
+      \"jointAgreement\": \"확정한 약속과 후보 활동을 따로 적음\",
+      \"timingLimit\": \"회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다.\"
+    },
+    \"relationNameReview\": {
+      \"termFamily\": \"quasi_identity\",
+      \"system\": \"socionics_term_family\",
+      \"reasonClasses\": [
+        \"C_LOCAL_OR_MIXED_SYSTEM_NAME_UNRESOLVED\",
+        \"D_SOURCE_LOCAL_COVERAGE_DIFFERS\",
+        \"F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED\"
+      ],
+      \"mappingStatus\": \"not_established\",
+      \"approvedForCustomer\": false
+    },
+    \"sourceTraitRefs\": [
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fe_first_judgment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c6030aafd9c16492de89cb5c9fa9334df09745b55a98cc2445aad8998a44458\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"future_meaning_orientation\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a035c8afc59a1a9ee0227da808331ad4904bcc08386c6d6b98d62ff13527f162\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"eloquent_social_speech\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_feedback\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7caedd4e21b4c08fcc9641bfefb82142b7f8d69ded45ba48e8199ce91bd1ec61\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"collaborative_environment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"tension_sensitive_work\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"47a6337072621b148225d69a4f66872362d2b2c52ef9508c3df3d664041f20f8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_social_bonding\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9fbe0e46ca9e757aab955191a1fa1957019f279f5714e7ac50e528268ea2dee6\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"warm_but_selective_cutoff\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4ad522286f5879c16f8b08c6970dc960415c3a8710300eb9be25c549666c846d\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"full_hearted_love\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"39bc693833b926655020899ebdd8ab19004fa730aaaea41075b46bd81ada45ae\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"emotional_confirmation_need\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b4420ecef332272c62209875c8d45f0a5fa226436d0ebe61283614c0a6d2f2f5\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planning_partner\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e66fe2e6b6dfd321cbc8c1bf767c462ec4858c0a45e0e1cad3889178958cbcf8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marital_emotional_labor\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"9bc3b87411148aeda32372eee9d07d004762db61a4a916a812f8c1aee30a2326\"
+      }
+    ],
+    \"targetTraitRefs\": [
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"ne_connection_thinking\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"68d176153713f5206cea0bd613cecc83c1987d0aa20263fbdefaa2f852c58fdc\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"imaginative_storytelling\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"539d339a74f64f38d682a270a9d5118985fdfcc4813f724778caed2d1c11f2cc\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"communication\",
+        \"traitId\": \"easy_conversation\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6bb60eafed38ff548e55db40438c6b15e90253504dc01c51cf4476b07560f1ab\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"communication\",
+        \"traitId\": \"random_but_charming_speech\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9bdfcdccc7628084d7584933866964f7457ebdc240b71dead12ee151530b3b12\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"novelty_required_work\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"3e6855d9cb854cbe5a02bfaa327200e5b63faa9f913e8754b8c498cb117ef0e8\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"deadline_sprint_style\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c2f70bbd1cfbdc8c2296f988a065f87ad1bdd8771ca47032e55b04da217bc25\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_light_network\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"f9427e37e92060c44c6193e4904efa43cfa854c271d5da4aaa2d6e34595725ba\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"joy_giver\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"124153af9c4f64a932f06c0e48ec965eb2deedc46abd348cc50aa71a538718bd\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"love\",
+        \"traitId\": \"passionate_romance\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"bc03c20270d9263d74e5f4eb1123f373f2e6909ef95eb790ab3e005e146133a8\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"love\",
+        \"traitId\": \"warm_confidant_partner\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"51b0c8a849e951d17b1a3d773ad0f448653944945e88ccaabd24f3b6e4580e6f\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"creative_family_life\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"c50159703e69fe71903234a397a1d109a9eb6cb6e1b61b16ee08f605e96bf6c8\"
+      },
+      {
+        \"type\": \"ENFP\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"freedom_in_marriage\",
+        \"file\": \"docs/product/mbti/source/ENFP.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"ef7c11cb305d70d6a0c867fba4fc19ad508754b69d2fe8e56758aa4388911e1a\"
+      }
+    ],
+    \"materialRefs\": [],
+    \"status\": \"conditional_reference_not_predictive\",
+    \"noScore\": true,
+    \"notNewInterpretation\": true,
+    \"applicationGate\": \"두 사람 모두 인용한 원천 성향이 실제로 맞는지 확인한다. 맞지 않거나 역할·환경·경험이 더 적절한 설명이면 적용하지 않는다. 도움·질문·활동은 상대 동의가 있을 때만 선택한다. love/relationships/communication 자료만 연애로 재검토한다. 직장·결혼 문맥은 자동 전용하지 않는다. sourceType은 원문 관점이며 모든 절의 행동 주어를 A로 해석하지 않는다.\"
+  },
+  {
+    \"id\": \"clr:mbti-pair:ENFJ>ISTJ\",
+    \"productKey\": \"saju_mbti_compatibility\",
+    \"relationshipCategory\": \"love\",
+    \"connectedToRuntime\": false,
+    \"approvedForCustomer\": false,
+    \"existingScoreContribution\": false,
+    \"runtimeEvidenceIds\": [],
+    \"sourceType\": \"ENFJ\",
+    \"targetType\": \"ISTJ\",
+    \"originalResearchId\": \"mpr:ENFJ:ISTJ\",
+    \"originalResearchHash\": \"2b2692c5594f9220ec5fb40976769dd5e2ba345091245595acc95a76aea3b81b\",
+    \"forward\": {
+      \"pointer\": \"/relationshipHints/notablePairs/5\",
+      \"sha256\": \"cb5ff1e97985f2d51f50b32904b3f1ecd4dda7c342cdd57702df01b338c0f137\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"reverse\": {
+      \"pointer\": \"/relationshipHints/notablePairs/4\",
+      \"sha256\": \"7ebe89b60facf72f99aa5a77fe75aa27d03a2e57712d0faf158fc9e0b86297ba\",
+      \"sourceCoverage\": \"direct\"
+    },
+    \"sourceLovePattern\": \"처음에는 서로의 차이가 매력으로 보인다. ENFJ는 ISTJ의 안정감과 책임감을 좋게 보고, ISTJ는 ENFJ의 따뜻함과 사회성을 신선하게 느낀다. 그러나 ENFJ의 감정 확인과 ISTJ의 절차적 판단이 반복적으로 충돌한다.\",
+    \"sourceFriction\": {
+      \"condition\": \"행동했으니 표현은 필요 없거나 표현이 없으니 관심 없다고 볼 때\",
+      \"sourceIntentionCandidate\": \"감정을 함께 확인하려는 대화\",
+      \"targetMayMisreadSource\": \"책임 외 요구가 늘어나는 것으로 읽힐 가능성\",
+      \"targetIntentionCandidate\": \"약속을 지켜 지지하는 행동\",
+      \"sourceMayMisreadTarget\": \"정서 요구를 무시하는 것으로 읽힐 가능성\"
+    },
+    \"sourceRepair\": {
+      \"sourceQuestion\": \"원하는 표현을 구체적으로 말했는가?\",
+      \"targetQuestion\": \"상대의 수고와 별개로 마음을 들었는가?\",
+      \"jointAgreement\": \"실무 점검과 안부를 별도로 고름\",
+      \"timingLimit\": \"회복 시간·연락 빈도를 유형으로 배정하지 않는다. 각자의 필요와 다시 이야기할 시점을 직접 정한다.\"
+    },
+    \"relationNameReview\": {
+      \"termFamily\": \"conflict\",
+      \"system\": \"socionics_term_family\",
+      \"reasonClasses\": [
+        \"B_TERM_ALIAS_OR_LABEL_VARIANT\",
+        \"F_ORIGINAL_LINEAGE_AND_EMPIRICAL_VALIDITY_UNVERIFIED\"
+      ],
+      \"mappingStatus\": \"not_established\",
+      \"approvedForCustomer\": false
+    },
+    \"sourceTraitRefs\": [
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"fe_first_judgment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"6c6030aafd9c16492de89cb5c9fa9334df09745b55a98cc2445aad8998a44458\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"future_meaning_orientation\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"a035c8afc59a1a9ee0227da808331ad4904bcc08386c6d6b98d62ff13527f162\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"eloquent_social_speech\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"c35da4eef9d0d1fadeb0ff08df7f8bfa6c36646feeefc64b798f480cee11060f\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"gentle_feedback\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"7caedd4e21b4c08fcc9641bfefb82142b7f8d69ded45ba48e8199ce91bd1ec61\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"collaborative_environment\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"8d219f175811e20225e227fec5e4e97d118bc8d5b0784575d0dc6a95a9b72c8e\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"tension_sensitive_work\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"47a6337072621b148225d69a4f66872362d2b2c52ef9508c3df3d664041f20f8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"wide_social_bonding\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"9fbe0e46ca9e757aab955191a1fa1957019f279f5714e7ac50e528268ea2dee6\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"warm_but_selective_cutoff\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/relationships/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"4ad522286f5879c16f8b08c6970dc960415c3a8710300eb9be25c549666c846d\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"full_hearted_love\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"39bc693833b926655020899ebdd8ab19004fa730aaaea41075b46bd81ada45ae\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"love\",
+        \"traitId\": \"emotional_confirmation_need\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/love/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b4420ecef332272c62209875c8d45f0a5fa226436d0ebe61283614c0a6d2f2f5\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"future_planning_partner\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e66fe2e6b6dfd321cbc8c1bf767c462ec4858c0a45e0e1cad3889178958cbcf8\"
+      },
+      {
+        \"type\": \"ENFJ\",
+        \"domain\": \"marriage\",
+        \"traitId\": \"marital_emotional_labor\",
+        \"file\": \"docs/product/mbti/source/ENFJ.json\",
+        \"pointer\": \"/traits/marriage/1\",
+        \"sourceCoverage\": \"inferred\",
+        \"plainKoSha256\": \"9bc3b87411148aeda32372eee9d07d004762db61a4a916a812f8c1aee30a2326\"
+      }
+    ],
+    \"targetTraitRefs\": [
+      {
+        \"type\": \"ISTJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"past_data_decision\",
+        \"file\": \"docs/product/mbti/source/ISTJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b362f8b53802e249035ce0979a3ee1c7c11752e020c26f4c9f2a6e340d110bef\"
+      },
+      {
+        \"type\": \"ISTJ\",
+        \"domain\": \"thinkingStyle\",
+        \"traitId\": \"efficient_error_detection\",
+        \"file\": \"docs/product/mbti/source/ISTJ.json\",
+        \"pointer\": \"/traits/thinkingStyle/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"b1c4340792a2be816e9c9dda32267554926f1fbe92a37f646777f2ee35b77113\"
+      },
+      {
+        \"type\": \"ISTJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"reserved_directness\",
+        \"file\": \"docs/product/mbti/source/ISTJ.json\",
+        \"pointer\": \"/traits/communication/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"accb5a5eac218f8263a128e9d53e46e7a4d96fb63eeb22300d3491888cff6116\"
+      },
+      {
+        \"type\": \"ISTJ\",
+        \"domain\": \"communication\",
+        \"traitId\": \"apology_difficulty\",
+        \"file\": \"docs/product/mbti/source/ISTJ.json\",
+        \"pointer\": \"/traits/communication/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"e1d767f800dca016987c31c4008328f8826dc859cea8abe3f4d639e4e36c70ec\"
+      },
+      {
+        \"type\": \"ISTJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"rule_following_reliability\",
+        \"file\": \"docs/product/mbti/source/ISTJ.json\",
+        \"pointer\": \"/traits/workplace/0\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"718254e25a4059b2ee415f8c20895622eb30fde5652862527de34c9fa2821cee\"
+      },
+      {
+        \"type\": \"ISTJ\",
+        \"domain\": \"workplace\",
+        \"traitId\": \"time_promise_strictness\",
+        \"file\": \"docs/product/mbti/source/ISTJ.json\",
+        \"pointer\": \"/traits/workplace/1\",
+        \"sourceCoverage\": \"direct\",
+        \"plainKoSha256\": \"aeeac6ab7bf8593830f8d8aa4d1801abe01f3ae7ff5c79c2cc8c1d76f466d394\"
+      },
+      {
+        \"type\": \"ISTJ\",
+        \"domain\": \"relationships\",
+        \"traitId\": \"hard_boundary_after_disrespect\",
+        \"file\": \"docs/product/mbti/source/ISTJ.json\",
+        \"poi...
+
+ ❯ tests/unit/report-knowledge/mbtiPairResearch.test.ts:205:63
+    203|     for (const file of walk("src").filter(f => /\.[cm]?[jt]sx?$/.test(…
+    204|       const code = readFileSync(file, "utf8");
+    205|       if (!file.startsWith(dir + "/")) expect(code, file).not.toMatch(…
+       |                                                               ^
+    206|       else {
+    207|         expect(code, file).not.toMatch(/\b(?:fetch|require|function)\s…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/17]⎯
+
+
+ Test Files  7 failed | 25 passed (32)
+      Tests  17 failed | 2975 passed | 1 skipped (2993)
+   Start at  23:48:45
+   Duration  996.93s (transform 6.04s, setup 179ms, import 14.70s, tests 978.23s, environment 2ms)

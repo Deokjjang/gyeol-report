@@ -1,0 +1,770 @@
+[
+  {
+    "letter": "A",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "B",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "146a94c189ec8c04ffb20237f76887816357a5e7c730529ee145d99e06f15e50",
+      "narrative": "c615dfecb2a5bfa2457e309979499f15bd12f6c6535f8938338d10522bfb361e",
+      "integration": "16fd519601b5c47b2846306eae0ceeaab0a5cde15dfbccc66920a97a8e50dc03",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+      "book": "4833b8c3454642011fe6c3fcaedb07eca0ac6daf8cbd30cdce16d87a900fcbea"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "146a94c189ec8c04ffb20237f76887816357a5e7c730529ee145d99e06f15e50",
+      "narrative": "c615dfecb2a5bfa2457e309979499f15bd12f6c6535f8938338d10522bfb361e",
+      "integration": "16fd519601b5c47b2846306eae0ceeaab0a5cde15dfbccc66920a97a8e50dc03",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+      "book": "4833b8c3454642011fe6c3fcaedb07eca0ac6daf8cbd30cdce16d87a900fcbea"
+    }
+  },
+  {
+    "letter": "C",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "71ec9cb3aed3c04d38ef8db7cbdf20aa519d404f88c8ae08f00a0e5de388c2b5",
+      "narrative": "854901a51386ec65163e2473b45a7c3add9b203c1cb9254498a71e8941954eed",
+      "integration": "8496810153e8650e8ae45b3bfd845ae0b0160f4df1739447f770207f42c86959",
+      "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "e7e101261da4f4ac378978e66f805180e34042e78d71cac02721252c9493bc42"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "71ec9cb3aed3c04d38ef8db7cbdf20aa519d404f88c8ae08f00a0e5de388c2b5",
+      "narrative": "854901a51386ec65163e2473b45a7c3add9b203c1cb9254498a71e8941954eed",
+      "integration": "8496810153e8650e8ae45b3bfd845ae0b0160f4df1739447f770207f42c86959",
+      "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "e7e101261da4f4ac378978e66f805180e34042e78d71cac02721252c9493bc42"
+    }
+  },
+  {
+    "letter": "D",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "253ca308e767f649fe8705c5f8d7a9b70453e4125a5063f23926a4954ec553c2",
+      "narrative": "84d1bdc8baa91783e6e55c938b3aceeedb9619c0a54766338ce10c76b4216259",
+      "integration": "7b2d0cb75fa67a4bacb7ebdbfd8e692d1985367e8f3ed09e48a33bd2dd3cf457",
+      "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+      "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+      "book": "661d9379227c93a09566317ae468c4f79a0d86109482bffa25b3e056f8e43a7e"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "253ca308e767f649fe8705c5f8d7a9b70453e4125a5063f23926a4954ec553c2",
+      "narrative": "84d1bdc8baa91783e6e55c938b3aceeedb9619c0a54766338ce10c76b4216259",
+      "integration": "7b2d0cb75fa67a4bacb7ebdbfd8e692d1985367e8f3ed09e48a33bd2dd3cf457",
+      "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+      "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+      "book": "661d9379227c93a09566317ae468c4f79a0d86109482bffa25b3e056f8e43a7e"
+    }
+  },
+  {
+    "letter": "E",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "9846b96d06bfacbee5f0d6b2719e1d8e1a0cbad93f5c007e8a940da71a762f5f",
+      "fullEvidence": "6075643481f8901d043d748dcdda1934a8a95e4f35261fe0605c5bcceebefc44",
+      "narrative": "11419c6e8526e699e831349b1d9e61b3d3fdd29fef5832dfa9adf58c7c4715fa",
+      "integration": "e10f5507996fec304df2ad3c529fc11a0c8077bc432bbbe6861fcecece6ce7b6",
+      "personA": "01782df46b3e7834a400702d09be2962133368104502d4dfa73195beba41bcc4",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "6c129873c580299353700e14307baeb6eea01b5a4cd5e5bd8de13dcf47f02173"
+    },
+    "after": {
+      "calculation": "9846b96d06bfacbee5f0d6b2719e1d8e1a0cbad93f5c007e8a940da71a762f5f",
+      "fullEvidence": "6075643481f8901d043d748dcdda1934a8a95e4f35261fe0605c5bcceebefc44",
+      "narrative": "11419c6e8526e699e831349b1d9e61b3d3fdd29fef5832dfa9adf58c7c4715fa",
+      "integration": "e10f5507996fec304df2ad3c529fc11a0c8077bc432bbbe6861fcecece6ce7b6",
+      "personA": "01782df46b3e7834a400702d09be2962133368104502d4dfa73195beba41bcc4",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "6c129873c580299353700e14307baeb6eea01b5a4cd5e5bd8de13dcf47f02173"
+    }
+  },
+  {
+    "letter": "F",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "622072c9764dff2b0ff4e3239862d4330ae31f30f46cd0d6340cbfc6d3bf1845",
+      "fullEvidence": "e50f152812728aefd2c0a3954a0cef2ebdcfc589899b83cb2a4ca358bcf0027b",
+      "narrative": "4c181b68a09e489372579e0584697770191f8157615a297a9713bab7b14ef42c",
+      "integration": "402fe2ce009a9596ae2d377a4aaf33634503041486a9a55d6b3a969f1daecc17",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "85a8309d53973d26c680db1700c17329eff0558c479e254c0a933cfa30d81ac2",
+      "book": "bc21addfc2cac7e060bfcfd172d316427200b9d86430bc77d76befae88bd9bb0"
+    },
+    "after": {
+      "calculation": "622072c9764dff2b0ff4e3239862d4330ae31f30f46cd0d6340cbfc6d3bf1845",
+      "fullEvidence": "e50f152812728aefd2c0a3954a0cef2ebdcfc589899b83cb2a4ca358bcf0027b",
+      "narrative": "4c181b68a09e489372579e0584697770191f8157615a297a9713bab7b14ef42c",
+      "integration": "402fe2ce009a9596ae2d377a4aaf33634503041486a9a55d6b3a969f1daecc17",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "85a8309d53973d26c680db1700c17329eff0558c479e254c0a933cfa30d81ac2",
+      "book": "bc21addfc2cac7e060bfcfd172d316427200b9d86430bc77d76befae88bd9bb0"
+    }
+  },
+  {
+    "letter": "G",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "H",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "ffbbc97477c3d27162ccabe272b8f15cdfed010a40929fc942107d778f7bf978",
+      "narrative": "6dda28fbf50893944ca6366cb50c2307beabd56422025d4d0fbd81c171e1f61b",
+      "integration": "587a59372ec8b97a7247003edc6f14cb2c0f3fb2c00da148cc8e1edb4b929b5a",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "23c45e1a9189871bfa8fd58e912d0da55af1af80d115cd8e23085d53ded36926",
+      "book": "1b1fc921b3e19dbeae6dc813ecdf8e67b57f92a06a884485dd2faf48623626b0"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "ffbbc97477c3d27162ccabe272b8f15cdfed010a40929fc942107d778f7bf978",
+      "narrative": "6dda28fbf50893944ca6366cb50c2307beabd56422025d4d0fbd81c171e1f61b",
+      "integration": "587a59372ec8b97a7247003edc6f14cb2c0f3fb2c00da148cc8e1edb4b929b5a",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "23c45e1a9189871bfa8fd58e912d0da55af1af80d115cd8e23085d53ded36926",
+      "book": "1b1fc921b3e19dbeae6dc813ecdf8e67b57f92a06a884485dd2faf48623626b0"
+    }
+  },
+  {
+    "letter": "I",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "J",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "K",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cb81fb5048f956f3cb34034d61d96621c6ce9d3499342d081e88370a8ec4d0d7",
+      "fullEvidence": "abf49bfd5c65dd723515ac34d4a94f540e060d4f150e3f0174b7b663f1dc7d42",
+      "narrative": "b803df0f63317878f4f2b499417db271f69d1dc38ddf2a4651bb983e8fbe5e28",
+      "integration": "f4c8b41b65a153f6606875c47143b7355ed2b57d013b01cedd658812882ca989",
+      "personA": "5af4130eb30aff6ae8e7d1553c18c098c0d9a4c32f7c411162dc1bd64af4c4c8",
+      "personB": "262bf7ccbfd396d7b0a51819898564ae9cf7748da4d7b3173ac872899ad86901",
+      "book": "19f61ff3a64c56d9562bf86ee8380b14f26a06bc052610391ddc069f10e88694"
+    },
+    "after": {
+      "calculation": "cb81fb5048f956f3cb34034d61d96621c6ce9d3499342d081e88370a8ec4d0d7",
+      "fullEvidence": "abf49bfd5c65dd723515ac34d4a94f540e060d4f150e3f0174b7b663f1dc7d42",
+      "narrative": "b803df0f63317878f4f2b499417db271f69d1dc38ddf2a4651bb983e8fbe5e28",
+      "integration": "f4c8b41b65a153f6606875c47143b7355ed2b57d013b01cedd658812882ca989",
+      "personA": "5af4130eb30aff6ae8e7d1553c18c098c0d9a4c32f7c411162dc1bd64af4c4c8",
+      "personB": "262bf7ccbfd396d7b0a51819898564ae9cf7748da4d7b3173ac872899ad86901",
+      "book": "19f61ff3a64c56d9562bf86ee8380b14f26a06bc052610391ddc069f10e88694"
+    }
+  },
+  {
+    "letter": "L",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "M",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "N",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "O",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+      "fullEvidence": "d5b6c73b02775daa2f055f13b6fee813df3086accfbe1297059f23a218fe7980",
+      "narrative": "3db0d700619c479e9a5903f37f454aa279ede4abdb9d6189a67e5e8b627c6455",
+      "integration": "aa9681018121c0a872340af161b4c605589ad1fbdbc70da2a252fe976b8fbd33",
+      "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+      "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+      "book": "7ff21daf882ee066b2e58346260ba1a077361f5ce5a84dcccc8f159f0df86833"
+    },
+    "after": {
+      "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+      "fullEvidence": "d5b6c73b02775daa2f055f13b6fee813df3086accfbe1297059f23a218fe7980",
+      "narrative": "3db0d700619c479e9a5903f37f454aa279ede4abdb9d6189a67e5e8b627c6455",
+      "integration": "aa9681018121c0a872340af161b4c605589ad1fbdbc70da2a252fe976b8fbd33",
+      "personA": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+      "personB": "e85d1ca184ba8c6d550464037e846906647ccbad75170d0ee53ff92e02e57787",
+      "book": "7ff21daf882ee066b2e58346260ba1a077361f5ce5a84dcccc8f159f0df86833"
+    }
+  },
+  {
+    "letter": "P",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "Q",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+      "fullEvidence": "c086faf2f6f6a87acb356b1e15a5171228cb0bc6240fba211c12559e6ea3a31b",
+      "narrative": "2ddae5d075f3cc1d75be8e18d929805a11c951548fc1706605c80c9fa3889b1e",
+      "integration": "1ec565b9f7474929a39f0e8e3ad30b3be6d5fa839e77b1bfb047c649b93796f0",
+      "personA": "4946b8d2b468dfb89e5d5b8a2663171907bafade316d2c18ed8531bf9ec7a785",
+      "personB": "4946b8d2b468dfb89e5d5b8a2663171907bafade316d2c18ed8531bf9ec7a785",
+      "book": "e258e86055f6c8f8723de9b46a0d1766e9d620338227777c731cd65774e47f98"
+    },
+    "after": {
+      "calculation": "dc12cfd340abf798e7264661511bafccea9f6f0d51d9a3e92021deaea7e30bec",
+      "fullEvidence": "c086faf2f6f6a87acb356b1e15a5171228cb0bc6240fba211c12559e6ea3a31b",
+      "narrative": "2ddae5d075f3cc1d75be8e18d929805a11c951548fc1706605c80c9fa3889b1e",
+      "integration": "1ec565b9f7474929a39f0e8e3ad30b3be6d5fa839e77b1bfb047c649b93796f0",
+      "personA": "4946b8d2b468dfb89e5d5b8a2663171907bafade316d2c18ed8531bf9ec7a785",
+      "personB": "4946b8d2b468dfb89e5d5b8a2663171907bafade316d2c18ed8531bf9ec7a785",
+      "book": "e258e86055f6c8f8723de9b46a0d1766e9d620338227777c731cd65774e47f98"
+    }
+  },
+  {
+    "letter": "R",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "253ca308e767f649fe8705c5f8d7a9b70453e4125a5063f23926a4954ec553c2",
+      "narrative": "84d1bdc8baa91783e6e55c938b3aceeedb9619c0a54766338ce10c76b4216259",
+      "integration": "7b2d0cb75fa67a4bacb7ebdbfd8e692d1985367e8f3ed09e48a33bd2dd3cf457",
+      "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+      "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+      "book": "661d9379227c93a09566317ae468c4f79a0d86109482bffa25b3e056f8e43a7e"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "253ca308e767f649fe8705c5f8d7a9b70453e4125a5063f23926a4954ec553c2",
+      "narrative": "84d1bdc8baa91783e6e55c938b3aceeedb9619c0a54766338ce10c76b4216259",
+      "integration": "7b2d0cb75fa67a4bacb7ebdbfd8e692d1985367e8f3ed09e48a33bd2dd3cf457",
+      "personA": "ef0996dc8e18e9263d92f47b98f895872973f6a5acc822c0719f21b6ab0d0266",
+      "personB": "127489893f60f61f4761b9d98a381e2c307adc18ff8232dcb0855e9887394531",
+      "book": "661d9379227c93a09566317ae468c4f79a0d86109482bffa25b3e056f8e43a7e"
+    }
+  },
+  {
+    "letter": "S",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "c07061c82b98014658ff6ff2310edd05f49e6c34046e6357eca04a78c1d8e03f",
+      "fullEvidence": "dd29e820869c57b75982aa3ad73ec2b47dff8f49dfe93b340ce6cced92d03a09",
+      "narrative": "3d480fa00d19650c9de1f32ed8b51e0f1540ada2932d75497cada47e69bab34a",
+      "integration": "5d91d9e3eb536511d3925c5fe8edfe825e859755b9b248c4e2ddebef4b1730c7",
+      "personA": "9be611db2650e90a1f2570bbb81db9761d4aebebb1455bb342f816e65426a6c6",
+      "personB": "708bffd975a24e1cff850e8af9c392f10525ccddb99522213b767c88c8450ad4",
+      "book": "bcd9ddcdccd0eebd6709b06f08c6540ee81fdfb44ae11816a55d238dd19c3104"
+    },
+    "after": {
+      "calculation": "c07061c82b98014658ff6ff2310edd05f49e6c34046e6357eca04a78c1d8e03f",
+      "fullEvidence": "dd29e820869c57b75982aa3ad73ec2b47dff8f49dfe93b340ce6cced92d03a09",
+      "narrative": "3d480fa00d19650c9de1f32ed8b51e0f1540ada2932d75497cada47e69bab34a",
+      "integration": "5d91d9e3eb536511d3925c5fe8edfe825e859755b9b248c4e2ddebef4b1730c7",
+      "personA": "9be611db2650e90a1f2570bbb81db9761d4aebebb1455bb342f816e65426a6c6",
+      "personB": "708bffd975a24e1cff850e8af9c392f10525ccddb99522213b767c88c8450ad4",
+      "book": "bcd9ddcdccd0eebd6709b06f08c6540ee81fdfb44ae11816a55d238dd19c3104"
+    }
+  },
+  {
+    "letter": "T",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "c07061c82b98014658ff6ff2310edd05f49e6c34046e6357eca04a78c1d8e03f",
+      "fullEvidence": "dd29e820869c57b75982aa3ad73ec2b47dff8f49dfe93b340ce6cced92d03a09",
+      "narrative": "3d480fa00d19650c9de1f32ed8b51e0f1540ada2932d75497cada47e69bab34a",
+      "integration": "5d91d9e3eb536511d3925c5fe8edfe825e859755b9b248c4e2ddebef4b1730c7",
+      "personA": "9be611db2650e90a1f2570bbb81db9761d4aebebb1455bb342f816e65426a6c6",
+      "personB": "708bffd975a24e1cff850e8af9c392f10525ccddb99522213b767c88c8450ad4",
+      "book": "bcd9ddcdccd0eebd6709b06f08c6540ee81fdfb44ae11816a55d238dd19c3104"
+    },
+    "after": {
+      "calculation": "c07061c82b98014658ff6ff2310edd05f49e6c34046e6357eca04a78c1d8e03f",
+      "fullEvidence": "dd29e820869c57b75982aa3ad73ec2b47dff8f49dfe93b340ce6cced92d03a09",
+      "narrative": "3d480fa00d19650c9de1f32ed8b51e0f1540ada2932d75497cada47e69bab34a",
+      "integration": "5d91d9e3eb536511d3925c5fe8edfe825e859755b9b248c4e2ddebef4b1730c7",
+      "personA": "9be611db2650e90a1f2570bbb81db9761d4aebebb1455bb342f816e65426a6c6",
+      "personB": "708bffd975a24e1cff850e8af9c392f10525ccddb99522213b767c88c8450ad4",
+      "book": "bcd9ddcdccd0eebd6709b06f08c6540ee81fdfb44ae11816a55d238dd19c3104"
+    }
+  },
+  {
+    "letter": "U",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "U",
+    "variant": 1,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "2efa33cafedbb9434386e1ba49a2447350c9bb96901fbb6ed751367b40b68bd8",
+      "narrative": "f0e8ff39003c492216a3e6b8c4b5ecc2bb0e3d9962844feacd06d3b5f47594a2",
+      "integration": "78a1c7934b77d16b24663b1c85c531158cd5749d296b2dd34901be295eb1a4cc",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "5eaa08ee5d38e472b20370e573b71365e87c0370cdc952a646d17df9aee9685b"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "2efa33cafedbb9434386e1ba49a2447350c9bb96901fbb6ed751367b40b68bd8",
+      "narrative": "f0e8ff39003c492216a3e6b8c4b5ecc2bb0e3d9962844feacd06d3b5f47594a2",
+      "integration": "78a1c7934b77d16b24663b1c85c531158cd5749d296b2dd34901be295eb1a4cc",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "5eaa08ee5d38e472b20370e573b71365e87c0370cdc952a646d17df9aee9685b"
+    }
+  },
+  {
+    "letter": "V",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "V",
+    "variant": 1,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "21b7b87c4fba0182ba44ab0007f42d0d1019416c8dd548d46f94394ecf620eb7",
+      "fullEvidence": "e97388825b861feaf979d4eec3966e92decd819d81d0216ea42b6b23b202336f",
+      "narrative": "ccfdf2590b588449bfea6542b09f46280374d8d3fead82661b90499a8795f63b",
+      "integration": "ffbca2673e91f99c7d0ab813ae63c0478c5f6548a077e2ba07a7d974978f2956",
+      "personA": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "personB": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "book": "e5403f60d57986c97e1ef5d3eb673197c1c0143969cfd8f68674e3e7bab9886f"
+    },
+    "after": {
+      "calculation": "21b7b87c4fba0182ba44ab0007f42d0d1019416c8dd548d46f94394ecf620eb7",
+      "fullEvidence": "e97388825b861feaf979d4eec3966e92decd819d81d0216ea42b6b23b202336f",
+      "narrative": "ccfdf2590b588449bfea6542b09f46280374d8d3fead82661b90499a8795f63b",
+      "integration": "ffbca2673e91f99c7d0ab813ae63c0478c5f6548a077e2ba07a7d974978f2956",
+      "personA": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "personB": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "book": "e5403f60d57986c97e1ef5d3eb673197c1c0143969cfd8f68674e3e7bab9886f"
+    }
+  },
+  {
+    "letter": "W",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "W",
+    "variant": 1,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "3f797204266b797a25a0a889fea302da188d1caea9d4b770c04f7159bd36ed4c",
+      "narrative": "6d817a7d403b415214ce2d88584415af2db9e304695debf752c28772c1fbfe8b",
+      "integration": "7464fca6c2f9beeb09d64d010f18940a14724104a24d0dacc2808d48e50615b3",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ffafc044edae94bb7dad679e5a2334acb058d59a97b510f6a9ecd8098054fe07"
+    }
+  },
+  {
+    "letter": "X",
+    "variant": 0,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "246960eefcc0b82c94bb718809f51ce79923d11e6a5d008dc59f51372b798d53",
+      "narrative": "2c10558daa3aad319d2d1df11e70c0f067bfb1eadce1a78ebdc93d51527e822e",
+      "integration": "478b03f2aada55fc65f1115a8bfec73a826610ab1be3d1ac7dc9ac3a8ba5fe26",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ab9f37fa26b5207bf2a34247a1f27a555416acb54a21f3477a7741e454c5f49b"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "246960eefcc0b82c94bb718809f51ce79923d11e6a5d008dc59f51372b798d53",
+      "narrative": "2c10558daa3aad319d2d1df11e70c0f067bfb1eadce1a78ebdc93d51527e822e",
+      "integration": "478b03f2aada55fc65f1115a8bfec73a826610ab1be3d1ac7dc9ac3a8ba5fe26",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "ab9f37fa26b5207bf2a34247a1f27a555416acb54a21f3477a7741e454c5f49b"
+    }
+  },
+  {
+    "letter": "X",
+    "variant": 1,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "77d6c53e29a4a17fd11835073801c7beaf317a718b52adb0a1f23c30d49423f3",
+      "narrative": "16ae62d67050c5998023168e122e2a41640d03be72d7986460ea4d817d5fa9b7",
+      "integration": "c38021e7529e920ca89ec68e6082f435fef4a88894139c306223654eae91706d",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "66cd10b7b2563d7294606227c730c8fd4f4ce02306d469e95c228a135cd3bed2"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "77d6c53e29a4a17fd11835073801c7beaf317a718b52adb0a1f23c30d49423f3",
+      "narrative": "16ae62d67050c5998023168e122e2a41640d03be72d7986460ea4d817d5fa9b7",
+      "integration": "c38021e7529e920ca89ec68e6082f435fef4a88894139c306223654eae91706d",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "66cd10b7b2563d7294606227c730c8fd4f4ce02306d469e95c228a135cd3bed2"
+    }
+  },
+  {
+    "letter": "X",
+    "variant": 2,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "79d1b1230b5e588111f6bba127cc6bb06edf776d4946e52275674dbe42b02d8c",
+      "narrative": "98339ef2d7b55144ce7378697874a712c4e9b26c3480424a037f81300f7796a0",
+      "integration": "be0e9f02978347568e634a83387f59f34fdf0a835c4f8df3686deea225dbc312",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "fd666b0ff509299796162ee00d9e121fc1be82846b24277de9bad2fc56582d05"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "79d1b1230b5e588111f6bba127cc6bb06edf776d4946e52275674dbe42b02d8c",
+      "narrative": "98339ef2d7b55144ce7378697874a712c4e9b26c3480424a037f81300f7796a0",
+      "integration": "be0e9f02978347568e634a83387f59f34fdf0a835c4f8df3686deea225dbc312",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "fd666b0ff509299796162ee00d9e121fc1be82846b24277de9bad2fc56582d05"
+    }
+  },
+  {
+    "letter": "X",
+    "variant": 3,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+      "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+      "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "ca9e0ebc0dea70bf91b56f8182a7f0c4ba2ff2b784afa1a519161bd16ee018d9",
+      "narrative": "7c85a11305567996461e2ed02c100190549ef9fab47be6f47cea8ab2f8a90ee3",
+      "integration": "440f9f4a93e2c3748eb06b56c98aeb9d0c5c2e5aeff6c61cf7b3367cbd848849",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "328a32d08dde9677a9930cf38601b8f4632dae0a1b31bbbda2a57c6ab583a566"
+    }
+  },
+  {
+    "letter": "X",
+    "variant": 4,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+      "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+      "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+      "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+      "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+    }
+  },
+  {
+    "letter": "X",
+    "variant": 5,
+    "ok": true,
+    "unchanged": true,
+    "before": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+      "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+      "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2"
+    },
+    "after": {
+      "calculation": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+      "fullEvidence": "9ce43a0b2fcb608f195478ace906df0c52a5425e1855a7e3f2a97f086a89011e",
+      "narrative": "045827bf40b6d28cdd8da5d63b21da92874407e8179001f1aed9c8e57bbb2c7b",
+      "integration": "b537469d448bd3e20a9d6afca2efc4d44d202f1d63f8d0e60b54f3259ffd2683",
+      "personA": "9c4164e8ee039d44a1cba945f5fe51d56b753ea5fb40cad15dfa0386006646aa",
+      "personB": "329ba07917942d316eacd40468e95fef4c465dbedc7d232b5c20095648962219",
+      "book": "711ab05b1fdc7ab0647bac735f5a9d87b3dad6b8fb3a140921847ef1bad256c2"
+    }
+  }
+]

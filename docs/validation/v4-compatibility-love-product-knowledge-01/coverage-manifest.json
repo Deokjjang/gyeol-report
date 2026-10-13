@@ -1,0 +1,93 @@
+{
+  "version": "compatibility-love-research-01",
+  "baseSha": "acb6f37556bd312386dec930dff80bbff94a41a4",
+  "productKey": "saju_mbti_compatibility",
+  "relationshipCategory": "love",
+  "connectedToRuntime": false,
+  "approvedForCustomer": false,
+  "existingScoreContribution": false,
+  "runtimeEvidenceIds": [],
+  "chapters": 9,
+  "paragraphs": 36,
+  "sentenceRoles": 144,
+  "materials": 80,
+  "conditionalApplications": 72,
+  "recalls": 8,
+  "roleLinks": 320,
+  "materialCountsByChapter": {
+    "CH01": 8,
+    "CH02": 8,
+    "CH03": 8,
+    "CH04": 8,
+    "CH05": 12,
+    "CH06": 12,
+    "CH07": 8,
+    "CH08": 8,
+    "CH09": 8
+  },
+  "modeCounts": {
+    "JOINT": 28,
+    "SELF_A": 8,
+    "SELF_B": 8,
+    "AB": 14,
+    "BA": 14,
+    "RECALL": 8
+  },
+  "sourceOwnerMaterialCounts": {
+    "A": 72,
+    "B": 72,
+    "SHARED": 5,
+    "PAIR_AB": 6,
+    "PAIR_BA": 4,
+    "DIRECTION_AB": 3,
+    "DIRECTION_BA": 3
+  },
+  "selectedKnowledgeLocators": 79,
+  "canonicalRelationReviewRows": 64,
+  "relationKinds": 9,
+  "supportedCrossMemberships": 34,
+  "unsupportedCrossMemberships": 30,
+  "mbtiPairReviewRows": 256,
+  "mbtiCoverage": {
+    "direct": 158,
+    "inferred": 98
+  },
+  "receiverTenGodKinds": 10,
+  "legacySignedFacets": 17,
+  "axesUsed": 18,
+  "facetsUsed": 33,
+  "axesAvailable": 36,
+  "facetsAvailable": 109,
+  "reuseReviews": 8,
+  "rejected": 24,
+  "held": 4,
+  "repairReviews": 16,
+  "fictionalScenes": 80,
+  "inheritedResearch": 2991,
+  "mbtiTraits": 1213,
+  "previousProductMaterials": [
+    179,
+    192,
+    164
+  ],
+  "fusionResearch": [
+    44,
+    96,
+    24
+  ],
+  "fictionalInputCases": 24,
+  "actualGeneratedVariants": 32,
+  "unchangedDigestSets": 32,
+  "existingFilesPreserved": 2435,
+  "otherWorktreesPreserved": 24,
+  "originalDirtyEntriesPreserved": 11,
+  "allTypeParagraphCombinationsCovered": false,
+  "actualBindingImplemented": false,
+  "newTraditionalFacts": 0,
+  "newEmpiricalFacts": 0,
+  "notes": [
+    "source crosswalk rows and role links are not new independent facts",
+    "no fixed quantity upper cap: authored scope is 2-3 candidates per paragraph, not exhaustive population coverage",
+    "O/Q pre-existing editorial fallback and BODY_LENGTH diagnostic preserved"
+  ]
+}

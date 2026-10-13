@@ -1,0 +1,8 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-compatibility-love-product-knowledge-01
+
+
+ Test Files  1 passed (1)
+      Tests  532 passed | 25 skipped (557)
+   Start at  00:05:47
+   Duration  5.69s (transform 3.73s, setup 18ms, import 2.72s, tests 2.77s, environment 0ms)
