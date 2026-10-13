@@ -1,0 +1,479 @@
+{
+  "runtimeChanged": false,
+  "sourceIsNotApproval": true,
+  "legacyBridgeContext": [
+    "career",
+    "money",
+    "conflict"
+  ],
+  "actualReaderContext": [
+    "social",
+    "recovery"
+  ],
+  "domainExpansionImplemented": false,
+  "profileObservations": [
+    {
+      "slot": "personA",
+      "businessScoringNodes": {
+        "CAREER": [
+          "mbti:INTP:traits:career:education_for_adults_fit:plainKo",
+          "mbti:INTP:traits:career:freelance_autonomy_fit:plainKo",
+          "mbti:INTP:traits:career:model_to_product_bridge:plainKo",
+          "mbti:INTP:traits:career:programming_engineering_fit:plainKo",
+          "mbti:INTP:traits:career:research_field_fit:plainKo"
+        ],
+        "WORK": [
+          "mbti:INTP:traits:workplace:anti_bureaucracy_work:plainKo",
+          "mbti:INTP:traits:workplace:effort_efficiency_filter:plainKo",
+          "mbti:INTP:traits:workplace:last_minute_execution:plainKo",
+          "mbti:INTP:traits:workplace:low_reaction_meeting_drain:plainKo",
+          "mbti:INTP:traits:workplace:needs_thinking_time:plainKo",
+          "mbti:INTP:traits:workplace:scope_clarity_contract:plainKo"
+        ],
+        "THINKING": [
+          "mbti:INTP:traits:thinkingStyle:big_picture_first:plainKo",
+          "mbti:INTP:traits:thinkingStyle:ne_possibility_storm:plainKo",
+          "mbti:INTP:traits:thinkingStyle:pattern_leap_risk:plainKo",
+          "mbti:INTP:traits:thinkingStyle:proof_before_agreement:plainKo",
+          "mbti:INTP:traits:thinkingStyle:ti_internal_model:plainKo",
+          "mbti:INTP:traits:thinkingStyle:why_question_loop:plainKo"
+        ],
+        "MONEY": [
+          "mbti:INTP:traits:money:automated_money_routine:plainKo",
+          "mbti:INTP:traits:money:independent_income_need:plainKo",
+          "mbti:INTP:traits:money:interest_spending_drift:plainKo",
+          "mbti:INTP:traits:money:irregular_income_buffer:plainKo",
+          "mbti:INTP:traits:money:low_material_drive:plainKo"
+        ],
+        "INVESTMENT": [
+          "mbti:INTP:traits:investment:analysis_delay_risk:plainKo",
+          "mbti:INTP:traits:investment:anti_trend_investing:plainKo",
+          "mbti:INTP:traits:investment:research_based_investing:plainKo",
+          "mbti:INTP:traits:investment:simple_rule_portfolio:plainKo",
+          "mbti:INTP:traits:investment:theory_detachment_guard:plainKo"
+        ]
+      },
+      "projectedDomains": [
+        "RELATIONSHIPS",
+        "COMMUNICATION",
+        "IDENTITY",
+        "STRENGTHS",
+        "RISKS",
+        "GROWTH"
+      ],
+      "readerSelectedNodeDomains": [
+        "COMMUNICATION",
+        "RELATIONSHIPS",
+        "IDENTITY",
+        "CHILDREN"
+      ],
+      "candidateCount": 11,
+      "eligibleCandidateCount": 11,
+      "candidatesContainingBlockedBusinessDomains": [
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:AUTONOMY:recovery:AUTONOMY:1:AUTONOMY:1",
+          "nodeDomains": [
+            "IDENTITY",
+            "IDENTITY",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:AUTONOMY:social:AUTONOMY:1:AUTONOMY:1",
+          "nodeDomains": [
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "RELATIONSHIPS",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR053",
+          "nodeDomains": [
+            "PARENTS",
+            "PARENTS",
+            "STRENGTHS",
+            "STRENGTHS",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR061",
+          "nodeDomains": [
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "PARENTS",
+            "PARENTS",
+            "RELATIONSHIPS",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR062",
+          "nodeDomains": [
+            "PARENTS",
+            "PARENTS",
+            "STRENGTHS",
+            "STRENGTHS",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR063",
+          "nodeDomains": [
+            "CHILDREN",
+            "COMMUNICATION",
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "PARENTS",
+            "PARENTS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR072",
+          "nodeDomains": [
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "PARENTS",
+            "PARENTS",
+            "RELATIONSHIPS",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+          "nodeDomains": [
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "PARENTS",
+            "PARENTS",
+            "RELATIONSHIPS",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        }
+      ],
+      "rawCandidateEligibilityIsNotAncestorApproval": true,
+      "moneyContextSupportExists": true,
+      "currentCustomerApproval": false
+    },
+    {
+      "slot": "personB",
+      "businessScoringNodes": {
+        "CAREER": [
+          "mbti:ESFJ:traits:career:organizational_relationship_advantage:plainKo",
+          "mbti:ESFJ:traits:career:public_recognition_motivation:plainKo",
+          "mbti:ESFJ:traits:career:relationship_service_revenue:plainKo",
+          "mbti:ESFJ:traits:career:repeat_process_strength:plainKo",
+          "mbti:ESFJ:traits:career:service_helping_fit:plainKo",
+          "mbti:ESFJ:traits:career:structured_future_career:plainKo"
+        ],
+        "WORK": [
+          "mbti:ESFJ:traits:workplace:change_adaptation_limit:plainKo",
+          "mbti:ESFJ:traits:workplace:perfectionist_completion:plainKo",
+          "mbti:ESFJ:traits:workplace:policy_alignment_need:plainKo",
+          "mbti:ESFJ:traits:workplace:praise_boundary_balance:plainKo",
+          "mbti:ESFJ:traits:workplace:punctual_pressure:plainKo",
+          "mbti:ESFJ:traits:workplace:team_morale_builder:plainKo",
+          "mbti:ESFJ:traits:workplace:visible_leadership:plainKo"
+        ],
+        "THINKING": [
+          "mbti:ESFJ:traits:thinkingStyle:fe_si_file_cabinet:plainKo",
+          "mbti:ESFJ:traits:thinkingStyle:memory_over_understanding:plainKo",
+          "mbti:ESFJ:traits:thinkingStyle:practical_evidence_need:plainKo",
+          "mbti:ESFJ:traits:thinkingStyle:quick_social_judgment:plainKo",
+          "mbti:ESFJ:traits:thinkingStyle:weak_abstract_analysis:plainKo"
+        ],
+        "MONEY": [
+          "mbti:ESFJ:traits:money:approval_spending_risk:plainKo",
+          "mbti:ESFJ:traits:money:event_family_budget_balance:plainKo",
+          "mbti:ESFJ:traits:money:relationship_spending:plainKo",
+          "mbti:ESFJ:traits:money:save_and_enjoy:plainKo",
+          "mbti:ESFJ:traits:money:service_community_income:plainKo",
+          "mbti:ESFJ:traits:money:status_over_money:plainKo"
+        ],
+        "INVESTMENT": [
+          "mbti:ESFJ:traits:investment:approval_bias_control:plainKo",
+          "mbti:ESFJ:traits:investment:family_budget_separation:plainKo",
+          "mbti:ESFJ:traits:investment:relationship_info_filter:plainKo",
+          "mbti:ESFJ:traits:investment:social_proof_risk:plainKo",
+          "mbti:ESFJ:traits:investment:stability_first_investment:plainKo"
+        ]
+      },
+      "projectedDomains": [
+        "RELATIONSHIPS",
+        "COMMUNICATION",
+        "IDENTITY",
+        "STRENGTHS",
+        "RISKS",
+        "GROWTH"
+      ],
+      "readerSelectedNodeDomains": [
+        "COMMUNICATION",
+        "RELATIONSHIPS",
+        "IDENTITY"
+      ],
+      "candidateCount": 33,
+      "eligibleCandidateCount": 33,
+      "candidatesContainingBlockedBusinessDomains": [
+        {
+          "id": "editorial:CLAIM:A02_INTIMATE_CHARM",
+          "nodeDomains": [
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "LOVE",
+            "LOVE",
+            "MARRIAGE",
+            "MARRIAGE",
+            "MARRIAGE",
+            "MARRIAGE",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:CLAIM:A05_ROMANTIC_VISIBILITY",
+          "nodeDomains": [
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "LOVE",
+            "LOVE",
+            "MARRIAGE",
+            "MARRIAGE",
+            "MARRIAGE",
+            "MARRIAGE",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:CLAIM:F07_OVERCARE",
+          "nodeDomains": [
+            "CAREER",
+            "CAREER",
+            "CAREER",
+            "CAREER",
+            "COMMUNICATION",
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "RELATIONSHIPS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING",
+            "WORK",
+            "WORK",
+            "WORK",
+            "WORK"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "nodeDomains": [
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "LOVE",
+            "LOVE",
+            "MARRIAGE",
+            "MARRIAGE",
+            "MARRIAGE",
+            "MARRIAGE",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1",
+          "nodeDomains": [
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "RELATIONSHIPS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+          "nodeDomains": [
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "RELATIONSHIPS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1",
+          "nodeDomains": [
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "RELATIONSHIPS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:SOCIAL_ATTUNEMENT:social:SOCIAL_ATTUNEMENT:1:SOCIAL_ATTUNEMENT:1",
+          "nodeDomains": [
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "RELATIONSHIPS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:GUIDANCE:guidance:G26",
+          "nodeDomains": [
+            "CHILDREN",
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "RELATIONSHIPS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR050",
+          "nodeDomains": [
+            "CHILDREN",
+            "COMMUNICATION",
+            "IDENTITY",
+            "IDENTITY",
+            "RELATIONSHIPS",
+            "RELATIONSHIPS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR062",
+          "nodeDomains": [
+            "CHILDREN",
+            "CHILDREN",
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "PARENTS",
+            "PARENTS",
+            "RELATIONSHIPS",
+            "RELATIONSHIPS",
+            "RELATIONSHIPS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR068",
+          "nodeDomains": [
+            "CHILDREN",
+            "CHILDREN",
+            "IDENTITY",
+            "IDENTITY",
+            "RELATIONSHIPS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+          "nodeDomains": [
+            "CHILDREN",
+            "CHILDREN",
+            "COMMUNICATION",
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "IDENTITY",
+            "PARENTS",
+            "PARENTS",
+            "RELATIONSHIPS",
+            "RELATIONSHIPS",
+            "RELATIONSHIPS",
+            "STRENGTHS",
+            "THINKING",
+            "THINKING"
+          ],
+          "primaryEligible": true,
+          "invalidReasons": []
+        }
+      ],
+      "rawCandidateEligibilityIsNotAncestorApproval": true,
+      "moneyContextSupportExists": true,
+      "currentCustomerApproval": false
+    }
+  ]
+}

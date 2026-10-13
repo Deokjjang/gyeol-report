@@ -1,0 +1,109 @@
+{
+  "numTotalTests": 110,
+  "numPassedTests": 99,
+  "numFailedTests": 11,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "success": false,
+  "rawReportSha256": "6f8eadb29e8f818c7ad35fdf293c2ba1795c1552fe955e1ded847f39c9f2a629",
+  "rawReportLocalPath": "/tmp/gyeol-compatibility-business-partner-knowledge-validation/book-before.json",
+  "storage": "compact actual Vitest result; full raw JSON retained outside repository; execution logs committed",
+  "files": [
+    {
+      "file": "tests/unit/app/bookPublicFlow.test.tsx",
+      "status": "passed",
+      "passed": 31,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/sharing/bookSharing.test.tsx",
+      "status": "passed",
+      "passed": 16,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/app/dev/bookReading13b.test.tsx",
+      "status": "passed",
+      "passed": 16,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/app/dev/bookRuntime.test.tsx",
+      "status": "failed",
+      "passed": 25,
+      "failed": 11,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": [
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 'career': every original paragraph and final line in original order",
+          "status": "failed",
+          "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [ '도울 범위를 먼저 정하세요', '중요한 오류부터 보세요' ] to include '나는 어떻게 일하는 사람인가'"
+        },
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 'love': every original paragraph and final line in original order",
+          "status": "failed",
+          "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '사랑할 때의 나'"
+        },
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 'compatibility': every original paragraph and final line in original order",
+          "status": "failed",
+          "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+        },
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 'pair-02-marriage': every original paragraph and final line in original order",
+          "status": "failed",
+          "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+        },
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 'pair-03-parent': every original paragraph and final line in original order",
+          "status": "failed",
+          "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+        },
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 'pair-04-coworker': every original paragraph and final line in original order",
+          "status": "failed",
+          "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+        },
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 'pair-05-manager': every original paragraph and final line in original order",
+          "status": "failed",
+          "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+        },
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 'pair-06-business': every original paragraph and final line in original order",
+          "status": "failed",
+          "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+        },
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 'pair-07-friend': every original paragraph and final line in original order",
+          "status": "failed",
+          "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+        },
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 'pair-08-love': every original paragraph and final line in original order",
+          "status": "failed",
+          "firstError": "AssertionError: only actual closing-rule titles may supplement chapter headings: expected [] to include '우리라는 관계의 핵심'"
+        },
+        {
+          "name": "actual V4 packet → book pages; no new calculation or prose 14 years, 10 future years, all ages, transitions and clickable full narratives",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ 2031, 48, '丁卯 → 丙寅', '辛亥', …(1) ] to deeply equal [ 2031, 48, '丙寅', '辛亥', …(1) ]"
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/app/reports/completedReadingExperience.test.tsx",
+      "status": "passed",
+      "passed": 11,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    }
+  ]
+}

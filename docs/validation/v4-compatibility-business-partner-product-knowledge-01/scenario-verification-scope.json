@@ -1,0 +1,354 @@
+[
+  {
+    "letter": "A",
+    "description": "양쪽 MBTI",
+    "actualVariantCount": 1,
+    "requiredPredicate": "both_mbti",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "B",
+    "description": "A만 MBTI",
+    "actualVariantCount": 1,
+    "requiredPredicate": "a_only",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "C",
+    "description": "B만 MBTI",
+    "actualVariantCount": 1,
+    "requiredPredicate": "b_only",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "D",
+    "description": "양쪽 미상",
+    "actualVariantCount": 1,
+    "requiredPredicate": "neither_mbti",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "E",
+    "description": "A 시각 미상",
+    "actualVariantCount": 1,
+    "requiredPredicate": "a_unknown_hour",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "F",
+    "description": "B 시각 미상",
+    "actualVariantCount": 1,
+    "requiredPredicate": "b_unknown_hour",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "G",
+    "description": "양쪽 시각 확정",
+    "actualVariantCount": 1,
+    "requiredPredicate": "both_known_hour",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "H",
+    "description": "동일 유형",
+    "actualVariantCount": 1,
+    "requiredPredicate": "same_mbti",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "I",
+    "description": "다른 유형",
+    "actualVariantCount": 1,
+    "requiredPredicate": "different_mbti",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "J",
+    "description": "실제 합",
+    "actualVariantCount": 1,
+    "requiredPredicate": "harmony",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "K",
+    "description": "실제 충",
+    "actualVariantCount": 1,
+    "requiredPredicate": "clash",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "L",
+    "description": "교차 지지 미검출",
+    "actualVariantCount": 1,
+    "requiredPredicate": "no_cross_branch",
+    "review": "교차 지지 관계 미검출. 방향 십성 등 다른 실제 근거까지 없는 사례는 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "M",
+    "description": "미지원 정의 참고",
+    "actualVariantCount": 1,
+    "requiredPredicate": "unsupported_reference_only",
+    "review": "원진의 실제 존재를 새로 검출하지 않음. producer의 unsupported 선언과 빈 cross-branch 결과를 확인. 미지원 관계 존재·영향 판정은 UNVERIFIED/withhold",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "N",
+    "description": "다른 방향 십성",
+    "actualVariantCount": 1,
+    "requiredPredicate": "different_ten_god",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "O",
+    "description": "같은 방향 십성",
+    "actualVariantCount": 1,
+    "requiredPredicate": "same_ten_god",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "P",
+    "description": "전체 A/B 순서 교환",
+    "actualVariantCount": 2,
+    "requiredPredicate": "whole_swap",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "Q",
+    "description": "이름만 교환",
+    "actualVariantCount": 2,
+    "requiredPredicate": "name_swap",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "R",
+    "description": "정확한 역할 버전",
+    "actualVariantCount": 1,
+    "requiredPredicate": "fixed_roles",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "S",
+    "description": "버전 누락",
+    "actualVariantCount": 1,
+    "requiredPredicate": "missing_role",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "T",
+    "description": "잘못된 역할 버전",
+    "actualVariantCount": 1,
+    "requiredPredicate": "invalid_role",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "U",
+    "description": "실제 동업 여부 미입력",
+    "actualVariantCount": 1,
+    "requiredPredicate": "unknown_partnership",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "V",
+    "description": "지분·출자금 미입력",
+    "actualVariantCount": 1,
+    "requiredPredicate": "unknown_equity",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "W",
+    "description": "계약 내용 미입력",
+    "actualVariantCount": 1,
+    "requiredPredicate": "unknown_contract",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "X",
+    "description": "실제 매출 미입력",
+    "actualVariantCount": 1,
+    "requiredPredicate": "unknown_revenue",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "Y",
+    "description": "가상 신규 사업 제안",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_opportunity",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "Z",
+    "description": "가상 고객 계약",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_customer",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AA",
+    "description": "가상 공동 지출",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_spending",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AB",
+    "description": "가상 손실",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_loss",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AC",
+    "description": "가상 현금 부족",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_cash_flow",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AD",
+    "description": "가상 외부 투자",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_investment",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AE",
+    "description": "가상 납품 지연",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_delivery",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AF",
+    "description": "가상 역할 불균형",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_contribution",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AG",
+    "description": "가상 교착",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_deadlock",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AH",
+    "description": "가상 방향 변경",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_pivot",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AI",
+    "description": "가상 동업 종료 검토",
+    "actualVariantCount": 1,
+    "requiredPredicate": "hypothetical_exit",
+    "review": "연구 장면만 가상 조건으로 검토. 실제 생성 payload에 사업 facts 추가 없음; 현 생성기가 해당 가상 사업을 실제 경험으로 분석했다는 뜻 아님",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AJ",
+    "description": "coworker 비교",
+    "actualVariantCount": 1,
+    "requiredPredicate": "coworker_category",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AK",
+    "description": "managerReport 비교",
+    "actualVariantCount": 1,
+    "requiredPredicate": "manager_category",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AL",
+    "description": "marriage 비교",
+    "actualVariantCount": 1,
+    "requiredPredicate": "marriage_category",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AM",
+    "description": "WORK/CAREER/MONEY 원천 공백",
+    "actualVariantCount": 1,
+    "requiredPredicate": "business_domain_trace",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AN",
+    "description": "CHILDREN ancestry 추적",
+    "actualVariantCount": 1,
+    "requiredPredicate": "children_trace",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AO",
+    "description": "기존 fallback 관찰",
+    "actualVariantCount": 1,
+    "requiredPredicate": "fallback_observe",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AP",
+    "description": "양쪽 MBTI·개인 Fusion 근거 부족",
+    "actualVariantCount": 1,
+    "requiredPredicate": "insufficient_mbti_sources",
+    "review": "양쪽 MBTI 미상으로 개인 MBTI·해당 Fusion·Pair 근거 부족. 유효한 명리 원국은 존재. 모든 명리까지 없는 정상 생성 사례로 과장하지 않음",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AQ",
+    "description": "기존 6상품 고정 회귀",
+    "actualVariantCount": 0,
+    "requiredPredicate": "six_product_suite",
+    "review": "실제 기존 sixProductIntegration64테스트. 빈 variants를 가짜 생성 성공으로 집계하지 않음",
+    "newResearchBindingExecuted": false
+  },
+  {
+    "letter": "AR",
+    "description": "동일 입력 재실행",
+    "actualVariantCount": 2,
+    "requiredPredicate": "replay",
+    "review": "기존 생성기 변경 전후 불변·실제 입력 조건 검증",
+    "newResearchBindingExecuted": false
+  }
+]

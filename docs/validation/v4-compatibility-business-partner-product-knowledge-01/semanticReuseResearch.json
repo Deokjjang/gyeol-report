@@ -1,0 +1,170 @@
+[
+  {
+    "id": "bppr:reuse:0",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH01",
+      "CH04"
+    ],
+    "sharedMeaning": "대표 기회 질문과 실제 공동 기여",
+    "differentInformation": [
+      "같이 볼 고객 문제와 제공 가정은 무엇인가?",
+      "고객·제공의 어떤 접점이 실제로 공통인가?"
+    ],
+    "reuseCondition": "같은 두 사람·owner·실제root·방향·과제의 실제 표시된 호환 group만 회수. 역할·뷰·회수는 독립 사실이 아님.",
+    "duplicateRisk": "같은 조언의 관계명·이름 치환 또는 모든 경제·권한 문제를 대화로 환원",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "bppr:reuse:1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH02",
+      "CH03"
+    ],
+    "sharedMeaning": "각자 독립 원천과 다른 정보",
+    "differentInformation": [
+      "A는 어떤 정보로 기회를 이해하는가?",
+      "B는 어떤 자료로 실행 조건을 이해하는가?"
+    ],
+    "reuseCondition": "같은 두 사람·owner·실제root·방향·과제의 실제 표시된 호환 group만 회수. 역할·뷰·회수는 독립 사실이 아님.",
+    "duplicateRisk": "같은 조언의 관계명·이름 치환 또는 모든 경제·권한 문제를 대화로 환원",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "bppr:reuse:2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH04",
+      "CH09"
+    ],
+    "sharedMeaning": "긍정 조건과 실제 표시 기반 회수",
+    "differentInformation": [
+      "고객·제공의 어떤 접점이 실제로 공통인가?",
+      "표시된 접점·공동 정보만 어떻게 지속하는가?"
+    ],
+    "reuseCondition": "같은 두 사람·owner·실제root·방향·과제의 실제 표시된 호환 group만 회수. 역할·뷰·회수는 독립 사실이 아님.",
+    "duplicateRisk": "같은 조언의 관계명·이름 치환 또는 모든 경제·권한 문제를 대화로 환원",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "bppr:reuse:3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH05",
+      "CH06"
+    ],
+    "sharedMeaning": "실제 수신자·방향별 업무 부담",
+    "differentInformation": [
+      "B 수신 십성과 A의 제안은 무엇이 다른가?",
+      "A 수신 십성과 B의 실행 정보는 무엇이 다른가?"
+    ],
+    "reuseCondition": "같은 두 사람·owner·실제root·방향·과제의 실제 표시된 호환 group만 회수. 역할·뷰·회수는 독립 사실이 아님.",
+    "duplicateRisk": "같은 조언의 관계명·이름 치환 또는 모든 경제·권한 문제를 대화로 환원",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "bppr:reuse:4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH05",
+      "CH07"
+    ],
+    "sharedMeaning": "A 제안이 B에게 남길 비용",
+    "differentInformation": [
+      "B 수신 십성과 A의 제안은 무엇이 다른가?",
+      "방향·지출·계약·예상 손익·출자의 차이는 무엇인가?"
+    ],
+    "reuseCondition": "같은 두 사람·owner·실제root·방향·과제의 실제 표시된 호환 group만 회수. 역할·뷰·회수는 독립 사실이 아님.",
+    "duplicateRisk": "같은 조언의 관계명·이름 치환 또는 모든 경제·권한 문제를 대화로 환원",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "bppr:reuse:5",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH06",
+      "CH07"
+    ],
+    "sharedMeaning": "B 실행 정보가 A에게 남길 질문",
+    "differentInformation": [
+      "A 수신 십성과 B의 실행 정보는 무엇이 다른가?",
+      "방향·지출·계약·예상 손익·출자의 차이는 무엇인가?"
+    ],
+    "reuseCondition": "같은 두 사람·owner·실제root·방향·과제의 실제 표시된 호환 group만 회수. 역할·뷰·회수는 독립 사실이 아님.",
+    "duplicateRisk": "같은 조언의 관계명·이름 치환 또는 모든 경제·권한 문제를 대화로 환원",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "bppr:reuse:6",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH07",
+      "CH08"
+    ],
+    "sharedMeaning": "경제·권한 공백과 실제 조정 절차",
+    "differentInformation": [
+      "방향·지출·계약·예상 손익·출자의 차이는 무엇인가?",
+      "표시된 방향·지출·계약·손익·출자 문제를 어떤 확인으로 좁히는가?"
+    ],
+    "reuseCondition": "같은 두 사람·owner·실제root·방향·과제의 실제 표시된 호환 group만 회수. 역할·뷰·회수는 독립 사실이 아님.",
+    "duplicateRisk": "같은 조언의 관계명·이름 치환 또는 모든 경제·권한 문제를 대화로 환원",
+    "independentFactsAdded": 0
+  },
+  {
+    "id": "bppr:reuse:7",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "chapters": [
+      "CH08",
+      "CH09"
+    ],
+    "sharedMeaning": "확인·동의·중단의 실제 도입 원칙",
+    "differentInformation": [
+      "표시된 방향·지출·계약·손익·출자 문제를 어떤 확인으로 좁히는가?",
+      "표시된 접점·공동 정보만 어떻게 지속하는가?"
+    ],
+    "reuseCondition": "같은 두 사람·owner·실제root·방향·과제의 실제 표시된 호환 group만 회수. 역할·뷰·회수는 독립 사실이 아님.",
+    "duplicateRisk": "같은 조언의 관계명·이름 치환 또는 모든 경제·권한 문제를 대화로 환원",
+    "independentFactsAdded": 0
+  }
+]

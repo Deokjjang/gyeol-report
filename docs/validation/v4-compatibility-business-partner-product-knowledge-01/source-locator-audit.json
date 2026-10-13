@@ -1,0 +1,2458 @@
+[
+  {
+    "key": "0ba71def5f7dd66a4424",
+    "sourceId": "mbti:INTP:traits:thinkingStyle:ne_possibility_storm",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/traits/thinkingStyle/1",
+    "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
+    "originalState": {
+      "type": "INTP",
+      "area": "thinkingStyle",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "THINKING",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "ne_possibility_storm",
+      "label": "가능성 폭풍",
+      "plainKo": "부기능 Ne가 강하게 작동하면 하나의 답보다 여러 가능성을 계속 떠올린다. 그래서 결론을 빨리 닫기보다 더 흥미로운 가설과 연결을 찾는다.",
+      "strongLine": "당신의 머릿속에서는 하나의 답보다 수십 개의 가능성이 동시에 열립니다.",
+      "positiveUse": "브레인스토밍, 기획, 연구 가설, 창작, 문제 해결에서 독창성을 만든다.",
+      "risk": "가능성이 너무 많아 실행이 늦어지고 현실 적용이 약해질 수 있다.",
+      "matchingMyeongliSignals": [
+        "상관",
+        "편인",
+        "목"
+      ],
+      "productDomains": [
+        "general",
+        "career",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "72685cd9261c6060b22d",
+    "sourceId": "mbti:ESFJ:traits:thinkingStyle:practical_evidence_need",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "pointer": "/traits/thinkingStyle/0",
+    "recordSha256": "28ccbaf8c0f6a7693c9355611f9a15602275b7c5d2527b0b2b7e5f94157a0687",
+    "originalState": {
+      "type": "ESFJ",
+      "area": "thinkingStyle",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "THINKING",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "practical_evidence_need",
+      "label": "실용 증거 선호",
+      "plainKo": "정보를 받을 때 추상적인 원리보다 지금 어디에 쓰이는지, 어떤 근거가 있는지, 어떤 절차로 실행되는지를 알고 싶어 한다. 바로 적용할 수 없는 장기 이론에는 흥미가 떨어진다.",
+      "strongLine": "ESFJ에게 설득력 있는 말은 멋진 개념이 아니라 지금 쓸 수 있는 근거와 과정입니다.",
+      "positiveUse": "현장 업무, 안내, 교육, 고객 응대, 실무 조율에서 빠르게 실행한다.",
+      "risk": "장기 전략, 구조 개선, 복잡한 분석이 필요한 문제를 눈앞의 적용성만으로 판단한다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "토",
+        "금"
+      ],
+      "productDomains": [
+        "career",
+        "study",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "d8e6b5b9bc1c9e1094f2",
+    "sourceId": "external:businessPartner:market",
+    "sourceKind": "external_context",
+    "url": "https://www.sba.gov/counseling/plan-your-business/",
+    "recordSha256": "850ce140dc71ff3733c97ecf6ee1d8cceb5fd6e5cba45da9116a3a5e30e850d6",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "U.S. Small Business Administration",
+      "title": "Plan your business",
+      "url": "https://www.sba.gov/counseling/plan-your-business/",
+      "requestedUrls": [
+        "https://www.sba.gov/business-guide/plan-your-business/market-research-competitive-analysis",
+        "https://www.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs"
+      ],
+      "checkedSection": "122–163,189–297,301–410",
+      "summary": "고객 수요·대안·가격을 검토하고 사업별 초기·반복 비용과 가정을 구분하는 계획 안내.",
+      "scope": "미국 일반 사업 계획. 세금·대출 자격·성공 보장과 환산하지 않음. 이전 두 URL은 같은 통합 페이지로 redirect하므로 출처2개로 세지 않음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "U.S. Small Business Administration",
+      "title": "Plan your business",
+      "url": "https://www.sba.gov/counseling/plan-your-business/",
+      "requestedUrls": [
+        "https://www.sba.gov/business-guide/plan-your-business/market-research-competitive-analysis",
+        "https://www.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs"
+      ],
+      "checkedSection": "122–163,189–297,301–410",
+      "summary": "고객 수요·대안·가격을 검토하고 사업별 초기·반복 비용과 가정을 구분하는 계획 안내.",
+      "scope": "미국 일반 사업 계획. 세금·대출 자격·성공 보장과 환산하지 않음. 이전 두 URL은 같은 통합 페이지로 redirect하므로 출처2개로 세지 않음."
+    }
+  },
+  {
+    "key": "66a9cd49cd16d86ca992",
+    "sourceId": "mbti:ENTJ:traits:money:capitalist_resource_logic",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "pointer": "/traits/money/1",
+    "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
+    "originalState": {
+      "type": "ENTJ",
+      "area": "money",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MONEY",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "capitalist_resource_logic",
+      "label": "자원 동원",
+      "plainKo": "자본주의와 성과 구조에 대한 감각이 강하다. 돈을 단순 소비가 아니라 목표 달성에 필요한 자원, 사람을 움직이는 수단, 구조를 확장하는 레버리지로 본다.",
+      "strongLine": "ENTJ는 돈을 아끼는 것보다 돈이 어떤 목표를 더 빠르게 이루게 하는지부터 계산합니다.",
+      "positiveUse": "사업 확장, 인력 채용, 시스템 투자, 전문 서비스 활용에 과감하게 쓴다.",
+      "risk": "사람의 가치까지 수익성으로만 평가하면 신뢰가 손상된다.",
+      "matchingMyeongliSignals": [
+        "편재",
+        "정재",
+        "금"
+      ],
+      "productDomains": [
+        "money",
+        "investment",
+        "career"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "b64fa2920704301bf622",
+    "sourceId": "mbti:ISTJ:traits:money:cost_and_contract_mind",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/money/1",
+    "recordSha256": "d8a5ed526be887f43b38387194f943c17383514807af76b4cdab88dff583c6b8",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "money",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MONEY",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "cost_and_contract_mind",
+      "label": "비용·계약 감각",
+      "plainKo": "손익계산과 절차의 공정성을 중요하게 본다. 돈 문제에서는 감정보다 기준, 계약, 정산, 책임 범위를 먼저 확인해야 마음이 놓인다.",
+      "strongLine": "당신은 돈을 감정으로 풀면 손해 보고, 숫자와 조건으로 고정할 때 강합니다.",
+      "positiveUse": "고정비 관리, 세금, 계약서, 정산, 대출 조건 비교에서 강점이 된다.",
+      "risk": "관계 돈거래에서 정을 앞세우면 본인이 더 크게 스트레스를 받는다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "편재",
+        "금"
+      ],
+      "productDomains": [
+        "money",
+        "investment",
+        "marriage"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "f64a1b254b8c7a0ebd5e",
+    "sourceId": "external:businessPartner:budget",
+    "sourceKind": "external_context",
+    "url": "https://business.gov.au/finance/financial-tools-and-templates/create-a-budget",
+    "recordSha256": "b922b342e80d90a0c1e9fd42af77086e31a7ffc043afcae95cdbcefaf8abe491",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "Australian Government / business.gov.au",
+      "title": "Create a budget",
+      "url": "https://business.gov.au/finance/financial-tools-and-templates/create-a-budget",
+      "checkedSection": "168–226",
+      "summary": "목표를 위한 예산과 현재 자료를 반영하는 전망을 구별하고 실제 비용과 비교하는 안내.",
+      "scope": "미국·호주식 세금·인건비 분류나 일률적 비율을 한국 사업에 강제하지 않음. 개인 자산·대출 판단 아님.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "Australian Government / business.gov.au",
+      "title": "Create a budget",
+      "url": "https://business.gov.au/finance/financial-tools-and-templates/create-a-budget",
+      "checkedSection": "168–226",
+      "summary": "목표를 위한 예산과 현재 자료를 반영하는 전망을 구별하고 실제 비용과 비교하는 안내.",
+      "scope": "미국·호주식 세금·인건비 분류나 일률적 비율을 한국 사업에 강제하지 않음. 개인 자산·대출 판단 아님."
+    }
+  },
+  {
+    "key": "84d1ddc4aa078aa8fa5f",
+    "sourceId": "rr:combination:yukhap:子丑",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsYukhap.ts",
+    "sourceFileSha256": "0c7326fa0c8ab8976b9b59c9522bd276c13ee4d8c2e29a66af8ab041ebacd8d0",
+    "exportName": "RELATION_COMBINATIONS_YUKHAP",
+    "index": 0,
+    "recordSha256": "4dea97f188169831baa4da4834947255b9af2b2dffaee5b735c26d39bd345219",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "A_HISTORICAL_TEXT",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "육합 목록의 한 쌍이다. 고전의 주객별 평가와 현행 대칭 검출은 다르다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論支元六合"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "子水·丑土가 실제 별도 자리에 있어야 하며 동절 토수의 여력을 검토한다.",
+      "exclusions": [
+        "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:yukhap:子丑",
+      "relation": "yukhap",
+      "targetId": "foundation:relation:yukhap",
+      "members": [
+        "子",
+        "丑"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        },
+        {
+          "symbol": "丑",
+          "element": "EARTH",
+          "yinYang": "yin",
+          "hiddenStems": [
+            "己",
+            "癸",
+            "辛"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "A_HISTORICAL_TEXT",
+        "text": "육합 목록의 한 쌍이다. 고전의 주객별 평가와 현행 대칭 검출은 다르다.",
+        "sourceRefs": [
+          {
+            "sourceId": "sm2",
+            "locator": "論支元六合"
+          }
+        ]
+      },
+      "composition": "子:WATER·yang·장간 癸 / 丑:EARTH·yin·장간 己癸辛; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "子水·丑土가 실제 별도 자리에 있어야 하며 동절 토수의 여력을 검토한다.",
+      "exclusions": [
+        "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "월령·각 지지의 장간·주변 기세를 확인하며 화한 오행은 별도 판본 비교가 필요하다. 합을 합화·결혼·동의·평화로 환산하지 않는다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "배합과 본래 토수 제약이 공존하는 조건을 확인할 수 있다.",
+      "risk": "丑의 장간과 계절을 생략하고 합화토를 확정하지 않는다.",
+      "reversal": "느슨한 연결이 원래 기능을 남길 수도 있다.",
+      "distinction": "午未 역시 토 참여 육합이나 상대 오행과 계절이 다르다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "실제 함께 쓰는 자원의 사용 시간이 다르면 운영 규칙을 확인한다.",
+        "action": "사용권과 보관 책임을 나눈다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "고전의 방향별 복 차이를 현행 대칭 표에서 계산한 것처럼 말하지 않는다.",
+        "육합의 화오행은 이 레지스트리에서 새 판정을 만들지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": []
+    }
+  },
+  {
+    "key": "52e29256ddea72aefa88",
+    "sourceId": "external:businessPartner:profit",
+    "sourceKind": "external_context",
+    "url": "https://www.business.tas.gov.au/running-a-business/money-tax-and-finance/budgeting-and-cash-flow",
+    "recordSha256": "6655e8e177552defe412b892dd464672176154570de6e5055eb9cb7def11a224",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "Tasmanian Government / Business Tasmania",
+      "title": "Budgeting and cash flow management",
+      "url": "https://www.business.tas.gov.au/running-a-business/money-tax-and-finance/budgeting-and-cash-flow",
+      "checkedSection": "132–191",
+      "summary": "손익계산은 일정 기간의 매출·비용·손익, 현금흐름은 실제 현금 유입·유출이며 이익이 나도 지급 자금이 부족할 수 있음을 구분.",
+      "scope": "경제 개념의 구분. 실제 개인 사업의 수익·지급능력·파산 판단이나 유형 성과 실증 아님.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "Tasmanian Government / Business Tasmania",
+      "title": "Budgeting and cash flow management",
+      "url": "https://www.business.tas.gov.au/running-a-business/money-tax-and-finance/budgeting-and-cash-flow",
+      "checkedSection": "132–191",
+      "summary": "손익계산은 일정 기간의 매출·비용·손익, 현금흐름은 실제 현금 유입·유출이며 이익이 나도 지급 자금이 부족할 수 있음을 구분.",
+      "scope": "경제 개념의 구분. 실제 개인 사업의 수익·지급능력·파산 판단이나 유형 성과 실증 아님."
+    }
+  },
+  {
+    "key": "69aac2d24f114cdd40fb",
+    "sourceId": "rr:combination:banhap:申子",
+    "sourceKind": "relation_definition",
+    "file": "src/lib/report-knowledge/relation-research/relationCombinationsBanhap.ts",
+    "sourceFileSha256": "790add612b2500bb5495248bc7d9122bf9acaeebabf8d7c362b1dd01ffb8eff6",
+    "exportName": "RELATION_COMBINATIONS_BANHAP",
+    "index": 0,
+    "recordSha256": "ce3de3577c501eb53df213c59fffceace976f71b50474af1391bc6ac16413583",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": "E_UNVERIFIED",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "definitionReview": null,
+      "traditional": {
+        "class": "E_UNVERIFIED",
+        "text": "삼합 원리의 생왕 부분, 현대 왕지 포함 반합 전승과 저장소12쌍 정책에 모두 속한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "half",
+            "locator": "반합 / 유파 차이"
+          }
+        ]
+      },
+      "evidenceLevel": null,
+      "formation": "수국의 생지申·왕지子 두 자리이며 辰은 실제로 없다면 보충하지 않는다.",
+      "exclusions": [
+        "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "support": null,
+      "deferred": []
+    },
+    "raw": {
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "runtimeEvidenceIds": [],
+      "id": "rr:combination:banhap:申子",
+      "relation": "banhap",
+      "targetId": "foundation:relation:banhap",
+      "members": [
+        "申",
+        "子"
+      ],
+      "form": "pair",
+      "producerMembership": "existing_table",
+      "participants": [
+        {
+          "symbol": "申",
+          "element": "METAL",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "庚",
+            "壬",
+            "戊"
+          ]
+        },
+        {
+          "symbol": "子",
+          "element": "WATER",
+          "yinYang": "yang",
+          "hiddenStems": [
+            "癸"
+          ]
+        }
+      ],
+      "traditional": {
+        "class": "E_UNVERIFIED",
+        "text": "삼합 원리의 생왕 부분, 현대 왕지 포함 반합 전승과 저장소12쌍 정책에 모두 속한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "half",
+            "locator": "반합 / 유파 차이"
+          }
+        ]
+      },
+      "composition": "申:METAL·yang·장간 庚壬戊 / 子:WATER·yang·장간 癸; 본기·음양·장간은 저장소 상수의 그대로인 구성 정보이며 이 항목만으로 길흉·힘·사건을 계산하지 않는다.",
+      "formation": "수국의 생지申·왕지子 두 자리이며 辰은 실제로 없다면 보충하지 않는다.",
+      "exclusions": [
+        "왕지가 없는 寅戌에 午가 숨어 있다고 쓰는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      "modifiers": "왕지 존재·계절·투출·다른 작용을 확인하되 지장간만으로 없는 왕지를 채우지 않는다. 12쌍은 저장소 정책;8쌍 엄격 전승과4쌍 약한/미채택 전승을 별도 목록으로 보존한다.",
+      "meaningClass": "C_CONDITIONAL_RESEARCH",
+      "positive": "시작과 중심의 연결 가능성을 제한적으로 검토한다.",
+      "risk": "갈무리 辰이 있다고 가정해 완성 화국으로 읽지 않는다.",
+      "reversal": "부족한 구성을 인정하는 것이 무리한 완성 선언을 줄일 수 있다.",
+      "distinction": "子辰은 왕고이고 申辰은 왕지 없는 생고다.",
+      "modern": {
+        "class": "D_MODERN_APPLICATION",
+        "condition": "시작과 실행은 맞지만 정리 담당이 실제 없다면 마무리 조건을 확인한다.",
+        "action": "종료 담당과 보존할 결과물을 정한다.",
+        "sourceRefs": [
+          {
+            "sourceId": "authored",
+            "locator": "조합별 조건부 현대 질문; 독립 전통 사실·예측 효력 아님"
+          }
+        ]
+      },
+      "overlaps": [],
+      "scopeRefs": [
+        "natal",
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "uncertainties": [
+        "왕지8쌍/생고4쌍 차이는 확인한 현대 전승이며 모든 학파의 보편 규칙을 확정한 것이 아니다.",
+        "현행12쌍 정책은 변경하지 않는다.",
+        "조합별 생활 장면의 고유 효과는 검증되지 않았다. 장면 차이를 독립 명리 사실로 집계하지 않는다."
+      ],
+      "producerScopeRefs": [
+        "cross_person",
+        "natal_major",
+        "natal_annual",
+        "natal_month",
+        "between_periods"
+      ],
+      "unsupportedProducerScopeRefs": [
+        "natal"
+      ]
+    }
+  },
+  {
+    "key": "d4af2f38a725dac45d6e",
+    "sourceId": "external:businessPartner:governance",
+    "sourceKind": "external_context",
+    "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=4&cciNo=2&cnpClsNo=1&csmSeq=633&popMenu=ov",
+    "recordSha256": "80d6de431b591998e030c9f0ce93cf5c08d124abd19f267d90826eb5838cd439",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 업무집행",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=4&cciNo=2&cnpClsNo=1&csmSeq=633&popMenu=ov",
+      "checkedSection": "218–269",
+      "summary": "업무집행·통상 사무·대리권·계약상 권한 제한은 다른 확인 항목이라는 일반 해설.",
+      "scope": "실제 구조·약정·법령 검토 필요. 페이지 요약은 선임 과반수, 본문은 3분의2로 기재돼 내부 불일치가 있어 선임 정족수 주장은 보류. 전문 검토 없이 한국 고객의 실제 권한 판정 금지.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 업무집행",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=4&cciNo=2&cnpClsNo=1&csmSeq=633&popMenu=ov",
+      "checkedSection": "218–269",
+      "summary": "업무집행·통상 사무·대리권·계약상 권한 제한은 다른 확인 항목이라는 일반 해설.",
+      "scope": "실제 구조·약정·법령 검토 필요. 페이지 요약은 선임 과반수, 본문은 3분의2로 기재돼 내부 불일치가 있어 선임 정족수 주장은 보류. 전문 검토 없이 한국 고객의 실제 권한 판정 금지."
+    }
+  },
+  {
+    "key": "f666c10a6db231abcc92",
+    "sourceId": "mbti:INTP:traits:thinkingStyle:why_question_loop",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/traits/thinkingStyle/2",
+    "recordSha256": "47d9a3968e95fec9bc328ed27f3cd38f057c65d86d473fc05f2480cb92d1faad",
+    "originalState": {
+      "type": "INTP",
+      "area": "thinkingStyle",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "THINKING",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "why_question_loop",
+      "label": "왜의 루프",
+      "plainKo": "왜라는 질문을 자주 품고, 근본 원인을 알고 싶어 한다. 모르는 부분이 남아 있으면 찝찝해하고, 관심 대상의 구조를 끝까지 탐구한다.",
+      "strongLine": "당신은 답보다 왜 그렇게 되는지가 해결되어야 마음이 놓이는 사람입니다.",
+      "positiveUse": "원인 분석, 연구, 디버깅, 학습에서 깊은 이해를 만든다.",
+      "risk": "실행보다 원인 탐구가 길어지면 주변에서는 결론 없는 사람으로 본다.",
+      "matchingMyeongliSignals": [
+        "천문성",
+        "편인",
+        "문창"
+      ],
+      "productDomains": [
+        "study",
+        "career",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "2fe4d73f766a08fb06e6",
+    "sourceId": "mbti-pair:INTP>ESFJ",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/relationshipHints/notablePairs/3",
+    "recordSha256": "c9561f145688a2c635a823c2ef47c1c7e3cfb606fcc530a4685ba2e17e06aad0",
+    "originalState": {
+      "sourceType": "INTP",
+      "targetType": "ESFJ",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "generic_sharedGround_friction_positiveInfluence_repairStrategy_only",
+      "businessPartnerPatternExists": false,
+      "romanticPatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "ESFJ",
+      "label": "이중성 관계",
+      "sourceRelationName": "Duality",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+        "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+        "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+      ],
+      "friction": [
+        "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+        "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+        "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+      ],
+      "positiveInfluence": [
+        "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+        "둘이 성숙할수록 상호 보완 효과가 커진다.",
+        "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+      ],
+      "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+      "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+      "repairStrategy": [
+        "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+        "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+        "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+      ],
+      "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+    }
+  },
+  {
+    "key": "be75c6da843ca261cd98",
+    "sourceId": "mbti:ISTJ:traits:investment:verified_method_preference",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/investment/2",
+    "recordSha256": "9563bc15e11bbd9aafc59d063ddef323ecf144550154d7564aa6e2850ab1d52a",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "investment",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "INVESTMENT",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "verified_method_preference",
+      "label": "검증 방식 선호",
+      "plainKo": "ISTJ는 새로운 이야기보다 검증된 절차와 기록을 먼저 본다. 투자에서도 누가 좋다고 말했는지보다 어떤 근거로 오래 버틸 수 있는지, 같은 조건에서 반복 가능한지 확인해야 마음이 놓인다.",
+      "strongLine": "당신은 화려한 기회보다 기록과 절차가 확인된 방식에서 더 안정적으로 움직입니다.",
+      "positiveUse": "장기 성과 기록, 비용 구조, 위험 범위, 운용 원칙을 확인하며 안정적인 판단을 만든다.",
+      "risk": "검증된 방식만 찾다 보면 변화가 빠른 환경에서 대응이 늦어질 수 있다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "정관",
+        "금"
+      ],
+      "productDomains": [
+        "investment",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "38fa9db618761c3db5b0",
+    "sourceId": "mbti-pair:ISTJ>ISTJ",
+    "sourceKind": "mbti_pair_reference",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/relationshipHints/notablePairs/1",
+    "recordSha256": "336fed2cb17ed88f30d0a4532ac0350963fa7defc634a6f44ddc3a265d73f0a4",
+    "originalState": {
+      "sourceType": "ISTJ",
+      "targetType": "ISTJ",
+      "sourceCoverage": "direct",
+      "lineage": "not_established",
+      "patternField": "generic_sharedGround_friction_positiveInfluence_repairStrategy_only",
+      "businessPartnerPatternExists": false,
+      "romanticPatternTransfer": false,
+      "individualScoring": false
+    },
+    "raw": {
+      "withType": "ISTJ",
+      "label": "동일 관계",
+      "sourceRelationName": "Identical",
+      "sourceCoverage": "direct",
+      "sharedGround": [
+        "서로를 실질적인 일을 완수하는 믿음직한 사람으로 빠르게 인식한다.",
+        "절차, 정확성, 책임, 약속 이행이라는 공통 기준이 강해 생활의 기본 약속을 쉽게 맞춘다.",
+        "말뿐인 다정함보다 꾸준한 행동을 더 크게 보므로, 서로의 성실함에서 애정을 확인한다."
+      ],
+      "friction": [
+        "각자가 겪은 과거 경험을 정답으로 믿으면 누구보다 단단하게 부딪힌다.",
+        "둘 다 감정을 뒤로 미루면 관계가 기능적이지만 차갑게 굳는다.",
+        "변화가 들어왔을 때 둘 다 예민해져 관계가 동시에 경직될 수 있고, 먼저 풀어주는 사람이 없으면 침묵이 길어진다."
+      ],
+      "positiveInfluence": [
+        "생활과 협업 환경이 매우 정돈되고 효율적으로 유지된다.",
+        "충성심과 정직함이 강해 오래 가는 안정적 관계를 만들 수 있다.",
+        "둘 다 약속을 가볍게 보지 않아 결혼이나 동거에서도 책임 구조가 빨리 잡힌다."
+      ],
+      "lovePattern": "편하고 안정적이지만 초반 설렘은 조용하다. 서로의 책임감과 생활 태도를 보며 신뢰가 쌓이고, 말보다 약속을 지키는 모습에서 애정을 확인한다. 다만 의식적으로 표현하지 않으면 호감이 생활 습관처럼 묻힌다.",
+      "marriagePattern": "가계, 일정, 집안 규칙은 잘 맞지만 감정 표현과 변화 대응을 의식적으로 보완해야 한다. 돈과 역할은 안정적으로 굴러가도, 따뜻한 말과 새로운 경험을 넣지 않으면 관계가 관리 체계처럼 건조해진다.",
+      "repairStrategy": [
+        "논리로만 결론내기 전에 감정을 한 문장이라도 확인한다.",
+        "각자의 경험을 정답으로 밀지 말고, 집안의 새 기준을 함께 만든다.",
+        "외부 활동과 새로운 경험을 일정에 의도적으로 넣는다."
+      ],
+      "reportLine": "ISTJ와 ISTJ는 생활의 질서를 만들기에는 강하지만, 감정과 변화까지 관리하지 않으면 너무 건조한 관계가 됩니다."
+    }
+  },
+  {
+    "key": "6256f57a0be573a6725a",
+    "sourceId": "mbti:ENFJ:traits:investment:relationship_info_boundary",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "pointer": "/traits/investment/2",
+    "recordSha256": "682f7031cddd237fa755c49412391f100dd7e04d13710970168f8af2f16529d7",
+    "originalState": {
+      "type": "ENFJ",
+      "area": "investment",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "INVESTMENT",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "relationship_info_boundary",
+      "label": "관계 정보 경계",
+      "plainKo": "ENFJ는 사람의 말투, 비전, 팀 분위기, 추천자의 진심을 빠르게 읽는다. 이 장점은 초기 판단에 도움이 되지만, 가까운 사람이 전한 정보일수록 따로 검증해야 한다.",
+      "strongLine": "당신은 사람을 잘 읽지만, 투자에서는 좋은 사람과 좋은 조건을 따로 봐야 합니다.",
+      "positiveUse": "팀의 방향성, 브랜드 신뢰, 사람들의 반응을 읽어 장기 흐름을 포착한다.",
+      "risk": "관계 신뢰가 강하면 자료 확인보다 사람에 대한 믿음이 앞설 수 있다.",
+      "matchingMyeongliSignals": [
+        "귀인",
+        "정관",
+        "편재"
+      ],
+      "productDomains": [
+        "investment",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "81c172dd5bbbb1920ae6",
+    "sourceId": "mbti:ISTJ:traits:money:informal_money_deal_risk",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/money/5",
+    "recordSha256": "417063b9865e146c0262684a512888e221870222677e50eee5e1a8b397ac6c91",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "money",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MONEY",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "informal_money_deal_risk",
+      "label": "비공식 돈거래 주의",
+      "plainKo": "ISTJ는 원칙과 문서가 분명한 돈에는 강하지만, 정 때문에 빌려주거나 구두 약속으로 처리하는 돈거래에는 스트레스가 크다. 관계를 믿고 시작해도 정산이 흐려지면 신뢰가 급격히 식는다. 가까운 사람일수록 금액, 기한, 책임 범위를 기록해야 마음이 편하다.",
+      "strongLine": "당신에게 돈거래는 친하니까 괜찮은 문제가 아니라, 친할수록 더 분명해야 하는 문제입니다.",
+      "positiveUse": "계약서, 이체 기록, 상환 일정, 정산 기준을 명확히 해 돈과 관계를 함께 지킨다.",
+      "risk": "정 때문에 기준을 늦게 세우면 손실보다 배신감이 더 크게 남는다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "겁재",
+        "금"
+      ],
+      "productDomains": [
+        "money",
+        "general",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "47598f584969b3d3f879",
+    "sourceId": "external:businessPartner:kr_contract",
+    "sourceKind": "external_context",
+    "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=2&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+    "recordSha256": "5eedc467db14be18a7d76591f5ae537b8c436cbe46f773d9eec5bb62152015f5",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 계약서의 작성",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=2&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+      "checkedSection": "218–294",
+      "summary": "목적·출자·손익·양도·존속·종료·기밀 등의 약속을 구분해 확인하는 안내.",
+      "scope": "상법 특정 조합 규정과 일반 설명이 함께 있으므로 모든 동업의 서면 요건으로 확정하지 않음. 본 DB는 조항 작성·공증 권고·개별 효력 판단을 하지 않음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 계약서의 작성",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=2&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+      "checkedSection": "218–294",
+      "summary": "목적·출자·손익·양도·존속·종료·기밀 등의 약속을 구분해 확인하는 안내.",
+      "scope": "상법 특정 조합 규정과 일반 설명이 함께 있으므로 모든 동업의 서면 요건으로 확정하지 않음. 본 DB는 조항 작성·공증 권고·개별 효력 판단을 하지 않음."
+    }
+  },
+  {
+    "key": "7ecd3182d36691c2b6b5",
+    "sourceId": "external:businessPartner:exit",
+    "sourceKind": "external_context",
+    "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=6&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+    "recordSha256": "2e5d7c4b7071d94d01c29411086d1b37c2e1d313a1c99885552f8e0f65b889aa",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 종료사유",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=6&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+      "checkedSection": "219–278",
+      "summary": "탈퇴·존속기간·미완료 사무·지분 계산·해산의 조건을 구분하는 일반 해설.",
+      "scope": "요약의 언제든 탈퇴를 무조건 규칙으로 쓰지 않음. 실제 약정·시기·구조·법적 사유 검토 필요. 출자금 원금 반환·종료 권리를 개별 확정하지 않음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 종료사유",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=6&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+      "checkedSection": "219–278",
+      "summary": "탈퇴·존속기간·미완료 사무·지분 계산·해산의 조건을 구분하는 일반 해설.",
+      "scope": "요약의 언제든 탈퇴를 무조건 규칙으로 쓰지 않음. 실제 약정·시기·구조·법적 사유 검토 필요. 출자금 원금 반환·종료 권리를 개별 확정하지 않음."
+    }
+  },
+  {
+    "key": "78ca1a3776c53c2d0b48",
+    "sourceId": "deep:ten_god:pian_yin",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 7,
+    "recordSha256": "a6d3747f2872f90db9a5075fea446471d0f665fa58ef3d4fb57af24132720b90",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:pian_yin",
+      "targetId": "foundation:ten_god:pian_yin",
+      "label": "편인",
+      "definition": "나를 생하는 오행·동일 음양의 지원 관계",
+      "contrastTargetId": "foundation:ten_god:zheng_yin",
+      "differentiation": "비정형 관점의 탐구를 검증된 지식의 수용과 구별한다.",
+      "prerequisites": [
+        "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다."
+      ],
+      "strengthConditions": [
+        "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:pian_yin:personality",
+        "deep:application:ten_god:pian_yin:career",
+        "deep:application:ten_god:pian_yin:money",
+        "deep:application:ten_god:pian_yin:study",
+        "deep:application:ten_god:pian_yin:love",
+        "deep:application:ten_god:pian_yin:marriage",
+        "deep:application:ten_god:pian_yin:family",
+        "deep:application:ten_god:pian_yin:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論倒食 / 柱中無食只以偏印論; 不可一見倒食便以凶論",
+          "proposition": "일간을 생하며 같은 음양인 지원 관계. 論倒食은 食神을 실제로 해치는 조건과 無食只以偏印論을 구분한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "bbc18a4e615032647a49",
+    "sourceId": "deep:ten_god:pian_cai",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 4,
+    "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:pian_cai",
+      "targetId": "foundation:ten_god:pian_cai",
+      "label": "편재",
+      "definition": "내가 극하는 오행·동일 음양의 자원 관계",
+      "contrastTargetId": "foundation:ten_god:zheng_cai",
+      "differentiation": "외부 자원·거래 범위를 지속적인 보유·관리와 구별한다.",
+      "prerequisites": [
+        "일간의 감당 여력, 재성의 강약·투출, 비겁과 실제 거래 조건을 확인한다."
+      ],
+      "strengthConditions": [
+        "재성이 많아도 일간의 여력과 회수 조건이 다르면 해석이 달라진다. 거래 규모를 부의 양으로 읽지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:pian_cai:personality",
+        "deep:application:ten_god:pian_cai:career",
+        "deep:application:ten_god:pian_cai:money",
+        "deep:application:ten_god:pian_cai:study",
+        "deep:application:ten_god:pian_cai:love",
+        "deep:application:ten_god:pian_cai:marriage",
+        "deep:application:ten_god:pian_cai:family",
+        "deep:application:ten_god:pian_cai:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論偏財 / 衆人之財・身勢勝任・年月日時差",
+          "proposition": "일간이 극하며 같은 음양인 자원 관계. 論偏財의 衆人之財는 고전의 자원 비유이지 타인의 돈을 받을 권리나 횡재 예언이 아니다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "fd240bf6e5740f4fe5d6",
+    "sourceId": "mbti:ENFJ:traits:money:cause_based_money",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "pointer": "/traits/money/2",
+    "recordSha256": "4d0c9450481f970a446685e0a3f89d93838a464f1d83129e379bc61a52f4df13",
+    "originalState": {
+      "type": "ENFJ",
+      "area": "money",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MONEY",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "cause_based_money",
+      "label": "명분형 돈 감각",
+      "plainKo": "가치 있다고 여기는 일에는 오래 헌신하는 유형이라, 돈도 단순 이익보다 의미와 명분이 있는 방향으로 쓰려 한다.",
+      "strongLine": "ENFJ는 돈을 모으는 이유보다 어디에 쓰면 사람을 살릴 수 있는지를 먼저 떠올린다.",
+      "positiveUse": "자선, 교육, 커뮤니티, 공익 사업에 자원을 연결하는 데 강하다.",
+      "risk": "명분이 좋다는 이유로 수익 구조와 지속 가능성을 충분히 보지 못할 수 있다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "편재",
+        "귀인"
+      ],
+      "productDomains": [
+        "money",
+        "career",
+        "daeun"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "932f48a511820a551fae",
+    "sourceId": "mbti:ISTP:traits:workplace:action_over_meeting",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "pointer": "/traits/workplace/4",
+    "recordSha256": "5ec356dc9fd8aa70b62dacb1efd710a96e76c96af80aa6c99f72776ae4f20a6e",
+    "originalState": {
+      "type": "ISTP",
+      "area": "workplace",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "WORK",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "action_over_meeting",
+      "label": "회의보다 실행",
+      "plainKo": "말을 길게 늘리는 회의보다 직접 해보고 결과를 확인하는 방식을 선호한다. 설명이 길어질수록 집중이 떨어진다.",
+      "strongLine": "당신은 회의실에서 말이 길어질수록 멀어지고, 현장에서 만져볼수록 가까워집니다.",
+      "positiveUse": "빠른 프로토타입, 현장 점검, 실습, 장비 테스트에서 좋다.",
+      "risk": "충분한 합의 없이 바로 움직이면 주변이 따라오지 못한다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "상관",
+        "화"
+      ],
+      "productDomains": [
+        "career",
+        "study"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "76d4c68e32d1662f8abf",
+    "sourceId": "mbti:ISTJ:traits:workplace:instant_error_correction",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/workplace/4",
+    "recordSha256": "017459da987b1d1e35fa681d79035a20764167d5d841571d97fece6451e57d96",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "workplace",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "WORK",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "instant_error_correction",
+      "label": "즉각 수정",
+      "plainKo": "자기 실수를 알면 빠르게 고치려 한다. 문제를 덮기보다 바로 잡는 편이라 실무 신뢰도가 높다.",
+      "strongLine": "당신은 실수를 인정하면 오래 끌지 않고 바로 수정하는 쪽입니다.",
+      "positiveUse": "품질 관리, 회계, 의료, 행정, 고객 대응에서 신뢰를 만든다.",
+      "risk": "타인의 실수도 같은 속도로 고치길 요구하면 압박이 된다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "현침살",
+        "금"
+      ],
+      "productDomains": [
+        "career",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "bfcb541ba28cf9dd0cce",
+    "sourceId": "fkr:complement:C002",
+    "sourceKind": "individual_fusion_research",
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+    "sourceFileSha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+    "exportName": "COMPLEMENT_FUSION_RESEARCH",
+    "index": 1,
+    "recordSha256": "b3061c278a7b32733d7400a2b8b25a81403a010dd3e4b4dfc43efb1a676e15c1",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "contexts": [
+        "identity",
+        "work",
+        "learning"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "PRECISION",
+          "DEPTH"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "sourceAssignmentRequired": true,
+      "noAutomaticBusinessPartnerTransfer": true
+    },
+    "raw": {
+      "id": "fkr:complement:C002",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "review": "conditional_editorial_not_empirical",
+      "sourceRefs": [
+        "repo:semantic-fusion",
+        "repo:complement-registry",
+        "authored:fusion-research"
+      ],
+      "sourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+      "missingEvidencePolicy": "withhold_no_fallback_fact",
+      "scopeRef": "fkr:scope:individual",
+      "origin": "complement_rule",
+      "existingRuleId": "C002",
+      "existingRuleSha256": "23aa38084741d80069944be8c211b8df208a9d847e7c451d636ab90f35d40460",
+      "group": "THINKING_ANALYSIS",
+      "researchRelation": "task_complement",
+      "originalMeaning": "작은 오류를 찾는 데서 끝나지 않고 왜 그런 문제가 생겼는지까지 파고드는 사람으로 이어질 수 있습니다.",
+      "originalDomains": [],
+      "contexts": [
+        "identity",
+        "work",
+        "learning"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "PRECISION",
+          "DEPTH"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "facets": [
+        {
+          "axis": "PRECISION",
+          "direction": 1,
+          "facetRef": "sar:facet:PRECISION:error-detection",
+          "definition": "작은 오류를 기준에 비추어 발견",
+          "role": "axisA_role"
+        },
+        {
+          "axis": "DEPTH",
+          "direction": 1,
+          "facetRef": "sar:facet:DEPTH:cause-tracing",
+          "definition": "표면 결과 뒤의 과정을 탐색",
+          "role": "axisB_role"
+        }
+      ],
+      "orientationPolicy": "both_source_assignments_require_independent_review",
+      "coreMeaning": "잘못된 결과와 그 결과를 만든 원인을 분리했는가?",
+      "jointReason": "작은 오류를 기준에 비추어 발견 / 표면 결과 뒤의 과정을 탐색의 서로 다른 기여가 같은 과제에서 필요한지 확인한다.",
+      "positive": "오류를 바로잡고 재발 원인을 별도로 조사",
+      "risk": "원인 규명에 몰입해 당장 필요한 복구를 늦춤",
+      "goodIntentionMistake": "완벽히 해결하려 사용자에게 필요한 임시 조치를 보류",
+      "twist": "원인을 모른다고 말해도 유효한 복구는 먼저 할 수 있음",
+      "fictionalScene": {
+        "kind": "fictional_not_customer_history",
+        "text": "가상으로 잘못된 청구를 수정하고 생성 경로를 따로 점검하는 장면"
+      },
+      "behaviorQuestion": "잘못된 결과와 그 결과를 만든 원인을 분리했는가?",
+      "conditions": [
+        "오류 사실·추적 자료·복구 권한을 확인",
+        "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+        "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+      ],
+      "counterexample": "오류가 보여도 원인을 추적할 자료는 없을 수 있음",
+      "exclusions": [
+        "오류 발견만으로 원인 진실을 알고 있다고 단정",
+        "축의 점수만으로 facet의 세부 행동을 관찰한 것으로 처리하지 않는다."
+      ],
+      "distinction": "C003의 반복 패턴과 일회 원인의 차이",
+      "applicabilityRef": "fkr:app:complement:C002",
+      "legacyTagReview": {
+        "relatedTags": [
+          {
+            "tag": "precision",
+            "researchRef": "sar:tag:precision",
+            "relation": "RELATED_CONDITIONAL",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "decisive-correction",
+            "researchRef": "sar:tag:decisive-correction",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "solitude",
+            "researchRef": "sar:tag:solitude",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "inquiry",
+            "researchRef": "sar:tag:inquiry",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "learning",
+            "researchRef": "sar:tag:learning",
+            "relation": "RELATED_CONDITIONAL",
+            "exactEquivalenceApproved": false
+          }
+        ],
+        "use": "reference_only_no_new_semanticConnection"
+      }
+    }
+  },
+  {
+    "key": "1f7d00a7995b32bad2b3",
+    "sourceId": "mbti:INTP:traits:investment:theory_detachment_guard",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/traits/investment/4",
+    "recordSha256": "7cdeb05a69dad1e33c64e7c80971e06c202ab3442059c1ca0288f0152dcd3bf3",
+    "originalState": {
+      "type": "INTP",
+      "area": "investment",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "INVESTMENT",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "theory_detachment_guard",
+      "label": "이론 분리 방지",
+      "plainKo": "INTP는 논리적으로 아름다운 설명에 끌리지만, 실제 돈은 설명의 완성도보다 변동성과 시간 압박에 반응한다. 투자 전에는 이론이 아니라 내 생활이 감당할 수 있는 범위를 먼저 잡아야 한다.",
+      "strongLine": "당신은 이해한 것과 감당할 수 있는 것을 분리해서 봐야 투자 피로가 줄어듭니다.",
+      "positiveUse": "작은 실험 단위, 손실 한도, 생활비와 분리된 운용 범위를 정하면 탐구심이 안전하게 작동한다.",
+      "risk": "이론에 몰입하면 실제 손실, 세금, 현금 필요 시점 같은 현실 조건을 늦게 반영한다.",
+      "matchingMyeongliSignals": [
+        "편인",
+        "정재",
+        "문창",
+        "수"
+      ],
+      "productDomains": [
+        "investment",
+        "money",
+        "study"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "c3e0328ac10371fa55ab",
+    "sourceId": "mbti:ENFJ:traits:money:support_limit_rule",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "sourceFileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "pointer": "/traits/money/5",
+    "recordSha256": "f29fd57342f7940da0cc1970fee57c214399d317366d28869a332091a0fc22e4",
+    "originalState": {
+      "type": "ENFJ",
+      "area": "money",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MONEY",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "support_limit_rule",
+      "label": "지원 한도",
+      "plainKo": "ENFJ는 상대의 가능성을 보면 시간, 돈, 인맥, 기회를 함께 밀어주고 싶어 한다. 이 힘은 사람을 살리는 장점이지만, 상대가 스스로 책임져야 할 비용까지 대신 감당하면 관계가 불균형해진다. 지원은 금액보다 기준이 먼저다.",
+      "strongLine": "당신의 지원은 사람을 키우지만, 기준이 없으면 상대의 책임까지 떠안게 됩니다.",
+      "positiveUse": "멘토링, 교육비, 가족 지원, 팀 운영비를 목표와 기간으로 정리해 건강한 도움을 만든다.",
+      "risk": "상대의 성장을 믿는 마음이 강해질수록 회수되지 않는 지출과 감정 책임이 커진다.",
+      "matchingMyeongliSignals": [
+        "귀인",
+        "겁재",
+        "편재"
+      ],
+      "productDomains": [
+        "money",
+        "parenting",
+        "compatibility"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "42cd2d081510f52bb34d",
+    "sourceId": "external:businessPartner:contribution",
+    "sourceKind": "external_context",
+    "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=3&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+    "recordSha256": "fd494a824691c2c20fea8edbdd9557194e0ca7231caa31013a88a772dd78701e",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 출자",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=3&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+      "checkedSection": "218–265",
+      "summary": "동업 유형에 따라 금전·재산·노무 등 출자 범위가 다를 수 있음을 확인.",
+      "scope": "대한민국 일반 법령 해설. 실제 조합·익명·합자관계는 입력으로 확정하지 않으며 개별 출자액·책임·배분 비율 판정 없음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 출자",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=3&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+      "checkedSection": "218–265",
+      "summary": "동업 유형에 따라 금전·재산·노무 등 출자 범위가 다를 수 있음을 확인.",
+      "scope": "대한민국 일반 법령 해설. 실제 조합·익명·합자관계는 입력으로 확정하지 않으며 개별 출자액·책임·배분 비율 판정 없음."
+    }
+  },
+  {
+    "key": "60699f5629066c047ea1",
+    "sourceId": "mbti:ESFJ:traits:workplace:policy_alignment_need",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "pointer": "/traits/workplace/4",
+    "recordSha256": "b056d530ebc30ab49e5858a63a2da18e90be321ff8045292d8cdd6a838be964e",
+    "originalState": {
+      "type": "ESFJ",
+      "area": "workplace",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "WORK",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "policy_alignment_need",
+      "label": "정책 정합성",
+      "plainKo": "새 정보를 받을 때 조직의 정책, 기존 절차, 성공했던 방식과 맞는지 확인하려 한다. 목표뿐 아니라 그 목표로 가는 과정까지 알려줘야 안심하고 움직인다.",
+      "strongLine": "ESFJ에게 새 과제는 목표만 던져서는 부족하고, 납득 가능한 과정과 조직 기준이 함께 있어야 합니다.",
+      "positiveUse": "매뉴얼 준수, 프로세스 운영, 고객 안내, 기관형 업무에서 오류를 줄인다.",
+      "risk": "절차가 없는 창업형 환경이나 빠른 실험 문화에서는 방향을 잡기 어렵다.",
+      "matchingMyeongliSignals": [
+        "정관",
+        "정인",
+        "토",
+        "금"
+      ],
+      "productDomains": [
+        "career",
+        "study",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "e2ed5b09b1f8185708cd",
+    "sourceId": "deep:ten_god:zheng_cai",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 5,
+    "recordSha256": "c5190449e4eac664419b628d879f0413f683ed7418d0a7b136d474d3d19dd59a",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:zheng_cai",
+      "targetId": "foundation:ten_god:zheng_cai",
+      "label": "정재",
+      "definition": "내가 극하는 오행·다른 음양의 자원 관계",
+      "contrastTargetId": "foundation:ten_god:pian_cai",
+      "differentiation": "지속 관리·책임의 범위를 기회의 확장과 구별한다.",
+      "prerequisites": [
+        "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다."
+      ],
+      "strengthConditions": [
+        "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:zheng_cai:personality",
+        "deep:application:ten_god:zheng_cai:career",
+        "deep:application:ten_god:zheng_cai:money",
+        "deep:application:ten_god:zheng_cai:study",
+        "deep:application:ten_god:zheng_cai:love",
+        "deep:application:ten_god:zheng_cai:marriage",
+        "deep:application:ten_god:zheng_cai:family",
+        "deep:application:ten_god:zheng_cai:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論正財 / 財多身弱・財少身強・得時得位有成",
+          "proposition": "일간이 극하며 다른 음양인 자원 관계. 論正財는 일간이 감당할 힘·재성의 적정량·월령을 함께 요구한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "5b95f1a5a0504d2d0869",
+    "sourceId": "external:businessPartner:contract",
+    "sourceKind": "external_context",
+    "url": "https://business.gov.au/people/contractors/prepare-a-contract",
+    "recordSha256": "68b51753584a329d8bdd2ce1af3b1e8d9dafe9a36871f646be650807cc07d008",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "Australian Government / business.gov.au",
+      "title": "Prepare a contract",
+      "url": "https://business.gov.au/people/contractors/prepare-a-contract",
+      "checkedSection": "257–310,328–365,428–end contract sections",
+      "summary": "지급 시점·성과 기준·IP 사용·비밀 정보·위험 이전을 별도 확인하는 외주 계약 안내.",
+      "scope": "호주 hirer/contractor 관계. contractor IP 귀속 기본 규칙·조항 효력을 한국 동업자에게 전용하지 않음. 확인 질문만 전이.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "Australian Government / business.gov.au",
+      "title": "Prepare a contract",
+      "url": "https://business.gov.au/people/contractors/prepare-a-contract",
+      "checkedSection": "257–310,328–365,428–end contract sections",
+      "summary": "지급 시점·성과 기준·IP 사용·비밀 정보·위험 이전을 별도 확인하는 외주 계약 안내.",
+      "scope": "호주 hirer/contractor 관계. contractor IP 귀속 기본 규칙·조항 효력을 한국 동업자에게 전용하지 않음. 확인 질문만 전이."
+    }
+  },
+  {
+    "key": "c0fbe9a4b01f0f51c46b",
+    "sourceId": "mbti:ISTP:traits:thinkingStyle:causal_principle_focus",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTP.json",
+    "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "pointer": "/traits/thinkingStyle/2",
+    "recordSha256": "23be2c7d5afa7bcb0d1966a1f54a33ee2c8fdc417009010538b6045bda0d8d4d",
+    "originalState": {
+      "type": "ISTP",
+      "area": "thinkingStyle",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "THINKING",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "causal_principle_focus",
+      "label": "원리와 인과",
+      "plainKo": "사실 자료를 정리하고 원인과 결과를 보는 데 관심이 많다. 감정적 설명보다 객관적 원리와 실제 작동 방식을 신뢰한다.",
+      "strongLine": "당신은 기분보다 원리, 분위기보다 작동 방식을 먼저 봅니다.",
+      "positiveUse": "기계, 시스템, 법 집행, 기술, 분석 업무에서 실질적인 판단을 만든다.",
+      "risk": "인간관계에서는 원인이 맞아도 표현이 틀리면 관계가 멀어진다.",
+      "matchingMyeongliSignals": [
+        "금",
+        "수",
+        "정관"
+      ],
+      "productDomains": [
+        "career",
+        "study",
+        "general"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "90e77590d3ea07930ba1",
+    "sourceId": "deep:ten_god:shi_shen",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 2,
+    "recordSha256": "46429fe865e9a25fb4e332aa37e7709375a33374caa139c3857d3ef233b41ffd",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:shi_shen",
+      "targetId": "foundation:ten_god:shi_shen",
+      "label": "식신",
+      "definition": "내가 생하는 오행·동일 음양의 산출 관계",
+      "contrastTargetId": "foundation:ten_god:shang_guan",
+      "differentiation": "숙련·지속적 산출을 규칙에 대한 비판·변경과 구별한다.",
+      "prerequisites": [
+        "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다."
+      ],
+      "strengthConditions": [
+        "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:shi_shen:personality",
+        "deep:application:ten_god:shi_shen:career",
+        "deep:application:ten_god:shi_shen:money",
+        "deep:application:ten_god:shi_shen:study",
+        "deep:application:ten_god:shi_shen:love",
+        "deep:application:ten_god:shi_shen:marriage",
+        "deep:application:ten_god:shi_shen:family",
+        "deep:application:ten_god:shi_shen:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論古人立印食官財名義 / 我生者・致養; 論倒食 / 食神条件",
+          "proposition": "일간이 생하며 같은 음양인 산출 관계. 印食官財 명의는 기르고 되돌려 주는 비유를 사용한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "51ae3a3317baa66901c0",
+    "sourceId": "external:businessPartner:distribution",
+    "sourceKind": "external_context",
+    "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+    "recordSha256": "1769fbcbf61d6c6d4ad132597c27748774182c4dfa9a93750040a4821823a746",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 수익분배방법",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+      "checkedSection": "218–249",
+      "summary": "약정·출자·손익 산정과 분배를 구분해 확인할 필요를 설명.",
+      "scope": "법적 구조·계약·세무 사항별 차이를 전제로 함. 기본 손익 비율·세금·개인 지분의 정당성을 DB가 결정하지 않음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 수익분배방법",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=5&cciNo=1&cnpClsNo=1&csmSeq=633&popMenu=ov",
+      "checkedSection": "218–249",
+      "summary": "약정·출자·손익 산정과 분배를 구분해 확인할 필요를 설명.",
+      "scope": "법적 구조·계약·세무 사항별 차이를 전제로 함. 기본 손익 비율·세금·개인 지분의 정당성을 DB가 결정하지 않음."
+    }
+  },
+  {
+    "key": "f30fa018d453a0318547",
+    "sourceId": "mbti:ISFP:traits:money:steady_income_boundary",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISFP.json",
+    "sourceFileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "pointer": "/traits/money/5",
+    "recordSha256": "49db188de9af8a7e9c7a4b3a692d9f70d4024641977bcfea280b8af0b5051548",
+    "originalState": {
+      "type": "ISFP",
+      "area": "money",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "MONEY",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "steady_income_boundary",
+      "label": "꾸준한 수입 경계",
+      "plainKo": "ISFP는 자유와 자기 리듬이 중요하지만, 돈에서는 최소한의 반복 수입 구조가 있어야 마음이 안정된다. 월 단위 고정 고객, 정기 판매, 기본급, 예약제처럼 예측 가능한 흐름이 있으면 감각형 작업도 오래 간다. 싫은 소리를 못 해 추가 작업을 무료로 넘기지 않는 기준도 필요하다.",
+      "strongLine": "당신에게 안정 수입은 자유를 막는 틀이 아니라, 내 감각을 오래 지키게 해주는 바닥입니다.",
+      "positiveUse": "정기 고객, 예약제, 패키지 상품, 기본 단가표를 만들어 감각형 수입을 반복 가능하게 만든다.",
+      "risk": "경계가 약하면 추가 요청과 감정 노동이 늘어나고 실제 수익률은 낮아진다.",
+      "matchingMyeongliSignals": [
+        "정재",
+        "비견",
+        "토"
+      ],
+      "productDomains": [
+        "money",
+        "career",
+        "marriage"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "e08ef500cdb091985a2e",
+    "sourceId": "mbti:ESFJ:traits:thinkingStyle:quick_social_judgment",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "pointer": "/traits/thinkingStyle/4",
+    "recordSha256": "73d8483a62094f125795b6a2a3d28274ae185bf1f986bd71a6d98393b9071fcd",
+    "originalState": {
+      "type": "ESFJ",
+      "area": "thinkingStyle",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "THINKING",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "quick_social_judgment",
+      "label": "빠른 분위기 판단",
+      "plainKo": "즉각적인 요구와 사람들의 반응을 잘 파악하지만, 그만큼 섣부른 판단으로 중요한 변수를 놓친다. 눈앞의 분위기를 맞추려다 장기적인 결과를 덜 계산한다.",
+      "strongLine": "ESFJ의 판단은 빠르고 따뜻하지만, 빠른 만큼 검증되지 않은 결론까지 사람들 앞에 먼저 꺼낼 수 있습니다.",
+      "positiveUse": "긴급 응대, 현장 조율, 분위기 전환, 서비스 판단에서 민첩하게 움직인다.",
+      "risk": "반대 의견을 충분히 듣기 전에 편을 정하고, 나중에 수정하기 어려운 관계 오해를 만든다.",
+      "matchingMyeongliSignals": [
+        "식신",
+        "상관",
+        "화"
+      ],
+      "productDomains": [
+        "general",
+        "compatibility",
+        "career"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "c7fee219fcf7a5b642fd",
+    "sourceId": "mbti:ISTJ:traits:thinkingStyle:efficient_error_detection",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "sourceFileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "pointer": "/traits/thinkingStyle/1",
+    "recordSha256": "734fb61164252cce9b9ed3b18c88183abd8db93ebbce0135f116621e1bb06fae",
+    "originalState": {
+      "type": "ISTJ",
+      "area": "thinkingStyle",
+      "sourceCoverage": "direct",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "THINKING",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "efficient_error_detection",
+      "label": "효율과 오류 검증",
+      "plainKo": "감정이 아니라 효율, 실용성, 데이터 오류를 계속 검토한다. 시스템의 결함이나 논리적 모순을 보면 그냥 넘기기 어렵다.",
+      "strongLine": "당신은 틀어진 절차와 데이터 오류를 보면 바로 걸리는 사람입니다.",
+      "positiveUse": "감사, 회계, 법무 보조, 품질 검수, 운영 관리에서 실수를 줄인다.",
+      "risk": "사람의 감정보다 오류를 먼저 지적하면 말이 차갑고 공격적으로 들릴 수 있다.",
+      "matchingMyeongliSignals": [
+        "현침살",
+        "정관",
+        "금"
+      ],
+      "productDomains": [
+        "career",
+        "general",
+        "compatibility"
+      ],
+      "sourceCoverage": "direct"
+    }
+  },
+  {
+    "key": "24c9a0e7e3707d4f1f00",
+    "sourceId": "external:businessPartner:cash",
+    "sourceKind": "external_context",
+    "url": "https://business.gov.au/finance/cash-flow/set-up-a-cash-flow-statement",
+    "recordSha256": "f046e14df223165cdf0dd1d8a014831231391bf14dfd335d8a85d5cfaed26052",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "Australian Government / business.gov.au",
+      "title": "Set up a cash flow statement",
+      "url": "https://business.gov.au/finance/cash-flow/set-up-a-cash-flow-statement",
+      "checkedSection": "168–233",
+      "summary": "실제 또는 추정 현금 유입·유출과 시점을 구분하고 예상과 실제를 표시하는 현금흐름 안내.",
+      "scope": "일반 자금 검토 질문만 전이. 호주 GST·회계기준·고객 은행잔고를 추정하지 않음. 템플릿은 다운로드·실행하지 않음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "Australian Government / business.gov.au",
+      "title": "Set up a cash flow statement",
+      "url": "https://business.gov.au/finance/cash-flow/set-up-a-cash-flow-statement",
+      "checkedSection": "168–233",
+      "summary": "실제 또는 추정 현금 유입·유출과 시점을 구분하고 예상과 실제를 표시하는 현금흐름 안내.",
+      "scope": "일반 자금 검토 질문만 전이. 호주 GST·회계기준·고객 은행잔고를 추정하지 않음. 템플릿은 다운로드·실행하지 않음."
+    }
+  },
+  {
+    "key": "446d4547c9d18193acaa",
+    "sourceId": "mbti:INTP:traits:investment:analysis_delay_risk",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/INTP.json",
+    "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "pointer": "/traits/investment/2",
+    "recordSha256": "604c710157278ade2a6ec04c45dc63c0efb67d4c9622949dca9ba3283d9fbd42",
+    "originalState": {
+      "type": "INTP",
+      "area": "investment",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "INVESTMENT",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "analysis_delay_risk",
+      "label": "분석 지연",
+      "plainKo": "INTP는 자료를 더 보면 더 정확해질 것 같아서 결정을 미루기 쉽다. 투자에서는 정보가 부족해서가 아니라, 기준이 닫히지 않아서 실행이 늦어지는 장면이 반복된다.",
+      "strongLine": "당신에게 필요한 것은 더 많은 자료가 아니라, 어느 지점에서 판단을 끝낼지 정한 규칙입니다.",
+      "positiveUse": "사전 체크리스트, 판단 마감 시간, 작은 단위의 실행 규칙을 두면 분석력이 실제 행동으로 이어진다.",
+      "risk": "관찰만 길어지면 좋은 가설도 생활 속 돈 관리와 자산 흐름으로 연결되지 않는다.",
+      "matchingMyeongliSignals": [
+        "편인",
+        "정인",
+        "수"
+      ],
+      "productDomains": [
+        "investment",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "24425ec34fdb222ac805",
+    "sourceId": "fkr:complement:C004",
+    "sourceKind": "individual_fusion_research",
+    "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+    "sourceFileSha256": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+    "exportName": "COMPLEMENT_FUSION_RESEARCH",
+    "index": 3,
+    "recordSha256": "b31aed2afb7d3bdc09054942ef18aa30856259200fa27a3c13c019d622629343",
+    "originalState": {
+      "review": "conditional_editorial_not_empirical",
+      "contexts": [
+        "identity",
+        "work",
+        "learning"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "CURIOSITY",
+          "PRECISION"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "sourceAssignmentRequired": true,
+      "noAutomaticBusinessPartnerTransfer": true
+    },
+    "raw": {
+      "id": "fkr:complement:C004",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "review": "conditional_editorial_not_empirical",
+      "sourceRefs": [
+        "repo:semantic-fusion",
+        "repo:complement-registry",
+        "authored:fusion-research"
+      ],
+      "sourceFactPolicy": "myeongli_fact_and_mbti_source_not_three_independent_facts",
+      "missingEvidencePolicy": "withhold_no_fallback_fact",
+      "scopeRef": "fkr:scope:individual",
+      "origin": "complement_rule",
+      "existingRuleId": "C004",
+      "existingRuleSha256": "18f4a4e3e96dc32b111031d8322b3fe982ad8e623b21b9ddb11e1fe034868364",
+      "group": "THINKING_ANALYSIS",
+      "researchRelation": "task_complement",
+      "originalMeaning": "궁금한 점이 생기면 대충 넘기기보다 앞뒤가 맞는지 확인할 때까지 파고드는 사람으로 이어질 수 있습니다.",
+      "originalDomains": [],
+      "contexts": [
+        "identity",
+        "work",
+        "learning"
+      ],
+      "myeongli": {
+        "features": [],
+        "researchRefs": [],
+        "meaning": "실제 명리 profile에서 선택한 방향의 유효한 축 근거가 필요; 연구 facet은 계산 사실이 아님",
+        "applicationStatus": "actual_evidence_still_required",
+        "meaningStatus": "existing_authored_definition_not_individual_fact"
+      },
+      "mbti": {
+        "traitRefs": [],
+        "requiredSourceAxes": [
+          "CURIOSITY",
+          "PRECISION"
+        ],
+        "meaning": "명리 쪽과 다른 축 역할을 지원하는 실제 primary trait node가 필요; prior·pair·bridge hint 제외",
+        "sourceStatus": "specific_source_not_yet_bound"
+      },
+      "facets": [
+        {
+          "axis": "CURIOSITY",
+          "direction": 1,
+          "facetRef": "sar:facet:CURIOSITY:question-making",
+          "definition": "모르는 지점을 질문으로 구체화",
+          "role": "axisA_role"
+        },
+        {
+          "axis": "PRECISION",
+          "direction": 1,
+          "facetRef": "sar:facet:PRECISION:argument-coherence",
+          "definition": "설명의 전제와 결론 사이 모순 확인",
+          "role": "axisB_role"
+        }
+      ],
+      "orientationPolicy": "both_source_assignments_require_independent_review",
+      "coreMeaning": "궁금한 이유와 설명의 모순이 같은 질문인가?",
+      "jointReason": "모르는 지점을 질문으로 구체화 / 설명의 전제와 결론 사이 모순 확인의 서로 다른 기여가 같은 과제에서 필요한지 확인한다.",
+      "positive": "질문을 명료한 전제로 나눠 확인 가능한 답을 얻음",
+      "risk": "모든 관심 질문을 상대 설명의 결함으로 취급",
+      "goodIntentionMistake": "납득하려 끝없이 반박해 대화를 닫음",
+      "twist": "답하지 않아도 되는 질문을 정하면 필요한 검토가 깊어짐",
+      "fictionalScene": {
+        "kind": "fictional_not_customer_history",
+        "text": "가상으로 제안서의 가정 한 개만 질문하고 별도 호기심은 보류하는 장면"
+      },
+      "behaviorQuestion": "궁금한 이유와 설명의 모순이 같은 질문인가?",
+      "conditions": [
+        "실제 주장·질문의 목적·답할 자료를 확인",
+        "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+        "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+      ],
+      "counterexample": "질문은 흥미 때문이고 오류는 없을 수 있음",
+      "exclusions": [
+        "호기심이 많으므로 논리적으로 정확하다고 단정",
+        "축의 점수만으로 facet의 세부 행동을 관찰한 것으로 처리하지 않는다."
+      ],
+      "distinction": "C011은 다른 정보의 연결, 이 규칙은 주장 검토",
+      "applicabilityRef": "fkr:app:complement:C004",
+      "legacyTagReview": {
+        "relatedTags": [
+          {
+            "tag": "precision",
+            "researchRef": "sar:tag:precision",
+            "relation": "RELATED_CONDITIONAL",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "decisive-correction",
+            "researchRef": "sar:tag:decisive-correction",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "inquiry",
+            "researchRef": "sar:tag:inquiry",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          },
+          {
+            "tag": "experimentation",
+            "researchRef": "sar:tag:experimentation",
+            "relation": "ONE_TO_MANY",
+            "exactEquivalenceApproved": false
+          }
+        ],
+        "use": "reference_only_no_new_semanticConnection"
+      }
+    }
+  },
+  {
+    "key": "756426b20e7a45cb7d82",
+    "sourceId": "mbti:ESFJ:traits:investment:relationship_info_filter",
+    "sourceKind": "individual_mbti",
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "pointer": "/traits/investment/2",
+    "recordSha256": "c65204510b430dce4f0d9d135896431b7523a31cee3d44df9fefe722a2e8b743",
+    "originalState": {
+      "type": "ESFJ",
+      "area": "investment",
+      "sourceCoverage": "inferred",
+      "empiricalVerification": "not_established",
+      "currentRelationshipDomain": "INVESTMENT",
+      "currentNonRomanticProjection": "not_in_current_scoring_projection",
+      "businessPartnerPatternExists": false,
+      "empiricalTypeEffectVerified": false
+    },
+    "raw": {
+      "id": "relationship_info_filter",
+      "label": "관계 정보 필터",
+      "plainKo": "ESFJ는 신뢰하는 사람의 추천과 주변 평판을 쉽게 무시하지 못한다. 투자에서는 친분, 분위기, 호감과 실제 조건을 분리해서 확인해야 관계와 돈이 함께 흔들리지 않는다.",
+      "strongLine": "당신은 누가 말했는지에 마음이 움직이기 쉬워서, 돈 문제에서는 정보와 관계를 따로 봐야 합니다.",
+      "positiveUse": "추천을 바로 따르기보다 체크리스트와 공식 자료로 한 번 더 확인하면 안정감이 커진다.",
+      "risk": "좋은 관계를 해치기 싫어 질문을 줄이면 나중에 돈보다 관계 상처가 더 커질 수 있다.",
+      "matchingMyeongliSignals": [
+        "귀인",
+        "겁재",
+        "정재"
+      ],
+      "productDomains": [
+        "investment",
+        "money",
+        "general"
+      ],
+      "sourceCoverage": "inferred"
+    }
+  },
+  {
+    "key": "464de610689b7074363e",
+    "sourceId": "external:businessPartner:partnership",
+    "sourceKind": "external_context",
+    "url": "https://business.gov.au/planning/business-structures-and-types/business-structures/partnership",
+    "recordSha256": "f299c52c14329911c9c9355d9e3c324f8b140636027ca22d48ba5f696a01e8d6",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "Australian Government / business.gov.au",
+      "title": "Partnership",
+      "url": "https://business.gov.au/planning/business-structures-and-types/business-structures/partnership",
+      "checkedSection": "168–208,253–269",
+      "summary": "파트너십 유형과 기여·권한·손익·기존/신규 IP·분쟁·종료를 구분하는 계약 검토 질문.",
+      "scope": "호주 법적 구조·지역별 규정. ABN/GST·무한책임·호주 partnership 정의를 한국 고객에게 적용하지 않음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": null,
+      "dateStatus": "not_displayed_in_opened_text",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "Australian Government / business.gov.au",
+      "title": "Partnership",
+      "url": "https://business.gov.au/planning/business-structures-and-types/business-structures/partnership",
+      "checkedSection": "168–208,253–269",
+      "summary": "파트너십 유형과 기여·권한·손익·기존/신규 IP·분쟁·종료를 구분하는 계약 검토 질문.",
+      "scope": "호주 법적 구조·지역별 규정. ABN/GST·무한책임·호주 partnership 정의를 한국 고객에게 적용하지 않음."
+    }
+  },
+  {
+    "key": "ce1defc1af72408fec4a",
+    "sourceId": "deep:ten_god:zheng_guan",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 6,
+    "recordSha256": "02292f2111aaf7b4a4934cecc4b14bbe4f7149241fe5601a054d35e32d7a3d59",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:zheng_guan",
+      "targetId": "foundation:ten_god:zheng_guan",
+      "label": "정관",
+      "definition": "나를 극하는 오행·다른 음양의 제약 관계",
+      "contrastTargetId": "foundation:ten_god:qi_sha",
+      "differentiation": "공식 역할·책임을 급격한 압박 대응과 구별한다.",
+      "prerequisites": [
+        "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다."
+      ],
+      "strengthConditions": [
+        "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:zheng_guan:personality",
+        "deep:application:ten_god:zheng_guan:career",
+        "deep:application:ten_god:zheng_guan:money",
+        "deep:application:ten_god:zheng_guan:study",
+        "deep:application:ten_god:zheng_guan:love",
+        "deep:application:ten_god:zheng_guan:marriage",
+        "deep:application:ten_god:zheng_guan:family",
+        "deep:application:ten_god:zheng_guan:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論正官 / 身旺・財印・月令・官殺",
+          "proposition": "일간을 극하며 다른 음양인 규율 관계. 論正官는 身旺·財印·형충·관살 구성의 조건을 병기한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "fe11b875c7ad3a9c8318",
+    "sourceId": "deep:ten_god:zheng_yin",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 8,
+    "recordSha256": "380e3f5f82de6c74467c4321d2e0234a21601692aeb639f6a481481d12941572",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:zheng_yin",
+      "targetId": "foundation:ten_god:zheng_yin",
+      "label": "정인",
+      "definition": "나를 생하는 오행·다른 음양의 지원 관계",
+      "contrastTargetId": "foundation:ten_god:pian_yin",
+      "differentiation": "체계적 수용·지원의 통로를 낯선 관점의 탐색과 구별한다.",
+      "prerequisites": [
+        "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다."
+      ],
+      "strengthConditions": [
+        "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:zheng_yin:personality",
+        "deep:application:ten_god:zheng_yin:career",
+        "deep:application:ten_god:zheng_yin:money",
+        "deep:application:ten_god:zheng_yin:study",
+        "deep:application:ten_god:zheng_yin:love",
+        "deep:application:ten_god:zheng_yin:marriage",
+        "deep:application:ten_god:zheng_yin:family",
+        "deep:application:ten_god:zheng_yin:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論印綬 / 月最要日時次之; 時逢生印",
+          "proposition": "일간을 생하며 다른 음양인 지원 관계. 論印綬는 부모·인장 비유와 月日時·官財·과다의 조건을 나누어 설명한다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "6047f491aa9082328a86",
+    "sourceId": "deep:ten_god:shang_guan",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 3,
+    "recordSha256": "3e4680f1d5790eb0614c29a380cd7c8ecbf27be8c600c27180989af07a73b797",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:shang_guan",
+      "targetId": "foundation:ten_god:shang_guan",
+      "label": "상관",
+      "definition": "내가 생하는 오행·다른 음양의 산출 관계",
+      "contrastTargetId": "foundation:ten_god:shi_shen",
+      "differentiation": "기준을 바꾸는 표현을 안정적 숙련의 반복과 구별한다.",
+      "prerequisites": [
+        "일간의 강약, 관성의 상태, 재성의 통관과 인성의 제약을 함께 확인한다."
+      ],
+      "strengthConditions": [
+        "상관과 관성이 있다는 이유만으로 충돌을 확정하지 않는다. 제화·통관·별도 격의 조건을 분리한다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:shang_guan:personality",
+        "deep:application:ten_god:shang_guan:career",
+        "deep:application:ten_god:shang_guan:money",
+        "deep:application:ten_god:shang_guan:study",
+        "deep:application:ten_god:shang_guan:love",
+        "deep:application:ten_god:shang_guan:marriage",
+        "deep:application:ten_god:shang_guan:family",
+        "deep:application:ten_god:shang_guan:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論傷官 / 傷官見官亦有不作禍者",
+          "proposition": "일간이 생하며 다른 음양인 산출 관계. 傷官 명칭은 正官과의 생극 설명에서 나오며 모든 권위와 충돌한다는 뜻이 아니다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "f8f90022e047bfe61557",
+    "sourceId": "deep:ten_god:qi_sha",
+    "sourceKind": "natal_definition",
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+    "exportName": "DEEP_TEN_GODS",
+    "index": 9,
+    "recordSha256": "2e8310a635977205afbcb0dffde9f5cbe8b140f2adf14e7b5899d4517a7defa3",
+    "originalState": {
+      "verification": null,
+      "review": null,
+      "class": null,
+      "traditionalClass": null,
+      "connectedToRuntime": null,
+      "approvedForCustomer": null,
+      "definitionReview": null,
+      "traditional": null,
+      "evidenceLevel": null,
+      "formation": null,
+      "exclusions": [],
+      "support": null,
+      "deferred": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    },
+    "raw": {
+      "id": "deep:ten_god:qi_sha",
+      "targetId": "foundation:ten_god:qi_sha",
+      "label": "편관",
+      "definition": "나를 극하는 오행·동일 음양의 제약 관계",
+      "contrastTargetId": "foundation:ten_god:zheng_guan",
+      "differentiation": "강한 요구와 대응 압력을 합의된 공식 규범과 구별한다.",
+      "prerequisites": [
+        "일간의 통근·강약, 식신의 제어, 인성의 연결, 혼잡 여부를 실제 근거로 확인한다."
+      ],
+      "strengthConditions": [
+        "살의 압력을 감당하거나 전환하는 조건과 지나치게 제압된 경우를 따로 본다. 위험·폭력·직업을 단정하지 않는다."
+      ],
+      "applicationIds": [
+        "deep:application:ten_god:qi_sha:personality",
+        "deep:application:ten_god:qi_sha:career",
+        "deep:application:ten_god:qi_sha:money",
+        "deep:application:ten_god:qi_sha:study",
+        "deep:application:ten_god:qi_sha:love",
+        "deep:application:ten_god:qi_sha:marriage",
+        "deep:application:ten_god:qi_sha:family",
+        "deep:application:ten_god:qi_sha:relationships"
+      ],
+      "sourceRefs": [
+        {
+          "sourceId": "deep-repo",
+          "locator": "getTenGod",
+          "proposition": "오행의 생극과 음양에 따른 기존 상대 관계 정의"
+        },
+        {
+          "sourceId": "completion-sm5",
+          "locator": "論偏官 / 制合生化・太過不及; 天元坐煞・時上一位貴・年上七煞",
+          "proposition": "일간을 극하며 같은 음양인 압력 관계. 論偏官는 制化·강약·과불급을 함께 보며 偏官/七煞를 단순 선악으로 고정하지 않는다."
+        }
+      ],
+      "followUp": [
+        "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+      ]
+    }
+  },
+  {
+    "key": "611fb713403bb5038a4a",
+    "sourceId": "external:businessPartner:settlement",
+    "sourceKind": "external_context",
+    "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=6&cciNo=1&cnpClsNo=2&csmSeq=633&popMenu=ov",
+    "recordSha256": "1b658322aa80e4b7b99c9d2123d4cc0aa0c8f680cb9fe546d23f0b3828e9624e",
+    "originalState": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 청산",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=6&cciNo=1&cnpClsNo=2&csmSeq=633&popMenu=ov",
+      "checkedSection": "216–252",
+      "summary": "종료 후 미완료 사무·채권·채무·잔여재산과 실제 처리 주체를 구분하는 해설.",
+      "scope": "탈퇴와 해산·청산은 같지 않으며 특정 2인조합 사례를 모든 사업에 전용하지 않음. 손실·지분·반환금·채무 책임을 산정하지 않음.",
+      "notTypeOrMyeongliValidation": true
+    },
+    "raw": {
+      "accessedAt": "2026-10-14",
+      "access": "web_page_text_actually_opened",
+      "published": null,
+      "reviewed": "2026-09-15",
+      "dateStatus": "page stated legal information reference date",
+      "notMbtiPairValidation": true,
+      "notMyeongliValidation": true,
+      "notCustomerObservation": true,
+      "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+      "author": "한국법령정보원 / 찾기쉬운 생활법령정보",
+      "title": "동업계약 – 청산",
+      "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?ccfNo=6&cciNo=1&cnpClsNo=2&csmSeq=633&popMenu=ov",
+      "checkedSection": "216–252",
+      "summary": "종료 후 미완료 사무·채권·채무·잔여재산과 실제 처리 주체를 구분하는 해설.",
+      "scope": "탈퇴와 해산·청산은 같지 않으며 특정 2인조합 사례를 모든 사업에 전용하지 않음. 손실·지분·반환금·채무 책임을 산정하지 않음."
+    }
+  }
+]

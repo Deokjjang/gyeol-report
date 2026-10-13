@@ -1,0 +1,51 @@
+
+ RUN  v4.1.5 /private/tmp/gyeol-compatibility-business-partner-product-knowledge-01
+
+ ✓ tests/unit/report-knowledge/compatibilityBusinessPartnerGenerationPreservation.test.ts (46 tests) 219171ms
+   ✓ actual offline 'A': '양쪽 MBTI' preserves source ownership and generation  6948ms
+   ✓ actual offline 'B': 'A만 MBTI' preserves source ownership and generation  3482ms
+   ✓ actual offline 'C': 'B만 MBTI' preserves source ownership and generation  3768ms
+   ✓ actual offline 'E': 'A 시각 미상' preserves source ownership and generation  5351ms
+   ✓ actual offline 'F': 'B 시각 미상' preserves source ownership and generation  5874ms
+   ✓ actual offline 'G': '양쪽 시각 확정' preserves source ownership and generation  5663ms
+   ✓ actual offline 'H': '동일 유형' preserves source ownership and generation  6840ms
+   ✓ actual offline 'I': '다른 유형' preserves source ownership and generation  5873ms
+   ✓ actual offline 'J': '실제 합' preserves source ownership and generation  5104ms
+   ✓ actual offline 'K': '실제 충' preserves source ownership and generation  4990ms
+   ✓ actual offline 'L': '교차 지지 미검출' preserves source ownership and generation  3067ms
+   ✓ actual offline 'M': '미지원 정의 참고' preserves source ownership and generation  3036ms
+   ✓ actual offline 'N': '다른 방향 십성' preserves source ownership and generation  4959ms
+   ✓ actual offline 'O': '같은 방향 십성' preserves source ownership and generation  4893ms
+   ✓ actual offline 'P': '전체 A/B 순서 교환' preserves source ownership and generation  9894ms
+   ✓ actual offline 'Q': '이름만 교환' preserves source ownership and generation  9940ms
+   ✓ actual offline 'R': '정확한 역할 버전' preserves source ownership and generation  4923ms
+   ✓ actual offline 'U': '실제 동업 여부 미입력' preserves source ownership and generation  4954ms
+   ✓ actual offline 'V': '지분·출자금 미입력' preserves source ownership and generation  4973ms
+   ✓ actual offline 'W': '계약 내용 미입력' preserves source ownership and generation  4931ms
+   ✓ actual offline 'X': '실제 매출 미입력' preserves source ownership and generation  4947ms
+   ✓ actual offline 'Y': '가상 신규 사업 제안' preserves source ownership and generation  4953ms
+   ✓ actual offline 'Z': '가상 고객 계약' preserves source ownership and generation  4931ms
+   ✓ actual offline 'AA': '가상 공동 지출' preserves source ownership and generation  4902ms
+   ✓ actual offline 'AB': '가상 손실' preserves source ownership and generation  4931ms
+   ✓ actual offline 'AC': '가상 현금 부족' preserves source ownership and generation  4951ms
+   ✓ actual offline 'AD': '가상 외부 투자' preserves source ownership and generation  5106ms
+   ✓ actual offline 'AE': '가상 납품 지연' preserves source ownership and generation  4918ms
+   ✓ actual offline 'AF': '가상 역할 불균형' preserves source ownership and generation  4964ms
+   ✓ actual offline 'AG': '가상 교착' preserves source ownership and generation  4939ms
+   ✓ actual offline 'AH': '가상 방향 변경' preserves source ownership and generation  4943ms
+   ✓ actual offline 'AI': '가상 동업 종료 검토' preserves source ownership and generation  5011ms
+   ✓ actual offline 'AJ': 'coworker 비교' preserves source ownership and generation  4969ms
+   ✓ actual offline 'AK': 'managerReport 비교' preserves source ownership and generation  5597ms
+   ✓ actual offline 'AL': 'marriage 비교' preserves source ownership and generation  5714ms
+   ✓ actual offline 'AM': 'WORK/CAREER/MONEY 원천 공백' preserves source ownership and generation  5531ms
+   ✓ actual offline 'AN': 'CHILDREN ancestry 추적' preserves source ownership and generation  4940ms
+   ✓ actual offline 'AO': '기존 fallback 관찰' preserves source ownership and generation  3065ms
+   ✓ actual offline 'AR': '동일 입력 재실행' preserves source ownership and generation  9994ms
+   ✓ audits actual businessPartner profile, projection, eligible candidates and reader-selected MBTI nodes separately  9918ms
+
+ Test Files  1 passed (1)
+      Tests  46 passed (46)
+   Start at  05:45:04
+   Duration  222.05s (transform 2.14s, setup 21ms, import 2.65s, tests 219.17s, environment 0ms)
+
+JSON report written to /tmp/gyeol-compatibility-business-partner-knowledge-validation/new-generation.json

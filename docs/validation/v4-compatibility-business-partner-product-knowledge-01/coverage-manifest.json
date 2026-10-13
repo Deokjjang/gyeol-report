@@ -1,0 +1,683 @@
+{
+  "baseSha": "6bcd8c733a6c7e924b2a59e98d8cdd23a6ba6eaf",
+  "category": "businessPartner",
+  "roleVersion": "compatibility-fixed-ab-v1",
+  "roles": {
+    "personA": "A",
+    "personB": "B"
+  },
+  "chapters": 9,
+  "paragraphs": [
+    {
+      "address": "CH01.P1",
+      "purpose": "두 사람을 한마디로 설명하면",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH01.P1.S1",
+        "CH01.P1.S2",
+        "CH01.P1.S3",
+        "CH01.P1.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH01.P1:idea-demand-interface",
+        "bppr:material:CH01.P1:opportunity-capacity-interface"
+      ]
+    },
+    {
+      "address": "CH01.P2",
+      "purpose": "명리에서 보는 두 사람의 관계",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH01.P2.S1",
+        "CH01.P2.S2",
+        "CH01.P2.S3",
+        "CH01.P2.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH01.P2:harmony-not-revenue",
+        "bppr:material:CH01.P2:half-harmony-not-governance"
+      ]
+    },
+    {
+      "address": "CH01.P3",
+      "purpose": "MBTI가 보여주는 우리",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH01.P3.S1",
+        "CH01.P3.S2",
+        "CH01.P3.S3",
+        "CH01.P3.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH01.P3:analysis-and-use",
+        "bppr:material:CH01.P3:same-type-different-stakes"
+      ]
+    },
+    {
+      "address": "CH01.P4",
+      "purpose": "이 관계를 이해하는 가장 중요한 기준",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH01.P4.S1",
+        "CH01.P4.S2",
+        "CH01.P4.S3",
+        "CH01.P4.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH01.P4:trust-verification-boundary",
+        "bppr:material:CH01.P4:stop-before-risk-lock"
+      ]
+    },
+    {
+      "address": "CH02.P1",
+      "purpose": "A의 관계 성향",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH02.P1.S1",
+        "CH02.P1.S2",
+        "CH02.P1.S3",
+        "CH02.P1.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH02.P1:a-opportunity-model",
+        "bppr:material:CH02.P1:a-resource-as-goal"
+      ]
+    },
+    {
+      "address": "CH02.P2",
+      "purpose": "A가 관계에서 중요하게 여기는 것",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH02.P2.S1",
+        "CH02.P2.S2",
+        "CH02.P2.S3",
+        "CH02.P2.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH02.P2:a-record-before-commit",
+        "bppr:material:CH02.P2:a-meaning-and-finance"
+      ]
+    },
+    {
+      "address": "CH02.P3",
+      "purpose": "A가 관계에 가져오는 장점",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH02.P3.S1",
+        "CH02.P3.S2",
+        "CH02.P3.S3",
+        "CH02.P3.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH02.P3:a-small-working-test",
+        "bppr:material:CH02.P3:a-correct-assumptions"
+      ]
+    },
+    {
+      "address": "CH02.P4",
+      "purpose": "A가 조심해야 할 부분",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH02.P4.S1",
+        "CH02.P4.S2",
+        "CH02.P4.S3",
+        "CH02.P4.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH02.P4:a-theory-without-demand",
+        "bppr:material:CH02.P4:a-support-becomes-funding"
+      ]
+    },
+    {
+      "address": "CH03.P1",
+      "purpose": "B의 관계 성향",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH03.P1.S1",
+        "CH03.P1.S2",
+        "CH03.P1.S3",
+        "CH03.P1.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH03.P1:b-operational-conditions",
+        "bppr:material:CH03.P1:b-method-and-data"
+      ]
+    },
+    {
+      "address": "CH03.P2",
+      "purpose": "B가 관계에서 중요하게 여기는 것",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH03.P2.S1",
+        "CH03.P2.S2",
+        "CH03.P2.S3",
+        "CH03.P2.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH03.P2:b-terms-before-money",
+        "bppr:material:CH03.P2:b-value-before-price"
+      ]
+    },
+    {
+      "address": "CH03.P3",
+      "purpose": "B가 관계에 가져오는 장점",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH03.P3.S1",
+        "CH03.P3.S2",
+        "CH03.P3.S3",
+        "CH03.P3.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH03.P3:b-customer-observation",
+        "bppr:material:CH03.P3:b-cost-gap-review"
+      ]
+    },
+    {
+      "address": "CH03.P4",
+      "purpose": "B가 조심해야 할 부분",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH03.P4.S1",
+        "CH03.P4.S2",
+        "CH03.P4.S3",
+        "CH03.P4.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH03.P4:b-review-without-close",
+        "bppr:material:CH03.P4:b-relationship-cost-blindness"
+      ]
+    },
+    {
+      "address": "CH04.P1",
+      "purpose": "두 사람의 공통점",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH04.P1.S1",
+        "CH04.P1.S2",
+        "CH04.P1.S3",
+        "CH04.P1.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH04.P1:shared-proof-before-investment",
+        "bppr:material:CH04.P1:shared-scope-repeatability"
+      ]
+    },
+    {
+      "address": "CH04.P2",
+      "purpose": "서로 다른 장점이 만날 때",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH04.P2.S1",
+        "CH04.P2.S2",
+        "CH04.P2.S3",
+        "CH04.P2.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH04.P2:exploration-delivery-interface",
+        "bppr:material:CH04.P2:trial-and-contract-boundary"
+      ]
+    },
+    {
+      "address": "CH04.P3",
+      "purpose": "함께 있을 때 좋은 순간",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH04.P3.S1",
+        "CH04.P3.S2",
+        "CH04.P3.S3",
+        "CH04.P3.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH04.P3:customer-signal-product-adjustment",
+        "bppr:material:CH04.P3:crisis-information-two-views"
+      ]
+    },
+    {
+      "address": "CH04.P4",
+      "purpose": "이 관계에서 키울 수 있는 좋은 힘",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH04.P4.S1",
+        "CH04.P4.S2",
+        "CH04.P4.S3",
+        "CH04.P4.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH04.P4:repeatable-operation-value",
+        "bppr:material:CH04.P4:contribution-recognition-without-shares"
+      ]
+    },
+    {
+      "address": "CH05.P1",
+      "purpose": "A는 B에게 어떤 자극을 주는가",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH05.P1.S1",
+        "CH05.P1.S2",
+        "CH05.P1.S3",
+        "CH05.P1.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH05.P1:a-alternative-b-standard",
+        "bppr:material:CH05.P1:a-resource-b-obligation"
+      ]
+    },
+    {
+      "address": "CH05.P2",
+      "purpose": "A가 B에게 주는 좋은 영향",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH05.P2.S1",
+        "CH05.P2.S2",
+        "CH05.P2.S3",
+        "CH05.P2.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH05.P2:a-prototype-b-service-cost",
+        "bppr:material:CH05.P2:a-meaning-b-allocation"
+      ]
+    },
+    {
+      "address": "CH05.P3",
+      "purpose": "A의 행동이 B에게 부담이 되는 순간",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH05.P3.S1",
+        "CH05.P3.S2",
+        "CH05.P3.S3",
+        "CH05.P3.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH05.P3:a-client-promise-b-cost",
+        "bppr:material:CH05.P3:a-expand-b-cash-timing"
+      ]
+    },
+    {
+      "address": "CH05.P4",
+      "purpose": "A가 영향력을 잘 사용하는 방법",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH05.P4.S1",
+        "CH05.P4.S2",
+        "CH05.P4.S3",
+        "CH05.P4.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH05.P4:a-change-small-safe-trial",
+        "bppr:material:CH05.P4:a-risk-disclosure-before-consent"
+      ]
+    },
+    {
+      "address": "CH06.P1",
+      "purpose": "B는 A에게 어떤 자극을 주는가",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH06.P1.S1",
+        "CH06.P1.S2",
+        "CH06.P1.S3",
+        "CH06.P1.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH06.P1:b-operation-a-support-question",
+        "bppr:material:CH06.P1:b-boundary-a-resource-choice"
+      ]
+    },
+    {
+      "address": "CH06.P2",
+      "purpose": "B가 A에게 주는 좋은 영향",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH06.P2.S1",
+        "CH06.P2.S2",
+        "CH06.P2.S3",
+        "CH06.P2.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+        "bppr:material:CH06.P2:b-cost-log-a-commitment"
+      ]
+    },
+    {
+      "address": "CH06.P3",
+      "purpose": "B의 행동이 A에게 부담이 되는 순간",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH06.P3.S1",
+        "CH06.P3.S2",
+        "CH06.P3.S3",
+        "CH06.P3.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH06.P3:b-contract-risk-a-delay",
+        "bppr:material:CH06.P3:b-maintenance-a-direction"
+      ]
+    },
+    {
+      "address": "CH06.P4",
+      "purpose": "B가 영향력을 잘 사용하는 방법",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH06.P4.S1",
+        "CH06.P4.S2",
+        "CH06.P4.S3",
+        "CH06.P4.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH06.P4:b-small-trial-before-expansion",
+        "bppr:material:CH06.P4:b-hold-with-decision-question"
+      ]
+    },
+    {
+      "address": "CH07.P1",
+      "purpose": "가장 중요한 차이",
+      "materialCount": 5,
+      "roleAddresses": [
+        "CH07.P1.S1",
+        "CH07.P1.S2",
+        "CH07.P1.S3",
+        "CH07.P1.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH07.P1:direction-disagreement",
+        "bppr:material:CH07.P1:unreviewed-spending",
+        "bppr:material:CH07.P1:external-contract-without-consent",
+        "bppr:material:CH07.P1:expected-return-actual-cost",
+        "bppr:material:CH07.P1:capital-expectation-difference"
+      ]
+    },
+    {
+      "address": "CH07.P2",
+      "purpose": "명리에서 보이는 충돌",
+      "materialCount": 5,
+      "roleAddresses": [
+        "CH07.P2.S1",
+        "CH07.P2.S2",
+        "CH07.P2.S3",
+        "CH07.P2.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH07.P2:credit-imbalance",
+        "bppr:material:CH07.P2:unclear-work-responsibility",
+        "bppr:material:CH07.P2:unclear-loss-allocation",
+        "bppr:material:CH07.P2:missing-cash-information",
+        "bppr:material:CH07.P2:contract-change"
+      ]
+    },
+    {
+      "address": "CH07.P3",
+      "purpose": "이 관계의 팩폭",
+      "materialCount": 5,
+      "roleAddresses": [
+        "CH07.P3.S1",
+        "CH07.P3.S2",
+        "CH07.P3.S3",
+        "CH07.P3.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH07.P3:customer-promise-execution",
+        "bppr:material:CH07.P3:ip-output-use",
+        "bppr:material:CH07.P3:information-not-shared",
+        "bppr:material:CH07.P3:deadlock",
+        "bppr:material:CH07.P3:trust-verification"
+      ]
+    },
+    {
+      "address": "CH07.P4",
+      "purpose": "갈등이 커지는 조건",
+      "materialCount": 5,
+      "roleAddresses": [
+        "CH07.P4.S1",
+        "CH07.P4.S2",
+        "CH07.P4.S3",
+        "CH07.P4.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH07.P4:expansion-speed",
+        "bppr:material:CH07.P4:ops-burden-imbalance",
+        "bppr:material:CH07.P4:unilateral-decision",
+        "bppr:material:CH07.P4:no-stop-conditions",
+        "bppr:material:CH07.P4:hide-problem-for-relationship"
+      ]
+    },
+    {
+      "address": "CH08.P1",
+      "purpose": "우리에게 필요한 조율",
+      "materialCount": 5,
+      "roleAddresses": [
+        "CH08.P1.S1",
+        "CH08.P1.S2",
+        "CH08.P1.S3",
+        "CH08.P1.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH08.P1:repair-direction-disagreement",
+        "bppr:material:CH08.P1:repair-unreviewed-spending",
+        "bppr:material:CH08.P1:repair-external-contract-without-consent",
+        "bppr:material:CH08.P1:repair-expected-return-actual-cost",
+        "bppr:material:CH08.P1:repair-capital-expectation-difference"
+      ]
+    },
+    {
+      "address": "CH08.P2",
+      "purpose": "A가 바꾸면 좋은 행동",
+      "materialCount": 5,
+      "roleAddresses": [
+        "CH08.P2.S1",
+        "CH08.P2.S2",
+        "CH08.P2.S3",
+        "CH08.P2.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH08.P2:repair-credit-imbalance",
+        "bppr:material:CH08.P2:repair-unclear-work-responsibility",
+        "bppr:material:CH08.P2:repair-unclear-loss-allocation",
+        "bppr:material:CH08.P2:repair-missing-cash-information",
+        "bppr:material:CH08.P2:repair-contract-change"
+      ]
+    },
+    {
+      "address": "CH08.P3",
+      "purpose": "B가 바꾸면 좋은 행동",
+      "materialCount": 5,
+      "roleAddresses": [
+        "CH08.P3.S1",
+        "CH08.P3.S2",
+        "CH08.P3.S3",
+        "CH08.P3.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH08.P3:repair-customer-promise-execution",
+        "bppr:material:CH08.P3:repair-ip-output-use",
+        "bppr:material:CH08.P3:repair-information-not-shared",
+        "bppr:material:CH08.P3:repair-deadlock",
+        "bppr:material:CH08.P3:repair-trust-verification"
+      ]
+    },
+    {
+      "address": "CH08.P4",
+      "purpose": "둘이 함께 지킬 약속",
+      "materialCount": 5,
+      "roleAddresses": [
+        "CH08.P4.S1",
+        "CH08.P4.S2",
+        "CH08.P4.S3",
+        "CH08.P4.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH08.P4:repair-expansion-speed",
+        "bppr:material:CH08.P4:repair-ops-burden-imbalance",
+        "bppr:material:CH08.P4:repair-unilateral-decision",
+        "bppr:material:CH08.P4:repair-no-stop-conditions",
+        "bppr:material:CH08.P4:repair-hide-problem-for-relationship"
+      ]
+    },
+    {
+      "address": "CH09.P1",
+      "purpose": "두 사람이 가진 좋은 힘",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH09.P1.S1",
+        "CH09.P1.S2",
+        "CH09.P1.S3",
+        "CH09.P1.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH09.P1:recall-market-and-scope",
+        "bppr:material:CH09.P1:recall-customer-and-risk"
+      ]
+    },
+    {
+      "address": "CH09.P2",
+      "purpose": "함께 활용할 수 있는 좋은 기운",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH09.P2.S1",
+        "CH09.P2.S2",
+        "CH09.P2.S3",
+        "CH09.P2.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH09.P2:recall-directional-contribution",
+        "bppr:material:CH09.P2:recall-contribution-without-value-price"
+      ]
+    },
+    {
+      "address": "CH09.P3",
+      "purpose": "관계를 오래 지키는 선택",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH09.P3.S1",
+        "CH09.P3.S2",
+        "CH09.P3.S3",
+        "CH09.P3.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH09.P3:recall-consent-principle",
+        "bppr:material:CH09.P3:recall-scope-and-stop-principle"
+      ]
+    },
+    {
+      "address": "CH09.P4",
+      "purpose": "우리라는 관계의 마지막 메시지",
+      "materialCount": 2,
+      "roleAddresses": [
+        "CH09.P4.S1",
+        "CH09.P4.S2",
+        "CH09.P4.S3",
+        "CH09.P4.S4"
+      ],
+      "materialIds": [
+        "bppr:material:CH09.P4:recall-business-value-with-boundary",
+        "bppr:material:CH09.P4:recall-hold-and-safe-exit"
+      ]
+    }
+  ],
+  "sentenceRoleAddresses": 144,
+  "chapterCandidates": 96,
+  "conditionalApplications": 88,
+  "recallCandidates": 8,
+  "roleContributionLinks": 384,
+  "independentTraditionalFacts": 0,
+  "newEmpiricalFacts": 0,
+  "newCalculatedFacts": 0,
+  "chapterCounts": {
+    "CH01": 8,
+    "CH02": 8,
+    "CH03": 8,
+    "CH04": 8,
+    "CH05": 8,
+    "CH06": 8,
+    "CH07": 20,
+    "CH08": 20,
+    "CH09": 8
+  },
+  "modeCounts": {
+    "JOINT": 56,
+    "SELF_A": 8,
+    "SELF_B": 8,
+    "AB": 8,
+    "BA": 8,
+    "RECALL": 8
+  },
+  "personASelectedTypes": [
+    "ENFJ",
+    "ENTJ",
+    "ESFJ",
+    "INTP",
+    "ISTJ",
+    "ISTP"
+  ],
+  "personBSelectedTypes": [
+    "ENFJ",
+    "ESFJ",
+    "INTP",
+    "ISFP",
+    "ISTJ",
+    "ISTP"
+  ],
+  "selectedSourceLocators": 46,
+  "selectedSourceKinds": {
+    "individual_mbti": 20,
+    "external_context": 12,
+    "relation_definition": 2,
+    "mbti_pair_reference": 2,
+    "natal_definition": 8,
+    "individual_fusion_research": 2
+  },
+  "sourceTraitsAudited": 779,
+  "typeSourceLenses": 16,
+  "canonicalDefinitions": 64,
+  "canonicalSupportedMemberships": 34,
+  "canonicalUnsupportedDefinitions": 30,
+  "mbtiDirectedReferences": 256,
+  "directPairRows": 158,
+  "inferredPairRows": 98,
+  "selectedDirectedPairRows": 2,
+  "commonReferenceOnlyPairRows": 254,
+  "recipientTenGodDefinitions": 10,
+  "individualFusionResearchCrosswalk": 164,
+  "existingFusionRuleCounts": [
+    44,
+    96
+  ],
+  "stages": 17,
+  "possibleBusinessStatuses": 7,
+  "decisionProcedures": 9,
+  "contexts": 15,
+  "contributionKinds": 15,
+  "decisionKinds": 13,
+  "financialDistinctions": 13,
+  "contractTopics": 7,
+  "exitTopics": 6,
+  "frictionThemes": 20,
+  "linkedRepairCandidates": 20,
+  "inputCaseLetters": 44,
+  "actualVariantObservations": 46,
+  "expectedSuccessfulVariants": 44,
+  "expectedVersionRejections": 2,
+  "hypotheticalContextCases": 11,
+  "sixProductCase": "AQ uses existing 64-test sixProductIntegration suite; not an empty simulated generation",
+  "existingTrackedFileLocks": 3073,
+  "preExistingWorktrees": 29,
+  "originalDirtyFiles": 11,
+  "connectedToRuntime": false,
+  "approvedForCustomer": false,
+  "existingScoreContribution": false,
+  "runtimeEvidenceIds": [],
+  "knownGaps": [
+    "MISSING_ACTUAL_BUSINESS_INPUTS",
+    "UNAPPROVED_WORK_CAREER_THINKING_MONEY_INVESTMENT",
+    "INHERITED_CHILDREN_MIXED_ANCESTRY",
+    "NO_ACTUALLY_DISPLAYED_LEDGER",
+    "NO_BINDER_OR_SELECTOR",
+    "PAIR_SPECIALIST_256_X_36_NOT_COMPLETE",
+    "NO_EMPIRICAL_SUCCESS_PREDICTION",
+    "LEGAL_STRUCTURE_AND_AUTHORITY_UNVERIFIED"
+  ],
+  "focusedBusinessAxisReviews": 10,
+  "sourceModuleAuditRecords": 25,
+  "distinctSourceModulesAudited": 23,
+  "totalRootResearchRecordsIncludingAuditsViewsAndIndices": 1917,
+  "allRootIdsUnique": true
+}

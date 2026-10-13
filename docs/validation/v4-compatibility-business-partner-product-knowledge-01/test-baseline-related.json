@@ -1,0 +1,441 @@
+{
+  "numTotalTests": 7426,
+  "numPassedTests": 7409,
+  "numFailedTests": 16,
+  "numPendingTests": 1,
+  "numTodoTests": 0,
+  "success": false,
+  "rawReportSha256": "b0723b86472c0008a3f84ab2575ee0785894a19f71f71e1db49118bbd414f84d",
+  "rawReportLocalPath": "/tmp/gyeol-compatibility-business-partner-knowledge-validation/baseline-related.json",
+  "storage": "compact actual Vitest result; full raw JSON retained outside repository; execution logs committed",
+  "files": [
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "status": "failed",
+      "passed": 0,
+      "failed": 5,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": [
+        {
+          "name": "'comprehensive' customer/evidence/Book stays frozen",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+        },
+        {
+          "name": "'love' customer/evidence/Book stays frozen",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+        },
+        {
+          "name": "'compatibility' customer/evidence/Book stays frozen",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+        },
+        {
+          "name": "'major' customer/evidence/Book stays frozen",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+        },
+        {
+          "name": "'annual' customer/evidence/Book stays frozen",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerRelease.test.ts",
+      "status": "failed",
+      "passed": 37,
+      "failed": 5,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": [
+        {
+          "name": "Career editorial reader edition 'comprehensive' previous saved edition remains identical",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+        },
+        {
+          "name": "Career editorial reader edition 'love' previous saved edition remains identical",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+        },
+        {
+          "name": "Career editorial reader edition 'compatibility' previous saved edition remains identical",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+        },
+        {
+          "name": "Career editorial reader edition 'major' previous saved edition remains identical",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+        },
+        {
+          "name": "Career editorial reader edition 'annual' previous saved edition remains identical",
+          "status": "failed",
+          "firstError": "AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]"
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityDiscovery.test.ts",
+      "status": "passed",
+      "passed": 1,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityNarrative.test.ts",
+      "status": "passed",
+      "passed": 9,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityQuality.test.tsx",
+      "status": "passed",
+      "passed": 18,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityRelease.test.ts",
+      "status": "passed",
+      "passed": 38,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilitySafety.test.ts",
+      "status": "passed",
+      "passed": 41,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityTitleSafety.test.ts",
+      "status": "passed",
+      "passed": 15,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+      "status": "failed",
+      "passed": 42,
+      "failed": 2,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": [
+        {
+          "name": "section-specific allocations, reservations, fallback and budgets C9 element composite beats a five-element dictionary and balanced yin yang is not a story",
+          "status": "failed",
+          "firstError": "AssertionError: expected [] to include 'composite'"
+        },
+        {
+          "name": "section-specific allocations, reservations, fallback and budgets recovery-axis Fusion can serve C9 even when its original application is work",
+          "status": "failed",
+          "firstError": "AssertionError: expected false to be true // Object.is equality"
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+      "status": "failed",
+      "passed": 21,
+      "failed": 1,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": [
+        {
+          "name": "actual 12-person review cohort and isolation scheduler is not consumed by prior layers, six products, UI, calculations or providers",
+          "status": "failed",
+          "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseRenderer.ts: expected 'import type { CareerProfiles } from \"…' not to match /[\"'][^\"']*\\/…/comprehensivePlanCore[\"']"
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveRelease.test.ts",
+      "status": "passed",
+      "passed": 23,
+      "failed": 0,
+      "conditionalNotRun": 1,
+      "failuresAndConditional": [
+        {
+          "name": "reader edition uses canonical evidence and actual customer publication former 13D-6B edition reopens without a reader upgrade",
+          "status": "skipped",
+          "firstError": null
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+      "status": "failed",
+      "passed": 19,
+      "failed": 1,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": [
+        {
+          "name": "Phase13D-1A stays off all six product paths only foundation modules reference the foundation; no writer/UI/calculation import",
+          "status": "failed",
+          "firstError": "AssertionError: src/lib/interpretation-v4/careerReleaseMaterials.ts: expected false to be true // Object.is equality"
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/interpretation-v4/loveRelease.test.ts",
+      "status": "passed",
+      "passed": 39,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/interpretation-v4/sixProductIntegration.test.ts",
+      "status": "passed",
+      "passed": 64,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-generation/compatibilityDirectionality.test.tsx",
+      "status": "passed",
+      "passed": 41,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-generation/customerDayunGeneration.test.ts",
+      "status": "failed",
+      "passed": 17,
+      "failed": 2,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": [
+        {
+          "name": "customer Dayun production boundaries rejects major_fortune bypass before order writes and allows stable input",
+          "status": "failed",
+          "firstError": "SyntaxError: Unexpected end of JSON input"
+        },
+        {
+          "name": "customer Dayun production boundaries rejects annual_fortune bypass before order writes and allows stable input",
+          "status": "failed",
+          "firstError": "SyntaxError: Unexpected end of JSON input"
+        }
+      ]
+    },
+    {
+      "file": "tests/unit/report-knowledge/careerProductResearch.test.ts",
+      "status": "passed",
+      "passed": 467,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityCoworkerGenerationPreservation.test.ts",
+      "status": "passed",
+      "passed": 38,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+      "status": "passed",
+      "passed": 1175,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityEvidenceBuilder.test.ts",
+      "status": "passed",
+      "passed": 11,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+      "status": "passed",
+      "passed": 557,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityManagerReportGenerationPreservation.test.ts",
+      "status": "passed",
+      "passed": 42,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+      "status": "passed",
+      "passed": 1123,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityMarriageGenerationPreservation.test.ts",
+      "status": "passed",
+      "passed": 30,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+      "status": "passed",
+      "passed": 626,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityParentChildGenerationPreservation.test.ts",
+      "status": "passed",
+      "passed": 34,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+      "status": "passed",
+      "passed": 744,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityRelationRules.test.ts",
+      "status": "passed",
+      "passed": 5,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityScoreEngine.test.ts",
+      "status": "passed",
+      "passed": 3,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/comprehensiveProductResearch.test.ts",
+      "status": "passed",
+      "passed": 603,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/fusionKnowledgeResearch.test.ts",
+      "status": "passed",
+      "passed": 201,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/loveProductResearch.test.ts",
+      "status": "passed",
+      "passed": 398,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/mbtiFoundationResearch.test.ts",
+      "status": "passed",
+      "passed": 54,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/mbtiPairResearch.test.ts",
+      "status": "passed",
+      "passed": 41,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/sajuCompositeStructureResearch.test.ts",
+      "status": "passed",
+      "passed": 217,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/sajuFoundationCompletion.test.ts",
+      "status": "passed",
+      "passed": 69,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/sajuFoundationDeepKnowledge.test.ts",
+      "status": "passed",
+      "passed": 131,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/sajuFoundationKnowledge.test.ts",
+      "status": "passed",
+      "passed": 12,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/sajuRelationResearch.test.ts",
+      "status": "passed",
+      "passed": 152,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/sajuTemporalInteractionResearch.test.ts",
+      "status": "passed",
+      "passed": 186,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/semanticAxisResearch.test.ts",
+      "status": "passed",
+      "passed": 55,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    },
+    {
+      "file": "tests/unit/report-knowledge/mbti/sourceRuntimeAdapter.test.ts",
+      "status": "passed",
+      "passed": 10,
+      "failed": 0,
+      "conditionalNotRun": 0,
+      "failuresAndConditional": []
+    }
+  ]
+}

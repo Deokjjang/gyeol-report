@@ -1,0 +1,2402 @@
+[
+  {
+    "id": "bppr:role:CH01.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S1",
+    "originalRole": "특징적인 조합",
+    "materialIds": [
+      "bppr:material:CH01.P1:idea-demand-interface",
+      "bppr:material:CH01.P1:opportunity-capacity-interface"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S2",
+    "originalRole": "대표 성향 대비",
+    "materialIds": [
+      "bppr:material:CH01.P1:idea-demand-interface",
+      "bppr:material:CH01.P1:opportunity-capacity-interface"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S3",
+    "originalRole": "함께하는 장면",
+    "materialIds": [
+      "bppr:material:CH01.P1:idea-demand-interface",
+      "bppr:material:CH01.P1:opportunity-capacity-interface"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P1.S4",
+    "originalRole": "관계의 상징",
+    "materialIds": [
+      "bppr:material:CH01.P1:idea-demand-interface",
+      "bppr:material:CH01.P1:opportunity-capacity-interface"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S1",
+    "originalRole": "실제 명리 관계",
+    "materialIds": [
+      "bppr:material:CH01.P2:harmony-not-revenue",
+      "bppr:material:CH01.P2:half-harmony-not-governance"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S2",
+    "originalRole": "쉬운 의미",
+    "materialIds": [
+      "bppr:material:CH01.P2:harmony-not-revenue",
+      "bppr:material:CH01.P2:half-harmony-not-governance"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S3",
+    "originalRole": "상호 영향",
+    "materialIds": [
+      "bppr:material:CH01.P2:harmony-not-revenue",
+      "bppr:material:CH01.P2:half-harmony-not-governance"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P2.S4",
+    "originalRole": "강점과 주의 조건",
+    "materialIds": [
+      "bppr:material:CH01.P2:harmony-not-revenue",
+      "bppr:material:CH01.P2:half-harmony-not-governance"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S1",
+    "originalRole": "A의 실제 MBTI",
+    "materialIds": [
+      "bppr:material:CH01.P3:analysis-and-use",
+      "bppr:material:CH01.P3:same-type-different-stakes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S2",
+    "originalRole": "B의 실제 MBTI",
+    "materialIds": [
+      "bppr:material:CH01.P3:analysis-and-use",
+      "bppr:material:CH01.P3:same-type-different-stakes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S3",
+    "originalRole": "공통점과 차이",
+    "materialIds": [
+      "bppr:material:CH01.P3:analysis-and-use",
+      "bppr:material:CH01.P3:same-type-different-stakes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P3.S4",
+    "originalRole": "상호작용",
+    "materialIds": [
+      "bppr:material:CH01.P3:analysis-and-use",
+      "bppr:material:CH01.P3:same-type-different-stakes"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S1",
+    "originalRole": "좋은 점",
+    "materialIds": [
+      "bppr:material:CH01.P4:trust-verification-boundary",
+      "bppr:material:CH01.P4:stop-before-risk-lock"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S2",
+    "originalRole": "조심할 차이",
+    "materialIds": [
+      "bppr:material:CH01.P4:trust-verification-boundary",
+      "bppr:material:CH01.P4:stop-before-risk-lock"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S3",
+    "originalRole": "관계별 조건",
+    "materialIds": [
+      "bppr:material:CH01.P4:trust-verification-boundary",
+      "bppr:material:CH01.P4:stop-before-risk-lock"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH01.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH01.P4.S4",
+    "originalRole": "앞으로의 질문",
+    "materialIds": [
+      "bppr:material:CH01.P4:trust-verification-boundary",
+      "bppr:material:CH01.P4:stop-before-risk-lock"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S1",
+    "originalRole": "대표 행동",
+    "materialIds": [
+      "bppr:material:CH02.P1:a-opportunity-model",
+      "bppr:material:CH02.P1:a-resource-as-goal"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S2",
+    "originalRole": "명리 근거",
+    "materialIds": [
+      "bppr:material:CH02.P1:a-opportunity-model",
+      "bppr:material:CH02.P1:a-resource-as-goal"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S3",
+    "originalRole": "MBTI 선호",
+    "materialIds": [
+      "bppr:material:CH02.P1:a-opportunity-model",
+      "bppr:material:CH02.P1:a-resource-as-goal"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P1.S4",
+    "originalRole": "B와의 관계",
+    "materialIds": [
+      "bppr:material:CH02.P1:a-opportunity-model",
+      "bppr:material:CH02.P1:a-resource-as-goal"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S1",
+    "originalRole": "관계 조건",
+    "materialIds": [
+      "bppr:material:CH02.P2:a-record-before-commit",
+      "bppr:material:CH02.P2:a-meaning-and-finance"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S2",
+    "originalRole": "실제 이유",
+    "materialIds": [
+      "bppr:material:CH02.P2:a-record-before-commit",
+      "bppr:material:CH02.P2:a-meaning-and-finance"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S3",
+    "originalRole": "B와의 장면",
+    "materialIds": [
+      "bppr:material:CH02.P2:a-record-before-commit",
+      "bppr:material:CH02.P2:a-meaning-and-finance"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P2.S4",
+    "originalRole": "충족될 때",
+    "materialIds": [
+      "bppr:material:CH02.P2:a-record-before-commit",
+      "bppr:material:CH02.P2:a-meaning-and-finance"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S1",
+    "originalRole": "특징적 강점",
+    "materialIds": [
+      "bppr:material:CH02.P3:a-small-working-test",
+      "bppr:material:CH02.P3:a-correct-assumptions"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "bppr:material:CH02.P3:a-small-working-test",
+      "bppr:material:CH02.P3:a-correct-assumptions"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S3",
+    "originalRole": "B에게 좋은 상황",
+    "materialIds": [
+      "bppr:material:CH02.P3:a-small-working-test",
+      "bppr:material:CH02.P3:a-correct-assumptions"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P3.S4",
+    "originalRole": "유지 조건",
+    "materialIds": [
+      "bppr:material:CH02.P3:a-small-working-test",
+      "bppr:material:CH02.P3:a-correct-assumptions"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S1",
+    "originalRole": "과사용 위험",
+    "materialIds": [
+      "bppr:material:CH02.P4:a-theory-without-demand",
+      "bppr:material:CH02.P4:a-support-becomes-funding"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S2",
+    "originalRole": "원인",
+    "materialIds": [
+      "bppr:material:CH02.P4:a-theory-without-demand",
+      "bppr:material:CH02.P4:a-support-becomes-funding"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S3",
+    "originalRole": "B가 받는 뜻",
+    "materialIds": [
+      "bppr:material:CH02.P4:a-theory-without-demand",
+      "bppr:material:CH02.P4:a-support-becomes-funding"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH02.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH02.P4.S4",
+    "originalRole": "조절 행동",
+    "materialIds": [
+      "bppr:material:CH02.P4:a-theory-without-demand",
+      "bppr:material:CH02.P4:a-support-becomes-funding"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S1",
+    "originalRole": "독립적 행동",
+    "materialIds": [
+      "bppr:material:CH03.P1:b-operational-conditions",
+      "bppr:material:CH03.P1:b-method-and-data"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S2",
+    "originalRole": "명리 근거",
+    "materialIds": [
+      "bppr:material:CH03.P1:b-operational-conditions",
+      "bppr:material:CH03.P1:b-method-and-data"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S3",
+    "originalRole": "MBTI 선호",
+    "materialIds": [
+      "bppr:material:CH03.P1:b-operational-conditions",
+      "bppr:material:CH03.P1:b-method-and-data"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P1.S4",
+    "originalRole": "A와의 관계",
+    "materialIds": [
+      "bppr:material:CH03.P1:b-operational-conditions",
+      "bppr:material:CH03.P1:b-method-and-data"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S1",
+    "originalRole": "관계 조건",
+    "materialIds": [
+      "bppr:material:CH03.P2:b-terms-before-money",
+      "bppr:material:CH03.P2:b-value-before-price"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S2",
+    "originalRole": "독립적 이유",
+    "materialIds": [
+      "bppr:material:CH03.P2:b-terms-before-money",
+      "bppr:material:CH03.P2:b-value-before-price"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S3",
+    "originalRole": "A와의 장면",
+    "materialIds": [
+      "bppr:material:CH03.P2:b-terms-before-money",
+      "bppr:material:CH03.P2:b-value-before-price"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P2.S4",
+    "originalRole": "충족될 때",
+    "materialIds": [
+      "bppr:material:CH03.P2:b-terms-before-money",
+      "bppr:material:CH03.P2:b-value-before-price"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S1",
+    "originalRole": "특징적 강점",
+    "materialIds": [
+      "bppr:material:CH03.P3:b-customer-observation",
+      "bppr:material:CH03.P3:b-cost-gap-review"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S2",
+    "originalRole": "독립적 근거",
+    "materialIds": [
+      "bppr:material:CH03.P3:b-customer-observation",
+      "bppr:material:CH03.P3:b-cost-gap-review"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S3",
+    "originalRole": "A에게 좋은 상황",
+    "materialIds": [
+      "bppr:material:CH03.P3:b-customer-observation",
+      "bppr:material:CH03.P3:b-cost-gap-review"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P3.S4",
+    "originalRole": "유지 조건",
+    "materialIds": [
+      "bppr:material:CH03.P3:b-customer-observation",
+      "bppr:material:CH03.P3:b-cost-gap-review"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S1",
+    "originalRole": "과사용 위험",
+    "materialIds": [
+      "bppr:material:CH03.P4:b-review-without-close",
+      "bppr:material:CH03.P4:b-relationship-cost-blindness"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S2",
+    "originalRole": "원인",
+    "materialIds": [
+      "bppr:material:CH03.P4:b-review-without-close",
+      "bppr:material:CH03.P4:b-relationship-cost-blindness"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S3",
+    "originalRole": "A가 받는 뜻",
+    "materialIds": [
+      "bppr:material:CH03.P4:b-review-without-close",
+      "bppr:material:CH03.P4:b-relationship-cost-blindness"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH03.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH03.P4.S4",
+    "originalRole": "조절 행동",
+    "materialIds": [
+      "bppr:material:CH03.P4:b-review-without-close",
+      "bppr:material:CH03.P4:b-relationship-cost-blindness"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S1",
+    "originalRole": "검증된 공통점 또는 다른 기여",
+    "materialIds": [
+      "bppr:material:CH04.P1:shared-proof-before-investment",
+      "bppr:material:CH04.P1:shared-scope-repeatability"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S2",
+    "originalRole": "각자 근거",
+    "materialIds": [
+      "bppr:material:CH04.P1:shared-proof-before-investment",
+      "bppr:material:CH04.P1:shared-scope-repeatability"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S3",
+    "originalRole": "함께하는 행동",
+    "materialIds": [
+      "bppr:material:CH04.P1:shared-proof-before-investment",
+      "bppr:material:CH04.P1:shared-scope-repeatability"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P1.S4",
+    "originalRole": "강점의 조건",
+    "materialIds": [
+      "bppr:material:CH04.P1:shared-proof-before-investment",
+      "bppr:material:CH04.P1:shared-scope-repeatability"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S1",
+    "originalRole": "검증된 보완 또는 다른 장점",
+    "materialIds": [
+      "bppr:material:CH04.P2:exploration-delivery-interface",
+      "bppr:material:CH04.P2:trial-and-contract-boundary"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "bppr:material:CH04.P2:exploration-delivery-interface",
+      "bppr:material:CH04.P2:trial-and-contract-boundary"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S3",
+    "originalRole": "도움의 장면",
+    "materialIds": [
+      "bppr:material:CH04.P2:exploration-delivery-interface",
+      "bppr:material:CH04.P2:trial-and-contract-boundary"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P2.S4",
+    "originalRole": "좋은 차이의 경계",
+    "materialIds": [
+      "bppr:material:CH04.P2:exploration-delivery-interface",
+      "bppr:material:CH04.P2:trial-and-contract-boundary"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S1",
+    "originalRole": "관계별 상황",
+    "materialIds": [
+      "bppr:material:CH04.P3:customer-signal-product-adjustment",
+      "bppr:material:CH04.P3:crisis-information-two-views"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S2",
+    "originalRole": "A의 기여",
+    "materialIds": [
+      "bppr:material:CH04.P3:customer-signal-product-adjustment",
+      "bppr:material:CH04.P3:crisis-information-two-views"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S3",
+    "originalRole": "B의 기여",
+    "materialIds": [
+      "bppr:material:CH04.P3:customer-signal-product-adjustment",
+      "bppr:material:CH04.P3:crisis-information-two-views"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P3.S4",
+    "originalRole": "함께 얻는 결과",
+    "materialIds": [
+      "bppr:material:CH04.P3:customer-signal-product-adjustment",
+      "bppr:material:CH04.P3:crisis-information-two-views"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S1",
+    "originalRole": "가치 있는 특징",
+    "materialIds": [
+      "bppr:material:CH04.P4:repeatable-operation-value",
+      "bppr:material:CH04.P4:contribution-recognition-without-shares"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S2",
+    "originalRole": "좋은 관계의 조건",
+    "materialIds": [
+      "bppr:material:CH04.P4:repeatable-operation-value",
+      "bppr:material:CH04.P4:contribution-recognition-without-shares"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S3",
+    "originalRole": "과사용 위험",
+    "materialIds": [
+      "bppr:material:CH04.P4:repeatable-operation-value",
+      "bppr:material:CH04.P4:contribution-recognition-without-shares"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH04.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH04.P4.S4",
+    "originalRole": "활용 방향",
+    "materialIds": [
+      "bppr:material:CH04.P4:repeatable-operation-value",
+      "bppr:material:CH04.P4:contribution-recognition-without-shares"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S1",
+    "originalRole": "A→B 영향",
+    "materialIds": [
+      "bppr:material:CH05.P1:a-alternative-b-standard",
+      "bppr:material:CH05.P1:a-resource-b-obligation"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S2",
+    "originalRole": "받는 사람 기준 십성",
+    "materialIds": [
+      "bppr:material:CH05.P1:a-alternative-b-standard",
+      "bppr:material:CH05.P1:a-resource-b-obligation"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S3",
+    "originalRole": "구체적 행동",
+    "materialIds": [
+      "bppr:material:CH05.P1:a-alternative-b-standard",
+      "bppr:material:CH05.P1:a-resource-b-obligation"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P1.S4",
+    "originalRole": "B에게 남는 의미",
+    "materialIds": [
+      "bppr:material:CH05.P1:a-alternative-b-standard",
+      "bppr:material:CH05.P1:a-resource-b-obligation"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S1",
+    "originalRole": "도움 되는 강점",
+    "materialIds": [
+      "bppr:material:CH05.P2:a-prototype-b-service-cost",
+      "bppr:material:CH05.P2:a-meaning-b-allocation"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S2",
+    "originalRole": "실제 근거",
+    "materialIds": [
+      "bppr:material:CH05.P2:a-prototype-b-service-cost",
+      "bppr:material:CH05.P2:a-meaning-b-allocation"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S3",
+    "originalRole": "관계별 장면",
+    "materialIds": [
+      "bppr:material:CH05.P2:a-prototype-b-service-cost",
+      "bppr:material:CH05.P2:a-meaning-b-allocation"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P2.S4",
+    "originalRole": "발휘 조건",
+    "materialIds": [
+      "bppr:material:CH05.P2:a-prototype-b-service-cost",
+      "bppr:material:CH05.P2:a-meaning-b-allocation"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S1",
+    "originalRole": "부담 행동",
+    "materialIds": [
+      "bppr:material:CH05.P3:a-client-promise-b-cost",
+      "bppr:material:CH05.P3:a-expand-b-cash-timing"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S2",
+    "originalRole": "검증된 차이",
+    "materialIds": [
+      "bppr:material:CH05.P3:a-client-promise-b-cost",
+      "bppr:material:CH05.P3:a-expand-b-cash-timing"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S3",
+    "originalRole": "의도와 경험",
+    "materialIds": [
+      "bppr:material:CH05.P3:a-client-promise-b-cost",
+      "bppr:material:CH05.P3:a-expand-b-cash-timing"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P3.S4",
+    "originalRole": "악화 조건",
+    "materialIds": [
+      "bppr:material:CH05.P3:a-client-promise-b-cost",
+      "bppr:material:CH05.P3:a-expand-b-cash-timing"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S1",
+    "originalRole": "조정할 행동",
+    "materialIds": [
+      "bppr:material:CH05.P4:a-change-small-safe-trial",
+      "bppr:material:CH05.P4:a-risk-disclosure-before-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S2",
+    "originalRole": "B의 필요",
+    "materialIds": [
+      "bppr:material:CH05.P4:a-change-small-safe-trial",
+      "bppr:material:CH05.P4:a-risk-disclosure-before-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S3",
+    "originalRole": "확인할 실천",
+    "materialIds": [
+      "bppr:material:CH05.P4:a-change-small-safe-trial",
+      "bppr:material:CH05.P4:a-risk-disclosure-before-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH05.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH05.P4.S4",
+    "originalRole": "A→B 가능성",
+    "materialIds": [
+      "bppr:material:CH05.P4:a-change-small-safe-trial",
+      "bppr:material:CH05.P4:a-risk-disclosure-before-consent"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S1",
+    "originalRole": "B→A 영향",
+    "materialIds": [
+      "bppr:material:CH06.P1:b-operation-a-support-question",
+      "bppr:material:CH06.P1:b-boundary-a-resource-choice"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S2",
+    "originalRole": "받는 사람 기준 십성",
+    "materialIds": [
+      "bppr:material:CH06.P1:b-operation-a-support-question",
+      "bppr:material:CH06.P1:b-boundary-a-resource-choice"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S3",
+    "originalRole": "다른 방향 행동",
+    "materialIds": [
+      "bppr:material:CH06.P1:b-operation-a-support-question",
+      "bppr:material:CH06.P1:b-boundary-a-resource-choice"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P1.S4",
+    "originalRole": "A에게 남는 의미",
+    "materialIds": [
+      "bppr:material:CH06.P1:b-operation-a-support-question",
+      "bppr:material:CH06.P1:b-boundary-a-resource-choice"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S1",
+    "originalRole": "도움 되는 강점",
+    "materialIds": [
+      "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+      "bppr:material:CH06.P2:b-cost-log-a-commitment"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S2",
+    "originalRole": "독립적 근거",
+    "materialIds": [
+      "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+      "bppr:material:CH06.P2:b-cost-log-a-commitment"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S3",
+    "originalRole": "관계별 장면",
+    "materialIds": [
+      "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+      "bppr:material:CH06.P2:b-cost-log-a-commitment"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P2.S4",
+    "originalRole": "발휘 조건",
+    "materialIds": [
+      "bppr:material:CH06.P2:b-customer-issue-a-hypothesis",
+      "bppr:material:CH06.P2:b-cost-log-a-commitment"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S1",
+    "originalRole": "부담 행동",
+    "materialIds": [
+      "bppr:material:CH06.P3:b-contract-risk-a-delay",
+      "bppr:material:CH06.P3:b-maintenance-a-direction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S2",
+    "originalRole": "검증된 차이",
+    "materialIds": [
+      "bppr:material:CH06.P3:b-contract-risk-a-delay",
+      "bppr:material:CH06.P3:b-maintenance-a-direction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S3",
+    "originalRole": "의도와 경험",
+    "materialIds": [
+      "bppr:material:CH06.P3:b-contract-risk-a-delay",
+      "bppr:material:CH06.P3:b-maintenance-a-direction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P3.S4",
+    "originalRole": "악화 조건",
+    "materialIds": [
+      "bppr:material:CH06.P3:b-contract-risk-a-delay",
+      "bppr:material:CH06.P3:b-maintenance-a-direction"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S1",
+    "originalRole": "조정할 행동",
+    "materialIds": [
+      "bppr:material:CH06.P4:b-small-trial-before-expansion",
+      "bppr:material:CH06.P4:b-hold-with-decision-question"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S2",
+    "originalRole": "A의 필요",
+    "materialIds": [
+      "bppr:material:CH06.P4:b-small-trial-before-expansion",
+      "bppr:material:CH06.P4:b-hold-with-decision-question"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S3",
+    "originalRole": "확인할 실천",
+    "materialIds": [
+      "bppr:material:CH06.P4:b-small-trial-before-expansion",
+      "bppr:material:CH06.P4:b-hold-with-decision-question"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH06.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH06.P4.S4",
+    "originalRole": "B→A 가능성",
+    "materialIds": [
+      "bppr:material:CH06.P4:b-small-trial-before-expansion",
+      "bppr:material:CH06.P4:b-hold-with-decision-question"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S1",
+    "originalRole": "불일치 또는 확인할 조건",
+    "materialIds": [
+      "bppr:material:CH07.P1:direction-disagreement",
+      "bppr:material:CH07.P1:unreviewed-spending",
+      "bppr:material:CH07.P1:external-contract-without-consent",
+      "bppr:material:CH07.P1:expected-return-actual-cost",
+      "bppr:material:CH07.P1:capital-expectation-difference"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S2",
+    "originalRole": "각자의 성향",
+    "materialIds": [
+      "bppr:material:CH07.P1:direction-disagreement",
+      "bppr:material:CH07.P1:unreviewed-spending",
+      "bppr:material:CH07.P1:external-contract-without-consent",
+      "bppr:material:CH07.P1:expected-return-actual-cost",
+      "bppr:material:CH07.P1:capital-expectation-difference"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S3",
+    "originalRole": "다른 이해",
+    "materialIds": [
+      "bppr:material:CH07.P1:direction-disagreement",
+      "bppr:material:CH07.P1:unreviewed-spending",
+      "bppr:material:CH07.P1:external-contract-without-consent",
+      "bppr:material:CH07.P1:expected-return-actual-cost",
+      "bppr:material:CH07.P1:capital-expectation-difference"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P1.S4",
+    "originalRole": "답답함의 이유",
+    "materialIds": [
+      "bppr:material:CH07.P1:direction-disagreement",
+      "bppr:material:CH07.P1:unreviewed-spending",
+      "bppr:material:CH07.P1:external-contract-without-consent",
+      "bppr:material:CH07.P1:expected-return-actual-cost",
+      "bppr:material:CH07.P1:capital-expectation-difference"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S1",
+    "originalRole": "실제 충돌 또는 부재",
+    "materialIds": [
+      "bppr:material:CH07.P2:credit-imbalance",
+      "bppr:material:CH07.P2:unclear-work-responsibility",
+      "bppr:material:CH07.P2:unclear-loss-allocation",
+      "bppr:material:CH07.P2:missing-cash-information",
+      "bppr:material:CH07.P2:contract-change"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S2",
+    "originalRole": "쉬운 의미",
+    "materialIds": [
+      "bppr:material:CH07.P2:credit-imbalance",
+      "bppr:material:CH07.P2:unclear-work-responsibility",
+      "bppr:material:CH07.P2:unclear-loss-allocation",
+      "bppr:material:CH07.P2:missing-cash-information",
+      "bppr:material:CH07.P2:contract-change"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S3",
+    "originalRole": "다른 반응",
+    "materialIds": [
+      "bppr:material:CH07.P2:credit-imbalance",
+      "bppr:material:CH07.P2:unclear-work-responsibility",
+      "bppr:material:CH07.P2:unclear-loss-allocation",
+      "bppr:material:CH07.P2:missing-cash-information",
+      "bppr:material:CH07.P2:contract-change"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P2.S4",
+    "originalRole": "긍정적 여지",
+    "materialIds": [
+      "bppr:material:CH07.P2:credit-imbalance",
+      "bppr:material:CH07.P2:unclear-work-responsibility",
+      "bppr:material:CH07.P2:unclear-loss-allocation",
+      "bppr:material:CH07.P2:missing-cash-information",
+      "bppr:material:CH07.P2:contract-change"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S1",
+    "originalRole": "반복 문제",
+    "materialIds": [
+      "bppr:material:CH07.P3:customer-promise-execution",
+      "bppr:material:CH07.P3:ip-output-use",
+      "bppr:material:CH07.P3:information-not-shared",
+      "bppr:material:CH07.P3:deadlock",
+      "bppr:material:CH07.P3:trust-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S2",
+    "originalRole": "방향별 원인",
+    "materialIds": [
+      "bppr:material:CH07.P3:customer-promise-execution",
+      "bppr:material:CH07.P3:ip-output-use",
+      "bppr:material:CH07.P3:information-not-shared",
+      "bppr:material:CH07.P3:deadlock",
+      "bppr:material:CH07.P3:trust-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S3",
+    "originalRole": "악화 장면",
+    "materialIds": [
+      "bppr:material:CH07.P3:customer-promise-execution",
+      "bppr:material:CH07.P3:ip-output-use",
+      "bppr:material:CH07.P3:information-not-shared",
+      "bppr:material:CH07.P3:deadlock",
+      "bppr:material:CH07.P3:trust-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P3.S4",
+    "originalRole": "직설적 결론",
+    "materialIds": [
+      "bppr:material:CH07.P3:customer-promise-execution",
+      "bppr:material:CH07.P3:ip-output-use",
+      "bppr:material:CH07.P3:information-not-shared",
+      "bppr:material:CH07.P3:deadlock",
+      "bppr:material:CH07.P3:trust-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S1",
+    "originalRole": "주의 상황",
+    "materialIds": [
+      "bppr:material:CH07.P4:expansion-speed",
+      "bppr:material:CH07.P4:ops-burden-imbalance",
+      "bppr:material:CH07.P4:unilateral-decision",
+      "bppr:material:CH07.P4:no-stop-conditions",
+      "bppr:material:CH07.P4:hide-problem-for-relationship"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S2",
+    "originalRole": "A의 기대",
+    "materialIds": [
+      "bppr:material:CH07.P4:expansion-speed",
+      "bppr:material:CH07.P4:ops-burden-imbalance",
+      "bppr:material:CH07.P4:unilateral-decision",
+      "bppr:material:CH07.P4:no-stop-conditions",
+      "bppr:material:CH07.P4:hide-problem-for-relationship"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S3",
+    "originalRole": "B의 기대",
+    "materialIds": [
+      "bppr:material:CH07.P4:expansion-speed",
+      "bppr:material:CH07.P4:ops-burden-imbalance",
+      "bppr:material:CH07.P4:unilateral-decision",
+      "bppr:material:CH07.P4:no-stop-conditions",
+      "bppr:material:CH07.P4:hide-problem-for-relationship"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH07.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH07.P4.S4",
+    "originalRole": "다르게 전달되는 뜻",
+    "materialIds": [
+      "bppr:material:CH07.P4:expansion-speed",
+      "bppr:material:CH07.P4:ops-burden-imbalance",
+      "bppr:material:CH07.P4:unilateral-decision",
+      "bppr:material:CH07.P4:no-stop-conditions",
+      "bppr:material:CH07.P4:hide-problem-for-relationship"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S1",
+    "originalRole": "앞선 갈등 질문",
+    "materialIds": [
+      "bppr:material:CH08.P1:repair-direction-disagreement",
+      "bppr:material:CH08.P1:repair-unreviewed-spending",
+      "bppr:material:CH08.P1:repair-external-contract-without-consent",
+      "bppr:material:CH08.P1:repair-expected-return-actual-cost",
+      "bppr:material:CH08.P1:repair-capital-expectation-difference"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S2",
+    "originalRole": "실제 원인",
+    "materialIds": [
+      "bppr:material:CH08.P1:repair-direction-disagreement",
+      "bppr:material:CH08.P1:repair-unreviewed-spending",
+      "bppr:material:CH08.P1:repair-external-contract-without-consent",
+      "bppr:material:CH08.P1:repair-expected-return-actual-cost",
+      "bppr:material:CH08.P1:repair-capital-expectation-difference"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S3",
+    "originalRole": "각자 필요",
+    "materialIds": [
+      "bppr:material:CH08.P1:repair-direction-disagreement",
+      "bppr:material:CH08.P1:repair-unreviewed-spending",
+      "bppr:material:CH08.P1:repair-external-contract-without-consent",
+      "bppr:material:CH08.P1:repair-expected-return-actual-cost",
+      "bppr:material:CH08.P1:repair-capital-expectation-difference"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P1.S4",
+    "originalRole": "조정 기준",
+    "materialIds": [
+      "bppr:material:CH08.P1:repair-direction-disagreement",
+      "bppr:material:CH08.P1:repair-unreviewed-spending",
+      "bppr:material:CH08.P1:repair-external-contract-without-consent",
+      "bppr:material:CH08.P1:repair-expected-return-actual-cost",
+      "bppr:material:CH08.P1:repair-capital-expectation-difference"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S1",
+    "originalRole": "A의 전략",
+    "materialIds": [
+      "bppr:material:CH08.P2:repair-credit-imbalance",
+      "bppr:material:CH08.P2:repair-unclear-work-responsibility",
+      "bppr:material:CH08.P2:repair-unclear-loss-allocation",
+      "bppr:material:CH08.P2:repair-missing-cash-information",
+      "bppr:material:CH08.P2:repair-contract-change"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S2",
+    "originalRole": "필요한 이유",
+    "materialIds": [
+      "bppr:material:CH08.P2:repair-credit-imbalance",
+      "bppr:material:CH08.P2:repair-unclear-work-responsibility",
+      "bppr:material:CH08.P2:repair-unclear-loss-allocation",
+      "bppr:material:CH08.P2:repair-missing-cash-information",
+      "bppr:material:CH08.P2:repair-contract-change"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S3",
+    "originalRole": "실천 방법",
+    "materialIds": [
+      "bppr:material:CH08.P2:repair-credit-imbalance",
+      "bppr:material:CH08.P2:repair-unclear-work-responsibility",
+      "bppr:material:CH08.P2:repair-unclear-loss-allocation",
+      "bppr:material:CH08.P2:repair-missing-cash-information",
+      "bppr:material:CH08.P2:repair-contract-change"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P2.S4",
+    "originalRole": "B에게 남는 변화",
+    "materialIds": [
+      "bppr:material:CH08.P2:repair-credit-imbalance",
+      "bppr:material:CH08.P2:repair-unclear-work-responsibility",
+      "bppr:material:CH08.P2:repair-unclear-loss-allocation",
+      "bppr:material:CH08.P2:repair-missing-cash-information",
+      "bppr:material:CH08.P2:repair-contract-change"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S1",
+    "originalRole": "B의 전략",
+    "materialIds": [
+      "bppr:material:CH08.P3:repair-customer-promise-execution",
+      "bppr:material:CH08.P3:repair-ip-output-use",
+      "bppr:material:CH08.P3:repair-information-not-shared",
+      "bppr:material:CH08.P3:repair-deadlock",
+      "bppr:material:CH08.P3:repair-trust-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S2",
+    "originalRole": "필요한 이유",
+    "materialIds": [
+      "bppr:material:CH08.P3:repair-customer-promise-execution",
+      "bppr:material:CH08.P3:repair-ip-output-use",
+      "bppr:material:CH08.P3:repair-information-not-shared",
+      "bppr:material:CH08.P3:repair-deadlock",
+      "bppr:material:CH08.P3:repair-trust-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S3",
+    "originalRole": "다른 실천 방법",
+    "materialIds": [
+      "bppr:material:CH08.P3:repair-customer-promise-execution",
+      "bppr:material:CH08.P3:repair-ip-output-use",
+      "bppr:material:CH08.P3:repair-information-not-shared",
+      "bppr:material:CH08.P3:repair-deadlock",
+      "bppr:material:CH08.P3:repair-trust-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P3.S4",
+    "originalRole": "A에게 남는 변화",
+    "materialIds": [
+      "bppr:material:CH08.P3:repair-customer-promise-execution",
+      "bppr:material:CH08.P3:repair-ip-output-use",
+      "bppr:material:CH08.P3:repair-information-not-shared",
+      "bppr:material:CH08.P3:repair-deadlock",
+      "bppr:material:CH08.P3:repair-trust-verification"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S1",
+    "originalRole": "공동 목표",
+    "materialIds": [
+      "bppr:material:CH08.P4:repair-expansion-speed",
+      "bppr:material:CH08.P4:repair-ops-burden-imbalance",
+      "bppr:material:CH08.P4:repair-unilateral-decision",
+      "bppr:material:CH08.P4:repair-no-stop-conditions",
+      "bppr:material:CH08.P4:repair-hide-problem-for-relationship"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S2",
+    "originalRole": "A의 역할",
+    "materialIds": [
+      "bppr:material:CH08.P4:repair-expansion-speed",
+      "bppr:material:CH08.P4:repair-ops-burden-imbalance",
+      "bppr:material:CH08.P4:repair-unilateral-decision",
+      "bppr:material:CH08.P4:repair-no-stop-conditions",
+      "bppr:material:CH08.P4:repair-hide-problem-for-relationship"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S3",
+    "originalRole": "B의 역할",
+    "materialIds": [
+      "bppr:material:CH08.P4:repair-expansion-speed",
+      "bppr:material:CH08.P4:repair-ops-burden-imbalance",
+      "bppr:material:CH08.P4:repair-unilateral-decision",
+      "bppr:material:CH08.P4:repair-no-stop-conditions",
+      "bppr:material:CH08.P4:repair-hide-problem-for-relationship"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH08.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH08.P4.S4",
+    "originalRole": "관계별 원칙",
+    "materialIds": [
+      "bppr:material:CH08.P4:repair-expansion-speed",
+      "bppr:material:CH08.P4:repair-ops-burden-imbalance",
+      "bppr:material:CH08.P4:repair-unilateral-decision",
+      "bppr:material:CH08.P4:repair-no-stop-conditions",
+      "bppr:material:CH08.P4:repair-hide-problem-for-relationship"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P1.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S1",
+    "originalRole": "긍정적 특징",
+    "materialIds": [
+      "bppr:material:CH09.P1:recall-market-and-scope",
+      "bppr:material:CH09.P1:recall-customer-and-risk"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P1.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S2",
+    "originalRole": "실제 명리·MBTI",
+    "materialIds": [
+      "bppr:material:CH09.P1:recall-market-and-scope",
+      "bppr:material:CH09.P1:recall-customer-and-risk"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P1.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S3",
+    "originalRole": "함께하는 장점",
+    "materialIds": [
+      "bppr:material:CH09.P1:recall-market-and-scope",
+      "bppr:material:CH09.P1:recall-customer-and-risk"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P1.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P1.S4",
+    "originalRole": "지속 조건",
+    "materialIds": [
+      "bppr:material:CH09.P1:recall-market-and-scope",
+      "bppr:material:CH09.P1:recall-customer-and-risk"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P2.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S1",
+    "originalRole": "검증된 좋은 기운",
+    "materialIds": [
+      "bppr:material:CH09.P2:recall-directional-contribution",
+      "bppr:material:CH09.P2:recall-contribution-without-value-price"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P2.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S2",
+    "originalRole": "근거와 의미",
+    "materialIds": [
+      "bppr:material:CH09.P2:recall-directional-contribution",
+      "bppr:material:CH09.P2:recall-contribution-without-value-price"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P2.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S3",
+    "originalRole": "관계의 가능성",
+    "materialIds": [
+      "bppr:material:CH09.P2:recall-directional-contribution",
+      "bppr:material:CH09.P2:recall-contribution-without-value-price"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P2.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P2.S4",
+    "originalRole": "현실적 활용",
+    "materialIds": [
+      "bppr:material:CH09.P2:recall-directional-contribution",
+      "bppr:material:CH09.P2:recall-contribution-without-value-price"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P3.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S1",
+    "originalRole": "조율 원칙",
+    "materialIds": [
+      "bppr:material:CH09.P3:recall-consent-principle",
+      "bppr:material:CH09.P3:recall-scope-and-stop-principle"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P3.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S2",
+    "originalRole": "개인별 이유",
+    "materialIds": [
+      "bppr:material:CH09.P3:recall-consent-principle",
+      "bppr:material:CH09.P3:recall-scope-and-stop-principle"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P3.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S3",
+    "originalRole": "실천 행동",
+    "materialIds": [
+      "bppr:material:CH09.P3:recall-consent-principle",
+      "bppr:material:CH09.P3:recall-scope-and-stop-principle"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P3.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P3.S4",
+    "originalRole": "지속 조건",
+    "materialIds": [
+      "bppr:material:CH09.P3:recall-consent-principle",
+      "bppr:material:CH09.P3:recall-scope-and-stop-principle"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P4.S1",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S1",
+    "originalRole": "특징적인 상호작용",
+    "materialIds": [
+      "bppr:material:CH09.P4:recall-business-value-with-boundary",
+      "bppr:material:CH09.P4:recall-hold-and-safe-exit"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P4.S2",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S2",
+    "originalRole": "함께 만드는 가치",
+    "materialIds": [
+      "bppr:material:CH09.P4:recall-business-value-with-boundary",
+      "bppr:material:CH09.P4:recall-hold-and-safe-exit"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P4.S3",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S3",
+    "originalRole": "기억할 기준",
+    "materialIds": [
+      "bppr:material:CH09.P4:recall-business-value-with-boundary",
+      "bppr:material:CH09.P4:recall-hold-and-safe-exit"
+    ],
+    "independentFactCount": 0
+  },
+  {
+    "id": "bppr:role:CH09.P4.S4",
+    "productKey": "saju_mbti_compatibility",
+    "relationshipCategory": "businessPartner",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "address": "CH09.P4.S4",
+    "originalRole": "관계별 결론",
+    "materialIds": [
+      "bppr:material:CH09.P4:recall-business-value-with-boundary",
+      "bppr:material:CH09.P4:recall-hold-and-safe-exit"
+    ],
+    "independentFactCount": 0
+  }
+]

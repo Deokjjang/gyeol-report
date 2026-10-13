@@ -1,0 +1,113 @@
+{
+  "areas": [
+    {
+      "area": "career",
+      "domain": "CAREER",
+      "traits": 106,
+      "types": 16,
+      "legacyAreaAllowed": false,
+      "currentScoringPlainNodes": 93,
+      "currentProjectionAllowedPlainNodes": 0
+    },
+    {
+      "area": "workplace",
+      "domain": "WORK",
+      "traits": 98,
+      "types": 16,
+      "legacyAreaAllowed": true,
+      "currentScoringPlainNodes": 95,
+      "currentProjectionAllowedPlainNodes": 0
+    },
+    {
+      "area": "thinkingStyle",
+      "domain": "THINKING",
+      "traits": 84,
+      "types": 16,
+      "legacyAreaAllowed": true,
+      "currentScoringPlainNodes": 83,
+      "currentProjectionAllowedPlainNodes": 0
+    },
+    {
+      "area": "communication",
+      "domain": "COMMUNICATION",
+      "traits": 59,
+      "types": 16,
+      "legacyAreaAllowed": true,
+      "currentScoringPlainNodes": 56,
+      "currentProjectionAllowedPlainNodes": 56
+    },
+    {
+      "area": "relationships",
+      "domain": "RELATIONSHIPS",
+      "traits": 62,
+      "types": 16,
+      "legacyAreaAllowed": true,
+      "currentScoringPlainNodes": 60,
+      "currentProjectionAllowedPlainNodes": 60
+    },
+    {
+      "area": "strengths",
+      "domain": "STRENGTHS",
+      "traits": 59,
+      "types": 16,
+      "legacyAreaAllowed": false,
+      "currentScoringPlainNodes": 59,
+      "currentProjectionAllowedPlainNodes": 59
+    },
+    {
+      "area": "risks",
+      "domain": "RISKS",
+      "traits": 77,
+      "types": 16,
+      "legacyAreaAllowed": false,
+      "currentScoringPlainNodes": 57,
+      "currentProjectionAllowedPlainNodes": 57
+    },
+    {
+      "area": "growth",
+      "domain": "GROWTH",
+      "traits": 58,
+      "types": 16,
+      "legacyAreaAllowed": true,
+      "currentScoringPlainNodes": 11,
+      "currentProjectionAllowedPlainNodes": 11
+    },
+    {
+      "area": "money",
+      "domain": "MONEY",
+      "traits": 96,
+      "types": 16,
+      "legacyAreaAllowed": true,
+      "currentScoringPlainNodes": 84,
+      "currentProjectionAllowedPlainNodes": 0
+    },
+    {
+      "area": "investment",
+      "domain": "INVESTMENT",
+      "traits": 80,
+      "types": 16,
+      "legacyAreaAllowed": false,
+      "currentScoringPlainNodes": 68,
+      "currentProjectionAllowedPlainNodes": 0
+    }
+  ],
+  "traits": 779,
+  "sourceIsNotSelectedCandidate": true,
+  "fullProjectionRequiresActualNatalAndContext": true,
+  "domainsAllowed": [
+    "RELATIONSHIPS",
+    "COMMUNICATION",
+    "IDENTITY",
+    "STRENGTHS",
+    "RISKS",
+    "GROWTH"
+  ],
+  "excluded": [
+    "CAREER",
+    "WORK",
+    "THINKING",
+    "MONEY",
+    "INVESTMENT"
+  ],
+  "runtimeChanged": false
+}
