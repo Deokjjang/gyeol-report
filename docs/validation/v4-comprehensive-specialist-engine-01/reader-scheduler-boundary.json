@@ -1,0 +1,38 @@
+{
+  "status": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+  "reader": {
+    "chapters": [
+      "CH01",
+      "CH02",
+      "CH03",
+      "CH04",
+      "CH05",
+      "CH06",
+      "CH07",
+      "CH08",
+      "CH09",
+      "CH10",
+      "CH11",
+      "CH12",
+      "CH13"
+    ],
+    "paragraphs": 52,
+    "roles": 208
+  },
+  "schedulerIds": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C10"
+  ],
+  "numberMappingCreated": false,
+  "originalSchedulerModified": false,
+  "originalReleaseSourceAllocationModified": false,
+  "roles": "Existing scheduler selects runtime profile candidates; this engine diagnoses original specialist research applicability. No Book allocation or rendering occurs."
+}

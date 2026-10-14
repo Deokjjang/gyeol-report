@@ -1,0 +1,225 @@
+{
+  "files": [
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveProductAdapter.ts",
+      "sha256": "ece7c58bcd7d28a1d6fee0ff0567a5de2be8953590e17966667d64787b0debef",
+      "exportedDeclarations": [
+        "COMPREHENSIVE_PRODUCT_VERSION",
+        "buildV4ComprehensiveProduct",
+        "ComprehensiveProduct"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveEditorialPlan.ts",
+      "sha256": "fce9aa42cf74fefdbf4b81e21964b581308d57c1bacff90ccbcc9e78969e4a33",
+      "exportedDeclarations": [
+        "COMPREHENSIVE_EDITORIAL_STEPS",
+        "buildComprehensiveEditorialPlan"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensivePlanCore.ts",
+      "sha256": "01ee6dba632646c58b5ddf9cbf72a0e79bfbccb46e14dd9d2bde718a941d953e",
+      "exportedDeclarations": [
+        "GYEOL_COMPREHENSIVE_SCHEDULER_VERSION",
+        "COMPREHENSIVE_SECTIONS",
+        "ComprehensiveSectionId",
+        "ComprehensivePlanInputs",
+        "EditorialSource",
+        "EditorialEmotion",
+        "TraitArcEditorialRole",
+        "OperatingManualSlot",
+        "SectionSlot",
+        "SectionBridgeIntent",
+        "SectionKind",
+        "EditorialRefs",
+        "EditorialCandidate",
+        "EditorialConflictEdge",
+        "EditorialSuppression",
+        "EditorialReservation",
+        "CandidatePlacement",
+        "EvidenceOwnership",
+        "SemanticThemeBudget",
+        "TerminologyOwnership",
+        "ComprehensiveSectionPlan",
+        "FusionBudget",
+        "ComprehensivePlanQualityAudit",
+        "ComprehensivePlanDiagnostics",
+        "ComprehensiveEditorialPlan",
+        "ComprehensivePlanResult"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveCandidateAdapter.ts",
+      "sha256": "4cb226b3ea332ed9c18494ae6f92db1e5cc6619b0d3f8de7923aa8435aeec981",
+      "exportedDeclarations": [
+        "editorialUnique",
+        "guidanceRuleType",
+        "collectComprehensiveCandidates"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveScoring.ts",
+      "sha256": "358a5902e953c04fcf2ffd8635f5f7203f81f65f59c5331d45aec6eb141e9837",
+      "exportedDeclarations": [
+        "editorialScore",
+        "editorialOrder",
+        "editorialOverlap"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveConflictGraph.ts",
+      "sha256": "a3885990e86b82d2a7026c5dbd1231aea01cee7d926294e161d642d30025fd31",
+      "exportedDeclarations": [
+        "buildEditorialConflictGraph"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveReservation.ts",
+      "sha256": "32d6cfed529985c84f40060e8612d45f27a5929ca01b02b0e6de349a9d68d965",
+      "exportedDeclarations": [
+        "reserveComprehensiveMaterials"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveAllocator.ts",
+      "sha256": "e7f7a02983c4c7eba707890596d2cb95de0d7ac9db606063e150ee6a692934ac",
+      "exportedDeclarations": [
+        "emptyEditorialSections",
+        "allocateComprehensiveMaterials"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveEvidenceOwnership.ts",
+      "sha256": "5fb21bfeefd14ac760ab6b98684570574d3381bc2b8536b508bd179f5d4647a7",
+      "exportedDeclarations": [
+        "assignEditorialOwnership",
+        "finalizeEditorialSections",
+        "buildEditorialThemeBudget"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveQualityAudit.ts",
+      "sha256": "29716b68525386fbf214c5bed68c3a63133dad159dd12bbd04da82a7baf06bf0",
+      "exportedDeclarations": [
+        "auditComprehensivePlan"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveManuscriptRenderer.ts",
+      "sha256": "c86f1bfa02ed5b34be2949fdf0f89b3765d13f0200138a8b5790a31c0c339535",
+      "exportedDeclarations": [
+        "renderComprehensiveManuscript"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveReleaseRenderer.ts",
+      "sha256": "4489b26a4ad16b1e2498f99441b7cb7274793acec22ce2916fb7ee265c44163e",
+      "exportedDeclarations": [
+        "ReleaseSentence",
+        "ReleaseParagraph",
+        "ReleaseChapter",
+        "ReleaseDraft",
+        "renderComprehensiveRelease"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveReleaseValidator.ts",
+      "sha256": "3bd16b450ac98c08b2d889fafc4c1ca04ccc620f583800f929a604c774f95b90",
+      "exportedDeclarations": [
+        "validateComprehensiveRelease",
+        "compareComprehensiveReaders"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveReleaseContracts.ts",
+      "sha256": "e8d105999376cb61b6da101fe236ba60e7af47708dfdcf81f894622ef1d956d3",
+      "exportedDeclarations": [
+        "COMPREHENSIVE_RELEASE_VERSION",
+        "COMPREHENSIVE_READER_CHAPTERS"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveReleaseSources.ts",
+      "sha256": "d22eff5186d6182c7d2f79e96180cf111a7394f10211732afa088fecd93432e6",
+      "exportedDeclarations": [
+        "ReleaseSource",
+        "releaseAtomName",
+        "collectReleaseSources",
+        "ReleaseAllocation",
+        "freshReleaseAllocation",
+        "selectReleaseSource",
+        "commitReleaseSource",
+        "ReleaseDemand",
+        "ReleasePreflight",
+        "allocateReleaseDemands"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveComposer.ts",
+      "sha256": "c2621b278ffecb87f65707d733a612cee87743d5e4fde0eccb99b465eb124679",
+      "exportedDeclarations": [
+        "composeComprehensiveNarrative"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/foundationIntegratedProfile.ts",
+      "sha256": "b6640f2021a9919159611bd5a52552d26cbffbe64c35e845d74b60cbe1ebcc30",
+      "exportedDeclarations": [
+        "INTEGRATED_FOUNDATION_VERSION",
+        "IntegratedFoundationInput",
+        "MyeongliSemanticProfile",
+        "IntegratedProfileResult",
+        "integrateMyeongliFoundation",
+        "buildIntegratedMyeongliProfile"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+      "sha256": "b95f7c05b61f27f42f9a2e5ecccf2811610095afaf08737fb269f6b2dbbca96f",
+      "exportedDeclarations": [
+        "MbtiAxisSupport",
+        "MbtiAxisLedger",
+        "MbtiSemanticProfile",
+        "aggregateMbtiContributions",
+        "MbtiProfileResult",
+        "projectMbtiSemanticProfile",
+        "buildMbtiSemanticProfile"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "sha256": "180e4343baba50532c878d89772eeec8d95fd008cfba46469479cb8ce58bfd17",
+      "exportedDeclarations": [
+        "buildMyeongliMbtiFusion"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/claimProfile.ts",
+      "sha256": "3f405565d9db8d082489ae36cda987c7e81dd8cfba926a383f3f4c0e47c52241",
+      "exportedDeclarations": [
+        "buildClaimProfile"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/personalResonanceProfile.ts",
+      "sha256": "b5a854e34c657e5fe045335cde20abc6b838005a463b123c7fcaceed1b71ea9d",
+      "exportedDeclarations": [
+        "buildPersonalResonanceProfile"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/guidanceProfile.ts",
+      "sha256": "c0d91205f3726824abb0e7be2a6b7b6d18b486e3b9a119e4d56e68f91355031e",
+      "exportedDeclarations": [
+        "buildContextualGuidanceProfile"
+      ]
+    }
+  ],
+  "existingScheduler": "C1-C10 current-profile candidate collection/scoring/conflict/reservation/allocation/ownership/theme/Fusion audits",
+  "specialist": "Original research applicability, meaning/reuse/conflict constraints; no runtime scheduler or writer copied",
+  "readerSchedulerBridge": "UNVERIFIED; no numeric conversion",
+  "releaseRootUnit": "ReleaseSource.atom.id, cap 3; not automatically CanonicalFactRoot",
+  "releaseFacetUnit": "Existing RELEASE_FACETS key, cap 5; not 83 separately budgeted research subfacets",
+  "schedulerPrimaryExposureUnit": "Original evidence owner primary exposure cap 1; distinct from Release language-pool budget"
+}

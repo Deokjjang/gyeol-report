@@ -1,0 +1,455 @@
+{
+  "purpose": "ISOLATED_SYNTHETIC_ONLY_NOT_REAL_RESEARCH_OR_CUSTOMER_FACTS",
+  "questions": [
+    {
+      "id": "synthetic:cse:q:1",
+      "requiredMeanings": [
+        "required-1"
+      ],
+      "context": "identity",
+      "domain": "identity",
+      "chapter": "CH01"
+    },
+    {
+      "id": "synthetic:cse:q:2",
+      "requiredMeanings": [
+        "required-2"
+      ],
+      "context": "identity",
+      "domain": "identity",
+      "chapter": "CH01"
+    },
+    {
+      "id": "synthetic:cse:q:3",
+      "requiredMeanings": [
+        "required-3"
+      ],
+      "context": "identity",
+      "domain": "identity",
+      "chapter": "CH01"
+    },
+    {
+      "id": "synthetic:cse:q:4",
+      "requiredMeanings": [
+        "required-4"
+      ],
+      "context": "identity",
+      "domain": "identity",
+      "chapter": "CH01"
+    },
+    {
+      "id": "synthetic:cse:q:5",
+      "requiredMeanings": [
+        "required-5"
+      ],
+      "context": "identity",
+      "domain": "identity",
+      "chapter": "CH01"
+    },
+    {
+      "id": "synthetic:cse:q:6",
+      "requiredMeanings": [
+        "required-6"
+      ],
+      "context": "identity",
+      "domain": "identity",
+      "chapter": "CH01"
+    },
+    {
+      "id": "synthetic:cse:q:7",
+      "requiredMeanings": [
+        "required-7"
+      ],
+      "context": "identity",
+      "domain": "identity",
+      "chapter": "CH01"
+    },
+    {
+      "id": "synthetic:cse:q:8",
+      "requiredMeanings": [
+        "required-8"
+      ],
+      "context": "identity",
+      "domain": "identity",
+      "chapter": "CH01"
+    },
+    {
+      "id": "synthetic:cse:q:9",
+      "requiredMeanings": [
+        "required-9"
+      ],
+      "context": "closing",
+      "domain": "identity",
+      "chapter": "CH13"
+    }
+  ],
+  "materials": [
+    {
+      "id": "synthetic:cse:a",
+      "questionId": "synthetic:cse:q:1",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:one",
+        "claimId": "synthetic:cse:claim:one",
+        "reviewId": "synthetic:cse:review:a",
+        "requiredMeanings": [
+          "required-1"
+        ],
+        "conditions": [
+          "condition-a"
+        ],
+        "action": "action-a",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-a",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [
+          "extra-a"
+        ],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      }
+    },
+    {
+      "id": "synthetic:cse:b",
+      "questionId": "synthetic:cse:q:1",
+      "root": "y",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:one-alt",
+        "claimId": "synthetic:cse:claim:one-alt",
+        "reviewId": "synthetic:cse:review:b",
+        "requiredMeanings": [
+          "required-1"
+        ],
+        "conditions": [
+          "condition-b"
+        ],
+        "action": "action-b",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-b",
+        "polarity": "positive",
+        "axis": null,
+        "direct": false,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      }
+    },
+    {
+      "id": "synthetic:cse:c",
+      "questionId": "synthetic:cse:q:2",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:two",
+        "claimId": "synthetic:cse:claim:two",
+        "reviewId": "synthetic:cse:review:c",
+        "requiredMeanings": [
+          "required-2"
+        ],
+        "conditions": [
+          "condition-c"
+        ],
+        "action": "action-c",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-c",
+        "polarity": "risk",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      }
+    },
+    {
+      "id": "synthetic:cse:d",
+      "questionId": "synthetic:cse:q:3",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:three",
+        "claimId": "synthetic:cse:claim:three",
+        "reviewId": "synthetic:cse:review:d",
+        "requiredMeanings": [
+          "required-3"
+        ],
+        "conditions": [
+          "condition-d"
+        ],
+        "action": "action-d",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-d",
+        "polarity": "twist",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      }
+    },
+    {
+      "id": "synthetic:cse:e",
+      "questionId": "synthetic:cse:q:4",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:four",
+        "claimId": "synthetic:cse:claim:four",
+        "reviewId": "synthetic:cse:review:e",
+        "requiredMeanings": [
+          "required-4"
+        ],
+        "conditions": [
+          "condition-e"
+        ],
+        "action": "action-e",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-e",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      }
+    },
+    {
+      "id": "synthetic:cse:f",
+      "questionId": "synthetic:cse:q:5",
+      "root": "z",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:five",
+        "claimId": "synthetic:cse:claim:five",
+        "reviewId": "synthetic:cse:review:f",
+        "requiredMeanings": [
+          "required-5"
+        ],
+        "conditions": [
+          "condition-f"
+        ],
+        "action": "action-f",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-f",
+        "polarity": "risk",
+        "axis": {
+          "id": "synthetic-axis",
+          "direction": 1
+        },
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      }
+    },
+    {
+      "id": "synthetic:cse:g",
+      "questionId": "synthetic:cse:q:6",
+      "root": "w",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:six",
+        "claimId": "synthetic:cse:claim:six",
+        "reviewId": "synthetic:cse:review:g",
+        "requiredMeanings": [
+          "required-6"
+        ],
+        "conditions": [
+          "condition-g"
+        ],
+        "action": "action-g",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-g",
+        "polarity": "twist",
+        "axis": {
+          "id": "synthetic-axis",
+          "direction": -1
+        },
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      }
+    },
+    {
+      "id": "synthetic:cse:h",
+      "questionId": "synthetic:cse:q:7",
+      "root": "v",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:seven",
+        "claimId": "synthetic:cse:claim:seven",
+        "reviewId": "synthetic:cse:review:h",
+        "requiredMeanings": [
+          "required-7"
+        ],
+        "conditions": [
+          "condition-h"
+        ],
+        "action": "action-h",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-h",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": [
+          "synthetic:cse:f"
+        ]
+      }
+    },
+    {
+      "id": "synthetic:cse:i",
+      "questionId": "synthetic:cse:q:8",
+      "root": "u",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:eight",
+        "claimId": "synthetic:cse:claim:eight",
+        "reviewId": "synthetic:cse:review:i",
+        "requiredMeanings": [
+          "required-8"
+        ],
+        "conditions": [
+          "condition-i"
+        ],
+        "action": "action-i",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-i",
+        "polarity": "risk",
+        "axis": null,
+        "direct": false,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      }
+    },
+    {
+      "id": "synthetic:cse:recall",
+      "questionId": "synthetic:cse:q:9",
+      "root": "x",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:one",
+        "claimId": "synthetic:cse:claim:one",
+        "reviewId": "synthetic:cse:review:recall",
+        "requiredMeanings": [
+          "required-9"
+        ],
+        "conditions": [
+          "condition-recall"
+        ],
+        "action": "action-recall",
+        "context": "closing",
+        "domain": "identity",
+        "facet": "facet-recall",
+        "polarity": "twist",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": "synthetic:cse:a",
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [
+          "identity"
+        ],
+        "verifiedComplementWith": []
+      }
+    },
+    {
+      "id": "synthetic:cse:g-resolved",
+      "questionId": "synthetic:cse:q:6",
+      "root": "w-resolved",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:six-resolved",
+        "claimId": "synthetic:cse:claim:six-resolved",
+        "reviewId": "synthetic:cse:review:g-resolved",
+        "requiredMeanings": [
+          "required-6"
+        ],
+        "conditions": [
+          "condition-g"
+        ],
+        "action": "action-g",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-g",
+        "polarity": "twist",
+        "axis": {
+          "id": "synthetic-axis",
+          "direction": -1
+        },
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [
+          "synthetic:cse:f"
+        ],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      }
+    },
+    {
+      "id": "synthetic:cse:j",
+      "questionId": "synthetic:cse:q:8",
+      "root": "fit-alternative",
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:eight-fit",
+        "claimId": "synthetic:cse:claim:eight-fit",
+        "reviewId": "synthetic:cse:review:j",
+        "requiredMeanings": [
+          "required-8"
+        ],
+        "conditions": [
+          "condition-i"
+        ],
+        "action": "action-i",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-i",
+        "polarity": "risk",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [
+          "question-specific-detail"
+        ],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      }
+    }
+  ]
+}

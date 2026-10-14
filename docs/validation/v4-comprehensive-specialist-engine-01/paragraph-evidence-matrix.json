@@ -1,0 +1,418 @@
+[
+  {
+    "address": "CH01.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 3,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH01.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH01.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH01.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH02.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH02.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH02.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH02.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH03.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH03.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 3,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH03.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH03.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH04.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH04.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH04.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH04.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH05.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH05.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 3,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH05.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH05.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH06.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH06.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 3,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH06.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 2,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH06.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH07.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH07.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH07.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH07.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH08.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 2,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH08.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH08.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH08.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH09.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 3,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH09.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 3,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH09.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 3,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH09.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH10.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH10.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH10.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH10.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH11.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 2,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH11.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH11.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 3,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH11.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH12.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 1,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH12.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 2,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH12.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 4,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH12.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH13.P1",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH13.P2",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH13.P3",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  },
+  {
+    "address": "CH13.P4",
+    "registered": 1,
+    "fixtureQuestionOccurrences": 4,
+    "linkedOccurrences": 4,
+    "witnessOccurrences": 0,
+    "customerEligible": 0
+  }
+]

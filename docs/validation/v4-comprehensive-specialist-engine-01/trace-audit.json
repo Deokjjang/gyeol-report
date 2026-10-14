@@ -1,0 +1,42 @@
+{
+  "before": 88,
+  "after": 88,
+  "allPathSetsIdentical": true,
+  "newEngineResearchValidationFixtureOrCliIncluded": [],
+  "nextConfigByteUnchanged": true,
+  "largestLocalReferencedFileSums": [
+    {
+      "trace": "app/dev/book-flow/r/[token]/book-og/route.js.nft.json",
+      "bytes": 54638460
+    },
+    {
+      "trace": "app/dev/book-flow/report/[reportId]/page.js.nft.json",
+      "bytes": 34454907
+    },
+    {
+      "trace": "app/dev/campaign/[slug]/page.js.nft.json",
+      "bytes": 33842871
+    },
+    {
+      "trace": "app/dev/book-flow/r/[token]/page.js.nft.json",
+      "bytes": 32744869
+    },
+    {
+      "trace": "app/dev/account/api/[action]/route.js.nft.json",
+      "bytes": 31754498
+    },
+    {
+      "trace": "app/dev/launch-event/route.js.nft.json",
+      "bytes": 31656424
+    },
+    {
+      "trace": "app/dev/campaign/[slug]/state/route.js.nft.json",
+      "bytes": 31656230
+    },
+    {
+      "trace": "app/dev/campaign/setup/route.js.nft.json",
+      "bytes": 31653456
+    }
+  ],
+  "remoteCompressedFunctionSizeNotAsserted": true
+}

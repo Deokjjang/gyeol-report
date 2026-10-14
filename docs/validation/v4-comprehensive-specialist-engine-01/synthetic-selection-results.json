@@ -1,0 +1,2263 @@
+{
+  "mode": "SYNTHETIC_ELIGIBLE_SELECTION_TEST",
+  "questionFitComparison": [
+    {
+      "method": "FIRST_ELIGIBLE",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:8",
+          "candidateId": "synthetic:cse:i"
+        }
+      ],
+      "coveredQuestions": 1,
+      "requiredMeaningUnits": 1,
+      "distinctMeanings": 1,
+      "distinctRoots": 1,
+      "repeatedRootUses": 0,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 0,
+        "explicitWitnesses": 1,
+        "functionVariety": 1
+      },
+      "search": {
+        "visited": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:j",
+          "reasons": [
+            "FACET_CONTEXT_REUSE",
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    },
+    {
+      "method": "QUESTION_FIT_FIRST",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:8",
+          "candidateId": "synthetic:cse:j"
+        }
+      ],
+      "coveredQuestions": 1,
+      "requiredMeaningUnits": 1,
+      "distinctMeanings": 1,
+      "distinctRoots": 1,
+      "repeatedRootUses": 0,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 1,
+        "explicitWitnesses": 1,
+        "functionVariety": 1
+      },
+      "search": {
+        "visited": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:i",
+          "reasons": [
+            "FACET_CONTEXT_REUSE",
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    },
+    {
+      "method": "CONSTRAINT_SEARCH",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:8",
+          "candidateId": "synthetic:cse:j"
+        }
+      ],
+      "coveredQuestions": 1,
+      "requiredMeaningUnits": 1,
+      "distinctMeanings": 1,
+      "distinctRoots": 1,
+      "repeatedRootUses": 0,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 1,
+        "explicitWitnesses": 1,
+        "functionVariety": 1
+      },
+      "search": {
+        "visited": 4,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:i",
+          "reasons": [
+            "FACET_CONTEXT_REUSE",
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    }
+  ],
+  "semanticConflictCase": {
+    "edges": [
+      {
+        "left": "synthetic:cse:f",
+        "right": "synthetic:cse:g-resolved",
+        "kind": "CONDITIONAL_TENSION",
+        "state": "VERIFIED",
+        "blocksJointPrimary": false,
+        "reasons": [
+          "OPPOSITE_SIGNALS_REQUIRE_ACTUAL_CONTEXT_OR_REVIEWED_SPLIT"
+        ]
+      },
+      {
+        "left": "synthetic:cse:f",
+        "right": "synthetic:cse:g",
+        "kind": "CONDITIONAL_TENSION",
+        "state": "REVIEW_REQUIRED",
+        "blocksJointPrimary": true,
+        "reasons": [
+          "OPPOSITE_SIGNALS_REQUIRE_ACTUAL_CONTEXT_OR_REVIEWED_SPLIT"
+        ]
+      },
+      {
+        "left": "synthetic:cse:f",
+        "right": "synthetic:cse:h",
+        "kind": "CONDITIONAL_COMPLEMENT",
+        "state": "VERIFIED",
+        "blocksJointPrimary": false,
+        "reasons": [
+          "EXPLICIT_REVIEWED_SYNTHETIC_COMPLEMENT"
+        ]
+      }
+    ],
+    "selection": {
+      "method": "CONSTRAINT_SEARCH",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:5",
+          "candidateId": "synthetic:cse:f"
+        },
+        {
+          "questionId": "synthetic:cse:q:6",
+          "candidateId": "synthetic:cse:g-resolved"
+        },
+        {
+          "questionId": "synthetic:cse:q:7",
+          "candidateId": "synthetic:cse:h"
+        }
+      ],
+      "coveredQuestions": 3,
+      "requiredMeaningUnits": 3,
+      "distinctMeanings": 3,
+      "distinctRoots": 3,
+      "repeatedRootUses": 0,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 3,
+        "explicitWitnesses": 3,
+        "functionVariety": 3
+      },
+      "search": {
+        "visited": 7,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:g",
+          "reasons": [
+            "FACET_CONTEXT_REUSE",
+            "OPPOSITE_SIGNALS_REQUIRE_ACTUAL_CONTEXT_OR_REVIEWED_SPLIT",
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    }
+  },
+  "closingRecallCase": {
+    "withoutActualDisplayEligible": 0,
+    "withActualDisplayEligible": 1,
+    "selection": {
+      "method": "CONSTRAINT_SEARCH",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:9",
+          "candidateId": "synthetic:cse:recall"
+        }
+      ],
+      "coveredQuestions": 1,
+      "requiredMeaningUnits": 1,
+      "distinctMeanings": 0,
+      "distinctRoots": 1,
+      "repeatedRootUses": 0,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 1,
+        "explicitWitnesses": 1,
+        "functionVariety": 1
+      },
+      "search": {
+        "visited": 3,
+        "complete": true
+      },
+      "notSelected": [],
+      "actualCustomerClaimsEmitted": 0
+    },
+    "plannedSelectionWasNotConvertedToDisplay": true
+  },
+  "sourceFile": "tests/fixtures/comprehensive-specialist-engine-01/synthetic-knowledge.json",
+  "sourceDigest": "f9ae44fe6921a4ea2d6ebb4c53f9352d9b72ed285c892814ace9a47c783b276b",
+  "comparison": [
+    {
+      "method": "FIRST_ELIGIBLE",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:1",
+          "candidateId": "synthetic:cse:a"
+        },
+        {
+          "questionId": "synthetic:cse:q:2",
+          "candidateId": "synthetic:cse:c"
+        },
+        {
+          "questionId": "synthetic:cse:q:3",
+          "candidateId": "synthetic:cse:d"
+        }
+      ],
+      "coveredQuestions": 3,
+      "requiredMeaningUnits": 3,
+      "distinctMeanings": 3,
+      "distinctRoots": 1,
+      "repeatedRootUses": 2,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 3,
+        "explicitWitnesses": 3,
+        "functionVariety": 3
+      },
+      "search": {
+        "visited": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:b",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        },
+        {
+          "candidateId": "synthetic:cse:e",
+          "reasons": [
+            "ROOT_PRIMARY_BUDGET"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    },
+    {
+      "method": "QUESTION_FIT_FIRST",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:1",
+          "candidateId": "synthetic:cse:a"
+        },
+        {
+          "questionId": "synthetic:cse:q:2",
+          "candidateId": "synthetic:cse:c"
+        },
+        {
+          "questionId": "synthetic:cse:q:3",
+          "candidateId": "synthetic:cse:d"
+        }
+      ],
+      "coveredQuestions": 3,
+      "requiredMeaningUnits": 3,
+      "distinctMeanings": 3,
+      "distinctRoots": 1,
+      "repeatedRootUses": 2,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 3,
+        "explicitWitnesses": 3,
+        "functionVariety": 3
+      },
+      "search": {
+        "visited": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:b",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        },
+        {
+          "candidateId": "synthetic:cse:e",
+          "reasons": [
+            "ROOT_PRIMARY_BUDGET"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    },
+    {
+      "method": "CONSTRAINT_SEARCH",
+      "selected": [
+        {
+          "questionId": "synthetic:cse:q:1",
+          "candidateId": "synthetic:cse:b"
+        },
+        {
+          "questionId": "synthetic:cse:q:2",
+          "candidateId": "synthetic:cse:c"
+        },
+        {
+          "questionId": "synthetic:cse:q:3",
+          "candidateId": "synthetic:cse:d"
+        },
+        {
+          "questionId": "synthetic:cse:q:4",
+          "candidateId": "synthetic:cse:e"
+        }
+      ],
+      "coveredQuestions": 4,
+      "requiredMeaningUnits": 4,
+      "distinctMeanings": 4,
+      "distinctRoots": 2,
+      "repeatedRootUses": 2,
+      "hardViolations": [],
+      "preferences": {
+        "directMaterials": 3,
+        "explicitWitnesses": 4,
+        "functionVariety": 3
+      },
+      "search": {
+        "visited": 21,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "candidateId": "synthetic:cse:a",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE",
+            "ROOT_PRIMARY_BUDGET"
+          ]
+        }
+      ],
+      "actualCustomerClaimsEmitted": 0
+    }
+  ],
+  "negative": [
+    {
+      "name": "missingApproval",
+      "eligibleOptions": 0,
+      "reasons": [
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING"
+      ]
+    },
+    {
+      "name": "wrongOwner",
+      "eligibleOptions": 0,
+      "reasons": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "VERIFIED_ROOT_REQUIRED",
+        "WRONG_OWNER"
+      ]
+    },
+    {
+      "name": "sourceDefinition",
+      "eligibleOptions": 0,
+      "reasons": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "VERIFIED_ROOT_REQUIRED"
+      ]
+    },
+    {
+      "name": "withheldRoot",
+      "eligibleOptions": 0,
+      "reasons": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "REQUIRED_ANCESTOR_WITHHELD",
+        "REQUIRED_GRAPH_NODE_WITHHELD",
+        "UNKNOWN_BIRTH_TIME",
+        "VERIFIED_ROOT_REQUIRED"
+      ]
+    },
+    {
+      "name": "sourceHash",
+      "eligibleOptions": 4,
+      "reasons": [
+        "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+      ]
+    },
+    {
+      "name": "missingFact",
+      "eligibleOptions": 0,
+      "reasons": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "VERIFIED_ROOT_REQUIRED"
+      ]
+    },
+    {
+      "name": "missingGroupSource",
+      "eligibleOptions": 0,
+      "reasons": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "ALL_AND_GROUP_SOURCES_REQUIRED"
+      ]
+    },
+    {
+      "name": "domainBlocked",
+      "eligibleOptions": 0,
+      "reasons": [
+        "DISALLOWED_ANCESTOR_DOMAIN"
+      ]
+    }
+  ],
+  "actualResearchApproved": 0,
+  "actualCustomerClaimsEmitted": 0,
+  "options": [
+    {
+      "id": "synthetic:cse:a",
+      "questionId": "synthetic:cse:q:1",
+      "receipt": {
+        "receiptId": "kb:receipt:447a098307b78becb2de4a08c63e35cd217741b01393fa8b20254752ecda7b1e",
+        "candidateCatalogKey": "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f",
+        "originalResearchId": "synthetic:cse:a",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:cse:selection",
+        "product": "saju_mbti_full",
+        "relationship": null,
+        "requirementRef": "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f",
+        "requiredSources": [
+          "synthetic:cse:a:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-1"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:cse:a:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-1",
+                "producerEvidenceId": "synthetic:cse:fact:x",
+                "ownerId": "synthetic:cse:owner",
+                "rootIds": [
+                  "synthetic:cse:root:x"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/comprehensive-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-cse-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [],
+        "counterexamples": {
+          "originalRef": "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:14a4439126f161ee4ec1174754dde3b0e7f028d8277dc211fb3fdf153758847f",
+          "originalRecordHash": "97b08b8fcdd4910dc74a2a67ec1ff50bff70772366b7f86e7ff6d2d6b6ad19a4",
+          "sourceVersion": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039",
+          "meaningIdentity": "synthetic:cse:meaning:one",
+          "claimIdentity": "synthetic:cse:claim:one",
+          "product": "saju_mbti_full",
+          "relationship": null,
+          "contexts": [
+            "identity",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-1"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:cse:root:x"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:cse:root:x"
+        ],
+        "meaningIdentity": "synthetic:cse:meaning:one",
+        "claimIdentity": "synthetic:cse:claim:one",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:one",
+        "claimId": "synthetic:cse:claim:one",
+        "reviewId": "synthetic:cse:review:a",
+        "requiredMeanings": [
+          "required-1"
+        ],
+        "conditions": [
+          "condition-a"
+        ],
+        "action": "action-a",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-a",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [
+          "extra-a"
+        ],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      },
+      "roots": [
+        "synthetic:cse:root:x"
+      ],
+      "owner": "synthetic:cse:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": []
+    },
+    {
+      "id": "synthetic:cse:b",
+      "questionId": "synthetic:cse:q:1",
+      "receipt": {
+        "receiptId": "kb:receipt:5848d8bbe73d3aa45b420efda011b0ca37693fa059b4e74949899437ab8e9254",
+        "candidateCatalogKey": "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162",
+        "originalResearchId": "synthetic:cse:b",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:cse:selection",
+        "product": "saju_mbti_full",
+        "relationship": null,
+        "requirementRef": "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162",
+        "requiredSources": [
+          "synthetic:cse:b:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-2"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:cse:b:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-2",
+                "producerEvidenceId": "synthetic:cse:fact:y",
+                "ownerId": "synthetic:cse:owner",
+                "rootIds": [
+                  "synthetic:cse:root:y"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/comprehensive-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-cse-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [],
+        "counterexamples": {
+          "originalRef": "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:5686a226dff8d3c63b375c2ab904ff8b7476866ae0626f17a8ae81e3c2fe0162",
+          "originalRecordHash": "475224fc9d7bd77d12fb2f09f8c1604161ef8dd867595ca179bf1c3bfc1b23cf",
+          "sourceVersion": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039",
+          "meaningIdentity": "synthetic:cse:meaning:one-alt",
+          "claimIdentity": "synthetic:cse:claim:one-alt",
+          "product": "saju_mbti_full",
+          "relationship": null,
+          "contexts": [
+            "identity",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-2"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:cse:root:y"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:cse:root:y"
+        ],
+        "meaningIdentity": "synthetic:cse:meaning:one-alt",
+        "claimIdentity": "synthetic:cse:claim:one-alt",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:one-alt",
+        "claimId": "synthetic:cse:claim:one-alt",
+        "reviewId": "synthetic:cse:review:b",
+        "requiredMeanings": [
+          "required-1"
+        ],
+        "conditions": [
+          "condition-b"
+        ],
+        "action": "action-b",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-b",
+        "polarity": "positive",
+        "axis": null,
+        "direct": false,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      },
+      "roots": [
+        "synthetic:cse:root:y"
+      ],
+      "owner": "synthetic:cse:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": []
+    },
+    {
+      "id": "synthetic:cse:c",
+      "questionId": "synthetic:cse:q:2",
+      "receipt": {
+        "receiptId": "kb:receipt:0bb8dd2ad637b864b3e223774d96e3309218aea8ed6ed8a9391e75b651a9e579",
+        "candidateCatalogKey": "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7",
+        "originalResearchId": "synthetic:cse:c",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:cse:selection",
+        "product": "saju_mbti_full",
+        "relationship": null,
+        "requirementRef": "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7",
+        "requiredSources": [
+          "synthetic:cse:c:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-1"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:cse:c:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-1",
+                "producerEvidenceId": "synthetic:cse:fact:x",
+                "ownerId": "synthetic:cse:owner",
+                "rootIds": [
+                  "synthetic:cse:root:x"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/comprehensive-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-cse-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [],
+        "counterexamples": {
+          "originalRef": "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:0cfcb47d8c61e18efb18b16cb29ed6622686a72e51495d0c54ed256d6dba35c7",
+          "originalRecordHash": "da080969564b861f69cbd27f6c2c591bcf0a98636455ce1aa8d4e5197f294782",
+          "sourceVersion": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039",
+          "meaningIdentity": "synthetic:cse:meaning:two",
+          "claimIdentity": "synthetic:cse:claim:two",
+          "product": "saju_mbti_full",
+          "relationship": null,
+          "contexts": [
+            "identity",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-1"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:cse:root:x"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:cse:root:x"
+        ],
+        "meaningIdentity": "synthetic:cse:meaning:two",
+        "claimIdentity": "synthetic:cse:claim:two",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:two",
+        "claimId": "synthetic:cse:claim:two",
+        "reviewId": "synthetic:cse:review:c",
+        "requiredMeanings": [
+          "required-2"
+        ],
+        "conditions": [
+          "condition-c"
+        ],
+        "action": "action-c",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-c",
+        "polarity": "risk",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      },
+      "roots": [
+        "synthetic:cse:root:x"
+      ],
+      "owner": "synthetic:cse:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": []
+    },
+    {
+      "id": "synthetic:cse:d",
+      "questionId": "synthetic:cse:q:3",
+      "receipt": {
+        "receiptId": "kb:receipt:3128549befeda51caea63125fc49910844ed92237d32a6dfb4d7d684b44e274f",
+        "candidateCatalogKey": "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549",
+        "originalResearchId": "synthetic:cse:d",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:cse:selection",
+        "product": "saju_mbti_full",
+        "relationship": null,
+        "requirementRef": "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549",
+        "requiredSources": [
+          "synthetic:cse:d:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-1"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:cse:d:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-1",
+                "producerEvidenceId": "synthetic:cse:fact:x",
+                "ownerId": "synthetic:cse:owner",
+                "rootIds": [
+                  "synthetic:cse:root:x"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/comprehensive-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-cse-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [],
+        "counterexamples": {
+          "originalRef": "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:2c6b9ae2455c4efd8ec556cb7b2430e1e07ab92a57eae8443a683af97592f549",
+          "originalRecordHash": "d477595f937fa9a1eb4930b673bf2e2f72f379da707f5fdc6104db969d7d238f",
+          "sourceVersion": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039",
+          "meaningIdentity": "synthetic:cse:meaning:three",
+          "claimIdentity": "synthetic:cse:claim:three",
+          "product": "saju_mbti_full",
+          "relationship": null,
+          "contexts": [
+            "identity",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-1"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:cse:root:x"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:cse:root:x"
+        ],
+        "meaningIdentity": "synthetic:cse:meaning:three",
+        "claimIdentity": "synthetic:cse:claim:three",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:three",
+        "claimId": "synthetic:cse:claim:three",
+        "reviewId": "synthetic:cse:review:d",
+        "requiredMeanings": [
+          "required-3"
+        ],
+        "conditions": [
+          "condition-d"
+        ],
+        "action": "action-d",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-d",
+        "polarity": "twist",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      },
+      "roots": [
+        "synthetic:cse:root:x"
+      ],
+      "owner": "synthetic:cse:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": []
+    },
+    {
+      "id": "synthetic:cse:e",
+      "questionId": "synthetic:cse:q:4",
+      "receipt": {
+        "receiptId": "kb:receipt:95d8649b9817b5712f8d48dab05380291dadd6ca168e3dcf122a88081e56765f",
+        "candidateCatalogKey": "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176",
+        "originalResearchId": "synthetic:cse:e",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:cse:selection",
+        "product": "saju_mbti_full",
+        "relationship": null,
+        "requirementRef": "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176",
+        "requiredSources": [
+          "synthetic:cse:e:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-1"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:cse:e:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-1",
+                "producerEvidenceId": "synthetic:cse:fact:x",
+                "ownerId": "synthetic:cse:owner",
+                "rootIds": [
+                  "synthetic:cse:root:x"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/comprehensive-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-cse-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [],
+        "counterexamples": {
+          "originalRef": "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:0bd006ed9e24b96290a9179140e8b5fa724272a81ff967916965eae0717cd176",
+          "originalRecordHash": "c4c41a26cb0c2957e9f68bc4793b420f72debfc591eeccef385d07221db82175",
+          "sourceVersion": "bc845934e0e3ad31b9e4ec24965da2758c419a2aac3dfb16ece83cb8b92a3039",
+          "meaningIdentity": "synthetic:cse:meaning:four",
+          "claimIdentity": "synthetic:cse:claim:four",
+          "product": "saju_mbti_full",
+          "relationship": null,
+          "contexts": [
+            "identity",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-1"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:cse:root:x"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:cse:root:x"
+        ],
+        "meaningIdentity": "synthetic:cse:meaning:four",
+        "claimIdentity": "synthetic:cse:claim:four",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:cse:meaning:four",
+        "claimId": "synthetic:cse:claim:four",
+        "reviewId": "synthetic:cse:review:e",
+        "requiredMeanings": [
+          "required-4"
+        ],
+        "conditions": [
+          "condition-e"
+        ],
+        "action": "action-e",
+        "context": "identity",
+        "domain": "identity",
+        "facet": "facet-e",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "compatiblePriorContexts": [],
+        "verifiedComplementWith": []
+      },
+      "roots": [
+        "synthetic:cse:root:x"
+      ],
+      "owner": "synthetic:cse:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": []
+    }
+  ],
+  "conflictGraph": [
+    {
+      "left": "synthetic:cse:a",
+      "right": "synthetic:cse:c",
+      "kind": "SAME_UNDERLYING_FACT",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "EXACT_SYNTHETIC_REGISTERED_ROOT_INTERSECTION"
+      ]
+    },
+    {
+      "left": "synthetic:cse:a",
+      "right": "synthetic:cse:c",
+      "kind": "SOURCE_REUSE_WITH_DIFFERENT_QUESTION",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "QUESTION_DIFFERENCE_REMAINS_SUBJECT_TO_ROOT_BUDGET"
+      ]
+    },
+    {
+      "left": "synthetic:cse:a",
+      "right": "synthetic:cse:d",
+      "kind": "SAME_UNDERLYING_FACT",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "EXACT_SYNTHETIC_REGISTERED_ROOT_INTERSECTION"
+      ]
+    },
+    {
+      "left": "synthetic:cse:a",
+      "right": "synthetic:cse:d",
+      "kind": "SOURCE_REUSE_WITH_DIFFERENT_QUESTION",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "QUESTION_DIFFERENCE_REMAINS_SUBJECT_TO_ROOT_BUDGET"
+      ]
+    },
+    {
+      "left": "synthetic:cse:a",
+      "right": "synthetic:cse:e",
+      "kind": "SAME_UNDERLYING_FACT",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "EXACT_SYNTHETIC_REGISTERED_ROOT_INTERSECTION"
+      ]
+    },
+    {
+      "left": "synthetic:cse:a",
+      "right": "synthetic:cse:e",
+      "kind": "SOURCE_REUSE_WITH_DIFFERENT_QUESTION",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "QUESTION_DIFFERENCE_REMAINS_SUBJECT_TO_ROOT_BUDGET"
+      ]
+    },
+    {
+      "left": "synthetic:cse:c",
+      "right": "synthetic:cse:d",
+      "kind": "SAME_UNDERLYING_FACT",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "EXACT_SYNTHETIC_REGISTERED_ROOT_INTERSECTION"
+      ]
+    },
+    {
+      "left": "synthetic:cse:c",
+      "right": "synthetic:cse:d",
+      "kind": "SOURCE_REUSE_WITH_DIFFERENT_QUESTION",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "QUESTION_DIFFERENCE_REMAINS_SUBJECT_TO_ROOT_BUDGET"
+      ]
+    },
+    {
+      "left": "synthetic:cse:c",
+      "right": "synthetic:cse:e",
+      "kind": "SAME_UNDERLYING_FACT",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "EXACT_SYNTHETIC_REGISTERED_ROOT_INTERSECTION"
+      ]
+    },
+    {
+      "left": "synthetic:cse:c",
+      "right": "synthetic:cse:e",
+      "kind": "SOURCE_REUSE_WITH_DIFFERENT_QUESTION",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "QUESTION_DIFFERENCE_REMAINS_SUBJECT_TO_ROOT_BUDGET"
+      ]
+    },
+    {
+      "left": "synthetic:cse:d",
+      "right": "synthetic:cse:e",
+      "kind": "SAME_UNDERLYING_FACT",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "EXACT_SYNTHETIC_REGISTERED_ROOT_INTERSECTION"
+      ]
+    },
+    {
+      "left": "synthetic:cse:d",
+      "right": "synthetic:cse:e",
+      "kind": "SOURCE_REUSE_WITH_DIFFERENT_QUESTION",
+      "state": "VERIFIED",
+      "blocksJointPrimary": false,
+      "reasons": [
+        "QUESTION_DIFFERENCE_REMAINS_SUBJECT_TO_ROOT_BUDGET"
+      ]
+    }
+  ]
+}
