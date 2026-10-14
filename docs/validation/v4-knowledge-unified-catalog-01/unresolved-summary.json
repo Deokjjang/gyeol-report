@@ -1,0 +1,12 @@
+{
+  "referenceOccurrences": 6490,
+  "reasonCounts": {
+    "TARGET_ID_NOT_INDEXED": 6040,
+    "AMBIGUOUS_ID_OR_ALIAS": 344,
+    "REFERENCE_FRAGMENT_MISSING": 60,
+    "AUDIT_WITHOUT_ORIGINAL_LOCATOR": 46
+  },
+  "affectedCatalogRecords": 3127,
+  "domainCrosswalkReviewRecords": 2966,
+  "notIndependentFacts": true
+}

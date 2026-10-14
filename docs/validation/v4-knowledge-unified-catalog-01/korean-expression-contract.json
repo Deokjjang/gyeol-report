@@ -1,0 +1,3019 @@
+[
+  {
+    "catalogKey": "kc:v1:061db6fa41396907f0db7dcad45ff02f2f4b70668a3353867ad810c9645bc2bf",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "sceneIdentity": "ker:scene:pair-love",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "love"
+      ],
+      "fields": {
+        "requiredUserState": "actual category roles and relevant life state; no pair fact from category alone"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:0dbde00f04edeb1e9f153fc1b180af7a29c0ee55e63e7fe7c32240290dd2147a",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:love",
+      "expressionIdentity": "ker:expression:love:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:144f976496f6efc7d0c88313b290b9c08214e5ed005589fbd5aa10911602ea8b",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "sceneIdentity": "ker:scene:pair-friendship",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "friendship"
+      ],
+      "fields": {
+        "requiredUserState": "actual category roles and relevant life state; no pair fact from category alone"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:1605947d4db960acbe0e1e1e1fe6dd194343bfcf63d205afa005da97c5ea7156",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:career",
+      "expressionIdentity": "ker:expression:career:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:17ba7304b18ed2ac4c286c1fb234ba220d06679831ec01ade9e91e53486ab8b2",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-love",
+      "expressionIdentity": "ker:expression:pair-love:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:199166dce418061c08f1d0711ce317b590cdcfeb73408bd8c8d9a56e06b04455",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-manager-report",
+      "expressionIdentity": "ker:expression:pair-manager-report:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:1a6e3c9e5f570a6d070fa1d7c730bb12020c82610e8c06c8c6b5d0eeb5e12f25",
+    "metadata": {
+      "productKey": "love_marriage_child",
+      "sceneIdentity": "ker:scene:affection-help",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "love_marriage_child"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "그 시기 실제 친밀 관계가 있거나 조건부"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:1af91697ac9e12a2af534a0877f45cd257342c8669fcc661e30cbb44a65018a6",
+    "metadata": {
+      "productKey": "love_marriage_child",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:love",
+      "meaningIdentity": "ker:meaning:love",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "love_marriage_child"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "person"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "none"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:1cbc84f1d51303686c9b7ad6392e928760bb48174f8ab4ae11897d1ae2695243",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "sceneIdentity": "ker:scene:pair-parentChild",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "parentChild"
+      ],
+      "fields": {
+        "requiredUserState": "actual category roles and relevant life state; no pair fact from category alone"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:1d7998d219162d6b7ae67fdfd04e5f47b23ece815a08cc4d338048eaba10043e",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-marriage",
+      "expressionIdentity": "ker:expression:pair-marriage:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:2727fb4edc59291548a4eff53ac305c4f194dba33a69bae92ecafcdee534ac94",
+    "metadata": {
+      "productKey": "career_money_study",
+      "sceneIdentity": "ker:scene:learning-proof",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "career_money_study"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "그 시기에 실제 학습 활동 있음"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:315ffc16219de12193230b0e99bbef3d06dcf3d7be6377acccb8b9bdadd6c9be",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:pair-friendship",
+      "meaningIdentity": "ker:meaning:pair-friendship",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "friendship"
+      ],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "pair"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "separately_required"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:365402c5312a3c450c0093913f1c0b7edf0ee7fef26041e24d65bdc404941fee",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:pair-manager-report",
+      "meaningIdentity": "ker:meaning:pair-manager-report",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "managerReport"
+      ],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "pair"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "separately_required"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:368f0679ed7d2bca65ab8582574c815d292c004532d6343a5b2bf5d781b38cf6",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-friendship",
+      "expressionIdentity": "ker:expression:pair-friendship:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:37457eeab62ad17c042e9d77724f77ea06164ded0dbca4e24e926ac9b2428ed5",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-business-partner",
+      "expressionIdentity": "ker:expression:pair-business-partner:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:3a7742f1ff4ccf618f6eaba3132e843998ba31f5bc1b00a5ca947dff4af75614",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:comprehensive",
+      "expressionIdentity": "ker:expression:comprehensive:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:4422ebc6b583038f804695ca0745ecb8721a9e9cf2febe65401e3a8f38831046",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:pair-parent-child",
+      "meaningIdentity": "ker:meaning:pair-parent-child",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "parentChild"
+      ],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "pair"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "separately_required"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:4fba5349d5ce1a0fe9d90a6fb6720340b7c429bd0483500cad4e9197fa9f7edc",
+    "metadata": {
+      "productKey": "saju_mbti_full",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:comprehensive",
+      "meaningIdentity": "ker:meaning:comprehensive",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_full"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "person"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "none"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:53491b0b5b38b80f28607bb498451f8d5c9b287aa92d88df6de76f0995870d78",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-love",
+      "expressionIdentity": "ker:expression:pair-love:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:53ba188567b4999203373963993c941d6ba28e870d253ec11bcffe05423794ca",
+    "metadata": {
+      "productKey": "annual_fortune",
+      "sceneIdentity": "ker:scene:month-window",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "annual_fortune"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "실제 해당 segment와 선택 상황 확인"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:54324e4cc806ace10b0c89e3d9b0f77aaae0fdefdbe526c1d979b1a95039a2ca",
+    "metadata": {
+      "productKey": "career_money_study",
+      "sceneIdentity": "ker:scene:work-brief",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "career_money_study"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "해당 시점 실제 의뢰/과제 있음"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:546ec820587b7388f23240127ce197edf348e4ebf6bf77dccf1ce64f8d5af625",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:annual",
+      "expressionIdentity": "ker:expression:annual:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:580d0df259d369743cdfbf6176cf2e9060b1e079ff82378162680c0f5f1f15de",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-parent-child",
+      "expressionIdentity": "ker:expression:pair-parent-child:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:58fcb7ab7a833bdbfe7b8722c35024fdeaf3e8b75e7a411c95209b7b398a85d4",
+    "metadata": {
+      "productKey": "career_money_study",
+      "sceneIdentity": "ker:scene:contract-bound",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "career_money_study"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "실제 변경 요청과 결정권 확인"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:595d6de6fa6d89176851b775dffe2362ed33fdf540887de7ea315834d3113bc0",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-business-partner",
+      "expressionIdentity": "ker:expression:pair-business-partner:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:66902eda30d28532127dd1f0fe73f9c26f8c40613fbc43e36e75a4f50513ab45",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "sceneIdentity": "ker:scene:pair-managerReport",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "managerReport"
+      ],
+      "fields": {
+        "requiredUserState": "actual category roles and relevant life state; no pair fact from category alone"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:68bc080413c9b7ebb73e1b97007502ae98b86cc1d411172d5423d0f5429c2868",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:pair-love",
+      "meaningIdentity": "ker:meaning:pair-love",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "love"
+      ],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "pair"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "separately_required"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:6ee1b7b23d428fc5fb4649c54683f0e7f8f3e89cbc51c6166a16aefee27f4eff",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:annual",
+      "expressionIdentity": "ker:expression:annual:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:7416d1e54d6f0c1503cb0feef9d8f354776a9670117f833029a6d205b84bbabd",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-manager-report",
+      "expressionIdentity": "ker:expression:pair-manager-report:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:7b62cc4d630cae00370b68ad51cc0a0ab5a05191f7e5316aa117bacf3a8885ae",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-coworker",
+      "expressionIdentity": "ker:expression:pair-coworker:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:7cc6be8ec534df1fb2b24fc631888bb36137e21fa88dff354b0d4baf3cbeb051",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:pair-marriage",
+      "meaningIdentity": "ker:meaning:pair-marriage",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "marriage"
+      ],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "pair"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "separately_required"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:859a3c049d613d5cf8c29253bc6d0f0730c052b4189c1a3fbc7d203cda1817a0",
+    "metadata": {
+      "productKey": "career_money_study",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:career",
+      "meaningIdentity": "ker:meaning:career",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "career_money_study"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "person"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "none"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:9d02dfcbf01e8d87cca0b204c8a42a020da360a8252d62219e9fbf3ffe05f510",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-coworker",
+      "expressionIdentity": "ker:expression:pair-coworker:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:a0730aefccd4051141ee5f8cd7ad67b4ae80332419b4052e0167c51d60d26624",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:major",
+      "expressionIdentity": "ker:expression:major:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:a18ba0a56fac8085389a978631fbc48fc0accc6bb8c3c6026f1cf92925917628",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:pair-business-partner",
+      "meaningIdentity": "ker:meaning:pair-business-partner",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "businessPartner"
+      ],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "pair"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "separately_required"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:ad72172fe61df1e678aeae4f14508e73aadba8f113a369258d95225f6327b6d9",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:love",
+      "expressionIdentity": "ker:expression:love:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:aec097be6da67b2a455eba6b099f45891fba76ce03f8fc728d712004d76da9eb",
+    "metadata": {
+      "productKey": "annual_fortune",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:annual",
+      "meaningIdentity": "ker:meaning:annual",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "annual_fortune"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "person"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "none"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:b9084656e0c72005a9aeab457400c9eb5d6b698a5a52d873da798223cf341fd8",
+    "metadata": {
+      "productKey": "love_marriage_child",
+      "sceneIdentity": "ker:scene:parenting-choice",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "love_marriage_child"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "양육 역할/발달 상태 실제 확인 또는 가정"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:bb290180cd2e6c2e93af9f32a7b34ae91072f462603949d5484a3a543646eaf3",
+    "metadata": {
+      "productKey": "major_fortune",
+      "sceneIdentity": "ker:scene:major-range",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "major_fortune"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "실제 transition_uncertain과 후보기간"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:bcfc9cf82aad68d3fb364c1602f1f011f4119de86317f178ec638af6ad784552",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:career",
+      "expressionIdentity": "ker:expression:career:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:bef1af5920c2adfe884ab777b58c5a95cf43adee068776139cf560ae0efa387c",
+    "metadata": {
+      "productKey": "major_fortune",
+      "sceneIdentity": "ker:scene:long-change",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "major_fortune"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "그 시점 활동/역할 확인; 현재 직업 자동 전용 금지"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:cc8cb4b662724cdf6a9e7f2bd3d1d7e35b37e5af809d068e0fc35bfc76f2302f",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "sceneIdentity": "ker:scene:pair-businessPartner",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "businessPartner"
+      ],
+      "fields": {
+        "requiredUserState": "actual category roles and relevant life state; no pair fact from category alone"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:cee0befb738e004b97e485aefb696297b1a7d751fc59ca4e01ca8ec4c94658b6",
+    "metadata": {
+      "productKey": "major_fortune",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:major",
+      "meaningIdentity": "ker:meaning:major",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "major_fortune"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "person"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "none"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:d3cfd4b2b7477c1316d0d82d4a2342c14ee1da0721f5abc121583b53899dcef0",
+    "metadata": {
+      "productKey": "annual_fortune",
+      "sceneIdentity": "ker:scene:annual-past",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "annual_fortune"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "그해 상황 미입력; 실제 사건 회상 전제 금지"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:e2a5b0ba49dc054b2a26674b35bf4028221cc5d7e9b3baac82c9e56a7443e3a5",
+    "metadata": {
+      "productKey": "career_money_study",
+      "sceneIdentity": "ker:scene:money-cost",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "career_money_study"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "실제 예산/구매 선택 있음"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:e6aa42a879e832ddd3d2e27974692ad6fb6f728f48e769c046dae90349e0c875",
+    "metadata": {
+      "productKey": "saju_mbti_full",
+      "sceneIdentity": "ker:scene:day-choice",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_full"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "실제 선택 상황이 있거나 가상으로만 제시"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:ea23405df0f27c51d0462aeef7023a37360a24b4f09929fa9d7826908131971d",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "sceneIdentity": "ker:scene:pair-coworker",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "coworker"
+      ],
+      "fields": {
+        "requiredUserState": "actual category roles and relevant life state; no pair fact from category alone"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:ea6421e8cd77c1d32b24047b5735865030049ad0a3d4dfc2db51f6a679b5cbb7",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-parent-child",
+      "expressionIdentity": "ker:expression:pair-parent-child:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:eae00b45b2e20aeb6cfbbee7bca8e03e95e9c80c36fda6c873025ead9e678643",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-friendship",
+      "expressionIdentity": "ker:expression:pair-friendship:1",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:ec0fc20f6654f0d5a2d3b275532c8dd202a0ffd1eb09f21ffa80036c858df211",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "sceneIdentity": "ker:scene:pair-marriage",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "marriage"
+      ],
+      "fields": {
+        "requiredUserState": "actual category roles and relevant life state; no pair fact from category alone"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:ec21d4fd8499a6b7e65ff994441f23b9b104eb487b093297dee2968e31292325",
+    "metadata": {
+      "productKey": "saju_mbti_compatibility",
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "claimIdentity": "ker:claim:pair-coworker",
+      "meaningIdentity": "ker:meaning:pair-coworker",
+      "review": "editorial_research_not_customer_approved",
+      "certainty": "conditional"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_compatibility"
+      ],
+      "relationships": [
+        "coworker"
+      ],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {
+          "owner": "pair"
+        },
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {
+          "direction": "separately_required"
+        },
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": "conditional",
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:ed5b84651d2a07858030540a3479b9bc27d9287a06fd12f95f8d1667a865565f",
+    "metadata": {
+      "productKey": "saju_mbti_full",
+      "sceneIdentity": "ker:scene:repair-dialogue",
+      "review": "editorial_research_not_customer_approved",
+      "status": "hypothetical_only"
+    },
+    "applicability": {
+      "products": [
+        "saju_mbti_full"
+      ],
+      "relationships": [],
+      "fields": {
+        "requiredUserState": "실제 과거 다툼으로 단정하지 않음"
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:edf6d74d25890f787e10afaa59223293b98f0e8e44d6cbb64dd84e447ee26a73",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:comprehensive",
+      "expressionIdentity": "ker:expression:comprehensive:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:f485616fe9a4b3e0a25da85b597d2ae69edc4303a324f13483ba9027f72f795e",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:major",
+      "expressionIdentity": "ker:expression:major:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:fde721a17ba6be6f4dbe2202d2bdd42b82461fb1771511d595d3458289e8a6a5",
+    "metadata": {
+      "requiredContext": [
+        "future approved interpretation matching this exact source meaning",
+        "verified person owner and relevant context",
+        "source review/conditions retained; source existence is not customer approval"
+      ],
+      "prohibitedInference": [
+        "new personality/event/result claim",
+        "stronger certainty or changed negation",
+        "wrong owner/direction/time",
+        "hypothetical scene as customer history"
+      ],
+      "meaningIdentity": "ker:meaning:pair-marriage",
+      "expressionIdentity": "ker:expression:pair-marriage:2",
+      "sceneIdentity": null,
+      "rhetoricalPurpose": "same research meaning, different clause order and focus; no new analysis",
+      "function": "explanation",
+      "meaningChangeAllowed": false,
+      "review": "editorial_research_not_customer_approved"
+    },
+    "applicability": {
+      "products": [],
+      "relationships": [],
+      "fields": {
+        "requiredContext": [
+          "future approved interpretation matching this exact source meaning",
+          "verified person owner and relevant context",
+          "source review/conditions retained; source existence is not customer approval"
+        ]
+      },
+      "ownership": {
+        "policy": "ACTUAL_PERSON_REQUIRED",
+        "declared": {},
+        "parentChildAndManagerRolesMustMatch": true
+      },
+      "direction": {
+        "policy": "ACTUAL_DIRECTION_REQUIRED_IF_DECLARED",
+        "declared": {},
+        "recipientTenGodMustBeCalculated": true,
+        "reverseIsIndependent": true
+      },
+      "temporal": {
+        "declared": {},
+        "start": null,
+        "end": null,
+        "certainty": null,
+        "actors": null,
+        "supportedProducers": null,
+        "unsupportedProducers": null,
+        "excludedWindows": null,
+        "actualWindowSupplier": "FUTURE_EVIDENCE_GRAPH",
+        "unknownIsNotTimeless": true
+      },
+      "domainValidation": "DECLARED_ONLY"
+    },
+    "customerApproved": false
+  }
+]

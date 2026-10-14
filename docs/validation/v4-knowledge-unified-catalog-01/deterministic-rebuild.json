@@ -1,0 +1,7 @@
+{
+  "generatedFiles": 59,
+  "matchedFiles": 59,
+  "treeSha256": "5824275ac2458f242d6a1cda7ab3c89df0660af653f1ee2811c267aa7e1162ad",
+  "compilerCommand": "node scripts/knowledge-catalog/compile.mjs [output-directory]",
+  "timestampsIncluded": false
+}

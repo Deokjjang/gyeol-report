@@ -1,0 +1,589 @@
+[
+  {
+    "file": "src/lib/report-knowledge/sajuKnowledgeBase.ts",
+    "exportName": "SAJU_KNOWLEDGE_BASE",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 77
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuFeatureTaxonomy.ts",
+    "exportName": "SAJU_FEATURE_TAXONOMY",
+    "kind": "CALCULATION_DEFINITION",
+    "count": 124
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+    "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 213
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuFoundationSources.ts",
+    "exportName": "SAJU_FOUNDATION_SOURCES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 20
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuDayPillarKnowledge.ts",
+    "exportName": "SAJU_DAY_PILLAR_KNOWLEDGE",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 60
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuBranchSymbolKnowledge.ts",
+    "exportName": "SAJU_BRANCH_SYMBOL_KNOWLEDGE",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 12
+  },
+  {
+    "file": "src/lib/report-knowledge/fusionKnowledgeBase.ts",
+    "exportName": "FUSION_KNOWLEDGE_BASE",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 78
+  },
+  {
+    "file": "src/lib/report-knowledge/mbtiKnowledgeBase.ts",
+    "exportName": "MBTI_KNOWLEDGE_BASE",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 16
+  },
+  {
+    "file": "src/lib/report-knowledge/mbtiTypeKnowledgeBase.ts",
+    "exportName": "MBTI_TYPE_KNOWLEDGE_BASE",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 16
+  },
+  {
+    "file": "src/lib/interpretation-v4/semanticCore.ts",
+    "exportName": "BIPOLAR_AXES",
+    "kind": "SEMANTIC_DEFINITION",
+    "count": 8
+  },
+  {
+    "file": "src/lib/interpretation-v4/semanticCore.ts",
+    "exportName": "STRENGTH_AXES",
+    "kind": "SEMANTIC_DEFINITION",
+    "count": 28
+  },
+  {
+    "file": "src/lib/interpretation-v4/semanticCore.ts",
+    "exportName": "DYNAMIC_TAGS",
+    "kind": "SEMANTIC_DEFINITION",
+    "count": 55
+  },
+  {
+    "file": "src/lib/interpretation-v4/semanticCore.ts",
+    "exportName": "FORTUNE_TAGS",
+    "kind": "SEMANTIC_DEFINITION",
+    "count": 16
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationRanking.ts",
+    "exportName": "BROAD_SEMANTIC_THEMES",
+    "kind": "SEMANTIC_DEFINITION",
+    "count": 16
+  },
+  {
+    "file": "src/lib/interpretation-v4/types.ts",
+    "exportName": "V4_DOMAINS",
+    "kind": "SEMANTIC_DEFINITION",
+    "count": 10
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationPillars.ts",
+    "exportName": "HEAVENLY_STEM_SEMANTICS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 10
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationPillars.ts",
+    "exportName": "EARTHLY_BRANCH_SEMANTICS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 12
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationTenGods.ts",
+    "exportName": "TEN_GOD_SEMANTICS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 10
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationTwelveStages.ts",
+    "exportName": "TWELVE_STAGE_SEMANTICS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 12
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationShinsal.ts",
+    "exportName": "SHINSAL_SEMANTICS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 27
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationShinsal.ts",
+    "exportName": "NATAL_MARKER_ALIASES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 54
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationRelations.ts",
+    "exportName": "RELATION_SEMANTICS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 9
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationRelations.ts",
+    "exportName": "RELATIONS_WITHOUT_NATAL_PRODUCER",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 5
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationElements.ts",
+    "exportName": "FOUNDATION_ELEMENT_REGISTRY",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 5
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationYinYang.ts",
+    "exportName": "YIN_YANG_SIGNATURES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 2
+  },
+  {
+    "file": "src/lib/interpretation-v4/dayMasterMaterials.ts",
+    "exportName": "DAY_MASTER_DEPTH",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 10
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionRules.ts",
+    "exportName": "FUSION_RULES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 44
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionRules.ts",
+    "exportName": "FORTUNE_RULES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 9
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionRules.ts",
+    "exportName": "STRUCTURE_FORTUNE_RULES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 2
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionComplementRegistry.ts",
+    "exportName": "FUSION_COMPLEMENT_RULES",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 96
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionCore.ts",
+    "exportName": "FUSION_TYPES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 3
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionCore.ts",
+    "exportName": "FUSION_CONDITION_SPLITS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 10
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionContext.ts",
+    "exportName": "FUSION_CONTEXTS",
+    "kind": "SEMANTIC_DEFINITION",
+    "count": 8
+  },
+  {
+    "file": "src/lib/interpretation-v4/materialRegistry.ts",
+    "exportName": "MATERIAL_REGISTRY",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 188
+  },
+  {
+    "file": "src/lib/interpretation-v4/materialDepth.ts",
+    "exportName": "MATERIAL_DEPTH",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 140
+  },
+  {
+    "file": "src/lib/interpretation-v4/claimRegistry.ts",
+    "exportName": "CLAIM_REGISTRY",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 41
+  },
+  {
+    "file": "src/lib/interpretation-v4/narrativeSceneRegistry.ts",
+    "exportName": "NARRATIVE_SCENES",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 252
+  },
+  {
+    "file": "src/lib/interpretation-v4/narrativeTitleRegistry.ts",
+    "exportName": "TITLE_SKELETONS",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 120
+  },
+  {
+    "file": "src/lib/saju/constants.ts",
+    "exportName": "HEAVENLY_STEMS",
+    "kind": "CALCULATION_DEFINITION",
+    "count": 10
+  },
+  {
+    "file": "src/lib/saju/constants.ts",
+    "exportName": "EARTHLY_BRANCHES",
+    "kind": "CALCULATION_DEFINITION",
+    "count": 12
+  },
+  {
+    "file": "src/lib/saju/constants.ts",
+    "exportName": "SEXAGENARY_CYCLE",
+    "kind": "CALCULATION_DEFINITION",
+    "count": 60
+  },
+  {
+    "file": "src/lib/saju/constants.ts",
+    "exportName": "HIDDEN_STEMS",
+    "kind": "CALCULATION_DEFINITION",
+    "count": 12
+  },
+  {
+    "file": "src/lib/saju/constants.ts",
+    "exportName": "STEM_COMBINATIONS",
+    "kind": "CALCULATION_DEFINITION",
+    "count": 5
+  },
+  {
+    "file": "src/lib/saju/constants.ts",
+    "exportName": "BRANCH_COMBINATIONS",
+    "kind": "CALCULATION_DEFINITION",
+    "count": 6
+  },
+  {
+    "file": "src/lib/saju/constants.ts",
+    "exportName": "BRANCH_CLASHES",
+    "kind": "CALCULATION_DEFINITION",
+    "count": 6
+  },
+  {
+    "file": "src/lib/saju/shinsalConstants.ts",
+    "exportName": "SHINSAL_METADATA",
+    "kind": "CALCULATION_DEFINITION",
+    "count": 27
+  },
+  {
+    "file": "src/lib/saju/shinsalConstants.ts",
+    "exportName": "SHINSAL_RULES",
+    "kind": "CALCULATION_DEFINITION",
+    "count": 27
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionStems.ts",
+    "exportName": "COMPLETION_STEMS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 10
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionYinYang.ts",
+    "exportName": "COMPLETION_YINYANG",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 2
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionElements.ts",
+    "exportName": "COMPLETION_ELEMENTS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 5
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionSources.ts",
+    "exportName": "COMPLETION_SOURCES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 8
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionMarkers.ts",
+    "exportName": "COMPLETION_MARKERS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 38
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionPositions.ts",
+    "exportName": "COMPLETION_POSITIONS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 4
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionTenGods.ts",
+    "exportName": "COMPLETION_TENGODS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 10
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionBranches.ts",
+    "exportName": "COMPLETION_BRANCHES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 12
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionHiddenStems.ts",
+    "exportName": "COMPLETION_HIDDENSTEMS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 12
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionDayPillars.ts",
+    "exportName": "COMPLETION_DAYPILLARS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 60
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-completion/sajuFoundationCompletionStages.ts",
+    "exportName": "COMPLETION_STAGES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 12
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepApplications.ts",
+    "exportName": "DEEP_APPLICATIONS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 560
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepCollation.ts",
+    "exportName": "DEEP_COLLATION",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 7
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepPositions.ts",
+    "exportName": "DEEP_POSITIONS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 40
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepHiddenStems.ts",
+    "exportName": "DEEP_HIDDEN_STEMS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 12
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+    "exportName": "DEEP_TEN_GODS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 10
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepDayPillars.ts",
+    "exportName": "DEEP_DAY_PILLARS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 60
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepMarkers.ts",
+    "exportName": "DEEP_MARKERS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 38
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepSources.ts",
+    "exportName": "DEEP_SOURCES",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 15
+  },
+  {
+    "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepRequirements.ts",
+    "exportName": "DEEP_HIDDEN_REQUIREMENTS",
+    "kind": "SOURCE_KNOWLEDGE",
+    "count": 96
+  },
+  {
+    "file": "src/lib/interpretation-v4/personalResonanceRegistry.ts",
+    "exportName": "PERSONAL_RESONANCE_REGISTRY",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 96
+  },
+  {
+    "file": "src/lib/interpretation-v4/operatingRuleRegistry.ts",
+    "exportName": "GUIDANCE_SHORT_TITLES",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 25
+  },
+  {
+    "file": "src/lib/interpretation-v4/operatingRuleRegistry.ts",
+    "exportName": "STRENGTH_USE_RULES",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 10
+  },
+  {
+    "file": "src/lib/interpretation-v4/mbtiSemanticAnnotations.ts",
+    "exportName": "MBTI_SOURCE_ANNOTATIONS",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 16
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationSynthesis.ts",
+    "exportName": "STRONG_ELEMENT_PAIRS",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 10
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationSynthesis.ts",
+    "exportName": "STRONGEST_WEAKEST_RULES",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 20
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationSynthesis.ts",
+    "exportName": "YIN_YANG_ELEMENT_RULES",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 10
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationTenGodSynthesis.ts",
+    "exportName": "TEN_GOD_PAIR_RULES",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 10
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationTenGodSynthesis.ts",
+    "exportName": "TEN_GOD_CHAIN_RULES",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 5
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationTenGodSynthesis.ts",
+    "exportName": "SPECIFIC_TEN_GOD_RULES",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 3
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationTenGodSynthesis.ts",
+    "exportName": "DAY_MASTER_TEN_GOD_RULES",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 10
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationShinsalFamilies.ts",
+    "exportName": "SHINSAL_FAMILIES",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 20
+  },
+  {
+    "file": "src/lib/interpretation-v4/structureRules.ts",
+    "exportName": "STRUCTURE_RULES",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 14
+  },
+  {
+    "file": "src/lib/interpretation-v4/structureMaterials.ts",
+    "exportName": "STRUCTURE_REGISTRY",
+    "kind": "CONDITIONAL_INTERPRETATION",
+    "count": 14
+  },
+  {
+    "file": "src/lib/report-knowledge/sajuSignatureSceneRules.ts",
+    "exportName": "SAJU_SIGNATURE_SCENE_RULES",
+    "kind": "EDITORIAL_MATERIAL",
+    "count": 18
+  },
+  {
+    "file": "src/lib/interpretation-v4/types.ts",
+    "exportName": "SemanticTag",
+    "count": 22
+  },
+  {
+    "file": "src/lib/interpretation-v4/semanticCore.ts",
+    "exportName": "InterpretationContext",
+    "count": 8
+  },
+  {
+    "file": "src/lib/interpretation-v4/semanticCore.ts",
+    "exportName": "FoundationEvidenceSource",
+    "count": 9
+  },
+  {
+    "file": "docs/product/mbti/source/ENFJ.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ENFP.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ENTJ.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ENTP.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ESFJ.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ESFP.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ESTJ.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ESTP.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/INFJ.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/INFP.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/INTJ.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/INTP.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ISFJ.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ISFP.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ISTJ.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  },
+  {
+    "file": "docs/product/mbti/source/ISTP.json",
+    "exportName": "actualDirectedPairs",
+    "count": 16
+  }
+]
