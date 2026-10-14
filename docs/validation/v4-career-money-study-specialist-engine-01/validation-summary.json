@@ -23,5 +23,12 @@
   "diffCheck": "PASS",
   "books": 17,
   "digests": 102,
-  "preview": "PENDING_EXACT_COMMIT_CHECK"
+  "preview": {
+    "implementationCommitSha": "5f18ee5da8b5ee6376155846088127e8dff1cf54",
+    "readyState": "READY",
+    "deploymentId": "dpl_9dqY5ZwpV7AcChT246QAiy3Rk4RW",
+    "url": "https://gyeol-report-l298olc8e-gyeol-report-s-projects.vercel.app",
+    "exactShaBranchProjectAndPreviewTargetVerified": true,
+    "finalDocumentationHead": "Verified separately in the final report and external validation receipt; avoids a self-referential commit SHA."
+  }
 }

@@ -2,8 +2,8 @@
   "TASK": "V4-CAREER-MONEY-STUDY-SPECIALIST-ENGINE-01",
   "BASE_SHA": "96fe614cc32e130a9fce9311a6330f443b22ab5a",
   "BRANCH": "v4/career-money-study-specialist-engine-01",
-  "COMMIT_SHA": "FINAL_SHA_IN_FINAL_REPORT",
-  "REMOTE_SHA_MATCH": "PENDING_PUSH",
+  "COMMIT_SHA": "5f18ee5da8b5ee6376155846088127e8dff1cf54",
+  "REMOTE_SHA_MATCH": true,
   "SPECIALIST_ENGINE": "CareerSpecialistEngine; existing Foundation/Binder/meaning/recall reused",
   "SPECIALIST_STATUS": "OFFLINE_IMPLEMENTED",
   "READER_CHAPTERS": 9,
@@ -84,7 +84,14 @@
   "LINT": "PASS",
   "BUILD": "PASS; warnings 0",
   "DIFF_CHECK": "PASS",
-  "VERCEL_PREVIEW": "PENDING_EXACT_COMMIT_CHECK",
+  "VERCEL_PREVIEW": {
+    "commitSha": "5f18ee5da8b5ee6376155846088127e8dff1cf54",
+    "state": "READY",
+    "deploymentId": "dpl_9dqY5ZwpV7AcChT246QAiy3Rk4RW",
+    "url": "https://gyeol-report-l298olc8e-gyeol-report-s-projects.vercel.app",
+    "target": null
+  },
   "REMAINING_GAPS": "192 semantic/application reviews/actual approvals; natural conditions/group contracts; partial legacy proof/producer/unknown job functions; identity/Reader bridges; display ledger; old 46 failures; future Writer length/fallback audit",
-  "NEXT_STAGE_READY": "Offline handoff READY; customer selection/writer/Planner/sales/Production NOT READY; no next product started"
+  "NEXT_STAGE_READY": "Offline handoff READY; customer selection/writer/Planner/sales/Production NOT READY; no next product started",
+  "COMMIT_SHA_SCOPE": "Implementation commit; the documentation receipt commit is reported externally after its own exact-SHA Preview verification."
 }

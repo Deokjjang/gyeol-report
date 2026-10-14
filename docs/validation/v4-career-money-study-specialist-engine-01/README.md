@@ -189,3 +189,13 @@ manifest, 원래 Candidate/Question/SourceKey 연결, 9장/36문단/144역할 ma
 - 현재 Release 길이·일반 문장·legacy fallback은 후속 Writer/Publication의 필수 감사 항목이며 여기서 수정하지 않는다.
 
 `career-specialist-handoff.md`는 후속 인수 계약이다. 고객 연결·Writer·Global Planner·다른 상품은 시작하지 않았다. master·Production·DB·결제·인증·Worker·환경변수는 변경하지 않는다. 신규 브랜치 commit/push 및 final SHA의 실제 Preview 상태는 최종 보고에서 확인한다.
+
+## Git 및 Preview 확인
+
+- 구현 커밋: `5f18ee5da8b5ee6376155846088127e8dff1cf54`; 같은 원격 작업 브랜치 SHA 일치 확인.
+- 구현 Preview: **READY**, deployment `dpl_9dqY5ZwpV7AcChT246QAiy3Rk4RW`.
+- URL: https://gyeol-report-l298olc8e-gyeol-report-s-projects.vercel.app
+- Vercel의 gitCommitSha·branch·project를 대조했으며 `target: null`인 Preview다.
+- 정형 확인 기록: `implementation-preview-receipt.json`.
+
+이 확인 기록을 담는 문서 전용 후속 커밋의 최종 SHA와 Preview는 별도로 확인하고 최종 보고 및 저장소 외부 검증 receipt에 기록한다. 문서 안에 자기 자신의 commit SHA를 넣기 위한 반복 커밋은 만들지 않는다. 구현·테스트·기존 파일은 이 기록 단계에서 변경하지 않는다. READY는 Preview 빌드 상태이며 고객 기능 연결·판매 승인·Production 배포를 뜻하지 않는다.
