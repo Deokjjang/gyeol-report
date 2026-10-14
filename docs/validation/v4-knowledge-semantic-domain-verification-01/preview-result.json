@@ -1,0 +1,13 @@
+{
+  "deploymentId": "dpl_2WxnjSiyNSbTyo1AR5nTbxqrnm9n",
+  "url": "https://gyeol-report-7es7lg3oh-gyeol-report-s-projects.vercel.app",
+  "target": "preview",
+  "readyState": "READY",
+  "verifiedCommitSha": "97cb6ad1216ab4d9b2d67e48c2bb0f6c8be5c8a9",
+  "branch": "v4/knowledge-semantic-domain-verification-01",
+  "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "scope": "Implementation commit READY. Documentation-only receipt commit is verified again externally and in final response to avoid a self-referencing commit hash.",
+  "observedAt": "2026-10-14 10:55:25 UTC",
+  "rawResearchInLocalFunctionTraces": 0,
+  "productionChanged": false
+}
