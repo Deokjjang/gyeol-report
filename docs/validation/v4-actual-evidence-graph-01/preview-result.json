@@ -1,0 +1,15 @@
+{
+  "deploymentId": "dpl_8dAcefznAkwfRME3cfM7SVk2UVQN",
+  "url": "https://gyeol-report-107ty877p-gyeol-report-s-projects.vercel.app",
+  "state": "READY",
+  "sha": "82c49d7b0f2071e28e589132e177969573b10323",
+  "branch": "v4/actual-evidence-graph-01",
+  "repository": "Deokjjang/gyeol-report",
+  "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "target": null,
+  "scope": "Preview only; Production not changed",
+  "verifiedVia": "Vercel deployment API with git metadata",
+  "implementationCommitVerified": true,
+  "finalHeadVerificationFile": "/tmp/gyeol-actual-evidence-graph-01-validation/final-preview.json",
+  "finalHeadVerificationNote": "This receipt records the implementation commit. The documentation commit and its exact-SHA Preview are verified separately after push."
+}

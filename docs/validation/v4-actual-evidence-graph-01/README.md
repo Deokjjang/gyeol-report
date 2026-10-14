@@ -131,4 +131,8 @@ Node/edge/receipt는 fixture별 shard, 나머지는 참조 index다. Binding 요
 
 원래 ID가 없는 관찰, 대운 패킷의 미노출 endpoint, 일부 legacy/편집 proof의 미해결 계보, 개인 Facet 및 완전한 Personal Resonance 출력 부재, 독립 복합 관계 미지원은 해결된 것으로 표시하지 않는다. 기존 실패 46건과 선행 미검토 의미/불완전 참조도 이번 작업에서 수정하지 않는다. 원래 방향 Evidence의 설명 문자열에 남은 조사 오류(예: `을목를`)도 새 원고 작업으로 확장하지 않고 그대로 보존했다. 모든 Graph가 PARTIAL인 것은 이러한 한계를 보존한 결과이며, 완전한 고객 사용 승인을 의미하지 않는다.
 
-Preview 검증은 feature branch push 후 실제 배포 ID와 SHA로 확인한다. 최종 확인 기록은 추가 문서 커밋의 자기 SHA 순환을 피하기 위해 외부 `/tmp/gyeol-actual-evidence-graph-01-validation/final-preview.json`에도 저장한다. master·Production은 변경하지 않으며, Knowledge Binder는 시작하지 않는다.
+## Preview 확인
+
+구현 커밋 `82c49d7b0f2071e28e589132e177969573b10323`의 실제 Vercel 배포 `dpl_8dAcefznAkwfRME3cfM7SVk2UVQN`이 `READY`다. [검증된 구현 Preview](https://gyeol-report-107ty877p-gyeol-report-s-projects.vercel.app). 배포 API의 Git SHA/branch/repository/project와 Preview target을 대조했고, 기록은 `preview-result.json`이다.
+
+이 문서 기록 커밋도 동일 feature branch에 push한 뒤 최종 HEAD의 실제 Preview READY와 원격 SHA를 별도 확인한다. 최종 확인 기록은 문서 커밋의 자기 SHA 순환을 피하기 위해 외부 `/tmp/gyeol-actual-evidence-graph-01-validation/final-preview.json`에 저장하고 최종 응답에 기록한다. 구현 소스·산출물은 문서 커밋에서 바꾸지 않는다. master·Production은 변경하지 않으며, Knowledge Binder는 시작하지 않는다.
