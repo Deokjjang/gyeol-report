@@ -1,0 +1,301 @@
+{
+  "unit": "wall milliseconds, offline synthetic fixtures, not Production latency",
+  "runs": [
+    {
+      "run": "rebuild-one.log",
+      "elapsedMs": 158511.641458,
+      "fixtureCount": 27,
+      "originalBinderMs": 8500.597874000032,
+      "foundationMs": 17293.759126999994,
+      "perFixture": [
+        {
+          "fixtureId": "fixture-comprehensive-A",
+          "originalBinderMs": 271.04133300000103,
+          "foundationMs": 279.5811250000006
+        },
+        {
+          "fixtureId": "fixture-comprehensive-F",
+          "originalBinderMs": 24.60475000000224,
+          "foundationMs": 42.49308299999757
+        },
+        {
+          "fixtureId": "fixture-career-A",
+          "originalBinderMs": 287.275958000002,
+          "foundationMs": 279.92045900000085
+        },
+        {
+          "fixtureId": "fixture-career-F",
+          "originalBinderMs": 36.185749999996915,
+          "foundationMs": 47.276709000001574
+        },
+        {
+          "fixtureId": "fixture-love-A",
+          "originalBinderMs": 281.5708340000019,
+          "foundationMs": 289.76541599999837
+        },
+        {
+          "fixtureId": "fixture-love-F",
+          "originalBinderMs": 17.88275000000067,
+          "foundationMs": 29.249292000000423
+        },
+        {
+          "fixtureId": "fixture-compatibility-A",
+          "originalBinderMs": 592.1909590000032,
+          "foundationMs": 702.7272080000002
+        },
+        {
+          "fixtureId": "fixture-compatibility-marriage",
+          "originalBinderMs": 578.5978329999998,
+          "foundationMs": 589.7776670000021
+        },
+        {
+          "fixtureId": "fixture-compatibility-parentChild",
+          "originalBinderMs": 566.6728749999966,
+          "foundationMs": 580.6535000000003
+        },
+        {
+          "fixtureId": "fixture-compatibility-coworker",
+          "originalBinderMs": 594.400416000004,
+          "foundationMs": 652.7988750000004
+        },
+        {
+          "fixtureId": "fixture-compatibility-managerReport",
+          "originalBinderMs": 578.7401250000039,
+          "foundationMs": 585.5164169999989
+        },
+        {
+          "fixtureId": "fixture-compatibility-businessPartner",
+          "originalBinderMs": 589.0489589999997,
+          "foundationMs": 630.3390829999989
+        },
+        {
+          "fixtureId": "fixture-compatibility-friendship",
+          "originalBinderMs": 541.2611250000045,
+          "foundationMs": 544.203416999997
+        },
+        {
+          "fixtureId": "fixture-major-A",
+          "originalBinderMs": 333.0909580000007,
+          "foundationMs": 325.12887500000943
+        },
+        {
+          "fixtureId": "fixture-major-F",
+          "originalBinderMs": 32.91516600000614,
+          "foundationMs": 35.18733400000201
+        },
+        {
+          "fixtureId": "fixture-annual-A",
+          "originalBinderMs": 307.9458330000052,
+          "foundationMs": 2019.1971669999912
+        },
+        {
+          "fixtureId": "fixture-annual-F",
+          "originalBinderMs": 55.92250000000058,
+          "foundationMs": 303.408792000002
+        },
+        {
+          "fixtureId": "fixture-major-transition-C",
+          "originalBinderMs": 264.86212499999965,
+          "foundationMs": 267.7072920000064
+        },
+        {
+          "fixtureId": "fixture-annual-transition-C2028",
+          "originalBinderMs": 291.4441250000091,
+          "foundationMs": 1861.680708999993
+        },
+        {
+          "fixtureId": "fixture-compatibility-unknown-both",
+          "originalBinderMs": 33.66275000000314,
+          "foundationMs": 41.34216699999524
+        },
+        {
+          "fixtureId": "fixture-compatibility-slot-swap",
+          "originalBinderMs": 556.3099589999911,
+          "foundationMs": 658.6886660000018
+        },
+        {
+          "fixtureId": "fixture-same-natal-different-mbti",
+          "originalBinderMs": 297.73933399999805,
+          "foundationMs": 312.6740410000057
+        },
+        {
+          "fixtureId": "fixture-same-mbti-different-natal",
+          "originalBinderMs": 255.62816700000258,
+          "foundationMs": 275.8174160000053
+        },
+        {
+          "fixtureId": "fixture-same-natal-career",
+          "originalBinderMs": 283.32966699999815,
+          "foundationMs": 285.6263329999929
+        },
+        {
+          "fixtureId": "fixture-annual-ranged-transition",
+          "originalBinderMs": 303.67854100000113,
+          "foundationMs": 2183.6347499999974
+        },
+        {
+          "fixtureId": "fixture-annual-before-first-dayun",
+          "originalBinderMs": 480.84454099999857,
+          "foundationMs": 3401.3711669999902
+        },
+        {
+          "fixtureId": "fixture-compatibility-no-detected-pair",
+          "originalBinderMs": 43.75054100000125,
+          "foundationMs": 67.99216700000397
+        }
+      ],
+      "originalBinderGeneratedFilesMatched": 83,
+      "network": "disabled"
+    },
+    {
+      "run": "rebuild-two.log",
+      "elapsedMs": 159663.21474999998,
+      "fixtureCount": 27,
+      "originalBinderMs": 8941.18000199999,
+      "foundationMs": 17260.974374999983,
+      "perFixture": [
+        {
+          "fixtureId": "fixture-comprehensive-A",
+          "originalBinderMs": 266.77600000000166,
+          "foundationMs": 278.70641599999726
+        },
+        {
+          "fixtureId": "fixture-comprehensive-F",
+          "originalBinderMs": 25.092625000001135,
+          "foundationMs": 43.81312500000058
+        },
+        {
+          "fixtureId": "fixture-career-A",
+          "originalBinderMs": 293.2104580000014,
+          "foundationMs": 282.43966699999874
+        },
+        {
+          "fixtureId": "fixture-career-F",
+          "originalBinderMs": 36.39795899999808,
+          "foundationMs": 47.97687500000029
+        },
+        {
+          "fixtureId": "fixture-love-A",
+          "originalBinderMs": 289.5332090000011,
+          "foundationMs": 297.8544159999983
+        },
+        {
+          "fixtureId": "fixture-love-F",
+          "originalBinderMs": 18.139500000001135,
+          "foundationMs": 29.826042000000598
+        },
+        {
+          "fixtureId": "fixture-compatibility-A",
+          "originalBinderMs": 631.1337079999976,
+          "foundationMs": 777.7450420000023
+        },
+        {
+          "fixtureId": "fixture-compatibility-marriage",
+          "originalBinderMs": 584.4234999999971,
+          "foundationMs": 593.4069589999999
+        },
+        {
+          "fixtureId": "fixture-compatibility-parentChild",
+          "originalBinderMs": 574.5669580000031,
+          "foundationMs": 597.5318340000013
+        },
+        {
+          "fixtureId": "fixture-compatibility-coworker",
+          "originalBinderMs": 608.5710830000025,
+          "foundationMs": 610.3340829999943
+        },
+        {
+          "fixtureId": "fixture-compatibility-managerReport",
+          "originalBinderMs": 581.8189579999962,
+          "foundationMs": 592.1995420000021
+        },
+        {
+          "fixtureId": "fixture-compatibility-businessPartner",
+          "originalBinderMs": 720.1205409999966,
+          "foundationMs": 626.2127919999984
+        },
+        {
+          "fixtureId": "fixture-compatibility-friendship",
+          "originalBinderMs": 543.2721670000028,
+          "foundationMs": 543.4774999999936
+        },
+        {
+          "fixtureId": "fixture-major-A",
+          "originalBinderMs": 336.62237499999173,
+          "foundationMs": 335.20141700000386
+        },
+        {
+          "fixtureId": "fixture-major-F",
+          "originalBinderMs": 33.15691700000025,
+          "foundationMs": 35.11187500000233
+        },
+        {
+          "fixtureId": "fixture-annual-A",
+          "originalBinderMs": 310.7716669999936,
+          "foundationMs": 2057.6742499999964
+        },
+        {
+          "fixtureId": "fixture-annual-F",
+          "originalBinderMs": 54.180959000004805,
+          "foundationMs": 299.6870829999971
+        },
+        {
+          "fixtureId": "fixture-major-transition-C",
+          "originalBinderMs": 265.39800000000105,
+          "foundationMs": 268.8006250000035
+        },
+        {
+          "fixtureId": "fixture-annual-transition-C2028",
+          "originalBinderMs": 294.55870900000446,
+          "foundationMs": 1852.937832999989
+        },
+        {
+          "fixtureId": "fixture-compatibility-unknown-both",
+          "originalBinderMs": 33.808791999996174,
+          "foundationMs": 42.200582999998005
+        },
+        {
+          "fixtureId": "fixture-compatibility-slot-swap",
+          "originalBinderMs": 582.1061660000123,
+          "foundationMs": 566.364791999993
+        },
+        {
+          "fixtureId": "fixture-same-natal-different-mbti",
+          "originalBinderMs": 293.6593750000029,
+          "foundationMs": 308.78541699999187
+        },
+        {
+          "fixtureId": "fixture-same-mbti-different-natal",
+          "originalBinderMs": 256.92308399999456,
+          "foundationMs": 274.46483300000546
+        },
+        {
+          "fixtureId": "fixture-same-natal-career",
+          "originalBinderMs": 281.78504200000316,
+          "foundationMs": 289.98729099999764
+        },
+        {
+          "fixtureId": "fixture-annual-ranged-transition",
+          "originalBinderMs": 313.93029099999694,
+          "foundationMs": 2011.9623340000107
+        },
+        {
+          "fixtureId": "fixture-annual-before-first-dayun",
+          "originalBinderMs": 685.041624999998,
+          "foundationMs": 3555.868333000006
+        },
+        {
+          "fixtureId": "fixture-compatibility-no-detected-pair",
+          "originalBinderMs": 26.18033399998967,
+          "foundationMs": 40.403416000001016
+        }
+      ],
+      "originalBinderGeneratedFilesMatched": 83,
+      "network": "disabled"
+    }
+  ],
+  "deterministicOutputsExcludeTiming": true,
+  "catalogPreparedOncePerRun": true,
+  "overlayCompiledOncePerRun": true,
+  "fullCatalogRescanPerQuestionOrFixture": false
+}

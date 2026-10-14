@@ -1,0 +1,50 @@
+{
+  "baselineTraceFiles": 88,
+  "afterTraceFiles": 88,
+  "allFilePathSetsIdentical": true,
+  "newFoundationResearchDocsOrCliIncluded": [],
+  "configByteUnchanged": true,
+  "sizeUnit": "local sum of referenced files; not Vercel compressed function size",
+  "largest": [
+    {
+      "routeTrace": "app/dev/book-flow/r/[token]/book-og/route.js.nft.json",
+      "referencedBytes": 54638460
+    },
+    {
+      "routeTrace": "app/dev/book-flow/report/[reportId]/page.js.nft.json",
+      "referencedBytes": 34454907
+    },
+    {
+      "routeTrace": "app/dev/campaign/[slug]/page.js.nft.json",
+      "referencedBytes": 33842871
+    },
+    {
+      "routeTrace": "app/dev/book-flow/r/[token]/page.js.nft.json",
+      "referencedBytes": 32744869
+    },
+    {
+      "routeTrace": "app/dev/account/api/[action]/route.js.nft.json",
+      "referencedBytes": 31754498
+    },
+    {
+      "routeTrace": "app/dev/launch-event/route.js.nft.json",
+      "referencedBytes": 31656424
+    },
+    {
+      "routeTrace": "app/dev/campaign/[slug]/state/route.js.nft.json",
+      "referencedBytes": 31656230
+    },
+    {
+      "routeTrace": "app/dev/campaign/setup/route.js.nft.json",
+      "referencedBytes": 31653456
+    },
+    {
+      "routeTrace": "app/dev/campaign/entry/route.js.nft.json",
+      "referencedBytes": 31651652
+    },
+    {
+      "routeTrace": "app/dev/book-flow/share/route.js.nft.json",
+      "referencedBytes": 31633392
+    }
+  ]
+}

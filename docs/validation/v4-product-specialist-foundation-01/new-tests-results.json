@@ -1,0 +1,180 @@
+{
+  "passed": 42,
+  "failed": 0,
+  "pending": 0,
+  "files": [
+    {
+      "file": "unit/report-knowledge/productSpecialistFoundation.test.ts",
+      "tests": [
+        {
+          "name": "compiles only original Reader structures, all six products and seven relationship interfaces",
+          "status": "passed"
+        },
+        {
+          "name": "every question has a real original pointer and matching source hash",
+          "status": "passed"
+        },
+        {
+          "name": "question IDs and original addresses are unique within product/relationship scope",
+          "status": "passed"
+        },
+        {
+          "name": "does not fabricate absent original annual question wording",
+          "status": "passed"
+        },
+        {
+          "name": "same natal evidence does not collapse different product questions",
+          "status": "passed"
+        },
+        {
+          "name": "normalizes the entire unchanged candidate inventory without approval or natural predicate inference",
+          "status": "passed"
+        },
+        {
+          "name": "preserves all 1903 common candidates with no automatic product scope",
+          "status": "passed"
+        },
+        {
+          "name": "retains original source IDs and exact link provenance instead of similarity",
+          "status": "passed"
+        },
+        {
+          "name": "source ancestry shared links stay references and never create facts",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: comprehensive",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: career",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: love",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: major",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: annual",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: pair",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: marriage",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: parentChild",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: coworker",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: managerReport",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: businessPartner",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: friendship",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: unknown",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: transition",
+          "status": "passed"
+        },
+        {
+          "name": "keeps existing Binder candidate pairs, 12 gates and no approvals: major-transition",
+          "status": "passed"
+        },
+        {
+          "name": "annual retains all twelve civil months and every original segment, including nonfocus",
+          "status": "passed"
+        },
+        {
+          "name": "monthly stem and branch-main gods match their separate exact fields",
+          "status": "passed"
+        },
+        {
+          "name": "cannot substitute branch-main for monthly stem or invent missing god",
+          "status": "passed"
+        },
+        {
+          "name": "rejects monthly witness owned by another participant",
+          "status": "passed"
+        },
+        {
+          "name": "exact window excludes adjacent interval and records the rejection",
+          "status": "passed"
+        },
+        {
+          "name": "monthly role ambiguity is diagnostic only, all alternatives retained without choice",
+          "status": "passed"
+        },
+        {
+          "name": "effective annual and dayun god support is not borrowed from month or natal",
+          "status": "passed"
+        },
+        {
+          "name": "nominal selected year differs from effective annual pillar before ipchun",
+          "status": "passed"
+        },
+        {
+          "name": "retains original exact transition and different pre/post cycles",
+          "status": "passed"
+        },
+        {
+          "name": "period binding is separate from primary denominator and preserves original unknown conditions",
+          "status": "passed"
+        },
+        {
+          "name": "major has fourteen editorial slots, original cycles and current-only natal ancestry",
+          "status": "passed"
+        },
+        {
+          "name": "unknown MBTI and hour remain absent rather than replaced by foundation data",
+          "status": "passed"
+        },
+        {
+          "name": "domain blocks remain scoped and source-group/RECALL requirements cannot disappear",
+          "status": "passed"
+        },
+        {
+          "name": "worklist has original questions, actual evidence and scope-specific domain results with no approval",
+          "status": "passed"
+        },
+        {
+          "name": "identical actual request produces identical contracts, receipts and coverage",
+          "status": "passed"
+        },
+        {
+          "name": "all 4153 original tracked files and the Vercel trace policy are unchanged",
+          "status": "passed"
+        },
+        {
+          "name": "no runtime imports foundation and offline implementation adds no customer route",
+          "status": "passed"
+        },
+        {
+          "name": "unknown transition range stays conditional and before-first cycle is not invented",
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

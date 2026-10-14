@@ -1,0 +1,997 @@
+{
+  "passed": 240,
+  "failed": 0,
+  "pending": 0,
+  "files": [
+    {
+      "file": "unit/report-knowledge/actualEvidenceGraph.test.ts",
+      "tests": [
+        {
+          "name": "executes actual six-product producer adapters without changing packet digests",
+          "status": "passed"
+        },
+        {
+          "name": "preserves actual pair owners and separate directions for pair",
+          "status": "passed"
+        },
+        {
+          "name": "preserves actual pair owners and separate directions for marriage",
+          "status": "passed"
+        },
+        {
+          "name": "preserves actual pair owners and separate directions for parentChild",
+          "status": "passed"
+        },
+        {
+          "name": "preserves actual pair owners and separate directions for coworker",
+          "status": "passed"
+        },
+        {
+          "name": "preserves actual pair owners and separate directions for managerReport",
+          "status": "passed"
+        },
+        {
+          "name": "preserves actual pair owners and separate directions for businessPartner",
+          "status": "passed"
+        },
+        {
+          "name": "preserves actual pair owners and separate directions for friendship",
+          "status": "passed"
+        },
+        {
+          "name": "preserves exact producer IDs rather than creating evidence from research IDs",
+          "status": "passed"
+        },
+        {
+          "name": "records unaddressable observations separately from original producer IDs",
+          "status": "passed"
+        },
+        {
+          "name": "does not manufacture an unknown hour or unknown MBTI source graph",
+          "status": "passed"
+        },
+        {
+          "name": "binds all MBTI leaves to exact original file/pointer/hash and preserves classification",
+          "status": "passed"
+        },
+        {
+          "name": "retains direct/inferred/reference metadata without empirical promotion",
+          "status": "passed"
+        },
+        {
+          "name": "keeps bipolar/strength scores and the actual contribution ledger unchanged",
+          "status": "passed"
+        },
+        {
+          "name": "resolves both real systems for Fusion without adding an independent root",
+          "status": "passed"
+        },
+        {
+          "name": "withholds Fusion when one exact annotation/source root is missing",
+          "status": "passed"
+        },
+        {
+          "name": "rejects a foreign owner's required Fusion ancestor",
+          "status": "passed"
+        },
+        {
+          "name": "finds every forbidden CHILDREN ancestor in actual friendship derivatives",
+          "status": "passed"
+        },
+        {
+          "name": "retains all current prohibited business domains even with allowed co-ancestors",
+          "status": "passed"
+        },
+        {
+          "name": "keeps parentChild unentered facts unknown",
+          "status": "passed"
+        },
+        {
+          "name": "keeps managerReport unentered facts unknown",
+          "status": "passed"
+        },
+        {
+          "name": "keeps businessPartner unentered facts unknown",
+          "status": "passed"
+        },
+        {
+          "name": "keeps friendship unentered facts unknown",
+          "status": "passed"
+        },
+        {
+          "name": "uses recipient day master and detects reversed tenGod attribution",
+          "status": "passed"
+        },
+        {
+          "name": "retains original direction identities under actual A/B slot swap",
+          "status": "passed"
+        },
+        {
+          "name": "reports only detected supported cross-person relations and five unsupported kinds",
+          "status": "passed"
+        },
+        {
+          "name": "keeps undetected relations absent in the existing canonical detector",
+          "status": "passed"
+        },
+        {
+          "name": "preserves all actual annual segment IDs, intervals and pre-Lichun year pillar",
+          "status": "passed"
+        },
+        {
+          "name": "keeps the exact transition before/at/after in actual 2028 segments",
+          "status": "passed"
+        },
+        {
+          "name": "checks Lichun before/at/after using actual half-open segment boundaries",
+          "status": "passed"
+        },
+        {
+          "name": "preserves real ranged transition candidates and before-first-cycle absence",
+          "status": "passed"
+        },
+        {
+          "name": "distinguishes actual ten-year cycles from fourteen editorial year slots",
+          "status": "passed"
+        },
+        {
+          "name": "uses end-exclusive period intersections and preserves conditional ranges",
+          "status": "passed"
+        },
+        {
+          "name": "classifies past/current/future at exact boundaries without ambient time",
+          "status": "passed"
+        },
+        {
+          "name": "requires original AND sources and actually displayed compatible alternatives",
+          "status": "passed"
+        },
+        {
+          "name": "deduplicates repeated actual roots and detects conflicting observations",
+          "status": "passed"
+        },
+        {
+          "name": "detects required ancestry cycles without inventing or deleting original facts",
+          "status": "passed"
+        },
+        {
+          "name": "connects verified source receipts without treating them as personal facts",
+          "status": "passed"
+        },
+        {
+          "name": "withholds a changed original source hash",
+          "status": "passed"
+        },
+        {
+          "name": "builds a byte-identical graph from identical explicit inputs",
+          "status": "passed"
+        },
+        {
+          "name": "exports ordinal fixture IDs and never exposes names, birth dates or person hashes",
+          "status": "passed"
+        },
+        {
+          "name": "leaves original Catalog, Source and Semantic artifacts byte-identical",
+          "status": "passed"
+        },
+        {
+          "name": "keeps the same actual natal roots when only MBTI changes",
+          "status": "passed"
+        },
+        {
+          "name": "keeps same-type source declarations distinct from different natal/owner roots",
+          "status": "passed"
+        },
+        {
+          "name": "uses the same actual calendar roots across product wrappers",
+          "status": "passed"
+        },
+        {
+          "name": "rejects caller changes to inherited semantic policy",
+          "status": "passed"
+        },
+        {
+          "name": "preserves all exposed monthly extension features and original unsupported declarations",
+          "status": "passed"
+        },
+        {
+          "name": "separates source attribution roots from independent calculated observations",
+          "status": "passed"
+        },
+        {
+          "name": "rejects stale verification versions without granting customer use",
+          "status": "passed"
+        },
+        {
+          "name": "records supported normalized context without exposing free text",
+          "status": "passed"
+        },
+        {
+          "name": "keeps held monthly transit observations separate from verified producer facts",
+          "status": "passed"
+        },
+        {
+          "name": "withholds required graph parents with disjoint actual periods",
+          "status": "passed"
+        },
+        {
+          "name": "emits distinct owner, participant, direction, period and source graph edges",
+          "status": "passed"
+        },
+        {
+          "name": "rejects collapsing two actual people into a single owner namespace",
+          "status": "passed"
+        },
+        {
+          "name": "preserves a complete actual V4 pair with zero detected cross relations",
+          "status": "passed"
+        },
+        {
+          "name": "propagates a withheld required ancestor across every downstream edge",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeBinder.test.ts",
+      "tests": [
+        {
+          "name": "01 matches exact original source identity and in-memory producer observation",
+          "status": "passed"
+        },
+        {
+          "name": "02 rejects a wrong CatalogKey without similarity substitution",
+          "status": "passed"
+        },
+        {
+          "name": "03 rejects original source hash mismatch",
+          "status": "passed"
+        },
+        {
+          "name": "04 rejects stale graph source verification versions",
+          "status": "passed"
+        },
+        {
+          "name": "05 withholds explicitly unsupported producers",
+          "status": "passed"
+        },
+        {
+          "name": "06 source definitions never become calculated Pair facts",
+          "status": "passed"
+        },
+        {
+          "name": "07 verifies a real single-person owner independently",
+          "status": "passed"
+        },
+        {
+          "name": "08 blocks a real foreign owner rather than copying their trait",
+          "status": "passed"
+        },
+        {
+          "name": "09 actual A/B swap retains directional owner meanings",
+          "status": "passed"
+        },
+        {
+          "name": "10/11 uses actual recipient tenGod for A_TO_B",
+          "status": "passed"
+        },
+        {
+          "name": "10/11 uses actual recipient tenGod for B_TO_A",
+          "status": "passed"
+        },
+        {
+          "name": "12 requires actual canonical cross-person membership",
+          "status": "passed"
+        },
+        {
+          "name": "13 no detected Pair is not bad compatibility and creates no binding fact",
+          "status": "passed"
+        },
+        {
+          "name": "14 never replaces unsupported punishment with a supported Pair kind",
+          "status": "passed"
+        },
+        {
+          "name": "15 unknown MBTI cannot borrow known-person source nodes",
+          "status": "passed"
+        },
+        {
+          "name": "16 unknown birth time cannot supply an hour observation",
+          "status": "passed"
+        },
+        {
+          "name": "17 REFERENCE_ONLY never becomes personal scoring evidence",
+          "status": "passed"
+        },
+        {
+          "name": "18 exact Fusion uses both original root systems without a third fact",
+          "status": "passed"
+        },
+        {
+          "name": "19 missing MBTI Fusion roots are withheld after ancestry recomputation",
+          "status": "passed"
+        },
+        {
+          "name": "20 foreign-owner Fusion roots cannot be mixed",
+          "status": "passed"
+        },
+        {
+          "name": "21 unknown generic Fusion ruleId cannot license a rule-specific candidate",
+          "status": "passed"
+        },
+        {
+          "name": "22 source groups require every AND source",
+          "status": "passed"
+        },
+        {
+          "name": "23 conditional alternatives require actual compatible display ledger",
+          "status": "passed"
+        },
+        {
+          "name": "24 incompatible owner MBTI types cannot complete a group",
+          "status": "passed"
+        },
+        {
+          "name": "25 RECALL cannot pass without actual introduced meaning",
+          "status": "passed"
+        },
+        {
+          "name": "26 actual CHILDREN ancestors remain prohibited for friendship",
+          "status": "passed"
+        },
+        {
+          "name": "27 businessPartner source domains remain scoped prohibitions",
+          "status": "passed"
+        },
+        {
+          "name": "28/29 real asymmetric roles and authority remain unknown for parentChild",
+          "status": "passed"
+        },
+        {
+          "name": "28/29 real asymmetric roles and authority remain unknown for managerReport",
+          "status": "passed"
+        },
+        {
+          "name": "30 exact transition uses the original post-transition interval",
+          "status": "passed"
+        },
+        {
+          "name": "31 actual producer transition ranges remain conditional and withheld",
+          "status": "passed"
+        },
+        {
+          "name": "32 pre-Lichun effective annual pillar is retained independently of nominal year",
+          "status": "passed"
+        },
+        {
+          "name": "33 evaluates non-focus monthly segments rather than discarding them",
+          "status": "passed"
+        },
+        {
+          "name": "34 disjoint half-open intervals cannot bind together",
+          "status": "passed"
+        },
+        {
+          "name": "35 does not infer an unsupported 3-layer composite",
+          "status": "passed"
+        },
+        {
+          "name": "35 does not infer an unsupported 4-layer composite",
+          "status": "passed"
+        },
+        {
+          "name": "36 repeated fact roots are reused rather than minted by Binder",
+          "status": "passed"
+        },
+        {
+          "name": "37 common roots do not authorize a different product application",
+          "status": "passed"
+        },
+        {
+          "name": "38 actual semantic review remains pending",
+          "status": "passed"
+        },
+        {
+          "name": "39 CODEX model reading is not operator approval",
+          "status": "passed"
+        },
+        {
+          "name": "40 matched facts alone remain customer approval pending",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for comprehensive",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for career",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for love",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for major",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for annual",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for pair",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for marriage",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for parentChild",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for coworker",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for managerReport",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for businessPartner",
+          "status": "passed"
+        },
+        {
+          "name": "41 real catalog customer eligible remains zero for friendship",
+          "status": "passed"
+        },
+        {
+          "name": "42 synthetic-only approval exercises the complete eligible path",
+          "status": "passed"
+        },
+        {
+          "name": "43 the actual catalog cannot inject a synthetic approval provider",
+          "status": "passed"
+        },
+        {
+          "name": "44 actual evidence and complete narrative are unchanged",
+          "status": "passed"
+        },
+        {
+          "name": "45 stored Book production source files remain frozen",
+          "status": "passed"
+        },
+        {
+          "name": "46 identical inputs build identical Binder receipts",
+          "status": "passed"
+        },
+        {
+          "name": "47 exports PII-safe deterministic artifacts without raw graph hashes",
+          "status": "passed"
+        },
+        {
+          "name": "48 preserves trace configuration and adds no customer route import",
+          "status": "passed"
+        },
+        {
+          "name": "rejects reverse direction even when the node belongs to its real subject",
+          "status": "passed"
+        },
+        {
+          "name": "rejects public redacted graph JSON as an exact binding input",
+          "status": "passed"
+        },
+        {
+          "name": "approval expiry is end-exclusive and exact record scope cannot change",
+          "status": "passed"
+        },
+        {
+          "name": "same-type source nodes from another owner do not poison a valid own-person match",
+          "status": "passed"
+        },
+        {
+          "name": "every AND group source can pass using the same verified root without duplicating facts",
+          "status": "passed"
+        },
+        {
+          "name": "Pair membership must match the actual symbols, not only the relation kind",
+          "status": "passed"
+        },
+        {
+          "name": "same Fusion rule still requires the exact declared ancestor source",
+          "status": "passed"
+        },
+        {
+          "name": "approval cannot reuse old root or temporal version scope",
+          "status": "passed"
+        },
+        {
+          "name": "unknown required temporal scope is not timeless",
+          "status": "passed"
+        },
+        {
+          "name": "directed MBTI Pair references are traceable but cannot license a personal fact",
+          "status": "passed"
+        },
+        {
+          "name": "an explicit AB material mode requires the actual direction gate",
+          "status": "passed"
+        },
+        {
+          "name": "a candidate-level A to B requirement cannot borrow an unrelated reverse direction",
+          "status": "passed"
+        },
+        {
+          "name": "original source group IDs resolve to their own catalog and alternative index",
+          "status": "passed"
+        },
+        {
+          "name": "missing actual witnesses cannot pass owner or complete actual ancestry gates",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeSemanticDomainVerification.test.ts",
+      "tests": [
+        {
+          "name": "01 evaluates all 2966 queue records exactly once without replacing the original",
+          "status": "passed"
+        },
+        {
+          "name": "02 preserves every original domain value including non-V4 and uppercase domains",
+          "status": "passed"
+        },
+        {
+          "name": "03 links only existing source verification receipts and retains all inherited ancestor keys",
+          "status": "passed"
+        },
+        {
+          "name": "04 fails closed on queue/catalog/proof identity mismatch",
+          "status": "passed"
+        },
+        {
+          "name": "05 preserves all inherited 464 prohibitions ahead of model review or relevance",
+          "status": "passed"
+        },
+        {
+          "name": "06 preserves wealth relatedness without equating it to RESOURCE_SENSE",
+          "status": "passed"
+        },
+        {
+          "name": "07 keeps bipolar negative directions neutral and all original values unchanged",
+          "status": "passed"
+        },
+        {
+          "name": "08 never treats low strength as its opposite or a defect",
+          "status": "passed"
+        },
+        {
+          "name": "09 blocks facet-to-whole-axis promotion with all 109 original conditions present",
+          "status": "passed"
+        },
+        {
+          "name": "10 blocks SemanticTag-to-axis and dynamic/fortune-to-permanent-trait promotion",
+          "status": "passed"
+        },
+        {
+          "name": "11 inventories actual 16 MBTI sources preserving direct/inferred and nonempirical states",
+          "status": "passed"
+        },
+        {
+          "name": "12 never promotes REFERENCE_ONLY to SCORING_SEMANTIC",
+          "status": "passed"
+        },
+        {
+          "name": "13 requires both same-person Fusion roots without inventing a third fact",
+          "status": "passed"
+        },
+        {
+          "name": "14 deduplicates fixture fact roots without issuing actual Evidence",
+          "status": "passed"
+        },
+        {
+          "name": "15 detects CHILDREN ancestry in actual friendship source records",
+          "status": "passed"
+        },
+        {
+          "name": "16 keeps businessPartner WORK/CAREER/THINKING/MONEY/INVESTMENT blocked",
+          "status": "passed"
+        },
+        {
+          "name": "17 requires actual parentChild roles rather than adult-type role inference",
+          "status": "passed"
+        },
+        {
+          "name": "18 requires actual managerReport authority despite declared asymmetric roles",
+          "status": "passed"
+        },
+        {
+          "name": "19 holds unentered friendship history and distance/trust claims",
+          "status": "passed"
+        },
+        {
+          "name": "20 blocks MBTI Pair as an individual personality source",
+          "status": "passed"
+        },
+        {
+          "name": "21 blocks a traditional/calculation definition from becoming actual Pair Evidence",
+          "status": "passed"
+        },
+        {
+          "name": "22 holds unsupported producer declarations even when a source definition exists",
+          "status": "passed"
+        },
+        {
+          "name": "23 distinguishes natal/dayun/annual/month scope rather than promoting natal to an event",
+          "status": "passed"
+        },
+        {
+          "name": "24 keeps unknown or mixed transition periods withheld",
+          "status": "passed"
+        },
+        {
+          "name": "25 requires every AND source instead of accepting any single source",
+          "status": "passed"
+        },
+        {
+          "name": "26 does not merge displayed alternatives or infer unknown group semantics",
+          "status": "passed"
+        },
+        {
+          "name": "27 preserves every inherited incomplete source block even after direct model reading",
+          "status": "passed"
+        },
+        {
+          "name": "28 retains distinct questions and requirements for all 6 products and 7 relationships",
+          "status": "passed"
+        },
+        {
+          "name": "29 distinguishes a new application from merely rephrasing the same meaning",
+          "status": "passed"
+        },
+        {
+          "name": "30 keeps every decision, model review and future gate unapproved",
+          "status": "passed"
+        },
+        {
+          "name": "31 detects full ancestry cycles and excludes RELATED_TO/documentary links from mandatory facts",
+          "status": "passed"
+        },
+        {
+          "name": "32 produces byte-identical results across two fresh engines and artifact directories",
+          "status": "passed"
+        },
+        {
+          "name": "33 preserves all original catalog and research bytes/keys",
+          "status": "passed"
+        },
+        {
+          "name": "34 preserves Source Verification receipts and sourceCoverage without overwriting them",
+          "status": "passed"
+        },
+        {
+          "name": "35 keeps new semantic verifier disconnected from the customer runtime",
+          "status": "passed"
+        },
+        {
+          "name": "36 preserves Vercel tracing configuration and disables verifier network access",
+          "status": "passed"
+        },
+        {
+          "name": "binds direct reading notes to their exact source hash and real field paths",
+          "status": "passed"
+        },
+        {
+          "name": "rejects a changed original source instead of generating a replacement meaning",
+          "status": "passed"
+        },
+        {
+          "name": "rejects a fake original domain or absent Source Verification receipt",
+          "status": "passed"
+        },
+        {
+          "name": "preserves conditional source groups as separate alternatives during ancestry review",
+          "status": "passed"
+        },
+        {
+          "name": "preserves scoped prohibitions without deleting the underlying original knowledge",
+          "status": "passed"
+        },
+        {
+          "name": "never treats a documentary/future source as an actual required personal ancestor",
+          "status": "passed"
+        },
+        {
+          "name": "rejects any Source Verification input that claims customer approval or actual Evidence",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeSourceVerification.test.ts",
+      "tests": [
+        {
+          "name": "01 preserves all 6490 original occurrences, ordinals, targets, fields, reasons and stable keys",
+          "status": "passed"
+        },
+        {
+          "name": "02 classifies the eighteen declared reference namespaces without coercing unknown strings",
+          "status": "passed"
+        },
+        {
+          "name": "03 verifies exact catalog key and actual file/export/pointer/ID/hash without semantic substitution",
+          "status": "passed"
+        },
+        {
+          "name": "04 blocks wrong original ID and missing ID without approximate or first-match fallback",
+          "status": "passed"
+        },
+        {
+          "name": "05 leaves an ambiguous sm2 alias blocked and only qualifies a copied source with hash-checked ancestry",
+          "status": "passed"
+        },
+        {
+          "name": "06 blocks wrong record, file, canonical and plainKo hashes",
+          "status": "passed"
+        },
+        {
+          "name": "07 validates both commit sourceVersion and file-hash sourceVersion",
+          "status": "passed"
+        },
+        {
+          "name": "08 blocks nonexistent MBTI TYPE and a conflicting explicit TYPE/file locator",
+          "status": "passed"
+        },
+        {
+          "name": "09 blocks mismatched trait area and nonexistent trait ID",
+          "status": "passed"
+        },
+        {
+          "name": "10 checks the actual ISTJ trait pointer, meaning, both hashes and declared nested pointer",
+          "status": "passed"
+        },
+        {
+          "name": "11 preserves original MBTI direct/inferred coverage without empirical or customer approval",
+          "status": "passed"
+        },
+        {
+          "name": "12 verifies native declarations while preserving the distinction from actual calculated facts",
+          "status": "passed"
+        },
+        {
+          "name": "13 blocks a multi-field fragment if any required field is missing",
+          "status": "passed"
+        },
+        {
+          "name": "14 verifies all sixty declared comma fragments and rejects undeclared comma grammar",
+          "status": "passed"
+        },
+        {
+          "name": "15 separates audit-only snapshots from audit plus an explicitly located original",
+          "status": "passed"
+        },
+        {
+          "name": "16 preserves AND inside displayed alternatives, does not combine mutually exclusive owner types, and holds unknown semantics",
+          "status": "passed"
+        },
+        {
+          "name": "17 gives repeated occurrences distinct receipts without inventing independent fact roots",
+          "status": "passed"
+        },
+        {
+          "name": "18 queues all 2966 domains and preserves explicit businessPartner policy without automatic mappings",
+          "status": "passed"
+        },
+        {
+          "name": "19 keeps all thirteen review dimensions independent and never auto-approves any recovered source",
+          "status": "passed"
+        },
+        {
+          "name": "20 keeps future/calculated Evidence requirements separate from real source recovery",
+          "status": "passed"
+        },
+        {
+          "name": "21 preserves every frozen base source/file hash including all research and original catalogs",
+          "status": "passed"
+        },
+        {
+          "name": "22 keeps all existing catalog keys unique and preserves original locator/ID identities",
+          "status": "passed"
+        },
+        {
+          "name": "23 produces deterministic receipts across fresh readers/engines with no clock fields",
+          "status": "passed"
+        },
+        {
+          "name": "24 produces byte-identical artifacts and valid overlay JSON-pointer receipt links",
+          "status": "passed"
+        },
+        {
+          "name": "25 keeps the source verifier disconnected from every customer runtime import",
+          "status": "passed"
+        },
+        {
+          "name": "26 preserves the Vercel tracing configuration and keeps raw research out of traced runtime inputs",
+          "status": "passed"
+        },
+        {
+          "name": "blocks misuse fixture { ancestryDomains: [ 'CHILDREN' ], category: 'friendship' } with required future gate CHILDREN_ANCESTRY_PROHIBITED_WITHOUT_EXPLICIT_REVIEW",
+          "status": "passed"
+        },
+        {
+          "name": "blocks misuse fixture { ancestryDomains: [ 'MONEY' ], category: 'businessPartner' } with required future gate EXISTING_BUSINESS_DOMAIN_POLICY_BLOCK",
+          "status": "passed"
+        },
+        {
+          "name": "blocks misuse fixture { sourceKind: 'MBTI_PAIR_REFERENCE', requestedUse: 'PERSONAL_TRAIT' } with required future gate PAIR_REFERENCE_IS_NOT_PERSONAL_FACT",
+          "status": "passed"
+        },
+        {
+          "name": "blocks misuse fixture { sourceKind: 'CALCULATION_DEFINITION', requestedUse: 'CALCULATED_PAIR' } with required future gate ACTUAL_PAIR_EVIDENCE_REQUIRED",
+          "status": "passed"
+        },
+        {
+          "name": "blocks misuse fixture { declaredOrigin: 'natal', requestedUse: 'PERIOD_EVENT' } with required future gate ACTUAL_PERIOD_FACT_AND_INTERVAL_REQUIRED",
+          "status": "passed"
+        },
+        {
+          "name": "blocks misuse fixture { mixedTransitionWindows: true } with required future gate TRANSITION_WINDOW_INTERSECTION_REQUIRED",
+          "status": "passed"
+        },
+        {
+          "name": "blocks misuse fixture { sourceKind: 'FUSION_RESEARCH', sourceRootsVerified: false } with required future gate ALL_FUSION_ROOTS_REQUIRED",
+          "status": "passed"
+        },
+        {
+          "name": "blocks misuse fixture { factRoots: [ 'root:a', 'root:a' ] } with required future gate REPEATED_ROOT_NOT_INDEPENDENT_EVIDENCE",
+          "status": "passed"
+        },
+        {
+          "name": "retains all eight handoff contracts and requires approval even for structurally clean fixtures",
+          "status": "passed"
+        },
+        {
+          "name": "traces unresolved ancestor references into the domain queue instead of only inspecting direct overlaps",
+          "status": "passed"
+        },
+        {
+          "name": "rejects a known but conflicting declared commit version rather than only checking version syntax",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "unit/report-knowledge/knowledgeUnifiedCatalog.test.ts",
+      "tests": [
+        {
+          "name": "parses every actual export in twenty families with preserved IDs, locators and hashes",
+          "status": "passed"
+        },
+        {
+          "name": "keeps foundation coverage separate and acquires actual MBTI16/pair256, axes8+28/facets109/tag22/theme16",
+          "status": "passed"
+        },
+        {
+          "name": "separates all fourteen kinds and source reference reuse from independent facts",
+          "status": "passed"
+        },
+        {
+          "name": "retains unresolved targets and all independent unapproved review dimensions",
+          "status": "passed"
+        },
+        {
+          "name": "makes a byte-identical second rebuild including shards, resolver and indexes",
+          "status": "passed"
+        },
+        {
+          "name": "detects duplicate catalog keys without merging research IDs or claim identities",
+          "status": "passed"
+        },
+        {
+          "name": "resolves exact original/file/export/ID/hash and reports each broken reference precisely",
+          "status": "passed"
+        },
+        {
+          "name": "requires explicit group semantics and preserves displayed-group conjunction without inventing OR",
+          "status": "passed"
+        },
+        {
+          "name": "validates rejected/invalid source states and forbids implicit customer approval",
+          "status": "passed"
+        },
+        {
+          "name": "makes unknown MBTI/hour, reversed direction and any prohibited ancestor domain explicit fixture gaps",
+          "status": "passed"
+        },
+        {
+          "name": "keeps negative bipolar signals neutral and unknown/conflicting time windows withheld",
+          "status": "passed"
+        },
+        {
+          "name": "preserves every acquired source byte and excludes runtime imports of the offline compiler",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "file": "unit/report-knowledge/koreanEditorialPreservation.test.ts",
+      "tests": [
+        {
+          "name": "'comprehensive'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'comprehensive'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'career'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'career'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'love'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'love'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'compatibility'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'compatibility'/'marriage' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'compatibility'/'parentChild' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'compatibility'/'coworker' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'compatibility'/'managerReport' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'compatibility'/'businessPartner' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'compatibility'/'friendship' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'major'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'major'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'annual'/'A' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "'annual'/'F' preserves actual calculation, proof, complete narrative, Book and snapshot",
+          "status": "passed"
+        },
+        {
+          "name": "records existing grammar limitations without changing their implementation",
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

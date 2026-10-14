@@ -1,0 +1,55 @@
+{
+  "registryQuestions": 2060,
+  "distinctQuestionsWithApplicableDeclaredMaterialAcrossFixtures": 1892,
+  "distinctQuestionsWithWitnessAcrossFixtures": 832,
+  "distinctQuestionsWithoutWitnessAcrossFixtures": 1228,
+  "distinctCustomerAnswerableQuestions": 0,
+  "questionFixtureReadiness": {
+    "questionFixtureOccurrences": 4304,
+    "questionsWithDeclaredMaterials": 3800,
+    "questionsWithActualWitnesses": 1240,
+    "unanswerableQuestions": 3064,
+    "customerAnswerable": 0,
+    "sourceReferences": 68044
+  },
+  "normalizationReceiptStates": {
+    "SOURCE_DECLARATION_VERIFIED": 27124,
+    "CONTRACT_NOT_MACHINE_CHECKABLE": 1093,
+    "SEMANTIC_REVIEW_REQUIRED": 10004,
+    "APPROVAL_REQUIRED": 4270,
+    "STRUCTURALLY_PARTIAL": 223,
+    "EXACT_TYPED_CONTRACT": 9731,
+    "ACTUAL_USER_STATE_REQUIRED": 4872,
+    "PRODUCER_SUPPORT_REQUIRED": 193
+  },
+  "normalizationMethods": {
+    "ORIGINAL_REFERENCE_IS_NOT_PERSONAL_OBSERVATION": 6857,
+    "MONTHLY_GOD_ROLE_NOT_DECLARED": 10,
+    "EXISTING_BINDER_DECLARATION_UNCHANGED": 21350,
+    "ORIGINAL_NATURAL_LANGUAGE_PRESERVED": 5734,
+    "NO_NATURAL_LANGUAGE_BOOLEAN_INFERENCE": 4270,
+    "NO_APPROVALS_PROVIDER_UNCHANGED": 4270,
+    "EXPLICIT_CALENDAR_SCOPE_WITH_REQUIRED_ORIGINAL_SEGMENT_LEDGER": 22,
+    "ORIGINAL_INPUT_ENUM": 379,
+    "EXISTING_BINDER_TYPED_CONTRACT": 2140,
+    "MISSING_ENTERED_USER_STATE": 4872,
+    "ORIGINAL_AND_ALTERNATIVE_AND_DISPLAYED_LEDGER_UNCHANGED": 201,
+    "EXISTING_UNSUPPORTED_PRODUCER_CONTRACT_UNCHANGED": 193,
+    "EXACT_ORIGINAL_POINTER_NARROWING": 7212
+  },
+  "sourceRequirementOccurrences": 16209,
+  "sourceRequirementsWithTypedSelector": 9352,
+  "sourceRequirementsWithoutTypedSelector": 6857,
+  "sourceRequirementsWithGaps": 1629,
+  "unsupportedProducerCandidateOccurrences": 193,
+  "unsupportedProducerFixtureOccurrences": 374,
+  "allOriginalNaturalConditionsRemainUnresolved": true,
+  "linkKindOccurrences": {
+    "CONDITIONAL_APPLICATION": 1032,
+    "DIRECT_QUESTION_MATERIAL": 5280,
+    "SHARED_FOUNDATION_MATERIAL": 26225,
+    "REFERENCE_ONLY": 1868,
+    "RECALL_ONLY": 955
+  },
+  "interpretation": "References, witnesses, structural matches and approvals are distinct. A question-fixture may repeat a candidate and is not an independent interpretation."
+}
