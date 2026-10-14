@@ -1,0 +1,3078 @@
+[
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH01.P1",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH01",
+        "periodId": null,
+        "paragraphId": "P1",
+        "sentenceRole": null,
+        "originalAddress": "CH01.P1",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "무엇을 먼저 확인하고 일을 시작하는가?",
+      "readerPurpose": "무엇을 먼저 확인하고 일을 시작하는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "목적·원인·초안·상대 필요·자원이라는 서로 다른 착수 기능",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "identity"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 0,
+        "originalId": "ckr:paragraph:CH01.P1",
+        "recordSha256": "a5342e731862fe6998bb42869490b1c9e9db4c04e7eea1d7f9f0c73a27c91725",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "a5342e731862fe6998bb42869490b1c9e9db4c04e7eea1d7f9f0c73a27c91725",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/0/paragraphs/0",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "5618ad5c6e1d23c9e47fed9244f06a06b0deb87273a4c947ce7e6fb35ecc8d22"
+      },
+      "readerContractHash": "5618ad5c6e1d23c9e47fed9244f06a06b0deb87273a4c947ce7e6fb35ecc8d22",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH01.P1:request-framing",
+        "ckr:material:CH01.P1:hypothesis-first",
+        "ckr:material:CH01.P1:draft-as-question",
+        "ckr:material:CH01.P1:people-entry",
+        "ckr:material:CH01.P1:capacity-entry"
+      ],
+      "sourceCatalogKey": "kc:v1:36aba536c1129a83ea58c87695fc000ab6cbe98a92c82da628c9627b75593f08",
+      "roleContract": null,
+      "sourcePolicy": "직업명으로 능력 확정"
+    },
+    "materials": [
+      "kc:v1:0517da0c93edacebc8821fef8adff3ca69cc645933c4af91d1c7c2e32ef76e34",
+      "kc:v1:0517da0c93edacebc8821fef8adff3ca69cc645933c4af91d1c7c2e32ef76e34",
+      "kc:v1:196dcaae6dde2be60fcd7783d6bf043f151ce2b02936e47058f40f52e07713c1",
+      "kc:v1:196dcaae6dde2be60fcd7783d6bf043f151ce2b02936e47058f40f52e07713c1",
+      "kc:v1:1d03cee93ac40945ecb5273d3c2052886bd3c9915773c0640384751d1cab09ac",
+      "kc:v1:1d03cee93ac40945ecb5273d3c2052886bd3c9915773c0640384751d1cab09ac",
+      "kc:v1:64cc2fd4994214ef0819aeec80429b6f840e2af1905d2d0716ec26c1f9d57341",
+      "kc:v1:64cc2fd4994214ef0819aeec80429b6f840e2af1905d2d0716ec26c1f9d57341",
+      "kc:v1:af8914f569b02ce7c7b28cdcf6ab45fc8bf9453d6a1ecb894eab5d6302bcd244",
+      "kc:v1:af8914f569b02ce7c7b28cdcf6ab45fc8bf9453d6a1ecb894eab5d6302bcd244"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH01.P2",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH01",
+        "periodId": null,
+        "paragraphId": "P2",
+        "sentenceRole": null,
+        "originalAddress": "CH01.P2",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "명리 상징과 MBTI 선호가 업무에서 각각 무엇을 말하는가?",
+      "readerPurpose": "명리 상징과 MBTI 선호가 업무에서 각각 무엇을 말하는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "원국 분류·현대 적용·유형 원천·Fusion 성립 조건",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "identity"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 1,
+        "originalId": "ckr:paragraph:CH01.P2",
+        "recordSha256": "c0b437ce69f4b987f8c41d609db43a46db350f6a55e48ece77ec8588a4dcc81d",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "c0b437ce69f4b987f8c41d609db43a46db350f6a55e48ece77ec8588a4dcc81d",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/0/paragraphs/1",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "3db51814ea789a382949affc1e6d98d9239200399a693b302b5400f673de5622"
+      },
+      "readerContractHash": "3db51814ea789a382949affc1e6d98d9239200399a693b302b5400f673de5622",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH01.P2:source-review-link",
+        "ckr:material:CH01.P2:source-expression-link",
+        "ckr:material:CH01.P2:source-resource-link",
+        "ckr:material:CH01.P2:source-help-boundary",
+        "ckr:material:CH01.P2:source-two-sided-tempo"
+      ],
+      "sourceCatalogKey": "kc:v1:d1c39905137af07bbdca66b7848c9e234551d91dd7dda8715989367f8d974367",
+      "roleContract": null,
+      "sourcePolicy": "인성의 받음과 돌봄 제공을 동일시"
+    },
+    "materials": [
+      "kc:v1:0304de8a4eb5ccba6ccf27b09a15e3ad16a6f76c5bbc4f5c3153fcb58c3a248a",
+      "kc:v1:0304de8a4eb5ccba6ccf27b09a15e3ad16a6f76c5bbc4f5c3153fcb58c3a248a",
+      "kc:v1:28c0a536732ece00a37bef5b86f096b2dece511be583e17bd707bd5232b17341",
+      "kc:v1:28c0a536732ece00a37bef5b86f096b2dece511be583e17bd707bd5232b17341",
+      "kc:v1:95968b20d678f34bc4362f13df7375555dd43b6f5ecf67f8f5aba377ebe615c3",
+      "kc:v1:95968b20d678f34bc4362f13df7375555dd43b6f5ecf67f8f5aba377ebe615c3",
+      "kc:v1:9dc90fd147c727394507a34a5fd291c68fd135517c31b63b9754d4a9cad683ae",
+      "kc:v1:9dc90fd147c727394507a34a5fd291c68fd135517c31b63b9754d4a9cad683ae",
+      "kc:v1:e8ee7c420da55626d2b2f77680fddb15e7183c37f2a99bce4db142fecf3f3457",
+      "kc:v1:e8ee7c420da55626d2b2f77680fddb15e7183c37f2a99bce4db142fecf3f3457"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH01.P3",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH01",
+        "periodId": null,
+        "paragraphId": "P3",
+        "sentenceRole": null,
+        "originalAddress": "CH01.P3",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "착수·진행·완료에서 행동은 어떻게 달라지는가?",
+      "readerPurpose": "착수·진행·완료에서 행동은 어떻게 달라지는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "정의·변경·검증·인계·반응의 시간별 기능",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "identity"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 2,
+        "originalId": "ckr:paragraph:CH01.P3",
+        "recordSha256": "479878991362d28c29b79b603161ef78cebb092888eb3d38d52cf93127eb14de",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "479878991362d28c29b79b603161ef78cebb092888eb3d38d52cf93127eb14de",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/0/paragraphs/2",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "8d955081bf311114ecd63c71eb5cfb7bd74110c9bf75a312240c7e06b0626423"
+      },
+      "readerContractHash": "8d955081bf311114ecd63c71eb5cfb7bd74110c9bf75a312240c7e06b0626423",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH01.P3:start-finish-contract",
+        "ckr:material:CH01.P3:iterate-selected-idea",
+        "ckr:material:CH01.P3:handoff-finish",
+        "ckr:material:CH01.P3:timeboxed-inquiry",
+        "ckr:material:CH01.P3:feedback-loop-entry"
+      ],
+      "sourceCatalogKey": "kc:v1:d4547210e718542f5105359508d99c52a310a8b8aed7bb9487757f1c26e40135",
+      "roleContract": null,
+      "sourcePolicy": "실제 수행 이력 단정"
+    },
+    "materials": [
+      "kc:v1:08d9fa9584835d7fef17f99007812f08dd0153c99ca9b311f6e192084c253ae2",
+      "kc:v1:08d9fa9584835d7fef17f99007812f08dd0153c99ca9b311f6e192084c253ae2",
+      "kc:v1:0e8f609fcd35b76e7a3d793256bd36197754c86c11d560da7977388fe77cecd0",
+      "kc:v1:0e8f609fcd35b76e7a3d793256bd36197754c86c11d560da7977388fe77cecd0",
+      "kc:v1:627de4e760072cc067d1a456b21abd6f697dc2530658d3f401e2cbc29c6a2258",
+      "kc:v1:627de4e760072cc067d1a456b21abd6f697dc2530658d3f401e2cbc29c6a2258",
+      "kc:v1:b527ff20e2e31524a5eb25c0d42a7a183b8a8a34398db1855e13f79463412ea2",
+      "kc:v1:b527ff20e2e31524a5eb25c0d42a7a183b8a8a34398db1855e13f79463412ea2",
+      "kc:v1:c93078b146746cf8d5ce42e6e511b5c90993d89207ebb9c9c99fa6a7a557a77d",
+      "kc:v1:c93078b146746cf8d5ce42e6e511b5c90993d89207ebb9c9c99fa6a7a557a77d"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH01.P4",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH01",
+        "periodId": null,
+        "paragraphId": "P4",
+        "sentenceRole": null,
+        "originalAddress": "CH01.P4",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "어떤 조건이 있어야 능력이 쓰이는가?",
+      "readerPurpose": "어떤 조건이 있어야 능력이 쓰이는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "자료·권한·재량·집중·변경·목적의 조건",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "identity"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 3,
+        "originalId": "ckr:paragraph:CH01.P4",
+        "recordSha256": "d54a9ad9772256d611fb718f35507abca6ed6c83985d64cac18bf1864f1ee76c",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "d54a9ad9772256d611fb718f35507abca6ed6c83985d64cac18bf1864f1ee76c",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/0/paragraphs/3",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "6b6684770c6ed24a6b6162678fe4e7a6fb48a7e13e67fc77575731d8d7bd412a"
+      },
+      "readerContractHash": "6b6684770c6ed24a6b6162678fe4e7a6fb48a7e13e67fc77575731d8d7bd412a",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH01.P4:permission-to-correct",
+        "ckr:material:CH01.P4:autonomy-with-checkpoint",
+        "ckr:material:CH01.P4:protected-depth-window",
+        "ckr:material:CH01.P4:change-with-baseline",
+        "ckr:material:CH01.P4:mission-with-basics"
+      ],
+      "sourceCatalogKey": "kc:v1:3d9359d90961d0fd6f1dc2e00cef9d3a103dbb225f5bd3939066c45b44cde83f",
+      "roleContract": null,
+      "sourcePolicy": "특정 조직을 미리 좋고 나쁨으로 판정"
+    },
+    "materials": [
+      "kc:v1:0862365e07ea4d317df58cadc76d429a189578ebee6086ad88a77ae0c1daae06",
+      "kc:v1:0862365e07ea4d317df58cadc76d429a189578ebee6086ad88a77ae0c1daae06",
+      "kc:v1:63aec230dcf0ecfd3d4bde3096f533938beb9c63a24e412023305911503c6f3e",
+      "kc:v1:63aec230dcf0ecfd3d4bde3096f533938beb9c63a24e412023305911503c6f3e",
+      "kc:v1:79434a4e92efb40964882186ba9633fc1d815d82c449b419912f4cfe58fe8ad0",
+      "kc:v1:79434a4e92efb40964882186ba9633fc1d815d82c449b419912f4cfe58fe8ad0",
+      "kc:v1:bd1abf7bdd49b56079b43d3b9c689f15a9b5c5b92c25a5ac92eec1b7f462b987",
+      "kc:v1:bd1abf7bdd49b56079b43d3b9c689f15a9b5c5b92c25a5ac92eec1b7f462b987",
+      "kc:v1:f7e9f9d4f506a098106ecc28a903739ddbfac34a0d0022778ad2bafc0721827b",
+      "kc:v1:f7e9f9d4f506a098106ecc28a903739ddbfac34a0d0022778ad2bafc0721827b"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH02.P1",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH02",
+        "periodId": null,
+        "paragraphId": "P1",
+        "sentenceRole": null,
+        "originalAddress": "CH02.P1",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "가장 강한 업무 능력은 무엇을 바꾸는가?",
+      "readerPurpose": "가장 강한 업무 능력은 무엇을 바꾸는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "검토·분석·창작·설명·반복 실행의 기능",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "strengths"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 4,
+        "originalId": "ckr:paragraph:CH02.P1",
+        "recordSha256": "1d610da40f065962c0ee8c55ad61a93aae37d25f155748efc310a513d807b6f0",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "1d610da40f065962c0ee8c55ad61a93aae37d25f155748efc310a513d807b6f0",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/1/paragraphs/0",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "be76e10a670ea271fc5424a97e5280ac09741ecc5a824de705b2f21de9989b9b"
+      },
+      "readerContractHash": "be76e10a670ea271fc5424a97e5280ac09741ecc5a824de705b2f21de9989b9b",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH02.P1:detect-mismatch",
+        "ckr:material:CH02.P1:causal-model",
+        "ckr:material:CH02.P1:make-alternative",
+        "ckr:material:CH02.P1:explain-to-use",
+        "ckr:material:CH02.P1:reliable-execution"
+      ],
+      "sourceCatalogKey": "kc:v1:c0f02cdec4af06ba1817c99053a899167c146e3d2bdf69af11d1f060b9dd49a2",
+      "roleContract": null,
+      "sourcePolicy": "사주·유형으로 전문 실력 증명"
+    },
+    "materials": [
+      "kc:v1:2f0b405ffd8fabd0a03b63a10c8c0b677d0b7efa1bb0f9621fcb2c35b78daf32",
+      "kc:v1:2f0b405ffd8fabd0a03b63a10c8c0b677d0b7efa1bb0f9621fcb2c35b78daf32",
+      "kc:v1:41a3952eb0ee6bb9851d1acc17553fad3a50ce92a25263ba206b27292e958395",
+      "kc:v1:41a3952eb0ee6bb9851d1acc17553fad3a50ce92a25263ba206b27292e958395",
+      "kc:v1:47c9470acc29cd5dc0ceec5aa69009eb95c71b11f9e37e7efb0e731cd6c0274d",
+      "kc:v1:47c9470acc29cd5dc0ceec5aa69009eb95c71b11f9e37e7efb0e731cd6c0274d",
+      "kc:v1:58e776f0049f4e76197750d18e552bd0a19d1abed251093560cabb13c14c914d",
+      "kc:v1:58e776f0049f4e76197750d18e552bd0a19d1abed251093560cabb13c14c914d",
+      "kc:v1:740c42fee70e15243110c0a6156b6f44a47b74dc7a12f27af67f850f55731785",
+      "kc:v1:740c42fee70e15243110c0a6156b6f44a47b74dc7a12f27af67f850f55731785"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH02.P2",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH02",
+        "periodId": null,
+        "paragraphId": "P2",
+        "sentenceRole": null,
+        "originalAddress": "CH02.P2",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "첫 재능과 다른 두 번째 기능이 있는가?",
+      "readerPurpose": "첫 재능과 다른 두 번째 기능이 있는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "조정·자원 배분·지원·수요 탐색·도구 수행의 독립성",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "strengths"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 5,
+        "originalId": "ckr:paragraph:CH02.P2",
+        "recordSha256": "951933a6e8e63602479f1fca996e501e92cd14f9a9f8fe9b2edf5dd7b54a40de",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "951933a6e8e63602479f1fca996e501e92cd14f9a9f8fe9b2edf5dd7b54a40de",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/1/paragraphs/1",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "790e8ccac4078b3d705a62c4bffaaf7a41dabdbdd6459a0a3e57680e8ae436c9"
+      },
+      "readerContractHash": "790e8ccac4078b3d705a62c4bffaaf7a41dabdbdd6459a0a3e57680e8ae436c9",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH02.P2:coordination-distinct",
+        "ckr:material:CH02.P2:resource-distinct",
+        "ckr:material:CH02.P2:care-distinct",
+        "ckr:material:CH02.P2:opportunity-distinct",
+        "ckr:material:CH02.P2:technical-distinct"
+      ],
+      "sourceCatalogKey": "kc:v1:98780e20b1497d990d5e95dd5818e4f4a3298bd56faca2c1e3c53a17b7b48d55",
+      "roleContract": null,
+      "sourcePolicy": "같은 root를 두 개 재능으로 수량 채우기"
+    },
+    "materials": [
+      "kc:v1:20cdd50263f5c4c83d58b1419ef810a3c534faab803383c248eedcee0961fff6",
+      "kc:v1:20cdd50263f5c4c83d58b1419ef810a3c534faab803383c248eedcee0961fff6",
+      "kc:v1:6b7464c268e4a8604e301917ce35a8c0036bf666724ed5c661ad43af2b08e761",
+      "kc:v1:6b7464c268e4a8604e301917ce35a8c0036bf666724ed5c661ad43af2b08e761",
+      "kc:v1:c544a2f62fee5158cfda22d540b624fc17f293a798c86920c4810f3173947e88",
+      "kc:v1:c544a2f62fee5158cfda22d540b624fc17f293a798c86920c4810f3173947e88",
+      "kc:v1:e6fc916b9c692b4d3f6a0567658e4add54422e1b88d03f6e59cf86ca28684bdd",
+      "kc:v1:e6fc916b9c692b4d3f6a0567658e4add54422e1b88d03f6e59cf86ca28684bdd",
+      "kc:v1:f8ddf6fde3b3d5af50867361ac9d09be1c8c87a635ba03d95ae2729022ae3139",
+      "kc:v1:f8ddf6fde3b3d5af50867361ac9d09be1c8c87a635ba03d95ae2729022ae3139"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH02.P3",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH02",
+        "periodId": null,
+        "paragraphId": "P3",
+        "sentenceRole": null,
+        "originalAddress": "CH02.P3",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "익숙한 강점은 다른 대상에서 어떻게 쓰일 수 있는가?",
+      "readerPurpose": "익숙한 강점은 다른 대상에서 어떻게 쓰일 수 있는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "검토→시각 정보, 분석→교육, 지원→절차, 실행→검증",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "strengths"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 6,
+        "originalId": "ckr:paragraph:CH02.P3",
+        "recordSha256": "8896978f7059eef576846f29cb2b08d5ad1b53327db1182b2067cb2aed9d2999",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "8896978f7059eef576846f29cb2b08d5ad1b53327db1182b2067cb2aed9d2999",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/1/paragraphs/2",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "53787c8f415fa939820b7462e846817fde867eebd54f27b3b7edcabd1950749b"
+      },
+      "readerContractHash": "53787c8f415fa939820b7462e846817fde867eebd54f27b3b7edcabd1950749b",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH02.P3:precision-to-visual",
+        "ckr:material:CH02.P3:analysis-to-teaching",
+        "ckr:material:CH02.P3:care-to-process",
+        "ckr:material:CH02.P3:execution-to-experiment",
+        "ckr:material:CH02.P3:meaning-to-proposal"
+      ],
+      "sourceCatalogKey": "kc:v1:6e9c88f0008673d53cea73471aa70c1d684d278f19ba35e183df1d4126935344",
+      "roleContract": null,
+      "sourcePolicy": "새 자격·직업을 자동 인정"
+    },
+    "materials": [
+      "kc:v1:415867bc52ac537f09da14d683cc265d579bb5d7d74a51a3cc83f2a07d149e91",
+      "kc:v1:415867bc52ac537f09da14d683cc265d579bb5d7d74a51a3cc83f2a07d149e91",
+      "kc:v1:46b2964b4c013b68fbdf0d72e5a20a9d30ef7cd6234bafad3ffc20fd5652c371",
+      "kc:v1:46b2964b4c013b68fbdf0d72e5a20a9d30ef7cd6234bafad3ffc20fd5652c371",
+      "kc:v1:8d11330a60a5879c542d9cc1b08f618cadc0dad92e02e185e75a25f5d847502d",
+      "kc:v1:8d11330a60a5879c542d9cc1b08f618cadc0dad92e02e185e75a25f5d847502d",
+      "kc:v1:95283df3237028ed9c316cb21f09aae39a0e1c299e5b8ab30b8d8a3e085f8263",
+      "kc:v1:95283df3237028ed9c316cb21f09aae39a0e1c299e5b8ab30b8d8a3e085f8263",
+      "kc:v1:ac8fe926ecebd0c9a97b5610c3e13ec2c84e3afccda79db775a78e9741ce7a26",
+      "kc:v1:ac8fe926ecebd0c9a97b5610c3e13ec2c84e3afccda79db775a78e9741ce7a26"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH02.P4",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH02",
+        "periodId": null,
+        "paragraphId": "P4",
+        "sentenceRole": null,
+        "originalAddress": "CH02.P4",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "재능을 어떻게 실제 실력으로 확인하는가?",
+      "readerPurpose": "재능을 어떻게 실제 실력으로 확인하는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "기준·피드백·전이·복합 기능·기여 흔적",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "strengths"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 7,
+        "originalId": "ckr:paragraph:CH02.P4",
+        "recordSha256": "fa4d33cd4bc60086b57b43fb2b5e99244b3ba3f752b4c11eba492a6833468d80",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "fa4d33cd4bc60086b57b43fb2b5e99244b3ba3f752b4c11eba492a6833468d80",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/1/paragraphs/3",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "feeb3ae2091da4a1e318f3798c0870bbecdbbdeac6a38db3eb5c58fb3e3b9149"
+      },
+      "readerContractHash": "feeb3ae2091da4a1e318f3798c0870bbecdbbdeac6a38db3eb5c58fb3e3b9149",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH02.P4:criterion-before-practice",
+        "ckr:material:CH02.P4:feedback-not-praise",
+        "ckr:material:CH02.P4:transfer-test",
+        "ckr:material:CH02.P4:two-skill-complement",
+        "ckr:material:CH02.P4:value-trace"
+      ],
+      "sourceCatalogKey": "kc:v1:0d9b219cefa43fc08295eaab21ca29319b6a8706de2cae8ad6d331d0f624db58",
+      "roleContract": null,
+      "sourcePolicy": "과거 경험·성과 조작"
+    },
+    "materials": [
+      "kc:v1:3ebf2a3f917a8f6e5659e85d9cd64a87e468123f1def219a90ba0cc6b5fdee12",
+      "kc:v1:3ebf2a3f917a8f6e5659e85d9cd64a87e468123f1def219a90ba0cc6b5fdee12",
+      "kc:v1:4c0225f82e5ccac94c6e54ef1046913aedcab59abc853ac76a7daec5b55e39d0",
+      "kc:v1:4c0225f82e5ccac94c6e54ef1046913aedcab59abc853ac76a7daec5b55e39d0",
+      "kc:v1:6874bf19182d7298afb1f22c372ccce3ad9573cf4c7a18bd27f0542d0f0dc04e",
+      "kc:v1:6874bf19182d7298afb1f22c372ccce3ad9573cf4c7a18bd27f0542d0f0dc04e",
+      "kc:v1:c71ec53e1f6c193a5d28541158e34af0368ae25fabffd1c4e301e8f31951c812",
+      "kc:v1:c71ec53e1f6c193a5d28541158e34af0368ae25fabffd1c4e301e8f31951c812",
+      "kc:v1:fa54c47218e9d4913da584c1ae68f65dc585f4b03136c176023ec48424328f45",
+      "kc:v1:fa54c47218e9d4913da584c1ae68f65dc585f4b03136c176023ec48424328f45"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH03.P1",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH03",
+        "periodId": null,
+        "paragraphId": "P1",
+        "sentenceRole": null,
+        "originalAddress": "CH03.P1",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "맞는 일의 공통점은 직함 밖에서 무엇인가?",
+      "readerPurpose": "맞는 일의 공통점은 직함 밖에서 무엇인가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "과제·대상·산출물·자격·유지와 탐색의 비중",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 8,
+        "originalId": "ckr:paragraph:CH03.P1",
+        "recordSha256": "44614a7530578bb8dec6e7675d9d482da9a9a64c6a7100cf7732dd16b503a09d",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "44614a7530578bb8dec6e7675d9d482da9a9a64c6a7100cf7732dd16b503a09d",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/2/paragraphs/0",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "4608a3f93f7443ce27a675c80fce204c6c698abe2ca8a912d1e579a43056e4ce"
+      },
+      "readerContractHash": "4608a3f93f7443ce27a675c80fce204c6c698abe2ca8a912d1e579a43056e4ce",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH03.P1:task-not-title",
+        "ckr:material:CH03.P1:investigation-object",
+        "ckr:material:CH03.P1:output-audience",
+        "ckr:material:CH03.P1:help-task-scope",
+        "ckr:material:CH03.P1:repeat-vs-search"
+      ],
+      "sourceCatalogKey": "kc:v1:fc9b9bd2c8653e5e192d9987c053986d98fdb2644537b2fd34aa54ef685c19b3",
+      "roleContract": null,
+      "sourcePolicy": "천직 확정·모든 직무 동일 책임감"
+    },
+    "materials": [
+      "kc:v1:0ef2f8598429c239e2a9ea9c74198b89a2b2d2d5f29d8f6dfb7df8c1a59c9149",
+      "kc:v1:0ef2f8598429c239e2a9ea9c74198b89a2b2d2d5f29d8f6dfb7df8c1a59c9149",
+      "kc:v1:328e72c3e92cc6c8512c26a9232dbb1bd9298297ef3f57db2a95943059a17080",
+      "kc:v1:328e72c3e92cc6c8512c26a9232dbb1bd9298297ef3f57db2a95943059a17080",
+      "kc:v1:3e8fec6afd4fb5f5d4e7082fe9c1294b9d2fdcb66bd1cbd24809cce255aab355",
+      "kc:v1:3e8fec6afd4fb5f5d4e7082fe9c1294b9d2fdcb66bd1cbd24809cce255aab355",
+      "kc:v1:d54ad82139b7c180d205e9e6813694406df3399aab997a5c7219682a0141f224",
+      "kc:v1:d54ad82139b7c180d205e9e6813694406df3399aab997a5c7219682a0141f224",
+      "kc:v1:f85f691eb59f6fd197746c3107e2bf68bcced6c85ec2e7385176707a8b50ba07",
+      "kc:v1:f85f691eb59f6fd197746c3107e2bf68bcced6c85ec2e7385176707a8b50ba07"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH03.P2",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH03",
+        "periodId": null,
+        "paragraphId": "P2",
+        "sentenceRole": null,
+        "originalAddress": "CH03.P2",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "실제 첫 탐색 후보의 하루에는 어떤 과제가 있는가?",
+      "readerPurpose": "실제 첫 탐색 후보의 하루에는 어떤 과제가 있는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "기존 8경로의 실제 과제·환경·검증",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 9,
+        "originalId": "ckr:paragraph:CH03.P2",
+        "recordSha256": "5db2d0842b9a8f57fb3a06d87072557044eb933fdf4142b083b1e18ced350002",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "5db2d0842b9a8f57fb3a06d87072557044eb933fdf4142b083b1e18ced350002",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/2/paragraphs/1",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "67c597b5b92b88a53e422118b0f3a17752720ae4edda27c4db2364449c1a985c"
+      },
+      "readerContractHash": "67c597b5b92b88a53e422118b0f3a17752720ae4edda27c4db2364449c1a985c",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH03.P2:route-review-finance",
+        "ckr:material:CH03.P2:route-investigate-dev",
+        "ckr:material:CH03.P2:route-create-photo",
+        "ckr:material:CH03.P2:route-teach-instruction",
+        "ckr:material:CH03.P2:route-lead-project",
+        "ckr:material:CH03.P2:route-manage-admin",
+        "ckr:material:CH03.P2:route-market-sales",
+        "ckr:material:CH03.P2:route-experience-service"
+      ],
+      "sourceCatalogKey": "kc:v1:e4c73bbe6b7939e58b68aacdb06b2855377494d8048fa4ddc883eaff9f97d380",
+      "roleContract": null,
+      "sourcePolicy": "연구 자료가 많다고 새로운 1순위 생성"
+    },
+    "materials": [
+      "kc:v1:0a23c8ae078359422b100b8f8a99ffe02e384020d0511f7c9603bd34c02c0421",
+      "kc:v1:0a23c8ae078359422b100b8f8a99ffe02e384020d0511f7c9603bd34c02c0421",
+      "kc:v1:104cd5007ed2a2cc857cbf5c5b75c6bfa18c8dd60b2528207a6325e9d46dfb3c",
+      "kc:v1:104cd5007ed2a2cc857cbf5c5b75c6bfa18c8dd60b2528207a6325e9d46dfb3c",
+      "kc:v1:480e6ba0990f2b8bf9e1f5a02d5a9a4124b1d30bad68b74fe671a887e2de8965",
+      "kc:v1:480e6ba0990f2b8bf9e1f5a02d5a9a4124b1d30bad68b74fe671a887e2de8965",
+      "kc:v1:810e73998b6603c4cc856a3c328047a1c8d972b15a98e7abbacf7072cc5d028f",
+      "kc:v1:810e73998b6603c4cc856a3c328047a1c8d972b15a98e7abbacf7072cc5d028f",
+      "kc:v1:8261153648b7cf7f4d80b2aad139cc3ac8ecc49df1dbfd0c981b45b850c309ff",
+      "kc:v1:8261153648b7cf7f4d80b2aad139cc3ac8ecc49df1dbfd0c981b45b850c309ff",
+      "kc:v1:82aa8341e924b6ea4526ca2a1846571cf5508a590ace4fa71ad2e8dc851acd2d",
+      "kc:v1:82aa8341e924b6ea4526ca2a1846571cf5508a590ace4fa71ad2e8dc851acd2d",
+      "kc:v1:91b1ce8bb22eeee3c6b817d4d13cede4abfa47070912c73fa44edd01c77ed1ed",
+      "kc:v1:91b1ce8bb22eeee3c6b817d4d13cede4abfa47070912c73fa44edd01c77ed1ed",
+      "kc:v1:a1664066fa417bb23d0cd1210c7a2b3bea61a090901f4e5585c551cd16785dde",
+      "kc:v1:a1664066fa417bb23d0cd1210c7a2b3bea61a090901f4e5585c551cd16785dde"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH03.P3",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH03",
+        "periodId": null,
+        "paragraphId": "P3",
+        "sentenceRole": null,
+        "originalAddress": "CH03.P3",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "다른 후보는 첫 후보와 무엇이 다른가?",
+      "readerPurpose": "다른 후보는 첫 후보와 무엇이 다른가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "언어·시간 매체·사용 흐름·지원·운영·판매·현장·사업 비교",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 10,
+        "originalId": "ckr:paragraph:CH03.P3",
+        "recordSha256": "cd4a3873c319acc619232d253fc379335626d03feb17add48763b85af850c0f2",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "cd4a3873c319acc619232d253fc379335626d03feb17add48763b85af850c0f2",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/2/paragraphs/2",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "ed991334f89d8b4145c9b0e79989ec099f22a30dc710cfb18ba5cce87e0e55e3"
+      },
+      "readerContractHash": "ed991334f89d8b4145c9b0e79989ec099f22a30dc710cfb18ba5cce87e0e55e3",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH03.P3:alternative-translation",
+        "ckr:material:CH03.P3:alternative-video",
+        "ckr:material:CH03.P3:alternative-ux",
+        "ckr:material:CH03.P3:alternative-support",
+        "ckr:material:CH03.P3:alternative-operations",
+        "ckr:material:CH03.P3:alternative-retail",
+        "ckr:material:CH03.P3:alternative-field",
+        "ckr:material:CH03.P3:alternative-business-analysis"
+      ],
+      "sourceCatalogKey": "kc:v1:83f1954a3087749ac50afdf64082e1af0c6fc1d07cc1168ce302d6127f4e9b7e",
+      "roleContract": null,
+      "sourcePolicy": "다른 이름의 같은 과제를 독립 추천으로 계산"
+    },
+    "materials": [
+      "kc:v1:28bf5920c8eff46184936c6b57d2b06ee3208e8580330bb9e91aaf199a41f2ce",
+      "kc:v1:28bf5920c8eff46184936c6b57d2b06ee3208e8580330bb9e91aaf199a41f2ce",
+      "kc:v1:3b82224458d7957aae1b821ea26ea3f3f93976c5b9b0a046d5aeac704a10cdc1",
+      "kc:v1:3b82224458d7957aae1b821ea26ea3f3f93976c5b9b0a046d5aeac704a10cdc1",
+      "kc:v1:59084b4d19952b0ccf27c38c3301a5389207faadc532f26cc9f11d76073610ad",
+      "kc:v1:59084b4d19952b0ccf27c38c3301a5389207faadc532f26cc9f11d76073610ad",
+      "kc:v1:718774d3852896cec56bd17e40f9ccbf7a7aeca6643d1284cf9dc527be5c0bc6",
+      "kc:v1:718774d3852896cec56bd17e40f9ccbf7a7aeca6643d1284cf9dc527be5c0bc6",
+      "kc:v1:93dedbd35ea57113aebbda4d016f5830767201bfac0c2ef28c16ec606eff63b5",
+      "kc:v1:93dedbd35ea57113aebbda4d016f5830767201bfac0c2ef28c16ec606eff63b5",
+      "kc:v1:a8534fbeff36d67d81b92fbc0cc82402480ddd1eabaed27ddc2a35a54cf424c2",
+      "kc:v1:a8534fbeff36d67d81b92fbc0cc82402480ddd1eabaed27ddc2a35a54cf424c2",
+      "kc:v1:cda7af5895e964b7b97d5b50348d0519605e0a85cef7b282a3a66c5df8359ed9",
+      "kc:v1:cda7af5895e964b7b97d5b50348d0519605e0a85cef7b282a3a66c5df8359ed9",
+      "kc:v1:d44205a71062ea2c91c3bc13ebb0c2c4a56d16f57a35f936e9d9a759716b5a27",
+      "kc:v1:d44205a71062ea2c91c3bc13ebb0c2c4a56d16f57a35f936e9d9a759716b5a27"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH03.P4",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH03",
+        "periodId": null,
+        "paragraphId": "P4",
+        "sentenceRole": null,
+        "originalAddress": "CH03.P4",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "피할 환경과 조정 가능한 조건을 어떻게 나누는가?",
+      "readerPurpose": "피할 환경과 조정 가능한 조건을 어떻게 나누는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "자료 차단·취향 변경·상시 지원·검증 생략·목적 불일치",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 11,
+        "originalId": "ckr:paragraph:CH03.P4",
+        "recordSha256": "0f33e911a9583de334755c4f11470785bfae2307f7b2495428b8400eacb58c04",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "0f33e911a9583de334755c4f11470785bfae2307f7b2495428b8400eacb58c04",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/2/paragraphs/3",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "39b2bb976cbc0fb9b315c9630deb575a65763649cd5e5755808acfd5f43e7310"
+      },
+      "readerContractHash": "39b2bb976cbc0fb9b315c9630deb575a65763649cd5e5755808acfd5f43e7310",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH03.P4:blocked-review",
+        "ckr:material:CH03.P4:creative-scope-chaos",
+        "ckr:material:CH03.P4:care-always-on",
+        "ckr:material:CH03.P4:false-speed",
+        "ckr:material:CH03.P4:purpose-mismatch"
+      ],
+      "sourceCatalogKey": "kc:v1:f2d457b5f384dbbb9f39479f4224b25c90846fd7fcfb792a0a050176035b6555",
+      "roleContract": null,
+      "sourcePolicy": "불편 한 번으로 직업 전체 회피 단정"
+    },
+    "materials": [
+      "kc:v1:9095ea8d8241c7a421006b1d3090a3c50eb6ca5f8d99b5a086016fac0352bab5",
+      "kc:v1:9095ea8d8241c7a421006b1d3090a3c50eb6ca5f8d99b5a086016fac0352bab5",
+      "kc:v1:bfc542bd656b3ab9cb446e396172ba3740231a67c52df2591d29d87ebc956ea7",
+      "kc:v1:bfc542bd656b3ab9cb446e396172ba3740231a67c52df2591d29d87ebc956ea7",
+      "kc:v1:e614d511f307575240fe3315a1f5bd51cd5f77cfe57105301d1b3c3c45f8f7c8",
+      "kc:v1:e614d511f307575240fe3315a1f5bd51cd5f77cfe57105301d1b3c3c45f8f7c8",
+      "kc:v1:eb75bd00c2e2e169ec447e1f2e89b284f4103d8e6dab2d33d1ca9627e582c473",
+      "kc:v1:eb75bd00c2e2e169ec447e1f2e89b284f4103d8e6dab2d33d1ca9627e582c473",
+      "kc:v1:f0fcef806a2eb55e1b1a1aa7b49f86893f65c35a4152e04c01b86a9691a5b191",
+      "kc:v1:f0fcef806a2eb55e1b1a1aa7b49f86893f65c35a4152e04c01b86a9691a5b191"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH04.P1",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH04",
+        "periodId": null,
+        "paragraphId": "P1",
+        "sentenceRole": null,
+        "originalAddress": "CH04.P1",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "다른 사람이 이어 일하도록 무엇을 전달하는가?",
+      "readerPurpose": "다른 사람이 이어 일하도록 무엇을 전달하는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "합의 언어·관찰 기록·선행 제약·의뢰 목적·팀 과제",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 12,
+        "originalId": "ckr:paragraph:CH04.P1",
+        "recordSha256": "564cff903a734cd389621bea257a088dd0f7b895574cead8ec2d1987ea016f8c",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "564cff903a734cd389621bea257a088dd0f7b895574cead8ec2d1987ea016f8c",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/3/paragraphs/0",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "9c4a63e0ee9f6bb008db94ed19d6ae44852929f5ad1a08f1ec625d1d96b102eb"
+      },
+      "readerContractHash": "9c4a63e0ee9f6bb008db94ed19d6ae44852929f5ad1a08f1ec625d1d96b102eb",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH04.P1:shared-vocabulary",
+        "ckr:material:CH04.P1:handoff-observation",
+        "ckr:material:CH04.P1:parallel-constraints",
+        "ckr:material:CH04.P1:client-brief",
+        "ckr:material:CH04.P1:student-role-dialogue"
+      ],
+      "sourceCatalogKey": "kc:v1:5d36b4b25a57bab43b299c72e5c770d53cfcc82414f71c2538323624d9ad459f",
+      "roleContract": null,
+      "sourcePolicy": "모든 상태에 상사·승진 적용"
+    },
+    "materials": [
+      "kc:v1:186e0a677b71df0753d0c48291867826df3b9ba23b6b739e6fc82cd89706f92f",
+      "kc:v1:186e0a677b71df0753d0c48291867826df3b9ba23b6b739e6fc82cd89706f92f",
+      "kc:v1:5714192f8470fd5e150ace8ec5e37d93605611a818d41733f9f2157901a11595",
+      "kc:v1:5714192f8470fd5e150ace8ec5e37d93605611a818d41733f9f2157901a11595",
+      "kc:v1:9f58b2367068eabf8f33efb809244d02db20a05a415b5685fcc0d5fd5abf6cb7",
+      "kc:v1:9f58b2367068eabf8f33efb809244d02db20a05a415b5685fcc0d5fd5abf6cb7",
+      "kc:v1:a56a65b6d4ea3ac11571a5b4951f67cc5c76327ea31da30c7f7da1c04aaea189",
+      "kc:v1:a56a65b6d4ea3ac11571a5b4951f67cc5c76327ea31da30c7f7da1c04aaea189",
+      "kc:v1:e702190dc3e3146c9f78858f5e871c9d02479f46496dda8408ac2bd2279d5401",
+      "kc:v1:e702190dc3e3146c9f78858f5e871c9d02479f46496dda8408ac2bd2279d5401"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH04.P2",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH04",
+        "periodId": null,
+        "paragraphId": "P2",
+        "sentenceRole": null,
+        "originalAddress": "CH04.P2",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "역할을 맡을 때 권한과 한계는 무엇인가?",
+      "readerPurpose": "역할을 맡을 때 권한과 한계는 무엇인가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "결정·검수·교육·운영 연결·전문 기여의 경계",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 13,
+        "originalId": "ckr:paragraph:CH04.P2",
+        "recordSha256": "88860f2d52ffafd47af50635bc0b3da2317ac2cf3f5363b1dfe41db9669b98db",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "88860f2d52ffafd47af50635bc0b3da2317ac2cf3f5363b1dfe41db9669b98db",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/3/paragraphs/1",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "3213f19539431e11413c2703a43545069dd53ecd94577a12dc5362d54de705ff"
+      },
+      "readerContractHash": "3213f19539431e11413c2703a43545069dd53ecd94577a12dc5362d54de705ff",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH04.P2:decision-owner",
+        "ckr:material:CH04.P2:quality-gate-role",
+        "ckr:material:CH04.P2:instruction-role",
+        "ckr:material:CH04.P2:operations-bridge",
+        "ckr:material:CH04.P2:independent-contributor"
+      ],
+      "sourceCatalogKey": "kc:v1:f73ab3f1e4b9be82d86df55b02afd4be857f97ffc07dc650dc337d66daa864ca",
+      "roleContract": null,
+      "sourcePolicy": "지위·직원·전문 자격 생성"
+    },
+    "materials": [
+      "kc:v1:5e6c7ca4472e3314b810a4de5b8cd470bd50c72cba4a87a625fd1c88d4b7d28e",
+      "kc:v1:5e6c7ca4472e3314b810a4de5b8cd470bd50c72cba4a87a625fd1c88d4b7d28e",
+      "kc:v1:680cf460bf29fe21c254ec6a534866c553d0b08b0900788459b4c93e6ed48126",
+      "kc:v1:680cf460bf29fe21c254ec6a534866c553d0b08b0900788459b4c93e6ed48126",
+      "kc:v1:7aa172f4c78eedce207649bf1b66353f3ef2782a2c80dbad96b4b8ee78193bf0",
+      "kc:v1:7aa172f4c78eedce207649bf1b66353f3ef2782a2c80dbad96b4b8ee78193bf0",
+      "kc:v1:dac6584dd93969dbd5846fc41edfa8e30b3060ec1b59407d6bc7687565bfd373",
+      "kc:v1:dac6584dd93969dbd5846fc41edfa8e30b3060ec1b59407d6bc7687565bfd373",
+      "kc:v1:e75dcf431f04732bca2254f7eebced085313ad5c0d4997f84e0e6e6f3dc02966",
+      "kc:v1:e75dcf431f04732bca2254f7eebced085313ad5c0d4997f84e0e6e6f3dc02966"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH04.P3",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH04",
+        "periodId": null,
+        "paragraphId": "P3",
+        "sentenceRole": null,
+        "originalAddress": "CH04.P3",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "좋은 의도가 협업 비용이 되는 조건은 무엇인가?",
+      "readerPurpose": "좋은 의도가 협업 비용이 되는 조건은 무엇인가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "평가 섞인 교정·책임 회수·침묵·미공유 변경·대안 없는 거절",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 14,
+        "originalId": "ckr:paragraph:CH04.P3",
+        "recordSha256": "2aaf4474ca6aded131eae68e51d8d3c599eef9e7b6a1ac889becc3280d3abd91",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "2aaf4474ca6aded131eae68e51d8d3c599eef9e7b6a1ac889becc3280d3abd91",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/3/paragraphs/2",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "12bc9e370d95739b03b2ef647d9b83b9df37c5622d72256dd327e6664f1d2d0b"
+      },
+      "readerContractHash": "12bc9e370d95739b03b2ef647d9b83b9df37c5622d72256dd327e6664f1d2d0b",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH04.P3:sharp-correction-cost",
+        "ckr:material:CH04.P3:take-back-work",
+        "ckr:material:CH04.P3:silent-disagreement",
+        "ckr:material:CH04.P3:invisible-change",
+        "ckr:material:CH04.P3:scope-refusal-cost"
+      ],
+      "sourceCatalogKey": "kc:v1:185800b832f605a432a7e6e589a1d440fdd907f174dcc77a6114d820653337b0",
+      "roleContract": null,
+      "sourcePolicy": "실제 실패·상대 감정 단정"
+    },
+    "materials": [
+      "kc:v1:0cba8af270e64508d91746f0ccc3765c59419ac2d5b03b5ff8ca33686d5fc7af",
+      "kc:v1:0cba8af270e64508d91746f0ccc3765c59419ac2d5b03b5ff8ca33686d5fc7af",
+      "kc:v1:1bb18d35f2027e49af98565a6a724d83527d265f69f8a68104984dd486d6926b",
+      "kc:v1:1bb18d35f2027e49af98565a6a724d83527d265f69f8a68104984dd486d6926b",
+      "kc:v1:69141635d91e90ad0b58a515e88dfa201903fea92a34049e8cb084e1b448395a",
+      "kc:v1:69141635d91e90ad0b58a515e88dfa201903fea92a34049e8cb084e1b448395a",
+      "kc:v1:97e3119dc1c188b63ace9d793fb2724638e263de6c9cdfa9d7eca8bc32a78cdb",
+      "kc:v1:97e3119dc1c188b63ace9d793fb2724638e263de6c9cdfa9d7eca8bc32a78cdb",
+      "kc:v1:d07e3b7d0a711b905fc206f1c79513bdf72ba17ddf644ec7f2c03049f7544c10",
+      "kc:v1:d07e3b7d0a711b905fc206f1c79513bdf72ba17ddf644ec7f2c03049f7544c10"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH04.P4",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH04",
+        "periodId": null,
+        "paragraphId": "P4",
+        "sentenceRole": null,
+        "originalAddress": "CH04.P4",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "조직문화의 말을 어떤 운영 질문으로 확인하는가?",
+      "readerPurpose": "조직문화의 말을 어떤 운영 질문으로 확인하는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "예외 통로·피드백·회복·근거 결정·현장 정보 반영",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 15,
+        "originalId": "ckr:paragraph:CH04.P4",
+        "recordSha256": "2dd67d9b3d8dcac48444776168dcf0570150c6cf70ce3ce8af3d6cdef21b4d95",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "2dd67d9b3d8dcac48444776168dcf0570150c6cf70ce3ce8af3d6cdef21b4d95",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/3/paragraphs/3",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "4debf80a60932b951bb30ed231bfc0f9c1258b2f6654e8e36c99705863b30af3"
+      },
+      "readerContractHash": "4debf80a60932b951bb30ed231bfc0f9c1258b2f6654e8e36c99705863b30af3",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH04.P4:culture-exception-path",
+        "ckr:material:CH04.P4:culture-feedback-safety",
+        "ckr:material:CH04.P4:culture-recovery",
+        "ckr:material:CH04.P4:culture-evidence-decision",
+        "ckr:material:CH04.P4:culture-frontline-voice"
+      ],
+      "sourceCatalogKey": "kc:v1:82288cfe18c9c5f6aa6c1590e4509cbe669a1e7246087d60dd395361849185c4",
+      "roleContract": null,
+      "sourcePolicy": "존재하지 않는 조직을 평가"
+    },
+    "materials": [
+      "kc:v1:32566006348bb9ff51a50be9793570f15853d9b495b99573ee85013b5e56c970",
+      "kc:v1:32566006348bb9ff51a50be9793570f15853d9b495b99573ee85013b5e56c970",
+      "kc:v1:64543483aeeb2687ea0b85404d2299428ce65235af54f90940f9d1efe6e47673",
+      "kc:v1:64543483aeeb2687ea0b85404d2299428ce65235af54f90940f9d1efe6e47673",
+      "kc:v1:c839d780321d8fe5671b54273a600d6c05da170145e51c4927fd199ba6f655aa",
+      "kc:v1:c839d780321d8fe5671b54273a600d6c05da170145e51c4927fd199ba6f655aa",
+      "kc:v1:c94fc5ff7424d00de77d3873d0ae5344b6dd3e635d822d1766514a348f9739cf",
+      "kc:v1:c94fc5ff7424d00de77d3873d0ae5344b6dd3e635d822d1766514a348f9739cf",
+      "kc:v1:dee376326a024f76f88e3b658d1dafb8d51112a514fe08fb4b2b12c8436578e7",
+      "kc:v1:dee376326a024f76f88e3b658d1dafb8d51112a514fe08fb4b2b12c8436578e7"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH05.P1",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH05",
+        "periodId": null,
+        "paragraphId": "P1",
+        "sentenceRole": null,
+        "originalAddress": "CH05.P1",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "현재 상태에서 먼저 확인할 전문 과제는 무엇인가?",
+      "readerPurpose": "현재 상태에서 먼저 확인할 전문 과제는 무엇인가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "입력 enum 10개 각각의 과제·제약",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 16,
+        "originalId": "ckr:paragraph:CH05.P1",
+        "recordSha256": "330121f5ed40fd2165e1dc373ed3cbaf45e6441d141d3149eec2c9cd3b201235",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "330121f5ed40fd2165e1dc373ed3cbaf45e6441d141d3149eec2c9cd3b201235",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/4/paragraphs/0",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "c51bfbba7a32801b8460202416aaba929334d4a414fcd64998480e15a7b5c748"
+      },
+      "readerContractHash": "c51bfbba7a32801b8460202416aaba929334d4a414fcd64998480e15a7b5c748",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH05.P1:status-student",
+        "ckr:material:CH05.P1:status-seeker",
+        "ckr:material:CH05.P1:status-employee",
+        "ckr:material:CH05.P1:status-freelancer",
+        "ckr:material:CH05.P1:status-self-employed",
+        "ckr:material:CH05.P1:status-owner",
+        "ckr:material:CH05.P1:status-homemaker",
+        "ckr:material:CH05.P1:status-resting",
+        "ckr:material:CH05.P1:status-other",
+        "ckr:material:CH05.P1:status-empty"
+      ],
+      "sourceCatalogKey": "kc:v1:4244ace227ccb2bc9b203fab41bdf350e6b75b701133174a81cc9229e89039b0",
+      "roleContract": null,
+      "sourcePolicy": "미입력 상태 보충·가족·실직 원인 추정"
+    },
+    "materials": [
+      "kc:v1:0cdd2d89e1be118b148d652fd5a6f38a2931b2848b7aec2be9155a7e0c416160",
+      "kc:v1:0cdd2d89e1be118b148d652fd5a6f38a2931b2848b7aec2be9155a7e0c416160",
+      "kc:v1:2f03ed0d3eee845761b93d43a0ec9490d90fc5cf043c471eb4db6b4351c730e4",
+      "kc:v1:2f03ed0d3eee845761b93d43a0ec9490d90fc5cf043c471eb4db6b4351c730e4",
+      "kc:v1:4a6ffba88e7ccf4f58ec5390f1aa3aaeb489f35139d637150093ffe67dd6237c",
+      "kc:v1:4a6ffba88e7ccf4f58ec5390f1aa3aaeb489f35139d637150093ffe67dd6237c",
+      "kc:v1:633938632897ea5465175ec98cf0bcd8e3bed3c1088af0e8e7fe4babc3e8fe89",
+      "kc:v1:633938632897ea5465175ec98cf0bcd8e3bed3c1088af0e8e7fe4babc3e8fe89",
+      "kc:v1:93ede0689bcb73a01fda9b652e4f64d15810eec38526271ad6c2d859b51b3285",
+      "kc:v1:93ede0689bcb73a01fda9b652e4f64d15810eec38526271ad6c2d859b51b3285",
+      "kc:v1:b6244bae7fbb9a67883eb1144623fd3e7a615af8c6d67a380df88773d1407ce8",
+      "kc:v1:b6244bae7fbb9a67883eb1144623fd3e7a615af8c6d67a380df88773d1407ce8",
+      "kc:v1:b93a3d5cf7e8fbbc1325599bb6253303d7eddcacff2640b53b21bfed4ecb47b3",
+      "kc:v1:b93a3d5cf7e8fbbc1325599bb6253303d7eddcacff2640b53b21bfed4ecb47b3",
+      "kc:v1:c0a3a1e758b63bd07b84799121cc2cb0c71054741eb062a0201dd189adfcd209",
+      "kc:v1:c0a3a1e758b63bd07b84799121cc2cb0c71054741eb062a0201dd189adfcd209",
+      "kc:v1:c8557203263a001b8820da6da557ac758efc93c68514eb80ce785ec8b3fc18f6",
+      "kc:v1:c8557203263a001b8820da6da557ac758efc93c68514eb80ce785ec8b3fc18f6",
+      "kc:v1:e06d01e05a5e46ed643f1b35c350c7730ac88cc174b4822cbb82435e8b83f0e9",
+      "kc:v1:e06d01e05a5e46ed643f1b35c350c7730ac88cc174b4822cbb82435e8b83f0e9"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH05.P2",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH05",
+        "periodId": null,
+        "paragraphId": "P2",
+        "sentenceRole": null,
+        "originalAddress": "CH05.P2",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "현재 과제에 소개된 재능을 어디까지 적용할 수 있는가?",
+      "readerPurpose": "현재 과제에 소개된 재능을 어디까지 적용할 수 있는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "사진 선별·재무 가정·디자인 매체·카페 흐름·돌봄 기록",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 17,
+        "originalId": "ckr:paragraph:CH05.P2",
+        "recordSha256": "70186ee0a8becf23e71054da3638c8de17b0a0720cb061b5215e8afa0c41f602",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "70186ee0a8becf23e71054da3638c8de17b0a0720cb061b5215e8afa0c41f602",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/4/paragraphs/1",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "5ca82f76888046e5e4f14770dcc0a55c70092167020aca8e879d49b9fdf91e1b"
+      },
+      "readerContractHash": "5ca82f76888046e5e4f14770dcc0a55c70092167020aca8e879d49b9fdf91e1b",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH05.P2:current-photo-selection",
+        "ckr:material:CH05.P2:current-finance-variance",
+        "ckr:material:CH05.P2:current-design-student",
+        "ckr:material:CH05.P2:current-cafe-flow",
+        "ckr:material:CH05.P2:current-care-record"
+      ],
+      "sourceCatalogKey": "kc:v1:fe37d9304bf67d404283856480f4671f38913d6f355d6080de9c1fd49d1d4bbc",
+      "roleContract": null,
+      "sourcePolicy": "직업명만 넣은 가짜 개인화"
+    },
+    "materials": [
+      "kc:v1:23de18a687512dafd07bd74258f8c98345530a907f84b03c002939d54a5f035c",
+      "kc:v1:23de18a687512dafd07bd74258f8c98345530a907f84b03c002939d54a5f035c",
+      "kc:v1:4ef92d5a580daade60b8de8addcc352e4ca8a5a4ec9968ee6d6dee2fce99f92f",
+      "kc:v1:4ef92d5a580daade60b8de8addcc352e4ca8a5a4ec9968ee6d6dee2fce99f92f",
+      "kc:v1:6688a6a9c8afe3ad8851388de6901606466c308c922bd0e116b1c1497cfc4286",
+      "kc:v1:6688a6a9c8afe3ad8851388de6901606466c308c922bd0e116b1c1497cfc4286",
+      "kc:v1:9c28c3f4b07fe79a59e4f2cf2f9898d0db9d71bce502558937bb700daa5c4748",
+      "kc:v1:9c28c3f4b07fe79a59e4f2cf2f9898d0db9d71bce502558937bb700daa5c4748",
+      "kc:v1:9e4032fec6de6003c03250e9cf22b1ed37de019e8ed6b9309ce8a59c9307c7fb",
+      "kc:v1:9e4032fec6de6003c03250e9cf22b1ed37de019e8ed6b9309ce8a59c9307c7fb"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH05.P3",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH05",
+        "periodId": null,
+        "paragraphId": "P3",
+        "sentenceRole": null,
+        "originalAddress": "CH05.P3",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "다음 역할로 넓히려면 어떤 기능을 더 배워야 하는가?",
+      "readerPurpose": "다음 역할로 넓히려면 어떤 기능을 더 배워야 하는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "목적 적합·유지·설명·학습 전이·위임 질문",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 18,
+        "originalId": "ckr:paragraph:CH05.P3",
+        "recordSha256": "7afe83f5d5d5a82710a3d7f3ee2f73fd287aaf465cda654381e5327f76454838",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "7afe83f5d5d5a82710a3d7f3ee2f73fd287aaf465cda654381e5327f76454838",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/4/paragraphs/2",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "e9ed5e6dcb85c5c0d981cdf449ac1e3cdd710262d263d8f36468fafe8bab8dd9"
+      },
+      "readerContractHash": "e9ed5e6dcb85c5c0d981cdf449ac1e3cdd710262d263d8f36468fafe8bab8dd9",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH05.P3:grow-photo-client-fit",
+        "ckr:material:CH05.P3:grow-dev-maintain",
+        "ckr:material:CH05.P3:grow-finance-communication",
+        "ckr:material:CH05.P3:grow-teaching-transfer",
+        "ckr:material:CH05.P3:grow-owner-question"
+      ],
+      "sourceCatalogKey": "kc:v1:afae93ebef9d15c091a975c697b3661c39a711f42a7d77bb442c0161fb192c81",
+      "roleContract": null,
+      "sourcePolicy": "직급이 바뀌면 실력이 늘었다고 단정"
+    },
+    "materials": [
+      "kc:v1:1c761bf4bcf16b298c6068fd13ea069976ff4e2877af27bdbed7394b201b352c",
+      "kc:v1:1c761bf4bcf16b298c6068fd13ea069976ff4e2877af27bdbed7394b201b352c",
+      "kc:v1:2236799e72b1d3c645095ea92943019c4b05a258e3e890a0b048cc7561f9dae6",
+      "kc:v1:2236799e72b1d3c645095ea92943019c4b05a258e3e890a0b048cc7561f9dae6",
+      "kc:v1:b0f2494b99d6101cf41dd2647f298216b959fb8e8d26a7d0dffcae4ec60a0cca",
+      "kc:v1:b0f2494b99d6101cf41dd2647f298216b959fb8e8d26a7d0dffcae4ec60a0cca",
+      "kc:v1:c1097f0eb3877c24b9da49b1d22c2761c7a5d56b206c5d0fd6bd8c213342f9e1",
+      "kc:v1:c1097f0eb3877c24b9da49b1d22c2761c7a5d56b206c5d0fd6bd8c213342f9e1",
+      "kc:v1:ff5dfdd718ade74752fd2a3d1ddba56571ad75e4134894057469df2310ef7aaf",
+      "kc:v1:ff5dfdd718ade74752fd2a3d1ddba56571ad75e4134894057469df2310ef7aaf"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH05.P4",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH05",
+        "periodId": null,
+        "paragraphId": "P4",
+        "sentenceRole": null,
+        "originalAddress": "CH05.P4",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "다음 선택 전 어떤 작은 확인을 할 수 있는가?",
+      "readerPurpose": "다음 선택 전 어떤 작은 확인을 할 수 있는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "상태별 의뢰·역할·공고·운영·맥락 확인",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "work"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 19,
+        "originalId": "ckr:paragraph:CH05.P4",
+        "recordSha256": "c72a31c79ec2f57cc1885c57d01ecf948e696b9484f80b1d41f06a674008d493",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "c72a31c79ec2f57cc1885c57d01ecf948e696b9484f80b1d41f06a674008d493",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/4/paragraphs/3",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "ff0fbc888e8d734bee884457b430a7f8ea3335b6f3e6658e1e5c1d6c9ee96ba9"
+      },
+      "readerContractHash": "ff0fbc888e8d734bee884457b430a7f8ea3335b6f3e6658e1e5c1d6c9ee96ba9",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH05.P4:next-photo-brief",
+        "ckr:material:CH05.P4:next-employee-role",
+        "ckr:material:CH05.P4:next-seeker-sample",
+        "ckr:material:CH05.P4:next-cafe-test",
+        "ckr:material:CH05.P4:next-unknown-question"
+      ],
+      "sourceCatalogKey": "kc:v1:ed937bd12989f559ac0826f753e5f0f3da389658477d20c188dea3dff491d116",
+      "roleContract": null,
+      "sourcePolicy": "같은 계획을 모든 상태에 강요"
+    },
+    "materials": [
+      "kc:v1:151598847b217cb2a9698660912fe19dbfa8d404a07a2139b50e8132b96dfec2",
+      "kc:v1:151598847b217cb2a9698660912fe19dbfa8d404a07a2139b50e8132b96dfec2",
+      "kc:v1:1dea32db5fda387007a83908c107afab0a11b6e3584afe8d44fcd9abf3765982",
+      "kc:v1:1dea32db5fda387007a83908c107afab0a11b6e3584afe8d44fcd9abf3765982",
+      "kc:v1:3a95d999d7def2d90f1826e84afd7785d75039a382001b72d51fb1add602770c",
+      "kc:v1:3a95d999d7def2d90f1826e84afd7785d75039a382001b72d51fb1add602770c",
+      "kc:v1:cc7ee803e9c2774225cbd062ac313a71198d11bf5cb0c0da718631550f23eeb9",
+      "kc:v1:cc7ee803e9c2774225cbd062ac313a71198d11bf5cb0c0da718631550f23eeb9",
+      "kc:v1:e67f998c633bfa4f35c05ccb7a999cfb5351221c37fae80df396975e95bd336f",
+      "kc:v1:e67f998c633bfa4f35c05ccb7a999cfb5351221c37fae80df396975e95bd336f"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH06.P1",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH06",
+        "periodId": null,
+        "paragraphId": "P1",
+        "sentenceRole": null,
+        "originalAddress": "CH06.P1",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "어떤 활동이 실제 제공 가치로 이어질 수 있는가?",
+      "readerPurpose": "어떤 활동이 실제 제공 가치로 이어질 수 있는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "재성·선호·자산 분리, 수요·전문성·지원·기술",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "money"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 20,
+        "originalId": "ckr:paragraph:CH06.P1",
+        "recordSha256": "937502118bae239349c1fc3feb9ea886b321dad621296dc75ba52854b7af87f3",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "937502118bae239349c1fc3feb9ea886b321dad621296dc75ba52854b7af87f3",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/5/paragraphs/0",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "cd2f064ec1795e3c4e035ae5458869b49d39ec67f5088225d540c24bb9bd24d9"
+      },
+      "readerContractHash": "cd2f064ec1795e3c4e035ae5458869b49d39ec67f5088225d540c24bb9bd24d9",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH06.P1:wealth-not-balance",
+        "ckr:material:CH06.P1:opportunity-to-demand",
+        "ckr:material:CH06.P1:expertise-value",
+        "ckr:material:CH06.P1:service-value",
+        "ckr:material:CH06.P1:skill-to-use"
+      ],
+      "sourceCatalogKey": "kc:v1:fd7980c0a8ce8277eb420d5ef27cd0a754abcd7d994cadbd35a5ff719173bacc",
+      "roleContract": null,
+      "sourcePolicy": "부·투자 실력·고소득 보장"
+    },
+    "materials": [
+      "kc:v1:78bc47f3a1585bcaa59c692fbc9b56beb69f541d73055be6510b6c83461832ba",
+      "kc:v1:78bc47f3a1585bcaa59c692fbc9b56beb69f541d73055be6510b6c83461832ba",
+      "kc:v1:a087524df3f5a17851e5657677373500b06eaf6ae14cd1bc3aed52e5763b1311",
+      "kc:v1:a087524df3f5a17851e5657677373500b06eaf6ae14cd1bc3aed52e5763b1311",
+      "kc:v1:a3b8b8b18443a5a0dfc199f5d8a30be1759a8bdbd6f5b483542b0d7fc1f9892f",
+      "kc:v1:a3b8b8b18443a5a0dfc199f5d8a30be1759a8bdbd6f5b483542b0d7fc1f9892f",
+      "kc:v1:af7fc6cdeacf1a9df892c5cef5e0fc8025718d52e1bb70202d10e75b53a43b71",
+      "kc:v1:af7fc6cdeacf1a9df892c5cef5e0fc8025718d52e1bb70202d10e75b53a43b71",
+      "kc:v1:d860599eff0d62bb669d39d70b019ae2fc90c3e7069671b5537c423497ca4d7b",
+      "kc:v1:d860599eff0d62bb669d39d70b019ae2fc90c3e7069671b5537c423497ca4d7b"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH06.P2",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH06",
+        "periodId": null,
+        "paragraphId": "P2",
+        "sentenceRole": null,
+        "originalAddress": "CH06.P2",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "소개된 능력의 경제적 가치에는 어떤 조건이 필요한가?",
+      "readerPurpose": "소개된 능력의 경제적 가치에는 어떤 조건이 필요한가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "사용 목적·기여·반복 품질·교육 활용·위임 구조",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "money"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 21,
+        "originalId": "ckr:paragraph:CH06.P2",
+        "recordSha256": "58c9096089cf471b94a7517b902fc1b2296de84424f74970d6e40bd5c9e05b93",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "58c9096089cf471b94a7517b902fc1b2296de84424f74970d6e40bd5c9e05b93",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/5/paragraphs/1",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "57df0dd5b79bca51cac2a9c1a21f100be69ead9845c9e18a5587bba8b6eb1b02"
+      },
+      "readerContractHash": "57df0dd5b79bca51cac2a9c1a21f100be69ead9845c9e18a5587bba8b6eb1b02",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH06.P2:photo-use-value",
+        "ckr:material:CH06.P2:employee-contribution",
+        "ckr:material:CH06.P2:cafe-unit-value",
+        "ckr:material:CH06.P2:learning-investment-value",
+        "ckr:material:CH06.P2:business-repeat-value"
+      ],
+      "sourceCatalogKey": "kc:v1:b0a0a0329f70f09fd98bc4b9dcf487bbd76569efe4e9a57e68ffa79f173aa4d8",
+      "roleContract": null,
+      "sourcePolicy": "실제 가격·매출·성과를 발명"
+    },
+    "materials": [
+      "kc:v1:38e9dc8f5e5f1ec1c2e6237b1a7aa528e07a4e85b022a92a4918d3954dc67f8f",
+      "kc:v1:38e9dc8f5e5f1ec1c2e6237b1a7aa528e07a4e85b022a92a4918d3954dc67f8f",
+      "kc:v1:5586b2744d49eedcc732e73af9b31c8359b5c7ec5f7126493533cdf99bbca56b",
+      "kc:v1:5586b2744d49eedcc732e73af9b31c8359b5c7ec5f7126493533cdf99bbca56b",
+      "kc:v1:db5dd63105e2b42ce4a53ad88640d52d01814f918d52ee8ce0cf0c4ed3250cce",
+      "kc:v1:db5dd63105e2b42ce4a53ad88640d52d01814f918d52ee8ce0cf0c4ed3250cce",
+      "kc:v1:e871a9ae2e2a00db4cab8f4e67bf33a75a9250a7aab6c84ddd960a48c76cd061",
+      "kc:v1:e871a9ae2e2a00db4cab8f4e67bf33a75a9250a7aab6c84ddd960a48c76cd061",
+      "kc:v1:f4bd9a635c2296725c66efb1ad8e26f43f537209d5de01bf4b72f35ab55edc92",
+      "kc:v1:f4bd9a635c2296725c66efb1ad8e26f43f537209d5de01bf4b72f35ab55edc92"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH06.P3",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH06",
+        "periodId": null,
+        "paragraphId": "P3",
+        "sentenceRole": null,
+        "originalAddress": "CH06.P3",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "좋은 의도가 어떤 보이지 않는 투입을 만드는가?",
+      "readerPurpose": "좋은 의도가 어떤 보이지 않는 투입을 만드는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "추가 수정·도구 수요 간격·빠른 지출·기회 확대·지원",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "money"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 22,
+        "originalId": "ckr:paragraph:CH06.P3",
+        "recordSha256": "7514f6e3ac3a9eb7655adb0ace5538000eef34a5f2aeff10627f92d3bbce11a8",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "7514f6e3ac3a9eb7655adb0ace5538000eef34a5f2aeff10627f92d3bbce11a8",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/5/paragraphs/2",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "cfb190745ae37f8d37d1feb5db1d359f92ca0ecbbf0b7edc2a5ed3d680139262"
+      },
+      "readerContractHash": "cfb190745ae37f8d37d1feb5db1d359f92ca0ecbbf0b7edc2a5ed3d680139262",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH06.P3:unpriced-revision",
+        "ckr:material:CH06.P3:tool-demand-gap",
+        "ckr:material:CH06.P3:fast-commitment",
+        "ckr:material:CH06.P3:many-opportunities-cost",
+        "ckr:material:CH06.P3:help-hidden-cost"
+      ],
+      "sourceCatalogKey": "kc:v1:a6272b2e03615010f9a230b91d189ebc0fc02e52bcb39b1a0b7836627363fe97",
+      "roleContract": null,
+      "sourcePolicy": "실제 손실·투자 결과 단정"
+    },
+    "materials": [
+      "kc:v1:2563194f77a42a93683551a546ccc81e60600003d917990b8eb2af246ce4183c",
+      "kc:v1:2563194f77a42a93683551a546ccc81e60600003d917990b8eb2af246ce4183c",
+      "kc:v1:2b1c05e8b52cfea150931453b7f7d8a60993743b452cb2bd750b732ff8fd4197",
+      "kc:v1:2b1c05e8b52cfea150931453b7f7d8a60993743b452cb2bd750b732ff8fd4197",
+      "kc:v1:a534df1415d98dade3c56710b069ff05652e717d336f0708c28f2b9a3fd230d7",
+      "kc:v1:a534df1415d98dade3c56710b069ff05652e717d336f0708c28f2b9a3fd230d7",
+      "kc:v1:adb1b557690177bd0217f000ca6f88b2265753e1a1a89fa1ea07f332dd3096b1",
+      "kc:v1:adb1b557690177bd0217f000ca6f88b2265753e1a1a89fa1ea07f332dd3096b1",
+      "kc:v1:b2d71ecffa36714aa3edbb6f0249306b3223af95349fc02d0b8f00924ca5e838",
+      "kc:v1:b2d71ecffa36714aa3edbb6f0249306b3223af95349fc02d0b8f00924ca5e838"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH06.P4",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH06",
+        "periodId": null,
+        "paragraphId": "P4",
+        "sentenceRole": null,
+        "originalAddress": "CH06.P4",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "남는 자원을 어떤 항목으로 확인하는가?",
+      "readerPurpose": "남는 자원을 어떤 항목으로 확인하는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "시점·비용 종류·전체 부담·교육 투입·선택 여지",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "money"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 23,
+        "originalId": "ckr:paragraph:CH06.P4",
+        "recordSha256": "875143dd22abb6118c567deca7b1a66f3b811ba4707ff6ac3f7e815461449a0c",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "875143dd22abb6118c567deca7b1a66f3b811ba4707ff6ac3f7e815461449a0c",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/5/paragraphs/3",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "b302aacc593d1abaea9dabd8e54d2d9ecc41b69e687ebfa81e3f4c0e25f1ce48"
+      },
+      "readerContractHash": "b302aacc593d1abaea9dabd8e54d2d9ecc41b69e687ebfa81e3f4c0e25f1ce48",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH06.P4:cashflow-timing",
+        "ckr:material:CH06.P4:fixed-variable-time",
+        "ckr:material:CH06.P4:value-not-cheapest",
+        "ckr:material:CH06.P4:learning-budget-question",
+        "ckr:material:CH06.P4:reserve-options"
+      ],
+      "sourceCatalogKey": "kc:v1:29d2023f76b280c97e6739faa4d284c749a5a267a284f081fe832966b5e58de4",
+      "roleContract": null,
+      "sourcePolicy": "소득·저축 비율·수익률 처방"
+    },
+    "materials": [
+      "kc:v1:4ff7d3f6f27ca73b59c71316b9b52f598eaef1e768d8bcb422e58b10074c8d77",
+      "kc:v1:4ff7d3f6f27ca73b59c71316b9b52f598eaef1e768d8bcb422e58b10074c8d77",
+      "kc:v1:6a84a72beabeb761ef640bbd3804b83e01a1b5b073595fa293307006ee79f792",
+      "kc:v1:6a84a72beabeb761ef640bbd3804b83e01a1b5b073595fa293307006ee79f792",
+      "kc:v1:b4cad9e82ca638bbb7178f156a4290d7c50411c9358a77717f5110e67972e9e2",
+      "kc:v1:b4cad9e82ca638bbb7178f156a4290d7c50411c9358a77717f5110e67972e9e2",
+      "kc:v1:bd78d5be612f488cb472067e894b6d059dcdb5f95439e1fe451802ff64813619",
+      "kc:v1:bd78d5be612f488cb472067e894b6d059dcdb5f95439e1fe451802ff64813619",
+      "kc:v1:f251f482b7c00deff94856b7e3cd29408e844feee0416c753fcb0e50f7dbdafa",
+      "kc:v1:f251f482b7c00deff94856b7e3cd29408e844feee0416c753fcb0e50f7dbdafa"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH07.P1",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH07",
+        "periodId": null,
+        "paragraphId": "P1",
+        "sentenceRole": null,
+        "originalAddress": "CH07.P1",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "나는 무엇을 하며 배우고 이해를 어떻게 확인하는가?",
+      "readerPurpose": "나는 무엇을 하며 배우고 이해를 어떻게 확인하는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "개념·실습·대화·이야기·구조화 학습의 차이",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "study"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 24,
+        "originalId": "ckr:paragraph:CH07.P1",
+        "recordSha256": "417aedff54758a1469c0c53b5af7734928c621b34a9d1b4bf669139831e71bf6",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "417aedff54758a1469c0c53b5af7734928c621b34a9d1b4bf669139831e71bf6",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/6/paragraphs/0",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "2ba04dbd2a030a8d0ae7ee7a227c4fe920e6be567d747087d09e5965798bbc60"
+      },
+      "readerContractHash": "2ba04dbd2a030a8d0ae7ee7a227c4fe920e6be567d747087d09e5965798bbc60",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH07.P1:concept-structure",
+        "ckr:material:CH07.P1:learn-by-doing",
+        "ckr:material:CH07.P1:learn-by-explain",
+        "ckr:material:CH07.P1:story-to-rule",
+        "ckr:material:CH07.P1:structured-practice"
+      ],
+      "sourceCatalogKey": "kc:v1:cc71505a040f1d295a927941df04826c7daa8b1417720e2fde83409682653eab",
+      "roleContract": null,
+      "sourcePolicy": "지능·점수·합격 예측"
+    },
+    "materials": [
+      "kc:v1:09d097eace87f16b1903df8a5c2670701d1592e3b285f0c0d1695546ca8db50a",
+      "kc:v1:09d097eace87f16b1903df8a5c2670701d1592e3b285f0c0d1695546ca8db50a",
+      "kc:v1:3199109fc739e5922e25f9694c0d9eda51b4655299d35d57f20d05297ab861b4",
+      "kc:v1:3199109fc739e5922e25f9694c0d9eda51b4655299d35d57f20d05297ab861b4",
+      "kc:v1:3e8ee697e78c0d90658be0625af0902be3c34ff81eda453be2d9f8e0dc80e053",
+      "kc:v1:3e8ee697e78c0d90658be0625af0902be3c34ff81eda453be2d9f8e0dc80e053",
+      "kc:v1:67113837d8e898c675d68edc62347313704b9bb9cfe964d5aafb55a6ae6754d9",
+      "kc:v1:67113837d8e898c675d68edc62347313704b9bb9cfe964d5aafb55a6ae6754d9",
+      "kc:v1:ffc64e4bc5c605a23d9854634a18ec9e984309a6b7e2c09381db3e27f4471382",
+      "kc:v1:ffc64e4bc5c605a23d9854634a18ec9e984309a6b7e2c09381db3e27f4471382"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH07.P2",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH07",
+        "periodId": null,
+        "paragraphId": "P2",
+        "sentenceRole": null,
+        "originalAddress": "CH07.P2",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "실제 분야에서 어떤 과제와 피드백이 필요한가?",
+      "readerPurpose": "실제 분야에서 어떤 과제와 피드백이 필요한가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "사진 광원·개발 입력·디자인 매체·재무 가정·현장 이상",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "study"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 25,
+        "originalId": "ckr:paragraph:CH07.P2",
+        "recordSha256": "11a1ce018f279fea62cc8b68946e737c0ec6498272151e85f626100d2d02b773",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "11a1ce018f279fea62cc8b68946e737c0ec6498272151e85f626100d2d02b773",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/6/paragraphs/1",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "64c5f9d7819a8297834e8a94d424a80465dfec71d5751fe8875f7b96f9abfbc8"
+      },
+      "readerContractHash": "64c5f9d7819a8297834e8a94d424a80465dfec71d5751fe8875f7b96f9abfbc8",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH07.P2:photo-light-comparison",
+        "ckr:material:CH07.P2:dev-new-input",
+        "ckr:material:CH07.P2:design-constraint-learning",
+        "ckr:material:CH07.P2:finance-scenario-learning",
+        "ckr:material:CH07.P2:field-anomaly-learning"
+      ],
+      "sourceCatalogKey": "kc:v1:a30db3e34d878d45f20ab551e506ec80e3406d41e958ff2b93d0f8daed9b44ad",
+      "roleContract": null,
+      "sourcePolicy": "위험 실전 실험·없는 기술 경험"
+    },
+    "materials": [
+      "kc:v1:54ddf5b967d0cd9d5e7231ffeaa5dc31f73bd0538e56ffd731dff7e4be012789",
+      "kc:v1:54ddf5b967d0cd9d5e7231ffeaa5dc31f73bd0538e56ffd731dff7e4be012789",
+      "kc:v1:6dbcbcef93940dd1dbb01dddf56795f09248d799d475646d22d1d4e9d7743290",
+      "kc:v1:6dbcbcef93940dd1dbb01dddf56795f09248d799d475646d22d1d4e9d7743290",
+      "kc:v1:8e52c64c500bca56245ea9ce6c2c0f7acd6af381a414b3e8766cc5fb35840a5a",
+      "kc:v1:8e52c64c500bca56245ea9ce6c2c0f7acd6af381a414b3e8766cc5fb35840a5a",
+      "kc:v1:975acaaa207edbad2e2fb30d44a86626891a7a7095b5078e490ed375a3f32e90",
+      "kc:v1:975acaaa207edbad2e2fb30d44a86626891a7a7095b5078e490ed375a3f32e90",
+      "kc:v1:e0c00b8fa2be788306d2f35e86448f0153e8aadb8ec8b053590c3188c680f2fd",
+      "kc:v1:e0c00b8fa2be788306d2f35e86448f0153e8aadb8ec8b053590c3188c680f2fd"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH07.P3",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH07",
+        "periodId": null,
+        "paragraphId": "P3",
+        "sentenceRole": null,
+        "originalAddress": "CH07.P3",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "학습 과정에서 무엇을 이해와 착각하기 쉬운가?",
+      "readerPurpose": "학습 과정에서 무엇을 이해와 착각하기 쉬운가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "수집·익숙함·완벽 준비·활동 기억·공동 이해",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "study"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 26,
+        "originalId": "ckr:paragraph:CH07.P3",
+        "recordSha256": "7459822daeb58af0bf5877235428dab51c1f4cf0948e9ec2d6ba59099427db5a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "7459822daeb58af0bf5877235428dab51c1f4cf0948e9ec2d6ba59099427db5a",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/6/paragraphs/2",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "cf4edc2fb6aa198baadd06cc54ea52f4bee51680de07c369d027a190dc0347f7"
+      },
+      "readerContractHash": "cf4edc2fb6aa198baadd06cc54ea52f4bee51680de07c369d027a190dc0347f7",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH07.P3:collecting-not-learning",
+        "ckr:material:CH07.P3:familiarity-trap",
+        "ckr:material:CH07.P3:perfection-start",
+        "ckr:material:CH07.P3:activity-to-language",
+        "ckr:material:CH07.P3:social-solo-gap"
+      ],
+      "sourceCatalogKey": "kc:v1:a4137a3fbc656da433215f0b263ba5f693ac989f7d5fbf47a9e6294cbd49b9e0",
+      "roleContract": null,
+      "sourcePolicy": "낮은 지능·학습 장애·실제 성적 생성"
+    },
+    "materials": [
+      "kc:v1:73ffec977d73ffdef2f03706830d6d7800260f65e402641853d4cbf129af4e5b",
+      "kc:v1:73ffec977d73ffdef2f03706830d6d7800260f65e402641853d4cbf129af4e5b",
+      "kc:v1:98af40f8d064deecf155ad9c3b38d53bcd7e9dc0868a02333bbbf136a2e9147f",
+      "kc:v1:98af40f8d064deecf155ad9c3b38d53bcd7e9dc0868a02333bbbf136a2e9147f",
+      "kc:v1:e1863abc876015e8daab10d5b3beed852bef33c9e586ee165a2225ebad315c39",
+      "kc:v1:e1863abc876015e8daab10d5b3beed852bef33c9e586ee165a2225ebad315c39",
+      "kc:v1:e39dfb90eb518ec586ccdb3f41de67656bef3485b1e64a8047e012ffe1c17500",
+      "kc:v1:e39dfb90eb518ec586ccdb3f41de67656bef3485b1e64a8047e012ffe1c17500",
+      "kc:v1:f710b9e879cf4e9bd5a9084675c9bb66ad13f2144ea2eecbcd01db6d035f2986",
+      "kc:v1:f710b9e879cf4e9bd5a9084675c9bb66ad13f2144ea2eecbcd01db6d035f2986"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH07.P4",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH07",
+        "periodId": null,
+        "paragraphId": "P4",
+        "sentenceRole": null,
+        "originalAddress": "CH07.P4",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "자격과 기술이 실제 전문성으로 이어졌는지 어떻게 확인하는가?",
+      "readerPurpose": "자격과 기술이 실제 전문성으로 이어졌는지 어떻게 확인하는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "요건·포트폴리오·직무 적용·전환 학습·재현",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "study"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 27,
+        "originalId": "ckr:paragraph:CH07.P4",
+        "recordSha256": "2d42734507ff3b9e9ac0d1f2b9d805666b936eb54f303c832d07beddc646ce67",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "2d42734507ff3b9e9ac0d1f2b9d805666b936eb54f303c832d07beddc646ce67",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/6/paragraphs/3",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "dde627e224890ce89a1cd2446991f6ef247fdb9b686d3a7267ec8a108d404fda"
+      },
+      "readerContractHash": "dde627e224890ce89a1cd2446991f6ef247fdb9b686d3a7267ec8a108d404fda",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH07.P4:certificate-requirement",
+        "ckr:material:CH07.P4:portfolio-decision",
+        "ckr:material:CH07.P4:work-based-upskill",
+        "ckr:material:CH07.P4:career-change-learning",
+        "ckr:material:CH07.P4:skill-repeatability"
+      ],
+      "sourceCatalogKey": "kc:v1:d9b0acac99b60fc53e63bc5a616cfec51ad390955365debba67d8a52b0aac23b",
+      "roleContract": null,
+      "sourcePolicy": "수료→취업·합격 자동 연결"
+    },
+    "materials": [
+      "kc:v1:0c54db4d5303d755fe52c45e7cd9aa06e47ee7fb5effd8c829b0ec894a11d6f1",
+      "kc:v1:0c54db4d5303d755fe52c45e7cd9aa06e47ee7fb5effd8c829b0ec894a11d6f1",
+      "kc:v1:35b61cb8b4e8264dbeab9818f3bc9e4ac3d3b2adccb83bef4b4c33374373eebf",
+      "kc:v1:35b61cb8b4e8264dbeab9818f3bc9e4ac3d3b2adccb83bef4b4c33374373eebf",
+      "kc:v1:4118957bf9c1231d4b412df953e2578f4f7a68122f18f66600677be203812da3",
+      "kc:v1:4118957bf9c1231d4b412df953e2578f4f7a68122f18f66600677be203812da3",
+      "kc:v1:8272c379a5d41b9b309e163637afc67c8ac007758a174f7bc3b479b8f3f303c1",
+      "kc:v1:8272c379a5d41b9b309e163637afc67c8ac007758a174f7bc3b479b8f3f303c1",
+      "kc:v1:ae5a38881a1c682f899a660ea741a3b76fa0554f7fde35309a0bc98d1ad9a1e8",
+      "kc:v1:ae5a38881a1c682f899a660ea741a3b76fa0554f7fde35309a0bc98d1ad9a1e8"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH08.P1",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH08",
+        "periodId": null,
+        "paragraphId": "P1",
+        "sentenceRole": null,
+        "originalAddress": "CH08.P1",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "좋은 명리 상징은 어떤 조건에서 활용할 수 있는가?",
+      "readerPurpose": "좋은 명리 상징은 어떤 조건에서 활용할 수 있는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "전거·계산·긍정 상징·현대 적용·성립 한계",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "success/fortune"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 28,
+        "originalId": "ckr:paragraph:CH08.P1",
+        "recordSha256": "d32b3d78846de648ea4374b2317964332c10213c3e9c394a28d0ad51a5f66ea1",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "d32b3d78846de648ea4374b2317964332c10213c3e9c394a28d0ad51a5f66ea1",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/7/paragraphs/0",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "e3d6547b8791cbb65b15492997a6b2997b9af0b3318ff8a28e9ed60f2de23a20"
+      },
+      "readerContractHash": "e3d6547b8791cbb65b15492997a6b2997b9af0b3318ff8a28e9ed60f2de23a20",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH08.P1:cheoneul-help-network",
+        "ckr:material:CH08.P1:jangseong-responsibility",
+        "ckr:material:CH08.P1:taegeuk-understanding",
+        "ckr:material:CH08.P1:siksang-output-potential",
+        "ckr:material:CH08.P1:resource-foundation-positive",
+        "ckr:material:CH08.P1:held-munchang-exam"
+      ],
+      "sourceCatalogKey": "kc:v1:09818414c2fae5a9a862c124edf93097836a548b05ddf4ec3030e98b46565d18",
+      "roleContract": null,
+      "sourcePolicy": "귀인·승진·시험·부·성공 예언"
+    },
+    "materials": [
+      "kc:v1:53252da8784bd7dad1abc712a9a39e54b48414d921f93096b17db391bd3e5aed",
+      "kc:v1:53252da8784bd7dad1abc712a9a39e54b48414d921f93096b17db391bd3e5aed",
+      "kc:v1:67a5a08af85be7550b62e27055902d2da6e5bd7067964857600d3d49a73a9306",
+      "kc:v1:67a5a08af85be7550b62e27055902d2da6e5bd7067964857600d3d49a73a9306",
+      "kc:v1:6fc410d0e6d9e64eb2cb508e31c605ce71baac8472dbf92f5fe36810b008b953",
+      "kc:v1:6fc410d0e6d9e64eb2cb508e31c605ce71baac8472dbf92f5fe36810b008b953",
+      "kc:v1:9e3da72458ebc3ddee386134acc40ead5150c48189fc451397e32790896fb0a3",
+      "kc:v1:9e3da72458ebc3ddee386134acc40ead5150c48189fc451397e32790896fb0a3",
+      "kc:v1:a038fe8e06a56e8c1eee63679793c1f3c6441606f9efc79056fe9b9f05d3cc1c",
+      "kc:v1:a038fe8e06a56e8c1eee63679793c1f3c6441606f9efc79056fe9b9f05d3cc1c",
+      "kc:v1:da09deb2e49bce9761c63368fe65710b62d75ec171341ec217082731b165652b",
+      "kc:v1:da09deb2e49bce9761c63368fe65710b62d75ec171341ec217082731b165652b"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH08.P2",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH08",
+        "periodId": null,
+        "paragraphId": "P2",
+        "sentenceRole": null,
+        "originalAddress": "CH08.P2",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "내 기여를 어떻게 정확하게 드러낼 수 있는가?",
+      "readerPurpose": "내 기여를 어떻게 정확하게 드러낼 수 있는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "예방·추적 가능한 의미·독립 지원·명확한 피드백·경험 개선",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "success/fortune"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 29,
+        "originalId": "ckr:paragraph:CH08.P2",
+        "recordSha256": "6ce58c941d875efd754de68c59228bef5e62013d0917f3a39ee1d7a8e82aef23",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "6ce58c941d875efd754de68c59228bef5e62013d0917f3a39ee1d7a8e82aef23",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/7/paragraphs/1",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "58b5a56f4bdfcff0e27cd0dd4286826bafca3c75cdf8816b6c56242e6b19b550"
+      },
+      "readerContractHash": "58b5a56f4bdfcff0e27cd0dd4286826bafca3c75cdf8816b6c56242e6b19b550",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH08.P2:recognized-prevention",
+        "ckr:material:CH08.P2:recognized-translation",
+        "ckr:material:CH08.P2:recognized-enablement",
+        "ckr:material:CH08.P2:recognized-clarity",
+        "ckr:material:CH08.P2:recognized-experience"
+      ],
+      "sourceCatalogKey": "kc:v1:2848e72d2c3fa5d030d2672a485d5de994c89d1aa722dadcba171604c4a1f790",
+      "roleContract": null,
+      "sourcePolicy": "일어나지 않은 손실을 예방 성과로 계산"
+    },
+    "materials": [
+      "kc:v1:86dcc272bacda6f237fe403cbf8f32c3f49aeb3c61f991df288b7ce34175446e",
+      "kc:v1:86dcc272bacda6f237fe403cbf8f32c3f49aeb3c61f991df288b7ce34175446e",
+      "kc:v1:a9487a1f2c8d2bb97f644afba9b88f9f016511507a1d9af81a656aaee04ff5c1",
+      "kc:v1:a9487a1f2c8d2bb97f644afba9b88f9f016511507a1d9af81a656aaee04ff5c1",
+      "kc:v1:b608226107a9c1128d122d00b82ea44c074e17760935bffd27eafa60716fc033",
+      "kc:v1:b608226107a9c1128d122d00b82ea44c074e17760935bffd27eafa60716fc033",
+      "kc:v1:be1a6a0875c7c0fd1de668a297b2448efc1a7d1130140066589493e797fb512e",
+      "kc:v1:be1a6a0875c7c0fd1de668a297b2448efc1a7d1130140066589493e797fb512e",
+      "kc:v1:d71b9de703a85dedd015be4056a4e6a7e1fe2292a61dca5a7cbb9c92241e25d1",
+      "kc:v1:d71b9de703a85dedd015be4056a4e6a7e1fe2292a61dca5a7cbb9c92241e25d1"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH08.P3",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH08",
+        "periodId": null,
+        "paragraphId": "P3",
+        "sentenceRole": null,
+        "originalAddress": "CH08.P3",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "강점 과용이 장기 성장에 어떤 제한을 만들 수 있는가?",
+      "readerPurpose": "강점 과용이 장기 성장에 어떤 제한을 만들 수 있는가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "반복 검토·미전달 분석·지원 과부하·수습 반복·연결 부족",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "success/fortune"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 30,
+        "originalId": "ckr:paragraph:CH08.P3",
+        "recordSha256": "2e28d621fa5d4d42ccaff079bb130fe289aae2d04cd19850a75f9a263c9cc92f",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "2e28d621fa5d4d42ccaff079bb130fe289aae2d04cd19850a75f9a263c9cc92f",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/7/paragraphs/2",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "003aea207d5190ccc981ffb865726887529f9d1f300b28a6138e9de6a876942c"
+      },
+      "readerContractHash": "003aea207d5190ccc981ffb865726887529f9d1f300b28a6138e9de6a876942c",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH08.P3:career-precision-lock",
+        "ckr:material:CH08.P3:career-depth-without-use",
+        "ckr:material:CH08.P3:career-help-overload",
+        "ckr:material:CH08.P3:career-drive-repeat-fire",
+        "ckr:material:CH08.P3:career-boundary-isolation"
+      ],
+      "sourceCatalogKey": "kc:v1:b7d2e3a1a2f08a293ebb172cbdf891e722189463a4f79102290f313274804a14",
+      "roleContract": null,
+      "sourcePolicy": "실제 실패·경력 정체·건강 단정"
+    },
+    "materials": [
+      "kc:v1:4e7030618088dfa2ae1dc5bcd2af7983955b30e9e7f2e0f91d74e9931a3eeb6e",
+      "kc:v1:4e7030618088dfa2ae1dc5bcd2af7983955b30e9e7f2e0f91d74e9931a3eeb6e",
+      "kc:v1:5f86b21e7fc1bbd5309361df8c84b66cd5580e8676049fe523ef624975df4e70",
+      "kc:v1:5f86b21e7fc1bbd5309361df8c84b66cd5580e8676049fe523ef624975df4e70",
+      "kc:v1:612bf2aa4bbab54f2eac7fbd2269e48ea14c6dac3c3e801f75ee0fc5cfae306e",
+      "kc:v1:612bf2aa4bbab54f2eac7fbd2269e48ea14c6dac3c3e801f75ee0fc5cfae306e",
+      "kc:v1:8793a328bc128fd80db152e26f7e4901f322732d018eb664d77bd455dbff6305",
+      "kc:v1:8793a328bc128fd80db152e26f7e4901f322732d018eb664d77bd455dbff6305",
+      "kc:v1:936fd97efaa701935ec580564e852759a5682f0480dd2fc6ec3ad24d1b7e5f9d",
+      "kc:v1:936fd97efaa701935ec580564e852759a5682f0480dd2fc6ec3ad24d1b7e5f9d"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH08.P4",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH08",
+        "periodId": null,
+        "paragraphId": "P4",
+        "sentenceRole": null,
+        "originalAddress": "CH08.P4",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "좋은 가능성을 현실적 희망으로 바꿀 조건은 무엇인가?",
+      "readerPurpose": "좋은 가능성을 현실적 희망으로 바꿀 조건은 무엇인가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "질문·목적·반복 개선·공동 결정·정직한 한계",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "success/fortune"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 31,
+        "originalId": "ckr:paragraph:CH08.P4",
+        "recordSha256": "c26ebaa184ba9664c192ced336c5116d76c84dc3091e2a7090cf0f3bd3e9a8cf",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "c26ebaa184ba9664c192ced336c5116d76c84dc3091e2a7090cf0f3bd3e9a8cf",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/7/paragraphs/3",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "e4782e61b78fe63afebc29aed24c06d92efbc43408dc72f1df7ca169ce70cfdd"
+      },
+      "readerContractHash": "e4782e61b78fe63afebc29aed24c06d92efbc43408dc72f1df7ca169ce70cfdd",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH08.P4:positive-conditions-to-proof",
+        "ckr:material:CH08.P4:positive-to-client-use",
+        "ckr:material:CH08.P4:positive-to-repeat-system",
+        "ckr:material:CH08.P4:positive-to-shared-decision",
+        "ckr:material:CH08.P4:positive-to-learning-humility"
+      ],
+      "sourceCatalogKey": "kc:v1:cd305f49fc975db554b665cea3f49d5b5d850cd731766a540b9f1d50861400c0",
+      "roleContract": null,
+      "sourcePolicy": "무조건 성공 또는 부정 운명"
+    },
+    "materials": [
+      "kc:v1:264a5a522ef66ce561f3f7d10fd9d4d14336e7d52680342b76c07ee3dc3088b9",
+      "kc:v1:264a5a522ef66ce561f3f7d10fd9d4d14336e7d52680342b76c07ee3dc3088b9",
+      "kc:v1:51b50bb064933dc4e7b2961d014355c428e60b3aca18724314e517b95cb69e47",
+      "kc:v1:51b50bb064933dc4e7b2961d014355c428e60b3aca18724314e517b95cb69e47",
+      "kc:v1:5d743643f3f14071fcc023b5706fad958451389f14953ae5fc063809732d6b5f",
+      "kc:v1:5d743643f3f14071fcc023b5706fad958451389f14953ae5fc063809732d6b5f",
+      "kc:v1:9d9871fe2039151b5a93671cf5ad09b49d3ec064a4875bc24604614829bdd628",
+      "kc:v1:9d9871fe2039151b5a93671cf5ad09b49d3ec064a4875bc24604614829bdd628",
+      "kc:v1:caba5ed8078d132ecf2580c8e59ccb87df2b232bfd81c81bbf79bd85a5e0ddc5",
+      "kc:v1:caba5ed8078d132ecf2580c8e59ccb87df2b232bfd81c81bbf79bd85a5e0ddc5"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH09.P1",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH09",
+        "periodId": null,
+        "paragraphId": "P1",
+        "sentenceRole": null,
+        "originalAddress": "CH09.P1",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "이번 선택을 어떤 질문으로 비교할 것인가?",
+      "readerPurpose": "이번 선택을 어떤 질문으로 비교할 것인가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "과제·자료·권한·목적·부담·정보 부족",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "strengths"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 32,
+        "originalId": "ckr:paragraph:CH09.P1",
+        "recordSha256": "e869f25a33415a799b307b8eb879f05fff0453d2fbab2eb3265fb05051e848e0",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "e869f25a33415a799b307b8eb879f05fff0453d2fbab2eb3265fb05051e848e0",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/8/paragraphs/0",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "b993cf088b2c9e71da0de825ba716c8b88398c60c3fbb162be8e2f83975b2edc"
+      },
+      "readerContractHash": "b993cf088b2c9e71da0de825ba716c8b88398c60c3fbb162be8e2f83975b2edc",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH09.P1:choose-task-rights",
+        "ckr:material:CH09.P1:choose-freelance-purpose",
+        "ckr:material:CH09.P1:choose-learning-sample",
+        "ckr:material:CH09.P1:choose-repeat-burden",
+        "ckr:material:CH09.P1:choose-known-context"
+      ],
+      "sourceCatalogKey": "kc:v1:d53d63127bf654335b7355650aa67a673614c2f05baeadedddcc279c1b9f815f",
+      "roleContract": null,
+      "sourcePolicy": "새 성격·새 추천·새 근거"
+    },
+    "materials": [
+      "kc:v1:1ef95579c474081df6b94a5bf22a9246b2ff6e8466dc03a60dbd42cae8514dbb",
+      "kc:v1:7995fcc8571fcad5524959a0ed27a651e7a70813606842a236985b119a870033",
+      "kc:v1:79c0b5d239725e709a63785f3479983c7bf789a67c0f5387b802df71e575e28f",
+      "kc:v1:91a707deb0187c8beaeaa669a85c8f747a7f2683d18d16f5c579aa6ff161c55d",
+      "kc:v1:c723d993fb1d3b45b89afe668dc93d7de5e24586d91b8ee13e57191fa633831e"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH09.P2",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH09",
+        "periodId": null,
+        "paragraphId": "P2",
+        "sentenceRole": null,
+        "originalAddress": "CH09.P2",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "소개된 위험을 어떤 조건에서 조절할 것인가?",
+      "readerPurpose": "소개된 위험을 어떤 조건에서 조절할 것인가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "같은 root의 즉시·자원·장기 비용 분리",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "strengths"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 33,
+        "originalId": "ckr:paragraph:CH09.P2",
+        "recordSha256": "bcd754353101d54207e74f708b7e393a08b7db238b3c3ec906966335cdcec948",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "bcd754353101d54207e74f708b7e393a08b7db238b3c3ec906966335cdcec948",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/8/paragraphs/1",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "413f8156b6b710361d91b48def0e140cefc0f87552159aefdb546e9bef59ecf8"
+      },
+      "readerContractHash": "413f8156b6b710361d91b48def0e140cefc0f87552159aefdb546e9bef59ecf8",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH09.P2:guard-precision-loop",
+        "ckr:material:CH09.P2:guard-depth-delay",
+        "ckr:material:CH09.P2:guard-help-responsibility",
+        "ckr:material:CH09.P2:guard-drive-review",
+        "ckr:material:CH09.P2:guard-boundary-isolation"
+      ],
+      "sourceCatalogKey": "kc:v1:0d90a1a1e3c961d7f5164e407120efc270ae7223d196d9e474c343871234d746",
+      "roleContract": null,
+      "sourcePolicy": "서로 다른 유형의 약점을 합침"
+    },
+    "materials": [
+      "kc:v1:02b2b60aa89990bc218be59d9b2c8c12d6381845478fd53a743764c08db01b8b",
+      "kc:v1:0ee186d2507000ac8345e3464601b32bbb9693fdd9cec6ce29235ac2266eaaab",
+      "kc:v1:152bfe76699ce8c4de9b47389fc4e90ed093e15de099fd979fc5b178c766dd73",
+      "kc:v1:b852df83ec215209f00b9af0baf1c8ddbbfe43b988d47d5a2bed7e9d1f440441",
+      "kc:v1:d17ef87fd7fef0129d1326d18846960f6acd2cb7b0ba7b02ea3b818c36b01acc"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH09.P3",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH09",
+        "periodId": null,
+        "paragraphId": "P3",
+        "sentenceRole": null,
+        "originalAddress": "CH09.P3",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "일·돈·학습을 어떤 작은 순서로 연결할 것인가?",
+      "readerPurpose": "일·돈·학습을 어떤 작은 순서로 연결할 것인가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "목적→과제→검증→투입→다음 질문",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "strengths"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 34,
+        "originalId": "ckr:paragraph:CH09.P3",
+        "recordSha256": "669afb8c882e66275003e3d3afe29f31181199577a3e0e4ee8f4dba193211ebb",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "669afb8c882e66275003e3d3afe29f31181199577a3e0e4ee8f4dba193211ebb",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/8/paragraphs/2",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "d056b58d224d94d1e93334cea3614e022184955b3fb42f63a4b34a89e0754b3e"
+      },
+      "readerContractHash": "d056b58d224d94d1e93334cea3614e022184955b3fb42f63a4b34a89e0754b3e",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH09.P3:strategy-photo-cycle",
+        "ckr:material:CH09.P3:strategy-dev-cycle",
+        "ckr:material:CH09.P3:strategy-finance-cycle",
+        "ckr:material:CH09.P3:strategy-cafe-cycle",
+        "ckr:material:CH09.P3:strategy-context-before-plan"
+      ],
+      "sourceCatalogKey": "kc:v1:e2d47001a213f5a71c975b20f5d6f64cc97abc6607e02033350f71d84fc037a3",
+      "roleContract": null,
+      "sourcePolicy": "논리적 인과·성과를 새로 발명"
+    },
+    "materials": [
+      "kc:v1:6dc9aeba35f74a1473a8f3ebd8f82b731b321ff101a4334be8f4a6240d0f82c8",
+      "kc:v1:a8ff9fecb021235846352440bc39ee3f29fde616c7291b22ba09b63083f52d5a",
+      "kc:v1:d076bd13dd580d5f9603be01af466922cb0c5bd539cb6ed0bd9138d43b06bb4e",
+      "kc:v1:d4c7e6a13a1286cbb68e886ea401d53956b04f628ec51f43304cf1adbfd4eec4",
+      "kc:v1:db1abef184de0da33e64b21edd889bcbb42a7f522fba36b6cf57743c312bd101"
+    ],
+    "customerAnswerable": 0
+  },
+  {
+    "question": {
+      "id": "psq:v1:career_money_study:single:CH09.P4",
+      "productKey": "career_money_study",
+      "relationshipCategory": null,
+      "address": {
+        "chapterId": "CH09",
+        "periodId": null,
+        "paragraphId": "P4",
+        "sentenceRole": null,
+        "originalAddress": "CH09.P4",
+        "level": "PARAGRAPH"
+      },
+      "originalQuestion": "마지막에 어떤 선택 원칙을 기억할 것인가?",
+      "readerPurpose": "마지막에 어떤 선택 원칙을 기억할 것인가?",
+      "originalRole": null,
+      "primaryMeaningRequirement": "검토·표현·이해·지원·미입력의 다른 마무리",
+      "secondaryMeaningRequirement": null,
+      "allowedContexts": [],
+      "allowedDomains": [
+        "strengths"
+      ],
+      "requirement": {
+        "original": {
+          "saju": "실제 본인의 원국 Evidence와 원래 성립·미상 조건; 시주·전체 부재·기간 사실 합성 금지",
+          "mbti": "실제 입력 유형의 해당 분야 원천; 미상이면 MBTI/Fusion 역할 보류",
+          "fusion": "양측 근거와 등록 조건·source assignment 확인; 단순 두 ID의 존재는 미충족",
+          "status": "실제 enum과 현재 과제를 구분하며 미입력 보충 금지",
+          "function": "기존 parser 관찰과 연구상 업무 기능은 별도. detailJob 질문·권한·조건 확인"
+        },
+        "requiredEvidenceKinds": [],
+        "sourceRequirements": [],
+        "sourceGroupRequirements": [],
+        "requiredPairEvidence": [],
+        "requiredRole": null,
+        "requiredOwner": [],
+        "requiredDirection": [],
+        "requiredTemporalScope": null,
+        "remainingUnknown": []
+      },
+      "specialistKnowledgeFamily": "career-product-research",
+      "sourceContractVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalContractLocator": {
+        "file": "src/lib/report-knowledge/career-product-research/paragraphResearch.ts",
+        "exportName": "CAREER_PARAGRAPH_RESEARCH",
+        "index": 35,
+        "originalId": "ckr:paragraph:CH09.P4",
+        "recordSha256": "2f3f5a5ba90312730bbbf2cdc2a86cb94b9314f7242b5252196e0b2e9b7775b1",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalContractHash": "2f3f5a5ba90312730bbbf2cdc2a86cb94b9314f7242b5252196e0b2e9b7775b1",
+      "readerContractLocator": {
+        "file": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "exportName": "CAREER_READER_CHAPTERS",
+        "pointer": "/8/paragraphs/3",
+        "fileSha256": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "recordSha256": "767c58bc3693573556a384e7b514d379d865b6e93cf26e31777644e97a372baa"
+      },
+      "readerContractHash": "767c58bc3693573556a384e7b514d379d865b6e93cf26e31777644e97a372baa",
+      "readerAgreement": "VERIFIED",
+      "declaredMaterialIds": [
+        "ckr:material:CH09.P4:closing-precision-value",
+        "ckr:material:CH09.P4:closing-creative-purpose",
+        "ckr:material:CH09.P4:closing-depth-use",
+        "ckr:material:CH09.P4:closing-help-sustainable",
+        "ckr:material:CH09.P4:closing-self-chosen-scope"
+      ],
+      "sourceCatalogKey": "kc:v1:42bbb2b7dcebc6b1d8ff37d77cde0ded56f2d035585128bc64238ec64e21c983",
+      "roleContract": null,
+      "sourcePolicy": "운명·천직·경력·소득 보장"
+    },
+    "materials": [
+      "kc:v1:1313d873b7742878750b3196f8dae156ab79005002161bfba88e4d8901f1e5bb",
+      "kc:v1:62fcc00f5cb23a65bcdb7d30b3ba6cb928c9dca698fcd123a95c49117d5eb4ff",
+      "kc:v1:7fdfb95f0de678adb9c019e3ae1bcf34d14df454f719bab7f3defe78f140e00d",
+      "kc:v1:dff4afac7d5665b8982c009b00d22ea35d45f4d6101069fdf776c10cab422afc",
+      "kc:v1:e7e9f755dc62005acf3bbfb137f1f1289dd6c3801d986ea74b3fbe99b471d5d8"
+    ],
+    "customerAnswerable": 0
+  }
+]

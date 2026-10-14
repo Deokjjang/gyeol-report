@@ -1,0 +1,5524 @@
+{
+  "mode": "SYNTHETIC_ELIGIBLE_SELECTION_TEST",
+  "sourceFile": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+  "sourceDigest": "95c98ee6a71b0afbe5faa471ec4677d6f4ae7a1e54b867cc34d1d8b64d48b510",
+  "comparison": [
+    {
+      "method": "FIRST_ELIGIBLE",
+      "selected": [
+        {
+          "questionId": "synthetic:career:q:1",
+          "candidateId": "synthetic:career:a"
+        },
+        {
+          "questionId": "synthetic:career:q:2",
+          "candidateId": "synthetic:career:c"
+        },
+        {
+          "questionId": "synthetic:career:q:3",
+          "candidateId": "synthetic:career:d"
+        },
+        {
+          "questionId": "synthetic:career:q:4",
+          "candidateId": "synthetic:career:e"
+        }
+      ],
+      "coveredQuestions": 4,
+      "importanceCovered": 4,
+      "requiredMeaningUnits": 4,
+      "independentMeanings": 4,
+      "roots": {
+        "distinct": 1,
+        "references": 4,
+        "repeated": 3
+      },
+      "conflicts": [],
+      "missingQuestions": [
+        "synthetic:career:q:5"
+      ],
+      "search": {
+        "visits": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "id": "synthetic:career:b",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        },
+        {
+          "id": "synthetic:career:f",
+          "reasons": [
+            "CAREER_POSITIVE_FACET_BUDGET"
+          ]
+        }
+      ],
+      "customerClaimsEmitted": 0
+    },
+    {
+      "method": "QUESTION_FIT_FIRST",
+      "selected": [
+        {
+          "questionId": "synthetic:career:q:1",
+          "candidateId": "synthetic:career:a"
+        },
+        {
+          "questionId": "synthetic:career:q:2",
+          "candidateId": "synthetic:career:c"
+        },
+        {
+          "questionId": "synthetic:career:q:3",
+          "candidateId": "synthetic:career:d"
+        },
+        {
+          "questionId": "synthetic:career:q:4",
+          "candidateId": "synthetic:career:e"
+        }
+      ],
+      "coveredQuestions": 4,
+      "importanceCovered": 4,
+      "requiredMeaningUnits": 4,
+      "independentMeanings": 4,
+      "roots": {
+        "distinct": 1,
+        "references": 4,
+        "repeated": 3
+      },
+      "conflicts": [],
+      "missingQuestions": [
+        "synthetic:career:q:5"
+      ],
+      "search": {
+        "visits": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "id": "synthetic:career:b",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        },
+        {
+          "id": "synthetic:career:f",
+          "reasons": [
+            "CAREER_POSITIVE_FACET_BUDGET"
+          ]
+        }
+      ],
+      "customerClaimsEmitted": 0
+    },
+    {
+      "method": "CONSTRAINT_AWARE_SELECTION",
+      "selected": [
+        {
+          "questionId": "synthetic:career:q:1",
+          "candidateId": "synthetic:career:b"
+        },
+        {
+          "questionId": "synthetic:career:q:2",
+          "candidateId": "synthetic:career:c"
+        },
+        {
+          "questionId": "synthetic:career:q:3",
+          "candidateId": "synthetic:career:d"
+        },
+        {
+          "questionId": "synthetic:career:q:4",
+          "candidateId": "synthetic:career:e"
+        },
+        {
+          "questionId": "synthetic:career:q:5",
+          "candidateId": "synthetic:career:f"
+        }
+      ],
+      "coveredQuestions": 5,
+      "importanceCovered": 6,
+      "requiredMeaningUnits": 5,
+      "independentMeanings": 5,
+      "roots": {
+        "distinct": 2,
+        "references": 5,
+        "repeated": 3
+      },
+      "conflicts": [],
+      "missingQuestions": [],
+      "search": {
+        "visits": 31,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "id": "synthetic:career:a",
+          "reasons": [
+            "CAREER_POSITIVE_FACET_BUDGET",
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "customerClaimsEmitted": 0
+    }
+  ],
+  "negative": [
+    {
+      "name": "missingApproval",
+      "eligible": 0,
+      "reasons": [
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING"
+      ]
+    },
+    {
+      "name": "wrongOwner",
+      "eligible": 0,
+      "reasons": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "VERIFIED_ROOT_REQUIRED",
+        "WRONG_OWNER"
+      ]
+    },
+    {
+      "name": "sourceDefinition",
+      "eligible": 0,
+      "reasons": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "VERIFIED_ROOT_REQUIRED"
+      ]
+    },
+    {
+      "name": "withheldRoot",
+      "eligible": 0,
+      "reasons": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "REQUIRED_ANCESTOR_WITHHELD",
+        "REQUIRED_GRAPH_NODE_WITHHELD",
+        "UNKNOWN_BIRTH_TIME",
+        "VERIFIED_ROOT_REQUIRED"
+      ]
+    },
+    {
+      "name": "sourceHash",
+      "eligible": 5,
+      "reasons": [
+        "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+      ]
+    },
+    {
+      "name": "missingFact",
+      "eligible": 0,
+      "reasons": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "VERIFIED_ROOT_REQUIRED"
+      ]
+    },
+    {
+      "name": "missingGroupSource",
+      "eligible": 0,
+      "reasons": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "ALL_AND_GROUP_SOURCES_REQUIRED"
+      ]
+    },
+    {
+      "name": "domainBlocked",
+      "eligible": 0,
+      "reasons": [
+        "DISALLOWED_ANCESTOR_DOMAIN"
+      ]
+    },
+    {
+      "name": "wrongStatus",
+      "eligible": 0,
+      "reasons": [
+        "JOB_STATUS_CONFLICT",
+        "REQUIRED_USER_STATE_NOT_VERIFIED"
+      ]
+    },
+    {
+      "name": "unknownFunction",
+      "eligible": 0,
+      "reasons": [
+        "WORK_FUNCTION_UNSUPPORTED"
+      ]
+    }
+  ],
+  "searchLimitCase": {
+    "method": "CONSTRAINT_AWARE_SELECTION",
+    "selected": [],
+    "coveredQuestions": 0,
+    "importanceCovered": 0,
+    "requiredMeaningUnits": 0,
+    "independentMeanings": 0,
+    "roots": {
+      "distinct": 0,
+      "references": 0,
+      "repeated": 0
+    },
+    "conflicts": [
+      "SEARCH_LIMIT_NO_OPTIMALITY_CLAIM"
+    ],
+    "missingQuestions": [
+      "synthetic:career:q:1",
+      "synthetic:career:q:2",
+      "synthetic:career:q:3",
+      "synthetic:career:q:4",
+      "synthetic:career:q:5"
+    ],
+    "search": {
+      "visits": 4,
+      "complete": false
+    },
+    "notSelected": [
+      {
+        "id": "synthetic:career:a",
+        "reasons": [
+          "GLOBAL_RESERVATION_OR_LEXICOGRAPHIC_PREFERENCE"
+        ]
+      },
+      {
+        "id": "synthetic:career:b",
+        "reasons": [
+          "GLOBAL_RESERVATION_OR_LEXICOGRAPHIC_PREFERENCE"
+        ]
+      },
+      {
+        "id": "synthetic:career:c",
+        "reasons": [
+          "GLOBAL_RESERVATION_OR_LEXICOGRAPHIC_PREFERENCE"
+        ]
+      },
+      {
+        "id": "synthetic:career:d",
+        "reasons": [
+          "GLOBAL_RESERVATION_OR_LEXICOGRAPHIC_PREFERENCE"
+        ]
+      },
+      {
+        "id": "synthetic:career:e",
+        "reasons": [
+          "GLOBAL_RESERVATION_OR_LEXICOGRAPHIC_PREFERENCE"
+        ]
+      },
+      {
+        "id": "synthetic:career:f",
+        "reasons": [
+          "GLOBAL_RESERVATION_OR_LEXICOGRAPHIC_PREFERENCE"
+        ]
+      }
+    ],
+    "customerClaimsEmitted": 0
+  },
+  "questionFitComparison": [
+    {
+      "method": "FIRST_ELIGIBLE",
+      "selected": [
+        {
+          "questionId": "synthetic:career:q:8",
+          "candidateId": "synthetic:career:i"
+        }
+      ],
+      "coveredQuestions": 1,
+      "importanceCovered": 1,
+      "requiredMeaningUnits": 1,
+      "independentMeanings": 1,
+      "roots": {
+        "distinct": 1,
+        "references": 1,
+        "repeated": 0
+      },
+      "conflicts": [],
+      "missingQuestions": [],
+      "search": {
+        "visits": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "id": "synthetic:career:j",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "customerClaimsEmitted": 0
+    },
+    {
+      "method": "QUESTION_FIT_FIRST",
+      "selected": [
+        {
+          "questionId": "synthetic:career:q:8",
+          "candidateId": "synthetic:career:j"
+        }
+      ],
+      "coveredQuestions": 1,
+      "importanceCovered": 1,
+      "requiredMeaningUnits": 1,
+      "independentMeanings": 1,
+      "roots": {
+        "distinct": 1,
+        "references": 1,
+        "repeated": 0
+      },
+      "conflicts": [],
+      "missingQuestions": [],
+      "search": {
+        "visits": 0,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "id": "synthetic:career:i",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "customerClaimsEmitted": 0
+    },
+    {
+      "method": "CONSTRAINT_AWARE_SELECTION",
+      "selected": [
+        {
+          "questionId": "synthetic:career:q:8",
+          "candidateId": "synthetic:career:j"
+        }
+      ],
+      "coveredQuestions": 1,
+      "importanceCovered": 1,
+      "requiredMeaningUnits": 1,
+      "independentMeanings": 1,
+      "roots": {
+        "distinct": 1,
+        "references": 1,
+        "repeated": 0
+      },
+      "conflicts": [],
+      "missingQuestions": [],
+      "search": {
+        "visits": 4,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "id": "synthetic:career:i",
+          "reasons": [
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "customerClaimsEmitted": 0
+    }
+  ],
+  "semantic": {
+    "edges": [
+      {
+        "left": "synthetic:career:tension-positive",
+        "right": "synthetic:career:tension-negative",
+        "kind": "CONDITIONAL_TENSION",
+        "state": "REVIEW_REQUIRED",
+        "blocksJointPrimary": true,
+        "reasons": [
+          "OPPOSITE_SIGNALS_REQUIRE_REVIEWED_SPLIT_OR_DISTINCT_CONTEXT"
+        ]
+      },
+      {
+        "left": "synthetic:career:tension-positive",
+        "right": "synthetic:career:tension-resolved",
+        "kind": "CONDITIONAL_COMPLEMENT",
+        "state": "VERIFIED",
+        "blocksJointPrimary": false,
+        "reasons": [
+          "EXPLICIT_REVIEWED_COMPLEMENT"
+        ]
+      },
+      {
+        "left": "synthetic:career:tension-positive",
+        "right": "synthetic:career:tension-resolved",
+        "kind": "CONDITIONAL_TENSION",
+        "state": "VERIFIED",
+        "blocksJointPrimary": false,
+        "reasons": [
+          "OPPOSITE_SIGNALS_REQUIRE_REVIEWED_SPLIT_OR_DISTINCT_CONTEXT"
+        ]
+      }
+    ],
+    "selection": {
+      "method": "CONSTRAINT_AWARE_SELECTION",
+      "selected": [
+        {
+          "questionId": "synthetic:career:q:6",
+          "candidateId": "synthetic:career:tension-positive"
+        },
+        {
+          "questionId": "synthetic:career:q:7",
+          "candidateId": "synthetic:career:tension-resolved"
+        }
+      ],
+      "coveredQuestions": 2,
+      "importanceCovered": 2,
+      "requiredMeaningUnits": 2,
+      "independentMeanings": 2,
+      "roots": {
+        "distinct": 2,
+        "references": 2,
+        "repeated": 0
+      },
+      "conflicts": [],
+      "missingQuestions": [],
+      "search": {
+        "visits": 5,
+        "complete": true
+      },
+      "notSelected": [
+        {
+          "id": "synthetic:career:tension-negative",
+          "reasons": [
+            "OPPOSITE_SIGNALS_REQUIRE_REVIEWED_SPLIT_OR_DISTINCT_CONTEXT",
+            "QUESTION_ASSIGNED_TWICE"
+          ]
+        }
+      ],
+      "customerClaimsEmitted": 0
+    }
+  },
+  "closing": {
+    "withoutDisplay": 0,
+    "withDisplay": 1,
+    "selection": {
+      "method": "CONSTRAINT_AWARE_SELECTION",
+      "selected": [
+        {
+          "questionId": "synthetic:career:q:9",
+          "candidateId": "synthetic:career:recall"
+        }
+      ],
+      "coveredQuestions": 1,
+      "importanceCovered": 1,
+      "requiredMeaningUnits": 1,
+      "independentMeanings": 0,
+      "roots": {
+        "distinct": 0,
+        "references": 0,
+        "repeated": 0
+      },
+      "conflicts": [],
+      "missingQuestions": [],
+      "search": {
+        "visits": 3,
+        "complete": true
+      },
+      "notSelected": [],
+      "customerClaimsEmitted": 0
+    },
+    "plannedSelectionNotDisplay": true
+  },
+  "domain": [
+    {
+      "name": "money-missing",
+      "options": [
+        {
+          "id": "synthetic:career:money",
+          "questionId": "synthetic:career:q:10",
+          "receipt": {
+            "receiptId": "kb:receipt:546ec7174238b9bba437b553bbec1eec8f9c3fd68d886d39b9568247f270ce66",
+            "candidateCatalogKey": "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea",
+            "originalResearchId": "synthetic:career:money",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:career:selection",
+            "product": "career_money_study",
+            "relationship": null,
+            "requirementRef": "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea",
+            "requiredSources": [
+              "synthetic:career:money:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-1"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:career:money:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-1",
+                    "producerEvidenceId": "synthetic:career:fact:x",
+                    "ownerId": "synthetic:career:owner",
+                    "rootIds": [
+                      "synthetic:career:root:x"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-career-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "jobStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/jobStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea",
+              "originalRecordHash": "3b3afb894181edd682c341e673d41bdc5324cb4a56fa0c9bf7c491946a95a774",
+              "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+              "meaningIdentity": "synthetic:career:meaning:money",
+              "claimIdentity": "synthetic:career:claim:money",
+              "product": "career_money_study",
+              "relationship": null,
+              "contexts": [
+                "work",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-1"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:career:root:x"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:career:root:x"
+            ],
+            "meaningIdentity": "synthetic:career:meaning:money",
+            "claimIdentity": "synthetic:career:claim:money",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:career:meaning:money",
+            "claimId": "synthetic:career:claim:money",
+            "reviewId": "synthetic:career:review:money",
+            "requiredMeanings": [
+              "synthetic:career:required:10"
+            ],
+            "conditions": [
+              "synthetic:career:condition:money"
+            ],
+            "action": "synthetic:career:action:money",
+            "context": "work",
+            "domain": "career_money_study",
+            "facet": "synthetic:career:facet:money",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "jobStatuses": [
+              "freelancer"
+            ],
+            "functions": [
+              "engineering"
+            ],
+            "recommendationId": null,
+            "economicNeeds": [
+              "synthetic:career:money:netProfit"
+            ],
+            "learningNeeds": [],
+            "duplicateGroup": null,
+            "semanticTheme": null,
+            "verifiedRiskRepeat": false,
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:career:root:x"
+          ],
+          "owner": "synthetic:career:owner",
+          "mbtiType": null,
+          "eligible": false,
+          "reasons": [
+            "ECONOMIC_REQUIREMENTS_UNKNOWN"
+          ],
+          "chapter": "CH06",
+          "requiredMeaningCount": 1,
+          "jobStatus": "freelancer",
+          "effectiveFunction": "engineering",
+          "detailContextId": "synthetic:career:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [],
+        "coveredQuestions": 0,
+        "importanceCovered": 0,
+        "requiredMeaningUnits": 0,
+        "independentMeanings": 0,
+        "roots": {
+          "distinct": 0,
+          "references": 0,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [
+          "synthetic:career:q:10"
+        ],
+        "search": {
+          "visits": 2,
+          "complete": true
+        },
+        "notSelected": [
+          {
+            "id": "synthetic:career:money",
+            "reasons": [
+              "ECONOMIC_REQUIREMENTS_UNKNOWN"
+            ]
+          }
+        ],
+        "customerClaimsEmitted": 0
+      }
+    },
+    {
+      "name": "money-entered",
+      "options": [
+        {
+          "id": "synthetic:career:money",
+          "questionId": "synthetic:career:q:10",
+          "receipt": {
+            "receiptId": "kb:receipt:546ec7174238b9bba437b553bbec1eec8f9c3fd68d886d39b9568247f270ce66",
+            "candidateCatalogKey": "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea",
+            "originalResearchId": "synthetic:career:money",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:career:selection",
+            "product": "career_money_study",
+            "relationship": null,
+            "requirementRef": "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea",
+            "requiredSources": [
+              "synthetic:career:money:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-1"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:career:money:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-1",
+                    "producerEvidenceId": "synthetic:career:fact:x",
+                    "ownerId": "synthetic:career:owner",
+                    "rootIds": [
+                      "synthetic:career:root:x"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-career-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "jobStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/jobStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:2efc4ca1d91c31f5036372230204fd3095eca4e14256f01ed5954ef2502973ea",
+              "originalRecordHash": "3b3afb894181edd682c341e673d41bdc5324cb4a56fa0c9bf7c491946a95a774",
+              "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+              "meaningIdentity": "synthetic:career:meaning:money",
+              "claimIdentity": "synthetic:career:claim:money",
+              "product": "career_money_study",
+              "relationship": null,
+              "contexts": [
+                "work",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-1"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:career:root:x"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:career:root:x"
+            ],
+            "meaningIdentity": "synthetic:career:meaning:money",
+            "claimIdentity": "synthetic:career:claim:money",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:career:meaning:money",
+            "claimId": "synthetic:career:claim:money",
+            "reviewId": "synthetic:career:review:money",
+            "requiredMeanings": [
+              "synthetic:career:required:10"
+            ],
+            "conditions": [
+              "synthetic:career:condition:money"
+            ],
+            "action": "synthetic:career:action:money",
+            "context": "work",
+            "domain": "career_money_study",
+            "facet": "synthetic:career:facet:money",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "jobStatuses": [
+              "freelancer"
+            ],
+            "functions": [
+              "engineering"
+            ],
+            "recommendationId": null,
+            "economicNeeds": [
+              "synthetic:career:money:netProfit"
+            ],
+            "learningNeeds": [],
+            "duplicateGroup": null,
+            "semanticTheme": null,
+            "verifiedRiskRepeat": false,
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:career:root:x"
+          ],
+          "owner": "synthetic:career:owner",
+          "mbtiType": null,
+          "eligible": true,
+          "reasons": [],
+          "chapter": "CH06",
+          "requiredMeaningCount": 1,
+          "jobStatus": "freelancer",
+          "effectiveFunction": "engineering",
+          "detailContextId": "synthetic:career:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [
+          {
+            "questionId": "synthetic:career:q:10",
+            "candidateId": "synthetic:career:money"
+          }
+        ],
+        "coveredQuestions": 1,
+        "importanceCovered": 1,
+        "requiredMeaningUnits": 1,
+        "independentMeanings": 1,
+        "roots": {
+          "distinct": 1,
+          "references": 1,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [],
+        "search": {
+          "visits": 3,
+          "complete": true
+        },
+        "notSelected": [],
+        "customerClaimsEmitted": 0
+      }
+    },
+    {
+      "name": "skill-missing",
+      "options": [
+        {
+          "id": "synthetic:career:learning",
+          "questionId": "synthetic:career:q:11",
+          "receipt": {
+            "receiptId": "kb:receipt:8770fb6cf5816226bca6d4debacd50c0a4054ed7de742f32863bc0c638302607",
+            "candidateCatalogKey": "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76",
+            "originalResearchId": "synthetic:career:learning",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:career:selection",
+            "product": "career_money_study",
+            "relationship": null,
+            "requirementRef": "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76",
+            "requiredSources": [
+              "synthetic:career:learning:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-1"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:career:learning:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-1",
+                    "producerEvidenceId": "synthetic:career:fact:x",
+                    "ownerId": "synthetic:career:owner",
+                    "rootIds": [
+                      "synthetic:career:root:x"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-career-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "jobStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/jobStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76",
+              "originalRecordHash": "1b3230a2e00b594192578b775cfc7dde74f4590fe4b3e1c84b37f2aa81ff7e3d",
+              "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+              "meaningIdentity": "synthetic:career:meaning:learning",
+              "claimIdentity": "synthetic:career:claim:learning",
+              "product": "career_money_study",
+              "relationship": null,
+              "contexts": [
+                "work",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-1"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:career:root:x"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:career:root:x"
+            ],
+            "meaningIdentity": "synthetic:career:meaning:learning",
+            "claimIdentity": "synthetic:career:claim:learning",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:career:meaning:learning",
+            "claimId": "synthetic:career:claim:learning",
+            "reviewId": "synthetic:career:review:learning",
+            "requiredMeanings": [
+              "synthetic:career:required:11"
+            ],
+            "conditions": [
+              "synthetic:career:condition:learning"
+            ],
+            "action": "synthetic:career:action:learning",
+            "context": "work",
+            "domain": "career_money_study",
+            "facet": "synthetic:career:facet:learning",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "jobStatuses": [
+              "freelancer"
+            ],
+            "functions": [
+              "engineering"
+            ],
+            "recommendationId": null,
+            "economicNeeds": [],
+            "learningNeeds": [
+              "synthetic:career:learning:independentPerformance"
+            ],
+            "duplicateGroup": null,
+            "semanticTheme": null,
+            "verifiedRiskRepeat": false,
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:career:root:x"
+          ],
+          "owner": "synthetic:career:owner",
+          "mbtiType": null,
+          "eligible": false,
+          "reasons": [
+            "LEARNING_REQUIREMENTS_UNKNOWN"
+          ],
+          "chapter": "CH07",
+          "requiredMeaningCount": 1,
+          "jobStatus": "freelancer",
+          "effectiveFunction": "engineering",
+          "detailContextId": "synthetic:career:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [],
+        "coveredQuestions": 0,
+        "importanceCovered": 0,
+        "requiredMeaningUnits": 0,
+        "independentMeanings": 0,
+        "roots": {
+          "distinct": 0,
+          "references": 0,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [
+          "synthetic:career:q:11"
+        ],
+        "search": {
+          "visits": 2,
+          "complete": true
+        },
+        "notSelected": [
+          {
+            "id": "synthetic:career:learning",
+            "reasons": [
+              "LEARNING_REQUIREMENTS_UNKNOWN"
+            ]
+          }
+        ],
+        "customerClaimsEmitted": 0
+      }
+    },
+    {
+      "name": "skill-entered",
+      "options": [
+        {
+          "id": "synthetic:career:learning",
+          "questionId": "synthetic:career:q:11",
+          "receipt": {
+            "receiptId": "kb:receipt:8770fb6cf5816226bca6d4debacd50c0a4054ed7de742f32863bc0c638302607",
+            "candidateCatalogKey": "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76",
+            "originalResearchId": "synthetic:career:learning",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:career:selection",
+            "product": "career_money_study",
+            "relationship": null,
+            "requirementRef": "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76",
+            "requiredSources": [
+              "synthetic:career:learning:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-1"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:career:learning:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-1",
+                    "producerEvidenceId": "synthetic:career:fact:x",
+                    "ownerId": "synthetic:career:owner",
+                    "rootIds": [
+                      "synthetic:career:root:x"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-career-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "jobStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/jobStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:04a61b5d036046dfe4dc4170ccb99ed91f103c126a1137b67d88752faff24d76",
+              "originalRecordHash": "1b3230a2e00b594192578b775cfc7dde74f4590fe4b3e1c84b37f2aa81ff7e3d",
+              "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+              "meaningIdentity": "synthetic:career:meaning:learning",
+              "claimIdentity": "synthetic:career:claim:learning",
+              "product": "career_money_study",
+              "relationship": null,
+              "contexts": [
+                "work",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-1"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:career:root:x"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:career:root:x"
+            ],
+            "meaningIdentity": "synthetic:career:meaning:learning",
+            "claimIdentity": "synthetic:career:claim:learning",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:career:meaning:learning",
+            "claimId": "synthetic:career:claim:learning",
+            "reviewId": "synthetic:career:review:learning",
+            "requiredMeanings": [
+              "synthetic:career:required:11"
+            ],
+            "conditions": [
+              "synthetic:career:condition:learning"
+            ],
+            "action": "synthetic:career:action:learning",
+            "context": "work",
+            "domain": "career_money_study",
+            "facet": "synthetic:career:facet:learning",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "jobStatuses": [
+              "freelancer"
+            ],
+            "functions": [
+              "engineering"
+            ],
+            "recommendationId": null,
+            "economicNeeds": [],
+            "learningNeeds": [
+              "synthetic:career:learning:independentPerformance"
+            ],
+            "duplicateGroup": null,
+            "semanticTheme": null,
+            "verifiedRiskRepeat": false,
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:career:root:x"
+          ],
+          "owner": "synthetic:career:owner",
+          "mbtiType": null,
+          "eligible": true,
+          "reasons": [],
+          "chapter": "CH07",
+          "requiredMeaningCount": 1,
+          "jobStatus": "freelancer",
+          "effectiveFunction": "engineering",
+          "detailContextId": "synthetic:career:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [
+          {
+            "questionId": "synthetic:career:q:11",
+            "candidateId": "synthetic:career:learning"
+          }
+        ],
+        "coveredQuestions": 1,
+        "importanceCovered": 1,
+        "requiredMeaningUnits": 1,
+        "independentMeanings": 1,
+        "roots": {
+          "distinct": 1,
+          "references": 1,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [],
+        "search": {
+          "visits": 3,
+          "complete": true
+        },
+        "notSelected": [],
+        "customerClaimsEmitted": 0
+      }
+    },
+    {
+      "name": "recommendation-missing",
+      "options": [
+        {
+          "id": "synthetic:career:recommendation",
+          "questionId": "synthetic:career:q:12",
+          "receipt": {
+            "receiptId": "kb:receipt:a0c53f06c4fc984d8578058095e84539665ccf2c70cc1a1c5983ebdbf14cb875",
+            "candidateCatalogKey": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+            "originalResearchId": "synthetic:career:recommendation",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:career:selection",
+            "product": "career_money_study",
+            "relationship": null,
+            "requirementRef": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+            "requiredSources": [
+              "synthetic:career:recommendation:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-1"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:career:recommendation:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-1",
+                    "producerEvidenceId": "synthetic:career:fact:x",
+                    "ownerId": "synthetic:career:owner",
+                    "rootIds": [
+                      "synthetic:career:root:x"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-career-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "jobStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/jobStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+              "originalRecordHash": "b5b02aff890f4b361df6e593af578f510ed0dd806e6b5c1b92435232dc1a39d9",
+              "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+              "meaningIdentity": "synthetic:career:meaning:recommendation",
+              "claimIdentity": "synthetic:career:claim:recommendation",
+              "product": "career_money_study",
+              "relationship": null,
+              "contexts": [
+                "work",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-1"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:career:root:x"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:career:root:x"
+            ],
+            "meaningIdentity": "synthetic:career:meaning:recommendation",
+            "claimIdentity": "synthetic:career:claim:recommendation",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:career:meaning:recommendation",
+            "claimId": "synthetic:career:claim:recommendation",
+            "reviewId": "synthetic:career:review:recommendation",
+            "requiredMeanings": [
+              "synthetic:career:required:12"
+            ],
+            "conditions": [
+              "synthetic:career:condition:recommendation"
+            ],
+            "action": "synthetic:career:action:recommendation",
+            "context": "work",
+            "domain": "career_money_study",
+            "facet": "synthetic:career:facet:recommendation",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "jobStatuses": [
+              "freelancer"
+            ],
+            "functions": [
+              "engineering"
+            ],
+            "recommendationId": "synthetic:career:route:review",
+            "economicNeeds": [],
+            "learningNeeds": [],
+            "duplicateGroup": null,
+            "semanticTheme": null,
+            "verifiedRiskRepeat": false,
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:career:root:x"
+          ],
+          "owner": "synthetic:career:owner",
+          "mbtiType": null,
+          "eligible": false,
+          "reasons": [
+            "RECOMMENDATION_PROOF_MISMATCH"
+          ],
+          "chapter": "CH03",
+          "requiredMeaningCount": 1,
+          "jobStatus": "freelancer",
+          "effectiveFunction": "engineering",
+          "detailContextId": "synthetic:career:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [],
+        "coveredQuestions": 0,
+        "importanceCovered": 0,
+        "requiredMeaningUnits": 0,
+        "independentMeanings": 0,
+        "roots": {
+          "distinct": 0,
+          "references": 0,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [
+          "synthetic:career:q:12"
+        ],
+        "search": {
+          "visits": 2,
+          "complete": true
+        },
+        "notSelected": [
+          {
+            "id": "synthetic:career:recommendation",
+            "reasons": [
+              "RECOMMENDATION_PROOF_MISMATCH"
+            ]
+          }
+        ],
+        "customerClaimsEmitted": 0
+      }
+    },
+    {
+      "name": "recommendation-matched",
+      "options": [
+        {
+          "id": "synthetic:career:recommendation",
+          "questionId": "synthetic:career:q:12",
+          "receipt": {
+            "receiptId": "kb:receipt:a0c53f06c4fc984d8578058095e84539665ccf2c70cc1a1c5983ebdbf14cb875",
+            "candidateCatalogKey": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+            "originalResearchId": "synthetic:career:recommendation",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:career:selection",
+            "product": "career_money_study",
+            "relationship": null,
+            "requirementRef": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+            "requiredSources": [
+              "synthetic:career:recommendation:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-1"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:career:recommendation:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-1",
+                    "producerEvidenceId": "synthetic:career:fact:x",
+                    "ownerId": "synthetic:career:owner",
+                    "rootIds": [
+                      "synthetic:career:root:x"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-career-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "jobStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/jobStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+              "originalRecordHash": "b5b02aff890f4b361df6e593af578f510ed0dd806e6b5c1b92435232dc1a39d9",
+              "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+              "meaningIdentity": "synthetic:career:meaning:recommendation",
+              "claimIdentity": "synthetic:career:claim:recommendation",
+              "product": "career_money_study",
+              "relationship": null,
+              "contexts": [
+                "work",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-1"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:career:root:x"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:career:root:x"
+            ],
+            "meaningIdentity": "synthetic:career:meaning:recommendation",
+            "claimIdentity": "synthetic:career:claim:recommendation",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:career:meaning:recommendation",
+            "claimId": "synthetic:career:claim:recommendation",
+            "reviewId": "synthetic:career:review:recommendation",
+            "requiredMeanings": [
+              "synthetic:career:required:12"
+            ],
+            "conditions": [
+              "synthetic:career:condition:recommendation"
+            ],
+            "action": "synthetic:career:action:recommendation",
+            "context": "work",
+            "domain": "career_money_study",
+            "facet": "synthetic:career:facet:recommendation",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "jobStatuses": [
+              "freelancer"
+            ],
+            "functions": [
+              "engineering"
+            ],
+            "recommendationId": "synthetic:career:route:review",
+            "economicNeeds": [],
+            "learningNeeds": [],
+            "duplicateGroup": null,
+            "semanticTheme": null,
+            "verifiedRiskRepeat": false,
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:career:root:x"
+          ],
+          "owner": "synthetic:career:owner",
+          "mbtiType": null,
+          "eligible": true,
+          "reasons": [],
+          "chapter": "CH03",
+          "requiredMeaningCount": 1,
+          "jobStatus": "freelancer",
+          "effectiveFunction": "engineering",
+          "detailContextId": "synthetic:career:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [
+          {
+            "questionId": "synthetic:career:q:12",
+            "candidateId": "synthetic:career:recommendation"
+          }
+        ],
+        "coveredQuestions": 1,
+        "importanceCovered": 1,
+        "requiredMeaningUnits": 1,
+        "independentMeanings": 1,
+        "roots": {
+          "distinct": 1,
+          "references": 1,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [],
+        "search": {
+          "visits": 3,
+          "complete": true
+        },
+        "notSelected": [],
+        "customerClaimsEmitted": 0
+      }
+    },
+    {
+      "name": "recommendation-root-mismatch",
+      "options": [
+        {
+          "id": "synthetic:career:recommendation",
+          "questionId": "synthetic:career:q:12",
+          "receipt": {
+            "receiptId": "kb:receipt:a0c53f06c4fc984d8578058095e84539665ccf2c70cc1a1c5983ebdbf14cb875",
+            "candidateCatalogKey": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+            "originalResearchId": "synthetic:career:recommendation",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:career:selection",
+            "product": "career_money_study",
+            "relationship": null,
+            "requirementRef": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+            "requiredSources": [
+              "synthetic:career:recommendation:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-1"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:career:recommendation:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-1",
+                    "producerEvidenceId": "synthetic:career:fact:x",
+                    "ownerId": "synthetic:career:owner",
+                    "rootIds": [
+                      "synthetic:career:root:x"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-career-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "jobStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/jobStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-1"
+                ],
+                "originalReferences": [
+                  "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:3790a710e319dedc95f537c05c99434509f0c4f38ec47f4ebd9873f695667420",
+              "originalRecordHash": "b5b02aff890f4b361df6e593af578f510ed0dd806e6b5c1b92435232dc1a39d9",
+              "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+              "meaningIdentity": "synthetic:career:meaning:recommendation",
+              "claimIdentity": "synthetic:career:claim:recommendation",
+              "product": "career_money_study",
+              "relationship": null,
+              "contexts": [
+                "work",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-1"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:career:root:x"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:career:root:x"
+            ],
+            "meaningIdentity": "synthetic:career:meaning:recommendation",
+            "claimIdentity": "synthetic:career:claim:recommendation",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:career:meaning:recommendation",
+            "claimId": "synthetic:career:claim:recommendation",
+            "reviewId": "synthetic:career:review:recommendation",
+            "requiredMeanings": [
+              "synthetic:career:required:12"
+            ],
+            "conditions": [
+              "synthetic:career:condition:recommendation"
+            ],
+            "action": "synthetic:career:action:recommendation",
+            "context": "work",
+            "domain": "career_money_study",
+            "facet": "synthetic:career:facet:recommendation",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "jobStatuses": [
+              "freelancer"
+            ],
+            "functions": [
+              "engineering"
+            ],
+            "recommendationId": "synthetic:career:route:review",
+            "economicNeeds": [],
+            "learningNeeds": [],
+            "duplicateGroup": null,
+            "semanticTheme": null,
+            "verifiedRiskRepeat": false,
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:career:root:x"
+          ],
+          "owner": "synthetic:career:owner",
+          "mbtiType": null,
+          "eligible": false,
+          "reasons": [
+            "RECOMMENDATION_PROOF_MISMATCH"
+          ],
+          "chapter": "CH03",
+          "requiredMeaningCount": 1,
+          "jobStatus": "freelancer",
+          "effectiveFunction": "engineering",
+          "detailContextId": "synthetic:career:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [],
+        "coveredQuestions": 0,
+        "importanceCovered": 0,
+        "requiredMeaningUnits": 0,
+        "independentMeanings": 0,
+        "roots": {
+          "distinct": 0,
+          "references": 0,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [
+          "synthetic:career:q:12"
+        ],
+        "search": {
+          "visits": 2,
+          "complete": true
+        },
+        "notSelected": [
+          {
+            "id": "synthetic:career:recommendation",
+            "reasons": [
+              "RECOMMENDATION_PROOF_MISMATCH"
+            ]
+          }
+        ],
+        "customerClaimsEmitted": 0
+      }
+    }
+  ],
+  "actualResearchApproved": 0,
+  "customerClaimsEmitted": 0,
+  "options": [
+    {
+      "id": "synthetic:career:a",
+      "questionId": "synthetic:career:q:1",
+      "receipt": {
+        "receiptId": "kb:receipt:64704e941284787e69ba201b08a4888944471af7692bb455feaa24281e1cd86b",
+        "candidateCatalogKey": "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6",
+        "originalResearchId": "synthetic:career:a",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:career:selection",
+        "product": "career_money_study",
+        "relationship": null,
+        "requirementRef": "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6",
+        "requiredSources": [
+          "synthetic:career:a:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-1"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:career:a:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-1",
+                "producerEvidenceId": "synthetic:career:fact:x",
+                "ownerId": "synthetic:career:owner",
+                "rootIds": [
+                  "synthetic:career:root:x"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-career-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [
+          {
+            "key": "jobStatus",
+            "state": "PASS"
+          }
+        ],
+        "counterexamples": {
+          "originalRef": "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [
+              "/meaning/jobStatuses"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:b7a472d98f4b322285b6d1ce1f06634ccd1a174c2076d3218ddd2c142754e6a6",
+          "originalRecordHash": "ff614cb71b1ecab9f13f50e57115dab3c590d21050f9398ad8049191365e80b0",
+          "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+          "meaningIdentity": "synthetic:career:meaning:a",
+          "claimIdentity": "synthetic:career:claim:a",
+          "product": "career_money_study",
+          "relationship": null,
+          "contexts": [
+            "work",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-1"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:career:root:x"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:career:root:x"
+        ],
+        "meaningIdentity": "synthetic:career:meaning:a",
+        "claimIdentity": "synthetic:career:claim:a",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:a",
+        "claimId": "synthetic:career:claim:a",
+        "reviewId": "synthetic:career:review:a",
+        "requiredMeanings": [
+          "synthetic:career:required:1"
+        ],
+        "conditions": [
+          "synthetic:career:condition:a"
+        ],
+        "action": "synthetic:career:action:a",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:shared",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      },
+      "roots": [
+        "synthetic:career:root:x"
+      ],
+      "owner": "synthetic:career:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": [],
+      "chapter": "CH01",
+      "requiredMeaningCount": 1,
+      "jobStatus": "freelancer",
+      "effectiveFunction": "engineering",
+      "detailContextId": "synthetic:career:context:one"
+    },
+    {
+      "id": "synthetic:career:b",
+      "questionId": "synthetic:career:q:1",
+      "receipt": {
+        "receiptId": "kb:receipt:46354dc0104757839aaef6f6c929e79358f4cffa45f6890d1b3e1b92582e861b",
+        "candidateCatalogKey": "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87",
+        "originalResearchId": "synthetic:career:b",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:career:selection",
+        "product": "career_money_study",
+        "relationship": null,
+        "requirementRef": "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87",
+        "requiredSources": [
+          "synthetic:career:b:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-2"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:career:b:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-2",
+                "producerEvidenceId": "synthetic:career:fact:y",
+                "ownerId": "synthetic:career:owner",
+                "rootIds": [
+                  "synthetic:career:root:y"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-career-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [
+          {
+            "key": "jobStatus",
+            "state": "PASS"
+          }
+        ],
+        "counterexamples": {
+          "originalRef": "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [
+              "/meaning/jobStatuses"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-2"
+            ],
+            "originalReferences": [
+              "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:a8eb8d8dff6a596ff01935ea708989e0126524daa8949b2b66e691931d967d87",
+          "originalRecordHash": "746845e7c7330f5e7a4e74a73b7f0b508019920a3e38462931dbcfee0c1ce4af",
+          "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+          "meaningIdentity": "synthetic:career:meaning:b",
+          "claimIdentity": "synthetic:career:claim:b",
+          "product": "career_money_study",
+          "relationship": null,
+          "contexts": [
+            "work",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-2"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:career:root:y"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:career:root:y"
+        ],
+        "meaningIdentity": "synthetic:career:meaning:b",
+        "claimIdentity": "synthetic:career:claim:b",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:b",
+        "claimId": "synthetic:career:claim:b",
+        "reviewId": "synthetic:career:review:b",
+        "requiredMeanings": [
+          "synthetic:career:required:1"
+        ],
+        "conditions": [
+          "synthetic:career:condition:b"
+        ],
+        "action": "synthetic:career:action:b",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:b",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      },
+      "roots": [
+        "synthetic:career:root:y"
+      ],
+      "owner": "synthetic:career:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": [],
+      "chapter": "CH01",
+      "requiredMeaningCount": 1,
+      "jobStatus": "freelancer",
+      "effectiveFunction": "engineering",
+      "detailContextId": "synthetic:career:context:one"
+    },
+    {
+      "id": "synthetic:career:c",
+      "questionId": "synthetic:career:q:2",
+      "receipt": {
+        "receiptId": "kb:receipt:7ffcd180090d0b338afc4588651f452f847a01f11dc9fd6670a2ba07eb5484f5",
+        "candidateCatalogKey": "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0",
+        "originalResearchId": "synthetic:career:c",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:career:selection",
+        "product": "career_money_study",
+        "relationship": null,
+        "requirementRef": "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0",
+        "requiredSources": [
+          "synthetic:career:c:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-1"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:career:c:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-1",
+                "producerEvidenceId": "synthetic:career:fact:x",
+                "ownerId": "synthetic:career:owner",
+                "rootIds": [
+                  "synthetic:career:root:x"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-career-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [
+          {
+            "key": "jobStatus",
+            "state": "PASS"
+          }
+        ],
+        "counterexamples": {
+          "originalRef": "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [
+              "/meaning/jobStatuses"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:d6928aaab3e5258a78e0e967f3676b6e321fc3d22f6c5f8ecbf2921f38818ee0",
+          "originalRecordHash": "36b9c8021496125fec14410197d7e0a0f450d55fb1829c18b1cd3ef7fc4ab682",
+          "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+          "meaningIdentity": "synthetic:career:meaning:c",
+          "claimIdentity": "synthetic:career:claim:c",
+          "product": "career_money_study",
+          "relationship": null,
+          "contexts": [
+            "work",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-1"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:career:root:x"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:career:root:x"
+        ],
+        "meaningIdentity": "synthetic:career:meaning:c",
+        "claimIdentity": "synthetic:career:claim:c",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:c",
+        "claimId": "synthetic:career:claim:c",
+        "reviewId": "synthetic:career:review:c",
+        "requiredMeanings": [
+          "synthetic:career:required:2"
+        ],
+        "conditions": [
+          "synthetic:career:condition:c"
+        ],
+        "action": "synthetic:career:action:c",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:shared",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      },
+      "roots": [
+        "synthetic:career:root:x"
+      ],
+      "owner": "synthetic:career:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": [],
+      "chapter": "CH02",
+      "requiredMeaningCount": 1,
+      "jobStatus": "freelancer",
+      "effectiveFunction": "engineering",
+      "detailContextId": "synthetic:career:context:one"
+    },
+    {
+      "id": "synthetic:career:d",
+      "questionId": "synthetic:career:q:3",
+      "receipt": {
+        "receiptId": "kb:receipt:c92407e791b9d57e220f0d7882f141d8718a7cd31469f662f104bb7ae854dd3f",
+        "candidateCatalogKey": "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5",
+        "originalResearchId": "synthetic:career:d",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:career:selection",
+        "product": "career_money_study",
+        "relationship": null,
+        "requirementRef": "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5",
+        "requiredSources": [
+          "synthetic:career:d:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-1"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:career:d:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-1",
+                "producerEvidenceId": "synthetic:career:fact:x",
+                "ownerId": "synthetic:career:owner",
+                "rootIds": [
+                  "synthetic:career:root:x"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-career-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [
+          {
+            "key": "jobStatus",
+            "state": "PASS"
+          }
+        ],
+        "counterexamples": {
+          "originalRef": "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [
+              "/meaning/jobStatuses"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:44ffccb4500e35fca5c539b494ca43c6082c241387a3c2f4d47f56b3f49061f5",
+          "originalRecordHash": "8b0704e7d0047a0e695379ebcb19f0ff7952a5f0c756304956b7ecbf46b31850",
+          "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+          "meaningIdentity": "synthetic:career:meaning:d",
+          "claimIdentity": "synthetic:career:claim:d",
+          "product": "career_money_study",
+          "relationship": null,
+          "contexts": [
+            "work",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-1"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:career:root:x"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:career:root:x"
+        ],
+        "meaningIdentity": "synthetic:career:meaning:d",
+        "claimIdentity": "synthetic:career:claim:d",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:d",
+        "claimId": "synthetic:career:claim:d",
+        "reviewId": "synthetic:career:review:d",
+        "requiredMeanings": [
+          "synthetic:career:required:3"
+        ],
+        "conditions": [
+          "synthetic:career:condition:d"
+        ],
+        "action": "synthetic:career:action:d",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:shared",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      },
+      "roots": [
+        "synthetic:career:root:x"
+      ],
+      "owner": "synthetic:career:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": [],
+      "chapter": "CH03",
+      "requiredMeaningCount": 1,
+      "jobStatus": "freelancer",
+      "effectiveFunction": "engineering",
+      "detailContextId": "synthetic:career:context:one"
+    },
+    {
+      "id": "synthetic:career:e",
+      "questionId": "synthetic:career:q:4",
+      "receipt": {
+        "receiptId": "kb:receipt:e6fa937be425cbe73293d6a0be16c7862251554c96813eca2fe1a49f625aff4b",
+        "candidateCatalogKey": "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995",
+        "originalResearchId": "synthetic:career:e",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:career:selection",
+        "product": "career_money_study",
+        "relationship": null,
+        "requirementRef": "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995",
+        "requiredSources": [
+          "synthetic:career:e:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-1"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:career:e:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-1",
+                "producerEvidenceId": "synthetic:career:fact:x",
+                "ownerId": "synthetic:career:owner",
+                "rootIds": [
+                  "synthetic:career:root:x"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-career-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [
+          {
+            "key": "jobStatus",
+            "state": "PASS"
+          }
+        ],
+        "counterexamples": {
+          "originalRef": "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [
+              "/meaning/jobStatuses"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:38acb4efd68582a82e57137706c3094d94f1fc621c3931090ae3bdf4333fd995",
+          "originalRecordHash": "571babca1a801b06d4b17498c78e53579fb6644277b5d215c771dc55fd82a403",
+          "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+          "meaningIdentity": "synthetic:career:meaning:e",
+          "claimIdentity": "synthetic:career:claim:e",
+          "product": "career_money_study",
+          "relationship": null,
+          "contexts": [
+            "work",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-1"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:career:root:x"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:career:root:x"
+        ],
+        "meaningIdentity": "synthetic:career:meaning:e",
+        "claimIdentity": "synthetic:career:claim:e",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:e",
+        "claimId": "synthetic:career:claim:e",
+        "reviewId": "synthetic:career:review:e",
+        "requiredMeanings": [
+          "synthetic:career:required:4"
+        ],
+        "conditions": [
+          "synthetic:career:condition:e"
+        ],
+        "action": "synthetic:career:action:e",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:shared",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      },
+      "roots": [
+        "synthetic:career:root:x"
+      ],
+      "owner": "synthetic:career:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": [],
+      "chapter": "CH04",
+      "requiredMeaningCount": 1,
+      "jobStatus": "freelancer",
+      "effectiveFunction": "engineering",
+      "detailContextId": "synthetic:career:context:one"
+    },
+    {
+      "id": "synthetic:career:f",
+      "questionId": "synthetic:career:q:5",
+      "receipt": {
+        "receiptId": "kb:receipt:8a2f6ca6924974e265eb55db6b0f894ee327c80a9e802c13a3b90abd9e069f50",
+        "candidateCatalogKey": "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3",
+        "originalResearchId": "synthetic:career:f",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:career:selection",
+        "product": "career_money_study",
+        "relationship": null,
+        "requirementRef": "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3",
+        "requiredSources": [
+          "synthetic:career:f:source"
+        ],
+        "selectedActualEvidence": [
+          "synthetic-node-1"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:career:f:source",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "synthetic-node-1",
+                "producerEvidenceId": "synthetic:career:fact:x",
+                "ownerId": "synthetic:career:owner",
+                "rootIds": [
+                  "synthetic:career:root:x"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/career-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticFact",
+                  "version": "synthetic-career-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [
+          {
+            "key": "jobStatus",
+            "state": "PASS"
+          }
+        ],
+        "counterexamples": {
+          "originalRef": "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [
+              "/meaning/jobStatuses"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "synthetic-node-1"
+            ],
+            "originalReferences": [
+              "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:cd7cbdf1d7d38fb6d56a8f810cb5c7d007f4f598528d7334bfe750e7604daab3",
+          "originalRecordHash": "82020da020d0b1c46ab8dc048371b37de947ff8b7876d20073d536632caa0c76",
+          "sourceVersion": "fe3ff68ae8b182c892a86c7574c8cb28a6cae342190df4ccd8fca73b4d4adae8",
+          "meaningIdentity": "synthetic:career:meaning:f",
+          "claimIdentity": "synthetic:career:claim:f",
+          "product": "career_money_study",
+          "relationship": null,
+          "contexts": [
+            "work",
+            "closing"
+          ],
+          "evidenceIds": [
+            "synthetic-node-1"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:career:root:x"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:career:root:x"
+        ],
+        "meaningIdentity": "synthetic:career:meaning:f",
+        "claimIdentity": "synthetic:career:claim:f",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "meaning": {
+        "meaningId": "synthetic:career:meaning:f",
+        "claimId": "synthetic:career:claim:f",
+        "reviewId": "synthetic:career:review:f",
+        "requiredMeanings": [
+          "synthetic:career:required:5"
+        ],
+        "conditions": [
+          "synthetic:career:condition:f"
+        ],
+        "action": "synthetic:career:action:f",
+        "context": "work",
+        "domain": "career_money_study",
+        "facet": "synthetic:career:facet:shared",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "jobStatuses": [
+          "freelancer"
+        ],
+        "functions": [
+          "engineering"
+        ],
+        "recommendationId": null,
+        "economicNeeds": [],
+        "learningNeeds": [],
+        "duplicateGroup": null,
+        "semanticTheme": null,
+        "verifiedRiskRepeat": false,
+        "compatiblePriorQuestions": []
+      },
+      "roots": [
+        "synthetic:career:root:x"
+      ],
+      "owner": "synthetic:career:owner",
+      "mbtiType": null,
+      "eligible": true,
+      "reasons": [],
+      "chapter": "CH05",
+      "requiredMeaningCount": 1,
+      "jobStatus": "freelancer",
+      "effectiveFunction": "engineering",
+      "detailContextId": "synthetic:career:context:one"
+    }
+  ]
+}

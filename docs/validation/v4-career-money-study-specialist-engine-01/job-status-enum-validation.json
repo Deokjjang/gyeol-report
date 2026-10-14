@@ -1,0 +1,58 @@
+{
+  "source": "src/lib/report-generation/reportInputTypes.ts#JOB_STATUSES",
+  "values": [
+    "",
+    "student",
+    "job_seeker",
+    "employee",
+    "freelancer",
+    "self_employed",
+    "business_owner",
+    "homemaker",
+    "unemployed",
+    "other"
+  ],
+  "actualEngineTests": [
+    {
+      "name": "M actual JobStatus \"\" remains an input scope, not skill or income",
+      "status": "passed"
+    },
+    {
+      "name": "M actual JobStatus \"student\" remains an input scope, not skill or income",
+      "status": "passed"
+    },
+    {
+      "name": "M actual JobStatus \"job_seeker\" remains an input scope, not skill or income",
+      "status": "passed"
+    },
+    {
+      "name": "M actual JobStatus \"employee\" remains an input scope, not skill or income",
+      "status": "passed"
+    },
+    {
+      "name": "M actual JobStatus \"freelancer\" remains an input scope, not skill or income",
+      "status": "passed"
+    },
+    {
+      "name": "M actual JobStatus \"self_employed\" remains an input scope, not skill or income",
+      "status": "passed"
+    },
+    {
+      "name": "M actual JobStatus \"business_owner\" remains an input scope, not skill or income",
+      "status": "passed"
+    },
+    {
+      "name": "M actual JobStatus \"homemaker\" remains an input scope, not skill or income",
+      "status": "passed"
+    },
+    {
+      "name": "M actual JobStatus \"unemployed\" remains an input scope, not skill or income",
+      "status": "passed"
+    },
+    {
+      "name": "M actual JobStatus \"other\" remains an input scope, not skill or income",
+      "status": "passed"
+    }
+  ],
+  "separateFromOriginal99ClassifierProbes": true
+}

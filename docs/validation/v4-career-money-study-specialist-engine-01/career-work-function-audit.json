@@ -1,0 +1,514 @@
+{
+  "originalFunctionResearch": [
+    {
+      "id": "ckr:function:finance_planning",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "finance_planning",
+      "actualSceneFacetKeys": [
+        "precision",
+        "resource",
+        "structure"
+      ],
+      "actualStepsSupported": false,
+      "observedParserExamples": [
+        {
+          "text": "재무기획",
+          "observedFunction": "finance_planning"
+        },
+        {
+          "text": "회계",
+          "observedFunction": "finance_planning"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:finance",
+        "ckr:job:accounting"
+      ],
+      "existingSourceHash": "88f57c93bb1f2ef9972f3f18a9cd59a5a02bedb4f1838c2057466b9717b55e67",
+      "classifierAndSceneAreSeparate": true
+    },
+    {
+      "id": "ckr:function:language_mediation",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "language_mediation",
+      "actualSceneFacetKeys": [
+        "depth",
+        "precision",
+        "expression"
+      ],
+      "actualStepsSupported": false,
+      "observedParserExamples": [
+        {
+          "text": "번역가",
+          "observedFunction": "language_mediation"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:translation"
+      ],
+      "existingSourceHash": "57c34ba275c70c57b4d9e953be16533d0cb1b597ec038d89cc3e22de6c5c1490",
+      "classifierAndSceneAreSeparate": true
+    },
+    {
+      "id": "ckr:function:teaching",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "teaching",
+      "actualSceneFacetKeys": [
+        "care",
+        "learning",
+        "structure"
+      ],
+      "actualStepsSupported": false,
+      "observedParserExamples": [
+        {
+          "text": "강사",
+          "observedFunction": "teaching"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:teaching"
+      ],
+      "existingSourceHash": "8ccd81487f96ea5b48179a341af88fc5a668f0fb92ab3ab020f4ac399517d2e3",
+      "classifierAndSceneAreSeparate": true
+    },
+    {
+      "id": "ckr:function:administration",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "administration",
+      "actualSceneFacetKeys": [
+        "precision",
+        "structure",
+        "boundary"
+      ],
+      "actualStepsSupported": false,
+      "observedParserExamples": [
+        {
+          "text": "행정",
+          "observedFunction": "administration"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:administration"
+      ],
+      "existingSourceHash": "0f50e659e80254ba80aaaf06a399c4962317884f2db91df98294284e32da84ae",
+      "classifierAndSceneAreSeparate": true
+    },
+    {
+      "id": "ckr:function:care_operations",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "care_operations",
+      "actualSceneFacetKeys": [
+        "care",
+        "precision",
+        "persistence"
+      ],
+      "actualStepsSupported": false,
+      "observedParserExamples": [
+        {
+          "text": "간호사",
+          "observedFunction": "care_operations"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:care"
+      ],
+      "existingSourceHash": "7f9fe19c99962a37795dd9e0e5f5b0efbac9ac766c409249adbe51e5655498a8",
+      "classifierAndSceneAreSeparate": true
+    },
+    {
+      "id": "ckr:function:field_operations",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "field_operations",
+      "actualSceneFacetKeys": [
+        "precision",
+        "flexibility",
+        "stability"
+      ],
+      "actualStepsSupported": false,
+      "observedParserExamples": [
+        {
+          "text": "현장 물류",
+          "observedFunction": "field_operations"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:logistics"
+      ],
+      "existingSourceHash": "565aec7fba1abce4dce5c9aa5565ad02be6a1b14b3d5566090ffa599b692b474",
+      "classifierAndSceneAreSeparate": true
+    },
+    {
+      "id": "ckr:function:business_operations",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "business_operations",
+      "actualSceneFacetKeys": [
+        "resource",
+        "opportunity",
+        "leadership"
+      ],
+      "actualStepsSupported": false,
+      "observedParserExamples": [
+        {
+          "text": "사진가",
+          "observedFunction": "unknown"
+        },
+        {
+          "text": "사업 대표",
+          "observedFunction": "business_operations"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:photography",
+        "ckr:job:small_business"
+      ],
+      "existingSourceHash": "205d4412bfd346fe050a8fa4f7e2d755d7a4581824cb35de97a71730406e00c5",
+      "classifierAndSceneAreSeparate": true
+    },
+    {
+      "id": "ckr:function:retail_operations",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "retail_operations",
+      "actualSceneFacetKeys": [
+        "resource",
+        "opportunity",
+        "persistence"
+      ],
+      "actualStepsSupported": false,
+      "observedParserExamples": [
+        {
+          "text": "매장 운영",
+          "observedFunction": "customer_service"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:retail"
+      ],
+      "existingSourceHash": "aab31c1d6f7a7ab782becd9101a3e136436d59cd941256c24653e862369e326d",
+      "classifierAndSceneAreSeparate": true
+    },
+    {
+      "id": "ckr:function:engineering",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "engineering",
+      "actualSceneFacetKeys": [
+        "precision",
+        "depth",
+        "creation",
+        "expression",
+        "care",
+        "leadership",
+        "resource",
+        "opportunity",
+        "persistence",
+        "learning",
+        "autonomy",
+        "boundary",
+        "structure",
+        "flexibility",
+        "drive",
+        "meaning",
+        "stability"
+      ],
+      "actualStepsSupported": true,
+      "observedParserExamples": [
+        {
+          "text": "개발자",
+          "observedFunction": "engineering"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:software"
+      ],
+      "existingSourceHash": "ed8da886e1e57ab562fbfc650a73728888655acac6ecea08a2c467eff0d0d775",
+      "classifierAndSceneAreSeparate": true
+    },
+    {
+      "id": "ckr:function:design",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "design",
+      "actualSceneFacetKeys": [
+        "precision",
+        "depth",
+        "creation",
+        "expression",
+        "care",
+        "leadership",
+        "resource",
+        "opportunity",
+        "persistence",
+        "learning",
+        "autonomy",
+        "boundary",
+        "structure",
+        "flexibility",
+        "drive",
+        "meaning",
+        "stability"
+      ],
+      "actualStepsSupported": true,
+      "observedParserExamples": [
+        {
+          "text": "브랜드 디자이너",
+          "observedFunction": "design"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:brand_design"
+      ],
+      "existingSourceHash": "454bb34b82a919f774d12d4a7634ba08eb90362e912cb31bab14efa5ea863112",
+      "classifierAndSceneAreSeparate": true
+    },
+    {
+      "id": "ckr:function:sales_operations",
+      "productKey": "career_money_study",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "empiricalVerification": "not_established",
+      "existingFunction": "sales_operations",
+      "actualSceneFacetKeys": [
+        "precision",
+        "depth",
+        "creation",
+        "expression",
+        "care",
+        "leadership",
+        "resource",
+        "opportunity",
+        "persistence",
+        "learning",
+        "autonomy",
+        "boundary",
+        "structure",
+        "flexibility",
+        "drive",
+        "meaning",
+        "stability"
+      ],
+      "actualStepsSupported": true,
+      "observedParserExamples": [
+        {
+          "text": "영업기획",
+          "observedFunction": "sales_operations"
+        }
+      ],
+      "jobResearchRefs": [
+        "ckr:job:sales"
+      ],
+      "existingSourceHash": "8c645b476a1f9da827bb321bfa71dc9088fbf137d78c80e1552864a615014180",
+      "classifierAndSceneAreSeparate": true
+    }
+  ],
+  "observations": [
+    {
+      "fixtureId": "fixture-career-A",
+      "context": {
+        "jobStatus": "",
+        "detailJobProvided": true,
+        "exactEnteredContext": true,
+        "baseFunction": "engineering",
+        "narrativeFunction": "engineering",
+        "effectiveFunction": "engineering",
+        "workMode": "other",
+        "states": [
+          "EXACT_ENTERED_CONTEXT",
+          "SUPPORTED_WORK_FUNCTION",
+          "JOB_RESEARCH_REFERENCE_ONLY",
+          "PERSONAL_SKILL_UNVERIFIED"
+        ],
+        "exactJobResearchIds": [
+          "ckr:job:software"
+        ],
+        "detailApplicationIds": [
+          "ckr:detail:software:reproduce-vs-design"
+        ],
+        "skillVerified": false,
+        "enteredTextRetainedOnlyInCaller": true,
+        "sourceHashes": {
+          "src/lib/interpretation-v3/careerContextV3.ts": "4afc714e1f9068bccbcc93851148170e3360b7ac7c9d3f59138b42fe0b2a58a1",
+          "src/lib/interpretation-v4/narrativeContext.ts": "7c5fd219c33f07bfe98cebb3721d0a0a7cd7fbda8075da3f235462aff79eb24e",
+          "src/lib/interpretation-v4/narrativeWorkContext.ts": "246e3f3f0f02d25e8bc0c41ab02f383b7c469657f72dc82829633b85afb69695",
+          "src/lib/interpretation-v4/careerWorkNarrative.ts": "45b6c40ad2249d20c48ea273ba416b6dc60fde440401683d5439534a62ce3cc9"
+        },
+        "unknownFacts": [
+          "authority",
+          "actualTasks",
+          "workOutputs",
+          "contracts",
+          "clientCount",
+          "staff",
+          "income",
+          "revenue",
+          "profit",
+          "cashFlow",
+          "assets",
+          "investmentReturn",
+          "pastSuccess",
+          "pastFailure",
+          "academicDegree",
+          "qualification",
+          "legalAuthority",
+          "skillPerformance",
+          "examPreparation",
+          "actualConflict"
+        ]
+      }
+    },
+    {
+      "fixtureId": "fixture-career-F",
+      "context": {
+        "jobStatus": "",
+        "detailJobProvided": true,
+        "exactEnteredContext": true,
+        "baseFunction": "engineering",
+        "narrativeFunction": "engineering",
+        "effectiveFunction": "engineering",
+        "workMode": "other",
+        "states": [
+          "EXACT_ENTERED_CONTEXT",
+          "SUPPORTED_WORK_FUNCTION",
+          "JOB_RESEARCH_REFERENCE_ONLY",
+          "PERSONAL_SKILL_UNVERIFIED"
+        ],
+        "exactJobResearchIds": [
+          "ckr:job:software"
+        ],
+        "detailApplicationIds": [
+          "ckr:detail:software:reproduce-vs-design"
+        ],
+        "skillVerified": false,
+        "enteredTextRetainedOnlyInCaller": true,
+        "sourceHashes": {
+          "src/lib/interpretation-v3/careerContextV3.ts": "4afc714e1f9068bccbcc93851148170e3360b7ac7c9d3f59138b42fe0b2a58a1",
+          "src/lib/interpretation-v4/narrativeContext.ts": "7c5fd219c33f07bfe98cebb3721d0a0a7cd7fbda8075da3f235462aff79eb24e",
+          "src/lib/interpretation-v4/narrativeWorkContext.ts": "246e3f3f0f02d25e8bc0c41ab02f383b7c469657f72dc82829633b85afb69695",
+          "src/lib/interpretation-v4/careerWorkNarrative.ts": "45b6c40ad2249d20c48ea273ba416b6dc60fde440401683d5439534a62ce3cc9"
+        },
+        "unknownFacts": [
+          "authority",
+          "actualTasks",
+          "workOutputs",
+          "contracts",
+          "clientCount",
+          "staff",
+          "income",
+          "revenue",
+          "profit",
+          "cashFlow",
+          "assets",
+          "investmentReturn",
+          "pastSuccess",
+          "pastFailure",
+          "academicDegree",
+          "qualification",
+          "legalAuthority",
+          "skillPerformance",
+          "examPreparation",
+          "actualConflict"
+        ]
+      }
+    },
+    {
+      "fixtureId": "fixture-same-natal-career",
+      "context": {
+        "jobStatus": "",
+        "detailJobProvided": false,
+        "exactEnteredContext": false,
+        "baseFunction": "unknown",
+        "narrativeFunction": "unknown",
+        "effectiveFunction": "unknown",
+        "workMode": "other",
+        "states": [
+          "UNKNOWN_WORK_FUNCTION",
+          "GENERIC_WORK_FUNCTION",
+          "PERSONAL_SKILL_UNVERIFIED"
+        ],
+        "exactJobResearchIds": [],
+        "detailApplicationIds": [],
+        "skillVerified": false,
+        "enteredTextRetainedOnlyInCaller": true,
+        "sourceHashes": {
+          "src/lib/interpretation-v3/careerContextV3.ts": "4afc714e1f9068bccbcc93851148170e3360b7ac7c9d3f59138b42fe0b2a58a1",
+          "src/lib/interpretation-v4/narrativeContext.ts": "7c5fd219c33f07bfe98cebb3721d0a0a7cd7fbda8075da3f235462aff79eb24e",
+          "src/lib/interpretation-v4/narrativeWorkContext.ts": "246e3f3f0f02d25e8bc0c41ab02f383b7c469657f72dc82829633b85afb69695",
+          "src/lib/interpretation-v4/careerWorkNarrative.ts": "45b6c40ad2249d20c48ea273ba416b6dc60fde440401683d5439534a62ce3cc9"
+        },
+        "unknownFacts": [
+          "authority",
+          "actualTasks",
+          "workOutputs",
+          "contracts",
+          "clientCount",
+          "staff",
+          "income",
+          "revenue",
+          "profit",
+          "cashFlow",
+          "assets",
+          "investmentReturn",
+          "pastSuccess",
+          "pastFailure",
+          "academicDegree",
+          "qualification",
+          "legalAuthority",
+          "skillPerformance",
+          "examPreparation",
+          "actualConflict"
+        ]
+      }
+    }
+  ],
+  "contextFunctionIsNotNewGraphFact": true,
+  "unknownNotUpgradedByResearchScene": true
+}

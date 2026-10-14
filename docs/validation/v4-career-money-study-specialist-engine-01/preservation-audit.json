@@ -1,0 +1,47 @@
+{
+  "originalTrackedFiles": 4304,
+  "allBytesEqual": true,
+  "researchFamilies": 20,
+  "originalArtifactFamilies": {
+    "v4-knowledge-unified-catalog-01": {
+      "generatedJsonPreserved": 59,
+      "allFrozenFilesCompared": 72,
+      "allBytesEqual": true
+    },
+    "v4-knowledge-source-verification-01": {
+      "generatedJsonPreserved": 20,
+      "allFrozenFilesCompared": 31,
+      "allBytesEqual": true
+    },
+    "v4-knowledge-semantic-domain-verification-01": {
+      "generatedJsonPreserved": 23,
+      "allFrozenFilesCompared": 34,
+      "allBytesEqual": true
+    },
+    "v4-actual-evidence-graph-01": {
+      "generatedJsonPreserved": 105,
+      "allFrozenFilesCompared": 117,
+      "allBytesEqual": true
+    },
+    "v4-knowledge-binder-01": {
+      "generatedJsonPreserved": 83,
+      "allFrozenFilesCompared": 101,
+      "allBytesEqual": true
+    },
+    "v4-product-specialist-foundation-01": {
+      "generatedJsonPreserved": 64,
+      "allFrozenFilesCompared": 79,
+      "allBytesEqual": true
+    },
+    "v4-comprehensive-specialist-engine-01": {
+      "generatedJsonPreserved": 29,
+      "allFrozenFilesCompared": 45,
+      "allBytesEqual": true
+    }
+  },
+  "runtimeImportsAdded": 0,
+  "originalWorktrees": 42,
+  "originalDirtyFiles": 11,
+  "sourceCodeModifications": 0,
+  "newFilesOnly": true
+}

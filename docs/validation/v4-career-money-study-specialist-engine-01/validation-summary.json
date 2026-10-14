@@ -1,0 +1,27 @@
+{
+  "newTests": {
+    "pass": 78,
+    "fail": 0
+  },
+  "originalRelatedTestsIncludingComprehensive": {
+    "pass": 344,
+    "fail": 0
+  },
+  "existing16FailedFiles": {
+    "pass": 5837,
+    "fail": 46,
+    "signaturesUnchanged": true
+  },
+  "typescript": {
+    "base": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "buildWarnings": 0,
+  "diffCheck": "PASS",
+  "books": 17,
+  "digests": 102,
+  "preview": "PENDING_EXACT_COMMIT_CHECK"
+}

@@ -1,0 +1,28 @@
+{
+  "status": "READER_INTERNAL_QUESTION_BRIDGE_UNVERIFIED",
+  "reader": {
+    "chapters": 9,
+    "paragraphs": 36,
+    "roles": 144
+  },
+  "internalQuestions": [
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6",
+    "K7",
+    "K8",
+    "K9",
+    "K10"
+  ],
+  "K9NotANewRecommendationRanker": true,
+  "CH03UsesOriginalLegacyRecommendations": true,
+  "numberMappingCreated": false,
+  "runtimeChanged": false,
+  "releaseQualityIssuesAreNotNewPaymentGates": true,
+  "writerFollowUp": [
+    "Audit short release and generic fallback sentences in a separately authorized Writer/Publication task"
+  ]
+}
