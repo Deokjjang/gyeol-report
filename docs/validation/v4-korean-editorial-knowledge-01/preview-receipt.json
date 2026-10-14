@@ -1,0 +1,14 @@
+{
+  "branch": "v4/korean-editorial-knowledge-01",
+  "implementationSha": "f66c272937e0f33d3737c0e23a86fd44aada6e92",
+  "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "deploymentId": "dpl_2udq2EBvLz7UCLpW8o2t5Z2X5xu5",
+  "url": "https://gyeol-report-408kpfyoa-gyeol-report-s-projects.vercel.app",
+  "state": "READY",
+  "target": "Preview",
+  "readyAt": 1791938435953,
+  "metadataChecked": true,
+  "productionChanged": false,
+  "allRemoteWarningCountNotAsserted": true,
+  "finalDocumentationSha": "receipt is stored by a following docs-only commit; its exact SHA READY will be checked separately to avoid self-referential commit content"
+}

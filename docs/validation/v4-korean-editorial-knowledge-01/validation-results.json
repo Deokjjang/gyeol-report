@@ -71,5 +71,12 @@
   "paidCalls": 0,
   "productionWrites": 0,
   "wholeProjectSuiteRerun": false,
-  "preview": "exact final pushed SHA must be checked"
+  "preview": {
+    "implementationSha": "f66c272937e0f33d3737c0e23a86fd44aada6e92",
+    "state": "READY",
+    "target": "Preview",
+    "deploymentId": "dpl_2udq2EBvLz7UCLpW8o2t5Z2X5xu5",
+    "receipt": "preview-receipt.json",
+    "finalDocsShaCheckedAfterPush": true
+  }
 }

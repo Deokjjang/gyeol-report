@@ -93,6 +93,8 @@
 
 기존 `withKoreanParticle`은 알려진 한글·ㄹ·일부 닫는 부호를 처리하며, 기존 `compatibilityTitle`은 explicit token·literal callback·외국 이름+님으로 안전성을 유지한다. 이를 새 기능으로 보고하지 않는다. 후속 slot 타입은 명사구/끝소리/괄호 head/용언 lemma/검토된 surface/주체/높임/시제/부정/조건을 구분한다. 엔진 구현 없음.
 
+표현 자료의 `manuallyReviewedForMeaning=true`는 Codex의 직접 정성 독해 기록이다. 운영자·독자의 인간 독해 승인이나 실증 결과가 아니며 `humanReviewRequiredBeforeUse=true`를 유지한다.
+
 문법 연구의 **요청된 항목 coverage**와 **한국어 문법 전체 완전성**은 다르다. 전자는 자료를 갖췄고, 후자의 보편 자동 판정·전체 활용 사전 교감·형태/구문 분석의 완전성은 미검증이다. 테스트를 맞추려고 올바른 짧은 자료를 늘리지 않았다. 초기 신규 테스트의 임의 최소 글자 수 조건은 실제 계약에 맞게 비어 있지 않음 검사로 수정했다. 의미/독해 평가는 별도 독해 기록으로 남겼다.
 
 ## 실제 문장과 중복 감사
@@ -147,7 +149,7 @@
 
 신규 연구·신규 테스트2개·이 검증 폴더만 stage/commit/push한다. Vercel trace 수정과 설정은 유지한다. 자동 Preview의 정확한 최종 SHA/branch/target/READY를 확인한다. 구현 SHA 확인 receipt를 문서 마감 commit으로 남길 경우 최종 문서 SHA READY도 별도로 확인해 최종 보고하며 자기 SHA를 그 commit 내부에 반복 기록하지 않는다.
 
-Preview: **push 후 확인 예정**.
+Preview: 구현 SHA `f66c272937e0f33d3737c0e23a86fd44aada6e92`의 **READY** 확인. [Preview](https://gyeol-report-408kpfyoa-gyeol-report-s-projects.vercel.app), deployment `dpl_2udq2EBvLz7UCLpW8o2t5Z2X5xu5`. 정확한 branch/SHA 및 Preview target(null)을 검사했다. [preview-receipt.json](preview-receipt.json)에 기록했다. 이 기록과 독해 주체 설명을 남기는 후속 문서 커밋의 최종 SHA READY도 push 후 별도로 확인해 최종 보고한다. 원격 전체 경고 수0은 주장하지 않는다.
 
 ## 완료 범위와 남은 조건
 
