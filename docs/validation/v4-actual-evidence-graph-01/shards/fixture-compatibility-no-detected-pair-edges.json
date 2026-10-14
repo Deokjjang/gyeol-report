@@ -1,0 +1,3758 @@
+[
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:1",
+    "to": "fixture-compatibility-no-detected-pair:node:51",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:1",
+    "to": "fixture-compatibility-no-detected-pair:node:97",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:1",
+    "to": "fixture-compatibility-no-detected-pair:node:168",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:1",
+    "to": "fixture-compatibility-no-detected-pair:node:169",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:1",
+    "to": "fixture-compatibility-no-detected-pair:node:188",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:1",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:2",
+    "to": "fixture-compatibility-no-detected-pair:node:182",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:2",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:3",
+    "to": "fixture-compatibility-no-detected-pair:node:3#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:3",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:3",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:3",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:4",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:5",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:5",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:5",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:5",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:5",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:5",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:5",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:6",
+    "to": "fixture-compatibility-no-detected-pair:node:182",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:6",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:7",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:7",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:8",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:8",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:9",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:9",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:10",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:10",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:10",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:11",
+    "to": "fixture-compatibility-no-detected-pair:node:11#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:11",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:12",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:12",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:13",
+    "to": "fixture-compatibility-no-detected-pair:node:113",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:13",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:14",
+    "to": "fixture-pair:fixture-person-16|fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:15",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:15",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:16",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:17",
+    "to": "fixture-compatibility-no-detected-pair:node:34",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:17",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:18",
+    "to": "fixture-compatibility-no-detected-pair:node:71",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:18",
+    "to": "fixture-compatibility-no-detected-pair:node:152",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:18",
+    "to": "fixture-compatibility-no-detected-pair:node:207",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:18",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:19",
+    "to": "fixture-compatibility-no-detected-pair:node:60",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:19",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:20",
+    "to": "fixture-compatibility-no-detected-pair:node:20#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:20",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:21",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:22",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:22",
+    "to": "fixture-compatibility-no-detected-pair:node:144",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:22",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:23",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:23",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:23",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:24",
+    "to": "fixture-compatibility-no-detected-pair:node:60",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:24",
+    "to": "fixture-compatibility-no-detected-pair:node:71",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:24",
+    "to": "fixture-compatibility-no-detected-pair:node:152",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:24",
+    "to": "fixture-compatibility-no-detected-pair:node:207",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:24",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:9",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:41",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:51",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:66",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:97",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:101",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:144",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:168",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:169",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:182",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:188",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-compatibility-no-detected-pair:node:199",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:25",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:26",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:26",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:27",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:27",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:28",
+    "to": "fixture-compatibility-no-detected-pair:node:82",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:28",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:29",
+    "to": "fixture-compatibility-no-detected-pair:node:50",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:29",
+    "to": "fixture-compatibility-no-detected-pair:node:141",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:29",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:30",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:30",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:31",
+    "to": "fixture-compatibility-no-detected-pair:node:45",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:31",
+    "to": "fixture-compatibility-no-detected-pair:node:135",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:31",
+    "to": "fixture-compatibility-no-detected-pair:node:159",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:31",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:32",
+    "to": "fixture-pair:fixture-person-16|fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:33",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:33",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:34",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:34",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:34",
+    "to": "fixture-compatibility-no-detected-pair:node:34#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:34",
+    "to": "fixture-compatibility-no-detected-pair:node:34#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:34",
+    "to": "fixture-compatibility-no-detected-pair:node:34#/participants/2",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:34",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:34",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:34",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:34",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:34",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:35",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:35",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:35",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:36",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:36",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:36",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:37",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:37",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:38",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:39",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:39",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:40",
+    "to": "fixture-compatibility-no-detected-pair:node:40#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:40",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:41",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:41",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:42",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:42",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:43",
+    "to": "fixture-compatibility-no-detected-pair:node:43#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:43",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:43",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:43",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:44",
+    "to": "fixture-compatibility-no-detected-pair:node:44#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:44",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:45",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:45",
+    "to": "fixture-compatibility-no-detected-pair:node:174",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:45",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:46",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:46",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:47",
+    "to": "fixture-pair:fixture-person-16|fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:48",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:48",
+    "to": "fixture-compatibility-no-detected-pair:node:48#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:48",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:48",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:49",
+    "to": "fixture-compatibility-no-detected-pair:node:84",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:49",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:50",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:50",
+    "to": "fixture-compatibility-no-detected-pair:node:50#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:50",
+    "to": "fixture-compatibility-no-detected-pair:node:50#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:50",
+    "to": "fixture-compatibility-no-detected-pair:node:50#/participants/2",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:50",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:50",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:50",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:50",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:50",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:50",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:51",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:51",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:52",
+    "to": "fixture-compatibility-no-detected-pair:node:41",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:52",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:53",
+    "to": "fixture-compatibility-no-detected-pair:node:135",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:53",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:54",
+    "to": "fixture-compatibility-no-detected-pair:node:51",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:54",
+    "to": "fixture-compatibility-no-detected-pair:node:188",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:54",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:55",
+    "to": "fixture-compatibility-no-detected-pair:node:41",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:55",
+    "to": "fixture-compatibility-no-detected-pair:node:82",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:55",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:56",
+    "to": "fixture-compatibility-no-detected-pair:node:56#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:56",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:57",
+    "to": "fixture-compatibility-no-detected-pair:node:123",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:57",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:57",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:58",
+    "to": "fixture-compatibility-no-detected-pair:node:57",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:58",
+    "to": "fixture-compatibility-no-detected-pair:node:117",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:58",
+    "to": "fixture-compatibility-no-detected-pair:node:146",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:58",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:59",
+    "to": "fixture-compatibility-no-detected-pair:node:97",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:59",
+    "to": "fixture-compatibility-no-detected-pair:node:168",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:59",
+    "to": "fixture-compatibility-no-detected-pair:node:169",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:59",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:60",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:60",
+    "to": "fixture-compatibility-no-detected-pair:node:72",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:60",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:61",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:62",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:63",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:63",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:63",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:64",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:64",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:64",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:65",
+    "to": "fixture-compatibility-no-detected-pair:node:65#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:65",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:66",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:66",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:67",
+    "to": "fixture-compatibility-no-detected-pair:node:41",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:67",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:68",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:68",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:69",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:69",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:69",
+    "to": "fixture-compatibility-no-detected-pair:node:69#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:69",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:70",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:70",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:70",
+    "to": "fixture-compatibility-no-detected-pair:node:135",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:70",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:71",
+    "to": "fixture-compatibility-no-detected-pair:node:110",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:71",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:72",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:72",
+    "to": "fixture-compatibility-no-detected-pair:node:72#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:72",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:72",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:73",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:73",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:74",
+    "to": "fixture-compatibility-no-detected-pair:node:17",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:74",
+    "to": "fixture-compatibility-no-detected-pair:node:45",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:74",
+    "to": "fixture-compatibility-no-detected-pair:node:99",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:74",
+    "to": "fixture-compatibility-no-detected-pair:node:135",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:74",
+    "to": "fixture-compatibility-no-detected-pair:node:159",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:74",
+    "to": "fixture-compatibility-no-detected-pair:node:167",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:74",
+    "to": "fixture-compatibility-no-detected-pair:node:205",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:74",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:75",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:75",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:75",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:76",
+    "to": "fixture-compatibility-no-detected-pair:node:199",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:76",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:77",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:77",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:77",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:77",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:77",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:77",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:77",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:78",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:78",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:78",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:78",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:78",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:78",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:78",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:79",
+    "to": "fixture-compatibility-no-detected-pair:node:29",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:79",
+    "to": "fixture-compatibility-no-detected-pair:node:57",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:79",
+    "to": "fixture-compatibility-no-detected-pair:node:117",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:79",
+    "to": "fixture-compatibility-no-detected-pair:node:146",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:79",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:80",
+    "to": "fixture-compatibility-no-detected-pair:node:193",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:80",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:81",
+    "to": "fixture-pair:fixture-person-16|fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:82",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:82",
+    "to": "fixture-compatibility-no-detected-pair:node:138",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:82",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:83",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:83",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:84",
+    "to": "fixture-compatibility-no-detected-pair:node:106",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:84",
+    "to": "fixture-compatibility-no-detected-pair:node:198",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:84",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:85",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:85",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:85",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:85",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:85",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:85",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:85",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:86",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:86",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:87",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:87",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:87",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:88",
+    "to": "fixture-compatibility-no-detected-pair:node:88#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:88",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:89",
+    "to": "fixture-compatibility-no-detected-pair:node:29",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:89",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:90",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:90",
+    "to": "fixture-compatibility-no-detected-pair:node:144",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:90",
+    "to": "fixture-compatibility-no-detected-pair:node:193",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:90",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:91",
+    "to": "fixture-compatibility-no-detected-pair:node:51",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:91",
+    "to": "fixture-compatibility-no-detected-pair:node:188",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:91",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:92",
+    "to": "fixture-compatibility-no-detected-pair:node:92#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:92",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:93",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:93",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:93",
+    "to": "fixture-compatibility-no-detected-pair:node:93#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:93",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:94",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:95",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:96",
+    "to": "fixture-compatibility-no-detected-pair:node:45",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:96",
+    "to": "fixture-compatibility-no-detected-pair:node:135",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:96",
+    "to": "fixture-compatibility-no-detected-pair:node:159",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:96",
+    "to": "fixture-compatibility-no-detected-pair:node:193",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:96",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:97",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:97",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:98",
+    "to": "fixture-compatibility-no-detected-pair:node:60",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:98",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:99",
+    "to": "fixture-compatibility-no-detected-pair:node:116",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:99",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:100",
+    "to": "fixture-compatibility-no-detected-pair:node:51",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:100",
+    "to": "fixture-compatibility-no-detected-pair:node:188",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:100",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:101",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:101",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:102",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:102",
+    "to": "fixture-compatibility-no-detected-pair:node:102#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:102",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:102",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:103",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:103",
+    "to": "fixture-compatibility-no-detected-pair:node:144",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:103",
+    "to": "fixture-compatibility-no-detected-pair:node:202",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:103",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:104",
+    "to": "fixture-compatibility-no-detected-pair:node:17",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:104",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:105",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:105",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:105",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:105",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:105",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:105",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:105",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:106",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:106",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:106",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:106",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:106",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:106",
+    "to": "fixture-compatibility-no-detected-pair:node:106#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:106",
+    "to": "fixture-compatibility-no-detected-pair:node:106#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:106",
+    "to": "fixture-compatibility-no-detected-pair:node:106#/participants/2",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:106",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:106",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:107",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:108",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:109",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:109",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:109",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:109",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:109",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:109",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:109",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:110",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:110",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:111",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:111",
+    "to": "fixture-compatibility-no-detected-pair:node:111#/direction",
+    "kind": "HAS_DIRECTION",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:111",
+    "to": "fixture-compatibility-no-detected-pair:node:111#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:111",
+    "to": "fixture-compatibility-no-detected-pair:node:111#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:111",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:111",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:112",
+    "to": "fixture-compatibility-no-detected-pair:node:41",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:112",
+    "to": "fixture-compatibility-no-detected-pair:node:51",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:112",
+    "to": "fixture-compatibility-no-detected-pair:node:97",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:112",
+    "to": "fixture-compatibility-no-detected-pair:node:168",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:112",
+    "to": "fixture-compatibility-no-detected-pair:node:169",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:112",
+    "to": "fixture-compatibility-no-detected-pair:node:188",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:112",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:113",
+    "to": "fixture-compatibility-no-detected-pair:node:206",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:113",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:114",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:115",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:115",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:115",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:115",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:115",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:115",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:115",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:116",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:116",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:117",
+    "to": "fixture-compatibility-no-detected-pair:node:3",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:117",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:117",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:118",
+    "to": "fixture-compatibility-no-detected-pair:node:182",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:118",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:119",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:120",
+    "to": "fixture-compatibility-no-detected-pair:node:9",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:120",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:120",
+    "to": "fixture-compatibility-no-detected-pair:node:66",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:120",
+    "to": "fixture-compatibility-no-detected-pair:node:101",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:120",
+    "to": "fixture-compatibility-no-detected-pair:node:144",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:120",
+    "to": "fixture-compatibility-no-detected-pair:node:182",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:120",
+    "to": "fixture-compatibility-no-detected-pair:node:199",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:120",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:121",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:122",
+    "to": "fixture-compatibility-no-detected-pair:node:57",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:122",
+    "to": "fixture-compatibility-no-detected-pair:node:117",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:122",
+    "to": "fixture-compatibility-no-detected-pair:node:146",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:122",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:123",
+    "to": "fixture-compatibility-no-detected-pair:node:123#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:123",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:123",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:123",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:124",
+    "to": "fixture-compatibility-no-detected-pair:node:29",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:124",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:125",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:126",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:127",
+    "to": "fixture-pair:fixture-person-16|fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:128",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:129",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:130",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:131",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:131",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:132",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:132",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:133",
+    "to": "fixture-compatibility-no-detected-pair:node:133#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:133",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:134",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:134",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:135",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:135",
+    "to": "fixture-compatibility-no-detected-pair:node:69",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:135",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:136",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:136",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:136",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:137",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:138",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:138",
+    "to": "fixture-compatibility-no-detected-pair:node:138#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:138",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:138",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:139",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:140",
+    "to": "fixture-compatibility-no-detected-pair:node:60",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:140",
+    "to": "fixture-compatibility-no-detected-pair:node:82",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:140",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:141",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:141",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:141",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:141",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:141",
+    "to": "fixture-compatibility-no-detected-pair:node:141#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:141",
+    "to": "fixture-compatibility-no-detected-pair:node:141#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:141",
+    "to": "fixture-compatibility-no-detected-pair:node:141#/participants/2",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:141",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:141",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:141",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:142",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:142",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:143",
+    "to": "fixture-compatibility-no-detected-pair:node:57",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:143",
+    "to": "fixture-compatibility-no-detected-pair:node:117",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:143",
+    "to": "fixture-compatibility-no-detected-pair:node:146",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:143",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:144",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:144",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:145",
+    "to": "fixture-compatibility-no-detected-pair:node:9",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:145",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:145",
+    "to": "fixture-compatibility-no-detected-pair:node:66",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:145",
+    "to": "fixture-compatibility-no-detected-pair:node:101",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:145",
+    "to": "fixture-compatibility-no-detected-pair:node:144",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:145",
+    "to": "fixture-compatibility-no-detected-pair:node:182",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:145",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:146",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:146",
+    "to": "fixture-compatibility-no-detected-pair:node:48",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:146",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:147",
+    "to": "fixture-compatibility-no-detected-pair:node:84",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:147",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:148",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:148",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:148",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:149",
+    "to": "fixture-compatibility-no-detected-pair:node:99",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:149",
+    "to": "fixture-compatibility-no-detected-pair:node:167",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:149",
+    "to": "fixture-compatibility-no-detected-pair:node:205",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:149",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:150",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:150",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:151",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:151",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:151",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:152",
+    "to": "fixture-compatibility-no-detected-pair:node:191",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:152",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:153",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:154",
+    "to": "fixture-compatibility-no-detected-pair:node:154#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:154",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:155",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:155",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:156",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:156",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:156",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:156",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:156",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:156",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:156",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:157",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:158",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:159",
+    "to": "fixture-compatibility-no-detected-pair:node:43",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:159",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:159",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:160",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:160",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:161",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:161",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:162",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:163",
+    "to": "fixture-compatibility-no-detected-pair:node:163#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:163",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:164",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:164",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:164",
+    "to": "fixture-compatibility-no-detected-pair:node:135",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:164",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:165",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:166",
+    "to": "fixture-compatibility-no-detected-pair:node:41",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:166",
+    "to": "fixture-compatibility-no-detected-pair:node:113",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:166",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:167",
+    "to": "fixture-compatibility-no-detected-pair:node:15",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:167",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:168",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:168",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:169",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:169",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:170",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:170",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:170",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:171",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:171",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:171",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:171",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:171",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:171",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:171",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:172",
+    "to": "fixture-compatibility-no-detected-pair:node:202",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:172",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:173",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:174",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:174",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:174",
+    "to": "fixture-compatibility-no-detected-pair:node:174#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:174",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:175",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:175",
+    "to": "fixture-compatibility-no-detected-pair:node:144",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:175",
+    "to": "fixture-compatibility-no-detected-pair:node:199",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:175",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:176",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:177",
+    "to": "fixture-compatibility-no-detected-pair:node:41",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:177",
+    "to": "fixture-compatibility-no-detected-pair:node:51",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:177",
+    "to": "fixture-compatibility-no-detected-pair:node:97",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:177",
+    "to": "fixture-compatibility-no-detected-pair:node:168",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:177",
+    "to": "fixture-compatibility-no-detected-pair:node:169",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:177",
+    "to": "fixture-compatibility-no-detected-pair:node:188",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:177",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:178",
+    "to": "fixture-compatibility-no-detected-pair:node:193",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:178",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:179",
+    "to": "fixture-compatibility-no-detected-pair:node:179#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:179",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:180",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:180",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:181",
+    "to": "fixture-compatibility-no-detected-pair:node:17",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:181",
+    "to": "fixture-compatibility-no-detected-pair:node:45",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:181",
+    "to": "fixture-compatibility-no-detected-pair:node:135",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:181",
+    "to": "fixture-compatibility-no-detected-pair:node:159",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:181",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:182",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:182",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:183",
+    "to": "fixture-compatibility-no-detected-pair:node:85",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:183",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:184",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:185",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:186",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:187",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:188",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:188",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:189",
+    "to": "fixture-compatibility-no-detected-pair:node:9",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:189",
+    "to": "fixture-compatibility-no-detected-pair:node:66",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:189",
+    "to": "fixture-compatibility-no-detected-pair:node:101",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:189",
+    "to": "fixture-compatibility-no-detected-pair:node:182",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:189",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:190",
+    "to": "fixture-compatibility-no-detected-pair:node:33",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:190",
+    "to": "fixture-compatibility-no-detected-pair:node:135",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:190",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:191",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:191",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:192",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:193",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:193",
+    "to": "fixture-compatibility-no-detected-pair:node:93",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:193",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:194",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:195",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:195",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:195",
+    "to": "fixture-compatibility-no-detected-pair:node:195#/direction",
+    "kind": "HAS_DIRECTION",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:195",
+    "to": "fixture-compatibility-no-detected-pair:node:195#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:195",
+    "to": "fixture-compatibility-no-detected-pair:node:195#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:195",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:196",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:197",
+    "to": "fixture-compatibility-no-detected-pair:node:82",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:197",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:198",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:198",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:198",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:198",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:198",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:198",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:198",
+    "to": "fixture-compatibility-no-detected-pair:node:198#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:198",
+    "to": "fixture-compatibility-no-detected-pair:node:198#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:198",
+    "to": "fixture-compatibility-no-detected-pair:node:198#/participants/2",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:198",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:199",
+    "to": "fixture-compatibility-no-detected-pair:node:102",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:199",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:199",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:200",
+    "to": "fixture-compatibility-no-detected-pair:node:84",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:200",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:201",
+    "to": "fixture-pair:fixture-person-16|fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:202",
+    "to": "fixture-compatibility-no-detected-pair:node:208",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:202",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:203",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:203",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:203",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:203",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:203",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:203",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:203",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:204",
+    "to": "fixture-compatibility-no-detected-pair:node:9",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:204",
+    "to": "fixture-compatibility-no-detected-pair:node:66",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:204",
+    "to": "fixture-compatibility-no-detected-pair:node:101",
+    "kind": "USES_SEMANTIC_CONTRIBUTION",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:204",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:205",
+    "to": "fixture-compatibility-no-detected-pair:node:160",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:205",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:206",
+    "to": "fixture-compatibility-no-detected-pair:node:40",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:206",
+    "to": "fixture-compatibility-no-detected-pair:node:65",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:206",
+    "to": "fixture-compatibility-no-detected-pair:node:92",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:206",
+    "to": "fixture-compatibility-no-detected-pair:node:133",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:206",
+    "to": "fixture-compatibility-no-detected-pair:node:163",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:206",
+    "to": "fixture-compatibility-no-detected-pair:node:179",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:206",
+    "to": "fixture-compatibility-no-detected-pair:node:206#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:206",
+    "to": "fixture-compatibility-no-detected-pair:node:206#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:206",
+    "to": "fixture-compatibility-no-detected-pair:node:206#/participants/2",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:206",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:207",
+    "to": "fixture-compatibility-no-detected-pair:node:7",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:207",
+    "to": "fixture-person-17",
+    "kind": "HAS_OWNER",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:208",
+    "to": "fixture-compatibility-no-detected-pair:node:11",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:208",
+    "to": "fixture-compatibility-no-detected-pair:node:20",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:208",
+    "to": "fixture-compatibility-no-detected-pair:node:44",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:208",
+    "to": "fixture-compatibility-no-detected-pair:node:56",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:208",
+    "to": "fixture-compatibility-no-detected-pair:node:88",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:208",
+    "to": "fixture-compatibility-no-detected-pair:node:154",
+    "kind": "DERIVED_FROM_ACTUAL_EVIDENCE",
+    "required": true
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:208",
+    "to": "fixture-compatibility-no-detected-pair:node:208#/participants/0",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:208",
+    "to": "fixture-compatibility-no-detected-pair:node:208#/participants/1",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:208",
+    "to": "fixture-compatibility-no-detected-pair:node:208#/participants/2",
+    "kind": "HAS_PARTICIPANT",
+    "required": false
+  },
+  {
+    "from": "fixture-compatibility-no-detected-pair:node:208",
+    "to": "fixture-person-16",
+    "kind": "HAS_OWNER",
+    "required": false
+  }
+]

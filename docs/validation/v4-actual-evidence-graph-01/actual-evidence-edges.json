@@ -1,0 +1,137 @@
+[
+  {
+    "fixtureId": "fixture-comprehensive-A",
+    "file": "shards/fixture-comprehensive-A-edges.json",
+    "count": 11322
+  },
+  {
+    "fixtureId": "fixture-comprehensive-F",
+    "file": "shards/fixture-comprehensive-F-edges.json",
+    "count": 533
+  },
+  {
+    "fixtureId": "fixture-career-A",
+    "file": "shards/fixture-career-A-edges.json",
+    "count": 10577
+  },
+  {
+    "fixtureId": "fixture-career-F",
+    "file": "shards/fixture-career-F-edges.json",
+    "count": 525
+  },
+  {
+    "fixtureId": "fixture-love-A",
+    "file": "shards/fixture-love-A-edges.json",
+    "count": 12252
+  },
+  {
+    "fixtureId": "fixture-love-F",
+    "file": "shards/fixture-love-F-edges.json",
+    "count": 502
+  },
+  {
+    "fixtureId": "fixture-compatibility-A",
+    "file": "shards/fixture-compatibility-A-edges.json",
+    "count": 23211
+  },
+  {
+    "fixtureId": "fixture-compatibility-marriage",
+    "file": "shards/fixture-compatibility-marriage-edges.json",
+    "count": 23211
+  },
+  {
+    "fixtureId": "fixture-compatibility-parentChild",
+    "file": "shards/fixture-compatibility-parentChild-edges.json",
+    "count": 23210
+  },
+  {
+    "fixtureId": "fixture-compatibility-coworker",
+    "file": "shards/fixture-compatibility-coworker-edges.json",
+    "count": 24804
+  },
+  {
+    "fixtureId": "fixture-compatibility-managerReport",
+    "file": "shards/fixture-compatibility-managerReport-edges.json",
+    "count": 24930
+  },
+  {
+    "fixtureId": "fixture-compatibility-businessPartner",
+    "file": "shards/fixture-compatibility-businessPartner-edges.json",
+    "count": 25139
+  },
+  {
+    "fixtureId": "fixture-compatibility-friendship",
+    "file": "shards/fixture-compatibility-friendship-edges.json",
+    "count": 23339
+  },
+  {
+    "fixtureId": "fixture-major-A",
+    "file": "shards/fixture-major-A-edges.json",
+    "count": 13158
+  },
+  {
+    "fixtureId": "fixture-major-F",
+    "file": "shards/fixture-major-F-edges.json",
+    "count": 1213
+  },
+  {
+    "fixtureId": "fixture-annual-A",
+    "file": "shards/fixture-annual-A-edges.json",
+    "count": 14629
+  },
+  {
+    "fixtureId": "fixture-annual-F",
+    "file": "shards/fixture-annual-F-edges.json",
+    "count": 2722
+  },
+  {
+    "fixtureId": "fixture-major-transition-C",
+    "file": "shards/fixture-major-transition-C-edges.json",
+    "count": 12270
+  },
+  {
+    "fixtureId": "fixture-annual-transition-C2028",
+    "file": "shards/fixture-annual-transition-C2028-edges.json",
+    "count": 14034
+  },
+  {
+    "fixtureId": "fixture-compatibility-unknown-both",
+    "file": "shards/fixture-compatibility-unknown-both-edges.json",
+    "count": 929
+  },
+  {
+    "fixtureId": "fixture-compatibility-slot-swap",
+    "file": "shards/fixture-compatibility-slot-swap-edges.json",
+    "count": 23220
+  },
+  {
+    "fixtureId": "fixture-same-natal-different-mbti",
+    "file": "shards/fixture-same-natal-different-mbti-edges.json",
+    "count": 13096
+  },
+  {
+    "fixtureId": "fixture-same-mbti-different-natal",
+    "file": "shards/fixture-same-mbti-different-natal-edges.json",
+    "count": 11571
+  },
+  {
+    "fixtureId": "fixture-same-natal-career",
+    "file": "shards/fixture-same-natal-career-edges.json",
+    "count": 11310
+  },
+  {
+    "fixtureId": "fixture-annual-ranged-transition",
+    "file": "shards/fixture-annual-ranged-transition-edges.json",
+    "count": 13986
+  },
+  {
+    "fixtureId": "fixture-annual-before-first-dayun",
+    "file": "shards/fixture-annual-before-first-dayun-edges.json",
+    "count": 14955
+  },
+  {
+    "fixtureId": "fixture-compatibility-no-detected-pair",
+    "file": "shards/fixture-compatibility-no-detected-pair-edges.json",
+    "count": 626
+  }
+]

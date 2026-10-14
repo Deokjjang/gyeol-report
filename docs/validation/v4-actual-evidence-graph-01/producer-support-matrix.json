@@ -1,0 +1,3208 @@
+[
+  {
+    "fixtureId": "fixture-comprehensive-A",
+    "producers": {
+      "V4Composition.narrative.proof@comprehensive-editorial-quality-fix-01-v1": {
+        "observed": 52,
+        "verified": 52,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 52,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 52,
+        "ancestryIncomplete": 0
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 1,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 29,
+        "verified": 29,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 25,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 29,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 79,
+        "verified": 79,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 43,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 79,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3106,
+        "verified": 3106,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2636,
+        "producerObservationOnly": 470,
+        "ancestryComplete": 3106,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 332,
+        "verified": 332,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 332,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 332,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 13,
+        "verified": 13,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 13,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 13,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 2,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-comprehensive-F",
+    "producers": {
+      "V4Composition.narrative.proof@comprehensive-editorial-quality-fix-01-v1": {
+        "observed": 52,
+        "verified": 52,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 52,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 52,
+        "ancestryIncomplete": 0
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 4,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 2,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 3,
+        "verified": 3,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 3,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 23,
+        "verified": 23,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 20,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 23,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 64,
+        "verified": 64,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 28,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 64,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 7,
+        "verified": 1,
+        "partial": 6,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 7,
+        "ancestryComplete": 7,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 9,
+        "verified": 9,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 9,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 2,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-career-A",
+    "producers": {
+      "V4Composition.narrative.proof@career-editorial-quality-fix-01-v1": {
+        "observed": 36,
+        "verified": 3,
+        "partial": 33,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 33
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 1,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 30,
+        "verified": 30,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 26,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 30,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 79,
+        "verified": 79,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 43,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 79,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 2990,
+        "verified": 2990,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2539,
+        "producerObservationOnly": 451,
+        "ancestryComplete": 2990,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 294,
+        "verified": 294,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 294,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 294,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 15,
+        "verified": 15,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 15,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 15,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 35,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-career-F",
+    "producers": {
+      "V4Composition.narrative.proof@career-editorial-quality-fix-01-v1": {
+        "observed": 36,
+        "verified": 0,
+        "partial": 36,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 36
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 4,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 2,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 3,
+        "verified": 3,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 3,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 23,
+        "verified": 23,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 20,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 23,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 63,
+        "verified": 63,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 27,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 63,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 7,
+        "verified": 1,
+        "partial": 6,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 7,
+        "ancestryComplete": 7,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 11,
+        "verified": 11,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 11,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 11,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 38,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-love-A",
+    "producers": {
+      "V4Composition.narrative.proof@love-editorial-quality-fix-01-v1": {
+        "observed": 36,
+        "verified": 3,
+        "partial": 33,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 33
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 1,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 35,
+        "verified": 35,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 31,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 35,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 82,
+        "verified": 82,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 46,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 82,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3425,
+        "verified": 3425,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2972,
+        "producerObservationOnly": 453,
+        "ancestryComplete": 3425,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 319,
+        "verified": 319,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 319,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 319,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 10,
+        "verified": 10,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 10,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 10,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 35,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-love-F",
+    "producers": {
+      "V4Composition.narrative.proof@love-editorial-quality-fix-01-v1": {
+        "observed": 36,
+        "verified": 0,
+        "partial": 36,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 36
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 4,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 2,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 3,
+        "verified": 3,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 3,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 25,
+        "verified": 25,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 22,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 25,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 66,
+        "verified": 66,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 30,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 66,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 7,
+        "verified": 1,
+        "partial": 6,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 7,
+        "ancestryComplete": 7,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 7,
+        "verified": 7,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 7,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 7,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 38,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-compatibility-A",
+    "producers": {
+      "V4Composition.narrative.proof@compatibility-editorial-quality-01-v1": {
+        "observed": 36,
+        "verified": 2,
+        "partial": 34,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 34
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 9,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 7,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 9
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 8,
+        "verified": 8,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 8,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 8,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 55,
+        "verified": 55,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 47,
+        "producerObservationOnly": 8,
+        "ancestryComplete": 55,
+        "ancestryIncomplete": 0
+      },
+      "buildCompatibilityDirectionEvidence@source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 154,
+        "verified": 154,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 82,
+        "producerObservationOnly": 72,
+        "ancestryComplete": 154,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 6508,
+        "verified": 5888,
+        "partial": 620,
+        "withheld": 0,
+        "originalIdPresent": 5566,
+        "producerObservationOnly": 942,
+        "ancestryComplete": 6508,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 661,
+        "verified": 661,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 661,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 661,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 18,
+        "verified": 2,
+        "partial": 16,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 18,
+        "ancestryComplete": 18,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 28,
+        "verified": 28,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 28,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 28,
+        "ancestryIncomplete": 0
+      },
+      "compatibilityNarrativeEvidence@canonical-rule-stable-person-order-v1": {
+        "observed": 6,
+        "verified": 6,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 6,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 6,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 9,
+    "incomplete": 43,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-compatibility-marriage",
+    "producers": {
+      "V4Composition.narrative.proof@compatibility-editorial-quality-01-v1": {
+        "observed": 36,
+        "verified": 2,
+        "partial": 34,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 34
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 9,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 7,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 9
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 8,
+        "verified": 8,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 8,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 8,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 55,
+        "verified": 55,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 47,
+        "producerObservationOnly": 8,
+        "ancestryComplete": 55,
+        "ancestryIncomplete": 0
+      },
+      "buildCompatibilityDirectionEvidence@source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 154,
+        "verified": 154,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 82,
+        "producerObservationOnly": 72,
+        "ancestryComplete": 154,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 6508,
+        "verified": 5888,
+        "partial": 620,
+        "withheld": 0,
+        "originalIdPresent": 5566,
+        "producerObservationOnly": 942,
+        "ancestryComplete": 6508,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 661,
+        "verified": 661,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 661,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 661,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 18,
+        "verified": 2,
+        "partial": 16,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 18,
+        "ancestryComplete": 18,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 28,
+        "verified": 28,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 28,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 28,
+        "ancestryIncomplete": 0
+      },
+      "compatibilityNarrativeEvidence@canonical-rule-stable-person-order-v1": {
+        "observed": 6,
+        "verified": 6,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 6,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 6,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 9,
+    "incomplete": 43,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-compatibility-parentChild",
+    "producers": {
+      "V4Composition.narrative.proof@compatibility-editorial-quality-01-v1": {
+        "observed": 36,
+        "verified": 2,
+        "partial": 34,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 34
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 10,
+        "verified": 0,
+        "partial": 3,
+        "withheld": 7,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 10,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 9
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 8,
+        "verified": 8,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 8,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 8,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 55,
+        "verified": 55,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 47,
+        "producerObservationOnly": 8,
+        "ancestryComplete": 55,
+        "ancestryIncomplete": 0
+      },
+      "buildCompatibilityDirectionEvidence@source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 154,
+        "verified": 154,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 82,
+        "producerObservationOnly": 72,
+        "ancestryComplete": 154,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 6508,
+        "verified": 5888,
+        "partial": 620,
+        "withheld": 0,
+        "originalIdPresent": 5566,
+        "producerObservationOnly": 942,
+        "ancestryComplete": 6508,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 661,
+        "verified": 661,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 661,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 661,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 18,
+        "verified": 2,
+        "partial": 16,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 18,
+        "ancestryComplete": 18,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 28,
+        "verified": 28,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 28,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 28,
+        "ancestryIncomplete": 0
+      },
+      "compatibilityNarrativeEvidence@canonical-rule-stable-person-order-v1": {
+        "observed": 6,
+        "verified": 6,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 6,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 6,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 9,
+    "incomplete": 43,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-compatibility-coworker",
+    "producers": {
+      "V4Composition.narrative.proof@compatibility-editorial-quality-01-v1": {
+        "observed": 36,
+        "verified": 2,
+        "partial": 19,
+        "withheld": 15,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 34
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 9,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 7,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 9
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 8,
+        "verified": 8,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 8,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 8,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 55,
+        "verified": 55,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 47,
+        "producerObservationOnly": 8,
+        "ancestryComplete": 55,
+        "ancestryIncomplete": 0
+      },
+      "buildCompatibilityDirectionEvidence@source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 154,
+        "verified": 154,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 82,
+        "producerObservationOnly": 72,
+        "ancestryComplete": 154,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 6508,
+        "verified": 5589,
+        "partial": 620,
+        "withheld": 299,
+        "originalIdPresent": 5566,
+        "producerObservationOnly": 942,
+        "ancestryComplete": 6508,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 661,
+        "verified": 269,
+        "partial": 0,
+        "withheld": 392,
+        "originalIdPresent": 661,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 661,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 18,
+        "verified": 2,
+        "partial": 16,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 18,
+        "ancestryComplete": 18,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 28,
+        "verified": 28,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 28,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 28,
+        "ancestryIncomplete": 0
+      },
+      "compatibilityNarrativeEvidence@canonical-rule-stable-person-order-v1": {
+        "observed": 6,
+        "verified": 6,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 6,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 6,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 9,
+    "incomplete": 43,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-compatibility-managerReport",
+    "producers": {
+      "V4Composition.narrative.proof@compatibility-editorial-quality-01-v1": {
+        "observed": 36,
+        "verified": 1,
+        "partial": 19,
+        "withheld": 16,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 34
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 10,
+        "verified": 0,
+        "partial": 3,
+        "withheld": 7,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 10,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 9
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 8,
+        "verified": 8,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 8,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 8,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 55,
+        "verified": 55,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 47,
+        "producerObservationOnly": 8,
+        "ancestryComplete": 55,
+        "ancestryIncomplete": 0
+      },
+      "buildCompatibilityDirectionEvidence@source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 154,
+        "verified": 154,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 82,
+        "producerObservationOnly": 72,
+        "ancestryComplete": 154,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 6508,
+        "verified": 5525,
+        "partial": 620,
+        "withheld": 363,
+        "originalIdPresent": 5566,
+        "producerObservationOnly": 942,
+        "ancestryComplete": 6508,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 661,
+        "verified": 247,
+        "partial": 0,
+        "withheld": 414,
+        "originalIdPresent": 661,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 661,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 18,
+        "verified": 2,
+        "partial": 16,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 18,
+        "ancestryComplete": 18,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 28,
+        "verified": 28,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 28,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 28,
+        "ancestryIncomplete": 0
+      },
+      "compatibilityNarrativeEvidence@canonical-rule-stable-person-order-v1": {
+        "observed": 6,
+        "verified": 6,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 6,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 6,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 9,
+    "incomplete": 43,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-compatibility-businessPartner",
+    "producers": {
+      "V4Composition.narrative.proof@compatibility-editorial-quality-01-v1": {
+        "observed": 36,
+        "verified": 2,
+        "partial": 19,
+        "withheld": 15,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 34
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 10,
+        "verified": 0,
+        "partial": 3,
+        "withheld": 7,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 10,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 9
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 8,
+        "verified": 8,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 8,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 8,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 55,
+        "verified": 55,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 47,
+        "producerObservationOnly": 8,
+        "ancestryComplete": 55,
+        "ancestryIncomplete": 0
+      },
+      "buildCompatibilityDirectionEvidence@source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 154,
+        "verified": 154,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 82,
+        "producerObservationOnly": 72,
+        "ancestryComplete": 154,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 6508,
+        "verified": 5427,
+        "partial": 620,
+        "withheld": 461,
+        "originalIdPresent": 5566,
+        "producerObservationOnly": 942,
+        "ancestryComplete": 6508,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 661,
+        "verified": 247,
+        "partial": 0,
+        "withheld": 414,
+        "originalIdPresent": 661,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 661,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 18,
+        "verified": 2,
+        "partial": 16,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 18,
+        "ancestryComplete": 18,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 28,
+        "verified": 28,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 28,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 28,
+        "ancestryIncomplete": 0
+      },
+      "compatibilityNarrativeEvidence@canonical-rule-stable-person-order-v1": {
+        "observed": 6,
+        "verified": 6,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 6,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 6,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 9,
+    "incomplete": 43,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-compatibility-friendship",
+    "producers": {
+      "V4Composition.narrative.proof@compatibility-editorial-quality-01-v1": {
+        "observed": 36,
+        "verified": 1,
+        "partial": 34,
+        "withheld": 1,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 34
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 10,
+        "verified": 0,
+        "partial": 3,
+        "withheld": 7,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 10,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 9
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 8,
+        "verified": 8,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 8,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 8,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 55,
+        "verified": 55,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 47,
+        "producerObservationOnly": 8,
+        "ancestryComplete": 55,
+        "ancestryIncomplete": 0
+      },
+      "buildCompatibilityDirectionEvidence@source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 154,
+        "verified": 154,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 82,
+        "producerObservationOnly": 72,
+        "ancestryComplete": 154,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 6508,
+        "verified": 5824,
+        "partial": 620,
+        "withheld": 64,
+        "originalIdPresent": 5566,
+        "producerObservationOnly": 942,
+        "ancestryComplete": 6508,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 661,
+        "verified": 635,
+        "partial": 0,
+        "withheld": 26,
+        "originalIdPresent": 661,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 661,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 18,
+        "verified": 2,
+        "partial": 16,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 18,
+        "ancestryComplete": 18,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 28,
+        "verified": 28,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 28,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 28,
+        "ancestryIncomplete": 0
+      },
+      "compatibilityNarrativeEvidence@canonical-rule-stable-person-order-v1": {
+        "observed": 6,
+        "verified": 6,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 6,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 6,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 9,
+    "incomplete": 43,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-major-A",
+    "producers": {
+      "V4Composition.narrative.proof@major-product-13d-7c-v1": {
+        "observed": 118,
+        "verified": 0,
+        "partial": 118,
+        "withheld": 0,
+        "originalIdPresent": 118,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 118
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 1,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 27,
+        "verified": 27,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 23,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 27,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 78,
+        "verified": 78,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 42,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 78,
+        "ancestryIncomplete": 0
+      },
+      "buildMajorFortuneDecadeReading@major-decade-v2": {
+        "observed": 95,
+        "verified": 31,
+        "partial": 64,
+        "withheld": 0,
+        "originalIdPresent": 79,
+        "producerObservationOnly": 16,
+        "ancestryComplete": 95,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3432,
+        "verified": 3432,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2950,
+        "producerObservationOnly": 482,
+        "ancestryComplete": 3432,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 399,
+        "verified": 399,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 399,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 399,
+        "ancestryIncomplete": 0
+      },
+      "calculateCustomerDayun@dayun-kst-sect2-v1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 10,
+        "verified": 10,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 10,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 10,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 120,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-major-F",
+    "producers": {
+      "V4Composition.narrative.proof@major-product-13d-7c-v1": {
+        "observed": 114,
+        "verified": 0,
+        "partial": 114,
+        "withheld": 0,
+        "originalIdPresent": 114,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 114
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 4,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 2,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 3,
+        "verified": 3,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 3,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 23,
+        "verified": 23,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 20,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 23,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 66,
+        "verified": 66,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 30,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 66,
+        "ancestryIncomplete": 0
+      },
+      "buildMajorFortuneDecadeReading@major-decade-v2": {
+        "observed": 92,
+        "verified": 31,
+        "partial": 61,
+        "withheld": 0,
+        "originalIdPresent": 76,
+        "producerObservationOnly": 16,
+        "ancestryComplete": 92,
+        "ancestryIncomplete": 0
+      },
+      "calculateCustomerDayun@dayun-kst-sect2-v1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 7,
+        "verified": 1,
+        "partial": 6,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 7,
+        "ancestryComplete": 7,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 8,
+        "verified": 8,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 8,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 8,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 116,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-annual-A",
+    "producers": {
+      "V4Composition.narrative.proof@annual-product-13d-7c-v1": {
+        "observed": 84,
+        "verified": 12,
+        "partial": 72,
+        "withheld": 0,
+        "originalIdPresent": 84,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 12,
+        "ancestryIncomplete": 72
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 3,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 2,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildAnnualMonthCalendar@annual-month-jie-kst-v2": {
+        "observed": 241,
+        "verified": 241,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 216,
+        "producerObservationOnly": 25,
+        "ancestryComplete": 241,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 27,
+        "verified": 27,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 23,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 27,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 78,
+        "verified": 78,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 42,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 78,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3432,
+        "verified": 3432,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2950,
+        "producerObservationOnly": 482,
+        "ancestryComplete": 3432,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 399,
+        "verified": 399,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 399,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 399,
+        "ancestryIncomplete": 0
+      },
+      "calculateCustomerDayun@dayun-kst-sect2-v1": {
+        "observed": 12,
+        "verified": 0,
+        "partial": 12,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 12,
+        "ancestryComplete": 12,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 10,
+        "verified": 10,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 10,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 10,
+        "ancestryIncomplete": 0
+      },
+      "extendAnnualMonthEvidence@annual-month-evidence-v1": {
+        "observed": 89,
+        "verified": 82,
+        "partial": 0,
+        "withheld": 7,
+        "originalIdPresent": 86,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 86,
+        "ancestryIncomplete": 3
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 6,
+    "incomplete": 77,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-annual-F",
+    "producers": {
+      "V4Composition.narrative.proof@annual-product-13d-7c-v1": {
+        "observed": 83,
+        "verified": 12,
+        "partial": 49,
+        "withheld": 22,
+        "originalIdPresent": 83,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 12,
+        "ancestryIncomplete": 71
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 5,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 3,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 5,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 3,
+        "verified": 3,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 3,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 0
+      },
+      "buildAnnualMonthCalendar@annual-month-jie-kst-v2": {
+        "observed": 235,
+        "verified": 218,
+        "partial": 0,
+        "withheld": 17,
+        "originalIdPresent": 210,
+        "producerObservationOnly": 25,
+        "ancestryComplete": 235,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 23,
+        "verified": 23,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 20,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 23,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 66,
+        "verified": 66,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 30,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 66,
+        "ancestryIncomplete": 0
+      },
+      "calculateCustomerDayun@dayun-kst-sect2-v1": {
+        "observed": 12,
+        "verified": 0,
+        "partial": 12,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 12,
+        "ancestryComplete": 12,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 7,
+        "verified": 1,
+        "partial": 6,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 7,
+        "ancestryComplete": 7,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 8,
+        "verified": 8,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 8,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 8,
+        "ancestryIncomplete": 0
+      },
+      "extendAnnualMonthEvidence@annual-month-evidence-v1": {
+        "observed": 87,
+        "verified": 80,
+        "partial": 0,
+        "withheld": 7,
+        "originalIdPresent": 84,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 84,
+        "ancestryIncomplete": 3
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 6,
+    "incomplete": 76,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-major-transition-C",
+    "producers": {
+      "V4Composition.narrative.proof@major-product-13d-7c-v1": {
+        "observed": 116,
+        "verified": 1,
+        "partial": 115,
+        "withheld": 0,
+        "originalIdPresent": 116,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 115
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 1,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 34,
+        "verified": 34,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 30,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 34,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 82,
+        "verified": 82,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 46,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 82,
+        "ancestryIncomplete": 0
+      },
+      "buildMajorFortuneDecadeReading@major-decade-v2": {
+        "observed": 104,
+        "verified": 31,
+        "partial": 73,
+        "withheld": 0,
+        "originalIdPresent": 89,
+        "producerObservationOnly": 15,
+        "ancestryComplete": 104,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3071,
+        "verified": 3071,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2608,
+        "producerObservationOnly": 463,
+        "ancestryComplete": 3071,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 383,
+        "verified": 383,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 383,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 383,
+        "ancestryIncomplete": 0
+      },
+      "calculateCustomerDayun@dayun-kst-sect2-v1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 14,
+        "verified": 14,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 14,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 14,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 117,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-annual-transition-C2028",
+    "producers": {
+      "V4Composition.narrative.proof@annual-product-13d-7c-v1": {
+        "observed": 95,
+        "verified": 13,
+        "partial": 82,
+        "withheld": 0,
+        "originalIdPresent": 95,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 13,
+        "ancestryIncomplete": 82
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 3,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 2,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildAnnualMonthCalendar@annual-month-jie-kst-v2": {
+        "observed": 268,
+        "verified": 268,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 242,
+        "producerObservationOnly": 26,
+        "ancestryComplete": 268,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 34,
+        "verified": 34,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 30,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 34,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 82,
+        "verified": 82,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 46,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 82,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3071,
+        "verified": 3071,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2608,
+        "producerObservationOnly": 463,
+        "ancestryComplete": 3071,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 383,
+        "verified": 383,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 383,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 383,
+        "ancestryIncomplete": 0
+      },
+      "calculateCustomerDayun@dayun-kst-sect2-v1": {
+        "observed": 12,
+        "verified": 0,
+        "partial": 12,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 12,
+        "ancestryComplete": 12,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 14,
+        "verified": 14,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 14,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 14,
+        "ancestryIncomplete": 0
+      },
+      "extendAnnualMonthEvidence@annual-month-evidence-v1": {
+        "observed": 99,
+        "verified": 92,
+        "partial": 0,
+        "withheld": 7,
+        "originalIdPresent": 96,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 96,
+        "ancestryIncomplete": 3
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 6,
+    "incomplete": 87,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-compatibility-unknown-both",
+    "producers": {
+      "V4Composition.narrative.proof@compatibility-editorial-quality-01-v1": {
+        "observed": 36,
+        "verified": 1,
+        "partial": 35,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 35
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 13,
+        "verified": 0,
+        "partial": 4,
+        "withheld": 9,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 13,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 9
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 6,
+        "verified": 6,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 6,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 6,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 43,
+        "verified": 43,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 37,
+        "producerObservationOnly": 6,
+        "ancestryComplete": 43,
+        "ancestryIncomplete": 0
+      },
+      "buildCompatibilityDirectionEvidence@source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 124,
+        "verified": 124,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 52,
+        "producerObservationOnly": 72,
+        "ancestryComplete": 124,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 14,
+        "verified": 2,
+        "partial": 12,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 14,
+        "ancestryComplete": 14,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 20,
+        "verified": 20,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 20,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 20,
+        "ancestryIncomplete": 0
+      },
+      "compatibilityNarrativeEvidence@canonical-rule-stable-person-order-v1": {
+        "observed": 3,
+        "verified": 3,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 3,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 9,
+    "incomplete": 44,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-compatibility-slot-swap",
+    "producers": {
+      "V4Composition.narrative.proof@compatibility-editorial-quality-01-v1": {
+        "observed": 36,
+        "verified": 2,
+        "partial": 34,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 34
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 9,
+        "verified": 0,
+        "partial": 2,
+        "withheld": 7,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 9
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 8,
+        "verified": 8,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 8,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 8,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 55,
+        "verified": 55,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 47,
+        "producerObservationOnly": 8,
+        "ancestryComplete": 55,
+        "ancestryIncomplete": 0
+      },
+      "buildCompatibilityDirectionEvidence@source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 154,
+        "verified": 154,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 82,
+        "producerObservationOnly": 72,
+        "ancestryComplete": 154,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 6508,
+        "verified": 5888,
+        "partial": 620,
+        "withheld": 0,
+        "originalIdPresent": 5566,
+        "producerObservationOnly": 942,
+        "ancestryComplete": 6508,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 661,
+        "verified": 661,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 661,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 661,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 18,
+        "verified": 2,
+        "partial": 16,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 18,
+        "ancestryComplete": 18,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 28,
+        "verified": 28,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 28,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 28,
+        "ancestryIncomplete": 0
+      },
+      "compatibilityNarrativeEvidence@canonical-rule-stable-person-order-v1": {
+        "observed": 6,
+        "verified": 6,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 6,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 6,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 9,
+    "incomplete": 43,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-same-natal-different-mbti",
+    "producers": {
+      "V4Composition.narrative.proof@comprehensive-editorial-quality-fix-01-v1": {
+        "observed": 52,
+        "verified": 52,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 52,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 52,
+        "ancestryIncomplete": 0
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 1,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 29,
+        "verified": 29,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 25,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 29,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 79,
+        "verified": 79,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 43,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 79,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3463,
+        "verified": 3463,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2972,
+        "producerObservationOnly": 491,
+        "ancestryComplete": 3463,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 451,
+        "verified": 451,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 451,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 451,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 13,
+        "verified": 13,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 13,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 13,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 2,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-same-mbti-different-natal",
+    "producers": {
+      "V4Composition.narrative.proof@comprehensive-editorial-quality-fix-01-v1": {
+        "observed": 52,
+        "verified": 52,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 52,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 52,
+        "ancestryIncomplete": 0
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 1,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 30,
+        "verified": 30,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 26,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 30,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 79,
+        "verified": 79,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 43,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 79,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3106,
+        "verified": 3106,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2636,
+        "producerObservationOnly": 470,
+        "ancestryComplete": 3106,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 2,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 1,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 1
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 359,
+        "verified": 359,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 359,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 359,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 15,
+        "verified": 15,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 15,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 15,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 3,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-same-natal-career",
+    "producers": {
+      "V4Composition.narrative.proof@career-editorial-quality-fix-01-v1": {
+        "observed": 36,
+        "verified": 3,
+        "partial": 33,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 33
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 2,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 1,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 0,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 29,
+        "verified": 29,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 25,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 29,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 79,
+        "verified": 79,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 43,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 79,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3106,
+        "verified": 3106,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2636,
+        "producerObservationOnly": 470,
+        "ancestryComplete": 3106,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 332,
+        "verified": 332,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 332,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 332,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 13,
+        "verified": 13,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 13,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 13,
+        "ancestryIncomplete": 0
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 2,
+    "incomplete": 35,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-annual-ranged-transition",
+    "producers": {
+      "V4Composition.narrative.proof@annual-product-13d-7c-v1": {
+        "observed": 93,
+        "verified": 12,
+        "partial": 50,
+        "withheld": 31,
+        "originalIdPresent": 93,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 12,
+        "ancestryIncomplete": 81
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 4,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 3,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 3,
+        "verified": 3,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 3,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 3,
+        "ancestryIncomplete": 0
+      },
+      "buildAnnualMonthCalendar@annual-month-jie-kst-v2": {
+        "observed": 250,
+        "verified": 221,
+        "partial": 0,
+        "withheld": 29,
+        "originalIdPresent": 223,
+        "producerObservationOnly": 27,
+        "ancestryComplete": 250,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 27,
+        "verified": 27,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 24,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 27,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 69,
+        "verified": 69,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 33,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 69,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3432,
+        "verified": 3432,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2950,
+        "producerObservationOnly": 482,
+        "ancestryComplete": 3432,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 363,
+        "verified": 363,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 363,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 363,
+        "ancestryIncomplete": 0
+      },
+      "calculateCustomerDayun@dayun-kst-sect2-v1": {
+        "observed": 12,
+        "verified": 0,
+        "partial": 12,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 12,
+        "ancestryComplete": 12,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 7,
+        "verified": 1,
+        "partial": 6,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 7,
+        "ancestryComplete": 7,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 9,
+        "verified": 9,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 9,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "extendAnnualMonthEvidence@annual-month-evidence-v1": {
+        "observed": 95,
+        "verified": 87,
+        "partial": 0,
+        "withheld": 8,
+        "originalIdPresent": 92,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 92,
+        "ancestryIncomplete": 3
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 6,
+    "incomplete": 86,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-annual-before-first-dayun",
+    "producers": {
+      "V4Composition.narrative.proof@annual-product-13d-7c-v1": {
+        "observed": 82,
+        "verified": 12,
+        "partial": 51,
+        "withheld": 19,
+        "originalIdPresent": 82,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 13,
+        "ancestryIncomplete": 69
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 3,
+        "verified": 0,
+        "partial": 1,
+        "withheld": 2,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 2
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 4,
+        "verified": 4,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 4,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 0
+      },
+      "buildAnnualMonthCalendar@annual-month-jie-kst-v2": {
+        "observed": 279,
+        "verified": 269,
+        "partial": 0,
+        "withheld": 10,
+        "originalIdPresent": 253,
+        "producerObservationOnly": 26,
+        "ancestryComplete": 279,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 34,
+        "verified": 34,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 30,
+        "producerObservationOnly": 4,
+        "ancestryComplete": 34,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 84,
+        "verified": 84,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 48,
+        "producerObservationOnly": 36,
+        "ancestryComplete": 84,
+        "ancestryIncomplete": 0
+      },
+      "buildMbtiSemanticProfile@mbti-semantic-13d-2a-v1": {
+        "observed": 3432,
+        "verified": 3432,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2950,
+        "producerObservationOnly": 482,
+        "ancestryComplete": 3432,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMaterialPacket@v4-material-packet-1": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 2,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildMyeongliMbtiFusion@myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1": {
+        "observed": 396,
+        "verified": 396,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 396,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 396,
+        "ancestryIncomplete": 0
+      },
+      "calculateCustomerDayun@dayun-kst-sect2-v1": {
+        "observed": 12,
+        "verified": 0,
+        "partial": 12,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 12,
+        "ancestryComplete": 12,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 9,
+        "verified": 1,
+        "partial": 8,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 9,
+        "ancestryComplete": 9,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 13,
+        "verified": 13,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 13,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 13,
+        "ancestryIncomplete": 0
+      },
+      "extendAnnualMonthEvidence@annual-month-evidence-v1": {
+        "observed": 93,
+        "verified": 86,
+        "partial": 0,
+        "withheld": 7,
+        "originalIdPresent": 90,
+        "producerObservationOnly": 3,
+        "ancestryComplete": 90,
+        "ancestryIncomplete": 3
+      },
+      "normalizeReportInputPayload@source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 6,
+    "incomplete": 74,
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "fixtureId": "fixture-compatibility-no-detected-pair",
+    "producers": {
+      "V4Composition.narrative.proof@compatibility-editorial-quality-01-v1": {
+        "observed": 36,
+        "verified": 1,
+        "partial": 35,
+        "withheld": 0,
+        "originalIdPresent": 36,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 35
+      },
+      "V4RuntimeEvidence@v4-runtime-evidence-1": {
+        "observed": 13,
+        "verified": 0,
+        "partial": 4,
+        "withheld": 9,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 13,
+        "ancestryComplete": 4,
+        "ancestryIncomplete": 9
+      },
+      "adaptSupplementTable@semantic-supplement-13d-1c-v1": {
+        "observed": 6,
+        "verified": 6,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 6,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 6,
+        "ancestryIncomplete": 0
+      },
+      "buildCanonicalNatalTable@canonical-natal-table-v1/saju-calendar-kst-v2": {
+        "observed": 21,
+        "verified": 21,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 15,
+        "producerObservationOnly": 6,
+        "ancestryComplete": 21,
+        "ancestryIncomplete": 0
+      },
+      "buildCompatibilityDirectionEvidence@source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84": {
+        "observed": 2,
+        "verified": 2,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 2,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 2,
+        "ancestryIncomplete": 0
+      },
+      "buildIntegratedMyeongliProfile@myeongli-semantic-profile-13d-1d-v1": {
+        "observed": 105,
+        "verified": 105,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 33,
+        "producerObservationOnly": 72,
+        "ancestryComplete": 105,
+        "ancestryIncomplete": 0
+      },
+      "calculateSaju@saju-calendar-kst-v2": {
+        "observed": 14,
+        "verified": 2,
+        "partial": 12,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 14,
+        "ancestryComplete": 14,
+        "ancestryIncomplete": 0
+      },
+      "collectStructureAtoms@v4-structure-evidence-1": {
+        "observed": 10,
+        "verified": 10,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 10,
+        "producerObservationOnly": 0,
+        "ancestryComplete": 10,
+        "ancestryIncomplete": 0
+      },
+      "compatibilityNarrativeEvidence@canonical-rule-stable-person-order-v1": {
+        "observed": 1,
+        "verified": 1,
+        "partial": 0,
+        "withheld": 0,
+        "originalIdPresent": 0,
+        "producerObservationOnly": 1,
+        "ancestryComplete": 1,
+        "ancestryIncomplete": 0
+      }
+    },
+    "unsupported": 9,
+    "incomplete": 44,
+    "graphStatus": "PARTIAL"
+  }
+]

@@ -1,0 +1,286 @@
+{
+  "fixtures": 27,
+  "products": [
+    "annual_fortune",
+    "career_money_study",
+    "love_marriage_child",
+    "major_fortune",
+    "saju_mbti_compatibility",
+    "saju_mbti_full"
+  ],
+  "relationships": [
+    "businessPartner",
+    "coworker",
+    "friendship",
+    "love",
+    "managerReport",
+    "marriage",
+    "parentChild"
+  ],
+  "graphStatus": "PARTIAL",
+  "fixtureOccurrenceCoverage": {
+    "nodes": 109333,
+    "edges": 351274,
+    "actualProducerFacts": 3095,
+    "actualEvidenceIds": 93909,
+    "canonicalFactRoots": 47170,
+    "duplicateRootReferences": 299553,
+    "completeAncestry": 107958,
+    "incompleteAncestry": 1375,
+    "sourceVerificationLinks": 28556,
+    "semanticDomainLinks": 2480,
+    "fusionComplete": 9716,
+    "fusionIncomplete": 1,
+    "withheldNodes": 2747
+  },
+  "distinctBatchRoots": 19468,
+  "distinctBatchRootTypes": {
+    "SOURCE_ATTRIBUTION": 17376,
+    "PRODUCER_OBSERVATION": 2069,
+    "SELF_REPORTED_INPUT": 23
+  },
+  "nodeKinds": {
+    "MBTI_SOURCE_NODE": 44030,
+    "SEMANTIC_DERIVATION": 49696,
+    "FUSION_DERIVATION": 9717,
+    "CALCULATED_NATAL_FACT": 1883,
+    "EDITORIAL_PROOF_OBSERVATION": 1773,
+    "CONTEXT_INPUT": 23,
+    "UNSUPPORTED_REQUIREMENT": 144,
+    "SOURCE_DECLARATION": 128,
+    "MBTI_INPUT_TYPE": 28,
+    "UNKNOWN_REQUIREMENT": 33,
+    "DIRECTIONAL_RELATION_FACT": 20,
+    "CANONICAL_PAIR_FACT": 35,
+    "CALCULATED_PERIOD_FACT": 1694,
+    "TEMPORAL_BOUNDARY": 129
+  },
+  "producerStates": {
+    "V4Composition.narrative.proof": {
+      "VERIFIED": 295,
+      "PARTIAL": 1119,
+      "WITHHELD": 119
+    },
+    "V4RuntimeEvidence": {
+      "PARTIAL": 50,
+      "WITHHELD": 102
+    },
+    "adaptSupplementTable": {
+      "VERIFIED": 138
+    },
+    "buildAnnualMonthCalendar": {
+      "VERIFIED": 1217,
+      "WITHHELD": 56
+    },
+    "buildCanonicalNatalTable": {
+      "VERIFIED": 986
+    },
+    "buildCompatibilityDirectionEvidence": {
+      "VERIFIED": 20
+    },
+    "buildIntegratedMyeongliProfile": {
+      "VERIFIED": 2736
+    },
+    "buildMajorFortuneDecadeReading": {
+      "PARTIAL": 198,
+      "VERIFIED": 93
+    },
+    "buildMbtiSemanticProfile": {
+      "VERIFIED": 84983,
+      "PARTIAL": 4960,
+      "WITHHELD": 1187
+    },
+    "buildMyeongliMaterialPacket": {
+      "VERIFIED": 18,
+      "WITHHELD": 1
+    },
+    "buildMyeongliMbtiFusion": {
+      "VERIFIED": 8452,
+      "WITHHELD": 1246
+    },
+    "calculateCustomerDayun": {
+      "PARTIAL": 66
+    },
+    "calculateSaju": {
+      "PARTIAL": 276,
+      "VERIFIED": 37
+    },
+    "collectStructureAtoms": {
+      "VERIFIED": 446
+    },
+    "compatibilityNarrativeEvidence": {
+      "VERIFIED": 52
+    },
+    "extendAnnualMonthEvidence": {
+      "VERIFIED": 427,
+      "WITHHELD": 36
+    },
+    "normalizeReportInputPayload": {
+      "VERIFIED": 17
+    }
+  },
+  "blockerOccurrences": {
+    "UNADDRESSABLE_PRODUCER_OBSERVATION": 342,
+    "MISSING_PRODUCER_OUTPUT": 37,
+    "UNSUPPORTED_PRODUCER": 102,
+    "UNKNOWN_BIRTH_TIME": 41,
+    "UNKNOWN_MBTI": 9,
+    "SOURCE_REFERENCE_UNRESOLVED": 9544,
+    "SOURCE_DECLARATION_NOT_EVIDENCE": 4960,
+    "UNKNOWN_ROLE_AUTHORITY": 2,
+    "DISALLOWED_ANCESTOR_DOMAIN": 2480,
+    "REQUIRED_ANCESTOR_WITHHELD": 2994,
+    "UNKNOWN_BUSINESS_FACTS": 1,
+    "UNKNOWN_RELATIONSHIP_HISTORY": 1,
+    "UNKNOWN_INTERVAL": 206,
+    "AMBIGUOUS_MANGSIN_RULE": 21,
+    "UNSUPPORTED_COMPOSITE": 5,
+    "MISSING_FUSION_ROOT": 1,
+    "UNCERTAIN_TRANSITION": 15,
+    "BEFORE_FIRST_DAYUN": 10
+  },
+  "observedMbtiTypes": [
+    "ENFJ",
+    "ENFP",
+    "ESTP",
+    "INFJ",
+    "INFP",
+    "INTJ",
+    "ISFJ",
+    "ISTJ"
+  ],
+  "declaredSupportedPairKinds": [
+    "six_harmony",
+    "three_harmony",
+    "half_harmony",
+    "clash",
+    "harm"
+  ],
+  "actuallyObservedPairKinds": [
+    "clash",
+    "harm",
+    "six_harmony"
+  ],
+  "ownerVerified": 109333,
+  "directionNodes": 20,
+  "timeWindowNodes": 2022,
+  "sourceVerificationLinkMeaning": "Exact technically-verified source target receipt occurrences, not personal-fact approval",
+  "semanticDomainLinkMeaning": "Actual all-ancestor uses blocked by unchanged inherited policy IDs; static source crosswalks remain separate",
+  "staticFriendshipChildResearchBlocks": 63,
+  "actualFriendshipChildDerivedNodes": 91,
+  "actualCompatibilityDisplayedGroupsApproved": 0,
+  "customerApproval": 0,
+  "researchRuntimeConnection": 0,
+  "specialistClaimsEmitted": 0,
+  "bookChanges": 0,
+  "verificationDimensions": {
+    "producerFactVerified": {
+      "verified": 3037,
+      "unverified": 58,
+      "applicable": 3095,
+      "verifiedRatio": 0.98126
+    },
+    "sourceReferenceVerified": {
+      "verified": 44494,
+      "unverified": 0,
+      "applicable": 44494,
+      "verifiedRatio": 1.0
+    },
+    "ownerVerified": {
+      "verified": 109333,
+      "unverified": 0,
+      "applicable": 109333,
+      "verifiedRatio": 1.0
+    },
+    "directionVerified": {
+      "verified": 20,
+      "unverified": 0,
+      "applicable": 20,
+      "verifiedRatio": 1.0
+    },
+    "temporalScopeVerified": {
+      "verified": 1736,
+      "unverified": 286,
+      "applicable": 2022,
+      "verifiedRatio": 0.858556
+    },
+    "ancestryComplete": {
+      "verified": 107958,
+      "unverified": 1375,
+      "applicable": 109333,
+      "verifiedRatio": 0.987424
+    }
+  },
+  "verificationApplicability": "Producer fact: independent producer observations only. Source locator: nodes with source identities only. Direction/time: non-null receipt fields. Owner/ancestry: all nodes. Other node kinds are not failed empirical facts.",
+  "genericFusionWithoutExplicitRuleId": 3457,
+  "batchRootReferenceOccurrences": 346723,
+  "duplicateRootReferencesAcrossBatch": 327255,
+  "idCoverageByKind": {
+    "CALCULATED_NATAL_FACT": {
+      "originalIdOccurrences": 1432,
+      "observationOnlyOccurrences": 451
+    },
+    "CALCULATED_PERIOD_FACT": {
+      "originalIdOccurrences": 1628,
+      "observationOnlyOccurrences": 66
+    },
+    "CANONICAL_PAIR_FACT": {
+      "originalIdOccurrences": 35,
+      "observationOnlyOccurrences": 0
+    },
+    "CONTEXT_INPUT": {
+      "originalIdOccurrences": 0,
+      "observationOnlyOccurrences": 23
+    },
+    "DIRECTIONAL_RELATION_FACT": {
+      "originalIdOccurrences": 20,
+      "observationOnlyOccurrences": 0
+    },
+    "EDITORIAL_PROOF_OBSERVATION": {
+      "originalIdOccurrences": 1731,
+      "observationOnlyOccurrences": 42
+    },
+    "FUSION_DERIVATION": {
+      "originalIdOccurrences": 9698,
+      "observationOnlyOccurrences": 19
+    },
+    "MBTI_INPUT_TYPE": {
+      "originalIdOccurrences": 0,
+      "observationOnlyOccurrences": 28
+    },
+    "MBTI_SOURCE_NODE": {
+      "originalIdOccurrences": 44030,
+      "observationOnlyOccurrences": 0
+    },
+    "SEMANTIC_DERIVATION": {
+      "originalIdOccurrences": 35197,
+      "observationOnlyOccurrences": 14499
+    },
+    "SOURCE_DECLARATION": {
+      "originalIdOccurrences": 128,
+      "observationOnlyOccurrences": 0
+    },
+    "TEMPORAL_BOUNDARY": {
+      "originalIdOccurrences": 0,
+      "observationOnlyOccurrences": 129
+    },
+    "UNKNOWN_REQUIREMENT": {
+      "originalIdOccurrences": 10,
+      "observationOnlyOccurrences": 23
+    },
+    "UNSUPPORTED_REQUIREMENT": {
+      "originalIdOccurrences": 0,
+      "observationOnlyOccurrences": 144
+    }
+  },
+  "cliElapsedMs": [
+    63998.69,
+    64095.69
+  ],
+  "graphTimingMs": {
+    "total": 2005.35,
+    "maximum": 158.75,
+    "includesProducerGeneration": false,
+    "rawMeasurementOutsideGit": "/var/folders/8x/04nzmww51h34rphgg61dcjc00000gn/T/gyeol-actual-graph-run-41299.json"
+  }
+}

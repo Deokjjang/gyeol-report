@@ -1,0 +1,56 @@
+{
+  "baseline": {
+    "passed": 7796,
+    "failed": 46
+  },
+  "afterLatestActualObservations": {
+    "passed": 7796,
+    "failed": 46,
+    "newFailures": 0
+  },
+  "verificationSuites": {
+    "actualEvidenceGraph.test.ts": {
+      "passed": 56,
+      "failed": 0
+    },
+    "knowledgeSemanticDomainVerification.test.ts": {
+      "passed": 43,
+      "failed": 0
+    },
+    "knowledgeSourceVerification.test.ts": {
+      "passed": 37,
+      "failed": 0
+    },
+    "knowledgeUnifiedCatalog.test.ts": {
+      "passed": 12,
+      "failed": 0
+    }
+  },
+  "verificationTotal": {
+    "passed": 148,
+    "failed": 0
+  },
+  "bookAndKoreanLatestActualObservations": {
+    "passed": 669,
+    "failed": 0
+  },
+  "combinedRelated": {
+    "passed": 8613,
+    "failed": 46
+  },
+  "frozenSixProduct": {
+    "passed": 64,
+    "failed": 0,
+    "includedInBaselineGroup": true
+  },
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "diffCheck": "PASS",
+  "resourceRechecks": "See existing-failures.json; duplicate test titles retain occurrence ordinals; original reports retained, only actual targeted rechecks used. New verifier suite uses maxWorkers=1. Existing test deadlines and files unchanged.",
+  "wholeProjectSuiteClaimed": false
+}

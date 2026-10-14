@@ -1,0 +1,137 @@
+[
+  {
+    "fixtureId": "fixture-comprehensive-A",
+    "file": "shards/fixture-comprehensive-A-receipts.json",
+    "count": 3628
+  },
+  {
+    "fixtureId": "fixture-comprehensive-F",
+    "file": "shards/fixture-comprehensive-F-receipts.json",
+    "count": 163
+  },
+  {
+    "fixtureId": "fixture-career-A",
+    "file": "shards/fixture-career-A-receipts.json",
+    "count": 3462
+  },
+  {
+    "fixtureId": "fixture-career-F",
+    "file": "shards/fixture-career-F-receipts.json",
+    "count": 148
+  },
+  {
+    "fixtureId": "fixture-love-A",
+    "file": "shards/fixture-love-A-receipts.json",
+    "count": 3925
+  },
+  {
+    "fixtureId": "fixture-love-F",
+    "file": "shards/fixture-love-F-receipts.json",
+    "count": 149
+  },
+  {
+    "fixtureId": "fixture-compatibility-A",
+    "file": "shards/fixture-compatibility-A-receipts.json",
+    "count": 7485
+  },
+  {
+    "fixtureId": "fixture-compatibility-marriage",
+    "file": "shards/fixture-compatibility-marriage-receipts.json",
+    "count": 7485
+  },
+  {
+    "fixtureId": "fixture-compatibility-parentChild",
+    "file": "shards/fixture-compatibility-parentChild-receipts.json",
+    "count": 7486
+  },
+  {
+    "fixtureId": "fixture-compatibility-coworker",
+    "file": "shards/fixture-compatibility-coworker-receipts.json",
+    "count": 7485
+  },
+  {
+    "fixtureId": "fixture-compatibility-managerReport",
+    "file": "shards/fixture-compatibility-managerReport-receipts.json",
+    "count": 7486
+  },
+  {
+    "fixtureId": "fixture-compatibility-businessPartner",
+    "file": "shards/fixture-compatibility-businessPartner-receipts.json",
+    "count": 7486
+  },
+  {
+    "fixtureId": "fixture-compatibility-friendship",
+    "file": "shards/fixture-compatibility-friendship-receipts.json",
+    "count": 7486
+  },
+  {
+    "fixtureId": "fixture-major-A",
+    "file": "shards/fixture-major-A-receipts.json",
+    "count": 4179
+  },
+  {
+    "fixtureId": "fixture-major-F",
+    "file": "shards/fixture-major-F-receipts.json",
+    "count": 320
+  },
+  {
+    "fixtureId": "fixture-annual-A",
+    "file": "shards/fixture-annual-A-receipts.json",
+    "count": 4391
+  },
+  {
+    "fixtureId": "fixture-annual-F",
+    "file": "shards/fixture-annual-F-receipts.json",
+    "count": 530
+  },
+  {
+    "fixtureId": "fixture-major-transition-C",
+    "file": "shards/fixture-major-transition-C-receipts.json",
+    "count": 3823
+  },
+  {
+    "fixtureId": "fixture-annual-transition-C2028",
+    "file": "shards/fixture-annual-transition-C2028-receipts.json",
+    "count": 4076
+  },
+  {
+    "fixtureId": "fixture-compatibility-unknown-both",
+    "file": "shards/fixture-compatibility-unknown-both-receipts.json",
+    "count": 261
+  },
+  {
+    "fixtureId": "fixture-compatibility-slot-swap",
+    "file": "shards/fixture-compatibility-slot-swap-receipts.json",
+    "count": 7485
+  },
+  {
+    "fixtureId": "fixture-same-natal-different-mbti",
+    "file": "shards/fixture-same-natal-different-mbti-receipts.json",
+    "count": 4104
+  },
+  {
+    "fixtureId": "fixture-same-mbti-different-natal",
+    "file": "shards/fixture-same-mbti-different-natal-receipts.json",
+    "count": 3659
+  },
+  {
+    "fixtureId": "fixture-same-natal-career",
+    "file": "shards/fixture-same-natal-career-receipts.json",
+    "count": 3612
+  },
+  {
+    "fixtureId": "fixture-annual-ranged-transition",
+    "file": "shards/fixture-annual-ranged-transition-receipts.json",
+    "count": 4367
+  },
+  {
+    "fixtureId": "fixture-annual-before-first-dayun",
+    "file": "shards/fixture-annual-before-first-dayun-receipts.json",
+    "count": 4444
+  },
+  {
+    "fixtureId": "fixture-compatibility-no-detected-pair",
+    "file": "shards/fixture-compatibility-no-detected-pair-receipts.json",
+    "count": 208
+  }
+]
