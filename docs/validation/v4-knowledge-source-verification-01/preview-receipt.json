@@ -1,0 +1,14 @@
+{
+  "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "branch": "v4/knowledge-source-verification-01",
+  "observedCommitSha": "ccd8770442293f61d32264b142f4c22ba88c0871",
+  "deploymentId": "dpl_qPRmiaS2QE4nArK9E7SzVkKbNdAs",
+  "url": "https://gyeol-report-2jfkm4bpz-gyeol-report-s-projects.vercel.app",
+  "readyState": "READY",
+  "target": null,
+  "source": "git",
+  "evidence": "Vercel MCP get_deployment withGitRepoInfo=true; project, branch and commit matched",
+  "scope": "Initial implementation Preview. Final receipt commit is checked after push and recorded in the final response and external validation directory to avoid self-referential commit hashes.",
+  "customerApproved": false,
+  "productionDeployed": false
+}

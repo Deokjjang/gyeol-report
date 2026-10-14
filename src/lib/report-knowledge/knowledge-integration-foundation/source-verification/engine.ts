@@ -218,7 +218,7 @@ export class SourceVerificationEngine {
       return { ...initial, resolutionState: o.targetNamespace === "UNKNOWN" ? "UNSUPPORTED_REFERENCE" : "SOURCE_RECORD_MISSING" };
     } catch (error) {
       const code = error instanceof Error ? error.message : String(error);
-      return { ...initial, resolutionState: errorState(code), blockingReasons: [...initial.blockingReasons, code], followupAction: "Restore the exact provenance evidence or obtain manual review; preserve the original reference and block use." };
+      return { ...initial, resolutionState: errorState(code), sourceReviewState: { ...initial.sourceReviewState, ...(errorState(code) === "SOURCE_HASH_MISMATCH" ? { HASH_INTEGRITY: "FAIL" as const } : {}), ...(errorState(code) === "SOURCE_VERSION_MISMATCH" ? { SOURCE_VERSION: "FAIL" as const } : {}) }, blockingReasons: [...initial.blockingReasons, code], followupAction: "Restore the exact provenance evidence or obtain manual review; preserve the original reference and block use." };
     }
   }
   async verify(edge: KnowledgeReferenceEdge, ordinal: number): Promise<VerificationReceipt> {

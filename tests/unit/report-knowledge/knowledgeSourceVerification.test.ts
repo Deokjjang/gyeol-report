@@ -70,7 +70,7 @@ it("05 leaves an ambiguous sm2 alias blocked and only qualifies a copied source 
 });
 it("06 blocks wrong record, file, canonical and plainKo hashes", async () => {
   const r = records.find(r => r.originalId === "completion:day_pillar:丙午")!;
-  for (const field of ["recordSha256", "fileSha256", "sha256", "plainKoSha256"]) expect((await verify({ ...r.locator, [field]: "0".repeat(64) })).resolutionState).toBe("SOURCE_HASH_MISMATCH");
+  for (const field of ["recordSha256", "fileSha256", "sha256", "plainKoSha256"]) { const broken = await verify({ ...r.locator, [field]: "0".repeat(64) }); expect(broken.resolutionState).toBe("SOURCE_HASH_MISMATCH"); expect(broken.sourceReviewState.HASH_INTEGRITY).toBe("FAIL"); }
 });
 it("07 validates both commit sourceVersion and file-hash sourceVersion", async () => {
   const r = records.find(r => r.originalId === "completion:day_pillar:丙午")!;

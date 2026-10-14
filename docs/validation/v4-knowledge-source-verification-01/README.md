@@ -117,7 +117,7 @@ pnpm exec vitest run tests/unit/report-knowledge/knowledgeSourceVerification.tes
 
 기존 46건의 파일·테스트명·첫 오류·전체 정규화 오류 hash는 [existing-failures.json](existing-failures.json)에 있다. 기존 실패를 수정·삭제·skip하지 않았다. 전체 프로젝트 테스트를 실행했다는 주장은 하지 않는다.
 
-Sandbox build는 compile 단계에서 약 6분간 유휴 상태여서 SIGINT로 종료했다. 같은 `pnpm build`를 sandbox 밖에서 실행하니 compile 7.1초, TypeScript 20초 및 전체 build가 성공했다. 코드·환경변수·설정 변경은 없었다. 최종 build 로그의 NFT 경고는 0건이다.
+Sandbox build는 compile 단계에서 약 6분간 유휴 상태여서 SIGINT로 종료했다. 같은 `pnpm build`를 sandbox 밖에서 실행하니 전체 build가 성공했다. 코드·환경변수·설정 변경은 없었다. 최종 build 로그의 NFT 경고는 0건이다.
 
 최대 로컬 traced path bytes는 54,618,130이다. 원격 압축 함수 크기와 다른 지표다. 기존 Vercel trace 수정 파일과 next.config.ts는 byte 보존했다.
 
@@ -125,7 +125,7 @@ Sandbox build는 compile 단계에서 약 6분간 유휴 상태여서 SIGINT로 
 
 신규 검증 코드·테스트·자료·보고서만 작업 브랜치에 commit/push한다. master와 Production은 변경하지 않는다. 실제 Preview 상태는 push 후 동일 SHA로 조회하며 아래 별도 receipt에 기록한다. 문서에 포함된 receipt commit 이후 최종 문서 commit의 SHA도 별도로 원격/Preview 일치를 확인한다.
 
-Preview: push 후 확인 예정. 완료 메시지에 최종 SHA와 실제 상태를 기록한다.
+첫 구현 커밋 `ccd8770442293f61d32264b142f4c22ba88c0871`의 Preview는 READY다. [조회 기록](preview-receipt.json). 최종 검증·보고서 커밋의 SHA도 push 후 원격 및 Preview READY를 확인해 완료 메시지와 외부 `/tmp/gyeol-knowledge-source-verification-01-validation/final-preview.json`에 기록한다. 자기 자신을 포함한 commit SHA를 문서에 삽입하지 않는다.
 
 ## 남은 검토
 
