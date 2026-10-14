@@ -1,0 +1,2449 @@
+[
+  {
+    "receiptKey": "sdv:receipt:080b8133f26365382a78a0685565cedfa6fb71625deb264b8a58a7e209af0ada",
+    "catalogKey": "kc:v1:012935a14b54e8de2245d0baaca79ff48816478033895ef9a8135c61961b603d",
+    "sourceProof": {
+      "catalogKey": "kc:v1:012935a14b54e8de2245d0baaca79ff48816478033895ef9a8135c61961b603d",
+      "originalId": "afpr:month-god:비견",
+      "locator": {
+        "file": "src/lib/report-knowledge/annual-fortune-product-research/monthlyTenGodResearch.ts",
+        "exportName": "MONTHLY_TEN_GOD_RESEARCH",
+        "index": 0,
+        "originalId": "afpr:month-god:비견",
+        "recordSha256": "cf91873bc939d6c90be8b8cbb72b554ead63f210c30b9f43a84538dd7d90ae20",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "cf91873bc939d6c90be8b8cbb72b554ead63f210c30b9f43a84538dd7d90ae20",
+      "actualRecordHash": "cf91873bc939d6c90be8b8cbb72b554ead63f210c30b9f43a84538dd7d90ae20",
+      "fileHash": "ace1f94e6b43c7ab2bd117c15b22c3cd2ea3f9ca1f2518ceb52b78d2c727ce24",
+      "meaningFields": {
+        "meaning": "짧은 마감 안에서 혼자 결정할 부분과 검토가 필요한 부분을 구분하는 질문이다.",
+        "positive": "작은 선택의 완료 기준을 본인이 설명할 수 있다.",
+        "risk": "기한이 짧다는 이유로 공동 검토가 필요한 항목까지 혼자 확정할 수 있다.",
+        "/meaning": "짧은 마감 안에서 혼자 결정할 부분과 검토가 필요한 부분을 구분하는 질문이다.",
+        "/requires": [
+          "독립 판단 관련 natal 근거·실제 권한",
+          "actual dayMaster + target stem + tenGod",
+          "exact segment/month bounds where monthly",
+          "actual annual/dayun context"
+        ],
+        "/scope": "monthly_segment"
+      },
+      "originalState": {
+        "verification": "conditional_editorial_not_calculated_fact",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:012935a14b54e8de2245d0baaca79ff48816478033895ef9a8135c61961b603d",
+      "catalogKey": "kc:v1:012935a14b54e8de2245d0baaca79ff48816478033895ef9a8135c61961b603d",
+      "originalRecordHash": "cf91873bc939d6c90be8b8cbb72b554ead63f210c30b9f43a84538dd7d90ae20",
+      "sourceFields": [
+        "/meaning",
+        "/requires",
+        "/scope"
+      ],
+      "proposedMeaning": "기한 안에서 독자 작업과 공동 검토를 나눌 수 있을 때만 질문으로 사용",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "독자 판단의 범위"
+      ],
+      "differingUnits": [
+        "비견을 단독 결정권이나 월별 사건으로 바꾸면 안 된다. 월간/월지와 natal/dayun/annual 조건은 각각 별도다."
+      ],
+      "requiredConditions": [
+        "실제 월 구간·기준 일간·권한·공동 승인 의무"
+      ],
+      "prohibitedUses": [
+        "비견 월이므로 승진하거나 혼자 결정해도 된다"
+      ],
+      "counterexamples": [
+        "공동 승인 의무가 있거나 되돌릴 수 없는 결정이면 단독 시험을 권하지 않는다."
+      ],
+      "productQuestion": "독자 판단의 범위",
+      "conditionalUse": "기한 안에서 독자 작업과 공동 검토를 나눌 수 있을 때만 질문으로 사용",
+      "unusableInterpretation": "비견 월이므로 승진하거나 혼자 결정해도 된다",
+      "reasoning": "비견을 단독 결정권이나 월별 사건으로 바꾸면 안 된다. 월간/월지와 natal/dayun/annual 조건은 각각 별도다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:951837ce4c68883c54bffae12a589d7cb502f9db9cf55a86b458b8fe203fa4ab",
+    "catalogKey": "kc:v1:02b2b60aa89990bc218be59d9b2c8c12d6381845478fd53a743764c08db01b8b",
+    "sourceProof": {
+      "catalogKey": "kc:v1:02b2b60aa89990bc218be59d9b2c8c12d6381845478fd53a743764c08db01b8b",
+      "originalId": "ckr:material:CH09.P2:guard-precision-loop",
+      "locator": {
+        "file": "src/lib/report-knowledge/career-product-research/chapter09Materials.ts",
+        "exportName": "CH09_MATERIALS",
+        "index": 5,
+        "originalId": "ckr:material:CH09.P2:guard-precision-loop",
+        "recordSha256": "044f4c6671fe4b8c48081a6d9a655abdb508720de589dff8ddbd074a03917d4f",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "044f4c6671fe4b8c48081a6d9a655abdb508720de589dff8ddbd074a03917d4f",
+      "actualRecordHash": "044f4c6671fe4b8c48081a6d9a655abdb508720de589dff8ddbd074a03917d4f",
+      "fileHash": "565c9325b532d33cf531cfeb6d2c74ec52eac9328a85e38b2f6048651a274b60",
+      "meaningFields": {
+        "coreMeaning": "검토 과용의 다른 비용을 이번 행동에서 분리해 회수",
+        "positive": "정확성을 유지하며 확인 범위를 조절할 여지",
+        "risk": "위험을 새로운 결함이나 실제 실패로 추가",
+        "readerQuestion": "내가 반드시 조심해야 할 것",
+        "/coreMeaning": "검토 과용의 다른 비용을 이번 행동에서 분리해 회수",
+        "/readerQuestion": "내가 반드시 조심해야 할 것"
+      },
+      "originalState": {
+        "review": "conditional_editorial_research",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "empiricalVerification": "not_established"
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:02b2b60aa89990bc218be59d9b2c8c12d6381845478fd53a743764c08db01b8b",
+      "catalogKey": "kc:v1:02b2b60aa89990bc218be59d9b2c8c12d6381845478fd53a743764c08db01b8b",
+      "originalRecordHash": "044f4c6671fe4b8c48081a6d9a655abdb508720de589dff8ddbd074a03917d4f",
+      "sourceFields": [
+        "/coreMeaning",
+        "/readerQuestion"
+      ],
+      "proposedMeaning": "기존에 도입된 검토 부담을 현재 방지 행동으로 회수",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "검토 과용의 비용 회수"
+      ],
+      "differingUnits": [
+        "오류를 알아보는 성향과 이미 본문에 도입된 위험의 회수는 다른 기능이다. 앞서 소개되지 않은 결함을 마지막에 만들면 안 된다."
+      ],
+      "requiredConditions": [
+        "같은 owner의 actuallyDisplayed 위험과 합의된 오류 기준"
+      ],
+      "prohibitedUses": [
+        "정확성 근거가 있으니 실패 경험이 있었다"
+      ],
+      "counterexamples": [
+        "이전 위험이 실제 도입되지 않았다면 보류"
+      ],
+      "productQuestion": "내가 반드시 조심해야 할 것",
+      "conditionalUse": "기존에 도입된 검토 부담을 현재 방지 행동으로 회수",
+      "unusableInterpretation": "정확성 근거가 있으니 실패 경험이 있었다",
+      "reasoning": "오류를 알아보는 성향과 이미 본문에 도입된 위험의 회수는 다른 기능이다. 앞서 소개되지 않은 결함을 마지막에 만들면 안 된다.",
+      "supportingOriginalIds": [
+        "sar:facet:PRECISION:error-detection"
+      ],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [
+      {
+        "catalogKey": "kc:v1:dbb4b922595f857f4819206ec8927e23bb96f3897cff431760ad3a6a8d2fb8b7",
+        "originalId": "sar:facet:PRECISION:error-detection",
+        "locator": {
+          "file": "src/lib/report-knowledge/semantic-axis-research/semanticFacets.ts",
+          "exportName": "SEMANTIC_FACETS",
+          "index": 48,
+          "originalId": "sar:facet:PRECISION:error-detection",
+          "recordSha256": "57b46a7775c71b9ae72a9e3815a5e75cd00eddfc4150c7554e4f5bca62b69644",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+        },
+        "originalRecordHash": "57b46a7775c71b9ae72a9e3815a5e75cd00eddfc4150c7554e4f5bca62b69644",
+        "actualRecordHash": "57b46a7775c71b9ae72a9e3815a5e75cd00eddfc4150c7554e4f5bca62b69644",
+        "fileHash": "4e92583c647eb44170e88b258cfcc0c84997ca8c1386d8d39a3e26231fe44322",
+        "meaningFields": {
+          "definition": "작은 오류를 기준에 비추어 발견",
+          "positive": "결과를 바꾸는 결함을 먼저 고침",
+          "risk": "취향 차이까지 오류로 명명",
+          "/definition": "작은 오류를 기준에 비추어 발견"
+        },
+        "originalState": {
+          "review": "modern_application_candidate",
+          "sourceStatus": "repository_checked_not_empirical",
+          "connectedToRuntime": false,
+          "approvedForCustomer": false,
+          "existingScoreContribution": false,
+          "runtimeEvidenceIds": []
+        },
+        "actualPersonalFact": false
+      }
+    ],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:3b0ca82efe0294c3adc062a2086c1a30c1f05e84f78a1f196d5b25f2501050ca",
+    "catalogKey": "kc:v1:00000010cb927f7f53d2dcc014fc491bcd1a2427e3ff64b0746b418e056b092a",
+    "sourceProof": {
+      "catalogKey": "kc:v1:00000010cb927f7f53d2dcc014fc491bcd1a2427e3ff64b0746b418e056b092a",
+      "originalId": "bppr:stage:customer_review",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-business-partner-research/businessStageResearch.ts",
+        "exportName": "BP_BUSINESS_STAGES",
+        "index": 14,
+        "originalId": "bppr:stage:customer_review",
+        "recordSha256": "4a4f937baa1096b61fac91ab50aa010d1ee86262696aeb974e3e7d6c829c1a65",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "4a4f937baa1096b61fac91ab50aa010d1ee86262696aeb974e3e7d6c829c1a65",
+      "actualRecordHash": "4a4f937baa1096b61fac91ab50aa010d1ee86262696aeb974e3e7d6c829c1a65",
+      "fileHash": "03979ec7a164b3e8262dc90b69e38f8289a999fca7958564118cedfeaf853164",
+      "meaningFields": {
+        "positive": "사용 문제를 작은 개선 가설로 연결",
+        "risk": "좋은 평가만 남기고 불편한 신호 삭제",
+        "question": "실제 반응은 어떤 가정을 바꿨나요?",
+        "/question": "실제 반응은 어떤 가정을 바꿨나요?"
+      },
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:00000010cb927f7f53d2dcc014fc491bcd1a2427e3ff64b0746b418e056b092a",
+      "catalogKey": "kc:v1:00000010cb927f7f53d2dcc014fc491bcd1a2427e3ff64b0746b418e056b092a",
+      "originalRecordHash": "4a4f937baa1096b61fac91ab50aa010d1ee86262696aeb974e3e7d6c829c1a65",
+      "sourceFields": [
+        "/question"
+      ],
+      "proposedMeaning": "자료가 있을 때 관찰과 해석을 분리해 개선 질문을 선택",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "고객 관찰과 해석 구분"
+      ],
+      "differingUnits": [
+        "자료는 관찰 항목과 다음 질문을 제안한다. 실제 고객·매출·반복 구매가 있었다는 사실은 공급하지 않는다."
+      ],
+      "requiredConditions": [
+        "실제 관찰·표본·가격·지원 비용·변경 권한"
+      ],
+      "prohibitedUses": [
+        "동업 궁합이 좋으니 매출과 재구매가 증가한다"
+      ],
+      "counterexamples": [
+        "호평이어도 같은 가격 구매는 아닐 수 있음"
+      ],
+      "productQuestion": "실제 반응은 어떤 가정을 바꿨나요?",
+      "conditionalUse": "자료가 있을 때 관찰과 해석을 분리해 개선 질문을 선택",
+      "unusableInterpretation": "동업 궁합이 좋으니 매출과 재구매가 증가한다",
+      "reasoning": "자료는 관찰 항목과 다음 질문을 제안한다. 실제 고객·매출·반복 구매가 있었다는 사실은 공급하지 않는다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:87ed7dd9c9e85db62d783c89fcf6e419dc0ca484a78dd5b0087c792b2233a9f0",
+    "catalogKey": "kc:v1:01a3f8cbd237b7e72fd0506d875905b288fdff28d007a9f5148fac31f65492dc",
+    "sourceProof": {
+      "catalogKey": "kc:v1:01a3f8cbd237b7e72fd0506d875905b288fdff28d007a9f5148fac31f65492dc",
+      "originalId": "cwpr:material:CH01.P3:pace-and-done",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-coworker-research/chapter01Materials.ts",
+        "exportName": "CW_CH01_MATERIALS",
+        "index": 9,
+        "originalId": "cwpr:material:CH01.P3:pace-and-done",
+        "recordSha256": "11b55b936c5b01ace93cad9b7855261f52761b488c573fb5bf2c2dce44178da4",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "11b55b936c5b01ace93cad9b7855261f52761b488c573fb5bf2c2dce44178da4",
+      "actualRecordHash": "11b55b936c5b01ace93cad9b7855261f52761b488c573fb5bf2c2dce44178da4",
+      "fileHash": "8eb4541d834a286505f7d2ce3454eb932600617920553bc72df06c3791a664b8",
+      "meaningFields": {
+        "coreMeaning": "핵심만 듣고 시험하려는 선호와 일정 약속을 먼저 보는 선호를 구분한다.",
+        "positive": "짧은 시험과 시간 확인",
+        "risk": "빠름을 능력 지킴을 고집으로 판정",
+        "readerQuestion": "각자의 사고·전달 선호에서 어떤 업무 질문을 확인하는가?",
+        "/coreMeaning": "핵심만 듣고 시험하려는 선호와 일정 약속을 먼저 보는 선호를 구분한다.",
+        "/readerQuestion": "각자의 사고·전달 선호에서 어떤 업무 질문을 확인하는가?"
+      },
+      "originalState": {
+        "review": "conditional_editorial_research",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:01a3f8cbd237b7e72fd0506d875905b288fdff28d007a9f5148fac31f65492dc",
+      "catalogKey": "kc:v1:01a3f8cbd237b7e72fd0506d875905b288fdff28d007a9f5148fac31f65492dc",
+      "originalRecordHash": "11b55b936c5b01ace93cad9b7855261f52761b488c573fb5bf2c2dce44178da4",
+      "sourceFields": [
+        "/coreMeaning",
+        "/readerQuestion"
+      ],
+      "proposedMeaning": "짧은 시연과 인계 시각을 분리해 합의할 때만 검토",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "속도와 일정의 서로 다른 질문"
+      ],
+      "differingUnits": [
+        "A의 핵심 전달 선호와 B의 일정 관심을 각자 입력 유형에 묶는다. 빠름은 능력이 아니고 시간 관심은 지각 경험이 아니다."
+      ],
+      "requiredConditions": [
+        "A ESTP/B ISTJ 각자 source, actual task/deadline, directed Pair 참고의 범위"
+      ],
+      "prohibitedUses": [
+        "A는 능력이 좋고 B는 고집이 세다"
+      ],
+      "counterexamples": [
+        "실제 마감 정보 없으면 시각 처방 금지"
+      ],
+      "productQuestion": "각자의 사고·전달 선호에서 어떤 업무 질문을 확인하는가?",
+      "conditionalUse": "짧은 시연과 인계 시각을 분리해 합의할 때만 검토",
+      "unusableInterpretation": "A는 능력이 좋고 B는 고집이 세다",
+      "reasoning": "A의 핵심 전달 선호와 B의 일정 관심을 각자 입력 유형에 묶는다. 빠름은 능력이 아니고 시간 관심은 지각 경험이 아니다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:bd4cf6936832cc3c85bea4700c10c79ae1366564cd720b742cb4d8732ae81557",
+    "catalogKey": "kc:v1:053a4b8224f19473a8cc66bc218e0318a6c30cfa44b5b43a8cb990e20e28f2b1",
+    "sourceProof": {
+      "catalogKey": "kc:v1:053a4b8224f19473a8cc66bc218e0318a6c30cfa44b5b43a8cb990e20e28f2b1",
+      "originalId": "frpr:material:CH06.P4:ba-availability-boundary",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-friendship-research/paragraphResearch.ts",
+        "exportName": "FRIENDSHIP_MATERIALS",
+        "index": 23,
+        "originalId": "frpr:material:CH06.P4:ba-availability-boundary",
+        "recordSha256": "d4d225d28144ce3f4a21b0a16a397cf77c2a6484a462168154aaaa5be008c17f",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "d4d225d28144ce3f4a21b0a16a397cf77c2a6484a462168154aaaa5be008c17f",
+      "actualRecordHash": "d4d225d28144ce3f4a21b0a16a397cf77c2a6484a462168154aaaa5be008c17f",
+      "fileHash": "949646869f687ed75aee35b42a8a50132e8db464066ffbca6355d7da998616d1",
+      "meaningFields": {
+        "coreMeaning": "도움을 못 주는 한계와 친구를 거절하는 뜻을 분리한다.",
+        "positive": "A가 다른 도움을 찾거나 요청의 범위를 조절할 정보를 얻는다.",
+        "risk": "B가 불가능한 부탁을 받아들인 뒤 잠적하거나 원망한다.",
+        "readerQuestion": "B가 자신의 한계를 알리는 것이 A에게 어떤 도움이 될까?",
+        "/coreMeaning": "도움을 못 주는 한계와 친구를 거절하는 뜻을 분리한다.",
+        "/readerQuestion": "B가 자신의 한계를 알리는 것이 A에게 어떤 도움이 될까?"
+      },
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:053a4b8224f19473a8cc66bc218e0318a6c30cfa44b5b43a8cb990e20e28f2b1",
+      "catalogKey": "kc:v1:053a4b8224f19473a8cc66bc218e0318a6c30cfa44b5b43a8cb990e20e28f2b1",
+      "originalRecordHash": "d4d225d28144ce3f4a21b0a16a397cf77c2a6484a462168154aaaa5be008c17f",
+      "sourceFields": [
+        "/coreMeaning",
+        "/readerQuestion"
+      ],
+      "proposedMeaning": "요청이 있을 때 가능한 도움과 불가능한 몫을 따로 말하는 선택",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "가능한 지원과 한계 전달"
+      ],
+      "differingUnits": [
+        "B→A의 지원 범위 질문이며 A→B 또는 과거 잠적의 사실이 아니다. 대안을 반드시 제공할 의무도 없다."
+      ],
+      "requiredConditions": [
+        "B의 가용 시간·A의 요청·동의·안전·실제 방향"
+      ],
+      "prohibitedUses": [
+        "B가 과거에도 잠적했고 A는 의존한다"
+      ],
+      "counterexamples": [
+        "작은 대안도 감당할 수 없다면 대신할 일을 반드시 제시할 의무는 없다."
+      ],
+      "productQuestion": "B가 자신의 한계를 알리는 것이 A에게 어떤 도움이 될까?",
+      "conditionalUse": "요청이 있을 때 가능한 도움과 불가능한 몫을 따로 말하는 선택",
+      "unusableInterpretation": "B가 과거에도 잠적했고 A는 의존한다",
+      "reasoning": "B→A의 지원 범위 질문이며 A→B 또는 과거 잠적의 사실이 아니다. 대안을 반드시 제공할 의무도 없다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:2b12e533c4fd17bbb7a46bf906d9b0177a740131913902b71b8156a6918528ac",
+    "catalogKey": "kc:v1:0033e911ee19d737bab5aabc4414c64c40d8cc53538d94c4a455ae59a20c9da1",
+    "sourceProof": {
+      "catalogKey": "kc:v1:0033e911ee19d737bab5aabc4414c64c40d8cc53538d94c4a455ae59a20c9da1",
+      "originalId": "clr:material:CH01.P2:clash-without-prophecy",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-love-research/chapter01Materials.ts",
+        "exportName": "CH01_MATERIALS",
+        "index": 3,
+        "originalId": "clr:material:CH01.P2:clash-without-prophecy",
+        "recordSha256": "168bf51a8a7a15a80cbd91b9b55bffad47d1600d2938527f509abb3ffb697ab4",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "168bf51a8a7a15a80cbd91b9b55bffad47d1600d2938527f509abb3ffb697ab4",
+      "actualRecordHash": "168bf51a8a7a15a80cbd91b9b55bffad47d1600d2938527f509abb3ffb697ab4",
+      "fileHash": "c227c0d52f6ea12490607e7cd3ac2a1de32952822c48c54d82ec32c75fd4e342",
+      "meaningFields": {
+        "coreMeaning": "실제 충의 참여 위치와 연애에서 선택 속도가 엇갈릴 조건을 구분한다.",
+        "positive": "서로 필요한 조건을 드러낼 여지",
+        "risk": "충의 이름으로 실제 답을 미리 정하기",
+        "readerQuestion": "명리에서 보는 두 사람의 관계",
+        "/coreMeaning": "실제 충의 참여 위치와 연애에서 선택 속도가 엇갈릴 조건을 구분한다.",
+        "/readerQuestion": "명리에서 보는 두 사람의 관계"
+      },
+      "originalState": {
+        "review": "conditional_editorial_research",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:0033e911ee19d737bab5aabc4414c64c40d8cc53538d94c4a455ae59a20c9da1",
+      "catalogKey": "kc:v1:0033e911ee19d737bab5aabc4414c64c40d8cc53538d94c4a455ae59a20c9da1",
+      "originalRecordHash": "168bf51a8a7a15a80cbd91b9b55bffad47d1600d2938527f509abb3ffb697ab4",
+      "sourceFields": [
+        "/coreMeaning",
+        "/readerQuestion"
+      ],
+      "proposedMeaning": "실제 관계와 대답할 시간을 구분해 질문",
+      "semanticRelation": "RELATED_BUT_NOT_EQUIVALENT",
+      "commonUnits": [
+        "실제 충 분류와 조정 질문"
+      ],
+      "differingUnits": [
+        "寅申 충의 계산 사실과 빠른 제안/신중한 응답의 생활 가설은 동치가 아니다. 두 명리/MBTI 출처를 따로 충족해야 한다."
+      ],
+      "requiredConditions": [
+        "기존 cross-person clash ID·참여 위치·양쪽 person 및 각자 MBTI"
+      ],
+      "prohibitedUses": [
+        "충이 있으므로 이별하거나 반드시 선택 속도가 다르다"
+      ],
+      "counterexamples": [
+        "실제 충이 없으면 이 명리 설명을 사용하지 않는다."
+      ],
+      "productQuestion": "명리에서 보는 두 사람의 관계",
+      "conditionalUse": "실제 관계와 대답할 시간을 구분해 질문",
+      "unusableInterpretation": "충이 있으므로 이별하거나 반드시 선택 속도가 다르다",
+      "reasoning": "寅申 충의 계산 사실과 빠른 제안/신중한 응답의 생활 가설은 동치가 아니다. 두 명리/MBTI 출처를 따로 충족해야 한다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:456f94bd5c438e6343bf83da995a6d98bd3602d3c2b96a7621e54fa9feabff46",
+    "catalogKey": "kc:v1:04660e1b2b218df18be0665c608efd00d23e57da1643ddc22bddc6085dadd73a",
+    "sourceProof": {
+      "catalogKey": "kc:v1:04660e1b2b218df18be0665c608efd00d23e57da1643ddc22bddc6085dadd73a",
+      "originalId": "mrpr:material:CH08.P3:report-name-blocked-resource",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-manager-report-research/chapter08Materials.ts",
+        "exportName": "MR_CH08_MATERIALS",
+        "index": 14,
+        "originalId": "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "recordSha256": "1d8e7be7cd99d8d6507335d3d4945e705feea132af46967ce9a03ae77dd1440e",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "1d8e7be7cd99d8d6507335d3d4945e705feea132af46967ce9a03ae77dd1440e",
+      "actualRecordHash": "1d8e7be7cd99d8d6507335d3d4945e705feea132af46967ce9a03ae77dd1440e",
+      "fileHash": "4d97b473ecad800714fe87bb0992f7ba24f0a19187b6115ec751ec53fed5f14f",
+      "meaningFields": {
+        "coreMeaning": "B는 막힌 단계와 필요한 자원을 구체적으로 알림",
+        "positive": "막힘을 조기에 연결할 여지",
+        "risk": "권한 없는 우회로 문제를 해결하게 함",
+        "readerQuestion": "B는 안전·사실·용량·자원 안에서 무엇을 확인할 수 있는가?",
+        "/coreMeaning": "B는 막힌 단계와 필요한 자원을 구체적으로 알림",
+        "/readerQuestion": "B는 안전·사실·용량·자원 안에서 무엇을 확인할 수 있는가?"
+      },
+      "originalState": {
+        "review": "conditional_editorial_research",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:04660e1b2b218df18be0665c608efd00d23e57da1643ddc22bddc6085dadd73a",
+      "catalogKey": "kc:v1:04660e1b2b218df18be0665c608efd00d23e57da1643ddc22bddc6085dadd73a",
+      "originalRecordHash": "1d8e7be7cd99d8d6507335d3d4945e705feea132af46967ce9a03ae77dd1440e",
+      "sourceFields": [
+        "/coreMeaning",
+        "/readerQuestion"
+      ],
+      "proposedMeaning": "확인된 막힘과 필요한 시점을 알리고 승인된 지원 담당을 찾는 질문",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "자원 공백과 수행 정보"
+      ],
+      "differingUnits": [
+        "자원 부족 보고는 능력 부족이 아니다. 상사/팀원 선언과 실제 승인·접근 권한은 다르다. CH07의 실제 표시 근거가 필요하다."
+      ],
+      "requiredConditions": [
+        "A상사/B팀원 역할 확인·실제 자원·승인·안전한 보고 경로·동일 task의 표시 이력"
+      ],
+      "prohibitedUses": [
+        "팀원 능력이 낮으니 권한을 우회하거나 더 순응해야 한다"
+      ],
+      "counterexamples": [
+        "보안·승인 우회 금지"
+      ],
+      "productQuestion": "B는 안전·사실·용량·자원 안에서 무엇을 확인할 수 있는가?",
+      "conditionalUse": "확인된 막힘과 필요한 시점을 알리고 승인된 지원 담당을 찾는 질문",
+      "unusableInterpretation": "팀원 능력이 낮으니 권한을 우회하거나 더 순응해야 한다",
+      "reasoning": "자원 부족 보고는 능력 부족이 아니다. 상사/팀원 선언과 실제 승인·접근 권한은 다르다. CH07의 실제 표시 근거가 필요하다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:e60bcbcc18cba4eb1218beb4d9cc6b1024c2a22a1fe12dd589a3d744ee445286",
+    "catalogKey": "kc:v1:01d1f7fd3bd65a432f56a08da9ae78681c24e9b4ca236967846f917deb944af6",
+    "sourceProof": {
+      "catalogKey": "kc:v1:01d1f7fd3bd65a432f56a08da9ae78681c24e9b4ca236967846f917deb944af6",
+      "originalId": "cmpr:view:autonomyResearch:material:CH06.P1:ba-receivable-help",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-marriage-research/autonomyResearch.ts",
+        "exportName": "MARRIAGE_AUTONOMY",
+        "index": 16,
+        "originalId": "cmpr:view:autonomyResearch:material:CH06.P1:ba-receivable-help",
+        "recordSha256": "0f9b26185e1eb763632d55a0922cb45202d53aa7dcfbb9af9c2fe7ffa5e0c039",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "0f9b26185e1eb763632d55a0922cb45202d53aa7dcfbb9af9c2fe7ffa5e0c039",
+      "actualRecordHash": "0f9b26185e1eb763632d55a0922cb45202d53aa7dcfbb9af9c2fe7ffa5e0c039",
+      "fileHash": "ce7095b05731265a7646d90e0a29a9a401b29ef3444e98cbaebb6aa1bf61041f",
+      "meaningFields": {
+        "coreMeaning": "B→A의 정인 관계를 도움을 받을 통로와 A가 실제로 수락한 지원으로 구분해 연구한다.",
+        "positive": "선택한 지원을 받아볼 가능성",
+        "risk": "B가 보호해 준다는 뜻으로 A의 선택을 먼저 끝냄",
+        "question": "받고 싶은 도움과 직접 이어갈 부분은 무엇인가?",
+        "/coreMeaning": "B→A의 정인 관계를 도움을 받을 통로와 A가 실제로 수락한 지원으로 구분해 연구한다.",
+        "/question": "받고 싶은 도움과 직접 이어갈 부분은 무엇인가?"
+      },
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:01d1f7fd3bd65a432f56a08da9ae78681c24e9b4ca236967846f917deb944af6",
+      "catalogKey": "kc:v1:01d1f7fd3bd65a432f56a08da9ae78681c24e9b4ca236967846f917deb944af6",
+      "originalRecordHash": "0f9b26185e1eb763632d55a0922cb45202d53aa7dcfbb9af9c2fe7ffa5e0c039",
+      "sourceFields": [
+        "/coreMeaning",
+        "/question"
+      ],
+      "proposedMeaning": "도움이 요청된 상황에서 맡길 부분과 직접 할 부분을 구분",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "지원 통로와 수락 범위"
+      ],
+      "differingUnits": [
+        "B→A 정인은 실제 공동생활이나 수락한 도움의 증명이 아니다. 지원은 A의 거절과 선택을 남겨야 한다."
+      ],
+      "requiredConditions": [
+        "B→A recipient tenGod와 실제 공동생활·수락 범위"
+      ],
+      "prohibitedUses": [
+        "B가 보호자이고 A는 도움을 받아야 한다"
+      ],
+      "counterexamples": [
+        "B→A recipient tenGod와 실제 공동생활·수락 범위"
+      ],
+      "productQuestion": "받고 싶은 도움과 직접 이어갈 부분은 무엇인가?",
+      "conditionalUse": "도움이 요청된 상황에서 맡길 부분과 직접 할 부분을 구분",
+      "unusableInterpretation": "B가 보호자이고 A는 도움을 받아야 한다",
+      "reasoning": "B→A 정인은 실제 공동생활이나 수락한 도움의 증명이 아니다. 지원은 A의 거절과 선택을 남겨야 한다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:4b30f94829aabc47c5a60a9af7da8454e3b7b4d463e7d732a2919d58261be1f1",
+    "catalogKey": "kc:v1:002f8d7e0b5426b9fcab400c42b03b796a795b7576cfb9d8ab17ea75d7ff033c",
+    "sourceProof": {
+      "catalogKey": "kc:v1:002f8d7e0b5426b9fcab400c42b03b796a795b7576cfb9d8ab17ea75d7ff033c",
+      "originalId": "pcpr:view:childToParentResearch:material:CH06.P3:ba-care-becomes-parent-dependence",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/childToParentResearch.ts",
+        "exportName": "PC_CHILD_TO_PARENT",
+        "index": 11,
+        "originalId": "pcpr:view:childToParentResearch:material:CH06.P3:ba-care-becomes-parent-dependence",
+        "recordSha256": "dc6f4e94b407e6f79476d36589fd271fe2eab5af757d7c4d758ad25e0a49b261",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "dc6f4e94b407e6f79476d36589fd271fe2eab5af757d7c4d758ad25e0a49b261",
+      "actualRecordHash": "dc6f4e94b407e6f79476d36589fd271fe2eab5af757d7c4d758ad25e0a49b261",
+      "fileHash": "29a87f343f4101e6f961640c62ad48d33f7128d030d14d29b9df17d30efd72ba",
+      "meaningFields": {
+        "coreMeaning": "자녀의 배려 표현을 부모가 정서 지원의 의무로 받아들일 위험을 연구한다.",
+        "positive": "관심의 뜻과 부담을 알아볼 기회",
+        "risk": "아이에게 부모 감정의 회복을 맡김",
+        "question": "자녀의 표현을 부모가 부담이나 거절로 읽을 조건은 무엇인가?",
+        "/coreMeaning": "자녀의 배려 표현을 부모가 정서 지원의 의무로 받아들일 위험을 연구한다.",
+        "/question": "자녀의 표현을 부모가 부담이나 거절로 읽을 조건은 무엇인가?"
+      },
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:002f8d7e0b5426b9fcab400c42b03b796a795b7576cfb9d8ab17ea75d7ff033c",
+      "catalogKey": "kc:v1:002f8d7e0b5426b9fcab400c42b03b796a795b7576cfb9d8ab17ea75d7ff033c",
+      "originalRecordHash": "dc6f4e94b407e6f79476d36589fd271fe2eab5af757d7c4d758ad25e0a49b261",
+      "sourceFields": [
+        "/coreMeaning",
+        "/question"
+      ],
+      "proposedMeaning": "자녀의 배려를 받을 때도 어른의 정서 지원은 성인이 따로 구하는 조건",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "자녀의 표현과 부모 책임"
+      ],
+      "differingUnits": [
+        "SCHOOL/TEEN의 자녀 표현을 부모 감정의 회복 의무로 전환할 수 없다. 성인 지원 책임을 부모에게 남기는 적용이다."
+      ],
+      "requiredConditions": [
+        "실제 부모/자녀 역할·발달 단계·관찰·안전한 중단 선택"
+      ],
+      "prohibitedUses": [
+        "아이는 부모를 돌봐야 하며 MBTI로 발달 단계를 알 수 있다"
+      ],
+      "counterexamples": [
+        "실제 부모/자녀 역할·발달 단계·관찰·안전한 중단 선택"
+      ],
+      "productQuestion": "자녀의 표현을 부모가 부담이나 거절로 읽을 조건은 무엇인가?",
+      "conditionalUse": "자녀의 배려를 받을 때도 어른의 정서 지원은 성인이 따로 구하는 조건",
+      "unusableInterpretation": "아이는 부모를 돌봐야 하며 MBTI로 발달 단계를 알 수 있다",
+      "reasoning": "SCHOOL/TEEN의 자녀 표현을 부모 감정의 회복 의무로 전환할 수 없다. 성인 지원 책임을 부모에게 남기는 적용이다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:823d4ea879490c54dec6206c80978221bde83a4844a5be8062b275d5fa9a9fab",
+    "catalogKey": "kc:v1:0089d0d0c26d2ebe5a83bd65d685064f1bbda72e29b26867c7b9ed6798214c1f",
+    "sourceProof": {
+      "catalogKey": "kc:v1:0089d0d0c26d2ebe5a83bd65d685064f1bbda72e29b26867c7b9ed6798214c1f",
+      "originalId": "csr:boundary:season_command:love",
+      "locator": {
+        "file": "src/lib/report-knowledge/composite-structure-research/compositeStructureBoundaries.ts",
+        "exportName": "COMPOSITE_BOUNDARIES",
+        "index": 20,
+        "originalId": "csr:boundary:season_command:love",
+        "recordSha256": "4367daa6d3a89eeeb39bbd8b552d296a66c5ce3156a1aacb3f647d9a62d11876",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "4367daa6d3a89eeeb39bbd8b552d296a66c5ce3156a1aacb3f647d9a62d11876",
+      "actualRecordHash": "4367daa6d3a89eeeb39bbd8b552d296a66c5ce3156a1aacb3f647d9a62d11876",
+      "fileHash": "a508868ae6105bcb5273b6f102b8945690521a49cff4f7b53ebd613819f0b485",
+      "meaningFields": {
+        "readerQuestion": "계절이 연애 방식을 정하나요?",
+        "/readerQuestion": "계절이 연애 방식을 정하나요?"
+      },
+      "originalState": {
+        "class": "E_UNVERIFIED",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:0089d0d0c26d2ebe5a83bd65d685064f1bbda72e29b26867c7b9ed6798214c1f",
+      "catalogKey": "kc:v1:0089d0d0c26d2ebe5a83bd65d685064f1bbda72e29b26867c7b9ed6798214c1f",
+      "originalRecordHash": "4367daa6d3a89eeeb39bbd8b552d296a66c5ce3156a1aacb3f647d9a62d11876",
+      "sourceFields": [
+        "/readerQuestion"
+      ],
+      "proposedMeaning": "원국 구조 정의를 보존하고 연애 적용은 보류",
+      "semanticRelation": "NO_MAPPING",
+      "commonUnits": [
+        "월령 구조의 원래 정의"
+      ],
+      "differingUnits": [
+        "원본이 월령과 실제 애정 표현 사이 독립 연결이 없다고 명시한다. 단순 구조 존재만으로 연애 성격을 대응시키지 않는다."
+      ],
+      "requiredConditions": [
+        "독립적인 실제 소통·전체 배합·분야 근거"
+      ],
+      "prohibitedUses": [
+        "월지가 특정하므로 특정 유형을 사랑한다"
+      ],
+      "counterexamples": [
+        "월지로 애정 성격이나 상대 유형 확정 금지"
+      ],
+      "productQuestion": "계절이 연애 방식을 정하나요?",
+      "conditionalUse": "원국 구조 정의를 보존하고 연애 적용은 보류",
+      "unusableInterpretation": "월지가 특정하므로 특정 유형을 사랑한다",
+      "reasoning": "원본이 월령과 실제 애정 표현 사이 독립 연결이 없다고 명시한다. 단순 구조 존재만으로 연애 성격을 대응시키지 않는다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:5bafcadd485954c9df7333da86c373a8adfda1e06d1e9e83b56e3d8cf92f122d",
+    "catalogKey": "kc:v1:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
+    "sourceProof": {
+      "catalogKey": "kc:v1:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
+      "originalId": "cpr:material:CH04.P4:soft-precise-request",
+      "locator": {
+        "file": "src/lib/report-knowledge/comprehensive-product-research/chapter04Materials.ts",
+        "exportName": "CH04_MATERIALS",
+        "index": 10,
+        "originalId": "cpr:material:CH04.P4:soft-precise-request",
+        "recordSha256": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+      "actualRecordHash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+      "fileHash": "931c8738b8a5986a74cb221c0d63fed607e28000dbaa72f07294680e159af096",
+      "meaningFields": {
+        "coreMeaning": "부드러운 말 안에 자기 요청을 남기는 숨은 가치",
+        "positive": "관계와 선택 기준을 함께 전달할 여지",
+        "shadow": "상대 마음을 정확히 안다고 과신",
+        "readerQuestion": "처음에 놓칠 수 있는 가치는 무엇인가?",
+        "/coreMeaning": "부드러운 말 안에 자기 요청을 남기는 숨은 가치",
+        "/readerQuestion": "처음에 놓칠 수 있는 가치는 무엇인가?"
+      },
+      "originalState": {
+        "review": "conditional_editorial_research",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "empiricalVerification": "not_established"
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
+      "catalogKey": "kc:v1:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
+      "originalRecordHash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+      "sourceFields": [
+        "/coreMeaning",
+        "/readerQuestion"
+      ],
+      "proposedMeaning": "이미 합의한 점과 조정할 요청을 구분할 때 조건부 숨은 가치로 검토",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "맥락을 고려한 전달과 자기 요청"
+      ],
+      "differingUnits": [
+        "gentle language와 firm refusal은 서로 다른 trait 조건이다. 부드러운 말투에서 배려의 성공이나 조정 능력을 확정하지 않는다."
+      ],
+      "requiredConditions": [
+        "INFJ 본인 원천·본인 소통 방식·민감한 상황·조정 가능성"
+      ],
+      "prohibitedUses": [
+        "INFJ이므로 상대 마음을 정확히 알고 관계를 잘 조율한다"
+      ],
+      "counterexamples": [
+        "원천의 말투 설명만으로 실제 배려 결과·조정 능력을 승인하지 않음"
+      ],
+      "productQuestion": "처음에 놓칠 수 있는 가치는 무엇인가?",
+      "conditionalUse": "이미 합의한 점과 조정할 요청을 구분할 때 조건부 숨은 가치로 검토",
+      "unusableInterpretation": "INFJ이므로 상대 마음을 정확히 알고 관계를 잘 조율한다",
+      "reasoning": "gentle language와 firm refusal은 서로 다른 trait 조건이다. 부드러운 말투에서 배려의 성공이나 조정 능력을 확정하지 않는다.",
+      "supportingOriginalIds": [
+        "gentle_language",
+        "firm_refusal_when_decided"
+      ],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [
+      {
+        "catalogKey": "kc:v1:f88f5220eefabf360e5d6b6a1c9df4c362b6c99b735ed7078940bf838ee6b150",
+        "originalId": "gentle_language",
+        "locator": {
+          "file": "docs/product/mbti/source/INFJ.json",
+          "pointer": "/traits/communication/1",
+          "originalId": "gentle_language",
+          "recordSha256": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+        },
+        "originalRecordHash": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
+        "actualRecordHash": "77f4503516cc63b6edc064f70008384f7f90d4cff5ad321b7b4450b5b3fb74f1",
+        "fileHash": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+        "meaningFields": {
+          "plainKo": "INFJ는 따뜻하고 섬세한 언어로 인간 대 인간의 대화를 나누는 것을 좋아한다. 예의범절을 중요하게 여기고 거친 말이나 비속어를 자제한다.",
+          "risk": "직설이 필요한 순간에도 너무 조심해 결론이 늦어질 수 있다."
+        },
+        "originalState": {
+          "sourceCoverage": "direct"
+        },
+        "actualPersonalFact": false
+      },
+      {
+        "catalogKey": "kc:v1:d6bbd434968e046f706dcd72904c012212fb8e530377fe278b7996b87d6918d9",
+        "originalId": "firm_refusal_when_decided",
+        "locator": {
+          "file": "docs/product/mbti/source/INFJ.json",
+          "pointer": "/traits/communication/4",
+          "originalId": "firm_refusal_when_decided",
+          "recordSha256": "34ae21e80397b63ceb2cf92f99acac9deee8a7816004b3b6dc352ce1ef66fcec",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+        },
+        "originalRecordHash": "34ae21e80397b63ceb2cf92f99acac9deee8a7816004b3b6dc352ce1ef66fcec",
+        "actualRecordHash": "34ae21e80397b63ceb2cf92f99acac9deee8a7816004b3b6dc352ce1ef66fcec",
+        "fileHash": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+        "meaningFields": {
+          "plainKo": "INFJ는 평소 부드럽지만 결단력이 있어 거절할 때는 단호하게 거절한다. 기준이 분명해진 뒤에는 흔들림이 적다.",
+          "risk": "상대에게는 갑작스러운 단절이나 차가운 태도로 느껴질 수 있다."
+        },
+        "originalState": {
+          "sourceCoverage": "direct"
+        },
+        "actualPersonalFact": false
+      }
+    ],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:a5178b6874daa8cf1b83443418cc6c758adc5bd005ab45d1c5ee3d3400490c38",
+    "catalogKey": "kc:v1:03b87f4edd6bbc620796713c001a7e0c7d24be44a1eafd13b5589e840dc12b27",
+    "sourceProof": {
+      "catalogKey": "kc:v1:03b87f4edd6bbc620796713c001a7e0c7d24be44a1eafd13b5589e840dc12b27",
+      "originalId": "fkr:complement:C070",
+      "locator": {
+        "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+        "exportName": "COMPLEMENT_FUSION_RESEARCH",
+        "index": 69,
+        "originalId": "fkr:complement:C070",
+        "recordSha256": "6fad0e04f851115760faafd92a44021abea8341fd07d7f17b62abc0ac6f2e42a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "6fad0e04f851115760faafd92a44021abea8341fd07d7f17b62abc0ac6f2e42a",
+      "actualRecordHash": "6fad0e04f851115760faafd92a44021abea8341fd07d7f17b62abc0ac6f2e42a",
+      "fileHash": "3196e648432ea2a207564bcba11d90693b0bae14a515e9c7a7ef9ec1bb971f9b",
+      "meaningFields": {
+        "coreMeaning": "궁금한 것을 확인할 작은 시험은 무엇인가?",
+        "originalMeaning": "궁금한 것을 알아보는 데서 끝나지 않고 새로운 아이디어나 결과로 이어가는 사람으로 발전할 수 있습니다.",
+        "positive": "질문을 실제 제작과 관찰 가능한 결과로 옮김",
+        "risk": "만드는 재미 때문에 처음 질문을 잊음",
+        "/coreMeaning": "궁금한 것을 확인할 작은 시험은 무엇인가?",
+        "/originalMeaning": "궁금한 것을 알아보는 데서 끝나지 않고 새로운 아이디어나 결과로 이어가는 사람으로 발전할 수 있습니다."
+      },
+      "originalState": {
+        "review": "conditional_editorial_not_empirical",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:03b87f4edd6bbc620796713c001a7e0c7d24be44a1eafd13b5589e840dc12b27",
+      "catalogKey": "kc:v1:03b87f4edd6bbc620796713c001a7e0c7d24be44a1eafd13b5589e840dc12b27",
+      "originalRecordHash": "6fad0e04f851115760faafd92a44021abea8341fd07d7f17b62abc0ac6f2e42a",
+      "sourceFields": [
+        "/coreMeaning",
+        "/originalMeaning"
+      ],
+      "proposedMeaning": "실제 질문을 안전한 작은 모형으로 확인할 필요가 있을 때만 검토",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "질문 만들기와 시험 가능한 산출"
+      ],
+      "differingUnits": [
+        "CURIOSITY와 CREATION의 서로 다른 역할을 같은 과제에서 연결한다. REINFORCE와 같지 않고 원천 배정 반전도 독립 검토한다."
+      ],
+      "requiredConditions": [
+        "같은 사람 명리/MBTI 양쪽 primary root·C070·방향·동일 허용 context·가역 시험"
+      ],
+      "prohibitedUses": [
+        "호기심과 창작 축이 높으므로 발명 성공이 보장된다"
+      ],
+      "counterexamples": [
+        "새 질문이 제작으로 확인 가능한 것은 아닐 수 있음"
+      ],
+      "productQuestion": "질문 만들기와 시험 가능한 산출",
+      "conditionalUse": "실제 질문을 안전한 작은 모형으로 확인할 필요가 있을 때만 검토",
+      "unusableInterpretation": "호기심과 창작 축이 높으므로 발명 성공이 보장된다",
+      "reasoning": "CURIOSITY와 CREATION의 서로 다른 역할을 같은 과제에서 연결한다. REINFORCE와 같지 않고 원천 배정 반전도 독립 검토한다.",
+      "supportingOriginalIds": [
+        "C070"
+      ],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [
+      {
+        "catalogKey": "kc:v1:11ead139a7d7efab67847088b63ef57e613d1e1c03975713c760f5c45bc0033f",
+        "originalId": "C070",
+        "locator": {
+          "file": "src/lib/interpretation-v4/fusionComplementRegistry.ts",
+          "exportName": "FUSION_COMPLEMENT_RULES",
+          "pointer": "/69",
+          "originalId": "C070",
+          "recordSha256": "27a2d8b1ceddf7048d6c573d1c26fb543a0d2007b899573f3096a73b2ab8a2b5",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+        },
+        "originalRecordHash": "27a2d8b1ceddf7048d6c573d1c26fb543a0d2007b899573f3096a73b2ab8a2b5",
+        "actualRecordHash": "27a2d8b1ceddf7048d6c573d1c26fb543a0d2007b899573f3096a73b2ab8a2b5",
+        "fileHash": "f1fcdee0ffcc7e7eb3946c293e4967f2d7ce274f33fa24c6934ae8b2b324880d",
+        "meaningFields": {},
+        "originalState": {},
+        "actualPersonalFact": false
+      }
+    ],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:e534eadecd02eaa5e551e54259b1dba26ac61b2957a55079e7f1860431e4955b",
+    "catalogKey": "kc:v1:016a91a88367bba40f28169bf192aee597271b73ecef705bc29cfc9b30ae2dc8",
+    "sourceProof": {
+      "catalogKey": "kc:v1:016a91a88367bba40f28169bf192aee597271b73ecef705bc29cfc9b30ae2dc8",
+      "originalId": "ker:role:CH03.P1.S3",
+      "locator": {
+        "file": "src/lib/report-knowledge/korean-editorial-research/compatibilityRoleViews.ts",
+        "exportName": "KOREAN_COMPATIBILITY_ROLE_VIEWS",
+        "index": 34,
+        "originalId": "ker:role:CH03.P1.S3",
+        "recordSha256": "94b75e1bc256d5c0de9a1de5157e99de0310165700b4fbd37a620f59f2e3ba37",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "94b75e1bc256d5c0de9a1de5157e99de0310165700b4fbd37a620f59f2e3ba37",
+      "actualRecordHash": "94b75e1bc256d5c0de9a1de5157e99de0310165700b4fbd37a620f59f2e3ba37",
+      "fileHash": "0d6dff17988b1c64e25d6838e200b2d02bf0c4c3d9cf112fcd032d7a4f8252b9",
+      "meaningFields": {
+        "originalRole": "MBTI 선호",
+        "/originalRole": "MBTI 선호",
+        "/requiredBeforeUse": [
+          "actual category-specific approved claim",
+          "matching owner/direction/time/context",
+          "function does not license missing Evidence",
+          "existing 9/36/144 contract unchanged"
+        ]
+      },
+      "originalState": {
+        "review": "editorial_research_not_customer_approved",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:016a91a88367bba40f28169bf192aee597271b73ecef705bc29cfc9b30ae2dc8",
+      "catalogKey": "kc:v1:016a91a88367bba40f28169bf192aee597271b73ecef705bc29cfc9b30ae2dc8",
+      "originalRecordHash": "94b75e1bc256d5c0de9a1de5157e99de0310165700b4fbd37a620f59f2e3ba37",
+      "sourceFields": [
+        "/originalRole",
+        "/requiredBeforeUse"
+      ],
+      "proposedMeaning": "이미 승인된 주장의 설명 역할을 배정하는 참고만 보존",
+      "semanticRelation": "NO_MAPPING",
+      "commonUnits": [
+        "문장 역할과 승인된 주장 구분"
+      ],
+      "differingUnits": [
+        "MBTI 선호라는 수사 역할은 source claim을 새로 만들지 않는다. 관계별 원본 claim/owner/direction을 먼저 공급해야 한다."
+      ],
+      "requiredConditions": [
+        "category-specific approved claim·owner/direction/time/context"
+      ],
+      "prohibitedUses": [
+        "설명 역할이 있으니 부족한 MBTI 근거를 채운다"
+      ],
+      "counterexamples": [
+        "category-specific approved claim·owner/direction/time/context"
+      ],
+      "productQuestion": "문장 역할과 승인된 주장 구분",
+      "conditionalUse": "이미 승인된 주장의 설명 역할을 배정하는 참고만 보존",
+      "unusableInterpretation": "설명 역할이 있으니 부족한 MBTI 근거를 채운다",
+      "reasoning": "MBTI 선호라는 수사 역할은 source claim을 새로 만들지 않는다. 관계별 원본 claim/owner/direction을 먼저 공급해야 한다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:9166a10387716fabc535c3b9be5d570310ae1f7e709c5a527064c48dedb28280",
+    "catalogKey": "kc:v1:06cd6c4bd7d4da824bf30fb992effb58924aac57ce54cf73561c4e9b60c51f54",
+    "sourceProof": {
+      "catalogKey": "kc:v1:06cd6c4bd7d4da824bf30fb992effb58924aac57ce54cf73561c4e9b60c51f54",
+      "originalId": "lkr:paragraph:CH03.P3",
+      "locator": {
+        "file": "src/lib/report-knowledge/love-product-research/paragraphResearch.ts",
+        "exportName": "LOVE_PARAGRAPH_RESEARCH",
+        "index": 10,
+        "originalId": "lkr:paragraph:CH03.P3",
+        "recordSha256": "48db0a4e4ef38f1381ee9677ad72e8c2592afc5e2f8c0507321bf8a17127fd4c",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "48db0a4e4ef38f1381ee9677ad72e8c2592afc5e2f8c0507321bf8a17127fd4c",
+      "actualRecordHash": "48db0a4e4ef38f1381ee9677ad72e8c2592afc5e2f8c0507321bf8a17127fd4c",
+      "fileHash": "e073c7f1aa975b23aa588f6f588f556ff719c21e74da1c99abdbd3d8dbd6372d",
+      "meaningFields": {
+        "readerQuestion": "서로 다른 모습이 도움이 될 때",
+        "independentInformation": [
+          "새 경험을 좋아하는 본인이 안정된 약속을 함께 두면 도움이 되는 조건을 연구한다.",
+          "해결을 잘 제안하려는 본인이 듣기를 원하는 경우와 만났을 때의 조건부 보완을 연구한다.",
+          "돌려 말하는 본인이 직접적인 질문을 받았을 때 활용할 조건을 연구한다.",
+          "사회 반응을 살피는 활동과 회복의 필요가 다를 때 둘의 시간을 조율하는 조건을 연구한다."
+        ],
+        "/independentInformation": [
+          "새 경험을 좋아하는 본인이 안정된 약속을 함께 두면 도움이 되는 조건을 연구한다.",
+          "해결을 잘 제안하려는 본인이 듣기를 원하는 경우와 만났을 때의 조건부 보완을 연구한다.",
+          "돌려 말하는 본인이 직접적인 질문을 받았을 때 활용할 조건을 연구한다.",
+          "사회 반응을 살피는 활동과 회복의 필요가 다를 때 둘의 시간을 조율하는 조건을 연구한다."
+        ],
+        "/readerQuestion": "서로 다른 모습이 도움이 될 때"
+      },
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "empiricalVerification": "not_established"
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:06cd6c4bd7d4da824bf30fb992effb58924aac57ce54cf73561c4e9b60c51f54",
+      "catalogKey": "kc:v1:06cd6c4bd7d4da824bf30fb992effb58924aac57ce54cf73561c4e9b60c51f54",
+      "originalRecordHash": "48db0a4e4ef38f1381ee9677ad72e8c2592afc5e2f8c0507321bf8a17127fd4c",
+      "sourceFields": [
+        "/independentInformation",
+        "/readerQuestion"
+      ],
+      "proposedMeaning": "해당 정보가 있을 때 차이를 확인하는 문단 역할만 검토",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "서로 다른 선호의 조건부 보완"
+      ],
+      "differingUnits": [
+        "새 경험/안정, 듣기/해결, 직접/완곡, 활동/회복은 별개 질문이다. 실제 상대 존재·유형이나 잘 맞는 상대상을 생성하지 않는다."
+      ],
+      "requiredConditions": [
+        "본인 source·상태·owner·조건과 실제 상대 정보·동의"
+      ],
+      "prohibitedUses": [
+        "솔로에게 실제 상대의 성향과 관계 성공을 확정한다"
+      ],
+      "counterexamples": [
+        "본인 source·상태·owner·조건과 실제 상대 정보·동의"
+      ],
+      "productQuestion": "서로 다른 모습이 도움이 될 때",
+      "conditionalUse": "해당 정보가 있을 때 차이를 확인하는 문단 역할만 검토",
+      "unusableInterpretation": "솔로에게 실제 상대의 성향과 관계 성공을 확정한다",
+      "reasoning": "새 경험/안정, 듣기/해결, 직접/완곡, 활동/회복은 별개 질문이다. 실제 상대 존재·유형이나 잘 맞는 상대상을 생성하지 않는다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:0f0bba0288211213c26f3281f4caf5c880156b04ba1698f42ada84349e8e804d",
+    "catalogKey": "kc:v1:0a0a70f177e22f8454ba4e3506f31ab1378a5e32f6bae2293b1d32b9072aa866",
+    "sourceProof": {
+      "catalogKey": "kc:v1:0a0a70f177e22f8454ba4e3506f31ab1378a5e32f6bae2293b1d32b9072aa866",
+      "originalId": "mfpr:domain:long_term_choice",
+      "locator": {
+        "file": "src/lib/report-knowledge/major-fortune-product-research/domainResearch.ts",
+        "exportName": "MAJOR_DOMAIN_RESEARCH",
+        "index": 7,
+        "originalId": "mfpr:domain:long_term_choice",
+        "recordSha256": "7bd8d8e53ab8299249a099a23d59a75d76689efff1143dc144abd55b533cf224",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "7bd8d8e53ab8299249a099a23d59a75d76689efff1143dc144abd55b533cf224",
+      "actualRecordHash": "7bd8d8e53ab8299249a099a23d59a75d76689efff1143dc144abd55b533cf224",
+      "fileHash": "86c067ed26dc60bc08ec29fa4474c36bca39cb30bec530fa5de72c0bebcee1f9",
+      "meaningFields": {
+        "meaning": "현재 자원을 다음 조건에서도 쓸 수 있는지",
+        "positive": "되돌릴 수 있는 시도와 남길 기준",
+        "risk": "교운 시각을 결정 실행일로 강제",
+        "/meaning": "현재 자원을 다음 조건에서도 쓸 수 있는지",
+        "/requires": [
+          "해당 시점의 actual period fact",
+          "실제 생활 상태 또는 조건형 장면",
+          "사용한 개인 근거와 시간 근거의 분리"
+        ],
+        "/scope": "conditional_life_application"
+      },
+      "originalState": {
+        "verification": "conditional_editorial",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:0a0a70f177e22f8454ba4e3506f31ab1378a5e32f6bae2293b1d32b9072aa866",
+      "catalogKey": "kc:v1:0a0a70f177e22f8454ba4e3506f31ab1378a5e32f6bae2293b1d32b9072aa866",
+      "originalRecordHash": "7bd8d8e53ab8299249a099a23d59a75d76689efff1143dc144abd55b533cf224",
+      "sourceFields": [
+        "/meaning",
+        "/requires",
+        "/scope"
+      ],
+      "proposedMeaning": "이전/새 배경의 요구와 되돌릴 수 있는 시도를 비교",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "장기 배경 변화와 선택 비교"
+      ],
+      "differingUnits": [
+        "교운 시각은 실제 결정 실행일이 아니다. 원국 개인 성향, 장기 기간 사실, 생활 선택은 출처가 다르다."
+      ],
+      "requiredConditions": [
+        "시점별 actual period fact·전환 전후 구간·실제 목표/자원 또는 조건형 장면"
+      ],
+      "prohibitedUses": [
+        "대운 전환일에 직업을 바꾸면 10년 뒤 성공한다"
+      ],
+      "counterexamples": [
+        "시점별 actual period fact·전환 전후 구간·실제 목표/자원 또는 조건형 장면"
+      ],
+      "productQuestion": "장기 배경 변화와 선택 비교",
+      "conditionalUse": "이전/새 배경의 요구와 되돌릴 수 있는 시도를 비교",
+      "unusableInterpretation": "대운 전환일에 직업을 바꾸면 10년 뒤 성공한다",
+      "reasoning": "교운 시각은 실제 결정 실행일이 아니다. 원국 개인 성향, 장기 기간 사실, 생활 선택은 출처가 다르다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:1fbf369501fed88bff11d53dae3319bb305b010b9606ee6d8df9c357e97e5d6c",
+    "catalogKey": "kc:v1:0058b650fc310378e9f9808e60937065b91ba05167ccb47f8657c76f51164ba1",
+    "sourceProof": {
+      "catalogKey": "kc:v1:0058b650fc310378e9f9808e60937065b91ba05167ccb47f8657c76f51164ba1",
+      "originalId": "mkr:ESTP:strengths:02",
+      "locator": {
+        "file": "src/lib/report-knowledge/mbti-foundation-research/mbtiResearchESTP.ts",
+        "exportName": "MBTI_RESEARCH_ESTP",
+        "index": 27,
+        "originalId": "mkr:ESTP:strengths:02",
+        "recordSha256": "0becc01f691f0486a86d394aef970b1746350acfada360acbcbad3609cf5e2c1",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "0becc01f691f0486a86d394aef970b1746350acfada360acbcbad3609cf5e2c1",
+      "actualRecordHash": "0becc01f691f0486a86d394aef970b1746350acfada360acbcbad3609cf5e2c1",
+      "fileHash": "587914006833286c342f1412ad304c5dda3002109cd30e2c5a9f0dd672f5be4d",
+      "meaningFields": {
+        "coreMeaning": "관찰한 정보의 공유",
+        "/coreMeaning": "관찰한 정보의 공유"
+      },
+      "originalState": {
+        "verification": "editorial_reviewed_not_empirically_verified",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:0058b650fc310378e9f9808e60937065b91ba05167ccb47f8657c76f51164ba1",
+      "catalogKey": "kc:v1:0058b650fc310378e9f9808e60937065b91ba05167ccb47f8657c76f51164ba1",
+      "originalRecordHash": "0becc01f691f0486a86d394aef970b1746350acfada360acbcbad3609cf5e2c1",
+      "sourceFields": [
+        "/coreMeaning"
+      ],
+      "proposedMeaning": "관찰이 있을 때 사실과 추측을 구분해 전달하는 질문",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "본 것과 추측의 구분"
+      ],
+      "differingUnits": [
+        "instant adaptation과 sharp observation에서 정보 공유 질문을 편집한 후보다. 팀이 실제 검토했거나 능력이 검증됐다는 뜻이 아니다."
+      ],
+      "requiredConditions": [
+        "본인의 입력 유형·정확한 두 trait·실제 관찰 상황·당사자 적합 확인"
+      ],
+      "prohibitedUses": [
+        "ESTP는 어디서나 적응하고 관찰력이 뛰어나다"
+      ],
+      "counterexamples": [
+        "어디서나 적응한다거나 관찰력이 뛰어나다고 보장하지 않음"
+      ],
+      "productQuestion": "본 것과 추측의 구분",
+      "conditionalUse": "관찰이 있을 때 사실과 추측을 구분해 전달하는 질문",
+      "unusableInterpretation": "ESTP는 어디서나 적응하고 관찰력이 뛰어나다",
+      "reasoning": "instant adaptation과 sharp observation에서 정보 공유 질문을 편집한 후보다. 팀이 실제 검토했거나 능력이 검증됐다는 뜻이 아니다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:12d3904276df7f2f4cb802a1e3000ee051b7cc937d4418cf15f255435d6d6579",
+    "catalogKey": "kc:v1:000040bec615b97086f942d3afbc705fa39359618f782f402a1ead3e8b8e2974",
+    "sourceProof": {
+      "catalogKey": "kc:v1:000040bec615b97086f942d3afbc705fa39359618f782f402a1ead3e8b8e2974",
+      "originalId": "mpr:INFP:ENTJ",
+      "locator": {
+        "file": "src/lib/report-knowledge/mbti-pair-research/mbtiPairINFP.ts",
+        "exportName": "MBTI_PAIR_RESEARCH_INFP",
+        "index": 2,
+        "originalId": "mpr:INFP:ENTJ",
+        "recordSha256": "699839ce73fd05100ee9399ba7f28c8e9fec83fc0971ed226fd807f518fe302e",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "699839ce73fd05100ee9399ba7f28c8e9fec83fc0971ed226fd807f518fe302e",
+      "actualRecordHash": "699839ce73fd05100ee9399ba7f28c8e9fec83fc0971ed226fd807f518fe302e",
+      "fileHash": "b11f344c90c085d9ef44094ce3a145e56d21e2640e1f8103274cb2e677df8d75",
+      "meaningFields": {
+        "sharedGround": "스스로 의미를 느끼는 목표에 몰입할 접점이 있다. 목표의 규모보다 수단에 동의하는지 확인한다.",
+        "difference": "빠른 실행 판단과 내적 가치 수용이 다른 중단 조건을 만들 수 있음",
+        "/sharedGround": "스스로 의미를 느끼는 목표에 몰입할 접점이 있다. 목표의 규모보다 수단에 동의하는지 확인한다.",
+        "/difference": "빠른 실행 판단과 내적 가치 수용이 다른 중단 조건을 만들 수 있음"
+      },
+      "originalState": {
+        "verification": "editorially_reviewed_conditional_not_empirical",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:000040bec615b97086f942d3afbc705fa39359618f782f402a1ead3e8b8e2974",
+      "catalogKey": "kc:v1:000040bec615b97086f942d3afbc705fa39359618f782f402a1ead3e8b8e2974",
+      "originalRecordHash": "699839ce73fd05100ee9399ba7f28c8e9fec83fc0971ed226fd807f518fe302e",
+      "sourceFields": [
+        "/sharedGround",
+        "/difference"
+      ],
+      "proposedMeaning": "거절권을 남기며 서로 원하는 도움의 범위를 물을 때 참고",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "내적 기준과 실행 제안의 방향별 비교"
+      ],
+      "differingUnits": [
+        "INFP/ENTJ source 및 reverse source의 local coverage를 각각 보존한다. Socionics 명칭의 계보·실증 상태는 미확정이며 개인 성격으로 복사하지 않는다."
+      ],
+      "requiredConditions": [
+        "양쪽 실제 유형·방향별 exact trait/Pair·실제 역할과 상호 동의"
+      ],
+      "prohibitedUses": [
+        "Semi-Duality라서 반드시 좋은 연애·동업 관계다"
+      ],
+      "counterexamples": [
+        "목표 달성·관계 성장 효과를 보장하지 않음"
+      ],
+      "productQuestion": "내적 기준과 실행 제안의 방향별 비교",
+      "conditionalUse": "거절권을 남기며 서로 원하는 도움의 범위를 물을 때 참고",
+      "unusableInterpretation": "Semi-Duality라서 반드시 좋은 연애·동업 관계다",
+      "reasoning": "INFP/ENTJ source 및 reverse source의 local coverage를 각각 보존한다. Socionics 명칭의 계보·실증 상태는 미확정이며 개인 성격으로 복사하지 않는다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:1552c1e8aaaf16aae532237aa50deb317162f555fb57f69e199993de88005520",
+    "catalogKey": "kc:v1:01d7054249778b31287b032458577c9c7aaf39001ba441aca5258addc90ee9a1",
+    "sourceProof": {
+      "catalogKey": "kc:v1:01d7054249778b31287b032458577c9c7aaf39001ba441aca5258addc90ee9a1",
+      "originalId": "rr:application:banhap:marriage",
+      "locator": {
+        "file": "src/lib/report-knowledge/relation-research/relationApplicationsBanhap.ts",
+        "exportName": "RELATION_APPLICATIONS_BANHAP",
+        "index": 5,
+        "originalId": "rr:application:banhap:marriage",
+        "recordSha256": "2e4a46413f0ad501b00acac45e200fbe64c25e19ea6b7e504bcd2fabf4d5f882",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "2e4a46413f0ad501b00acac45e200fbe64c25e19ea6b7e504bcd2fabf4d5f882",
+      "actualRecordHash": "2e4a46413f0ad501b00acac45e200fbe64c25e19ea6b7e504bcd2fabf4d5f882",
+      "fileHash": "be1a0749950443d766c8d34b2bf22690fae214f4fa54f1f02f73e982219fece4",
+      "meaningFields": {
+        "core": "시작과 중심, 중심과 저장, 시작과 저장은 빠진 역할이 다르다. 단순 약한 삼합이라는 말보다 부족한 구성의 종류가 새 정보다. 이 분야의 검토 초점: 결혼은 실행 준비, 연애는 서로 확인한 의사를 본다.",
+        "positive": "합의와 실행 준비를 구분해 부담의 공백을 확인할 수 있다.",
+        "risk": "계획을 세웠다는 이유로 운영 준비가 끝났다고 보는 경우.",
+        "readerQuestion": "공동 생활의 일부 합의 뒤에 필요한 실행 자원이 있는가?",
+        "/core": "시작과 중심, 중심과 저장, 시작과 저장은 빠진 역할이 다르다. 단순 약한 삼합이라는 말보다 부족한 구성의 종류가 새 정보다. 이 분야의 검토 초점: 결혼은 실행 준비, 연애는 서로 확인한 의사를 본다.",
+        "/readerQuestion": "공동 생활의 일부 합의 뒤에 필요한 실행 자원이 있는가?"
+      },
+      "originalState": {
+        "class": "D_MODERN_APPLICATION",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:01d7054249778b31287b032458577c9c7aaf39001ba441aca5258addc90ee9a1",
+      "catalogKey": "kc:v1:01d7054249778b31287b032458577c9c7aaf39001ba441aca5258addc90ee9a1",
+      "originalRecordHash": "2e4a46413f0ad501b00acac45e200fbe64c25e19ea6b7e504bcd2fabf4d5f882",
+      "sourceFields": [
+        "/core",
+        "/readerQuestion"
+      ],
+      "proposedMeaning": "실제 이사 합의가 있을 때 확보된 자원과 미정 업무를 구분",
+      "semanticRelation": "RELATED_BUT_NOT_EQUIVALENT",
+      "commonUnits": [
+        "부분 조합의 구조와 실제 실행 준비"
+      ],
+      "differingUnits": [
+        "빠진 구성 역할과 실제 가계/돌봄 자원의 공백은 동일한 사실이 아니다. 현대 응용에는 독립적인 현실 자료가 필요하다."
+      ],
+      "requiredConditions": [
+        "지원되는 scope의 actual relation·공동생활 합의·실제 비용/돌봄/거주"
+      ],
+      "prohibitedUses": [
+        "반합 때문에 혼인이 늦고 가정이 불완전하다"
+      ],
+      "counterexamples": [
+        "반합으로 혼인 지연이나 불완전한 가정을 판정하지 않는다."
+      ],
+      "productQuestion": "공동 생활의 일부 합의 뒤에 필요한 실행 자원이 있는가?",
+      "conditionalUse": "실제 이사 합의가 있을 때 확보된 자원과 미정 업무를 구분",
+      "unusableInterpretation": "반합 때문에 혼인이 늦고 가정이 불완전하다",
+      "reasoning": "빠진 구성 역할과 실제 가계/돌봄 자원의 공백은 동일한 사실이 아니다. 현대 응용에는 독립적인 현실 자료가 필요하다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:37525194a9617409523de0f322e3595498382ecee5274fa524602fd6ced87b68",
+    "catalogKey": "kc:v1:017daacba6ba7227be40f1aca1f7339006a1a1a0abc36bb74b5e7c20e9eec428",
+    "sourceProof": {
+      "catalogKey": "kc:v1:017daacba6ba7227be40f1aca1f7339006a1a1a0abc36bb74b5e7c20e9eec428",
+      "originalId": "sar:axis:CREATION",
+      "locator": {
+        "file": "src/lib/report-knowledge/semantic-axis-research/axisProfiles.ts",
+        "exportName": "AXIS_RESEARCH",
+        "index": 19,
+        "originalId": "sar:axis:CREATION",
+        "recordSha256": "adcc60b04852167aa1c611df156e715a05ed6b46f154d02c9f4109adb9dca8f9",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "adcc60b04852167aa1c611df156e715a05ed6b46f154d02c9f4109adb9dca8f9",
+      "actualRecordHash": "adcc60b04852167aa1c611df156e715a05ed6b46f154d02c9f4109adb9dca8f9",
+      "fileHash": "6e48813e2323f63efe6c6bb678bcca7bde18059338c3b26a5267510860cd1003",
+      "meaningFields": {
+        "definition": "생각을 외부에서 확인 가능한 새 결과물로 만드는 성향 후보",
+        "existingDefinition": "생각을 실제 결과물로 만들고 싶어 하는 성향",
+        "positive": "머릿속 가능성을 시험 가능한 형태로 전환",
+        "risk": "만드는 재미가 목적·사용자의 필요를 덮음",
+        "/definition": "생각을 외부에서 확인 가능한 새 결과물로 만드는 성향 후보"
+      },
+      "originalState": {
+        "review": "conditional_semantic_candidate",
+        "sourceStatus": "repository_checked_not_empirical",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:017daacba6ba7227be40f1aca1f7339006a1a1a0abc36bb74b5e7c20e9eec428",
+      "catalogKey": "kc:v1:017daacba6ba7227be40f1aca1f7339006a1a1a0abc36bb74b5e7c20e9eec428",
+      "originalRecordHash": "adcc60b04852167aa1c611df156e715a05ed6b46f154d02c9f4109adb9dca8f9",
+      "sourceFields": [
+        "/definition"
+      ],
+      "proposedMeaning": "가능성을 시험 가능한 결과물로 만드는 조건을 확인",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "생각의 산출과 전달의 차이"
+      ],
+      "differingUnits": [
+        "CREATION은 결과물 생성, EXPRESSION은 전달이다. 창작 신호가 작다고 예술성이 없거나 높다고 예술 직업 적합이 아니다."
+      ],
+      "requiredConditions": [
+        "실제 source·제작 재량·도구·검토 대상·해당 과제"
+      ],
+      "prohibitedUses": [
+        "CREATION이 높으므로 예술가가 적성이다"
+      ],
+      "counterexamples": [
+        "예술 직업·재능·저작 성과를 자동 판정하지 않음"
+      ],
+      "productQuestion": "생각의 산출과 전달의 차이",
+      "conditionalUse": "가능성을 시험 가능한 결과물로 만드는 조건을 확인",
+      "unusableInterpretation": "CREATION이 높으므로 예술가가 적성이다",
+      "reasoning": "CREATION은 결과물 생성, EXPRESSION은 전달이다. 창작 신호가 작다고 예술성이 없거나 높다고 예술 직업 적합이 아니다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:98121a543f82778c9edfe515725714a211d74c3a59e099d0f231fd07d4c47784",
+    "catalogKey": "kc:v1:003a5082d9c62526200e7689aa2041ea8d05fb6fa59fb0d120b0824fc0da0c97",
+    "sourceProof": {
+      "catalogKey": "kc:v1:003a5082d9c62526200e7689aa2041ea8d05fb6fa59fb0d120b0824fc0da0c97",
+      "originalId": "tr:domain:natal_saeun:personality",
+      "locator": {
+        "file": "src/lib/report-knowledge/temporal-interaction-research/temporalDomains.ts",
+        "exportName": "TEMPORAL_DOMAINS",
+        "index": 8,
+        "originalId": "tr:domain:natal_saeun:personality",
+        "recordSha256": "4970b88f2933a409f2742a2ec74dcccb981c7199a6d5759f9e53ab817216644e",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "4970b88f2933a409f2742a2ec74dcccb981c7199a6d5759f9e53ab817216644e",
+      "actualRecordHash": "4970b88f2933a409f2742a2ec74dcccb981c7199a6d5759f9e53ab817216644e",
+      "fileHash": "9a213186b04ad555b45d229774af1366cb96c20aa274e4c425cdb37edf0df803",
+      "meaningFields": {
+        "positive": "자동 반응을 관찰하고 올해 선택 범위를 좁힌다.",
+        "risk": "세운 요소를 타고난 인격으로 설명하지 않는다.",
+        "question": "올해 자극받는 원국의 반응과 실제 환경 요구를 구별할 수 있는가?",
+        "/question": "올해 자극받는 원국의 반응과 실제 환경 요구를 구별할 수 있는가?",
+        "/scope": "natal_saeun"
+      },
+      "originalState": {
+        "class": "D",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:003a5082d9c62526200e7689aa2041ea8d05fb6fa59fb0d120b0824fc0da0c97",
+      "catalogKey": "kc:v1:003a5082d9c62526200e7689aa2041ea8d05fb6fa59fb0d120b0824fc0da0c97",
+      "originalRecordHash": "4970b88f2933a409f2742a2ec74dcccb981c7199a6d5759f9e53ab817216644e",
+      "sourceFields": [
+        "/question",
+        "/scope"
+      ],
+      "proposedMeaning": "올해 실제로 반응한 상황을 확인하는 질문만 검토",
+      "semanticRelation": "RELATED_BUT_NOT_EQUIVALENT",
+      "commonUnits": [
+        "원국 반응과 해당 연도 자극"
+      ],
+      "differingUnits": [
+        "natal과saeun이 서로 다른 layer다. 올해 환경에서 관찰할 질문을 영구 성격이나 과거 사건으로 바꾸지 않는다."
+      ],
+      "requiredConditions": [
+        "참가자 owner·기준 일간·실제 적용 구간·생활 맥락·의사"
+      ],
+      "prohibitedUses": [
+        "올해 세운이 원래 인격을 결정하고 과거 사건이 이미 있었다"
+      ],
+      "counterexamples": [
+        "참가자 owner·기준 일간·실제 적용 구간·생활 맥락·의사"
+      ],
+      "productQuestion": "올해 자극받는 원국의 반응과 실제 환경 요구를 구별할 수 있는가?",
+      "conditionalUse": "올해 실제로 반응한 상황을 확인하는 질문만 검토",
+      "unusableInterpretation": "올해 세운이 원래 인격을 결정하고 과거 사건이 이미 있었다",
+      "reasoning": "natal과saeun이 서로 다른 layer다. 올해 환경에서 관찰할 질문을 영구 성격이나 과거 사건으로 바꾸지 않는다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:3594df6afe316f588d5d25db730a6626d892a8d419e0f5b7aa73e9e2954a2909",
+    "catalogKey": "kc:v1:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
+    "sourceProof": {
+      "catalogKey": "kc:v1:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
+      "originalId": "frpr:trait:ESTJ:child:mature_hardworking_child",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-friendship-research/individualMbtiCrosswalk.ts",
+        "exportName": "FRIENDSHIP_MBTI_TRAIT_CROSSWALK",
+        "index": 506,
+        "originalId": "frpr:trait:ESTJ:child:mature_hardworking_child",
+        "recordSha256": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
+      "actualRecordHash": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
+      "fileHash": "f1e24e1ecb5f645925af8811561b1bbefce1fc373cb21a1fa1c21bcf12854181",
+      "meaningFields": {
+        "/originalState/raw/plainKo": "ESTJ 아이는 주변에서 일을 열심히 하고 성숙하다는 말을 듣기 쉽다. 책임감이 강하고 맡은 역할을 제대로 해내려는 태도가 일찍 드러난다.",
+        "/originalState/node/sourceDomain": "CHILDREN"
+      },
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
+      "catalogKey": "kc:v1:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
+      "originalRecordHash": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
+      "sourceFields": [
+        "/originalState/raw/plainKo",
+        "/originalState/node/sourceDomain"
+      ],
+      "proposedMeaning": "원천 보존 및 금지 ancestry 탐지에만 사용",
+      "semanticRelation": "NO_MAPPING",
+      "commonUnits": [
+        "아동의 책임 표현 원천"
+      ],
+      "differingUnits": [
+        "원문은 ESTJ 아이의 역할 수행 설명이며 CHILDREN sourceDomain/currentProjectionAllowed=false다. 친구 성격이나 과거로 전용할 수 없다."
+      ],
+      "requiredConditions": [
+        "원래 child domain 보존·현재 friendship 사용 차단"
+      ],
+      "prohibitedUses": [
+        "성인 친구가 어릴 때부터 성실했고 내 몫도 도와준다"
+      ],
+      "counterexamples": [
+        "원래 child domain 보존·현재 friendship 사용 차단"
+      ],
+      "productQuestion": "아동의 책임 표현 원천",
+      "conditionalUse": "원천 보존 및 금지 ancestry 탐지에만 사용",
+      "unusableInterpretation": "성인 친구가 어릴 때부터 성실했고 내 몫도 도와준다",
+      "reasoning": "원문은 ESTJ 아이의 역할 수행 설명이며 CHILDREN sourceDomain/currentProjectionAllowed=false다. 친구 성격이나 과거로 전용할 수 없다.",
+      "supportingOriginalIds": [
+        "mature_hardworking_child"
+      ],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [
+      {
+        "catalogKey": "kc:v1:b1b3e4219c082df51d4686b4d4f4243616de952ba5a037598383e3ea4b1d0652",
+        "originalId": "mature_hardworking_child",
+        "locator": {
+          "file": "docs/product/mbti/source/ESTJ.json",
+          "pointer": "/traits/child/2",
+          "originalId": "mature_hardworking_child",
+          "recordSha256": "e75af4d9e5edf51f95d8f1a98a5308dfcd4f6ef2598a84904e8a8238ea0d7d97",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+        },
+        "originalRecordHash": "e75af4d9e5edf51f95d8f1a98a5308dfcd4f6ef2598a84904e8a8238ea0d7d97",
+        "actualRecordHash": "e75af4d9e5edf51f95d8f1a98a5308dfcd4f6ef2598a84904e8a8238ea0d7d97",
+        "fileHash": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+        "meaningFields": {
+          "plainKo": "ESTJ 아이는 주변에서 일을 열심히 하고 성숙하다는 말을 듣기 쉽다. 책임감이 강하고 맡은 역할을 제대로 해내려는 태도가 일찍 드러난다.",
+          "risk": "실패나 변화에 대한 부담이 커지고, 쉬는 시간을 죄책감으로 느낄 수 있다."
+        },
+        "originalState": {
+          "sourceCoverage": "direct"
+        },
+        "actualPersonalFact": false
+      }
+    ],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:290d138dc5803a7c864af3bcefaabbacf04d6b57c72809a60fe7a1ac062e7abe",
+    "catalogKey": "kc:v1:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
+    "sourceProof": {
+      "catalogKey": "kc:v1:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
+      "originalId": "frpr:trait:ENFP:child:anti_conservative_child",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-friendship-research/individualMbtiCrosswalk.ts",
+        "exportName": "FRIENDSHIP_MBTI_TRAIT_CROSSWALK",
+        "index": 122,
+        "originalId": "frpr:trait:ENFP:child:anti_conservative_child",
+        "recordSha256": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
+      "actualRecordHash": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
+      "fileHash": "f1e24e1ecb5f645925af8811561b1bbefce1fc373cb21a1fa1c21bcf12854181",
+      "meaningFields": {
+        "/originalState/raw/plainKo": "엄격하고 보수적인 기성세대 문화와는 마찰이 크다. 부모가 둔감하거나 통제적인 성향이면 아이의 자유와 감정이 부딪히기 쉽다.",
+        "/originalState/node/sourceDomain": "CHILDREN"
+      },
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
+      "catalogKey": "kc:v1:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
+      "originalRecordHash": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
+      "sourceFields": [
+        "/originalState/raw/plainKo",
+        "/originalState/node/sourceDomain"
+      ],
+      "proposedMeaning": "친구 적용을 차단하고 원문은 독립 보존",
+      "semanticRelation": "NO_MAPPING",
+      "commonUnits": [
+        "아동과 부모 통제의 관계 원천"
+      ],
+      "differingUnits": [
+        "부모와 아이 상황을 친구의 권위 반발·신뢰 문제로 옮기면 역할과 의미가 바뀐다. SCORING 분류도 projection 미허용을 뒤집지 못한다."
+      ],
+      "requiredConditions": [
+        "CHILDREN/owner/조건·projection 미허용 보존"
+      ],
+      "prohibitedUses": [
+        "ENFP 친구는 권위와 충돌하고 과거 부모와 갈등했다"
+      ],
+      "counterexamples": [
+        "CHILDREN/owner/조건·projection 미허용 보존"
+      ],
+      "productQuestion": "아동과 부모 통제의 관계 원천",
+      "conditionalUse": "친구 적용을 차단하고 원문은 독립 보존",
+      "unusableInterpretation": "ENFP 친구는 권위와 충돌하고 과거 부모와 갈등했다",
+      "reasoning": "부모와 아이 상황을 친구의 권위 반발·신뢰 문제로 옮기면 역할과 의미가 바뀐다. SCORING 분류도 projection 미허용을 뒤집지 못한다.",
+      "supportingOriginalIds": [
+        "anti_conservative_child"
+      ],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [
+      {
+        "catalogKey": "kc:v1:dece44a4f1821fd7e3245944e769d9a841e2d7f18b7fd46db170d744be52fd31",
+        "originalId": "anti_conservative_child",
+        "locator": {
+          "file": "docs/product/mbti/source/ENFP.json",
+          "pointer": "/traits/child/3",
+          "originalId": "anti_conservative_child",
+          "recordSha256": "fd4b8ba15a56a88324e351904b8542510c6634e269d5c69a823f31f6282d5391",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+        },
+        "originalRecordHash": "fd4b8ba15a56a88324e351904b8542510c6634e269d5c69a823f31f6282d5391",
+        "actualRecordHash": "fd4b8ba15a56a88324e351904b8542510c6634e269d5c69a823f31f6282d5391",
+        "fileHash": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+        "meaningFields": {
+          "plainKo": "엄격하고 보수적인 기성세대 문화와는 마찰이 크다. 부모가 둔감하거나 통제적인 성향이면 아이의 자유와 감정이 부딪히기 쉽다.",
+          "risk": "권위로 누르면 관계가 멀어지고, 아이는 자기 세계를 숨길 수 있다."
+        },
+        "originalState": {
+          "sourceCoverage": "direct"
+        },
+        "actualPersonalFact": false
+      }
+    ],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:60b647c9f3186d44c7b1f45d38d382ff890ee51d49e7e886815d294714da5648",
+    "catalogKey": "kc:v1:2e0012df384e009cab130eaf3b69aefb68109a9d6c8441a6212e4ac29c48ba4f",
+    "sourceProof": {
+      "catalogKey": "kc:v1:2e0012df384e009cab130eaf3b69aefb68109a9d6c8441a6212e4ac29c48ba4f",
+      "originalId": "sar:tag:wealth",
+      "locator": {
+        "file": "src/lib/report-knowledge/semantic-axis-research/legacyTags.ts",
+        "exportName": "LEGACY_TAG_RESEARCH",
+        "index": 4,
+        "originalId": "sar:tag:wealth",
+        "recordSha256": "bed64d6cd6776f0864318f1af60ea87071adfb03bc1e54103ff013352534969c",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "bed64d6cd6776f0864318f1af60ea87071adfb03bc1e54103ff013352534969c",
+      "actualRecordHash": "bed64d6cd6776f0864318f1af60ea87071adfb03bc1e54103ff013352534969c",
+      "fileHash": "39f482949829a68c3d5dfc6393aefb12b8e01e265fb00059629938c975899ce8",
+      "meaningFields": {
+        "difference": "재물 흐름·축재 상징은 개인의 관리 습관이나 실제 부가 아님",
+        "/commonMeaning": "자원 관리와 현실 성과에 관련",
+        "/difference": "재물 흐름·축재 상징은 개인의 관리 습관이나 실제 부가 아님"
+      },
+      "originalState": {
+        "review": "conditional_semantic_candidate",
+        "sourceStatus": "repository_checked_not_empirical",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:2e0012df384e009cab130eaf3b69aefb68109a9d6c8441a6212e4ac29c48ba4f",
+      "catalogKey": "kc:v1:2e0012df384e009cab130eaf3b69aefb68109a9d6c8441a6212e4ac29c48ba4f",
+      "originalRecordHash": "bed64d6cd6776f0864318f1af60ea87071adfb03bc1e54103ff013352534969c",
+      "sourceFields": [
+        "/commonMeaning",
+        "/difference"
+      ],
+      "proposedMeaning": "기존 태그 의미를 참조로 유지하며 대응은 독립 검토",
+      "semanticRelation": "RELATED_BUT_NOT_EQUIVALENT",
+      "commonUnits": [
+        "자원 관련성"
+      ],
+      "differingUnits": [
+        "wealth는 RESOURCE_SENSE/OPPORTUNITY_SENSE/PRACTICALITY와 관련되지만 명시적으로 NOT_EQUIVALENT다. 재물 상징은 관리 습관이나 실제 부가 아니다."
+      ],
+      "requiredConditions": [
+        "실제 원천 의미·해당 분야 자료·수입 결과와 배분 행동의 구분"
+      ],
+      "prohibitedUses": [
+        "wealth=RESOURCE_SENSE 또는 실제 재산 증가"
+      ],
+      "counterexamples": [
+        "실제 원천 의미·해당 분야 자료·수입 결과와 배분 행동의 구분"
+      ],
+      "productQuestion": "자원 관련성",
+      "conditionalUse": "기존 태그 의미를 참조로 유지하며 대응은 독립 검토",
+      "unusableInterpretation": "wealth=RESOURCE_SENSE 또는 실제 재산 증가",
+      "reasoning": "wealth는 RESOURCE_SENSE/OPPORTUNITY_SENSE/PRACTICALITY와 관련되지만 명시적으로 NOT_EQUIVALENT다. 재물 상징은 관리 습관이나 실제 부가 아니다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:e73148331e9ecc04b6a18aaffc6dd547bad85136b180a66471048a305715e8c1",
+    "catalogKey": "kc:v1:5f27bea5585d2f2ed25e974ee82d817f9bf57bc877a24b9ff193029f8fb06f7d",
+    "sourceProof": {
+      "catalogKey": "kc:v1:5f27bea5585d2f2ed25e974ee82d817f9bf57bc877a24b9ff193029f8fb06f7d",
+      "originalId": "sar:axis:ACTION_TEMPO",
+      "locator": {
+        "file": "src/lib/report-knowledge/semantic-axis-research/axisProfiles.ts",
+        "exportName": "AXIS_RESEARCH",
+        "index": 0,
+        "originalId": "sar:axis:ACTION_TEMPO",
+        "recordSha256": "59b665e8bafc5125783e09bc785219e5b63e5cc72059f1faf97c74b80cf2ae8e",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "59b665e8bafc5125783e09bc785219e5b63e5cc72059f1faf97c74b80cf2ae8e",
+      "actualRecordHash": "59b665e8bafc5125783e09bc785219e5b63e5cc72059f1faf97c74b80cf2ae8e",
+      "fileHash": "6e48813e2323f63efe6c6bb678bcca7bde18059338c3b26a5267510860cd1003",
+      "meaningFields": {
+        "definition": "판단 뒤 행동을 시작하기까지의 상대적 속도",
+        "existingDefinition": "{\"positive\":\"결론이 나면 빠르게 움직이는 쪽\",\"negative\":\"충분히 보고 생각한 뒤 움직이는 쪽\"}",
+        "positive": "빠른 시험으로 피드백을 얻거나 검토 시간으로 재작업을 줄임",
+        "risk": "상대의 준비를 생략하거나 검토 종료를 알리지 않음",
+        "/definition": "판단 뒤 행동을 시작하기까지의 상대적 속도"
+      },
+      "originalState": {
+        "review": "conditional_semantic_candidate",
+        "sourceStatus": "repository_checked_not_empirical",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:5f27bea5585d2f2ed25e974ee82d817f9bf57bc877a24b9ff193029f8fb06f7d",
+      "catalogKey": "kc:v1:5f27bea5585d2f2ed25e974ee82d817f9bf57bc877a24b9ff193029f8fb06f7d",
+      "originalRecordHash": "59b665e8bafc5125783e09bc785219e5b63e5cc72059f1faf97c74b80cf2ae8e",
+      "sourceFields": [
+        "/definition"
+      ],
+      "proposedMeaning": "검토 종료와 첫 행동 시점을 별도로 확인",
+      "semanticRelation": "CONDITIONAL",
+      "commonUnits": [
+        "판단 뒤 착수 속도"
+      ],
+      "differingUnits": [
+        "빠름/검토는 양극의 다른 방향이며 느림은 실행력 결함이 아니다. INITIATIVE의 먼저 제안하기와도 다르다."
+      ],
+      "requiredConditions": [
+        "평소 장면·안전 검토·가역 시험·실제 기한"
+      ],
+      "prohibitedUses": [
+        "음의 점수는 실행력이 부족하다는 뜻이다"
+      ],
+      "counterexamples": [
+        "위기 때의 빠름을 평소 속도로 일반화하지 않음"
+      ],
+      "productQuestion": "판단 뒤 착수 속도",
+      "conditionalUse": "검토 종료와 첫 행동 시점을 별도로 확인",
+      "unusableInterpretation": "음의 점수는 실행력이 부족하다는 뜻이다",
+      "reasoning": "빠름/검토는 양극의 다른 방향이며 느림은 실행력 결함이 아니다. INITIATIVE의 먼저 제안하기와도 다르다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:9bd59a760e33f8a2030361a52336da01c9466451c80ff2716939e76956fd0b94",
+    "catalogKey": "kc:v1:dbb4b922595f857f4819206ec8927e23bb96f3897cff431760ad3a6a8d2fb8b7",
+    "sourceProof": {
+      "catalogKey": "kc:v1:dbb4b922595f857f4819206ec8927e23bb96f3897cff431760ad3a6a8d2fb8b7",
+      "originalId": "sar:facet:PRECISION:error-detection",
+      "locator": {
+        "file": "src/lib/report-knowledge/semantic-axis-research/semanticFacets.ts",
+        "exportName": "SEMANTIC_FACETS",
+        "index": 48,
+        "originalId": "sar:facet:PRECISION:error-detection",
+        "recordSha256": "57b46a7775c71b9ae72a9e3815a5e75cd00eddfc4150c7554e4f5bca62b69644",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "57b46a7775c71b9ae72a9e3815a5e75cd00eddfc4150c7554e4f5bca62b69644",
+      "actualRecordHash": "57b46a7775c71b9ae72a9e3815a5e75cd00eddfc4150c7554e4f5bca62b69644",
+      "fileHash": "4e92583c647eb44170e88b258cfcc0c84997ca8c1386d8d39a3e26231fe44322",
+      "meaningFields": {
+        "definition": "작은 오류를 기준에 비추어 발견",
+        "positive": "결과를 바꾸는 결함을 먼저 고침",
+        "risk": "취향 차이까지 오류로 명명",
+        "/definition": "작은 오류를 기준에 비추어 발견"
+      },
+      "originalState": {
+        "review": "modern_application_candidate",
+        "sourceStatus": "repository_checked_not_empirical",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:dbb4b922595f857f4819206ec8927e23bb96f3897cff431760ad3a6a8d2fb8b7",
+      "catalogKey": "kc:v1:dbb4b922595f857f4819206ec8927e23bb96f3897cff431760ad3a6a8d2fb8b7",
+      "originalRecordHash": "57b46a7775c71b9ae72a9e3815a5e75cd00eddfc4150c7554e4f5bca62b69644",
+      "sourceFields": [
+        "/definition"
+      ],
+      "proposedMeaning": "결과를 바꾸는 결함의 확인 질문에만 사용",
+      "semanticRelation": "PARTIAL",
+      "commonUnits": [
+        "기준에 비춘 오류 발견"
+      ],
+      "differingUnits": [
+        "오류 발견은 PRECISION의 부분 의미다. 취향 차이를 오류로 만들거나 하나의 facet을 전체 축·능력으로 확대하지 않는다."
+      ],
+      "requiredConditions": [
+        "합의된 검증 기준·해당 오류 비용·실제 관찰"
+      ],
+      "prohibitedUses": [
+        "오류 하나를 알아봤으므로 전반적으로 정확하고 유능하다"
+      ],
+      "counterexamples": [
+        "합의된 검증 기준·해당 오류 비용·실제 관찰"
+      ],
+      "productQuestion": "기준에 비춘 오류 발견",
+      "conditionalUse": "결과를 바꾸는 결함의 확인 질문에만 사용",
+      "unusableInterpretation": "오류 하나를 알아봤으므로 전반적으로 정확하고 유능하다",
+      "reasoning": "오류 발견은 PRECISION의 부분 의미다. 취향 차이를 오류로 만들거나 하나의 facet을 전체 축·능력으로 확대하지 않는다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:69ca61a4f8c549776c82cdd5702e71ffed38a176e4ade9333abd85ef9174af36",
+    "catalogKey": "kc:v1:b670d2d83bbe6e70df70c2a8fcb9faf8a13f73de3628f823a72a02f0e124b60e",
+    "sourceProof": {
+      "catalogKey": "kc:v1:b670d2d83bbe6e70df70c2a8fcb9faf8a13f73de3628f823a72a02f0e124b60e",
+      "originalId": "frpr:binding:all-ancestors",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-friendship-research/bindingDesign.ts",
+        "exportName": "FRIENDSHIP_BINDING_DESIGN",
+        "index": 3,
+        "originalId": "frpr:binding:all-ancestors",
+        "recordSha256": "6df4a35a1fda1a6561c0fe0a596e72822146fa877e5db137ee44db24e2882729",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "6df4a35a1fda1a6561c0fe0a596e72822146fa877e5db137ee44db24e2882729",
+      "actualRecordHash": "6df4a35a1fda1a6561c0fe0a596e72822146fa877e5db137ee44db24e2882729",
+      "fileHash": "47ce0214ab8d197226f72fb99fb1134a36d99981966659c111bddca674b8ac19",
+      "meaningFields": {
+        "/rule": "전체 ancestry 검토",
+        "/requiredChecks": [
+          "허용 node가 하나 있더라도 혼합 side·comparison의 모든 ancestor 확인",
+          "owner·domain·context·sourceCoverage·condition·source-local 검증 상태",
+          "CHILDREN은 친구 개인 성향의 라이선스 아님"
+        ]
+      },
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:b670d2d83bbe6e70df70c2a8fcb9faf8a13f73de3628f823a72a02f0e124b60e",
+      "catalogKey": "kc:v1:b670d2d83bbe6e70df70c2a8fcb9faf8a13f73de3628f823a72a02f0e124b60e",
+      "originalRecordHash": "6df4a35a1fda1a6561c0fe0a596e72822146fa877e5db137ee44db24e2882729",
+      "sourceFields": [
+        "/rule",
+        "/requiredChecks"
+      ],
+      "proposedMeaning": "검증 계약으로 보존하고 개인 trait으로 사용하지 않음",
+      "semanticRelation": "NO_MAPPING",
+      "commonUnits": [
+        "필수 계보의 검증 요구"
+      ],
+      "differingUnits": [
+        "허용 node 하나가 CHILDREN 조상이나 혼합 side를 허용하지 않는다. 이 자료는 검증 요구 정의이며 친구의 성향 관찰이 아니다."
+      ],
+      "requiredConditions": [
+        "전체 owner/domain/context/sourceCoverage/condition·실제 사용 경로"
+      ],
+      "prohibitedUses": [
+        "social context 하나가 있으므로 CHILDREN을 친구 성격에 사용한다"
+      ],
+      "counterexamples": [
+        "전체 owner/domain/context/sourceCoverage/condition·실제 사용 경로"
+      ],
+      "productQuestion": "필수 계보의 검증 요구",
+      "conditionalUse": "검증 계약으로 보존하고 개인 trait으로 사용하지 않음",
+      "unusableInterpretation": "social context 하나가 있으므로 CHILDREN을 친구 성격에 사용한다",
+      "reasoning": "허용 node 하나가 CHILDREN 조상이나 혼합 side를 허용하지 않는다. 이 자료는 검증 요구 정의이며 친구의 성향 관찰이 아니다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:923c8766231723433e6ec50a4514b0e3b5108c33b62b69302ce37691be2f3774",
+    "catalogKey": "kc:v1:2d501cdce864f73ea464143a18b4f1b51c9713e55110a08e610d448c8c3ef354",
+    "sourceProof": {
+      "catalogKey": "kc:v1:2d501cdce864f73ea464143a18b4f1b51c9713e55110a08e610d448c8c3ef354",
+      "originalId": "sar:context:work:work",
+      "locator": {
+        "file": "src/lib/report-knowledge/semantic-axis-research/contextDomains.ts",
+        "exportName": "CONTEXT_DOMAIN_RESEARCH",
+        "index": 13,
+        "originalId": "sar:context:work:work",
+        "recordSha256": "33c1a1fa1fd54d5c41fcb9d33051a228de9ffae239f81ddf791fa53551a5fef1",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "33c1a1fa1fd54d5c41fcb9d33051a228de9ffae239f81ddf791fa53551a5fef1",
+      "actualRecordHash": "33c1a1fa1fd54d5c41fcb9d33051a228de9ffae239f81ddf791fa53551a5fef1",
+      "fileHash": "cb6276be5a1f2a75528ed24a72f9a67e2e48a4152a893edfdbbd4f3bcecd7e0a",
+      "meaningFields": {
+        "/reason": "명칭상 분석 범위가 대응하지만 개인 적용은 별도 검증"
+      },
+      "originalState": {
+        "review": "conditional_semantic_candidate",
+        "sourceStatus": "repository_checked_not_empirical",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:2d501cdce864f73ea464143a18b4f1b51c9713e55110a08e610d448c8c3ef354",
+      "catalogKey": "kc:v1:2d501cdce864f73ea464143a18b4f1b51c9713e55110a08e610d448c8c3ef354",
+      "originalRecordHash": "33c1a1fa1fd54d5c41fcb9d33051a228de9ffae239f81ddf791fa53551a5fef1",
+      "sourceFields": [
+        "/reason"
+      ],
+      "proposedMeaning": "분석 범위 참조만 직접 대응하고 해석 승인은 보류",
+      "semanticRelation": "DIRECT",
+      "commonUnits": [
+        "명시된 분석 범위"
+      ],
+      "differingUnits": [
+        "기존 direct_scope는 work context와 work domain의 분석 범위 대응이다. 개인 적용·직무·성과나 축의 강도를 확인한 것은 아니다."
+      ],
+      "requiredConditions": [
+        "실제 개인 입력·행동·업무 맥락을 별도 검증"
+      ],
+      "prohibitedUses": [
+        "work scope가 같으니 실제 직무 역량이 검증됐다"
+      ],
+      "counterexamples": [
+        "실제 개인 입력·행동·업무 맥락을 별도 검증"
+      ],
+      "productQuestion": "명시된 분석 범위",
+      "conditionalUse": "분석 범위 참조만 직접 대응하고 해석 승인은 보류",
+      "unusableInterpretation": "work scope가 같으니 실제 직무 역량이 검증됐다",
+      "reasoning": "기존 direct_scope는 work context와 work domain의 분석 범위 대응이다. 개인 적용·직무·성과나 축의 강도를 확인한 것은 아니다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:217d4e947321b198d6c22251ae22cda7d8deb01b8570bf4969cf83429b13d657",
+    "catalogKey": "kc:v1:ad2653e05b91dc9660124758ea2a35b41478ad9131695b7524a0d16365a29f2f",
+    "sourceProof": {
+      "catalogKey": "kc:v1:ad2653e05b91dc9660124758ea2a35b41478ad9131695b7524a0d16365a29f2f",
+      "originalId": "fkr:scope:individual",
+      "locator": {
+        "file": "src/lib/report-knowledge/fusion-knowledge-research/fusionScopeResearch.ts",
+        "exportName": "FUSION_SCOPE_RESEARCH",
+        "index": 0,
+        "originalId": "fkr:scope:individual",
+        "recordSha256": "ae2bb3fdaac78743d1f7e43d5211c9c4b6fef7aec562eb597d1ae2c40f10d51c",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "ae2bb3fdaac78743d1f7e43d5211c9c4b6fef7aec562eb597d1ae2c40f10d51c",
+      "actualRecordHash": "ae2bb3fdaac78743d1f7e43d5211c9c4b6fef7aec562eb597d1ae2c40f10d51c",
+      "fileHash": "413cb5804e8612d915cdea6a1e8268d177be1fc4222a0d1072dcaaa73fe25a54",
+      "meaningFields": {
+        "/requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "/scope": "individual"
+      },
+      "originalState": {
+        "review": "conditional_editorial_not_empirical",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:ad2653e05b91dc9660124758ea2a35b41478ad9131695b7524a0d16365a29f2f",
+      "catalogKey": "kc:v1:ad2653e05b91dc9660124758ea2a35b41478ad9131695b7524a0d16365a29f2f",
+      "originalRecordHash": "ae2bb3fdaac78743d1f7e43d5211c9c4b6fef7aec562eb597d1ae2c40f10d51c",
+      "sourceFields": [
+        "/requires",
+        "/scope"
+      ],
+      "proposedMeaning": "후속 Fusion 검증의 필수 gate로만 사용",
+      "semanticRelation": "NO_MAPPING",
+      "commonUnits": [
+        "개인 Fusion의 원천 요구"
+      ],
+      "differingUnits": [
+        "같은 개인의 명리/MBTI primary 원천 둘과 context가 필요하다. 이 scope 선언은 실제 Fusion이나 세 번째 사실이 아니다."
+      ],
+      "requiredConditions": [
+        "owner·두 root·version/hash·방향·동일context·기존rule"
+      ],
+      "prohibitedUses": [
+        "연구 ID만으로 Fusion 계산 사실이 발생한다"
+      ],
+      "counterexamples": [
+        "owner·두 root·version/hash·방향·동일context·기존rule"
+      ],
+      "productQuestion": "개인 Fusion의 원천 요구",
+      "conditionalUse": "후속 Fusion 검증의 필수 gate로만 사용",
+      "unusableInterpretation": "연구 ID만으로 Fusion 계산 사실이 발생한다",
+      "reasoning": "같은 개인의 명리/MBTI primary 원천 둘과 context가 필요하다. 이 scope 선언은 실제 Fusion이나 세 번째 사실이 아니다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:3957cb04b8652063ff301858ea045c55270632f924e927074060facc64109f86",
+    "catalogKey": "kc:v1:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904",
+    "sourceProof": {
+      "catalogKey": "kc:v1:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904",
+      "originalId": "bppr:work-trait:ENFJ:career:activist_leadership",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-business-partner-research/workTraitSourceAudit.ts",
+        "exportName": "BP_WORK_TRAIT_SOURCES",
+        "index": 695,
+        "originalId": "bppr:work-trait:ENFJ:career:activist_leadership",
+        "recordSha256": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
+      "actualRecordHash": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
+      "fileHash": "c7097f491fc156afa3861bb783eacc7e595116cf7a6b0c48df5ba648d6062783",
+      "meaningFields": {
+        "/raw/plainKo": "사회 정의, 인권, 사회 운동 같은 주제에 관심이 생기면 ENFJ는 단순 공감에 머물지 않고 사람을 모으고 행동으로 옮기려 한다.",
+        "/semanticNode/sourceDomain": "CAREER",
+        "/currentProjectionAllowed": false
+      },
+      "originalState": {
+        "sourceCoverage": "direct",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904",
+      "catalogKey": "kc:v1:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904",
+      "originalRecordHash": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
+      "sourceFields": [
+        "/raw/plainKo",
+        "/semanticNode/sourceDomain",
+        "/currentProjectionAllowed"
+      ],
+      "proposedMeaning": "현재 사업 파트너 개인 해석에 사용하지 않고 금지 원천으로 기록",
+      "semanticRelation": "NO_MAPPING",
+      "commonUnits": [
+        "공익 주제에서 사람을 모으는 source"
+      ],
+      "differingUnits": [
+        "CAREER source의 공익 관심과 실제 사업의 리더십·대표권은 다르다. SCORING_SEMANTIC과 direct가 있어도 현 businessPartner projection은 미허용이다."
+      ],
+      "requiredConditions": [
+        "실제 입력 유형·원래 CAREER domain 보존·현재 projection 제한"
+      ],
+      "prohibitedUses": [
+        "ENFJ이므로 동업을 이끌 능력과 법적 대표권이 있다"
+      ],
+      "counterexamples": [
+        "source 수록·관심·정의만으로 실제 개인의 효과나 권한을 증명하지 못한다."
+      ],
+      "productQuestion": "원래 domain의 후보를 이 상품에서 사용할 근거와 정책이 있는가?",
+      "conditionalUse": "현재 사업 파트너 개인 해석에 사용하지 않고 금지 원천으로 기록",
+      "unusableInterpretation": "ENFJ이므로 동업을 이끌 능력과 법적 대표권이 있다",
+      "reasoning": "CAREER source의 공익 관심과 실제 사업의 리더십·대표권은 다르다. SCORING_SEMANTIC과 direct가 있어도 현 businessPartner projection은 미허용이다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:e74f4e1c829a26642f968fd98b747a5baddb932853cd6aefd8f3a88f97fa79fb",
+    "catalogKey": "kc:v1:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23",
+    "sourceProof": {
+      "catalogKey": "kc:v1:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23",
+      "originalId": "bppr:work-trait:ENFJ:money:support_limit_rule",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-business-partner-research/workTraitSourceAudit.ts",
+        "exportName": "BP_WORK_TRAIT_SOURCES",
+        "index": 729,
+        "originalId": "bppr:work-trait:ENFJ:money:support_limit_rule",
+        "recordSha256": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
+      "actualRecordHash": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
+      "fileHash": "c7097f491fc156afa3861bb783eacc7e595116cf7a6b0c48df5ba648d6062783",
+      "meaningFields": {
+        "/raw/plainKo": "ENFJ는 상대의 가능성을 보면 시간, 돈, 인맥, 기회를 함께 밀어주고 싶어 한다. 이 힘은 사람을 살리는 장점이지만, 상대가 스스로 책임져야 할 비용까지 대신 감당하면 관계가 불균형해진다. 지원은 금액보다 기준이 먼저다.",
+        "/semanticNode/sourceDomain": "MONEY",
+        "/currentProjectionAllowed": false
+      },
+      "originalState": {
+        "sourceCoverage": "inferred",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23",
+      "catalogKey": "kc:v1:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23",
+      "originalRecordHash": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
+      "sourceFields": [
+        "/raw/plainKo",
+        "/semanticNode/sourceDomain",
+        "/currentProjectionAllowed"
+      ],
+      "proposedMeaning": "원래 돈의 지원 후보를 보존하되 현재 동업 해석으로 전용하지 않는다",
+      "semanticRelation": "NO_MAPPING",
+      "commonUnits": [
+        "지원의 기준과 한도"
+      ],
+      "differingUnits": [
+        "MONEY source의 지원 범위 질문은 계약·출자·지분·부채·매출에 관한 사실이 아니다. inferred와 legacy 영역 허용도 현재 businessPartner 정책 금지를 바꾸지 못한다."
+      ],
+      "requiredConditions": [
+        "MONEY 원천·inferred·projection 미허용·실제 경제 정보 UNKNOWN 보존"
+      ],
+      "prohibitedUses": [
+        "돈을 도와주므로 지분을 같게 나누고 손실을 대신 감당해야 한다"
+      ],
+      "counterexamples": [
+        "source 수록·관심·정의만으로 실제 개인의 효과나 권한을 증명하지 못한다."
+      ],
+      "productQuestion": "원래 domain의 후보를 이 상품에서 사용할 근거와 정책이 있는가?",
+      "conditionalUse": "원래 돈의 지원 후보를 보존하되 현재 동업 해석으로 전용하지 않는다",
+      "unusableInterpretation": "돈을 도와주므로 지분을 같게 나누고 손실을 대신 감당해야 한다",
+      "reasoning": "MONEY source의 지원 범위 질문은 계약·출자·지분·부채·매출에 관한 사실이 아니다. inferred와 legacy 영역 허용도 현재 businessPartner 정책 금지를 바꾸지 못한다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  },
+  {
+    "receiptKey": "sdv:receipt:120ca1827cd5f0b1bead254eba606203c446fc1015db9c996eb74e9748c0cf57",
+    "catalogKey": "kc:v1:0126f5c31cc1383f14144c6d884f71ef3e003580cb5bda90e5645b2f0ae6139b",
+    "sourceProof": {
+      "catalogKey": "kc:v1:0126f5c31cc1383f14144c6d884f71ef3e003580cb5bda90e5645b2f0ae6139b",
+      "originalId": "deep:application:day_pillar:丙寅:personality",
+      "locator": {
+        "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepApplications.ts",
+        "exportName": "DEEP_APPLICATIONS",
+        "pointer": "/16",
+        "originalId": "deep:application:day_pillar:丙寅:personality",
+        "recordSha256": "ee875edcea71f076c08b7483b83477ff228db8d37be8b790b2460c191e6f02a9",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "ee875edcea71f076c08b7483b83477ff228db8d37be8b790b2460c191e6f02a9",
+      "actualRecordHash": "ee875edcea71f076c08b7483b83477ff228db8d37be8b790b2460c191e6f02a9",
+      "fileHash": "37d7956c2ce8f92dba6c28b3000b2ed919a6dfcb086dcdf951135e9b66aacbac",
+      "meaningFields": {
+        "coreMeaning": "배운 것을 앞에 내놓을 준비는?",
+        "positive": "자료를 자기 관점으로 재구성",
+        "readerQuestion": "배운 것을 앞에 내놓을 준비는?",
+        "/coreMeaning": "배운 것을 앞에 내놓을 준비는?",
+        "/differentiation": "丙寅: 甲(偏印)·丙(比肩)·戊(食神)라는 구조를 대조하되, 이 생활 질문은 丙寅만의 독점적 특성이 아니다. 성격의 실제 쟁점을 별도 확인한다.",
+        "/prerequisites": [
+          "일주 丙寅 확인; 월령·통근·투간·생조·설기·제화·강약을 별도로 확인한다.",
+          "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+          "질문과 일치하는 실제 생활 맥락이 확인된 경우에만 후보로 검토하고, 맞지 않으면 적용하지 않는다."
+        ]
+      },
+      "originalState": {
+        "review": "editorial_reviewed_not_validated"
+      },
+      "actualPersonalFact": false
+    },
+    "directReview": {
+      "reviewId": "sdv:review:0126f5c31cc1383f14144c6d884f71ef3e003580cb5bda90e5645b2f0ae6139b",
+      "catalogKey": "kc:v1:0126f5c31cc1383f14144c6d884f71ef3e003580cb5bda90e5645b2f0ae6139b",
+      "originalRecordHash": "ee875edcea71f076c08b7483b83477ff228db8d37be8b790b2460c191e6f02a9",
+      "sourceFields": [
+        "/coreMeaning",
+        "/differentiation",
+        "/prerequisites"
+      ],
+      "proposedMeaning": "조건부 질문 자체를 검토 기록으로만 남기고 sourceIncomplete 차단을 유지",
+      "semanticRelation": "INSUFFICIENT_VERIFICATION",
+      "commonUnits": [
+        "배운 자료를 자기 관점으로 재구성하는 질문"
+      ],
+      "differingUnits": [
+        "丙寅의 지장간 구성과 자기 관점으로 재구성하는 생활 질문은 다른 의미 단위다. 원천의 누락된 참조와 월령·강약·본인 반례 조건을 해결하기 전 개인 성격으로 대응할 수 없다."
+      ],
+      "requiredConditions": [
+        "원래 일주·전체 배합과 본인 판단·반례·불완전한 source locator 확인"
+      ],
+      "prohibitedUses": [
+        "丙寅이므로 배운 것을 반드시 잘 발표하고 반론을 무시한다"
+      ],
+      "counterexamples": [
+        "source 수록·관심·정의만으로 실제 개인의 효과나 권한을 증명하지 못한다."
+      ],
+      "productQuestion": "배운 것을 앞에 내놓을 준비는?",
+      "conditionalUse": "조건부 질문 자체를 검토 기록으로만 남기고 sourceIncomplete 차단을 유지",
+      "unusableInterpretation": "丙寅이므로 배운 것을 반드시 잘 발표하고 반론을 무시한다",
+      "reasoning": "丙寅의 지장간 구성과 자기 관점으로 재구성하는 생활 질문은 다른 의미 단위다. 원천의 누락된 참조와 월령·강약·본인 반례 조건을 해결하기 전 개인 성격으로 대응할 수 없다.",
+      "supportingOriginalIds": [],
+      "reviewActorType": "CODEX_MODEL",
+      "operatorApproved": false,
+      "customerApproved": false
+    },
+    "supportingSourceProofs": [],
+    "reviewMethod": "DIRECT_SOURCE_READING",
+    "reviewActorType": "CODEX_MODEL",
+    "humanOperatorApproval": false,
+    "customerApproved": false,
+    "clockIncluded": false
+  }
+]

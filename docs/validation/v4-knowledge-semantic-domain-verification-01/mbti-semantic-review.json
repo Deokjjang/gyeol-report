@@ -1,0 +1,450 @@
+[
+  {
+    "type": "ENFJ",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ENFJ.json",
+      "pointer": "",
+      "recordSha256": "3999004dd8e4fa1ebb8769a44b21be928d9d7f755d02eb03adbfaf4cf22184f3",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+    "sourceNodeCount": 1486,
+    "classifications": {
+      "METADATA": 340,
+      "REFERENCE_ONLY": 1079,
+      "SCORING_SEMANTIC": 67
+    },
+    "sourceCoverage": {
+      "direct": 1116,
+      "inferred": 249
+    },
+    "originalNodeSha256": "53678cc48d4eb2c5b882a895f3688afd21ce904816ee94d9f52bbe71258c601a",
+    "originalAnnotationSha256": "785a4839811cbd39b6f384d06d1651d3b3839fcf29f07aafd63f6fa9728882d9",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ENFP",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ENFP.json",
+      "pointer": "",
+      "recordSha256": "b6b18cbce59634a34ffd9ad24e038f858482a22588162c0713c4d91653c05ccc",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "093dc33663ca44087c7880b042da01546f245629fd5ba7650c35ad1c71a96648",
+    "sourceNodeCount": 1474,
+    "classifications": {
+      "METADATA": 344,
+      "REFERENCE_ONLY": 1067,
+      "SCORING_SEMANTIC": 63
+    },
+    "sourceCoverage": {
+      "direct": 812,
+      "inferred": 540
+    },
+    "originalNodeSha256": "1f19baf777d7f60e1557a4a70cca56c0af1cf437e1ef06591b3db31c1e0dc03f",
+    "originalAnnotationSha256": "6a63c95baee4c59f1b466a397f6243b35da10056712ee7f3a9fdf59d7781fb0d",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ENTJ",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ENTJ.json",
+      "pointer": "",
+      "recordSha256": "3a0e26f7fedbe601daa1e9314bc6830e6f90c9faa0fe02587aaca3f33de16a21",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+    "sourceNodeCount": 1810,
+    "classifications": {
+      "METADATA": 422,
+      "REFERENCE_ONLY": 1318,
+      "SCORING_SEMANTIC": 70
+    },
+    "sourceCoverage": {
+      "direct": 1373,
+      "inferred": 316
+    },
+    "originalNodeSha256": "92b456b8ac59440c7a181c3661602d6ada569c69ee64eaeb00d7b0f46f43a98b",
+    "originalAnnotationSha256": "29ca182245a0263eec4c4a3d7e9451ede1006b8c6cb368643368ae941b1905ec",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ENTP",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ENTP.json",
+      "pointer": "",
+      "recordSha256": "cbbbb92087fd1091bfdc48c8c6340fa006194185062ebdb393045b8c31c590f3",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "07777e18f189be746a6339aef118a8589c05f6121450586bfe63e8959b42daab",
+    "sourceNodeCount": 1602,
+    "classifications": {
+      "METADATA": 376,
+      "REFERENCE_ONLY": 1156,
+      "SCORING_SEMANTIC": 70
+    },
+    "sourceCoverage": {
+      "direct": 1082,
+      "inferred": 402
+    },
+    "originalNodeSha256": "97e46632e8f7e1eab83d83c1f20d85de8d223cec7eacad11083f7fedc3b29529",
+    "originalAnnotationSha256": "7bf90b86c0bff8a7c235bee71b6c22aca0aea346027f512ae942ff96bb94460c",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ESFJ",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ESFJ.json",
+      "pointer": "",
+      "recordSha256": "444d3b110d0c3cf66c1efbe6250794fd6a5c53906d559a4c3c0e56b7440e905d",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+    "sourceNodeCount": 1763,
+    "classifications": {
+      "METADATA": 416,
+      "REFERENCE_ONLY": 1276,
+      "SCORING_SEMANTIC": 71
+    },
+    "sourceCoverage": {
+      "direct": 1279,
+      "inferred": 369
+    },
+    "originalNodeSha256": "809a47bb542fc3bd23d48e2674cc86056c8049f14754294129eff7023a26c02d",
+    "originalAnnotationSha256": "9c641545b780ac77720bba2dfd7de805c13e1ea145b699f22c96666725cbe80d",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ESFP",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ESFP.json",
+      "pointer": "",
+      "recordSha256": "e2af75a04ede806db10395935dede7267e1389df0555123ebed98c7bb96f10d4",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "b22468fccc71563e5d256aa160d778fa3c61f582e1ead73caea369402a0f1248",
+    "sourceNodeCount": 1622,
+    "classifications": {
+      "METADATA": 401,
+      "REFERENCE_ONLY": 1155,
+      "SCORING_SEMANTIC": 66
+    },
+    "sourceCoverage": {
+      "direct": 878,
+      "inferred": 622
+    },
+    "originalNodeSha256": "2069612b0886fc1295d4b42e7646d2c9df9ddd84d12505089e743cd40dd31e1f",
+    "originalAnnotationSha256": "1fb61b95012e917d8de42b69e253d20a1492551029f1f419025e9743784a1b12",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ESTJ",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ESTJ.json",
+      "pointer": "",
+      "recordSha256": "4bcdfdecd00321cdb5dc08a52f7d209acd1eb1df73deea377e04cbab51d8155d",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "8187be30ddd97adf87c1afedf15f179da1a25aa871dfa0ad9a6aadf6d4a25fc6",
+    "sourceNodeCount": 1671,
+    "classifications": {
+      "METADATA": 388,
+      "REFERENCE_ONLY": 1209,
+      "SCORING_SEMANTIC": 74
+    },
+    "sourceCoverage": {
+      "direct": 1294,
+      "inferred": 244
+    },
+    "originalNodeSha256": "32864a9490d4896dc204e70b9d876a0fc8ed58f180033d191820e363ce8aa135",
+    "originalAnnotationSha256": "18d23f09b6e60868f30ce2d32c2bfa4c35d04921bfa179abf8d0e3b24beec879",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ESTP",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ESTP.json",
+      "pointer": "",
+      "recordSha256": "529c1196858319fa2cb3a67c6f3e26b5514f28fcdd949cd15d37970fc470d5e9",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "cbad165b46fa8b9af38e16c47a76a1113255ac3041ccdd765cc2a035834807ec",
+    "sourceNodeCount": 1572,
+    "classifications": {
+      "METADATA": 376,
+      "REFERENCE_ONLY": 1128,
+      "SCORING_SEMANTIC": 68
+    },
+    "sourceCoverage": {
+      "direct": 867,
+      "inferred": 588
+    },
+    "originalNodeSha256": "70da33d55dd8b1193a1345636fd0f814a380034f99487828351a999b16bc2e34",
+    "originalAnnotationSha256": "80a49c67376567bae4e9f69ae3dc56a740bcb107a5e822a91c2b6d1b754e1949",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "INFJ",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/INFJ.json",
+      "pointer": "",
+      "recordSha256": "91e4072564e05290c0ba999dcc7f0d812a08435a50175688cb0d6c889bfdd868",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "394227f31f485014d3f8be75060d1f03b3b3afa13cd464c9b1716624bf3f6500",
+    "sourceNodeCount": 1665,
+    "classifications": {
+      "METADATA": 384,
+      "REFERENCE_ONLY": 1208,
+      "SCORING_SEMANTIC": 73
+    },
+    "sourceCoverage": {
+      "direct": 1212,
+      "inferred": 337
+    },
+    "originalNodeSha256": "4f24f44069e9a7944f801dcd9fee035775750d50d377f4bbac78828123bff00e",
+    "originalAnnotationSha256": "23c3441e8274715577bb9972ea295cdfad00bd1932c1bd39c09151eccc9d9b98",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "INFP",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/INFP.json",
+      "pointer": "",
+      "recordSha256": "f811dfe42205d849d8bb4b25c9c9e9bca1a6a764390360a7a02767218ecf9565",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+    "sourceNodeCount": 1676,
+    "classifications": {
+      "METADATA": 384,
+      "REFERENCE_ONLY": 1231,
+      "SCORING_SEMANTIC": 61
+    },
+    "sourceCoverage": {
+      "direct": 1363,
+      "inferred": 186
+    },
+    "originalNodeSha256": "9a95c2064548f316b9ed86ac9d096a3fe9715d306de848d2fe7312495d4f8eff",
+    "originalAnnotationSha256": "6b1e25ba6267051c56db01620a7f9e29db8e6186e237cbfdd946a2a619202dc0",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "INTJ",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/INTJ.json",
+      "pointer": "",
+      "recordSha256": "d60fbe307a928ed48914c203826b99192e667b91cff26dfc0da1f571b1b29370",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "2c48ef88ead10045051529db9afa6354e80c3ef29683c0ca98265d2b77968a83",
+    "sourceNodeCount": 1683,
+    "classifications": {
+      "METADATA": 398,
+      "REFERENCE_ONLY": 1212,
+      "SCORING_SEMANTIC": 73
+    },
+    "sourceCoverage": {
+      "direct": 1023,
+      "inferred": 539
+    },
+    "originalNodeSha256": "95e399c5762901b51168ed9e8f1856703d3b5eb0a6cc54ed27623b9214536ef0",
+    "originalAnnotationSha256": "a038217db004fddb3674cb1b4a7588904b67eda79f213871fade8967f273e187",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "INTP",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/INTP.json",
+      "pointer": "",
+      "recordSha256": "0a35053147229af9b1c1f162d5a0544a8f732c7c6497e9a98ad70526f711204a",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+    "sourceNodeCount": 1636,
+    "classifications": {
+      "METADATA": 399,
+      "REFERENCE_ONLY": 1171,
+      "SCORING_SEMANTIC": 66
+    },
+    "sourceCoverage": {
+      "direct": 1219,
+      "inferred": 286
+    },
+    "originalNodeSha256": "1f557248b601d89e6d3b3bcb21599cdf55768384436de61ff259769aa55d1925",
+    "originalAnnotationSha256": "7d3d7efc7c2d68ea156d05dce9c2c0eda2d995bf436978cab0d4f12edaf11a3d",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ISFJ",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ISFJ.json",
+      "pointer": "",
+      "recordSha256": "58804e597c71672887f6527727632dd2ab14cc934ac3280e748386037e438c0b",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "5558f3ca6c2fb71fdcbffd21130951733c5b440240e1d77131c3d8bde96ccdd2",
+    "sourceNodeCount": 1575,
+    "classifications": {
+      "METADATA": 360,
+      "REFERENCE_ONLY": 1146,
+      "SCORING_SEMANTIC": 69
+    },
+    "sourceCoverage": {
+      "direct": 994,
+      "inferred": 459
+    },
+    "originalNodeSha256": "eea22cd9d4490e3b33f412489dd0240bbab3a707879b3788b69164c8bac7b66f",
+    "originalAnnotationSha256": "a12e9da4cd9b965e99af3f41c250a72aa2fc1f6b8ec2d6bbb52ce6a2409ce218",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ISFP",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ISFP.json",
+      "pointer": "",
+      "recordSha256": "69157c1272b2d9340f4a33f5925ef9b8fca719663cae1676203a15bf752420d5",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "c29503d26796af4c3dbc8c9298f4bf8d0636570e63c0494169bcf95d722d38d8",
+    "sourceNodeCount": 1613,
+    "classifications": {
+      "METADATA": 371,
+      "REFERENCE_ONLY": 1180,
+      "SCORING_SEMANTIC": 62
+    },
+    "sourceCoverage": {
+      "direct": 1190,
+      "inferred": 299
+    },
+    "originalNodeSha256": "a82c60330a4e8b80679bbb3786f066a93f8cd1792b2702941cf5220ddbb6b4bd",
+    "originalAnnotationSha256": "61ff7909a1ecd6a4aca34d2e58edaa687de5848ca731207c09caa11d352fd664",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ISTJ",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ISTJ.json",
+      "pointer": "",
+      "recordSha256": "69e89b6fa3ae7e4eae4803f7cc8f4dff2e0cbbd75a93cd25e42883e2ff0f4675",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "dfeda4d6607b2ee991ae6334b357af4aaae7000985b64a014b62bb0cad8d586a",
+    "sourceNodeCount": 1429,
+    "classifications": {
+      "METADATA": 323,
+      "REFERENCE_ONLY": 1050,
+      "SCORING_SEMANTIC": 56
+    },
+    "sourceCoverage": {
+      "direct": 886,
+      "inferred": 416
+    },
+    "originalNodeSha256": "9c266241133f42374a2a0986ff0cac4ad110e98b7a8c9ae51204ca46c717583a",
+    "originalAnnotationSha256": "1c6349ac444815d4d32eb38d71f61fa8dfb2f020df0ea9175210cc95bc8f2b36",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  },
+  {
+    "type": "ISTP",
+    "sourceLocator": {
+      "file": "docs/product/mbti/source/ISTP.json",
+      "pointer": "",
+      "recordSha256": "b4942f046b8166a9d9f371a7b798a6c6f421d0b10f4463578a4bd949a0136868",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "fileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+    "sourceNodeCount": 1473,
+    "classifications": {
+      "METADATA": 327,
+      "REFERENCE_ONLY": 1085,
+      "SCORING_SEMANTIC": 61
+    },
+    "sourceCoverage": {
+      "direct": 818,
+      "inferred": 524
+    },
+    "originalNodeSha256": "b839107d923e5217ffea21ab08116e043166b9ac37e7cdc7f95e1eb0e01bfa97",
+    "originalAnnotationSha256": "8d58842e469ac156f2f6775c83e13870e617954f50bf6b02e38870ba93558b59",
+    "hardErrors": [],
+    "directIsNotEmpiricalValidity": true,
+    "referenceOnlyPromotionAllowed": false,
+    "reviewer": "EXISTING_STATIC_INVENTORY_AND_ANNOTATION_DECLARATIONS",
+    "actualPersonSupplied": false,
+    "customerApproved": false
+  }
+]

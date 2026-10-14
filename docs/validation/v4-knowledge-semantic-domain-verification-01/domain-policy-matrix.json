@@ -1,0 +1,166 @@
+[
+  {
+    "rule": {
+      "id": "sdv:policy:business-domain-ban",
+      "originalId": "bppr:binding-policy:v1",
+      "field": "/rules/3",
+      "exactDeclaration": "WORK/CAREER/THINKING/MONEY/INVESTMENT는 현재 비연애 projection 미허용.",
+      "relationship": "businessPartner",
+      "prohibitedDomains": [
+        "WORK",
+        "CAREER",
+        "THINKING",
+        "MONEY",
+        "INVESTMENT"
+      ],
+      "kind": "EXPLICIT_PROHIBITION",
+      "use": "SOURCE_OR_REQUIRED_ANCESTOR"
+    },
+    "proof": {
+      "catalogKey": "kc:v1:3dfd39eab98be1a3e239bc1b4f58a63fe83ce3e2635871be70529b8a75d3bbc2",
+      "originalId": "bppr:binding-policy:v1",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-business-partner-research/bindingPolicy.ts",
+        "exportName": "BP_BINDING_POLICY",
+        "index": 0,
+        "originalId": "bppr:binding-policy:v1",
+        "recordSha256": "e0a0690fb9b1b3a82e718fc8924da4b3420f8bf811e636edc3924fa5ee432ea9",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "e0a0690fb9b1b3a82e718fc8924da4b3420f8bf811e636edc3924fa5ee432ea9",
+      "actualRecordHash": "e0a0690fb9b1b3a82e718fc8924da4b3420f8bf811e636edc3924fa5ee432ea9",
+      "fileHash": "83f26a61d232ed9df611f7922b4900aad67f0460ab8b2d73d0849541ebd9c4e6",
+      "meaningFields": {},
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    }
+  },
+  {
+    "rule": {
+      "id": "sdv:policy:coworker-domain-ban",
+      "originalId": "cwpr:binding-policy:v1",
+      "field": "/rules/3",
+      "exactDeclaration": "WORK/CAREER/THINKING 원천은 현 비연애 projection의 허용 node가 아니다.",
+      "relationship": "coworker",
+      "prohibitedDomains": [
+        "WORK",
+        "CAREER",
+        "THINKING"
+      ],
+      "kind": "EXPLICIT_PROHIBITION",
+      "use": "SOURCE_OR_REQUIRED_ANCESTOR"
+    },
+    "proof": {
+      "catalogKey": "kc:v1:f6e4df42fac71e21f871225cc72ec19f1f9ab934f9d8ba289e0a3fecd0ec5610",
+      "originalId": "cwpr:binding-policy:v1",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-coworker-research/bindingPolicy.ts",
+        "exportName": "CW_BINDING_POLICY",
+        "index": 0,
+        "originalId": "cwpr:binding-policy:v1",
+        "recordSha256": "1f3ab1521d1e48ea38a06c73a12acfd90a2c39e9ace8fd271ab25588131b0283",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "1f3ab1521d1e48ea38a06c73a12acfd90a2c39e9ace8fd271ab25588131b0283",
+      "actualRecordHash": "1f3ab1521d1e48ea38a06c73a12acfd90a2c39e9ace8fd271ab25588131b0283",
+      "fileHash": "35e528e1fc853eaf4790fe0e681b2d0184a198f196985c6d98aaaaafbfd91960",
+      "meaningFields": {},
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    }
+  },
+  {
+    "rule": {
+      "id": "sdv:policy:manager-domain-ban",
+      "originalId": "mrpr:binding-policy:v1",
+      "field": "/rules/4",
+      "exactDeclaration": "CHILDREN·WORK·CAREER·THINKING 등 금지 domain은",
+      "relationship": "managerReport",
+      "prohibitedDomains": [
+        "CHILDREN",
+        "WORK",
+        "CAREER",
+        "THINKING"
+      ],
+      "kind": "EXPLICIT_PROHIBITION",
+      "use": "SOURCE_OR_REQUIRED_ANCESTOR"
+    },
+    "proof": {
+      "catalogKey": "kc:v1:4e1b46989919aaa53834d94c3d88ea64635f76a58eb6a2b2cc5c21952dcf4374",
+      "originalId": "mrpr:binding-policy:v1",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-manager-report-research/bindingPolicy.ts",
+        "exportName": "MR_BINDING_POLICY",
+        "index": 0,
+        "originalId": "mrpr:binding-policy:v1",
+        "recordSha256": "63494808be250ac965bc6fbcd7bf17d3e532c949efd8b706397eb2ccc393877e",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "63494808be250ac965bc6fbcd7bf17d3e532c949efd8b706397eb2ccc393877e",
+      "actualRecordHash": "63494808be250ac965bc6fbcd7bf17d3e532c949efd8b706397eb2ccc393877e",
+      "fileHash": "c20baccf39fb6e22e157f21e17df3a9204b7c1bd0e6bf90f6351b4adfeb1ba83",
+      "meaningFields": {},
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    }
+  },
+  {
+    "rule": {
+      "id": "sdv:policy:friendship-child-ban",
+      "originalId": "frpr:binding:all-ancestors",
+      "field": "/requiredChecks/2",
+      "exactDeclaration": "CHILDREN은 친구 개인 성향의 라이선스 아님",
+      "relationship": "friendship",
+      "prohibitedDomains": [
+        "CHILDREN"
+      ],
+      "kind": "EXPLICIT_PROHIBITION",
+      "use": "SOURCE_OR_REQUIRED_ANCESTOR"
+    },
+    "proof": {
+      "catalogKey": "kc:v1:b670d2d83bbe6e70df70c2a8fcb9faf8a13f73de3628f823a72a02f0e124b60e",
+      "originalId": "frpr:binding:all-ancestors",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-friendship-research/bindingDesign.ts",
+        "exportName": "FRIENDSHIP_BINDING_DESIGN",
+        "index": 3,
+        "originalId": "frpr:binding:all-ancestors",
+        "recordSha256": "6df4a35a1fda1a6561c0fe0a596e72822146fa877e5db137ee44db24e2882729",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "originalRecordHash": "6df4a35a1fda1a6561c0fe0a596e72822146fa877e5db137ee44db24e2882729",
+      "actualRecordHash": "6df4a35a1fda1a6561c0fe0a596e72822146fa877e5db137ee44db24e2882729",
+      "fileHash": "47ce0214ab8d197226f72fb99fb1134a36d99981966659c111bddca674b8ac19",
+      "meaningFields": {
+        "/rule": "전체 ancestry 검토",
+        "/requiredChecks": [
+          "허용 node가 하나 있더라도 혼합 side·comparison의 모든 ancestor 확인",
+          "owner·domain·context·sourceCoverage·condition·source-local 검증 상태",
+          "CHILDREN은 친구 개인 성향의 라이선스 아님"
+        ]
+      },
+      "originalState": {
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": []
+      },
+      "actualPersonalFact": false
+    }
+  }
+]
