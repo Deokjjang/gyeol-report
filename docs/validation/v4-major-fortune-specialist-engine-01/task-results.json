@@ -1,0 +1,153 @@
+{
+  "TASK": "V4-MAJOR-FORTUNE-SPECIALIST-ENGINE-01",
+  "BASE_SHA": "9963a12351a7d08e60255f29c032b5348152e870",
+  "BRANCH": "v4/major-fortune-specialist-engine-01",
+  "COMMIT_SHA": "FINAL_SHA_RECORDED_AFTER_COMMIT_AND_PREVIEW",
+  "REMOTE_SHA_MATCH": "PENDING_GIT_PUSH",
+  "SPECIALIST_ENGINE": "MajorFortuneSpecialistEngine",
+  "SPECIALIST_STATUS": "OFFLINE_IMPLEMENTED",
+  "MAJOR_REGISTRY_RECORDS": 863,
+  "DOMAIN_RESEARCH_RECORDS": 89,
+  "INHERITED_REFERENCE_RECORDS": 735,
+  "YEAR_SLOTS": 14,
+  "QUESTION_VIEWS": 168,
+  "QUESTION_REGISTRY": "Original Foundation ID/locator/hash; REFERENCE_ONLY; relative -3..+10",
+  "ACTUAL_CATALOG_CANDIDATES": 89,
+  "ACTUAL_BINDER_EVALUATIONS": 267,
+  "SOURCE_MATCH_BEFORE": 633,
+  "SOURCE_MATCH_AFTER": 633,
+  "ACTUAL_EVIDENCE_MATCH_BEFORE": 3,
+  "ACTUAL_EVIDENCE_MATCH_AFTER": 3,
+  "FACTS_MATCHED_BEFORE": 3,
+  "FACTS_MATCHED_AFTER": 3,
+  "STRUCTURAL_MATCH_BEFORE": 0,
+  "STRUCTURAL_MATCH_AFTER": 0,
+  "ACTUAL_DAYUN_CYCLES": {
+    "rawProducerCycleFixtureOccurrences": 36,
+    "horizonCycleFixtureOccurrences": 6
+  },
+  "TEN_YEAR_CYCLE_VERIFICATION": "PASS original producer/version/ganji/tenGod/start/end preserved",
+  "FOURTEEN_YEAR_HORIZON": "PASS 2026:2023-2036; 2027:2024-2037; six A-F cases each",
+  "ACTIVE_CYCLE_SELECTION": "PASS calendar selected versus instant active; null not filled",
+  "EXACT_TRANSITION": "PASS C 2028-04-23 21:42 KST T-1ms/T/T+1ms; 壬申 편재 -> 辛未 상관; annual 戊申 비견 separate",
+  "RANGE_TRANSITION": "PASS D/F 2033-06-14 02:00 through 2033-10-15 23:59:59 KST; interior uncertain, latest included; synthetic range separately registered",
+  "BEFORE_FIRST_DAYUN": "PASS DAYUN_CYCLE_UNAVAILABLE retained; no cycle 0",
+  "UNKNOWN_CYCLE_HANDLING": "WITHHELD original errors/ranges; independent year observations kept",
+  "NATAL_DAYUN_RELATION": "Source base cycle only; other cycles and out-of-window use blocked",
+  "NATAL_ANNUAL_RELATION": "Original year/reason/pillar/participant preserved; no unknown hour",
+  "DAYUN_ANNUAL_RELATION": "Original after-cycle row only; pre-transition unsupported. C 2028 actual array empty",
+  "COMPOSITE_RELATION_BLOCKING": "PASS no independent 3-layer verdict, two-participant Samhap or invented resolution",
+  "PRODUCER_SUPPORT_MATRIX": "4 original scopes/hash retained; verified observations distinct from unsupported producers",
+  "ANNUAL_EVIDENCE_IDENTITY": "14 original annual roots per Graph fixture; reason IDs are not independent years",
+  "SOURCE_ANCESTRY": "Original source references, actual requirements, comparison sources and unresolved declarations separated",
+  "TIME_INTERSECTION": {
+    "originalGateStates": {
+      "PASS": 2,
+      "FAIL": 0,
+      "UNKNOWN": 265,
+      "NOT_APPLICABLE": 0,
+      "REVIEW_REQUIRED": 0
+    },
+    "newExactAnnualIntervals": 0,
+    "unknownPromotions": 0
+  },
+  "YEAR_COMPARISON_GRAPH": "91 actual year pairs per fixture, 273 occurrences; structural observations, not approved meanings",
+  "INFORMATION_FUNCTION_CLASSIFICATION": "8 functions; approved applications distinct from calculated differences and continuity",
+  "NEW_CALCULATED_FACTS": {
+    "newCanonicalRootsIssued": 0,
+    "originalAnnualRootFixtureOccurrences": 42
+  },
+  "VERIFIED_NEW_APPLICATIONS": {
+    "actual": 0,
+    "syntheticGlobal": 1,
+    "separateSyntheticRangeAfter": 1
+  },
+  "VERIFIED_COMPARISONS": {
+    "actual": 0,
+    "syntheticGlobal": 1
+  },
+  "CONTINUITY_REFERENCES": {
+    "actualApproved": 0,
+    "yearCycleRootReuseGroups": 6,
+    "syntheticGlobal": 1
+  },
+  "WITHHELD_YEAR_REQUIREMENTS": 3738,
+  "MEANING_IDENTITY_RESOLVED": 0,
+  "MEANING_REVIEW_REQUIRED": 89,
+  "SEMANTIC_CONFLICT_PAIRS": {
+    "reviewPairs": 11748,
+    "actualConfirmedSemanticConflicts": 0
+  },
+  "DUPLICATE_FACT_GROUPS": {
+    "candidateFixtureGroups": 0,
+    "cycleRootYearReferenceGroups": 6
+  },
+  "ROOT_REUSE_CONSTRAINTS": "Primary information roots versus full ancestry; one calculated fact, reviewed new applications/comparisons, continuity and actual-display recall separated",
+  "YEAR_QUESTION_COVERAGE": {
+    "referenceViews": 168,
+    "actualCustomerCoverage": 0,
+    "syntheticGlobalCoverage": 17,
+    "syntheticUnfilledViewsWithReasons": 151,
+    "syntheticYearsRepresented": 14
+  },
+  "ACTUAL_CUSTOMER_ELIGIBLE": 0,
+  "ACTUAL_SPECIALIST_CLAIMS_EMITTED": 0,
+  "SYNTHETIC_SELECTION_TESTS": "PASS exact/range/owner/producer/source/hash/participant/meaning/context/root/approval negatives; authentic private sessions",
+  "SYNTHETIC_ALGORITHM_COMPARISON": {
+    "coveredQuestions": [
+      16,
+      16,
+      17
+    ],
+    "independentInformation": [
+      15,
+      15,
+      16
+    ],
+    "rangeCoverage": 2,
+    "unsupportedUse": 0,
+    "wrongYear": 0,
+    "claims": 0
+  },
+  "OPERATOR_REVIEW_WORKLIST": "89 materials plus 14 year/168 question matrix; review order only, no customer rank",
+  "UNRESOLVED_REQUIREMENTS": 158,
+  "SOURCE_GROUP_BLOCKERS": {
+    "declaredActualMaterialGroups": 0,
+    "sourceGroupPass": 0,
+    "unapprovedMaterials": 89
+  },
+  "PRODUCER_GAPS": "Other-cycle natal relations; pre-transition Dayun-annual packet; Graph endpoints; precise annual intervals; independent composite/strength/favorability",
+  "HARD_GATE_PRESERVATION": "12 unchanged; reexecuted in real 267 cohort and synthetic cases",
+  "DETERMINISTIC_BUILD": {
+    "freshFinalCliExecutions": 2,
+    "json": 28,
+    "byteEqual": true
+  },
+  "PRIVACY_CHECK": "PASS generated JSON omits input names/birth dates; actual customer data and external paid calls zero",
+  "CATALOG_PRESERVATION": "PASS 59 original JSON plus unchanged source bytes",
+  "SOURCE_VERIFICATION_PRESERVATION": "PASS 20 original JSON plus unchanged source bytes",
+  "SEMANTIC_VERIFICATION_PRESERVATION": "PASS 23 original JSON plus unchanged source bytes",
+  "EVIDENCE_GRAPH_PRESERVATION": "PASS 105 original JSON plus unchanged source bytes",
+  "BINDER_PRESERVATION": "PASS 83 original JSON plus unchanged source bytes",
+  "FOUNDATION_PRESERVATION": "PASS 64 original JSON plus unchanged source bytes",
+  "COMPREHENSIVE_ENGINE_PRESERVATION": "PASS 29 original JSON plus unchanged source bytes",
+  "CAREER_ENGINE_PRESERVATION": "PASS 35 original JSON plus unchanged source bytes",
+  "LOVE_ENGINE_PRESERVATION": "PASS 38 original JSON plus unchanged source bytes",
+  "CALCULATION_PRESERVATION": "PASS 17 books / 102 digests; full calculations and evidence unchanged",
+  "NARRATIVE_PRESERVATION": "PASS full original narrative objects byte-identical",
+  "BOOK_PRESERVATION": "PASS full 17 Book objects and stored offline roundtrip; customer writes zero",
+  "EXISTING_TEST_FAILURES": "5837 PASS / 46 FAIL before and after; exact files/names/first errors/full normalized signatures match",
+  "NEW_TEST_FAILURES": {
+    "new": 0,
+    "newPass": 80,
+    "existingRelatedPass": 478,
+    "isolatedReruns": "Catalog12 and Love56 passed with unchanged source after contention timeouts"
+  },
+  "TYPESCRIPT": "0 -> 0; new diagnostics 0",
+  "LINT": "PASS zero warnings",
+  "BUILD": "PASS zero warnings; server NFT88 paths preserved",
+  "DIFF_CHECK": "PASS",
+  "VERCEL_PREVIEW": "PENDING_EXACT_FINAL_SHA_CHECK",
+  "REMAINING_GAPS": "89 semantic/application/customer approvals pending; unparsed natural prerequisites and missing producer scopes retained; existing46 baseline failures",
+  "NEXT_STAGE_READY": "OFFLINE_MAJOR_HANDOFF_READY; customer Writer/Book disconnected; Annual Specialist not started"
+}

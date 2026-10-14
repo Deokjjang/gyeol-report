@@ -1,0 +1,539 @@
+{
+  "resolved": 0,
+  "pending": [
+    {
+      "catalogKey": "kc:v1:00ebc7496305c364a6a60067f3ccf6c0de3882c056482ddfa4669101c7b47fa5",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:0a0a70f177e22f8454ba4e3506f31ab1378a5e32f6bae2293b1d32b9072aa866",
+      "originalMeaning": "현재 자원을 다음 조건에서도 쓸 수 있는지",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:0a736f972d2da70d1278cc6d5a5cfc9a5adb4f41ed355e40c26d497a235ddf26",
+      "originalMeaning": "첫 시각은 null이며 2033-06-14 02:00~2033-10-15 23:59:59 KST가 교운 가능 범위다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:0eb558a6b8e0cc21219812ab8c3786e0b31033da0ea6648ab157a61af136959e",
+      "originalMeaning": "첫 대운 시작 이전",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:0eef28cb9021688b08710dbbc0656761ce2eafadbfebcf880cfab18c84ef6f59",
+      "originalMeaning": "표현과 기존 방식의 수정",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:19bbcc4084f0e7224d91dc0efe6c0ce7abbd05f352dc0e94e9a9d2d61db03fbe",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:21611f7d147df21a6838c2d1dd9d0a27c79fa8c987ad561e9ccaaca84c318ee3",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:224c876e0f0941788981137e3c1991ab681cc28c56bc5176c784e248eaaebdcb",
+      "originalMeaning": "지속 운영과 예측 가능한 자원",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:2479c6cea89a0612f5772e6222e9e561c663dac6ef4f96595a4fccec26474210",
+      "originalMeaning": "전환 이전 확정 구간",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:25acb7c5c01be59cf15aaedb9a23672ed1b29f4fdeedff7d02972202702115e7",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:26e0e537dad19f14a03d33eadff34d0d3702f0a556dfbae1269e56c9823bafc6",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:2813820e4d44d0197e4b8c68bcab92741556813645989d3afb0b9f08256bcb0e",
+      "originalMeaning": "반복 가능한 산출과 생활 리듬",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:2a4d777ac4796fe530b3fd4d9ca12af0564bf9584a13da870ef05b887cc3714c",
+      "originalMeaning": "전환 이후 확정 구간",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:2a73e0fc18575e02362f7c80091fb6ea17ffdf94ef2c254a0faf45b5a38bc556",
+      "originalMeaning": "辛未 대운과 癸丑 세운의 丑未 충/未丑 형, 원국 연지 丑戌 형/시지 丑辰 파를 분리한다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:2b2e6e12116ea862b9be7dd03228e3ba0f2549db41a58d34ba0011694095df7a",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:2e8a3461f7531fd864172f48064258414c0a7e6304d178e54b45fd5fac136c2a",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:2f0b2f47a7ff8d5a4940b021f9ad5442f2c7435c99fee4e2d8c9110e32cac87d",
+      "originalMeaning": "돈의 크기 대신 자원의 유입·유지·회수",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:3947132a09e9842f84d30a9f8ce423978a7ef8267a18aa456a6d3bbc8ec53cd8",
+      "originalMeaning": "교운 가능한 시각 범위",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:3a278c351538ebf7808dd283f755ea98b7ee3d4a8beb11340675452a9e8bb8f8",
+      "originalMeaning": "대운 오행은 원국에 더해 읽는 요소 표지이며 강도 결과가 아니다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:3b5860d46f1e3d96e8eae0434730dcf69aaea8e047a80211d13d360ba54ed2ac",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:3c806251b701abdc524b56e67ceb8a4aafbe664b12130bb8db36ef59653424b7",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:3cdf4d640dcebe8c75e054ba4d7f73eb1671d343644f62fb30110cdd67466766",
+      "originalMeaning": "2028-04-23 21:42 KST 이전 壬申 편재, 정각 이후 辛未 상관이며 戊申 비견은 연주다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:3dbd487ee68f1e516235993f258741dbd5789dab8d0daf6e57375df499c7eedb",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:481b582dd5f08808cfb4dcccabfb9d39880b7e2833318207c666f038ea4197be",
+      "originalMeaning": "긴장은 실제 검출 관계와 조건부 행동 부담을 구별해 읽는다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:49d8aa39c814b7568eb88d4d45205d2f4385626330e679f95de103ac7e60534a",
+      "originalMeaning": "범위 내부 활성 미확정",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:4a3e1e8e117d4bfdf483aaf6017162d511bd9617486811e386d30bf777d6e385",
+      "originalMeaning": "2034-01-14 17:30 KST 전후 己卯 정재에서 戊寅 편재로 바뀐다. 甲寅 비견은 그 해 연주 십성이다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:4b4f164b9e1be2d8c17c5813d75bfa269e9e09f061b72cd16f0513546a262080",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:4d7e3c6966e109130ff675f37cc1a5b78243ec0784fb4dfa99b5bf668eae1afb",
+      "originalMeaning": "직접 관계가 없으면 일반 십성 질문과 검증된 원국 설명을 구분해 제한한다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:4d9e3b410c934ed25fa1b3b6ed8b1f4838885f604da2a004e32e2cd7f1d6ced2",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:55acb9b6408668d6477ac17e827d0ae22c191f4edb0c6215a0a536c06c9fe606",
+      "originalMeaning": "공식 역할과 신뢰의 기준",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:59b6233e1ae5a7dc3bf7dcc77a06f62aba8777bdacc9a1882407e4acb7ca3a41",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:5eab7ae68576112ef396ea93dc38ad2e3a17ec61892efa7eb1e332c4f3a88e01",
+      "originalMeaning": "함께 쓰는 자원과 몫",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:6b155b244e85d18d63802c782cbf70b36fe7b3c520cebd614878a3daceb19436",
+      "originalMeaning": "기존 계산에서 판정 불가능",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:6d7be6ea588f6792c2c163cb4904fde39d7c69839050c0cecd15862cde4a0861",
+      "originalMeaning": "새 대운은 가능한 선택을 비교할 배경이지 강제 전환 명령이 아니다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:6dd62994c62ba4b62ad836bf98b1b2c83431bf0f499b357d3a992a181aa2e4a2",
+      "originalMeaning": "돌봄·생활 운영의 책임 범위",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:7080a7244b20cbd570c1d5da6d9dedf82699426514323b5e81b811aca359424f",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:72264f3ae5a4bf29a78efa005703792d7be48458391b0a2e819db86054116e22",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:76319cd311b71a04fe3f05dddbdb00b9cc626cf49b377ff5ede147e2dbd3092d",
+      "originalMeaning": "같은 의미를 다시 만나는 것과 힘이 실제로 강화되는 것을 구별한다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:7ececd6ec0b8cc7e98bcbc68bee62451841a9bd9695212fd2ef55af62d761c03",
+      "originalMeaning": "대운–세운 寅申 충과 申寅 형, 세운–원국 일지 申子 반합을 서로 다른 scope로 비교한다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:829fc633238948264ee9fff7ab97f821a25814925c606c61d91f5bed4f1a3b28",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:834518ee2c9176fb39b35e04d18f5f820cf93bf7af834094fdc43d303a4d94dc",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:844067bb6bddb3e458e441691b4000bcaef88b5d7ebfa4901572c9bb1b08dd0b",
+      "originalMeaning": "대운 십성은 일간을 기준으로 대운 천간을 읽는 관계 범주다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:846e03096e026fb18fd85326fbb92b10997f32a228d86ce3e38c25191466b3d4",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:870d03819536f1390af64bdea8ab014a54f7e5de05be062e0c1a5237adaa4ac2",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+      "originalMeaning": "긴급 요구와 책임의 한계",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:8a266c97103d91c03db4d56dcaac5e2d0a63c3886ab8740c2389ecf7c321c0e3",
+      "originalMeaning": "독립 기준과 동등한 주체",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:9110e12650baab9e1815c47f805419fe477970892398aeb1104c0c38ded09174",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:934962014b275183b2374761244078df95435af9a3efd80602a03412827175f4",
+      "originalMeaning": "장기 반복의 위험은 실제 행동과 자원의 한계를 확인할 때 설명 가능하다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:95fe0fdb1d1678538444ce4b90e62b0f458c8e11c0f4f552a995183724c34028",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+      "originalMeaning": "외부 자원·접점과 선택 범위",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:9fc029a7665946acfde827ae997fdee9daaa6db8e8b77ddf9d881f2daed85255",
+      "originalMeaning": "지식의 확보와 활용을 여러 해 비교",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:a80606632d00f386089127aebdad5fa9bd873dcee906e1b32bbe8e5844989147",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:a908bfb393db2a845df3c79e92c5cddf9a628ae8fd7936f6383fd86906cf99f7",
+      "originalMeaning": "친밀함을 유지할 생활 조건의 장기 비교",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:a9f2af3d2fd6a41c340e3a6bb7b961118fa53130e83cc46c4733dd0d965ef068",
+      "originalMeaning": "타고난 성향과 기간 조건은 같은 문장에서도 출처를 나눠야 한다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:abe13db1e53bd47b53174cd31896068bfb17c63edc5f5be797ff29d7314ad392",
+      "originalMeaning": "공동 약속과 개인 자원의 지속 가능성",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:acb5dbf7022f0d210006887c1fc43b7e9ebc3199b76b50237b58fb5f624e813d",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:b4c902a6a5460cb57fa7d1001fe7c548eb4990a234fc0dd457d51fe0eef3ce63",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:b96fe97fa0b5cce45d0ffc5a13a91968b548dd1c07002dbad2d39dc2380cbc95",
+      "originalMeaning": "壬申 편재 대운에서 丙午 편인 세운을 읽는다. A의 戊寅 편인 대운과 다른 참가 조건이다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:bc4a96ca3d4906f83188526aac0d818417a709078680f132ffe70efd1393e6c0",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:bcac27170010c27821bd2f944f17fabe3cc77d0410eec200a68c012b5dc12bc9",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:c5fbfc1ad6066b2acc1096b5d302111fba3e3906c257d48170236c056a264ef2",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+      "originalMeaning": "선택적 탐색과 다른 관점",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:d091f9b0e6dfbcf144268fa016c9b3f1cc2a60ba2df205e0b9b4dbf9fe5314d2",
+      "originalMeaning": "천간은 대운 간지의 드러난 층위를 구별하는 표지다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:d2c4307b76f245100beb977767512ce38a6d0d543ef11313bafdf0f4bf09d4a3",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:d3769d311978203f79df7328f769f34e865d6499679610e860f869826b2c9f3e",
+      "originalMeaning": "기존 조건과 새 장기 요구가 겹치는 경계를 확인",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:d3b5f16bef829d89dd8927f74e8a4bac83a30e56b6cc5cc9375fcc0269a4d1e8",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:d4ecf3ec65d91f55a63607e253e7aea1f76c22020be0f4a1d555efecef4a324e",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:d52920232972ef9a7e5c301e0078050cebd793ec77a096dde957deade0d2b96f",
+      "originalMeaning": "대운–세운 관계는 없지만 연지 丑未 충/未丑 형, 월지 午未 육합 등 원국 관계는 남는다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:d5aa7dc29c571684b779f93102436bb71076fd2283cf6388dedb30444fdcc25d",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:d89aef1274afbade08a455bbd1eb80305bde38b5806795774b73349234c03240",
+      "originalMeaning": "직함보다 책임과 선택 범위를 장기 비교",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:da822f64af4a06ac875bfefb1d807d00b5b840a12eca054041ff526145216aad",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:de3a514421504420bc456f8465884d4fb05065de895c98abce97de3faf09eb0b",
+      "originalMeaning": "기본 성향과 기간 과제를 분리",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:df9128e6e4cc2907a2f8103a1db904dc4164f6ca608201bb66d51be8dacb6618",
+      "originalMeaning": "복합 구조의 기존 성립 상태가 있을 때만 대운과 비교한다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:e009c17760527d8ee85fa287565f4de7ce85ed69a4c21461fdc0ed59eb069552",
+      "originalMeaning": "다음 대운은 미래 조건의 연구 대상이며 현재 활성 대운과 바꾸어 말하지 않는다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:e0cede37d555c4f5ab21f531641fbcdf7507b30303c205a2be073f6a6e80b5b5",
+      "originalMeaning": "배움과 지원을 사용할 기반",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:e27b9ffd0f435792b08b08ff14a16e6f74680a9f20a031b09683d8c822a8c8f3",
+      "originalMeaning": "직업·관계 입력은 현재 장면의 조건이지 14년 생활 이력이 아니다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:e31287ddaccc4cbf2c5ba04a58f1a281228eafbdc6e87616b89db0ca19e7a0d3",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:e41557f0623a9025af38342d8fac173eb2b80ad5b8c44464ed115547ae635fa0",
+      "originalMeaning": "같은 배경 아래 서로 다른 세운의 실제 차이를 비교",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:eb4d0309aaf5b554ca3bb8a9ae7c953ac343fc0c510ff42b173923dcb067e58e",
+      "originalMeaning": "이전 대운 비교는 두 기간의 계산값과 역할 차이를 보여주는 작업이다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:ec706326692b8bf1b20ce57c781196bdee57e707db828b66516379242081b3e2",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:edb93b3a40269b0531597d04d92fe30b5d61f10748eb78387edc829bfe458463",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:ef13fa4432a40ab8a8a22740cdfc6c1ba5a3202c53879b10eb821f444580e0dc",
+      "originalMeaning": "己卯 정재 배경과 戊申 편재 연주 사실은 있으나 cycle/natal branch relation 검출은 없다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:f1355a81757b7e63e47f19054b63900e683f1f5be8b8844aa6c1752e64acd736",
+      "originalMeaning": "다른 주제는 서로 상쇄하지 않고 각자의 조건에서 함께 존재할 수 있다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:f22e16aad9095b5bc3de49e1206ab872cdd8d128e93aaa915e8427426a8a2231",
+      "originalMeaning": "다음 주기와 차이가 확인되는 과제만 비교",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:f2a01e7051e8d533d50e75a854d137651a909a41fd75039e425f4801c86a5f73",
+      "originalMeaning": "확정 교운 시각",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:f4598ed90b134bcf5b2cf2ca99f3c6d5ded1c02ecb444cb67a7259ebda8b1ebd",
+      "originalMeaning": "대운 지지는 원국·세운 지지 관계의 실제 참가 요소다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:f9bdaf383263a54f537886b3841328bb3c0f9c3e8d5a8c498e3ab48e43917b18",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:fa197e3def58f2990c8f4e515ee11c5d658a1e427e06c6b575cec795cd86e645",
+      "originalMeaning": null,
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    },
+    {
+      "catalogKey": "kc:v1:fa609bb15dd77b4b046d585fb8068e4fd6b9609aaadad3a400b6497a29280f01",
+      "originalMeaning": "기간이 바뀌어도 유효한 원국 근거와 축적된 자원은 자동 소멸하지 않는다.",
+      "state": "MEANING_REVIEW_REQUIRED",
+      "operatorApproved": false
+    }
+  ]
+}

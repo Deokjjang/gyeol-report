@@ -1,0 +1,1528 @@
+[
+  {
+    "id": "A",
+    "year": 2023,
+    "state": "PASS",
+    "observations": [
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 3,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2023-07-14T22:59:59.999Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2023-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 29,
+            "endAge": 38,
+            "startYear": 2013,
+            "endYear": 2022,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2013-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2013-07-15T08:00:00+09:00",
+              "latestKst": "2013-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2023-07-14T23:00:00.000Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2023-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 29,
+            "endAge": 38,
+            "startYear": 2013,
+            "endYear": 2022,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2013-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2013-07-15T08:00:00+09:00",
+              "latestKst": "2013-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2023-07-14T23:00:00.001Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2023-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 29,
+            "endAge": 38,
+            "startYear": 2013,
+            "endYear": 2022,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2013-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2013-07-15T08:00:00+09:00",
+              "latestKst": "2013-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      }
+    ],
+    "boundary": {
+      "exact": "2023-07-15T08:00:00+09:00",
+      "earliestKst": "2023-07-15T08:00:00+09:00",
+      "latestKst": "2023-07-15T08:00:00+09:00",
+      "beforeIndex": 3,
+      "afterIndex": 4
+    },
+    "midpointUsed": false,
+    "originalCalculationVersion": "dayun-kst-sect2-v1",
+    "annualGanji": "癸卯",
+    "annualTenGod": "상관",
+    "cycleScopeGuards": [
+      {
+        "calendarYear": 2023,
+        "evaluatedAt": "2023-07-14T22:59:59.999Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 3,
+        "rowCycle": 4,
+        "cycleScopeAllowed": false,
+        "reasons": [
+          "WRONG_CYCLE",
+          "PRE_POST_TRANSITION_CONFLICT"
+        ],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2023,
+        "evaluatedAt": "2023-07-14T23:00:00.000Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 4,
+        "rowCycle": 4,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2023,
+        "evaluatedAt": "2023-07-14T23:00:00.001Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 4,
+        "rowCycle": 4,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      }
+    ]
+  },
+  {
+    "id": "A",
+    "year": 2033,
+    "state": "PASS",
+    "observations": [
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 5,
+        "originalError": null,
+        "evaluatedAt": "2033-07-14T22:59:59.999Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2033-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2033-07-15T08:00:00+09:00",
+            "latestKst": "2033-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 5,
+            "startAge": 49,
+            "endAge": 58,
+            "startYear": 2033,
+            "endYear": 2042,
+            "ganji": "丁丑",
+            "stem": "丁",
+            "branch": "丑",
+            "stemElement": "fire",
+            "branchElement": "earth",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2033-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 5,
+        "selectedCycle": 5,
+        "originalError": null,
+        "evaluatedAt": "2033-07-14T23:00:00.000Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2033-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2033-07-15T08:00:00+09:00",
+            "latestKst": "2033-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 5,
+            "startAge": 49,
+            "endAge": 58,
+            "startYear": 2033,
+            "endYear": 2042,
+            "ganji": "丁丑",
+            "stem": "丁",
+            "branch": "丑",
+            "stemElement": "fire",
+            "branchElement": "earth",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2033-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 5,
+        "selectedCycle": 5,
+        "originalError": null,
+        "evaluatedAt": "2033-07-14T23:00:00.001Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2033-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2033-07-15T08:00:00+09:00",
+            "latestKst": "2033-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 5,
+            "startAge": 49,
+            "endAge": 58,
+            "startYear": 2033,
+            "endYear": 2042,
+            "ganji": "丁丑",
+            "stem": "丁",
+            "branch": "丑",
+            "stemElement": "fire",
+            "branchElement": "earth",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2033-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      }
+    ],
+    "boundary": {
+      "exact": "2033-07-15T08:00:00+09:00",
+      "earliestKst": "2033-07-15T08:00:00+09:00",
+      "latestKst": "2033-07-15T08:00:00+09:00",
+      "beforeIndex": 4,
+      "afterIndex": 5
+    },
+    "midpointUsed": false,
+    "originalCalculationVersion": "dayun-kst-sect2-v1",
+    "annualGanji": "癸丑",
+    "annualTenGod": "상관",
+    "cycleScopeGuards": [
+      {
+        "calendarYear": 2033,
+        "evaluatedAt": "2033-07-14T22:59:59.999Z",
+        "selectedCycle": 5,
+        "instantActiveCycle": 4,
+        "rowCycle": 5,
+        "cycleScopeAllowed": false,
+        "reasons": [
+          "WRONG_CYCLE",
+          "PRE_POST_TRANSITION_CONFLICT"
+        ],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2033,
+        "evaluatedAt": "2033-07-14T23:00:00.000Z",
+        "selectedCycle": 5,
+        "instantActiveCycle": 5,
+        "rowCycle": 5,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2033,
+        "evaluatedAt": "2033-07-14T23:00:00.001Z",
+        "selectedCycle": 5,
+        "instantActiveCycle": 5,
+        "rowCycle": 5,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      }
+    ]
+  },
+  {
+    "id": "B",
+    "year": 2024,
+    "state": "PASS",
+    "observations": [
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 3,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2024-01-14T08:29:59.999Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2024-01-14T17:30:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2024-01-14T17:30:00+09:00",
+            "latestKst": "2024-01-14T17:30:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 25,
+            "endAge": 34,
+            "startYear": 2014,
+            "endYear": 2023,
+            "ganji": "庚辰",
+            "stem": "庚",
+            "branch": "辰",
+            "stemElement": "metal",
+            "branchElement": "earth",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2014-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2014-01-14T17:30:00+09:00",
+              "latestKst": "2014-01-14T17:30:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 35,
+            "endAge": 44,
+            "startYear": 2024,
+            "endYear": 2033,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2024-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2024-01-14T17:30:00+09:00",
+              "latestKst": "2024-01-14T17:30:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2024-01-14T08:30:00.000Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2024-01-14T17:30:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2024-01-14T17:30:00+09:00",
+            "latestKst": "2024-01-14T17:30:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 25,
+            "endAge": 34,
+            "startYear": 2014,
+            "endYear": 2023,
+            "ganji": "庚辰",
+            "stem": "庚",
+            "branch": "辰",
+            "stemElement": "metal",
+            "branchElement": "earth",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2014-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2014-01-14T17:30:00+09:00",
+              "latestKst": "2014-01-14T17:30:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 35,
+            "endAge": 44,
+            "startYear": 2024,
+            "endYear": 2033,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2024-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2024-01-14T17:30:00+09:00",
+              "latestKst": "2024-01-14T17:30:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2024-01-14T08:30:00.001Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2024-01-14T17:30:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2024-01-14T17:30:00+09:00",
+            "latestKst": "2024-01-14T17:30:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 25,
+            "endAge": 34,
+            "startYear": 2014,
+            "endYear": 2023,
+            "ganji": "庚辰",
+            "stem": "庚",
+            "branch": "辰",
+            "stemElement": "metal",
+            "branchElement": "earth",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2014-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2014-01-14T17:30:00+09:00",
+              "latestKst": "2014-01-14T17:30:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 35,
+            "endAge": 44,
+            "startYear": 2024,
+            "endYear": 2033,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2024-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2024-01-14T17:30:00+09:00",
+              "latestKst": "2024-01-14T17:30:00+09:00"
+            }
+          }
+        }
+      }
+    ],
+    "boundary": {
+      "exact": "2024-01-14T17:30:00+09:00",
+      "earliestKst": "2024-01-14T17:30:00+09:00",
+      "latestKst": "2024-01-14T17:30:00+09:00",
+      "beforeIndex": 3,
+      "afterIndex": 4
+    },
+    "midpointUsed": false,
+    "originalCalculationVersion": "dayun-kst-sect2-v1",
+    "annualGanji": "甲辰",
+    "annualTenGod": "비견",
+    "cycleScopeGuards": [
+      {
+        "calendarYear": 2024,
+        "evaluatedAt": "2024-01-14T08:29:59.999Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 3,
+        "rowCycle": 4,
+        "cycleScopeAllowed": false,
+        "reasons": [
+          "WRONG_CYCLE",
+          "PRE_POST_TRANSITION_CONFLICT"
+        ],
+        "relationPacketPresent": true,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2024,
+        "evaluatedAt": "2024-01-14T08:30:00.000Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 4,
+        "rowCycle": 4,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": true,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2024,
+        "evaluatedAt": "2024-01-14T08:30:00.001Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 4,
+        "rowCycle": 4,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": true,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      }
+    ]
+  },
+  {
+    "id": "B",
+    "year": 2034,
+    "state": "PASS",
+    "observations": [
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 5,
+        "originalError": null,
+        "evaluatedAt": "2034-01-14T08:29:59.999Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2034-01-14T17:30:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2034-01-14T17:30:00+09:00",
+            "latestKst": "2034-01-14T17:30:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 4,
+            "startAge": 35,
+            "endAge": 44,
+            "startYear": 2024,
+            "endYear": 2033,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2024-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2024-01-14T17:30:00+09:00",
+              "latestKst": "2024-01-14T17:30:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 5,
+            "startAge": 45,
+            "endAge": 54,
+            "startYear": 2034,
+            "endYear": 2043,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2034-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2034-01-14T17:30:00+09:00",
+              "latestKst": "2034-01-14T17:30:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 5,
+        "selectedCycle": 5,
+        "originalError": null,
+        "evaluatedAt": "2034-01-14T08:30:00.000Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2034-01-14T17:30:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2034-01-14T17:30:00+09:00",
+            "latestKst": "2034-01-14T17:30:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 4,
+            "startAge": 35,
+            "endAge": 44,
+            "startYear": 2024,
+            "endYear": 2033,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2024-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2024-01-14T17:30:00+09:00",
+              "latestKst": "2024-01-14T17:30:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 5,
+            "startAge": 45,
+            "endAge": 54,
+            "startYear": 2034,
+            "endYear": 2043,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2034-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2034-01-14T17:30:00+09:00",
+              "latestKst": "2034-01-14T17:30:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 5,
+        "selectedCycle": 5,
+        "originalError": null,
+        "evaluatedAt": "2034-01-14T08:30:00.001Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2034-01-14T17:30:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2034-01-14T17:30:00+09:00",
+            "latestKst": "2034-01-14T17:30:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 4,
+            "startAge": 35,
+            "endAge": 44,
+            "startYear": 2024,
+            "endYear": 2033,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2024-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2024-01-14T17:30:00+09:00",
+              "latestKst": "2024-01-14T17:30:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 5,
+            "startAge": 45,
+            "endAge": 54,
+            "startYear": 2034,
+            "endYear": 2043,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2034-01-14T17:30:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2034-01-14T17:30:00+09:00",
+              "latestKst": "2034-01-14T17:30:00+09:00"
+            }
+          }
+        }
+      }
+    ],
+    "boundary": {
+      "exact": "2034-01-14T17:30:00+09:00",
+      "earliestKst": "2034-01-14T17:30:00+09:00",
+      "latestKst": "2034-01-14T17:30:00+09:00",
+      "beforeIndex": 4,
+      "afterIndex": 5
+    },
+    "midpointUsed": false,
+    "originalCalculationVersion": "dayun-kst-sect2-v1",
+    "annualGanji": "甲寅",
+    "annualTenGod": "비견",
+    "cycleScopeGuards": [
+      {
+        "calendarYear": 2034,
+        "evaluatedAt": "2034-01-14T08:29:59.999Z",
+        "selectedCycle": 5,
+        "instantActiveCycle": 4,
+        "rowCycle": 5,
+        "cycleScopeAllowed": false,
+        "reasons": [
+          "WRONG_CYCLE",
+          "PRE_POST_TRANSITION_CONFLICT"
+        ],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2034,
+        "evaluatedAt": "2034-01-14T08:30:00.000Z",
+        "selectedCycle": 5,
+        "instantActiveCycle": 5,
+        "rowCycle": 5,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2034,
+        "evaluatedAt": "2034-01-14T08:30:00.001Z",
+        "selectedCycle": 5,
+        "instantActiveCycle": 5,
+        "rowCycle": 5,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      }
+    ]
+  },
+  {
+    "id": "C",
+    "year": 2028,
+    "state": "PASS",
+    "observations": [
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 3,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2028-04-23T12:41:59.999Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2028-04-23T21:42:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2028-04-23T21:42:00+09:00",
+            "latestKst": "2028-04-23T21:42:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 25,
+            "endAge": 34,
+            "startYear": 2018,
+            "endYear": 2027,
+            "ganji": "壬申",
+            "stem": "壬",
+            "branch": "申",
+            "stemElement": "water",
+            "branchElement": "metal",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2018-04-23T21:42:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2018-04-23T21:42:00+09:00",
+              "latestKst": "2018-04-23T21:42:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 35,
+            "endAge": 44,
+            "startYear": 2028,
+            "endYear": 2037,
+            "ganji": "辛未",
+            "stem": "辛",
+            "branch": "未",
+            "stemElement": "metal",
+            "branchElement": "earth",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2028-04-23T21:42:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2028-04-23T21:42:00+09:00",
+              "latestKst": "2028-04-23T21:42:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2028-04-23T12:42:00.000Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2028-04-23T21:42:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2028-04-23T21:42:00+09:00",
+            "latestKst": "2028-04-23T21:42:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 25,
+            "endAge": 34,
+            "startYear": 2018,
+            "endYear": 2027,
+            "ganji": "壬申",
+            "stem": "壬",
+            "branch": "申",
+            "stemElement": "water",
+            "branchElement": "metal",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2018-04-23T21:42:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2018-04-23T21:42:00+09:00",
+              "latestKst": "2018-04-23T21:42:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 35,
+            "endAge": 44,
+            "startYear": 2028,
+            "endYear": 2037,
+            "ganji": "辛未",
+            "stem": "辛",
+            "branch": "未",
+            "stemElement": "metal",
+            "branchElement": "earth",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2028-04-23T21:42:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2028-04-23T21:42:00+09:00",
+              "latestKst": "2028-04-23T21:42:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2028-04-23T12:42:00.001Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2028-04-23T21:42:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2028-04-23T21:42:00+09:00",
+            "latestKst": "2028-04-23T21:42:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 25,
+            "endAge": 34,
+            "startYear": 2018,
+            "endYear": 2027,
+            "ganji": "壬申",
+            "stem": "壬",
+            "branch": "申",
+            "stemElement": "water",
+            "branchElement": "metal",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2018-04-23T21:42:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2018-04-23T21:42:00+09:00",
+              "latestKst": "2018-04-23T21:42:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 35,
+            "endAge": 44,
+            "startYear": 2028,
+            "endYear": 2037,
+            "ganji": "辛未",
+            "stem": "辛",
+            "branch": "未",
+            "stemElement": "metal",
+            "branchElement": "earth",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2028-04-23T21:42:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2028-04-23T21:42:00+09:00",
+              "latestKst": "2028-04-23T21:42:00+09:00"
+            }
+          }
+        }
+      }
+    ],
+    "boundary": {
+      "exact": "2028-04-23T21:42:00+09:00",
+      "earliestKst": "2028-04-23T21:42:00+09:00",
+      "latestKst": "2028-04-23T21:42:00+09:00",
+      "beforeIndex": 3,
+      "afterIndex": 4
+    },
+    "midpointUsed": false,
+    "originalCalculationVersion": "dayun-kst-sect2-v1",
+    "annualGanji": "戊申",
+    "annualTenGod": "비견",
+    "cycleScopeGuards": [
+      {
+        "calendarYear": 2028,
+        "evaluatedAt": "2028-04-23T12:41:59.999Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 3,
+        "rowCycle": 4,
+        "cycleScopeAllowed": false,
+        "reasons": [
+          "WRONG_CYCLE",
+          "PRE_POST_TRANSITION_CONFLICT"
+        ],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2028,
+        "evaluatedAt": "2028-04-23T12:42:00.000Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 4,
+        "rowCycle": 4,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2028,
+        "evaluatedAt": "2028-04-23T12:42:00.001Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 4,
+        "rowCycle": 4,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      }
+    ]
+  },
+  {
+    "id": "E",
+    "year": 2023,
+    "state": "PASS",
+    "observations": [
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 3,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2023-07-14T22:59:59.999Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2023-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 29,
+            "endAge": 38,
+            "startYear": 2013,
+            "endYear": 2022,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2013-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2013-07-15T08:00:00+09:00",
+              "latestKst": "2013-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2023-07-14T23:00:00.000Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2023-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 29,
+            "endAge": 38,
+            "startYear": 2013,
+            "endYear": 2022,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2013-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2013-07-15T08:00:00+09:00",
+              "latestKst": "2013-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 4,
+        "originalError": null,
+        "evaluatedAt": "2023-07-14T23:00:00.001Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2023-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 3,
+            "startAge": 29,
+            "endAge": 38,
+            "startYear": 2013,
+            "endYear": 2022,
+            "ganji": "己卯",
+            "stem": "己",
+            "branch": "卯",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2013-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2013-07-15T08:00:00+09:00",
+              "latestKst": "2013-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      }
+    ],
+    "boundary": {
+      "exact": "2023-07-15T08:00:00+09:00",
+      "earliestKst": "2023-07-15T08:00:00+09:00",
+      "latestKst": "2023-07-15T08:00:00+09:00",
+      "beforeIndex": 3,
+      "afterIndex": 4
+    },
+    "midpointUsed": false,
+    "originalCalculationVersion": "dayun-kst-sect2-v1",
+    "annualGanji": "癸卯",
+    "annualTenGod": "상관",
+    "cycleScopeGuards": [
+      {
+        "calendarYear": 2023,
+        "evaluatedAt": "2023-07-14T22:59:59.999Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 3,
+        "rowCycle": 4,
+        "cycleScopeAllowed": false,
+        "reasons": [
+          "WRONG_CYCLE",
+          "PRE_POST_TRANSITION_CONFLICT"
+        ],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2023,
+        "evaluatedAt": "2023-07-14T23:00:00.000Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 4,
+        "rowCycle": 4,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2023,
+        "evaluatedAt": "2023-07-14T23:00:00.001Z",
+        "selectedCycle": 4,
+        "instantActiveCycle": 4,
+        "rowCycle": 4,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      }
+    ]
+  },
+  {
+    "id": "E",
+    "year": 2033,
+    "state": "PASS",
+    "observations": [
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 4,
+        "selectedCycle": 5,
+        "originalError": null,
+        "evaluatedAt": "2033-07-14T22:59:59.999Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2033-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2033-07-15T08:00:00+09:00",
+            "latestKst": "2033-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 5,
+            "startAge": 49,
+            "endAge": 58,
+            "startYear": 2033,
+            "endYear": 2042,
+            "ganji": "丁丑",
+            "stem": "丁",
+            "branch": "丑",
+            "stemElement": "fire",
+            "branchElement": "earth",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2033-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 5,
+        "selectedCycle": 5,
+        "originalError": null,
+        "evaluatedAt": "2033-07-14T23:00:00.000Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2033-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2033-07-15T08:00:00+09:00",
+            "latestKst": "2033-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 5,
+            "startAge": 49,
+            "endAge": 58,
+            "startYear": 2033,
+            "endYear": 2042,
+            "ganji": "丁丑",
+            "stem": "丁",
+            "branch": "丑",
+            "stemElement": "fire",
+            "branchElement": "earth",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2033-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      },
+      {
+        "state": "CONFIRMED",
+        "activeCycle": 5,
+        "selectedCycle": 5,
+        "originalError": null,
+        "evaluatedAt": "2033-07-14T23:00:00.001Z",
+        "transition": {
+          "transitionYear": true,
+          "startSolarKst": "2033-07-15T08:00:00+09:00",
+          "startSolarRange": {
+            "earliestKst": "2033-07-15T08:00:00+09:00",
+            "latestKst": "2033-07-15T08:00:00+09:00"
+          },
+          "beforeCycle": {
+            "index": 4,
+            "startAge": 39,
+            "endAge": 48,
+            "startYear": 2023,
+            "endYear": 2032,
+            "ganji": "戊寅",
+            "stem": "戊",
+            "branch": "寅",
+            "stemElement": "earth",
+            "branchElement": "wood",
+            "stemYinYang": "yang",
+            "branchYinYang": "yang",
+            "startSolarKst": "2023-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          },
+          "afterCycle": {
+            "index": 5,
+            "startAge": 49,
+            "endAge": 58,
+            "startYear": 2033,
+            "endYear": 2042,
+            "ganji": "丁丑",
+            "stem": "丁",
+            "branch": "丑",
+            "stemElement": "fire",
+            "branchElement": "earth",
+            "stemYinYang": "yin",
+            "branchYinYang": "yin",
+            "startSolarKst": "2033-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            }
+          }
+        }
+      }
+    ],
+    "boundary": {
+      "exact": "2033-07-15T08:00:00+09:00",
+      "earliestKst": "2033-07-15T08:00:00+09:00",
+      "latestKst": "2033-07-15T08:00:00+09:00",
+      "beforeIndex": 4,
+      "afterIndex": 5
+    },
+    "midpointUsed": false,
+    "originalCalculationVersion": "dayun-kst-sect2-v1",
+    "annualGanji": "癸丑",
+    "annualTenGod": "상관",
+    "cycleScopeGuards": [
+      {
+        "calendarYear": 2033,
+        "evaluatedAt": "2033-07-14T22:59:59.999Z",
+        "selectedCycle": 5,
+        "instantActiveCycle": 4,
+        "rowCycle": 5,
+        "cycleScopeAllowed": false,
+        "reasons": [
+          "WRONG_CYCLE",
+          "PRE_POST_TRANSITION_CONFLICT"
+        ],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2033,
+        "evaluatedAt": "2033-07-14T23:00:00.000Z",
+        "selectedCycle": 5,
+        "instantActiveCycle": 5,
+        "rowCycle": 5,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      },
+      {
+        "calendarYear": 2033,
+        "evaluatedAt": "2033-07-14T23:00:00.001Z",
+        "selectedCycle": 5,
+        "instantActiveCycle": 5,
+        "rowCycle": 5,
+        "cycleScopeAllowed": true,
+        "reasons": [],
+        "relationPacketPresent": false,
+        "annualEvidencePrecision": "YEAR_SCOPE_OBSERVATION",
+        "grantsExactAnnualEvidence": false
+      }
+    ]
+  }
+]

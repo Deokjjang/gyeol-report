@@ -1,0 +1,59 @@
+{
+  "baseSha": "9963a12351a7d08e60255f29c032b5348152e870",
+  "frozenTrackedFiles": 4443,
+  "allBytesPreserved": true,
+  "existingWorktrees": 44,
+  "allOldHeadsBranchesStatusesFilesPreserved": true,
+  "originalDirtyFiles": 11,
+  "worktreeDiscrepancy": "43 reported; 44 measured, including the completed Love engine worktree",
+  "artifactFamilies": {
+    "v4-knowledge-unified-catalog-01": {
+      "originalGeneratedJson": 59,
+      "allOriginalTrackedArtifactsBytePreserved": true,
+      "allTrackedFilesVerified": 72
+    },
+    "v4-knowledge-source-verification-01": {
+      "originalGeneratedJson": 20,
+      "allOriginalTrackedArtifactsBytePreserved": true,
+      "allTrackedFilesVerified": 31
+    },
+    "v4-knowledge-semantic-domain-verification-01": {
+      "originalGeneratedJson": 23,
+      "allOriginalTrackedArtifactsBytePreserved": true,
+      "allTrackedFilesVerified": 34
+    },
+    "v4-actual-evidence-graph-01": {
+      "originalGeneratedJson": 105,
+      "allOriginalTrackedArtifactsBytePreserved": true,
+      "allTrackedFilesVerified": 117
+    },
+    "v4-knowledge-binder-01": {
+      "originalGeneratedJson": 83,
+      "allOriginalTrackedArtifactsBytePreserved": true,
+      "allTrackedFilesVerified": 101
+    },
+    "v4-product-specialist-foundation-01": {
+      "originalGeneratedJson": 64,
+      "allOriginalTrackedArtifactsBytePreserved": true,
+      "allTrackedFilesVerified": 79
+    },
+    "v4-comprehensive-specialist-engine-01": {
+      "originalGeneratedJson": 29,
+      "allOriginalTrackedArtifactsBytePreserved": true,
+      "allTrackedFilesVerified": 45
+    },
+    "v4-career-money-study-specialist-engine-01": {
+      "originalGeneratedJson": 35,
+      "allOriginalTrackedArtifactsBytePreserved": true,
+      "allTrackedFilesVerified": 53
+    },
+    "v4-love-marriage-child-specialist-engine-01": {
+      "originalGeneratedJson": 38,
+      "allOriginalTrackedArtifactsBytePreserved": true,
+      "allTrackedFilesVerified": 55
+    }
+  },
+  "calculationNarrativeBook": "17 books / 102 digests / full objects identical",
+  "runtimeImportsAdded": [],
+  "productionDbPaymentsAuthWorkerEnvChanges": 0
+}

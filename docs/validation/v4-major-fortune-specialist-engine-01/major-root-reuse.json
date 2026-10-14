@@ -1,0 +1,26 @@
+{
+  "contract": {
+    "newFact": "Canonical Graph root may be counted once, regardless of year or wording",
+    "continuity": "Same cycle/root/approved meaning, distinct question, prior introduction; zero independent facts",
+    "application": "Reviewed distinct condition and application; never a new calculated root",
+    "comparison": "Two observed periods and approved comparison; zero new dayun roots",
+    "recall": "Actual compatible displayed ledger, not a planned selection",
+    "redundant": "Same claim/meaning cannot be reissued as independent annual information",
+    "hardRootCap": null,
+    "customerApplicationApprovals": 0
+  },
+  "groups": [
+    {
+      "fixtureId": "fixture-major-A",
+      "groups": []
+    },
+    {
+      "fixtureId": "fixture-major-F",
+      "groups": []
+    },
+    {
+      "fixtureId": "fixture-major-transition-C",
+      "groups": []
+    }
+  ]
+}

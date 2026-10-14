@@ -1,0 +1,327 @@
+{
+  "passed": 80,
+  "failed": 0,
+  "pending": 0,
+  "tests": [
+    {
+      "name": "inherits 863 original registry records and 89 typed research candidates",
+      "status": "passed"
+    },
+    {
+      "name": "retains all 20 research families and original 18610 records",
+      "status": "passed"
+    },
+    {
+      "name": "maps every original Foundation period question without approval promotion",
+      "status": "passed"
+    },
+    {
+      "name": "shifts the relative horizon to 2024-2037 with base year 2027",
+      "status": "passed"
+    },
+    {
+      "name": "reexecutes the exact 89 by 3 Binder cohort and twelve Hard Gates",
+      "status": "passed"
+    },
+    {
+      "name": "retains natal/element natural prerequisites omitted by the original god adapter",
+      "status": "passed"
+    },
+    {
+      "name": "does not turn documentary sourceRefs into an AND source group",
+      "status": "passed"
+    },
+    {
+      "name": "preserves real approval, rank, selection, claims, graph and packet",
+      "status": "passed"
+    },
+    {
+      "name": "A blocks a fourteen-year single-cycle substitution",
+      "status": "passed"
+    },
+    {
+      "name": "all A-F producer cycles remain ten years and all horizons contain transitions",
+      "status": "passed"
+    },
+    {
+      "name": "B-D exact C transition uses previous at T-1ms and next at T/T+1ms",
+      "status": "passed"
+    },
+    {
+      "name": "C D/F range preserves both endpoints and no midpoint",
+      "status": "passed"
+    },
+    {
+      "name": "does not recover a failed range generation with an invented active cycle",
+      "status": "passed"
+    },
+    {
+      "name": "first Dayun absence preserves original DAYUN_CYCLE_UNAVAILABLE",
+      "status": "passed"
+    },
+    {
+      "name": "an unsupported uncertain producer stays WITHHELD",
+      "status": "passed"
+    },
+    {
+      "name": "E never copies a current natal-Dayun relation to another cycle",
+      "status": "passed"
+    },
+    {
+      "name": "F blocks after-cycle relationships before C exact transition",
+      "status": "passed"
+    },
+    {
+      "name": "G-H scope mismatches cannot turn annual/natal reasons into Dayun",
+      "status": "passed"
+    },
+    {
+      "name": "A 2028 preserves clash/punishment and natal day half combination separately",
+      "status": "passed"
+    },
+    {
+      "name": "B 2028 relation absence is not a peace or failure verdict",
+      "status": "passed"
+    },
+    {
+      "name": "K B 2034 keeps cycle PianCai distinct from annual BiJian",
+      "status": "passed"
+    },
+    {
+      "name": "C 2033 preserves original natal pillar positions and relation scopes",
+      "status": "passed"
+    },
+    {
+      "name": "L unknown hour never gains a participant while known natal evidence survives",
+      "status": "passed"
+    },
+    {
+      "name": "M MBTI absence never creates timing or Fusion roots",
+      "status": "passed"
+    },
+    {
+      "name": "N preserves unsupported composite and no precise annual interval",
+      "status": "passed"
+    },
+    {
+      "name": "O does not approve Samhap from only two participants",
+      "status": "passed"
+    },
+    {
+      "name": "does not mint a missing or wrong-cycle original reason ID",
+      "status": "passed"
+    },
+    {
+      "name": "TenGod matching retains original literals, roles, versions and natal prerequisites",
+      "status": "passed"
+    },
+    {
+      "name": "computes 91 two-year comparisons without minting annual or cycle roots",
+      "status": "passed"
+    },
+    {
+      "name": "actual meanings are pending even if roots coincide or terms differ",
+      "status": "passed"
+    },
+    {
+      "name": "all synthetic algorithms evaluate the full 14-year 168-question registry",
+      "status": "passed"
+    },
+    {
+      "name": "global search reserves a later transition, not just a local preference",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic hard-gate/identity negative missingApproval cannot be compensated by ranking",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic hard-gate/identity negative wrongOwner cannot be compensated by ranking",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic hard-gate/identity negative sourceDefinition cannot be compensated by ranking",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic hard-gate/identity negative badSourceHash cannot be compensated by ranking",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic hard-gate/identity negative withheld cannot be compensated by ranking",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic hard-gate/identity negative missingFact cannot be compensated by ranking",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic hard-gate/identity negative composite cannot be compensated by ranking",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic hard-gate/identity negative missingGroupSource cannot be compensated by ranking",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic hard-gate/identity negative wrongProducer cannot be compensated by ranking",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic hard-gate/identity negative forgedObservation cannot be compensated by ranking",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative wrong-year is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative wrong-cycle is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative wrong-scope is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative missing-participant is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative composite is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative missing-comparison is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative unverified-life-state is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative future-event is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative phase-event is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative source-definition is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative pre-transition is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative range is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative past-experience is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative future-marriage is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "temporal/meaning negative future-health is explicitly withheld",
+      "status": "passed"
+    },
+    {
+      "name": "Q-R same root or same meaning cannot become a new annual fact",
+      "status": "passed"
+    },
+    {
+      "name": "planned introduction is insufficient for an actual display recall",
+      "status": "passed"
+    },
+    {
+      "name": "W synthetic approval cannot enter real research and sessions cannot be forged",
+      "status": "passed"
+    },
+    {
+      "name": "source/meaning modifications outside the registered fixture are rejected",
+      "status": "passed"
+    },
+    {
+      "name": "does not infer a new comparison from only one observed year",
+      "status": "passed"
+    },
+    {
+      "name": "search limit never claims optimality and deterministic ties repeat exactly",
+      "status": "passed"
+    },
+    {
+      "name": "X preserves every original research/runtime/Book source byte",
+      "status": "passed"
+    },
+    {
+      "name": "invalid instants do not gain a cycle",
+      "status": "passed"
+    },
+    {
+      "name": "recall requires a registered independent synthetic display contract",
+      "status": "passed"
+    },
+    {
+      "name": "preserves fourteen independent year observations inside an uncertain current cycle",
+      "status": "passed"
+    },
+    {
+      "name": "missing comparison source withholds only dependent options",
+      "status": "passed"
+    },
+    {
+      "name": "comparison witnesses are two actual registered Graph nodes",
+      "status": "passed"
+    },
+    {
+      "name": "old cycle natal relation cannot leak beyond the next producer boundary",
+      "status": "passed"
+    },
+    {
+      "name": "offline input diagnosis returns WITHHELD for unsupported input without minting roots",
+      "status": "passed"
+    },
+    {
+      "name": "rejects changed producer packet seals without altering the frozen Graph",
+      "status": "passed"
+    },
+    {
+      "name": "question fit cannot compensate for an unprovided required meaning",
+      "status": "passed"
+    },
+    {
+      "name": "a synthetic observation cannot leak outside its registered exact interval",
+      "status": "passed"
+    },
+    {
+      "name": "the second comparison operand must retain its exact original producer version",
+      "status": "passed"
+    },
+    {
+      "name": "registered range cycle is withheld inside its original boundary",
+      "status": "passed"
+    },
+    {
+      "name": "registered range cycle becomes usable after latest without a midpoint",
+      "status": "passed"
+    },
+    {
+      "name": "cycle uncertainty preserves a separately registered independent annual fact",
+      "status": "passed"
+    },
+    {
+      "name": "context roots do not turn different annual facts into duplicate Dayun facts",
+      "status": "passed"
+    },
+    {
+      "name": "every unfilled year question retains a concrete reason instead of fabricated coverage",
+      "status": "passed"
+    }
+  ]
+}

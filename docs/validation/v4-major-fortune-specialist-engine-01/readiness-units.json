@@ -1,0 +1,102 @@
+{
+  "registryRecords": 863,
+  "newResearchRecordsAdded": 0,
+  "researchMaterials": 89,
+  "referenceRecords": 735,
+  "sourceInventory": 17,
+  "bindingDesign": 9,
+  "heldOrRejected": 13,
+  "sourceResearchFamilies": 20,
+  "sourceResearchRecords": 18610,
+  "foundationSourceSlots": 4799,
+  "potentialInterpretationCandidates": 4270,
+  "yearSlots": 14,
+  "questionViewsPerFixture": 168,
+  "questionFixtureViews": 504,
+  "researchYearFixtureRequirements": 3738,
+  "actualBinderCandidateFixture": 267,
+  "before": {
+    "sourceMatchOccurrences": 633,
+    "actualEvidenceMatchOccurrences": 3,
+    "factsMatched": 3,
+    "structurallyMatched": 0,
+    "sourceGroupPassOccurrences": 0
+  },
+  "after": {
+    "sourceMatchOccurrences": 633,
+    "actualEvidenceMatchOccurrences": 3,
+    "factsMatched": 3,
+    "structurallyMatched": 0,
+    "sourceGroupPassOccurrences": 0
+  },
+  "rawProducerCycleFixtureOccurrences": 36,
+  "horizonCycleFixtureOccurrences": 6,
+  "annualRootFixtureOccurrences": 42,
+  "newCanonicalRootsIssued": 0,
+  "twoYearPairsPerFixture": 91,
+  "twoYearPairFixtureOccurrences": 273,
+  "actualVerifiedApplications": 0,
+  "actualVerifiedMeaningComparisons": 0,
+  "candidateFixtureDuplicateRootGroups": 0,
+  "yearCycleRootReuseGroups": [
+    {
+      "fixtureId": "fixture-major-A",
+      "groups": [
+        {
+          "root": "aeg:root:95970f5d8a35c28362d9bacb8f4586e85b53f9da521ca077d66ec3916f501408",
+          "yearReferences": 10
+        },
+        {
+          "root": "aeg:root:1840c5a23d3b25a5c52b1cd952e1cc59be1b54ab8fe9573014c45256c042083c",
+          "yearReferences": 4
+        }
+      ]
+    },
+    {
+      "fixtureId": "fixture-major-F",
+      "groups": [
+        {
+          "root": "aeg:root:e5c17e9433ab944f843d8df231d02ddf21323bd9595084a62bfdc1463734c838",
+          "yearReferences": 10
+        },
+        {
+          "root": "aeg:root:9bf8654efc1c66a1631dc5f22de93fed70d9f825f21336fa728ae490471e00f7",
+          "yearReferences": 4
+        }
+      ]
+    },
+    {
+      "fixtureId": "fixture-major-transition-C",
+      "groups": [
+        {
+          "root": "aeg:root:82fb85f8983cf4d0a69bc1f39902604173e45f9bf8920521e32c39f157835760",
+          "yearReferences": 5
+        },
+        {
+          "root": "aeg:root:6ecce7a65fd069246aa47334a6de633098fb9e8fd348e694df97ed8ae8af575a",
+          "yearReferences": 9
+        }
+      ]
+    }
+  ],
+  "unresolvedOriginalConditionDeclarations": 158,
+  "sourceGroupDeclaredMaterials": 0,
+  "meaningReviewsRequired": 89,
+  "realMeaningReviewPairOccurrences": 11748,
+  "actualConfirmedMeaningConflicts": 0,
+  "actualCustomerEligible": 0,
+  "actualCustomerSelection": 0,
+  "actualClaims": 0,
+  "syntheticAlgorithmCoverage": [
+    16,
+    16,
+    17
+  ],
+  "syntheticIndependentInformation": [
+    15,
+    15,
+    16
+  ],
+  "syntheticRangeCoverage": 2,
+  "actualResearchAndSyntheticUnitsNeverCombined": true
+}

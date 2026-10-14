@@ -1,0 +1,33 @@
+{
+  "algorithm": "SHA256 exact JSON bytes",
+  "files": {
+    "major-a-f-observations.json": "0184cd9c7ae9371027fab1b9e420974fe9a8b4cf5c593dae57ba84b10132c708",
+    "major-algorithm-comparison.json": "df9be97f3606e471198eca9027c7bbab82b59c854e3e1aed301d706c316f8bcb",
+    "major-annual-evidence-identity.json": "ab41ff054496f6cea3edf0c575abf79ac6306927dadab3837db9b29fb89bc291",
+    "major-before-after-binding.json": "e487f2639a47453c5629bc45fac3a5c720f191bd65934f899071737c181801b4",
+    "major-cycle-selection-results.json": "f99c4dfda321e5914a2f6f22a886e904f89f7faa86487d79acb3c71e477308b0",
+    "major-information-function.json": "e68cefe7d41c007c9c7384e4786d4df8caabf2080a5fe17eef4fe6448975a54d",
+    "major-inherited-reference-audit.json": "f35351bb70bda8ec643f905a57fe7bac3c557baff7ee12724dbf17833295f46b",
+    "major-operator-worklist.json": "a26737557eb86120428e799e2ec3432b5e608aefdfa0efd837dfa57f05bbaa79",
+    "major-period-evidence-matches.json": "2f6c7440a296f89e92878fb5f141ba33838c929abfec7e818846d020c6bbf413",
+    "major-privacy-audit.json": "874f7331c8b0f86fd41caff10e07f5d2d3e25544bc7a4fb36d5ef819d77b5007",
+    "major-producer-gaps.json": "1c52aa08b9637c04ff99cfd8268eccfab85f5e061f6526d11858c8b7d0f55236",
+    "major-producer-support.json": "cdf99c0ac7ed885714af35ffbe5108f702f98768afa2af2fa6ee9ec4b6c5b1c9",
+    "major-range-transition-results.json": "3987123f5203fb27c8a66e1456145af6594ec542c191d40987a97cb11c593f00",
+    "major-registry-classification.json": "fbbab41bb26057983d9cd0c868935885a336eacd6cfaef3a334dc28008f6dccc",
+    "major-relation-scope-audit.json": "d38f7d81dc6b45e152ade7f0314b36fd6572b5c82dab6a0b949dd77c58e86c83",
+    "major-research-index.json": "4d5481955418e3612220ae8f72fa37c4808afb701b3dee58d3cf44b652b23039",
+    "major-root-reuse.json": "8d5ad35505d88ad9c4ccc333efd2d02a7fca841cddd4f14f2b8dc0ff18f9c813",
+    "major-semantic-conflicts.json": "a55d5c551892c221fd359463e9db7c6ec2eb36cd4a09452def25458a7db8bdfc",
+    "major-semantic-pending.json": "be544820010fd1f5a56ff4a4dad2e1b58e79adf26a832287d71e6fe08d1dacb0",
+    "major-source-ancestry.json": "15413b2be0050d3cc542082d4f4b8ca6ea6b6bc37dc9238f871751fe33e1dbbe",
+    "major-specialist-manifest.json": "c38a28a435e82edc06cac41dff013359c3665a6208f3b6d6f60242a819d1e464",
+    "major-synthetic-selection.json": "95ac4f9a3d78b2dd72bb50d8c876aecab03cf94f74909a1a43a6ae479ed6bbe9",
+    "major-transition-validation.json": "b7dbbaabe9fc127f9c021b5416c94dd0ad79374ebc74858c9571bd96366fde2f",
+    "major-unresolved-requirements.json": "ef1c509a802903b3e3c8fa5cd8c893291f03c66717f756c78ec0d61dbbf4e0ec",
+    "major-withheld-evidence.json": "c596f7f919a5f376021399f109aecbe4db8b1f074d049b17a1351a393d83eb7f",
+    "major-year-comparison-graph.json": "f30ceeb08047f1d10702f231b991840fc15126865adf23a79ce29765b3bb145f",
+    "major-year-question-registry.json": "135d03cf4963cf8972ffecaaabe84ed0a5a0aef0e457c60544eab130845a8d47"
+  },
+  "combinedDigest": "41509c8b2cfaee74446f7b3f3b778ff34b6a775355234644416b015906a8bbc5"
+}

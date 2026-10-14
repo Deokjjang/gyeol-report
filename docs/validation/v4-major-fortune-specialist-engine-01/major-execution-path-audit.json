@@ -1,0 +1,565 @@
+{
+  "files": [
+    {
+      "file": "src/lib/interpretation-v4/majorProductAdapter.ts",
+      "sha256": "e453ea018a4fb95e38de12adbe4fb6709b8a3372d6bec7a21e3b376be1d53e44",
+      "exports": [
+        "MAJOR_PRODUCT_VERSION",
+        "buildV4MajorProduct",
+        "MajorProduct"
+      ],
+      "imports": [
+        "./majorComposer",
+        "./timeProductContext",
+        "./editorialGuard"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/majorEvidence.ts",
+      "sha256": "455b538aeb5e7bb233db32a01f24e2ce43061a03333fcb372d7e7a8314c05407",
+      "exports": [
+        "majorNarrativeEvidence",
+        "MajorEvidence",
+        "MajorYearEvidence"
+      ],
+      "imports": [
+        "../report-generation/majorFortuneV3Generation",
+        "../report-generation/reportInputAdapter",
+        "../report-generation/majorFortuneGenerationHandler",
+        "../report-knowledge/majorFortuneDecadeReading",
+        "../report-knowledge/annualFortuneYearRules",
+        "./materialPacket",
+        "./narrativeTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/majorComposer.ts",
+      "sha256": "3252dc1b6c1a6b3721a0d055686233cd7e996232d99f61afca494a8b47c0dcbc",
+      "exports": [
+        "composeMajorFortuneNarrative"
+      ],
+      "imports": [
+        "../report-knowledge/koreanCopyUtils",
+        "./majorEvidence",
+        "./majorContext",
+        "./majorYearNarrative",
+        "./majorBehavior",
+        "./majorDistantScenes",
+        "./majorMaterials",
+        "./copyRealizer",
+        "./editorialGuard",
+        "./contentSynthesis",
+        "./majorEvidenceReading",
+        "./majorYearPersonalization",
+        "./majorPeriodCopy",
+        "./majorInteractionReading",
+        "./contentQuality",
+        "./periodPlanner",
+        "./narrativeTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/majorEvidenceReading.ts",
+      "sha256": "a94563882c12b12462577927e203b7f1c39a83dcb62f15bbf7a4977dd5fbcbd7",
+      "exports": [
+        "separateMajorChapter"
+      ],
+      "imports": [
+        "./foundationTenGods",
+        "./contentEvidence",
+        "./majorMaterials",
+        "./copyRealizer",
+        "../report-knowledge/koreanCopyUtils",
+        "../report-knowledge/annualFortuneTypes",
+        "./narrativeTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/majorYearPersonalization.ts",
+      "sha256": "5eef99c41e0cbe442b17d5b6db07457f140abcca504649582adb3b2c75521601",
+      "exports": [
+        "createMajorYearPersonalization"
+      ],
+      "imports": [
+        "../report-knowledge/koreanCopyUtils",
+        "./materialRegistry",
+        "./contentEvidence",
+        "./contentMbti",
+        "./contentSynthesis",
+        "./copyRealizer",
+        "./editorialGuard",
+        "./majorEvidence",
+        "./narrativeTypes",
+        "./materialDepthTypes",
+        "./types"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/majorPeriodCopy.ts",
+      "sha256": "9a51297c2e937664ffc4e1a5db433dfbb9a517a4d4f4bf570a19a408ddd047e8",
+      "exports": [
+        "majorYearPeriod"
+      ],
+      "imports": [
+        "./majorEvidence"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/majorInteractionReading.ts",
+      "sha256": "b0b026b1c3bc0ef2babe2621d0367e85f4334243c644ae68d72d4b19d13e7d70",
+      "exports": [
+        "majorInteractionReading",
+        "withMajorInteractions"
+      ],
+      "imports": [
+        "../report-knowledge/koreanCopyUtils",
+        "./majorPeriodCopy",
+        "./majorMaterials",
+        "../report-knowledge/annualFortuneTypes",
+        "./majorEvidence",
+        "./narrativeTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/periodPlanner.ts",
+      "sha256": "ed0a1c4b9d35c656bd8c2df9ea72140d696e18167b4cf8743f7d7e75dc1cf39c",
+      "exports": [
+        "PeriodImportance",
+        "planMajorYears",
+        "planAnnualMonths",
+        "annualYearMap",
+        "monthBoundaryDescription",
+        "friendlyTransition"
+      ],
+      "imports": [
+        "./majorEvidence",
+        "./annualEvidence"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/timeProductContext.ts",
+      "sha256": "ca3fd07c2fdd39a43c3e1694f3c36b156c26750a8d5290c31cac0a93958c32c6",
+      "exports": [
+        "TimeProductPeriod",
+        "TimeContextProjection",
+        "createTimeProductContext"
+      ],
+      "imports": [
+        "node:crypto",
+        "./relationshipProductView",
+        "./comprehensiveCandidateAdapter",
+        "./foundationTenGods",
+        "./majorMaterials",
+        "./narrativeBlockRenderer",
+        "./narrativeMemory",
+        "./narrativeHumanSurface",
+        "./narrativeMbtiReason",
+        "./copyRealizer",
+        "../report-knowledge/annualFortuneTypes",
+        "./narrativeTypes",
+        "./comprehensivePlanCore",
+        "./narrativeCore",
+        "./semanticCore"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/contentSynthesis.ts",
+      "sha256": "d8d715fbaec4a3a71e2a99fdcb906a5611580f5f6b54b4698e52e399cc72dc4f",
+      "exports": [
+        "CONTENT_REVISION",
+        "conversationalVoice",
+        "realizeChapterVoice",
+        "composeEvidenceChapters"
+      ],
+      "imports": [
+        "./contentEvidence",
+        "./contentMbti",
+        "./contentRelationshipMbti",
+        "./contentQuality",
+        "./contentWhy",
+        "./productRhythm",
+        "./assertionCopy",
+        "./copyRealizer",
+        "./editorialGuard",
+        "./narrativeTypes",
+        "./materialDepthTypes",
+        "./types",
+        "./comprehensivePlan"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/contentQuality.ts",
+      "sha256": "44e50287d61bd338bdd90205069bfc4ee60888382c73de43bbc4eb9f98764453",
+      "exports": [
+        "SEMANTIC_FAMILIES",
+        "auditContent"
+      ],
+      "imports": [
+        "./editorialGuard",
+        "./narrativeTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v4/editorialGuard.ts",
+      "sha256": "ac036a0b8b23d0d84b2d605756ad226830b3e0141988a7a9749eca0eafd6f34f",
+      "exports": [
+        "sentences",
+        "sentenceKey",
+        "narrativeText",
+        "reviewNarrative",
+        "reviewNarrativeCohort"
+      ],
+      "imports": [
+        "./narrativeTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/report-generation/majorFortuneV3Generation.ts",
+      "sha256": "c7ee6d2dc869eb67616755a99b9fb99ff855b0f344bc3954928adfc2b089bf5a",
+      "exports": [
+        "createMajorFortuneV3",
+        "validateMajorFortuneV3"
+      ],
+      "imports": [
+        "../interpretation-v3/majorFortuneEditorial",
+        "../interpretation-v3/evidence",
+        "../interpretation-v3/types",
+        "../report-knowledge/natalTableEvidence",
+        "../report-knowledge/majorFortuneTypes",
+        "../saju/calendarVersion",
+        "../saju/types",
+        "./majorFortuneGenerationHandler",
+        "./majorFortuneReportDraftValidator",
+        "./majorFortuneReportDraftTypes",
+        "./reportInputAdapter",
+        "../interpretation-v3/majorFortuneHorizon",
+        "../interpretation-v3/majorFortuneOutlook",
+        "../interpretation-v3/majorFortuneFinalPolish",
+        "../interpretation-v3/contentRevision"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/report-generation/majorFortuneGenerationHandler.ts",
+      "sha256": "702921647894f7da98453c11809ee8ee612ac102d696b88c8806c290b5bd5960",
+      "exports": [
+        "MajorFortuneGenerationErrorCode",
+        "MajorFortuneGenerationResult",
+        "MajorFortuneGenerationHandlerOptions",
+        "generateMajorFortuneProductDraft",
+        "calculateMajorFortuneSaju"
+      ],
+      "imports": [
+        "../report-knowledge/bridge/interactionScenes",
+        "./reportInputEvidence",
+        "../saju/birthTimePrecisionTypes",
+        "../saju/customerDayun",
+        "../report-knowledge/annualFortuneYearRules",
+        "../report-knowledge/majorFortuneEvidence",
+        "../report-knowledge/majorFortuneTypes",
+        "../report-knowledge/userContextTypes",
+        "../saju/calculateSaju",
+        "../saju/types",
+        "./majorFortuneReportDraftTypes",
+        "./majorFortuneReportDraftValidator",
+        "./openaiMajorFortuneReportWriter",
+        "./reportInputAdapter",
+        "./reportInputTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/report-generation/majorFortuneReportDraftTypes.ts",
+      "sha256": "bbfe4c658887ca4f843c5cdcf6d6836d06d32d0da99092237d7df025f6910312",
+      "exports": [
+        "MajorFortuneDomainLabel",
+        "MajorFortuneKeySignalType",
+        "MajorFortunePhase",
+        "MajorFortuneDraftFlowSection",
+        "MajorFortuneTimelineYearProseDetail",
+        "MajorFortuneTimelineYearLegacyDetail",
+        "MajorFortuneTimelineYearDetail",
+        "MajorFortuneReportDraft",
+        "majorFortuneDomainLabels",
+        "majorFortuneReportDraftJsonSchema",
+        "getMajorFortuneReportDraftSchemaTopLevelKeys"
+      ],
+      "imports": [
+        "../saju/customerDayun"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/report-generation/reportInputAdapter.ts",
+      "sha256": "1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+      "exports": [
+        "ReportInputAdapterOptions",
+        "ReportProductKind",
+        "ReportInputAdapterErrorCode",
+        "ReportInputAdapterResult",
+        "GenerationPersonInput",
+        "SinglePersonGenerationInput",
+        "CompatibilityGenerationInput",
+        "ReportGenerationInput",
+        "getReportProductKind",
+        "normalizeReportInputPayload",
+        "toSinglePersonGenerationInput",
+        "toCompatibilityGenerationInput"
+      ],
+      "imports": [
+        "../saju/birthTimePrecisionTypes",
+        "../saju/birthTimePrecision",
+        "../saju/customerDayun",
+        "./reportInputTypes",
+        "../report-knowledge/annualFortuneYearRules",
+        "./reportInputTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/report-knowledge/majorFortuneTypes.ts",
+      "sha256": "02b2918fc71e6dbedd261a953fa1546b59bfd955f065e5fac9acb63fd5fb5a45",
+      "exports": [
+        "MajorFortuneCycleBasis",
+        "MajorFortuneCycle",
+        "MajorFortuneCycleAccess",
+        "MajorFortuneSignal",
+        "MajorFortuneDomainFlowKey",
+        "MajorFortuneEvidencePacket"
+      ],
+      "imports": [
+        "./majorFortuneDecadeReading",
+        "./annualFortuneTypes",
+        "./bridge/types",
+        "./userContextTypes",
+        "../saju/customerDayun"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+      "sha256": "a64f62449cc09b079996ae70a1d8397dda8e111558dc18fb61e19e0261e596f4",
+      "exports": [
+        "MajorDecadeReason",
+        "MajorDecadeYear",
+        "MajorDecadeReading",
+        "buildMajorFortuneDecadeReading",
+        "withMajorFortuneDecadeReading"
+      ],
+      "imports": [
+        "./annualFortuneYearRules",
+        "./annualFortuneTypes",
+        "./majorFortuneTypes",
+        "./reportContextScenes",
+        "./koreanCopyUtils"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/report-knowledge/majorFortuneEvidence.ts",
+      "sha256": "e0ac28c618a81da2523c7a79f3bc0b4bbbb8b5d071d6f20dd8d7e93ccc5e3305",
+      "exports": [
+        "buildMajorFortuneElementEffect",
+        "getMajorFortuneBranchInteractions",
+        "MajorFortuneEvidenceMatrixQualitySummary",
+        "summarizeMajorFortuneEvidenceMatrixQuality",
+        "buildMajorFortuneEvidence"
+      ],
+      "imports": [
+        "./majorFortuneDecadeReading",
+        "./annualFortuneTypes",
+        "./annualFortuneYearRules",
+        "./majorFortuneRules",
+        "./bridge",
+        "./mbti",
+        "./majorFortuneTypes",
+        "./userContextTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/report-knowledge/majorFortuneRules.ts",
+      "sha256": "ef21ccd5d75a40bf43109a35866dbb612295afa84ce10ef722dadd75a9c91e93",
+      "exports": [
+        "getMajorFortuneGanjiInfo",
+        "hydrateMajorFortuneCycle",
+        "getMajorFortuneCycleForYear"
+      ],
+      "imports": [
+        "./annualFortuneTypes",
+        "./annualFortuneYearRules",
+        "./majorFortuneTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+      "sha256": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe",
+      "exports": [
+        "ANNUAL_FORTUNE_TIME_ZONE",
+        "ANNUAL_FORTUNE_COMMERCE_YEAR_COUNT",
+        "AnnualFortuneSeoulDateParts",
+        "AnnualFortuneCommerceYearPolicy",
+        "getAnnualFortuneSeoulDateParts",
+        "getAnnualFortuneCurrentYear",
+        "getAnnualFortuneCommerceYearPolicy",
+        "isAnnualFortuneCommerceYearSelectable",
+        "getStemElement",
+        "getBranchElement",
+        "getStemYinYang",
+        "getBranchYinYang",
+        "getGeneratedElement",
+        "getAnnualGanjiInfo",
+        "getAnnualMonthGanjiInfo",
+        "getAnnualFortuneYearAccess",
+        "getTenGodForStemPair",
+        "getBranchPairRelations",
+        "getAnnualBranchInteractions"
+      ],
+      "imports": [
+        "./annualFortuneTypes"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v3/majorFortuneHorizon.ts",
+      "sha256": "718f70b7232ece56447d8c62927068c73973cbe18d6aef7808e43428be2ae983",
+      "exports": [
+        "MAJOR_HORIZON_VERSION",
+        "HorizonCycle",
+        "HorizonTransition",
+        "MajorHorizon",
+        "buildMajorFortuneHorizon"
+      ],
+      "imports": [
+        "../report-knowledge/majorFortuneDecadeReading",
+        "../report-knowledge/annualFortuneYearRules",
+        "../report-knowledge/annualFortuneTypes",
+        "../report-knowledge/majorFortuneTypes",
+        "../report-generation/majorFortuneReportDraftTypes",
+        "../saju/customerDayun",
+        "../saju/types",
+        "./majorFortuneEditorial",
+        "./careerEditorialScenes",
+        "./careerContextV3",
+        "./mbtiNarrative",
+        "./narrativeEdition",
+        "./types"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v3/majorFortuneOutlook.ts",
+      "sha256": "3feee56d312506a5d0e2b1d67038fd7a61b45038b36b4c2ff19a4669b77c143a",
+      "exports": [
+        "MAJOR_OUTLOOK_VERSION",
+        "buildMajorFortuneOutlook"
+      ],
+      "imports": [
+        "../report-knowledge/annualFortuneTypes",
+        "../report-knowledge/majorFortuneTypes",
+        "../report-generation/majorFortuneReportDraftTypes",
+        "../saju/types",
+        "../report-knowledge/koreanCopyUtils",
+        "./majorFortuneHorizon",
+        "./majorFortuneEditorial",
+        "./careerEditorialScenes",
+        "./careerContextV3",
+        "./mbtiFortuneFusion",
+        "./mbtiNarrative",
+        "./narrativeEdition",
+        "./types"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/interpretation-v3/majorFortuneFinalPolish.ts",
+      "sha256": "06d8b44d9d2c0fa97a02668c5216b1ed0d9bf79d16c3bb22d6ddc700f91c6525",
+      "exports": [
+        "MAJOR_FINAL_VERSION",
+        "buildMajorFortuneFinal"
+      ],
+      "imports": [
+        "../report-generation/majorFortuneReportDraftTypes",
+        "../report-knowledge/majorFortuneTypes",
+        "../report-knowledge/annualFortuneTypes",
+        "../saju/types",
+        "./types",
+        "./majorFortuneOutlook",
+        "./mbtiNarrative",
+        "./contentRevision",
+        "./careerEditorialScenes",
+        "./careerContextV3"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/saju/customerDayun.ts",
+      "sha256": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+      "exports": [
+        "DAYUN_UNCERTAIN_MESSAGE",
+        "CustomerDayunInput",
+        "DayunTimeRange",
+        "CustomerDayunCycle",
+        "CustomerDayun",
+        "DayunSelection",
+        "formatDayunKst",
+        "calculateCustomerDayun",
+        "selectCustomerDayun"
+      ],
+      "imports": [
+        "node:module",
+        "./calendarVersion",
+        "./lunarJavascriptPillars",
+        "./birthTimePrecision",
+        "./birthTimePrecisionTypes",
+        "../report-knowledge/majorFortuneRules",
+        "../report-knowledge/majorFortuneTypes",
+        "./calendarVersion"
+      ],
+      "modified": false
+    },
+    {
+      "file": "src/lib/saju/calendarVersion.ts",
+      "sha256": "4afd5b85df5f5cd5e2d5b6249077b40c3bca1057aae5662e12fbb1ebd73a07a5",
+      "exports": [
+        "SAJU_CALENDAR_VERSION",
+        "DAYUN_CALCULATION_VERSION",
+        "DAYUN_ACTUAL_CYCLE_COUNT"
+      ],
+      "imports": [],
+      "modified": false
+    }
+  ],
+  "customerPath": [
+    "normalizeReportInputPayload",
+    "generateMajorFortuneProductDraft",
+    "calculateCustomerDayun / selectCustomerDayun",
+    "buildMajorFortuneEvidenceFromGenerationInput",
+    "createMajorFortuneV3 (writer disabled)",
+    "majorNarrativeEvidence (existing horizon / decade years)",
+    "composeMajorFortuneNarrative",
+    "buildV4MajorProduct",
+    "runtimeProjection / projectBook"
+  ],
+  "observations": [
+    "Calendar selection and instant activation differ at transition",
+    "majorNatal originates from base selected currentCycle only, with at most two exposed factors",
+    "annual.cycleRelations in a transition row use its selected afterCycle",
+    "Annual row has no exact Ipchun/time interval in this Graph",
+    "majorComposer preserves CURRENT_DAYUN_BOUNDARY_UNCERTAIN when activeCycle is null"
+  ],
+  "newRuntimeImports": []
+}

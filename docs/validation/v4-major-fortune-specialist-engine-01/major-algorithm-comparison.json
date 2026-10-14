@@ -1,0 +1,4091 @@
+[
+  {
+    "method": "FIRST_ELIGIBLE",
+    "selected": [
+      {
+        "candidateId": "synthetic:major:01-first-crowded",
+        "questionId": "synthetic:major:q:2023:annual",
+        "year": 2023,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:background-first",
+        "questionId": "synthetic:major:q:2023:background",
+        "year": 2023,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2024",
+        "questionId": "synthetic:major:q:2024:annual",
+        "year": 2024,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:background-continuity",
+        "questionId": "synthetic:major:q:2024:background",
+        "year": 2024,
+        "function": "CONTINUITY"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2025",
+        "questionId": "synthetic:major:q:2025:annual",
+        "year": 2025,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:application",
+        "questionId": "synthetic:major:q:2025:domain",
+        "year": 2025,
+        "function": "VERIFIED_NEW_APPLICATION"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2026",
+        "questionId": "synthetic:major:q:2026:annual",
+        "year": 2026,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2027",
+        "questionId": "synthetic:major:q:2027:annual",
+        "year": 2027,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2029",
+        "questionId": "synthetic:major:q:2029:annual",
+        "year": 2029,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2030",
+        "questionId": "synthetic:major:q:2030:annual",
+        "year": 2030,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2031",
+        "questionId": "synthetic:major:q:2031:annual",
+        "year": 2031,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2032",
+        "questionId": "synthetic:major:q:2032:annual",
+        "year": 2032,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2033",
+        "questionId": "synthetic:major:q:2033:annual",
+        "year": 2033,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2034",
+        "questionId": "synthetic:major:q:2034:annual",
+        "year": 2034,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2035",
+        "questionId": "synthetic:major:q:2035:annual",
+        "year": 2035,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2036",
+        "questionId": "synthetic:major:q:2036:annual",
+        "year": 2036,
+        "function": "NEW_CALCULATED_FACT"
+      }
+    ],
+    "uncoveredQuestions": [
+      {
+        "questionId": "synthetic:major:q:2023:domain",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:natal",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:new-information",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:next",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:novelty",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:positive",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:previous",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:risk",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:transition",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:unsupported",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:domain",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:natal",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:new-information",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:next",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:novelty",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:positive",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:previous",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:risk",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:transition",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:unsupported",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:background",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:natal",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:new-information",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:next",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:novelty",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:positive",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:previous",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:risk",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:transition",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:unsupported",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:background",
+        "year": 2026,
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_LEDGER_REQUIRED"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:domain",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:natal",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:new-information",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:next",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:novelty",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:positive",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:previous",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:risk",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:transition",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:unsupported",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:background",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:domain",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:natal",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:new-information",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:next",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:novelty",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:positive",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:previous",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:risk",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:transition",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:unsupported",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:annual",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:background",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:domain",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:natal",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:new-information",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:next",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:novelty",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:positive",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:previous",
+        "year": 2028,
+        "reasons": [
+          "PRE_POST_TRANSITION_CONFLICT"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:risk",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:transition",
+        "year": 2028,
+        "reasons": [
+          "REUSE_WITHOUT_NEW_MEANING"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:unsupported",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:background",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:domain",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:natal",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:new-information",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:next",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:novelty",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:positive",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:previous",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:risk",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:transition",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:unsupported",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:background",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:domain",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:natal",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:new-information",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:next",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:novelty",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:positive",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:previous",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:risk",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:transition",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:unsupported",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:background",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:domain",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:natal",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:new-information",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:next",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:novelty",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:positive",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:previous",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:risk",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:transition",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:unsupported",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:background",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:domain",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:natal",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:new-information",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:next",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:novelty",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:positive",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:previous",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:risk",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:transition",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:unsupported",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:background",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:domain",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:natal",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:new-information",
+        "year": 2033,
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:next",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:novelty",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:positive",
+        "year": 2033,
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:previous",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:risk",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:transition",
+        "year": 2033,
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:unsupported",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:background",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:domain",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:natal",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:new-information",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:next",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:novelty",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:positive",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:previous",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:risk",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:transition",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:unsupported",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:background",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:domain",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:natal",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:new-information",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:next",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:novelty",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:positive",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:previous",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:risk",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:transition",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:unsupported",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:background",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:domain",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:natal",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:new-information",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:next",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:novelty",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:positive",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:previous",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:risk",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:transition",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:unsupported",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      }
+    ],
+    "coveredQuestions": 16,
+    "independentInformation": 15,
+    "distinctRoots": 14,
+    "repeatedRootUses": 3,
+    "transitionComparisons": 0,
+    "continuityReferences": 1,
+    "unsupportedRelationsUsed": 0,
+    "wrongYearAssignments": 0,
+    "claimsEmitted": 0,
+    "search": {
+      "visited": 0,
+      "complete": true,
+      "status": "COMPLETE"
+    },
+    "violations": [],
+    "notSelected": [
+      {
+        "id": "synthetic:major:02-alternative",
+        "reasons": [
+          "ONE_MATERIAL_PER_QUESTION",
+          "SAME_FACT_ROOT_NOT_NEW_CALCULATED_FACT"
+        ]
+      },
+      {
+        "id": "synthetic:major:transition-comparison",
+        "reasons": [
+          "REUSE_WITHOUT_NEW_MEANING"
+        ]
+      },
+      {
+        "id": "synthetic:major:recall",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_LEDGER_REQUIRED"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-wrong-year",
+        "reasons": [
+          "WRONG_ANNUAL_YEAR"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-wrong-cycle",
+        "reasons": [
+          "WRONG_CYCLE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-wrong-scope",
+        "reasons": [
+          "WRONG_RELATION_SCOPE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-missing-participant",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-composite",
+        "reasons": [
+          "UNSUPPORTED_COMPOSITE",
+          "WRONG_RELATION_SCOPE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-missing-comparison",
+        "reasons": [
+          "COMPARISON_REQUIRES_TWO_PERIODS"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-unverified-life-state",
+        "reasons": [
+          "UNVERIFIED_LIFE_STATE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-future-event",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-phase-event",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-source-definition",
+        "reasons": [
+          "WRONG_RELATION_SCOPE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-pre-transition",
+        "reasons": [
+          "PRE_POST_TRANSITION_CONFLICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-range",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-past-experience",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-future-marriage",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-future-health",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:range-after",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "id": "synthetic:major:range-independent-annual",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "YEAR_LOCAL_GREEDY",
+    "selected": [
+      {
+        "candidateId": "synthetic:major:01-first-crowded",
+        "questionId": "synthetic:major:q:2023:annual",
+        "year": 2023,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:background-first",
+        "questionId": "synthetic:major:q:2023:background",
+        "year": 2023,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2024",
+        "questionId": "synthetic:major:q:2024:annual",
+        "year": 2024,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:background-continuity",
+        "questionId": "synthetic:major:q:2024:background",
+        "year": 2024,
+        "function": "CONTINUITY"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2025",
+        "questionId": "synthetic:major:q:2025:annual",
+        "year": 2025,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:application",
+        "questionId": "synthetic:major:q:2025:domain",
+        "year": 2025,
+        "function": "VERIFIED_NEW_APPLICATION"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2026",
+        "questionId": "synthetic:major:q:2026:annual",
+        "year": 2026,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2027",
+        "questionId": "synthetic:major:q:2027:annual",
+        "year": 2027,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2029",
+        "questionId": "synthetic:major:q:2029:annual",
+        "year": 2029,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2030",
+        "questionId": "synthetic:major:q:2030:annual",
+        "year": 2030,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2031",
+        "questionId": "synthetic:major:q:2031:annual",
+        "year": 2031,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2032",
+        "questionId": "synthetic:major:q:2032:annual",
+        "year": 2032,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2033",
+        "questionId": "synthetic:major:q:2033:annual",
+        "year": 2033,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2034",
+        "questionId": "synthetic:major:q:2034:annual",
+        "year": 2034,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2035",
+        "questionId": "synthetic:major:q:2035:annual",
+        "year": 2035,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2036",
+        "questionId": "synthetic:major:q:2036:annual",
+        "year": 2036,
+        "function": "NEW_CALCULATED_FACT"
+      }
+    ],
+    "uncoveredQuestions": [
+      {
+        "questionId": "synthetic:major:q:2023:domain",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:natal",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:new-information",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:next",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:novelty",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:positive",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:previous",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:risk",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:transition",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:unsupported",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:domain",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:natal",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:new-information",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:next",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:novelty",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:positive",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:previous",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:risk",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:transition",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:unsupported",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:background",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:natal",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:new-information",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:next",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:novelty",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:positive",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:previous",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:risk",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:transition",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:unsupported",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:background",
+        "year": 2026,
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_LEDGER_REQUIRED"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:domain",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:natal",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:new-information",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:next",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:novelty",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:positive",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:previous",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:risk",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:transition",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:unsupported",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:background",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:domain",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:natal",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:new-information",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:next",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:novelty",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:positive",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:previous",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:risk",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:transition",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:unsupported",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:annual",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:background",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:domain",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:natal",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:new-information",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:next",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:novelty",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:positive",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:previous",
+        "year": 2028,
+        "reasons": [
+          "PRE_POST_TRANSITION_CONFLICT"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:risk",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:transition",
+        "year": 2028,
+        "reasons": [
+          "REUSE_WITHOUT_NEW_MEANING"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:unsupported",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:background",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:domain",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:natal",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:new-information",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:next",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:novelty",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:positive",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:previous",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:risk",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:transition",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:unsupported",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:background",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:domain",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:natal",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:new-information",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:next",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:novelty",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:positive",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:previous",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:risk",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:transition",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:unsupported",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:background",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:domain",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:natal",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:new-information",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:next",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:novelty",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:positive",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:previous",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:risk",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:transition",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:unsupported",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:background",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:domain",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:natal",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:new-information",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:next",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:novelty",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:positive",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:previous",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:risk",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:transition",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:unsupported",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:background",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:domain",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:natal",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:new-information",
+        "year": 2033,
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:next",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:novelty",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:positive",
+        "year": 2033,
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:previous",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:risk",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:transition",
+        "year": 2033,
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:unsupported",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:background",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:domain",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:natal",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:new-information",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:next",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:novelty",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:positive",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:previous",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:risk",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:transition",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:unsupported",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:background",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:domain",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:natal",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:new-information",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:next",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:novelty",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:positive",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:previous",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:risk",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:transition",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:unsupported",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:background",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:domain",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:natal",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:new-information",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:next",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:novelty",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:positive",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:previous",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:risk",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:transition",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:unsupported",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      }
+    ],
+    "coveredQuestions": 16,
+    "independentInformation": 15,
+    "distinctRoots": 14,
+    "repeatedRootUses": 3,
+    "transitionComparisons": 0,
+    "continuityReferences": 1,
+    "unsupportedRelationsUsed": 0,
+    "wrongYearAssignments": 0,
+    "claimsEmitted": 0,
+    "search": {
+      "visited": 0,
+      "complete": true,
+      "status": "COMPLETE"
+    },
+    "violations": [],
+    "notSelected": [
+      {
+        "id": "synthetic:major:02-alternative",
+        "reasons": [
+          "ONE_MATERIAL_PER_QUESTION",
+          "SAME_FACT_ROOT_NOT_NEW_CALCULATED_FACT"
+        ]
+      },
+      {
+        "id": "synthetic:major:transition-comparison",
+        "reasons": [
+          "REUSE_WITHOUT_NEW_MEANING"
+        ]
+      },
+      {
+        "id": "synthetic:major:recall",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_LEDGER_REQUIRED"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-wrong-year",
+        "reasons": [
+          "WRONG_ANNUAL_YEAR"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-wrong-cycle",
+        "reasons": [
+          "WRONG_CYCLE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-wrong-scope",
+        "reasons": [
+          "WRONG_RELATION_SCOPE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-missing-participant",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-composite",
+        "reasons": [
+          "UNSUPPORTED_COMPOSITE",
+          "WRONG_RELATION_SCOPE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-missing-comparison",
+        "reasons": [
+          "COMPARISON_REQUIRES_TWO_PERIODS"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-unverified-life-state",
+        "reasons": [
+          "UNVERIFIED_LIFE_STATE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-future-event",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-phase-event",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-source-definition",
+        "reasons": [
+          "WRONG_RELATION_SCOPE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-pre-transition",
+        "reasons": [
+          "PRE_POST_TRANSITION_CONFLICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-range",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-past-experience",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-future-marriage",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-future-health",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:range-after",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "id": "synthetic:major:range-independent-annual",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GLOBAL_CONSTRAINT_AWARE",
+    "selected": [
+      {
+        "candidateId": "synthetic:major:02-alternative",
+        "questionId": "synthetic:major:q:2023:annual",
+        "year": 2023,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:background-first",
+        "questionId": "synthetic:major:q:2023:background",
+        "year": 2023,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2024",
+        "questionId": "synthetic:major:q:2024:annual",
+        "year": 2024,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:background-continuity",
+        "questionId": "synthetic:major:q:2024:background",
+        "year": 2024,
+        "function": "CONTINUITY"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2025",
+        "questionId": "synthetic:major:q:2025:annual",
+        "year": 2025,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:application",
+        "questionId": "synthetic:major:q:2025:domain",
+        "year": 2025,
+        "function": "VERIFIED_NEW_APPLICATION"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2026",
+        "questionId": "synthetic:major:q:2026:annual",
+        "year": 2026,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2027",
+        "questionId": "synthetic:major:q:2027:annual",
+        "year": 2027,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:transition-comparison",
+        "questionId": "synthetic:major:q:2028:transition",
+        "year": 2028,
+        "function": "VERIFIED_COMPARISON"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2029",
+        "questionId": "synthetic:major:q:2029:annual",
+        "year": 2029,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2030",
+        "questionId": "synthetic:major:q:2030:annual",
+        "year": 2030,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2031",
+        "questionId": "synthetic:major:q:2031:annual",
+        "year": 2031,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2032",
+        "questionId": "synthetic:major:q:2032:annual",
+        "year": 2032,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2033",
+        "questionId": "synthetic:major:q:2033:annual",
+        "year": 2033,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2034",
+        "questionId": "synthetic:major:q:2034:annual",
+        "year": 2034,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2035",
+        "questionId": "synthetic:major:q:2035:annual",
+        "year": 2035,
+        "function": "NEW_CALCULATED_FACT"
+      },
+      {
+        "candidateId": "synthetic:major:annual-2036",
+        "questionId": "synthetic:major:q:2036:annual",
+        "year": 2036,
+        "function": "NEW_CALCULATED_FACT"
+      }
+    ],
+    "uncoveredQuestions": [
+      {
+        "questionId": "synthetic:major:q:2023:domain",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:natal",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:new-information",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:next",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:novelty",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:positive",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:previous",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:risk",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:transition",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2023:unsupported",
+        "year": 2023,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:domain",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:natal",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:new-information",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:next",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:novelty",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:positive",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:previous",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:risk",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:transition",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2024:unsupported",
+        "year": 2024,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:background",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:natal",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:new-information",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:next",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:novelty",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:positive",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:previous",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:risk",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:transition",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2025:unsupported",
+        "year": 2025,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:background",
+        "year": 2026,
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_LEDGER_REQUIRED"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:domain",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:natal",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:new-information",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:next",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:novelty",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:positive",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:previous",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:risk",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:transition",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2026:unsupported",
+        "year": 2026,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:background",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:domain",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:natal",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:new-information",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:next",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:novelty",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:positive",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:previous",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:risk",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:transition",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2027:unsupported",
+        "year": 2027,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:annual",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:background",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:domain",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:natal",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:new-information",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:next",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:novelty",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:positive",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:previous",
+        "year": 2028,
+        "reasons": [
+          "PRE_POST_TRANSITION_CONFLICT"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:risk",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2028:unsupported",
+        "year": 2028,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:background",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:domain",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:natal",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:new-information",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:next",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:novelty",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:positive",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:previous",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:risk",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:transition",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2029:unsupported",
+        "year": 2029,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:background",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:domain",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:natal",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:new-information",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:next",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:novelty",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:positive",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:previous",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:risk",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:transition",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2030:unsupported",
+        "year": 2030,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:background",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:domain",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:natal",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:new-information",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:next",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:novelty",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:positive",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:previous",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:risk",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:transition",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2031:unsupported",
+        "year": 2031,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:background",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:domain",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:natal",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:new-information",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:next",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:novelty",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:positive",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:previous",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:risk",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:transition",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2032:unsupported",
+        "year": 2032,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:background",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:domain",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:natal",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:new-information",
+        "year": 2033,
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:next",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:novelty",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:positive",
+        "year": 2033,
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:previous",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:risk",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:transition",
+        "year": 2033,
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2033:unsupported",
+        "year": 2033,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:background",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:domain",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:natal",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:new-information",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:next",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:novelty",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:positive",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:previous",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:risk",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:transition",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2034:unsupported",
+        "year": 2034,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:background",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:domain",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:natal",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:new-information",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:next",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:novelty",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:positive",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:previous",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:risk",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:transition",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2035:unsupported",
+        "year": 2035,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:background",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:domain",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:natal",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:new-information",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:next",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:novelty",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:positive",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:previous",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:risk",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:transition",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      },
+      {
+        "questionId": "synthetic:major:q:2036:unsupported",
+        "year": 2036,
+        "reasons": [
+          "NO_REGISTERED_MATERIAL_FOR_QUESTION"
+        ]
+      }
+    ],
+    "coveredQuestions": 17,
+    "independentInformation": 16,
+    "distinctRoots": 16,
+    "repeatedRootUses": 3,
+    "transitionComparisons": 1,
+    "continuityReferences": 1,
+    "unsupportedRelationsUsed": 0,
+    "wrongYearAssignments": 0,
+    "claimsEmitted": 0,
+    "search": {
+      "visited": 340,
+      "complete": true,
+      "status": "COMPLETE"
+    },
+    "violations": [],
+    "notSelected": [
+      {
+        "id": "synthetic:major:01-first-crowded",
+        "reasons": [
+          "ONE_MATERIAL_PER_QUESTION",
+          "REUSE_WITHOUT_NEW_MEANING",
+          "SAME_FACT_ROOT_NOT_NEW_CALCULATED_FACT"
+        ]
+      },
+      {
+        "id": "synthetic:major:recall",
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_LEDGER_REQUIRED"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-wrong-year",
+        "reasons": [
+          "WRONG_ANNUAL_YEAR"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-wrong-cycle",
+        "reasons": [
+          "WRONG_CYCLE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-wrong-scope",
+        "reasons": [
+          "WRONG_RELATION_SCOPE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-missing-participant",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-composite",
+        "reasons": [
+          "UNSUPPORTED_COMPOSITE",
+          "WRONG_RELATION_SCOPE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-missing-comparison",
+        "reasons": [
+          "COMPARISON_REQUIRES_TWO_PERIODS"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-unverified-life-state",
+        "reasons": [
+          "UNVERIFIED_LIFE_STATE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-future-event",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-phase-event",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-source-definition",
+        "reasons": [
+          "WRONG_RELATION_SCOPE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-pre-transition",
+        "reasons": [
+          "PRE_POST_TRANSITION_CONFLICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-range",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-past-experience",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-future-marriage",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:negative-future-health",
+        "reasons": [
+          "UNSUPPORTED_EVENT_OR_PHASE_VERDICT"
+        ]
+      },
+      {
+        "id": "synthetic:major:range-after",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED",
+          "TARGET_CYCLE_UNAVAILABLE"
+        ]
+      },
+      {
+        "id": "synthetic:major:range-independent-annual",
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "ACTUAL_PERIOD_REQUIRED",
+          "ACTUAL_ROOT_REQUIRED",
+          "ACTUAL_TEMPORAL_OBSERVATION_MISSING",
+          "MISSING_PARTICIPANT",
+          "REGISTERED_TEMPORAL_WINDOW_MISMATCH",
+          "SYNTHETIC_PRODUCER_OBSERVATION_NOT_REGISTERED"
+        ]
+      }
+    ]
+  }
+]

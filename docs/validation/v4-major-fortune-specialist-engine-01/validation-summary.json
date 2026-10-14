@@ -1,0 +1,33 @@
+{
+  "newTests": {
+    "pass": 80,
+    "fail": 0,
+    "skip": 0
+  },
+  "existingRelated": {
+    "pass": 478,
+    "fail": 0,
+    "skip": 0,
+    "isolatedTimeoutRerunsExplained": true
+  },
+  "existing16FailedFiles": {
+    "pass": 5837,
+    "fail": 46,
+    "sameFullSignatures": true
+  },
+  "typescript": {
+    "base": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "buildWarnings": 0,
+  "diffCheck": "PASS",
+  "books": 17,
+  "digests": 102,
+  "originalFiles": 4443,
+  "preservedWorktrees": 44,
+  "generatedJson": 28,
+  "preview": "PENDING_EXACT_COMMIT_CHECK"
+}
