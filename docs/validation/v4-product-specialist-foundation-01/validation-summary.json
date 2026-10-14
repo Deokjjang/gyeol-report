@@ -32,5 +32,11 @@
   "originalDirtyFiles": 11,
   "books": 17,
   "digests": 102,
-  "preview": "PENDING_EXACT_COMMIT_VERIFICATION"
+  "preview": {
+    "implementationSha": "215060261e32428ad2ae961de8ca76da263af42e",
+    "state": "READY",
+    "url": "https://gyeol-report-m4i6rusze-gyeol-report-s-projects.vercel.app",
+    "target": "preview",
+    "finalDocumentationCommit": "Verified separately after push"
+  }
 }

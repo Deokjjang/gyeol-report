@@ -138,3 +138,5 @@
 ## Git / Preview
 
 검증한 신규 파일만 feature branch에 commit/push한다. master/Production은 보존한다. 정확한 commit의 Preview READY와 원격 SHA는 push 후 확인하고 최종 보고한다. 검증된 parent Preview receipt를 보완 커밋에 기록하는 경우 최종 보완 SHA도 별도로 다시 확인한다. Preview READY는 고객 판매·해석 승인 또는 Production 배포 승인이 아니다.
+
+구현 커밋 `215060261e32428ad2ae961de8ca76da263af42e`의 원격 SHA 일치와 Vercel Preview **READY**를 실제 확인했다. URL: https://gyeol-report-m4i6rusze-gyeol-report-s-projects.vercel.app. `preview-verification.json`에 project/branch/target/SHA를 기록했다. 이 기록을 추가한 문서 커밋도 push 후 정확한 최종 SHA의 READY를 다시 확인하고 최종 응답 및 외부 검증 receipt에 기록한다. 구현·생성 산출물은 이 문서 보완에서 변경하지 않았다.

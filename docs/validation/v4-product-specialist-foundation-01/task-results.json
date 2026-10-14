@@ -1,0 +1,106 @@
+{
+  "TASK": "V4-PRODUCT-SPECIALIST-FOUNDATION-01",
+  "BASE_SHA": "2f5baa3f0241b440a83f8b5138b5b590a38a0a06",
+  "BRANCH": "v4/product-specialist-foundation-01",
+  "COMMIT_SHA": "Implementation commit recorded in preview-verification.json; final documentation SHA verified in final report",
+  "REMOTE_SHA_MATCH": true,
+  "FOUNDATION_ENGINE": "IMPLEMENTED_OFFLINE_ONLY",
+  "QUESTION_REGISTRY": 2060,
+  "PRODUCT_COVERAGE": "6/6 original structures",
+  "RELATIONSHIP_INTERFACE_COVERAGE": "7/7 interfaces; no specialist selection engine enabled",
+  "RESEARCH_RECORDS": 18610,
+  "INTERPRETATION_CANDIDATES": 4270,
+  "QUESTION_MAPPED_CANDIDATES": 1273,
+  "DIRECT_SPECIALIST_MATERIALS": 1056,
+  "COMMON_RESEARCH_UNSCOPED": 1903,
+  "TYPED_REQUIREMENT_ADAPTERS": {
+    "sourceSelectorOccurrences": 9352,
+    "exactOriginalPointerNarrowings": 7212,
+    "unverifiedMonthlyRoleSelectorsActivated": 0
+  },
+  "FULLY_MACHINE_CHECKABLE_BEFORE": 52,
+  "FULLY_MACHINE_CHECKABLE_AFTER": 52,
+  "PARTIALLY_CHECKABLE_BEFORE": 2029,
+  "PARTIALLY_CHECKABLE_AFTER": 2029,
+  "UNMACHINEABLE_BEFORE": 2189,
+  "UNMACHINEABLE_AFTER": 2189,
+  "ANNUAL_SELECTOR_STATUS": "12 months, all segments; stem/branch separate; ambiguous role WITHHELD; effective-annual/dayun god unexposed",
+  "ANNUAL_EVIDENCE_MATCH_BEFORE": 0,
+  "ANNUAL_EVIDENCE_MATCH_AFTER": {
+    "samePrimaryCohort": 0,
+    "separatePeriodAttempts": 124,
+    "separatePeriodWitnessOccurrences": 372,
+    "separateRoleAlternativeWitnessOccurrences": 248,
+    "customerEligible": 0
+  },
+  "MAJOR_SELECTOR_STATUS": "14 editorial years separated from actual ten-year cycles; original endpoints/transitions/current-only natal relations preserved",
+  "ACTUAL_EVIDENCE_MATCH_BEFORE": 917,
+  "ACTUAL_EVIDENCE_MATCH_AFTER": 917,
+  "STRUCTURAL_MATCH_BEFORE": 81,
+  "STRUCTURAL_MATCH_AFTER": 81,
+  "SOURCE_GROUP_PASS": 0,
+  "QUESTION_COVERAGE": {
+    "registry": 2060,
+    "distinctWithDeclaredMaterialsAcrossFixtures": 1892,
+    "distinctWithWitnessAcrossFixtures": 832,
+    "fixtureQuestionOccurrences": 4304
+  },
+  "UNANSWERABLE_QUESTIONS": {
+    "withoutWitnessDistinct": 1228,
+    "materialOrWitnessMissingFixtureOccurrences": 3064,
+    "customerAnswerable": 0
+  },
+  "UNKNOWN_SOURCE_REQUIREMENTS": {
+    "withoutSelectorIncludingDocumentary": 6857,
+    "withGaps": 1629
+  },
+  "UNSUPPORTED_PRODUCER_REQUIREMENTS": {
+    "candidateOccurrences": 193,
+    "fixtureOccurrences": 374
+  },
+  "SEMANTIC_REVIEW_PENDING": "4270 distinct candidates; 5073 primary uses",
+  "OPERATOR_REVIEW_PENDING": 4270,
+  "CUSTOMER_ELIGIBLE": 0,
+  "WITHHELD_CANDIDATES": {
+    "primaryCandidateFixtureOccurrences": 5073,
+    "separatePeriodAttempts": 124
+  },
+  "HARD_GATE_PRESERVATION": "12/12; states unchanged; 110 missing-period reasons made more specific",
+  "FACT_ROOT_REUSE": {
+    "originalGraphDistinctRoots": 19468,
+    "originalBinderDistinctRoots": 358,
+    "originalBinderRootReferenceOccurrences": 2958,
+    "newIndependentFacts": 0
+  },
+  "DETERMINISTIC_BUILD": {
+    "generatedFiles": 64,
+    "freshExecutions": 2,
+    "allBytesEqual": true,
+    "digest": "8573d01e416e0421f98d3768467900103c40ff4a04565cfac02765357d45620e"
+  },
+  "PRIVACY_CHECK": "PASS; match before redaction, no raw synthetic names/DOB/person hash/Graph fingerprints",
+  "CATALOG_PRESERVATION": "59 generated JSON and all original files unchanged",
+  "SOURCE_VERIFICATION_PRESERVATION": "20 generated JSON and all original files unchanged",
+  "SEMANTIC_VERIFICATION_PRESERVATION": "23 generated JSON and all original files unchanged",
+  "EVIDENCE_GRAPH_PRESERVATION": "105 generated JSON unchanged; same 27 PARTIAL Graphs",
+  "BINDER_PRESERVATION": "83 generated JSON unchanged; same primary 5073 pairs",
+  "CALCULATION_PRESERVATION": "PASS; original files and calculation digests unchanged",
+  "NARRATIVE_PRESERVATION": "PASS; 17 complete narrative objects unchanged",
+  "BOOK_PRESERVATION": "PASS; 17 Books /102 digests and stored roundtrip unchanged",
+  "EXISTING_TEST_FAILURES": "46 identical signatures; all tests in original 16 failing files 5837 PASS /46 FAIL before and after",
+  "NEW_TEST_FAILURES": 0,
+  "TYPESCRIPT": "0 baseline /0 after /0 new",
+  "LINT": "PASS",
+  "BUILD": "PASS; local Production build, zero warnings",
+  "DIFF_CHECK": "PASS",
+  "VERCEL_PREVIEW": "Exact implementation SHA READY recorded separately; final documentation SHA rechecked after push",
+  "REMAINING_GAPS": [
+    "Natural meaning predicates and original C/CH mapping not invented",
+    "Monthly god role unspecified; effective-annual/dayun god unsupported in existing Graph",
+    "Personal Facet /some Fusion rule IDs /Personal Resonance ancestry /some dayun endpoints remain held",
+    "3/4 layer temporal composition unsupported",
+    "Source group/display ledger/RECALL/user role-context requirements unchanged",
+    "Unscoped product policy and operator/customer approval still required"
+  ],
+  "NEXT_STAGE_READY": "Foundation handoff ready; customer specialist claims/ranking/writer NOT enabled; no next stage started"
+}
