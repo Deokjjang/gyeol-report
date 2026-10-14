@@ -1,0 +1,63 @@
+{
+  "unit": "Local offline verification elapsed milliseconds/RSS, not customer latency",
+  "runs": [
+    {
+      "elapsedMs": 309194.89141700004,
+      "rssStartBytes": 721780736,
+      "rssEndBytes": 4367122432,
+      "maxRssBytes": 4552966144,
+      "timings": [
+        {
+          "fixtureId": "fixture-major-A",
+          "foundationMs": 344.49170899999444,
+          "specialistMs": 513.1959579999966,
+          "rssBytes": 3485876224
+        },
+        {
+          "fixtureId": "fixture-major-F",
+          "foundationMs": 36.29349999999977,
+          "specialistMs": 245.19358399999328,
+          "rssBytes": 2641379328
+        },
+        {
+          "fixtureId": "fixture-major-transition-C",
+          "foundationMs": 270.19429200000013,
+          "specialistMs": 466.10899999999674,
+          "rssBytes": 3680387072
+        }
+      ],
+      "originalLoveGeneratedFilesMatched": 38,
+      "network": "disabled"
+    },
+    {
+      "elapsedMs": 307005.163584,
+      "rssStartBytes": 769212416,
+      "rssEndBytes": 3657711616,
+      "maxRssBytes": 4198268928,
+      "timings": [
+        {
+          "fixtureId": "fixture-major-A",
+          "foundationMs": 346.1522499999992,
+          "specialistMs": 514.6576669999922,
+          "rssBytes": 2703835136
+        },
+        {
+          "fixtureId": "fixture-major-F",
+          "foundationMs": 36.559166999999434,
+          "specialistMs": 212.80945800000336,
+          "rssBytes": 2682486784
+        },
+        {
+          "fixtureId": "fixture-major-transition-C",
+          "foundationMs": 419.0108340000006,
+          "specialistMs": 479.5836660000059,
+          "rssBytes": 2882863104
+        }
+      ],
+      "originalLoveGeneratedFilesMatched": 38,
+      "network": "disabled"
+    }
+  ],
+  "existingLoveOutputRebuiltAndByteMatched": 38,
+  "sourceOptimizationPerformed": false
+}

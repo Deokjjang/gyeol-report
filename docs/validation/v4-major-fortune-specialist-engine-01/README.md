@@ -54,3 +54,7 @@ git diff --check
 미해결 자연어 계약, Source Group 미선언, 의미·domain·counterexample·고객 승인, 다른 cycle의 원국 관계, 전환 전 대운×세운 packet, Graph endpoint 노출, 정밀 연도 interval, 독립 3층 판정은 남긴다. 원래 calculateCustomerDayun의 원시 경계와 V4/Graph 노출 부족을 구별해야 한다. [후속 인수 계약](major-specialist-handoff.md)은 제안만 하며 이번에 계산기·고객 Planner·Writer를 수정하지 않았다.
 
 master·Production·운영 DB·Supabase·환경변수·결제·Auth·Worker·기존 구매 Book은 변경하지 않는다. Preview는 commit/push 이후 정확 SHA/branch/project/target을 확인하고 Git 검증 receipt와 함께 보고한다. 다음 세운 Specialist Engine은 시작하지 않는다.
+
+## Git 및 Preview receipt
+
+구현 커밋 `48421c460a143d48990ec5b1d2e073d6637f5606`은 원격 작업 브랜치와 일치하며 [Preview](https://gyeol-report-i2jb1q1a8-gyeol-report-s-projects.vercel.app)가 READY다. Deployment `dpl_CUcM1LbX85Ci4mQtK414NhZkATkA`, project `prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc`, branch `v4/major-fortune-specialist-engine-01`, target=null을 직접 확인했다. [검증 receipt](preview-verification.json)를 보존한다. 이 문서 커밋의 최종 SHA도 별도로 Preview READY·원격 일치를 확인한 뒤 최종 응답과 `/tmp/gyeol-major-specialist-engine-01-validation/final-preview-receipt.json`에 기록한다. 본문·코드 변경 없는 문서 커밋에 자기 SHA를 다시 넣는 순환을 피한다.

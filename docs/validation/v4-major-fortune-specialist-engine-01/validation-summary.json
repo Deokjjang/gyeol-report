@@ -29,5 +29,9 @@
   "originalFiles": 4443,
   "preservedWorktrees": 44,
   "generatedJson": 28,
-  "preview": "PENDING_EXACT_COMMIT_CHECK"
+  "preview": {
+    "implementation": "READY",
+    "sha": "48421c460a143d48990ec5b1d2e073d6637f5606",
+    "finalDocsHead": "TO_BE_VERIFIED_AFTER_THIS_COMMIT"
+  }
 }
