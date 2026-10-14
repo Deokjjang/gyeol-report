@@ -1,0 +1,257 @@
+[
+  {
+    "id": "comprehensive/A",
+    "productKey": "saju_mbti_full",
+    "narrativePages": 13,
+    "paragraphs": 52,
+    "narrativeLength": 10049,
+    "endings": {
+      "formal": 112,
+      "haeyo": 17,
+      "questions": 0
+    },
+    "sourceRoots": 0,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "comprehensive/F",
+    "productKey": "saju_mbti_full",
+    "narrativePages": 13,
+    "paragraphs": 52,
+    "narrativeLength": 9814,
+    "endings": {
+      "formal": 119,
+      "haeyo": 18,
+      "questions": 0
+    },
+    "sourceRoots": 0,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "career/A",
+    "productKey": "career_money_study",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 9359,
+    "endings": {
+      "formal": 75,
+      "haeyo": 19,
+      "questions": 0
+    },
+    "sourceRoots": 0,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "career/F",
+    "productKey": "career_money_study",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 9385,
+    "endings": {
+      "formal": 76,
+      "haeyo": 17,
+      "questions": 0
+    },
+    "sourceRoots": 0,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "love/A",
+    "productKey": "love_marriage_child",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 8336,
+    "endings": {
+      "formal": 72,
+      "haeyo": 4,
+      "questions": 0
+    },
+    "sourceRoots": 0,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "love/F",
+    "productKey": "love_marriage_child",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 8022,
+    "endings": {
+      "formal": 74,
+      "haeyo": 4,
+      "questions": 0
+    },
+    "sourceRoots": 0,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "compatibility/A",
+    "productKey": "saju_mbti_compatibility",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 9803,
+    "endings": {
+      "formal": 102,
+      "haeyo": 0,
+      "questions": 0
+    },
+    "sourceRoots": 3,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "compatibility/marriage",
+    "productKey": "saju_mbti_compatibility",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 9845,
+    "endings": {
+      "formal": 102,
+      "haeyo": 0,
+      "questions": 0
+    },
+    "sourceRoots": 3,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "compatibility/parentChild",
+    "productKey": "saju_mbti_compatibility",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 9771,
+    "endings": {
+      "formal": 103,
+      "haeyo": 0,
+      "questions": 0
+    },
+    "sourceRoots": 3,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "compatibility/coworker",
+    "productKey": "saju_mbti_compatibility",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 9863,
+    "endings": {
+      "formal": 103,
+      "haeyo": 0,
+      "questions": 0
+    },
+    "sourceRoots": 3,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "compatibility/managerReport",
+    "productKey": "saju_mbti_compatibility",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 9824,
+    "endings": {
+      "formal": 102,
+      "haeyo": 0,
+      "questions": 0
+    },
+    "sourceRoots": 3,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "compatibility/businessPartner",
+    "productKey": "saju_mbti_compatibility",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 9868,
+    "endings": {
+      "formal": 101,
+      "haeyo": 0,
+      "questions": 0
+    },
+    "sourceRoots": 3,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "compatibility/friendship",
+    "productKey": "saju_mbti_compatibility",
+    "narrativePages": 9,
+    "paragraphs": 36,
+    "narrativeLength": 9834,
+    "endings": {
+      "formal": 103,
+      "haeyo": 0,
+      "questions": 0
+    },
+    "sourceRoots": 3,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "major/A",
+    "productKey": "major_fortune",
+    "narrativePages": 22,
+    "paragraphs": 118,
+    "narrativeLength": 17063,
+    "endings": {
+      "formal": 114,
+      "haeyo": 158,
+      "questions": 24
+    },
+    "sourceRoots": 13,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "major/F",
+    "productKey": "major_fortune",
+    "narrativePages": 22,
+    "paragraphs": 114,
+    "narrativeLength": 16541,
+    "endings": {
+      "formal": 114,
+      "haeyo": 152,
+      "questions": 22
+    },
+    "sourceRoots": 12,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "annual/A",
+    "productKey": "annual_fortune",
+    "narrativePages": 17,
+    "paragraphs": 84,
+    "narrativeLength": 11204,
+    "endings": {
+      "formal": 79,
+      "haeyo": 108,
+      "questions": 0
+    },
+    "sourceRoots": 8,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  },
+  {
+    "id": "annual/F",
+    "productKey": "annual_fortune",
+    "narrativePages": 17,
+    "paragraphs": 83,
+    "narrativeLength": 10752,
+    "endings": {
+      "formal": 78,
+      "haeyo": 105,
+      "questions": 0
+    },
+    "sourceRoots": 7,
+    "reviewedCompleteBookStructurally": true,
+    "notFullHumanSalesAudit": true
+  }
+]

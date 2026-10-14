@@ -1,0 +1,78 @@
+{
+  "customerOccurrenceInProductionNotAsserted": true,
+  "existingFilesChanged": 0,
+  "confirmedStandaloneHelperLimits": [
+    {
+      "file": "src/lib/interpretation-v4/copyRealizer.ts",
+      "symbol": "particle",
+      "line": 8,
+      "input": [
+        "길",
+        "으로",
+        "로"
+      ],
+      "actual": "길으로",
+      "preferred": "길로",
+      "cause": "generic Hangul final test has no rieul exception",
+      "impact": "callers using directional pair and rieul noun; not every actual current call uses this shape",
+      "futureCondition": "typed pair kind; reuse verified safe helper without changing claim content"
+    },
+    {
+      "file": "src/lib/interpretation-v4/copyRealizer.ts",
+      "symbol": "particle",
+      "line": 8,
+      "input": [
+        "‘제안’",
+        "이",
+        "가"
+      ],
+      "actual": "‘제안’가",
+      "preferred": "‘제안’이",
+      "cause": "checks closing quote codepoint and defaults open ending",
+      "impact": "quoted final-consonant noun passed to this old generic helper",
+      "futureCondition": "explicit noun head/reading; not arbitrary whole-sentence regex repair"
+    },
+    {
+      "file": "src/lib/report-knowledge/koreanCopyUtils.ts",
+      "symbol": "normalizeKoreanSentenceSpacing",
+      "line": 32,
+      "input": "버전 3.14에서 확인합니다.",
+      "actual": "버전 3. 14에서 확인합니다.",
+      "preferred": "버전 3.14에서 확인합니다.",
+      "cause": "punctuation before a following digit treated as sentence boundary",
+      "impact": "decimal/version/abbreviation-like literals; actual paid occurrence not established",
+      "futureCondition": "protect literal spans and distinguish punctuation token kind"
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeEndings.ts",
+      "symbol": "narrativeSurfaces",
+      "line": 23,
+      "input": "이 자료는 정보입니다.",
+      "actual": "이 자료는 정보여요.",
+      "preferred": "이 자료는 정보예요.",
+      "cause": "unlisted noun predicate ends with same substring as verb 보입니다",
+      "impact": "standalone helper probe; it is not a valid publication claim without actual refs",
+      "futureCondition": "lemma/predicate typing and reviewed inflection; preserve existing directness/negation"
+    }
+  ],
+  "contextualLimits": [
+    {
+      "file": "src/lib/report-knowledge/koreanCopyUtils.ts",
+      "symbol": "withKoreanParticle",
+      "actual": "3이",
+      "condition": "Sino 삼 reading is supported; 세/셋/번호/unit context must be explicit",
+      "notUniversallyWrong": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/copyRealizer.ts",
+      "symbol": "particle",
+      "condition": "foreign or unusual spelling defaults open suffix; pronunciation cannot be assumed",
+      "actualRuntimeOccurrenceNotEstablished": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeMemory.ts",
+      "condition": "usedClaims,terms,words,ending history already exist and selected release renderers import freshNarrativeMemory; old isolation test is stale",
+      "futureRequirement": "reuse actual existing source/term/claim bookkeeping where applicable; add only necessary contract fields in separately approved implementation"
+    }
+  ]
+}

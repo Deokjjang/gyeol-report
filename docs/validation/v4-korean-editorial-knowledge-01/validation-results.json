@@ -1,0 +1,75 @@
+{
+  "baseSha": "39a08dcc43c467f0dba71da820d0e879dff91ec1",
+  "tests": {
+    "baseline-regression": {
+      "passed": 228,
+      "failed": 33,
+      "pending": 0
+    },
+    "after-regression": {
+      "passed": 228,
+      "failed": 33,
+      "pending": 0
+    },
+    "baseline-inherited": {
+      "passed": 7245,
+      "failed": 6,
+      "pending": 0
+    },
+    "after-inherited": {
+      "passed": 7245,
+      "failed": 6,
+      "pending": 0
+    },
+    "baseline-annual": {
+      "passed": 185,
+      "failed": 6,
+      "pending": 0
+    },
+    "after-annual": {
+      "passed": 185,
+      "failed": 6,
+      "pending": 0
+    },
+    "baseline-language": {
+      "passed": 138,
+      "failed": 1,
+      "pending": 0
+    },
+    "after-language": {
+      "passed": 138,
+      "failed": 1,
+      "pending": 0
+    },
+    "new-tests-final": {
+      "passed": 669,
+      "failed": 0,
+      "pending": 0
+    },
+    "additional-static-final-not-added-to-total": {
+      "passed": 651,
+      "failed": 0,
+      "pending": 0
+    }
+  },
+  "uniqueRelatedFiles": 30,
+  "totalRelatedPasses": 8465,
+  "existingFailures": 46,
+  "known45Reproduced": true,
+  "additionalBaselineFailures": 1,
+  "newFailures": 0,
+  "typescriptBefore": 0,
+  "typescriptAfter": 0,
+  "lint": "PASS",
+  "defaultProductionBuild": "PASS",
+  "localBuildWarnings": 0,
+  "diffCheck": "PASS",
+  "allExistingFilesUnchanged": true,
+  "allExistingResearchPreserved": true,
+  "allOriginalWorktreesPreserved": true,
+  "newRuntimeImports": 0,
+  "paidCalls": 0,
+  "productionWrites": 0,
+  "wholeProjectSuiteRerun": false,
+  "preview": "exact final pushed SHA must be checked"
+}

@@ -1,0 +1,623 @@
+# 실제 원고 독해 샘플
+
+고정 2026-10-12 12:00 KST. 기존 실제 offline 발행 경로의 출력이다. 본문은 교정하지 않았다. Book 전체는 baseline-generation.json에 있다. 아래는 기능·방향·전환을 조사하기 위한 선택 표본이며 17권 전체 판매 품질 감사가 아니다.
+
+## comprehensive/A / opening / CH01.P1
+답을 들었어도 이해되지 않는 부분이 있으면 그냥 넘기지 않고, 왜 그런지 생각하며 다시 확인합니다. 비유하자면 한 장을 넘기기 전에 그 아래의 주석까지 읽는 독자에 가깝습니다. 남들이 이미 이해했다고 넘어간 이야기에서도 한 가지 조건이 마음에 걸리면, 이전 설명을 다시 짚어 보는 모습을 보일 수 있습니다. 이 질문은 말을 어렵게 하려는 버릇이라기보다 납득한 답을 자기 것으로 만들려는 방식에 가깝습니다.
+
+원천: foundation:element:WATER:STRONG
+
+## comprehensive/A / opening / CH01.P2
+일간은 임수이며, 명리에서는 자신의 기본 성향을 읽는 출발점으로 봅니다. 壬辰 일주는 이 일간과 일지의 조합으로, 한 길에 막혀도 다른 가능성과 길을 찾는 성질이라는 면을 가까운 일상에서 살펴볼 수 있습니다. 일주 지지 진토에는 여러 기운을 모으면서 다음 변화도 준비하는 땅이라는 의미도 있어, 같은 사람 안에서 다른 필요가 함께 작동할 수 있습니다. 기본 성향에 다른 기둥과 십성의 조건이 더해져, 한 글자만으로 전체를 정하지 않습니다.
+
+원천: natal:day:stem:壬, natal:day:branch:辰
+
+## comprehensive/A / elements / CH02.P1
+전체 오행에서는 수 기운이 상대적으로 두드러지는 구성입니다. 수의 의미는 하나를 보고도 생각을 더 이어가고 다른 것과 연결하는 기운이라는 방향에서 이해할 수 있습니다. 같은 수 기운이라도 위치와 십성에 따라 쓰임은 달라집니다. 자연스럽게 쓰는 힘과 연습할 방식을 구분하면, 오행이 생활의 단서가 됩니다.
+
+원천: foundation:element:EARTH:BALANCED, foundation:element:FIRE:BALANCED, foundation:element:METAL:BALANCED, foundation:element:WATER:STRONG, foundation:element:WOOD:BALANCED
+
+## comprehensive/A / elements / CH02.P2
+수 기운의 ‘하나를 보고도 생각을 더 이어가고 다른 것과 연결하는 기운’이라는 뜻을 배움에도 연결해 볼 수 있습니다. 공부한 내용을 다른 개념과 연결할 때 오래 남는 이해를 만들 수 있습니다. 한 과목의 정의를 외운 뒤 실제 사례를 하나 찾아 비교하면, 비슷한 말 사이의 차이와 적용할 수 없는 조건까지 보이기 시작합니다. 관심이 옆 주제로 번질 때는 당장 풀 질문을 한 줄로 남겨 두면, 탐구의 재미를 지키면서도 배움의 방향을 놓치지 않습니다.
+
+원천: foundation:element:WATER:STRONG
+
+## comprehensive/A / fortune / CH07.P1
+일간 임수는 ‘한 길에 막혀도 다른 가능성과 길을 찾는 성질’이라는 뜻으로 읽습니다. 새로운 정보와 기회를 연결하고 방법을 바꾸는 데 강점이 있습니다. 도전할 목표를 정하고 이전 결과와 달라진 한 가지를 보여 주면, 막연한 의욕보다 다음 역할을 맡길 가능성이 보입니다. 비교의 기준을 타인의 속도에서 자신의 개선으로 옮길 때 도전하는 힘을 오래 쓸 수 있습니다.
+
+원천: natal:day:stem:壬
+
+## comprehensive/A / fortune / CH07.P2
+상대와 상황에 맞춰 방법을 바꾸는 데 힘을 보탭니다. 새로 합류한 사람에게 묻기 어려웠던 절차를 먼저 설명하면, 친절한 인상에 그치지 않고 함께할 수 있는 자리를 넓힙니다. 대신 해 주기보다 스스로 참여할 발판을 건네는 도움이 서로의 힘을 키웁니다.
+
+원천: natal:month:branch:卯
+
+## comprehensive/A / direction / CH13.P1
+첫 장에서 읽은 ‘하나를 보고도 생각을 더 이어가고 다른 것과 연결하는 기운’이라는 성향을 선택에 쓸 때는, 잘할 수 있는지와 지금 필요한 일을 구분해 보세요. 중요한 결정을 할 때는 더 알아볼 것과 이제 실행할 것을 따로 나눠 보세요. 틀리면 수정할 수 있는 선택은 작은 시도로 확인하고, 바꾸기 어려운 선택에 더 많은 검토 시간을 배정하면 사고의 깊이를 효율적으로 쓸 수 있습니다.
+
+원천: foundation:element:WATER:STRONG
+
+## comprehensive/A / direction / CH13.P2
+재능을 쓸 과제는 ‘한 길에 막혀도 다른 가능성과 길을 찾는 성질’이라는 힘이 실제 결과에 필요한지를 기준으로 고를 수 있습니다. 아직 시도하지 않은 방법이 있고 작은 비용으로 가능성을 확인할 수 있는 일을 고르세요. 그 과제에서 바꿀 부분 하나와 이미 충분한 부분 하나를 구분하면, 장점을 더 세게 쓰는 대신 어디에 써야 하는지 판단하게 됩니다.
+
+원천: natal:day:stem:壬
+
+## career/A / opening / CH01.P1
+일에서는 빠진 조건을 찾아내는 정확성이 먼저 드러나며, 명리에서 읽은 ‘필요한 것과 필요 없는 것을 가르고 기준을 세우는 기운’의 뜻과 연결됩니다. 개발 과제라면 요구사항과 실제 동작을 나란히 놓고, 정상 입력에서 보이지 않던 오류를 테스트로 확인하는 데 이 눈을 쓸 수 있습니다. 남들이 다시 처리할 일을 미리 줄여 준다는 점에서, 정확성은 혼자 만족하는 완성도를 넘어 공동의 시간을 지켜 줍니다. 내가 발견한 작은 차이 하나가 다른 사람의 큰 재작업을 줄였다면, 그 차이는 충분히 설명할 만한 전문성입니다.
+
+원천: foundation:element:METAL:BALANCED, resonance:PR077
+
+## career/A / opening / CH01.P2
+년주 천간 무토가 이 업무 방식을 설명하는 실제 명리 근거입니다. 쉽게 결론을 바꾸기보다 한번 정한 것을 오래 지키는 편입니다. ISTJ에서도 새로운 일을 정하기 전에는 익숙한 생활을 지킬 방법부터 생각합니다. 익숙하고 안정적인 방식을 지키는 쪽을 두 체계가 같은 방향으로 말합니다.
+
+원천: natal:year:stem:戊, fusion:REINFORCE:CHANGE_ORIENTATION:learning:CHANGE_ORIENTATION:-1:CHANGE_ORIENTATION:-1, mbti:ISTJ:traits:identity:conservative_filter:plainKo
+
+## career/A / strengths / CH02.P1
+업무에서 먼저 꺼내 쓸 재능은 쓸모와 비용을 함께 보는 현실감각입니다. 일주 지장간 편재에서 읽는 명리적 뜻은 ‘바깥의 사람과 기회에서 돈과 자원을 찾는 성질’입니다. 개발 도구나 구현 방식을 고를 때는 처음 만드는 시간과 이후 수정할 시간을 따로 비교해야, 짧은 구현이 긴 유지보수로 돌아오는 경우를 볼 수 있습니다. 한정된 자원을 어디에 써야 결과가 남는지 판단하는 데 가치가 있으며, 덜 쓰는 것과 제대로 쓰는 것을 구분할 때 현실감각이 살아납니다.
+
+원천: natal:ten-god:day:MAIN:己, resonance:PR039
+
+## career/A / strengths / CH02.P2
+다른 과제에 쓸 능력은 책임과 결정을 이어 주는 추진력이며, 자신을 한 가지 방식으로만 설명하지 않게 해 줍니다. 월주 지지 술토에서 읽는 명리적 뜻은 ‘끝을 정리하고 경계를 지키는 땅’입니다. 함께 일할 때에는 상대의 방법까지 대신 정하기보다 원하는 결과와 맡길 범위를 분명히 해 주는 방식이 각자의 힘을 살립니다. 일을 대신하는 속도보다 다른 사람이 맡은 일을 끝낼 수 있게 돕는 능력을 키우면, 책임이 커져도 혼자 버티는 시간을 줄일 수 있습니다.
+
+원천: natal:month:branch:戌, M05_STABLE_INCOME
+
+## career/A / current / CH05.P1
+현재 알려준 일인 ‘개발자’에 비춰 다음 선택을 살펴보겠습니다. 바깥의 변화를 기회로 읽는 감각을 지금 맡을 과제에 적용할 범위를 정해 볼 만합니다. 현재 과제 하나에 ‘새 제안을 선택하면 미뤄야 할 일과 필요한 비용을 먼저 적기’를 적용하고, 그 전후에 달라진 판단을 비교해 보세요. 개발에서는 오류를 고치는 판단과 무엇을 먼저 만들지 고르는 판단을 나누어 보세요.
+
+원천: input:jobStatus, input:detailJob, foundation:yin_yang:STRONG_YANG, SU02_GROWTH_DESIRE
+
+## career/A / current / CH05.P2
+지금 활용할 능력은 변동 속에서도 지킬 기반을 보는 안정감각이며, 직업 이름만으로 적합성이 증명되지는 않습니다. 월주 천간 정인에서 읽는 명리적 뜻은 ‘차근차근 배우고 받아들여 자기 것으로 쌓는 성질’입니다. 개발 방식의 변경을 검토할 때 기존 동작을 보존할 테스트와 되돌릴 방법을 먼저 준비하면, 안정성을 지키면서 개선을 시험할 수 있습니다. 현재 활동에서 ‘위험의 크기가 작은 변경부터 기존 방식과 비교하기’를 해볼 과제 하나를 고르면, 실제 역할과 재능이 만나는 지점을 알아가기 좋습니다.
+
+원천: natal:ten-god:month:visible:壬, resonance:PR039
+
+## career/A / direction / CH09.P1
+직업 선택의 핵심 질문은 원본과 결과를 대조해 빠진 조건을 찾는 일을 실제로 필요로 하는가입니다. 다시 고칠 일의 감소가 그 자리에서도 가치로 인정돼야, 내 능력과 실제 역할이 만날 수 있습니다. 상담에서는 자료를 확인하고 중요한 오류를 고칠 권한이 있는지 묻고, 결과를 평가할 기준도 확인할 만합니다. 실제 하루의 과제를 알면, 강점을 쓰기 어려운 자리를 구분할 수 있습니다.
+
+원천: natal:hour:branch:申, resonance:PR077
+
+## career/A / direction / CH09.P2
+앞서 읽은 약점을 새 역할의 선택 기준으로 옮겨보면, 자료를 확인하고 중요한 오류를 고칠 권한이 실제로 주어지는지 물어볼 수 있습니다. 빠진 조건을 찾아내는 정확성이 필요한 일일수록 같은 방식에만 기대기 쉬우므로, 결과와 지금의 부담을 함께 돌아보아야 합니다. 면담에서는 다시 고칠 일의 감소를 평가하는 방법과, 그 일을 위해 쓸 수 있는 시간을 함께 물어보세요. 잘할 수 있다는 이유만으로 그 역할을 골라야 하는 것은 아니며, 필요한 권한과 시간을 얻기 어려운 조건도 선택에 포함할 만합니다.
+
+원천: foundation:element:METAL:BALANCED, F03_PERFECTIONISM
+
+## love/A / opening / CH01.P1
+사랑을 시작하고 이어가는 기본 힘은 작은 차이를 알아보는 세심함이며, 일주 일간 신금의 ‘작은 차이와 완성도를 세밀하게 보는 성질’에서 읽는 모습입니다. 가까운 사람의 취향과 평소와 다른 반응이 눈에 들어올 수 있어, 남들이 지나친 작은 부분에 마음을 쓰는 애정이 드러납니다. 이 모습이 잘 쓰이면 세심함을 평가보다 관심으로 받는 관계에서 자신의 마음도 덜 감추게 됩니다.
+
+원천: natal:day:stem:辛, resonance:PR054
+
+## love/A / opening / CH01.P2
+일주 지지 유금의 성향을 관계에 적용하면, 요청을 받으면 들어줄 수 있는지부터 확인하고 내 기준도 지키고 싶어 하는 면을 살펴볼 수 있습니다. INFP의 관계 성향에서도, 무례하거나 불공평한 대우에는 거리를 두고 자기 기준을 지키려는 면을 살펴볼 만합니다. 가까워지고 싶은 마음과 별개로 서로 존중받을 선을 중요하게 본다는 점이 겹치며, 친밀함을 위해 불편한 대우까지 참을 필요는 없다는 기준으로 활용할 만합니다.
+
+원천: natal:day:branch:酉, fusion:REINFORCE:BOUNDARY:social:BOUNDARY:1:BOUNDARY:1, mbti:INFP:traits:relationships:boundary_against_cruelty:plainKo
+
+## love/A / attraction / CH02.P1
+첫 만남에서 드러날 매력은 필요한 것을 먼저 살피는 다정함입니다. 명리에서 월주 천간 식신은 ‘내가 가진 것을 자연스럽게 결과물로 꺼내는 성질’이라는 뜻으로 풀이합니다. 처음 만나는 자리에서 메뉴를 못 고르는 사람에게 선택할 시간을 주는 태도처럼, 눈에 잘 띄지 않는 배려가 긴장을 낮출 수 있습니다. 상대가 곤란해 보일 때도 필요한지 먼저 물은 도움이라야, 다정함이 낯선 사람의 선택까지 대신하는 부담으로 바뀌지 않습니다.
+
+원천: natal:ten-god:month:visible:癸, resonance:PR051
+
+## love/A / attraction / CH02.P2
+시간을 함께 보내며 알게 될 좋은 면은 자기 자리를 지키는 독립성입니다. 명리에서 시주 천간 편인은 ‘남들이 지나친 이유나 다른 관점을 깊게 파고드는 성질’이라는 뜻으로 풀이합니다. 같은 공간에서 각자 다른 일을 하다가 문득 이야기를 나누는 시간처럼, 계속 반응하지 않아도 이어지는 친밀함을 소중하게 느낄 수 있습니다. 각자의 활동에서 새로 알게 된 것을 돌아와 나누면, 둘이 늘 같은 일을 하지 않아도 관계에 새로운 이야기를 가져오는 매력이 됩니다.
+
+원천: natal:ten-god:hour:visible:己, resonance:PR002
+
+## love/A / shadow / CH06.P1
+연애에서 가장 먼저 돌아볼 취약점은 작은 차이를 알아보는 세심함을 한 가지 방식으로만 밀어붙일 때 나타납니다. 더 편해지게 하려던 지적이 연달아 나오면, 상대는 좋은 점보다 부족한 점을 더 자주 들으며 언제쯤 충분해질지 몰라 지칠 수 있습니다. 틀린 점을 다 고친 뒤 좋았던 말이 하나도 없다면, 세심함이 계속 함께 있고 싶은 이유가 되기는 어렵습니다.
+
+원천: natal:day:stem:辛, F02_SHARP_SPEECH
+
+## love/A / shadow / CH06.P2
+일주 일간 신금에서 읽은 작은 차이를 알아보는 세심함은 장점이지만, 언제 어떻게 쓰는지에 따라 상대가 받는 느낌은 달라질 수 있습니다. 문제는 세심함을 평가보다 관심으로 받는 관계를 원하는 마음이 강해질 때, 상대도 같은 방법을 원한다는 전제를 먼저 둘 수 있다는 점입니다. 차이를 잘 보는 힘이 피곤한 날에도 틀린 점부터 향하면, 상대가 시도한 이유나 이미 잘한 부분을 듣는 순서가 줄어들 수 있습니다.
+
+원천: natal:day:stem:辛, F02_SHARP_SPEECH
+
+## love/A / direction / CH09.P2
+앞에서 읽은 서로의 선을 알아보는 분명함은 상대에게 줄 수 있는 힘이면서 나도 받아도 되는 배려입니다. 월주 지장간 정관에서 읽은 장점을 주는 역할로만 쓰지 않아도 된다는 점이 중요합니다. 내가 받아들일 부탁과 어려운 부탁을 미리 나누는 일을 할 때 상대에게도 같은 참여를 요청할 수 있다면, 매력을 증명하는 수고와 서로 편해지는 노력을 나누어 볼 수 있습니다.
+
+원천: natal:ten-god:month:MAIN:丙, resonance:PR002
+
+## love/A / direction / CH09.P3
+관계의 선택을 바꿀 때는 앞서 읽은 의견 차이를 말해도 안전한 대화를 계속 혼자 책임지고 있지는 않은지 볼 만합니다. 일주 일간 신금의 힘이 애쓰는 방향으로만 쓰일 때와, 상대의 응답을 기다리는 여유가 있을 때를 비교해보세요. 내가 바꿔볼 행동과 상대에게 요청할 행동을 나누는 것이 중요하며, 모든 관계의 결과를 내 성향 하나로 떠안을 필요는 없습니다.
+
+원천: natal:day:stem:辛, F02_SHARP_SPEECH
+
+## compatibility/A / person-a / CH02.P1
+이준혁님의 관계 성향은 스스로 판단한 뒤 선택을 알리는 방식을 중심으로 살펴볼 수 있습니다. 이준혁님의 일주 일간 갑목은 ‘방향을 잡으면 앞으로 자라고 커지려는 성질’이라는 뜻으로, 상대와 함께 정할 때도 자신의 기준이 생기는 이유를 보여줍니다. ESTP의 선호를 함께 보면 중요한 일일수록 정해진 답을 받기보다 직접 결정하고 싶어 합니다. 정유진님이 상대가 빠뜨린 작은 필요를 챙기는 방식을 중요하게 여긴다는 점까지 함께 보면, 자기 기준을 전하는 것과 상대가 받아들일 준비를 하는 것은 다른 과정임을 알 수 있습니다.
+
+원천: /traits/love/1/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/A / person-a / CH02.P2
+이준혁님에게 바뀌는 이유를 미리 알 수 있는 약속은 편하게 자기 의견을 내기 위한 조건입니다. 이준혁님의 토 기운은 ‘현실에서 오래 굴러갈 수 있는지를 중요하게 보는 기운’이라는 뜻으로, 어떤 상황에서 상대를 덜 경계하고 만날 수 있는지 설명해줍니다. 바쁜 주에 연락할 수 있는 시간을 이야기할 때, 이준혁님이 꼭 필요한 조건과 조정할 수 있는 조건을 나눠 말하면 정유진님도 구체적으로 응답할 수 있습니다. 원하는 것을 모두 받아달라는 요구와 필요한 것을 설명하는 일은 다르며, 어려운 조건을 미리 말해야 함께 바꿀 방법도 보입니다.
+
+원천: foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C076:love:STABILITY:1:SOCIAL_ATTUNEMENT:1, person:29a2534854378270a988c1f8
+
+## compatibility/A / person-b / CH03.P1
+정유진님에게서 먼저 읽을 면은 상대가 빠뜨린 작은 필요를 챙기는 방식입니다. 정유진님의 일주 일간 을목은 ‘정면으로 밀기보다 가능한 길을 찾아 계속 자라는 성질’이라는 뜻으로, 상대에게 다가가고 자기 뜻을 지키는 바탕이 됩니다. 정유진님의 ISFJ 선호에서 함께 살필 반응도 있습니다: 누군가 곤란해 보이면 필요한 것을 알아차리고, 무엇을 챙겨줄 수 있을지 생각하며 먼저 움직입니다. 이준혁님에게 익숙한 스스로 판단한 뒤 선택을 알리는 방식을 함께 생각하면, 정유진님의 편안함만으로 둘의 대화가 끝났다고 여기기는 어렵습니다.
+
+원천: /traits/love/1/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/A / person-b / CH03.P2
+정유진님에게 무리한 몫을 거절할 수 있는 선은 편하게 자기 의견을 내기 위한 조건입니다. 정유진님의 월주 천간 비견은 ‘남이 정한 답보다 자기 힘과 판단을 믿으려는 성질’이라는 뜻으로, 억지로 맞추기보다 자기 의견을 편하게 낼 조건을 보여줍니다. 이준혁님의 제안을 듣는 정유진님은 무엇이 편하고 어디부터 어려운지 알려줄 수 있으며, 찬반만 답할 때보다 함께 바꿀 부분이 잘 보입니다. 괜찮다는 답을 오래 유지하는 것보다 감당하기 어려워지는 지점을 일찍 알리는 편이, 상대에게도 약속을 지킬 기회를 줍니다.
+
+원천: natal:ten-god:month:visible:乙, person:b425792e04d53877ee951f97, resonance:PR055
+
+## compatibility/A / direction-ab / CH05.P1
+정유진님의 일간 乙 기준에서 이준혁님의 일간 甲에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 이준혁님의 존재가 정유진님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 이준혁님 쪽에서는 스스로 판단한 뒤 선택을 알리는 방식으로 그 자극을 전할 수 있습니다. 정유진님에게 중요한 무리한 몫을 거절할 수 있는 선을 함께 지켜야 이 자극이 선택 가능한 제안으로 도착합니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:29a2534854378270a988c1f8:to:b425792e04d53877ee951f97, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:甲, natal:ten-god:month:visible:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, resonance:PR055, target-viewer:b425792e04d53877ee951f97
+
+## compatibility/A / direction-ab / CH05.P2
+낯선 곳에서 함께 하루를 보내보기로 한다면, 이준혁님의 불편을 알아채고 손을 보태는 세심함이 정유진님에게 도움이 될 수 있습니다. 정유진님에게 익숙한 것은 상대가 빠뜨린 작은 필요를 챙기는 방식이며, 상대의 도움을 받아도 이 방식으로 직접 참여할 몫은 남겨둘 만합니다. 이준혁님이 가능한 도움을 먼저 설명하고 정유진님이 쓸 부분을 고르면, 서로의 좋은 면을 같은 방식으로 바꾸지 않아도 함께 시도할 폭이 넓어집니다. 정유진님이 어떤 도움이 실제로 필요했는지 알려주면, 이준혁님도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다.
+
+원천: P02_GOOD_RELATION_RECIPROCITY, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, natal:day:stem:乙, natal:ten-god:month:visible:丙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/A / direction-ba / CH06.P1
+이준혁님의 일간 甲 기준에서 정유진님의 일간 乙에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 정유진님의 존재가 이준혁님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 정유진님에게 익숙한 상대가 빠뜨린 작은 필요를 챙기는 방식이 이준혁님에게 닿는다면, 받는 쪽의 여건도 같이 살펴야 합니다. 이준혁님이 필요로 하는 바뀌는 이유를 미리 알 수 있는 약속을 먼저 살피면, 같은 십성의 자극도 그 사람에게 맞는 속도로 건넬 수 있습니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:b425792e04d53877ee951f97:to:29a2534854378270a988c1f8, foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C076:love:STABILITY:1:SOCIAL_ATTUNEMENT:1, natal:day:stem:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, target-viewer:29a2534854378270a988c1f8
+
+## compatibility/A / direction-ba / CH06.P2
+낯선 곳에서 함께 하루를 보내보기로 한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다. 이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다. 이준혁님이 평소 혼자 확인하던 부분에 정유진님의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다. 정유진님이 보탠 뒤 이준혁님이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다.
+
+원천: fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/A / friction / CH07.P1
+답장이 짧아진 이유를 묻는 대화에서 두 사람의 다른 첫 반응이 드러날 수 있습니다. 이준혁님 쪽에서는 틀린 점이 보이면 돌려 말하기보다 무엇이 다른지 바로 말하고 고칠 부분을 짚습니다. 정유진님에게는 다른 방향도 있습니다: 의견이 달라도 바로 말하기 전에 상대가 어떻게 들을지 생각하고, 받아들일 말을 골라서 전합니다. 답장을 기다린 쪽은 관심을 묻고, 늦게 답한 쪽은 하루를 설명하면서 같은 대화를 다르게 시작할 수 있습니다.
+
+원천: personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo, personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo, personA:mbti:ESTP:traits:communication:straight_humor:plainKo, personB:foundation:yin_yang:EXTREME_YIN, personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo, personB:mbti:ISFJ:traits:love:gentle_speech_love:plainKo, personB:mbti:ISFJ:traits:love:low_request_high_duty:plainKo, personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo, personB:natal:day:stem:乙, personB:natal:month:stem:乙
+
+## compatibility/A / friction / CH07.P2
+갈등을 읽을 명리 단서는 이준혁님의 일지 寅 및 정유진님의 일지 巳 사이의 해입니다. 해는 말로 정하지 않은 기대가 엇갈리며 서운함을 남길 수 있는 관계입니다. 서운했던 한 순간이 누가 더 좋아하는지 증명하는 시험으로 바뀌는 때에는 작은 행동도 누구의 기준이 우선인지 따지는 문제로 번질 수 있습니다. 이 관계가 불화나 이별을 예고하는 것은 아니며, 말하지 않은 기대와 실제 합의가 다른 지점을 찾아 조정하는 데 쓸 수 있는 단서입니다.
+
+원천: compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳
+
+## compatibility/A / repair / CH08.P1
+서운했던 말을 다시 꺼내기로 했다면, 잘못의 크기를 먼저 비교하기보다 무슨 일이 있었는지 한 장면부터 맞춰보는 편이 좋습니다. 실제로 한 말과 그 말을 듣고 짐작한 뜻을 나누면, 의도는 아니었다는 해명 뒤에 상대가 받은 불편도 남길 수 있습니다. 사과는 마음을 알아달라는 요청에서 끝내기보다 다음에 바꿀 행동과 확인할 때를 함께 정할수록 구체적입니다. 서로 같은 잘못을 인정해야만 대화를 시작할 수 있다는 조건을 걸지 않아야, 먼저 꺼낸 어려움도 평가받는 말로 돌아오지 않습니다.
+
+원천: canonical-natal-table-v1:features:day_pillar_eulsa, canonical-natal-table-v1:features:day_pillar_gabin, natal:day_pillar_eulsa, natal:day_pillar_gabin, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, sajuDayPillarKnowledge:day_pillar_eulsa:coreKeywords, sajuDayPillarKnowledge:day_pillar_eulsa:symbolicImage, sajuDayPillarKnowledge:day_pillar_gabin:coreKeywords, sajuDayPillarKnowledge:day_pillar_gabin:symbolicImage, v1:dayPillar:갑인, v1:dayPillar:을사, v4:material-depth:day_pillar_eulsa, v4:material-depth:day_pillar_gabin
+
+## compatibility/A / repair / CH08.P2
+이준혁님이 다툼 뒤 시도할 회복 행동은 ‘평가처럼 들린 말에서 사람에 대한 판단을 걷어내고, 바꿀 행동만 다시 설명하기’입니다. 정유진님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 먼저 제안한 만남이라도 상대가 편하게 바꿀 수 있는 선택을 남겨야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.
+
+원천: foundation:yin_yang:STRONG_YANG, person:29a2534854378270a988c1f8, resonance:PR054
+
+## compatibility/marriage / person-a / CH02.P1
+이준혁님의 관계 성향은 스스로 판단한 뒤 선택을 알리는 방식을 중심으로 살펴볼 수 있습니다. 이준혁님의 일주 일간 갑목은 ‘방향을 잡으면 앞으로 자라고 커지려는 성질’이라는 뜻으로, 상대와 함께 정할 때도 자신의 기준이 생기는 이유를 보여줍니다. ESTP의 선호를 함께 보면 중요한 일일수록 정해진 답을 받기보다 직접 결정하고 싶어 합니다. 정유진님이 상대가 빠뜨린 작은 필요를 챙기는 방식을 중요하게 여긴다는 점까지 함께 보면, 자기 기준을 전하는 것과 상대가 받아들일 준비를 하는 것은 다른 과정임을 알 수 있습니다.
+
+원천: /traits/marriage/1/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/marriage / person-a / CH02.P2
+이준혁님에게 바뀌는 이유를 미리 알 수 있는 약속은 편하게 자기 의견을 내기 위한 조건입니다. 이준혁님의 토 기운은 ‘현실에서 오래 굴러갈 수 있는지를 중요하게 보는 기운’이라는 뜻으로, 어떤 상황에서 상대를 덜 경계하고 만날 수 있는지 설명해줍니다. 퇴근 뒤 혼자 쉴 시간과 남은 집안일을 나눌 때, 이준혁님이 꼭 필요한 조건과 조정할 수 있는 조건을 나눠 말하면 정유진님도 구체적으로 응답할 수 있습니다. 원하는 것을 모두 받아달라는 요구와 필요한 것을 설명하는 일은 다르며, 어려운 조건을 미리 말해야 함께 바꿀 방법도 보입니다.
+
+원천: foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C076:love:STABILITY:1:SOCIAL_ATTUNEMENT:1, person:29a2534854378270a988c1f8
+
+## compatibility/marriage / person-b / CH03.P1
+정유진님에게서 먼저 읽을 면은 상대가 빠뜨린 작은 필요를 챙기는 방식입니다. 정유진님의 일주 일간 을목은 ‘정면으로 밀기보다 가능한 길을 찾아 계속 자라는 성질’이라는 뜻으로, 상대에게 다가가고 자기 뜻을 지키는 바탕이 됩니다. 정유진님의 ISFJ 선호에서 함께 살필 반응도 있습니다: 누군가 곤란해 보이면 필요한 것을 알아차리고, 무엇을 챙겨줄 수 있을지 생각하며 먼저 움직입니다. 이준혁님에게 익숙한 스스로 판단한 뒤 선택을 알리는 방식을 함께 생각하면, 정유진님의 편안함만으로 둘의 대화가 끝났다고 여기기는 어렵습니다.
+
+원천: /traits/marriage/3/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/marriage / person-b / CH03.P2
+정유진님에게 무리한 몫을 거절할 수 있는 선은 편하게 자기 의견을 내기 위한 조건입니다. 정유진님의 월주 천간 비견은 ‘남이 정한 답보다 자기 힘과 판단을 믿으려는 성질’이라는 뜻으로, 억지로 맞추기보다 자기 의견을 편하게 낼 조건을 보여줍니다. 이준혁님의 제안을 듣는 정유진님은 무엇이 편하고 어디부터 어려운지 알려줄 수 있으며, 찬반만 답할 때보다 함께 바꿀 부분이 잘 보입니다. 괜찮다는 답을 오래 유지하는 것보다 감당하기 어려워지는 지점을 일찍 알리는 편이, 상대에게도 약속을 지킬 기회를 줍니다.
+
+원천: natal:ten-god:month:visible:乙, person:b425792e04d53877ee951f97, resonance:PR055
+
+## compatibility/marriage / direction-ab / CH05.P1
+정유진님의 일간 乙 기준에서 이준혁님의 일간 甲에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 이준혁님의 존재가 정유진님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 이준혁님 쪽에서는 스스로 판단한 뒤 선택을 알리는 방식으로 그 자극을 전할 수 있습니다. 정유진님에게 중요한 무리한 몫을 거절할 수 있는 선을 함께 지켜야 이 자극이 선택 가능한 제안으로 도착합니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:29a2534854378270a988c1f8:to:b425792e04d53877ee951f97, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:甲, natal:ten-god:month:visible:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, resonance:PR055, target-viewer:b425792e04d53877ee951f97
+
+## compatibility/marriage / direction-ab / CH05.P2
+큰 가전 교체나 이사 계획을 함께 검토한다면, 이준혁님의 불편을 알아채고 손을 보태는 세심함이 정유진님에게 도움이 될 수 있습니다. 정유진님에게 익숙한 것은 상대가 빠뜨린 작은 필요를 챙기는 방식이며, 상대의 도움을 받아도 이 방식으로 직접 참여할 몫은 남겨둘 만합니다. 이준혁님이 가능한 도움을 먼저 설명하고 정유진님이 쓸 부분을 고르면, 서로의 좋은 면을 같은 방식으로 바꾸지 않아도 함께 시도할 폭이 넓어집니다. 정유진님이 어떤 도움이 실제로 필요했는지 알려주면, 이준혁님도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다.
+
+원천: P02_GOOD_RELATION_RECIPROCITY, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, natal:day:stem:乙, natal:ten-god:month:visible:丙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/marriage / direction-ba / CH06.P1
+이준혁님의 일간 甲 기준에서 정유진님의 일간 乙에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 정유진님의 존재가 이준혁님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 정유진님에게 익숙한 상대가 빠뜨린 작은 필요를 챙기는 방식이 이준혁님에게 닿는다면, 받는 쪽의 여건도 같이 살펴야 합니다. 이준혁님이 필요로 하는 바뀌는 이유를 미리 알 수 있는 약속을 먼저 살피면, 같은 십성의 자극도 그 사람에게 맞는 속도로 건넬 수 있습니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:b425792e04d53877ee951f97:to:29a2534854378270a988c1f8, foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C076:love:STABILITY:1:SOCIAL_ATTUNEMENT:1, natal:day:stem:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, target-viewer:29a2534854378270a988c1f8
+
+## compatibility/marriage / direction-ba / CH06.P2
+큰 가전 교체나 이사 계획을 함께 검토한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다. 이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다. 이준혁님이 평소 혼자 확인하던 부분에 정유진님의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다. 정유진님이 보탠 뒤 이준혁님이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다.
+
+원천: fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/marriage / friction / CH07.P1
+끝나지 않은 집안일을 두고 누가 더 고생했는지 따질 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. 이준혁님 쪽에서는 틀린 점이 보이면 돌려 말하기보다 무엇이 다른지 바로 말하고 고칠 부분을 짚습니다. 정유진님에게는 다른 방향도 있습니다: 의견이 달라도 바로 말하기 전에 상대가 어떻게 들을지 생각하고, 받아들일 말을 골라서 전합니다. 공동 지출을 아끼자는 말과 각자의 자유를 지키자는 말은 서로 반대처럼 들려도 다른 필요를 설명하는 중일 수 있습니다.
+
+원천: personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo, personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo, personA:mbti:ESTP:traits:communication:straight_humor:plainKo, personB:foundation:yin_yang:EXTREME_YIN, personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo, personB:mbti:ISFJ:traits:love:gentle_speech_love:plainKo, personB:mbti:ISFJ:traits:love:low_request_high_duty:plainKo, personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo, personB:natal:day:stem:乙, personB:natal:month:stem:乙
+
+## compatibility/marriage / friction / CH07.P2
+갈등을 읽을 명리 단서는 이준혁님의 일지 寅 및 정유진님의 일지 巳 사이의 해입니다. 해는 말로 정하지 않은 기대가 엇갈리며 서운함을 남길 수 있는 관계입니다. 오늘의 집안일을 두고 지난 수고를 한꺼번에 계산하기 시작하는 때에는 작은 행동도 누구의 기준이 우선인지 따지는 문제로 번질 수 있습니다. 이 관계가 불화나 이별을 예고하는 것은 아니며, 말하지 않은 기대와 실제 합의가 다른 지점을 찾아 조정하는 데 쓸 수 있는 단서입니다.
+
+원천: compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳
+
+## compatibility/marriage / repair / CH08.P1
+분담을 지키지 못한 날의 일을 다시 이야기한다면, 잘못의 크기를 먼저 비교하기보다 무슨 일이 있었는지 한 장면부터 맞춰보는 편이 좋습니다. 실제로 한 말과 그 말을 듣고 짐작한 뜻을 나누면, 의도는 아니었다는 해명 뒤에 상대가 받은 불편도 남길 수 있습니다. 사과는 마음을 알아달라는 요청에서 끝내기보다 다음에 바꿀 행동과 확인할 때를 함께 정할수록 구체적입니다. 서로 같은 잘못을 인정해야만 대화를 시작할 수 있다는 조건을 걸지 않아야, 먼저 꺼낸 어려움도 평가받는 말로 돌아오지 않습니다.
+
+원천: canonical-natal-table-v1:features:day_pillar_eulsa, canonical-natal-table-v1:features:day_pillar_gabin, natal:day_pillar_eulsa, natal:day_pillar_gabin, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, sajuDayPillarKnowledge:day_pillar_eulsa:coreKeywords, sajuDayPillarKnowledge:day_pillar_eulsa:symbolicImage, sajuDayPillarKnowledge:day_pillar_gabin:coreKeywords, sajuDayPillarKnowledge:day_pillar_gabin:symbolicImage, v1:dayPillar:갑인, v1:dayPillar:을사, v4:material-depth:day_pillar_eulsa, v4:material-depth:day_pillar_gabin
+
+## compatibility/marriage / repair / CH08.P2
+이준혁님이 다툼 뒤 시도할 회복 행동은 ‘평가처럼 들린 말에서 사람에 대한 판단을 걷어내고, 바꿀 행동만 다시 설명하기’입니다. 정유진님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 살림을 도와준다는 말 대신 처음부터 끝까지 책임질 일을 분명히 나눠야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.
+
+원천: foundation:yin_yang:STRONG_YANG, person:29a2534854378270a988c1f8, resonance:PR054
+
+## compatibility/parentChild / person-a / CH02.P1
+이준혁님의 관계 성향은 스스로 판단한 뒤 선택을 알리는 방식을 중심으로 살펴볼 수 있습니다. 이준혁님의 일주 일간 갑목은 ‘방향을 잡으면 앞으로 자라고 커지려는 성질’이라는 뜻으로, 상대와 함께 정할 때도 자신의 기준이 생기는 이유를 보여줍니다. ESTP의 선호를 함께 보면 중요한 일일수록 정해진 답을 받기보다 직접 결정하고 싶어 합니다. 정유진님이 상대가 빠뜨린 작은 필요를 챙기는 방식을 중요하게 여긴다는 점까지 함께 보면, 자기 기준을 전하는 것과 상대가 받아들일 준비를 하는 것은 다른 과정임을 알 수 있습니다.
+
+원천: /traits/identity/4/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/parentChild / person-a / CH02.P2
+이준혁님에게 바뀌는 이유를 미리 알 수 있는 약속은 편하게 자기 의견을 내기 위한 조건입니다. 이준혁님의 토 기운은 ‘현실에서 오래 굴러갈 수 있는지를 중요하게 보는 기운’이라는 뜻으로, 어떤 상황에서 상대를 덜 경계하고 만날 수 있는지 설명해줍니다. 부모 이준혁님은 이 필요를 자녀에게 맡기기보다 성인에게 구할 지원과 스스로 쉴 시간을 챙기는 편이 좋습니다. 원하는 것을 모두 받아달라는 요구와 필요한 것을 설명하는 일은 다르며, 어려운 조건을 미리 말해야 함께 바꿀 방법도 보입니다.
+
+원천: foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1, person:29a2534854378270a988c1f8
+
+## compatibility/parentChild / person-b / CH03.P1
+정유진님에게서 먼저 읽을 면은 상대가 빠뜨린 작은 필요를 챙기는 방식입니다. 정유진님의 일주 일간 을목은 ‘정면으로 밀기보다 가능한 길을 찾아 계속 자라는 성질’이라는 뜻으로, 상대에게 다가가고 자기 뜻을 지키는 바탕이 됩니다. 정유진님의 ISFJ 선호에서 함께 살필 반응도 있습니다: 누군가 곤란해 보이면 필요한 것을 알아차리고, 무엇을 챙겨줄 수 있을지 생각하며 먼저 움직입니다. 이준혁님에게 익숙한 스스로 판단한 뒤 선택을 알리는 방식을 함께 생각하면, 정유진님의 편안함만으로 둘의 대화가 끝났다고 여기기는 어렵습니다.
+
+원천: /traits/communication/0/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/parentChild / person-b / CH03.P2
+정유진님에게 무리한 몫을 거절할 수 있는 선은 편하게 자기 의견을 내기 위한 조건입니다. 정유진님의 월주 천간 비견은 ‘남이 정한 답보다 자기 힘과 판단을 믿으려는 성질’이라는 뜻으로, 억지로 맞추기보다 자기 의견을 편하게 낼 조건을 보여줍니다. 이준혁님의 제안을 듣는 정유진님은 무엇이 편하고 어디부터 어려운지 알려줄 수 있으며, 찬반만 답할 때보다 함께 바꿀 부분이 잘 보입니다. 괜찮다는 답을 오래 유지하는 것보다 감당하기 어려워지는 지점을 일찍 알리는 편이, 상대에게도 약속을 지킬 기회를 줍니다.
+
+원천: natal:ten-god:month:visible:乙, person:b425792e04d53877ee951f97, resonance:PR055
+
+## compatibility/parentChild / direction-ab / CH05.P1
+정유진님의 일간 乙 기준에서 이준혁님의 일간 甲에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 이준혁님의 존재가 정유진님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 이준혁님 쪽에서는 스스로 판단한 뒤 선택을 알리는 방식으로 그 자극을 전할 수 있습니다. 정유진님에게 중요한 무리한 몫을 거절할 수 있는 선을 함께 지켜야 이 자극이 선택 가능한 제안으로 도착합니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:29a2534854378270a988c1f8:to:b425792e04d53877ee951f97, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:甲, natal:ten-god:month:visible:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, resonance:PR055, target-viewer:b425792e04d53877ee951f97
+
+## compatibility/parentChild / direction-ab / CH05.P2
+자녀가 익숙하지 않은 활동에 도전하고 싶어 한다면, 이준혁님의 불편을 알아채고 손을 보태는 세심함이 정유진님에게 도움이 될 수 있습니다. 정유진님에게 익숙한 것은 상대가 빠뜨린 작은 필요를 챙기는 방식이며, 상대의 도움을 받아도 이 방식으로 직접 참여할 몫은 남겨둘 만합니다. 이준혁님이 가능한 도움을 먼저 설명하고 정유진님이 쓸 부분을 고르면, 서로의 좋은 면을 같은 방식으로 바꾸지 않아도 함께 시도할 폭이 넓어집니다. 정유진님이 어떤 도움이 실제로 필요했는지 알려주면, 이준혁님도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다.
+
+원천: P02_GOOD_RELATION_RECIPROCITY, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, natal:day:stem:乙, natal:ten-god:month:visible:丙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/parentChild / direction-ba / CH06.P1
+이준혁님의 일간 甲 기준에서 정유진님의 일간 乙에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 정유진님의 존재가 이준혁님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 정유진님에게 익숙한 상대가 빠뜨린 작은 필요를 챙기는 방식이 이준혁님에게 닿는다면, 받는 쪽의 여건도 같이 살펴야 합니다. 이준혁님이 필요로 하는 바뀌는 이유를 미리 알 수 있는 약속을 먼저 살피면, 같은 십성의 자극도 그 사람에게 맞는 속도로 건넬 수 있습니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:b425792e04d53877ee951f97:to:29a2534854378270a988c1f8, foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1, natal:day:stem:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, target-viewer:29a2534854378270a988c1f8
+
+## compatibility/parentChild / direction-ba / CH06.P2
+자녀가 익숙하지 않은 활동에 도전하고 싶어 한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다. 이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다. 자녀 정유진님의 시도를 보며 부모 이준혁님이 새 관점을 배울 수 있지만, 부모의 어려움을 해결하는 역할까지 자녀에게 맡기지는 않아야 합니다. 정유진님이 보탠 뒤 이준혁님이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다.
+
+원천: fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/parentChild / friction / CH07.P1
+자녀의 설명을 끝까지 듣기 전에 규칙 위반부터 지적할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. 이준혁님 쪽에서는 틀린 점이 보이면 돌려 말하기보다 무엇이 다른지 바로 말하고 고칠 부분을 짚습니다. 정유진님에게는 다른 방향도 있습니다: 의견이 달라도 바로 말하기 전에 상대가 어떻게 들을지 생각하고, 받아들일 말을 골라서 전합니다. 안전한 답을 빨리 알려주려는 부모와 자기 이유를 끝까지 말하고 싶은 자녀는 같은 시간을 다르게 경험할 수 있습니다.
+
+원천: personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo, personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo, personA:mbti:ESTP:traits:communication:straight_humor:plainKo, personB:foundation:yin_yang:EXTREME_YIN, personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo, personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo, personB:natal:day:stem:乙, personB:natal:month:stem:乙
+
+## compatibility/parentChild / friction / CH07.P2
+갈등을 읽을 명리 단서는 이준혁님의 일지 寅 및 정유진님의 일지 巳 사이의 해입니다. 해는 말로 정하지 않은 기대가 엇갈리며 서운함을 남길 수 있는 관계입니다. 질문이 자녀의 설명을 돕기보다 이미 정한 답을 확인하는 검사로 바뀌는 때에는 작은 행동도 누구의 기준이 우선인지 따지는 문제로 번질 수 있습니다. 이 관계가 불화나 이별을 예고하는 것은 아니며, 말하지 않은 기대와 실제 합의가 다른 지점을 찾아 조정하는 데 쓸 수 있는 단서입니다.
+
+원천: compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳
+
+## compatibility/parentChild / repair / CH08.P1
+규칙을 둘러싼 다툼 뒤 다시 대화한다면, 잘못의 크기를 먼저 비교하기보다 무슨 일이 있었는지 한 장면부터 맞춰보는 편이 좋습니다. 실제로 한 말과 그 말을 듣고 짐작한 뜻을 나누면, 의도는 아니었다는 해명 뒤에 상대가 받은 불편도 남길 수 있습니다. 사과는 마음을 알아달라는 요청에서 끝내기보다 다음에 바꿀 행동과 확인할 때를 함께 정할수록 구체적입니다. 권한을 가진 쪽이 먼저 자신의 결정과 설명을 돌아봐야, 상대가 불이익을 걱정하지 않고 실제 어려움을 말할 수 있습니다.
+
+원천: canonical-natal-table-v1:features:day_pillar_eulsa, canonical-natal-table-v1:features:day_pillar_gabin, natal:day_pillar_eulsa, natal:day_pillar_gabin, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, sajuDayPillarKnowledge:day_pillar_eulsa:coreKeywords, sajuDayPillarKnowledge:day_pillar_eulsa:symbolicImage, sajuDayPillarKnowledge:day_pillar_gabin:coreKeywords, sajuDayPillarKnowledge:day_pillar_gabin:symbolicImage, v1:dayPillar:갑인, v1:dayPillar:을사, v4:material-depth:day_pillar_eulsa, v4:material-depth:day_pillar_gabin
+
+## compatibility/parentChild / repair / CH08.P2
+이준혁님이 다툼 뒤 시도할 회복 행동은 ‘평가처럼 들린 말에서 사람에 대한 판단을 걷어내고, 바꿀 행동만 다시 설명하기’입니다. 정유진님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 안전의 최종 책임은 부모에게 있으며, 자녀의 거절에도 이유를 말할 자리를 남겨야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.
+
+원천: foundation:yin_yang:STRONG_YANG, person:29a2534854378270a988c1f8, resonance:PR054
+
+## compatibility/coworker / person-a / CH02.P1
+이준혁님의 관계 성향은 스스로 판단한 뒤 선택을 알리는 방식을 중심으로 살펴볼 수 있습니다. 이준혁님의 일주 일간 갑목은 ‘방향을 잡으면 앞으로 자라고 커지려는 성질’이라는 뜻으로, 상대와 함께 정할 때도 자신의 기준이 생기는 이유를 보여줍니다. ESTP의 선호를 함께 보면 중요한 일일수록 정해진 답을 받기보다 직접 결정하고 싶어 합니다. 정유진님이 상대가 빠뜨린 작은 필요를 챙기는 방식을 중요하게 여긴다는 점까지 함께 보면, 자기 기준을 전하는 것과 상대가 받아들일 준비를 하는 것은 다른 과정임을 알 수 있습니다.
+
+원천: /traits/identity/4/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/coworker / person-a / CH02.P2
+이준혁님에게 바뀌는 이유를 미리 알 수 있는 약속은 편하게 자기 의견을 내기 위한 조건입니다. 이준혁님의 토 기운은 ‘현실에서 오래 굴러갈 수 있는지를 중요하게 보는 기운’이라는 뜻으로, 어떤 상황에서 상대를 덜 경계하고 만날 수 있는지 설명해줍니다. 동료에게 급한 수정을 부탁하기 전에 남은 일을 확인할 때, 이준혁님이 꼭 필요한 조건과 조정할 수 있는 조건을 나눠 말하면 정유진님도 구체적으로 응답할 수 있습니다. 원하는 것을 모두 받아달라는 요구와 필요한 것을 설명하는 일은 다르며, 어려운 조건을 미리 말해야 함께 바꿀 방법도 보입니다.
+
+원천: foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1, person:29a2534854378270a988c1f8
+
+## compatibility/coworker / person-b / CH03.P1
+정유진님에게서 먼저 읽을 면은 상대가 빠뜨린 작은 필요를 챙기는 방식입니다. 정유진님의 일주 일간 을목은 ‘정면으로 밀기보다 가능한 길을 찾아 계속 자라는 성질’이라는 뜻으로, 상대에게 다가가고 자기 뜻을 지키는 바탕이 됩니다. 정유진님의 ISFJ 선호에서 함께 살필 반응도 있습니다: 누군가 곤란해 보이면 필요한 것을 알아차리고, 무엇을 챙겨줄 수 있을지 생각하며 먼저 움직입니다. 이준혁님에게 익숙한 스스로 판단한 뒤 선택을 알리는 방식을 함께 생각하면, 정유진님의 편안함만으로 둘의 대화가 끝났다고 여기기는 어렵습니다.
+
+원천: /traits/communication/0/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/coworker / person-b / CH03.P2
+정유진님에게 무리한 몫을 거절할 수 있는 선은 편하게 자기 의견을 내기 위한 조건입니다. 정유진님의 월주 천간 비견은 ‘남이 정한 답보다 자기 힘과 판단을 믿으려는 성질’이라는 뜻으로, 억지로 맞추기보다 자기 의견을 편하게 낼 조건을 보여줍니다. 이준혁님의 제안을 듣는 정유진님은 무엇이 편하고 어디부터 어려운지 알려줄 수 있으며, 찬반만 답할 때보다 함께 바꿀 부분이 잘 보입니다. 괜찮다는 답을 오래 유지하는 것보다 감당하기 어려워지는 지점을 일찍 알리는 편이, 상대에게도 약속을 지킬 기회를 줍니다.
+
+원천: natal:ten-god:month:visible:乙, person:b425792e04d53877ee951f97, resonance:PR055
+
+## compatibility/coworker / direction-ab / CH05.P1
+정유진님의 일간 乙 기준에서 이준혁님의 일간 甲에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 이준혁님의 존재가 정유진님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 이준혁님 쪽에서는 스스로 판단한 뒤 선택을 알리는 방식으로 그 자극을 전할 수 있습니다. 정유진님에게 중요한 무리한 몫을 거절할 수 있는 선을 함께 지켜야 이 자극이 선택 가능한 제안으로 도착합니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:29a2534854378270a988c1f8:to:b425792e04d53877ee951f97, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:甲, natal:ten-god:month:visible:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, resonance:PR055, target-viewer:b425792e04d53877ee951f97
+
+## compatibility/coworker / direction-ab / CH05.P2
+익숙한 절차 대신 작은 개선안을 같이 시험한다면, 이준혁님의 불편을 알아채고 손을 보태는 세심함이 정유진님에게 도움이 될 수 있습니다. 정유진님에게 익숙한 것은 상대가 빠뜨린 작은 필요를 챙기는 방식이며, 상대의 도움을 받아도 이 방식으로 직접 참여할 몫은 남겨둘 만합니다. 이준혁님이 가능한 도움을 먼저 설명하고 정유진님이 쓸 부분을 고르면, 서로의 좋은 면을 같은 방식으로 바꾸지 않아도 함께 시도할 폭이 넓어집니다. 정유진님이 어떤 도움이 실제로 필요했는지 알려주면, 이준혁님도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다.
+
+원천: P02_GOOD_RELATION_RECIPROCITY, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, natal:day:stem:乙, natal:ten-god:month:visible:丙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/coworker / direction-ba / CH06.P1
+이준혁님의 일간 甲 기준에서 정유진님의 일간 乙에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 정유진님의 존재가 이준혁님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 정유진님에게 익숙한 상대가 빠뜨린 작은 필요를 챙기는 방식이 이준혁님에게 닿는다면, 받는 쪽의 여건도 같이 살펴야 합니다. 이준혁님이 필요로 하는 바뀌는 이유를 미리 알 수 있는 약속을 먼저 살피면, 같은 십성의 자극도 그 사람에게 맞는 속도로 건넬 수 있습니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:b425792e04d53877ee951f97:to:29a2534854378270a988c1f8, foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1, natal:day:stem:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, target-viewer:29a2534854378270a988c1f8
+
+## compatibility/coworker / direction-ba / CH06.P2
+익숙한 절차 대신 작은 개선안을 같이 시험한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다. 이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다. 이준혁님이 평소 혼자 확인하던 부분에 정유진님의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다. 정유진님이 보탠 뒤 이준혁님이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다.
+
+원천: fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/coworker / friction / CH07.P1
+수정 의견이 결과물에 관한 말인지 능력 평가인지 모호해질 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. 이준혁님 쪽에서는 틀린 점이 보이면 돌려 말하기보다 무엇이 다른지 바로 말하고 고칠 부분을 짚습니다. 정유진님에게는 다른 방향도 있습니다: 의견이 달라도 바로 말하기 전에 상대가 어떻게 들을지 생각하고, 받아들일 말을 골라서 전합니다. 수정을 더 하자는 의견과 지금 넘기자는 의견은 완성도의 문제와 일정의 문제를 다른 순서로 말하는 중일 수 있습니다.
+
+원천: personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo, personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo, personA:mbti:ESTP:traits:communication:straight_humor:plainKo, personB:foundation:yin_yang:EXTREME_YIN, personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo, personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo, personB:natal:day:stem:乙, personB:natal:month:stem:乙
+
+## compatibility/coworker / friction / CH07.P2
+갈등을 읽을 명리 단서는 이준혁님의 일지 寅 및 정유진님의 일지 巳 사이의 해입니다. 해는 말로 정하지 않은 기대가 엇갈리며 서운함을 남길 수 있는 관계입니다. 수정할 내용 하나가 누가 일을 더 잘하는지 겨루는 평가로 번지는 때에는 작은 행동도 누구의 기준이 우선인지 따지는 문제로 번질 수 있습니다. 이 관계가 불화나 이별을 예고하는 것은 아니며, 말하지 않은 기대와 실제 합의가 다른 지점을 찾아 조정하는 데 쓸 수 있는 단서입니다.
+
+원천: compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳
+
+## compatibility/coworker / repair / CH08.P1
+잘못 넘긴 결과물 때문에 일정이 어긋난 뒤라면, 잘못의 크기를 먼저 비교하기보다 무슨 일이 있었는지 한 장면부터 맞춰보는 편이 좋습니다. 실제로 한 말과 그 말을 듣고 짐작한 뜻을 나누면, 의도는 아니었다는 해명 뒤에 상대가 받은 불편도 남길 수 있습니다. 사과는 마음을 알아달라는 요청에서 끝내기보다 다음에 바꿀 행동과 확인할 때를 함께 정할수록 구체적입니다. 서로 같은 잘못을 인정해야만 대화를 시작할 수 있다는 조건을 걸지 않아야, 먼저 꺼낸 어려움도 평가받는 말로 돌아오지 않습니다.
+
+원천: canonical-natal-table-v1:features:day_pillar_eulsa, canonical-natal-table-v1:features:day_pillar_gabin, natal:day_pillar_eulsa, natal:day_pillar_gabin, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, sajuDayPillarKnowledge:day_pillar_eulsa:coreKeywords, sajuDayPillarKnowledge:day_pillar_eulsa:symbolicImage, sajuDayPillarKnowledge:day_pillar_gabin:coreKeywords, sajuDayPillarKnowledge:day_pillar_gabin:symbolicImage, v1:dayPillar:갑인, v1:dayPillar:을사, v4:material-depth:day_pillar_eulsa, v4:material-depth:day_pillar_gabin
+
+## compatibility/coworker / repair / CH08.P2
+이준혁님이 다툼 뒤 시도할 회복 행동은 ‘평가처럼 들린 말에서 사람에 대한 판단을 걷어내고, 바꿀 행동만 다시 설명하기’입니다. 정유진님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 의견을 낸 사람이라도 결정권을 독점하지 않고 수정 이유를 동료가 확인할 수 있게 해야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.
+
+원천: foundation:yin_yang:STRONG_YANG, person:29a2534854378270a988c1f8, resonance:PR054
+
+## compatibility/managerReport / person-a / CH02.P1
+이준혁님의 관계 성향은 스스로 판단한 뒤 선택을 알리는 방식을 중심으로 살펴볼 수 있습니다. 이준혁님의 일주 일간 갑목은 ‘방향을 잡으면 앞으로 자라고 커지려는 성질’이라는 뜻으로, 상대와 함께 정할 때도 자신의 기준이 생기는 이유를 보여줍니다. ESTP의 선호를 함께 보면 중요한 일일수록 정해진 답을 받기보다 직접 결정하고 싶어 합니다. 정유진님이 상대가 빠뜨린 작은 필요를 챙기는 방식을 중요하게 여긴다는 점까지 함께 보면, 자기 기준을 전하는 것과 상대가 받아들일 준비를 하는 것은 다른 과정임을 알 수 있습니다.
+
+원천: /traits/identity/4/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/managerReport / person-a / CH02.P2
+이준혁님에게 바뀌는 이유를 미리 알 수 있는 약속은 편하게 자기 의견을 내기 위한 조건입니다. 이준혁님의 토 기운은 ‘현실에서 오래 굴러갈 수 있는지를 중요하게 보는 기운’이라는 뜻으로, 어떤 상황에서 상대를 덜 경계하고 만날 수 있는지 설명해줍니다. 상사 이준혁님이 원하는 보고의 기준을 먼저 설명하면, 팀원 정유진님이 기대를 눈치로 맞히는 일을 줄일 수 있습니다. 원하는 것을 모두 받아달라는 요구와 필요한 것을 설명하는 일은 다르며, 어려운 조건을 미리 말해야 함께 바꿀 방법도 보입니다.
+
+원천: foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1, person:29a2534854378270a988c1f8
+
+## compatibility/managerReport / person-b / CH03.P1
+정유진님에게서 먼저 읽을 면은 상대가 빠뜨린 작은 필요를 챙기는 방식입니다. 정유진님의 일주 일간 을목은 ‘정면으로 밀기보다 가능한 길을 찾아 계속 자라는 성질’이라는 뜻으로, 상대에게 다가가고 자기 뜻을 지키는 바탕이 됩니다. 정유진님의 ISFJ 선호에서 함께 살필 반응도 있습니다: 누군가 곤란해 보이면 필요한 것을 알아차리고, 무엇을 챙겨줄 수 있을지 생각하며 먼저 움직입니다. 이준혁님에게 익숙한 스스로 판단한 뒤 선택을 알리는 방식을 함께 생각하면, 정유진님의 편안함만으로 둘의 대화가 끝났다고 여기기는 어렵습니다.
+
+원천: /traits/communication/0/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/managerReport / person-b / CH03.P2
+정유진님에게 무리한 몫을 거절할 수 있는 선은 편하게 자기 의견을 내기 위한 조건입니다. 정유진님의 월주 천간 비견은 ‘남이 정한 답보다 자기 힘과 판단을 믿으려는 성질’이라는 뜻으로, 억지로 맞추기보다 자기 의견을 편하게 낼 조건을 보여줍니다. 이준혁님의 제안을 듣는 정유진님은 무엇이 편하고 어디부터 어려운지 알려줄 수 있으며, 찬반만 답할 때보다 함께 바꿀 부분이 잘 보입니다. 괜찮다는 답을 오래 유지하는 것보다 감당하기 어려워지는 지점을 일찍 알리는 편이, 상대에게도 약속을 지킬 기회를 줍니다.
+
+원천: natal:ten-god:month:visible:乙, person:b425792e04d53877ee951f97, resonance:PR055
+
+## compatibility/managerReport / direction-ab / CH05.P1
+정유진님의 일간 乙 기준에서 이준혁님의 일간 甲에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 이준혁님의 존재가 정유진님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 이준혁님 쪽에서는 스스로 판단한 뒤 선택을 알리는 방식으로 그 자극을 전할 수 있습니다. 정유진님에게 중요한 무리한 몫을 거절할 수 있는 선을 함께 지켜야 이 자극이 선택 가능한 제안으로 도착합니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:29a2534854378270a988c1f8:to:b425792e04d53877ee951f97, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:甲, natal:ten-god:month:visible:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, resonance:PR055, target-viewer:b425792e04d53877ee951f97
+
+## compatibility/managerReport / direction-ab / CH05.P2
+기존 방법과 다른 제안을 팀원이 시험해보려 한다면, 이준혁님의 불편을 알아채고 손을 보태는 세심함이 정유진님에게 도움이 될 수 있습니다. 정유진님에게 익숙한 것은 상대가 빠뜨린 작은 필요를 챙기는 방식이며, 상대의 도움을 받아도 이 방식으로 직접 참여할 몫은 남겨둘 만합니다. 이준혁님이 가능한 도움을 먼저 설명하고 정유진님이 쓸 부분을 고르면, 서로의 좋은 면을 같은 방식으로 바꾸지 않아도 함께 시도할 폭이 넓어집니다. 정유진님이 어떤 도움이 실제로 필요했는지 알려주면, 이준혁님도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다.
+
+원천: P02_GOOD_RELATION_RECIPROCITY, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, natal:day:stem:乙, natal:ten-god:month:visible:丙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/managerReport / direction-ba / CH06.P1
+이준혁님의 일간 甲 기준에서 정유진님의 일간 乙에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 정유진님의 존재가 이준혁님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 정유진님에게 익숙한 상대가 빠뜨린 작은 필요를 챙기는 방식이 이준혁님에게 닿는다면, 받는 쪽의 여건도 같이 살펴야 합니다. 이준혁님이 필요로 하는 바뀌는 이유를 미리 알 수 있는 약속을 먼저 살피면, 같은 십성의 자극도 그 사람에게 맞는 속도로 건넬 수 있습니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:b425792e04d53877ee951f97:to:29a2534854378270a988c1f8, foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1, natal:day:stem:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, target-viewer:29a2534854378270a988c1f8
+
+## compatibility/managerReport / direction-ba / CH06.P2
+기존 방법과 다른 제안을 팀원이 시험해보려 한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다. 이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다. 팀원 정유진님의 제안은 상사 이준혁님의 판단에 정보를 더해줄 수 있으며, 최종 권한과 책임이 팀원에게 넘어가는 것은 아닙니다. 정유진님이 보탠 뒤 이준혁님이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다.
+
+원천: fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/managerReport / friction / CH07.P1
+늦어진 보고의 원인보다 태도부터 평가할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. 이준혁님 쪽에서는 틀린 점이 보이면 돌려 말하기보다 무엇이 다른지 바로 말하고 고칠 부분을 짚습니다. 정유진님에게는 다른 방향도 있습니다: 의견이 달라도 바로 말하기 전에 상대가 어떻게 들을지 생각하고, 받아들일 말을 골라서 전합니다. 상사의 확인 질문이 팀원에게는 불신으로, 팀원의 짧은 보고가 상사에게는 진행을 알 수 없다는 불안으로 전달될 수 있습니다.
+
+원천: personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo, personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo, personA:mbti:ESTP:traits:communication:straight_humor:plainKo, personB:foundation:yin_yang:EXTREME_YIN, personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo, personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo, personB:natal:day:stem:乙, personB:natal:month:stem:乙
+
+## compatibility/managerReport / friction / CH07.P2
+갈등을 읽을 명리 단서는 이준혁님의 일지 寅 및 정유진님의 일지 巳 사이의 해입니다. 해는 말로 정하지 않은 기대가 엇갈리며 서운함을 남길 수 있는 관계입니다. 모호한 지시의 책임까지 팀원이 눈치로 해결해야 하는 때에는 작은 행동도 누구의 기준이 우선인지 따지는 문제로 번질 수 있습니다. 이 관계가 불화나 이별을 예고하는 것은 아니며, 말하지 않은 기대와 실제 합의가 다른 지점을 찾아 조정하는 데 쓸 수 있는 단서입니다.
+
+원천: compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳
+
+## compatibility/managerReport / repair / CH08.P1
+모호했던 지시로 재작업이 생긴 뒤라면, 잘못의 크기를 먼저 비교하기보다 무슨 일이 있었는지 한 장면부터 맞춰보는 편이 좋습니다. 실제로 한 말과 그 말을 듣고 짐작한 뜻을 나누면, 의도는 아니었다는 해명 뒤에 상대가 받은 불편도 남길 수 있습니다. 사과는 마음을 알아달라는 요청에서 끝내기보다 다음에 바꿀 행동과 확인할 때를 함께 정할수록 구체적입니다. 권한을 가진 쪽이 먼저 자신의 결정과 설명을 돌아봐야, 상대가 불이익을 걱정하지 않고 실제 어려움을 말할 수 있습니다.
+
+원천: canonical-natal-table-v1:features:day_pillar_eulsa, canonical-natal-table-v1:features:day_pillar_gabin, natal:day_pillar_eulsa, natal:day_pillar_gabin, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, sajuDayPillarKnowledge:day_pillar_eulsa:coreKeywords, sajuDayPillarKnowledge:day_pillar_eulsa:symbolicImage, sajuDayPillarKnowledge:day_pillar_gabin:coreKeywords, sajuDayPillarKnowledge:day_pillar_gabin:symbolicImage, v1:dayPillar:갑인, v1:dayPillar:을사, v4:material-depth:day_pillar_eulsa, v4:material-depth:day_pillar_gabin
+
+## compatibility/managerReport / repair / CH08.P2
+이준혁님이 다툼 뒤 시도할 회복 행동은 ‘평가처럼 들린 말에서 사람에 대한 판단을 걷어내고, 바꿀 행동만 다시 설명하기’입니다. 정유진님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 상사는 결과 기준과 결정할 권한을 먼저 밝히고 공개된 자리에서 사람을 평가하지 않아야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.
+
+원천: foundation:yin_yang:STRONG_YANG, person:29a2534854378270a988c1f8, resonance:PR054
+
+## compatibility/businessPartner / person-a / CH02.P1
+이준혁님의 관계 성향은 스스로 판단한 뒤 선택을 알리는 방식을 중심으로 살펴볼 수 있습니다. 이준혁님의 일주 일간 갑목은 ‘방향을 잡으면 앞으로 자라고 커지려는 성질’이라는 뜻으로, 상대와 함께 정할 때도 자신의 기준이 생기는 이유를 보여줍니다. ESTP의 선호를 함께 보면 중요한 일일수록 정해진 답을 받기보다 직접 결정하고 싶어 합니다. 정유진님이 상대가 빠뜨린 작은 필요를 챙기는 방식을 중요하게 여긴다는 점까지 함께 보면, 자기 기준을 전하는 것과 상대가 받아들일 준비를 하는 것은 다른 과정임을 알 수 있습니다.
+
+원천: /traits/identity/4/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/businessPartner / person-a / CH02.P2
+이준혁님에게 바뀌는 이유를 미리 알 수 있는 약속은 편하게 자기 의견을 내기 위한 조건입니다. 이준혁님의 토 기운은 ‘현실에서 오래 굴러갈 수 있는지를 중요하게 보는 기운’이라는 뜻으로, 어떤 상황에서 상대를 덜 경계하고 만날 수 있는지 설명해줍니다. 공동 자금을 쓰기 전에 각자 감당할 수 있는 범위를 밝힐 때, 이준혁님이 꼭 필요한 조건과 조정할 수 있는 조건을 나눠 말하면 정유진님도 구체적으로 응답할 수 있습니다. 원하는 것을 모두 받아달라는 요구와 필요한 것을 설명하는 일은 다르며, 어려운 조건을 미리 말해야 함께 바꿀 방법도 보입니다.
+
+원천: foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1, person:29a2534854378270a988c1f8
+
+## compatibility/businessPartner / person-b / CH03.P1
+정유진님에게서 먼저 읽을 면은 상대가 빠뜨린 작은 필요를 챙기는 방식입니다. 정유진님의 일주 일간 을목은 ‘정면으로 밀기보다 가능한 길을 찾아 계속 자라는 성질’이라는 뜻으로, 상대에게 다가가고 자기 뜻을 지키는 바탕이 됩니다. 정유진님의 ISFJ 선호에서 함께 살필 반응도 있습니다: 누군가 곤란해 보이면 필요한 것을 알아차리고, 무엇을 챙겨줄 수 있을지 생각하며 먼저 움직입니다. 이준혁님에게 익숙한 스스로 판단한 뒤 선택을 알리는 방식을 함께 생각하면, 정유진님의 편안함만으로 둘의 대화가 끝났다고 여기기는 어렵습니다.
+
+원천: /traits/communication/0/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/businessPartner / person-b / CH03.P2
+정유진님에게 무리한 몫을 거절할 수 있는 선은 편하게 자기 의견을 내기 위한 조건입니다. 정유진님의 월주 천간 비견은 ‘남이 정한 답보다 자기 힘과 판단을 믿으려는 성질’이라는 뜻으로, 억지로 맞추기보다 자기 의견을 편하게 낼 조건을 보여줍니다. 이준혁님의 제안을 듣는 정유진님은 무엇이 편하고 어디부터 어려운지 알려줄 수 있으며, 찬반만 답할 때보다 함께 바꿀 부분이 잘 보입니다. 괜찮다는 답을 오래 유지하는 것보다 감당하기 어려워지는 지점을 일찍 알리는 편이, 상대에게도 약속을 지킬 기회를 줍니다.
+
+원천: natal:ten-god:month:visible:乙, person:b425792e04d53877ee951f97, resonance:PR055
+
+## compatibility/businessPartner / direction-ab / CH05.P1
+정유진님의 일간 乙 기준에서 이준혁님의 일간 甲에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 이준혁님의 존재가 정유진님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 이준혁님 쪽에서는 스스로 판단한 뒤 선택을 알리는 방식으로 그 자극을 전할 수 있습니다. 정유진님에게 중요한 무리한 몫을 거절할 수 있는 선을 함께 지켜야 이 자극이 선택 가능한 제안으로 도착합니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:29a2534854378270a988c1f8:to:b425792e04d53877ee951f97, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:甲, natal:ten-god:month:visible:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, resonance:PR055, target-viewer:b425792e04d53877ee951f97
+
+## compatibility/businessPartner / direction-ab / CH05.P2
+새 고객에게 소규모 시험 제안을 함께 한다면, 이준혁님의 불편을 알아채고 손을 보태는 세심함이 정유진님에게 도움이 될 수 있습니다. 정유진님에게 익숙한 것은 상대가 빠뜨린 작은 필요를 챙기는 방식이며, 상대의 도움을 받아도 이 방식으로 직접 참여할 몫은 남겨둘 만합니다. 이준혁님이 가능한 도움을 먼저 설명하고 정유진님이 쓸 부분을 고르면, 서로의 좋은 면을 같은 방식으로 바꾸지 않아도 함께 시도할 폭이 넓어집니다. 정유진님이 어떤 도움이 실제로 필요했는지 알려주면, 이준혁님도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다.
+
+원천: P02_GOOD_RELATION_RECIPROCITY, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, natal:day:stem:乙, natal:ten-god:month:visible:丙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/businessPartner / direction-ba / CH06.P1
+이준혁님의 일간 甲 기준에서 정유진님의 일간 乙에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 정유진님의 존재가 이준혁님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 정유진님에게 익숙한 상대가 빠뜨린 작은 필요를 챙기는 방식이 이준혁님에게 닿는다면, 받는 쪽의 여건도 같이 살펴야 합니다. 이준혁님이 필요로 하는 바뀌는 이유를 미리 알 수 있는 약속을 먼저 살피면, 같은 십성의 자극도 그 사람에게 맞는 속도로 건넬 수 있습니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:b425792e04d53877ee951f97:to:29a2534854378270a988c1f8, foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1, natal:day:stem:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, target-viewer:29a2534854378270a988c1f8
+
+## compatibility/businessPartner / direction-ba / CH06.P2
+새 고객에게 소규모 시험 제안을 함께 한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다. 이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다. 이준혁님이 평소 혼자 확인하던 부분에 정유진님의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다. 정유진님이 보탠 뒤 이준혁님이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다.
+
+원천: fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/businessPartner / friction / CH07.P1
+기대 매출은 이야기하면서 실패 비용은 따로 묻지 않을 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. 이준혁님 쪽에서는 틀린 점이 보이면 돌려 말하기보다 무엇이 다른지 바로 말하고 고칠 부분을 짚습니다. 정유진님에게는 다른 방향도 있습니다: 의견이 달라도 바로 말하기 전에 상대가 어떻게 들을지 생각하고, 받아들일 말을 골라서 전합니다. 전망이 좋다는 말과 지금 비용을 감당할 수 있다는 말은 다른 질문이므로 같은 찬성으로 묶으면 안 됩니다.
+
+원천: personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo, personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo, personA:mbti:ESTP:traits:communication:straight_humor:plainKo, personB:foundation:yin_yang:EXTREME_YIN, personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo, personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo, personB:natal:day:stem:乙, personB:natal:month:stem:乙
+
+## compatibility/businessPartner / friction / CH07.P2
+갈등을 읽을 명리 단서는 이준혁님의 일지 寅 및 정유진님의 일지 巳 사이의 해입니다. 해는 말로 정하지 않은 기대가 엇갈리며 서운함을 남길 수 있는 관계입니다. 밖에 먼저 약속한 뒤 상대의 동의를 나중에 받으려는 때에는 작은 행동도 누구의 기준이 우선인지 따지는 문제로 번질 수 있습니다. 이 관계가 불화나 이별을 예고하는 것은 아니며, 말하지 않은 기대와 실제 합의가 다른 지점을 찾아 조정하는 데 쓸 수 있는 단서입니다.
+
+원천: compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳
+
+## compatibility/businessPartner / repair / CH08.P1
+약속한 비용이나 역할의 범위를 두고 다툰 뒤라면, 잘못의 크기를 먼저 비교하기보다 무슨 일이 있었는지 한 장면부터 맞춰보는 편이 좋습니다. 실제로 한 말과 그 말을 듣고 짐작한 뜻을 나누면, 의도는 아니었다는 해명 뒤에 상대가 받은 불편도 남길 수 있습니다. 사과는 마음을 알아달라는 요청에서 끝내기보다 다음에 바꿀 행동과 확인할 때를 함께 정할수록 구체적입니다. 서로 같은 잘못을 인정해야만 대화를 시작할 수 있다는 조건을 걸지 않아야, 먼저 꺼낸 어려움도 평가받는 말로 돌아오지 않습니다.
+
+원천: canonical-natal-table-v1:features:day_pillar_eulsa, canonical-natal-table-v1:features:day_pillar_gabin, natal:day_pillar_eulsa, natal:day_pillar_gabin, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, sajuDayPillarKnowledge:day_pillar_eulsa:coreKeywords, sajuDayPillarKnowledge:day_pillar_eulsa:symbolicImage, sajuDayPillarKnowledge:day_pillar_gabin:coreKeywords, sajuDayPillarKnowledge:day_pillar_gabin:symbolicImage, v1:dayPillar:갑인, v1:dayPillar:을사, v4:material-depth:day_pillar_eulsa, v4:material-depth:day_pillar_gabin
+
+## compatibility/businessPartner / repair / CH08.P2
+이준혁님이 다툼 뒤 시도할 회복 행동은 ‘평가처럼 들린 말에서 사람에 대한 판단을 걷어내고, 바꿀 행동만 다시 설명하기’입니다. 정유진님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 제안을 먼저 한 사람도 큰 지출과 계약을 상대의 동의 없이 확정해서는 안 됩니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.
+
+원천: foundation:yin_yang:STRONG_YANG, person:29a2534854378270a988c1f8, resonance:PR054
+
+## compatibility/friendship / person-a / CH02.P1
+이준혁님의 관계 성향은 스스로 판단한 뒤 선택을 알리는 방식을 중심으로 살펴볼 수 있습니다. 이준혁님의 일주 일간 갑목은 ‘방향을 잡으면 앞으로 자라고 커지려는 성질’이라는 뜻으로, 상대와 함께 정할 때도 자신의 기준이 생기는 이유를 보여줍니다. ESTP의 선호를 함께 보면 중요한 일일수록 정해진 답을 받기보다 직접 결정하고 싶어 합니다. 정유진님이 상대가 빠뜨린 작은 필요를 챙기는 방식을 중요하게 여긴다는 점까지 함께 보면, 자기 기준을 전하는 것과 상대가 받아들일 준비를 하는 것은 다른 과정임을 알 수 있습니다.
+
+원천: /traits/identity/4/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/friendship / person-a / CH02.P2
+이준혁님에게 바뀌는 이유를 미리 알 수 있는 약속은 편하게 자기 의견을 내기 위한 조건입니다. 이준혁님의 토 기운은 ‘현실에서 오래 굴러갈 수 있는지를 중요하게 보는 기운’이라는 뜻으로, 어떤 상황에서 상대를 덜 경계하고 만날 수 있는지 설명해줍니다. 한동안 바빠 자주 만나기 어려운 사정을 이야기할 때, 이준혁님이 꼭 필요한 조건과 조정할 수 있는 조건을 나눠 말하면 정유진님도 구체적으로 응답할 수 있습니다. 원하는 것을 모두 받아달라는 요구와 필요한 것을 설명하는 일은 다르며, 어려운 조건을 미리 말해야 함께 바꿀 방법도 보입니다.
+
+원천: foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1, person:29a2534854378270a988c1f8
+
+## compatibility/friendship / person-b / CH03.P1
+정유진님에게서 먼저 읽을 면은 상대가 빠뜨린 작은 필요를 챙기는 방식입니다. 정유진님의 일주 일간 을목은 ‘정면으로 밀기보다 가능한 길을 찾아 계속 자라는 성질’이라는 뜻으로, 상대에게 다가가고 자기 뜻을 지키는 바탕이 됩니다. 정유진님의 ISFJ 선호에서 함께 살필 반응도 있습니다: 누군가 곤란해 보이면 필요한 것을 알아차리고, 무엇을 챙겨줄 수 있을지 생각하며 먼저 움직입니다. 이준혁님에게 익숙한 스스로 판단한 뒤 선택을 알리는 방식을 함께 생각하면, 정유진님의 편안함만으로 둘의 대화가 끝났다고 여기기는 어렵습니다.
+
+원천: /traits/communication/0/plainKo, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/friendship / person-b / CH03.P2
+정유진님에게 무리한 몫을 거절할 수 있는 선은 편하게 자기 의견을 내기 위한 조건입니다. 정유진님의 월주 천간 비견은 ‘남이 정한 답보다 자기 힘과 판단을 믿으려는 성질’이라는 뜻으로, 억지로 맞추기보다 자기 의견을 편하게 낼 조건을 보여줍니다. 이준혁님의 제안을 듣는 정유진님은 무엇이 편하고 어디부터 어려운지 알려줄 수 있으며, 찬반만 답할 때보다 함께 바꿀 부분이 잘 보입니다. 괜찮다는 답을 오래 유지하는 것보다 감당하기 어려워지는 지점을 일찍 알리는 편이, 상대에게도 약속을 지킬 기회를 줍니다.
+
+원천: natal:ten-god:month:visible:乙, person:b425792e04d53877ee951f97, resonance:PR055
+
+## compatibility/friendship / direction-ab / CH05.P1
+정유진님의 일간 乙 기준에서 이준혁님의 일간 甲에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 이준혁님의 존재가 정유진님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 이준혁님 쪽에서는 스스로 판단한 뒤 선택을 알리는 방식으로 그 자극을 전할 수 있습니다. 정유진님에게 중요한 무리한 몫을 거절할 수 있는 선을 함께 지켜야 이 자극이 선택 가능한 제안으로 도착합니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:29a2534854378270a988c1f8:to:b425792e04d53877ee951f97, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:甲, natal:ten-god:month:visible:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, resonance:PR055, target-viewer:b425792e04d53877ee951f97
+
+## compatibility/friendship / direction-ab / CH05.P2
+서로 해보지 않은 활동을 가볍게 제안한다면, 이준혁님의 불편을 알아채고 손을 보태는 세심함이 정유진님에게 도움이 될 수 있습니다. 정유진님에게 익숙한 것은 상대가 빠뜨린 작은 필요를 챙기는 방식이며, 상대의 도움을 받아도 이 방식으로 직접 참여할 몫은 남겨둘 만합니다. 이준혁님이 가능한 도움을 먼저 설명하고 정유진님이 쓸 부분을 고르면, 서로의 좋은 면을 같은 방식으로 바꾸지 않아도 함께 시도할 폭이 넓어집니다. 정유진님이 어떤 도움이 실제로 필요했는지 알려주면, 이준혁님도 수고를 더 늘리기보다 필요한 곳에 힘을 쓸 수 있습니다.
+
+원천: P02_GOOD_RELATION_RECIPROCITY, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, natal:day:stem:乙, natal:ten-god:month:visible:丙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/friendship / direction-ba / CH06.P1
+이준혁님의 일간 甲 기준에서 정유진님의 일간 乙에 해당하는 십성은 겁재입니다. 겁재의 관계 자극을 풀면 정유진님의 존재가 이준혁님에게 가만있기보다 같이 도전하고 싶은 마음을 건드립니다. 정유진님에게 익숙한 상대가 빠뜨린 작은 필요를 챙기는 방식이 이준혁님에게 닿는다면, 받는 쪽의 여건도 같이 살펴야 합니다. 이준혁님이 필요로 하는 바뀌는 이유를 미리 알 수 있는 약속을 먼저 살피면, 같은 십성의 자극도 그 사람에게 맞는 속도로 건넬 수 있습니다.
+
+원천: compatibilityRelationRules:getCrossTenGodRelation:b425792e04d53877ee951f97:to:29a2534854378270a988c1f8, foundation:element:EARTH:STRONG, fusion:COMPLEMENT:C001:social:CARE:1:PRECISION:1, fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1, natal:day:stem:乙, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, target-viewer:29a2534854378270a988c1f8
+
+## compatibility/friendship / direction-ba / CH06.P2
+서로 해보지 않은 활동을 가볍게 제안한다면, 정유진님의 대화의 온도가 달라지는 순간을 알아채는 감각이 이준혁님에게 도움이 될 수 있습니다. 이준혁님은 스스로 판단한 뒤 선택을 알리는 방식을 바탕으로 자기 답을 찾는 편이므로, 정유진님의 기여를 받아도 선택을 직접 확인할 여지는 필요합니다. 이준혁님이 평소 혼자 확인하던 부분에 정유진님의 관점을 보태보면, 도움을 받으면서도 최종 선택은 직접 할 수 있습니다. 정유진님이 보탠 뒤 이준혁님이 혼자 이어갈 부분까지 정하면, 다음에도 같은 도움을 기다려야 하는 부담을 줄일 수 있습니다.
+
+원천: fusion:COMPLEMENT:C049:social:CARE:1:SOCIAL_ATTUNEMENT:1, fusion:COMPLEMENT:C094:recovery:AUTONOMY:1:PRACTICALITY:1, natal:day:stem:乙, natal:day:stem:甲, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97
+
+## compatibility/friendship / friction / CH07.P1
+만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. 이준혁님 쪽에서는 틀린 점이 보이면 돌려 말하기보다 무엇이 다른지 바로 말하고 고칠 부분을 짚습니다. 정유진님에게는 다른 방향도 있습니다: 의견이 달라도 바로 말하기 전에 상대가 어떻게 들을지 생각하고, 받아들일 말을 골라서 전합니다. 자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.
+
+원천: personA:mbti:ESTP:traits:child:serious_talk_avoidance_child:plainKo, personA:mbti:ESTP:traits:communication:short_explanation_preference:plainKo, personA:mbti:ESTP:traits:communication:straight_humor:plainKo, personB:foundation:yin_yang:EXTREME_YIN, personB:mbti:ISFJ:traits:communication:careful_word_choice:plainKo, personB:mbti:ISFJ:traits:relationships:relationship_stress_absorber:plainKo, personB:natal:day:stem:乙, personB:natal:month:stem:乙
+
+## compatibility/friendship / friction / CH07.P2
+갈등을 읽을 명리 단서는 이준혁님의 일지 寅 및 정유진님의 일지 巳 사이의 해입니다. 해는 말로 정하지 않은 기대가 엇갈리며 서운함을 남길 수 있는 관계입니다. 한 번 못 만난다는 답이 우정의 순위를 정하는 증거가 되는 때에는 작은 행동도 누구의 기준이 우선인지 따지는 문제로 번질 수 있습니다. 이 관계가 불화나 이별을 예고하는 것은 아니며, 말하지 않은 기대와 실제 합의가 다른 지점을 찾아 조정하는 데 쓸 수 있는 단서입니다.
+
+원천: compatibilityRelationRules:detectCrossBranchRelations:harm:29a2534854378270a988c1f8:day:寅|b425792e04d53877ee951f97:day:巳
+
+## compatibility/friendship / repair / CH08.P1
+한동안 뜸했던 연락에 서운함이 생겨 다시 이야기한다면, 잘못의 크기를 먼저 비교하기보다 무슨 일이 있었는지 한 장면부터 맞춰보는 편이 좋습니다. 실제로 한 말과 그 말을 듣고 짐작한 뜻을 나누면, 의도는 아니었다는 해명 뒤에 상대가 받은 불편도 남길 수 있습니다. 사과는 마음을 알아달라는 요청에서 끝내기보다 다음에 바꿀 행동과 확인할 때를 함께 정할수록 구체적입니다. 서로 같은 잘못을 인정해야만 대화를 시작할 수 있다는 조건을 걸지 않아야, 먼저 꺼낸 어려움도 평가받는 말로 돌아오지 않습니다.
+
+원천: canonical-natal-table-v1:features:day_pillar_eulsa, canonical-natal-table-v1:features:day_pillar_gabin, natal:day_pillar_eulsa, natal:day_pillar_gabin, person:29a2534854378270a988c1f8, person:b425792e04d53877ee951f97, sajuDayPillarKnowledge:day_pillar_eulsa:coreKeywords, sajuDayPillarKnowledge:day_pillar_eulsa:symbolicImage, sajuDayPillarKnowledge:day_pillar_gabin:coreKeywords, sajuDayPillarKnowledge:day_pillar_gabin:symbolicImage, v1:dayPillar:갑인, v1:dayPillar:을사, v4:material-depth:day_pillar_eulsa, v4:material-depth:day_pillar_gabin
+
+## compatibility/friendship / repair / CH08.P2
+이준혁님이 다툼 뒤 시도할 회복 행동은 ‘평가처럼 들린 말에서 사람에 대한 판단을 걷어내고, 바꿀 행동만 다시 설명하기’입니다. 정유진님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 먼저 잡은 약속이라도 친구가 어려운 날에는 거절할 수 있는 여지를 남겨야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.
+
+원천: foundation:yin_yang:STRONG_YANG, person:29a2534854378270a988c1f8, resonance:PR054
+
+## major/A / opening / big-flow
+도윤님이 지금 지나고 있는 戊寅 대운에서 읽는 십성은 편인입니다. 이 시기의 중심은 ‘남이 놓친 질문을 깊게 파는 시간’입니다. 예전과 같은 일을 해도 ‘남의 해답보다 내가 이해한 길’ 쪽에 더 마음이 가는 변화예요. 지금은 특히 남과 다른 지식에 시간을 쓰는 선택을 가까이서 보게 되는 시기죠.
+
+원천: calendar:saju-calendar-kst-v2, careerContextV3:function:business_operations, dayun-cycle:4:戊寅, dayun:dayun-kst-sect2-v1, input:detailJob, input:jobStatus, majorFortuneDecadeReading:major-decade-v2, majorFortuneHorizon:14-year-window, majorFortuneV3Generation:createMajorFortuneV3:writer-disabled, period-ten-god:편인, v4:major-setting:business
+
+## major/A / opening / first-gift
+이 흐름의 좋은 패는 독특한 이해를 전문성으로 바꿀 학습운입니다. ‘재구매가 멈춘 이유를 고객 경험에서 찾는 시간’ 같은 순간을 떠올려볼까요? 다들 답을 찾았다는데 혼자 질문이 남아 있을 수 있어요. 빨리 아는 것과 다르게 이해하는 것은 다른 재주이고, 이번 장은 후자의 값을 알아볼 시간이에요.
+
+원천: calendar:saju-calendar-kst-v2, careerContextV3:function:business_operations, dayun-cycle:4:戊寅, dayun:dayun-kst-sect2-v1, input:detailJob, input:jobStatus, majorFortuneDecadeReading:major-decade-v2, majorFortuneHorizon:14-year-window, majorFortuneV3Generation:createMajorFortuneV3:writer-disabled, period-ten-god:편인, v4:major-setting:business
+
+## major/A / current-context / current-setting
+직업·생활이 과거나 미래에도 같다고 가정하지 않고, 입력 당시의 ‘온라인 교육사업 대표’에 비춰 아래 예시를 살펴봅니다. 지금의 경험에 이 흐름을 적용해본다면, ‘익숙한 상품의 쓰임을 다른 각도에서 보는 연구’ 같은 장면을 떠올릴 수 있어요. 원인을 깊게 들여다볼 문제가 왜 요즘 더 신경 쓰이는지 생각해보면, 단순히 일이 많아서만은 아닐 거예요. 어려운 것을 이해하고 써보게 만드는 설명을 어디에 쓰느냐에 따라 똑같이 바쁜 하루도 만족감이 달라집니다.
+
+원천: calendar:saju-calendar-kst-v2, careerContextV3:function:business_operations, dayun-cycle:4:戊寅, dayun:dayun-kst-sect2-v1, input:detailJob, input:jobStatus, majorFortuneDecadeReading:major-decade-v2, majorFortuneHorizon:14-year-window, majorFortuneV3Generation:createMajorFortuneV3:writer-disabled, period-ten-god:편인, v4:major-setting:business
+
+## major/A / current-context / money-flow
+돈에서는 남과 다른 지식에 시간을 쓰는 선택을 먼저 봐요. 답을 찾다가 시작을 계속 미루는 생각이 커지면 잘하고도 생활은 제자리처럼 느껴질 수 있어요. 금방 설명할 수 없는 관심에도 배울 값은 있습니다. 다만 오래 알아본 것을 한 번 써보는 순간이 있어야 지식이 다음 기회의 근거로 남아요.
+
+원천: calendar:saju-calendar-kst-v2, careerContextV3:function:business_operations, dayun-cycle:4:戊寅, dayun:dayun-kst-sect2-v1, input:detailJob, input:jobStatus, majorFortuneDecadeReading:major-decade-v2, majorFortuneHorizon:14-year-window, majorFortuneV3Generation:createMajorFortuneV3:writer-disabled, period-ten-god:편인, v4:major-setting:business
+
+## major/A / year-2027 / 2027-character
+2027년은 戊寅 대운의 편인, 丁未 세운의 정관이 만나는 흐름입니다. 큰 배경인 ‘남이 놓친 질문을 깊게 파는 시간’ 속에서 ‘신뢰가 이름과 자리가 되는 과정’에 주목합니다. 믿고 맡기는 역할이 ‘믿고 맡겨도 되겠다’는 인상으로 이어질 여지가 큽니다.
+
+원천: calendar:saju-calendar-kst-v2, careerContextV3:function:business_operations, dayun:dayun-kst-sect2-v1, input:detailJob, input:jobStatus, major:4:戊寅:year:2027:丁未, major:4:戊寅:year:2027:丁未:natal:반합:未卯:hour, major:4:戊寅:year:2027:丁未:natal:육합:午未:month, major:4:戊寅:year:2027:丁未:natal:충:丑未:year, major:4:戊寅:year:2027:丁未:natal:해:子未:day, major:4:戊寅:year:2027:丁未:natal:형:未丑:year, major:4:戊寅:year:2027:丁未:ten-god, majorFortuneDecadeReading:major-decade-v2, majorFortuneHorizon:14-year-window, majorFortuneV3Generation:createMajorFortuneV3:writer-disabled, period-ten-god:정관, v4:major-setting:business, v4:major-reader-periods-01, dayun-cycle:4:戊寅, period-ten-god:편인
+
+## major/A / year-2027 / 2027-scene
+역할 선택을 생각할 때 원국의 정관이 어떤 모습인지 떠올려볼까요? 자유롭게 하라는 말보다 어디까지 맡으면 되는지 알려주는 게 편한가요?
+
+원천: SajuCalcResult:tenGods.distribution:正官, calendar:saju-calendar-kst-v2, careerContextV3:function:business_operations, dayun:dayun-kst-sect2-v1, input:detailJob, input:jobStatus, major:4:戊寅:year:2027:丁未, major:4:戊寅:year:2027:丁未:natal:반합:未卯:hour, major:4:戊寅:year:2027:丁未:natal:육합:午未:month, major:4:戊寅:year:2027:丁未:natal:충:丑未:year, major:4:戊寅:year:2027:丁未:natal:해:子未:day, major:4:戊寅:year:2027:丁未:natal:형:未丑:year, major:4:戊寅:year:2027:丁未:ten-god, majorFortuneDecadeReading:major-decade-v2, majorFortuneHorizon:14-year-window, majorFortuneV3Generation:createMajorFortuneV3:writer-disabled, period-ten-god:정관, sajuKnowledgeBase:ten_god_zheng_guan, src/lib/interpretation-v3/comprehensiveStoryEvidence.ts:storySupport, v4:major-setting:business, v4:material-depth:ten_god_zheng_guan, v4:semantic-meaning:ten_god_zheng_guan
+
+## major/A / final / final-strength
+도윤님에게 이미 있는 것은 어려운 것을 이해하고 써보게 만드는 설명입니다. 2033년의 전환을 거치며 ‘공식적으로 맡길 수 있는 역할’까지 다뤄볼 수 있는 사람으로 넓어지는 쪽을 바라볼 만해요.
+
+원천: calendar:saju-calendar-kst-v2, careerContextV3:function:business_operations, dayun-cycle:4:戊寅, dayun-cycle:5:丁丑, dayun:dayun-kst-sect2-v1, input:detailJob, input:jobStatus, majorFortuneDecadeReading:major-decade-v2, majorFortuneHorizon:14-year-window, majorFortuneV3Generation:createMajorFortuneV3:writer-disabled, period-ten-god:정관, period-ten-god:편인, v4:major-setting:business
+
+## major/A / final / final-gift
+마지막 해가 놓인 장의 좋은 힘은 맡겨도 되는 사람으로 인정받을 명예운입니다. 남이 보지 않을 때도 지킨 태도는 없어지지 않아요. 더 중요한 것을 맡겨도 되겠다는 믿음이 쌓이면 조용히 해온 일에도 이름이 붙어요.
+
+원천: calendar:saju-calendar-kst-v2, careerContextV3:function:business_operations, dayun-cycle:4:戊寅, dayun-cycle:5:丁丑, dayun:dayun-kst-sect2-v1, input:detailJob, input:jobStatus, majorFortuneDecadeReading:major-decade-v2, majorFortuneHorizon:14-year-window, majorFortuneV3Generation:createMajorFortuneV3:writer-disabled, period-ten-god:정관, period-ten-god:편인, v4:major-setting:business
+
+## annual/A / opening / annual-opening
+2026년을 보면 丙午 세운의 천간은 庚 일간에게 편관입니다. 어려운 결정을 맡는 힘을 한 해의 중심에 놓아볼 수 있어요. 실력을 조용히 쌓는 데서 어려운 판단을 맡는 쪽으로 무게가 옮겨가는 해입니다. 부담도 커질 수 있지만 그만큼 앞에 서고 존재감을 보여줄 자리도 생각해볼 만해요.
+
+원천: annual-month-jie-kst-v2, annual:2026, annualFortuneEvidence:buildAnnualFortuneEvidence, annualFortuneGenerationHandler:generateAnnualFortuneProductDraft:writer-disabled, calendar:saju-calendar-kst-v2
+
+## annual/A / opening / annual-context
+앞으로의 장면은 지금 알려준 생활에 비춰보는 예시입니다. 상황이 달라진다면 새 생활에 맞게 적용해볼 수 있어요. ‘온라인 교육사업 대표’라는 현재 맥락에서는 어려운 것을 이해하고 써보게 만드는 설명을 빠르게 판단해야 할 책임과 이어볼 만합니다. 결정의 무게에 따라오는 보상과 부담도 함께 보는 동안 곤란한 순간에도 기준이 분명한 사람과 어떤 이야기를 나눌지 궁금해져요.
+
+원천: annual-month-jie-kst-v2, annual:2026, annualFortuneEvidence:buildAnnualFortuneEvidence, annualFortuneGenerationHandler:generateAnnualFortuneProductDraft:writer-disabled, calendar:saju-calendar-kst-v2
+
+## annual/A / dayun-cross / dayun-cross-0
+1월 1일 00:00:00 KST부터 2월 4일 05:02:08 KST 직전까지의 흐름을 돌아보면, 乙巳 세운은 정재, 戊寅 대운은 편인의 흐름입니다. 새 달력을 펼쳐도 반복되는 수입과 생활의 축적을 다루던 앞선 흐름이 잠시 이어집니다. 큰 배경인 남이 놓친 질문을 깊게 파는 시간도 이 구간에서는 그대로입니다. 2월 초를 지나며 한 해의 관심이 바뀌므로 1월부터 모든 것을 새로 정할 필요는 없습니다.
+
+원천: annualFortuneReading:crossPeriods, annualFortuneYearRules:getBranchPairRelations, annualFortuneYearRules:getTenGodForStemPair, month-v2:2026:1:1:annual, month-v2:2026:1:1:dayun
+
+## annual/A / dayun-cross / dayun-cross-1
+2월 4일 05:02:08 KST부터 12월 31일까지 이어지는 지금 흐름에서는, 丙午 세운은 편관, 戊寅 대운은 편인의 흐름입니다. 한 해의 어려운 결정을 맡는 힘이 더 긴 목표인 남이 놓친 질문을 깊게 파는 시간을 받쳐줄 수 있어요. 당장 하는 일이 먼 목표와 따로인 것 같아도 그 결과를 어디에 쌓느냐에 따라 연결이 생겨요. 빠르게 판단해야 할 책임을 한 번의 수고로 끝내지 않을 이유가 여기에 있어요.
+
+원천: annualFortuneReading:crossPeriods, annualFortuneYearRules:getBranchPairRelations, annualFortuneYearRules:getTenGodForStemPair, month-v2:2026:2:2:annual, month-v2:2026:2:2:dayun
+
+## annual/A / month-5 / month-5-meaning
+당연하게 따르던 방식에 질문이 생겼다면 그때의 눈을 다시 믿어봐도 좋습니다. 癸巳 월간에 붙는 상관은 庚 일간이 표현하고 기존 답을 고치는 쪽의 힘이에요. 불편한데 모두 그냥 따르던 방식이 유난히 잘 보이는 흐름입니다. 말만 빠른 사람이 아니라 다른 답을 보여줄 수 있는 사람이 될 기회예요. 틀렸다고 지적하는 순간보다 바꾼 뒤 편해지는 장면에서 표현력이 빛납니다.
+
+원천: annual-month-jie-kst-v2, calendarMonths:5:2026-05-05T20:48:44+09:00, month-v2:2026:5:2:annual, month-v2:2026:5:2:dayun, month-v2:2026:5:2:elements, month-v2:2026:5:2:month, month-v2:2026:5:2:month:2026:5:branch:반합:巳丑, month-v2:2026:5:2:month_dayun_branch:4:해:寅巳, month-v2:2026:5:2:month_dayun_branch:4:형:寅巳, month-v2:2026:5:2:ten_gods
+
+## annual/A / month-5 / month-5-scene
+고객이 불편해한 순서를 바꿔보는 실험에 비춰 읽어볼 만해요. 고객이 매번 되묻는 문장이 눈에 밟힙니다. 안내를 바꿔 문의가 짧아지면 말 한 줄도 운영을 편하게 만든다는 손맛이 생깁니다.
+
+원천: annual-month-jie-kst-v2, calendarMonths:5:2026-05-05T20:48:44+09:00, careerContextV3:function:business_operations, input:detailJob, input:jobStatus, month-v2:2026:5:2:annual, month-v2:2026:5:2:dayun, month-v2:2026:5:2:elements, month-v2:2026:5:2:month, month-v2:2026:5:2:month:2026:5:branch:반합:巳丑, month-v2:2026:5:2:month_dayun_branch:4:해:寅巳, month-v2:2026:5:2:month_dayun_branch:4:형:寅巳, month-v2:2026:5:2:ten_gods, v4:major-setting:business
+
+## annual/A / final / final-focus
+도윤님에게 2026년은 어려운 결정을 맡는 힘을 내 방식으로 다뤄보는 한 해입니다. 고객에게 줄 경험을 남의 성적표와만 비교하지 않으면 내가 가진 실력의 쓰임도 더 넓게 보여요.
+
+원천: annual-month-jie-kst-v2, annual:2026, annualFortuneEvidence:buildAnnualFortuneEvidence, annualFortuneGenerationHandler:generateAnnualFortuneProductDraft:writer-disabled, calendar:saju-calendar-kst-v2
+
+## annual/A / final / final-natal
+복잡한 이야기를 핵심과 근거로 나누어 보는 눈이 좋아요. 한 해의 분위기가 달라져도 이 바탕까지 새로 만들어야 하는 것은 아닙니다.
+
+원천: canonical-natal-table-v1:features:day_pillar_gyeongja, natal:day_pillar_gyeongja, sajuDayPillarKnowledge:day_pillar_gyeongja:coreKeywords, sajuDayPillarKnowledge:day_pillar_gyeongja:symbolicImage, v1:dayPillar:경자, v4:material-depth:day_pillar_gyeongja

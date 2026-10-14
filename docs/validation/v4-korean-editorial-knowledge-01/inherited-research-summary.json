@@ -1,0 +1,78 @@
+[
+  {
+    "family": "annual-fortune-product-research",
+    "records": 1792
+  },
+  {
+    "family": "career-product-research",
+    "records": 839
+  },
+  {
+    "family": "compatibility-business-partner-research",
+    "records": 1917
+  },
+  {
+    "family": "compatibility-coworker-research",
+    "records": 1948
+  },
+  {
+    "family": "compatibility-friendship-research",
+    "records": 2138
+  },
+  {
+    "family": "compatibility-love-research",
+    "records": 851
+  },
+  {
+    "family": "compatibility-manager-report-research",
+    "records": 1741
+  },
+  {
+    "family": "compatibility-marriage-research",
+    "records": 1133
+  },
+  {
+    "family": "compatibility-parent-child-research",
+    "records": 1209
+  },
+  {
+    "family": "composite-structure-research",
+    "records": 301
+  },
+  {
+    "family": "comprehensive-product-research",
+    "records": 512
+  },
+  {
+    "family": "fusion-knowledge-research",
+    "records": 374
+  },
+  {
+    "family": "love-product-research",
+    "records": 764
+  },
+  {
+    "family": "major-fortune-product-research",
+    "records": 863
+  },
+  {
+    "family": "mbti-foundation-research",
+    "records": 531
+  },
+  {
+    "family": "mbti-pair-research",
+    "records": 279
+  },
+  {
+    "family": "relation-research",
+    "records": 246
+  },
+  {
+    "family": "semantic-axis-research",
+    "records": 370
+  },
+  {
+    "family": "temporal-interaction-research",
+    "records": 410
+  }
+]

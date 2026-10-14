@@ -1,0 +1,46 @@
+{
+  "files": 121,
+  "functionsIndexed": 2055,
+  "mandatoryFiles": 17,
+  "classes": [
+    {
+      "kind": "existing materials",
+      "files": [
+        "narrativeDomainVariants.ts",
+        "narrativePortraitVariants.ts",
+        "narrativeLifeVariants.ts",
+        "majorAnnualStories.ts",
+        "annualStories.ts",
+        "compatibilityReleaseApplications.ts"
+      ],
+      "usage": "source/lens/domain/period-gated material; declarations not always selected"
+    },
+    {
+      "kind": "combination/grammar",
+      "files": [
+        "copyRealizer.ts",
+        "contentSynthesis.ts",
+        "koreanCopyUtils.ts",
+        "compatibilityTitle.ts"
+      ],
+      "usage": "seed joins, scoped reviewed endings, particle helpers, explicit title tokens; not complete syntax engine"
+    },
+    {
+      "kind": "QA",
+      "files": [
+        "contentQuality.ts",
+        "editorialGuard.ts",
+        "compatibilityReleaseValidator.ts"
+      ],
+      "usage": "exact/phrase/root/theme/tone/role checks; human semantics not proven by counters"
+    },
+    {
+      "kind": "offline research",
+      "files": [
+        "19 existing research families"
+      ],
+      "usage": "all existing state preserved; not automatically used in runtime"
+    }
+  ],
+  "notAllIndexedFunctionsSemanticallyProven": true
+}
