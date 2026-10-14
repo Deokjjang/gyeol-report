@@ -2,8 +2,8 @@
   "TASK": "V4-COMPREHENSIVE-SPECIALIST-ENGINE-01",
   "BASE_SHA": "e0d27b3c78380bb249ec7dd12aa20e8747bc3666",
   "BRANCH": "v4/comprehensive-specialist-engine-01",
-  "COMMIT_SHA": "FINAL_RECEIPT_IN_FINAL_REPORT",
-  "REMOTE_SHA_MATCH": "PENDING_PUSH",
+  "COMMIT_SHA": "Implementation: 6feb88e486c003361338696f6731d8fda26a6bea; final documentation-only HEAD in final report",
+  "REMOTE_SHA_MATCH": "Implementation verified; final HEAD verified separately in final report",
   "SPECIALIST_ENGINE": "ComprehensiveSpecialistEngine; existing Foundation/ActualBindingIndex/Binder reused",
   "SPECIALIST_STATUS": "OFFLINE_IMPLEMENTED; real diagnostics and isolated synthetic selection only",
   "READER_CHAPTERS": 13,
@@ -57,7 +57,17 @@
   "LINT": "PASS; 0 warnings/errors",
   "BUILD": "PASS; warnings 0",
   "DIFF_CHECK": "PASS",
-  "VERCEL_PREVIEW": "PENDING_EXACT_COMMIT_CHECK",
+  "VERCEL_PREVIEW": {
+    "deploymentId": "dpl_DQU8Zd8EcNFCybtDktjWQYqoPpQ1",
+    "status": "READY",
+    "url": "https://gyeol-report-oa2gtxr66-gyeol-report-s-projects.vercel.app",
+    "commitSha": "6feb88e486c003361338696f6731d8fda26a6bea",
+    "branch": "v4/comprehensive-specialist-engine-01",
+    "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+    "target": "preview",
+    "productionChanged": false,
+    "receiptScope": "Validated implementation commit. Final documentation-only HEAD is verified in the final report."
+  },
   "REMAINING_GAPS": "179 semantic reviews/approvals; typed natural conditions; source groups/producer gaps; identity-budget/Reader bridges; actual display ledger; existing 46 failures",
   "NEXT_STAGE_READY": "Offline handoff READY; actual customer selection/writer/Planner/sales/Production NOT READY; no next task started"
 }

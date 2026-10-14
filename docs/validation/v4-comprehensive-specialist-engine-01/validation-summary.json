@@ -23,5 +23,9 @@
   "diffCheck": "PASS",
   "books": 17,
   "digests": 102,
-  "preview": "PENDING_EXACT_COMMIT_CHECK"
+  "preview": {
+    "implementation": "READY",
+    "receipt": "implementation-preview-receipt.json",
+    "finalDocumentationHead": "Checked separately in final report"
+  }
 }

@@ -175,4 +175,6 @@ Hard Constraint가 먼저이고 질문 충족·직접 전문성·명시 witness�
 
 ## Git / Preview 검증
 
-관련 신규 파일만 명시적으로 stage/commit/push한다. 원격 SHA 및 exact commit의 Vercel Preview READY를 별도로 확인한다. 최종 receipt와 SHA는 최종 보고를 따른다. Production target은 사용하지 않는다.
+구현 커밋 `6feb88e486c003361338696f6731d8fda26a6bea`를 독립 브랜치에 commit/push했고 원격 SHA가 일치한다. 해당 exact commit의 [Vercel Preview](https://gyeol-report-oa2gtxr66-gyeol-report-s-projects.vercel.app)가 READY임을 확인했다. receipt는 `implementation-preview-receipt.json`에 기록했다.
+
+이 검증 기록을 추가한 마지막 문서 전용 커밋의 exact SHA·원격 일치·Preview READY도 최종 보고에서 별도로 확인한다. 커밋이 자신의 SHA를 포함할 수 없으므로 문서에는 구현 SHA를 기록하고 최종 HEAD는 최종 보고를 따른다. master는 `8d93a165464b0350d28fc3b9aa79d0e482268bfe`로 유지했다. Production target은 사용하지 않았다.

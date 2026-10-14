@@ -1,0 +1,11 @@
+{
+  "deploymentId": "dpl_DQU8Zd8EcNFCybtDktjWQYqoPpQ1",
+  "status": "READY",
+  "url": "https://gyeol-report-oa2gtxr66-gyeol-report-s-projects.vercel.app",
+  "commitSha": "6feb88e486c003361338696f6731d8fda26a6bea",
+  "branch": "v4/comprehensive-specialist-engine-01",
+  "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "target": "preview",
+  "productionChanged": false,
+  "receiptScope": "Validated implementation commit. Final documentation-only HEAD is verified in the final report."
+}
