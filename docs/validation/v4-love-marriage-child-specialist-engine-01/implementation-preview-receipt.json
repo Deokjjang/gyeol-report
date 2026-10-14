@@ -1,0 +1,13 @@
+{
+  "deploymentId": "dpl_48FjgJ1VsNWNpgwgzT2qxx3hsMoW",
+  "projectId": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "gitCommitSha": "69f8be3c88639b2a02099004648fb9e3863ea199",
+  "gitCommitRef": "v4/love-marriage-child-specialist-engine-01",
+  "target": null,
+  "readyState": "READY",
+  "url": "https://gyeol-report-lb0lm5ff2-gyeol-report-s-projects.vercel.app",
+  "createdAt": 1792002997187,
+  "readyAt": 1792003093382,
+  "checkedAt": "2026-10-14 18:39:45 UTC",
+  "exactShaBranchProjectAndPreviewTargetVerified": true
+}

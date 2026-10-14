@@ -170,3 +170,13 @@ CH09 P1/P2의 긍정 상징과 P3/P4의 회수를 구분한다. 회수 8개는 �
 전체 Registry 137개 중 Material이 사용하는 distinct key는 126개다. 사용하지 않는 11개도 원본 식별자를 검증했다. 양육 48개 원천 필드는 모두 일치하며 scoring 16개/reference 32개를 구분했다. 선택된 Fusion 관측 10개 중 4개 일치/6개 보류는 후보 승인 수가 아니다. 긍정 상징 관측은 2개 확인/4개 보류이며 별도 실제 도화 입력도 검증했다.
 
 정확한 집계 단위와 47절 지표는 `readiness-units.json`, 전체 최종 보고 필드는 `task-results.json`에 있다. 실제 연구에서 상대/자녀 사실을 주장하는 시도는 0이며, 그러한 주장에 필요한 사실 차단은 독립 합성 negative에서 실행했다. 미상 상태·추가 사실의 범위는 29개 원래 입력 probe와 원래 6 enum 회귀에서 별도로 확인했다.
+
+## Git 및 Preview 확인
+
+- 구현 커밋: `69f8be3c88639b2a02099004648fb9e3863ea199`; 원격 작업 브랜치 SHA 일치 확인.
+- 구현 Preview: **READY**, deployment `dpl_48FjgJ1VsNWNpgwgzT2qxx3hsMoW`.
+- URL: https://gyeol-report-lb0lm5ff2-gyeol-report-s-projects.vercel.app
+- gitCommitSha·branch·project와 `target: null`인 Preview를 대조했다.
+- 정형 확인 기록: `implementation-preview-receipt.json`.
+
+이 기록을 담는 문서 전용 후속 커밋의 최종 SHA/Preview는 별도로 확인하고 최종 보고 및 저장소 외부 receipt에 기록한다. 문서에 자기 commit SHA를 넣기 위한 반복 커밋은 만들지 않는다. 구현·테스트·결정론 산출물·기존 파일은 기록 단계에서 변경하지 않는다. Preview READY는 고객 기능 연결·판매 승인·Production 배포를 뜻하지 않는다.
