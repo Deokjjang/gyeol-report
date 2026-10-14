@@ -145,4 +145,4 @@ Compiler는 명시적 offline CLI이고 임의 입력 실행 sandbox가 아니�
 
 신규 브랜치 `v4/knowledge-unified-catalog-01`의 신규 compiler·tests·산출물·검증 문서만 commit/push한다. 원격 SHA와 최종 SHA의 Preview 상태는 최종 보고와 deployment receipt로 확인한다. master·Production·결제·인증·Supabase·환경변수·이벤트·광고는 변경하지 않았다.
 
-Preview receipt는 push 이후 기록한다. 기술 검증과 Preview READY는 고객 사용 승인 또는 Production 배포 승인이 아니다.
+구현 커밋 `3aa465a5274620ff9233b5dadff0489a15e17829`의 Preview READY를 확인했다. [preview-receipt.json](preview-receipt.json)은 이 구현 커밋의 검증 기록이다. 이 기록을 추가한 최종 문서 커밋도 push 후 SHA별 Preview를 별도로 확인하고 최종 보고한다. 기술 검증과 Preview READY는 고객 사용 승인 또는 Production 배포 승인이 아니다.

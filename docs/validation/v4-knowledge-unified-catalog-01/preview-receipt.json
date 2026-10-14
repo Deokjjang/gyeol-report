@@ -1,0 +1,11 @@
+{
+  "commitSha": "3aa465a5274620ff9233b5dadff0489a15e17829",
+  "branch": "v4/knowledge-unified-catalog-01",
+  "project": "gyeol-report",
+  "deploymentId": "dpl_GtcodXCzeb1GC1Hhb49digeRif9L",
+  "url": "https://gyeol-report-cpp6kqpnq-gyeol-report-s-projects.vercel.app",
+  "state": "READY",
+  "target": "Preview",
+  "productionDeployed": false,
+  "scope": "Implementation commit; final documentation commit Preview is checked separately after push."
+}
