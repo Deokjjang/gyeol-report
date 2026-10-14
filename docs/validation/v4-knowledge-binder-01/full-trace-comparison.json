@@ -1,0 +1,262 @@
+{
+  "baseWorktree": "/private/tmp/gyeol-actual-evidence-graph-01",
+  "baseSha": "daec9f64e0d871688ea1b657621127170f9c7529",
+  "traceCountBefore": 88,
+  "traceCountAfter": 88,
+  "tracedPathsAndFileBytesAllEqual": false,
+  "changes": [
+    {
+      "file": ".next/server/app/dev/annual-fortune-preview/page.js.nft.json",
+      "added": [],
+      "removed": [],
+      "changed": [
+        ".next/server/app/dev/annual-fortune-preview/page_client-reference-manifest.js",
+        ".next/server/chunks/ssr/_08dsip1._.js",
+        ".next/server/chunks/ssr/_0c19bwn._.js"
+      ]
+    },
+    {
+      "file": ".next/server/app/dev/annual-v3-preview/page.js.nft.json",
+      "added": [],
+      "removed": [],
+      "changed": [
+        ".next/server/app/dev/annual-v3-preview/page_client-reference-manifest.js",
+        ".next/server/chunks/ssr/_0vneg5n._.js",
+        ".next/server/chunks/ssr/_0yz0xzw._.js"
+      ]
+    },
+    {
+      "file": ".next/server/app/dev/career-report-preview/page.js.nft.json",
+      "added": [],
+      "removed": [],
+      "changed": [
+        ".next/server/app/dev/career-report-preview/page_client-reference-manifest.js",
+        ".next/server/chunks/ssr/_01_2b26._.js",
+        ".next/server/chunks/ssr/_0m9656r._.js"
+      ]
+    },
+    {
+      "file": ".next/server/app/dev/compatibility-preview/page.js.nft.json",
+      "added": [],
+      "removed": [],
+      "changed": [
+        ".next/server/app/dev/compatibility-preview/page_client-reference-manifest.js",
+        ".next/server/chunks/ssr/_0m9656r._.js",
+        ".next/server/chunks/ssr/_0ul62gg._.js"
+      ]
+    },
+    {
+      "file": ".next/server/app/dev/comprehensive-preview/page.js.nft.json",
+      "added": [],
+      "removed": [],
+      "changed": [
+        ".next/server/app/dev/comprehensive-preview/page_client-reference-manifest.js",
+        ".next/server/chunks/ssr/_0m9656r._.js",
+        ".next/server/chunks/ssr/_0wy~jne._.js"
+      ]
+    },
+    {
+      "file": ".next/server/app/dev/love-marriage-child-report-preview/page.js.nft.json",
+      "added": [],
+      "removed": [],
+      "changed": [
+        ".next/server/app/dev/love-marriage-child-report-preview/page_client-reference-manifest.js",
+        ".next/server/chunks/ssr/_0ud9ajn._.js",
+        ".next/server/chunks/ssr/_12hm077._.js"
+      ]
+    },
+    {
+      "file": ".next/server/app/dev/major-fortune-preview/page.js.nft.json",
+      "added": [],
+      "removed": [],
+      "changed": [
+        ".next/server/app/dev/major-fortune-preview/page_client-reference-manifest.js",
+        ".next/server/chunks/ssr/_0m9656r._.js",
+        ".next/server/chunks/ssr/_11mu~_f._.js"
+      ]
+    },
+    {
+      "file": ".next/server/app/dev/v3-editorial-preview/page.js.nft.json",
+      "added": [],
+      "removed": [],
+      "changed": [
+        ".next/server/app/dev/v3-editorial-preview/page_client-reference-manifest.js",
+        ".next/server/chunks/ssr/_0lof21y._.js",
+        ".next/server/chunks/ssr/_0yz0xzw._.js"
+      ]
+    },
+    {
+      "file": ".next/server/app/r/[token]/page.js.nft.json",
+      "added": [],
+      "removed": [],
+      "changed": [
+        ".next/server/app/r/[token]/page_client-reference-manifest.js",
+        ".next/server/chunks/ssr/_0m9656r._.js",
+        ".next/server/chunks/ssr/_0ogu9sr._.js"
+      ]
+    },
+    {
+      "file": ".next/server/app/reports/[reportId]/page.js.nft.json",
+      "added": [],
+      "removed": [],
+      "changed": [
+        ".next/server/app/reports/[reportId]/page_client-reference-manifest.js",
+        ".next/server/chunks/ssr/_0m9656r._.js",
+        ".next/server/chunks/ssr/_0x~48.r._.js"
+      ]
+    }
+  ],
+  "tracedPathsAllEqual": true,
+  "buildByteDifferences": [
+    {
+      "file": ".next/server/app/dev/annual-fortune-preview/page_client-reference-manifest.js",
+      "bytesBefore": 21211,
+      "bytesAfter": 21211,
+      "equalAfterReplacingStaticChunkFilenames": true
+    },
+    {
+      "file": ".next/server/app/dev/annual-v3-preview/page_client-reference-manifest.js",
+      "bytesBefore": 21196,
+      "bytesAfter": 21196,
+      "equalAfterReplacingStaticChunkFilenames": true
+    },
+    {
+      "file": ".next/server/app/dev/career-report-preview/page_client-reference-manifest.js",
+      "bytesBefore": 21208,
+      "bytesAfter": 21208,
+      "equalAfterReplacingStaticChunkFilenames": true
+    },
+    {
+      "file": ".next/server/app/dev/compatibility-preview/page_client-reference-manifest.js",
+      "bytesBefore": 21208,
+      "bytesAfter": 21208,
+      "equalAfterReplacingStaticChunkFilenames": true
+    },
+    {
+      "file": ".next/server/app/dev/comprehensive-preview/page_client-reference-manifest.js",
+      "bytesBefore": 21208,
+      "bytesAfter": 21208,
+      "equalAfterReplacingStaticChunkFilenames": true
+    },
+    {
+      "file": ".next/server/app/dev/love-marriage-child-report-preview/page_client-reference-manifest.js",
+      "bytesBefore": 21247,
+      "bytesAfter": 21247,
+      "equalAfterReplacingStaticChunkFilenames": true
+    },
+    {
+      "file": ".next/server/app/dev/major-fortune-preview/page_client-reference-manifest.js",
+      "bytesBefore": 21208,
+      "bytesAfter": 21208,
+      "equalAfterReplacingStaticChunkFilenames": true
+    },
+    {
+      "file": ".next/server/app/dev/v3-editorial-preview/page_client-reference-manifest.js",
+      "bytesBefore": 21205,
+      "bytesAfter": 21205,
+      "equalAfterReplacingStaticChunkFilenames": true
+    },
+    {
+      "file": ".next/server/app/r/[token]/page_client-reference-manifest.js",
+      "bytesBefore": 30771,
+      "bytesAfter": 30771,
+      "equalAfterReplacingStaticChunkFilenames": true
+    },
+    {
+      "file": ".next/server/app/reports/[reportId]/page_client-reference-manifest.js",
+      "bytesBefore": 29938,
+      "bytesAfter": 29938,
+      "equalAfterReplacingStaticChunkFilenames": true
+    },
+    {
+      "file": ".next/server/chunks/ssr/_01_2b26._.js",
+      "bytesBefore": 6152,
+      "bytesAfter": 6152,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_08dsip1._.js",
+      "bytesBefore": 51155,
+      "bytesAfter": 51155,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_0c19bwn._.js",
+      "bytesBefore": 6152,
+      "bytesAfter": 6152,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_0lof21y._.js",
+      "bytesBefore": 6152,
+      "bytesAfter": 6152,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_0m9656r._.js",
+      "bytesBefore": 51155,
+      "bytesAfter": 51155,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_0ogu9sr._.js",
+      "bytesBefore": 6152,
+      "bytesAfter": 6152,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_0ud9ajn._.js",
+      "bytesBefore": 51155,
+      "bytesAfter": 51155,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_0ul62gg._.js",
+      "bytesBefore": 6152,
+      "bytesAfter": 6152,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_0vneg5n._.js",
+      "bytesBefore": 6150,
+      "bytesAfter": 6150,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_0wy~jne._.js",
+      "bytesBefore": 6150,
+      "bytesAfter": 6150,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_0x~48.r._.js",
+      "bytesBefore": 6152,
+      "bytesAfter": 6152,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_0yz0xzw._.js",
+      "bytesBefore": 51155,
+      "bytesAfter": 51155,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_11mu~_f._.js",
+      "bytesBefore": 6152,
+      "bytesAfter": 6152,
+      "equalAfterReplacingStaticChunkFilenames": false
+    },
+    {
+      "file": ".next/server/chunks/ssr/_12hm077._.js",
+      "bytesBefore": 6148,
+      "bytesAfter": 6148,
+      "equalAfterReplacingStaticChunkFilenames": false
+    }
+  ],
+  "onlyStaticChunkFilenameDifferences": false,
+  "allByteDifferencesExplainedByPublicActionIdAndStaticChunkFilenames": true,
+  "publicActionReferenceNamesCompared": [
+    "prepareReportShare"
+  ],
+  "sourceRuntimeFilesChanged": 0
+}

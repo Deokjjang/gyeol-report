@@ -1,0 +1,49 @@
+{
+  "traceCount": 88,
+  "rawResearchValidationBinderFiles": [],
+  "largest": {
+    "file": ".next/server/app/dev/book-flow/r/[token]/book-og/route.js.nft.json",
+    "paths": 496,
+    "summedFileBytes": 54638460
+  },
+  "devAccount": [
+    {
+      "file": ".next/server/app/dev/account/page.js.nft.json",
+      "paths": 132,
+      "summedFileBytes": 2199381
+    },
+    {
+      "file": ".next/server/app/dev/account/tickets/page.js.nft.json",
+      "paths": 133,
+      "summedFileBytes": 2213153
+    },
+    {
+      "file": ".next/server/app/dev/account/library-preview/page.js.nft.json",
+      "paths": 131,
+      "summedFileBytes": 2181251
+    },
+    {
+      "file": ".next/server/app/dev/account/api/[action]/route.js.nft.json",
+      "paths": 434,
+      "summedFileBytes": 31754498
+    },
+    {
+      "file": ".next/server/app/dev/account/tickets/mock/page.js.nft.json",
+      "paths": 131,
+      "summedFileBytes": 2175552
+    },
+    {
+      "file": ".next/server/app/dev/account/tickets/api/[action]/route.js.nft.json",
+      "paths": 400,
+      "summedFileBytes": 28888806
+    },
+    {
+      "file": ".next/server/app/dev/account/tickets/checkout/[result]/page.js.nft.json",
+      "paths": 133,
+      "summedFileBytes": 2213272
+    }
+  ],
+  "metric": "Local traced file byte sum; not remote compressed size",
+  "nextConfigUnchanged": true,
+  "baseline": "docs/validation/v4-actual-evidence-graph-01/function-trace.json"
+}

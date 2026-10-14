@@ -1,0 +1,99 @@
+[
+  {
+    "adapter": "DECLARED_REFERENCE_ONLY",
+    "candidates": 1653,
+    "families": [
+      "annual-fortune-product-research",
+      "career-product-research",
+      "compatibility-business-partner-research",
+      "compatibility-coworker-research",
+      "compatibility-friendship-research",
+      "compatibility-love-research",
+      "compatibility-manager-report-research",
+      "compatibility-marriage-research",
+      "compatibility-parent-child-research",
+      "comprehensive-product-research",
+      "fusion-knowledge-research",
+      "love-product-research",
+      "major-fortune-product-research",
+      "relation-research",
+      "semantic-axis-research",
+      "temporal-interaction-research"
+    ]
+  },
+  {
+    "adapter": "DIRECTED_MBTI_PAIR_TRAITS",
+    "candidates": 256,
+    "families": [
+      "mbti-pair-research"
+    ]
+  },
+  {
+    "adapter": "EXISTING_FUSION_RULE",
+    "candidates": 140,
+    "families": [
+      "fusion-knowledge-research"
+    ]
+  },
+  {
+    "adapter": "FRIENDSHIP_SOURCE_USE",
+    "candidates": 36,
+    "families": [
+      "compatibility-friendship-research"
+    ]
+  },
+  {
+    "adapter": "MAJOR_TEN_GOD",
+    "candidates": 10,
+    "families": [
+      "major-fortune-product-research"
+    ]
+  },
+  {
+    "adapter": "MBTI_TYPED_BASIS",
+    "candidates": 512,
+    "families": [
+      "mbti-foundation-research"
+    ]
+  },
+  {
+    "adapter": "MONTHLY_TEN_GOD",
+    "candidates": 10,
+    "families": [
+      "annual-fortune-product-research"
+    ]
+  },
+  {
+    "adapter": "OWNED_RELATIONSHIP_SOURCE_ASSIGNMENT",
+    "candidates": 676,
+    "families": [
+      "compatibility-business-partner-research",
+      "compatibility-coworker-research",
+      "compatibility-love-research",
+      "compatibility-manager-report-research",
+      "compatibility-marriage-research",
+      "compatibility-parent-child-research"
+    ]
+  },
+  {
+    "adapter": "PRODUCT_SOURCE_KEY_REGISTRY",
+    "candidates": 500,
+    "families": [
+      "career-product-research",
+      "compatibility-business-partner-research",
+      "compatibility-coworker-research",
+      "compatibility-manager-report-research",
+      "compatibility-parent-child-research",
+      "love-product-research"
+    ]
+  },
+  {
+    "adapter": "PRODUCT_TYPED_SOURCE_REF",
+    "candidates": 477,
+    "families": [
+      "composite-structure-research",
+      "comprehensive-product-research",
+      "relation-research"
+    ]
+  }
+]

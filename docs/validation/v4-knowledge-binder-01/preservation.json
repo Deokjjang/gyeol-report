@@ -1,0 +1,31 @@
+{
+  "baseFiles": 4042,
+  "changedBaseFiles": [],
+  "existingArtifacts": {
+    "v4-knowledge-unified-catalog-01": {
+      "allTrackedJson": 67,
+      "changed": []
+    },
+    "v4-knowledge-source-verification-01": {
+      "allTrackedJson": 29,
+      "changed": []
+    },
+    "v4-knowledge-semantic-domain-verification-01": {
+      "allTrackedJson": 32,
+      "changed": []
+    },
+    "v4-actual-evidence-graph-01": {
+      "allTrackedJson": 115,
+      "changed": [],
+      "generatedJson": 105
+    }
+  },
+  "preExistingWorktrees": 39,
+  "allOriginalWorktreesHeadBranchStatusAndFileHashesEqual": true,
+  "originalDirtyPaths": 3,
+  "oldResearchFilesRemoved": 0,
+  "runtimeImportsAdded": 0,
+  "newCalculatedFacts": 0,
+  "customerClaimsEmitted": 0,
+  "bookChanges": 0
+}

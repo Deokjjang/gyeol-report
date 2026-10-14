@@ -1,0 +1,30 @@
+{
+  "actualApprovalsIssued": 0,
+  "actualCustomerEligible": 0,
+  "provider": "NO_APPROVALS",
+  "requiredFields": [
+    "catalogKey",
+    "originalRecordHash",
+    "sourceVersion",
+    "meaningIdentity",
+    "claimIdentity",
+    "product",
+    "relationship",
+    "contexts",
+    "evidenceIds",
+    "prohibitedInference",
+    "canonicalFactRoots",
+    "graphVersion",
+    "sourceVerificationVersion",
+    "semanticVerificationVersion",
+    "temporalWitnesses",
+    "approverIdentity",
+    "reviewRecord",
+    "approvalVersion",
+    "issuedAt",
+    "expiresAt",
+    "revoked"
+  ],
+  "requirementsInReceiptShards": "/approvalRequirement",
+  "syntheticApprovalsInActualCatalog": 0
+}

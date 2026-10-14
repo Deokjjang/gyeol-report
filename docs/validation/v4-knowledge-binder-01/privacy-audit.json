@@ -1,0 +1,9 @@
+{
+  "syntheticOnly": true,
+  "rawInputsExported": false,
+  "originalPersonHashExported": false,
+  "rawGraphAndReceiptFingerprintExported": false,
+  "ordinalAliases": true,
+  "exactProducerIdsComparedBeforeRedaction": true,
+  "approvalRecordsExported": 0
+}

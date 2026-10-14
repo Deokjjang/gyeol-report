@@ -1,0 +1,102 @@
+[
+  {
+    "family": "annual-fortune-product-research",
+    "file": "shards/annual-fortune-product-research-requirements.json",
+    "candidates": 109
+  },
+  {
+    "family": "career-product-research",
+    "file": "shards/career-product-research-requirements.json",
+    "candidates": 268
+  },
+  {
+    "family": "compatibility-business-partner-research",
+    "file": "shards/compatibility-business-partner-research-requirements.json",
+    "candidates": 281
+  },
+  {
+    "family": "compatibility-coworker-research",
+    "file": "shards/compatibility-coworker-research-requirements.json",
+    "candidates": 299
+  },
+  {
+    "family": "compatibility-friendship-research",
+    "file": "shards/compatibility-friendship-research-requirements.json",
+    "candidates": 137
+  },
+  {
+    "family": "compatibility-love-research",
+    "file": "shards/compatibility-love-research-requirements.json",
+    "candidates": 154
+  },
+  {
+    "family": "compatibility-manager-report-research",
+    "file": "shards/compatibility-manager-report-research-requirements.json",
+    "candidates": 239
+  },
+  {
+    "family": "compatibility-marriage-research",
+    "file": "shards/compatibility-marriage-research-requirements.json",
+    "candidates": 186
+  },
+  {
+    "family": "compatibility-parent-child-research",
+    "file": "shards/compatibility-parent-child-research-requirements.json",
+    "candidates": 199
+  },
+  {
+    "family": "composite-structure-research",
+    "file": "shards/composite-structure-research-requirements.json",
+    "candidates": 261
+  },
+  {
+    "family": "comprehensive-product-research",
+    "file": "shards/comprehensive-product-research-requirements.json",
+    "candidates": 200
+  },
+  {
+    "family": "fusion-knowledge-research",
+    "file": "shards/fusion-knowledge-research-requirements.json",
+    "candidates": 191
+  },
+  {
+    "family": "korean-editorial-research",
+    "file": "shards/korean-editorial-research-requirements.json",
+    "candidates": 0
+  },
+  {
+    "family": "love-product-research",
+    "file": "shards/love-product-research-requirements.json",
+    "candidates": 170
+  },
+  {
+    "family": "major-fortune-product-research",
+    "file": "shards/major-fortune-product-research-requirements.json",
+    "candidates": 89
+  },
+  {
+    "family": "mbti-foundation-research",
+    "file": "shards/mbti-foundation-research-requirements.json",
+    "candidates": 512
+  },
+  {
+    "family": "mbti-pair-research",
+    "file": "shards/mbti-pair-research-requirements.json",
+    "candidates": 256
+  },
+  {
+    "family": "relation-research",
+    "file": "shards/relation-research-requirements.json",
+    "candidates": 223
+  },
+  {
+    "family": "semantic-axis-research",
+    "file": "shards/semantic-axis-research-requirements.json",
+    "candidates": 109
+  },
+  {
+    "family": "temporal-interaction-research",
+    "file": "shards/temporal-interaction-research-requirements.json",
+    "candidates": 387
+  }
+]

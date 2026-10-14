@@ -1,0 +1,5466 @@
+[
+  {
+    "root": "fixture-root-10078",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1010",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:188"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10145",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10203",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:10"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10266",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:62"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10289",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:27"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10304",
+    "receiptReferences": 16,
+    "receipts": [
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:199"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10310",
+    "receiptReferences": 22,
+    "receipts": [
+      "fixture-career-A:binding:149",
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:121",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:137",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:176",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:21",
+      "fixture-same-mbti-different-natal:binding:37",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:60",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64",
+      "fixture-same-mbti-different-natal:binding:76",
+      "fixture-same-mbti-different-natal:binding:87",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10362",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:105"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10381",
+    "receiptReferences": 123,
+    "receipts": [
+      "fixture-compatibility-A:binding:10",
+      "fixture-compatibility-A:binding:100",
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:128",
+      "fixture-compatibility-A:binding:14",
+      "fixture-compatibility-A:binding:146",
+      "fixture-compatibility-A:binding:151",
+      "fixture-compatibility-A:binding:21",
+      "fixture-compatibility-A:binding:30",
+      "fixture-compatibility-A:binding:4",
+      "fixture-compatibility-A:binding:41",
+      "fixture-compatibility-A:binding:55",
+      "fixture-compatibility-A:binding:81",
+      "fixture-compatibility-A:binding:93",
+      "fixture-compatibility-businessPartner:binding:12",
+      "fixture-compatibility-businessPartner:binding:123",
+      "fixture-compatibility-businessPartner:binding:14",
+      "fixture-compatibility-businessPartner:binding:189",
+      "fixture-compatibility-businessPartner:binding:193",
+      "fixture-compatibility-businessPartner:binding:199",
+      "fixture-compatibility-businessPartner:binding:226",
+      "fixture-compatibility-businessPartner:binding:247",
+      "fixture-compatibility-coworker:binding:117",
+      "fixture-compatibility-coworker:binding:129",
+      "fixture-compatibility-coworker:binding:137",
+      "fixture-compatibility-coworker:binding:146",
+      "fixture-compatibility-coworker:binding:152",
+      "fixture-compatibility-coworker:binding:161",
+      "fixture-compatibility-coworker:binding:168",
+      "fixture-compatibility-coworker:binding:177",
+      "fixture-compatibility-coworker:binding:181",
+      "fixture-compatibility-coworker:binding:183",
+      "fixture-compatibility-coworker:binding:199",
+      "fixture-compatibility-coworker:binding:202",
+      "fixture-compatibility-coworker:binding:240",
+      "fixture-compatibility-coworker:binding:25",
+      "fixture-compatibility-coworker:binding:261",
+      "fixture-compatibility-coworker:binding:266",
+      "fixture-compatibility-coworker:binding:280",
+      "fixture-compatibility-coworker:binding:291",
+      "fixture-compatibility-coworker:binding:47",
+      "fixture-compatibility-coworker:binding:5",
+      "fixture-compatibility-coworker:binding:52",
+      "fixture-compatibility-coworker:binding:54",
+      "fixture-compatibility-coworker:binding:55",
+      "fixture-compatibility-coworker:binding:56",
+      "fixture-compatibility-coworker:binding:7",
+      "fixture-compatibility-coworker:binding:88",
+      "fixture-compatibility-friendship:binding:123",
+      "fixture-compatibility-friendship:binding:2",
+      "fixture-compatibility-friendship:binding:37",
+      "fixture-compatibility-friendship:binding:45",
+      "fixture-compatibility-friendship:binding:65",
+      "fixture-compatibility-friendship:binding:69",
+      "fixture-compatibility-friendship:binding:95",
+      "fixture-compatibility-friendship:binding:99",
+      "fixture-compatibility-managerReport:binding:10",
+      "fixture-compatibility-managerReport:binding:101",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-managerReport:binding:191",
+      "fixture-compatibility-managerReport:binding:205",
+      "fixture-compatibility-managerReport:binding:38",
+      "fixture-compatibility-managerReport:binding:40",
+      "fixture-compatibility-managerReport:binding:45",
+      "fixture-compatibility-managerReport:binding:46",
+      "fixture-compatibility-managerReport:binding:56",
+      "fixture-compatibility-managerReport:binding:58",
+      "fixture-compatibility-managerReport:binding:77",
+      "fixture-compatibility-managerReport:binding:95",
+      "fixture-compatibility-marriage:binding:101",
+      "fixture-compatibility-marriage:binding:106",
+      "fixture-compatibility-marriage:binding:121",
+      "fixture-compatibility-marriage:binding:133",
+      "fixture-compatibility-marriage:binding:141",
+      "fixture-compatibility-marriage:binding:148",
+      "fixture-compatibility-marriage:binding:156",
+      "fixture-compatibility-marriage:binding:179",
+      "fixture-compatibility-marriage:binding:180",
+      "fixture-compatibility-marriage:binding:22",
+      "fixture-compatibility-marriage:binding:27",
+      "fixture-compatibility-marriage:binding:30",
+      "fixture-compatibility-marriage:binding:38",
+      "fixture-compatibility-marriage:binding:47",
+      "fixture-compatibility-marriage:binding:54",
+      "fixture-compatibility-marriage:binding:70",
+      "fixture-compatibility-marriage:binding:72",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:78",
+      "fixture-compatibility-marriage:binding:99",
+      "fixture-compatibility-parentChild:binding:107",
+      "fixture-compatibility-parentChild:binding:123",
+      "fixture-compatibility-parentChild:binding:131",
+      "fixture-compatibility-parentChild:binding:135",
+      "fixture-compatibility-parentChild:binding:136",
+      "fixture-compatibility-parentChild:binding:138",
+      "fixture-compatibility-parentChild:binding:141",
+      "fixture-compatibility-parentChild:binding:153",
+      "fixture-compatibility-parentChild:binding:157",
+      "fixture-compatibility-parentChild:binding:161",
+      "fixture-compatibility-parentChild:binding:171",
+      "fixture-compatibility-parentChild:binding:175",
+      "fixture-compatibility-parentChild:binding:177",
+      "fixture-compatibility-parentChild:binding:199",
+      "fixture-compatibility-parentChild:binding:22",
+      "fixture-compatibility-parentChild:binding:3",
+      "fixture-compatibility-parentChild:binding:32",
+      "fixture-compatibility-parentChild:binding:35",
+      "fixture-compatibility-parentChild:binding:54",
+      "fixture-compatibility-parentChild:binding:80",
+      "fixture-compatibility-slot-swap:binding:110",
+      "fixture-compatibility-slot-swap:binding:114",
+      "fixture-compatibility-slot-swap:binding:129",
+      "fixture-compatibility-slot-swap:binding:132",
+      "fixture-compatibility-slot-swap:binding:145",
+      "fixture-compatibility-slot-swap:binding:153",
+      "fixture-compatibility-slot-swap:binding:19",
+      "fixture-compatibility-slot-swap:binding:3",
+      "fixture-compatibility-slot-swap:binding:34",
+      "fixture-compatibility-slot-swap:binding:37",
+      "fixture-compatibility-slot-swap:binding:38",
+      "fixture-compatibility-slot-swap:binding:92",
+      "fixture-compatibility-slot-swap:binding:95",
+      "fixture-compatibility-slot-swap:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10389",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:61"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10460",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10479",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:139",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10595",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10620",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:157"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10705",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:116",
+      "fixture-same-mbti-different-natal:binding:130"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10714",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:106",
+      "fixture-same-mbti-different-natal:binding:66",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10757",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-10982",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11",
+    "receiptReferences": 11,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:110",
+      "fixture-same-mbti-different-natal:binding:121",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:137",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:176",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:35",
+      "fixture-same-mbti-different-natal:binding:40",
+      "fixture-same-mbti-different-natal:binding:9",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11023",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11083",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:193",
+      "fixture-same-natal-career:binding:140",
+      "fixture-same-natal-career:binding:145"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11273",
+    "receiptReferences": 10,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11339",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-major-A:binding:62"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11349",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11353",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:130"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11459",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:61"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11525",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:157"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11573",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-comprehensive-A:binding:199",
+      "fixture-same-natal-career:binding:84"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-116",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:73"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11612",
+    "receiptReferences": 7,
+    "receipts": [
+      "fixture-compatibility-A:binding:48",
+      "fixture-compatibility-businessPartner:binding:19",
+      "fixture-compatibility-coworker:binding:289",
+      "fixture-compatibility-managerReport:binding:138",
+      "fixture-compatibility-marriage:binding:119",
+      "fixture-compatibility-parentChild:binding:187",
+      "fixture-compatibility-slot-swap:binding:48"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11643",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11660",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:62"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11664",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-comprehensive-A:binding:60",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11680",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1170",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11700",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11771",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:107"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11849",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11866",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1187",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:33",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-11874",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-same-natal-different-mbti:binding:188",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:46"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12036",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12206",
+    "receiptReferences": 45,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:127",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-businessPartner:binding:186",
+      "fixture-compatibility-businessPartner:binding:212",
+      "fixture-compatibility-businessPartner:binding:260",
+      "fixture-compatibility-coworker:binding:153",
+      "fixture-compatibility-coworker:binding:155",
+      "fixture-compatibility-coworker:binding:165",
+      "fixture-compatibility-coworker:binding:176",
+      "fixture-compatibility-coworker:binding:212",
+      "fixture-compatibility-coworker:binding:213",
+      "fixture-compatibility-coworker:binding:221",
+      "fixture-compatibility-coworker:binding:249",
+      "fixture-compatibility-coworker:binding:252",
+      "fixture-compatibility-coworker:binding:265",
+      "fixture-compatibility-coworker:binding:48",
+      "fixture-compatibility-coworker:binding:57",
+      "fixture-compatibility-coworker:binding:92",
+      "fixture-compatibility-friendship:binding:4",
+      "fixture-compatibility-friendship:binding:92",
+      "fixture-compatibility-friendship:binding:96",
+      "fixture-compatibility-managerReport:binding:10",
+      "fixture-compatibility-managerReport:binding:111",
+      "fixture-compatibility-managerReport:binding:151",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-managerReport:binding:180",
+      "fixture-compatibility-managerReport:binding:191",
+      "fixture-compatibility-managerReport:binding:205",
+      "fixture-compatibility-managerReport:binding:220",
+      "fixture-compatibility-managerReport:binding:26",
+      "fixture-compatibility-managerReport:binding:27",
+      "fixture-compatibility-managerReport:binding:79",
+      "fixture-compatibility-managerReport:binding:95",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:59",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-parentChild:binding:111",
+      "fixture-compatibility-slot-swap:binding:127",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1234",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-career:binding:259"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1238",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1240",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-same-natal-career:binding:149"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12412",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:70"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12421",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12451",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12605",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12627",
+    "receiptReferences": 16,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:48",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-businessPartner:binding:19",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:289",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-managerReport:binding:138",
+      "fixture-compatibility-marriage:binding:119",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:98",
+      "fixture-compatibility-parentChild:binding:187",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:48"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12629",
+    "receiptReferences": 26,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:104",
+      "fixture-same-natal-different-mbti:binding:105",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:130",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:139",
+      "fixture-same-natal-different-mbti:binding:148",
+      "fixture-same-natal-different-mbti:binding:15",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:188",
+      "fixture-same-natal-different-mbti:binding:190",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:46",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:65",
+      "fixture-same-natal-different-mbti:binding:76",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1263",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:37",
+      "fixture-same-mbti-different-natal:binding:87",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12653",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-A:binding:130",
+      "fixture-compatibility-A:binding:146",
+      "fixture-compatibility-A:binding:19"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12675",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:27"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12688",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1269",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12908",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:170"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12918",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12921",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:103",
+      "fixture-compatibility-coworker:binding:148",
+      "fixture-compatibility-coworker:binding:197",
+      "fixture-compatibility-coworker:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12933",
+    "receiptReferences": 7,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:61"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12953",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:139"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12968",
+    "receiptReferences": 9,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-12976",
+    "receiptReferences": 18,
+    "receipts": [
+      "fixture-career-A:binding:149",
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:21",
+      "fixture-same-mbti-different-natal:binding:37",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:60",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64",
+      "fixture-same-mbti-different-natal:binding:76",
+      "fixture-same-mbti-different-natal:binding:87",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1299",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:185"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13077",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13210",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-marriage:binding:73"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13211",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:130"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13251",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:121",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:137",
+      "fixture-same-mbti-different-natal:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13305",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13313",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13411",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:15"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13468",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13518",
+    "receiptReferences": 33,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:139",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:37",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-comprehensive-A:binding:93",
+      "fixture-same-natal-career:binding:149",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:139",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13552",
+    "receiptReferences": 14,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:33",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-marriage:binding:98",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13602",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1362",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13629",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:95"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13637",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:188"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13639",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:37",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13671",
+    "receiptReferences": 10,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:167",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13693",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13798",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:107"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13823",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13849",
+    "receiptReferences": 7,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-same-natal-career:binding:149"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13855",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1386",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:167"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13864",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-same-natal-different-mbti:binding:61"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13906",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-13945",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14064",
+    "receiptReferences": 27,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:130",
+      "fixture-compatibility-A:binding:146",
+      "fixture-compatibility-A:binding:19",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:55",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:1",
+      "fixture-compatibility-coworker:binding:156",
+      "fixture-compatibility-coworker:binding:170",
+      "fixture-compatibility-coworker:binding:177",
+      "fixture-compatibility-coworker:binding:275",
+      "fixture-compatibility-coworker:binding:55",
+      "fixture-compatibility-coworker:binding:98",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:27",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-parentChild:binding:141",
+      "fixture-compatibility-parentChild:binding:30",
+      "fixture-compatibility-parentChild:binding:88",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:61",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14065",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14075",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:107",
+      "fixture-compatibility-unknown-both:binding:127"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14136",
+    "receiptReferences": 13,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-marriage:binding:98",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14280",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:157"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14343",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14432",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-love-A:binding:168"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14459",
+    "receiptReferences": 16,
+    "receipts": [
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:199"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1446",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1454",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-A:binding:33"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14591",
+    "receiptReferences": 16,
+    "receipts": [
+      "fixture-love-A:binding:100",
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:14",
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:161",
+      "fixture-love-A:binding:163",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:167",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:169",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:6",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14618",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14658",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-love-A:binding:168"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14722",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-same-natal-career:binding:157"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14771",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14862",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:4"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-14995",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15215",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-A:binding:149",
+      "fixture-compatibility-A:binding:38",
+      "fixture-compatibility-A:binding:92"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15231",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:70"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15253",
+    "receiptReferences": 48,
+    "receipts": [
+      "fixture-compatibility-A:binding:149",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:33",
+      "fixture-compatibility-A:binding:38",
+      "fixture-compatibility-A:binding:55",
+      "fixture-compatibility-A:binding:69",
+      "fixture-compatibility-A:binding:79",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-A:binding:92",
+      "fixture-compatibility-coworker:binding:103",
+      "fixture-compatibility-coworker:binding:111",
+      "fixture-compatibility-coworker:binding:129",
+      "fixture-compatibility-coworker:binding:148",
+      "fixture-compatibility-coworker:binding:156",
+      "fixture-compatibility-coworker:binding:172",
+      "fixture-compatibility-coworker:binding:177",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:197",
+      "fixture-compatibility-coworker:binding:256",
+      "fixture-compatibility-coworker:binding:266",
+      "fixture-compatibility-coworker:binding:269",
+      "fixture-compatibility-coworker:binding:272",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-coworker:binding:93",
+      "fixture-compatibility-coworker:binding:95",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:14",
+      "fixture-compatibility-marriage:binding:161",
+      "fixture-compatibility-marriage:binding:177",
+      "fixture-compatibility-marriage:binding:28",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:65",
+      "fixture-compatibility-marriage:binding:66",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-marriage:binding:94",
+      "fixture-compatibility-marriage:binding:98",
+      "fixture-compatibility-parentChild:binding:149",
+      "fixture-compatibility-parentChild:binding:95",
+      "fixture-compatibility-parentChild:binding:99",
+      "fixture-compatibility-slot-swap:binding:100",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:122",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:4",
+      "fixture-compatibility-slot-swap:binding:72",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15291",
+    "receiptReferences": 18,
+    "receipts": [
+      "fixture-career-A:binding:149",
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:21",
+      "fixture-same-mbti-different-natal:binding:37",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:60",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64",
+      "fixture-same-mbti-different-natal:binding:76",
+      "fixture-same-mbti-different-natal:binding:87",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-154",
+    "receiptReferences": 7,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15441",
+    "receiptReferences": 11,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15475",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:33"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1549",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:130"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15575",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:21"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15588",
+    "receiptReferences": 13,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-marriage:binding:98",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15597",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:120"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15605",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15656",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:100",
+      "fixture-love-A:binding:6"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15721",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15752",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:127"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15848",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:70"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15880",
+    "receiptReferences": 13,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-marriage:binding:14",
+      "fixture-compatibility-marriage:binding:161",
+      "fixture-compatibility-marriage:binding:28",
+      "fixture-compatibility-marriage:binding:65",
+      "fixture-compatibility-marriage:binding:66",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-marriage:binding:94",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15927",
+    "receiptReferences": 11,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15969",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-15995",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16006",
+    "receiptReferences": 9,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16055",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:85"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16444",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:21"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16466",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16477",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-same-natal-different-mbti:binding:188",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:46"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16522",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16535",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:70"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16606",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-same-natal-different-mbti:binding:188",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:46"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16621",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-career-A:binding:157",
+      "fixture-career-A:binding:32",
+      "fixture-career-A:binding:49",
+      "fixture-career-A:binding:64",
+      "fixture-career-A:binding:97"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16675",
+    "receiptReferences": 41,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:130",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:139",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:37",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-comprehensive-A:binding:93",
+      "fixture-same-natal-career:binding:149",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:130",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:139",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16706",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:105",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1676",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-career-A:binding:149",
+      "fixture-career-A:binding:157"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1682",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:115"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16868",
+    "receiptReferences": 18,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:27",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-businessPartner:binding:163",
+      "fixture-compatibility-coworker:binding:142",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-managerReport:binding:97",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:39",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-parentChild:binding:26",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:27",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16889",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:1",
+      "fixture-compatibility-coworker:binding:156",
+      "fixture-compatibility-coworker:binding:275",
+      "fixture-compatibility-slot-swap:binding:61"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-16965",
+    "receiptReferences": 7,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:80"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17008",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17053",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:130"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17098",
+    "receiptReferences": 10,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:167",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17122",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1715",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:76",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17155",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:188",
+      "fixture-same-mbti-different-natal:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17179",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17186",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-love-A:binding:168"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17210",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-career:binding:241"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17228",
+    "receiptReferences": 14,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:10",
+      "fixture-compatibility-unknown-both:binding:100",
+      "fixture-compatibility-unknown-both:binding:103",
+      "fixture-compatibility-unknown-both:binding:128",
+      "fixture-compatibility-unknown-both:binding:14",
+      "fixture-compatibility-unknown-both:binding:146",
+      "fixture-compatibility-unknown-both:binding:151",
+      "fixture-compatibility-unknown-both:binding:21",
+      "fixture-compatibility-unknown-both:binding:30",
+      "fixture-compatibility-unknown-both:binding:4",
+      "fixture-compatibility-unknown-both:binding:41",
+      "fixture-compatibility-unknown-both:binding:55",
+      "fixture-compatibility-unknown-both:binding:81",
+      "fixture-compatibility-unknown-both:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17298",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:27"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17440",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-major-F:binding:62"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1751",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17516",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17579",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:60"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17589",
+    "receiptReferences": 10,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:167",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17675",
+    "receiptReferences": 28,
+    "receipts": [
+      "fixture-compatibility-no-detected-pair:binding:10",
+      "fixture-compatibility-no-detected-pair:binding:100",
+      "fixture-compatibility-no-detected-pair:binding:103",
+      "fixture-compatibility-no-detected-pair:binding:110",
+      "fixture-compatibility-no-detected-pair:binding:114",
+      "fixture-compatibility-no-detected-pair:binding:128",
+      "fixture-compatibility-no-detected-pair:binding:129",
+      "fixture-compatibility-no-detected-pair:binding:132",
+      "fixture-compatibility-no-detected-pair:binding:14",
+      "fixture-compatibility-no-detected-pair:binding:145",
+      "fixture-compatibility-no-detected-pair:binding:146",
+      "fixture-compatibility-no-detected-pair:binding:151",
+      "fixture-compatibility-no-detected-pair:binding:153",
+      "fixture-compatibility-no-detected-pair:binding:19",
+      "fixture-compatibility-no-detected-pair:binding:21",
+      "fixture-compatibility-no-detected-pair:binding:3",
+      "fixture-compatibility-no-detected-pair:binding:30",
+      "fixture-compatibility-no-detected-pair:binding:34",
+      "fixture-compatibility-no-detected-pair:binding:37",
+      "fixture-compatibility-no-detected-pair:binding:38",
+      "fixture-compatibility-no-detected-pair:binding:4",
+      "fixture-compatibility-no-detected-pair:binding:41",
+      "fixture-compatibility-no-detected-pair:binding:55",
+      "fixture-compatibility-no-detected-pair:binding:81",
+      "fixture-compatibility-no-detected-pair:binding:92",
+      "fixture-compatibility-no-detected-pair:binding:93",
+      "fixture-compatibility-no-detected-pair:binding:95",
+      "fixture-compatibility-no-detected-pair:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17710",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:127"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17720",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-love-A:binding:14"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1777",
+    "receiptReferences": 31,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:106",
+      "fixture-same-mbti-different-natal:binding:110",
+      "fixture-same-mbti-different-natal:binding:115",
+      "fixture-same-mbti-different-natal:binding:116",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:121",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:137",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:172",
+      "fixture-same-mbti-different-natal:binding:176",
+      "fixture-same-mbti-different-natal:binding:188",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:21",
+      "fixture-same-mbti-different-natal:binding:35",
+      "fixture-same-mbti-different-natal:binding:37",
+      "fixture-same-mbti-different-natal:binding:40",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:60",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64",
+      "fixture-same-mbti-different-natal:binding:66",
+      "fixture-same-mbti-different-natal:binding:76",
+      "fixture-same-mbti-different-natal:binding:85",
+      "fixture-same-mbti-different-natal:binding:87",
+      "fixture-same-mbti-different-natal:binding:9",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17779",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:13"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17836",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17871",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17878",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:60"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17906",
+    "receiptReferences": 54,
+    "receipts": [
+      "fixture-compatibility-A:binding:107",
+      "fixture-compatibility-A:binding:127",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-businessPartner:binding:139",
+      "fixture-compatibility-businessPartner:binding:186",
+      "fixture-compatibility-businessPartner:binding:212",
+      "fixture-compatibility-businessPartner:binding:260",
+      "fixture-compatibility-coworker:binding:107",
+      "fixture-compatibility-coworker:binding:153",
+      "fixture-compatibility-coworker:binding:155",
+      "fixture-compatibility-coworker:binding:165",
+      "fixture-compatibility-coworker:binding:176",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:212",
+      "fixture-compatibility-coworker:binding:213",
+      "fixture-compatibility-coworker:binding:221",
+      "fixture-compatibility-coworker:binding:249",
+      "fixture-compatibility-coworker:binding:252",
+      "fixture-compatibility-coworker:binding:265",
+      "fixture-compatibility-coworker:binding:48",
+      "fixture-compatibility-coworker:binding:57",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-coworker:binding:92",
+      "fixture-compatibility-friendship:binding:4",
+      "fixture-compatibility-friendship:binding:92",
+      "fixture-compatibility-friendship:binding:96",
+      "fixture-compatibility-managerReport:binding:10",
+      "fixture-compatibility-managerReport:binding:111",
+      "fixture-compatibility-managerReport:binding:151",
+      "fixture-compatibility-managerReport:binding:180",
+      "fixture-compatibility-managerReport:binding:191",
+      "fixture-compatibility-managerReport:binding:205",
+      "fixture-compatibility-managerReport:binding:220",
+      "fixture-compatibility-managerReport:binding:26",
+      "fixture-compatibility-managerReport:binding:27",
+      "fixture-compatibility-managerReport:binding:54",
+      "fixture-compatibility-managerReport:binding:79",
+      "fixture-compatibility-managerReport:binding:95",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:151",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:59",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-marriage:binding:98",
+      "fixture-compatibility-parentChild:binding:111",
+      "fixture-compatibility-parentChild:binding:172",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:107",
+      "fixture-compatibility-slot-swap:binding:127",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17972",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-17974",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:139",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18064",
+    "receiptReferences": 10,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:167",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18083",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-marriage:binding:177",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18099",
+    "receiptReferences": 22,
+    "receipts": [
+      "fixture-career-A:binding:149",
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:121",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:137",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:176",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:21",
+      "fixture-same-mbti-different-natal:binding:37",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:60",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64",
+      "fixture-same-mbti-different-natal:binding:76",
+      "fixture-same-mbti-different-natal:binding:87",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18229",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:61"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18235",
+    "receiptReferences": 23,
+    "receipts": [
+      "fixture-career-A:binding:149",
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:121",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:137",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:176",
+      "fixture-same-mbti-different-natal:binding:188",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:21",
+      "fixture-same-mbti-different-natal:binding:37",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:60",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64",
+      "fixture-same-mbti-different-natal:binding:76",
+      "fixture-same-mbti-different-natal:binding:87",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18269",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18281",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18312",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:65",
+      "fixture-compatibility-marriage:binding:94"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18327",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:106",
+      "fixture-comprehensive-A:binding:66",
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18367",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:93",
+      "fixture-same-natal-career:binding:149"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18408",
+    "receiptReferences": 16,
+    "receipts": [
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:199"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1842",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18433",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-same-natal-career:binding:149"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18455",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:188",
+      "fixture-same-mbti-different-natal:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18464",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:157"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18521",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18552",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-career-A:binding:157",
+      "fixture-career-A:binding:187"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18608",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1863",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:37"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18640",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:156"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18870",
+    "receiptReferences": 14,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:110",
+      "fixture-compatibility-unknown-both:binding:114",
+      "fixture-compatibility-unknown-both:binding:129",
+      "fixture-compatibility-unknown-both:binding:132",
+      "fixture-compatibility-unknown-both:binding:145",
+      "fixture-compatibility-unknown-both:binding:153",
+      "fixture-compatibility-unknown-both:binding:19",
+      "fixture-compatibility-unknown-both:binding:3",
+      "fixture-compatibility-unknown-both:binding:34",
+      "fixture-compatibility-unknown-both:binding:37",
+      "fixture-compatibility-unknown-both:binding:38",
+      "fixture-compatibility-unknown-both:binding:92",
+      "fixture-compatibility-unknown-both:binding:95",
+      "fixture-compatibility-unknown-both:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18890",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:139",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18960",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-18964",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-19001",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1905",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:168"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-19145",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:139",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:188",
+      "fixture-same-natal-different-mbti:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-19419",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:70"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-19463",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:85",
+      "fixture-same-natal-career:binding:181",
+      "fixture-same-natal-career:binding:83"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1961",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-1986",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:172"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2056",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:188",
+      "fixture-same-natal-different-mbti:binding:61"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2093",
+    "receiptReferences": 123,
+    "receipts": [
+      "fixture-compatibility-A:binding:110",
+      "fixture-compatibility-A:binding:114",
+      "fixture-compatibility-A:binding:129",
+      "fixture-compatibility-A:binding:132",
+      "fixture-compatibility-A:binding:145",
+      "fixture-compatibility-A:binding:153",
+      "fixture-compatibility-A:binding:19",
+      "fixture-compatibility-A:binding:3",
+      "fixture-compatibility-A:binding:34",
+      "fixture-compatibility-A:binding:37",
+      "fixture-compatibility-A:binding:38",
+      "fixture-compatibility-A:binding:92",
+      "fixture-compatibility-A:binding:95",
+      "fixture-compatibility-A:binding:98",
+      "fixture-compatibility-businessPartner:binding:138",
+      "fixture-compatibility-businessPartner:binding:173",
+      "fixture-compatibility-businessPartner:binding:187",
+      "fixture-compatibility-businessPartner:binding:265",
+      "fixture-compatibility-businessPartner:binding:43",
+      "fixture-compatibility-businessPartner:binding:75",
+      "fixture-compatibility-businessPartner:binding:77",
+      "fixture-compatibility-businessPartner:binding:84",
+      "fixture-compatibility-coworker:binding:112",
+      "fixture-compatibility-coworker:binding:135",
+      "fixture-compatibility-coworker:binding:138",
+      "fixture-compatibility-coworker:binding:150",
+      "fixture-compatibility-coworker:binding:153",
+      "fixture-compatibility-coworker:binding:154",
+      "fixture-compatibility-coworker:binding:156",
+      "fixture-compatibility-coworker:binding:17",
+      "fixture-compatibility-coworker:binding:190",
+      "fixture-compatibility-coworker:binding:207",
+      "fixture-compatibility-coworker:binding:219",
+      "fixture-compatibility-coworker:binding:236",
+      "fixture-compatibility-coworker:binding:237",
+      "fixture-compatibility-coworker:binding:239",
+      "fixture-compatibility-coworker:binding:24",
+      "fixture-compatibility-coworker:binding:257",
+      "fixture-compatibility-coworker:binding:269",
+      "fixture-compatibility-coworker:binding:275",
+      "fixture-compatibility-coworker:binding:278",
+      "fixture-compatibility-coworker:binding:293",
+      "fixture-compatibility-coworker:binding:50",
+      "fixture-compatibility-coworker:binding:60",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-coworker:binding:77",
+      "fixture-compatibility-coworker:binding:85",
+      "fixture-compatibility-coworker:binding:89",
+      "fixture-compatibility-friendship:binding:1",
+      "fixture-compatibility-friendship:binding:102",
+      "fixture-compatibility-friendship:binding:112",
+      "fixture-compatibility-friendship:binding:120",
+      "fixture-compatibility-friendship:binding:131",
+      "fixture-compatibility-friendship:binding:33",
+      "fixture-compatibility-friendship:binding:39",
+      "fixture-compatibility-friendship:binding:8",
+      "fixture-compatibility-managerReport:binding:116",
+      "fixture-compatibility-managerReport:binding:12",
+      "fixture-compatibility-managerReport:binding:127",
+      "fixture-compatibility-managerReport:binding:164",
+      "fixture-compatibility-managerReport:binding:178",
+      "fixture-compatibility-managerReport:binding:199",
+      "fixture-compatibility-managerReport:binding:21",
+      "fixture-compatibility-managerReport:binding:224",
+      "fixture-compatibility-managerReport:binding:232",
+      "fixture-compatibility-managerReport:binding:239",
+      "fixture-compatibility-managerReport:binding:3",
+      "fixture-compatibility-managerReport:binding:52",
+      "fixture-compatibility-managerReport:binding:98",
+      "fixture-compatibility-marriage:binding:117",
+      "fixture-compatibility-marriage:binding:122",
+      "fixture-compatibility-marriage:binding:127",
+      "fixture-compatibility-marriage:binding:130",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:155",
+      "fixture-compatibility-marriage:binding:163",
+      "fixture-compatibility-marriage:binding:2",
+      "fixture-compatibility-marriage:binding:23",
+      "fixture-compatibility-marriage:binding:29",
+      "fixture-compatibility-marriage:binding:36",
+      "fixture-compatibility-marriage:binding:43",
+      "fixture-compatibility-marriage:binding:44",
+      "fixture-compatibility-marriage:binding:46",
+      "fixture-compatibility-marriage:binding:49",
+      "fixture-compatibility-marriage:binding:58",
+      "fixture-compatibility-marriage:binding:71",
+      "fixture-compatibility-marriage:binding:77",
+      "fixture-compatibility-marriage:binding:89",
+      "fixture-compatibility-marriage:binding:91",
+      "fixture-compatibility-parentChild:binding:128",
+      "fixture-compatibility-parentChild:binding:137",
+      "fixture-compatibility-parentChild:binding:149",
+      "fixture-compatibility-parentChild:binding:150",
+      "fixture-compatibility-parentChild:binding:158",
+      "fixture-compatibility-parentChild:binding:159",
+      "fixture-compatibility-parentChild:binding:169",
+      "fixture-compatibility-parentChild:binding:180",
+      "fixture-compatibility-parentChild:binding:194",
+      "fixture-compatibility-parentChild:binding:25",
+      "fixture-compatibility-parentChild:binding:36",
+      "fixture-compatibility-parentChild:binding:49",
+      "fixture-compatibility-parentChild:binding:52",
+      "fixture-compatibility-parentChild:binding:53",
+      "fixture-compatibility-parentChild:binding:57",
+      "fixture-compatibility-parentChild:binding:61",
+      "fixture-compatibility-parentChild:binding:69",
+      "fixture-compatibility-parentChild:binding:70",
+      "fixture-compatibility-parentChild:binding:77",
+      "fixture-compatibility-parentChild:binding:78",
+      "fixture-compatibility-slot-swap:binding:10",
+      "fixture-compatibility-slot-swap:binding:100",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:128",
+      "fixture-compatibility-slot-swap:binding:14",
+      "fixture-compatibility-slot-swap:binding:146",
+      "fixture-compatibility-slot-swap:binding:151",
+      "fixture-compatibility-slot-swap:binding:21",
+      "fixture-compatibility-slot-swap:binding:30",
+      "fixture-compatibility-slot-swap:binding:4",
+      "fixture-compatibility-slot-swap:binding:41",
+      "fixture-compatibility-slot-swap:binding:55",
+      "fixture-compatibility-slot-swap:binding:81",
+      "fixture-compatibility-slot-swap:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2159",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:21",
+      "fixture-same-mbti-different-natal:binding:60",
+      "fixture-same-mbti-different-natal:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2301",
+    "receiptReferences": 18,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:48",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-businessPartner:binding:19",
+      "fixture-compatibility-coworker:binding:289",
+      "fixture-compatibility-managerReport:binding:138",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:119",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-parentChild:binding:187",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:48",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2350",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:139"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2360",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2369",
+    "receiptReferences": 19,
+    "receipts": [
+      "fixture-career-A:binding:149",
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:188",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:21",
+      "fixture-same-mbti-different-natal:binding:37",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:60",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64",
+      "fixture-same-mbti-different-natal:binding:76",
+      "fixture-same-mbti-different-natal:binding:87",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2488",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2506",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-253",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2537",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2599",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:139"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2667",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2671",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2685",
+    "receiptReferences": 28,
+    "receipts": [
+      "fixture-compatibility-no-detected-pair:binding:10",
+      "fixture-compatibility-no-detected-pair:binding:100",
+      "fixture-compatibility-no-detected-pair:binding:103",
+      "fixture-compatibility-no-detected-pair:binding:110",
+      "fixture-compatibility-no-detected-pair:binding:114",
+      "fixture-compatibility-no-detected-pair:binding:128",
+      "fixture-compatibility-no-detected-pair:binding:129",
+      "fixture-compatibility-no-detected-pair:binding:132",
+      "fixture-compatibility-no-detected-pair:binding:14",
+      "fixture-compatibility-no-detected-pair:binding:145",
+      "fixture-compatibility-no-detected-pair:binding:146",
+      "fixture-compatibility-no-detected-pair:binding:151",
+      "fixture-compatibility-no-detected-pair:binding:153",
+      "fixture-compatibility-no-detected-pair:binding:19",
+      "fixture-compatibility-no-detected-pair:binding:21",
+      "fixture-compatibility-no-detected-pair:binding:3",
+      "fixture-compatibility-no-detected-pair:binding:30",
+      "fixture-compatibility-no-detected-pair:binding:34",
+      "fixture-compatibility-no-detected-pair:binding:37",
+      "fixture-compatibility-no-detected-pair:binding:38",
+      "fixture-compatibility-no-detected-pair:binding:4",
+      "fixture-compatibility-no-detected-pair:binding:41",
+      "fixture-compatibility-no-detected-pair:binding:55",
+      "fixture-compatibility-no-detected-pair:binding:81",
+      "fixture-compatibility-no-detected-pair:binding:92",
+      "fixture-compatibility-no-detected-pair:binding:93",
+      "fixture-compatibility-no-detected-pair:binding:95",
+      "fixture-compatibility-no-detected-pair:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2860",
+    "receiptReferences": 7,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2875",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2886",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-comprehensive-A:binding:116",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:130",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-291",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:130"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2932",
+    "receiptReferences": 11,
+    "receipts": [
+      "fixture-compatibility-A:binding:55",
+      "fixture-compatibility-A:binding:69",
+      "fixture-compatibility-A:binding:79",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:72",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2939",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2940",
+    "receiptReferences": 10,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-2985",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:237"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3074",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3133",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:80"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3190",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3296",
+    "receiptReferences": 39,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:37",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-comprehensive-A:binding:93",
+      "fixture-same-natal-career:binding:149",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:188",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:46",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3326",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:4"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3645",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3646",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3660",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-same-natal-career:binding:267"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3665",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3839",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-same-natal-career:binding:157"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3885",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3942",
+    "receiptReferences": 11,
+    "receipts": [
+      "fixture-comprehensive-A:binding:110",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:130",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:139",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:35",
+      "fixture-comprehensive-A:binding:40",
+      "fixture-comprehensive-A:binding:9",
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3960",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:48"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-3976",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4001",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:199"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4006",
+    "receiptReferences": 34,
+    "receipts": [
+      "fixture-compatibility-A:binding:127",
+      "fixture-compatibility-businessPartner:binding:186",
+      "fixture-compatibility-businessPartner:binding:212",
+      "fixture-compatibility-businessPartner:binding:260",
+      "fixture-compatibility-coworker:binding:153",
+      "fixture-compatibility-coworker:binding:155",
+      "fixture-compatibility-coworker:binding:165",
+      "fixture-compatibility-coworker:binding:176",
+      "fixture-compatibility-coworker:binding:212",
+      "fixture-compatibility-coworker:binding:213",
+      "fixture-compatibility-coworker:binding:221",
+      "fixture-compatibility-coworker:binding:249",
+      "fixture-compatibility-coworker:binding:252",
+      "fixture-compatibility-coworker:binding:265",
+      "fixture-compatibility-coworker:binding:48",
+      "fixture-compatibility-coworker:binding:57",
+      "fixture-compatibility-coworker:binding:92",
+      "fixture-compatibility-friendship:binding:4",
+      "fixture-compatibility-friendship:binding:92",
+      "fixture-compatibility-friendship:binding:96",
+      "fixture-compatibility-managerReport:binding:10",
+      "fixture-compatibility-managerReport:binding:111",
+      "fixture-compatibility-managerReport:binding:151",
+      "fixture-compatibility-managerReport:binding:180",
+      "fixture-compatibility-managerReport:binding:191",
+      "fixture-compatibility-managerReport:binding:205",
+      "fixture-compatibility-managerReport:binding:220",
+      "fixture-compatibility-managerReport:binding:26",
+      "fixture-compatibility-managerReport:binding:27",
+      "fixture-compatibility-managerReport:binding:79",
+      "fixture-compatibility-managerReport:binding:95",
+      "fixture-compatibility-marriage:binding:59",
+      "fixture-compatibility-parentChild:binding:111",
+      "fixture-compatibility-slot-swap:binding:127"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4070",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-career:binding:178"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4100",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:27"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4107",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:172"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4163",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:157"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-418",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4202",
+    "receiptReferences": 39,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:37",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-comprehensive-A:binding:93",
+      "fixture-same-natal-career:binding:149",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:188",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:46",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4223",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4229",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-parentChild:binding:149",
+      "fixture-compatibility-parentChild:binding:95",
+      "fixture-compatibility-parentChild:binding:99"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4257",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:121",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:137",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:176",
+      "fixture-same-mbti-different-natal:binding:60"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4310",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4324",
+    "receiptReferences": 7,
+    "receipts": [
+      "fixture-compatibility-A:binding:107",
+      "fixture-compatibility-businessPartner:binding:139",
+      "fixture-compatibility-coworker:binding:107",
+      "fixture-compatibility-managerReport:binding:54",
+      "fixture-compatibility-marriage:binding:151",
+      "fixture-compatibility-parentChild:binding:172",
+      "fixture-compatibility-slot-swap:binding:107"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4346",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4384",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:62"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4497",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4576",
+    "receiptReferences": 39,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:37",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-comprehensive-A:binding:93",
+      "fixture-same-natal-career:binding:149",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:188",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:46",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4617",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-comprehensive-A:binding:115",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-same-natal-career:binding:17",
+      "fixture-same-natal-career:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-4892",
+    "receiptReferences": 9,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5043",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:167"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5070",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-career-A:binding:104",
+      "fixture-career-A:binding:157"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5093",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5160",
+    "receiptReferences": 254,
+    "receipts": [
+      "fixture-compatibility-A:binding:10",
+      "fixture-compatibility-A:binding:100",
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:110",
+      "fixture-compatibility-A:binding:114",
+      "fixture-compatibility-A:binding:128",
+      "fixture-compatibility-A:binding:129",
+      "fixture-compatibility-A:binding:132",
+      "fixture-compatibility-A:binding:14",
+      "fixture-compatibility-A:binding:145",
+      "fixture-compatibility-A:binding:146",
+      "fixture-compatibility-A:binding:151",
+      "fixture-compatibility-A:binding:153",
+      "fixture-compatibility-A:binding:19",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:21",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:3",
+      "fixture-compatibility-A:binding:30",
+      "fixture-compatibility-A:binding:34",
+      "fixture-compatibility-A:binding:37",
+      "fixture-compatibility-A:binding:38",
+      "fixture-compatibility-A:binding:4",
+      "fixture-compatibility-A:binding:41",
+      "fixture-compatibility-A:binding:55",
+      "fixture-compatibility-A:binding:81",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-A:binding:92",
+      "fixture-compatibility-A:binding:93",
+      "fixture-compatibility-A:binding:95",
+      "fixture-compatibility-A:binding:98",
+      "fixture-compatibility-businessPartner:binding:12",
+      "fixture-compatibility-businessPartner:binding:123",
+      "fixture-compatibility-businessPartner:binding:138",
+      "fixture-compatibility-businessPartner:binding:14",
+      "fixture-compatibility-businessPartner:binding:173",
+      "fixture-compatibility-businessPartner:binding:187",
+      "fixture-compatibility-businessPartner:binding:189",
+      "fixture-compatibility-businessPartner:binding:193",
+      "fixture-compatibility-businessPartner:binding:199",
+      "fixture-compatibility-businessPartner:binding:226",
+      "fixture-compatibility-businessPartner:binding:247",
+      "fixture-compatibility-businessPartner:binding:265",
+      "fixture-compatibility-businessPartner:binding:43",
+      "fixture-compatibility-businessPartner:binding:75",
+      "fixture-compatibility-businessPartner:binding:77",
+      "fixture-compatibility-businessPartner:binding:84",
+      "fixture-compatibility-coworker:binding:112",
+      "fixture-compatibility-coworker:binding:117",
+      "fixture-compatibility-coworker:binding:129",
+      "fixture-compatibility-coworker:binding:135",
+      "fixture-compatibility-coworker:binding:137",
+      "fixture-compatibility-coworker:binding:138",
+      "fixture-compatibility-coworker:binding:146",
+      "fixture-compatibility-coworker:binding:150",
+      "fixture-compatibility-coworker:binding:152",
+      "fixture-compatibility-coworker:binding:153",
+      "fixture-compatibility-coworker:binding:154",
+      "fixture-compatibility-coworker:binding:156",
+      "fixture-compatibility-coworker:binding:161",
+      "fixture-compatibility-coworker:binding:168",
+      "fixture-compatibility-coworker:binding:17",
+      "fixture-compatibility-coworker:binding:177",
+      "fixture-compatibility-coworker:binding:181",
+      "fixture-compatibility-coworker:binding:183",
+      "fixture-compatibility-coworker:binding:190",
+      "fixture-compatibility-coworker:binding:199",
+      "fixture-compatibility-coworker:binding:202",
+      "fixture-compatibility-coworker:binding:207",
+      "fixture-compatibility-coworker:binding:219",
+      "fixture-compatibility-coworker:binding:236",
+      "fixture-compatibility-coworker:binding:237",
+      "fixture-compatibility-coworker:binding:239",
+      "fixture-compatibility-coworker:binding:24",
+      "fixture-compatibility-coworker:binding:240",
+      "fixture-compatibility-coworker:binding:25",
+      "fixture-compatibility-coworker:binding:257",
+      "fixture-compatibility-coworker:binding:261",
+      "fixture-compatibility-coworker:binding:266",
+      "fixture-compatibility-coworker:binding:269",
+      "fixture-compatibility-coworker:binding:275",
+      "fixture-compatibility-coworker:binding:278",
+      "fixture-compatibility-coworker:binding:280",
+      "fixture-compatibility-coworker:binding:291",
+      "fixture-compatibility-coworker:binding:293",
+      "fixture-compatibility-coworker:binding:47",
+      "fixture-compatibility-coworker:binding:5",
+      "fixture-compatibility-coworker:binding:50",
+      "fixture-compatibility-coworker:binding:52",
+      "fixture-compatibility-coworker:binding:54",
+      "fixture-compatibility-coworker:binding:55",
+      "fixture-compatibility-coworker:binding:56",
+      "fixture-compatibility-coworker:binding:60",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-coworker:binding:7",
+      "fixture-compatibility-coworker:binding:77",
+      "fixture-compatibility-coworker:binding:85",
+      "fixture-compatibility-coworker:binding:88",
+      "fixture-compatibility-coworker:binding:89",
+      "fixture-compatibility-friendship:binding:1",
+      "fixture-compatibility-friendship:binding:102",
+      "fixture-compatibility-friendship:binding:112",
+      "fixture-compatibility-friendship:binding:120",
+      "fixture-compatibility-friendship:binding:123",
+      "fixture-compatibility-friendship:binding:131",
+      "fixture-compatibility-friendship:binding:2",
+      "fixture-compatibility-friendship:binding:33",
+      "fixture-compatibility-friendship:binding:37",
+      "fixture-compatibility-friendship:binding:39",
+      "fixture-compatibility-friendship:binding:45",
+      "fixture-compatibility-friendship:binding:65",
+      "fixture-compatibility-friendship:binding:69",
+      "fixture-compatibility-friendship:binding:8",
+      "fixture-compatibility-friendship:binding:95",
+      "fixture-compatibility-friendship:binding:99",
+      "fixture-compatibility-managerReport:binding:10",
+      "fixture-compatibility-managerReport:binding:101",
+      "fixture-compatibility-managerReport:binding:116",
+      "fixture-compatibility-managerReport:binding:12",
+      "fixture-compatibility-managerReport:binding:127",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-managerReport:binding:164",
+      "fixture-compatibility-managerReport:binding:178",
+      "fixture-compatibility-managerReport:binding:191",
+      "fixture-compatibility-managerReport:binding:199",
+      "fixture-compatibility-managerReport:binding:205",
+      "fixture-compatibility-managerReport:binding:21",
+      "fixture-compatibility-managerReport:binding:224",
+      "fixture-compatibility-managerReport:binding:232",
+      "fixture-compatibility-managerReport:binding:239",
+      "fixture-compatibility-managerReport:binding:3",
+      "fixture-compatibility-managerReport:binding:38",
+      "fixture-compatibility-managerReport:binding:40",
+      "fixture-compatibility-managerReport:binding:45",
+      "fixture-compatibility-managerReport:binding:46",
+      "fixture-compatibility-managerReport:binding:52",
+      "fixture-compatibility-managerReport:binding:56",
+      "fixture-compatibility-managerReport:binding:58",
+      "fixture-compatibility-managerReport:binding:77",
+      "fixture-compatibility-managerReport:binding:95",
+      "fixture-compatibility-managerReport:binding:98",
+      "fixture-compatibility-marriage:binding:101",
+      "fixture-compatibility-marriage:binding:106",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:117",
+      "fixture-compatibility-marriage:binding:121",
+      "fixture-compatibility-marriage:binding:122",
+      "fixture-compatibility-marriage:binding:127",
+      "fixture-compatibility-marriage:binding:130",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:133",
+      "fixture-compatibility-marriage:binding:141",
+      "fixture-compatibility-marriage:binding:148",
+      "fixture-compatibility-marriage:binding:155",
+      "fixture-compatibility-marriage:binding:156",
+      "fixture-compatibility-marriage:binding:163",
+      "fixture-compatibility-marriage:binding:179",
+      "fixture-compatibility-marriage:binding:180",
+      "fixture-compatibility-marriage:binding:2",
+      "fixture-compatibility-marriage:binding:22",
+      "fixture-compatibility-marriage:binding:23",
+      "fixture-compatibility-marriage:binding:27",
+      "fixture-compatibility-marriage:binding:29",
+      "fixture-compatibility-marriage:binding:30",
+      "fixture-compatibility-marriage:binding:36",
+      "fixture-compatibility-marriage:binding:38",
+      "fixture-compatibility-marriage:binding:43",
+      "fixture-compatibility-marriage:binding:44",
+      "fixture-compatibility-marriage:binding:46",
+      "fixture-compatibility-marriage:binding:47",
+      "fixture-compatibility-marriage:binding:49",
+      "fixture-compatibility-marriage:binding:54",
+      "fixture-compatibility-marriage:binding:58",
+      "fixture-compatibility-marriage:binding:70",
+      "fixture-compatibility-marriage:binding:71",
+      "fixture-compatibility-marriage:binding:72",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:77",
+      "fixture-compatibility-marriage:binding:78",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:89",
+      "fixture-compatibility-marriage:binding:91",
+      "fixture-compatibility-marriage:binding:99",
+      "fixture-compatibility-parentChild:binding:107",
+      "fixture-compatibility-parentChild:binding:123",
+      "fixture-compatibility-parentChild:binding:128",
+      "fixture-compatibility-parentChild:binding:131",
+      "fixture-compatibility-parentChild:binding:135",
+      "fixture-compatibility-parentChild:binding:136",
+      "fixture-compatibility-parentChild:binding:137",
+      "fixture-compatibility-parentChild:binding:138",
+      "fixture-compatibility-parentChild:binding:141",
+      "fixture-compatibility-parentChild:binding:149",
+      "fixture-compatibility-parentChild:binding:150",
+      "fixture-compatibility-parentChild:binding:153",
+      "fixture-compatibility-parentChild:binding:157",
+      "fixture-compatibility-parentChild:binding:158",
+      "fixture-compatibility-parentChild:binding:159",
+      "fixture-compatibility-parentChild:binding:161",
+      "fixture-compatibility-parentChild:binding:169",
+      "fixture-compatibility-parentChild:binding:171",
+      "fixture-compatibility-parentChild:binding:175",
+      "fixture-compatibility-parentChild:binding:177",
+      "fixture-compatibility-parentChild:binding:180",
+      "fixture-compatibility-parentChild:binding:194",
+      "fixture-compatibility-parentChild:binding:199",
+      "fixture-compatibility-parentChild:binding:22",
+      "fixture-compatibility-parentChild:binding:25",
+      "fixture-compatibility-parentChild:binding:3",
+      "fixture-compatibility-parentChild:binding:32",
+      "fixture-compatibility-parentChild:binding:35",
+      "fixture-compatibility-parentChild:binding:36",
+      "fixture-compatibility-parentChild:binding:49",
+      "fixture-compatibility-parentChild:binding:52",
+      "fixture-compatibility-parentChild:binding:53",
+      "fixture-compatibility-parentChild:binding:54",
+      "fixture-compatibility-parentChild:binding:57",
+      "fixture-compatibility-parentChild:binding:61",
+      "fixture-compatibility-parentChild:binding:69",
+      "fixture-compatibility-parentChild:binding:70",
+      "fixture-compatibility-parentChild:binding:77",
+      "fixture-compatibility-parentChild:binding:78",
+      "fixture-compatibility-parentChild:binding:80",
+      "fixture-compatibility-slot-swap:binding:10",
+      "fixture-compatibility-slot-swap:binding:100",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:110",
+      "fixture-compatibility-slot-swap:binding:114",
+      "fixture-compatibility-slot-swap:binding:128",
+      "fixture-compatibility-slot-swap:binding:129",
+      "fixture-compatibility-slot-swap:binding:132",
+      "fixture-compatibility-slot-swap:binding:14",
+      "fixture-compatibility-slot-swap:binding:145",
+      "fixture-compatibility-slot-swap:binding:146",
+      "fixture-compatibility-slot-swap:binding:151",
+      "fixture-compatibility-slot-swap:binding:153",
+      "fixture-compatibility-slot-swap:binding:19",
+      "fixture-compatibility-slot-swap:binding:21",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:3",
+      "fixture-compatibility-slot-swap:binding:30",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:34",
+      "fixture-compatibility-slot-swap:binding:37",
+      "fixture-compatibility-slot-swap:binding:38",
+      "fixture-compatibility-slot-swap:binding:4",
+      "fixture-compatibility-slot-swap:binding:41",
+      "fixture-compatibility-slot-swap:binding:55",
+      "fixture-compatibility-slot-swap:binding:81",
+      "fixture-compatibility-slot-swap:binding:90",
+      "fixture-compatibility-slot-swap:binding:92",
+      "fixture-compatibility-slot-swap:binding:93",
+      "fixture-compatibility-slot-swap:binding:95",
+      "fixture-compatibility-slot-swap:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5163",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5186",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-A:binding:55",
+      "fixture-compatibility-slot-swap:binding:26"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5307",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:60"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5318",
+    "receiptReferences": 11,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5432",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:77"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5445",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5484",
+    "receiptReferences": 20,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:27",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-businessPartner:binding:163",
+      "fixture-compatibility-coworker:binding:142",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-managerReport:binding:97",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:39",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-marriage:binding:98",
+      "fixture-compatibility-parentChild:binding:26",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:27",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5497",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5547",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-559",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:87",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-56",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5734",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:130"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5821",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:111"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5857",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-same-natal-career:binding:149"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5860",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5902",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-5920",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6022",
+    "receiptReferences": 10,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:167",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6102",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-compatibility-A:binding:33",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6131",
+    "receiptReferences": 39,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:37",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-comprehensive-A:binding:93",
+      "fixture-same-natal-career:binding:149",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:188",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:46",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6175",
+    "receiptReferences": 18,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:107",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-businessPartner:binding:139",
+      "fixture-compatibility-coworker:binding:107",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-managerReport:binding:54",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:151",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-parentChild:binding:172",
+      "fixture-compatibility-slot-swap:binding:107",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6181",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:121",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:137",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:176",
+      "fixture-same-mbti-different-natal:binding:60"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6371",
+    "receiptReferences": 10,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:167",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6397",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-love-A:binding:169",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:70"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6424",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6449",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:266"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6543",
+    "receiptReferences": 28,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:10",
+      "fixture-compatibility-unknown-both:binding:100",
+      "fixture-compatibility-unknown-both:binding:103",
+      "fixture-compatibility-unknown-both:binding:110",
+      "fixture-compatibility-unknown-both:binding:114",
+      "fixture-compatibility-unknown-both:binding:128",
+      "fixture-compatibility-unknown-both:binding:129",
+      "fixture-compatibility-unknown-both:binding:132",
+      "fixture-compatibility-unknown-both:binding:14",
+      "fixture-compatibility-unknown-both:binding:145",
+      "fixture-compatibility-unknown-both:binding:146",
+      "fixture-compatibility-unknown-both:binding:151",
+      "fixture-compatibility-unknown-both:binding:153",
+      "fixture-compatibility-unknown-both:binding:19",
+      "fixture-compatibility-unknown-both:binding:21",
+      "fixture-compatibility-unknown-both:binding:3",
+      "fixture-compatibility-unknown-both:binding:30",
+      "fixture-compatibility-unknown-both:binding:34",
+      "fixture-compatibility-unknown-both:binding:37",
+      "fixture-compatibility-unknown-both:binding:38",
+      "fixture-compatibility-unknown-both:binding:4",
+      "fixture-compatibility-unknown-both:binding:41",
+      "fixture-compatibility-unknown-both:binding:55",
+      "fixture-compatibility-unknown-both:binding:81",
+      "fixture-compatibility-unknown-both:binding:92",
+      "fixture-compatibility-unknown-both:binding:93",
+      "fixture-compatibility-unknown-both:binding:95",
+      "fixture-compatibility-unknown-both:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6551",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:167"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6575",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:177"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6647",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-comprehensive-A:binding:60",
+      "fixture-same-natal-career:binding:44"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6656",
+    "receiptReferences": 14,
+    "receipts": [
+      "fixture-compatibility-no-detected-pair:binding:110",
+      "fixture-compatibility-no-detected-pair:binding:114",
+      "fixture-compatibility-no-detected-pair:binding:129",
+      "fixture-compatibility-no-detected-pair:binding:132",
+      "fixture-compatibility-no-detected-pair:binding:145",
+      "fixture-compatibility-no-detected-pair:binding:153",
+      "fixture-compatibility-no-detected-pair:binding:19",
+      "fixture-compatibility-no-detected-pair:binding:3",
+      "fixture-compatibility-no-detected-pair:binding:34",
+      "fixture-compatibility-no-detected-pair:binding:37",
+      "fixture-compatibility-no-detected-pair:binding:38",
+      "fixture-compatibility-no-detected-pair:binding:92",
+      "fixture-compatibility-no-detected-pair:binding:95",
+      "fixture-compatibility-no-detected-pair:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6683",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-674",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6742",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6752",
+    "receiptReferences": 14,
+    "receipts": [
+      "fixture-career-A:binding:104",
+      "fixture-career-A:binding:117",
+      "fixture-career-A:binding:149",
+      "fixture-career-A:binding:157",
+      "fixture-career-A:binding:187",
+      "fixture-career-A:binding:237",
+      "fixture-career-A:binding:32",
+      "fixture-career-A:binding:48",
+      "fixture-career-A:binding:49",
+      "fixture-career-A:binding:64",
+      "fixture-career-A:binding:77",
+      "fixture-career-A:binding:90",
+      "fixture-career-A:binding:95",
+      "fixture-career-A:binding:97"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6791",
+    "receiptReferences": 12,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-parentChild:binding:141",
+      "fixture-compatibility-parentChild:binding:30",
+      "fixture-compatibility-parentChild:binding:88",
+      "fixture-compatibility-slot-swap:binding:33",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6837",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6843",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-69",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:61"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-6911",
+    "receiptReferences": 10,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:167",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:62"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7110",
+    "receiptReferences": 28,
+    "receipts": [
+      "fixture-compatibility-unknown-both:binding:10",
+      "fixture-compatibility-unknown-both:binding:100",
+      "fixture-compatibility-unknown-both:binding:103",
+      "fixture-compatibility-unknown-both:binding:110",
+      "fixture-compatibility-unknown-both:binding:114",
+      "fixture-compatibility-unknown-both:binding:128",
+      "fixture-compatibility-unknown-both:binding:129",
+      "fixture-compatibility-unknown-both:binding:132",
+      "fixture-compatibility-unknown-both:binding:14",
+      "fixture-compatibility-unknown-both:binding:145",
+      "fixture-compatibility-unknown-both:binding:146",
+      "fixture-compatibility-unknown-both:binding:151",
+      "fixture-compatibility-unknown-both:binding:153",
+      "fixture-compatibility-unknown-both:binding:19",
+      "fixture-compatibility-unknown-both:binding:21",
+      "fixture-compatibility-unknown-both:binding:3",
+      "fixture-compatibility-unknown-both:binding:30",
+      "fixture-compatibility-unknown-both:binding:34",
+      "fixture-compatibility-unknown-both:binding:37",
+      "fixture-compatibility-unknown-both:binding:38",
+      "fixture-compatibility-unknown-both:binding:4",
+      "fixture-compatibility-unknown-both:binding:41",
+      "fixture-compatibility-unknown-both:binding:55",
+      "fixture-compatibility-unknown-both:binding:81",
+      "fixture-compatibility-unknown-both:binding:92",
+      "fixture-compatibility-unknown-both:binding:93",
+      "fixture-compatibility-unknown-both:binding:95",
+      "fixture-compatibility-unknown-both:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7246",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:10"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7257",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:167"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7303",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-737",
+    "receiptReferences": 14,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:33",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-marriage:binding:98",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7403",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7443",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:100",
+      "fixture-compatibility-slot-swap:binding:122",
+      "fixture-compatibility-slot-swap:binding:4"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7457",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7510",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:177",
+      "fixture-compatibility-coworker:binding:55",
+      "fixture-compatibility-coworker:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7514",
+    "receiptReferences": 257,
+    "receipts": [
+      "fixture-compatibility-A:binding:10",
+      "fixture-compatibility-A:binding:100",
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:110",
+      "fixture-compatibility-A:binding:114",
+      "fixture-compatibility-A:binding:128",
+      "fixture-compatibility-A:binding:129",
+      "fixture-compatibility-A:binding:132",
+      "fixture-compatibility-A:binding:14",
+      "fixture-compatibility-A:binding:145",
+      "fixture-compatibility-A:binding:146",
+      "fixture-compatibility-A:binding:151",
+      "fixture-compatibility-A:binding:153",
+      "fixture-compatibility-A:binding:19",
+      "fixture-compatibility-A:binding:21",
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:3",
+      "fixture-compatibility-A:binding:30",
+      "fixture-compatibility-A:binding:33",
+      "fixture-compatibility-A:binding:34",
+      "fixture-compatibility-A:binding:37",
+      "fixture-compatibility-A:binding:38",
+      "fixture-compatibility-A:binding:4",
+      "fixture-compatibility-A:binding:41",
+      "fixture-compatibility-A:binding:55",
+      "fixture-compatibility-A:binding:81",
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-A:binding:92",
+      "fixture-compatibility-A:binding:93",
+      "fixture-compatibility-A:binding:95",
+      "fixture-compatibility-A:binding:98",
+      "fixture-compatibility-businessPartner:binding:12",
+      "fixture-compatibility-businessPartner:binding:123",
+      "fixture-compatibility-businessPartner:binding:138",
+      "fixture-compatibility-businessPartner:binding:14",
+      "fixture-compatibility-businessPartner:binding:173",
+      "fixture-compatibility-businessPartner:binding:187",
+      "fixture-compatibility-businessPartner:binding:189",
+      "fixture-compatibility-businessPartner:binding:193",
+      "fixture-compatibility-businessPartner:binding:199",
+      "fixture-compatibility-businessPartner:binding:226",
+      "fixture-compatibility-businessPartner:binding:247",
+      "fixture-compatibility-businessPartner:binding:265",
+      "fixture-compatibility-businessPartner:binding:43",
+      "fixture-compatibility-businessPartner:binding:75",
+      "fixture-compatibility-businessPartner:binding:77",
+      "fixture-compatibility-businessPartner:binding:84",
+      "fixture-compatibility-coworker:binding:112",
+      "fixture-compatibility-coworker:binding:117",
+      "fixture-compatibility-coworker:binding:129",
+      "fixture-compatibility-coworker:binding:135",
+      "fixture-compatibility-coworker:binding:137",
+      "fixture-compatibility-coworker:binding:138",
+      "fixture-compatibility-coworker:binding:146",
+      "fixture-compatibility-coworker:binding:150",
+      "fixture-compatibility-coworker:binding:152",
+      "fixture-compatibility-coworker:binding:153",
+      "fixture-compatibility-coworker:binding:154",
+      "fixture-compatibility-coworker:binding:156",
+      "fixture-compatibility-coworker:binding:161",
+      "fixture-compatibility-coworker:binding:168",
+      "fixture-compatibility-coworker:binding:17",
+      "fixture-compatibility-coworker:binding:177",
+      "fixture-compatibility-coworker:binding:181",
+      "fixture-compatibility-coworker:binding:183",
+      "fixture-compatibility-coworker:binding:185",
+      "fixture-compatibility-coworker:binding:190",
+      "fixture-compatibility-coworker:binding:199",
+      "fixture-compatibility-coworker:binding:202",
+      "fixture-compatibility-coworker:binding:207",
+      "fixture-compatibility-coworker:binding:219",
+      "fixture-compatibility-coworker:binding:236",
+      "fixture-compatibility-coworker:binding:237",
+      "fixture-compatibility-coworker:binding:239",
+      "fixture-compatibility-coworker:binding:24",
+      "fixture-compatibility-coworker:binding:240",
+      "fixture-compatibility-coworker:binding:25",
+      "fixture-compatibility-coworker:binding:257",
+      "fixture-compatibility-coworker:binding:261",
+      "fixture-compatibility-coworker:binding:266",
+      "fixture-compatibility-coworker:binding:269",
+      "fixture-compatibility-coworker:binding:275",
+      "fixture-compatibility-coworker:binding:278",
+      "fixture-compatibility-coworker:binding:280",
+      "fixture-compatibility-coworker:binding:291",
+      "fixture-compatibility-coworker:binding:293",
+      "fixture-compatibility-coworker:binding:47",
+      "fixture-compatibility-coworker:binding:5",
+      "fixture-compatibility-coworker:binding:50",
+      "fixture-compatibility-coworker:binding:52",
+      "fixture-compatibility-coworker:binding:54",
+      "fixture-compatibility-coworker:binding:55",
+      "fixture-compatibility-coworker:binding:56",
+      "fixture-compatibility-coworker:binding:60",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-coworker:binding:7",
+      "fixture-compatibility-coworker:binding:77",
+      "fixture-compatibility-coworker:binding:85",
+      "fixture-compatibility-coworker:binding:88",
+      "fixture-compatibility-coworker:binding:89",
+      "fixture-compatibility-friendship:binding:1",
+      "fixture-compatibility-friendship:binding:102",
+      "fixture-compatibility-friendship:binding:112",
+      "fixture-compatibility-friendship:binding:120",
+      "fixture-compatibility-friendship:binding:123",
+      "fixture-compatibility-friendship:binding:131",
+      "fixture-compatibility-friendship:binding:2",
+      "fixture-compatibility-friendship:binding:33",
+      "fixture-compatibility-friendship:binding:37",
+      "fixture-compatibility-friendship:binding:39",
+      "fixture-compatibility-friendship:binding:45",
+      "fixture-compatibility-friendship:binding:65",
+      "fixture-compatibility-friendship:binding:69",
+      "fixture-compatibility-friendship:binding:8",
+      "fixture-compatibility-friendship:binding:95",
+      "fixture-compatibility-friendship:binding:99",
+      "fixture-compatibility-managerReport:binding:10",
+      "fixture-compatibility-managerReport:binding:101",
+      "fixture-compatibility-managerReport:binding:116",
+      "fixture-compatibility-managerReport:binding:12",
+      "fixture-compatibility-managerReport:binding:127",
+      "fixture-compatibility-managerReport:binding:16",
+      "fixture-compatibility-managerReport:binding:164",
+      "fixture-compatibility-managerReport:binding:178",
+      "fixture-compatibility-managerReport:binding:191",
+      "fixture-compatibility-managerReport:binding:199",
+      "fixture-compatibility-managerReport:binding:205",
+      "fixture-compatibility-managerReport:binding:21",
+      "fixture-compatibility-managerReport:binding:224",
+      "fixture-compatibility-managerReport:binding:232",
+      "fixture-compatibility-managerReport:binding:239",
+      "fixture-compatibility-managerReport:binding:3",
+      "fixture-compatibility-managerReport:binding:38",
+      "fixture-compatibility-managerReport:binding:40",
+      "fixture-compatibility-managerReport:binding:45",
+      "fixture-compatibility-managerReport:binding:46",
+      "fixture-compatibility-managerReport:binding:52",
+      "fixture-compatibility-managerReport:binding:56",
+      "fixture-compatibility-managerReport:binding:58",
+      "fixture-compatibility-managerReport:binding:77",
+      "fixture-compatibility-managerReport:binding:95",
+      "fixture-compatibility-managerReport:binding:98",
+      "fixture-compatibility-marriage:binding:101",
+      "fixture-compatibility-marriage:binding:106",
+      "fixture-compatibility-marriage:binding:117",
+      "fixture-compatibility-marriage:binding:121",
+      "fixture-compatibility-marriage:binding:122",
+      "fixture-compatibility-marriage:binding:127",
+      "fixture-compatibility-marriage:binding:130",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:133",
+      "fixture-compatibility-marriage:binding:141",
+      "fixture-compatibility-marriage:binding:148",
+      "fixture-compatibility-marriage:binding:155",
+      "fixture-compatibility-marriage:binding:156",
+      "fixture-compatibility-marriage:binding:163",
+      "fixture-compatibility-marriage:binding:179",
+      "fixture-compatibility-marriage:binding:180",
+      "fixture-compatibility-marriage:binding:2",
+      "fixture-compatibility-marriage:binding:22",
+      "fixture-compatibility-marriage:binding:23",
+      "fixture-compatibility-marriage:binding:27",
+      "fixture-compatibility-marriage:binding:29",
+      "fixture-compatibility-marriage:binding:30",
+      "fixture-compatibility-marriage:binding:36",
+      "fixture-compatibility-marriage:binding:38",
+      "fixture-compatibility-marriage:binding:43",
+      "fixture-compatibility-marriage:binding:44",
+      "fixture-compatibility-marriage:binding:46",
+      "fixture-compatibility-marriage:binding:47",
+      "fixture-compatibility-marriage:binding:49",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:54",
+      "fixture-compatibility-marriage:binding:58",
+      "fixture-compatibility-marriage:binding:70",
+      "fixture-compatibility-marriage:binding:71",
+      "fixture-compatibility-marriage:binding:72",
+      "fixture-compatibility-marriage:binding:73",
+      "fixture-compatibility-marriage:binding:77",
+      "fixture-compatibility-marriage:binding:78",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-marriage:binding:89",
+      "fixture-compatibility-marriage:binding:91",
+      "fixture-compatibility-marriage:binding:98",
+      "fixture-compatibility-marriage:binding:99",
+      "fixture-compatibility-parentChild:binding:107",
+      "fixture-compatibility-parentChild:binding:123",
+      "fixture-compatibility-parentChild:binding:128",
+      "fixture-compatibility-parentChild:binding:131",
+      "fixture-compatibility-parentChild:binding:135",
+      "fixture-compatibility-parentChild:binding:136",
+      "fixture-compatibility-parentChild:binding:137",
+      "fixture-compatibility-parentChild:binding:138",
+      "fixture-compatibility-parentChild:binding:141",
+      "fixture-compatibility-parentChild:binding:149",
+      "fixture-compatibility-parentChild:binding:150",
+      "fixture-compatibility-parentChild:binding:153",
+      "fixture-compatibility-parentChild:binding:157",
+      "fixture-compatibility-parentChild:binding:158",
+      "fixture-compatibility-parentChild:binding:159",
+      "fixture-compatibility-parentChild:binding:161",
+      "fixture-compatibility-parentChild:binding:169",
+      "fixture-compatibility-parentChild:binding:171",
+      "fixture-compatibility-parentChild:binding:175",
+      "fixture-compatibility-parentChild:binding:177",
+      "fixture-compatibility-parentChild:binding:180",
+      "fixture-compatibility-parentChild:binding:194",
+      "fixture-compatibility-parentChild:binding:199",
+      "fixture-compatibility-parentChild:binding:22",
+      "fixture-compatibility-parentChild:binding:25",
+      "fixture-compatibility-parentChild:binding:3",
+      "fixture-compatibility-parentChild:binding:32",
+      "fixture-compatibility-parentChild:binding:35",
+      "fixture-compatibility-parentChild:binding:36",
+      "fixture-compatibility-parentChild:binding:49",
+      "fixture-compatibility-parentChild:binding:52",
+      "fixture-compatibility-parentChild:binding:53",
+      "fixture-compatibility-parentChild:binding:54",
+      "fixture-compatibility-parentChild:binding:57",
+      "fixture-compatibility-parentChild:binding:61",
+      "fixture-compatibility-parentChild:binding:69",
+      "fixture-compatibility-parentChild:binding:70",
+      "fixture-compatibility-parentChild:binding:77",
+      "fixture-compatibility-parentChild:binding:78",
+      "fixture-compatibility-parentChild:binding:80",
+      "fixture-compatibility-slot-swap:binding:10",
+      "fixture-compatibility-slot-swap:binding:100",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:110",
+      "fixture-compatibility-slot-swap:binding:114",
+      "fixture-compatibility-slot-swap:binding:128",
+      "fixture-compatibility-slot-swap:binding:129",
+      "fixture-compatibility-slot-swap:binding:132",
+      "fixture-compatibility-slot-swap:binding:14",
+      "fixture-compatibility-slot-swap:binding:145",
+      "fixture-compatibility-slot-swap:binding:146",
+      "fixture-compatibility-slot-swap:binding:151",
+      "fixture-compatibility-slot-swap:binding:153",
+      "fixture-compatibility-slot-swap:binding:19",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:21",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:3",
+      "fixture-compatibility-slot-swap:binding:30",
+      "fixture-compatibility-slot-swap:binding:34",
+      "fixture-compatibility-slot-swap:binding:37",
+      "fixture-compatibility-slot-swap:binding:38",
+      "fixture-compatibility-slot-swap:binding:4",
+      "fixture-compatibility-slot-swap:binding:41",
+      "fixture-compatibility-slot-swap:binding:55",
+      "fixture-compatibility-slot-swap:binding:81",
+      "fixture-compatibility-slot-swap:binding:90",
+      "fixture-compatibility-slot-swap:binding:92",
+      "fixture-compatibility-slot-swap:binding:93",
+      "fixture-compatibility-slot-swap:binding:95",
+      "fixture-compatibility-slot-swap:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7526",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:130"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7615",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:73"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7635",
+    "receiptReferences": 23,
+    "receipts": [
+      "fixture-career-A:binding:149",
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:121",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:137",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:176",
+      "fixture-same-mbti-different-natal:binding:188",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:21",
+      "fixture-same-mbti-different-natal:binding:37",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:60",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64",
+      "fixture-same-mbti-different-natal:binding:76",
+      "fixture-same-mbti-different-natal:binding:87",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7728",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7774",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-comprehensive-A:binding:60",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7788",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-love-A:binding:161"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7825",
+    "receiptReferences": 10,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13",
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:165",
+      "fixture-love-A:binding:167",
+      "fixture-love-A:binding:168",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:4",
+      "fixture-love-A:binding:70",
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7827",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:104",
+      "fixture-same-natal-different-mbti:binding:148",
+      "fixture-same-natal-different-mbti:binding:190",
+      "fixture-same-natal-different-mbti:binding:46"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7840",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7857",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7917",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7939",
+    "receiptReferences": 37,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:37",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-comprehensive-A:binding:93",
+      "fixture-same-natal-career:binding:149",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7951",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-love-A:binding:4"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7962",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-7980",
+    "receiptReferences": 18,
+    "receipts": [
+      "fixture-career-A:binding:149",
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:120",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:130",
+      "fixture-same-mbti-different-natal:binding:193",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:21",
+      "fixture-same-mbti-different-natal:binding:37",
+      "fixture-same-mbti-different-natal:binding:46",
+      "fixture-same-mbti-different-natal:binding:60",
+      "fixture-same-mbti-different-natal:binding:61",
+      "fixture-same-mbti-different-natal:binding:64",
+      "fixture-same-mbti-different-natal:binding:76",
+      "fixture-same-mbti-different-natal:binding:87",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8067",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-love-A:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8127",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:33"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8166",
+    "receiptReferences": 5,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:139",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8180",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-love-A:binding:163"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8217",
+    "receiptReferences": 9,
+    "receipts": [
+      "fixture-compatibility-coworker:binding:129",
+      "fixture-compatibility-coworker:binding:172",
+      "fixture-compatibility-coworker:binding:256",
+      "fixture-compatibility-coworker:binding:269",
+      "fixture-compatibility-coworker:binding:272",
+      "fixture-compatibility-coworker:binding:95",
+      "fixture-compatibility-marriage:binding:132",
+      "fixture-compatibility-marriage:binding:52",
+      "fixture-compatibility-marriage:binding:98"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8230",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:61"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8293",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-837",
+    "receiptReferences": 3,
+    "receipts": [
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:176"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8435",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:167",
+      "fixture-love-A:binding:35",
+      "fixture-love-A:binding:70"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8589",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:193"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-861",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-marriage:binding:73"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-869",
+    "receiptReferences": 14,
+    "receipts": [
+      "fixture-compatibility-no-detected-pair:binding:10",
+      "fixture-compatibility-no-detected-pair:binding:100",
+      "fixture-compatibility-no-detected-pair:binding:103",
+      "fixture-compatibility-no-detected-pair:binding:128",
+      "fixture-compatibility-no-detected-pair:binding:14",
+      "fixture-compatibility-no-detected-pair:binding:146",
+      "fixture-compatibility-no-detected-pair:binding:151",
+      "fixture-compatibility-no-detected-pair:binding:21",
+      "fixture-compatibility-no-detected-pair:binding:30",
+      "fixture-compatibility-no-detected-pair:binding:4",
+      "fixture-compatibility-no-detected-pair:binding:41",
+      "fixture-compatibility-no-detected-pair:binding:55",
+      "fixture-compatibility-no-detected-pair:binding:81",
+      "fixture-compatibility-no-detected-pair:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8691",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:13"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8895",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:155",
+      "fixture-love-A:binding:167"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8965",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-compatibility-A:binding:26",
+      "fixture-compatibility-A:binding:33"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-8993",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-love-A:binding:123",
+      "fixture-love-A:binding:13"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9009",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-same-natal-career:binding:149",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9061",
+    "receiptReferences": 7,
+    "receipts": [
+      "fixture-career-A:binding:149",
+      "fixture-same-mbti-different-natal:binding:121",
+      "fixture-same-mbti-different-natal:binding:137",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:176",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:76"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9247",
+    "receiptReferences": 8,
+    "receipts": [
+      "fixture-compatibility-A:binding:90",
+      "fixture-compatibility-coworker:binding:62",
+      "fixture-compatibility-marriage:binding:80",
+      "fixture-compatibility-marriage:binding:84",
+      "fixture-compatibility-slot-swap:binding:103",
+      "fixture-compatibility-slot-swap:binding:20",
+      "fixture-compatibility-slot-swap:binding:26",
+      "fixture-compatibility-slot-swap:binding:90"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9290",
+    "receiptReferences": 6,
+    "receipts": [
+      "fixture-same-mbti-different-natal:binding:10",
+      "fixture-same-mbti-different-natal:binding:117",
+      "fixture-same-mbti-different-natal:binding:13",
+      "fixture-same-mbti-different-natal:binding:139",
+      "fixture-same-mbti-different-natal:binding:199",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9329",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-same-natal-different-mbti:binding:130",
+      "fixture-same-natal-different-mbti:binding:65"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9394",
+    "receiptReferences": 45,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:106",
+      "fixture-comprehensive-A:binding:110",
+      "fixture-comprehensive-A:binding:115",
+      "fixture-comprehensive-A:binding:116",
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:130",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:139",
+      "fixture-comprehensive-A:binding:172",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:35",
+      "fixture-comprehensive-A:binding:37",
+      "fixture-comprehensive-A:binding:40",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-comprehensive-A:binding:66",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-comprehensive-A:binding:85",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-comprehensive-A:binding:9",
+      "fixture-comprehensive-A:binding:93",
+      "fixture-same-natal-career:binding:140",
+      "fixture-same-natal-career:binding:145",
+      "fixture-same-natal-career:binding:149",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-career:binding:17",
+      "fixture-same-natal-career:binding:178",
+      "fixture-same-natal-career:binding:181",
+      "fixture-same-natal-career:binding:241",
+      "fixture-same-natal-career:binding:259",
+      "fixture-same-natal-career:binding:267",
+      "fixture-same-natal-career:binding:44",
+      "fixture-same-natal-career:binding:83",
+      "fixture-same-natal-career:binding:84",
+      "fixture-same-natal-career:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9521",
+    "receiptReferences": 2,
+    "receipts": [
+      "fixture-career-A:binding:157",
+      "fixture-same-mbti-different-natal:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9562",
+    "receiptReferences": 7,
+    "receipts": [
+      "fixture-compatibility-A:binding:27",
+      "fixture-compatibility-businessPartner:binding:163",
+      "fixture-compatibility-coworker:binding:142",
+      "fixture-compatibility-managerReport:binding:97",
+      "fixture-compatibility-marriage:binding:39",
+      "fixture-compatibility-parentChild:binding:26",
+      "fixture-compatibility-slot-swap:binding:27"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9614",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-compatibility-slot-swap:binding:26"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-977",
+    "receiptReferences": 41,
+    "receipts": [
+      "fixture-comprehensive-A:binding:10",
+      "fixture-comprehensive-A:binding:117",
+      "fixture-comprehensive-A:binding:120",
+      "fixture-comprehensive-A:binding:121",
+      "fixture-comprehensive-A:binding:13",
+      "fixture-comprehensive-A:binding:130",
+      "fixture-comprehensive-A:binding:137",
+      "fixture-comprehensive-A:binding:139",
+      "fixture-comprehensive-A:binding:176",
+      "fixture-comprehensive-A:binding:188",
+      "fixture-comprehensive-A:binding:193",
+      "fixture-comprehensive-A:binding:199",
+      "fixture-comprehensive-A:binding:21",
+      "fixture-comprehensive-A:binding:37",
+      "fixture-comprehensive-A:binding:46",
+      "fixture-comprehensive-A:binding:60",
+      "fixture-comprehensive-A:binding:61",
+      "fixture-comprehensive-A:binding:64",
+      "fixture-comprehensive-A:binding:76",
+      "fixture-comprehensive-A:binding:87",
+      "fixture-comprehensive-A:binding:93",
+      "fixture-same-natal-career:binding:149",
+      "fixture-same-natal-career:binding:157",
+      "fixture-same-natal-different-mbti:binding:10",
+      "fixture-same-natal-different-mbti:binding:117",
+      "fixture-same-natal-different-mbti:binding:120",
+      "fixture-same-natal-different-mbti:binding:121",
+      "fixture-same-natal-different-mbti:binding:13",
+      "fixture-same-natal-different-mbti:binding:130",
+      "fixture-same-natal-different-mbti:binding:137",
+      "fixture-same-natal-different-mbti:binding:139",
+      "fixture-same-natal-different-mbti:binding:176",
+      "fixture-same-natal-different-mbti:binding:193",
+      "fixture-same-natal-different-mbti:binding:199",
+      "fixture-same-natal-different-mbti:binding:21",
+      "fixture-same-natal-different-mbti:binding:37",
+      "fixture-same-natal-different-mbti:binding:60",
+      "fixture-same-natal-different-mbti:binding:61",
+      "fixture-same-natal-different-mbti:binding:64",
+      "fixture-same-natal-different-mbti:binding:76",
+      "fixture-same-natal-different-mbti:binding:87"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9856",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-comprehensive-A:binding:93"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9860",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-career-A:binding:117"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9885",
+    "receiptReferences": 4,
+    "receipts": [
+      "fixture-compatibility-A:binding:103",
+      "fixture-compatibility-A:binding:20",
+      "fixture-compatibility-marriage:binding:113",
+      "fixture-compatibility-marriage:binding:80"
+    ],
+    "newFactsAdded": 0
+  },
+  {
+    "root": "fixture-root-9939",
+    "receiptReferences": 1,
+    "receipts": [
+      "fixture-major-transition-C:binding:50"
+    ],
+    "newFactsAdded": 0
+  }
+]
