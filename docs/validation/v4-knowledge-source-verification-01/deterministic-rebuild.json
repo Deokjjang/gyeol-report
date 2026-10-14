@@ -1,0 +1,8 @@
+{
+  "generatedFiles": 20,
+  "matchedFiles": 20,
+  "treeSha256": "22f86050f44ed5118c6af92257fb3d00eb90db58154d06bd2f6463465b3b8c53",
+  "command": "node scripts/knowledge-source-verification/verify.mjs [output-directory]",
+  "freshCliExecutions": 2,
+  "wallClockInReceipts": false
+}

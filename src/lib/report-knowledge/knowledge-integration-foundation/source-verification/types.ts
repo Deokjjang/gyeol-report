@@ -1,0 +1,52 @@
+import type { CatalogKey, JsonRecord, KnowledgeCatalogRecord, KnowledgeReferenceEdge, KnowledgeSourcePointer } from "../types";
+export type ReferenceKey = `sv:ref:${string}`;
+export type ReferenceNamespace = "CATALOG_KEY" | "RESEARCH_ID" | "FOUNDATION_ID" | "LOCATOR" | "JSON_POINTER" | "MBTI_STRUCTURED_ID" | "SAJU_KNOWLEDGE_ID" | "SEMANTIC_ID" | "FUSION_ID" | "PRODUCT_RESEARCH_ID" | "RELATIONSHIP_RESEARCH_ID" | "EDITORIAL_ID" | "TRADITIONAL_SOURCE_ID" | "AUDIT_REFERENCE" | "FIELD_FRAGMENT" | "FUTURE_BINDING_REQUIREMENT" | "CALCULATED_EVIDENCE_REQUIREMENT" | "UNKNOWN";
+export type ResolutionState = "EXACT_SOURCE_VERIFIED" | "UNIQUE_ALIAS_VERIFIED" | "FRAGMENT_VERIFIED" | "AUDIT_AND_ORIGINAL_VERIFIED" | "DOCUMENTARY_REFERENCE_ONLY" | "FUTURE_REQUIREMENT_ONLY" | "AMBIGUOUS_SOURCE" | "ORIGINAL_LOCATOR_MISSING" | "SOURCE_RECORD_MISSING" | "SOURCE_HASH_MISMATCH" | "SOURCE_VERSION_MISMATCH" | "SOURCE_KIND_MISMATCH" | "PARTIAL_FRAGMENT" | "UNSUPPORTED_REFERENCE" | "MANUAL_REVIEW_REQUIRED";
+export type VerificationDimension = "PASS" | "FAIL" | "NOT_APPLICABLE" | "UNREVIEWED" | "INHERITED_ONLY" | "ACTUAL_EVIDENCE_REQUIRED";
+export type VerificationDimensions = {
+  SOURCE_EXISTENCE: VerificationDimension; HASH_INTEGRITY: VerificationDimension;
+  REFERENCE_RESOLUTION: VerificationDimension; ORIGINAL_RECORD_IDENTITY: VerificationDimension;
+  SOURCE_VERSION: VerificationDimension; ORIGINAL_CONTENT_REVIEW: VerificationDimension;
+  TRADITIONAL_SOURCE_REVIEW: VerificationDimension; MBTI_SOURCE_COVERAGE: unknown;
+  SEMANTIC_REVIEW: VerificationDimension; PRODUCER_SUPPORT: VerificationDimension;
+  DOMAIN_REVIEW: VerificationDimension; PRODUCT_APPLICABILITY: VerificationDimension;
+  CUSTOMER_APPROVAL: false;
+};
+export type SourceProof = { locator: KnowledgeSourcePointer; matchedCatalogKey: CatalogKey | null; originalId: string | null; role: "ORIGINAL_RECORD" | "DECLARATION" | "AUDIT_RECORD" | "DOCUMENTARY_SNAPSHOT"; expectedHash: string; actualHash: string; hashAlgorithm: "SHA256_JSON_INSERTION" | "SHA256_JSON_CANONICAL" | "SHA256_FILE" | "SHA256_PLAIN_KO"; sourceVersion: string; reviewState: unknown; originalMeaning?: string; qualification?: unknown };
+export type VerificationOccurrence = {
+  referenceKey: ReferenceKey; affectedCatalogKey: CatalogKey; researchFamily: string;
+  originalResearchId: string; referenceField: string; referenceKind: KnowledgeReferenceEdge["kind"];
+  originalTarget: unknown; originalReason: string; targetNamespace: ReferenceNamespace;
+  requiredSourceKind: string; originalLocator: KnowledgeSourcePointer;
+  originalEdgeOrdinal: number; originalReferencePreserved: true;
+};
+export type VerificationReceipt = VerificationOccurrence & {
+  originalCatalogKey: CatalogKey; originalField: string;
+  verificationVersion: string; verificationMethod: string;
+  matchedLocator: KnowledgeSourcePointer | null; matchedOriginalId: string | null;
+  matchedSourceVersion: string | null; hashAlgorithm: SourceProof["hashAlgorithm"] | null;
+  expectedHash: string | null; actualHash: string | null;
+  candidateTargets: { catalogKey: CatalogKey; originalId: string; locator: KnowledgeSourcePointer; kind: string }[];
+  resolutionMethod: string; resolutionState: ResolutionState;
+  verificationStrength: "ORIGINAL_SOURCE" | "DECLARATION_ONLY" | "DOCUMENTARY_ONLY" | "UNVERIFIED";
+  verificationEvidence: SourceProof[]; sourceReviewState: VerificationDimensions;
+  blockingState: "SOURCE_BLOCKED" | "REQUIRES_FUTURE_BINDING_AND_APPROVAL";
+  blockingReasons: string[]; followupAction: string;
+  needsHumanReview: true; customerApproved: false; establishesPersonalEvidence: false;
+  checkedAtPolicy: string; risk: "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";
+  impact: { originalRecordKind: KnowledgeCatalogRecord["kind"]; downstreamCandidateCount: number; actualRuntimeConnected: false; potentialFutureUseOnly: true };
+};
+export type VerificationConfig = {
+  version: string; baseSha: string; catalogRoot: string; catalogConfig: string; sourceIntegrity: string;
+  locatorConventions: { prefix: string; file: string; exportName: string; fieldSuffix: boolean; proof: string }[];
+  fragmentGrammars: { exportName: string; referenceField: string; syntax: string; fields: string[]; declaration: string; examplesFile: string; contractNote: string }[];
+  aliasDocuments: { file: string; field: string }[];
+  declarationSources: { file: string; exportName: string; role: string }[];
+  scopeAlias: { exportName: string; field: string; proof: string };
+  nativeDefinitionFiles: string[];
+  domainPolicies: { relationship: string; policyId: string; domains: string[]; quote: string }[];
+  futurePatterns: string[]; checkedAtPolicy: string;
+};
+export type DomainQueueEntry = { catalogKey: CatalogKey; originalId: string; family: string; originalDomain: unknown; baselineReferenceOverlap: number; ancestorReferenceKeys: ReferenceKey[]; unsupportedProducerSourceKeys: CatalogKey[]; originalSourceProof: SourceProof; recoveredReferences: number; remainingReferenceBlockers: ReferenceKey[]; classifications: ("INCOMPLETE_SOURCE" | "SEMANTIC_REVIEW_REQUIRED" | "PRODUCT_POLICY_REQUIRED" | "ORIGINAL_POLICY_PROHIBITS" | "UNSUPPORTED_PRODUCER" | "EXPLICIT_MAPPING_DECLARED")[]; priority: VerificationReceipt["risk"]; policyProofs: SourceProof[]; domainApproved: false; futureAllAncestorReviewRequired: true };
+export type GroupReview = { catalogKey: CatalogKey; originalId: string; semantics: KnowledgeCatalogRecord["groupSemantics"]; originalGroupPolicy: unknown; groups: { originalGroup: unknown; requiredSources: string[]; verifiedSourceKeys: string[]; heldSourceKeys: string[]; conflictingOwnerTypeDeclarations: boolean; status: "DECLARED_SOURCES_VERIFIED" | "WITHHELD" }[]; blockingReasons: string[]; actualOwnersDirectionsTimesRequired: true; approvedForCustomer: false };
+export type VerificationArtifacts = { receipts: VerificationReceipt[]; domainQueue: DomainQueueEntry[]; groups: GroupReview[]; manifest: JsonRecord; sourceIntegrity: { file: string; sha256: string }[]; aliasDeclarations: unknown[]; safetyContract: unknown };

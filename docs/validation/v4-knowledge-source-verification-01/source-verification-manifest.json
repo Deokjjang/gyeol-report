@@ -1,0 +1,38 @@
+{
+  "version": "source-verification-v1",
+  "baseSha": "51420fdebd4af81b503128a64f2c5c4d5beb3714",
+  "originalReferences": 6490,
+  "classifiedReferences": 6490,
+  "originalResolvedReferences": 69098,
+  "originalUnresolvedReferences": 6490,
+  "resolutionStates": {
+    "AMBIGUOUS_SOURCE": 48,
+    "DOCUMENTARY_REFERENCE_ONLY": 623,
+    "EXACT_SOURCE_VERIFIED": 1591,
+    "FRAGMENT_VERIFIED": 300,
+    "FUTURE_REQUIREMENT_ONLY": 1418,
+    "ORIGINAL_LOCATOR_MISSING": 78,
+    "SOURCE_RECORD_MISSING": 90,
+    "UNIQUE_ALIAS_VERIFIED": 1397,
+    "UNSUPPORTED_REFERENCE": 945
+  },
+  "technicallyRecovered": 3288,
+  "unresolvedAfterVerification": 3202,
+  "documentaryAndFutureAreNotRecovered": true,
+  "hashMismatches": 0,
+  "versionMismatches": 0,
+  "domainQueue": 2966,
+  "domainClassifications": {
+    "INCOMPLETE_SOURCE": 331,
+    "ORIGINAL_POLICY_PROHIBITS": 464,
+    "PRODUCT_POLICY_REQUIRED": 2145,
+    "SEMANTIC_REVIEW_REQUIRED": 2966
+  },
+  "sourceGroups": 192,
+  "sourceGroupBlockers": 188,
+  "highRiskReferenceBlockers": 4255,
+  "humanReviewRequired": 6490,
+  "customerApproval": 0,
+  "runtimeConnection": 0,
+  "wallClockInReceipts": false
+}
