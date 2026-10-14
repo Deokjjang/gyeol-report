@@ -1,0 +1,97 @@
+{
+  "actual": [
+    {
+      "id": "lkr:material:CH09.P1:good-help-access",
+      "symbols": [
+        {
+          "symbol": "CHEONEUL",
+          "matched": false,
+          "nodes": [],
+          "reasons": [
+            "ACTUAL_SYMBOL_NOT_FOUND"
+          ],
+          "sourceReviewRequired": true,
+          "actualOutcomeKnown": false
+        }
+      ]
+    },
+    {
+      "id": "lkr:material:CH09.P1:held-hongyeom-expansion",
+      "symbols": [
+        {
+          "symbol": "HONGYEOM",
+          "matched": false,
+          "nodes": [],
+          "reasons": [
+            "ORIGINAL_HONGYEOM_RESEARCH_SOURCE_HELD_NO_ALIAS_SUBSTITUTION"
+          ],
+          "sourceReviewRequired": true,
+          "actualOutcomeKnown": false
+        }
+      ]
+    },
+    {
+      "id": "lkr:material:CH09.P1:good-dohwa-symbol",
+      "symbols": [
+        {
+          "symbol": "DOHWA",
+          "matched": true,
+          "nodes": [
+            "fixture-love-A:node:3428"
+          ],
+          "reasons": [],
+          "sourceReviewRequired": true,
+          "actualOutcomeKnown": false
+        }
+      ]
+    },
+    {
+      "id": "lkr:material:CH09.P1:good-help-access",
+      "symbols": [
+        {
+          "symbol": "CHEONEUL",
+          "matched": false,
+          "nodes": [],
+          "reasons": [
+            "ACTUAL_SYMBOL_NOT_FOUND"
+          ],
+          "sourceReviewRequired": true,
+          "actualOutcomeKnown": false
+        }
+      ]
+    },
+    {
+      "id": "lkr:material:CH09.P1:held-hongyeom-expansion",
+      "symbols": [
+        {
+          "symbol": "HONGYEOM",
+          "matched": false,
+          "nodes": [],
+          "reasons": [
+            "ORIGINAL_HONGYEOM_RESEARCH_SOURCE_HELD_NO_ALIAS_SUBSTITUTION"
+          ],
+          "sourceReviewRequired": true,
+          "actualOutcomeKnown": false
+        }
+      ]
+    },
+    {
+      "id": "lkr:material:CH09.P1:good-dohwa-symbol",
+      "symbols": [
+        {
+          "symbol": "DOHWA",
+          "matched": true,
+          "nodes": [
+            "fixture-love-F:node:94"
+          ],
+          "reasons": [],
+          "sourceReviewRequired": true,
+          "actualOutcomeKnown": false
+        }
+      ]
+    }
+  ],
+  "hongyeomRemainsSourceHeld": true,
+  "cheoneulDirection": "RECEIVE_HELP_IS_NOT_GIVE_HELP_ABILITY",
+  "traditionalSymbolIsNotPopularityMarriageOrBirthEvent": true
+}

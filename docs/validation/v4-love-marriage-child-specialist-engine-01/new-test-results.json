@@ -1,0 +1,231 @@
+{
+  "passed": 56,
+  "failed": 0,
+  "pending": 0,
+  "tests": [
+    {
+      "name": "A preserves 9/36/144 Reader contract",
+      "status": "passed"
+    },
+    {
+      "name": "B retains 180 original Question identities",
+      "status": "passed"
+    },
+    {
+      "name": "C acquires 164 original Materials and 170 applicable Catalog candidates",
+      "status": "passed"
+    },
+    {
+      "name": "D preserves 155 conditional, 8 recall and 1 held",
+      "status": "passed"
+    },
+    {
+      "name": "E verifies original SourceKey identity, locator and file/record hashes",
+      "status": "passed"
+    },
+    {
+      "name": "F requires actual own owner",
+      "status": "passed"
+    },
+    {
+      "name": "G prevents personal preference becoming partner facts",
+      "status": "passed"
+    },
+    {
+      "name": "H blocks CHILD and CHILDREN at direct or required ancestry",
+      "status": "passed"
+    },
+    {
+      "name": "I allows exact own PARENTS only and rejects forged CHILD ownership",
+      "status": "passed"
+    },
+    {
+      "name": "L-R validates original RelationshipStatus  without creating life facts",
+      "status": "passed"
+    },
+    {
+      "name": "L-R validates original RelationshipStatus single without creating life facts",
+      "status": "passed"
+    },
+    {
+      "name": "L-R validates original RelationshipStatus some without creating life facts",
+      "status": "passed"
+    },
+    {
+      "name": "L-R validates original RelationshipStatus dating without creating life facts",
+      "status": "passed"
+    },
+    {
+      "name": "L-R validates original RelationshipStatus marriage_preparing without creating life facts",
+      "status": "passed"
+    },
+    {
+      "name": "L-R validates original RelationshipStatus married without creating life facts",
+      "status": "passed"
+    },
+    {
+      "name": "J-K verifies 16 parenting types, 32 strengths and 16 risks with distinct source classes",
+      "status": "passed"
+    },
+    {
+      "name": "S changes status Context while actual personal core remains identical",
+      "status": "passed"
+    },
+    {
+      "name": "T-U preserves L2 retained path and no Reader number bridge",
+      "status": "passed"
+    },
+    {
+      "name": "V-W matches native TenGod with exact actual participants",
+      "status": "passed"
+    },
+    {
+      "name": "X preserves original MBTI input/source ownership and values",
+      "status": "passed"
+    },
+    {
+      "name": "Y blocks required Pair ancestry without direct source token",
+      "status": "passed"
+    },
+    {
+      "name": "Z-AA-AB retains both real Fusion roots and withholds missing/unknown rules",
+      "status": "passed"
+    },
+    {
+      "name": "AC matches actual producer Dohwa, not a definition or hypothetical symbol",
+      "status": "passed"
+    },
+    {
+      "name": "AD retains Hongyeom source hold even if an old producer exists",
+      "status": "passed"
+    },
+    {
+      "name": "AE does not reverse Cheoneul receiving-help direction",
+      "status": "passed"
+    },
+    {
+      "name": "AF-AG blocks unsafe repair under explicit VIOLENCE",
+      "status": "passed"
+    },
+    {
+      "name": "AF-AG blocks unsafe repair under explicit THREAT",
+      "status": "passed"
+    },
+    {
+      "name": "AF-AG blocks unsafe repair under explicit COERCION",
+      "status": "passed"
+    },
+    {
+      "name": "AF-AG blocks unsafe repair under explicit SURVEILLANCE",
+      "status": "passed"
+    },
+    {
+      "name": "AF-AG blocks unsafe repair under explicit STALKING",
+      "status": "passed"
+    },
+    {
+      "name": "AF-AG blocks unsafe repair under explicit SEXUAL_CONSENT_VIOLATION",
+      "status": "passed"
+    },
+    {
+      "name": "AF-AG blocks unsafe repair under explicit ECONOMIC_CONTROL",
+      "status": "passed"
+    },
+    {
+      "name": "AF-AG blocks unsafe repair under explicit PRIVACY_VIOLATION",
+      "status": "passed"
+    },
+    {
+      "name": "AF-AG blocks unsafe repair under explicit CHILD_ABUSE",
+      "status": "passed"
+    },
+    {
+      "name": "AF-AG blocks unsafe repair under explicit REPEATED_PRESSURE",
+      "status": "passed"
+    },
+    {
+      "name": "AH married does not supply cohabitation or consent",
+      "status": "passed"
+    },
+    {
+      "name": "AI-AJ own parenting never proves child existence or age",
+      "status": "passed"
+    },
+    {
+      "name": "AK requires actual display, compatible status/context/question/address",
+      "status": "passed"
+    },
+    {
+      "name": "AL-AM records same roots without declaring unreviewed applications independent",
+      "status": "passed"
+    },
+    {
+      "name": "AN blocks unresolved tension but permits reviewed conditional split",
+      "status": "passed"
+    },
+    {
+      "name": "AO preserves Love facet six, chapter one and no invented root cap",
+      "status": "passed"
+    },
+    {
+      "name": "AP executes Source Group AND; same-root sources are not independent roots",
+      "status": "passed"
+    },
+    {
+      "name": "AQ uses all original twelve Hard Gates with no fit compensation",
+      "status": "passed"
+    },
+    {
+      "name": "AR-AS-AT leaves real approvals, ranking, selection and claims zero",
+      "status": "passed"
+    },
+    {
+      "name": "AU authentic synthetic selection cannot be invoked with real research",
+      "status": "passed"
+    },
+    {
+      "name": "AV validates global reservation, independent meanings and violations",
+      "status": "passed"
+    },
+    {
+      "name": "AW produces deterministic ties and honest search-limit diagnostics",
+      "status": "passed"
+    },
+    {
+      "name": "AX reproduces B/N/P 30-paragraph 7213-character shortage unchanged",
+      "status": "passed"
+    },
+    {
+      "name": "AY preserves unknown hour without synthesizing hour evidence",
+      "status": "passed"
+    },
+    {
+      "name": "AZ preserves all original source/research/runtime bytes",
+      "status": "passed"
+    },
+    {
+      "name": "BA keeps existing actual Book present and original 36-paragraph inputs intact",
+      "status": "passed"
+    },
+    {
+      "name": "BB rebuilds all new artifacts byte-identically without input identity leaks",
+      "status": "passed"
+    },
+    {
+      "name": "BC keeps runtime entry points and tracing configuration frozen",
+      "status": "passed"
+    },
+    {
+      "name": "forged Context flags cannot override verified synthetic Graph input",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic options and session contents cannot be modified by callers",
+      "status": "passed"
+    },
+    {
+      "name": "counts repair as a distinct function alongside positive risk and twist",
+      "status": "passed"
+    }
+  ]
+}

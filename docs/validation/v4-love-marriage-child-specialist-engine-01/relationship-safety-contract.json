@@ -1,0 +1,1231 @@
+{
+  "explicitRiskKinds": [
+    "VIOLENCE",
+    "THREAT",
+    "COERCION",
+    "SURVEILLANCE",
+    "STALKING",
+    "SEXUAL_CONSENT_VIOLATION",
+    "ECONOMIC_CONTROL",
+    "PRIVACY_VIOLATION",
+    "CHILD_ABUSE",
+    "REPEATED_PRESSURE"
+  ],
+  "requiresSafetyAndVoluntaryConsent": true,
+  "noUnconditionalReconciliationOrRecontact": true,
+  "actualRiskAssumed": false,
+  "synthetic": [
+    {
+      "name": "repair-safety-unknown",
+      "options": [
+        {
+          "id": "synthetic:love:repair-conditional",
+          "questionId": "synthetic:love:q:23",
+          "receipt": {
+            "receiptId": "kb:receipt:a010f489099ae14ef9c6cd5eccb00e99f27137489fd8361393477b3594fe4b84",
+            "candidateCatalogKey": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+            "originalResearchId": "synthetic:love:repair-conditional",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:love:selection",
+            "product": "love_marriage_child",
+            "relationship": null,
+            "requirementRef": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+            "requiredSources": [
+              "synthetic:love:repair-conditional:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-10"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:love:repair-conditional:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-10",
+                    "producerEvidenceId": "synthetic:love:fact:repair",
+                    "ownerId": "synthetic:love:owner",
+                    "rootIds": [
+                      "synthetic:love:root:repair"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/love-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-love-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "relationshipStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/relationshipStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+              "originalRecordHash": "41699a8d327febbe013926e72f89136cc960a742bf7ca4c795d51aeae1fbd310",
+              "sourceVersion": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f",
+              "meaningIdentity": "synthetic:love:meaning:repair-conditional",
+              "claimIdentity": "synthetic:love:claim:repair-conditional",
+              "product": "love_marriage_child",
+              "relationship": null,
+              "contexts": [
+                "love",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-10"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:love:root:repair"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:love:root:repair"
+            ],
+            "meaningIdentity": "synthetic:love:meaning:repair-conditional",
+            "claimIdentity": "synthetic:love:claim:repair-conditional",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:love:meaning:repair-conditional",
+            "claimId": "synthetic:love:claim:repair-conditional",
+            "reviewId": "synthetic:love:review:repair-conditional",
+            "requiredMeanings": [
+              "answer-23"
+            ],
+            "conditions": [
+              "synthetic-condition-repair-conditional"
+            ],
+            "action": "synthetic-action-repair-conditional",
+            "context": "love",
+            "domain": "SYNTHETIC_LOVE",
+            "facet": "COMMUNICATION",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "relationshipStatuses": [
+              "dating"
+            ],
+            "application": {
+              "scope": "OWN_RELATIONSHIP_PREFERENCE",
+              "partnerFacts": [],
+              "marriageFacts": [],
+              "childFacts": [],
+              "parentSourceRequired": false,
+              "repair": true,
+              "unconditionalRepair": false,
+              "assertsOutcome": false,
+              "symbol": null,
+              "symbolDirection": null
+            },
+            "sourceDomains": [],
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:love:root:repair"
+          ],
+          "owner": "synthetic:love:owner",
+          "mbtiType": "INTJ",
+          "eligible": false,
+          "reasons": [
+            "REPAIR_REQUIRES_SAFETY_AND_VOLUNTARY_CONSENT"
+          ],
+          "chapter": "CH06",
+          "requiredMeaningCount": 1,
+          "relationshipStatus": "dating",
+          "contextId": "synthetic:love:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [],
+        "coveredQuestions": 0,
+        "importanceCovered": 0,
+        "requiredMeaningUnits": 0,
+        "independentMeanings": 0,
+        "roots": {
+          "distinct": 0,
+          "references": 0,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [
+          "synthetic:love:q:23"
+        ],
+        "search": {
+          "visits": 2,
+          "complete": true
+        },
+        "notSelected": [
+          {
+            "id": "synthetic:love:repair-conditional",
+            "reasons": [
+              "REPAIR_REQUIRES_SAFETY_AND_VOLUNTARY_CONSENT"
+            ]
+          }
+        ],
+        "invalidPartnerChildInferences": 0,
+        "customerClaimsEmitted": 0
+      }
+    },
+    {
+      "name": "repair-safe-voluntary",
+      "options": [
+        {
+          "id": "synthetic:love:repair-conditional",
+          "questionId": "synthetic:love:q:23",
+          "receipt": {
+            "receiptId": "kb:receipt:a010f489099ae14ef9c6cd5eccb00e99f27137489fd8361393477b3594fe4b84",
+            "candidateCatalogKey": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+            "originalResearchId": "synthetic:love:repair-conditional",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:love:selection",
+            "product": "love_marriage_child",
+            "relationship": null,
+            "requirementRef": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+            "requiredSources": [
+              "synthetic:love:repair-conditional:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-10"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:love:repair-conditional:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-10",
+                    "producerEvidenceId": "synthetic:love:fact:repair",
+                    "ownerId": "synthetic:love:owner",
+                    "rootIds": [
+                      "synthetic:love:root:repair"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/love-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-love-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "relationshipStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/relationshipStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+              "originalRecordHash": "41699a8d327febbe013926e72f89136cc960a742bf7ca4c795d51aeae1fbd310",
+              "sourceVersion": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f",
+              "meaningIdentity": "synthetic:love:meaning:repair-conditional",
+              "claimIdentity": "synthetic:love:claim:repair-conditional",
+              "product": "love_marriage_child",
+              "relationship": null,
+              "contexts": [
+                "love",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-10"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:love:root:repair"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:love:root:repair"
+            ],
+            "meaningIdentity": "synthetic:love:meaning:repair-conditional",
+            "claimIdentity": "synthetic:love:claim:repair-conditional",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:love:meaning:repair-conditional",
+            "claimId": "synthetic:love:claim:repair-conditional",
+            "reviewId": "synthetic:love:review:repair-conditional",
+            "requiredMeanings": [
+              "answer-23"
+            ],
+            "conditions": [
+              "synthetic-condition-repair-conditional"
+            ],
+            "action": "synthetic-action-repair-conditional",
+            "context": "love",
+            "domain": "SYNTHETIC_LOVE",
+            "facet": "COMMUNICATION",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "relationshipStatuses": [
+              "dating"
+            ],
+            "application": {
+              "scope": "OWN_RELATIONSHIP_PREFERENCE",
+              "partnerFacts": [],
+              "marriageFacts": [],
+              "childFacts": [],
+              "parentSourceRequired": false,
+              "repair": true,
+              "unconditionalRepair": false,
+              "assertsOutcome": false,
+              "symbol": null,
+              "symbolDirection": null
+            },
+            "sourceDomains": [],
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:love:root:repair"
+          ],
+          "owner": "synthetic:love:owner",
+          "mbtiType": "INTJ",
+          "eligible": true,
+          "reasons": [],
+          "chapter": "CH06",
+          "requiredMeaningCount": 1,
+          "relationshipStatus": "dating",
+          "contextId": "synthetic:love:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [
+          {
+            "questionId": "synthetic:love:q:23",
+            "candidateId": "synthetic:love:repair-conditional"
+          }
+        ],
+        "coveredQuestions": 1,
+        "importanceCovered": 1,
+        "requiredMeaningUnits": 1,
+        "independentMeanings": 1,
+        "roots": {
+          "distinct": 1,
+          "references": 1,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [],
+        "search": {
+          "visits": 3,
+          "complete": true
+        },
+        "notSelected": [],
+        "invalidPartnerChildInferences": 0,
+        "customerClaimsEmitted": 0
+      }
+    },
+    {
+      "name": "repair-risk",
+      "options": [
+        {
+          "id": "synthetic:love:repair-conditional",
+          "questionId": "synthetic:love:q:23",
+          "receipt": {
+            "receiptId": "kb:receipt:a010f489099ae14ef9c6cd5eccb00e99f27137489fd8361393477b3594fe4b84",
+            "candidateCatalogKey": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+            "originalResearchId": "synthetic:love:repair-conditional",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:love:selection",
+            "product": "love_marriage_child",
+            "relationship": null,
+            "requirementRef": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+            "requiredSources": [
+              "synthetic:love:repair-conditional:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-10"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:love:repair-conditional:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-10",
+                    "producerEvidenceId": "synthetic:love:fact:repair",
+                    "ownerId": "synthetic:love:owner",
+                    "rootIds": [
+                      "synthetic:love:root:repair"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/love-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-love-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "relationshipStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/relationshipStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-10"
+                ],
+                "originalReferences": [
+                  "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:96a0a98b7b5d071931f1efdcbdee8d07826a5124d7e3dd3df4e98f6fe404ddd5",
+              "originalRecordHash": "41699a8d327febbe013926e72f89136cc960a742bf7ca4c795d51aeae1fbd310",
+              "sourceVersion": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f",
+              "meaningIdentity": "synthetic:love:meaning:repair-conditional",
+              "claimIdentity": "synthetic:love:claim:repair-conditional",
+              "product": "love_marriage_child",
+              "relationship": null,
+              "contexts": [
+                "love",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-10"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:love:root:repair"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:love:root:repair"
+            ],
+            "meaningIdentity": "synthetic:love:meaning:repair-conditional",
+            "claimIdentity": "synthetic:love:claim:repair-conditional",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:love:meaning:repair-conditional",
+            "claimId": "synthetic:love:claim:repair-conditional",
+            "reviewId": "synthetic:love:review:repair-conditional",
+            "requiredMeanings": [
+              "answer-23"
+            ],
+            "conditions": [
+              "synthetic-condition-repair-conditional"
+            ],
+            "action": "synthetic-action-repair-conditional",
+            "context": "love",
+            "domain": "SYNTHETIC_LOVE",
+            "facet": "COMMUNICATION",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "relationshipStatuses": [
+              "dating"
+            ],
+            "application": {
+              "scope": "OWN_RELATIONSHIP_PREFERENCE",
+              "partnerFacts": [],
+              "marriageFacts": [],
+              "childFacts": [],
+              "parentSourceRequired": false,
+              "repair": true,
+              "unconditionalRepair": false,
+              "assertsOutcome": false,
+              "symbol": null,
+              "symbolDirection": null
+            },
+            "sourceDomains": [],
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:love:root:repair"
+          ],
+          "owner": "synthetic:love:owner",
+          "mbtiType": "INTJ",
+          "eligible": false,
+          "reasons": [
+            "REPAIR_REQUIRES_SAFETY_AND_VOLUNTARY_CONSENT"
+          ],
+          "chapter": "CH06",
+          "requiredMeaningCount": 1,
+          "relationshipStatus": "dating",
+          "contextId": "synthetic:love:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [],
+        "coveredQuestions": 0,
+        "importanceCovered": 0,
+        "requiredMeaningUnits": 0,
+        "independentMeanings": 0,
+        "roots": {
+          "distinct": 0,
+          "references": 0,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [
+          "synthetic:love:q:23"
+        ],
+        "search": {
+          "visits": 2,
+          "complete": true
+        },
+        "notSelected": [
+          {
+            "id": "synthetic:love:repair-conditional",
+            "reasons": [
+              "REPAIR_REQUIRES_SAFETY_AND_VOLUNTARY_CONSENT"
+            ]
+          }
+        ],
+        "invalidPartnerChildInferences": 0,
+        "customerClaimsEmitted": 0
+      }
+    }
+  ]
+}

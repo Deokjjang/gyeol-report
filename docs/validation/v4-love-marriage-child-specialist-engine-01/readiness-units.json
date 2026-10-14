@@ -1,0 +1,63 @@
+{
+  "LOVE_MATERIALS": 164,
+  "QUESTION_LINKED_MATERIALS": 164,
+  "ACTUAL_CATALOG_CANDIDATES": 170,
+  "ACTUAL_BINDER_EVALUATIONS": 340,
+  "SOURCE_MATCH_BEFORE": 638,
+  "SOURCE_MATCH_AFTER": 648,
+  "GRAPH_WITNESS_BEFORE": 34,
+  "GRAPH_WITNESS_AFTER": 49,
+  "FACTS_MATCHED_BEFORE": 16,
+  "FACTS_MATCHED_AFTER": 16,
+  "STRUCTURAL_MATCH_BEFORE": 6,
+  "STRUCTURAL_MATCH_AFTER": 6,
+  "RELATIONSHIP_STATUS_COVERAGE": 6,
+  "STATUS_SCOPE_MATCHED": 288,
+  "STATUS_CONTEXT_UNKNOWN": 288,
+  "statusStateOccurrences": {
+    "ADDITIONAL_STATE_REQUIRED": 288,
+    "STATUS_CONFLICT": 40
+  },
+  "PARTNER_FACT_REQUIRED": {
+    "originalCoupleClaimPolicyMaterials": 164,
+    "actualCoupleClaimsAttempted": 0
+  },
+  "PARTNER_FACT_WITHHELD": {
+    "actualOwnScopeDiagnosticsWithPartnerBlocker": 0,
+    "syntheticPartnerAndRecipientClaimsBlocked": 2,
+    "noActualPartnerFactsInput": true
+  },
+  "PAIR_SOURCE_BLOCKED": 0,
+  "PARENTS_SOURCE_MATCHED": 8,
+  "CHILD_SOURCE_BLOCKED": 0,
+  "PARENTING_SOURCE_COVERAGE": {
+    "types": 16,
+    "strengthRows": 32,
+    "riskRows": 16,
+    "verifiedIdentityFields": 48,
+    "scoringFields": 16,
+    "referenceFields": 32
+  },
+  "FUSION_SOURCE_MATCHED": 4,
+  "FUSION_SOURCE_WITHHELD": 6,
+  "fusionMaterialOccurrences": 26,
+  "POSITIVE_SYMBOL_VERIFIED": 2,
+  "POSITIVE_SYMBOL_WITHHELD": 4,
+  "REPAIR_CONFLICT_RELATIONS": 135,
+  "UNSAFE_REPAIR_BLOCKERS": 32,
+  "MEANING_IDENTITY_RESOLVED": 0,
+  "MEANING_REVIEW_REQUIRED": 164,
+  "DUPLICATE_FACT_GROUPS": 43,
+  "VALID_DIFFERENT_APPLICATIONS": 0,
+  "CH09_RECALL_WITHHELD": 16,
+  "CUSTOMER_ELIGIBLE": 0,
+  "CUSTOMER_CLAIMS_EMITTED": 0,
+  "sourceRegistryEntries": 137,
+  "registryVerifiedIdentities": 137,
+  "usedDistinctSourceKeys": 126,
+  "sourceKeyOccurrences": 190,
+  "materialFixtureOccurrences": 328,
+  "questionFixtureOccurrences": 360,
+  "parentSourceIdentityIsNotNewBinderWitness": true,
+  "units": "Material=164; candidate-fixture=340; material-fixture=328; source occurrence=190; parenting fields=48; probes=29; synthetic is separate. Available source, witnessed fact, reviewed meaning and customer approval are distinct."
+}

@@ -1,0 +1,52 @@
+{
+  "unit": "Offline wall milliseconds and RSS, not customer latency",
+  "runs": [
+    {
+      "elapsedMs": 289215.308583,
+      "rssStartBytes": 825950208,
+      "rssEndBytes": 4127358976,
+      "maxRssBytes": 4232298496,
+      "timings": [
+        {
+          "fixtureId": "fixture-love-A",
+          "foundationMs": 442.2963749999981,
+          "specialistMs": 362.6079580000005,
+          "rssBytes": 3024814080
+        },
+        {
+          "fixtureId": "fixture-love-F",
+          "foundationMs": 33.182999999997264,
+          "specialistMs": 37.86879100000078,
+          "rssBytes": 2995798016
+        }
+      ],
+      "originalCareerGeneratedFilesMatched": 35,
+      "network": "disabled"
+    },
+    {
+      "elapsedMs": 287037.470041,
+      "rssStartBytes": 827523072,
+      "rssEndBytes": 3827171328,
+      "maxRssBytes": 4074487808,
+      "timings": [
+        {
+          "fixtureId": "fixture-love-A",
+          "foundationMs": 444.03145799999766,
+          "specialistMs": 365.13383299999987,
+          "rssBytes": 2646867968
+        },
+        {
+          "fixtureId": "fixture-love-F",
+          "foundationMs": 33.14654200000223,
+          "specialistMs": 37.71270799999911,
+          "rssBytes": 2617819136
+        }
+      ],
+      "originalCareerGeneratedFilesMatched": 35,
+      "network": "disabled"
+    }
+  ],
+  "catalogPreparedOncePerExecution": true,
+  "originalGraphsReusedWithoutRecalculation": true,
+  "oldCareerAndItsComprehensiveFoundationBinderGraphRebuildVerified": true
+}

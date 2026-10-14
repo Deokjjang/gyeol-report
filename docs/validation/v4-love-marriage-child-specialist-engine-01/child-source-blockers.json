@@ -1,0 +1,2481 @@
+{
+  "allowedOwnDomain": "PARENTS",
+  "disallowedTransferDomains": [
+    "CHILD",
+    "CHILDREN"
+  ],
+  "actualChildInput": false,
+  "childExistenceAgeDevelopmentUnknown": true,
+  "actual": [
+    {
+      "id": "lkr:material:CH08.P2:parent-esfj-belonging",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 아이의 친구·위험 행동·성격을 예측하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-consent-respect",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [
+        {
+          "node": "fixture-love-A:node:32",
+          "owner": "fixture-person-5",
+          "value": {
+            "type": "INFP",
+            "sourceDomain": "PARENTS",
+            "classification": "SCORING_SEMANTIC",
+            "sourceCoverage": "direct",
+            "value": "INFP 부모는 원리·원칙적이고 엄격한 부모보다 자녀의 자율성을 지향한다. 아이가 자기 의견과 자아를 형성하고 흥미 있는 일을 찾을 권리를 주고 싶어 한다.",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "empiricallyValidatedPersonality": false
+          },
+          "source": [
+            {
+              "file": "docs/product/mbti/source/INFP.json",
+              "pointer": "/traits/parenting/0/plainKo",
+              "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+              "catalogKeys": [
+                "kc:v1:5390878857585b8b4ab10dcb7bbd0c69e231a31edba80bb782243e244962a6ed"
+              ],
+              "sourceReferenceKeys": [
+                "sv:ref:9db56da540b20255175c93d02cd8258fb5a4313c061f809656dfd35707d8f0a2"
+              ],
+              "semanticDecisionKeys": [],
+              "state": "VERIFIED",
+              "originalClassification": "SCORING_SEMANTIC",
+              "sourceCoverage": "direct"
+            }
+          ]
+        }
+      ],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "현재 학대 피해나 가해자를 특정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-optout-warmth",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "미입력 유형을 추정하지 않음. 회수는 실제 선행 원천 확인.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "출산·임신·성별·수명·자녀 수를 예측하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-estp-activity-choice",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 아이의 재능이나 위험 허용 수준을 추정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-age-aware-question",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "발달·건강·진단의 판단을 본인 유형에서 만들지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-intj-reasoning",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "자녀 존재·지능·성적·성격을 본인 유형으로 예측하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-care-sustainable",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 소진·우울·가족 지원을 진단하거나 보충하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-istp-help-access",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이의 독립성·안전·실제 문제를 본인 유형으로 판단하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-model-commitment",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 부모의 실수나 아이의 신뢰 문제를 생성하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-overprotection",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이가 위험한 성격이라는 결론을 만들지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-debate-as-listen",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "모든 연령에 토론을 적합한 양육법으로 권하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-estj-rules-explained",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "복종으로 좋은 아이나 좋은 부모를 평가하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-entp-experiment",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 아이의 모험 성향이나 발달 단계를 추정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-infp-choice",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [
+        {
+          "node": "fixture-love-A:node:32",
+          "owner": "fixture-person-5",
+          "value": {
+            "type": "INFP",
+            "sourceDomain": "PARENTS",
+            "classification": "SCORING_SEMANTIC",
+            "sourceCoverage": "direct",
+            "value": "INFP 부모는 원리·원칙적이고 엄격한 부모보다 자녀의 자율성을 지향한다. 아이가 자기 의견과 자아를 형성하고 흥미 있는 일을 찾을 권리를 주고 싶어 한다.",
+            "sourcePath": "/traits/parenting/0/plainKo",
+            "empiricallyValidatedPersonality": false
+          },
+          "source": [
+            {
+              "file": "docs/product/mbti/source/INFP.json",
+              "pointer": "/traits/parenting/0/plainKo",
+              "fileSha256": "da20db33f5117531247ce3a366a20925ca5845f19174efaf20e356763ecae94a",
+              "catalogKeys": [
+                "kc:v1:5390878857585b8b4ab10dcb7bbd0c69e231a31edba80bb782243e244962a6ed"
+              ],
+              "sourceReferenceKeys": [
+                "sv:ref:9db56da540b20255175c93d02cd8258fb5a4313c061f809656dfd35707d8f0a2"
+              ],
+              "semanticDecisionKeys": [],
+              "state": "VERIFIED",
+              "originalClassification": "SCORING_SEMANTIC",
+              "sourceCoverage": "direct"
+            }
+          ]
+        }
+      ],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "자녀의 실제 취향·출생·성별을 생성하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-support-channel",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 아동의 위험·가족 구성·연락처를 만들어내지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-enfj-emotional-base",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 아동의 감정·진단·문제를 본인 자료에서 만들지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-results-only",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이 성적·적성·진로를 부모 차트에서 추론하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-isfp-warm-limit",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이의 감정·나이·가정 갈등을 만들어 넣지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-intp-patience",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이가 실제로 호기심이 많거나 INTP라고 만들지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-high-expectation",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "성적·진로·장래 성공을 예언하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-monopoly-fatigue",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "부모의 소진·질병·실제 가족 갈등을 진단하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-infj-opinion",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이의 성향·지능·가치관을 본인 유형으로 단정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-esfp-shared-interest",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이가 밝은 성격이거나 사회성이 좋을 것이라고 예측하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-enfp-encouragement",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이의 성적·재능·성격을 예측하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-emotion-reading",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "우울·불안·기질 등 아동 진단을 생성하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-istj-predictability",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 자녀의 성실함·성적·진로를 만들지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-isfj-security",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "현재 자녀의 존재나 불안·기질을 추정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-entj-responsibility",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "성취·진로·좋은 부모의 등급을 유형으로 단정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-esfj-belonging",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 아이의 친구·위험 행동·성격을 예측하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-consent-respect",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "현재 학대 피해나 가해자를 특정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-optout-warmth",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "미입력 유형을 추정하지 않음. 회수는 실제 선행 원천 확인.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "출산·임신·성별·수명·자녀 수를 예측하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-estp-activity-choice",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 아이의 재능이나 위험 허용 수준을 추정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-age-aware-question",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "발달·건강·진단의 판단을 본인 유형에서 만들지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-intj-reasoning",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "자녀 존재·지능·성적·성격을 본인 유형으로 예측하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-care-sustainable",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 소진·우울·가족 지원을 진단하거나 보충하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-istp-help-access",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이의 독립성·안전·실제 문제를 본인 유형으로 판단하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-model-commitment",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 부모의 실수나 아이의 신뢰 문제를 생성하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-overprotection",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이가 위험한 성격이라는 결론을 만들지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-debate-as-listen",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "모든 연령에 토론을 적합한 양육법으로 권하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-estj-rules-explained",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "복종으로 좋은 아이나 좋은 부모를 평가하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-entp-experiment",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 아이의 모험 성향이나 발달 단계를 추정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-infp-choice",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "자녀의 실제 취향·출생·성별을 생성하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P4:parent-support-channel",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 아동의 위험·가족 구성·연락처를 만들어내지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-enfj-emotional-base",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 아동의 감정·진단·문제를 본인 자료에서 만들지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-results-only",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이 성적·적성·진로를 부모 차트에서 추론하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-isfp-warm-limit",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이의 감정·나이·가정 갈등을 만들어 넣지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-intp-patience",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이가 실제로 호기심이 많거나 INTP라고 만들지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-high-expectation",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "성적·진로·장래 성공을 예언하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-monopoly-fatigue",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "부모의 소진·질병·실제 가족 갈등을 진단하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-infj-opinion",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이의 성향·지능·가치관을 본인 유형으로 단정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-esfp-shared-interest",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이가 밝은 성격이거나 사회성이 좋을 것이라고 예측하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-enfp-encouragement",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "아이의 성적·재능·성격을 예측하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P3:parent-emotion-reading",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "우울·불안·기질 등 아동 진단을 생성하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-istj-predictability",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "실제 자녀의 성실함·성적·진로를 만들지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P2:parent-isfj-security",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "현재 자녀의 존재나 불안·기질을 추정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    },
+    {
+      "id": "lkr:material:CH08.P1:parent-entj-responsibility",
+      "ancestry": {
+        "pairBlocked": false,
+        "childBlocked": false,
+        "blockedSources": [],
+        "blockedNodes": [],
+        "reasons": []
+      },
+      "ownSources": [],
+      "conditions": {
+        "sourceOwner": "same_person_only",
+        "saju": "이 자료의 명리 사실을 새로 만들지 않음. 개인화할 다른 근거는 별도 확인.",
+        "mbti": "실제 본인 유형의 동일 분야·trait·pointer/hash 확인. direct/inferred는 실증 수준이 아니며 타인·아이의 성격을 만들지 않음.",
+        "fusion": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+        "input": "성취·진로·좋은 부모의 등급을 유형으로 단정하지 않는다.",
+        "partnerFactsRequiredForCoupleClaims": true,
+        "childFactsRequiredForChildClaims": true,
+        "positiveSymbolNeedsActualProducer": false
+      }
+    }
+  ],
+  "synthetic": [
+    {
+      "name": "child-to-parent",
+      "options": [
+        {
+          "id": "synthetic:love:child-transfer",
+          "questionId": "synthetic:love:q:18",
+          "receipt": {
+            "receiptId": "kb:receipt:9e15a5b5b7cb380d257d0eb4baee4875194f5d33210bf295c3ab831c0c4aa091",
+            "candidateCatalogKey": "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc",
+            "originalResearchId": "synthetic:love:child-transfer",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:love:selection",
+            "product": "love_marriage_child",
+            "relationship": null,
+            "requirementRef": "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc",
+            "requiredSources": [
+              "synthetic:love:child-transfer:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-5"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:love:child-transfer:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-5",
+                    "producerEvidenceId": "synthetic:love:fact:child",
+                    "ownerId": "synthetic:love:owner",
+                    "rootIds": [
+                      "synthetic:love:root:child"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/love-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-love-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "relationshipStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/relationshipStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-5"
+                ],
+                "originalReferences": [
+                  "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:37c6dd5a0215d4ccf9a2a3131f01b4210c08eec6507c5583d4e523f7628cf9dc",
+              "originalRecordHash": "5c2dcca85035bcfbcbdb0d04c196faae793e9454c4d6dfa814719af5f576d16b",
+              "sourceVersion": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f",
+              "meaningIdentity": "synthetic:love:meaning:child-transfer",
+              "claimIdentity": "synthetic:love:claim:child-transfer",
+              "product": "love_marriage_child",
+              "relationship": null,
+              "contexts": [
+                "love",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-5"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:love:root:child"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:love:root:child"
+            ],
+            "meaningIdentity": "synthetic:love:meaning:child-transfer",
+            "claimIdentity": "synthetic:love:claim:child-transfer",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:love:meaning:child-transfer",
+            "claimId": "synthetic:love:claim:child-transfer",
+            "reviewId": "synthetic:love:review:child-transfer",
+            "requiredMeanings": [
+              "answer-18"
+            ],
+            "conditions": [
+              "synthetic-condition-child-transfer"
+            ],
+            "action": "synthetic-action-child-transfer",
+            "context": "love",
+            "domain": "SYNTHETIC_LOVE",
+            "facet": "CARE",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "relationshipStatuses": [
+              "dating"
+            ],
+            "application": {
+              "scope": "OWN_PARENTING",
+              "partnerFacts": [],
+              "marriageFacts": [],
+              "childFacts": [],
+              "parentSourceRequired": true,
+              "repair": false,
+              "unconditionalRepair": false,
+              "assertsOutcome": false,
+              "symbol": null,
+              "symbolDirection": null
+            },
+            "sourceDomains": [
+              "CHILDREN"
+            ],
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:love:root:child"
+          ],
+          "owner": "synthetic:love:owner",
+          "mbtiType": "INTJ",
+          "eligible": false,
+          "reasons": [
+            "CHILD_SOURCE_CANNOT_BECOME_OWN_PARENTING",
+            "EXACT_SAME_OWNER_PARENTS_SOURCE_REQUIRED"
+          ],
+          "chapter": "CH08",
+          "requiredMeaningCount": 1,
+          "relationshipStatus": "dating",
+          "contextId": "synthetic:love:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [],
+        "coveredQuestions": 0,
+        "importanceCovered": 0,
+        "requiredMeaningUnits": 0,
+        "independentMeanings": 0,
+        "roots": {
+          "distinct": 0,
+          "references": 0,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [
+          "synthetic:love:q:18"
+        ],
+        "search": {
+          "visits": 2,
+          "complete": true
+        },
+        "notSelected": [
+          {
+            "id": "synthetic:love:child-transfer",
+            "reasons": [
+              "CHILD_SOURCE_CANNOT_BECOME_OWN_PARENTING",
+              "EXACT_SAME_OWNER_PARENTS_SOURCE_REQUIRED"
+            ]
+          }
+        ],
+        "invalidPartnerChildInferences": 0,
+        "customerClaimsEmitted": 0
+      }
+    },
+    {
+      "name": "parents-domain-forged",
+      "options": [
+        {
+          "id": "synthetic:love:own-parenting",
+          "questionId": "synthetic:love:q:17",
+          "receipt": {
+            "receiptId": "kb:receipt:7e11cec8c54ef7fad62cfbe718be4a5e1f2008ed5d9ad7ebc8eff6b820e0fa64",
+            "candidateCatalogKey": "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d",
+            "originalResearchId": "synthetic:love:own-parenting",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:love:selection",
+            "product": "love_marriage_child",
+            "relationship": null,
+            "requirementRef": "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d",
+            "requiredSources": [
+              "synthetic:love:own-parenting:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-4"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:love:own-parenting:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-4",
+                    "producerEvidenceId": "synthetic:love:fact:parent",
+                    "ownerId": "synthetic:love:owner",
+                    "rootIds": [
+                      "synthetic:love:root:parent"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/love-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-love-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "relationshipStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/relationshipStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-4"
+                ],
+                "originalReferences": [
+                  "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:623d32a885280b9fdbed4a909a1eef877b6751fe815c2efa07eccb891525437d",
+              "originalRecordHash": "2977959e8b2744296ec3b67a743e49c784bb9a1260132e93d0b77dbb3e07f273",
+              "sourceVersion": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f",
+              "meaningIdentity": "synthetic:love:meaning:own-parenting",
+              "claimIdentity": "synthetic:love:claim:own-parenting",
+              "product": "love_marriage_child",
+              "relationship": null,
+              "contexts": [
+                "love",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-4"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:love:root:parent"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:love:root:parent"
+            ],
+            "meaningIdentity": "synthetic:love:meaning:own-parenting",
+            "claimIdentity": "synthetic:love:claim:own-parenting",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:love:meaning:own-parenting",
+            "claimId": "synthetic:love:claim:own-parenting",
+            "reviewId": "synthetic:love:review:own-parenting",
+            "requiredMeanings": [
+              "answer-17"
+            ],
+            "conditions": [
+              "synthetic-condition-own-parenting"
+            ],
+            "action": "synthetic-action-own-parenting",
+            "context": "love",
+            "domain": "SYNTHETIC_LOVE",
+            "facet": "CARE",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "relationshipStatuses": [
+              "dating"
+            ],
+            "application": {
+              "scope": "OWN_PARENTING",
+              "partnerFacts": [],
+              "marriageFacts": [],
+              "childFacts": [],
+              "parentSourceRequired": true,
+              "repair": false,
+              "unconditionalRepair": false,
+              "assertsOutcome": false,
+              "symbol": null,
+              "symbolDirection": null
+            },
+            "sourceDomains": [
+              "PARENTS"
+            ],
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:love:root:parent"
+          ],
+          "owner": "synthetic:love:owner",
+          "mbtiType": "INTJ",
+          "eligible": false,
+          "reasons": [
+            "CHILD_SOURCE_CANNOT_BECOME_OWN_PARENTING",
+            "EXACT_SAME_OWNER_PARENTS_SOURCE_REQUIRED"
+          ],
+          "chapter": "CH08",
+          "requiredMeaningCount": 1,
+          "relationshipStatus": "dating",
+          "contextId": "synthetic:love:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [],
+        "coveredQuestions": 0,
+        "importanceCovered": 0,
+        "requiredMeaningUnits": 0,
+        "independentMeanings": 0,
+        "roots": {
+          "distinct": 0,
+          "references": 0,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [
+          "synthetic:love:q:17"
+        ],
+        "search": {
+          "visits": 2,
+          "complete": true
+        },
+        "notSelected": [
+          {
+            "id": "synthetic:love:own-parenting",
+            "reasons": [
+              "CHILD_SOURCE_CANNOT_BECOME_OWN_PARENTING",
+              "EXACT_SAME_OWNER_PARENTS_SOURCE_REQUIRED"
+            ]
+          }
+        ],
+        "invalidPartnerChildInferences": 0,
+        "customerClaimsEmitted": 0
+      }
+    },
+    {
+      "name": "child-age-unknown",
+      "options": [
+        {
+          "id": "synthetic:love:child-age-inference",
+          "questionId": "synthetic:love:q:24",
+          "receipt": {
+            "receiptId": "kb:receipt:d4a45b15c09ed34b683427d4bf86539d519c83f48cad93dbde53812db157abce",
+            "candidateCatalogKey": "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c",
+            "originalResearchId": "synthetic:love:child-age-inference",
+            "knowledgeKind": "PRODUCT_SPECIALIST",
+            "fixtureId": "synthetic:love:selection",
+            "product": "love_marriage_child",
+            "relationship": null,
+            "requirementRef": "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c",
+            "requiredSources": [
+              "synthetic:love:child-age-inference:source"
+            ],
+            "selectedActualEvidence": [
+              "synthetic-node-11"
+            ],
+            "temporalWitnesses": [],
+            "matches": [
+              {
+                "requirementId": "synthetic:love:child-age-inference:source",
+                "sourceCatalogKeys": [],
+                "matchedSourceReferences": [],
+                "matchedActualEvidence": [
+                  {
+                    "nodeId": "synthetic-node-11",
+                    "producerEvidenceId": "synthetic:love:fact:age",
+                    "ownerId": "synthetic:love:owner",
+                    "rootIds": [
+                      "synthetic:love:root:age"
+                    ],
+                    "producer": {
+                      "file": "tests/fixtures/love-specialist-engine-01/synthetic-knowledge.json",
+                      "symbol": "declaredSyntheticFact",
+                      "version": "synthetic-love-v1",
+                      "system": "synthetic-only"
+                    },
+                    "addressability": "ORIGINAL_ID",
+                    "participants": [],
+                    "direction": null,
+                    "temporal": null,
+                    "sources": []
+                  }
+                ],
+                "rejectedNodeIds": [],
+                "rejectedReasons": [],
+                "identityMatches": 1,
+                "state": "PASS",
+                "reasons": []
+              }
+            ],
+            "sourceGroupEvaluation": [],
+            "ownerEvaluation": "PASS",
+            "directionEvaluation": "NOT_APPLICABLE",
+            "participantEvaluation": "PASS",
+            "temporalEvaluation": "NOT_APPLICABLE",
+            "ancestryEvaluation": "PASS",
+            "semanticDecisionReferences": [],
+            "domainPolicyReferences": [],
+            "producerSupport": "PASS",
+            "actualInputConditions": [
+              {
+                "key": "relationshipStatus",
+                "state": "PASS"
+              }
+            ],
+            "counterexamples": {
+              "originalRef": "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c",
+              "state": "PASS"
+            },
+            "allTwelveGateResults": [
+              {
+                "gate": "SOURCE_INTEGRITY",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalRecordHash",
+                  "sourceVerificationVersion"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "INTERPRETATION_REVIEW",
+                "state": "PASS",
+                "requirementFields": [
+                  "originalReviewState"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCER_SUPPORT",
+                "state": "PASS",
+                "requirementFields": [
+                  "producerRequirements"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_CALCULATED_FACT",
+                "state": "PASS",
+                "requirementFields": [
+                  "sourceRequirements",
+                  "sourceGroups"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_OWNER",
+                "state": "PASS",
+                "requirementFields": [
+                  "requiredOwner"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_DIRECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredDirection"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ALL_ANCESTOR_DOMAINS",
+                "state": "PASS",
+                "requirementFields": [
+                  "allActualAndResearchRequiredAncestors"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "TIME_INTERSECTION",
+                "state": "NOT_APPLICABLE",
+                "requirementFields": [
+                  "requiredTemporalScope",
+                  "requiredWindow"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "ACTUAL_USER_STATE",
+                "state": "PASS",
+                "requirementFields": [
+                  "/meaning/relationshipStatuses"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+                "state": "PASS",
+                "requirementFields": [
+                  "counterexamples",
+                  "prohibitions",
+                  "introducedLedger"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "PRODUCT_SPECIALISM",
+                "state": "PASS",
+                "requirementFields": [
+                  "product",
+                  "relationship",
+                  "readerQuestion",
+                  "coreMeaning"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              },
+              {
+                "gate": "CUSTOMER_APPROVAL",
+                "state": "PASS",
+                "requirementFields": [
+                  "operatorApproval",
+                  "customerApproval",
+                  "originalRecordHash",
+                  "approvalScope"
+                ],
+                "actualEvidence": [
+                  "synthetic-node-11"
+                ],
+                "originalReferences": [
+                  "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c"
+                ],
+                "reasons": [],
+                "nextAction": null
+              }
+            ],
+            "stages": [
+              "DISCOVERED",
+              "SOURCE_TRACEABLE",
+              "FACTS_MATCHED",
+              "CONDITIONS_MATCHED"
+            ],
+            "finalDisposition": "CUSTOMER_ELIGIBLE",
+            "blockingReasons": [],
+            "followupRequirements": [],
+            "customerApproved": true,
+            "operatorApproved": true,
+            "approvalRequirement": {
+              "catalogKey": "kc:v1:ab9a2f5a5686d8b079c8cb7189d73d39b5a606f6628398118e645835f95cd81c",
+              "originalRecordHash": "2aeb1d3768d6a0a7cebd19d098a02c0ce658e86dce8f0f2feca653f7a29ef2eb",
+              "sourceVersion": "01f71057f1c08d968a3e60521ec141a716731cf74ca258cfb474720ddff9232f",
+              "meaningIdentity": "synthetic:love:meaning:child-age-inference",
+              "claimIdentity": "synthetic:love:claim:child-age-inference",
+              "product": "love_marriage_child",
+              "relationship": null,
+              "contexts": [
+                "love",
+                "closing"
+              ],
+              "evidenceIds": [
+                "synthetic-node-11"
+              ],
+              "prohibitedInference": {},
+              "evaluatedAt": "2026-10-12T12:00:00+09:00",
+              "canonicalFactRoots": [
+                "synthetic:love:root:age"
+              ],
+              "graphVersion": "actual-evidence-graph-v1",
+              "sourceVerificationVersion": "source-verification-v1",
+              "semanticVerificationVersion": "semantic-domain-v1",
+              "temporalWitnesses": []
+            },
+            "canonicalFactRoots": [
+              "synthetic:love:root:age"
+            ],
+            "meaningIdentity": "synthetic:love:meaning:child-age-inference",
+            "claimIdentity": "synthetic:love:claim:child-age-inference",
+            "reuse": {
+              "relation": "INSUFFICIENT_VERIFICATION",
+              "independentFactsAdded": 0
+            },
+            "binderVersion": "knowledge-binder-v1",
+            "graphVersion": "actual-evidence-graph-v1",
+            "catalogVersion": "unified-catalog-v1",
+            "sourceVerificationVersion": "source-verification-v1",
+            "semanticVerificationVersion": "semantic-domain-v1"
+          },
+          "meaning": {
+            "meaningId": "synthetic:love:meaning:child-age-inference",
+            "claimId": "synthetic:love:claim:child-age-inference",
+            "reviewId": "synthetic:love:review:child-age-inference",
+            "requiredMeanings": [
+              "answer-24"
+            ],
+            "conditions": [
+              "synthetic-condition-child-age-inference"
+            ],
+            "action": "synthetic-action-child-age-inference",
+            "context": "love",
+            "domain": "SYNTHETIC_LOVE",
+            "facet": "DUTY",
+            "polarity": "positive",
+            "axis": null,
+            "direct": true,
+            "extraMeanings": [],
+            "recallOf": null,
+            "compatiblePriorContexts": [],
+            "exclusiveWith": [],
+            "verifiedSplitWith": [],
+            "verifiedComplementWith": [],
+            "relationshipStatuses": [
+              "dating"
+            ],
+            "application": {
+              "scope": "ACTUAL_CHILD_FACT",
+              "partnerFacts": [],
+              "marriageFacts": [],
+              "childFacts": [
+                "child.exists",
+                "child.age",
+                "child.development"
+              ],
+              "parentSourceRequired": false,
+              "repair": false,
+              "unconditionalRepair": false,
+              "assertsOutcome": false,
+              "symbol": null,
+              "symbolDirection": null
+            },
+            "sourceDomains": [],
+            "compatiblePriorQuestions": []
+          },
+          "roots": [
+            "synthetic:love:root:age"
+          ],
+          "owner": "synthetic:love:owner",
+          "mbtiType": "INTJ",
+          "eligible": false,
+          "reasons": [
+            "ACTUAL_CHILD_EXISTENCE_AGE_DEVELOPMENT_NOT_PROVIDED"
+          ],
+          "chapter": "CH08",
+          "requiredMeaningCount": 1,
+          "relationshipStatus": "dating",
+          "contextId": "synthetic:love:context:one"
+        }
+      ],
+      "selection": {
+        "method": "CONSTRAINT_AWARE_SELECTION",
+        "selected": [],
+        "coveredQuestions": 0,
+        "importanceCovered": 0,
+        "requiredMeaningUnits": 0,
+        "independentMeanings": 0,
+        "roots": {
+          "distinct": 0,
+          "references": 0,
+          "repeated": 0
+        },
+        "conflicts": [],
+        "missingQuestions": [
+          "synthetic:love:q:24"
+        ],
+        "search": {
+          "visits": 2,
+          "complete": true
+        },
+        "notSelected": [
+          {
+            "id": "synthetic:love:child-age-inference",
+            "reasons": [
+              "ACTUAL_CHILD_EXISTENCE_AGE_DEVELOPMENT_NOT_PROVIDED"
+            ]
+          }
+        ],
+        "invalidPartnerChildInferences": 0,
+        "customerClaimsEmitted": 0
+      }
+    }
+  ]
+}

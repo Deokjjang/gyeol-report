@@ -1,0 +1,2322 @@
+[
+  {
+    "id": "lkr:material:CH05.P4:sustain-reciprocal-expression",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-esfj-belonging",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P1:care-ledger",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P3:reliable-attention",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [
+      {
+        "node": "fixture-love-A:node:1059",
+        "matched": false,
+        "reasons": [
+          "FUSION_CONTEXT_MISMATCH"
+        ],
+        "roots": [
+          "fixture-root-139",
+          "fixture-root-227",
+          "fixture-root-301",
+          "fixture-root-333",
+          "fixture-root-542",
+          "fixture-root-571",
+          "fixture-root-610",
+          "fixture-root-620",
+          "fixture-root-684",
+          "fixture-root-714",
+          "fixture-root-729",
+          "fixture-root-1045",
+          "fixture-root-1069",
+          "fixture-root-1236",
+          "fixture-root-1268",
+          "fixture-root-1326",
+          "fixture-root-1350",
+          "fixture-root-1438",
+          "fixture-root-1554",
+          "fixture-root-1603",
+          "fixture-root-1625",
+          "fixture-root-1649"
+        ],
+        "ruleId": "C073",
+        "contexts": [
+          "social"
+        ],
+        "split": null
+      }
+    ],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P4:humor-stop-signal",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-consent-respect",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P3:difference-welcomed",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P1:good-help-access",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-space-return",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-choice-care",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-current-person",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P2:natal-rule-not-control",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-care-fusion",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [
+      {
+        "node": "fixture-love-A:node:27",
+        "matched": false,
+        "reasons": [
+          "FUSION_CONTEXT_MISMATCH"
+        ],
+        "roots": [
+          "fixture-root-139",
+          "fixture-root-170",
+          "fixture-root-227",
+          "fixture-root-333",
+          "fixture-root-542",
+          "fixture-root-571",
+          "fixture-root-596",
+          "fixture-root-610",
+          "fixture-root-620",
+          "fixture-root-684",
+          "fixture-root-714",
+          "fixture-root-817",
+          "fixture-root-1045",
+          "fixture-root-1069",
+          "fixture-root-1236",
+          "fixture-root-1268",
+          "fixture-root-1302",
+          "fixture-root-1326",
+          "fixture-root-1350",
+          "fixture-root-1438",
+          "fixture-root-1554",
+          "fixture-root-1603",
+          "fixture-root-1625",
+          "fixture-root-1649"
+        ],
+        "ruleId": "C077",
+        "contexts": [
+          "social"
+        ],
+        "split": null
+      }
+    ],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P3:new-experience-design",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P4:reciprocal-care",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-optout-legitimate",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:single-overhelp",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-not-passcode",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-optout-warmth",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:some-answer-not-label",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-care-rotation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-response-over-image",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-direct-gentle",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-playfulness",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-quiet-room",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-kin-information",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-trust-current",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-conditional-rule",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P2:mbti-speed-not-motive",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-spending-threshold",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-explained-change",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-shared-story",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P3:broken-promise-loop",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P2:fusion-visible-care",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [
+      {
+        "node": "fixture-love-A:node:948",
+        "matched": true,
+        "reasons": [],
+        "roots": [
+          "fixture-root-139",
+          "fixture-root-542",
+          "fixture-root-571",
+          "fixture-root-573",
+          "fixture-root-596",
+          "fixture-root-610",
+          "fixture-root-620",
+          "fixture-root-714",
+          "fixture-root-772",
+          "fixture-root-1069",
+          "fixture-root-1121",
+          "fixture-root-1236",
+          "fixture-root-1268",
+          "fixture-root-1326",
+          "fixture-root-1377",
+          "fixture-root-1429",
+          "fixture-root-1495",
+          "fixture-root-1554",
+          "fixture-root-1603",
+          "fixture-root-1625",
+          "fixture-root-1649",
+          "fixture-root-1764"
+        ],
+        "ruleId": "C074",
+        "contexts": [
+          "love"
+        ],
+        "split": null
+      }
+    ],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P1:solution-over-listen",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-clear-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P2:saju-equality-context",
+    "originalRequirement": "두 원천을 비교하는 조건부 연구이며 신규 등록 Fusion이 아님. 독립 사실 3개로 계산하지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-no-test",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-new-and-stable",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-pace-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P1:self-retained",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-estp-activity-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:married-talk-not-demand",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-age-aware-question",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:unknown-channel-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-self-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-care-request",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P1:precision-not-person",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-intj-reasoning",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-space-with-return",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-remembering",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-safe-kindness",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:married-current-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:single-small-invite",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-care-sustainable",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-istp-help-access",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-planned-not-fixed",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-action-not-apology",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:preparing-decision-pace",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:dating-expression-update",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-revision-meeting",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-attuned-question",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P1:held-hongyeom-expansion",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:dating-current-interest",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-boundary-safety",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P4:warmth-with-refusal",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-care-with-choice",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [
+      {
+        "node": "fixture-love-A:node:948",
+        "matched": true,
+        "reasons": [],
+        "roots": [
+          "fixture-root-139",
+          "fixture-root-542",
+          "fixture-root-571",
+          "fixture-root-573",
+          "fixture-root-596",
+          "fixture-root-610",
+          "fixture-root-620",
+          "fixture-root-714",
+          "fixture-root-772",
+          "fixture-root-1069",
+          "fixture-root-1121",
+          "fixture-root-1236",
+          "fixture-root-1268",
+          "fixture-root-1326",
+          "fixture-root-1377",
+          "fixture-root-1429",
+          "fixture-root-1495",
+          "fixture-root-1554",
+          "fixture-root-1603",
+          "fixture-root-1625",
+          "fixture-root-1649",
+          "fixture-root-1764"
+        ],
+        "ruleId": "C074",
+        "contexts": [
+          "love"
+        ],
+        "split": null
+      }
+    ],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-direction",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-refusal",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-model-commitment",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-heard-first",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:single-open-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-invitation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P4:safe-dissent",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-overprotection",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:unknown-open-context",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P2:attune-interpretation-loop",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P1:quiet-concentration",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-correction-fatigue",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-chosen-company",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P4:depth-small-dose",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-trust-expression",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-debate-as-listen",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-estj-rules-explained",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P1:good-output-joy",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P3:memory-updated",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [
+      {
+        "node": "fixture-love-A:node:2507",
+        "matched": false,
+        "reasons": [
+          "FUSION_CONTEXT_MISMATCH"
+        ],
+        "roots": [
+          "fixture-root-139",
+          "fixture-root-227",
+          "fixture-root-333",
+          "fixture-root-542",
+          "fixture-root-571",
+          "fixture-root-596",
+          "fixture-root-610",
+          "fixture-root-620",
+          "fixture-root-684",
+          "fixture-root-714",
+          "fixture-root-741",
+          "fixture-root-1045",
+          "fixture-root-1069",
+          "fixture-root-1236",
+          "fixture-root-1268",
+          "fixture-root-1326",
+          "fixture-root-1438",
+          "fixture-root-1554",
+          "fixture-root-1603",
+          "fixture-root-1625",
+          "fixture-root-1649"
+        ],
+        "ruleId": "C081",
+        "contexts": [
+          "social"
+        ],
+        "split": null
+      }
+    ],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-rest-fairness",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-minimum-system",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:married-labor-invisible",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-peace-not-consent",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P4:honesty-with-listening",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-entp-experiment",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:single-interest",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:unknown-no-stage-script",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P3:pace-escalation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-infp-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-support-channel",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-enfj-emotional-base",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-return-signal",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P3:mutual-growth-question",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-repair-access",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-emotional-answer",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-care-with-safety",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-novelty-cost",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-liveliness",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P2:saju-output-context",
+    "originalRequirement": "두 원천을 비교하는 조건부 연구이며 신규 등록 Fusion이 아님. 독립 사실 3개로 계산하지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-results-only",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-isfp-warm-limit",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P3:expression-and-receipt",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P1:care-asked",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-acknowledged-care",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-calm-help",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-listening-depth",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-reciprocity",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:preparing-both-directions",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-practical-trust",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P1:silent-agreement-cost",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P2:fusion-care-space",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [
+      {
+        "node": "fixture-love-A:node:27",
+        "matched": false,
+        "reasons": [
+          "FUSION_CONTEXT_MISMATCH"
+        ],
+        "roots": [
+          "fixture-root-139",
+          "fixture-root-170",
+          "fixture-root-227",
+          "fixture-root-333",
+          "fixture-root-542",
+          "fixture-root-571",
+          "fixture-root-596",
+          "fixture-root-610",
+          "fixture-root-620",
+          "fixture-root-684",
+          "fixture-root-714",
+          "fixture-root-817",
+          "fixture-root-1045",
+          "fixture-root-1069",
+          "fixture-root-1236",
+          "fixture-root-1268",
+          "fixture-root-1302",
+          "fixture-root-1326",
+          "fixture-root-1350",
+          "fixture-root-1438",
+          "fixture-root-1554",
+          "fixture-root-1603",
+          "fixture-root-1625",
+          "fixture-root-1649"
+        ],
+        "ruleId": "C077",
+        "contexts": [
+          "social"
+        ],
+        "split": null
+      }
+    ],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:married-person-interest",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-meaning-difference",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P4:trust-as-condition",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-intp-patience",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-not-changed-person",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-autonomy-respect",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:some-response-window",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P1:good-dohwa-symbol",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-high-expectation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-quiet-visible",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:preparing-finance-consent",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-listening-and-solution",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-money-power",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:preparing-affection-not-task",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:dating-unspoken-score",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-unguarded-detail",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-small-promises",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-monopoly-fatigue",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P4:meaning-not-sameness",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-infj-opinion",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-esfp-shared-interest",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P3:unasked-help-escalation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-enfp-encouragement",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-emotion-reading",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:some-observed",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:dating-renew-small",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-istj-predictability",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:unknown-no-deficit",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-deep-understood",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P3:quiet-request",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-recovery-attunement",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [
+      {
+        "node": "fixture-love-A:node:1799",
+        "matched": true,
+        "reasons": [],
+        "roots": [
+          "fixture-root-129",
+          "fixture-root-448",
+          "fixture-root-542",
+          "fixture-root-571",
+          "fixture-root-585",
+          "fixture-root-620",
+          "fixture-root-662",
+          "fixture-root-714",
+          "fixture-root-772",
+          "fixture-root-806",
+          "fixture-root-1236",
+          "fixture-root-1326",
+          "fixture-root-1554",
+          "fixture-root-1603",
+          "fixture-root-1649"
+        ],
+        "ruleId": "C080",
+        "contexts": [
+          "love"
+        ],
+        "split": null
+      }
+    ],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P3:practical-not-substitute",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-isfj-security",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-warm-rhythm",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-warm-humor",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-entj-responsibility",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P3:avoidance-escalation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-change-buffer",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-unforced-self",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-dialogue",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P2:fusion-meaning-care",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [
+      {
+        "node": "fixture-love-A:node:504",
+        "matched": false,
+        "reasons": [
+          "FUSION_CONTEXT_MISMATCH"
+        ],
+        "roots": [
+          "fixture-root-139",
+          "fixture-root-227",
+          "fixture-root-301",
+          "fixture-root-333",
+          "fixture-root-490",
+          "fixture-root-542",
+          "fixture-root-571",
+          "fixture-root-610",
+          "fixture-root-620",
+          "fixture-root-684",
+          "fixture-root-714",
+          "fixture-root-1045",
+          "fixture-root-1069",
+          "fixture-root-1236",
+          "fixture-root-1268",
+          "fixture-root-1326",
+          "fixture-root-1438",
+          "fixture-root-1554",
+          "fixture-root-1603",
+          "fixture-root-1625",
+          "fixture-root-1649"
+        ],
+        "ruleId": "C079",
+        "contexts": [
+          "social"
+        ],
+        "split": null
+      }
+    ],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-space",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-rest-and-company",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [
+      {
+        "node": "fixture-love-A:node:1799",
+        "matched": true,
+        "reasons": [],
+        "roots": [
+          "fixture-root-129",
+          "fixture-root-448",
+          "fixture-root-542",
+          "fixture-root-571",
+          "fixture-root-585",
+          "fixture-root-620",
+          "fixture-root-662",
+          "fixture-root-714",
+          "fixture-root-772",
+          "fixture-root-806",
+          "fixture-root-1236",
+          "fixture-root-1326",
+          "fixture-root-1554",
+          "fixture-root-1603",
+          "fixture-root-1649"
+        ],
+        "ruleId": "C080",
+        "contexts": [
+          "love"
+        ],
+        "split": null
+      }
+    ],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-meaningful-listen",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [
+      {
+        "node": "fixture-love-A:node:2322",
+        "matched": false,
+        "reasons": [
+          "FUSION_CONTEXT_MISMATCH"
+        ],
+        "roots": [
+          "fixture-root-139",
+          "fixture-root-170",
+          "fixture-root-227",
+          "fixture-root-333",
+          "fixture-root-490",
+          "fixture-root-542",
+          "fixture-root-571",
+          "fixture-root-610",
+          "fixture-root-620",
+          "fixture-root-684",
+          "fixture-root-714",
+          "fixture-root-1045",
+          "fixture-root-1069",
+          "fixture-root-1236",
+          "fixture-root-1268",
+          "fixture-root-1310",
+          "fixture-root-1326",
+          "fixture-root-1335",
+          "fixture-root-1438",
+          "fixture-root-1554",
+          "fixture-root-1566",
+          "fixture-root-1603",
+          "fixture-root-1625",
+          "fixture-root-1649"
+        ],
+        "ruleId": "C075",
+        "contexts": [
+          "social"
+        ],
+        "split": null
+      }
+    ],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P1:shared-meaning",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:some-reading-delay",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-reciprocal-expression",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-esfj-belonging",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P1:care-ledger",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P3:reliable-attention",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P4:humor-stop-signal",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-consent-respect",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P3:difference-welcomed",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P1:good-help-access",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-space-return",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-choice-care",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-current-person",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P2:natal-rule-not-control",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-care-fusion",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P3:new-experience-design",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P4:reciprocal-care",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-optout-legitimate",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:single-overhelp",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-not-passcode",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-optout-warmth",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:some-answer-not-label",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-care-rotation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-response-over-image",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-direct-gentle",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-playfulness",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-quiet-room",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-kin-information",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-trust-current",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-conditional-rule",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P2:mbti-speed-not-motive",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-spending-threshold",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-explained-change",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-shared-story",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P3:broken-promise-loop",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P2:fusion-visible-care",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P1:solution-over-listen",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-clear-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P2:saju-equality-context",
+    "originalRequirement": "두 원천을 비교하는 조건부 연구이며 신규 등록 Fusion이 아님. 독립 사실 3개로 계산하지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-no-test",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-new-and-stable",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-pace-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P1:self-retained",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-estp-activity-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:married-talk-not-demand",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-age-aware-question",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:unknown-channel-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-self-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-care-request",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P1:precision-not-person",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-intj-reasoning",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-space-with-return",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-remembering",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-safe-kindness",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:married-current-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:single-small-invite",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-care-sustainable",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-istp-help-access",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-planned-not-fixed",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-action-not-apology",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:preparing-decision-pace",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:dating-expression-update",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-revision-meeting",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-attuned-question",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P1:held-hongyeom-expansion",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:dating-current-interest",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-boundary-safety",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P4:warmth-with-refusal",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-care-with-choice",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-direction",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-refusal",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-model-commitment",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P4:repair-heard-first",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:single-open-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-invitation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P4:safe-dissent",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-overprotection",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:unknown-open-context",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P2:attune-interpretation-loop",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P1:quiet-concentration",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-correction-fatigue",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-chosen-company",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P4:depth-small-dose",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-trust-expression",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-debate-as-listen",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-estj-rules-explained",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P1:good-output-joy",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P3:memory-updated",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P4:home-rest-fairness",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-minimum-system",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:married-labor-invisible",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-peace-not-consent",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P4:honesty-with-listening",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-entp-experiment",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:single-interest",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:unknown-no-stage-script",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P3:pace-escalation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-infp-choice",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P4:parent-support-channel",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-enfj-emotional-base",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-return-signal",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P3:mutual-growth-question",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-repair-access",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-emotional-answer",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P3:recall-care-with-safety",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-novelty-cost",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-liveliness",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P2:saju-output-context",
+    "originalRequirement": "두 원천을 비교하는 조건부 연구이며 신규 등록 Fusion이 아님. 독립 사실 3개로 계산하지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-results-only",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-isfp-warm-limit",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P3:expression-and-receipt",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P1:care-asked",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-acknowledged-care",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-calm-help",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P2:private-listening-depth",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P4:selection-reciprocity",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:preparing-both-directions",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-practical-trust",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P1:silent-agreement-cost",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P2:fusion-care-space",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:married-person-interest",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-meaning-difference",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P4:trust-as-condition",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-intp-patience",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-not-changed-person",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-autonomy-respect",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P2:some-response-window",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P1:good-dohwa-symbol",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-high-expectation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P4:closing-quiet-visible",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:preparing-finance-consent",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-listening-and-solution",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P3:home-money-power",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:preparing-affection-not-task",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:dating-unspoken-score",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P1:close-unguarded-detail",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P4:sustain-small-promises",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-monopoly-fatigue",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P4:meaning-not-sameness",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-infj-opinion",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-esfp-shared-interest",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P3:unasked-help-escalation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-enfp-encouragement",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P3:parent-emotion-reading",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P1:some-observed",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:dating-renew-small",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-istj-predictability",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P4:unknown-no-deficit",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P2:need-deep-understood",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P3:quiet-request",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH05.P3:space-recovery-attunement",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P3:practical-not-substitute",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P2:parent-isfj-security",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P1:home-warm-rhythm",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH02.P1:first-warm-humor",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH08.P1:parent-entj-responsibility",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P3:avoidance-escalation",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH07.P2:home-change-buffer",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-unforced-self",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P1:attracted-to-dialogue",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH06.P2:fusion-meaning-care",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P2:comfort-space",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH03.P3:difference-rest-and-company",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH09.P2:gift-meaningful-listen",
+    "originalRequirement": "원래 등록 규칙의 양측 signed axis·owner·source assignment·domain/context·split·충족 조건 확인. 연구 ID는 runtime Fusion ID가 아님.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH01.P1:shared-meaning",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  },
+  {
+    "id": "lkr:material:CH04.P3:some-reading-delay",
+    "originalRequirement": "이 후보가 새 Fusion 근거나 계산을 만들지 않음.",
+    "matched": [],
+    "unresolvedOrAbsentFusionDoesNotInvalidateIndependentNatal": true
+  }
+]

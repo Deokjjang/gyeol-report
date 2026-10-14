@@ -1,0 +1,20 @@
+{
+  "originalTrackedFiles": 4372,
+  "allBytesEqual": true,
+  "researchFamilies": 20,
+  "oldGeneratedJsonCounts": {
+    "Catalog": 59,
+    "Source": 20,
+    "SemanticDomain": 23,
+    "Graph": 105,
+    "Binder": 83,
+    "Foundation": 64,
+    "Comprehensive": 29,
+    "Career": 35
+  },
+  "originalWorktrees": 43,
+  "originalDirtyFiles": 11,
+  "existingRuntimeImportsAdded": 0,
+  "existingSourceCodeModifications": 0,
+  "newFilesOnly": true
+}

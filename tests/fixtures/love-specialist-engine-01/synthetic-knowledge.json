@@ -1,0 +1,1515 @@
+{
+  "version": "synthetic-love-v1",
+  "syntheticOnly": true,
+  "actualResearchCopied": false,
+  "enterableFacts": [
+    "partner.mbti",
+    "partner.actualResponse",
+    "marriage.cohabitation",
+    "child.exists",
+    "child.age",
+    "child.development"
+  ],
+  "questions": [
+    {
+      "id": "synthetic:love:q:01",
+      "requiredMeanings": [
+        "answer-1"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH01",
+      "address": "CH01.P1",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:02",
+      "requiredMeanings": [
+        "answer-2"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH02",
+      "address": "CH02.P1",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:03",
+      "requiredMeanings": [
+        "answer-3"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH03",
+      "address": "CH03.P1",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:04",
+      "requiredMeanings": [
+        "answer-4"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH04",
+      "address": "CH04.P1",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:05",
+      "requiredMeanings": [
+        "answer-5"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH05",
+      "address": "CH05.P1",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:06",
+      "requiredMeanings": [
+        "answer-6"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH06",
+      "address": "CH06.P1",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:07",
+      "requiredMeanings": [
+        "answer-7"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH07",
+      "address": "CH07.P1",
+      "importance": 2
+    },
+    {
+      "id": "synthetic:love:q:08",
+      "requiredMeanings": [
+        "answer-8"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH01",
+      "address": "CH01.P2",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:09",
+      "requiredMeanings": [
+        "answer-9"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH02",
+      "address": "CH02.P2",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:10",
+      "requiredMeanings": [
+        "answer-10"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH03",
+      "address": "CH03.P2",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:11",
+      "requiredMeanings": [
+        "answer-11"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH04",
+      "address": "CH04.P2",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:12",
+      "requiredMeanings": [
+        "answer-12"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH05",
+      "address": "CH05.P2",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:13",
+      "requiredMeanings": [
+        "answer-13"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH09",
+      "address": "CH09.P3",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:14",
+      "requiredMeanings": [
+        "answer-14"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH03",
+      "address": "CH03.P3",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:15",
+      "requiredMeanings": [
+        "answer-15"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH02",
+      "address": "CH02.P3",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:16",
+      "requiredMeanings": [
+        "answer-16"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH07",
+      "address": "CH07.P2",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:17",
+      "requiredMeanings": [
+        "answer-17"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH08",
+      "address": "CH08.P1",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:18",
+      "requiredMeanings": [
+        "answer-18"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH08",
+      "address": "CH08.P2",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:19",
+      "requiredMeanings": [
+        "answer-19"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH03",
+      "address": "CH03.P4",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:20",
+      "requiredMeanings": [
+        "answer-20"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH09",
+      "address": "CH09.P1",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:21",
+      "requiredMeanings": [
+        "answer-21"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH09",
+      "address": "CH09.P2",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:22",
+      "requiredMeanings": [
+        "answer-22"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH07",
+      "address": "CH07.P3",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:23",
+      "requiredMeanings": [
+        "answer-23"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH06",
+      "address": "CH06.P3",
+      "importance": 1
+    },
+    {
+      "id": "synthetic:love:q:24",
+      "requiredMeanings": [
+        "answer-24"
+      ],
+      "context": "love",
+      "domain": "SYNTHETIC_LOVE",
+      "chapter": "CH08",
+      "address": "CH08.P4",
+      "importance": 1
+    }
+  ],
+  "materials": [
+    {
+      "id": "synthetic:love:a",
+      "questionId": "synthetic:love:q:01",
+      "root": "care",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:a",
+        "claimId": "synthetic:love:claim:a",
+        "reviewId": "synthetic:love:review:a",
+        "requiredMeanings": [
+          "answer-1"
+        ],
+        "conditions": [
+          "synthetic-condition-a"
+        ],
+        "action": "synthetic-action-a",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:b",
+      "questionId": "synthetic:love:q:01",
+      "root": "space",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:b",
+        "claimId": "synthetic:love:claim:b",
+        "reviewId": "synthetic:love:review:b",
+        "requiredMeanings": [
+          "answer-1"
+        ],
+        "conditions": [
+          "synthetic-condition-b"
+        ],
+        "action": "synthetic-action-b",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "AUTONOMY",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:c",
+      "questionId": "synthetic:love:q:02",
+      "root": "care",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:c",
+        "claimId": "synthetic:love:claim:c",
+        "reviewId": "synthetic:love:review:c",
+        "requiredMeanings": [
+          "answer-2"
+        ],
+        "conditions": [
+          "synthetic-condition-c"
+        ],
+        "action": "synthetic-action-c",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:d",
+      "questionId": "synthetic:love:q:03",
+      "root": "care",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:d",
+        "claimId": "synthetic:love:claim:d",
+        "reviewId": "synthetic:love:review:d",
+        "requiredMeanings": [
+          "answer-3"
+        ],
+        "conditions": [
+          "synthetic-condition-d"
+        ],
+        "action": "synthetic-action-d",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:e",
+      "questionId": "synthetic:love:q:04",
+      "root": "care",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:e",
+        "claimId": "synthetic:love:claim:e",
+        "reviewId": "synthetic:love:review:e",
+        "requiredMeanings": [
+          "answer-4"
+        ],
+        "conditions": [
+          "synthetic-condition-e"
+        ],
+        "action": "synthetic-action-e",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:f",
+      "questionId": "synthetic:love:q:05",
+      "root": "care",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:f",
+        "claimId": "synthetic:love:claim:f",
+        "reviewId": "synthetic:love:review:f",
+        "requiredMeanings": [
+          "answer-5"
+        ],
+        "conditions": [
+          "synthetic-condition-f"
+        ],
+        "action": "synthetic-action-f",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:g",
+      "questionId": "synthetic:love:q:06",
+      "root": "care",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:g",
+        "claimId": "synthetic:love:claim:g",
+        "reviewId": "synthetic:love:review:g",
+        "requiredMeanings": [
+          "answer-6"
+        ],
+        "conditions": [
+          "synthetic-condition-g"
+        ],
+        "action": "synthetic-action-g",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:h",
+      "questionId": "synthetic:love:q:07",
+      "root": "care",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:h",
+        "claimId": "synthetic:love:claim:h",
+        "reviewId": "synthetic:love:review:h",
+        "requiredMeanings": [
+          "answer-7"
+        ],
+        "conditions": [
+          "synthetic-condition-h"
+        ],
+        "action": "synthetic-action-h",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:tension-own-plus",
+      "questionId": "synthetic:love:q:08",
+      "root": "tension-plus",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:tension-own-plus",
+        "claimId": "synthetic:love:claim:tension-own-plus",
+        "reviewId": "synthetic:love:review:tension-own-plus",
+        "requiredMeanings": [
+          "answer-8"
+        ],
+        "conditions": [
+          "synthetic-condition-tension-own-plus"
+        ],
+        "action": "synthetic-action-tension-own-plus",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "EXPRESSION",
+        "polarity": "positive",
+        "axis": {
+          "id": "CARE",
+          "direction": 1
+        },
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:tension-own-minus",
+      "questionId": "synthetic:love:q:09",
+      "root": "tension-minus",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:tension-own-minus",
+        "claimId": "synthetic:love:claim:tension-own-minus",
+        "reviewId": "synthetic:love:review:tension-own-minus",
+        "requiredMeanings": [
+          "answer-9"
+        ],
+        "conditions": [
+          "synthetic-condition-tension-own-minus"
+        ],
+        "action": "synthetic-action-tension-own-minus",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "BOUNDARY",
+        "polarity": "risk",
+        "axis": {
+          "id": "CARE",
+          "direction": -1
+        },
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:split-own-plus",
+      "questionId": "synthetic:love:q:10",
+      "root": "split-plus",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:split-own-plus",
+        "claimId": "synthetic:love:claim:split-own-plus",
+        "reviewId": "synthetic:love:review:split-own-plus",
+        "requiredMeanings": [
+          "answer-10"
+        ],
+        "conditions": [
+          "synthetic-condition-split-own-plus"
+        ],
+        "action": "synthetic-action-split-own-plus",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "EXPRESSION",
+        "polarity": "positive",
+        "axis": {
+          "id": "CARE",
+          "direction": 1
+        },
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [
+          "synthetic:love:split-own-minus"
+        ],
+        "verifiedComplementWith": [
+          "synthetic:love:split-own-minus"
+        ],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:split-own-minus",
+      "questionId": "synthetic:love:q:11",
+      "root": "split-minus",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:split-own-minus",
+        "claimId": "synthetic:love:claim:split-own-minus",
+        "reviewId": "synthetic:love:review:split-own-minus",
+        "requiredMeanings": [
+          "answer-11"
+        ],
+        "conditions": [
+          "synthetic-condition-split-own-minus"
+        ],
+        "action": "synthetic-action-split-own-minus",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "BOUNDARY",
+        "polarity": "risk",
+        "axis": {
+          "id": "CARE",
+          "direction": -1
+        },
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [
+          "synthetic:love:split-own-plus"
+        ],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:fit-indirect",
+      "questionId": "synthetic:love:q:12",
+      "root": "indirect",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:fit-indirect",
+        "claimId": "synthetic:love:claim:fit-indirect",
+        "reviewId": "synthetic:love:review:fit-indirect",
+        "requiredMeanings": [
+          "answer-12"
+        ],
+        "conditions": [
+          "synthetic-condition-fit-indirect"
+        ],
+        "action": "synthetic-action-fit-indirect",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "MEANING",
+        "polarity": "positive",
+        "axis": null,
+        "direct": false,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:fit-specialist",
+      "questionId": "synthetic:love:q:12",
+      "root": "specialist",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:fit-specialist",
+        "claimId": "synthetic:love:claim:fit-specialist",
+        "reviewId": "synthetic:love:review:fit-specialist",
+        "requiredMeanings": [
+          "answer-12"
+        ],
+        "conditions": [
+          "synthetic-condition-fit-specialist"
+        ],
+        "action": "synthetic-action-fit-specialist",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "MEANING",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:recall-care",
+      "questionId": "synthetic:love:q:13",
+      "root": "care",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:a",
+        "claimId": "synthetic:love:claim:a",
+        "reviewId": "synthetic:love:review:recall-care",
+        "requiredMeanings": [
+          "answer-13"
+        ],
+        "conditions": [
+          "synthetic-condition-recall-care"
+        ],
+        "action": "synthetic-action-recall-care",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": "synthetic:love:a",
+        "compatiblePriorContexts": [
+          "love"
+        ],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": [
+          "synthetic:love:q:01"
+        ]
+      }
+    },
+    {
+      "id": "synthetic:love:partner-inference",
+      "questionId": "synthetic:love:q:14",
+      "root": "partner",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:partner-inference",
+        "claimId": "synthetic:love:claim:partner-inference",
+        "reviewId": "synthetic:love:review:partner-inference",
+        "requiredMeanings": [
+          "answer-14"
+        ],
+        "conditions": [
+          "synthetic-condition-partner-inference"
+        ],
+        "action": "synthetic-action-partner-inference",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "PREFERENCE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "ACTUAL_PARTNER_FACT",
+          "partnerFacts": [
+            "partner.mbti"
+          ],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:recipient-inference",
+      "questionId": "synthetic:love:q:15",
+      "root": "recipient",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:recipient-inference",
+        "claimId": "synthetic:love:claim:recipient-inference",
+        "reviewId": "synthetic:love:review:recipient-inference",
+        "requiredMeanings": [
+          "answer-15"
+        ],
+        "conditions": [
+          "synthetic-condition-recipient-inference"
+        ],
+        "action": "synthetic-action-recipient-inference",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "EXPRESSION",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "ACTUAL_RECIPIENT_RESPONSE",
+          "partnerFacts": [
+            "partner.actualResponse"
+          ],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:shared-home",
+      "questionId": "synthetic:love:q:16",
+      "root": "home",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:shared-home",
+        "claimId": "synthetic:love:claim:shared-home",
+        "reviewId": "synthetic:love:review:shared-home",
+        "requiredMeanings": [
+          "answer-16"
+        ],
+        "conditions": [
+          "synthetic-condition-shared-home"
+        ],
+        "action": "synthetic-action-shared-home",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "DUTY",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [
+            "marriage.cohabitation"
+          ],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:own-parenting",
+      "questionId": "synthetic:love:q:17",
+      "root": "parent",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:own-parenting",
+        "claimId": "synthetic:love:claim:own-parenting",
+        "reviewId": "synthetic:love:review:own-parenting",
+        "requiredMeanings": [
+          "answer-17"
+        ],
+        "conditions": [
+          "synthetic-condition-own-parenting"
+        ],
+        "action": "synthetic-action-own-parenting",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_PARENTING",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": true,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [
+          "PARENTS"
+        ],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:child-transfer",
+      "questionId": "synthetic:love:q:18",
+      "root": "child",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:child-transfer",
+        "claimId": "synthetic:love:claim:child-transfer",
+        "reviewId": "synthetic:love:review:child-transfer",
+        "requiredMeanings": [
+          "answer-18"
+        ],
+        "conditions": [
+          "synthetic-condition-child-transfer"
+        ],
+        "action": "synthetic-action-child-transfer",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_PARENTING",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": true,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [
+          "CHILDREN"
+        ],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:pair-transfer",
+      "questionId": "synthetic:love:q:19",
+      "root": "pair",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:pair-transfer",
+        "claimId": "synthetic:love:claim:pair-transfer",
+        "reviewId": "synthetic:love:review:pair-transfer",
+        "requiredMeanings": [
+          "answer-19"
+        ],
+        "conditions": [
+          "synthetic-condition-pair-transfer"
+        ],
+        "action": "synthetic-action-pair-transfer",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "PREFERENCE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [
+          "RELATIONSHIP_PAIR"
+        ],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:dohwa-symbol",
+      "questionId": "synthetic:love:q:20",
+      "root": "dohwa",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:dohwa-symbol",
+        "claimId": "synthetic:love:claim:dohwa-symbol",
+        "reviewId": "synthetic:love:review:dohwa-symbol",
+        "requiredMeanings": [
+          "answer-20"
+        ],
+        "conditions": [
+          "synthetic-condition-dohwa-symbol"
+        ],
+        "action": "synthetic-action-dohwa-symbol",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CHARISMA",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_NATAL",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": "DOHWA",
+          "symbolDirection": "TRADITIONAL_CONDITIONAL"
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:hongyeom-held",
+      "questionId": "synthetic:love:q:21",
+      "root": "hongyeom",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:hongyeom-held",
+        "claimId": "synthetic:love:claim:hongyeom-held",
+        "reviewId": "synthetic:love:review:hongyeom-held",
+        "requiredMeanings": [
+          "answer-21"
+        ],
+        "conditions": [
+          "synthetic-condition-hongyeom-held"
+        ],
+        "action": "synthetic-action-hongyeom-held",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CHARISMA",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_NATAL",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": "HONGYEOM",
+          "symbolDirection": "TRADITIONAL_CONDITIONAL"
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:helper-direction",
+      "questionId": "synthetic:love:q:22",
+      "root": "helper",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:helper-direction",
+        "claimId": "synthetic:love:claim:helper-direction",
+        "reviewId": "synthetic:love:review:helper-direction",
+        "requiredMeanings": [
+          "answer-22"
+        ],
+        "conditions": [
+          "synthetic-condition-helper-direction"
+        ],
+        "action": "synthetic-action-helper-direction",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "CARE",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_NATAL",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": "CHEONEUL",
+          "symbolDirection": "GIVE_HELP"
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:repair-conditional",
+      "questionId": "synthetic:love:q:23",
+      "root": "repair",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:repair-conditional",
+        "claimId": "synthetic:love:claim:repair-conditional",
+        "reviewId": "synthetic:love:review:repair-conditional",
+        "requiredMeanings": [
+          "answer-23"
+        ],
+        "conditions": [
+          "synthetic-condition-repair-conditional"
+        ],
+        "action": "synthetic-action-repair-conditional",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "COMMUNICATION",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "OWN_RELATIONSHIP_PREFERENCE",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [],
+          "parentSourceRequired": false,
+          "repair": true,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    },
+    {
+      "id": "synthetic:love:child-age-inference",
+      "questionId": "synthetic:love:q:24",
+      "root": "age",
+      "meaning": {
+        "meaningId": "synthetic:love:meaning:child-age-inference",
+        "claimId": "synthetic:love:claim:child-age-inference",
+        "reviewId": "synthetic:love:review:child-age-inference",
+        "requiredMeanings": [
+          "answer-24"
+        ],
+        "conditions": [
+          "synthetic-condition-child-age-inference"
+        ],
+        "action": "synthetic-action-child-age-inference",
+        "context": "love",
+        "domain": "SYNTHETIC_LOVE",
+        "facet": "DUTY",
+        "polarity": "positive",
+        "axis": null,
+        "direct": true,
+        "extraMeanings": [],
+        "recallOf": null,
+        "compatiblePriorContexts": [],
+        "exclusiveWith": [],
+        "verifiedSplitWith": [],
+        "verifiedComplementWith": [],
+        "relationshipStatuses": [
+          "dating"
+        ],
+        "application": {
+          "scope": "ACTUAL_CHILD_FACT",
+          "partnerFacts": [],
+          "marriageFacts": [],
+          "childFacts": [
+            "child.exists",
+            "child.age",
+            "child.development"
+          ],
+          "parentSourceRequired": false,
+          "repair": false,
+          "unconditionalRepair": false,
+          "assertsOutcome": false,
+          "symbol": null,
+          "symbolDirection": null
+        },
+        "sourceDomains": [],
+        "compatiblePriorQuestions": []
+      }
+    }
+  ]
+}
