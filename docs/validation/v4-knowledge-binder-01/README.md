@@ -76,7 +76,7 @@ API·실행·승인·후속 소비 경계는 [binder-handoff.md](binder-handoff.
 | PRODUCT_SPECIALISM | 2596 | 0 | 2477 | 0 | 0 |
 | CUSTOMER_APPROVAL | 0 | 0 | 0 | 0 | 5073 |
 
-총 Gate 평가 60,876회. 각 Gate에는 원래 필드/참조, 실제 발견 근거, 상태, 차단 이유, 해결 요구사항이 있다. actual customer 승인 발급은 0이며 synthetic-only 승인 객체는 신규 테스트 메모리 안에서만 사용한다.
+총 Gate 평가 60,876회. 각 Gate에는 원래 필드/참조, 실제 발견 근거, 상태, 차단 이유, 해결 요구사항이 있다. 원본 파일 읽기/hash 검증과 필수 참조 완결성 Gate는 구분한다. SOURCE_INTEGRITY의 FAIL에는 미완성 참조·원본 Overlay 조건도 포함되며, 기존 연구 파일이 변경됐다는 뜻이 아니다. actual customer 승인 발급은 0이며 synthetic-only 승인 객체는 신규 테스트 메모리 안에서만 사용한다.
 
 ## 실제 Receipt 독해
 
@@ -140,4 +140,4 @@ API·실행·승인·후속 소비 경계는 [binder-handoff.md](binder-handoff.
 
 Binder 구현 및 검증 산출물 인수는 가능하다. 고객용 전문 해석 활성화·판매 승인·Planner·한국어 엔진 연결은 준비 완료로 선언하지 않는다. 후속 단계는 시작하지 않았다.
 
-Feature 브랜치 push 후 동일 Git SHA의 Vercel Preview READY를 확인한다. Production 배포와 master 통합은 하지 않는다. 구현 Preview 기록은 `preview-result.json`, 최종 문서 커밋의 정확한 SHA/READY는 외부 최종 검증 receipt 및 최종 답변으로 남긴다.
+구현 커밋 `6a1c901f6dfaf97d29dacf5050a3a4bff6688caf`의 Vercel Preview `dpl_9WzBqcvHE7oNkmzs4xHtGPWV2Cy3`가 READY다. [구현 Preview](https://gyeol-report-euxswoeqo-gyeol-report-s-projects.vercel.app). project/repository/branch/Git SHA/Preview target을 대조했다. 기록은 `preview-result.json`이다. 이 확인 결과를 담은 최종 문서 커밋의 정확한 SHA/READY는 외부 최종 검증 receipt 및 최종 답변으로 별도 확인한다. Production 배포와 master 통합은 하지 않았다.
