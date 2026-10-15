@@ -1,0 +1,9 @@
+{
+  "appServerBefore": 88,
+  "appServerAfter": 88,
+  "includingNextServer": 90,
+  "allPathsAndDependencySetsEqual": true,
+  "newOfflineFilesInCustomerTraces": [],
+  "baselineIsolatedArchiveSha": "40bc7d1a91d08bc15c85c6642d4dfd5c67b14690",
+  "remoteCompressedFunctionSizeNotAsserted": true
+}

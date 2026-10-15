@@ -1,0 +1,9 @@
+{
+  "freshExactSourceExecutions": 2,
+  "generatedJson": 25,
+  "byteEqual": true,
+  "combinedDigest": "deb7d447c3b15c3d97ed50aba7996414530743f5e374609f3fe2b628bf086c06",
+  "timingsAndMemoryExcluded": true,
+  "nodeCliHeapLimitMb": 8192,
+  "notRuntimePerformanceMeasurement": true
+}

@@ -1,0 +1,54 @@
+{
+  "unchangedOriginalFoundationRuns": [
+    {
+      "fixtureId": "fixture-compatibility-marriage",
+      "relationship": "marriage",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-parentChild",
+      "relationship": "parentChild",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-coworker",
+      "relationship": "coworker",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-managerReport",
+      "relationship": "managerReport",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-businessPartner",
+      "relationship": "businessPartner",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-friendship",
+      "relationship": "friendship",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    }
+  ],
+  "newPoliciesAppliedToOtherCategories": 0,
+  "singlePersonLoveChanged": false
+}

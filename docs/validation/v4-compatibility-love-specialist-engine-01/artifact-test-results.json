@@ -1,0 +1,47 @@
+{
+  "passed": 10,
+  "failed": 0,
+  "pending": 0,
+  "tests": [
+    {
+      "name": "checks every generated artifact against exact-byte digest",
+      "status": "passed"
+    },
+    {
+      "name": "checks all 4578 original tracked files by raw bytes",
+      "status": "passed"
+    },
+    {
+      "name": "checks the twelve final generator inputs were not changed after sealing",
+      "status": "passed"
+    },
+    {
+      "name": "checks actual/structural/approval denominators separately",
+      "status": "passed"
+    },
+    {
+      "name": "checks complete 80-entry operator worklist without automatic approvals",
+      "status": "passed"
+    },
+    {
+      "name": "checks privacy against original fictional input names and birth dates",
+      "status": "passed"
+    },
+    {
+      "name": "checks 88 app/server traces and dependency-set preservation",
+      "status": "passed"
+    },
+    {
+      "name": "checks 17 Book/102 digests and 32 full pair objects preserved",
+      "status": "passed"
+    },
+    {
+      "name": "checks original 46 failure signatures and no original test changes",
+      "status": "passed"
+    },
+    {
+      "name": "checks six-category isolation and O/Q legacy publication",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,3292 @@
+{
+  "actual": [
+    {
+      "letter": "A",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "B",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": null
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": null
+        }
+      }
+    },
+    {
+      "letter": "C",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": null
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": null
+        }
+      }
+    },
+    {
+      "letter": "D",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": null
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": null
+        }
+      }
+    },
+    {
+      "letter": "E",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "59b90df5a8fcd5d34dd6af46",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "59b90df5a8fcd5d34dd6af46:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "59b90df5a8fcd5d34dd6af46:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "59b90df5a8fcd5d34dd6af46",
+          "relationId": "313b38ee316c7f0e3181b95f:to:59b90df5a8fcd5d34dd6af46",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:59b90df5a8fcd5d34dd6af46:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "F",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "95c49b8ae1b89cd6c0a950b9",
+          "relationId": "51e2d73a80866288129d316d:to:95c49b8ae1b89cd6c0a950b9",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:95c49b8ae1b89cd6c0a950b9:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "95c49b8ae1b89cd6c0a950b9",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "95c49b8ae1b89cd6c0a950b9:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "95c49b8ae1b89cd6c0a950b9:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "G",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "H",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "INTP",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "INTP",
+            "label": "동일 관계",
+            "sourceRelationName": "Identical",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로의 사고 방식, 귀차니즘, 지적 몰입, 개인주의를 가장 쉽게 이해한다.",
+              "같은 유형을 객관적으로 보며 자기 개발의 거울로 삼을 수 있다.",
+              "각자의 혼자 있는 시간과 관심사 몰입을 크게 문제 삼지 않아 관계의 압박이 적다."
+            ],
+            "friction": [
+              "기능상 보완이 약해 관계가 단조롭게 흐를 수 있고, 불편한 감정도 서로 알아서 정리하겠거니 넘기기 쉽다.",
+              "둘 다 실행과 생활 관리가 약하면 아이디어만 많고 현실이 방치된다.",
+              "돈, 집안일, 가족 일정처럼 누군가는 닫아야 하는 문제를 서로 미루면 생활의 신뢰가 약해진다."
+            ],
+            "positiveInfluence": [
+              "서로의 특이함을 이상하게 보지 않고 편하게 받아들인다.",
+              "관심사가 맞으면 깊은 지적 대화와 공동 탐구가 가능하다.",
+              "각자의 독립성을 존중하기 때문에 과한 감정 요구 없이 오래 생각을 나누는 관계가 된다."
+            ],
+            "lovePattern": "연애는 조용하고 느리게 시작되지만, 관심사가 맞으면 깊게 붙는다. 감정 표현보다 이해와 자유가 핵심이고, 사랑한다는 말보다 서로의 사고 방식을 방해하지 않는 태도에서 안정감을 느낀다.",
+            "marriagePattern": "장기 관계에서는 각자 공간을 잘 존중하지만, 집안일과 마감, 돈 관리처럼 닫아야 할 영역이 둘 다 약해질 수 있다. 생활 운영을 자동화하지 않으면 편한 관계가 느슨한 동거로 흐른다.",
+            "repairStrategy": [
+              "생활 책임을 자동화하거나 외부 도움으로 구조화한다.",
+              "감정 확인을 짧은 문장으로라도 정기적으로 한다.",
+              "공동 프로젝트는 마감과 산출물을 먼저 정한다."
+            ],
+            "reportLine": "INTP와 INTP는 서로를 가장 편하게 이해하지만, 둘 다 미루면 관계도 생활도 아이디어 상태로 남습니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "동일 관계",
+            "sourceRelationName": "Identical",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로의 사고 방식, 귀차니즘, 지적 몰입, 개인주의를 가장 쉽게 이해한다.",
+              "같은 유형을 객관적으로 보며 자기 개발의 거울로 삼을 수 있다.",
+              "각자의 혼자 있는 시간과 관심사 몰입을 크게 문제 삼지 않아 관계의 압박이 적다."
+            ],
+            "friction": [
+              "기능상 보완이 약해 관계가 단조롭게 흐를 수 있고, 불편한 감정도 서로 알아서 정리하겠거니 넘기기 쉽다.",
+              "둘 다 실행과 생활 관리가 약하면 아이디어만 많고 현실이 방치된다.",
+              "돈, 집안일, 가족 일정처럼 누군가는 닫아야 하는 문제를 서로 미루면 생활의 신뢰가 약해진다."
+            ],
+            "positiveInfluence": [
+              "서로의 특이함을 이상하게 보지 않고 편하게 받아들인다.",
+              "관심사가 맞으면 깊은 지적 대화와 공동 탐구가 가능하다.",
+              "각자의 독립성을 존중하기 때문에 과한 감정 요구 없이 오래 생각을 나누는 관계가 된다."
+            ],
+            "lovePattern": "연애는 조용하고 느리게 시작되지만, 관심사가 맞으면 깊게 붙는다. 감정 표현보다 이해와 자유가 핵심이고, 사랑한다는 말보다 서로의 사고 방식을 방해하지 않는 태도에서 안정감을 느낀다.",
+            "marriagePattern": "장기 관계에서는 각자 공간을 잘 존중하지만, 집안일과 마감, 돈 관리처럼 닫아야 할 영역이 둘 다 약해질 수 있다. 생활 운영을 자동화하지 않으면 편한 관계가 느슨한 동거로 흐른다.",
+            "repairStrategy": [
+              "생활 책임을 자동화하거나 외부 도움으로 구조화한다.",
+              "감정 확인을 짧은 문장으로라도 정기적으로 한다.",
+              "공동 프로젝트는 마감과 산출물을 먼저 정한다."
+            ],
+            "reportLine": "INTP와 INTP는 서로를 가장 편하게 이해하지만, 둘 다 미루면 관계도 생활도 아이디어 상태로 남습니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "I",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "J",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "K",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "a673b4746105d7b0d371e031",
+          "targetPerson": "a111180ea4a40c4d615e0df9",
+          "relationId": "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9",
+          "receivedTenGod": {
+            "viewerDayStem": "庚",
+            "targetDayStem": "庚",
+            "tenGod": "比肩",
+            "tenGodKo": "비견",
+            "relationLabel": "경금이 경금를 보면 비견"
+          },
+          "element": {
+            "sourceStem": "庚",
+            "targetStem": "庚",
+            "sourceElement": "metal",
+            "targetElement": "metal",
+            "relation": "same",
+            "relationLabel": "경금 -> 경금",
+            "summary": "경금와 경금가 같은 오행으로 공명하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INFJ",
+            "targetType": "ESTP",
+            "evidenceId": "a673b4746105d7b0d371e031:to:a111180ea4a40c4d615e0df9:mbti-pair",
+            "withType": "ESTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로의 관심사와 호감이 맞으면 INFJ의 내면적 비전과 ESTP의 현실적 행동력이 강하게 보완된다.",
+              "INFJ는 ESTP에게 깊이와 장기 방향을 보여주고, ESTP는 INFJ를 생각에서 현실 행동으로 끌어낸다.",
+              "서로를 바꾸려 하지 않으면 의미와 실행, 통찰과 현장감이 함께 살아난다."
+            ],
+            "friction": [
+              "이 관계는 매력은 강하지만 생활 속에서는 서로의 기본 속도가 크게 다르게 드러난다.",
+              "ESTP의 즉각적 행동성과 활동성은 INFJ에게 정서적 안전을 확인할 시간을 빼앗는 피로로 느껴질 수 있다.",
+              "INFJ의 깊은 의미 탐색은 ESTP에게 지나치게 복잡하게 들리고, ESTP의 빠른 전환은 INFJ에게 가벼운 태도로 보일 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESTP는 INFJ를 현실과 행동으로 끌어내고, INFJ는 ESTP에게 장기적 의미와 관계의 깊이를 보여준다.",
+              "INFJ는 ESTP의 현재 대응력을 통해 생각을 실제 장면에 연결하고, ESTP는 INFJ를 통해 행동 뒤의 의미를 읽는 법을 배운다."
+            ],
+            "lovePattern": "연애에서는 서로에게 전혀 다른 세계가 매력으로 다가온다. ESTP는 INFJ에게 지금 여기의 생동감을 주고, INFJ는 ESTP에게 평소 잘 보지 않던 의미와 정서의 깊이를 열어준다. 다만 활동량과 대화 깊이가 맞지 않으면 빠르게 피로해진다.",
+            "marriagePattern": "결혼에서는 생활 속도와 자극 수준이 핵심이다. ESTP는 경험과 행동을 늘리고 싶어 하고 INFJ는 조용한 의미와 정서적 안전을 원하므로, 외부 활동과 회복 시간을 명확히 나눠야 한다.",
+            "repairStrategy": [
+              "ESTP는 INFJ의 조용한 회복 시간을 존중한다.",
+              "INFJ는 ESTP의 즉흥성을 무책임으로 단정하지 않는다.",
+              "주말과 여가를 활동일과 휴식일로 나누어 설계한다."
+            ],
+            "reportLine": "INFJ와 ESTP는 비전과 행동이 만나는 강한 보완 가능성이 있지만, 자극의 양과 생활 속도를 맞추지 못하면 서로의 세계가 부담이 됩니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "a111180ea4a40c4d615e0df9",
+          "targetPerson": "a673b4746105d7b0d371e031",
+          "relationId": "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031",
+          "receivedTenGod": {
+            "viewerDayStem": "庚",
+            "targetDayStem": "庚",
+            "tenGod": "比肩",
+            "tenGodKo": "비견",
+            "relationLabel": "경금이 경금를 보면 비견"
+          },
+          "element": {
+            "sourceStem": "庚",
+            "targetStem": "庚",
+            "sourceElement": "metal",
+            "targetElement": "metal",
+            "relation": "same",
+            "relationLabel": "경금 -> 경금",
+            "summary": "경금와 경금가 같은 오행으로 공명하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESTP",
+            "targetType": "INFJ",
+            "evidenceId": "a111180ea4a40c4d615e0df9:to:a673b4746105d7b0d371e031:mbti-pair",
+            "withType": "INFJ",
+            "label": "같은 Beta 그룹의 감각과 통찰 보완",
+            "sourceRelationName": "Beta Comfort",
+            "sourceCoverage": "inferred",
+            "sharedGround": [
+              "ESTP는 현장의 흐름을 빠르게 읽고, INFJ는 사람과 관계의 숨은 흐름을 깊게 읽는다.",
+              "둘 다 상황을 관찰하는 힘이 있지만, ESTP는 눈앞의 신호에 민감하고 INFJ는 장기적 의미에 민감하다.",
+              "서로를 보완하면 행동력과 통찰이 함께 살아나는 관계가 된다."
+            ],
+            "friction": [
+              "INFJ는 관계의 의미와 정서적 맥락을 중요하게 보지만, ESTP는 현재의 행동과 직접적인 반응을 더 신뢰한다.",
+              "ESTP의 빠른 말과 행동은 INFJ에게 거칠게 느껴질 수 있고, INFJ의 깊은 해석은 ESTP에게 복잡하게 느껴질 수 있다.",
+              "갈등이 생기면 INFJ는 조용히 상처를 해석하고 ESTP는 빨리 분위기를 바꾸려 하면서 문제의 깊이를 다르게 본다."
+            ],
+            "positiveInfluence": [
+              "INFJ는 ESTP가 장기적 방향과 사람의 내면을 더 보게 돕는다.",
+              "ESTP는 INFJ가 현실 속에서 움직이고 경험하도록 끌어낸다.",
+              "서로를 바꾸려 들지 않으면 INFJ의 통찰은 ESTP의 행동에 의미를 붙이고, ESTP의 실행력은 INFJ의 생각을 실제 장면으로 밀어준다."
+            ],
+            "lovePattern": "연애에서는 서로의 낯선 매력에 끌릴 수 있다. ESTP는 INFJ의 깊이를 신기하게 보고, INFJ는 ESTP의 생동감에 끌리지만 감정 처리 속도와 대화 깊이에서 피로가 생긴다.",
+            "marriagePattern": "장기 관계에서는 ESTP가 생활의 움직임을 만들고 INFJ가 관계의 의미를 붙인다. 다만 ESTP가 깊은 대화를 회피하고 INFJ가 행동보다 해석에 머무르면 서로 멀어진다.",
+            "repairStrategy": [
+              "ESTP는 장기적 고민을 장난으로 넘기지 않는다.",
+              "INFJ는 추상적 불안을 구체적인 요청으로 표현한다.",
+              "체험과 대화를 번갈아 배치해 서로의 방식에 시간을 준다."
+            ],
+            "reportLine": "ESTP와 INFJ는 현장 감각과 깊은 통찰이 만나는 조합이며, 행동과 의미를 번갈아 존중할 때 서로를 크게 성장시킵니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "L",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "M",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "N",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "O",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "3265a4c7e0fa7a829d2c80ff",
+          "targetPerson": "b36da8848e44eeca5a03abf1",
+          "relationId": "3265a4c7e0fa7a829d2c80ff:to:b36da8848e44eeca5a03abf1",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "己",
+            "tenGod": "比肩",
+            "tenGodKo": "비견",
+            "relationLabel": "기토이 기토를 보면 비견"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "己",
+            "sourceElement": "earth",
+            "targetElement": "earth",
+            "relation": "same",
+            "relationLabel": "기토 -> 기토",
+            "summary": "기토와 기토가 같은 오행으로 공명하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "INTP",
+            "evidenceId": "3265a4c7e0fa7a829d2c80ff:to:b36da8848e44eeca5a03abf1:mbti-pair",
+            "withType": "INTP",
+            "label": "동일 관계",
+            "sourceRelationName": "Identical",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로의 사고 방식, 귀차니즘, 지적 몰입, 개인주의를 가장 쉽게 이해한다.",
+              "같은 유형을 객관적으로 보며 자기 개발의 거울로 삼을 수 있다.",
+              "각자의 혼자 있는 시간과 관심사 몰입을 크게 문제 삼지 않아 관계의 압박이 적다."
+            ],
+            "friction": [
+              "기능상 보완이 약해 관계가 단조롭게 흐를 수 있고, 불편한 감정도 서로 알아서 정리하겠거니 넘기기 쉽다.",
+              "둘 다 실행과 생활 관리가 약하면 아이디어만 많고 현실이 방치된다.",
+              "돈, 집안일, 가족 일정처럼 누군가는 닫아야 하는 문제를 서로 미루면 생활의 신뢰가 약해진다."
+            ],
+            "positiveInfluence": [
+              "서로의 특이함을 이상하게 보지 않고 편하게 받아들인다.",
+              "관심사가 맞으면 깊은 지적 대화와 공동 탐구가 가능하다.",
+              "각자의 독립성을 존중하기 때문에 과한 감정 요구 없이 오래 생각을 나누는 관계가 된다."
+            ],
+            "lovePattern": "연애는 조용하고 느리게 시작되지만, 관심사가 맞으면 깊게 붙는다. 감정 표현보다 이해와 자유가 핵심이고, 사랑한다는 말보다 서로의 사고 방식을 방해하지 않는 태도에서 안정감을 느낀다.",
+            "marriagePattern": "장기 관계에서는 각자 공간을 잘 존중하지만, 집안일과 마감, 돈 관리처럼 닫아야 할 영역이 둘 다 약해질 수 있다. 생활 운영을 자동화하지 않으면 편한 관계가 느슨한 동거로 흐른다.",
+            "repairStrategy": [
+              "생활 책임을 자동화하거나 외부 도움으로 구조화한다.",
+              "감정 확인을 짧은 문장으로라도 정기적으로 한다.",
+              "공동 프로젝트는 마감과 산출물을 먼저 정한다."
+            ],
+            "reportLine": "INTP와 INTP는 서로를 가장 편하게 이해하지만, 둘 다 미루면 관계도 생활도 아이디어 상태로 남습니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "b36da8848e44eeca5a03abf1",
+          "targetPerson": "3265a4c7e0fa7a829d2c80ff",
+          "relationId": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "己",
+            "tenGod": "比肩",
+            "tenGodKo": "비견",
+            "relationLabel": "기토이 기토를 보면 비견"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "己",
+            "sourceElement": "earth",
+            "targetElement": "earth",
+            "relation": "same",
+            "relationLabel": "기토 -> 기토",
+            "summary": "기토와 기토가 같은 오행으로 공명하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "INTP",
+            "evidenceId": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff:mbti-pair",
+            "withType": "INTP",
+            "label": "동일 관계",
+            "sourceRelationName": "Identical",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로의 사고 방식, 귀차니즘, 지적 몰입, 개인주의를 가장 쉽게 이해한다.",
+              "같은 유형을 객관적으로 보며 자기 개발의 거울로 삼을 수 있다.",
+              "각자의 혼자 있는 시간과 관심사 몰입을 크게 문제 삼지 않아 관계의 압박이 적다."
+            ],
+            "friction": [
+              "기능상 보완이 약해 관계가 단조롭게 흐를 수 있고, 불편한 감정도 서로 알아서 정리하겠거니 넘기기 쉽다.",
+              "둘 다 실행과 생활 관리가 약하면 아이디어만 많고 현실이 방치된다.",
+              "돈, 집안일, 가족 일정처럼 누군가는 닫아야 하는 문제를 서로 미루면 생활의 신뢰가 약해진다."
+            ],
+            "positiveInfluence": [
+              "서로의 특이함을 이상하게 보지 않고 편하게 받아들인다.",
+              "관심사가 맞으면 깊은 지적 대화와 공동 탐구가 가능하다.",
+              "각자의 독립성을 존중하기 때문에 과한 감정 요구 없이 오래 생각을 나누는 관계가 된다."
+            ],
+            "lovePattern": "연애는 조용하고 느리게 시작되지만, 관심사가 맞으면 깊게 붙는다. 감정 표현보다 이해와 자유가 핵심이고, 사랑한다는 말보다 서로의 사고 방식을 방해하지 않는 태도에서 안정감을 느낀다.",
+            "marriagePattern": "장기 관계에서는 각자 공간을 잘 존중하지만, 집안일과 마감, 돈 관리처럼 닫아야 할 영역이 둘 다 약해질 수 있다. 생활 운영을 자동화하지 않으면 편한 관계가 느슨한 동거로 흐른다.",
+            "repairStrategy": [
+              "생활 책임을 자동화하거나 외부 도움으로 구조화한다.",
+              "감정 확인을 짧은 문장으로라도 정기적으로 한다.",
+              "공동 프로젝트는 마감과 산출물을 먼저 정한다."
+            ],
+            "reportLine": "INTP와 INTP는 서로를 가장 편하게 이해하지만, 둘 다 미루면 관계도 생활도 아이디어 상태로 남습니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "P",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "Q",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "3265a4c7e0fa7a829d2c80ff",
+          "targetPerson": "b36da8848e44eeca5a03abf1",
+          "relationId": "3265a4c7e0fa7a829d2c80ff:to:b36da8848e44eeca5a03abf1",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "己",
+            "tenGod": "比肩",
+            "tenGodKo": "비견",
+            "relationLabel": "기토이 기토를 보면 비견"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "己",
+            "sourceElement": "earth",
+            "targetElement": "earth",
+            "relation": "same",
+            "relationLabel": "기토 -> 기토",
+            "summary": "기토와 기토가 같은 오행으로 공명하는 구조입니다."
+          },
+          "mbtiPair": null
+        },
+        "bToA": {
+          "subjectPerson": "b36da8848e44eeca5a03abf1",
+          "targetPerson": "3265a4c7e0fa7a829d2c80ff",
+          "relationId": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "己",
+            "tenGod": "比肩",
+            "tenGodKo": "비견",
+            "relationLabel": "기토이 기토를 보면 비견"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "己",
+            "sourceElement": "earth",
+            "targetElement": "earth",
+            "relation": "same",
+            "relationLabel": "기토 -> 기토",
+            "summary": "기토와 기토가 같은 오행으로 공명하는 구조입니다."
+          },
+          "mbtiPair": null
+        }
+      }
+    },
+    {
+      "letter": "R",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": null
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": null
+        }
+      }
+    },
+    {
+      "letter": "S",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "a0a9396e146736119ec92f47",
+          "targetPerson": "1e7e816adb0a760d063e3038",
+          "relationId": "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038",
+          "receivedTenGod": {
+            "viewerDayStem": "壬",
+            "targetDayStem": "甲",
+            "tenGod": "食神",
+            "tenGodKo": "식신",
+            "relationLabel": "임수이 갑목를 보면 식신"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "壬",
+            "sourceElement": "wood",
+            "targetElement": "water",
+            "relation": "generated_by",
+            "relationLabel": "갑목 -> 임수",
+            "summary": "갑목은 임수에게 힘을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ENTJ",
+            "targetType": "INTP",
+            "evidenceId": "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair",
+            "withType": "INTP",
+            "label": "대척 관계",
+            "sourceRelationName": "Contrary",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "둘 다 사고형이며 지적 주제와 논리적 설명에 반응한다.",
+              "ENTJ는 INTP의 원리 분석에서 전략의 빈틈을 발견하고, INTP는 ENTJ의 실행력에서 생각이 현실로 옮겨지는 힘을 본다.",
+              "감정 과잉보다 근거 있는 대화를 선호해, 경쟁이 통제되면 서로의 판단을 날카롭게 만드는 조합이 된다."
+            ],
+            "friction": [
+              "사회적 상황에서는 각자의 강한 면으로 경쟁하며 심리적 거리를 형성하기 어렵다.",
+              "ENTJ는 INTP의 신중함과 거리두기를 의도적 회피로 오해할 수 있다.",
+              "ENTJ의 빠른 실행 압박과 INTP의 사고 독립성이 부딪히면, 한쪽은 답답함을 느끼고 한쪽은 자기 속도를 침해받는다고 느낀다."
+            ],
+            "positiveInfluence": [
+              "INTP는 ENTJ에게 더 깊은 논리 검증과 개념적 정교함을 제공한다.",
+              "ENTJ는 INTP에게 실행과 외부 영향력의 필요를 보여 준다.",
+              "경쟁이 통제되면 지적 긴장감이 생산적 자극이 된다."
+            ],
+            "lovePattern": "연애에서는 ENTJ가 INTP의 지적 독립성에 흥미를 느끼고, INTP는 ENTJ의 강한 실행력을 신기하게 볼 수 있다. 하지만 ENTJ가 빠른 실행과 명확한 결론을 요구하면 INTP는 물러나고, INTP의 지연과 탐색은 ENTJ에게 비협조로 보인다.",
+            "marriagePattern": "결혼에서는 생활 리듬과 사회적 태도에서 차이가 크다. ENTJ는 외부 목표와 지위를 움직이고 싶어 하고, INTP는 생각의 자유와 분석 시간을 원한다. 사회적 장면에서 경쟁과 오해가 생기기 쉽다.",
+            "repairStrategy": [
+              "ENTJ는 INTP의 느린 사고를 무능으로 보지 않는다.",
+              "INTP는 결론 없는 탐색을 줄이고 실행 가능한 최소 합의를 제시한다.",
+              "사회적 역할과 개인 사고 시간을 분명히 나눈다."
+            ],
+            "reportLine": "ENTJ와 INTP는 지적으로 끌릴 수 있지만, 실행 속도와 사회적 태도의 차이가 크므로 경쟁을 줄이고 역할을 나눠야 합니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "1e7e816adb0a760d063e3038",
+          "targetPerson": "a0a9396e146736119ec92f47",
+          "relationId": "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "壬",
+            "tenGod": "偏印",
+            "tenGodKo": "편인",
+            "relationLabel": "갑목이 임수를 보면 편인"
+          },
+          "element": {
+            "sourceStem": "壬",
+            "targetStem": "甲",
+            "sourceElement": "water",
+            "targetElement": "wood",
+            "relation": "generates",
+            "relationLabel": "임수 -> 갑목",
+            "summary": "임수이 갑목를 살리는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ENTJ",
+            "evidenceId": "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair",
+            "withType": "ENTJ",
+            "label": "반대 관계",
+            "sourceRelationName": "Contrary",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "둘이 있을 때는 특정 강점에 끌리며 잘 지낼 수 있고, 서로의 지적 능력과 문제 해결력을 빠르게 알아본다.",
+              "지적 능력과 전략적 사고에서 서로를 인정할 수 있다.",
+              "둘 다 문제를 감정만으로 덮기보다 구조와 원인을 찾아보려는 태도가 있다."
+            ],
+            "friction": [
+              "사회적 환경에서는 각자의 강점을 활용해 경쟁하기 쉽고, 주도권을 누가 쥐는지에 따라 긴장이 커진다.",
+              "ENTJ는 INTP의 거리 두기를 의도적 냉담함으로 오해할 수 있다.",
+              "ENTJ의 지휘와 속도는 INTP에게 통제와 압박으로 느껴진다."
+            ],
+            "positiveInfluence": [
+              "ENTJ는 INTP의 아이디어를 실행과 목표로 밀어붙인다.",
+              "INTP는 ENTJ의 전략에 더 깊은 원리와 반례 검토를 제공한다.",
+              "권한과 자율성을 분리하면 추진력과 분석력이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 능력과 지적 자극이 매력적이다. ENTJ는 INTP의 독립적 사고에 끌리고 INTP는 ENTJ의 실행력에 자극받지만, 추진력과 거리감이 부딪히면 관심이 압박으로 바뀐다.",
+            "marriagePattern": "결혼에서는 ENTJ가 실행과 관리의 주도권을 잡으려 하고 INTP가 자율성을 지키려 하면서 권한 갈등이 생긴다. 돈, 일정, 가족 책임은 ENTJ가 몰아붙이기 전에 INTP가 맡을 범위를 명확히 정해야 한다.",
+            "repairStrategy": [
+              "ENTJ는 INTP의 혼자 있는 시간을 의도적 회피로 보지 않는다.",
+              "INTP는 필요한 결정과 책임을 계속 미루지 않는다.",
+              "실행권과 검토권을 분리해 각자의 강점을 살린다."
+            ],
+            "reportLine": "INTP와 ENTJ는 서로의 능력에 끌리지만, 사회적 장면에서는 거리감과 지휘 욕구가 오해를 만들기 쉽습니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "T",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "a0a9396e146736119ec92f47",
+          "targetPerson": "1e7e816adb0a760d063e3038",
+          "relationId": "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038",
+          "receivedTenGod": {
+            "viewerDayStem": "壬",
+            "targetDayStem": "甲",
+            "tenGod": "食神",
+            "tenGodKo": "식신",
+            "relationLabel": "임수이 갑목를 보면 식신"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "壬",
+            "sourceElement": "wood",
+            "targetElement": "water",
+            "relation": "generated_by",
+            "relationLabel": "갑목 -> 임수",
+            "summary": "갑목은 임수에게 힘을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ENTJ",
+            "targetType": "INTP",
+            "evidenceId": "a0a9396e146736119ec92f47:to:1e7e816adb0a760d063e3038:mbti-pair",
+            "withType": "INTP",
+            "label": "대척 관계",
+            "sourceRelationName": "Contrary",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "둘 다 사고형이며 지적 주제와 논리적 설명에 반응한다.",
+              "ENTJ는 INTP의 원리 분석에서 전략의 빈틈을 발견하고, INTP는 ENTJ의 실행력에서 생각이 현실로 옮겨지는 힘을 본다.",
+              "감정 과잉보다 근거 있는 대화를 선호해, 경쟁이 통제되면 서로의 판단을 날카롭게 만드는 조합이 된다."
+            ],
+            "friction": [
+              "사회적 상황에서는 각자의 강한 면으로 경쟁하며 심리적 거리를 형성하기 어렵다.",
+              "ENTJ는 INTP의 신중함과 거리두기를 의도적 회피로 오해할 수 있다.",
+              "ENTJ의 빠른 실행 압박과 INTP의 사고 독립성이 부딪히면, 한쪽은 답답함을 느끼고 한쪽은 자기 속도를 침해받는다고 느낀다."
+            ],
+            "positiveInfluence": [
+              "INTP는 ENTJ에게 더 깊은 논리 검증과 개념적 정교함을 제공한다.",
+              "ENTJ는 INTP에게 실행과 외부 영향력의 필요를 보여 준다.",
+              "경쟁이 통제되면 지적 긴장감이 생산적 자극이 된다."
+            ],
+            "lovePattern": "연애에서는 ENTJ가 INTP의 지적 독립성에 흥미를 느끼고, INTP는 ENTJ의 강한 실행력을 신기하게 볼 수 있다. 하지만 ENTJ가 빠른 실행과 명확한 결론을 요구하면 INTP는 물러나고, INTP의 지연과 탐색은 ENTJ에게 비협조로 보인다.",
+            "marriagePattern": "결혼에서는 생활 리듬과 사회적 태도에서 차이가 크다. ENTJ는 외부 목표와 지위를 움직이고 싶어 하고, INTP는 생각의 자유와 분석 시간을 원한다. 사회적 장면에서 경쟁과 오해가 생기기 쉽다.",
+            "repairStrategy": [
+              "ENTJ는 INTP의 느린 사고를 무능으로 보지 않는다.",
+              "INTP는 결론 없는 탐색을 줄이고 실행 가능한 최소 합의를 제시한다.",
+              "사회적 역할과 개인 사고 시간을 분명히 나눈다."
+            ],
+            "reportLine": "ENTJ와 INTP는 지적으로 끌릴 수 있지만, 실행 속도와 사회적 태도의 차이가 크므로 경쟁을 줄이고 역할을 나눠야 합니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "1e7e816adb0a760d063e3038",
+          "targetPerson": "a0a9396e146736119ec92f47",
+          "relationId": "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "壬",
+            "tenGod": "偏印",
+            "tenGodKo": "편인",
+            "relationLabel": "갑목이 임수를 보면 편인"
+          },
+          "element": {
+            "sourceStem": "壬",
+            "targetStem": "甲",
+            "sourceElement": "water",
+            "targetElement": "wood",
+            "relation": "generates",
+            "relationLabel": "임수 -> 갑목",
+            "summary": "임수이 갑목를 살리는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ENTJ",
+            "evidenceId": "1e7e816adb0a760d063e3038:to:a0a9396e146736119ec92f47:mbti-pair",
+            "withType": "ENTJ",
+            "label": "반대 관계",
+            "sourceRelationName": "Contrary",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "둘이 있을 때는 특정 강점에 끌리며 잘 지낼 수 있고, 서로의 지적 능력과 문제 해결력을 빠르게 알아본다.",
+              "지적 능력과 전략적 사고에서 서로를 인정할 수 있다.",
+              "둘 다 문제를 감정만으로 덮기보다 구조와 원인을 찾아보려는 태도가 있다."
+            ],
+            "friction": [
+              "사회적 환경에서는 각자의 강점을 활용해 경쟁하기 쉽고, 주도권을 누가 쥐는지에 따라 긴장이 커진다.",
+              "ENTJ는 INTP의 거리 두기를 의도적 냉담함으로 오해할 수 있다.",
+              "ENTJ의 지휘와 속도는 INTP에게 통제와 압박으로 느껴진다."
+            ],
+            "positiveInfluence": [
+              "ENTJ는 INTP의 아이디어를 실행과 목표로 밀어붙인다.",
+              "INTP는 ENTJ의 전략에 더 깊은 원리와 반례 검토를 제공한다.",
+              "권한과 자율성을 분리하면 추진력과 분석력이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 능력과 지적 자극이 매력적이다. ENTJ는 INTP의 독립적 사고에 끌리고 INTP는 ENTJ의 실행력에 자극받지만, 추진력과 거리감이 부딪히면 관심이 압박으로 바뀐다.",
+            "marriagePattern": "결혼에서는 ENTJ가 실행과 관리의 주도권을 잡으려 하고 INTP가 자율성을 지키려 하면서 권한 갈등이 생긴다. 돈, 일정, 가족 책임은 ENTJ가 몰아붙이기 전에 INTP가 맡을 범위를 명확히 정해야 한다.",
+            "repairStrategy": [
+              "ENTJ는 INTP의 혼자 있는 시간을 의도적 회피로 보지 않는다.",
+              "INTP는 필요한 결정과 책임을 계속 미루지 않는다.",
+              "실행권과 검토권을 분리해 각자의 강점을 살린다."
+            ],
+            "reportLine": "INTP와 ENTJ는 서로의 능력에 끌리지만, 사회적 장면에서는 거리감과 지휘 욕구가 오해를 만들기 쉽습니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "U",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "U",
+      "variant": 1,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "353791e81d2f891320c0b926",
+          "targetPerson": "2bab203f5885c50f75737922",
+          "relationId": "353791e81d2f891320c0b926:to:2bab203f5885c50f75737922",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "353791e81d2f891320c0b926:to:2bab203f5885c50f75737922:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "2bab203f5885c50f75737922",
+          "targetPerson": "353791e81d2f891320c0b926",
+          "relationId": "2bab203f5885c50f75737922:to:353791e81d2f891320c0b926",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "2bab203f5885c50f75737922:to:353791e81d2f891320c0b926:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "V",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "V",
+      "variant": 1,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "W",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "W",
+      "variant": 1,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "X",
+      "variant": 0,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "X",
+      "variant": 1,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "X",
+      "variant": 2,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "X",
+      "variant": 3,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "X",
+      "variant": 4,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    },
+    {
+      "letter": "X",
+      "variant": 5,
+      "directions": {
+        "aToB": {
+          "subjectPerson": "51e2d73a80866288129d316d",
+          "targetPerson": "313b38ee316c7f0e3181b95f",
+          "relationId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f",
+          "receivedTenGod": {
+            "viewerDayStem": "己",
+            "targetDayStem": "甲",
+            "tenGod": "正官",
+            "tenGodKo": "정관",
+            "relationLabel": "기토이 갑목를 보면 정관"
+          },
+          "element": {
+            "sourceStem": "甲",
+            "targetStem": "己",
+            "sourceElement": "wood",
+            "targetElement": "earth",
+            "relation": "controls",
+            "relationLabel": "갑목 -> 기토",
+            "summary": "갑목이 기토를 조절하는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "INTP",
+            "targetType": "ESFJ",
+            "evidenceId": "51e2d73a80866288129d316d:to:313b38ee316c7f0e3181b95f:mbti-pair",
+            "withType": "ESFJ",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "INTP의 분석적 거리감과 ESFJ의 관계 관리 감각은 서로 다른 방식으로 안정감을 만든다.",
+              "ESFJ는 INTP가 놓치기 쉬운 분위기와 관계의 흐름을 챙기고, INTP는 ESFJ에게 감정에 휩쓸리지 않는 판단 기준을 준다.",
+              "INTP는 ESFJ의 배려와 활발함을 관찰하며 끌릴 수 있고, ESFJ는 INTP의 통찰과 지적 직언에서 매력을 느낀다."
+            ],
+            "friction": [
+              "처음에는 ESFJ의 활발함이 INTP에게 부담이 될 수 있다.",
+              "ESFJ가 관계와 분위기를 많이 챙기면 INTP는 에너지 소모를 느낀다.",
+              "INTP가 비위를 맞춰주려 노력해도 감정 표현이 어색하면 ESFJ가 불안해질 수 있다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 상황에 스며들도록 돕고, INTP는 ESFJ에게 깊은 통찰과 논리적 조언을 제공한다.",
+              "둘이 성숙할수록 상호 보완 효과가 커진다.",
+              "ESFJ의 관찰력과 감정선, INTP의 지식과 직언이 함께 살아난다."
+            ],
+            "lovePattern": "초반에는 전혀 다른 성향이 신기하게 느껴진다. ESFJ의 호감 표현은 INTP에게 낯설지만 매력적이고, INTP의 지적 깊이는 ESFJ에게 특별한 매력으로 다가온다.",
+            "marriagePattern": "결혼에서는 ESFJ가 외부 관계와 생활 정서를 돕고 INTP가 분석과 문제 해결을 제공한다. 다만 INTP가 모든 사회적 부담을 ESFJ에게 떠넘기지 않도록 해야 한다.",
+            "repairStrategy": [
+              "INTP는 ESFJ의 배려에 짧게라도 고마움을 표현한다.",
+              "ESFJ는 INTP의 침묵을 애정 없음으로 단정하지 않는다.",
+              "모임과 혼자 있는 시간을 일정으로 분리해 둘 다의 에너지를 보호한다."
+            ],
+            "reportLine": "INTP와 ESFJ는 겉보기엔 반대지만, 성숙할수록 INTP의 논리와 ESFJ의 관계 능력이 서로의 빈자리를 정확히 채웁니다."
+          }
+        },
+        "bToA": {
+          "subjectPerson": "313b38ee316c7f0e3181b95f",
+          "targetPerson": "51e2d73a80866288129d316d",
+          "relationId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d",
+          "receivedTenGod": {
+            "viewerDayStem": "甲",
+            "targetDayStem": "己",
+            "tenGod": "正財",
+            "tenGodKo": "정재",
+            "relationLabel": "갑목이 기토를 보면 정재"
+          },
+          "element": {
+            "sourceStem": "己",
+            "targetStem": "甲",
+            "sourceElement": "earth",
+            "targetElement": "wood",
+            "relation": "controlled_by",
+            "relationLabel": "기토 -> 갑목",
+            "summary": "기토은 갑목에게 조절을 받는 구조입니다."
+          },
+          "mbtiPair": {
+            "sourceType": "ESFJ",
+            "targetType": "INTP",
+            "evidenceId": "313b38ee316c7f0e3181b95f:to:51e2d73a80866288129d316d:mbti-pair",
+            "withType": "INTP",
+            "label": "이중성 관계",
+            "sourceRelationName": "Duality",
+            "sourceCoverage": "direct",
+            "sharedGround": [
+              "서로 같은 기능을 반대 순서로 사용해 상대의 강점이 자신의 약점을 보완한다.",
+              "ESFJ는 INTP의 논리, 지식, 직언에서 지적 매력을 느끼고, INTP는 ESFJ의 활발함과 사람 다루는 능력을 신기하게 본다.",
+              "성숙할수록 ESFJ의 사회성은 INTP의 고립을 완화하고, INTP의 분석력은 ESFJ의 감정 판단을 보완한다."
+            ],
+            "friction": [
+              "ESFJ의 빠른 반응과 감정 표현은 INTP에게 과하게 느껴질 수 있다.",
+              "INTP의 시니컬한 태도와 건조한 분석은 ESFJ에게 차갑고 무심하게 보인다.",
+              "ESFJ는 관계 확인을 원하고 INTP는 혼자 생각할 시간을 원해 리듬 차이가 생긴다."
+            ],
+            "positiveInfluence": [
+              "ESFJ는 INTP가 사회적 장면에 자연스럽게 스며들도록 돕는다.",
+              "INTP는 ESFJ가 놓친 논리적 허점과 사실 관계를 잡아 준다.",
+              "서로가 자기에게 부족한 세계를 실제 생활에서 경험하게 만든다."
+            ],
+            "lovePattern": "처음에는 불가능해 보일 만큼 다르지만 그 차이가 강한 호기심이 된다. ESFJ는 INTP의 특이한 지성과 담백함에 끌리고, INTP는 ESFJ의 밝은 표현과 생활력에 서서히 마음이 열린다. 다만 ESFJ가 매일의 반응을 요구하고 INTP가 침묵으로 쉬면 서로 상처가 난다.",
+            "marriagePattern": "장기 관계에서는 ESFJ가 가족·모임·생활 운영을 맡고 INTP가 분석·판단·문제 해결을 보완하는 구도가 강하다. 성공하려면 ESFJ는 INTP의 혼자 있는 시간을 존중하고, INTP는 ESFJ의 사회적 욕구를 귀찮은 장식이 아니라 관계 유지 장치로 인정해야 한다.",
+            "repairStrategy": [
+              "INTP는 맞는 말을 하더라도 먼저 ESFJ의 감정을 인정한다.",
+              "ESFJ는 INTP의 침묵을 거절로 해석하지 말고 생각 시간으로 남겨 둔다.",
+              "모임, 휴식, 집안일, 대화 시간을 구체적으로 합의해 리듬 차이를 줄인다."
+            ],
+            "reportLine": "ESFJ와 INTP는 사람의 세계와 논리의 세계가 맞물리는 강한 보완 조합이지만, 온도와 거리감을 조율하지 않으면 매력의 차이가 곧 피로가 됩니다."
+          }
+        }
+      }
+    }
+  ],
+  "swaps": {
+    "nameOnly": {
+      "personAUnchanged": true,
+      "personBUnchanged": true,
+      "sameReceivedGod": true
+    },
+    "whole": {
+      "originalAIsNewB": true,
+      "originalBIsNewA": true,
+      "originalABIsNewBA": true,
+      "originalBAIsNewAB": true
+    }
+  },
+  "subjectIsTenGodTarget": true,
+  "recipientIsTenGodViewer": true
+}

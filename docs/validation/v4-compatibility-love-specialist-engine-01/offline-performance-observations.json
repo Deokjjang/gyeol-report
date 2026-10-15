@@ -1,0 +1,102 @@
+{
+  "runs": [
+    {
+      "elapsedMs": 512951.517083,
+      "rssStartBytes": 818528256,
+      "rssEndBytes": 6101811200,
+      "maxRssBytes": 6244892672,
+      "timings": [
+        {
+          "fixtureId": "fixture-compatibility-A",
+          "foundationMs": 634.1748329999973,
+          "specialistMs": 649.0006670000002,
+          "candidateQueryMs": 59.25970799999777,
+          "binderMs": 58.87024999999994,
+          "conflictMs": 3.2787500000049477,
+          "rssBytes": 2741551104
+        },
+        {
+          "fixtureId": "fixture-compatibility-unknown-both",
+          "foundationMs": 42.09020799999416,
+          "specialistMs": 51.964208999997936,
+          "candidateQueryMs": 59.25970799999777,
+          "binderMs": 15.03308300000208,
+          "conflictMs": 4.28125,
+          "rssBytes": 4329357312
+        },
+        {
+          "fixtureId": "fixture-compatibility-slot-swap",
+          "foundationMs": 756.4793329999957,
+          "specialistMs": 642.8702500000072,
+          "candidateQueryMs": 59.25970799999777,
+          "binderMs": 57.399042000004556,
+          "conflictMs": 3.2983749999984866,
+          "rssBytes": 3749986304
+        },
+        {
+          "fixtureId": "fixture-compatibility-no-detected-pair",
+          "foundationMs": 37.764374999998836,
+          "specialistMs": 44.16279100000975,
+          "candidateQueryMs": 59.25970799999777,
+          "binderMs": 18.05070799999521,
+          "conflictMs": 3.2166250000009313,
+          "rssBytes": 3915415552
+        }
+      ],
+      "syntheticMs": 2916.055208000005,
+      "artifactAndDigestMs": 1834.9510840000003,
+      "originalAnnualGeneratedFilesMatched": 29,
+      "network": "disabled"
+    },
+    {
+      "elapsedMs": 514491.825541,
+      "rssStartBytes": 826474496,
+      "rssEndBytes": 6142738432,
+      "maxRssBytes": 6260998144,
+      "timings": [
+        {
+          "fixtureId": "fixture-compatibility-A",
+          "foundationMs": 620.2609999999986,
+          "specialistMs": 628.3601669999989,
+          "candidateQueryMs": 55.30270799999562,
+          "binderMs": 55.94341599999461,
+          "conflictMs": 3.2655000000013388,
+          "rssBytes": 2896789504
+        },
+        {
+          "fixtureId": "fixture-compatibility-unknown-both",
+          "foundationMs": 43.99899999999616,
+          "specialistMs": 52.16812499999651,
+          "candidateQueryMs": 55.30270799999562,
+          "binderMs": 14.852415999994264,
+          "conflictMs": 4.281709000002593,
+          "rssBytes": 3463249920
+        },
+        {
+          "fixtureId": "fixture-compatibility-slot-swap",
+          "foundationMs": 574.849000000002,
+          "specialistMs": 625.9469580000004,
+          "candidateQueryMs": 55.30270799999562,
+          "binderMs": 55.15737499999523,
+          "conflictMs": 2.5087920000078157,
+          "rssBytes": 4201594880
+        },
+        {
+          "fixtureId": "fixture-compatibility-no-detected-pair",
+          "foundationMs": 37.279375000012806,
+          "specialistMs": 42.324208999983966,
+          "candidateQueryMs": 55.30270799999562,
+          "binderMs": 16.69995799998287,
+          "conflictMs": 3.0829580000136048,
+          "rssBytes": 3868672000
+        }
+      ],
+      "syntheticMs": 2994.530458000023,
+      "artifactAndDigestMs": 1606.8979169999948,
+      "originalAnnualGeneratedFilesMatched": 29,
+      "network": "disabled"
+    }
+  ],
+  "customerRuntimePerformanceMeasured": false,
+  "resourceAndTimeDataExcludedFromDeterministicArtifacts": true
+}

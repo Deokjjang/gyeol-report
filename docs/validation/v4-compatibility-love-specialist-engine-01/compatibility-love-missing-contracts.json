@@ -1,0 +1,2981 @@
+{
+  "meaningReviews": 80,
+  "approvals": 80,
+  "unresolved": [
+    {
+      "id": "clr:material:CH01.P2:clash-without-prophecy",
+      "requirements": [
+        {
+          "field": "kc:v1:224e406fa908c6f64744b6ef24f6b3e13e2196a410fc077266f369396050e1eb#/formation",
+          "original": "寅木·申金의 대향과 장간의 여러 생극을 함께 검토한다."
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "해당 종류·참여 지지·실제 양쪽 소유자·기둥 위치가 있는 기존 cross-person relation ID가 필요하다. 전통 표만으로 검출하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH01.P3:two-types-two-views",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P2:ba-quiet-doing",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH08.P2:a-change-unasked-care",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH02.P2:a-space-with-connection",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH03.P4:b-novelty-with-cost",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH09.P3:recall-request-not-ledger",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH04.P4:positive-harmony-with-choice",
+      "requirements": [
+        {
+          "field": "kc:v1:6b8a4759ea4f844903ee5d590dee9697d2265ff13a39617435a1511a56e21829#/formation",
+          "original": "수국의 생지申·왕지子 두 자리이며 辰은 실제로 없다면 보충하지 않는다."
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "해당 종류·참여 지지·실제 양쪽 소유자·기둥 위치가 있는 기존 cross-person relation ID가 필요하다. 전통 표만으로 검출하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P2:ab-clear-invite",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH04.P2:clear-and-considered",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH01.P3:same-type-no-same-person",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P2:ab-new-meaning",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH01.P1:response-and-thought",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH02.P3:a-playful-encouragement",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P1:ba-equal-opinion",
+      "requirements": [
+        {
+          "field": "kc:v1:129ca7d39126c8ade13d06a2c183199d59b97fd2a1d5f67610ecb16080b41574#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:12c64c1f74ce366d71265ab343b66f5311fa0bee3f4495029328369aee53d7f0#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:303eeed4256d5f0f5dd509c1e2fe13a56f4a4e5b8dec8451c6efdc7bfef939a1#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:33e0838c2fcf44871632562f4358cc9f816b759d210eec3ad62cece82f60e29d#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:33e0838c2fcf44871632562f4358cc9f816b759d210eec3ad62cece82f60e29d#/strengthConditions",
+          "original": [
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:53193d555c80f8742ac06e88572646106da6bf21cb809f94495112ea1e562af8#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:e9c57df5770a4cf70cd8657931280f790525a059bc4452f883fe1222f3c406b6#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:ed5445e9725e9366ac5b6b4fd19047fbf7314a2dcb7a309465cda97c4ab1099e#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:f01c5b47bb9370074f40b94487905270d10f65fff434ae285d7c747e4ac837fd#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:f06fc3c79e32ab0e4031b48c7a2096706918fa570ea662efb7827d792c71331e#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH02.P3:a-help-with-permission",
+      "requirements": [
+        {
+          "field": "kc:v1:6b5a28a04ecfbd75d8474ba71a30b067a67aea2c62cf747887e39f1354d6d3e5#/conditions",
+          "original": [
+            "실제 필요·관계 단계·표현 동의·여력 확인",
+            "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+            "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH08.P2:a-change-delivery",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH08.P1:repair-response-loop",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH01.P4:two-source-limits",
+      "requirements": [
+        {
+          "field": "kc:v1:617eadcd9b91f888b072e8fa0e23c2e5adab11b448b0a16e5519703b016f084b#/conditions",
+          "original": [
+            "실제 관계·보호 의무·선택권·요청 확인",
+            "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+            "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:f36215f3f09d01ba890748d5e3be6fb2f77e227af901e7d950ca15dca72e65e3#/conditions",
+          "original": [
+            "실제 교제·연락 합의·표현 통로·생활 여력 확인",
+            "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+            "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH07.P3:correction-and-retreat",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P3:ab-reaction-pressure",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH01.P1:steady-and-new",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH03.P3:b-reliable-small-care",
+      "requirements": [
+        {
+          "field": "kc:v1:810eb9cd21dca4cdfa8716eb0860933a45595f13c8e2b5837eff5b0e242fa255#/conditions",
+          "original": [
+            "실제 관계·요청·지원 여력·보호 의무 확인",
+            "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+            "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P4:ba-present-not-explain-away",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH01.P2:detected-harmony-context",
+      "requirements": [
+        {
+          "field": "kc:v1:dcce6096ff7f2835fee40d16e9271d181ae47fc357b08200dc87806184d05f26#/formation",
+          "original": "子水·丑土가 실제 별도 자리에 있어야 하며 동절 토수의 여력을 검토한다."
+        },
+        {
+          "field": "kc:v1:129ca7d39126c8ade13d06a2c183199d59b97fd2a1d5f67610ecb16080b41574#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:12c64c1f74ce366d71265ab343b66f5311fa0bee3f4495029328369aee53d7f0#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:303eeed4256d5f0f5dd509c1e2fe13a56f4a4e5b8dec8451c6efdc7bfef939a1#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:33e0838c2fcf44871632562f4358cc9f816b759d210eec3ad62cece82f60e29d#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:33e0838c2fcf44871632562f4358cc9f816b759d210eec3ad62cece82f60e29d#/strengthConditions",
+          "original": [
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:53193d555c80f8742ac06e88572646106da6bf21cb809f94495112ea1e562af8#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:e9c57df5770a4cf70cd8657931280f790525a059bc4452f883fe1222f3c406b6#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:ed5445e9725e9366ac5b6b4fd19047fbf7314a2dcb7a309465cda97c4ab1099e#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:f01c5b47bb9370074f40b94487905270d10f65fff434ae285d7c747e4ac837fd#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:f06fc3c79e32ab0e4031b48c7a2096706918fa570ea662efb7827d792c71331e#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:2169128f0148570f24eb3922524abdad0140d343896ac80c6f0780a9af294a7a#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:2ee04452afd64a2665e705e13229d823cefb32ed861284481aa0be29ca715a9d#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:2f86bb4aeb9e8fa288eb595395db12c9643b02d7d1e0bbf3de5280215fd4ceeb#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:438423380c697e620042ebb933e3ab079dc484ed504bc0d9e26c1e337c5e763e#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:7eba5abaee99f839c5e35a2a75ca189f0ab27a04b8f338ae9367d3a96f3febcf#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:83eddcca571e7a3f3ed3a9e06c87fbb307a8de4f8473309c468dc7a28e262d52#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다."
+          ]
+        },
+        {
+          "field": "kc:v1:83eddcca571e7a3f3ed3a9e06c87fbb307a8de4f8473309c468dc7a28e262d52#/strengthConditions",
+          "original": [
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:ce9939294a7c82e8d2a073c46498695c09709f4349483a414e5b6f3a4d8c0d9e#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:e3e934fe3fa7c37a6915bbdb133affcf80100dc992a1eb41c709c765494deadf#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:ea290c95e5220932bcba1796aa98a35f08191c8df1870ddf5706723b2371724e#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "해당 종류·참여 지지·실제 양쪽 소유자·기둥 위치가 있는 기존 cross-person relation ID가 필요하다. 전통 표만으로 검출하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P4:ba-name-own-need",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P4:ba-update-memory",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH02.P1:a-explicit-action",
+      "requirements": [
+        {
+          "field": "kc:v1:2169128f0148570f24eb3922524abdad0140d343896ac80c6f0780a9af294a7a#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:2ee04452afd64a2665e705e13229d823cefb32ed861284481aa0be29ca715a9d#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:2f86bb4aeb9e8fa288eb595395db12c9643b02d7d1e0bbf3de5280215fd4ceeb#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:438423380c697e620042ebb933e3ab079dc484ed504bc0d9e26c1e337c5e763e#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:7eba5abaee99f839c5e35a2a75ca189f0ab27a04b8f338ae9367d3a96f3febcf#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:83eddcca571e7a3f3ed3a9e06c87fbb307a8de4f8473309c468dc7a28e262d52#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다."
+          ]
+        },
+        {
+          "field": "kc:v1:83eddcca571e7a3f3ed3a9e06c87fbb307a8de4f8473309c468dc7a28e262d52#/strengthConditions",
+          "original": [
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:ce9939294a7c82e8d2a073c46498695c09709f4349483a414e5b6f3a4d8c0d9e#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:e3e934fe3fa7c37a6915bbdb133affcf80100dc992a1eb41c709c765494deadf#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:ea290c95e5220932bcba1796aa98a35f08191c8df1870ddf5706723b2371724e#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P4:ab-return-with-boundary",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH03.P1:b-reaction-as-participation",
+      "requirements": [
+        {
+          "field": "kc:v1:0e733c4e758c50ddcd9fd645ac797ad2fa78084a9cc7ec16309d09b876fb6060#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:5d25c44000257c41157786fc18525d0f9097a1a3720291d8c13ad81a62e45085#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:a25b5c210bfd20eac1011932fac64fa56a9ac9b23b8cb47980519a4f5ab75535#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:bfb07a754e2d2152e48eeacb3d2a8a7b1107f561345e268c7813b60f769c7c0d#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:c959325fe98a7ff0b694348eae1e54cdc46c7c1692942c2ad11db16873cf6159#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:e585c6b875eb2146fc9b0045aca1600aa81a301a5383affa9f11a1e0d6ecd5c4#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다."
+          ]
+        },
+        {
+          "field": "kc:v1:e585c6b875eb2146fc9b0045aca1600aa81a301a5383affa9f11a1e0d6ecd5c4#/strengthConditions",
+          "original": [
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:eec23f9992b946b7aea6c016e519398b1ba16ffc735ddd6ec3578e226ff50508#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:f76016734dc9b3b270bb6fb192193cf9b74052b8eafee2e03b03a45f75feb841#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:fa50321b414f99c24fb7a475b5797bf2323e8b98003d64604a4845a73452c764#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH03.P4:b-silent-resentment",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH09.P4:closing-response-with-choice",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH08.P4:joint-safe-stop",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH09.P3:recall-response-agreement",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P4:ab-offer-not-reservation",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH07.P1:mismatched-response-time",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH04.P1:same-care-different-help",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH07.P4:assumption-grows-with-meaning",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH07.P2:harm-is-not-wonjin",
+      "requirements": [
+        {
+          "field": "kc:v1:82479da38d221990139aa4aa091841fc8f047a05cc3262ce9880e62a2795779e#/formation",
+          "original": "子·未 두 실제 글자와 각 계절·장간을 확인한다."
+        },
+        {
+          "field": "kc:v1:7382552a75c43835945360f301640556da40d14dda6e1d72c1734d01259e7d39#/formation",
+          "original": "子·未 실제 두 자리와 facts의 원진살 신호·육해 중복을 확인한다."
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "해를 설명할 때 기존 실제 cross-person harm의 子未 refs·참여 소유자·기둥 위치가 필요하다. 원진 원천은 미지원 비교·보류용이며 실제 원진 ID를 요구하거나 생성하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH09.P1:recall-mutual-care-limit",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH09.P4:closing-new-and-held",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH04.P1:shared-trust-not-same-rule",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH03.P3:b-new-view-with-listening",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH07.P4:safety-outside-type",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH03.P2:b-safe-disagreement",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH01.P4:agreement-not-feeling-score",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P1:ab-resource-specificity",
+      "requirements": [
+        {
+          "field": "kc:v1:0dce3c8fe902ab32b09ee4dce4afd1e950879c25db047ba94ab5d039b5261c6a#/prerequisites",
+          "original": [
+            "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다.",
+            "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:0f6052bd50803c1b770380e2ec265cbaaa8b2c1dfb599df8af5bb33c55289ed7#/prerequisites",
+          "original": [
+            "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다.",
+            "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:25e1ce0b7e70bc927783d62855cdb5522b67ee4d2dbff23d0289359d6db91077#/prerequisites",
+          "original": [
+            "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다.",
+            "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:59e9baeda4084186314b0da35ca5cf4627010cf6ab26d4713d3ca8039db35cda#/prerequisites",
+          "original": [
+            "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다.",
+            "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:5aeebb543486edd4d6360c1b9de98e491843bf907f3f6d23f1308a341f8dcf96#/prerequisites",
+          "original": [
+            "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다.",
+            "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:5c380741089c94261362a35ed310af6fd08628c0fd701a64ce90304c2de6886f#/prerequisites",
+          "original": [
+            "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다."
+          ]
+        },
+        {
+          "field": "kc:v1:5c380741089c94261362a35ed310af6fd08628c0fd701a64ce90304c2de6886f#/strengthConditions",
+          "original": [
+            "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:7781ee2b948f81b276d4c6f51c9028bab393e634dd16aceb90e5fe9a980c5d88#/prerequisites",
+          "original": [
+            "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다.",
+            "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:912e2cfb7dc8eec2c4483711c6e2af7330f118e975d3403973a0cb6b849a0f2f#/prerequisites",
+          "original": [
+            "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다.",
+            "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:9733e0a407b28c13f113f024840c10fd0a560759e34537e8c4594d3c97d46da8#/prerequisites",
+          "original": [
+            "일간의 강약, 재성의 위치·투출, 식상·비겁·관성과 실제 관리 책임을 확인한다.",
+            "관리 가능한 자원과 감당 못 할 책임을 구분하며 강한 정재를 무조건 좋은 재운으로 승인하지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH03.P1:b-practical-quietness",
+      "requirements": [
+        {
+          "field": "kc:v1:129ca7d39126c8ade13d06a2c183199d59b97fd2a1d5f67610ecb16080b41574#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:12c64c1f74ce366d71265ab343b66f5311fa0bee3f4495029328369aee53d7f0#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:303eeed4256d5f0f5dd509c1e2fe13a56f4a4e5b8dec8451c6efdc7bfef939a1#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:33e0838c2fcf44871632562f4358cc9f816b759d210eec3ad62cece82f60e29d#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:33e0838c2fcf44871632562f4358cc9f816b759d210eec3ad62cece82f60e29d#/strengthConditions",
+          "original": [
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:53193d555c80f8742ac06e88572646106da6bf21cb809f94495112ea1e562af8#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:e9c57df5770a4cf70cd8657931280f790525a059bc4452f883fe1222f3c406b6#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:ed5445e9725e9366ac5b6b4fd19047fbf7314a2dcb7a309465cda97c4ab1099e#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:f01c5b47bb9370074f40b94487905270d10f65fff434ae285d7c747e4ac837fd#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:f06fc3c79e32ab0e4031b48c7a2096706918fa570ea662efb7827d792c71331e#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH04.P4:mutual-chosen-strength",
+      "requirements": [
+        {
+          "field": "kc:v1:617eadcd9b91f888b072e8fa0e23c2e5adab11b448b0a16e5519703b016f084b#/conditions",
+          "original": [
+            "실제 관계·보호 의무·선택권·요청 확인",
+            "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+            "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:e50041d6118978aa2674992a7b01071145c3b97e72fb3751ebb2cc47bec696d5#/conditions",
+          "original": [
+            "실제 진술·질문 동의·해석 반례 확인",
+            "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+            "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P2:ba-memory-open-question",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P3:ab-correction-without-request",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P3:ba-care-erases-choice",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P1:ba-care-receiving",
+      "requirements": [
+        {
+          "field": "kc:v1:14316c2c56451f4fde7bf2d0ef58438ee1a8518fdfff4aaafc3498a95b0ffba5#/prerequisites",
+          "original": [
+            "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다.",
+            "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:1ad2a5225396f138982f9119a1a272217d8d0d3b8dedab68800ce7b99fbe5752#/prerequisites",
+          "original": [
+            "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다.",
+            "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:257a58ea54f8d1616b9aa74f8e266105acdf6c819439bdfc798c3ce41d4bdb5b#/prerequisites",
+          "original": [
+            "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다.",
+            "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:4ff8aff913d41140d0d8b7af171409c6bc8e4c89f3396f01453077293bc7e1b7#/prerequisites",
+          "original": [
+            "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다.",
+            "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:55f050a34b128157fdb70537eea06673df23d888b7a3d767bfe81af15a362048#/prerequisites",
+          "original": [
+            "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다.",
+            "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:68640ac76a6942b6c33fbd87d543cd900dcae96f41f09917d705d96009bdd192#/prerequisites",
+          "original": [
+            "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다.",
+            "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:730458dbba8aee81ad9583ead0c55c03f42f7d5f73d1bc21002816e35cd7193e#/prerequisites",
+          "original": [
+            "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다.",
+            "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:b5d9b6bcd300f1f39f2430766576155beeef43d0a814bdec4a770a368e6647ef#/prerequisites",
+          "original": [
+            "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다."
+          ]
+        },
+        {
+          "field": "kc:v1:b5d9b6bcd300f1f39f2430766576155beeef43d0a814bdec4a770a368e6647ef#/strengthConditions",
+          "original": [
+            "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:bfc8ebf07fb405573f84ce82474311f5e0428332e7df6c1cfa0ac23cb0458b46#/prerequisites",
+          "original": [
+            "일간의 강약, 월령, 인성의 생조, 재성의 제약과 식상의 산출을 함께 확인한다.",
+            "필요한 지원과 과도한 의존은 원국·실제 맥락이 달라 구분해야 한다. 인성 개수로 지능·학력·부모를 확정하지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P3:ab-care-debt",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH08.P1:repair-correction-loop",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P2:ab-care-with-autonomy",
+      "requirements": [
+        {
+          "field": "kc:v1:6b5a28a04ecfbd75d8474ba71a30b067a67aea2c62cf747887e39f1354d6d3e5#/conditions",
+          "original": [
+            "실제 필요·관계 단계·표현 동의·여력 확인",
+            "두 축이 같은 과제·owner·허용 Context에 실제로 적용돼야 한다.",
+            "명리/MBTI 역할을 바꾼 반대 배정도 독립 검토하며 자동 대칭 승인하지 않는다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH09.P1:recall-trust-as-choice",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH03.P2:b-chosen-presence",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P1:ba-other-question",
+      "requirements": [
+        {
+          "field": "kc:v1:36dba5299031fab2c45f6c9787e62e438d54b8385855ef5834c53a2c7e93d850#/prerequisites",
+          "original": [
+            "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다.",
+            "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:4fd04c27156369a0c371db3e39c2f43d1bc819fd98a93c57b99baed2b9b76736#/prerequisites",
+          "original": [
+            "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다."
+          ]
+        },
+        {
+          "field": "kc:v1:4fd04c27156369a0c371db3e39c2f43d1bc819fd98a93c57b99baed2b9b76736#/strengthConditions",
+          "original": [
+            "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:57ccdb049384a86ed79dcdfe0f8caa66231602afdda2f895d35926affa9f3204#/prerequisites",
+          "original": [
+            "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다.",
+            "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:72a29f91effc0c41017689cc9224499e9c2d8883dfd89793d36ca1ed5d81ff00#/prerequisites",
+          "original": [
+            "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다.",
+            "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:8bf1e7e49a935a85b4692bda1b7df64cee46a2008de9697832de553d0bf8cadf#/prerequisites",
+          "original": [
+            "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다.",
+            "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:ad287f110774be256e177388a49bc3bd173e75639e97b845d194224bee5522bf#/prerequisites",
+          "original": [
+            "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다.",
+            "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:bdb234bdfdb2a428ffdf0bb9ed3bb255bd338992617497ba8286d3e8dbb7b879#/prerequisites",
+          "original": [
+            "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다.",
+            "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:becc27ee8ec76038558edfe596eec84771a843077b7315cabd18ebdf79cd65eb#/prerequisites",
+          "original": [
+            "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다.",
+            "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:ecda92743be79e398af79827ad2b190d2b56f1968c942db2fd4ebdaaf7d3f436#/prerequisites",
+          "original": [
+            "일간의 강약, 실제 식신의 유무·용도, 재성의 제어와 인성의 편중을 확인한다.",
+            "편인이 있다는 사실과 식신을 제약하는 도식 조건은 같지 않다. 실제 조합 없이 도식의 위험을 적용하지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH02.P2:a-trust-change",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P3:ba-asking-becomes-monitoring",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH09.P2:recall-independent-fusions",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH02.P4:a-fix-before-hearing",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH07.P3:care-and-unasked-debt",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH07.P1:no-friction-no-hidden-fault",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH07.P2:clash-position-and-question",
+      "requirements": [
+        {
+          "field": "kc:v1:fa4b4f531764c7fdcb1572d44d37b6ef8c86d2c3d6ac3db7661d8f35215eb7c1#/formation",
+          "original": "子水·午火의 대향과 월령별 왕쇠를 검토한다."
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "해당 종류·참여 지지·실제 양쪽 소유자·기둥 위치가 있는 기존 cross-person relation ID가 필요하다. 전통 표만으로 검출하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P1:ab-rule-as-option",
+      "requirements": [
+        {
+          "field": "kc:v1:2169128f0148570f24eb3922524abdad0140d343896ac80c6f0780a9af294a7a#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:2ee04452afd64a2665e705e13229d823cefb32ed861284481aa0be29ca715a9d#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:2f86bb4aeb9e8fa288eb595395db12c9643b02d7d1e0bbf3de5280215fd4ceeb#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:438423380c697e620042ebb933e3ab079dc484ed504bc0d9e26c1e337c5e763e#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:7eba5abaee99f839c5e35a2a75ca189f0ab27a04b8f338ae9367d3a96f3febcf#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:83eddcca571e7a3f3ed3a9e06c87fbb307a8de4f8473309c468dc7a28e262d52#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다."
+          ]
+        },
+        {
+          "field": "kc:v1:83eddcca571e7a3f3ed3a9e06c87fbb307a8de4f8473309c468dc7a28e262d52#/strengthConditions",
+          "original": [
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:ce9939294a7c82e8d2a073c46498695c09709f4349483a414e5b6f3a4d8c0d9e#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:e3e934fe3fa7c37a6915bbdb133affcf80100dc992a1eb41c709c765494deadf#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:ea290c95e5220932bcba1796aa98a35f08191c8df1870ddf5706723b2371724e#/prerequisites",
+          "original": [
+            "일간과 관성의 강약, 재성의 생조, 상관·인성·관살 혼잡을 확인한다.",
+            "기준이 기능하는 경우와 평가 부담이 과한 경우를 분리한다. 관성의 존재를 공직·승진의 보장으로 읽지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P2:ba-warm-feedback",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH04.P3:chosen-shared-adventure",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH08.P3:b-change-help-boundary",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH02.P4:a-read-response",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH02.P1:a-deliberate-affection",
+      "requirements": [
+        {
+          "field": "kc:v1:129ca7d39126c8ade13d06a2c183199d59b97fd2a1d5f67610ecb16080b41574#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:12c64c1f74ce366d71265ab343b66f5311fa0bee3f4495029328369aee53d7f0#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:303eeed4256d5f0f5dd509c1e2fe13a56f4a4e5b8dec8451c6efdc7bfef939a1#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:33e0838c2fcf44871632562f4358cc9f816b759d210eec3ad62cece82f60e29d#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:33e0838c2fcf44871632562f4358cc9f816b759d210eec3ad62cece82f60e29d#/strengthConditions",
+          "original": [
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:53193d555c80f8742ac06e88572646106da6bf21cb809f94495112ea1e562af8#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:e9c57df5770a4cf70cd8657931280f790525a059bc4452f883fe1222f3c406b6#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:ed5445e9725e9366ac5b6b4fd19047fbf7314a2dcb7a309465cda97c4ab1099e#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:f01c5b47bb9370074f40b94487905270d10f65fff434ae285d7c747e4ac837fd#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:f06fc3c79e32ab0e4031b48c7a2096706918fa570ea662efb7827d792c71331e#/prerequisites",
+          "original": [
+            "일간의 실제 통근·월령과 비견의 투출·중첩을 확인해야 자립 지원인지 과경쟁인지 논할 수 있다.",
+            "약한 일간을 돕는 경우와 이미 강한 일간에 동류가 더해지는 경우를 구분한다. 수만으로 강약을 정하지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH08.P4:joint-contact-revision",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH04.P3:quiet-co-presence",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH08.P3:b-change-return-signal",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P1:ab-output-enjoyment",
+      "requirements": [
+        {
+          "field": "kc:v1:0e733c4e758c50ddcd9fd645ac797ad2fa78084a9cc7ec16309d09b876fb6060#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "실제 수입·지출·부채·유동성·계약; 재물의 양이나 투자 수익을 예측하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:5d25c44000257c41157786fc18525d0f9097a1a3720291d8c13ad81a62e45085#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "당사자가 밝힌 가족 관계·지원 여력·동의; 부모·형제·자녀의 존재나 사건을 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:a25b5c210bfd20eac1011932fac64fa56a9ac9b23b8cb47980519a4f5ab75535#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "본인이 확인한 판단 습관과 반례; 일주만으로 성격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:bfb07a754e2d2152e48eeacb3d2a8a7b1107f561345e268c7813b60f769c7c0d#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "당사자가 밝힌 관계 상태·동의·대화 맥락; 연애 경험·호감·외도를 만들어 내지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:c959325fe98a7ff0b694348eae1e54cdc46c7c1692942c2ad11db16873cf6159#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "실제 업무·역할·권한·자원·고용 조건; 특정 직업의 적합성이나 승진을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:e585c6b875eb2146fc9b0045aca1600aa81a301a5383affa9f11a1e0d6ecd5c4#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다."
+          ]
+        },
+        {
+          "field": "kc:v1:e585c6b875eb2146fc9b0045aca1600aa81a301a5383affa9f11a1e0d6ecd5c4#/strengthConditions",
+          "original": [
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다."
+          ]
+        },
+        {
+          "field": "kc:v1:eec23f9992b946b7aea6c016e519398b1ba16ffc735ddd6ec3578e226ff50508#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "실제 공동생활 여부·합의한 가사·경제·돌봄 책임; 결혼 여부와 배우자 운명을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:f76016734dc9b3b270bb6fb192193cf9b74052b8eafee2e03b03a45f75feb841#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "실제 모임·협업·약속·갈등의 맥락; 사회성이나 귀인의 실존을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "kc:v1:fa50321b414f99c24fb7a475b5797bf2323e8b98003d64604a4845a73452c764#/prerequisites",
+          "original": [
+            "일간과 식신의 생왕, 편인의 제약, 재성·관살과의 관계를 확인한다.",
+            "일간이 감당할 설기인지, 산출 통로가 막혔는지 검토한다. 식신 하나로 부·수명·자녀를 예측하지 않는다.",
+            "실제 학습 과제·기초 수준·피드백; 지능·학력·시험 합격을 추론하지 않는다.",
+            "본인이 확인한 생활 맥락과 반례가 있어야 적용할 수 있다."
+          ]
+        },
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH09.P2:recall-symbol-grounded",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH04.P2:curiosity-and-continuity",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": null,
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH05.P4:ab-listen-before-more",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "A_TO_B",
+              "subject": "A",
+              "recipient": "B",
+              "tenGodViewer": "B.dayMaster",
+              "tenGodTarget": "A.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    },
+    {
+      "id": "clr:material:CH06.P3:ba-explanation-too-late",
+      "requirements": [
+        {
+          "field": "/requirements",
+          "original": {
+            "personA": "A 본인의 실제 natal/MBTI/Fusion만 연결. 등록된 유형·trait·성립 조건과 signed axis를 확인한다.",
+            "personB": "B 본인의 실제 natal/MBTI/Fusion만 연결. A의 trait를 B에게 복사하지 않는다.",
+            "canonicalPair": "본 후보에 관계 종류가 없으면 새로운 합·충·형 등을 추가하지 않는다.",
+            "direction": {
+              "direction": "B_TO_A",
+              "subject": "B",
+              "recipient": "A",
+              "tenGodViewer": "A.dayMaster",
+              "tenGodTarget": "B.dayMaster",
+              "actualProducerRequired": true
+            },
+            "mbtiPair": "두 유형이 모두 알려졌을 때만 해당 방향 notablePairs와 역방향의 서로 다른 sourceCoverage를 참고한다. 유형만으로 실제 감정·관계 결과를 판정하지 않는다.",
+            "fusion": "A/B 개인별 기존 명리와 MBTI 두 root 및 실제 rule 충족을 따로 확인한다. 공통 Pair Fusion 점수를 만들지 않는다.",
+            "unknownMbti": "해당 사람 MBTI와 개인 Fusion 및 Pair 후보를 보류한다. 상대 유형·원국으로 보충하지 않는다.",
+            "unknownBirthTime": "실제 남은 원국만 사용하고 시주·시주 관계를 보충하지 않는다.",
+            "recall": "CH09 모든 문단은 같은 두 사람에게 앞서 실제 도입된 호환 의미만 회수한다. 없는 의미를 마지막에 새로 도입하지 않는다.",
+            "safety": "강요·통제·폭력은 성향 차이로 조율하지 않는다. 동의 없는 접촉·만남·화해를 요구하지 않는다."
+          }
+        }
+      ],
+      "sourceGroups": []
+    }
+  ],
+  "unsupportedCross": [
+    "stem_combination",
+    "punishment",
+    "break",
+    "wonjin",
+    "directional_harmony"
+  ],
+  "ruleSpecificFusionRequiresOriginalRuleId": true,
+  "actualConsentAndHistory": "UNKNOWN",
+  "precedingReferencesAreActualDisplay": false,
+  "runtimeConnection": "NOT_IN_SCOPE"
+}

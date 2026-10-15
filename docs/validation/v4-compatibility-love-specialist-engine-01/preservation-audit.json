@@ -1,0 +1,68 @@
+{
+  "baseSha": "40bc7d1a91d08bc15c85c6642d4dfd5c67b14690",
+  "trackedOriginalFiles": 4578,
+  "allBytesPreserved": true,
+  "oldWorktrees": 46,
+  "originalDirtyFiles": 11,
+  "originalCheckout": "v4/annual-editorial-quality-fix-01@c048218cc5961e0f53a1deab2603511e17559fc3",
+  "reportedVsMeasured": "4509 files/45 worktrees reported; 4578 files/46 worktrees measured before task",
+  "families": {
+    "v4-knowledge-unified-catalog-01": {
+      "generatedJson": 59,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 72
+    },
+    "v4-knowledge-source-verification-01": {
+      "generatedJson": 20,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 31
+    },
+    "v4-knowledge-semantic-domain-verification-01": {
+      "generatedJson": 23,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 34
+    },
+    "v4-actual-evidence-graph-01": {
+      "generatedJson": 105,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 117
+    },
+    "v4-knowledge-binder-01": {
+      "generatedJson": 83,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 101
+    },
+    "v4-product-specialist-foundation-01": {
+      "generatedJson": 64,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 79
+    },
+    "v4-comprehensive-specialist-engine-01": {
+      "generatedJson": 29,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 45
+    },
+    "v4-career-money-study-specialist-engine-01": {
+      "generatedJson": 35,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 53
+    },
+    "v4-love-marriage-child-specialist-engine-01": {
+      "generatedJson": 38,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 55
+    },
+    "v4-major-fortune-specialist-engine-01": {
+      "generatedJson": 28,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 45
+    },
+    "v4-annual-fortune-specialist-engine-01": {
+      "generatedJson": 29,
+      "allTrackedArtifactsBytePreserved": true,
+      "trackedFiles": 50
+    }
+  },
+  "customerRuntimeImports": [],
+  "productionDbPaymentsAuthWorkerEnvChanges": 0
+}

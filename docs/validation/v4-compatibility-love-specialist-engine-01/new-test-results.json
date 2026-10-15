@@ -1,0 +1,467 @@
+{
+  "passed": 115,
+  "failed": 0,
+  "pending": 0,
+  "tests": [
+    {
+      "name": "ingests 80 native materials and 190 candidates without role/index duplication",
+      "status": "passed"
+    },
+    {
+      "name": "preserves 9/36/144/180 and 320 material-role contributions",
+      "status": "passed"
+    },
+    {
+      "name": "uses the exact four original Binder fixtures and 760 evaluations",
+      "status": "passed"
+    },
+    {
+      "name": "leaves approvals, claims, selection and rank pending",
+      "status": "passed"
+    },
+    {
+      "name": "preserves original source-group and unresolved-condition contracts",
+      "status": "passed"
+    },
+    {
+      "name": "resolves original source IDs and hashes rather than source labels",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate SOURCE_INTEGRITY for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate INTERPRETATION_REVIEW for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate PRODUCER_SUPPORT for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate ACTUAL_CALCULATED_FACT for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate ACTUAL_OWNER for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate ACTUAL_DIRECTION for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate ALL_ANCESTOR_DOMAINS for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate TIME_INTERSECTION for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate ACTUAL_USER_STATE for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate COUNTEREXAMPLES_AND_PROHIBITIONS for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate PRODUCT_SPECIALISM for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "runs original Hard Gate CUSTOMER_APPROVAL for every applicable candidate",
+      "status": "passed"
+    },
+    {
+      "name": "does not mutate input Graph or producer packet",
+      "status": "passed"
+    },
+    {
+      "name": "rejects another category marriage",
+      "status": "passed"
+    },
+    {
+      "name": "rejects another category parentChild",
+      "status": "passed"
+    },
+    {
+      "name": "rejects another category coworker",
+      "status": "passed"
+    },
+    {
+      "name": "rejects another category managerReport",
+      "status": "passed"
+    },
+    {
+      "name": "rejects another category businessPartner",
+      "status": "passed"
+    },
+    {
+      "name": "rejects another category friendship",
+      "status": "passed"
+    },
+    {
+      "name": "rejects single-person Love as a different product",
+      "status": "passed"
+    },
+    {
+      "name": "keeps dating projection distinct from actual relationship state",
+      "status": "passed"
+    },
+    {
+      "name": "preserves personal A ownership and independent Fusion",
+      "status": "passed"
+    },
+    {
+      "name": "preserves personal B ownership and independent Fusion",
+      "status": "passed"
+    },
+    {
+      "name": "validates only the five supported canonical relation kinds",
+      "status": "passed"
+    },
+    {
+      "name": "rejects canonical participants corruption",
+      "status": "passed"
+    },
+    {
+      "name": "rejects canonical position corruption",
+      "status": "passed"
+    },
+    {
+      "name": "rejects canonical branch corruption",
+      "status": "passed"
+    },
+    {
+      "name": "rejects canonical kind corruption",
+      "status": "passed"
+    },
+    {
+      "name": "retains absent pair as an observation while independent personal/directional evidence survives",
+      "status": "passed"
+    },
+    {
+      "name": "checks recipient viewpoint for A_TO_B",
+      "status": "passed"
+    },
+    {
+      "name": "checks recipient viewpoint for B_TO_A",
+      "status": "passed"
+    },
+    {
+      "name": "keeps whole input swap separate from name-only swap",
+      "status": "passed"
+    },
+    {
+      "name": "retains all 256 directed MBTI references and direct/inferred coverage",
+      "status": "passed"
+    },
+    {
+      "name": "preserves MBTI unknown and unknown hour without filling",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $A calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $B calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $C calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $D calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $E calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $F calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $G calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $H calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $I calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $J calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $K calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $L calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $M calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $N calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $O calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $P calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $Q calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $R calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $S calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $T calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $U calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $V calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $W calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "preserves actual A-X variant $X calculation/evidence/narrative/Book",
+      "status": "passed"
+    },
+    {
+      "name": "reproduces existing O fallback without declaring Reader PASS",
+      "status": "passed"
+    },
+    {
+      "name": "reproduces existing Q fallback without declaring Reader PASS",
+      "status": "passed"
+    },
+    {
+      "name": "keeps 80 unresolved meanings distinct from 3160 comparison pairs",
+      "status": "passed"
+    },
+    {
+      "name": "blocks forced repair/contact for VIOLENCE only with explicit synthetic signal",
+      "status": "passed"
+    },
+    {
+      "name": "blocks forced repair/contact for THREAT only with explicit synthetic signal",
+      "status": "passed"
+    },
+    {
+      "name": "blocks forced repair/contact for COERCION only with explicit synthetic signal",
+      "status": "passed"
+    },
+    {
+      "name": "blocks forced repair/contact for STALKING only with explicit synthetic signal",
+      "status": "passed"
+    },
+    {
+      "name": "blocks forced repair/contact for NO_CONTACT_CONSENT only with explicit synthetic signal",
+      "status": "passed"
+    },
+    {
+      "name": "blocks forced repair/contact for SEXUAL_BOUNDARY only with explicit synthetic signal",
+      "status": "passed"
+    },
+    {
+      "name": "blocks forced repair/contact for SURVEILLANCE only with explicit synthetic signal",
+      "status": "passed"
+    },
+    {
+      "name": "blocks forced repair/contact for ECONOMIC_CONTROL only with explicit synthetic signal",
+      "status": "passed"
+    },
+    {
+      "name": "blocks forced repair/contact for PRIVACY_VIOLATION only with explicit synthetic signal",
+      "status": "passed"
+    },
+    {
+      "name": "blocks forced repair/contact for RETALIATION only with explicit synthetic signal",
+      "status": "passed"
+    },
+    {
+      "name": "requires every required ancestry domain and retains signs",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on missingApproval",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on wrongOwner",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on wrongRecipient",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on reversePairReference",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on missingRoot",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on noCanonical",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on badSourceHash",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on forbiddenDomain",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on badParticipants",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on unsupportedRelation",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on sourceDefinition",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on missingNativeFact",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on missingFusionRule",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on withheld",
+      "status": "passed"
+    },
+    {
+      "name": "holds affected synthetic candidates on tamperedValue",
+      "status": "passed"
+    },
+    {
+      "name": "allows separately registered identical directional TenGod facts",
+      "status": "passed"
+    },
+    {
+      "name": "requires actual registered display rather than planned recall allocation",
+      "status": "passed"
+    },
+    {
+      "name": "rejects incompatible recall display owners",
+      "status": "passed"
+    },
+    {
+      "name": "rejects incompatible recall display types",
+      "status": "passed"
+    },
+    {
+      "name": "rejects incompatible recall display roots",
+      "status": "passed"
+    },
+    {
+      "name": "rejects incompatible recall display direction",
+      "status": "passed"
+    },
+    {
+      "name": "rejects incompatible recall display meaning",
+      "status": "passed"
+    },
+    {
+      "name": "rejects incompatible recall display claim",
+      "status": "passed"
+    },
+    {
+      "name": "rejects incompatible recall display context",
+      "status": "passed"
+    },
+    {
+      "name": "rejects incompatible recall display address",
+      "status": "passed"
+    },
+    {
+      "name": "rejects incompatible recall display actuallyDisplayed",
+      "status": "passed"
+    },
+    {
+      "name": "blocks input-free past experience and repair without verified friction",
+      "status": "passed"
+    },
+    {
+      "name": "compares all three algorithms using all 180 questions",
+      "status": "passed"
+    },
+    {
+      "name": "reserves CH05 scarce candidate without claiming every global result is optimal",
+      "status": "passed"
+    },
+    {
+      "name": "uses deterministic selection and rejects fabricated sessions",
+      "status": "passed"
+    },
+    {
+      "name": "validates independent fixture record hashes before selection",
+      "status": "passed"
+    },
+    {
+      "name": "blocks same fact/meaning but permits reviewed distinct application",
+      "status": "passed"
+    },
+    {
+      "name": "retains input-independent policy without customer display issuance",
+      "status": "passed"
+    },
+    {
+      "name": "keeps read-only copies of synthetic options",
+      "status": "passed"
+    },
+    {
+      "name": "checks selected repair dependency against actual selected CH07",
+      "status": "passed"
+    },
+    {
+      "name": "emits no source-name or birth-date text in public artifacts",
+      "status": "passed"
+    },
+    {
+      "name": "uses actual categories for A-X probes and Catalog-only research lookup",
+      "status": "passed"
+    }
+  ]
+}

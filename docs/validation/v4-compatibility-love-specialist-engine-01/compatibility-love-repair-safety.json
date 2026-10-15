@@ -1,0 +1,1142 @@
+{
+  "policy": {
+    "relationshipStatus": "UNKNOWN_UNLESS_ACTUALLY_ENTERED",
+    "datingProjectionIsInput": false,
+    "fixedAB": true,
+    "inferGenderRoles": false,
+    "missingPair": "NO_RELATION_DETECTED_IS_NOT_BAD_COMPATIBILITY",
+    "pairReference": "REFERENCE_ONLY_NOT_INDIVIDUAL_SCORING_OR_OBSERVED_BEHAVIOR",
+    "signedAxes": "KEEP_OWNER_AND_SIGN; SAME_OR_OPPOSITE_IS_NOT_OUTCOME",
+    "facets": "APPLICATION_CONDITION_NOT_NEW_ROOT",
+    "friction": "PERSONAL_TENDENCY_AND_PAIR_DIFFERENCE_AND_HYPOTHESIS_ARE_DISTINCT",
+    "repair": "VERIFIED_PRECEDING_FRICTION_REQUIRED; NO_ASSUMED_PAST_CONFLICT",
+    "repairSteps": [
+      "FACT_CHECK",
+      "SENDER_ADJUSTMENT",
+      "RECIPIENT_QUESTION",
+      "CONSENT",
+      "REVIEW_TIME",
+      "BOUNDARIES"
+    ],
+    "positive": "CONDITIONS_COUNTEREXAMPLES_CONSENT_AND_OVERUSE_REQUIRED",
+    "recall": "ACTUAL_SAME_OWNER_TYPE_ROOT_DIRECTION_MEANING_CLAIM_CONTEXT_DISPLAY_REQUIRED",
+    "rootBudget": null,
+    "newActualRoots": 0,
+    "customerDisplayLedgerIssued": false
+  },
+  "signals": [
+    "VIOLENCE",
+    "THREAT",
+    "COERCION",
+    "STALKING",
+    "NO_CONTACT_CONSENT",
+    "SEXUAL_BOUNDARY",
+    "SURVEILLANCE",
+    "ECONOMIC_CONTROL",
+    "PRIVACY_VIOLATION",
+    "RETALIATION"
+  ],
+  "actualCustomerIncidents": "NOT_ENTERED_NOT_DIAGNOSED",
+  "actualRepair": [
+    {
+      "id": "clr:material:CH08.P2:a-change-unasked-care",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH05.P3:ab-care-debt"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "WRONG_OWNER",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P2:a-change-delivery",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH05.P3:ab-correction-without-request"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P1:repair-response-loop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P1:mismatched-response-time"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P4:joint-safe-stop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P4:safety-outside-type"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P1:repair-correction-loop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P3:correction-and-retreat"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P3:b-change-help-boundary",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH06.P3:ba-care-erases-choice"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P4:joint-contact-revision",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P1:mismatched-response-time"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P3:b-change-return-signal",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH06.P3:ba-explanation-too-late"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P2:a-change-unasked-care",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH05.P3:ab-care-debt"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P2:a-change-delivery",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH05.P3:ab-correction-without-request"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P1:repair-response-loop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P1:mismatched-response-time"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P4:joint-safe-stop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P4:safety-outside-type"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P1:repair-correction-loop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P3:correction-and-retreat"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P3:b-change-help-boundary",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH06.P3:ba-care-erases-choice"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P4:joint-contact-revision",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P1:mismatched-response-time"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P3:b-change-return-signal",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH06.P3:ba-explanation-too-late"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P2:a-change-unasked-care",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH05.P3:ab-care-debt"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P2:a-change-delivery",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH05.P3:ab-correction-without-request"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P1:repair-response-loop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P1:mismatched-response-time"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P4:joint-safe-stop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P4:safety-outside-type"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P1:repair-correction-loop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P3:correction-and-retreat"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P3:b-change-help-boundary",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH06.P3:ba-care-erases-choice"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P4:joint-contact-revision",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P1:mismatched-response-time"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P3:b-change-return-signal",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH06.P3:ba-explanation-too-late"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P2:a-change-unasked-care",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH05.P3:ab-care-debt"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P2:a-change-delivery",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH05.P3:ab-correction-without-request"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P1:repair-response-loop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P1:mismatched-response-time"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P4:joint-safe-stop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P4:safety-outside-type"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P1:repair-correction-loop",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P3:correction-and-retreat"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P3:b-change-help-boundary",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH06.P3:ba-care-erases-choice"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P4:joint-contact-revision",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH07.P1:mismatched-response-time"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "id": "clr:material:CH08.P3:b-change-return-signal",
+      "repair": {
+        "required": true,
+        "state": "VERIFIED_PRECEDING_FRICTION_AND_CONSENT_REQUIRED",
+        "precedingMeaningRefs": [
+          "clr:material:CH06.P3:ba-explanation-too-late"
+        ]
+      },
+      "blockers": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CUSTOMER_APPROVAL_PENDING",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "UNKNOWN_MBTI",
+        "MEANING_REVIEW_REQUIRED"
+      ]
+    }
+  ],
+  "syntheticUnsafe": [
+    {
+      "id": "synthetic:love:negative:unsafe-repair",
+      "question": {
+        "id": "synthetic:love:question:CH01.P1",
+        "address": "CH01.P1",
+        "chapter": 1,
+        "paragraph": 1,
+        "role": null,
+        "priority": false,
+        "requiredDirection": null,
+        "requiredOwner": "PAIR",
+        "repair": false,
+        "recall": false
+      },
+      "meaning": {
+        "id": "synthetic:love:meaning:CH01.P1",
+        "claim": "synthetic:love:claim:CH01.P1",
+        "owner": "PAIR",
+        "direction": null,
+        "context": "love",
+        "application": "CH01.P1",
+        "condition": "synthetic:love:condition:CH01.P1",
+        "function": "NEW_APPLICATION",
+        "reviewed": true,
+        "factIds": [
+          "natalA",
+          "natalA",
+          "natalB"
+        ],
+        "fit": 10,
+        "requiresFriction": false,
+        "frictionOf": null,
+        "event": false,
+        "forcedContact": false,
+        "forcedRepair": true,
+        "safety": [
+          "COERCION"
+        ],
+        "types": [
+          "INTP",
+          "ESFJ"
+        ]
+      },
+      "receipt": {
+        "receiptId": "kb:receipt:d5a5a593430e4970657014a281fddee3188fb717722456092eba7132f88970c6",
+        "candidateCatalogKey": "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471",
+        "originalResearchId": "synthetic:love:negative:unsafe-repair",
+        "knowledgeKind": "PRODUCT_SPECIALIST",
+        "fixtureId": "synthetic:love:selection",
+        "product": "saju_mbti_compatibility",
+        "relationship": "love",
+        "requirementRef": "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471",
+        "requiredSources": [
+          "synthetic:love:negative:unsafe-repair:fact:natalA",
+          "synthetic:love:negative:unsafe-repair:fact:natalB"
+        ],
+        "selectedActualEvidence": [
+          "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+          "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+        ],
+        "temporalWitnesses": [],
+        "matches": [
+          {
+            "requirementId": "synthetic:love:negative:unsafe-repair:fact:natalA",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af",
+                "producerEvidenceId": "synthetic:love:fact:natalA",
+                "ownerId": "synthetic:love:owner:A",
+                "rootIds": [
+                  "synthetic:love:root:natal:A"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/compatibility-love-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticPair",
+                  "version": "synthetic-love-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          },
+          {
+            "requirementId": "synthetic:love:negative:unsafe-repair:fact:natalB",
+            "sourceCatalogKeys": [],
+            "matchedSourceReferences": [],
+            "matchedActualEvidence": [
+              {
+                "nodeId": "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+                "producerEvidenceId": "synthetic:love:fact:natalB",
+                "ownerId": "synthetic:love:owner:B",
+                "rootIds": [
+                  "synthetic:love:root:natal:B"
+                ],
+                "producer": {
+                  "file": "tests/fixtures/compatibility-love-specialist-engine-01/synthetic-knowledge.json",
+                  "symbol": "declaredSyntheticPair",
+                  "version": "synthetic-love-v1",
+                  "system": "synthetic-only"
+                },
+                "addressability": "ORIGINAL_ID",
+                "participants": [],
+                "direction": null,
+                "temporal": null,
+                "sources": []
+              }
+            ],
+            "rejectedNodeIds": [],
+            "rejectedReasons": [],
+            "identityMatches": 1,
+            "state": "PASS",
+            "reasons": []
+          }
+        ],
+        "sourceGroupEvaluation": [],
+        "ownerEvaluation": "PASS",
+        "directionEvaluation": "NOT_APPLICABLE",
+        "participantEvaluation": "PASS",
+        "temporalEvaluation": "NOT_APPLICABLE",
+        "ancestryEvaluation": "PASS",
+        "semanticDecisionReferences": [],
+        "domainPolicyReferences": [],
+        "producerSupport": "PASS",
+        "actualInputConditions": [],
+        "counterexamples": {
+          "originalRef": "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471",
+          "state": "PASS"
+        },
+        "allTwelveGateResults": [
+          {
+            "gate": "SOURCE_INTEGRITY",
+            "state": "PASS",
+            "requirementFields": [
+              "originalRecordHash",
+              "sourceVerificationVersion"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "INTERPRETATION_REVIEW",
+            "state": "PASS",
+            "requirementFields": [
+              "originalReviewState"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCER_SUPPORT",
+            "state": "PASS",
+            "requirementFields": [
+              "producerRequirements"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_CALCULATED_FACT",
+            "state": "PASS",
+            "requirementFields": [
+              "sourceRequirements",
+              "sourceGroups"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_OWNER",
+            "state": "PASS",
+            "requirementFields": [
+              "requiredOwner"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_DIRECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredDirection"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ALL_ANCESTOR_DOMAINS",
+            "state": "PASS",
+            "requirementFields": [
+              "allActualAndResearchRequiredAncestors"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "TIME_INTERSECTION",
+            "state": "NOT_APPLICABLE",
+            "requirementFields": [
+              "requiredTemporalScope",
+              "requiredWindow"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "ACTUAL_USER_STATE",
+            "state": "PASS",
+            "requirementFields": [],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+            "state": "PASS",
+            "requirementFields": [
+              "counterexamples",
+              "prohibitions",
+              "introducedLedger"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "PRODUCT_SPECIALISM",
+            "state": "PASS",
+            "requirementFields": [
+              "product",
+              "relationship",
+              "readerQuestion",
+              "coreMeaning"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          },
+          {
+            "gate": "CUSTOMER_APPROVAL",
+            "state": "PASS",
+            "requirementFields": [
+              "operatorApproval",
+              "customerApproval",
+              "originalRecordHash",
+              "approvalScope"
+            ],
+            "actualEvidence": [
+              "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+              "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+            ],
+            "originalReferences": [
+              "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471"
+            ],
+            "reasons": [],
+            "nextAction": null
+          }
+        ],
+        "stages": [
+          "DISCOVERED",
+          "SOURCE_TRACEABLE",
+          "FACTS_MATCHED",
+          "CONDITIONS_MATCHED"
+        ],
+        "finalDisposition": "CUSTOMER_ELIGIBLE",
+        "blockingReasons": [],
+        "followupRequirements": [],
+        "customerApproved": true,
+        "operatorApproved": true,
+        "approvalRequirement": {
+          "catalogKey": "kc:v1:0b44dbaeef57b2ea487d9f5965c6207c4da25335088e53e75696a0aa88ecf471",
+          "originalRecordHash": "9dfbe46ac3e359a2c5ce1a4ce49960d062bc2064bb3a8e540141141372302f3a",
+          "sourceVersion": "e32450d13f5fa39f8ec37bc410502a3d66047d9050937769b797ca5f16cfb9d4",
+          "meaningIdentity": "synthetic:love:meaning:CH01.P1",
+          "claimIdentity": "synthetic:love:claim:CH01.P1",
+          "product": "saju_mbti_compatibility",
+          "relationship": "love",
+          "contexts": [],
+          "evidenceIds": [
+            "aeg:node:697d061be3c258a40408333e9e507ac44587a76778305d12df86f674331afb41",
+            "aeg:node:6e0c0a2ad062430cfc158ff16d9ed00e0d0b8302e7d5b8343b7765454c7318af"
+          ],
+          "prohibitedInference": {},
+          "evaluatedAt": "2026-10-12T12:00:00+09:00",
+          "canonicalFactRoots": [
+            "synthetic:love:root:natal:A",
+            "synthetic:love:root:natal:B"
+          ],
+          "graphVersion": "actual-evidence-graph-v1",
+          "sourceVerificationVersion": "source-verification-v1",
+          "semanticVerificationVersion": "semantic-domain-v1",
+          "temporalWitnesses": []
+        },
+        "canonicalFactRoots": [
+          "synthetic:love:root:natal:A",
+          "synthetic:love:root:natal:B"
+        ],
+        "meaningIdentity": "synthetic:love:meaning:CH01.P1",
+        "claimIdentity": "synthetic:love:claim:CH01.P1",
+        "reuse": {
+          "relation": "INSUFFICIENT_VERIFICATION",
+          "independentFactsAdded": 0
+        },
+        "binderVersion": "knowledge-binder-v1",
+        "graphVersion": "actual-evidence-graph-v1",
+        "catalogVersion": "unified-catalog-v1",
+        "sourceVerificationVersion": "source-verification-v1",
+        "semanticVerificationVersion": "semantic-domain-v1"
+      },
+      "informationRoots": [
+        "synthetic:love:root:natal:A"
+      ],
+      "supportingAncestryRoots": [
+        "synthetic:love:root:natal:A",
+        "synthetic:love:root:natal:B"
+      ],
+      "owners": [
+        "synthetic:love:owner:A",
+        "synthetic:love:owner:B"
+      ],
+      "eligible": false,
+      "reasons": [
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    }
+  ]
+}
