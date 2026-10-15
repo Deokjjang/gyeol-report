@@ -7,8 +7,8 @@
 - **TASK:** V4-COMPATIBILITY-LOVE-SPECIALIST-ENGINE-01
 - **BASE_SHA:** 40bc7d1a91d08bc15c85c6642d4dfd5c67b14690
 - **BRANCH:** v4/compatibility-love-specialist-engine-01
-- **COMMIT_SHA:** Recorded in final Git/Preview receipt after validation
-- **REMOTE_SHA_MATCH:** Recorded in final Git/Preview receipt after validation
+- **COMMIT_SHA:** e665da249a4ba9882f4465dee74dec4cd323197c (implementation; final receipt-only HEAD is reported separately at completion)
+- **REMOTE_SHA_MATCH:** PASS for implementation; final receipt-only HEAD independently reverified
 - **SPECIALIST_ENGINE:** CompatibilityLoveSpecialistEngine
 - **SPECIALIST_STATUS:** OFFLINE_IMPLEMENTED; customer publication not approved
 - **PRODUCT_KEY:** saju_mbti_compatibility
@@ -96,7 +96,7 @@
 - **LINT:** PASS; 0 warnings
 - **BUILD:** PASS; 0 warnings
 - **DIFF_CHECK:** PASS
-- **VERCEL_PREVIEW:** Exact final SHA/branch/repository/project/target=null receipt required after push
+- **VERCEL_PREVIEW:** READY implementation e665da249a4ba9882f4465dee74dec4cd323197c; https://gyeol-report-9ipxccpfu-gyeol-report-s-projects.vercel.app; exact repository/ref/project/target=null verified
 - **REMAINING_GAPS:** 80 meaning/operator/customer reviews; original source-group/context/Fusion rule gaps; O/Q publication-safety work; no runtime integration
 - **NEXT_STAGE_READY:** Offline candidate/condition/conflict/root handoff READY; sales, customer publication and Production not approved; no next task started
 
@@ -121,3 +121,7 @@
 초기 신규 구현의 연구 모듈 직접 import는 기존 격리 검사 1건을 추가 실패시켰다. 기존 테스트나 fixture를 바꾸지 않고 Catalog 조회로 수정했다. 최종 기존 실패는 다시 동일한 46건이다. 신규 Catalog 동등성 검사는 Catalog 순서와 원본 배열 순서를 구별해 원래 ID별 전체 값을 비교한다.
 
 성능 값은 candidate 조회/Binder/conflict/synthetic/artifact digest/peak RSS를 구분한 외부 오프라인 실행 관측이다. 고객 Runtime 응답시간이나 배포 함수 압축 크기를 측정했다고 주장하지 않는다.
+
+## Preview 영수증
+
+[구현 커밋 Preview 영수증](preview-receipt.json)은 구현 SHA `e665da249a4ba9882f4465dee74dec4cd323197c`의 READY를 기록한다. 이 영수증을 추가하는 마지막 문서 커밋의 SHA와 Preview READY는 완료 응답에서 독립적으로 다시 확인한다. 소스·fixture·생성 JSON은 구현 커밋 이후 바뀌지 않았다. master 통합, Production 배포, 고객 사용 승인은 실행하지 않았다.

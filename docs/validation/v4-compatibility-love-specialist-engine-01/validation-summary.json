@@ -33,7 +33,13 @@
   "customerApproved": 0,
   "customerSelections": 0,
   "claims": 0,
-  "preview": "CHECK_EXACT_FINAL_BRANCH_HEAD_AFTER_PUSH",
+  "preview": {
+    "scope": "implementation",
+    "state": "READY",
+    "sha": "e665da249a4ba9882f4465dee74dec4cd323197c",
+    "url": "https://gyeol-report-9ipxccpfu-gyeol-report-s-projects.vercel.app",
+    "finalReceiptOnlyHeadVerifiedInCompletionResponse": true
+  },
   "productionApproved": false,
   "newEngineTests": {
     "pass": 115,
