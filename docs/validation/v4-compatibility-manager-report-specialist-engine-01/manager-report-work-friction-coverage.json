@@ -1,0 +1,182 @@
+[
+  {
+    "id": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+    "address": "CH07.P2",
+    "topic": "관계 미검출이어도 평가 기준을 물을 필요",
+    "authorityKind": "evaluation",
+    "repairIds": [
+      "mrpr:material:CH08.P2:manager-explain-evaluation"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P4:excluded-team-voice",
+    "address": "CH07.P4",
+    "topic": "즉답자 위주 회의에서 빠지는 실행 정보",
+    "authorityKind": "safety_support",
+    "repairIds": [
+      "mrpr:material:CH08.P4:agree-multiple-voice-channels"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P2:report-time-clash",
+    "address": "CH07.P2",
+    "topic": "실제 충과 보고 시점 불일치의 구분",
+    "authorityKind": "reporting",
+    "repairIds": [
+      "mrpr:material:CH08.P2:manager-set-report-time"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+    "address": "CH07.P1",
+    "topic": "수행 책임과 결정권의 불균형",
+    "authorityKind": "delegation",
+    "repairIds": [
+      "mrpr:material:CH08.P1:delegate-decision"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P1:excess-report-frequency",
+    "address": "CH07.P1",
+    "topic": "점검이 반복 설명 업무로 바뀌는 조건",
+    "authorityKind": "reporting",
+    "repairIds": [
+      "mrpr:material:CH08.P1:reduce-duplicate-report"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P3:insufficient-credit",
+    "address": "CH07.P3",
+    "topic": "기여가 기록에서 사라지는 비용",
+    "authorityKind": "recognition",
+    "repairIds": [
+      "mrpr:material:CH08.P3:report-state-contribution"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P4:late-risk-report",
+    "address": "CH07.P4",
+    "topic": "문제 보고가 늦어지는 조건",
+    "authorityKind": "reporting",
+    "repairIds": [
+      "mrpr:material:CH08.P4:agree-early-risk-response"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P4:missing-change-history",
+    "address": "CH07.P4",
+    "topic": "바뀐 지시의 기록이 사라지는 조건",
+    "authorityKind": "priority_change",
+    "repairIds": [
+      "mrpr:material:CH08.P4:agree-change-log"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P2:rework-with-half-harmony",
+    "address": "CH07.P2",
+    "topic": "접점이 있어도 수정 기준이 계속 바뀌면 재작업",
+    "authorityKind": "review_standard",
+    "repairIds": [
+      "mrpr:material:CH08.P2:manager-close-revision"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+    "address": "CH07.P4",
+    "topic": "관리 판단을 팀원의 책임으로 넘기는 조건",
+    "authorityKind": "decision_rights",
+    "repairIds": [
+      "mrpr:material:CH08.P4:agree-retained-manager-decision"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P3:public-personal-judgment",
+    "address": "CH07.P3",
+    "topic": "공개 지적에서 행동과 인격을 섞는 문제",
+    "authorityKind": "feedback",
+    "repairIds": [
+      "mrpr:material:CH08.P3:report-request-specific-feedback"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+    "address": "CH07.P4",
+    "topic": "판단 정보와 상시 행동 감시의 경계",
+    "authorityKind": "reporting",
+    "repairIds": [
+      "mrpr:material:CH08.P4:agree-report-purpose"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+    "address": "CH07.P1",
+    "topic": "자율이라는 말과 실제 선택지의 차이",
+    "authorityKind": "method_discretion",
+    "repairIds": [
+      "mrpr:material:CH08.P1:make-discretion-visible"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P3:fear-of-retaliation",
+    "address": "CH07.P3",
+    "topic": "말하지 않는 이유를 유형으로 고정하지 않기",
+    "authorityKind": "safety_support",
+    "repairIds": [
+      "mrpr:material:CH08.P3:report-safe-support-route"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P3:insufficient-resources",
+    "address": "CH07.P3",
+    "topic": "결과 책임에 필요한 접근·자원 공백",
+    "authorityKind": "resource_support",
+    "repairIds": [
+      "mrpr:material:CH08.P3:report-name-blocked-resource"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P3:overload-allocation",
+    "address": "CH07.P3",
+    "topic": "업무량 초과와 배분 결정의 책임",
+    "authorityKind": "work_allocation",
+    "repairIds": [
+      "mrpr:material:CH08.P3:report-state-capacity"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P2:priority-change-harm",
+    "address": "CH07.P2",
+    "topic": "실제 해와 업무 우선순위 변경을 구분",
+    "authorityKind": "priority_change",
+    "repairIds": [
+      "mrpr:material:CH08.P2:manager-record-priority"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P1:goal-method-confusion",
+    "address": "CH07.P1",
+    "topic": "결과 목표와 개인 선호 방법의 혼동",
+    "authorityKind": "method_discretion",
+    "repairIds": [
+      "mrpr:material:CH08.P1:separate-method"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P1:vague-instructions",
+    "address": "CH07.P1",
+    "topic": "구체화되지 않은 목표의 정보 공백",
+    "authorityKind": "goal_setting",
+    "repairIds": [
+      "mrpr:material:CH08.P1:clarify-output"
+    ]
+  },
+  {
+    "id": "mrpr:material:CH07.P2:final-authority-unsupported",
+    "address": "CH07.P2",
+    "topic": "미지원 명리 정의로 최종 결정자를 정하지 않기",
+    "authorityKind": "decision_rights",
+    "repairIds": [
+      "mrpr:material:CH08.P2:manager-confirm-final-authority"
+    ]
+  }
+]

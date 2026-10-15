@@ -1,0 +1,6138 @@
+{
+  "required": [
+    "workplace",
+    "reportingRelationship",
+    "task",
+    "stage",
+    "output",
+    "requiredInformation",
+    "availableTime",
+    "responsibility",
+    "decisionOwner"
+  ],
+  "distinctions": [
+    "DRAFT_NOT_APPROVED",
+    "REVIEW_NOT_REVISION_COMPLETED",
+    "AGREED_DEADLINE_NOT_MET_DEADLINE",
+    "TRANSMITTED_NOT_UNDERSTOOD",
+    "LATEST_VERSION_NOT_RESPONSIBILITY_TRANSFER"
+  ],
+  "original": [
+    {
+      "id": "mrpr:material:CH05.P1:manager-to-report-exploration",
+      "stage": "draft",
+      "output": "proposal_status",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH05.P1:manager-to-report-exploration",
+            "sourceKeys": [
+              "0ba71def5f7dd66a4424",
+              "60699f5629066c047ea1",
+              "78ca1a3776c53c2d0b48",
+              "afc8a0ecee18bdf80b98",
+              "6186611585f3c5ffc311"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "0ba71def5f7dd66a4424"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "60699f5629066c047ea1"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "0ba71def5f7dd66a4424",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "60699f5629066c047ea1",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "같은 A의 Fusion root·context 없으면 해당 지원 보류"
+    },
+    {
+      "id": "mrpr:material:CH09.P4:recall-contribution-learning",
+      "stage": "maintenance",
+      "output": "introduced_learning",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH04.P3:feedback-credit-visible",
+            "sourceKeys": [
+              "a405c7c47aa46bef385b",
+              "15401c66ebefeba6594d",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "a405c7c47aa46bef385b"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "15401c66ebefeba6594d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          },
+          {
+            "groupId": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+            "sourceKeys": [
+              "80abdb3362bb5a5279c3",
+              "1fa4cae7d38bb8fe8883",
+              "c9a09e727fe2ed6dcdbd"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "1fa4cae7d38bb8fe8883"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "a405c7c47aa46bef385b",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "15401c66ebefeba6594d",
+            "domain": "WORK"
+          },
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "1fa4cae7d38bb8fe8883",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "복수 ref는 실제 표시된 호환 subset만 회수"
+    },
+    {
+      "id": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+      "stage": "midpoint",
+      "output": "reality_brief",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+            "sourceKeys": [
+              "c7fee219fcf7a5b642fd",
+              "45c222b77f8da3a044fc",
+              "6047f491aa9082328a86",
+              "bfcb541ba28cf9dd0cce",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ISTJ",
+                "sourceKey": "c7fee219fcf7a5b642fd"
+              },
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "45c222b77f8da3a044fc"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ISTJ",
+            "sourceKey": "c7fee219fcf7a5b642fd",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "45c222b77f8da3a044fc",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "B 같은 사람 Fusion root 없으면 해당 지원 보류"
+    },
+    {
+      "id": "mrpr:material:CH05.P3:manager-care-as-surveillance",
+      "stage": "execution",
+      "output": "check_purpose",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH05.P3:manager-care-as-surveillance",
+            "sourceKeys": [
+              "80abdb3362bb5a5279c3",
+              "412d7ea5f91628d61b5d",
+              "fe11b875c7ad3a9c8318",
+              "73f1ae9fb0a7c110106b",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              },
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "412d7ea5f91628d61b5d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTP",
+            "sourceKey": "412d7ea5f91628d61b5d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "보안·법정 모니터링은 실제 기준 별도 확인"
+    },
+    {
+      "id": "mrpr:material:CH09.P2:recall-personal-fusion",
+      "stage": "midpoint",
+      "output": "introduced_fusion",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+            "sourceKeys": [
+              "c7fee219fcf7a5b642fd",
+              "45c222b77f8da3a044fc",
+              "6047f491aa9082328a86",
+              "bfcb541ba28cf9dd0cce",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ISTJ",
+                "sourceKey": "c7fee219fcf7a5b642fd"
+              },
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "45c222b77f8da3a044fc"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ISTJ",
+            "sourceKey": "c7fee219fcf7a5b642fd",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "45c222b77f8da3a044fc",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "Fusion root·방향·실제 표시 없으면 보류"
+    },
+    {
+      "id": "mrpr:material:CH05.P1:manager-to-report-constraint",
+      "stage": "start",
+      "output": "directional_boundary",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH05.P1:manager-to-report-constraint",
+            "sourceKeys": [
+              "ce1defc1af72408fec4a",
+              "7d3a67f375180035e30f",
+              "ce1defc1af72408fec4a",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "7d3a67f375180035e30f"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "7d3a67f375180035e30f",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "AB 실제 정관 없으면 후보 보류"
+    },
+    {
+      "id": "mrpr:material:CH06.P4:report-decision-ready-brief",
+      "stage": "midpoint",
+      "output": "decision_request",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH06.P4:report-decision-ready-brief",
+            "sourceKeys": [
+              "4b43fdff038f96814956",
+              "9157cb32f6c4c40c5336",
+              "ce1defc1af72408fec4a",
+              "8cbe6472c2f9201328be"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "4b43fdff038f96814956"
+              },
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "9157cb32f6c4c40c5336"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ISTP",
+            "sourceKey": "4b43fdff038f96814956",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "9157cb32f6c4c40c5336",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "간결함 때문에 필수 안전 정보를 생략 불가"
+    },
+    {
+      "id": "mrpr:material:CH06.P4:report-feedback-clarification",
+      "stage": "revision",
+      "output": "feedback_question",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH06.P4:report-feedback-clarification",
+            "sourceKeys": [
+              "4d4a080342aae90654f6",
+              "f1a63049534f1dfb09b7",
+              "fe11b875c7ad3a9c8318",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "4d4a080342aae90654f6"
+              },
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "f1a63049534f1dfb09b7"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "4d4a080342aae90654f6",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "f1a63049534f1dfb09b7",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "보복 위험이 있으면 직접 대화 대신 안전 통로 확인"
+    },
+    {
+      "id": "mrpr:material:CH05.P3:manager-speed-pressure",
+      "stage": "review",
+      "output": "review_time",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH05.P3:manager-speed-pressure",
+            "sourceKeys": [
+              "16577eb313d7ad41b01b",
+              "4d4a080342aae90654f6",
+              "f8f90022e047bfe61557",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "16577eb313d7ad41b01b"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "4d4a080342aae90654f6"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "16577eb313d7ad41b01b",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "4d4a080342aae90654f6",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "위험한 상황에서 직접 반박을 강요하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH01.P3:model-and-procedure",
+      "stage": "information",
+      "output": "information_format",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH01.P3:model-and-procedure",
+            "sourceKeys": [
+              "5c3113996849818dc94a",
+              "72685cd9261c6060b22d",
+              "2fe4d73f766a08fb06e6"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "5c3113996849818dc94a"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "72685cd9261c6060b22d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "5c3113996849818dc94a",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "72685cd9261c6060b22d",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "양쪽 실제 유형·개인 원천 없으면 Pair 해석 보류"
+    },
+    {
+      "id": "mrpr:material:CH01.P3:same-type-different-role",
+      "stage": "plan",
+      "output": "rule_version",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH01.P3:same-type-different-role",
+            "sourceKeys": [
+              "871f1880dae3d3831abc",
+              "01b252c15ec6d3cc4064",
+              "38fa9db618761c3db5b0"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "871f1880dae3d3831abc"
+              },
+              {
+                "owner": "B",
+                "type": "ISTJ",
+                "sourceKey": "01b252c15ec6d3cc4064"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "871f1880dae3d3831abc",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTJ",
+            "sourceKey": "01b252c15ec6d3cc4064",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "유형이 다르면 동일 유형 후보 적용 불가"
+    },
+    {
+      "id": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+      "stage": "information",
+      "output": "observation_scope",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+            "sourceKeys": [
+              "e08ef500cdb091985a2e",
+              "16577eb313d7ad41b01b",
+              "90e77590d3ea07930ba1",
+              "8cbe6472c2f9201328be"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "e08ef500cdb091985a2e"
+              },
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "16577eb313d7ad41b01b"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "e08ef500cdb091985a2e",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "16577eb313d7ad41b01b",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 직업·고객 관계를 만들어내지 않음"
+    },
+    {
+      "id": "mrpr:material:CH07.P2:report-time-clash",
+      "stage": "midpoint",
+      "output": "timing_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P2:report-time-clash",
+            "sourceKeys": [
+              "941361dcf854c0c9f213",
+              "16577eb313d7ad41b01b",
+              "ab7a3cfbec4c729e713c",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "16577eb313d7ad41b01b"
+              },
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "ab7a3cfbec4c729e713c"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "16577eb313d7ad41b01b",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "ab7a3cfbec4c729e713c",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "actual_supported_relation_or_withhold",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 관계 refs·각자 원천 없으면 이 결합 보류"
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-set-report-time",
+      "stage": "midpoint",
+      "output": "timing_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P2:report-time-clash",
+            "sourceKeys": [
+              "941361dcf854c0c9f213",
+              "16577eb313d7ad41b01b",
+              "ab7a3cfbec4c729e713c",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "16577eb313d7ad41b01b"
+              },
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "ab7a3cfbec4c729e713c"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "16577eb313d7ad41b01b",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "ab7a3cfbec4c729e713c",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "actual_supported_relation_or_withhold",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "실제 관계 없으면 충 해석 보류"
+    },
+    {
+      "id": "mrpr:material:CH05.P2:manager-resource-removal",
+      "stage": "execution",
+      "output": "support_commitment",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH05.P2:manager-resource-removal",
+            "sourceKeys": [
+              "5b778076e2f7f6a60f75",
+              "ab01acce90e1dd368d2d",
+              "fe11b875c7ad3a9c8318",
+              "7912252da76a38abbace"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "5b778076e2f7f6a60f75"
+              },
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "ab01acce90e1dd368d2d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "5b778076e2f7f6a60f75",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "ab01acce90e1dd368d2d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "A 실제 권한 밖 자원을 확보했다고 쓰지 않음"
+    },
+    {
+      "id": "mrpr:material:CH05.P4:manager-delegation-confirm",
+      "stage": "plan",
+      "output": "delegation_boundary",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH05.P4:manager-delegation-confirm",
+            "sourceKeys": [
+              "0d96f1fc326be0f4a50a",
+              "8df480c9e6bb997fbe0e",
+              "ce1defc1af72408fec4a",
+              "17a595663fd8055c13b7"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "0d96f1fc326be0f4a50a"
+              },
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "8df480c9e6bb997fbe0e"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "0d96f1fc326be0f4a50a",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "8df480c9e6bb997fbe0e",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 승인권·예산은 입력되지 않음"
+    },
+    {
+      "id": "mrpr:material:CH05.P4:manager-feedback-recheck",
+      "stage": "revision",
+      "output": "feedback_recheck",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH05.P4:manager-feedback-recheck",
+            "sourceKeys": [
+              "f1a63049534f1dfb09b7",
+              "1fa4cae7d38bb8fe8883",
+              "90e77590d3ea07930ba1",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "f1a63049534f1dfb09b7"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "1fa4cae7d38bb8fe8883"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "f1a63049534f1dfb09b7",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "1fa4cae7d38bb8fe8883",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "평가권·실적 판단은 별도 사실 필요"
+    },
+    {
+      "id": "mrpr:material:CH06.P2:report-capacity-information",
+      "stage": "plan",
+      "output": "capacity_brief",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH06.P2:report-capacity-information",
+            "sourceKeys": [
+              "15401c66ebefeba6594d",
+              "80abdb3362bb5a5279c3",
+              "e2ed5b09b1f8185708cd",
+              "59caf289010ad94aa04b"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "15401c66ebefeba6594d"
+              },
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "15401c66ebefeba6594d",
+            "domain": "WORK"
+          },
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 근로조건·법률 판단은 별도"
+    },
+    {
+      "id": "mrpr:material:CH06.P2:report-propose-bounded-method",
+      "stage": "draft",
+      "output": "trial_proposal",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH06.P2:report-propose-bounded-method",
+            "sourceKeys": [
+              "0ba71def5f7dd66a4424",
+              "c3c4464cae8ed35c5fd1",
+              "bbc18a4e615032647a49",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "0ba71def5f7dd66a4424"
+              },
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "c3c4464cae8ed35c5fd1"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "0ba71def5f7dd66a4424",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "c3c4464cae8ed35c5fd1",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "성과·예산 효과는 미확인 추정으로 표시"
+    },
+    {
+      "id": "mrpr:material:CH06.P3:report-question-as-final-decision",
+      "stage": "review",
+      "output": "question_status",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH06.P3:report-question-as-final-decision",
+            "sourceKeys": [
+              "f666c10a6db231abcc92",
+              "0d96f1fc326be0f4a50a",
+              "3f130780549c6cb7a467",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "f666c10a6db231abcc92"
+              },
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "0d96f1fc326be0f4a50a"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "f666c10a6db231abcc92",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "0d96f1fc326be0f4a50a",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 확정 결정·권한은 별도 확인"
+    },
+    {
+      "id": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+      "stage": "midpoint",
+      "output": "risk_timing",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+            "sourceKeys": [
+              "ab7a3cfbec4c729e713c",
+              "16577eb313d7ad41b01b",
+              "78ca1a3776c53c2d0b48",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "ab7a3cfbec4c729e713c"
+              },
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "16577eb313d7ad41b01b"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "ab7a3cfbec4c729e713c",
+            "domain": "WORK"
+          },
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "16577eb313d7ad41b01b",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "안전한 직접 보고가 어렵다면 적절한 지원 확인"
+    },
+    {
+      "id": "mrpr:material:CH05.P2:manager-recognize-evidence",
+      "stage": "feedback",
+      "output": "specific_credit",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH05.P2:manager-recognize-evidence",
+            "sourceKeys": [
+              "c3c4464cae8ed35c5fd1",
+              "15401c66ebefeba6594d",
+              "e2ed5b09b1f8185708cd",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "c3c4464cae8ed35c5fd1"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "15401c66ebefeba6594d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "c3c4464cae8ed35c5fd1",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "15401c66ebefeba6594d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "확인되지 않은 실적은 후보로도 만들지 않음"
+    },
+    {
+      "id": "mrpr:material:CH09.P2:recall-supported-possibility",
+      "stage": "execution",
+      "output": "introduced_support",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH05.P2:manager-resource-removal",
+            "sourceKeys": [
+              "5b778076e2f7f6a60f75",
+              "ab01acce90e1dd368d2d",
+              "fe11b875c7ad3a9c8318",
+              "7912252da76a38abbace"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "5b778076e2f7f6a60f75"
+              },
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "ab01acce90e1dd368d2d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "5b778076e2f7f6a60f75",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "ab01acce90e1dd368d2d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "후보·계산만으로 실제 도움 받은 이력 생성 금지"
+    },
+    {
+      "id": "mrpr:material:CH03.P1:report-procedure-understanding",
+      "stage": "start",
+      "output": "execution_questions",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH03.P1:report-procedure-understanding",
+            "sourceKeys": [
+              "5b5228616e5b4f21b980",
+              "e2ed5b09b1f8185708cd",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "5b5228616e5b4f21b980"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "5b5228616e5b4f21b980",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "B 실제 원국·유형 조건이 없으면 개인화 보류"
+    },
+    {
+      "id": "mrpr:material:CH02.P1:manager-model-goal",
+      "stage": "goal",
+      "output": "goal_translation",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH02.P1:manager-model-goal",
+            "sourceKeys": [
+              "45c222b77f8da3a044fc",
+              "78ca1a3776c53c2d0b48",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "45c222b77f8da3a044fc"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "45c222b77f8da3a044fc",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "A 실제 원국·유형 조건 없는 개인화 보류"
+    },
+    {
+      "id": "mrpr:material:CH02.P1:manager-people-purpose",
+      "stage": "start",
+      "output": "purpose_support",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH02.P1:manager-people-purpose",
+            "sourceKeys": [
+              "25034b1d3583cb77b7ab",
+              "fe11b875c7ad3a9c8318",
+              "7912252da76a38abbace"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "25034b1d3583cb77b7ab"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "25034b1d3583cb77b7ab",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 동의·경력·성과를 추정하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH03.P1:report-independent-focus",
+      "stage": "execution",
+      "output": "minimum_report",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH03.P1:report-independent-focus",
+            "sourceKeys": [
+              "412d7ea5f91628d61b5d",
+              "90e77590d3ea07930ba1",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "412d7ea5f91628d61b5d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ISTP",
+            "sourceKey": "412d7ea5f91628d61b5d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "안전·고객 피해 관련 즉시 보고는 지연 불가"
+    },
+    {
+      "id": "mrpr:material:CH07.P4:excluded-team-voice",
+      "stage": "review",
+      "output": "voice_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:excluded-team-voice",
+            "sourceKeys": [
+              "16577eb313d7ad41b01b",
+              "4d4a080342aae90654f6",
+              "ae0c112b425afed611ff"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "16577eb313d7ad41b01b"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "4d4a080342aae90654f6"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "16577eb313d7ad41b01b",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "4d4a080342aae90654f6",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "표현 방식 조정을 B에게만 요구하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+      "stage": "review",
+      "output": "voice_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:excluded-team-voice",
+            "sourceKeys": [
+              "16577eb313d7ad41b01b",
+              "4d4a080342aae90654f6",
+              "ae0c112b425afed611ff"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "16577eb313d7ad41b01b"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "4d4a080342aae90654f6"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "16577eb313d7ad41b01b",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "4d4a080342aae90654f6",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "보복 우려에서는 별도 지원 먼저"
+    },
+    {
+      "id": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+      "stage": "plan",
+      "output": "analysis_scope",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+            "sourceKeys": [
+              "f666c10a6db231abcc92",
+              "c7fee219fcf7a5b642fd",
+              "6186611585f3c5ffc311"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "f666c10a6db231abcc92"
+              },
+              {
+                "owner": "B",
+                "type": "ISTJ",
+                "sourceKey": "c7fee219fcf7a5b642fd"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "f666c10a6db231abcc92",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "ISTJ",
+            "sourceKey": "c7fee219fcf7a5b642fd",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "확인하지 않은 결과를 사실로 쓰지 않음"
+    },
+    {
+      "id": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+      "stage": "delivery",
+      "output": "completion_check",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+            "sourceKeys": [
+              "871f1880dae3d3831abc",
+              "e5bb3aac2a342fa953aa",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "871f1880dae3d3831abc"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "e5bb3aac2a342fa953aa"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "871f1880dae3d3831abc",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "e5bb3aac2a342fa953aa",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 수행 능력·실적 보장은 아님"
+    },
+    {
+      "id": "mrpr:material:CH04.P2:big-picture-field-interface",
+      "stage": "midpoint",
+      "output": "field_to_plan",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH04.P2:big-picture-field-interface",
+            "sourceKeys": [
+              "45c222b77f8da3a044fc",
+              "c0fbe9a4b01f0f51c46b",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "45c222b77f8da3a044fc"
+              },
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "c0fbe9a4b01f0f51c46b"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "45c222b77f8da3a044fc",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "ISTP",
+            "sourceKey": "c0fbe9a4b01f0f51c46b",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "확인되지 않은 실제 현장·직업을 만들지 않음"
+    },
+    {
+      "id": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+      "stage": "draft",
+      "output": "bounded_trial",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+            "sourceKeys": [
+              "c3c4464cae8ed35c5fd1",
+              "0ba71def5f7dd66a4424",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "c3c4464cae8ed35c5fd1"
+              },
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "0ba71def5f7dd66a4424"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "c3c4464cae8ed35c5fd1",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "0ba71def5f7dd66a4424",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "법정·안전 규칙은 시험 명목으로 우회 불가"
+    },
+    {
+      "id": "mrpr:material:CH07.P1:goal-method-confusion",
+      "stage": "execution",
+      "output": "method_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:goal-method-confusion",
+            "sourceKeys": [
+              "0d96f1fc326be0f4a50a",
+              "8df480c9e6bb997fbe0e",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "0d96f1fc326be0f4a50a"
+              },
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "8df480c9e6bb997fbe0e"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "0d96f1fc326be0f4a50a",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "8df480c9e6bb997fbe0e",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "법정 절차는 취향 차이로 처리하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH07.P1:vague-instructions",
+      "stage": "goal",
+      "output": "instruction_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:vague-instructions",
+            "sourceKeys": [
+              "45c222b77f8da3a044fc",
+              "5b5228616e5b4f21b980",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "45c222b77f8da3a044fc"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "5b5228616e5b4f21b980"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "45c222b77f8da3a044fc",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "5b5228616e5b4f21b980",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "명확한 지시가 이미 있다면 사실부터 재확인"
+    },
+    {
+      "id": "mrpr:material:CH07.P3:insufficient-credit",
+      "stage": "delivery",
+      "output": "credit_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:insufficient-credit",
+            "sourceKeys": [
+              "f1a63049534f1dfb09b7",
+              "15401c66ebefeba6594d",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "f1a63049534f1dfb09b7"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "15401c66ebefeba6594d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "f1a63049534f1dfb09b7",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "15401c66ebefeba6594d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "성과·보수·승진 약속 금지"
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-state-contribution",
+      "stage": "delivery",
+      "output": "credit_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:insufficient-credit",
+            "sourceKeys": [
+              "f1a63049534f1dfb09b7",
+              "15401c66ebefeba6594d",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "f1a63049534f1dfb09b7"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "15401c66ebefeba6594d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "f1a63049534f1dfb09b7",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "15401c66ebefeba6594d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "확인되지 않은 성과를 부풀리지 않음"
+    },
+    {
+      "id": "mrpr:material:CH01.P1:goal-method-interface",
+      "stage": "goal",
+      "output": "goal_brief",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH01.P1:goal-method-interface",
+            "sourceKeys": [
+              "45c222b77f8da3a044fc",
+              "5b5228616e5b4f21b980",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "45c222b77f8da3a044fc"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "5b5228616e5b4f21b980"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "45c222b77f8da3a044fc",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "5b5228616e5b4f21b980",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "방법이 법정 절차로 고정된 업무는 별도 확인"
+    },
+    {
+      "id": "mrpr:material:CH01.P4:discretion-as-condition",
+      "stage": "plan",
+      "output": "discretion_boundary",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH01.P4:discretion-as-condition",
+            "sourceKeys": [
+              "0d96f1fc326be0f4a50a",
+              "7d3a67f375180035e30f",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "0d96f1fc326be0f4a50a"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "7d3a67f375180035e30f"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "0d96f1fc326be0f4a50a",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "7d3a67f375180035e30f",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "안전·자격상 필수 규칙을 임의 해제하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH04.P3:feedback-credit-visible",
+      "stage": "feedback",
+      "output": "contribution_record",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH04.P3:feedback-credit-visible",
+            "sourceKeys": [
+              "a405c7c47aa46bef385b",
+              "15401c66ebefeba6594d",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "a405c7c47aa46bef385b"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "15401c66ebefeba6594d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "a405c7c47aa46bef385b",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "15401c66ebefeba6594d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실적·성과 이력을 유형으로 추정하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+      "stage": "revision",
+      "output": "supported_learning",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+            "sourceKeys": [
+              "80abdb3362bb5a5279c3",
+              "1fa4cae7d38bb8fe8883",
+              "c9a09e727fe2ed6dcdbd"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "1fa4cae7d38bb8fe8883"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "1fa4cae7d38bb8fe8883",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "위험·부당행위는 일반 회고만으로 해결 단정 불가"
+    },
+    {
+      "id": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+      "stage": "plan",
+      "output": "discretion_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+            "sourceKeys": [
+              "0d96f1fc326be0f4a50a",
+              "7d3a67f375180035e30f",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "0d96f1fc326be0f4a50a"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "7d3a67f375180035e30f"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "0d96f1fc326be0f4a50a",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "7d3a67f375180035e30f",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 업무 규정 확인 전 제약 부당성 단정 금지"
+    },
+    {
+      "id": "mrpr:material:CH07.P1:excess-report-frequency",
+      "stage": "execution",
+      "output": "report_cost",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:excess-report-frequency",
+            "sourceKeys": [
+              "80abdb3362bb5a5279c3",
+              "412d7ea5f91628d61b5d",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              },
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "412d7ea5f91628d61b5d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTP",
+            "sourceKey": "412d7ea5f91628d61b5d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "필수 안전 보고는 단순 횟수만으로 축소 불가"
+    },
+    {
+      "id": "mrpr:material:CH07.P3:overload-allocation",
+      "stage": "plan",
+      "output": "load_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:overload-allocation",
+            "sourceKeys": [
+              "80abdb3362bb5a5279c3",
+              "15401c66ebefeba6594d",
+              "59caf289010ad94aa04b"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "15401c66ebefeba6594d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "15401c66ebefeba6594d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "노동·건강·법률 결과를 임의 판정하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH07.P3:public-personal-judgment",
+      "stage": "feedback",
+      "output": "safe_feedback",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:public-personal-judgment",
+            "sourceKeys": [
+              "ef731f4b889ed40d780d",
+              "1fa4cae7d38bb8fe8883",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "ef731f4b889ed40d780d"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "1fa4cae7d38bb8fe8883"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "ef731f4b889ed40d780d",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "1fa4cae7d38bb8fe8883",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "보복 우려면 직접 화해 강요 금지"
+    },
+    {
+      "id": "mrpr:material:CH07.P4:late-risk-report",
+      "stage": "midpoint",
+      "output": "early_report_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:late-risk-report",
+            "sourceKeys": [
+              "16577eb313d7ad41b01b",
+              "ab7a3cfbec4c729e713c",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "16577eb313d7ad41b01b"
+              },
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "ab7a3cfbec4c729e713c"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "16577eb313d7ad41b01b",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "ab7a3cfbec4c729e713c",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "안전 의무·즉시 보고 조건 별도 준수"
+    },
+    {
+      "id": "mrpr:material:CH07.P4:missing-change-history",
+      "stage": "revision",
+      "output": "change_record_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:missing-change-history",
+            "sourceKeys": [
+              "76d4c68e32d1662f8abf",
+              "c3c4464cae8ed35c5fd1",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "76d4c68e32d1662f8abf"
+              },
+              {
+                "owner": "B",
+                "type": "ISTJ",
+                "sourceKey": "c3c4464cae8ed35c5fd1"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "76d4c68e32d1662f8abf",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTJ",
+            "sourceKey": "c3c4464cae8ed35c5fd1",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "기존 기록을 임의로 지우거나 법적 증거 판정 금지"
+    },
+    {
+      "id": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+      "stage": "maintenance",
+      "output": "report_boundary",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+            "sourceKeys": [
+              "80abdb3362bb5a5279c3",
+              "412d7ea5f91628d61b5d",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              },
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "412d7ea5f91628d61b5d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTP",
+            "sourceKey": "412d7ea5f91628d61b5d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 법적 적합성·감시 사실은 별도 확인"
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-request-specific-feedback",
+      "stage": "feedback",
+      "output": "safe_feedback",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:public-personal-judgment",
+            "sourceKeys": [
+              "ef731f4b889ed40d780d",
+              "1fa4cae7d38bb8fe8883",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "ef731f4b889ed40d780d"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "1fa4cae7d38bb8fe8883"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "ef731f4b889ed40d780d",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "1fa4cae7d38bb8fe8883",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "위험한 직접 대화·화해 강요 금지"
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-state-capacity",
+      "stage": "plan",
+      "output": "load_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:overload-allocation",
+            "sourceKeys": [
+              "80abdb3362bb5a5279c3",
+              "15401c66ebefeba6594d",
+              "59caf289010ad94aa04b"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "15401c66ebefeba6594d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "15401c66ebefeba6594d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "실제 근로·건강 판단은 별도 지원"
+    },
+    {
+      "id": "mrpr:material:CH01.P1:support-execution-interface",
+      "stage": "start",
+      "output": "support_window",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH01.P1:support-execution-interface",
+            "sourceKeys": [
+              "80abdb3362bb5a5279c3",
+              "412d7ea5f91628d61b5d",
+              "7912252da76a38abbace"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              },
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "412d7ea5f91628d61b5d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTP",
+            "sourceKey": "412d7ea5f91628d61b5d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "안전상 상시 모니터링이 필요한 과정은 그대로 적용 불가"
+    },
+    {
+      "id": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+      "stage": "execution",
+      "output": "delegation_sheet",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+            "sourceKeys": [
+              "0d96f1fc326be0f4a50a",
+              "412d7ea5f91628d61b5d",
+              "17a595663fd8055c13b7"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "0d96f1fc326be0f4a50a"
+              },
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "412d7ea5f91628d61b5d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "0d96f1fc326be0f4a50a",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTP",
+            "sourceKey": "412d7ea5f91628d61b5d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 권한·과제 확인 전 적용 보류"
+    },
+    {
+      "id": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+      "stage": "midpoint",
+      "output": "early_risk_response",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+            "sourceKeys": [
+              "76d4c68e32d1662f8abf",
+              "c7fee219fcf7a5b642fd",
+              "ae0c112b425afed611ff"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "76d4c68e32d1662f8abf"
+              },
+              {
+                "owner": "B",
+                "type": "ISTJ",
+                "sourceKey": "c7fee219fcf7a5b642fd"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "76d4c68e32d1662f8abf",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTJ",
+            "sourceKey": "c7fee219fcf7a5b642fd",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "안전한 발언이 실제 보장된다고 단정하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH08.P1:clarify-output",
+      "stage": "goal",
+      "output": "instruction_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:vague-instructions",
+            "sourceKeys": [
+              "45c222b77f8da3a044fc",
+              "5b5228616e5b4f21b980",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "45c222b77f8da3a044fc"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "5b5228616e5b4f21b980"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "45c222b77f8da3a044fc",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "5b5228616e5b4f21b980",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "직접 질문이 위험하면 안전 통로 확인"
+    },
+    {
+      "id": "mrpr:material:CH08.P1:separate-method",
+      "stage": "execution",
+      "output": "method_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:goal-method-confusion",
+            "sourceKeys": [
+              "0d96f1fc326be0f4a50a",
+              "8df480c9e6bb997fbe0e",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "0d96f1fc326be0f4a50a"
+              },
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "8df480c9e6bb997fbe0e"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "0d96f1fc326be0f4a50a",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "8df480c9e6bb997fbe0e",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "법정·안전 절차 임의 변경 금지"
+    },
+    {
+      "id": "mrpr:material:CH09.P1:recall-goal-execution",
+      "stage": "goal",
+      "output": "introduced_goal",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH01.P1:goal-method-interface",
+            "sourceKeys": [
+              "45c222b77f8da3a044fc",
+              "5b5228616e5b4f21b980",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "45c222b77f8da3a044fc"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "5b5228616e5b4f21b980"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "INTP",
+            "sourceKey": "45c222b77f8da3a044fc",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "5b5228616e5b4f21b980",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "actuallyDisplayed ledger 없으면 고객 적용 보류"
+    },
+    {
+      "id": "mrpr:material:CH09.P1:recall-shared-completion",
+      "stage": "delivery",
+      "output": "introduced_completion",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+            "sourceKeys": [
+              "871f1880dae3d3831abc",
+              "e5bb3aac2a342fa953aa",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "871f1880dae3d3831abc"
+              },
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "e5bb3aac2a342fa953aa"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "871f1880dae3d3831abc",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "e5bb3aac2a342fa953aa",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "같은 root·과제·실제 표시 확인 전 보류"
+    },
+    {
+      "id": "mrpr:material:CH08.P1:make-discretion-visible",
+      "stage": "plan",
+      "output": "discretion_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+            "sourceKeys": [
+              "0d96f1fc326be0f4a50a",
+              "7d3a67f375180035e30f",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "0d96f1fc326be0f4a50a"
+              },
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "7d3a67f375180035e30f"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "0d96f1fc326be0f4a50a",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "7d3a67f375180035e30f",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "규정상 고정 조건은 그대로 보존"
+    },
+    {
+      "id": "mrpr:material:CH08.P1:reduce-duplicate-report",
+      "stage": "execution",
+      "output": "report_cost",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:excess-report-frequency",
+            "sourceKeys": [
+              "80abdb3362bb5a5279c3",
+              "412d7ea5f91628d61b5d",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              },
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "412d7ea5f91628d61b5d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTP",
+            "sourceKey": "412d7ea5f91628d61b5d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "필수 안전 보고는 유지"
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-change-log",
+      "stage": "revision",
+      "output": "change_record_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:missing-change-history",
+            "sourceKeys": [
+              "76d4c68e32d1662f8abf",
+              "c3c4464cae8ed35c5fd1",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "76d4c68e32d1662f8abf"
+              },
+              {
+                "owner": "B",
+                "type": "ISTJ",
+                "sourceKey": "c3c4464cae8ed35c5fd1"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "76d4c68e32d1662f8abf",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTJ",
+            "sourceKey": "c3c4464cae8ed35c5fd1",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "과거 기록 임의 삭제 금지"
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-early-risk-response",
+      "stage": "midpoint",
+      "output": "early_report_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:late-risk-report",
+            "sourceKeys": [
+              "16577eb313d7ad41b01b",
+              "ab7a3cfbec4c729e713c",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "16577eb313d7ad41b01b"
+              },
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "ab7a3cfbec4c729e713c"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "16577eb313d7ad41b01b",
+            "domain": "COMMUNICATION"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "ab7a3cfbec4c729e713c",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "안전 의무는 정해진 절차 우선"
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-report-purpose",
+      "stage": "maintenance",
+      "output": "report_boundary",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+            "sourceKeys": [
+              "80abdb3362bb5a5279c3",
+              "412d7ea5f91628d61b5d",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "80abdb3362bb5a5279c3"
+              },
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "412d7ea5f91628d61b5d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "80abdb3362bb5a5279c3",
+            "domain": "WORK"
+          },
+          {
+            "owner": "B",
+            "type": "ISTP",
+            "sourceKey": "412d7ea5f91628d61b5d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "법률·보안·조직 정책은 별도 확인"
+    },
+    {
+      "id": "mrpr:material:CH01.P2:half-harmony-not-completion",
+      "stage": "review",
+      "output": "completion_boundary",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH01.P2:half-harmony-not-completion",
+            "sourceKeys": [
+              "69aac2d24f114cdd40fb",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "actual_supported_relation_or_withhold",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "반합 미검출이면 일반 업무 문장으로 채우지 않음"
+    },
+    {
+      "id": "mrpr:material:CH07.P2:priority-change-harm",
+      "stage": "revision",
+      "output": "priority_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P2:priority-change-harm",
+            "sourceKeys": [
+              "e23b027944c5f0d3197a",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "actual_supported_relation_or_withhold",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "해 미검출이면 사건·관계 새로 생성 금지"
+    },
+    {
+      "id": "mrpr:material:CH07.P2:rework-with-half-harmony",
+      "stage": "revision",
+      "output": "rework_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P2:rework-with-half-harmony",
+            "sourceKeys": [
+              "69aac2d24f114cdd40fb",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "actual_supported_relation_or_withhold",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 반합·수정 이력은 각각 확인 필요"
+    },
+    {
+      "id": "mrpr:material:CH01.P2:harmony-not-approval",
+      "stage": "approval",
+      "output": "relation_question",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH01.P2:harmony-not-approval",
+            "sourceKeys": [
+              "84d1ddc4aa078aa8fa5f",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "actual_supported_relation_or_withhold",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 관계 ID가 없으면 이 후보 보류"
+    },
+    {
+      "id": "mrpr:material:CH07.P2:final-authority-unsupported",
+      "stage": "approval",
+      "output": "authority_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P2:final-authority-unsupported",
+            "sourceKeys": [
+              "88af77cc76890045d0ca",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "actual_supported_relation_or_withhold",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "원진·직급·평가권 추정 금지"
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-close-revision",
+      "stage": "revision",
+      "output": "rework_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P2:rework-with-half-harmony",
+            "sourceKeys": [
+              "69aac2d24f114cdd40fb",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "actual_supported_relation_or_withhold",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "실제 반합을 수정 성공 보장으로 사용 금지"
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-record-priority",
+      "stage": "revision",
+      "output": "priority_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P2:priority-change-harm",
+            "sourceKeys": [
+              "e23b027944c5f0d3197a",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "actual_supported_relation_or_withhold",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "실제 변경 없는 고객 과거를 창작하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-confirm-final-authority",
+      "stage": "approval",
+      "output": "authority_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P2:final-authority-unsupported",
+            "sourceKeys": [
+              "88af77cc76890045d0ca",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "actual_supported_relation_or_withhold",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "미확인 권한은 UNKNOWN 유지"
+    },
+    {
+      "id": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+      "stage": "midpoint",
+      "output": "decision_brief",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+            "sourceKeys": [
+              "16577eb313d7ad41b01b",
+              "17a595663fd8055c13b7"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "16577eb313d7ad41b01b"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENTJ",
+            "sourceKey": "16577eb313d7ad41b01b",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "즉시 안전 대응은 정해진 절차 적용"
+    },
+    {
+      "id": "mrpr:material:CH02.P4:manager-avoid-feedback",
+      "stage": "feedback",
+      "output": "specific_feedback",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH02.P4:manager-avoid-feedback",
+            "sourceKeys": [
+              "f1a63049534f1dfb09b7",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "f1a63049534f1dfb09b7"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "f1a63049534f1dfb09b7",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 평가권은 별도 확인"
+    },
+    {
+      "id": "mrpr:material:CH02.P3:manager-correct-own-error",
+      "stage": "revision",
+      "output": "instruction_correction",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH02.P3:manager-correct-own-error",
+            "sourceKeys": [
+              "76d4c68e32d1662f8abf",
+              "17a595663fd8055c13b7"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "76d4c68e32d1662f8abf"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "76d4c68e32d1662f8abf",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 오류가 있었다고 단정하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH02.P4:manager-overcontrol",
+      "stage": "execution",
+      "output": "method_boundary",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH02.P4:manager-overcontrol",
+            "sourceKeys": [
+              "0d96f1fc326be0f4a50a",
+              "7394a0c2a7a725f0d533"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "0d96f1fc326be0f4a50a"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "0d96f1fc326be0f4a50a",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "필수 안전 절차는 간섭이라는 이유로 생략 불가"
+    },
+    {
+      "id": "mrpr:material:CH03.P2:report-definition-before-work",
+      "stage": "goal",
+      "output": "problem_boundary",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH03.P2:report-definition-before-work",
+            "sourceKeys": [
+              "ab01acce90e1dd368d2d",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "ab01acce90e1dd368d2d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "ab01acce90e1dd368d2d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 납기·안전 대응 의무를 삭제하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+      "stage": "midpoint",
+      "output": "gap_report",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+            "sourceKeys": [
+              "c7fee219fcf7a5b642fd",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ISTJ",
+                "sourceKey": "c7fee219fcf7a5b642fd"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ISTJ",
+            "sourceKey": "c7fee219fcf7a5b642fd",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 검토·권한 없는 항목을 확정하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH02.P2:manager-standard-evidence",
+      "stage": "review",
+      "output": "standard_scope",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH02.P2:manager-standard-evidence",
+            "sourceKeys": [
+              "c3c4464cae8ed35c5fd1",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ISTJ",
+                "sourceKey": "c3c4464cae8ed35c5fd1"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "c3c4464cae8ed35c5fd1",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "규정상 고정 양식은 임의 대체하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH02.P3:manager-support-limit",
+      "stage": "execution",
+      "output": "support_routing",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH02.P3:manager-support-limit",
+            "sourceKeys": [
+              "5b778076e2f7f6a60f75",
+              "7912252da76a38abbace"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENFJ",
+                "sourceKey": "5b778076e2f7f6a60f75"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ENFJ",
+            "sourceKey": "5b778076e2f7f6a60f75",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "권한 밖 자원 확보를 약속하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH03.P2:report-private-feedback-space",
+      "stage": "feedback",
+      "output": "feedback_conditions",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH03.P2:report-private-feedback-space",
+            "sourceKeys": [
+              "1fa4cae7d38bb8fe8883",
+              "97fa6fd9e95f85910bf9"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ISFP",
+                "sourceKey": "1fa4cae7d38bb8fe8883"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ISFP",
+            "sourceKey": "1fa4cae7d38bb8fe8883",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "직접 요청이 위험하면 조직 지원 경로 확인"
+    },
+    {
+      "id": "mrpr:material:CH03.P3:report-participation-signal",
+      "stage": "midpoint",
+      "output": "participation_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH03.P3:report-participation-signal",
+            "sourceKeys": [
+              "ee94f546d508b18941b2",
+              "7912252da76a38abbace"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "ee94f546d508b18941b2"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "ee94f546d508b18941b2",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "개인 사생활·민감 정보는 임의 수집하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH03.P4:report-late-synthesis",
+      "stage": "midpoint",
+      "output": "intermediate_status",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH03.P4:report-late-synthesis",
+            "sourceKeys": [
+              "ab7a3cfbec4c729e713c",
+              "154edb00b2c3dca6d39c"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "INTP",
+                "sourceKey": "ab7a3cfbec4c729e713c"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "ab7a3cfbec4c729e713c",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "미완성을 실제 지연 이력으로 단정하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH03.P4:report-overacceptance",
+      "stage": "execution",
+      "output": "capacity_statement",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH03.P4:report-overacceptance",
+            "sourceKeys": [
+              "15401c66ebefeba6594d",
+              "59caf289010ad94aa04b"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "15401c66ebefeba6594d"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ESFJ",
+            "sourceKey": "15401c66ebefeba6594d",
+            "domain": "WORK"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "팀원에게 위험한 직접 거절을 강요하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+      "stage": "goal",
+      "output": "context_gate",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+            "sourceKeys": [
+              "d23874cc920e78330b98",
+              "ae0c112b425afed611ff",
+              "d6112a6cb9c4d49a4d17"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "직접 이견이 위험하면 안전한 별도 통로 우선"
+    },
+    {
+      "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+      "stage": "plan",
+      "output": "delegation_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:responsibility-without-delegation",
+            "sourceKeys": [
+              "17a595663fd8055c13b7",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 권한 미확인이므로 법적 책임 판정 불가"
+    },
+    {
+      "id": "mrpr:material:CH07.P3:fear-of-retaliation",
+      "stage": "feedback",
+      "output": "voice_support",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:fear-of-retaliation",
+            "sourceKeys": [
+              "ae0c112b425afed611ff",
+              "55deedb0770c19853fe3"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 보복·불법 여부는 앱이 판정하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH07.P3:insufficient-resources",
+      "stage": "execution",
+      "output": "resource_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:insufficient-resources",
+            "sourceKeys": [
+              "17a595663fd8055c13b7",
+              "7912252da76a38abbace"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "승인·보안 우회 제안 금지"
+    },
+    {
+      "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+      "stage": "approval",
+      "output": "decision_transfer_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+            "sourceKeys": [
+              "d23874cc920e78330b98",
+              "17a595663fd8055c13b7"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "직급·법적 책임은 따로 확인"
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-name-blocked-resource",
+      "stage": "execution",
+      "output": "resource_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:insufficient-resources",
+            "sourceKeys": [
+              "17a595663fd8055c13b7",
+              "7912252da76a38abbace"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "보안·승인 우회 금지"
+    },
+    {
+      "id": "mrpr:material:CH08.P3:report-safe-support-route",
+      "stage": "feedback",
+      "output": "voice_support",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:fear-of-retaliation",
+            "sourceKeys": [
+              "ae0c112b425afed611ff",
+              "55deedb0770c19853fe3"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "실제 안전 보장·불법 여부 판정 금지"
+    },
+    {
+      "id": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+      "stage": "feedback",
+      "output": "evaluation_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+            "sourceKeys": [
+              "97fa6fd9e95f85910bf9",
+              "6a87ebbb37ab5d75d10c"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "all_direct_sources",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "counterexample": "실제 평가권·평점·성과는 미확인"
+    },
+    {
+      "id": "mrpr:material:CH08.P2:manager-explain-evaluation",
+      "stage": "feedback",
+      "output": "evaluation_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+            "sourceKeys": [
+              "97fa6fd9e95f85910bf9",
+              "6a87ebbb37ab5d75d10c"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": {
+          "direction": "A_TO_B",
+          "subject": "A",
+          "recipient": "B",
+          "tenGodViewer": "B.dayMaster",
+          "tenGodTarget": "A.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "실제 인사평가 절차를 임의 변경하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH08.P1:delegate-decision",
+      "stage": "plan",
+      "output": "delegation_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:responsibility-without-delegation",
+            "sourceKeys": [
+              "17a595663fd8055c13b7",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "권한 밖 결정을 확약하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+      "stage": "approval",
+      "output": "decision_transfer_gap",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+            "sourceKeys": [
+              "d23874cc920e78330b98",
+              "17a595663fd8055c13b7"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "법적 책임 판정·조직 권한 날조 금지"
+    },
+    {
+      "id": "mrpr:material:CH09.P3:recall-delegation-principle",
+      "stage": "plan",
+      "output": "introduced_delegation",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P1:responsibility-without-delegation",
+            "sourceKeys": [
+              "17a595663fd8055c13b7",
+              "d23874cc920e78330b98"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "같은 task·owner·actuallyDisplayed 확인 필요"
+    },
+    {
+      "id": "mrpr:material:CH09.P3:recall-safe-voice",
+      "stage": "feedback",
+      "output": "introduced_safety",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P3:fear-of-retaliation",
+            "sourceKeys": [
+              "ae0c112b425afed611ff",
+              "55deedb0770c19853fe3"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "보호·안전·법적 결과를 보장하지 않음"
+    },
+    {
+      "id": "mrpr:material:CH09.P4:recall-decision-responsibility",
+      "stage": "approval",
+      "output": "introduced_responsibility",
+      "conditions": {
+        "policyRef": "mrpr:binding-policy:v1",
+        "sourceGroups": [
+          {
+            "groupId": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+            "sourceKeys": [
+              "d23874cc920e78330b98",
+              "17a595663fd8055c13b7"
+            ],
+            "typePredicates": [],
+            "allSourcesWithinGroupRequired": true
+          }
+        ],
+        "groupPolicy": "compatible_actually_displayed_group_only",
+        "allAncestorDomainAndOwnerReviewRequired": true,
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_manager_role",
+          "actual_team_member_role",
+          "verified_reporting_relationship",
+          "verified_evaluation_authority",
+          "safe_voice_channel",
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": true
+      },
+      "counterexample": "실제 표시·동일 인물·과제 범위 없으면 보류"
+    }
+  ],
+  "actualOutput": "UNKNOWN"
+}

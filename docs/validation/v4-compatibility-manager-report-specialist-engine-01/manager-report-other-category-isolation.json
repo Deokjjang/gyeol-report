@@ -1,0 +1,103 @@
+{
+  "unchangedOriginalFoundationRuns": [
+    {
+      "fixtureId": "fixture-compatibility-A",
+      "relationship": "love",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-marriage",
+      "relationship": "marriage",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-parentChild",
+      "relationship": "parentChild",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-coworker",
+      "relationship": "coworker",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-businessPartner",
+      "relationship": "businessPartner",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-friendship",
+      "relationship": "friendship",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-unknown-both",
+      "relationship": "love",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-slot-swap",
+      "relationship": "love",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-no-detected-pair",
+      "relationship": "love",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "eligible": 0,
+      "errors": []
+    }
+  ],
+  "actualContrasts": [
+    {
+      "letter": "AH",
+      "variant": 0,
+      "category": "coworker",
+      "hashes": {
+        "calculations": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "packet": "79d1b1230b5e588111f6bba127cc6bb06edf776d4946e52275674dbe42b02d8c",
+        "narrative": "98339ef2d7b55144ce7378697874a712c4e9b26c3480424a037f81300f7796a0",
+        "integration": "be0e9f02978347568e634a83387f59f34fdf0a835c4f8df3686deea225dbc312",
+        "book": "fd666b0ff509299796162ee00d9e121fc1be82846b24277de9bad2fc56582d05"
+      }
+    },
+    {
+      "letter": "AI",
+      "variant": 0,
+      "category": "businessPartner",
+      "hashes": {
+        "calculations": "cf1693249b15c2c2a7645125b5247d4fae057f101e28d8d2fc69f8a36ea67f56",
+        "packet": "353cad38c9d67802f5743602d06b3fc4723e85edb76bd4865b2e7954ff90e2d1",
+        "narrative": "72c35b655b2bc462b3bf1d879f106a9a2c85e00bbe5c7eb7c343c43f8482de16",
+        "integration": "944a7bc611831416be08b598484aedffc640ff228f9013872c4abd99d375aa1a",
+        "book": "8d6e494a91007fe197d4d4351fc4764b1cf9345366c7559586735a70c5ec20ec"
+      }
+    }
+  ],
+  "policiesAppliedToOtherCategories": 0
+}

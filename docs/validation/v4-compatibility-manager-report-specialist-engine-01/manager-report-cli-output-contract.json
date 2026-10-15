@@ -1,0 +1,13 @@
+{
+  "ownManifest": "compatibility-manager-report-specialist-manifest.json",
+  "ownManifestExists": true,
+  "ownedOutputDirectoryReplayed": true,
+  "preseedProducedByFinalEngineUnitTest": true,
+  "preseedManifestSha256": "c99181acd682aef6cd04240826d06ab087a1e5f2494bfce119955e0917a6e4eb",
+  "coworkerPerformanceNamespaceUnchanged": true,
+  "performanceLogCollision": false,
+  "independentFinalRuns": 2,
+  "generatedJsonExactByteEquality": 53,
+  "sourceInputsFrozenBeforeAndAfter": 18,
+  "foreignDirectoryGuardTests": 3
+}

@@ -1,0 +1,962 @@
+[
+  {
+    "id": "mrpr:material:CH08.P3:report-name-blocked-resource",
+    "coreMeaning": "B는 막힌 단계와 필요한 자원을 구체적으로 알림",
+    "workStage": "execution",
+    "outputType": "resource_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+    "coreMeaning": "관계 미검출이어도 평가 기준을 물을 필요",
+    "workStage": "feedback",
+    "outputType": "evaluation_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH04.P2:big-picture-field-interface",
+    "coreMeaning": "큰 구조와 실제 작동 정보의 조건부 연결",
+    "workStage": "midpoint",
+    "outputType": "field_to_plan",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH03.P3:report-participation-signal",
+    "coreMeaning": "참여 상태를 알아채는 B의 강점과 관리 책임",
+    "workStage": "midpoint",
+    "outputType": "participation_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-close-revision",
+    "coreMeaning": "A가 추가 기준과 오류 수정을 구분",
+    "workStage": "revision",
+    "outputType": "rework_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH03.P3:report-detect-procedure-gap",
+    "coreMeaning": "B의 절차·데이터 검토가 관리 판단에 제공할 정보",
+    "workStage": "midpoint",
+    "outputType": "gap_report",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-request-specific-feedback",
+    "coreMeaning": "B는 안전이 확인될 때 수정 항목을 구체적으로 요청",
+    "workStage": "feedback",
+    "outputType": "safe_feedback",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH05.P1:manager-to-report-exploration",
+    "coreMeaning": "A의 대안 탐색이 B의 실행을 자극하는 조건",
+    "workStage": "draft",
+    "outputType": "proposal_status",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH06.P3:report-question-as-final-decision",
+    "coreMeaning": "질문이 늘어도 승인 책임은 넘어가지 않음",
+    "workStage": "review",
+    "outputType": "question_status",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P4:excluded-team-voice",
+    "coreMeaning": "즉답자 위주 회의에서 빠지는 실행 정보",
+    "workStage": "review",
+    "outputType": "voice_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH01.P2:half-harmony-not-completion",
+    "coreMeaning": "부분 연결과 결과 완성의 비동일성",
+    "workStage": "review",
+    "outputType": "completion_boundary",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P2:report-time-clash",
+    "coreMeaning": "실제 충과 보고 시점 불일치의 구분",
+    "workStage": "midpoint",
+    "outputType": "timing_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+    "coreMeaning": "수행 책임과 결정권의 불균형",
+    "workStage": "plan",
+    "outputType": "delegation_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH02.P3:manager-support-limit",
+    "coreMeaning": "팀원의 어려움을 알아채는 강점과 배분 책임",
+    "workStage": "execution",
+    "outputType": "support_routing",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH03.P1:report-independent-focus",
+    "coreMeaning": "간결한 점검을 원하는 B와 보고 의무의 구분",
+    "workStage": "execution",
+    "outputType": "minimum_report",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P1:excess-report-frequency",
+    "coreMeaning": "점검이 반복 설명 업무로 바뀌는 조건",
+    "workStage": "execution",
+    "outputType": "report_cost",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH09.P3:recall-safe-voice",
+    "coreMeaning": "실제로 소개된 안전한 지원 선택을 유지",
+    "workStage": "feedback",
+    "outputType": "introduced_safety",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-explain-evaluation",
+    "coreMeaning": "A가 추상 평가어를 관찰 행동과 기준으로 바꾸기",
+    "workStage": "feedback",
+    "outputType": "evaluation_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH05.P4:manager-delegation-confirm",
+    "coreMeaning": "A가 선택 범위를 확인 가능한 약속으로 바꾸기",
+    "workStage": "plan",
+    "outputType": "delegation_boundary",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH05.P3:manager-speed-pressure",
+    "coreMeaning": "즉답 요구가 검토 시간을 빼앗는 부담",
+    "workStage": "review",
+    "outputType": "review_time",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH05.P2:manager-recognize-evidence",
+    "coreMeaning": "A가 기여를 사실로 인정하는 조건",
+    "workStage": "feedback",
+    "outputType": "specific_credit",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH03.P2:report-definition-before-work",
+    "coreMeaning": "B가 문제 정의를 확인해야 하는 이유",
+    "workStage": "goal",
+    "outputType": "problem_boundary",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P1:separate-method",
+    "coreMeaning": "앞서 표시된 방법 간섭을 필수·선호 구분으로 조정",
+    "workStage": "execution",
+    "outputType": "method_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH06.P4:report-feedback-clarification",
+    "coreMeaning": "B가 평가어를 수정 조건 질문으로 바꾸기",
+    "workStage": "revision",
+    "outputType": "feedback_question",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P1:delegate-decision",
+    "coreMeaning": "앞서 표시된 권한 공백을 결정 목록으로 확인",
+    "workStage": "plan",
+    "outputType": "delegation_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH05.P2:manager-resource-removal",
+    "coreMeaning": "A의 지원이 B의 막힌 단계에 맞는 조건",
+    "workStage": "execution",
+    "outputType": "support_commitment",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH05.P1:manager-to-report-constraint",
+    "coreMeaning": "A의 기준 제시가 B에게 도착하는 조건",
+    "workStage": "start",
+    "outputType": "directional_boundary",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P3:insufficient-credit",
+    "coreMeaning": "기여가 기록에서 사라지는 비용",
+    "workStage": "delivery",
+    "outputType": "credit_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+    "coreMeaning": "명확한 위임이 불필요한 보고를 줄일 가능성",
+    "workStage": "execution",
+    "outputType": "delegation_sheet",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P4:late-risk-report",
+    "coreMeaning": "문제 보고가 늦어지는 조건",
+    "workStage": "midpoint",
+    "outputType": "early_report_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+    "coreMeaning": "A가 빠른 판단을 원할 때 필요한 정보 수준",
+    "workStage": "midpoint",
+    "outputType": "decision_brief",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P4:missing-change-history",
+    "coreMeaning": "바뀐 지시의 기록이 사라지는 조건",
+    "workStage": "revision",
+    "outputType": "change_record_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH09.P3:recall-delegation-principle",
+    "coreMeaning": "실제로 소개된 결정 경계만 지속",
+    "workStage": "plan",
+    "outputType": "introduced_delegation",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH05.P4:manager-feedback-recheck",
+    "coreMeaning": "A의 구체적 수정 요청과 재확인 책임",
+    "workStage": "revision",
+    "outputType": "feedback_recheck",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P2:rework-with-half-harmony",
+    "coreMeaning": "접점이 있어도 수정 기준이 계속 바뀌면 재작업",
+    "workStage": "revision",
+    "outputType": "rework_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+    "coreMeaning": "관리 판단을 팀원의 책임으로 넘기는 조건",
+    "workStage": "approval",
+    "outputType": "decision_transfer_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P3:public-personal-judgment",
+    "coreMeaning": "공개 지적에서 행동과 인격을 섞는 문제",
+    "workStage": "feedback",
+    "outputType": "safe_feedback",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-set-report-time",
+    "coreMeaning": "A가 판단 시한과 중간 정보 수준을 먼저 정하기",
+    "workStage": "midpoint",
+    "outputType": "timing_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH01.P3:model-and-procedure",
+    "coreMeaning": "원리 납득과 적용 절차의 독립적 요구",
+    "workStage": "information",
+    "outputType": "information_format",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-safe-support-route",
+    "coreMeaning": "B는 직접 이견이 위험하면 적절한 지원 통로를 확인",
+    "workStage": "feedback",
+    "outputType": "voice_support",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH05.P3:manager-care-as-surveillance",
+    "coreMeaning": "챙김이 설명 감시로 전달될 수 있는 조건",
+    "workStage": "execution",
+    "outputType": "check_purpose",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+    "coreMeaning": "수정에서 배우되 관리 책임을 남기기",
+    "workStage": "revision",
+    "outputType": "supported_learning",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P1:clarify-output",
+    "coreMeaning": "앞서 표시된 목표 공백을 결과물 확인 질문으로 바꾸기",
+    "workStage": "goal",
+    "outputType": "instruction_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH02.P2:manager-standard-evidence",
+    "coreMeaning": "검증된 사례를 기준으로 쓸 때 적용 범위를 설명",
+    "workStage": "review",
+    "outputType": "standard_scope",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH01.P4:discretion-as-condition",
+    "coreMeaning": "통제 필요와 방식 재량을 나누는 기준",
+    "workStage": "plan",
+    "outputType": "discretion_boundary",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+    "coreMeaning": "판단 정보와 상시 행동 감시의 경계",
+    "workStage": "maintenance",
+    "outputType": "report_boundary",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH02.P4:manager-overcontrol",
+    "coreMeaning": "기준 유지가 방식 간섭으로 번지는 경계",
+    "workStage": "execution",
+    "outputType": "method_boundary",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-early-risk-response",
+    "coreMeaning": "둘은 잠정 위험과 확정 결과를 구별하는 목표를 정함",
+    "workStage": "midpoint",
+    "outputType": "early_report_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH01.P2:harmony-not-approval",
+    "coreMeaning": "실제 합의 정의와 실제 승인권의 분리",
+    "workStage": "approval",
+    "outputType": "relation_question",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH03.P4:report-late-synthesis",
+    "coreMeaning": "집중이 늦게 붙는 B와 중간 상태 공유",
+    "workStage": "midpoint",
+    "outputType": "intermediate_status",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH06.P3:report-unclear-risk-timing",
+    "coreMeaning": "완성본을 기다리는 보고가 A의 결정 시점을 놓칠 위험",
+    "workStage": "midpoint",
+    "outputType": "risk_timing",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH09.P2:recall-personal-fusion",
+    "coreMeaning": "표시된 B의 실제 정보 기여만 활용",
+    "workStage": "midpoint",
+    "outputType": "introduced_fusion",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH02.P1:manager-people-purpose",
+    "coreMeaning": "참여를 이끄는 설명과 실제 지원은 별개",
+    "workStage": "start",
+    "outputType": "purpose_support",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH06.P1:report-to-manager-reality-check",
+    "coreMeaning": "B가 계획과 다른 사실을 A에게 보여주는 자극",
+    "workStage": "midpoint",
+    "outputType": "reality_brief",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH01.P1:goal-method-interface",
+    "coreMeaning": "목표를 정리하는 상사와 실행 경로를 확인하는 팀원의 접점",
+    "workStage": "goal",
+    "outputType": "goal_brief",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+    "coreMeaning": "자율이라는 말과 실제 선택지의 차이",
+    "workStage": "plan",
+    "outputType": "discretion_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+    "coreMeaning": "둘은 결정 전 필요한 실행 정보를 놓치지 않기로 정함",
+    "workStage": "review",
+    "outputType": "voice_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P1:make-discretion-visible",
+    "coreMeaning": "앞서 표시된 자율 모순을 선택 가능한 항목으로 바꾸기",
+    "workStage": "plan",
+    "outputType": "discretion_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P3:fear-of-retaliation",
+    "coreMeaning": "말하지 않는 이유를 유형으로 고정하지 않기",
+    "workStage": "feedback",
+    "outputType": "voice_support",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH01.P3:same-type-different-role",
+    "coreMeaning": "같은 유형이라도 기준 설명 책임은 같지 않음",
+    "workStage": "plan",
+    "outputType": "rule_version",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH09.P1:recall-goal-execution",
+    "coreMeaning": "표시된 목표·실행 접점을 지속하기",
+    "workStage": "goal",
+    "outputType": "introduced_goal",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH04.P3:feedback-credit-visible",
+    "coreMeaning": "기여를 구체적으로 알아보는 피드백",
+    "workStage": "feedback",
+    "outputType": "contribution_record",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH01.P4:management-facts-before-compatibility",
+    "coreMeaning": "성향보다 먼저 확인할 업무 조건",
+    "workStage": "goal",
+    "outputType": "context_gate",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P3:insufficient-resources",
+    "coreMeaning": "결과 책임에 필요한 접근·자원 공백",
+    "workStage": "execution",
+    "outputType": "resource_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH01.P1:support-execution-interface",
+    "coreMeaning": "관심을 주는 상사와 집중할 구간이 필요한 팀원",
+    "workStage": "start",
+    "outputType": "support_window",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P3:overload-allocation",
+    "coreMeaning": "업무량 초과와 배분 결정의 책임",
+    "workStage": "plan",
+    "outputType": "load_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH06.P2:report-capacity-information",
+    "coreMeaning": "B의 업무량 정보가 A의 배분 결정을 돕기",
+    "workStage": "plan",
+    "outputType": "capacity_brief",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH02.P3:manager-correct-own-error",
+    "coreMeaning": "관리자가 자기 지시 오류를 고칠 여지",
+    "workStage": "revision",
+    "outputType": "instruction_correction",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH02.P1:manager-model-goal",
+    "coreMeaning": "A의 큰 구조 설명은 실행 조건을 풀어야 전달됨",
+    "workStage": "goal",
+    "outputType": "goal_translation",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH04.P4:manager-response-to-early-risk",
+    "coreMeaning": "문제 공유에 대한 관리 반응을 키우기",
+    "workStage": "midpoint",
+    "outputType": "early_risk_response",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH09.P4:recall-contribution-learning",
+    "coreMeaning": "표시된 인정·수정·지원의 좋은 방향",
+    "workStage": "maintenance",
+    "outputType": "introduced_learning",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH06.P2:report-propose-bounded-method",
+    "coreMeaning": "B의 대안이 A의 검토를 돕는 조건",
+    "workStage": "draft",
+    "outputType": "trial_proposal",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P2:priority-change-harm",
+    "coreMeaning": "실제 해와 업무 우선순위 변경을 구분",
+    "workStage": "revision",
+    "outputType": "priority_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH09.P1:recall-shared-completion",
+    "coreMeaning": "표시된 공통 완결 선호의 역할 차이 유지",
+    "workStage": "delivery",
+    "outputType": "introduced_completion",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-report-purpose",
+    "coreMeaning": "둘은 업무 판단에 필요한 정보 범위를 확인",
+    "workStage": "maintenance",
+    "outputType": "report_boundary",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-confirm-final-authority",
+    "coreMeaning": "A가 최종 결정자와 상충 지시 확인 경로를 설명",
+    "workStage": "approval",
+    "outputType": "authority_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P1:goal-method-confusion",
+    "coreMeaning": "결과 목표와 개인 선호 방법의 혼동",
+    "workStage": "execution",
+    "outputType": "method_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH09.P2:recall-supported-possibility",
+    "coreMeaning": "실제 소개된 지원 가능성을 활용하기",
+    "workStage": "execution",
+    "outputType": "introduced_support",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P1:reduce-duplicate-report",
+    "coreMeaning": "앞서 표시된 중복 보고를 정보 사용처로 조정",
+    "workStage": "execution",
+    "outputType": "report_cost",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH06.P4:report-decision-ready-brief",
+    "coreMeaning": "간결함을 결정 가능한 정보로 바꾸기",
+    "workStage": "midpoint",
+    "outputType": "decision_request",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH03.P2:report-private-feedback-space",
+    "coreMeaning": "B가 수정에 필요한 공간·시간",
+    "workStage": "feedback",
+    "outputType": "feedback_conditions",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P1:vague-instructions",
+    "coreMeaning": "구체화되지 않은 목표의 정보 공백",
+    "workStage": "goal",
+    "outputType": "instruction_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P2:manager-record-priority",
+    "coreMeaning": "A가 변경 이유·중단 작업·새 기한을 함께 설명",
+    "workStage": "revision",
+    "outputType": "priority_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH03.P1:report-procedure-understanding",
+    "coreMeaning": "B가 실행 과정을 묻는 독립적 이유",
+    "workStage": "start",
+    "outputType": "execution_questions",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH03.P4:report-overacceptance",
+    "coreMeaning": "인정받으려는 수락이 업무량을 숨기는 위험",
+    "workStage": "execution",
+    "outputType": "capacity_statement",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-change-log",
+    "coreMeaning": "둘은 지시 변경의 출처와 영향을 남기기로 정함",
+    "workStage": "revision",
+    "outputType": "change_record_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH07.P2:final-authority-unsupported",
+    "coreMeaning": "미지원 명리 정의로 최종 결정자를 정하지 않기",
+    "workStage": "approval",
+    "outputType": "authority_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH04.P2:idea-review-not-personal-approval",
+    "coreMeaning": "새 아이디어와 기준 검토의 연결",
+    "workStage": "draft",
+    "outputType": "bounded_trial",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-state-contribution",
+    "coreMeaning": "B는 수행·검토·지원 받은 범위를 사실로 구분",
+    "workStage": "delivery",
+    "outputType": "credit_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH04.P1:shared-completion-distinct-duty",
+    "coreMeaning": "끝까지 하려는 공통 선호와 다른 책임",
+    "workStage": "delivery",
+    "outputType": "completion_check",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH09.P4:recall-decision-responsibility",
+    "coreMeaning": "표시된 정보와 결정의 다른 역할로 마무리",
+    "workStage": "approval",
+    "outputType": "introduced_responsibility",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH04.P1:shared-analysis-different-scope",
+    "coreMeaning": "분석 성향이 같아도 검토 범위는 다름",
+    "workStage": "plan",
+    "outputType": "analysis_scope",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH02.P4:manager-avoid-feedback",
+    "coreMeaning": "배려 때문에 필요한 수정 기준을 늦추는 위험",
+    "workStage": "feedback",
+    "outputType": "specific_feedback",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P3:report-state-capacity",
+    "coreMeaning": "B는 작업량·충돌 시각·가능 범위를 사실로 알림",
+    "workStage": "plan",
+    "outputType": "load_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+    "coreMeaning": "둘은 수행과 최종 결정의 경계를 유지하는 목표를 정함",
+    "workStage": "approval",
+    "outputType": "decision_transfer_gap",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "mrpr:material:CH06.P1:report-to-manager-customer-observation",
+    "coreMeaning": "B의 가까운 반응 정보와 A의 판단",
+    "workStage": "information",
+    "outputType": "observation_scope",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  }
+]

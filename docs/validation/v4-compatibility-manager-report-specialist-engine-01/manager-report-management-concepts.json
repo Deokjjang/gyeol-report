@@ -1,0 +1,970 @@
+[
+  {
+    "original": {
+      "id": "mrpr:concept:instruction",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "instruction",
+      "definition": "지시의 목적·결과·기한·제외 범위는 서로 다른 정보",
+      "managerResponsibility": "A는 결과 예시와 필수 조건을 설명",
+      "reportAvailableAction": "B는 이해한 범위와 빈칸을 확인",
+      "limits": "지시를 이해했다는 사실이 모든 방법·자원 수락은 아님",
+      "sourceKeys": [
+        "d23874cc920e78330b98"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P1:vague-instructions",
+        "mrpr:material:CH08.P1:clarify-output"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P1:vague-instructions",
+        "authorityContext": {
+          "kind": "goal_setting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "이번 결과물의 필수 항목을 확인할까요?"
+        },
+        "managerResponsibility": "결과·제외 범위·기준 예시 설명",
+        "reportAvailableAction": "모호한 항목을 확인 질문으로 제시"
+      },
+      {
+        "id": "mrpr:material:CH08.P1:clarify-output",
+        "authorityContext": {
+          "kind": "goal_setting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "결과·제외 범위·완료 예시를 확인할까요?"
+        },
+        "managerResponsibility": "필수 기준·목적·지원 설명",
+        "reportAvailableAction": "이해한 범위와 빈칸 질문"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:feedback",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "feedback",
+      "definition": "상황·관찰 행동·영향·수정 요청과 의도 질문을 구별",
+      "managerResponsibility": "A는 인격 판단 대신 수정할 항목·시간 설명",
+      "reportAvailableAction": "B는 안전한 통로에서 이해·수정 범위 확인",
+      "limits": "의도는 추정하지 않고 실제 경험·반응은 확인이 필요",
+      "sourceKeys": [
+        "97fa6fd9e95f85910bf9"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P3:public-personal-judgment",
+        "mrpr:material:CH08.P3:report-request-specific-feedback"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P3:public-personal-judgment",
+        "authorityContext": {
+          "kind": "feedback",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "산출물의 수정 항목으로 확인할 수 있나요?"
+        },
+        "managerResponsibility": "공개 인격 판단 중단·구체적 수정 기준 제공",
+        "reportAvailableAction": "안전할 때 사실·수정 조건 확인"
+      },
+      {
+        "id": "mrpr:material:CH08.P3:report-request-specific-feedback",
+        "authorityContext": {
+          "kind": "feedback",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "안전한 방식으로 구체적 수정 항목을 받을 수 있나요?"
+        },
+        "managerResponsibility": "공개 인격 판단 중단·기준 설명",
+        "reportAvailableAction": "안전한 통로에서 구체적 수정 항목 확인"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:voice",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "voice",
+      "definition": "질문·실수·이견의 대인 위험과 실제 보호를 구별",
+      "managerResponsibility": "A는 사전 정보·검토 시간·안전한 지원 조건 확인",
+      "reportAvailableAction": "B는 가능한 통로·지원 필요를 선택",
+      "limits": "조직 한정 연구를 비보복·법적 보호 보장으로 사용 금지",
+      "sourceKeys": [
+        "ae0c112b425afed611ff"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P4:excluded-team-voice",
+        "mrpr:material:CH08.P4:agree-multiple-voice-channels"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P4:excluded-team-voice",
+        "authorityContext": {
+          "kind": "safety_support",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "검토 후 의견을 남길 통로와 시한이 있나요?"
+        },
+        "managerResponsibility": "사전 질문·응답 시간·대체 통로 마련",
+        "reportAvailableAction": "안전한 방식으로 검토 의견 제시"
+      },
+      {
+        "id": "mrpr:material:CH08.P4:agree-multiple-voice-channels",
+        "authorityContext": {
+          "kind": "safety_support",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "검토 시간과 대체 제출 통로를 정할까요?"
+        },
+        "managerResponsibility": "응답 경로·검토 시점·결정 이유 설명",
+        "reportAvailableAction": "검토 의견·미확인 항목 전달"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:reporting",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "reporting",
+      "definition": "정보 전달·수신 확인·승인·수락은 별개",
+      "managerResponsibility": "A는 필요한 판단·시한·응답 책임 설명",
+      "reportAvailableAction": "B는 사실·추정·미확인·선택지 구분",
+      "limits": "읽음·호응이 승인이나 수행 책임 수락을 뜻하지 않음",
+      "sourceKeys": [
+        "8cbe6472c2f9201328be"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P2:report-time-clash",
+        "mrpr:material:CH08.P2:manager-set-report-time"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P2:report-time-clash",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "확정 전 어느 시점의 정보가 필요한가요?"
+        },
+        "managerResponsibility": "결정 시한과 중간 보고 범위 설명",
+        "reportAvailableAction": "미확인 항목·다음 확인 시간 제시"
+      },
+      {
+        "id": "mrpr:material:CH08.P2:manager-set-report-time",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "잠정 정보와 확정 결과를 언제 각각 확인하나요?"
+        },
+        "managerResponsibility": "판단 시한·중간 정보·지원 응답 설명",
+        "reportAvailableAction": "잠정·확정·미확인을 구분"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:discretion",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "discretion",
+      "definition": "목표·안전선과 작업 방법 선택 범위를 구별",
+      "managerResponsibility": "A는 필수 제약과 선택지를 공개",
+      "reportAvailableAction": "B는 재량 안의 방법·예외를 구분",
+      "limits": "자율이라는 말만으로 실제 권한을 확인한 것은 아님",
+      "sourceKeys": [
+        "7394a0c2a7a725f0d533"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+        "mrpr:material:CH08.P1:make-discretion-visible"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P1:autonomy-with-no-discretion",
+        "authorityContext": {
+          "kind": "method_discretion",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "시간·순서·도구 중 무엇을 선택할 수 있나요?"
+        },
+        "managerResponsibility": "필수 제약과 실제 재량을 공개",
+        "reportAvailableAction": "변경 가능한 선택을 확인"
+      },
+      {
+        "id": "mrpr:material:CH08.P1:make-discretion-visible",
+        "authorityContext": {
+          "kind": "method_discretion",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "실제로 선택할 수 있는 한 항목부터 정할까요?"
+        },
+        "managerResponsibility": "선택 범위·지원·예외 설명",
+        "reportAvailableAction": "선택할 항목과 확인할 예외 재진술"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:allocation",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "allocation",
+      "definition": "추가 업무의 시간·기한·지원 충돌을 드러냄",
+      "managerResponsibility": "A는 중단·연기·지원할 항목을 결정",
+      "reportAvailableAction": "B는 현재 작업량·소요·가능 범위 제시",
+      "limits": "부족한 시간을 헌신·야근·팀원 성격으로 메우지 않음",
+      "sourceKeys": [
+        "59caf289010ad94aa04b"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH03.P4:report-overacceptance",
+        "mrpr:material:CH07.P3:overload-allocation",
+        "mrpr:material:CH08.P3:report-state-capacity"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P3:overload-allocation",
+        "authorityContext": {
+          "kind": "work_allocation",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "추가 요청에 맞춰 무엇을 빼거나 지원하나요?"
+        },
+        "managerResponsibility": "우선순위·기한·자원 중 조정 결정",
+        "reportAvailableAction": "실제 작업량·충돌 범위 공유"
+      },
+      {
+        "id": "mrpr:material:CH08.P3:report-state-capacity",
+        "authorityContext": {
+          "kind": "work_allocation",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "가능 범위에 맞춰 우선순위를 정해 주실 수 있나요?"
+        },
+        "managerResponsibility": "우선순위·자원 조정 결정",
+        "reportAvailableAction": "소요·충돌·가능 범위 공유"
+      },
+      {
+        "id": "mrpr:material:CH03.P4:report-overacceptance",
+        "authorityContext": {
+          "kind": "work_allocation",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "추가 작업을 받으면 어느 기존 작업을 조정하나요?"
+        },
+        "managerResponsibility": "추가 요청의 우선순위·중단할 작업 결정",
+        "reportAvailableAction": "실제 소요와 충돌 시간을 제시"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:decision",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "decision",
+      "definition": "제안자·수행자·최종 결정자를 구별",
+      "managerResponsibility": "A는 자기 권한·상위 확인 경로 명시",
+      "reportAvailableAction": "B는 선택지·영향·필요 시점 보고",
+      "limits": "B가 문제를 발견했다고 최종 판단 책임까지 이전되지 않음",
+      "sourceKeys": [
+        "d23874cc920e78330b98"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "mrpr:material:CH08.P4:agree-retained-manager-decision"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P4:manager-responsibility-transfer",
+        "authorityContext": {
+          "kind": "decision_rights",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "이 중 상사가 결정하거나 상위 확인할 항목은 무엇인가요?"
+        },
+        "managerResponsibility": "실제 권한 안에서 결정·상위 확인·지원 수행",
+        "reportAvailableAction": "확인 필요한 결정과 영향 정리"
+      },
+      {
+        "id": "mrpr:material:CH08.P4:agree-retained-manager-decision",
+        "authorityContext": {
+          "kind": "decision_rights",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "수행·제안·승인·지원 담당을 구분할까요?"
+        },
+        "managerResponsibility": "결정 결과·보류 이유·다음 응답 시점 명시",
+        "reportAvailableAction": "실행 가능 범위·결정 요청 구분"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:recognition",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "recognition",
+      "definition": "인정은 관찰한 기여의 출처와 내용을 남기는 행동",
+      "managerResponsibility": "A는 수행·검토·지원 기여를 구분해 기록",
+      "reportAvailableAction": "B는 수행 범위와 지원 받은 항목 알림",
+      "limits": "칭찬은 추가 업무 자동 수락·보수 약속 아님",
+      "sourceKeys": [
+        "97fa6fd9e95f85910bf9"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P3:insufficient-credit",
+        "mrpr:material:CH08.P3:report-state-contribution"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P3:insufficient-credit",
+        "authorityContext": {
+          "kind": "recognition",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "초안·검토·지원 기여를 나눠 남길까요?"
+        },
+        "managerResponsibility": "기여 사실을 확인해 정확히 남김",
+        "reportAvailableAction": "수행·지원 받은 범위를 구분해 제시"
+      },
+      {
+        "id": "mrpr:material:CH08.P3:report-state-contribution",
+        "authorityContext": {
+          "kind": "recognition",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "제가 수행한 항목과 지원 받은 항목을 나눠 남길까요?"
+        },
+        "managerResponsibility": "수행 사실 확인·기여 기록 정리",
+        "reportAvailableAction": "수행 범위·지원 받은 항목 제시"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:management",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "management",
+      "definition": "관리 점검은 실제 결정·지원 행동과 연결돼야 함",
+      "managerResponsibility": "A는 점검 정보 사용·자원·응답을 설명",
+      "reportAvailableAction": "B는 상태·영향·결정 필요를 제공",
+      "limits": "관리 역할 선언은 평가·해고·보수 권한 증명 아님",
+      "sourceKeys": [
+        "7912252da76a38abbace"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH01.P1:support-execution-interface",
+        "mrpr:material:CH02.P2:manager-checkpoint-intent",
+        "mrpr:material:CH03.P1:report-independent-focus",
+        "mrpr:material:CH03.P4:report-late-synthesis",
+        "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "mrpr:material:CH07.P1:excess-report-frequency",
+        "mrpr:material:CH07.P4:late-risk-report",
+        "mrpr:material:CH07.P4:reporting-versus-surveillance",
+        "mrpr:material:CH08.P1:reduce-duplicate-report",
+        "mrpr:material:CH08.P4:agree-early-risk-response",
+        "mrpr:material:CH08.P4:agree-report-purpose"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH06.P4:report-decision-ready-brief",
+        "authorityContext": {
+          "kind": "decision_rights",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "이 중 상사 결정이 필요한 항목을 확인해 주실 수 있나요?"
+        },
+        "managerResponsibility": "결정과 미결 항목을 답변",
+        "reportAvailableAction": "사실·선택지·결정 요청을 구분"
+      },
+      {
+        "id": "mrpr:material:CH03.P1:report-independent-focus",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "정기 보고와 즉시 알려야 할 조건을 나눌까요?"
+        },
+        "managerResponsibility": "점검 목적·긴급 보고 조건을 정함",
+        "reportAvailableAction": "상태·위험·결정 필요를 구분"
+      },
+      {
+        "id": "mrpr:material:CH07.P1:excess-report-frequency",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "같은 정보를 어떤 한 채널에서 확인하면 될까요?"
+        },
+        "managerResponsibility": "보고 목적·빈도·중복 채널 정리",
+        "reportAvailableAction": "보고 시간·중단 비용을 사실로 알림"
+      },
+      {
+        "id": "mrpr:material:CH07.P4:late-risk-report",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "확정 전 어떤 불확실성부터 알려야 하나요?"
+        },
+        "managerResponsibility": "불확실 보고의 사용·응답 조건 명시",
+        "reportAvailableAction": "확인된 영향과 다음 검토 시점 알림"
+      },
+      {
+        "id": "mrpr:material:CH07.P4:reporting-versus-surveillance",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "이 정보는 어떤 업무 판단에 누가 사용하나요?"
+        },
+        "managerResponsibility": "보고 목적·수집 범위·사용처 명시",
+        "reportAvailableAction": "업무 상태와 무관 정보의 경계 확인"
+      },
+      {
+        "id": "mrpr:material:CH01.P1:support-execution-interface",
+        "authorityContext": {
+          "kind": "resource_support",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "어떤 막힘을 어느 통로로 바로 알려야 하나요?"
+        },
+        "managerResponsibility": "중단 없는 시간과 지원 가능 시간을 설명",
+        "reportAvailableAction": "막힌 항목과 요청 자원을 짧게 알림"
+      },
+      {
+        "id": "mrpr:material:CH04.P3:delegation-with-checkpoints",
+        "authorityContext": {
+          "kind": "delegation",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "언제 혼자 결정하고 언제 바로 확인하나요?"
+        },
+        "managerResponsibility": "재량·점검·지원 응답 시점 명시",
+        "reportAvailableAction": "예외 조건과 현재 상태 공유"
+      },
+      {
+        "id": "mrpr:material:CH08.P1:reduce-duplicate-report",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "중복 상태는 한 곳에서 보고 예외만 바로 알릴까요?"
+        },
+        "managerResponsibility": "정보 목적·주기·응답을 정함",
+        "reportAvailableAction": "중복 준비 시간·긴급 조건 공유"
+      },
+      {
+        "id": "mrpr:material:CH08.P4:agree-early-risk-response",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "잠정 위험을 언제 알리고 누가 언제 답하나요?"
+        },
+        "managerResponsibility": "초기 정보 수용·지원 응답 명시",
+        "reportAvailableAction": "상태 변화·영향·다음 확인 전달"
+      },
+      {
+        "id": "mrpr:material:CH08.P4:agree-report-purpose",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "업무 판단과 무관한 정보는 어떻게 구분하나요?"
+        },
+        "managerResponsibility": "목적·범위·사용·지원 통로 명시",
+        "reportAvailableAction": "업무 상태와 개인 정보 경계 확인"
+      },
+      {
+        "id": "mrpr:material:CH02.P2:manager-checkpoint-intent",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "이번 점검에서 결정하려는 항목은 무엇인가요?"
+        },
+        "managerResponsibility": "필요 정보와 결정 시한을 먼저 명시",
+        "reportAvailableAction": "확인된 것·조사 중인 것을 분리"
+      },
+      {
+        "id": "mrpr:material:CH03.P4:report-late-synthesis",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "완성 전 어떤 상태를 언제 공유하면 되나요?"
+        },
+        "managerResponsibility": "중간 상태 공유를 최종 평가와 구분",
+        "reportAvailableAction": "완료·진행·막힘과 다음 확인 시각 공유"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:delegation",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "delegation",
+      "definition": "위임에는 맡길 결정·남길 결정·지원·점검이 필요",
+      "managerResponsibility": "A는 실제 권한 안의 범위·지원·응답을 명시",
+      "reportAvailableAction": "B는 수행·예외·막힘을 알림",
+      "limits": "위임으로 상사 관리 책임이나 법적 책임을 자동 이전하지 않음",
+      "sourceKeys": [
+        "17a595663fd8055c13b7"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "mrpr:material:CH08.P1:delegate-decision"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P1:responsibility-without-delegation",
+        "authorityContext": {
+          "kind": "delegation",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "어느 결정은 제가 하고 어느 결정은 승인받나요?"
+        },
+        "managerResponsibility": "실제 결정 범위·응답 책임·지원 확인",
+        "reportAvailableAction": "승인 대기·영향·필요 시점 보고"
+      },
+      {
+        "id": "mrpr:material:CH08.P1:delegate-decision",
+        "authorityContext": {
+          "kind": "delegation",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "결정 범위와 승인 응답 시점을 정할까요?"
+        },
+        "managerResponsibility": "실제 권한·지원·응답 책임 확인",
+        "reportAvailableAction": "대기 영향·필요 시각 제시"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:evaluation",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "evaluation",
+      "definition": "목표·관찰·기준·지원·검토 기록의 연결을 확인",
+      "managerResponsibility": "A는 실제 평가권·절차·기준 출처 확인",
+      "reportAvailableAction": "B는 관찰 예시·수정 조건 질문",
+      "limits": "유형·명리·말투는 평점·승진·실적 증거 아님",
+      "sourceKeys": [
+        "6a87ebbb37ab5d75d10c"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+        "mrpr:material:CH08.P2:manager-explain-evaluation"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P2:vague-evaluation-no-relation",
+        "authorityContext": {
+          "kind": "evaluation",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "어떤 관찰 행동이 어떤 기준에 미치지 못했나요?"
+        },
+        "managerResponsibility": "관찰 행동·업무 영향·수정 기준 설명",
+        "reportAvailableAction": "예시·우선순위·수정 시점 확인"
+      },
+      {
+        "id": "mrpr:material:CH08.P2:manager-explain-evaluation",
+        "authorityContext": {
+          "kind": "evaluation",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "관찰 예시와 수정 조건을 함께 알려주실 수 있나요?"
+        },
+        "managerResponsibility": "관찰 항목·기준·지원·재검토 설명",
+        "reportAvailableAction": "수정 이해·우선순위 확인"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:change",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "change",
+      "definition": "계획 변경은 이유·영향·중단할 작업·새 확인을 포함",
+      "managerResponsibility": "A는 기준·우선순위·기한 변화의 책임 설명",
+      "reportAvailableAction": "B는 이전 수행·추가 소요·미완료 공유",
+      "limits": "변경 이력을 지워 팀원 오류로 기록하지 않음",
+      "sourceKeys": [
+        "154edb00b2c3dca6d39c"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P4:missing-change-history",
+        "mrpr:material:CH08.P4:agree-change-log"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P4:missing-change-history",
+        "authorityContext": {
+          "kind": "priority_change",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "변경 전후 기준과 추가 소요를 함께 기록할까요?"
+        },
+        "managerResponsibility": "변경자·이유·시점·영향 기록",
+        "reportAvailableAction": "이전 수행과 추가 소요를 구분"
+      },
+      {
+        "id": "mrpr:material:CH08.P4:agree-change-log",
+        "authorityContext": {
+          "kind": "priority_change",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "변경자·이유·범위·기한을 함께 남길까요?"
+        },
+        "managerResponsibility": "변경 사유·지원·일정 책임 명시",
+        "reportAvailableAction": "추가 수행·영향 사실 확인"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:resources",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "resources",
+      "definition": "자료·도구·접근·자격·연결 담당은 수행 조건",
+      "managerResponsibility": "A는 실제 지원 권한·가능 시점·대안 확인",
+      "reportAvailableAction": "B는 막힌 단계·필요 자원·영향 제시",
+      "limits": "보안·승인·자격을 우회하도록 요구하지 않음",
+      "sourceKeys": [
+        "7912252da76a38abbace"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P3:insufficient-resources",
+        "mrpr:material:CH08.P3:report-name-blocked-resource"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P3:insufficient-resources",
+        "authorityContext": {
+          "kind": "resource_support",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "필요한 자원은 누가 언제 연결하나요?"
+        },
+        "managerResponsibility": "지원 담당·가능 시점·대안 결정",
+        "reportAvailableAction": "필요 자원·대기 영향·기한 공유"
+      },
+      {
+        "id": "mrpr:material:CH08.P3:report-name-blocked-resource",
+        "authorityContext": {
+          "kind": "resource_support",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "어떤 담당자와 언제까지 자원을 확인하나요?"
+        },
+        "managerResponsibility": "지원 담당·가능 시점·대안 결정",
+        "reportAvailableAction": "필요 자원·막힘·영향 구분"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:overmanagement",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "overmanagement",
+      "definition": "필수 기준 밖 개입·중복 점검의 작업 비용을 확인",
+      "managerResponsibility": "A는 취향 간섭·중복 채널을 먼저 검토",
+      "reportAvailableAction": "B는 중단·준비 시간을 사실로 알림",
+      "limits": "안전상 필수 점검까지 모두 간섭으로 축소 금지",
+      "sourceKeys": [
+        "7394a0c2a7a725f0d533"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P1:excess-report-frequency",
+        "mrpr:material:CH08.P1:reduce-duplicate-report"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P1:excess-report-frequency",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "같은 정보를 어떤 한 채널에서 확인하면 될까요?"
+        },
+        "managerResponsibility": "보고 목적·빈도·중복 채널 정리",
+        "reportAvailableAction": "보고 시간·중단 비용을 사실로 알림"
+      },
+      {
+        "id": "mrpr:material:CH08.P1:reduce-duplicate-report",
+        "authorityContext": {
+          "kind": "reporting",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "중복 상태는 한 곳에서 보고 예외만 바로 알릴까요?"
+        },
+        "managerResponsibility": "정보 목적·주기·응답을 정함",
+        "reportAvailableAction": "중복 준비 시간·긴급 조건 공유"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:learning",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "learning",
+      "definition": "회고는 관찰 경과·지원 조건·다음 변경을 구별",
+      "managerResponsibility": "A는 자기 지시·자원·검토 조건도 수정",
+      "reportAvailableAction": "B는 확인된 수행·미완료·개선 질문 제시",
+      "limits": "과거 성공 경험을 만들거나 모든 실패를 성장 기회로 미화하지 않음",
+      "sourceKeys": [
+        "c9a09e727fe2ed6dcdbd"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH04.P4:learning-with-retained-accountability"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH04.P4:learning-with-retained-accountability",
+        "authorityContext": {
+          "kind": "resource_support",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "다음에는 제 행동과 지원 조건 중 무엇을 함께 바꾸나요?"
+        },
+        "managerResponsibility": "자기 지시·지원 조건도 수정 대상에 포함",
+        "reportAvailableAction": "확인한 실행상의 개선점을 제안"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  },
+  {
+    "original": {
+      "id": "mrpr:concept:retaliation",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "managerReport",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "concept": "retaliation",
+      "definition": "불이익 우려는 성향 조율보다 안전·조직 지원 확인이 우선",
+      "managerResponsibility": "A는 강압·인격 판단·위험을 정상화하지 않음",
+      "reportAvailableAction": "B에게 직접 화해·감정 달래기 의무를 부과하지 않음",
+      "limits": "앱은 실제 위법·보복·보호 결과를 판정하지 않음",
+      "sourceKeys": [
+        "55deedb0770c19853fe3"
+      ],
+      "basis": "external_context_guidance",
+      "applicationStatus": "conditional_editorial_transfer_not_type_fact",
+      "materialRefs": [
+        "mrpr:material:CH07.P3:fear-of-retaliation",
+        "mrpr:material:CH08.P3:report-safe-support-route"
+      ],
+      "actualAuthority": "UNKNOWN",
+      "notNewCalculatedFact": true
+    },
+    "linkedMaterials": [
+      {
+        "id": "mrpr:material:CH07.P3:fear-of-retaliation",
+        "authorityContext": {
+          "kind": "safety_support",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "직접 질문이 어렵다면 어떤 안전한 지원 통로가 있나요?"
+        },
+        "managerResponsibility": "위험 신호를 정상화하지 않고 조직 지원 확인",
+        "reportAvailableAction": "안전한 통로와 필요한 보호 조건 확인"
+      },
+      {
+        "id": "mrpr:material:CH08.P3:report-safe-support-route",
+        "authorityContext": {
+          "kind": "safety_support",
+          "actualAuthority": "UNKNOWN",
+          "verificationRequired": true,
+          "question": "직접 말하기 전 어떤 안전한 지원을 확인할까요?"
+        },
+        "managerResponsibility": "위험을 정상화하지 않고 적절한 지원 확인",
+        "reportAvailableAction": "안전·동의·지원 필요를 우선 확인"
+      }
+    ],
+    "actualAuthority": "UNKNOWN",
+    "documentaryGuidanceIsActualFact": false
+  }
+]

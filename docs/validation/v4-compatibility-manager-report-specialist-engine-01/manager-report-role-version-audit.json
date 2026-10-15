@@ -1,0 +1,66 @@
+{
+  "roleVersion": "compatibility-fixed-ab-v1",
+  "roles": {
+    "A": "상사",
+    "B": "부하·팀원"
+  },
+  "expectedRejections": [
+    {
+      "letter": "Q",
+      "variant": 0,
+      "ok": false,
+      "error": {
+        "code": "INVALID_REPORT_INPUT",
+        "message": "V4_COMPATIBILITY_GENERATION_FAILED",
+        "validationErrors": [
+          "V4_COMPATIBILITY_GENERATION_FAILED"
+        ]
+      },
+      "legacy": {
+        "normalized": true,
+        "normalizationError": null,
+        "v4RoleAccepted": false,
+        "actualReportingRelationship": "UNKNOWN",
+        "actualAuthority": "UNKNOWN"
+      },
+      "originalErrorMatch": true
+    },
+    {
+      "letter": "R",
+      "variant": 0,
+      "ok": false,
+      "error": {
+        "code": "INVALID_REPORT_INPUT",
+        "message": "INVALID_COMPATIBILITY_ROLE_VERSION",
+        "validationErrors": [
+          "INVALID_COMPATIBILITY_ROLE_VERSION"
+        ]
+      },
+      "legacy": {
+        "normalized": false,
+        "normalizationError": "INVALID_COMPATIBILITY_ROLE_VERSION",
+        "normalizedRoleVersion": null,
+        "v4RoleAccepted": false,
+        "actualReportingRelationship": "UNKNOWN",
+        "actualAuthority": "UNKNOWN"
+      },
+      "originalErrorMatch": true
+    }
+  ],
+  "swaps": {
+    "nameOnly": {
+      "personAUnchanged": true,
+      "personBUnchanged": true,
+      "sameReceivedGod": true
+    },
+    "whole": {
+      "originalAIsNewB": true,
+      "originalBIsNewA": true,
+      "originalABIsNewBA": true,
+      "originalBAIsNewAB": true
+    },
+    "replay": true
+  },
+  "roleDeclarationIsAuthority": false,
+  "wholeSwapIsOriginalManagementRelationship": false
+}

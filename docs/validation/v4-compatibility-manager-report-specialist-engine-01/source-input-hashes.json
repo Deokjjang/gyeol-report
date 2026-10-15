@@ -1,0 +1,20 @@
+{
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/artifacts.ts": "458c8168922cf9dd826f5c3fe04e2d478b55fbaa98cf08229526e893cf261d95",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/candidateIndex.ts": "1ce0995c81aad7cf9956f3435aac92e6b57aa6abe0f7a58200a9513a532d3730",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/conflictGraph.ts": "bf7fb941456e5cb7890dda7ec91c15826df44da0c9a7c6ead825ce090afe78f6",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/engine.ts": "7f094c5477259c91c381ac2c2549d34f8002395122025395cd1ccc855db83d9f",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/managementContext.ts": "d31e421c9f530ecd67c25f280bc5c09125ba1f782f3b45e4e02bd77c1ad2b986",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/observations.ts": "ac386debc6974a0a54b108cc9095e2827cd848832c9f25a3182acb09d790152b",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/policy.ts": "225e66b4f2ded84cd924c37797f540132029c51ace6468a2dcc4cf7b068a98ed",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/requirementAdapter.ts": "2114e3adb93411042dae701a6683fe1e53921b970982ad67f0d1cc239e579c16",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/researchCatalog.ts": "a2974bb873f4784ad91b24dd97197fb9c72f53e38cff8435b232b14e2b28b0ea",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/roleValidator.ts": "c4b8c14e7e3f4b46d6c4a941223c65418cac1918a5c0157de76c1f98bb7d523e",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/selection.ts": "108de4f908e42c76311ccd03fecec59d234a8a4de45f0ac05ef932e593c14544",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/sourceGroups.ts": "5e375f3bdc762884b3b9330eb06356f0c475f9e294909c1d388c864a8d391bca",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/synthetic.ts": "94741ace12f0b07c03ea4d0a401fd8b863f5bf103bebefa0bc2c417d41a851d4",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/workDomainBoundary.ts": "0a5cb966e91f57c78abd2a4e7254cdbec924aedc088dfcf128dd60b77f3b323e",
+  "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+  "tests/unit/report-knowledge/compatibilityManagerReportSpecialistEngine.test.ts": "3fce0799c5c4f3dba5035aa209d63be35fc63c94a96cd94b41423dc782ff51ce",
+  "tools/compatibility-manager-report-specialist-engine/sharedServices.ts": "faaf1fd58c26392f959dddec4ddf77f04c4f6befdaddaabec7fec055fc3f4dd1",
+  "tools/compatibility-manager-report-specialist-engine/verify.mjs": "01fc45b553faecb0bda92eca0c5b6fc6148760e094b8e1467a25c0f07dd4f03d"
+}
