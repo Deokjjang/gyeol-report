@@ -1,0 +1,50 @@
+[
+  {
+    "sourceUse": "own_entered_type_only",
+    "count": 162,
+    "supportedByAdapter": true,
+    "declaredGrouping": "ORIGINAL_ONLY_UNKNOWN_NOT_AND"
+  },
+  {
+    "sourceUse": "directed_reference_only",
+    "count": 3,
+    "supportedByAdapter": true,
+    "declaredGrouping": "ORIGINAL_ONLY_UNKNOWN_NOT_AND"
+  },
+  {
+    "sourceUse": "actual_canonical_membership_required",
+    "count": 8,
+    "supportedByAdapter": true,
+    "declaredGrouping": "ORIGINAL_ONLY_UNKNOWN_NOT_AND"
+  },
+  {
+    "sourceUse": "both_same_person_roots_required",
+    "count": 2,
+    "supportedByAdapter": true,
+    "declaredGrouping": "ORIGINAL_ONLY_UNKNOWN_NOT_AND"
+  },
+  {
+    "sourceUse": "recipient_direction_definition",
+    "count": 8,
+    "supportedByAdapter": true,
+    "declaredGrouping": "ORIGINAL_ONLY_UNKNOWN_NOT_AND"
+  },
+  {
+    "sourceUse": "actual_natal_condition_required",
+    "count": 0,
+    "supportedByAdapter": true,
+    "declaredGrouping": "ORIGINAL_ONLY_UNKNOWN_NOT_AND"
+  },
+  {
+    "sourceUse": "context_guidance_not_person_fact",
+    "count": 132,
+    "supportedByAdapter": true,
+    "declaredGrouping": "ORIGINAL_ONLY_UNKNOWN_NOT_AND"
+  },
+  {
+    "sourceUse": "unsupported_comparison_only",
+    "count": 1,
+    "supportedByAdapter": true,
+    "declaredGrouping": "ORIGINAL_ONLY_UNKNOWN_NOT_AND"
+  }
+]

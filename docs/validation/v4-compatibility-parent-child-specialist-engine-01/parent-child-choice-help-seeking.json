@@ -1,0 +1,607 @@
+{
+  "original": [
+    {
+      "id": "pcpr:material:CH05.P1:ab-support-without-answer-ownership",
+      "parent": "지원 방식과 수신 여부를 확인한다.",
+      "child": "말·글·보류·다른 지원을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P1:adult-contact-is-not-permission",
+      "parent": "기대와 실제 동의를 분리한다.",
+      "child": "거절·다른 날짜·정보 경계를 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P1:privacy-and-safety-are-different",
+      "parent": "목적·범위·지원 통로를 점검한다.",
+      "child": "어려운 공개 범위를 말하거나 안전한 지원자를 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+      "parent": "자녀의 관심을 보고 응답하며 반응을 기다린다.",
+      "child": "관심을 옮기거나 멈추고 다른 방식으로 표현할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P1:b-expression-without-talent-prediction",
+      "parent": "활동을 시험할 조건을 마련하되 결과를 약속받지 않는다.",
+      "child": "말·글·만들기 등 편한 방법을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH01.P1:predictability-with-room-to-try",
+      "parent": "기대와 현재 시도를 나누어 설명한다.",
+      "child": "지금 직접 해보고 싶은 부분과 도움이 필요한 부분을 말하거나 보류할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P2:quiet-and-spoken-routes",
+      "parent": "통로·수신·다시 볼 때를 명확히 한다.",
+      "child": "말·글·지원자를 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P1:knowledge-support-without-perfect-child",
+      "parent": "결과 평가보다 도움의 현재 적합성을 점검한다.",
+      "child": "모르는 내용을 말하고 다시 설명해달라고 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P1:device-rule-needs-reason",
+      "parent": "목적·대안·재검토를 마련한다.",
+      "child": "현재 필요한 사용과 불편한 규칙을 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P3:adult-resource-with-consent",
+      "parent": "원하는 지원 범위만 확인한다.",
+      "child": "자료를 쓰거나 다른 자원을 찾고 조언을 거절할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P2:no-relation-is-not-missing-bond",
+      "parent": "근거의 부재를 관계의 결함으로 읽지 않는다.",
+      "child": "필요한 도움이나 다른 의견을 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH01.P2:harmony-not-parenting-proof",
+      "parent": "관계 종류와 실제 돌봄 행동을 분리한다.",
+      "child": "말할 준비가 되면 필요한 도움을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P3:recall-parent-regulation-repair",
+      "parent": "사과와 성인 지원의 경계를 유지한다.",
+      "child": "즉시 답하지 않거나 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "parent": "확정 전에 수정·보류할 자리를 실제로 남긴다.",
+      "child": "동의·다른 관심·보류를 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P3:debate-silence-loop",
+      "parent": "반박을 멈추고 수신을 확인한다.",
+      "child": "말·글·보류를 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P2:b-quiet-route-to-help",
+      "parent": "통로를 마련하고 수신했다는 반응을 남긴다.",
+      "child": "말하거나 쓰거나 준비될 때까지 보류할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+      "parent": "기대와 동의 범위를 조정한다.",
+      "child": "연락·방문·정보 공유 범위를 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P2:a-anchor-without-emotional-debt",
+      "parent": "경청 의사를 말하고 답변을 강요하지 않는다.",
+      "child": "말할 내용·시점·안전한 지원자를 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P1:recall-opportunity-with-voice",
+      "parent": "같은 의미와 보호 조건을 회수한다.",
+      "child": "참여·거절·수정을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-help-one-step-then-return",
+      "parent": "개입 범위를 묻고 안전 책임은 유지한다.",
+      "child": "도움을 요청하거나 직접 다시 해볼 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-care-asks-for-parent-comfort",
+      "parent": "자신의 감정과 지원 요청을 직접 맡는다.",
+      "child": "걱정을 말하거나 자기 활동으로 돌아갈 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-interest-changes-parent-plan",
+      "parent": "자신의 기대를 수정하고 실제 부담을 검토한다.",
+      "child": "바뀐 관심·휴식·도움 필요를 표현할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH01.P2:clash-not-disobedience",
+      "parent": "계산 관계와 실제 발언의 의미를 구분한다.",
+      "child": "규칙의 어려운 부분을 말하거나 다른 통로로 질문할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P4:a-insight-needs-verification",
+      "parent": "관찰·추측·실제 설명을 구분한다.",
+      "child": "추측이 다르다고 말하거나 지금 설명하지 않을 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P3:a-space-with-available-help",
+      "parent": "안전 확인의 목적과 범위를 설명한다.",
+      "child": "쉬거나 자신의 필요를 나중에 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P2:structure-with-flexible-method",
+      "parent": "필요한 결과와 바꿀 수 있는 방법을 분리한다.",
+      "child": "도움과 방법 변경을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-change-parent-replans",
+      "parent": "자신의 기대와 지원 계획을 수정한다.",
+      "child": "관심·대안·휴식을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P2:a-alone-time-with-return",
+      "parent": "부모의 시간과 돌봄 지속 계획을 함께 설명한다.",
+      "child": "도움이 급한지 말하거나 안전한 다른 성인에게 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH01.P1:autonomy-with-adult-responsibility",
+      "parent": "보호할 조건을 직접 점검하고 이유를 설명한다.",
+      "child": "이유를 묻고 가능한 방법을 제안하거나 지원을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-question-route-parent-receives",
+      "parent": "불이익 없는 반응과 설명을 마련한다.",
+      "child": "질문·보류·안전한 지원자를 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-peer-voice-not-peer-duty",
+      "parent": "책임과 참여 범위를 설명한다.",
+      "child": "의견을 말하고 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-explain-protection-and-try",
+      "parent": "제한 이유·선택·지원 통로를 설명한다.",
+      "child": "방법을 고르거나 멈추고 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P4:young-rule-repair-with-model",
+      "parent": "설명·모델·안전 지원을 맡는다.",
+      "child": "작은 방법을 고르거나 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-question-not-parent-evaluation",
+      "parent": "자신의 기준과 설명을 점검한다.",
+      "child": "질문하거나 준비되지 않으면 말하지 않을 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P4:care-is-not-fixed-family-role",
+      "parent": "성인 책임과 지원 요청을 직접 맡는다.",
+      "child": "걱정하거나 자기 활동으로 돌아갈 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-quiet-response-increases-parent-demand",
+      "parent": "질문 범위를 줄이고 반응을 기다린다.",
+      "child": "짧게 답하거나 다른 방식으로 전할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-parent-emotional-responsibility",
+      "parent": "반응 조절·안전 돌봄·성인 지원을 직접 맡는다.",
+      "child": "사과에 즉시 답하지 않고 자신의 필요를 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P1:b-fairness-question-not-rebellion",
+      "parent": "질문을 듣고 바꿀 부분과 보호할 조건을 구분한다.",
+      "child": "왜 다른지 묻거나 이해하기 쉬운 설명을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P2:recall-harmony-needs-support",
+      "parent": "같은 출처와 비단정 조건을 회수한다.",
+      "child": "도움 범위를 말하거나 다른 지원을 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P3:a-experience-with-safety-plan",
+      "parent": "안전 준비와 실행 선택을 나눈다.",
+      "child": "해보거나 도움을 요청하고 중단할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-short-request-parent-supports",
+      "parent": "수신·지원·추가 질문의 범위를 나눈다.",
+      "child": "짧은 요청·보류·다른 안전한 도움을 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-care-becomes-parent-dependence",
+      "parent": "성인 지원을 직접 구하고 요구를 줄인다.",
+      "child": "걱정을 말하거나 대화를 멈출 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P3:effort-not-comparison",
+      "parent": "행동과 지원을 구체적으로 알아본다.",
+      "child": "다시 하거나 쉬고 다른 방식을 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P2:b-gentle-feedback-without-fragile-label",
+      "parent": "반응을 듣고 필요한 설명과 지원을 조정한다.",
+      "child": "불편한 표현을 말하거나 도움받을 통로를 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-boundary-parent-seeks-adult",
+      "parent": "반응 조절과 성인 지원을 직접 맡는다.",
+      "child": "멈춤·거리·도움 요청을 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-change-can-be-reported-not-defended",
+      "parent": "기대와 현재 지원을 다시 나눈다.",
+      "child": "관심·중단·대안을 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P3:recall-expectation-repair",
+      "parent": "기대와 지원을 분리했던 행동을 유지한다.",
+      "child": "다른 관심·거절·보류를 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-preview-before-change",
+      "parent": "안내와 지원을 함께 제공한다.",
+      "child": "다시 듣거나 보여달라고 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P4:change-rules-with-development",
+      "parent": "역할·상황·지원의 전제를 확인한다.",
+      "child": "현재의 경계와 도움 요청 범위를 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P2:clash-without-family-blame",
+      "parent": "계산 사실과 행동의 선택을 분리한다.",
+      "child": "다른 의견과 지원 필요를 표현할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P4:comparison-removes-own-question",
+      "parent": "비교를 멈추고 실제 지원을 확인한다.",
+      "child": "자기 질문과 도움 필요를 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P1:b-interest-not-achievement-label",
+      "parent": "능력 평가를 멈추고 필요한 자료·안전·시간을 지원한다.",
+      "child": "관심을 설명하거나 바꾸고 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P1:opportunity-with-child-voice",
+      "parent": "안전·비용·지원은 성인이 확인한다.",
+      "child": "자기 목적을 말하고 다른 활동을 제안할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P4:adult-consent-and-contact-review",
+      "parent": "승인 요구를 줄이고 동의한 지원만 맡는다.",
+      "child": "방문·연락·조언·정보 경계를 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P3:child-comfort-parent-loop",
+      "parent": "자신의 반응·요구·성인 지원을 점검한다.",
+      "child": "대화 범위를 줄이거나 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-debate-and-return",
+      "parent": "반박·답변 요구를 줄이고 실제 수신을 확인한다.",
+      "child": "요약을 고치거나 다른 통로로 전할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P3:young-signal-and-response",
+      "parent": "관심을 확인하고 도울 준비를 유지한다.",
+      "child": "고르거나 멈추고 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+      "parent": "복종을 칭찬하기보다 실제 선택을 확인한다.",
+      "child": "동의를 수정하거나 어려운 항목을 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P1:expectation-and-interest-differ",
+      "parent": "현재 목적과 실제 지원을 확인한다.",
+      "child": "다른 관심·보류·도움 필요를 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P2:b-predictable-help-sequence",
+      "parent": "변경 이유와 지금 가능한 행동을 설명한다.",
+      "child": "순서를 다시 묻거나 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH01.P3:same-type-not-same-power",
+      "parent": "기준 준수와 자유로운 의견을 별도로 확인한다.",
+      "child": "같은 의견을 요구받지 않고 어려운 항목을 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-adult-support-and-boundary",
+      "parent": "동의한 지원과 경계를 유지한다.",
+      "child": "조언·방문·연락을 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P2:different-expression-equal-respect",
+      "parent": "반응의 크기 대신 지금의 동의를 확인한다.",
+      "child": "참여하거나 쉬고 활동 범위를 바꿀 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-role-changes-with-context",
+      "parent": "상황·동의·재검토 조건을 유지한다.",
+      "child": "현재 필요한 도움과 경계를 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P3:recall-protection-repair",
+      "parent": "실제 보호 기준과 선택 범위를 유지한다.",
+      "child": "방법·중단·도움을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P4:adult-choice-not-permanent-approval",
+      "parent": "승인 요구를 줄이고 정보 제공 범위를 확인한다.",
+      "child": "결정·조언 수신·연락 경계를 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-stop-comfort-demand",
+      "parent": "사과·반응 조절·안전 돌봄을 직접 맡는다.",
+      "child": "답변·거리·지원 요청을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P4:teen-device-rule-review",
+      "parent": "안전·이유·선택·재검토를 마련한다.",
+      "child": "의견·대안·도움 요청을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P4:safety-support-not-forced-reunion",
+      "parent": "보호·지원·안전 확인을 맡는다.",
+      "child": "안전한 도움을 요청하거나 위험한 대화를 중단할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P1:a-values-with-open-question",
+      "parent": "가치·행동·선택 범위를 구분해 말한다.",
+      "child": "다른 생각을 말하거나 판단을 보류할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P3:b-deep-interest-with-change-option",
+      "parent": "목표 대신 현재 선택과 부담을 확인한다.",
+      "child": "이어가거나 바꾸고 휴식을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P1:recall-learning-with-mistake-space",
+      "parent": "실수·지원 조건을 유지한다.",
+      "child": "모름·추가 설명·휴식을 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-change-expectation-before-enrollment",
+      "parent": "확정 전 선택과 지원 조건을 다시 연다.",
+      "child": "다른 관심이나 보류를 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P4:digital-monitoring-is-not-trust",
+      "parent": "안전 문제를 성격의 탓으로 돌리지 않는다.",
+      "child": "안전한 성인·전문 지원을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P4:harmony-needs-child-consent",
+      "parent": "실제 지원과 동의를 확인한다.",
+      "child": "도움의 범위를 말하거나 다른 지원을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-new-interest-not-teaching-job",
+      "parent": "검증과 지원을 직접 맡는다.",
+      "child": "관심을 공유하거나 설명을 멈출 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH01.P3:pair-is-not-development-test",
+      "parent": "가르칠 내용과 자녀가 궁금한 내용을 나눈다.",
+      "child": "이해 못한 부분을 다시 묻거나 다른 설명을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-receive-before-rebuttal",
+      "parent": "반박을 멈추고 실제 수신을 확인한다.",
+      "child": "요약을 고치거나 나중에 전할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P2:harmony-and-disagreement-coexist",
+      "parent": "각각의 출처와 비단정 조건을 유지한다.",
+      "child": "관계 분류와 실제 경험이 다르다고 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-protection-removes-small-choice",
+      "parent": "확인된 위험에 맞게 제한 범위를 다시 본다.",
+      "child": "가능한 다른 방법을 제안하거나 설명을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-allow-wrong-first-answer",
+      "parent": "질문을 끝내기보다 이해 여부를 확인한다.",
+      "child": "모르거나 다르게 생각한다고 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-care-can-stop-without-guilt",
+      "parent": "자녀의 경계를 받아들이고 자신의 반응을 관리한다.",
+      "child": "멈춤·거리·도움 요청을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P1:ab-pressure-is-not-protection",
+      "parent": "실제 안전을 확인하고 불필요한 제한을 다시 본다.",
+      "child": "어려운 조건을 말하고 안전한 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P1:recall-curiosity-with-choice",
+      "parent": "실제 표시된 조건을 유지한다.",
+      "child": "참여·변경·중단을 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P2:a-rest-needs-adult-support",
+      "parent": "필요한 지원을 성인이나 적절한 자원에 요청한다.",
+      "child": "부모를 달래는 역할을 맡지 않고 자신의 필요를 표현할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P1:ab-new-opportunity-with-safety",
+      "parent": "지원 준비와 참여 결정을 분리한다.",
+      "child": "참여·수정·거절을 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P3:result-debt-loop",
+      "parent": "기대와 조건 없는 보호를 구분한다.",
+      "child": "관심·부담·보류를 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P4:coercion-not-equal-style-conflict",
+      "parent": "안전 확보와 전문 판단을 우선한다.",
+      "child": "안전한 도움을 요청하거나 위험한 대화를 중단할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P4:b-active-interest-not-risk-identity",
+      "parent": "위험·지원·중단 신호를 실제 상황에서 확인한다.",
+      "child": "설명을 다시 요청하거나 중단하고 도움을 청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P2:harm-not-wonjin-child",
+      "parent": "검출과 연구 정의를 구분한다.",
+      "child": "관계 명칭을 자기 문제로 받아들일 의무 없이 질문할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P4:b-brief-answer-still-has-choice",
+      "parent": "질문 하나씩 내용과 현재 동의를 확인한다.",
+      "child": "짧게 답하거나 다시 설명해달라고 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-small-no-informs-support",
+      "parent": "거절을 받아들이고 반응을 직접 조절한다.",
+      "child": "거절·대안·보류를 표현할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-brief-help-request-is-enough",
+      "parent": "요청을 받고 필요한 지원을 직접 마련한다.",
+      "child": "짧게 요청하거나 다른 안전한 지원자에게 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+      "parent": "부모 지원과 개인 root 조건을 유지한다.",
+      "child": "관심을 표현하거나 멈출 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-debate-overwhelms-child",
+      "parent": "속도와 방식의 권한을 점검한다.",
+      "child": "시간·글·다른 통로를 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-young-support-and-small-choice",
+      "parent": "관찰·설명·안전 지원을 유지한다.",
+      "child": "고르거나 멈추고 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P4:a-rule-correction-without-humiliation",
+      "parent": "비난을 멈추고 실행 가능한 설명으로 바꾼다.",
+      "child": "어려운 부분을 말하거나 보여달라고 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-parent-support-outside-child",
+      "parent": "반응 조절·사과·성인 지원을 직접 맡는다.",
+      "child": "사과에 즉시 답하거나 용서할 의무 없이 자신의 필요를 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-question-treated-as-rejection",
+      "parent": "반박 전에 실제 질문을 듣는다.",
+      "child": "질문·보류·다른 지원 요청을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-practical-trial-informs-guidance",
+      "parent": "안전 준비와 개입 범위를 직접 점검한다.",
+      "child": "시도하거나 멈추고 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+      "parent": "조건 없는 돌봄과 현재 선택을 분리한다.",
+      "child": "관심·부담·지원 필요를 말하거나 보류할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P3:b-peer-care-not-family-regulator",
+      "parent": "부모의 정서 조절과 지원 요청을 직접 맡는다.",
+      "child": "걱정을 표현하거나 자신의 활동으로 돌아갈 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH03.P3:b-questions-expand-parent-information",
+      "parent": "배우는 책임을 자녀에게 맡기지 않고 필요한 검증을 한다.",
+      "child": "알고 싶은 질문을 고르거나 설명을 멈출 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH04.P1:shared-curiosity-with-no-performance",
+      "parent": "실제 관심과 중단 선택을 확인한다.",
+      "child": "참여·변경·중단을 선택할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-enjoyment-not-family-mood-task",
+      "parent": "분위기와 감정 조절을 자녀에게 맡기지 않는다.",
+      "child": "참여하거나 쉬고 활동을 바꿀 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P1:ab-rule-as-explanation",
+      "parent": "자녀의 질문을 듣고 자신의 설명을 점검한다.",
+      "child": "이유를 묻거나 다른 방법을 제안할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+      "parent": "자신의 불편과 자녀의 발언권을 구분한다.",
+      "child": "다른 의견을 말하거나 대화 방식을 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-listen-before-answer",
+      "parent": "반박 전 수신 내용을 확인한다.",
+      "child": "요약을 고치거나 나중에 글로 전할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH01.P4:adult-child-has-own-life",
+      "parent": "조언·실행 지원·결정을 구분한다.",
+      "child": "조언을 고르거나 거절하고 직접 결정할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-notice-without-mind-reading",
+      "parent": "추측을 질문으로 바꾸고 선택을 기다린다.",
+      "child": "말하거나 보류하고 다른 지원을 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-written-view-changes-parent-assumption",
+      "parent": "자신의 해석을 수정하고 필요한 결정을 설명한다.",
+      "child": "요약을 고치거나 공개 범위를 줄일 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P1:a-effort-without-future-script",
+      "parent": "자신의 성공 기준과 지원할 행동을 나눈다.",
+      "child": "관심을 바꾸거나 더 알아볼 시간을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-result-debt",
+      "parent": "기대 압박을 줄이고 실제 지원을 마련한다.",
+      "child": "관심을 말하거나 답하지 않을 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH09.P2:recall-many-routes-to-trust",
+      "parent": "실제 도입된 통로와 선택을 회수한다.",
+      "child": "말·글·보류를 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH02.P1:a-standards-with-explanation",
+      "parent": "규칙의 범위와 이해 가능성을 먼저 확인한다.",
+      "child": "모르는 부분을 가리키거나 함께 해달라고 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH01.P4:fixed-role-not-age-diagnosis",
+      "parent": "단계와 실제 관계를 추측하지 않고 적용 전제를 확인한다.",
+      "child": "확인할 맥락을 말하거나 제공하지 않을 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-option-to-question-safely",
+      "parent": "발언권·수신·불이익 없는 반응을 마련한다.",
+      "child": "질문하거나 보류하고 안전한 지원자를 고를 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH07.P3:protection-question-test-loop",
+      "parent": "질문의 목적과 실제 선택 범위를 확인한다.",
+      "child": "이유를 묻거나 다른 방법을 말할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-protection-test",
+      "parent": "안전 기준을 설명하고 불필요한 제한을 줄인다.",
+      "child": "방법을 고르거나 멈추고 도움을 요청할 수 있다."
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-reduce-unnecessary-restriction",
+      "parent": "불필요한 제한을 수정하고 보호를 유지한다.",
+      "child": "방법·도움·중단을 고를 수 있다."
+    }
+  ],
+  "forcedDisclosure": false,
+  "forcedForgiveness": false,
+  "actualTrust": "UNKNOWN"
+}

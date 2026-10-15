@@ -1,0 +1,912 @@
+{
+  "hardRootCap": null,
+  "newRoots": 0,
+  "fusionIsIndependentThirdFact": false,
+  "observations": [
+    {
+      "id": "pcpr:material:CH05.P1:ab-support-without-answer-ownership",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH07.P1:adult-contact-is-not-permission",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH07.P1:privacy-and-safety-are-different",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P1:b-expression-without-talent-prediction",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH01.P1:predictability-with-room-to-try",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH04.P2:quiet-and-spoken-routes",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH04.P1:knowledge-support-without-perfect-child",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH07.P1:device-rule-needs-reason",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH04.P3:adult-resource-with-consent",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH07.P2:no-relation-is-not-missing-bond",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH01.P2:harmony-not-parenting-proof",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH09.P3:recall-parent-regulation-repair",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH07.P3:debate-silence-loop",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P2:b-quiet-route-to-help",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH02.P2:a-anchor-without-emotional-debt",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH09.P1:recall-opportunity-with-voice",
+      "informationRoots": [],
+      "supportingAncestryRoots": [
+        "aeg:root:593288a94901b68c6d2b3fa7329a61afdc07dde0f21363df2d3224bc3f6e649a",
+        "aeg:root:b9bdb15dbe5bfc5349552d9ebb858f236b3d130675cf60860afc2707d196e018"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-help-one-step-then-return",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-care-asks-for-parent-comfort",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-interest-changes-parent-plan",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH01.P2:clash-not-disobedience",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH02.P4:a-insight-needs-verification",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH02.P3:a-space-with-available-help",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH04.P2:structure-with-flexible-method",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-change-parent-replans",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH02.P2:a-alone-time-with-return",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH01.P1:autonomy-with-adult-responsibility",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-question-route-parent-receives",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-peer-voice-not-peer-duty",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-explain-protection-and-try",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH08.P4:young-rule-repair-with-model",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-question-not-parent-evaluation",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH04.P4:care-is-not-fixed-family-role",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-quiet-response-increases-parent-demand",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-parent-emotional-responsibility",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P1:b-fairness-question-not-rebellion",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH09.P2:recall-harmony-needs-support",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH02.P3:a-experience-with-safety-plan",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-short-request-parent-supports",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-care-becomes-parent-dependence",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH04.P3:effort-not-comparison",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P2:b-gentle-feedback-without-fragile-label",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-boundary-parent-seeks-adult",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-change-can-be-reported-not-defended",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH09.P3:recall-expectation-repair",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-preview-before-change",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH04.P4:change-rules-with-development",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH07.P2:clash-without-family-blame",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH07.P4:comparison-removes-own-question",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P1:b-interest-not-achievement-label",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH04.P1:opportunity-with-child-voice",
+      "informationRoots": [],
+      "supportingAncestryRoots": [
+        "aeg:root:593288a94901b68c6d2b3fa7329a61afdc07dde0f21363df2d3224bc3f6e649a",
+        "aeg:root:b9bdb15dbe5bfc5349552d9ebb858f236b3d130675cf60860afc2707d196e018"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH08.P4:adult-consent-and-contact-review",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH07.P3:child-comfort-parent-loop",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-debate-and-return",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH04.P3:young-signal-and-response",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+      "informationRoots": [],
+      "supportingAncestryRoots": [
+        "aeg:root:378817a93211bed15bac2a371f766049dd4246ca37abd524b820bd35a0e1b33d",
+        "aeg:root:c96c369b23c44327bb6526a8c7eda56e0e7d082543efe7633ea126eade0b5cfa"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH07.P1:expectation-and-interest-differ",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P2:b-predictable-help-sequence",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH01.P3:same-type-not-same-power",
+      "informationRoots": [],
+      "supportingAncestryRoots": [
+        "aeg:root:378817a93211bed15bac2a371f766049dd4246ca37abd524b820bd35a0e1b33d",
+        "aeg:root:c96c369b23c44327bb6526a8c7eda56e0e7d082543efe7633ea126eade0b5cfa"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-adult-support-and-boundary",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH04.P2:different-expression-equal-respect",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-role-changes-with-context",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH09.P3:recall-protection-repair",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH07.P4:adult-choice-not-permanent-approval",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-stop-comfort-demand",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH08.P4:teen-device-rule-review",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P4:safety-support-not-forced-reunion",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH02.P1:a-values-with-open-question",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P3:b-deep-interest-with-change-option",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH09.P1:recall-learning-with-mistake-space",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-change-expectation-before-enrollment",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH07.P4:digital-monitoring-is-not-trust",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH04.P4:harmony-needs-child-consent",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-new-interest-not-teaching-job",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH01.P3:pair-is-not-development-test",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-receive-before-rebuttal",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH07.P2:harmony-and-disagreement-coexist",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-protection-removes-small-choice",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-allow-wrong-first-answer",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-care-can-stop-without-guilt",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH05.P1:ab-pressure-is-not-protection",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH09.P1:recall-curiosity-with-choice",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH02.P2:a-rest-needs-adult-support",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH05.P1:ab-new-opportunity-with-safety",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:593288a94901b68c6d2b3fa7329a61afdc07dde0f21363df2d3224bc3f6e649a",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750",
+        "aeg:root:b9bdb15dbe5bfc5349552d9ebb858f236b3d130675cf60860afc2707d196e018"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH07.P3:result-debt-loop",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH07.P4:coercion-not-equal-style-conflict",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P4:b-active-interest-not-risk-identity",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH07.P2:harm-not-wonjin-child",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P4:b-brief-answer-still-has-choice",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-small-no-informs-support",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:378817a93211bed15bac2a371f766049dd4246ca37abd524b820bd35a0e1b33d",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:c96c369b23c44327bb6526a8c7eda56e0e7d082543efe7633ea126eade0b5cfa"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-brief-help-request-is-enough",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-debate-overwhelms-child",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-young-support-and-small-choice",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH02.P4:a-rule-correction-without-humiliation",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-parent-support-outside-child",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-question-treated-as-rejection",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-practical-trial-informs-guidance",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH03.P3:b-peer-care-not-family-regulator",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH03.P3:b-questions-expand-parent-information",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH04.P1:shared-curiosity-with-no-performance",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-enjoyment-not-family-mood-task",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH05.P1:ab-rule-as-explanation",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-listen-before-answer",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH01.P4:adult-child-has-own-life",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-notice-without-mind-reading",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-written-view-changes-parent-assumption",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH02.P1:a-effort-without-future-script",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-result-debt",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH09.P2:recall-many-routes-to-trust",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH02.P1:a-standards-with-explanation",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH01.P4:fixed-role-not-age-diagnosis",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-option-to-question-safely",
+      "informationRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62"
+      ]
+    },
+    {
+      "id": "pcpr:material:CH07.P3:protection-question-test-loop",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-protection-test",
+      "informationRoots": [],
+      "supportingAncestryRoots": []
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-reduce-unnecessary-restriction",
+      "informationRoots": [
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ],
+      "supportingAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750"
+      ]
+    }
+  ],
+  "rootIndex": [
+    {
+      "aeg:root:1b6af729f17b49df98c8c02abe373a59fabffb4015d1c21b5bc84820f28ab6bc": [
+        "kc:v1:1d11fcaf70c31043139efd97a834f52c2bf8d1b2b036b104b90df6416906b7b7",
+        "kc:v1:28434150a46252cc401fa77244928665e5fc3683a84cc56b43cfd36dfdfa5b5b",
+        "kc:v1:33aea2b69d413c9da94b3a387902d1240293caf0ff079ba8e055f86574a97ddd",
+        "kc:v1:34e94c03524226f11e9a32bbf6532aa0a789cb102b46f1a151484077d48b099e",
+        "kc:v1:367455eb24921433afd76a0f4d24d1ed024bcddb65111bfef0127f80414657fc",
+        "kc:v1:383b2a08a6e8bdc3dc2754f7f3ed6afed97c1f38665007bdece1a8f5302b1def",
+        "kc:v1:3ca35dcccdea3cb975af3ec9eabeca2546e3f6edaae527a3f0daffa93a164115",
+        "kc:v1:4a095384e58701df26da17cd88887d2a753c89e38c1c0e7d413fa6e4fe5b27b7",
+        "kc:v1:4a4b362742256ad8b0f9f1d917b90e3c424df59c662e0198e0f83e702fd5180c",
+        "kc:v1:53e87b545d493bbeae63ce152b52ba060981e10f0e2978491dd7678ecbe138d0",
+        "kc:v1:5610b13865660ece497754b2a8784c7b62c127ee2a5a3e48394bbe2af457962a",
+        "kc:v1:900384fc524883fd720522ac0c3af5e6c4e1b49419ff35874fbd99d7a1bf0173",
+        "kc:v1:9bbbbc621dbc9ba06093e8077c04141d98bd5573c388d306c8d4d8160f972186",
+        "kc:v1:a7d70978e2d5c4154cad3a2760e17834a2b7da9bc00e03bbab65d97066832181",
+        "kc:v1:abd6f3b4c4b898faa8d70c596930b39012309d29b87fe7f2a30911233d296b0c",
+        "kc:v1:b7a3c0fd2e4496f2f96eabbaab006dff29efe1d756e9bed41085602e65921503",
+        "kc:v1:b7b2c54952a87d5c5fb920874cbd5cde4d4f565edae204cbeee4d7b5570d92ae",
+        "kc:v1:c6bef20fea5dffb97f7f32cb38dac09e0a609f4e87886309542b5b241874104c",
+        "kc:v1:d7a19b83e9e0b90eb415e9337e6bb949964986c627ae3cf30f91a7ac5008c4d4",
+        "kc:v1:f5c36e3fde7067af5413b1c9469c0528857b2e416b7518a6f5d0b4293d07c3f3"
+      ],
+      "aeg:root:88fcd08f8129b1b49078f332822687c6f82a7f27375d3d51d52171cc6cd4d750": [
+        "kc:v1:03626b3e18ad9c3aad6d8442b46bb0be10b5877606be553d495ac112172cd3aa",
+        "kc:v1:185a1a8d7e8f945a95994a7d4ab50929fdef7c772f8c2965415033f979817256",
+        "kc:v1:257fa701f30da66f7c980f5c01abbd0615fbb15e87ebb79dfd7097834c698365",
+        "kc:v1:270c2a405a000b652a228317015ee052f5a70145248faa6daf4137dfd1342568",
+        "kc:v1:36a57e58a172d9bf0a63382ab40683d59676f78314fd9513393c36bcebe842c7",
+        "kc:v1:5950afef17bb2fd00e69eecde79f3ea3505329c3fcc4e4e903ee775dddd76c6d",
+        "kc:v1:76d792efb161f51a29b7bf17b095eff4cf5b30884af8dc9418a3a9547dc22147",
+        "kc:v1:89ee86aca65c2495a6861b74c040008922adbeb1f8d59632683f90c872bde192",
+        "kc:v1:9380179d6fec7cec59dbf0f49e0f10a209ea1ed88386b262e603a232dcd6255f",
+        "kc:v1:970de365f4f51b2635159f70dd7e1962e93fc8aa538ee3db9371b45b20e22d53",
+        "kc:v1:9819455f4843186ab2d89bffbf6e92ea69b48b84610e7360baccd2dc24c8d570",
+        "kc:v1:9c129f5c737b257e91fd23812cde7e1e2edc901afce1c927329372595eb75628",
+        "kc:v1:a026e45baf06160190c9a4bea44c1a6cdcaa66d5a84e75e08efa09bc6683264f",
+        "kc:v1:b009481fee283cf51f1e5c251e2fd23f8b103d3fec6b0cbeaf597fc73e9ae8e1",
+        "kc:v1:b54b0e2c4b6773c329c09d25ec071e36507ffe91cb29f0b49bbe36b95c253270",
+        "kc:v1:b98d3bdee37a0a65c19e28e1015db51885651f50ab6da2b9b8d5c06df675a237",
+        "kc:v1:c718c581d7349033e71935f1f146117eb37de1c9077797520f280f38a3ac4c50",
+        "kc:v1:d12e31c9410c2c3d94749914c015601fb316163e4a450060d5b5adda0f9f1278",
+        "kc:v1:d3f26ea11e5425d207b1de0699c4e0d7b5beb103271466e865091119c2f58a94",
+        "kc:v1:f95f8f58aba6a7c6c3b251c409a81c12477a2ecc46f0861f9142e14e838935c2"
+      ]
+    }
+  ],
+  "actualDifferentApplicationsApproved": 0
+}

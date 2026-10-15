@@ -1,0 +1,33 @@
+{
+  "signals": [
+    "CHILD_ABUSE",
+    "NEGLECT",
+    "VIOLENCE",
+    "THREAT",
+    "COERCION",
+    "STALKING",
+    "SURVEILLANCE",
+    "PRIVACY_VIOLATION",
+    "SEXUAL_BOUNDARY",
+    "ECONOMIC_CONTROL",
+    "PARENT_EMOTIONAL_BURDEN",
+    "UNSAFE_RECONTACT"
+  ],
+  "actualRisk": "UNKNOWN",
+  "actualAbuseDiagnosed": false,
+  "parentProtectionNotTransferred": true,
+  "syntheticBlocked": [
+    {
+      "id": "synthetic:parent-child:negative:unsafe-contact",
+      "reasons": [
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:parent-child:negative:unsafe-repair",
+      "reasons": [
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "expectedErrors": [
+    {
+      "letter": "Q",
+      "variant": 0,
+      "ok": false,
+      "error": {
+        "code": "INVALID_REPORT_INPUT",
+        "message": "V4_COMPATIBILITY_GENERATION_FAILED",
+        "validationErrors": [
+          "V4_COMPATIBILITY_GENERATION_FAILED"
+        ]
+      },
+      "legacy": {
+        "normalization": "LEGACY_NORMALIZATION_ACCEPTED",
+        "v4": {
+          "state": "V4_FIXED_ROLE_REQUIRED",
+          "roles": null,
+          "actualParentage": "UNVERIFIED_ROLE_ASSIGNMENT",
+          "legalAuthority": "UNKNOWN",
+          "originalError": "V4_COMPATIBILITY_FIXED_ROLE_INPUT_REQUIRED"
+        },
+        "legacyBooksReinterpreted": false
+      },
+      "originalErrorPreserved": true
+    },
+    {
+      "letter": "R",
+      "variant": 0,
+      "ok": false,
+      "error": {
+        "code": "INVALID_REPORT_INPUT",
+        "message": "INVALID_COMPATIBILITY_ROLE_VERSION",
+        "validationErrors": [
+          "INVALID_COMPATIBILITY_ROLE_VERSION"
+        ]
+      },
+      "legacy": {
+        "normalization": "INVALID_COMPATIBILITY_ROLE_VERSION",
+        "v4": {
+          "state": "INVALID_ROLE_VERSION",
+          "roles": null,
+          "actualParentage": "UNVERIFIED_ROLE_ASSIGNMENT",
+          "legalAuthority": "UNKNOWN",
+          "originalError": "INVALID_COMPATIBILITY_ROLE_VERSION"
+        },
+        "legacyBooksReinterpreted": false
+      },
+      "originalErrorPreserved": true
+    }
+  ],
+  "wholeSwap": {
+    "originalAIsNewB": true,
+    "originalBIsNewA": true,
+    "originalABIsNewBA": true,
+    "originalBAIsNewAB": true
+  },
+  "nameOnlySwap": {
+    "personAUnchanged": true,
+    "personBUnchanged": true,
+    "sameReceivedGod": true
+  },
+  "wholeSwapState": "WHOLE_SWAP_ROLE_DECLARATION_CHANGED",
+  "oldRolelessBooksReinterpreted": false
+}

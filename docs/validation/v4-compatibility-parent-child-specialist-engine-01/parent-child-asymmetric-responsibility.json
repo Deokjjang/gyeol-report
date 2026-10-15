@@ -1,0 +1,1943 @@
+{
+  "policy": {
+    "roleVersion": "compatibility-fixed-ab-v1",
+    "parentOwner": "A",
+    "childOwner": "B",
+    "actualParentage": "UNKNOWN",
+    "development": "UNKNOWN_UNLESS_EXPLICITLY_VERIFIED",
+    "ageCalculation": false,
+    "scoringDomainExpansion": false,
+    "responsibility": "ASYMMETRIC_PARENT_RESPONSIBILITY_CHILD_OPTIONS",
+    "childMustRepairParent": false,
+    "adultParentFinalAuthority": false,
+    "parentChildPatternExists": false,
+    "actualCustomerApprovals": 0,
+    "customerDisplayLedgerIssued": false,
+    "writerUnchanged": true
+  },
+  "original": [
+    {
+      "id": "pcpr:material:CH05.P1:ab-support-without-answer-ownership",
+      "parentResponsibleAction": "지원 방식과 수신 여부를 확인한다.",
+      "childAvailableChoice": "말·글·보류·다른 지원을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "보호했다는 이유로 결정과 정보 소유권을 요구",
+        "parentChecksFirst": "지원 방식과 수신 여부를 확인한다.",
+        "childExpression": "말·글·보류·다른 지원을 선택할 수 있다.",
+        "adultChange": "지원 방식과 수신 여부를 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "말·글·보류·다른 지원을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P1:adult-contact-is-not-permission",
+      "parentResponsibleAction": "기대와 실제 동의를 분리한다.",
+      "childAvailableChoice": "거절·다른 날짜·정보 경계를 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "답이 늦다는 이유로 독립 결정을 제한",
+        "parentChecksFirst": "기대와 실제 동의를 분리한다.",
+        "childExpression": "거절·다른 날짜·정보 경계를 선택할 수 있다.",
+        "adultChange": "기대와 실제 동의를 분리한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "거절·다른 날짜·정보 경계를 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P1:privacy-and-safety-are-different",
+      "parentResponsibleAction": "목적·범위·지원 통로를 점검한다.",
+      "childAvailableChoice": "어려운 공개 범위를 말하거나 안전한 지원자를 고를 수 있다.",
+      "repairPlan": {
+        "condition": "감시를 관심으로 정당화",
+        "parentChecksFirst": "목적·범위·지원 통로를 점검한다.",
+        "childExpression": "어려운 공개 범위를 말하거나 안전한 지원자를 고를 수 있다.",
+        "adultChange": "목적·범위·지원 통로를 점검한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "어려운 공개 범위를 말하거나 안전한 지원자를 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+      "parentResponsibleAction": "자녀의 관심을 보고 응답하며 반응을 기다린다.",
+      "childAvailableChoice": "관심을 옮기거나 멈추고 다른 방식으로 표현할 수 있다.",
+      "repairPlan": {
+        "condition": "질문을 정답 시험으로 바꿈",
+        "parentChecksFirst": "자녀의 관심을 보고 응답하며 반응을 기다린다.",
+        "childExpression": "관심을 옮기거나 멈추고 다른 방식으로 표현할 수 있다.",
+        "adultChange": "자녀의 관심을 보고 응답하며 반응을 기다린다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관심을 옮기거나 멈추고 다른 방식으로 표현할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P1:b-expression-without-talent-prediction",
+      "parentResponsibleAction": "활동을 시험할 조건을 마련하되 결과를 약속받지 않는다.",
+      "childAvailableChoice": "말·글·만들기 등 편한 방법을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "예체능 소질을 정해 성과를 요구",
+        "parentChecksFirst": "활동을 시험할 조건을 마련하되 결과를 약속받지 않는다.",
+        "childExpression": "말·글·만들기 등 편한 방법을 선택할 수 있다.",
+        "adultChange": "활동을 시험할 조건을 마련하되 결과를 약속받지 않는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "말·글·만들기 등 편한 방법을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH01.P1:predictability-with-room-to-try",
+      "parentResponsibleAction": "기대와 현재 시도를 나누어 설명한다.",
+      "childAvailableChoice": "지금 직접 해보고 싶은 부분과 도움이 필요한 부분을 말하거나 보류할 수 있다.",
+      "repairPlan": {
+        "condition": "꾸준함을 부모가 고른 진로에 따르는 것으로 정의",
+        "parentChecksFirst": "기대와 현재 시도를 나누어 설명한다.",
+        "childExpression": "지금 직접 해보고 싶은 부분과 도움이 필요한 부분을 말하거나 보류할 수 있다.",
+        "adultChange": "기대와 현재 시도를 나누어 설명한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "지금 직접 해보고 싶은 부분과 도움이 필요한 부분을 말하거나 보류할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P2:quiet-and-spoken-routes",
+      "parentResponsibleAction": "통로·수신·다시 볼 때를 명확히 한다.",
+      "childAvailableChoice": "말·글·지원자를 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "많이 이야기하는 것을 친밀함의 유일한 증거로 삼음",
+        "parentChecksFirst": "통로·수신·다시 볼 때를 명확히 한다.",
+        "childExpression": "말·글·지원자를 선택할 수 있다.",
+        "adultChange": "통로·수신·다시 볼 때를 명확히 한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "말·글·지원자를 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P1:knowledge-support-without-perfect-child",
+      "parentResponsibleAction": "결과 평가보다 도움의 현재 적합성을 점검한다.",
+      "childAvailableChoice": "모르는 내용을 말하고 다시 설명해달라고 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "성실한 자녀니 도움 없이 잘해야 한다고 기대",
+        "parentChecksFirst": "결과 평가보다 도움의 현재 적합성을 점검한다.",
+        "childExpression": "모르는 내용을 말하고 다시 설명해달라고 요청할 수 있다.",
+        "adultChange": "결과 평가보다 도움의 현재 적합성을 점검한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "모르는 내용을 말하고 다시 설명해달라고 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P1:device-rule-needs-reason",
+      "parentResponsibleAction": "목적·대안·재검토를 마련한다.",
+      "childAvailableChoice": "현재 필요한 사용과 불편한 규칙을 말할 수 있다.",
+      "repairPlan": {
+        "condition": "질문을 기기 중독이나 불순종으로 진단",
+        "parentChecksFirst": "목적·대안·재검토를 마련한다.",
+        "childExpression": "현재 필요한 사용과 불편한 규칙을 말할 수 있다.",
+        "adultChange": "목적·대안·재검토를 마련한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "현재 필요한 사용과 불편한 규칙을 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P3:adult-resource-with-consent",
+      "parentResponsibleAction": "원하는 지원 범위만 확인한다.",
+      "childAvailableChoice": "자료를 쓰거나 다른 자원을 찾고 조언을 거절할 수 있다.",
+      "repairPlan": {
+        "condition": "대신 연락하고 사적인 정보를 요구",
+        "parentChecksFirst": "원하는 지원 범위만 확인한다.",
+        "childExpression": "자료를 쓰거나 다른 자원을 찾고 조언을 거절할 수 있다.",
+        "adultChange": "원하는 지원 범위만 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "자료를 쓰거나 다른 자원을 찾고 조언을 거절할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P2:no-relation-is-not-missing-bond",
+      "parentResponsibleAction": "근거의 부재를 관계의 결함으로 읽지 않는다.",
+      "childAvailableChoice": "필요한 도움이나 다른 의견을 말할 수 있다.",
+      "repairPlan": {
+        "condition": "관계가 없으니 애착이나 이해가 부족하다고 평가",
+        "parentChecksFirst": "근거의 부재를 관계의 결함으로 읽지 않는다.",
+        "childExpression": "필요한 도움이나 다른 의견을 말할 수 있다.",
+        "adultChange": "근거의 부재를 관계의 결함으로 읽지 않는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "필요한 도움이나 다른 의견을 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH01.P2:harmony-not-parenting-proof",
+      "parentResponsibleAction": "관계 종류와 실제 돌봄 행동을 분리한다.",
+      "childAvailableChoice": "말할 준비가 되면 필요한 도움을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "합이라는 이름으로 보호·경청 검토를 생략",
+        "parentChecksFirst": "관계 종류와 실제 돌봄 행동을 분리한다.",
+        "childExpression": "말할 준비가 되면 필요한 도움을 선택할 수 있다.",
+        "adultChange": "관계 종류와 실제 돌봄 행동을 분리한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "말할 준비가 되면 필요한 도움을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P3:recall-parent-regulation-repair",
+      "parentResponsibleAction": "사과와 성인 지원의 경계를 유지한다.",
+      "childAvailableChoice": "즉시 답하지 않거나 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "자녀가 화해를 완성해야 한다고 결론",
+        "parentChecksFirst": "사과와 성인 지원의 경계를 유지한다.",
+        "childExpression": "즉시 답하지 않거나 도움을 요청할 수 있다.",
+        "adultChange": "사과와 성인 지원의 경계를 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "즉시 답하지 않거나 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-return-choice-before-commitment",
+      "parentResponsibleAction": "확정 전에 수정·보류할 자리를 실제로 남긴다.",
+      "childAvailableChoice": "동의·다른 관심·보류를 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "질문만 하고 예정대로 확정",
+        "parentChecksFirst": "확정 전에 수정·보류할 자리를 실제로 남긴다.",
+        "childExpression": "동의·다른 관심·보류를 선택할 수 있다.",
+        "adultChange": "확정 전에 수정·보류할 자리를 실제로 남긴다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "동의·다른 관심·보류를 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P3:debate-silence-loop",
+      "parentResponsibleAction": "반박을 멈추고 수신을 확인한다.",
+      "childAvailableChoice": "말·글·보류를 고를 수 있다.",
+      "repairPlan": {
+        "condition": "말이 없으니 더 몰아붙여야 한다고 판단",
+        "parentChecksFirst": "반박을 멈추고 수신을 확인한다.",
+        "childExpression": "말·글·보류를 고를 수 있다.",
+        "adultChange": "반박을 멈추고 수신을 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "말·글·보류를 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P2:b-quiet-route-to-help",
+      "parentResponsibleAction": "통로를 마련하고 수신했다는 반응을 남긴다.",
+      "childAvailableChoice": "말하거나 쓰거나 준비될 때까지 보류할 수 있다.",
+      "repairPlan": {
+        "condition": "말이 적다고 감정이나 의견이 없다고 봄",
+        "parentChecksFirst": "통로를 마련하고 수신했다는 반응을 남긴다.",
+        "childExpression": "말하거나 쓰거나 준비될 때까지 보류할 수 있다.",
+        "adultChange": "통로를 마련하고 수신했다는 반응을 남긴다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "말하거나 쓰거나 준비될 때까지 보류할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+      "parentResponsibleAction": "기대와 동의 범위를 조정한다.",
+      "childAvailableChoice": "연락·방문·정보 공유 범위를 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "답변 지연을 애정 부족으로 평가",
+        "parentChecksFirst": "기대와 동의 범위를 조정한다.",
+        "childExpression": "연락·방문·정보 공유 범위를 선택할 수 있다.",
+        "adultChange": "기대와 동의 범위를 조정한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "연락·방문·정보 공유 범위를 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P2:a-anchor-without-emotional-debt",
+      "parentResponsibleAction": "경청 의사를 말하고 답변을 강요하지 않는다.",
+      "childAvailableChoice": "말할 내용·시점·안전한 지원자를 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "나를 믿는다면 모두 말하라고 요구",
+        "parentChecksFirst": "경청 의사를 말하고 답변을 강요하지 않는다.",
+        "childExpression": "말할 내용·시점·안전한 지원자를 선택할 수 있다.",
+        "adultChange": "경청 의사를 말하고 답변을 강요하지 않는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "말할 내용·시점·안전한 지원자를 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P1:recall-opportunity-with-voice",
+      "parentResponsibleAction": "같은 의미와 보호 조건을 회수한다.",
+      "childAvailableChoice": "참여·거절·수정을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "기회를 받았으니 성공할 의무를 추가",
+        "parentChecksFirst": "같은 의미와 보호 조건을 회수한다.",
+        "childExpression": "참여·거절·수정을 선택할 수 있다.",
+        "adultChange": "같은 의미와 보호 조건을 회수한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "참여·거절·수정을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-help-one-step-then-return",
+      "parentResponsibleAction": "개입 범위를 묻고 안전 책임은 유지한다.",
+      "childAvailableChoice": "도움을 요청하거나 직접 다시 해볼 수 있다.",
+      "repairPlan": {
+        "condition": "완성품을 빨리 만들려고 모두 대신 함",
+        "parentChecksFirst": "개입 범위를 묻고 안전 책임은 유지한다.",
+        "childExpression": "도움을 요청하거나 직접 다시 해볼 수 있다.",
+        "adultChange": "개입 범위를 묻고 안전 책임은 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "도움을 요청하거나 직접 다시 해볼 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-care-asks-for-parent-comfort",
+      "parentResponsibleAction": "자신의 감정과 지원 요청을 직접 맡는다.",
+      "childAvailableChoice": "걱정을 말하거나 자기 활동으로 돌아갈 수 있다.",
+      "repairPlan": {
+        "condition": "자녀의 위로를 좋은 관계의 조건으로 삼음",
+        "parentChecksFirst": "자신의 감정과 지원 요청을 직접 맡는다.",
+        "childExpression": "걱정을 말하거나 자기 활동으로 돌아갈 수 있다.",
+        "adultChange": "자신의 감정과 지원 요청을 직접 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "걱정을 말하거나 자기 활동으로 돌아갈 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-interest-changes-parent-plan",
+      "parentResponsibleAction": "자신의 기대를 수정하고 실제 부담을 검토한다.",
+      "childAvailableChoice": "바뀐 관심·휴식·도움 필요를 표현할 수 있다.",
+      "repairPlan": {
+        "condition": "지원한 비용을 이유로 진로 변경을 금지",
+        "parentChecksFirst": "자신의 기대를 수정하고 실제 부담을 검토한다.",
+        "childExpression": "바뀐 관심·휴식·도움 필요를 표현할 수 있다.",
+        "adultChange": "자신의 기대를 수정하고 실제 부담을 검토한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "바뀐 관심·휴식·도움 필요를 표현할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH01.P2:clash-not-disobedience",
+      "parentResponsibleAction": "계산 관계와 실제 발언의 의미를 구분한다.",
+      "childAvailableChoice": "규칙의 어려운 부분을 말하거나 다른 통로로 질문할 수 있다.",
+      "repairPlan": {
+        "condition": "충을 이유로 자녀의 설명을 포기",
+        "parentChecksFirst": "계산 관계와 실제 발언의 의미를 구분한다.",
+        "childExpression": "규칙의 어려운 부분을 말하거나 다른 통로로 질문할 수 있다.",
+        "adultChange": "계산 관계와 실제 발언의 의미를 구분한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "규칙의 어려운 부분을 말하거나 다른 통로로 질문할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P4:a-insight-needs-verification",
+      "parentResponsibleAction": "관찰·추측·실제 설명을 구분한다.",
+      "childAvailableChoice": "추측이 다르다고 말하거나 지금 설명하지 않을 수 있다.",
+      "repairPlan": {
+        "condition": "속마음을 안다며 설명을 무효화",
+        "parentChecksFirst": "관찰·추측·실제 설명을 구분한다.",
+        "childExpression": "추측이 다르다고 말하거나 지금 설명하지 않을 수 있다.",
+        "adultChange": "관찰·추측·실제 설명을 구분한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "추측이 다르다고 말하거나 지금 설명하지 않을 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P3:a-space-with-available-help",
+      "parentResponsibleAction": "안전 확인의 목적과 범위를 설명한다.",
+      "childAvailableChoice": "쉬거나 자신의 필요를 나중에 말할 수 있다.",
+      "repairPlan": {
+        "condition": "관심을 묻지 않는 것을 존중으로만 해석",
+        "parentChecksFirst": "안전 확인의 목적과 범위를 설명한다.",
+        "childExpression": "쉬거나 자신의 필요를 나중에 말할 수 있다.",
+        "adultChange": "안전 확인의 목적과 범위를 설명한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "쉬거나 자신의 필요를 나중에 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P2:structure-with-flexible-method",
+      "parentResponsibleAction": "필요한 결과와 바꿀 수 있는 방법을 분리한다.",
+      "childAvailableChoice": "도움과 방법 변경을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "같은 방법을 끝까지 해야만 책임감 있다고 봄",
+        "parentChecksFirst": "필요한 결과와 바꿀 수 있는 방법을 분리한다.",
+        "childExpression": "도움과 방법 변경을 요청할 수 있다.",
+        "adultChange": "필요한 결과와 바꿀 수 있는 방법을 분리한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "도움과 방법 변경을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-change-parent-replans",
+      "parentResponsibleAction": "자신의 기대와 지원 계획을 수정한다.",
+      "childAvailableChoice": "관심·대안·휴식을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "마지막 기회라며 변경을 압박",
+        "parentChecksFirst": "자신의 기대와 지원 계획을 수정한다.",
+        "childExpression": "관심·대안·휴식을 선택할 수 있다.",
+        "adultChange": "자신의 기대와 지원 계획을 수정한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관심·대안·휴식을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P2:a-alone-time-with-return",
+      "parentResponsibleAction": "부모의 시간과 돌봄 지속 계획을 함께 설명한다.",
+      "childAvailableChoice": "도움이 급한지 말하거나 안전한 다른 성인에게 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "휴식을 이유로 모든 요청을 무기한 미룸",
+        "parentChecksFirst": "부모의 시간과 돌봄 지속 계획을 함께 설명한다.",
+        "childExpression": "도움이 급한지 말하거나 안전한 다른 성인에게 요청할 수 있다.",
+        "adultChange": "부모의 시간과 돌봄 지속 계획을 함께 설명한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "도움이 급한지 말하거나 안전한 다른 성인에게 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH01.P1:autonomy-with-adult-responsibility",
+      "parentResponsibleAction": "보호할 조건을 직접 점검하고 이유를 설명한다.",
+      "childAvailableChoice": "이유를 묻고 가능한 방법을 제안하거나 지원을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "자유라는 말로 위험 판단까지 자녀에게 넘김",
+        "parentChecksFirst": "보호할 조건을 직접 점검하고 이유를 설명한다.",
+        "childExpression": "이유를 묻고 가능한 방법을 제안하거나 지원을 요청할 수 있다.",
+        "adultChange": "보호할 조건을 직접 점검하고 이유를 설명한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "이유를 묻고 가능한 방법을 제안하거나 지원을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-question-route-parent-receives",
+      "parentResponsibleAction": "불이익 없는 반응과 설명을 마련한다.",
+      "childAvailableChoice": "질문·보류·안전한 지원자를 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "자녀의 설명 솜씨에 회복을 맡김",
+        "parentChecksFirst": "불이익 없는 반응과 설명을 마련한다.",
+        "childExpression": "질문·보류·안전한 지원자를 선택할 수 있다.",
+        "adultChange": "불이익 없는 반응과 설명을 마련한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "질문·보류·안전한 지원자를 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-peer-voice-not-peer-duty",
+      "parentResponsibleAction": "책임과 참여 범위를 설명한다.",
+      "childAvailableChoice": "의견을 말하고 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "비견이니 성인 책임을 같이 나누라고 요구",
+        "parentChecksFirst": "책임과 참여 범위를 설명한다.",
+        "childExpression": "의견을 말하고 도움을 요청할 수 있다.",
+        "adultChange": "책임과 참여 범위를 설명한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "의견을 말하고 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-explain-protection-and-try",
+      "parentResponsibleAction": "제한 이유·선택·지원 통로를 설명한다.",
+      "childAvailableChoice": "방법을 고르거나 멈추고 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "자녀가 괜찮다고 하면 보호를 철회",
+        "parentChecksFirst": "제한 이유·선택·지원 통로를 설명한다.",
+        "childExpression": "방법을 고르거나 멈추고 도움을 요청할 수 있다.",
+        "adultChange": "제한 이유·선택·지원 통로를 설명한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "방법을 고르거나 멈추고 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P4:young-rule-repair-with-model",
+      "parentResponsibleAction": "설명·모델·안전 지원을 맡는다.",
+      "childAvailableChoice": "작은 방법을 고르거나 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "어른의 큰 사과 뒤 같은 모욕 반복",
+        "parentChecksFirst": "설명·모델·안전 지원을 맡는다.",
+        "childExpression": "작은 방법을 고르거나 도움을 요청할 수 있다.",
+        "adultChange": "설명·모델·안전 지원을 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "작은 방법을 고르거나 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-question-not-parent-evaluation",
+      "parentResponsibleAction": "자신의 기준과 설명을 점검한다.",
+      "childAvailableChoice": "질문하거나 준비되지 않으면 말하지 않을 수 있다.",
+      "repairPlan": {
+        "condition": "자녀가 부모를 납득시켜야만 질문을 허용",
+        "parentChecksFirst": "자신의 기준과 설명을 점검한다.",
+        "childExpression": "질문하거나 준비되지 않으면 말하지 않을 수 있다.",
+        "adultChange": "자신의 기준과 설명을 점검한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "질문하거나 준비되지 않으면 말하지 않을 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P4:care-is-not-fixed-family-role",
+      "parentResponsibleAction": "성인 책임과 지원 요청을 직접 맡는다.",
+      "childAvailableChoice": "걱정하거나 자기 활동으로 돌아갈 수 있다.",
+      "repairPlan": {
+        "condition": "배려하는 자녀를 가족 조정자로 고정",
+        "parentChecksFirst": "성인 책임과 지원 요청을 직접 맡는다.",
+        "childExpression": "걱정하거나 자기 활동으로 돌아갈 수 있다.",
+        "adultChange": "성인 책임과 지원 요청을 직접 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "걱정하거나 자기 활동으로 돌아갈 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-quiet-response-increases-parent-demand",
+      "parentResponsibleAction": "질문 범위를 줄이고 반응을 기다린다.",
+      "childAvailableChoice": "짧게 답하거나 다른 방식으로 전할 수 있다.",
+      "repairPlan": {
+        "condition": "침묵을 불성실함으로 평가하며 재촉",
+        "parentChecksFirst": "질문 범위를 줄이고 반응을 기다린다.",
+        "childExpression": "짧게 답하거나 다른 방식으로 전할 수 있다.",
+        "adultChange": "질문 범위를 줄이고 반응을 기다린다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "짧게 답하거나 다른 방식으로 전할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-parent-emotional-responsibility",
+      "parentResponsibleAction": "반응 조절·안전 돌봄·성인 지원을 직접 맡는다.",
+      "childAvailableChoice": "사과에 즉시 답하지 않고 자신의 필요를 말할 수 있다.",
+      "repairPlan": {
+        "condition": "사과받은 자녀에게 괜찮다고 해달라고 요구",
+        "parentChecksFirst": "반응 조절·안전 돌봄·성인 지원을 직접 맡는다.",
+        "childExpression": "사과에 즉시 답하지 않고 자신의 필요를 말할 수 있다.",
+        "adultChange": "반응 조절·안전 돌봄·성인 지원을 직접 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "사과에 즉시 답하지 않고 자신의 필요를 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P1:b-fairness-question-not-rebellion",
+      "parentResponsibleAction": "질문을 듣고 바꿀 부분과 보호할 조건을 구분한다.",
+      "childAvailableChoice": "왜 다른지 묻거나 이해하기 쉬운 설명을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "부모가 납득할 논리를 대야만 의견을 허용",
+        "parentChecksFirst": "질문을 듣고 바꿀 부분과 보호할 조건을 구분한다.",
+        "childExpression": "왜 다른지 묻거나 이해하기 쉬운 설명을 요청할 수 있다.",
+        "adultChange": "질문을 듣고 바꿀 부분과 보호할 조건을 구분한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "왜 다른지 묻거나 이해하기 쉬운 설명을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P2:recall-harmony-needs-support",
+      "parentResponsibleAction": "같은 출처와 비단정 조건을 회수한다.",
+      "childAvailableChoice": "도움 범위를 말하거나 다른 지원을 고를 수 있다.",
+      "repairPlan": {
+        "condition": "합을 좋은 부모·자녀의 보장으로 확대",
+        "parentChecksFirst": "같은 출처와 비단정 조건을 회수한다.",
+        "childExpression": "도움 범위를 말하거나 다른 지원을 고를 수 있다.",
+        "adultChange": "같은 출처와 비단정 조건을 회수한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "도움 범위를 말하거나 다른 지원을 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P3:a-experience-with-safety-plan",
+      "parentResponsibleAction": "안전 준비와 실행 선택을 나눈다.",
+      "childAvailableChoice": "해보거나 도움을 요청하고 중단할 수 있다.",
+      "repairPlan": {
+        "condition": "실패해야 배운다며 보호를 철회",
+        "parentChecksFirst": "안전 준비와 실행 선택을 나눈다.",
+        "childExpression": "해보거나 도움을 요청하고 중단할 수 있다.",
+        "adultChange": "안전 준비와 실행 선택을 나눈다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "해보거나 도움을 요청하고 중단할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-short-request-parent-supports",
+      "parentResponsibleAction": "수신·지원·추가 질문의 범위를 나눈다.",
+      "childAvailableChoice": "짧은 요청·보류·다른 안전한 도움을 고를 수 있다.",
+      "repairPlan": {
+        "condition": "부모가 만족할 설명을 해야 도와줌",
+        "parentChecksFirst": "수신·지원·추가 질문의 범위를 나눈다.",
+        "childExpression": "짧은 요청·보류·다른 안전한 도움을 고를 수 있다.",
+        "adultChange": "수신·지원·추가 질문의 범위를 나눈다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "짧은 요청·보류·다른 안전한 도움을 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-care-becomes-parent-dependence",
+      "parentResponsibleAction": "성인 지원을 직접 구하고 요구를 줄인다.",
+      "childAvailableChoice": "걱정을 말하거나 대화를 멈출 수 있다.",
+      "repairPlan": {
+        "condition": "아이에게 부모 감정의 회복을 맡김",
+        "parentChecksFirst": "성인 지원을 직접 구하고 요구를 줄인다.",
+        "childExpression": "걱정을 말하거나 대화를 멈출 수 있다.",
+        "adultChange": "성인 지원을 직접 구하고 요구를 줄인다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "걱정을 말하거나 대화를 멈출 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P3:effort-not-comparison",
+      "parentResponsibleAction": "행동과 지원을 구체적으로 알아본다.",
+      "childAvailableChoice": "다시 하거나 쉬고 다른 방식을 고를 수 있다.",
+      "repairPlan": {
+        "condition": "칭찬 뒤에 다음 결과의 기대를 즉시 붙임",
+        "parentChecksFirst": "행동과 지원을 구체적으로 알아본다.",
+        "childExpression": "다시 하거나 쉬고 다른 방식을 고를 수 있다.",
+        "adultChange": "행동과 지원을 구체적으로 알아본다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "다시 하거나 쉬고 다른 방식을 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P2:b-gentle-feedback-without-fragile-label",
+      "parentResponsibleAction": "반응을 듣고 필요한 설명과 지원을 조정한다.",
+      "childAvailableChoice": "불편한 표현을 말하거나 도움받을 통로를 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "상처받기 쉬운 유형이라며 설명을 생략",
+        "parentChecksFirst": "반응을 듣고 필요한 설명과 지원을 조정한다.",
+        "childExpression": "불편한 표현을 말하거나 도움받을 통로를 선택할 수 있다.",
+        "adultChange": "반응을 듣고 필요한 설명과 지원을 조정한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "불편한 표현을 말하거나 도움받을 통로를 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P3:child-boundary-parent-seeks-adult",
+      "parentResponsibleAction": "반응 조절과 성인 지원을 직접 맡는다.",
+      "childAvailableChoice": "멈춤·거리·도움 요청을 고를 수 있다.",
+      "repairPlan": {
+        "condition": "거절한 자녀를 차갑다고 평가",
+        "parentChecksFirst": "반응 조절과 성인 지원을 직접 맡는다.",
+        "childExpression": "멈춤·거리·도움 요청을 고를 수 있다.",
+        "adultChange": "반응 조절과 성인 지원을 직접 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "멈춤·거리·도움 요청을 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-change-can-be-reported-not-defended",
+      "parentResponsibleAction": "기대와 현재 지원을 다시 나눈다.",
+      "childAvailableChoice": "관심·중단·대안을 말할 수 있다.",
+      "repairPlan": {
+        "condition": "변경 이유를 부모가 만족할 때까지 심사",
+        "parentChecksFirst": "기대와 현재 지원을 다시 나눈다.",
+        "childExpression": "관심·중단·대안을 말할 수 있다.",
+        "adultChange": "기대와 현재 지원을 다시 나눈다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관심·중단·대안을 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P3:recall-expectation-repair",
+      "parentResponsibleAction": "기대와 지원을 분리했던 행동을 유지한다.",
+      "childAvailableChoice": "다른 관심·거절·보류를 고를 수 있다.",
+      "repairPlan": {
+        "condition": "부담을 말했으니 관계가 회복됐다고 서술",
+        "parentChecksFirst": "기대와 지원을 분리했던 행동을 유지한다.",
+        "childExpression": "다른 관심·거절·보류를 고를 수 있다.",
+        "adultChange": "기대와 지원을 분리했던 행동을 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "다른 관심·거절·보류를 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-preview-before-change",
+      "parentResponsibleAction": "안내와 지원을 함께 제공한다.",
+      "childAvailableChoice": "다시 듣거나 보여달라고 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "설명했으니 혼자 해야 한다고 요구",
+        "parentChecksFirst": "안내와 지원을 함께 제공한다.",
+        "childExpression": "다시 듣거나 보여달라고 요청할 수 있다.",
+        "adultChange": "안내와 지원을 함께 제공한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "다시 듣거나 보여달라고 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P4:change-rules-with-development",
+      "parentResponsibleAction": "역할·상황·지원의 전제를 확인한다.",
+      "childAvailableChoice": "현재의 경계와 도움 요청 범위를 말할 수 있다.",
+      "repairPlan": {
+        "condition": "과거의 규칙을 무기한 유지",
+        "parentChecksFirst": "역할·상황·지원의 전제를 확인한다.",
+        "childExpression": "현재의 경계와 도움 요청 범위를 말할 수 있다.",
+        "adultChange": "역할·상황·지원의 전제를 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "현재의 경계와 도움 요청 범위를 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P2:clash-without-family-blame",
+      "parentResponsibleAction": "계산 사실과 행동의 선택을 분리한다.",
+      "childAvailableChoice": "다른 의견과 지원 필요를 표현할 수 있다.",
+      "repairPlan": {
+        "condition": "충 때문에 갈등이 필연적이라고 판단",
+        "parentChecksFirst": "계산 사실과 행동의 선택을 분리한다.",
+        "childExpression": "다른 의견과 지원 필요를 표현할 수 있다.",
+        "adultChange": "계산 사실과 행동의 선택을 분리한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "다른 의견과 지원 필요를 표현할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P4:comparison-removes-own-question",
+      "parentResponsibleAction": "비교를 멈추고 실제 지원을 확인한다.",
+      "childAvailableChoice": "자기 질문과 도움 필요를 말할 수 있다.",
+      "repairPlan": {
+        "condition": "비교를 동기부여로만 정당화",
+        "parentChecksFirst": "비교를 멈추고 실제 지원을 확인한다.",
+        "childExpression": "자기 질문과 도움 필요를 말할 수 있다.",
+        "adultChange": "비교를 멈추고 실제 지원을 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "자기 질문과 도움 필요를 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P1:b-interest-not-achievement-label",
+      "parentResponsibleAction": "능력 평가를 멈추고 필요한 자료·안전·시간을 지원한다.",
+      "childAvailableChoice": "관심을 설명하거나 바꾸고 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "유형으로 잘할 과목을 미리 지정",
+        "parentChecksFirst": "능력 평가를 멈추고 필요한 자료·안전·시간을 지원한다.",
+        "childExpression": "관심을 설명하거나 바꾸고 도움을 요청할 수 있다.",
+        "adultChange": "능력 평가를 멈추고 필요한 자료·안전·시간을 지원한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관심을 설명하거나 바꾸고 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P1:opportunity-with-child-voice",
+      "parentResponsibleAction": "안전·비용·지원은 성인이 확인한다.",
+      "childAvailableChoice": "자기 목적을 말하고 다른 활동을 제안할 수 있다.",
+      "repairPlan": {
+        "condition": "기회를 마련했으니 반드시 성과를 내라고 요구",
+        "parentChecksFirst": "안전·비용·지원은 성인이 확인한다.",
+        "childExpression": "자기 목적을 말하고 다른 활동을 제안할 수 있다.",
+        "adultChange": "안전·비용·지원은 성인이 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "자기 목적을 말하고 다른 활동을 제안할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P4:adult-consent-and-contact-review",
+      "parentResponsibleAction": "승인 요구를 줄이고 동의한 지원만 맡는다.",
+      "childAvailableChoice": "방문·연락·조언·정보 경계를 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "과거 지원을 경계 거절의 벌로 사용",
+        "parentChecksFirst": "승인 요구를 줄이고 동의한 지원만 맡는다.",
+        "childExpression": "방문·연락·조언·정보 경계를 선택할 수 있다.",
+        "adultChange": "승인 요구를 줄이고 동의한 지원만 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "방문·연락·조언·정보 경계를 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P3:child-comfort-parent-loop",
+      "parentResponsibleAction": "자신의 반응·요구·성인 지원을 점검한다.",
+      "childAvailableChoice": "대화 범위를 줄이거나 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "좋은 자녀는 부모 마음을 알아야 한다고 요구",
+        "parentChecksFirst": "자신의 반응·요구·성인 지원을 점검한다.",
+        "childExpression": "대화 범위를 줄이거나 도움을 요청할 수 있다.",
+        "adultChange": "자신의 반응·요구·성인 지원을 점검한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "대화 범위를 줄이거나 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-debate-and-return",
+      "parentResponsibleAction": "반박·답변 요구를 줄이고 실제 수신을 확인한다.",
+      "childAvailableChoice": "요약을 고치거나 다른 통로로 전할 수 있다.",
+      "repairPlan": {
+        "condition": "중단을 벌이나 잠수로 사용",
+        "parentChecksFirst": "반박·답변 요구를 줄이고 실제 수신을 확인한다.",
+        "childExpression": "요약을 고치거나 다른 통로로 전할 수 있다.",
+        "adultChange": "반박·답변 요구를 줄이고 실제 수신을 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "요약을 고치거나 다른 통로로 전할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P3:young-signal-and-response",
+      "parentResponsibleAction": "관심을 확인하고 도울 준비를 유지한다.",
+      "childAvailableChoice": "고르거나 멈추고 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "모든 신호를 성인이 정한 학습 목표로 바꿈",
+        "parentChecksFirst": "관심을 확인하고 도울 준비를 유지한다.",
+        "childExpression": "고르거나 멈추고 도움을 요청할 수 있다.",
+        "adultChange": "관심을 확인하고 도울 준비를 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "고르거나 멈추고 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+      "parentResponsibleAction": "복종을 칭찬하기보다 실제 선택을 확인한다.",
+      "childAvailableChoice": "동의를 수정하거나 어려운 항목을 말할 수 있다.",
+      "repairPlan": {
+        "condition": "좋은 자녀라는 평가 때문에 거절을 어렵게 만듦",
+        "parentChecksFirst": "복종을 칭찬하기보다 실제 선택을 확인한다.",
+        "childExpression": "동의를 수정하거나 어려운 항목을 말할 수 있다.",
+        "adultChange": "복종을 칭찬하기보다 실제 선택을 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "동의를 수정하거나 어려운 항목을 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P1:expectation-and-interest-differ",
+      "parentResponsibleAction": "현재 목적과 실제 지원을 확인한다.",
+      "childAvailableChoice": "다른 관심·보류·도움 필요를 말할 수 있다.",
+      "repairPlan": {
+        "condition": "같은 미래를 원해야 좋은 자녀라고 평가",
+        "parentChecksFirst": "현재 목적과 실제 지원을 확인한다.",
+        "childExpression": "다른 관심·보류·도움 필요를 말할 수 있다.",
+        "adultChange": "현재 목적과 실제 지원을 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "다른 관심·보류·도움 필요를 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P2:b-predictable-help-sequence",
+      "parentResponsibleAction": "변경 이유와 지금 가능한 행동을 설명한다.",
+      "childAvailableChoice": "순서를 다시 묻거나 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "유형을 이유로 모든 변화를 금지",
+        "parentChecksFirst": "변경 이유와 지금 가능한 행동을 설명한다.",
+        "childExpression": "순서를 다시 묻거나 도움을 요청할 수 있다.",
+        "adultChange": "변경 이유와 지금 가능한 행동을 설명한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "순서를 다시 묻거나 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH01.P3:same-type-not-same-power",
+      "parentResponsibleAction": "기준 준수와 자유로운 의견을 별도로 확인한다.",
+      "childAvailableChoice": "같은 의견을 요구받지 않고 어려운 항목을 말할 수 있다.",
+      "repairPlan": {
+        "condition": "착해 보인다는 이유로 어려움을 묻지 않음",
+        "parentChecksFirst": "기준 준수와 자유로운 의견을 별도로 확인한다.",
+        "childExpression": "같은 의견을 요구받지 않고 어려운 항목을 말할 수 있다.",
+        "adultChange": "기준 준수와 자유로운 의견을 별도로 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "같은 의견을 요구받지 않고 어려운 항목을 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-adult-support-and-boundary",
+      "parentResponsibleAction": "동의한 지원과 경계를 유지한다.",
+      "childAvailableChoice": "조언·방문·연락을 고를 수 있다.",
+      "repairPlan": {
+        "condition": "가족이라 모든 경계를 없애도 된다고 결론",
+        "parentChecksFirst": "동의한 지원과 경계를 유지한다.",
+        "childExpression": "조언·방문·연락을 고를 수 있다.",
+        "adultChange": "동의한 지원과 경계를 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "조언·방문·연락을 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P2:different-expression-equal-respect",
+      "parentResponsibleAction": "반응의 크기 대신 지금의 동의를 확인한다.",
+      "childAvailableChoice": "참여하거나 쉬고 활동 범위를 바꿀 수 있다.",
+      "repairPlan": {
+        "condition": "즐겁게 반응해야 한다는 압박",
+        "parentChecksFirst": "반응의 크기 대신 지금의 동의를 확인한다.",
+        "childExpression": "참여하거나 쉬고 활동 범위를 바꿀 수 있다.",
+        "adultChange": "반응의 크기 대신 지금의 동의를 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "참여하거나 쉬고 활동 범위를 바꿀 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-role-changes-with-context",
+      "parentResponsibleAction": "상황·동의·재검토 조건을 유지한다.",
+      "childAvailableChoice": "현재 필요한 도움과 경계를 말할 수 있다.",
+      "repairPlan": {
+        "condition": "성인 자녀를 영구적인 지시 대상으로 결론",
+        "parentChecksFirst": "상황·동의·재검토 조건을 유지한다.",
+        "childExpression": "현재 필요한 도움과 경계를 말할 수 있다.",
+        "adultChange": "상황·동의·재검토 조건을 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "현재 필요한 도움과 경계를 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P3:recall-protection-repair",
+      "parentResponsibleAction": "실제 보호 기준과 선택 범위를 유지한다.",
+      "childAvailableChoice": "방법·중단·도움을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "자녀가 스스로 안전을 책임지게 함",
+        "parentChecksFirst": "실제 보호 기준과 선택 범위를 유지한다.",
+        "childExpression": "방법·중단·도움을 선택할 수 있다.",
+        "adultChange": "실제 보호 기준과 선택 범위를 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "방법·중단·도움을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P4:adult-choice-not-permanent-approval",
+      "parentResponsibleAction": "승인 요구를 줄이고 정보 제공 범위를 확인한다.",
+      "childAvailableChoice": "결정·조언 수신·연락 경계를 고를 수 있다.",
+      "repairPlan": {
+        "condition": "지원했으니 진로·방문·연락을 모두 정함",
+        "parentChecksFirst": "승인 요구를 줄이고 정보 제공 범위를 확인한다.",
+        "childExpression": "결정·조언 수신·연락 경계를 고를 수 있다.",
+        "adultChange": "승인 요구를 줄이고 정보 제공 범위를 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "결정·조언 수신·연락 경계를 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-stop-comfort-demand",
+      "parentResponsibleAction": "사과·반응 조절·안전 돌봄을 직접 맡는다.",
+      "childAvailableChoice": "답변·거리·지원 요청을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "사과 뒤에도 마음을 알아달라고 반복",
+        "parentChecksFirst": "사과·반응 조절·안전 돌봄을 직접 맡는다.",
+        "childExpression": "답변·거리·지원 요청을 선택할 수 있다.",
+        "adultChange": "사과·반응 조절·안전 돌봄을 직접 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "답변·거리·지원 요청을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P4:teen-device-rule-review",
+      "parentResponsibleAction": "안전·이유·선택·재검토를 마련한다.",
+      "childAvailableChoice": "의견·대안·도움 요청을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "일방 규칙을 공동 합의라고 부름",
+        "parentChecksFirst": "안전·이유·선택·재검토를 마련한다.",
+        "childExpression": "의견·대안·도움 요청을 선택할 수 있다.",
+        "adultChange": "안전·이유·선택·재검토를 마련한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "의견·대안·도움 요청을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P4:safety-support-not-forced-reunion",
+      "parentResponsibleAction": "보호·지원·안전 확인을 맡는다.",
+      "childAvailableChoice": "안전한 도움을 요청하거나 위험한 대화를 중단할 수 있다.",
+      "repairPlan": {
+        "condition": "화해·용서·가족 재결합을 우선 요구",
+        "parentChecksFirst": "보호·지원·안전 확인을 맡는다.",
+        "childExpression": "안전한 도움을 요청하거나 위험한 대화를 중단할 수 있다.",
+        "adultChange": "보호·지원·안전 확인을 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "안전한 도움을 요청하거나 위험한 대화를 중단할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P1:a-values-with-open-question",
+      "parentResponsibleAction": "가치·행동·선택 범위를 구분해 말한다.",
+      "childAvailableChoice": "다른 생각을 말하거나 판단을 보류할 수 있다.",
+      "repairPlan": {
+        "condition": "다른 선택을 도덕적으로 부족한 자녀로 평가",
+        "parentChecksFirst": "가치·행동·선택 범위를 구분해 말한다.",
+        "childExpression": "다른 생각을 말하거나 판단을 보류할 수 있다.",
+        "adultChange": "가치·행동·선택 범위를 구분해 말한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "다른 생각을 말하거나 판단을 보류할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P3:b-deep-interest-with-change-option",
+      "parentResponsibleAction": "목표 대신 현재 선택과 부담을 확인한다.",
+      "childAvailableChoice": "이어가거나 바꾸고 휴식을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "한번 고른 관심을 평생 적성으로 고정",
+        "parentChecksFirst": "목표 대신 현재 선택과 부담을 확인한다.",
+        "childExpression": "이어가거나 바꾸고 휴식을 요청할 수 있다.",
+        "adultChange": "목표 대신 현재 선택과 부담을 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "이어가거나 바꾸고 휴식을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P1:recall-learning-with-mistake-space",
+      "parentResponsibleAction": "실수·지원 조건을 유지한다.",
+      "childAvailableChoice": "모름·추가 설명·휴식을 말할 수 있다.",
+      "repairPlan": {
+        "condition": "좋은 자녀니 혼자 잘할 것이라 결론",
+        "parentChecksFirst": "실수·지원 조건을 유지한다.",
+        "childExpression": "모름·추가 설명·휴식을 말할 수 있다.",
+        "adultChange": "실수·지원 조건을 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "모름·추가 설명·휴식을 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-change-expectation-before-enrollment",
+      "parentResponsibleAction": "확정 전 선택과 지원 조건을 다시 연다.",
+      "childAvailableChoice": "다른 관심이나 보류를 말할 수 있다.",
+      "repairPlan": {
+        "condition": "의견을 묻고도 결정을 바꾸지 않음",
+        "parentChecksFirst": "확정 전 선택과 지원 조건을 다시 연다.",
+        "childExpression": "다른 관심이나 보류를 말할 수 있다.",
+        "adultChange": "확정 전 선택과 지원 조건을 다시 연다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "다른 관심이나 보류를 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P4:digital-monitoring-is-not-trust",
+      "parentResponsibleAction": "안전 문제를 성격의 탓으로 돌리지 않는다.",
+      "childAvailableChoice": "안전한 성인·전문 지원을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "몰래 모든 정보를 보는 것을 보호 성향으로 미화",
+        "parentChecksFirst": "안전 문제를 성격의 탓으로 돌리지 않는다.",
+        "childExpression": "안전한 성인·전문 지원을 선택할 수 있다.",
+        "adultChange": "안전 문제를 성격의 탓으로 돌리지 않는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "안전한 성인·전문 지원을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P4:harmony-needs-child-consent",
+      "parentResponsibleAction": "실제 지원과 동의를 확인한다.",
+      "childAvailableChoice": "도움의 범위를 말하거나 다른 지원을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "합이니 의견 차이를 드러낼 필요가 없다고 봄",
+        "parentChecksFirst": "실제 지원과 동의를 확인한다.",
+        "childExpression": "도움의 범위를 말하거나 다른 지원을 선택할 수 있다.",
+        "adultChange": "실제 지원과 동의를 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "도움의 범위를 말하거나 다른 지원을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-new-interest-not-teaching-job",
+      "parentResponsibleAction": "검증과 지원을 직접 맡는다.",
+      "childAvailableChoice": "관심을 공유하거나 설명을 멈출 수 있다.",
+      "repairPlan": {
+        "condition": "잘 아는 아이에게 가족의 모든 설명을 맡김",
+        "parentChecksFirst": "검증과 지원을 직접 맡는다.",
+        "childExpression": "관심을 공유하거나 설명을 멈출 수 있다.",
+        "adultChange": "검증과 지원을 직접 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관심을 공유하거나 설명을 멈출 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH01.P3:pair-is-not-development-test",
+      "parentResponsibleAction": "가르칠 내용과 자녀가 궁금한 내용을 나눈다.",
+      "childAvailableChoice": "이해 못한 부분을 다시 묻거나 다른 설명을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "논쟁을 잘하면 자녀가 성숙하거나 우수하다고 판정",
+        "parentChecksFirst": "가르칠 내용과 자녀가 궁금한 내용을 나눈다.",
+        "childExpression": "이해 못한 부분을 다시 묻거나 다른 설명을 요청할 수 있다.",
+        "adultChange": "가르칠 내용과 자녀가 궁금한 내용을 나눈다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "이해 못한 부분을 다시 묻거나 다른 설명을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-receive-before-rebuttal",
+      "parentResponsibleAction": "반박을 멈추고 실제 수신을 확인한다.",
+      "childAvailableChoice": "요약을 고치거나 나중에 전할 수 있다.",
+      "repairPlan": {
+        "condition": "요약을 자녀 논리를 공격할 준비로 사용",
+        "parentChecksFirst": "반박을 멈추고 실제 수신을 확인한다.",
+        "childExpression": "요약을 고치거나 나중에 전할 수 있다.",
+        "adultChange": "반박을 멈추고 실제 수신을 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "요약을 고치거나 나중에 전할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P2:harmony-and-disagreement-coexist",
+      "parentResponsibleAction": "각각의 출처와 비단정 조건을 유지한다.",
+      "childAvailableChoice": "관계 분류와 실제 경험이 다르다고 말할 수 있다.",
+      "repairPlan": {
+        "condition": "좋고 나쁨 하나로 가족을 평가",
+        "parentChecksFirst": "각각의 출처와 비단정 조건을 유지한다.",
+        "childExpression": "관계 분류와 실제 경험이 다르다고 말할 수 있다.",
+        "adultChange": "각각의 출처와 비단정 조건을 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관계 분류와 실제 경험이 다르다고 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-protection-removes-small-choice",
+      "parentResponsibleAction": "확인된 위험에 맞게 제한 범위를 다시 본다.",
+      "childAvailableChoice": "가능한 다른 방법을 제안하거나 설명을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "모든 질문을 위험 감수 성향으로 평가",
+        "parentChecksFirst": "확인된 위험에 맞게 제한 범위를 다시 본다.",
+        "childExpression": "가능한 다른 방법을 제안하거나 설명을 요청할 수 있다.",
+        "adultChange": "확인된 위험에 맞게 제한 범위를 다시 본다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "가능한 다른 방법을 제안하거나 설명을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-allow-wrong-first-answer",
+      "parentResponsibleAction": "질문을 끝내기보다 이해 여부를 확인한다.",
+      "childAvailableChoice": "모르거나 다르게 생각한다고 말할 수 있다.",
+      "repairPlan": {
+        "condition": "질문할수록 부모를 설득해야 하는 시험이 됨",
+        "parentChecksFirst": "질문을 끝내기보다 이해 여부를 확인한다.",
+        "childExpression": "모르거나 다르게 생각한다고 말할 수 있다.",
+        "adultChange": "질문을 끝내기보다 이해 여부를 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "모르거나 다르게 생각한다고 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-care-can-stop-without-guilt",
+      "parentResponsibleAction": "자녀의 경계를 받아들이고 자신의 반응을 관리한다.",
+      "childAvailableChoice": "멈춤·거리·도움 요청을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "거절을 고마움 부족으로 평가",
+        "parentChecksFirst": "자녀의 경계를 받아들이고 자신의 반응을 관리한다.",
+        "childExpression": "멈춤·거리·도움 요청을 선택할 수 있다.",
+        "adultChange": "자녀의 경계를 받아들이고 자신의 반응을 관리한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "멈춤·거리·도움 요청을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P1:ab-pressure-is-not-protection",
+      "parentResponsibleAction": "실제 안전을 확인하고 불필요한 제한을 다시 본다.",
+      "childAvailableChoice": "어려운 조건을 말하고 안전한 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "편관이라 엄격해야 자녀가 성장한다고 단정",
+        "parentChecksFirst": "실제 안전을 확인하고 불필요한 제한을 다시 본다.",
+        "childExpression": "어려운 조건을 말하고 안전한 도움을 요청할 수 있다.",
+        "adultChange": "실제 안전을 확인하고 불필요한 제한을 다시 본다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "어려운 조건을 말하고 안전한 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P1:recall-curiosity-with-choice",
+      "parentResponsibleAction": "실제 표시된 조건을 유지한다.",
+      "childAvailableChoice": "참여·변경·중단을 고를 수 있다.",
+      "repairPlan": {
+        "condition": "공통 유형을 행복 보장으로 확대",
+        "parentChecksFirst": "실제 표시된 조건을 유지한다.",
+        "childExpression": "참여·변경·중단을 고를 수 있다.",
+        "adultChange": "실제 표시된 조건을 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "참여·변경·중단을 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P2:a-rest-needs-adult-support",
+      "parentResponsibleAction": "필요한 지원을 성인이나 적절한 자원에 요청한다.",
+      "childAvailableChoice": "부모를 달래는 역할을 맡지 않고 자신의 필요를 표현할 수 있다.",
+      "repairPlan": {
+        "condition": "헌신 목록을 자녀의 정서적 빚으로 만듦",
+        "parentChecksFirst": "필요한 지원을 성인이나 적절한 자원에 요청한다.",
+        "childExpression": "부모를 달래는 역할을 맡지 않고 자신의 필요를 표현할 수 있다.",
+        "adultChange": "필요한 지원을 성인이나 적절한 자원에 요청한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "부모를 달래는 역할을 맡지 않고 자신의 필요를 표현할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P1:ab-new-opportunity-with-safety",
+      "parentResponsibleAction": "지원 준비와 참여 결정을 분리한다.",
+      "childAvailableChoice": "참여·수정·거절을 말할 수 있다.",
+      "repairPlan": {
+        "condition": "기회를 줬으니 성과를 내라고 압박",
+        "parentChecksFirst": "지원 준비와 참여 결정을 분리한다.",
+        "childExpression": "참여·수정·거절을 말할 수 있다.",
+        "adultChange": "지원 준비와 참여 결정을 분리한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "참여·수정·거절을 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P3:result-debt-loop",
+      "parentResponsibleAction": "기대와 조건 없는 보호를 구분한다.",
+      "childAvailableChoice": "관심·부담·보류를 말할 수 있다.",
+      "repairPlan": {
+        "condition": "설명이 줄면 지원을 줄이겠다고 압박",
+        "parentChecksFirst": "기대와 조건 없는 보호를 구분한다.",
+        "childExpression": "관심·부담·보류를 말할 수 있다.",
+        "adultChange": "기대와 조건 없는 보호를 구분한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관심·부담·보류를 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P4:coercion-not-equal-style-conflict",
+      "parentResponsibleAction": "안전 확보와 전문 판단을 우선한다.",
+      "childAvailableChoice": "안전한 도움을 요청하거나 위험한 대화를 중단할 수 있다.",
+      "repairPlan": {
+        "condition": "학대를 궁합이 안 맞는 결과로 미화",
+        "parentChecksFirst": "안전 확보와 전문 판단을 우선한다.",
+        "childExpression": "안전한 도움을 요청하거나 위험한 대화를 중단할 수 있다.",
+        "adultChange": "안전 확보와 전문 판단을 우선한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "안전한 도움을 요청하거나 위험한 대화를 중단할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P4:b-active-interest-not-risk-identity",
+      "parentResponsibleAction": "위험·지원·중단 신호를 실제 상황에서 확인한다.",
+      "childAvailableChoice": "설명을 다시 요청하거나 중단하고 도움을 청할 수 있다.",
+      "repairPlan": {
+        "condition": "활동적 유형이라 위험을 감수할 사람으로 고정",
+        "parentChecksFirst": "위험·지원·중단 신호를 실제 상황에서 확인한다.",
+        "childExpression": "설명을 다시 요청하거나 중단하고 도움을 청할 수 있다.",
+        "adultChange": "위험·지원·중단 신호를 실제 상황에서 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "설명을 다시 요청하거나 중단하고 도움을 청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P2:harm-not-wonjin-child",
+      "parentResponsibleAction": "검출과 연구 정의를 구분한다.",
+      "childAvailableChoice": "관계 명칭을 자기 문제로 받아들일 의무 없이 질문할 수 있다.",
+      "repairPlan": {
+        "condition": "해를 원진으로 바꿔 가족 불행을 설명",
+        "parentChecksFirst": "검출과 연구 정의를 구분한다.",
+        "childExpression": "관계 명칭을 자기 문제로 받아들일 의무 없이 질문할 수 있다.",
+        "adultChange": "검출과 연구 정의를 구분한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관계 명칭을 자기 문제로 받아들일 의무 없이 질문할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P4:b-brief-answer-still-has-choice",
+      "parentResponsibleAction": "질문 하나씩 내용과 현재 동의를 확인한다.",
+      "childAvailableChoice": "짧게 답하거나 다시 설명해달라고 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "짧은 말에 숨은 의도나 반항을 붙임",
+        "parentChecksFirst": "질문 하나씩 내용과 현재 동의를 확인한다.",
+        "childExpression": "짧게 답하거나 다시 설명해달라고 요청할 수 있다.",
+        "adultChange": "질문 하나씩 내용과 현재 동의를 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "짧게 답하거나 다시 설명해달라고 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-small-no-informs-support",
+      "parentResponsibleAction": "거절을 받아들이고 반응을 직접 조절한다.",
+      "childAvailableChoice": "거절·대안·보류를 표현할 수 있다.",
+      "repairPlan": {
+        "condition": "거절하면 부모를 상처준다고 말함",
+        "parentChecksFirst": "거절을 받아들이고 반응을 직접 조절한다.",
+        "childExpression": "거절·대안·보류를 표현할 수 있다.",
+        "adultChange": "거절을 받아들이고 반응을 직접 조절한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "거절·대안·보류를 표현할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-brief-help-request-is-enough",
+      "parentResponsibleAction": "요청을 받고 필요한 지원을 직접 마련한다.",
+      "childAvailableChoice": "짧게 요청하거나 다른 안전한 지원자에게 말할 수 있다.",
+      "repairPlan": {
+        "condition": "이유를 완벽히 설명해야 지원",
+        "parentChecksFirst": "요청을 받고 필요한 지원을 직접 마련한다.",
+        "childExpression": "짧게 요청하거나 다른 안전한 지원자에게 말할 수 있다.",
+        "adultChange": "요청을 받고 필요한 지원을 직접 마련한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "짧게 요청하거나 다른 안전한 지원자에게 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P2:recall-care-without-role-transfer",
+      "parentResponsibleAction": "부모 지원과 개인 root 조건을 유지한다.",
+      "childAvailableChoice": "관심을 표현하거나 멈출 수 있다.",
+      "repairPlan": {
+        "condition": "다정한 자녀가 가족을 유지한다고 결론",
+        "parentChecksFirst": "부모 지원과 개인 root 조건을 유지한다.",
+        "childExpression": "관심을 표현하거나 멈출 수 있다.",
+        "adultChange": "부모 지원과 개인 root 조건을 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관심을 표현하거나 멈출 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-debate-overwhelms-child",
+      "parentResponsibleAction": "속도와 방식의 권한을 점검한다.",
+      "childAvailableChoice": "시간·글·다른 통로를 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "말재주로 자녀의 설명을 닫음",
+        "parentChecksFirst": "속도와 방식의 권한을 점검한다.",
+        "childExpression": "시간·글·다른 통로를 요청할 수 있다.",
+        "adultChange": "속도와 방식의 권한을 점검한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "시간·글·다른 통로를 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P4:recall-young-support-and-small-choice",
+      "parentResponsibleAction": "관찰·설명·안전 지원을 유지한다.",
+      "childAvailableChoice": "고르거나 멈추고 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "자녀가 부모의 설명을 완성해야 한다고 요구",
+        "parentChecksFirst": "관찰·설명·안전 지원을 유지한다.",
+        "childExpression": "고르거나 멈추고 도움을 요청할 수 있다.",
+        "adultChange": "관찰·설명·안전 지원을 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "고르거나 멈추고 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P4:a-rule-correction-without-humiliation",
+      "parentResponsibleAction": "비난을 멈추고 실행 가능한 설명으로 바꾼다.",
+      "childAvailableChoice": "어려운 부분을 말하거나 보여달라고 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "공개 비교나 수치심으로 복종을 얻음",
+        "parentChecksFirst": "비난을 멈추고 실행 가능한 설명으로 바꾼다.",
+        "childExpression": "어려운 부분을 말하거나 보여달라고 요청할 수 있다.",
+        "adultChange": "비난을 멈추고 실행 가능한 설명으로 바꾼다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "어려운 부분을 말하거나 보여달라고 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-parent-support-outside-child",
+      "parentResponsibleAction": "반응 조절·사과·성인 지원을 직접 맡는다.",
+      "childAvailableChoice": "사과에 즉시 답하거나 용서할 의무 없이 자신의 필요를 말할 수 있다.",
+      "repairPlan": {
+        "condition": "사과 뒤 자녀에게 위로나 용서를 요구",
+        "parentChecksFirst": "반응 조절·사과·성인 지원을 직접 맡는다.",
+        "childExpression": "사과에 즉시 답하거나 용서할 의무 없이 자신의 필요를 말할 수 있다.",
+        "adultChange": "반응 조절·사과·성인 지원을 직접 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "사과에 즉시 답하거나 용서할 의무 없이 자신의 필요를 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P3:ba-question-treated-as-rejection",
+      "parentResponsibleAction": "반박 전에 실제 질문을 듣는다.",
+      "childAvailableChoice": "질문·보류·다른 지원 요청을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "질문마다 존중이 부족하다고 추궁",
+        "parentChecksFirst": "반박 전에 실제 질문을 듣는다.",
+        "childExpression": "질문·보류·다른 지원 요청을 선택할 수 있다.",
+        "adultChange": "반박 전에 실제 질문을 듣는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "질문·보류·다른 지원 요청을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-practical-trial-informs-guidance",
+      "parentResponsibleAction": "안전 준비와 개입 범위를 직접 점검한다.",
+      "childAvailableChoice": "시도하거나 멈추고 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "자녀의 시도를 부모의 교육 성과로 채점",
+        "parentChecksFirst": "안전 준비와 개입 범위를 직접 점검한다.",
+        "childExpression": "시도하거나 멈추고 도움을 요청할 수 있다.",
+        "adultChange": "안전 준비와 개입 범위를 직접 점검한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "시도하거나 멈추고 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P3:ab-expectation-becomes-result-debt",
+      "parentResponsibleAction": "조건 없는 돌봄과 현재 선택을 분리한다.",
+      "childAvailableChoice": "관심·부담·지원 필요를 말하거나 보류할 수 있다.",
+      "repairPlan": {
+        "condition": "돌봄을 성과의 대가로 만듦",
+        "parentChecksFirst": "조건 없는 돌봄과 현재 선택을 분리한다.",
+        "childExpression": "관심·부담·지원 필요를 말하거나 보류할 수 있다.",
+        "adultChange": "조건 없는 돌봄과 현재 선택을 분리한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관심·부담·지원 필요를 말하거나 보류할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P3:b-peer-care-not-family-regulator",
+      "parentResponsibleAction": "부모의 정서 조절과 지원 요청을 직접 맡는다.",
+      "childAvailableChoice": "걱정을 표현하거나 자신의 활동으로 돌아갈 수 있다.",
+      "repairPlan": {
+        "condition": "다정함을 가족 감정의 조정 책임으로 만듦",
+        "parentChecksFirst": "부모의 정서 조절과 지원 요청을 직접 맡는다.",
+        "childExpression": "걱정을 표현하거나 자신의 활동으로 돌아갈 수 있다.",
+        "adultChange": "부모의 정서 조절과 지원 요청을 직접 맡는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "걱정을 표현하거나 자신의 활동으로 돌아갈 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH03.P3:b-questions-expand-parent-information",
+      "parentResponsibleAction": "배우는 책임을 자녀에게 맡기지 않고 필요한 검증을 한다.",
+      "childAvailableChoice": "알고 싶은 질문을 고르거나 설명을 멈출 수 있다.",
+      "repairPlan": {
+        "condition": "질문을 많이 해야 좋은 자녀라고 평가",
+        "parentChecksFirst": "배우는 책임을 자녀에게 맡기지 않고 필요한 검증을 한다.",
+        "childExpression": "알고 싶은 질문을 고르거나 설명을 멈출 수 있다.",
+        "adultChange": "배우는 책임을 자녀에게 맡기지 않고 필요한 검증을 한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "알고 싶은 질문을 고르거나 설명을 멈출 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH04.P1:shared-curiosity-with-no-performance",
+      "parentResponsibleAction": "실제 관심과 중단 선택을 확인한다.",
+      "childAvailableChoice": "참여·변경·중단을 선택할 수 있다.",
+      "repairPlan": {
+        "condition": "부모도 즐거우니 자녀도 즐겁다고 단정",
+        "parentChecksFirst": "실제 관심과 중단 선택을 확인한다.",
+        "childExpression": "참여·변경·중단을 선택할 수 있다.",
+        "adultChange": "실제 관심과 중단 선택을 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "참여·변경·중단을 선택할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P1:ba-enjoyment-not-family-mood-task",
+      "parentResponsibleAction": "분위기와 감정 조절을 자녀에게 맡기지 않는다.",
+      "childAvailableChoice": "참여하거나 쉬고 활동을 바꿀 수 있다.",
+      "repairPlan": {
+        "condition": "밝은 자녀가 계속 가족을 즐겁게 해야 함",
+        "parentChecksFirst": "분위기와 감정 조절을 자녀에게 맡기지 않는다.",
+        "childExpression": "참여하거나 쉬고 활동을 바꿀 수 있다.",
+        "adultChange": "분위기와 감정 조절을 자녀에게 맡기지 않는다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "참여하거나 쉬고 활동을 바꿀 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P1:ab-rule-as-explanation",
+      "parentResponsibleAction": "자녀의 질문을 듣고 자신의 설명을 점검한다.",
+      "childAvailableChoice": "이유를 묻거나 다른 방법을 제안할 수 있다.",
+      "repairPlan": {
+        "condition": "십성을 복종 요구의 근거로 사용",
+        "parentChecksFirst": "자녀의 질문을 듣고 자신의 설명을 점검한다.",
+        "childExpression": "이유를 묻거나 다른 방법을 제안할 수 있다.",
+        "adultChange": "자녀의 질문을 듣고 자신의 설명을 점검한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "이유를 묻거나 다른 방법을 제안할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P4:a-harmony-must-allow-disagreement",
+      "parentResponsibleAction": "자신의 불편과 자녀의 발언권을 구분한다.",
+      "childAvailableChoice": "다른 의견을 말하거나 대화 방식을 고를 수 있다.",
+      "repairPlan": {
+        "condition": "분위기를 깨지 말라며 의견을 차단",
+        "parentChecksFirst": "자신의 불편과 자녀의 발언권을 구분한다.",
+        "childExpression": "다른 의견을 말하거나 대화 방식을 고를 수 있다.",
+        "adultChange": "자신의 불편과 자녀의 발언권을 구분한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "다른 의견을 말하거나 대화 방식을 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P4:ab-listen-before-answer",
+      "parentResponsibleAction": "반박 전 수신 내용을 확인한다.",
+      "childAvailableChoice": "요약을 고치거나 나중에 글로 전할 수 있다.",
+      "repairPlan": {
+        "condition": "요약을 다시 반박하기 위한 절차로 사용",
+        "parentChecksFirst": "반박 전 수신 내용을 확인한다.",
+        "childExpression": "요약을 고치거나 나중에 글로 전할 수 있다.",
+        "adultChange": "반박 전 수신 내용을 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "요약을 고치거나 나중에 글로 전할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH01.P4:adult-child-has-own-life",
+      "parentResponsibleAction": "조언·실행 지원·결정을 구분한다.",
+      "childAvailableChoice": "조언을 고르거나 거절하고 직접 결정할 수 있다.",
+      "repairPlan": {
+        "condition": "지원했다는 이유로 모든 선택의 승인권을 요구",
+        "parentChecksFirst": "조언·실행 지원·결정을 구분한다.",
+        "childExpression": "조언을 고르거나 거절하고 직접 결정할 수 있다.",
+        "adultChange": "조언·실행 지원·결정을 구분한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "조언을 고르거나 거절하고 직접 결정할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH05.P2:ab-notice-without-mind-reading",
+      "parentResponsibleAction": "추측을 질문으로 바꾸고 선택을 기다린다.",
+      "childAvailableChoice": "말하거나 보류하고 다른 지원을 고를 수 있다.",
+      "repairPlan": {
+        "condition": "도움 의도를 이유로 사생활을 캐묻기",
+        "parentChecksFirst": "추측을 질문으로 바꾸고 선택을 기다린다.",
+        "childExpression": "말하거나 보류하고 다른 지원을 고를 수 있다.",
+        "adultChange": "추측을 질문으로 바꾸고 선택을 기다린다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "말하거나 보류하고 다른 지원을 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P2:ba-written-view-changes-parent-assumption",
+      "parentResponsibleAction": "자신의 해석을 수정하고 필요한 결정을 설명한다.",
+      "childAvailableChoice": "요약을 고치거나 공개 범위를 줄일 수 있다.",
+      "repairPlan": {
+        "condition": "부모가 이해할 때까지 반복 설명을 요구",
+        "parentChecksFirst": "자신의 해석을 수정하고 필요한 결정을 설명한다.",
+        "childExpression": "요약을 고치거나 공개 범위를 줄일 수 있다.",
+        "adultChange": "자신의 해석을 수정하고 필요한 결정을 설명한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "요약을 고치거나 공개 범위를 줄일 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P1:a-effort-without-future-script",
+      "parentResponsibleAction": "자신의 성공 기준과 지원할 행동을 나눈다.",
+      "childAvailableChoice": "관심을 바꾸거나 더 알아볼 시간을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "안정의 이름으로 진로를 미리 확정",
+        "parentChecksFirst": "자신의 성공 기준과 지원할 행동을 나눈다.",
+        "childExpression": "관심을 바꾸거나 더 알아볼 시간을 요청할 수 있다.",
+        "adultChange": "자신의 성공 기준과 지원할 행동을 나눈다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관심을 바꾸거나 더 알아볼 시간을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-result-debt",
+      "parentResponsibleAction": "기대 압박을 줄이고 실제 지원을 마련한다.",
+      "childAvailableChoice": "관심을 말하거나 답하지 않을 수 있다.",
+      "repairPlan": {
+        "condition": "사과 뒤에도 같은 결과를 요구",
+        "parentChecksFirst": "기대 압박을 줄이고 실제 지원을 마련한다.",
+        "childExpression": "관심을 말하거나 답하지 않을 수 있다.",
+        "adultChange": "기대 압박을 줄이고 실제 지원을 마련한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "관심을 말하거나 답하지 않을 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH09.P2:recall-many-routes-to-trust",
+      "parentResponsibleAction": "실제 도입된 통로와 선택을 회수한다.",
+      "childAvailableChoice": "말·글·보류를 고를 수 있다.",
+      "repairPlan": {
+        "condition": "많이 말해야 신뢰한다는 결론",
+        "parentChecksFirst": "실제 도입된 통로와 선택을 회수한다.",
+        "childExpression": "말·글·보류를 고를 수 있다.",
+        "adultChange": "실제 도입된 통로와 선택을 회수한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "말·글·보류를 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH02.P1:a-standards-with-explanation",
+      "parentResponsibleAction": "규칙의 범위와 이해 가능성을 먼저 확인한다.",
+      "childAvailableChoice": "모르는 부분을 가리키거나 함께 해달라고 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "순종을 좋은 양육의 결과로 삼음",
+        "parentChecksFirst": "규칙의 범위와 이해 가능성을 먼저 확인한다.",
+        "childExpression": "모르는 부분을 가리키거나 함께 해달라고 요청할 수 있다.",
+        "adultChange": "규칙의 범위와 이해 가능성을 먼저 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "모르는 부분을 가리키거나 함께 해달라고 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH01.P4:fixed-role-not-age-diagnosis",
+      "parentResponsibleAction": "단계와 실제 관계를 추측하지 않고 적용 전제를 확인한다.",
+      "childAvailableChoice": "확인할 맥락을 말하거나 제공하지 않을 수 있다.",
+      "repairPlan": {
+        "condition": "자녀를 모두 어린아이로 취급",
+        "parentChecksFirst": "단계와 실제 관계를 추측하지 않고 적용 전제를 확인한다.",
+        "childExpression": "확인할 맥락을 말하거나 제공하지 않을 수 있다.",
+        "adultChange": "단계와 실제 관계를 추측하지 않고 적용 전제를 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "확인할 맥락을 말하거나 제공하지 않을 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH06.P4:ba-option-to-question-safely",
+      "parentResponsibleAction": "발언권·수신·불이익 없는 반응을 마련한다.",
+      "childAvailableChoice": "질문하거나 보류하고 안전한 지원자를 고를 수 있다.",
+      "repairPlan": {
+        "condition": "자녀가 더 잘 말해야 갈등이 끝난다고 요구",
+        "parentChecksFirst": "발언권·수신·불이익 없는 반응을 마련한다.",
+        "childExpression": "질문하거나 보류하고 안전한 지원자를 고를 수 있다.",
+        "adultChange": "발언권·수신·불이익 없는 반응을 마련한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "질문하거나 보류하고 안전한 지원자를 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH07.P3:protection-question-test-loop",
+      "parentResponsibleAction": "질문의 목적과 실제 선택 범위를 확인한다.",
+      "childAvailableChoice": "이유를 묻거나 다른 방법을 말할 수 있다.",
+      "repairPlan": {
+        "condition": "질문 형식만으로 선택권을 줬다고 여김",
+        "parentChecksFirst": "질문의 목적과 실제 선택 범위를 확인한다.",
+        "childExpression": "이유를 묻거나 다른 방법을 말할 수 있다.",
+        "adultChange": "질문의 목적과 실제 선택 범위를 확인한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "이유를 묻거나 다른 방법을 말할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P1:repair-protection-test",
+      "parentResponsibleAction": "안전 기준을 설명하고 불필요한 제한을 줄인다.",
+      "childAvailableChoice": "방법을 고르거나 멈추고 도움을 요청할 수 있다.",
+      "repairPlan": {
+        "condition": "자녀가 동의하면 부모 책임이 끝났다고 봄",
+        "parentChecksFirst": "안전 기준을 설명하고 불필요한 제한을 줄인다.",
+        "childExpression": "방법을 고르거나 멈추고 도움을 요청할 수 있다.",
+        "adultChange": "안전 기준을 설명하고 불필요한 제한을 줄인다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "방법을 고르거나 멈추고 도움을 요청할 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    },
+    {
+      "id": "pcpr:material:CH08.P2:a-reduce-unnecessary-restriction",
+      "parentResponsibleAction": "불필요한 제한을 수정하고 보호를 유지한다.",
+      "childAvailableChoice": "방법·도움·중단을 고를 수 있다.",
+      "repairPlan": {
+        "condition": "보호를 줄이려 모든 판단을 자녀에게 넘김",
+        "parentChecksFirst": "불필요한 제한을 수정하고 보호를 유지한다.",
+        "childExpression": "방법·도움·중단을 고를 수 있다.",
+        "adultChange": "불필요한 제한을 수정하고 보호를 유지한다.",
+        "safetyNonNegotiable": "실제 필요한 보호 유지. 모욕·폭력·강압 금지. 전문 판단을 일반 조율로 대체하지 않음.",
+        "choiceLeftToChild": "방법·도움·중단을 고를 수 있다.",
+        "revisit": "다음 같은 활동·결정 또는 실제 조건이 바뀔 때 부모가 지원·설명·선택 범위를 다시 확인",
+        "improvementCheck": "부모가 구체 행동을 바꿨는가, 자녀에게 불이익 없는 의견·도움 통로가 실제 남았는가. 순종·성과를 회복 척도로 쓰지 않음.",
+        "childMustRepairParent": false
+      }
+    }
+  ],
+  "childMustRepairParentFalse": true,
+  "jointMeansEqualDuty": false,
+  "BToAMeansChildEmotionalDuty": false
+}

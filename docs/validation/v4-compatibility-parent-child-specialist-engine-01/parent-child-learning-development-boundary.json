@@ -1,0 +1,797 @@
+{
+  "originalThemes": [
+    {
+      "id": "pcpr:view:learningResearch:material:CH04.P2:structure-with-flexible-method",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 12,
+        "originalId": "pcpr:view:learningResearch:material:CH04.P2:structure-with-flexible-method",
+        "recordSha256": "9d2704a8620f81738d5504a0032ce8695ead93295274a6674280f2722a763e6f",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH04.P2:structure-with-flexible-method",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH04.P2:structure-with-flexible-method",
+        "coreMeaning": "부모의 예측 가능성과 자녀의 관심 변화를 바꿀 수 있는 방법의 조건으로 연구한다.",
+        "question": "서로 다른 방식이 도움되려면 어떤 수신 조건이 필요한가?",
+        "parentResponsibleAction": "필요한 결과와 바꿀 수 있는 방법을 분리한다.",
+        "childAvailableChoice": "도움과 방법 변경을 요청할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "지원의 지속과 탐색을 함께 남길 가능성",
+        "risk": "같은 방법을 끝까지 해야만 책임감 있다고 봄",
+        "factBomb": "방법을 바꿨다는 사실만으로 노력까지 없었다고 알 수는 없다.",
+        "twist": "일정한 지원 안에서도 시도 방법은 달라질 수 있다.",
+        "scene": "가상으로 학습 활동을 시험한다면 부모는 지원할 범위를 유지하고 자녀가 방법을 바꿔본다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH07.P1:expectation-and-interest-differ",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 20,
+        "originalId": "pcpr:view:learningResearch:material:CH07.P1:expectation-and-interest-differ",
+        "recordSha256": "9b19f0aa28b93a60967661cd7abec0455e112b54973174dce7437154215eb3ba",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH07.P1:expectation-and-interest-differ",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH07.P1:expectation-and-interest-differ",
+        "coreMeaning": "부모가 바라는 안정과 자녀의 현재 관심이 다른 조건을 연구한다.",
+        "question": "기대·사생활·기기·성인 연락에서 무엇이 다른 질문인가?",
+        "parentResponsibleAction": "현재 목적과 실제 지원을 확인한다.",
+        "childAvailableChoice": "다른 관심·보류·도움 필요를 말할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "목적과 지원을 다시 확인할 여지",
+        "risk": "같은 미래를 원해야 좋은 자녀라고 평가",
+        "factBomb": "부모의 계획과 다르다는 사실만으로 자녀의 계획이 없는 것은 아니다.",
+        "twist": "작은 탐색으로 차이가 실제 무엇인지 알아볼 수 있다.",
+        "scene": "가상으로 활동 선택이 다르다면 부모는 관심과 걱정을 따로 듣는다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH03.P3:b-deep-interest-with-change-option",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 8,
+        "originalId": "pcpr:view:learningResearch:material:CH03.P3:b-deep-interest-with-change-option",
+        "recordSha256": "e84313d8f63f62afc4e6681c3f5b9c968ff7c80dd541edeb505ae40d3c40e18a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH03.P3:b-deep-interest-with-change-option",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH03.P3:b-deep-interest-with-change-option",
+        "coreMeaning": "B의 한 분야에 몰입하는 참고를 관심 지속과 변경 선택의 질문으로 연구한다.",
+        "question": "자녀의 관점이 성인 책임을 맡지 않고 기여할 조건은 무엇인가?",
+        "parentResponsibleAction": "목표 대신 현재 선택과 부담을 확인한다.",
+        "childAvailableChoice": "이어가거나 바꾸고 휴식을 요청할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "깊이 알아볼 시간을 지원할 가능성",
+        "risk": "한번 고른 관심을 평생 적성으로 고정",
+        "factBomb": "오래 좋아했다는 사실도 계속 좋아해야 할 계약은 아니다.",
+        "twist": "중단이나 변경을 알아보는 선택이 관심을 더 정확히 확인하게 할 수 있다.",
+        "scene": "가상으로 활동을 계속할지 논의한다면 부모는 현재 필요한 지원과 바뀐 관심을 함께 듣는다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH06.P1:ba-new-interest-not-teaching-job",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 18,
+        "originalId": "pcpr:view:learningResearch:material:CH06.P1:ba-new-interest-not-teaching-job",
+        "recordSha256": "66482d5bfef00227380077604c4f54e378c0337f9f594867b8325c897660e112",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH06.P1:ba-new-interest-not-teaching-job",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH06.P1:ba-new-interest-not-teaching-job",
+        "coreMeaning": "A 수신 편인 정의와 자녀의 새 관심을 부모가 모르는 것을 확인할 계기로 연구한다.",
+        "question": "부모 A 기준의 실제 십성과 B 원천은 어떤 새 정보를 줄 수 있는가?",
+        "parentResponsibleAction": "검증과 지원을 직접 맡는다.",
+        "childAvailableChoice": "관심을 공유하거나 설명을 멈출 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "기존 관점을 다시 살필 가능성",
+        "risk": "잘 아는 아이에게 가족의 모든 설명을 맡김",
+        "factBomb": "새로운 것을 알려줬다고 아이가 계속 어른의 선생님이 되어야 하는 것은 아니다.",
+        "twist": "부모도 같이 확인하면 자녀는 모르는 상태를 말할 수 있다.",
+        "scene": "가상으로 새 주제를 들었다면 부모는 자녀가 궁금한 내용과 확인할 자료를 함께 본다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH02.P3:a-experience-with-safety-plan",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 4,
+        "originalId": "pcpr:view:learningResearch:material:CH02.P3:a-experience-with-safety-plan",
+        "recordSha256": "a6590cf9046dc9333919890b3dcbe87cc5c52ea1072bc37698d2507446572daf",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH02.P3:a-experience-with-safety-plan",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH02.P3:a-experience-with-safety-plan",
+        "coreMeaning": "A의 직접 경험을 돕는 관심을 안전한 작은 선택의 조건으로 연구한다.",
+        "question": "부모의 강점이 실제 지원으로 도착할 조건은 무엇인가?",
+        "parentResponsibleAction": "안전 준비와 실행 선택을 나눈다.",
+        "childAvailableChoice": "해보거나 도움을 요청하고 중단할 수 있다.",
+        "developmentalContexts": [
+          "YOUNG"
+        ],
+        "positive": "안전한 범위 안에서 직접 해볼 가능성",
+        "risk": "실패해야 배운다며 보호를 철회",
+        "factBomb": "스스로 배우게 둔다는 말이 위험까지 혼자 감당하게 할 이유는 아니다.",
+        "twist": "도울 준비를 남겨두어도 직접 해낸 부분은 자녀에게 남을 수 있다.",
+        "scene": "가상으로 만들기를 한다면 부모는 안전한 재료를 확인하고 자녀가 배치 방법을 고르게 한다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH07.P4:comparison-removes-own-question",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 21,
+        "originalId": "pcpr:view:learningResearch:material:CH07.P4:comparison-removes-own-question",
+        "recordSha256": "e6eafa9b117bcec0cfa9e7588d139abfb58de5d7cac69080d6d0bec39083ccd2",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH07.P4:comparison-removes-own-question",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH07.P4:comparison-removes-own-question",
+        "coreMeaning": "다른 가족·또래와의 비교가 현재 지원 질문을 지울 조건을 연구한다.",
+        "question": "비교·감시·영구 승인권·강압에서 어른이 돌아볼 경계는 무엇인가?",
+        "parentResponsibleAction": "비교를 멈추고 실제 지원을 확인한다.",
+        "childAvailableChoice": "자기 질문과 도움 필요를 말할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "현재 필요한 지원을 볼 가능성",
+        "risk": "비교를 동기부여로만 정당화",
+        "factBomb": "다른 아이 이야기를 오래 해도 지금 내 아이가 막힌 곳은 알 수 없다.",
+        "twist": "현재 한 질문을 듣는 것이 더 구체적인 지원을 만들 수 있다.",
+        "scene": "가상으로 학습을 논의한다면 부모는 또래 순위 대신 필요한 자료를 묻는다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH03.P1:b-interest-not-achievement-label",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 5,
+        "originalId": "pcpr:view:learningResearch:material:CH03.P1:b-interest-not-achievement-label",
+        "recordSha256": "8ae328a069e12ad590f2ef16d62393bd11e0490a18b8cebf0344d657c726a7dc",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH03.P1:b-interest-not-achievement-label",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH03.P1:b-interest-not-achievement-label",
+        "coreMeaning": "B의 관심별 탐색 참고를 지능이나 성취의 사실과 구분해 연구한다.",
+        "question": "자녀 B의 관심과 질문을 능력 사실 없이 어떻게 들을 수 있는가?",
+        "parentResponsibleAction": "능력 평가를 멈추고 필요한 자료·안전·시간을 지원한다.",
+        "childAvailableChoice": "관심을 설명하거나 바꾸고 도움을 요청할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "관심을 설명할 통로",
+        "risk": "유형으로 잘할 과목을 미리 지정",
+        "factBomb": "관심을 묻는 자리가 재능을 증명하는 시험이 되면 질문하기 어려워질 수 있다.",
+        "twist": "많이 아는 분야보다 아직 모르는 것을 묻는 선택도 탐색의 일부다.",
+        "scene": "가상으로 새 주제를 알아본다면 부모는 지금 궁금한 질문부터 듣는다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH05.P1:ab-new-opportunity-with-safety",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 15,
+        "originalId": "pcpr:view:learningResearch:material:CH05.P1:ab-new-opportunity-with-safety",
+        "recordSha256": "f18e0240d7d3a6e4c8532fdbb07181e36cfcf3370ad4c70271723714017a2994",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH05.P1:ab-new-opportunity-with-safety",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH05.P1:ab-new-opportunity-with-safety",
+        "coreMeaning": "B 수신 편재 정의와 활동 지원을 실제 기회·안전·선택 확인으로 연구한다.",
+        "question": "자녀 B 기준의 실제 십성과 A 원천은 어떤 지원 질문을 만드는가?",
+        "parentResponsibleAction": "지원 준비와 참여 결정을 분리한다.",
+        "childAvailableChoice": "참여·수정·거절을 말할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "지원할 선택지를 넓힐 가능성",
+        "risk": "기회를 줬으니 성과를 내라고 압박",
+        "factBomb": "좋은 기회라는 부모의 판단이 자녀의 동의를 대신하지는 않는다.",
+        "twist": "시도 범위를 줄여도 새로운 정보를 얻는 기회는 남을 수 있다.",
+        "scene": "가상으로 새 활동을 제안한다면 부모는 실제 부담과 지원을 확인한다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH03.P1:b-expression-without-talent-prediction",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 6,
+        "originalId": "pcpr:view:learningResearch:material:CH03.P1:b-expression-without-talent-prediction",
+        "recordSha256": "5b16a3b7b6bca0e1c364f320be8c0c500209105a5a38fc7efb0b3b4bacd9ca22",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH03.P1:b-expression-without-talent-prediction",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH03.P1:b-expression-without-talent-prediction",
+        "coreMeaning": "B의 감각적 표현 참고를 실제 재능·직업 판단과 분리하는 연구다.",
+        "question": "자녀 B의 관심과 질문을 능력 사실 없이 어떻게 들을 수 있는가?",
+        "parentResponsibleAction": "활동을 시험할 조건을 마련하되 결과를 약속받지 않는다.",
+        "childAvailableChoice": "말·글·만들기 등 편한 방법을 선택할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "다른 표현 통로를 시험할 가능성",
+        "risk": "예체능 소질을 정해 성과를 요구",
+        "factBomb": "표현할 기회를 준다는 말과 잘하는 결과를 요구하는 말은 다르다.",
+        "twist": "마음에 들지 않은 작품을 바꾸는 선택도 자기표현일 수 있다.",
+        "scene": "가상으로 표현 활동을 고른다면 자녀는 해보고 싶은 방식과 멈출 지점을 고른다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH06.P2:ba-practical-trial-informs-guidance",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 19,
+        "originalId": "pcpr:view:learningResearch:material:CH06.P2:ba-practical-trial-informs-guidance",
+        "recordSha256": "3a168ce46aaa39a8b3d60a59235186a7cb00ee4ca805d875f1463e85e4a5c56e",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH06.P2:ba-practical-trial-informs-guidance",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH06.P2:ba-practical-trial-informs-guidance",
+        "coreMeaning": "자녀가 해본 방법이 부모의 도움 범위를 조정할 단서가 되는 조건을 연구한다.",
+        "question": "자녀의 관점이 부모에게 도착하려면 어른은 무엇을 준비해야 하는가?",
+        "parentResponsibleAction": "안전 준비와 개입 범위를 직접 점검한다.",
+        "childAvailableChoice": "시도하거나 멈추고 도움을 요청할 수 있다.",
+        "developmentalContexts": [
+          "YOUNG"
+        ],
+        "positive": "필요한 지원을 구체화할 가능성",
+        "risk": "자녀의 시도를 부모의 교육 성과로 채점",
+        "factBomb": "직접 해본 결과가 어른의 평가를 통과해야만 의미 있는 것은 아니다.",
+        "twist": "시도한 방법을 들으면 대신할 일을 줄일 수도 있다.",
+        "scene": "가상으로 만들기를 한다면 부모는 자녀가 고른 방법과 막힌 부분을 본다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH04.P1:shared-curiosity-with-no-performance",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 9,
+        "originalId": "pcpr:view:learningResearch:material:CH04.P1:shared-curiosity-with-no-performance",
+        "recordSha256": "bcc1034304504b4386c81624696948594590a0b1654baeda7dd8ada69c97a3b7",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH04.P1:shared-curiosity-with-no-performance",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH04.P1:shared-curiosity-with-no-performance",
+        "coreMeaning": "공통 유형의 관심 나눔을 성과 요구 없이 함께 알아볼 조건으로 연구한다.",
+        "question": "공통점이 있어도 실수·거절·보호받을 자리를 어떻게 남기는가?",
+        "parentResponsibleAction": "실제 관심과 중단 선택을 확인한다.",
+        "childAvailableChoice": "참여·변경·중단을 선택할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "질문과 활동을 함께 고를 가능성",
+        "risk": "부모도 즐거우니 자녀도 즐겁다고 단정",
+        "factBomb": "함께 좋아할 것이라는 기대에도 싫다고 할 자리는 남아 있어야 한다.",
+        "twist": "닮은 성향을 확인하기보다 다른 관심을 물으면 새로운 이야기가 생길 수 있다.",
+        "scene": "가상으로 활동을 고른다면 부모는 자녀가 고른 주제에 필요한 지원을 묻는다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH04.P1:opportunity-with-child-voice",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 10,
+        "originalId": "pcpr:view:learningResearch:material:CH04.P1:opportunity-with-child-voice",
+        "recordSha256": "b10f2c631197c178905d542c91ce8f0cab75b4d3bffa2d058eec2ec30967221d",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH04.P1:opportunity-with-child-voice",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH04.P1:opportunity-with-child-voice",
+        "coreMeaning": "부모의 실제 기회 지원 관심과 자녀의 생각을 인정받을 참고를 조건부로 연결한다.",
+        "question": "공통점이 있어도 실수·거절·보호받을 자리를 어떻게 남기는가?",
+        "parentResponsibleAction": "안전·비용·지원은 성인이 확인한다.",
+        "childAvailableChoice": "자기 목적을 말하고 다른 활동을 제안할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "지원과 자녀 주도의 질문을 함께 남길 가능성",
+        "risk": "기회를 마련했으니 반드시 성과를 내라고 요구",
+        "factBomb": "기회를 제공한 수고가 아이의 결과를 소유할 권리는 아니다.",
+        "twist": "시도할 목표를 자녀가 수정할 수 있어야 지원의 의미가 남을 수 있다.",
+        "scene": "가상으로 새 활동을 알아본다면 부모는 참가를 확정하기 전에 자녀의 관심과 필요한 지원을 듣는다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH04.P3:effort-not-comparison",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 14,
+        "originalId": "pcpr:view:learningResearch:material:CH04.P3:effort-not-comparison",
+        "recordSha256": "ba8aa267cb9e76a056c1346da73f0dc74bc8dc5729d45af211cf19979e37703b",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH04.P3:effort-not-comparison",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH04.P3:effort-not-comparison",
+        "coreMeaning": "작은 시도를 알아보는 피드백과 다른 사람과의 비교를 구분한다.",
+        "question": "실제 시도·과정·도움 선택에서 좋은 가능성을 어떻게 쓸 수 있는가?",
+        "parentResponsibleAction": "행동과 지원을 구체적으로 알아본다.",
+        "childAvailableChoice": "다시 하거나 쉬고 다른 방식을 고를 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "과정의 구체적인 수고를 이야기할 가능성",
+        "risk": "칭찬 뒤에 다음 결과의 기대를 즉시 붙임",
+        "factBomb": "이번 수고를 알아준다는 말에 더 잘해야 받을 다음 인정까지 붙일 필요는 없다.",
+        "twist": "도움받은 부분을 인정해도 스스로 해본 의미는 남는다.",
+        "scene": "가상으로 활동 결과를 돌아본다면 부모는 자녀가 시도한 방법과 필요한 지원을 묻는다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH02.P1:a-effort-without-future-script",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 2,
+        "originalId": "pcpr:view:learningResearch:material:CH02.P1:a-effort-without-future-script",
+        "recordSha256": "b811696f8f0f0c6b11d309cdca1716a53efec048513a44ba77101c402bbddff2",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH02.P1:a-effort-without-future-script",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH02.P1:a-effort-without-future-script",
+        "coreMeaning": "A가 안정된 미래를 바라는 마음을 현재 탐색 지원과 구분한다.",
+        "question": "부모 A가 기준과 가치를 제공할 때 남겨야 할 자리는 무엇인가?",
+        "parentResponsibleAction": "자신의 성공 기준과 지원할 행동을 나눈다.",
+        "childAvailableChoice": "관심을 바꾸거나 더 알아볼 시간을 요청할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "준비할 자료와 지원을 구체화할 가능성",
+        "risk": "안정의 이름으로 진로를 미리 확정",
+        "factBomb": "미래를 걱정한다는 말이 지금의 관심을 들을 일을 대신하지는 않는다.",
+        "twist": "불확실한 경로도 작게 알아보면 현재 선택의 정보가 늘 수 있다.",
+        "scene": "가상으로 진로 활동을 고른다면 부모는 결과 약속 대신 실제 필요한 자료와 부담을 확인한다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH04.P3:young-signal-and-response",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 13,
+        "originalId": "pcpr:view:learningResearch:material:CH04.P3:young-signal-and-response",
+        "recordSha256": "51c5aff7a4f6cf7baaa10be4d648b356372040f0206d123a6c0d772cde53888c",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH04.P3:young-signal-and-response",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH04.P3:young-signal-and-response",
+        "coreMeaning": "어린 자녀의 관심 신호에 응답하고 작은 선택을 남기는 가상 장면을 연구한다.",
+        "question": "실제 시도·과정·도움 선택에서 좋은 가능성을 어떻게 쓸 수 있는가?",
+        "parentResponsibleAction": "관심을 확인하고 도울 준비를 유지한다.",
+        "childAvailableChoice": "고르거나 멈추고 도움을 요청할 수 있다.",
+        "developmentalContexts": [
+          "YOUNG"
+        ],
+        "positive": "반응을 보고 함께 탐색할 가능성",
+        "risk": "모든 신호를 성인이 정한 학습 목표로 바꿈",
+        "factBomb": "아이의 관심을 따라간다는 말이 부모의 활동표를 끝내는 뜻은 아니다.",
+        "twist": "잠깐의 시도도 완성품 없이 함께 알아보는 시간이 될 수 있다.",
+        "scene": "가상으로 어린 자녀가 재료를 만져본다면 부모는 안전을 확인하고 고를 방법을 남긴다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH01.P3:pair-is-not-development-test",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 1,
+        "originalId": "pcpr:view:learningResearch:material:CH01.P3:pair-is-not-development-test",
+        "recordSha256": "7006d8d2557ee75b4d93346b15852b0a778335f4c4324695a8dd99b807aaec0a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH01.P3:pair-is-not-development-test",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH01.P3:pair-is-not-development-test",
+        "coreMeaning": "부모의 사고 지원과 자녀의 규칙 질문을 양쪽 원천으로 비교하되 발달 검사로 읽지 않는다.",
+        "question": "각자의 유형 참고가 무엇을 확인하게 하고 무엇은 말하지 못하는가?",
+        "parentResponsibleAction": "가르칠 내용과 자녀가 궁금한 내용을 나눈다.",
+        "childAvailableChoice": "이해 못한 부분을 다시 묻거나 다른 설명을 요청할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "이유를 함께 살필 대화 가능성",
+        "risk": "논쟁을 잘하면 자녀가 성숙하거나 우수하다고 판정",
+        "factBomb": "질문에 답을 많이 준 것과 자녀의 질문을 알아들은 것은 다를 수 있다.",
+        "twist": "부모도 모른다고 말하면 질문을 함께 확인할 여지가 남는다.",
+        "scene": "가상으로 규칙의 이유를 묻는다면 부모는 답을 시험하지 않고 질문의 뜻을 다시 듣는다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH03.P3:b-questions-expand-parent-information",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 7,
+        "originalId": "pcpr:view:learningResearch:material:CH03.P3:b-questions-expand-parent-information",
+        "recordSha256": "5e56a0cc0576301822cc464214db1f1aab7826b6dce9b51599d4e1f7c5bf1aff",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH03.P3:b-questions-expand-parent-information",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH03.P3:b-questions-expand-parent-information",
+        "coreMeaning": "B의 질문 관심이 부모가 놓친 내용을 알려줄 가능성을 연구한다.",
+        "question": "자녀의 관점이 성인 책임을 맡지 않고 기여할 조건은 무엇인가?",
+        "parentResponsibleAction": "배우는 책임을 자녀에게 맡기지 않고 필요한 검증을 한다.",
+        "childAvailableChoice": "알고 싶은 질문을 고르거나 설명을 멈출 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "새로운 관점을 들을 기회",
+        "risk": "질문을 많이 해야 좋은 자녀라고 평가",
+        "factBomb": "부모가 배웠다는 좋은 결과도 아이가 계속 흥미로운 답을 내야 할 이유는 아니다.",
+        "twist": "질문 하나가 결론보다 함께 확인할 과정을 만들 수 있다.",
+        "scene": "가상으로 새로운 관심을 말한다면 부모는 자녀가 궁금한 부분을 따라 자료를 찾는다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH05.P2:ab-allow-wrong-first-answer",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 17,
+        "originalId": "pcpr:view:learningResearch:material:CH05.P2:ab-allow-wrong-first-answer",
+        "recordSha256": "2c5b67354978fc6061312600a63f15c1c4acd8256a37765a557ee030199e0a0a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH05.P2:ab-allow-wrong-first-answer",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH05.P2:ab-allow-wrong-first-answer",
+        "coreMeaning": "부모의 원리 설명과 자녀의 이유 질문을 틀린 첫 답도 허용하는 탐색으로 연구한다.",
+        "question": "부모 A의 지원이 자녀의 시도를 도울 조건은 무엇인가?",
+        "parentResponsibleAction": "질문을 끝내기보다 이해 여부를 확인한다.",
+        "childAvailableChoice": "모르거나 다르게 생각한다고 말할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "다른 가정을 검토할 가능성",
+        "risk": "질문할수록 부모를 설득해야 하는 시험이 됨",
+        "factBomb": "정답을 아는 부모라도 자녀의 질문을 아직 모를 수 있다.",
+        "twist": "틀린 첫 가설이 무엇을 더 알아볼지 보여줄 수 있다.",
+        "scene": "가상으로 다른 방법을 제안한다면 부모는 이유를 듣고 확인할 자료를 함께 고른다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH05.P2:ab-help-one-step-then-return",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 16,
+        "originalId": "pcpr:view:learningResearch:material:CH05.P2:ab-help-one-step-then-return",
+        "recordSha256": "066618599a8cef73926fd235cec22840bc7cbd9c26088be3f09047b9cb33ffed",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH05.P2:ab-help-one-step-then-return",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH05.P2:ab-help-one-step-then-return",
+        "coreMeaning": "부모의 경험 지원과 자녀의 직접 해보기 참고를 필요한 만큼의 도움으로 연구한다.",
+        "question": "부모 A의 지원이 자녀의 시도를 도울 조건은 무엇인가?",
+        "parentResponsibleAction": "개입 범위를 묻고 안전 책임은 유지한다.",
+        "childAvailableChoice": "도움을 요청하거나 직접 다시 해볼 수 있다.",
+        "developmentalContexts": [
+          "YOUNG"
+        ],
+        "positive": "직접 시도한 부분을 남길 가능성",
+        "risk": "완성품을 빨리 만들려고 모두 대신 함",
+        "factBomb": "끝내준 결과가 아이가 해본 경험을 대신할 수는 없다.",
+        "twist": "조금 덜 완성돼도 직접 고른 방법이 남을 수 있다.",
+        "scene": "가상으로 만들기를 한다면 부모는 안전을 확인하고 요청받은 부분만 돕는다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH02.P3:a-question-partner-not-examiner",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 3,
+        "originalId": "pcpr:view:learningResearch:material:CH02.P3:a-question-partner-not-examiner",
+        "recordSha256": "0f27a93e19dd65d694ddd21dfb52fd26d594142fe505da8098b6fe465a5b1256",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH02.P3:a-question-partner-not-examiner",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH02.P3:a-question-partner-not-examiner",
+        "coreMeaning": "A의 함께 파고드는 관심을 자녀의 질문을 따라가는 조건부 기여로 연구한다.",
+        "question": "부모의 강점이 실제 지원으로 도착할 조건은 무엇인가?",
+        "parentResponsibleAction": "자녀의 관심을 보고 응답하며 반응을 기다린다.",
+        "childAvailableChoice": "관심을 옮기거나 멈추고 다른 방식으로 표현할 수 있다.",
+        "developmentalContexts": [
+          "YOUNG"
+        ],
+        "positive": "관심을 함께 관찰할 가능성",
+        "risk": "질문을 정답 시험으로 바꿈",
+        "factBomb": "설명이 길어질수록 아이의 질문이 작아진다면 더 많이 아는 것이 답은 아닐 수 있다.",
+        "twist": "부모도 같이 찾아보는 태도가 질문의 주도권을 자녀에게 남길 수 있다.",
+        "scene": "가상으로 어린 자녀가 사물을 가리킨다면 부모는 먼저 무엇을 보고 있는지 확인한다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH01.P1:predictability-with-room-to-try",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 0,
+        "originalId": "pcpr:view:learningResearch:material:CH01.P1:predictability-with-room-to-try",
+        "recordSha256": "8606e636b4836a188090312b5ab16768d386a311f6d3f560f0888d7e44ef701a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH01.P1:predictability-with-room-to-try",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH01.P1:predictability-with-room-to-try",
+        "coreMeaning": "부모가 바라는 꾸준함과 자녀의 관심 탐색을 서로 다른 책임의 질문으로 연구한다.",
+        "question": "부모의 보호와 자녀의 탐색은 어떤 다른 책임을 가지는가?",
+        "parentResponsibleAction": "기대와 현재 시도를 나누어 설명한다.",
+        "childAvailableChoice": "지금 직접 해보고 싶은 부분과 도움이 필요한 부분을 말하거나 보류할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "예측 가능한 지원 안에서 관심을 시험할 가능성",
+        "risk": "꾸준함을 부모가 고른 진로에 따르는 것으로 정의",
+        "factBomb": "성실하길 바란다는 말에 자녀의 관심을 대신 고를 권한까지 들어 있지는 않다.",
+        "twist": "짧은 시험 기간이 평생의 목표를 먼저 확정하는 것보다 선택을 알아보게 할 수 있다.",
+        "scene": "가상으로 학습 활동을 고른다면 부모는 안전과 비용 범위를 확인하고 자녀가 시험할 주제를 고른다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    },
+    {
+      "id": "pcpr:view:learningResearch:material:CH04.P1:knowledge-support-without-perfect-child",
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/learningResearch.ts",
+        "exportName": "PC_LEARNING_SUPPORT",
+        "index": 11,
+        "originalId": "pcpr:view:learningResearch:material:CH04.P1:knowledge-support-without-perfect-child",
+        "recordSha256": "10e46667a37f9a9fe21bb71820354c677aa4e8ca8d255143011e3f4bc8b2bb4f",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "original": {
+        "id": "pcpr:view:learningResearch:material:CH04.P1:knowledge-support-without-perfect-child",
+        "productKey": "saju_mbti_compatibility",
+        "relationshipCategory": "parentChild",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "materialRef": "pcpr:material:CH04.P1:knowledge-support-without-perfect-child",
+        "coreMeaning": "부모의 자료 지원과 자녀의 꾸준함 참고를 실수할 수 있는 배움의 조건으로 연구한다.",
+        "question": "공통점이 있어도 실수·거절·보호받을 자리를 어떻게 남기는가?",
+        "parentResponsibleAction": "결과 평가보다 도움의 현재 적합성을 점검한다.",
+        "childAvailableChoice": "모르는 내용을 말하고 다시 설명해달라고 요청할 수 있다.",
+        "developmentalContexts": [
+          "TEEN"
+        ],
+        "positive": "필요한 자료를 구체적으로 찾을 가능성",
+        "risk": "성실한 자녀니 도움 없이 잘해야 한다고 기대",
+        "factBomb": "꾸준해 보인다는 이유로 모른다고 말할 필요까지 사라지지는 않는다.",
+        "twist": "질문이 늘어나는 것이 배움의 지원이 쓰이고 있다는 단서일 수 있다.",
+        "scene": "가상으로 어려운 주제를 알아본다면 부모는 자녀가 막힌 질문을 듣고 자료를 함께 고른다.",
+        "precedingMeaningRefs": [],
+        "notAdditionalIndependentFact": true
+      }
+    }
+  ],
+  "preferenceIsAbility": false,
+  "schoolPerformance": "UNKNOWN",
+  "developmentalDiagnosis": "NOT_SUPPORTED",
+  "synthetic": [
+    {
+      "id": "synthetic:parent-child:negative:ability-prediction",
+      "reasons": [
+        "LEARNING_DEVELOPMENT_CLAIM_FORBIDDEN"
+      ]
+    },
+    {
+      "id": "synthetic:parent-child:negative:school-prediction",
+      "reasons": [
+        "LEARNING_DEVELOPMENT_CLAIM_FORBIDDEN"
+      ]
+    },
+    {
+      "id": "synthetic:parent-child:negative:development-diagnosis",
+      "reasons": [
+        "LEARNING_DEVELOPMENT_CLAIM_FORBIDDEN"
+      ]
+    }
+  ]
+}
