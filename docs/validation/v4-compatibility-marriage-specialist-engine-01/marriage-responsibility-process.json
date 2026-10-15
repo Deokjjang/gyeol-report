@@ -1,0 +1,5154 @@
+[
+  {
+    "id": "cmpr:material:CH06.P3:ba-unanswered-plan",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-common-space-private-time",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P4:category-is-not-marital-fact",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P2:a-meaning-needs-operations",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P1:a-quiet-system-support",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-shared-private-money",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:family-choice-not-family-duty",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:clash-not-decision-cause",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P2:b-sensory-common-space",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-resource-explanation",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-visible-only-finish",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P2:b-acknowledgement-not-assignment",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-family-choice-boundaries",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-receivable-help",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-release-care-debt",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-care-repair-path",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P3:b-family-boundary-contribution",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:two-rest-windows",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-check-impact-before-correction",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P1:b-visible-practical-support",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-transition-repair-path",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-change-without-handover",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-name-pending-answer",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P4:b-avoids-budget-answer",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-care-as-debt",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-handover-before-change",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:competence-with-rotation",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P2:a-rest-is-a-resource",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-leave-family-choice-open",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P2:clash-and-two-standards",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-family-with-common-choice",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:family-image-becomes-cost",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P1:decision-and-influence",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:money-purpose-difference",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-care-with-whole-task",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-support-before-family-contact",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:scores-of-past-work",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:decision-silence-loop",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-answer-pending-plan",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-standards-without-performance-review",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P4:shared-strength-not-shared-score",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P1:predictability-and-revision",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:care-manager-loop",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P3:b-useful-simplification",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-state-completion-boundary",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-two-family-boundaries",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:detected-clash-shared-timing",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-competence-with-rotation",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-stop-remaking-method",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:criteria-revision-loop",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-standard-remakes",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-visible-full-process",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-care-not-default-manager",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-unilateral-budget",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P1:a-operating-standards",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P3:a-notice-with-permission",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P4:b-expands-social-cost",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:values-meet-operating-detail",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-advance-plan-information",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-update-family-information",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-kinship-commitment",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:budget-permission-loop",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P3:a-complete-task-ownership",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-new-routine-small-test",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P1:b-adaptable-day-plan",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:old-fairness-after-change",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:rest-order-and-waiting",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-rule-with-revision",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P4:a-corrects-unagreed-standard",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-return-budget-authority",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-revise-completion-standard",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-care-without-default-manager",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:family-request-vs-common-consent",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-own-unseen-preparation",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-pending-decision-return",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P4:a-management-becomes-permission",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-budget-clarity",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-space-and-common-work",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-money-repair-path",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P3:same-type-separate-workload",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-holiday-finality",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-own-one-whole-process",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-autonomy-with-common-duty",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:coercion-is-outside-style",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P2:harmony-and-household-terms",
+    "process": {
+      "phases": [
+        {
+          "originalRole": "notice",
+          "phase": "DISCOVERY",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "prepare",
+          "phase": "PREPARATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "decide",
+          "phase": "DECISION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "execute",
+          "phase": "EXECUTION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "monitor",
+          "phase": "VERIFICATION",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "handle_exception",
+          "phase": "EXCEPTION_HANDLING",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        },
+        {
+          "originalRole": "remember_next_cycle",
+          "phase": "FUTURE_MEMORY_OR_REVIEW",
+          "state": "EXPLICIT_ROLE_MAPPING"
+        }
+      ],
+      "scope": "GENERAL_TASK_MODEL_NOT_ACTUAL_AB_HISTORY",
+      "actualTaskOwner": "UNKNOWN",
+      "laborTime": "UNKNOWN",
+      "oneOffHelpIsEndToEndResponsibility": false
+    }
+  }
+]

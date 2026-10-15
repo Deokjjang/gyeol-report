@@ -1,0 +1,1468 @@
+[
+  {
+    "id": "cmpr:material:CH06.P3:ba-unanswered-plan",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-common-space-private-time",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH01.P4:category-is-not-marital-fact",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH02.P2:a-meaning-needs-operations",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH02.P1:a-quiet-system-support",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-shared-private-money",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P4:family-choice-not-family-duty",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P2:clash-not-decision-cause",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH03.P2:b-sensory-common-space",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-resource-explanation",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-visible-only-finish",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH03.P2:b-acknowledgement-not-assignment",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-family-choice-boundaries",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-receivable-help",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-release-care-debt",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-care-repair-path",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH03.P3:b-family-boundary-contribution",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P3:two-rest-windows",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-check-impact-before-correction",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH03.P1:b-visible-practical-support",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-transition-repair-path",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-change-without-handover",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-name-pending-answer",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH03.P4:b-avoids-budget-answer",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-care-as-debt",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-handover-before-change",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P4:competence-with-rotation",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": [
+      "MARRIAGE_REQUIRED_ANCESTOR_DOMAIN_NOT_ALLOWED"
+    ]
+  },
+  {
+    "id": "cmpr:material:CH02.P2:a-rest-is-a-resource",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-leave-family-choice-open",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH01.P2:clash-and-two-standards",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-family-with-common-choice",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P4:family-image-becomes-cost",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH01.P1:decision-and-influence",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P1:money-purpose-difference",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-care-with-whole-task",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-support-before-family-contact",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P4:scores-of-past-work",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P3:decision-silence-loop",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-answer-pending-plan",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-standards-without-performance-review",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH01.P4:shared-strength-not-shared-score",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": [
+      "MARRIAGE_REQUIRED_ANCESTOR_DOMAIN_NOT_ALLOWED"
+    ]
+  },
+  {
+    "id": "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH01.P1:predictability-and-revision",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P3:care-manager-loop",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH03.P3:b-useful-simplification",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-state-completion-boundary",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-two-family-boundaries",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P2:detected-clash-shared-timing",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-competence-with-rotation",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": [
+      "MARRIAGE_REQUIRED_ANCESTOR_DOMAIN_NOT_ALLOWED"
+    ]
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-stop-remaking-method",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P3:criteria-revision-loop",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-standard-remakes",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-visible-full-process",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-care-not-default-manager",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-unilateral-budget",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH02.P1:a-operating-standards",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH02.P3:a-notice-with-permission",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": [
+      "MARRIAGE_REQUIRED_ANCESTOR_DOMAIN_NOT_ALLOWED"
+    ]
+  },
+  {
+    "id": "cmpr:material:CH03.P4:b-expands-social-cost",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P2:values-meet-operating-detail",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-advance-plan-information",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-update-family-information",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-kinship-commitment",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P3:budget-permission-loop",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH02.P3:a-complete-task-ownership",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-new-routine-small-test",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": [
+      "MARRIAGE_REQUIRED_ANCESTOR_DOMAIN_NOT_ALLOWED"
+    ]
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH03.P1:b-adaptable-day-plan",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P4:old-fairness-after-change",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P1:rest-order-and-waiting",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-rule-with-revision",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH02.P4:a-corrects-unagreed-standard",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-return-budget-authority",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-revise-completion-standard",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-care-without-default-manager",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P1:family-request-vs-common-consent",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-own-unseen-preparation",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-pending-decision-return",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH02.P4:a-management-becomes-permission",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-budget-clarity",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-space-and-common-work",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-money-repair-path",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH01.P3:same-type-separate-workload",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-holiday-finality",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-own-one-whole-process",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-autonomy-with-common-duty",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH07.P4:coercion-is-outside-style",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  },
+  {
+    "id": "cmpr:material:CH01.P2:harmony-and-household-terms",
+    "financial": {
+      "income": "UNKNOWN",
+      "assets": "UNKNOWN",
+      "debt": "UNKNOWN",
+      "legalOwnership": "UNKNOWN",
+      "prescriptionAllowed": false,
+      "traditionalWealthIsActualMoney": false,
+      "resourceSenseIsFinancialAbility": false
+    },
+    "domains": []
+  }
+]

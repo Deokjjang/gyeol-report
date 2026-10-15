@@ -1,0 +1,2690 @@
+[
+  {
+    "id": "cmpr:material:CH06.P3:ba-unanswered-plan",
+    "decisionRights": {
+      "original": {
+        "question": "지금 동의한 부분과 아직 답하지 않은 부분은 어디인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-common-space-private-time",
+    "decisionRights": {
+      "original": {
+        "question": "어느 때는 방해하지 않고 어느 일은 함께 확인해야 하는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P4:category-is-not-marital-fact",
+    "decisionRights": {
+      "original": {
+        "question": "지금 함께 정하려는 일은 무엇이며 아직 결정하지 않은 상태는 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+    "decisionRights": {
+      "original": {
+        "question": "지금 결정에 필요한 정보와 나중에 확인할 부담은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P2:a-meaning-needs-operations",
+    "decisionRights": {
+      "original": {
+        "question": "지키고 싶은 가치가 이번 주에는 어떤 선택을 뜻하는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P1:a-quiet-system-support",
+    "decisionRights": {
+      "original": {
+        "question": "장치가 멈췄을 때 누가 알아차리고 무엇을 할 수 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-shared-private-money",
+    "decisionRights": {
+      "original": {
+        "question": "함께 알아야 할 정보와 각자 결정할 정보는 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:family-choice-not-family-duty",
+    "decisionRights": {
+      "original": {
+        "question": "이번 선택이 다음에도 계속될 약속으로 이해될 여지가 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:clash-not-decision-cause",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 의견은 아직 반영되지 않았는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P2:b-sensory-common-space",
+    "decisionRights": {
+      "original": {
+        "question": "공동으로 바꿀 조건과 각자 공간에서 고를 조건은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-resource-explanation",
+    "decisionRights": {
+      "original": {
+        "question": "이 비용의 목적과 지금 감당할 수 있는 범위는 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-visible-only-finish",
+    "decisionRights": {
+      "original": {
+        "question": "지금 내가 끝냈다고 보는 지점과 당신에게 남은 일은 어디인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P2:b-acknowledgement-not-assignment",
+    "decisionRights": {
+      "original": {
+        "question": "알아주길 바라는 일과 실제로 덜 맡고 싶은 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+    "decisionRights": {
+      "original": {
+        "question": "이 선택이 반복되면 누가 어떤 시간을 더 써야 하는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-family-choice-boundaries",
+    "decisionRights": {
+      "original": {
+        "question": "관계를 이어가면서도 함께 정할 경계는 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-receivable-help",
+    "decisionRights": {
+      "original": {
+        "question": "받고 싶은 도움과 직접 이어갈 부분은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-release-care-debt",
+    "decisionRights": {
+      "original": {
+        "question": "고마움과 별개로 다음부터 누가 끝까지 맡을 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-care-repair-path",
+    "decisionRights": {
+      "original": {
+        "question": "다음 번부터 더 이상 한쪽이 기억하지 않아도 될 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P3:b-family-boundary-contribution",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 내용은 함께 전하고 어떤 것은 각자에게 남길 것인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+    "decisionRights": {
+      "original": {
+        "question": "완료를 판단할 사람과 다음 필요를 확인할 사람은 누구인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+    "decisionRights": {
+      "original": {
+        "question": "누구에게 어디까지 전해도 되는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:two-rest-windows",
+    "decisionRights": {
+      "original": {
+        "question": "두 사람 각각에게 실제로 중단 없는 시간이 남는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-check-impact-before-correction",
+    "decisionRights": {
+      "original": {
+        "question": "내가 말한 수정 중 무엇이 필요 정보이고 무엇이 새 기준인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P1:b-visible-practical-support",
+    "decisionRights": {
+      "original": {
+        "question": "지금 끝난 부분과 이후에도 확인할 부분은 어디인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+    "decisionRights": {
+      "original": {
+        "question": "내가 자유롭게 결정할 영역도 똑같이 남아 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-transition-repair-path",
+    "decisionRights": {
+      "original": {
+        "question": "지금의 시간에 맞게 줄이거나 바꿀 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "생활 조건이 바뀐다면 다음 업무 주기에서 가능 범위를 다시 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-change-without-handover",
+    "decisionRights": {
+      "original": {
+        "question": "지금까지 방식으로 계속하기 어려운 일과 잠시 줄일 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-name-pending-answer",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 자료를 더 보면 답하거나 거절할 수 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P4:b-avoids-budget-answer",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 정보가 더 있어야 결정하거나 거절할 수 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+    "decisionRights": {
+      "original": {
+        "question": "지금 단독으로 답할 수 있는 내용과 확인이 필요한 내용은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-care-as-debt",
+    "decisionRights": {
+      "original": {
+        "question": "어느 단계부터 실제로 넘기고 싶은가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-handover-before-change",
+    "decisionRights": {
+      "original": {
+        "question": "다음 주기부터 계속할 일과 멈출 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "생활 조건이 바뀐다면 다음 업무 주기에서 가능 범위를 다시 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:competence-with-rotation",
+    "decisionRights": {
+      "original": {
+        "question": "무엇을 알면 혼자 끝낼 수 있으며 언제 다시 확인할 것인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P2:a-rest-is-a-resource",
+    "decisionRights": {
+      "original": {
+        "question": "누가 쉬고 누가 대기하는지 실제 시간을 같이 볼 수 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-leave-family-choice-open",
+    "decisionRights": {
+      "original": {
+        "question": "외부에 답하기 전에 두 사람이 정할 조건은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P2:clash-and-two-standards",
+    "decisionRights": {
+      "original": {
+        "question": "현재 함께 정할 기준과 각자 정할 기준은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs",
+    "decisionRights": {
+      "original": {
+        "question": "동의하는 부분과 다른 답을 유지할 부분은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty",
+    "decisionRights": {
+      "original": {
+        "question": "같이 확인할 결과와 각자 정할 방법은 어디까지인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+    "decisionRights": {
+      "original": {
+        "question": "이 강점을 쓰면서도 각자 남길 선택은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+    "decisionRights": {
+      "original": {
+        "question": "이 기여를 무리 없이 계속할 조건은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-family-with-common-choice",
+    "decisionRights": {
+      "original": {
+        "question": "다음 요청에서도 함께 확인할 경계는 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:family-image-becomes-cost",
+    "decisionRights": {
+      "original": {
+        "question": "이번 약속이 다음에도 해야 한다는 기대를 남기는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P1:decision-and-influence",
+    "decisionRights": {
+      "original": {
+        "question": "아직 검토하지 못한 조건은 무엇이며 언제 답할 수 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:money-purpose-difference",
+    "decisionRights": {
+      "original": {
+        "question": "줄이려는 것은 돈인가, 준비 시간인가, 불확실함인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-care-with-whole-task",
+    "decisionRights": {
+      "original": {
+        "question": "내가 맡으면 당신에게 남지 않을 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+    "decisionRights": {
+      "original": {
+        "question": "현재 내가 끝낸 일과 당신이 알고 있어야 할 미정 항목은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+    "decisionRights": {
+      "original": {
+        "question": "함께 결정하려면 어떤 정보까지 필요한가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-support-before-family-contact",
+    "decisionRights": {
+      "original": {
+        "question": "상대에게 알려도 되는 내용과 확인 후 답할 내용은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:scores-of-past-work",
+    "decisionRights": {
+      "original": {
+        "question": "지금 해결할 한 가지와 별도로 이야기할 과거 주제는 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:decision-silence-loop",
+    "decisionRights": {
+      "original": {
+        "question": "지금까지의 답 중 실제 동의와 단순 보류는 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+    "decisionRights": {
+      "original": {
+        "question": "다음 결정에서 서로의 선택을 어떻게 남길 것인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-answer-pending-plan",
+    "decisionRights": {
+      "original": {
+        "question": "무엇은 지금 답할 수 있고 무엇은 더 확인해야 하는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-standards-without-performance-review",
+    "decisionRights": {
+      "original": {
+        "question": "지금 꼭 바꿀 일과 그대로 두어도 되는 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P4:shared-strength-not-shared-score",
+    "decisionRights": {
+      "original": {
+        "question": "자주 할 수 있는 기여와 지금은 맡기 어려운 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+    "decisionRights": {
+      "original": {
+        "question": "함께 쓰는 영역에서 꼭 필요한 기준은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P1:predictability-and-revision",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 변경을 미리 알아야 자신의 일정을 준비할 수 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:care-manager-loop",
+    "decisionRights": {
+      "original": {
+        "question": "이 일이 필요하다는 사실을 누가 처음 알아차리고 다음에도 기억하는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P3:b-useful-simplification",
+    "decisionRights": {
+      "original": {
+        "question": "이 방법이 누구의 기억을 줄이고 누구의 확인을 늘리는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+    "decisionRights": {
+      "original": {
+        "question": "줄일 일·새로 맡을 일·다시 볼 때는 언제인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "생활 조건이 바뀐다면 다음 업무 주기에서 가능 범위를 다시 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+    "decisionRights": {
+      "original": {
+        "question": "그 확인을 하지 않으면 실제 어떤 일이 남는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+    "decisionRights": {
+      "original": {
+        "question": "아직 동의하기 어려운 한 가지 조건은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-state-completion-boundary",
+    "decisionRights": {
+      "original": {
+        "question": "내가 혼자 마칠 수 있으려면 어떤 정보와 권한이 필요한가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-two-family-boundaries",
+    "decisionRights": {
+      "original": {
+        "question": "누구에게 무엇을 언제까지 답하고 어떤 정보는 전하지 않을 것인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 결과면 유지하고 어떤 부담이면 다시 바꿀 것인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:detected-clash-shared-timing",
+    "decisionRights": {
+      "original": {
+        "question": "이번 변화에서 실제로 조정할 일이 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-competence-with-rotation",
+    "decisionRights": {
+      "original": {
+        "question": "역할을 바꿀 때 무엇을 함께 넘겨야 하는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-stop-remaking-method",
+    "decisionRights": {
+      "original": {
+        "question": "결과가 같다면 달라도 되는 방식은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:criteria-revision-loop",
+    "decisionRights": {
+      "original": {
+        "question": "처음 합의에서 무엇이 달라졌고 누가 그 정보를 못 받았는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-standard-remakes",
+    "decisionRights": {
+      "original": {
+        "question": "처음 합의한 완료 기준에서 무엇이 실제로 빠졌는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-visible-full-process",
+    "decisionRights": {
+      "original": {
+        "question": "정보와 결정권까지 있어야 혼자 끝낼 수 있는 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-care-not-default-manager",
+    "decisionRights": {
+      "original": {
+        "question": "누가 마지막 확인을 하고 다음 필요를 알아차릴 것인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-unilateral-budget",
+    "decisionRights": {
+      "original": {
+        "question": "지금 바꿀 수 없는 것으로 처리된 항목이 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect",
+    "decisionRights": {
+      "original": {
+        "question": "지금 함께 확인하고 싶은 생활 항목이 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P1:a-operating-standards",
+    "decisionRights": {
+      "original": {
+        "question": "어디까지가 필요한 기본이고 어떤 부분은 A의 선호인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P3:a-notice-with-permission",
+    "decisionRights": {
+      "original": {
+        "question": "지금 직접 하고 싶은 부분과 도움을 고를 부분은 어디인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P4:b-expands-social-cost",
+    "decisionRights": {
+      "original": {
+        "question": "참석 여부와 별개로 맡을 수 있는 준비가 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:values-meet-operating-detail",
+    "decisionRights": {
+      "original": {
+        "question": "이 방식이 지키는 가치와 실제 드는 시간은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 임시 약속을 언제 다시 검토하면 좋은가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-advance-plan-information",
+    "decisionRights": {
+      "original": {
+        "question": "이 중 함께 바꿀 수 있는 항목과 미리 알아야 할 항목은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-update-family-information",
+    "decisionRights": {
+      "original": {
+        "question": "지금 요청받은 것 중 함께 결정할 항목은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+    "decisionRights": {
+      "original": {
+        "question": "이 연결이 실제 도움이 되려면 어떤 확인이 필요한가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-kinship-commitment",
+    "decisionRights": {
+      "original": {
+        "question": "다른 사람에게 약속하기 전에 무엇을 함께 확인해야 하는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:budget-permission-loop",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 정보가 공동 비용의 결정에 꼭 필요한가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+    "decisionRights": {
+      "original": {
+        "question": "이번 활동에서 함께 즐길 부분과 감당할 준비는 어디까지인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P3:a-complete-task-ownership",
+    "decisionRights": {
+      "original": {
+        "question": "완료까지 맡을 수 있는 일과 공동 조정이 필요한 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-new-routine-small-test",
+    "decisionRights": {
+      "original": {
+        "question": "이 방법을 멈출 조건과 되돌릴 담당은 누구인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+    "decisionRights": {
+      "original": {
+        "question": "내 제안에서 지금 바꿀 수 있는 부분은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P1:b-adaptable-day-plan",
+    "decisionRights": {
+      "original": {
+        "question": "이번 변경 때문에 다시 해야 할 일과 그 담당은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:old-fairness-after-change",
+    "decisionRights": {
+      "original": {
+        "question": "이전 합의에서 지금 감당하기 어려운 부분은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:rest-order-and-waiting",
+    "decisionRights": {
+      "original": {
+        "question": "각자 언제 실제로 일을 내려놓을 수 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-rule-with-revision",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 기준은 편하고 어떤 부분은 직접 고르고 싶은가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P4:a-corrects-unagreed-standard",
+    "decisionRights": {
+      "original": {
+        "question": "그 기준은 안전 때문인가, 함께 정한 조건인가, A의 선호인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-return-budget-authority",
+    "decisionRights": {
+      "original": {
+        "question": "이 항목에서 B가 실제로 거절하거나 바꿀 수 있는 것은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-revise-completion-standard",
+    "decisionRights": {
+      "original": {
+        "question": "다음에 같은 일을 할 때 무엇이면 끝났다고 볼 수 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+    "decisionRights": {
+      "original": {
+        "question": "무엇이 언제부터 달라지고 어떤 일은 그대로 남는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+    "decisionRights": {
+      "original": {
+        "question": "둘 다 남기고 싶은 목적과 줄일 수 있는 규모는 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+    "decisionRights": {
+      "original": {
+        "question": "우리가 실제로 합의한 항목은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-care-without-default-manager",
+    "decisionRights": {
+      "original": {
+        "question": "이 강점을 살리면서 한쪽이 내려놓을 일은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:family-request-vs-common-consent",
+    "decisionRights": {
+      "original": {
+        "question": "어느 부분은 개인이 정하고 어느 부분은 함께 정해야 하는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-own-unseen-preparation",
+    "decisionRights": {
+      "original": {
+        "question": "A가 기억하지 않아도 되려면 B에게 어떤 정보와 권한이 필요한가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-pending-decision-return",
+    "decisionRights": {
+      "original": {
+        "question": "무엇을 확인하면 다음 대화에서 답할 수 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P4:a-management-becomes-permission",
+    "decisionRights": {
+      "original": {
+        "question": "공동 결정에 필요한 정보와 각자에게 남길 사적 정보는 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-budget-clarity",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 비용이 공동생활을 위한 것이며 누가 결정에 참여하는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-space-and-common-work",
+    "decisionRights": {
+      "original": {
+        "question": "각자 정할 일과 함께 확인할 일은 계속 분명한가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-money-repair-path",
+    "decisionRights": {
+      "original": {
+        "question": "이 합의를 언제 다시 살펴볼 것인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+    "decisionRights": {
+      "original": {
+        "question": "그 지출은 어떤 목적이며 누구의 자원에 영향을 주는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P3:same-type-separate-workload",
+    "decisionRights": {
+      "original": {
+        "question": "같은 일을 둘 다 준비하거나 아무도 확인하지 않는 구간은 어디인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-holiday-finality",
+    "decisionRights": {
+      "original": {
+        "question": "어떤 조건을 아직 말하지 못했으며 언제 검토할 수 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-own-one-whole-process",
+    "decisionRights": {
+      "original": {
+        "question": "이 일이 끝나기까지 내가 계속 알려줘야 하는 부분은 무엇인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-autonomy-with-common-duty",
+    "decisionRights": {
+      "original": {
+        "question": "함께 확인할 일과 각자 정할 일은 어떻게 나눌 것인가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:coercion-is-outside-style",
+    "decisionRights": {
+      "original": {
+        "question": "거절하거나 중단했을 때 위협·불이익이 생길 우려가 있는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P2:harmony-and-household-terms",
+    "decisionRights": {
+      "original": {
+        "question": "누가 알아차리고 누가 확인까지 할지 정했는가?",
+        "authority": "공동 항목은 양쪽 동의, 개인 영역은 본인 선택. 실제 권한을 유형이나 소득으로 배정하지 않음.",
+        "cost": "금액·시간·에너지의 실제 값은 UNKNOWN. 필요한 준비·실행·대기 비용을 조건부 질문으로 확인.",
+        "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+        "processRoles": [
+          "notice",
+          "prepare",
+          "decide",
+          "execute",
+          "monitor",
+          "handle_exception",
+          "remember_next_cycle"
+        ],
+        "assignedBy": "people_consent_not_gender_or_type"
+      },
+      "actualAuthority": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "assignedBy": "people_consent_not_gender_or_type"
+    }
+  }
+]

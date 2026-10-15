@@ -1,0 +1,898 @@
+[
+  {
+    "id": "cmpr:material:CH06.P3:ba-unanswered-plan",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-common-space-private-time",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P4:category-is-not-marital-fact",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P2:a-meaning-needs-operations",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P1:a-quiet-system-support",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-shared-private-money",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:family-choice-not-family-duty",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:clash-not-decision-cause",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P2:b-sensory-common-space",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-resource-explanation",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-visible-only-finish",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P2:b-acknowledgement-not-assignment",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-family-choice-boundaries",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-receivable-help",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-release-care-debt",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-care-repair-path",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P3:b-family-boundary-contribution",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:two-rest-windows",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-check-impact-before-correction",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P1:b-visible-practical-support",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-transition-repair-path",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-change-without-handover",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-name-pending-answer",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P4:b-avoids-budget-answer",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-care-as-debt",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-handover-before-change",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:competence-with-rotation",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P2:a-rest-is-a-resource",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-leave-family-choice-open",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P2:clash-and-two-standards",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-family-with-common-choice",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:family-image-becomes-cost",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P1:decision-and-influence",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:money-purpose-difference",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-care-with-whole-task",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-support-before-family-contact",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:scores-of-past-work",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:decision-silence-loop",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-answer-pending-plan",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-standards-without-performance-review",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P4:shared-strength-not-shared-score",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P1:predictability-and-revision",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:care-manager-loop",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P3:b-useful-simplification",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-state-completion-boundary",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-two-family-boundaries",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:detected-clash-shared-timing",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-competence-with-rotation",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-stop-remaking-method",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:criteria-revision-loop",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-standard-remakes",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-visible-full-process",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-care-not-default-manager",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-unilateral-budget",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P1:a-operating-standards",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P3:a-notice-with-permission",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P4:b-expands-social-cost",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:values-meet-operating-detail",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-advance-plan-information",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-update-family-information",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-kinship-commitment",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:budget-permission-loop",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P3:a-complete-task-ownership",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-new-routine-small-test",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P1:b-adaptable-day-plan",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:old-fairness-after-change",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:rest-order-and-waiting",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-rule-with-revision",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P4:a-corrects-unagreed-standard",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-return-budget-authority",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-revise-completion-standard",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-care-without-default-manager",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:family-request-vs-common-consent",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-own-unseen-preparation",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-pending-decision-return",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P4:a-management-becomes-permission",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-budget-clarity",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-space-and-common-work",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-money-repair-path",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P3:same-type-separate-workload",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-holiday-finality",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-own-one-whole-process",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-autonomy-with-common-duty",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:coercion-is-outside-style",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P2:harmony-and-household-terms",
+    "family": {
+      "actualConflict": "UNKNOWN",
+      "actualConsent": "UNKNOWN",
+      "topicIsFact": false
+    }
+  }
+]

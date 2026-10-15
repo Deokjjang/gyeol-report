@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "cmpr:material:CH06.P3:ba-unanswered-plan",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-common-space-private-time",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P4:category-is-not-marital-fact",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:unexpected-cost-joint-review",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P2:a-meaning-needs-operations",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P1:a-quiet-system-support",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-shared-private-money",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:family-choice-not-family-duty",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:clash-not-decision-cause",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P2:b-sensory-common-space",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-resource-explanation",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-visible-only-finish",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P2:b-acknowledgement-not-assignment",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-opportunity-with-maintenance",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-family-choice-boundaries",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-receivable-help",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-release-care-debt",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-care-repair-path",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P3:b-family-boundary-contribution",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:notice-prepare-execute-monitor",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-check-before-kinship-promise",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P3:two-rest-windows",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-check-impact-before-correction",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P1:b-visible-practical-support",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-money-choice-without-permission",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-transition-repair-path",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "생활 조건이 바뀐다면 다음 업무 주기에서 가능 범위를 다시 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-change-without-handover",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-name-pending-answer",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P4:b-avoids-budget-answer",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-confirm-before-external-promise",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-care-as-debt",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-handover-before-change",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "생활 조건이 바뀐다면 다음 업무 주기에서 가능 범위를 다시 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:competence-with-rotation",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P2:a-rest-is-a-resource",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-leave-family-choice-open",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P2:clash-and-two-standards",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-peer-voice-not-identical-needs",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-autonomy-clear-common-duty",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-shared-budget-clarity",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P4:harmony-cannot-assign-spouse",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-family-with-common-choice",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:family-image-becomes-cost",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P1:decision-and-influence",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:money-purpose-difference",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-care-with-whole-task",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-quiet-maintenance-report",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-joint-cost-private-discretion",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-support-before-family-contact",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:scores-of-past-work",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:decision-silence-loop",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-decision-with-two-voices",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-answer-pending-plan",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-standards-without-performance-review",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P4:shared-strength-not-shared-score",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:cleanliness-and-comfort-criteria",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P1:predictability-and-revision",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:care-manager-loop",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P3:b-useful-simplification",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-review-after-life-change",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "생활 조건이 바뀐다면 다음 업무 주기에서 가능 범위를 다시 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-question-hidden-upkeep",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:directness-with-checkable-dissent",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-state-completion-boundary",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P4:agreement-two-family-boundaries",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:novelty-with-maintenance-owner",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:detected-clash-shared-timing",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-competence-with-rotation",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-stop-remaking-method",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:criteria-revision-loop",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-standard-remakes",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-visible-full-process",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-care-not-default-manager",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-unilateral-budget",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:no-pair-relation-no-hidden-defect",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P1:a-operating-standards",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P3:a-notice-with-permission",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P4:b-expands-social-cost",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P2:values-meet-operating-detail",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P4:ba-handover-before-new-schedule",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-advance-plan-information",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-update-family-information",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P2:recall-harmony-conditional-support",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P3:ba-kinship-commitment",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P3:budget-permission-loop",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P1:ba-enjoyment-with-maintenance",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P3:a-complete-task-ownership",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-new-routine-small-test",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-return-choice-before-commitment",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH03.P1:b-adaptable-day-plan",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:old-fairness-after-change",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:rest-order-and-waiting",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P1:ab-rule-with-revision",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P4:a-corrects-unagreed-standard",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P2:a-return-budget-authority",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-revise-completion-standard",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH06.P2:ba-prepare-changed-work-window",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P2:ab-expense-purpose-dialogue",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P2:harm-unsupported-wonjin",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-care-without-default-manager",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P1:family-request-vs-common-consent",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P3:b-own-unseen-preparation",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH08.P1:joint-pending-decision-return",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH02.P4:a-management-becomes-permission",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH04.P1:shared-budget-clarity",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P4:recall-space-and-common-work",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P3:recall-money-repair-path",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P3:marriage-pattern-not-love-label",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P3:same-type-separate-workload",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P3:ab-holiday-finality",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH05.P4:ab-own-one-whole-process",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH09.P1:recall-autonomy-with-common-duty",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH07.P4:coercion-is-outside-style",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  },
+  {
+    "id": "cmpr:material:CH01.P2:harmony-and-household-terms",
+    "transition": {
+      "actualEvent": "UNKNOWN",
+      "date": null,
+      "reviewTrigger": "다음 같은 결정 또는 업무 주기에서 완료·남은 부담·예외를 확인",
+      "temporalEvidenceImported": false
+    }
+  }
+]
