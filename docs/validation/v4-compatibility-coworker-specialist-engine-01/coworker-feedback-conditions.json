@@ -1,0 +1,7069 @@
+{
+  "required": [
+    "observedArtifact",
+    "observedIssue",
+    "potentialImpact",
+    "senderIntention",
+    "recipientInterpretation",
+    "requestedChange",
+    "availableTime",
+    "decisionAuthority",
+    "followupVerification"
+  ],
+  "taskProblemIsPersonEvaluation": false,
+  "actualRecipientReaction": "UNKNOWN",
+  "actualChecks": [
+    {
+      "id": "cwpr:material:CH01.P3:pace-and-done",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P2:missing-relation-withhold",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P1:a-logical-model",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P3:ab-review-scope-creep",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P4:ab-fix-one-item",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P2:a-method-discretion",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P4:capacity-before-expansion",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P4:a-public-critique-cost",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P2:ba-resource-warning",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P1:recall-learning-procedure",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P4:result-and-respect",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P4:ba-report-blocker-not-person",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P1:ab-peer-draft",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P3:b-clear-completion",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P3:recall-review-priority",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-unowned-integration",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:disagreement-becomes-competence",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:division-gap",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-credit-check",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P3:unknown-type-no-substitution",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P2:a-feedback-dignity",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P1:a-first-practical-trial",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-handoff-status",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P2:harmony-is-classification",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:revision-without-stop",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P1:ba-overlap-not-rivalry",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-boundary-for-risk",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P3:ab-decision-too-soon",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-request-full-impact",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P3:ab-changing-priority",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P1:ab-alternative-window",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P2:three-part-formation",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P3:recall-safe-support",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P4:reliable-minimum",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-state-integration-limit",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P4:learning-after-work",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P4:ba-decline-addition",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P2:idea-to-test",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P1:shared-space-different-questions",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P4:phase-before-person",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:completion-mismatch",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P4:dissent-as-testable-choice",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-dependency-time",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P4:b-directive-without-authority",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P1:question-before-start",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-priority-escalation",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-name-pending-review",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P2:structure-and-detail",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:feedback-as-person-score",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-make-blocker-visible",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P2:ab-background-not-answer",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P2:ba-question-channel",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-common-not-conflict",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P2:recall-bounded-support-fusion",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P1:recall-different-checks",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P1:b-private-synthesis",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P3:b-practical-assistance",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P4:a-fast-fix-without-notice",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P3:help-with-explicit-return",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P3:parallel-review-rejoin",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P4:recall-work-not-rank",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P3:routine-exception-window",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P1:b-procedure-memory",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P1:ba-change-the-premise",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P4:ab-pass-uncertainty",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:duplicate-edit",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P2:a-clear-criteria",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P4:a-rescue-without-consent",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:deadline-dependency",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P3:draft-before-polish",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:no-relation-current-issue",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P4:ab-propose-reversible-test",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P3:a-system-review",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-review-level",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P4:b-relational-overload",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P1:ba-shown-not-promised",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P1:a-shared-purpose",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-separate-observation",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P3:ba-observe-is-judge",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:handoff-omission",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P1:standard-and-experiment",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P1:ab-corrective-question",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P4:sustainable-help",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P3:ba-detail-cost",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P1:ab-produced-example",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-ask-intent-without-excusing",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-receive-not-accept",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:clash-and-current-work",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P1:b-value-filter",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:same-source-no-false-conflict",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P3:ab-help-replaces-work",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P3:b-contradiction-question",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-support-exit",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-relation-gate",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P2:ab-continuous-record",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P1:shared-action-no-double-work",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P2:autonomy-and-continuity",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:additional-work-hidden",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:half-harmony-not-agreement",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P1:ab-resource-boundary",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P4:ab-request-with-acceptance",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:priority-conflict",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P3:ab-ideas-become-obligation",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P4:recall-difference-with-output",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P2:b-bounded-autonomy",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P3:ba-late-change-after-start",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P4:b-praise-without-scope",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P2:a-focus-window",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P1:output-not-rank",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P4:ab-capacity-query",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-change-with-record",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P1:b-current-observation",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P2:ba-other-model",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P1:focus-and-contact",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P2:recall-idea-test",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-change-review",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:unsupported-punishment",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P2:direct-and-receivable",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P1:recall-scope-of-help",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P1:recall-testable-dissent",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P1:ba-new-connection-with-limits",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P4:b-hidden-disagreement",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:coercion-not-style",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P1:repair-done-state",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:review-depth-gap",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P2:b-meaning-and-contact",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P3:a-new-links",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P3:recall-actual-done",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P1:shared-care-no-invisible-task",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P3:recognize-integration-labor",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P3:b-limit-invisible-help",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P4:ba-prioritize-review",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P2:ba-rule-explanation",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P2:ab-criterion-not-command",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P3:recall-handoff-responsibility",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P1:responsibility-border",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P4:recall-credit-next-task",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P4:a-sprint-dependency",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P2:harm-not-hostility",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P2:b-next-step-needed",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P4:joint-meeting-decision-log",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P2:clash-not-failure",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P1:shared-records-different-checks",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P3:ba-social-participation-duty",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-do-not-claim-authority",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P3:spoken-versus-private",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P2:recall-capacity-choice",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P3:a-participation-signal",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P4:recall-change-without-history",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P2:ab-supported-learning",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P2:b-time-to-answer",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P4:ba-confirm-receipt",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:fatigue-without-rebalance",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P3:shared-precision-not-proof",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH09.P2:recall-handoff-interface",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P2:future-and-current-constraint",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH04.P1:shared-values-usable-output",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:information-silo",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P2:ba-closure-list",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P3:request-without-input",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH05.P2:ab-constraint-check",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P4:support-not-transfer",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH03.P3:b-social-translation",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P3:a-reroute-proposal",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:meeting-closure-gap",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH07.P4:credit-erasure",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH08.P2:a-limit-revision",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH01.P4:repeat-or-project",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH06.P1:ba-independent-second-view",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    },
+    {
+      "id": "cwpr:material:CH02.P1:a-verified-record",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ]
+    }
+  ]
+}

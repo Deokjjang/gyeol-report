@@ -1,0 +1,1722 @@
+[
+  {
+    "id": "cwpr:material:CH01.P3:pace-and-done",
+    "coreMeaning": "핵심만 듣고 시험하려는 선호와 일정 약속을 먼저 보는 선호를 구분한다.",
+    "workStage": "plan",
+    "outputType": "시연 인계표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P2:missing-relation-withhold",
+    "coreMeaning": "교차 관계가 검출되지 않으면 성격 관계를 지어내지 않고 확인 질문을 남긴다.",
+    "workStage": "information",
+    "outputType": "근거 부재 안내",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P1:a-logical-model",
+    "coreMeaning": "A의 내부 논리 정리를 공유 가능한 가정과 질문으로 바꾸는 조건을 연구한다.",
+    "workStage": "information",
+    "outputType": "가정표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P3:ab-review-scope-creep",
+    "coreMeaning": "A의 즉시 수정 요청이 B의 남은 시간을 줄일 조건을 연구한다.",
+    "workStage": "review",
+    "outputType": "수정 범위표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P4:ab-fix-one-item",
+    "coreMeaning": "A가 지적을 한 항목의 사실·영향·요청으로 좁힐 조건을 연구한다.",
+    "workStage": "feedback",
+    "outputType": "항목 의견서",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P2:a-method-discretion",
+    "coreMeaning": "A에게 결과의 경계와 방법의 재량을 나누어 설명할 조건을 연구한다.",
+    "workStage": "plan",
+    "outputType": "재량 범위표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P4:capacity-before-expansion",
+    "coreMeaning": "새 협업 기회를 넓히기 전 기존 작업의 가용 여력을 비교한다.",
+    "workStage": "plan",
+    "outputType": "여력 비교표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P4:a-public-critique-cost",
+    "coreMeaning": "A의 허점 지적이 공개 평가로 바뀔 조건을 연구한다.",
+    "workStage": "feedback",
+    "outputType": "검토 의견",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P2:ba-resource-warning",
+    "coreMeaning": "A 수신 편관을 강요가 아니라 확인된 업무 한도의 질문과 구분한다.",
+    "workStage": "midpoint",
+    "outputType": "담당 영향표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P1:recall-learning-procedure",
+    "coreMeaning": "앞서 소개한 절차 학습만 다음 확인 행동으로 회수한다.",
+    "workStage": "maintenance",
+    "outputType": "학습 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P4:result-and-respect",
+    "coreMeaning": "작업물의 기준과 상대를 존중하는 전달을 동시에 확인한다.",
+    "workStage": "feedback",
+    "outputType": "피드백 기준",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P4:ba-report-blocker-not-person",
+    "coreMeaning": "B가 반대나 막힘을 작업 상태로 표시하여 A에게 알릴 조건을 연구한다.",
+    "workStage": "execution",
+    "outputType": "작업 상태 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P1:ab-peer-draft",
+    "coreMeaning": "B 기준 비견 정의와 A의 대안 제시를 초안 비교 질문으로 연구한다.",
+    "workStage": "draft",
+    "outputType": "비교 초안",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P3:b-clear-completion",
+    "coreMeaning": "B가 완료 기준을 언어로 정리할 때 동료 검토와 승인을 나눈다.",
+    "workStage": "approval",
+    "outputType": "완료 기준표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P3:recall-review-priority",
+    "coreMeaning": "이미 소개된 양쪽 수정 범위 조정을 다음 검토 원칙으로 묶는다.",
+    "workStage": "maintenance",
+    "outputType": "검토 범위 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P1:repair-unowned-integration",
+    "coreMeaning": "앞서 실제 소개한 통합 공백을 빈 담당 확인 절차로 연결한다.",
+    "workStage": "plan",
+    "outputType": "통합 체크표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P4:disagreement-becomes-competence",
+    "coreMeaning": "다른 우선 기준을 상대의 낮은 실력으로 읽을 위험을 연구한다.",
+    "workStage": "feedback",
+    "outputType": "판단 기준표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P1:division-gap",
+    "coreMeaning": "분담 목록에서 아무도 맡지 않은 통합 작업의 부담을 연구한다.",
+    "workStage": "plan",
+    "outputType": "통합 담당 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P4:joint-credit-check",
+    "coreMeaning": "공동 결과의 기여 출처를 기록하되 인사 평가와 나눈다.",
+    "workStage": "delivery",
+    "outputType": "기여 출처 기록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P3:unknown-type-no-substitution",
+    "coreMeaning": "MBTI 미상인 사람의 업무 선호는 상대 유형으로 보충하지 않는다.",
+    "workStage": "information",
+    "outputType": "선호 확인 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P2:a-feedback-dignity",
+    "coreMeaning": "A가 피드백을 받을 장소와 범위를 구분할 조건을 연구한다.",
+    "workStage": "feedback",
+    "outputType": "수정 대화 요청",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P1:a-first-practical-trial",
+    "coreMeaning": "A의 직접 해보기 선호를 안전한 작은 시연의 조건으로 연구한다.",
+    "workStage": "draft",
+    "outputType": "소규모 시연",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P2:a-handoff-status",
+    "coreMeaning": "A가 넘길 자료에 상태·미완료·불확실성을 포함한다.",
+    "workStage": "handoff",
+    "outputType": "상태 인계 묶음",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P2:harmony-is-classification",
+    "coreMeaning": "실제 子丑 육합은 전통 관계 분류이며 협업 능력 검증과 구분한다.",
+    "workStage": "goal",
+    "outputType": "근거 설명 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P3:revision-without-stop",
+    "coreMeaning": "수정 종료 조건이 없어 새 의견이 계속 필수 작업이 될 상황을 연구한다.",
+    "workStage": "revision",
+    "outputType": "수정 종료표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P1:ba-overlap-not-rivalry",
+    "coreMeaning": "A 수신 겁재를 실제 경쟁으로 단정하지 않고 겹친 담당 확인과 구분한다.",
+    "workStage": "execution",
+    "outputType": "중복 작업 지도",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P4:joint-boundary-for-risk",
+    "coreMeaning": "부당행위 가능성이 있으면 일반 조율 대신 안전·지원 선택을 우선한다.",
+    "workStage": "feedback",
+    "outputType": "지원 통로 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P3:ab-decision-too-soon",
+    "coreMeaning": "A의 빠른 결론이 B의 미검토 조건을 동의로 덮을 수 있는 상황을 연구한다.",
+    "workStage": "approval",
+    "outputType": "검토 상태표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P2:a-request-full-impact",
+    "coreMeaning": "A가 추가 요청 전에 연결된 검토·인계 작업을 묻는다.",
+    "workStage": "execution",
+    "outputType": "추가 영향 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P3:ab-changing-priority",
+    "coreMeaning": "A가 우선순위를 바꿀 때 B의 이미 시작한 작업을 확인한다.",
+    "workStage": "execution",
+    "outputType": "우선순위 변경안",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P1:ab-alternative-window",
+    "coreMeaning": "B 수신 편재 정의를 새 방법 제안의 확인 조건과 별도로 둔다.",
+    "workStage": "plan",
+    "outputType": "한정 시험안",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P2:three-part-formation",
+    "coreMeaning": "삼합의 완전 구성과 두 글자 반합을 다른 계산으로 보존한다.",
+    "workStage": "review",
+    "outputType": "관계 구성표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P3:recall-safe-support",
+    "coreMeaning": "실제 도입된 안전·지원 경계를 지속 기준으로 회수한다.",
+    "workStage": "maintenance",
+    "outputType": "안전·지원 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P4:reliable-minimum",
+    "coreMeaning": "서로 확인 가능한 최소 약속을 반복 신뢰의 질문으로 연구한다.",
+    "workStage": "maintenance",
+    "outputType": "반복 확인 목록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P3:b-state-integration-limit",
+    "coreMeaning": "B가 자기 수정의 대상·버전·통합 상태를 A에게 표시한다.",
+    "workStage": "revision",
+    "outputType": "충돌 항목표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P4:learning-after-work",
+    "coreMeaning": "잘된 작업을 다음에 다시 사용할 절차로 남기는 조건을 연구한다.",
+    "workStage": "maintenance",
+    "outputType": "절차 학습 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P4:ba-decline-addition",
+    "coreMeaning": "B가 추가 지원을 조절하며 A의 기존 일정 영향을 함께 묻는다.",
+    "workStage": "maintenance",
+    "outputType": "추가 지원 답변",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P2:idea-to-test",
+    "coreMeaning": "발상을 넓히는 질문과 작은 작동 시험이 만날 조건을 연구한다.",
+    "workStage": "draft",
+    "outputType": "시험물",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P1:shared-space-different-questions",
+    "coreMeaning": "원리를 묻는 관심이 같아도 질문의 순서와 결론을 따로 남긴다.",
+    "workStage": "review",
+    "outputType": "전제·범위표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P4:phase-before-person",
+    "coreMeaning": "일의 단계와 사람의 능력을 분리하는 것을 협업의 첫 판단 기준으로 둔다.",
+    "workStage": "goal",
+    "outputType": "단계 지도",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P1:completion-mismatch",
+    "coreMeaning": "초안 완료와 사용 가능 완료가 다를 때 인계의 부담을 연구한다.",
+    "workStage": "approval",
+    "outputType": "상태 기준표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P4:dissent-as-testable-choice",
+    "coreMeaning": "다른 의견을 사람의 우열보다 비교 가능한 선택으로 남긴다.",
+    "workStage": "review",
+    "outputType": "대안 비교서",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P1:repair-dependency-time",
+    "coreMeaning": "마감 의존성 문제를 부분 인계와 수신 검토 시간으로 연결한다.",
+    "workStage": "handoff",
+    "outputType": "부분 인계 일정",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P4:b-directive-without-authority",
+    "coreMeaning": "B의 빠른 지시 선호가 동료에게 권한 없는 명령으로 도착할 조건을 연구한다.",
+    "workStage": "revision",
+    "outputType": "변경 제안 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P1:question-before-start",
+    "coreMeaning": "A의 사전 사고 시간과 B의 현장 대응 선호를 착수 전 정보의 질문으로 구분한다.",
+    "workStage": "goal",
+    "outputType": "착수 질문표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P1:repair-priority-escalation",
+    "coreMeaning": "상충한 우선순위를 사실·영향·결정 필요 자료로 정리한다.",
+    "workStage": "plan",
+    "outputType": "우선 조정 요청",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P3:b-name-pending-review",
+    "coreMeaning": "B가 깊은 검토의 미확정 질문과 현재 답할 항목을 나눈다.",
+    "workStage": "review",
+    "outputType": "검토 중간표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P2:structure-and-detail",
+    "coreMeaning": "전체 의존 관계와 세부 오류 검토를 같은 결과물에 연결한다.",
+    "workStage": "review",
+    "outputType": "대조 검토서",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P3:feedback-as-person-score",
+    "coreMeaning": "작업물의 한 문제를 동료 전체의 능력 평가로 확대할 위험을 연구한다.",
+    "workStage": "feedback",
+    "outputType": "관찰 의견",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P3:b-make-blocker-visible",
+    "coreMeaning": "B가 다음 작업을 막는 최소 자료와 필요 시점을 A에게 알린다.",
+    "workStage": "execution",
+    "outputType": "의존 자료 요청",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P2:ab-background-not-answer",
+    "coreMeaning": "B 수신 편인의 지원 분류와 A의 원리 설명을 필요한 배경 정보로 한정한다.",
+    "workStage": "information",
+    "outputType": "근거 요약문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P2:ba-question-channel",
+    "coreMeaning": "A 수신 정인과 B의 부드러운 전달을 필요한 질문만 받을 지원으로 연구한다.",
+    "workStage": "feedback",
+    "outputType": "지원 통로 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P4:joint-common-not-conflict",
+    "coreMeaning": "공통 의미를 보존하고 실제 합의 항목은 별도 확인한다.",
+    "workStage": "plan",
+    "outputType": "공통·합의표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P2:recall-bounded-support-fusion",
+    "coreMeaning": "앞서 실제 도입된 개인 Fusion의 지원 한도만 동일 owner로 회수한다.",
+    "workStage": "maintenance",
+    "outputType": "지원 한도 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P1:recall-different-checks",
+    "coreMeaning": "실제로 소개된 절차 관심과 서로 다른 검토 항목만 다음 작업에 회수한다.",
+    "workStage": "maintenance",
+    "outputType": "다음 검토 기준",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P1:b-private-synthesis",
+    "coreMeaning": "B가 혼자 정리한 생각을 어떤 범위까지 설명할지 연구한다.",
+    "workStage": "information",
+    "outputType": "미확정 질문표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P3:b-practical-assistance",
+    "coreMeaning": "B의 담백한 지원을 특정 막힌 작업의 도움으로 연구한다.",
+    "workStage": "execution",
+    "outputType": "지원 결과",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P4:a-fast-fix-without-notice",
+    "coreMeaning": "A의 현장 타협이 공유되지 않은 변경이 될 조건을 연구한다.",
+    "workStage": "revision",
+    "outputType": "변경 통지",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P3:help-with-explicit-return",
+    "coreMeaning": "서로 가능한 도움을 일부 교환하되 담당 복귀 지점을 남긴다.",
+    "workStage": "execution",
+    "outputType": "지원 종료 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P3:parallel-review-rejoin",
+    "coreMeaning": "나누어 검토한 결과를 다시 합칠 통합 확인을 연구한다.",
+    "workStage": "review",
+    "outputType": "통합 검토본",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P4:recall-work-not-rank",
+    "coreMeaning": "실제로 소개된 권한 UNKNOWN과 작업 기준을 마지막 협업 판단으로 회수한다.",
+    "workStage": "maintenance",
+    "outputType": "담당 확인 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P3:routine-exception-window",
+    "coreMeaning": "반복 절차와 예외 대응을 함께 남길 조건을 연구한다.",
+    "workStage": "maintenance",
+    "outputType": "예외 기록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P1:b-procedure-memory",
+    "coreMeaning": "B가 구체 사례와 순서를 받아들이는 조건을 연구한다.",
+    "workStage": "plan",
+    "outputType": "예시 차이표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P1:ba-change-the-premise",
+    "coreMeaning": "A 수신 상관 정의와 B의 허점 질문을 현행 절차의 확인으로 연구한다.",
+    "workStage": "review",
+    "outputType": "예외 질문서",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P4:ab-pass-uncertainty",
+    "coreMeaning": "A가 인계할 때 확정분과 미완료·불확실성을 함께 남긴다.",
+    "workStage": "handoff",
+    "outputType": "상태 포함 인계",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P4:duplicate-edit",
+    "coreMeaning": "서로 최신본을 모른 채 같은 부분을 고칠 조건을 연구한다.",
+    "workStage": "revision",
+    "outputType": "편집 상태표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P2:a-clear-criteria",
+    "coreMeaning": "A의 명료한 기대 선호를 결과물 기준 확인에 한정한다.",
+    "workStage": "plan",
+    "outputType": "필수 기준표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P4:a-rescue-without-consent",
+    "coreMeaning": "A가 대신 챙길 때 숨은 추가 업무와 담당 경계를 연구한다.",
+    "workStage": "execution",
+    "outputType": "지원 한도 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P1:deadline-dependency",
+    "coreMeaning": "최종 마감은 같아도 중간 결과를 받아야 할 시점이 다른 조건을 연구한다.",
+    "workStage": "handoff",
+    "outputType": "의존 일정표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P3:draft-before-polish",
+    "coreMeaning": "초안과 최종 완성도의 다른 목적을 나누어 연결한다.",
+    "workStage": "draft",
+    "outputType": "방향 확인 초안",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P2:no-relation-current-issue",
+    "coreMeaning": "관계 미검출에도 있을 수 있는 업무 문제를 실제 조건으로만 확인한다.",
+    "workStage": "review",
+    "outputType": "사실 확인표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P4:ab-propose-reversible-test",
+    "coreMeaning": "A가 새 방법을 제안할 때 되돌릴 범위와 B의 기준을 묻는다.",
+    "workStage": "draft",
+    "outputType": "한정 실험 계획",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P3:a-system-review",
+    "coreMeaning": "A의 모순 탐색을 다른 사람이 확인할 수 있는 검토 메모로 연구한다.",
+    "workStage": "review",
+    "outputType": "논리 검토 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P1:repair-review-level",
+    "coreMeaning": "검토 깊이의 차이를 이번 오류 수정과 후속 원인 검토로 나눈다.",
+    "workStage": "review",
+    "outputType": "검토 범위 합의",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P4:b-relational-overload",
+    "coreMeaning": "B가 관계 문제까지 떠안을 때 실제 담당과 지원 한도를 연구한다.",
+    "workStage": "maintenance",
+    "outputType": "지원 경계표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P1:ba-shown-not-promised",
+    "coreMeaning": "A 수신 식신과 B의 표현 선호를 실제 사용 목적을 묻는 결과 예시로 연구한다.",
+    "workStage": "draft",
+    "outputType": "표현 초안",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P1:a-shared-purpose",
+    "coreMeaning": "A가 공동 목표에 의미를 찾는 선호를 현재 결과물의 질문으로 연결한다.",
+    "workStage": "goal",
+    "outputType": "목표 설명문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P2:a-separate-observation",
+    "coreMeaning": "A가 작업 관찰과 능력 평가를 구별해 피드백한다.",
+    "workStage": "feedback",
+    "outputType": "항목 피드백",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P3:ba-observe-is-judge",
+    "coreMeaning": "B가 A의 말투에서 숨은 의도를 확정할 위험을 연구한다.",
+    "workStage": "feedback",
+    "outputType": "의도 확인 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P3:handoff-omission",
+    "coreMeaning": "파일만 넘기고 미완료·불확실성·다음 담당을 빠뜨릴 부담을 연구한다.",
+    "workStage": "handoff",
+    "outputType": "상태 인계표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P1:standard-and-experiment",
+    "coreMeaning": "지킬 기준과 새 방법의 탐색을 같은 목표 안의 다른 기여로 연구한다.",
+    "workStage": "plan",
+    "outputType": "실험 범위표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P1:ab-corrective-question",
+    "coreMeaning": "B 수신 상관의 산출 관계와 A의 검토 질문을 평가 권한과 분리한다.",
+    "workStage": "review",
+    "outputType": "반례 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P4:sustainable-help",
+    "coreMeaning": "기여를 지속하려면 추가 지원의 한도까지 말할 조건을 연구한다.",
+    "workStage": "maintenance",
+    "outputType": "지원 한도 합의",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P3:ba-detail-cost",
+    "coreMeaning": "B의 세부 기준이 A의 이번 목적과 다른 수정량을 만들 조건을 연구한다.",
+    "workStage": "review",
+    "outputType": "수정 이유표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P1:ab-produced-example",
+    "coreMeaning": "B 수신 식신의 산출 관계를 실제 시연 능력과 구분해 예시 전달을 연구한다.",
+    "workStage": "draft",
+    "outputType": "시험 예시",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P3:b-ask-intent-without-excusing",
+    "coreMeaning": "B가 받은 뜻과 실제 관찰을 A에게 질문하되 부당행위를 면책하지 않는다.",
+    "workStage": "feedback",
+    "outputType": "의도·영향 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P3:b-receive-not-accept",
+    "coreMeaning": "B가 요청을 이해했는지와 실제 맡을 수 있는지를 별도로 답한다.",
+    "workStage": "information",
+    "outputType": "요청 응답표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P2:clash-and-current-work",
+    "coreMeaning": "실제 寅申 충과 현재 수정 의견의 충돌을 인과로 연결하지 않는다.",
+    "workStage": "revision",
+    "outputType": "근거·의견 대조",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+    "coreMeaning": "B가 갈등을 피하며 인계 문제를 말하지 않을 조건을 연구한다.",
+    "workStage": "handoff",
+    "outputType": "인수 상태표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P1:b-value-filter",
+    "coreMeaning": "B의 가치 확인을 공동 과제의 사용 목적 질문으로 연구한다.",
+    "workStage": "goal",
+    "outputType": "사용 목적 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P2:same-source-no-false-conflict",
+    "coreMeaning": "같은 원천 의미를 억지 차이로 바꾸지 않고 적용 기준만 확인한다.",
+    "workStage": "plan",
+    "outputType": "공통 조건표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P3:ab-help-replaces-work",
+    "coreMeaning": "A의 대신 처리하려는 지원이 B의 작업 통로를 끊을 조건을 연구한다.",
+    "workStage": "execution",
+    "outputType": "지원 변경 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P3:b-contradiction-question",
+    "coreMeaning": "B의 정의 확인이 A의 다른 가정을 드러낼 조건을 연구한다.",
+    "workStage": "review",
+    "outputType": "정의 대조표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P1:repair-support-exit",
+    "coreMeaning": "반복 지원의 경계 문제를 종료·복귀 확인으로 연결한다.",
+    "workStage": "execution",
+    "outputType": "지원 복귀표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P4:joint-relation-gate",
+    "coreMeaning": "실제 교차 근거의 검출·미검출·미지원 상태를 나눈 뒤 업무 사실을 확인한다.",
+    "workStage": "review",
+    "outputType": "근거 상태표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P2:ab-continuous-record",
+    "coreMeaning": "B 수신 정재 정의와 A의 기록 관심을 빠진 인계 항목 확인으로 연구한다.",
+    "workStage": "handoff",
+    "outputType": "인계 목록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P1:shared-action-no-double-work",
+    "coreMeaning": "빠르게 해보려는 두 선호에 중복 작업을 막을 표시를 연구한다.",
+    "workStage": "execution",
+    "outputType": "시험 배분표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P2:autonomy-and-continuity",
+    "coreMeaning": "다른 작업 방법을 하나의 인계 규격에서 만나게 할 조건을 연구한다.",
+    "workStage": "handoff",
+    "outputType": "인계 묶음",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P3:additional-work-hidden",
+    "coreMeaning": "짧은 추가 요청에 준비·검토·인계의 숨은 작업이 붙을 조건을 연구한다.",
+    "workStage": "execution",
+    "outputType": "요청 영향도",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P2:half-harmony-not-agreement",
+    "coreMeaning": "실제 반합이 있어도 업무 합의의 누락을 대신하지 못함을 연구한다.",
+    "workStage": "plan",
+    "outputType": "분담 확인서",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P1:ab-resource-boundary",
+    "coreMeaning": "B 수신 겁재를 실제 경쟁·착취로 단정하지 않고 공동 자원 질문과 분리한다.",
+    "workStage": "plan",
+    "outputType": "자원 요청표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P4:ab-request-with-acceptance",
+    "coreMeaning": "A의 명료한 요청을 B의 이해와 수락을 따로 확인하는 절차로 연구한다.",
+    "workStage": "handoff",
+    "outputType": "요청 확인표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P1:priority-conflict",
+    "coreMeaning": "각자 받은 우선순위가 충돌할 때 동료가 임의 서열을 정하지 않는 조건을 연구한다.",
+    "workStage": "execution",
+    "outputType": "충돌 요청표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P3:ab-ideas-become-obligation",
+    "coreMeaning": "A의 아이디어가 B의 추가 실행 의무로 읽힐 조건을 연구한다.",
+    "workStage": "draft",
+    "outputType": "제안 상태표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P4:recall-difference-with-output",
+    "coreMeaning": "도입된 서로 다른 검토와 결정 상태를 다음 결과물의 기준으로 묶는다.",
+    "workStage": "maintenance",
+    "outputType": "다음 결과 기준",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P2:b-bounded-autonomy",
+    "coreMeaning": "B의 방법 재량과 공동 산출물 경계를 구별한다.",
+    "workStage": "execution",
+    "outputType": "수신 규격표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P3:ba-late-change-after-start",
+    "coreMeaning": "B의 새 대안이 A의 이미 확정한 작업을 다시 열 조건을 연구한다.",
+    "workStage": "revision",
+    "outputType": "변경 근거표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P4:b-praise-without-scope",
+    "coreMeaning": "B가 인정받기 위해 추가 요청을 받을 조건과 선택을 연구한다.",
+    "workStage": "execution",
+    "outputType": "추가 요청표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P2:a-focus-window",
+    "coreMeaning": "A의 조용한 작업 선호를 동료의 필요한 접점과 함께 연구한다.",
+    "workStage": "execution",
+    "outputType": "집중·접점 일정",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P1:output-not-rank",
+    "coreMeaning": "책임의 명료함과 조용한 추가 기여를 보되 순서로 권한을 부여하지 않는다.",
+    "workStage": "goal",
+    "outputType": "담당 확인표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P4:ab-capacity-query",
+    "coreMeaning": "A가 도움을 제안할 때 B에게 필요한 일부와 양쪽 여력을 묻는다.",
+    "workStage": "execution",
+    "outputType": "지원 확인 카드",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P2:a-change-with-record",
+    "coreMeaning": "A가 바꾼 정보를 B가 확인할 수 있는 변경 기록으로 남긴다.",
+    "workStage": "revision",
+    "outputType": "변경 기록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P1:b-current-observation",
+    "coreMeaning": "B가 현재 관찰한 조건을 설명할 때 자료의 범위를 연구한다.",
+    "workStage": "information",
+    "outputType": "현장 조건 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P2:ba-other-model",
+    "coreMeaning": "A 수신 편인과 B의 대안 가설을 확정 답이 아닌 반례 질문으로 연구한다.",
+    "workStage": "review",
+    "outputType": "가설 대조표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P1:focus-and-contact",
+    "coreMeaning": "혼자 정리할 시간과 함께 목표를 확인할 접점의 공존을 연구한다.",
+    "workStage": "information",
+    "outputType": "정보 접점표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P2:recall-idea-test",
+    "coreMeaning": "실제 도입된 발상과 시험의 연결을 새로운 성과 예언 없이 활용한다.",
+    "workStage": "draft",
+    "outputType": "시험 협업 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P4:joint-change-review",
+    "coreMeaning": "실제 충 분류와 별도로 합의한 변경의 결과를 다음 작업 전에 확인한다.",
+    "workStage": "maintenance",
+    "outputType": "변경 후 확인표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P2:unsupported-punishment",
+    "coreMeaning": "미지원 원진 연구를 실제 동료 갈등의 계산으로 만들지 않는다.",
+    "workStage": "review",
+    "outputType": "미지원 기록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P2:direct-and-receivable",
+    "coreMeaning": "명료한 수정 요청과 수신하기 편한 범위를 연결한다.",
+    "workStage": "feedback",
+    "outputType": "수정 요청서",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P1:recall-scope-of-help",
+    "coreMeaning": "앞서 표시된 작은 지원과 담당 복귀를 지속 가능한 기여로 회수한다.",
+    "workStage": "maintenance",
+    "outputType": "지원 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P1:recall-testable-dissent",
+    "coreMeaning": "실제 도입된 이견 비교를 다음 작업의 검토 질문으로 회수한다.",
+    "workStage": "maintenance",
+    "outputType": "이견 비교 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P1:ba-new-connection-with-limits",
+    "coreMeaning": "A 수신 편재 정의를 B가 가져올 다른 연결의 검토 조건과 분리한다.",
+    "workStage": "plan",
+    "outputType": "추가 자료 카드",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P4:b-hidden-disagreement",
+    "coreMeaning": "B가 반대를 늦게 드러낼 때 동의와 미응답을 구분한다.",
+    "workStage": "feedback",
+    "outputType": "의견 상태표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P4:coercion-not-style",
+    "coreMeaning": "괴롭힘·차별·보복·강압 가능성을 일반적인 업무 의견 차이와 구분한다.",
+    "workStage": "feedback",
+    "outputType": "지원 필요 기록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P1:repair-done-state",
+    "coreMeaning": "완료 뜻의 불일치를 초안·검토중·사용가능 상태 확인으로 바꾼다.",
+    "workStage": "approval",
+    "outputType": "파일 상태 합의",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P1:review-depth-gap",
+    "coreMeaning": "항목 오류 검토와 원인 탐색의 깊이가 다를 때 필요한 범위를 연구한다.",
+    "workStage": "review",
+    "outputType": "검토 수준표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P2:b-meaning-and-contact",
+    "coreMeaning": "B가 질문과 시험이 가능한 조건을 요청할 때 열린 범위를 연구한다.",
+    "workStage": "draft",
+    "outputType": "시험 제안",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P3:a-new-links",
+    "coreMeaning": "A의 연결형 발상을 검증할 수 있는 작은 대안으로 정리한다.",
+    "workStage": "draft",
+    "outputType": "대안 카드",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P3:recall-actual-done",
+    "coreMeaning": "앞서 표시된 완료 상태의 합의를 다음 전달에 재사용한다.",
+    "workStage": "maintenance",
+    "outputType": "완료 표시 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P1:shared-care-no-invisible-task",
+    "coreMeaning": "조용히 챙길 선호가 공통일 때 보이지 않는 지원을 담당으로 기록한다.",
+    "workStage": "maintenance",
+    "outputType": "지원 목록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P3:recognize-integration-labor",
+    "coreMeaning": "최종 발표와 자료 통합의 기여를 다른 작업으로 알아보는 조건을 연구한다.",
+    "workStage": "delivery",
+    "outputType": "기여 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P3:b-limit-invisible-help",
+    "coreMeaning": "B가 반복 지원 때문에 밀리는 담당을 자료로 남긴다.",
+    "workStage": "maintenance",
+    "outputType": "여력 요청 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P4:ba-prioritize-review",
+    "coreMeaning": "B가 검토 의견을 중요도와 범위로 묶어 A에게 전달한다.",
+    "workStage": "feedback",
+    "outputType": "우선 의견표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P2:ba-rule-explanation",
+    "coreMeaning": "A 수신 정관과 B의 절차 관심을 필요한 최소 확인의 질문으로 연구한다.",
+    "workStage": "plan",
+    "outputType": "최소 절차안",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P2:ab-criterion-not-command",
+    "coreMeaning": "B 수신 정관의 제약 분류와 A의 기준 정리를 동료 간 제안으로 연구한다.",
+    "workStage": "review",
+    "outputType": "검토 기준안",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P3:recall-handoff-responsibility",
+    "coreMeaning": "앞서 도입한 발신 상태와 수신·수락 구분을 반복 인계 원칙으로 연결한다.",
+    "workStage": "maintenance",
+    "outputType": "발신·수신 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P1:responsibility-border",
+    "coreMeaning": "한 번 도운 일이 계속 담당으로 굳어지는 조건을 연구한다.",
+    "workStage": "execution",
+    "outputType": "지원 종료 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P4:recall-credit-next-task",
+    "coreMeaning": "실제 소개한 기여 출처를 다음 협업의 담당 질문으로 회수한다.",
+    "workStage": "maintenance",
+    "outputType": "기여·분담 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P4:a-sprint-dependency",
+    "coreMeaning": "A의 가까운 마감에 몰입할 선호와 B가 기다릴 중간 결과를 구분한다.",
+    "workStage": "execution",
+    "outputType": "중간 인계 일정",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P2:harm-not-hostility",
+    "coreMeaning": "실제 子未 해를 상대의 악의나 뒷말의 증거로 쓰지 않는다.",
+    "workStage": "feedback",
+    "outputType": "수신 차이 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P2:b-next-step-needed",
+    "coreMeaning": "B가 목적뿐 아니라 실행 순서를 알고 싶은 조건을 연구한다.",
+    "workStage": "plan",
+    "outputType": "다음 단계표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P4:joint-meeting-decision-log",
+    "coreMeaning": "회의의 결정·보류·다음 확인을 다른 상태로 기록한다.",
+    "workStage": "plan",
+    "outputType": "결정·보류 기록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P2:clash-not-failure",
+    "coreMeaning": "실제 子午 충의 전통 긴장 분류를 실패의 예언과 구분한다.",
+    "workStage": "plan",
+    "outputType": "변경 질문 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P1:shared-records-different-checks",
+    "coreMeaning": "절차를 선호하는 두 사람이 같은 양식을 서로 다른 누락 확인에 쓸 조건을 연구한다.",
+    "workStage": "plan",
+    "outputType": "검토 양식",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P3:ba-social-participation-duty",
+    "coreMeaning": "B가 원하는 반응이 A에게 비업무 참여 의무가 될 조건을 연구한다.",
+    "workStage": "maintenance",
+    "outputType": "접점 구분 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P2:a-do-not-claim-authority",
+    "coreMeaning": "A가 다른 의견을 평가하거나 명령하기 전 기준과 권한을 확인한다.",
+    "workStage": "approval",
+    "outputType": "결정권 확인 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P3:spoken-versus-private",
+    "coreMeaning": "대화하며 가설을 바꾸는 선호와 혼자 답을 다듬는 선호의 정보 차이를 연구한다.",
+    "workStage": "draft",
+    "outputType": "회의 가설 목록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P2:recall-capacity-choice",
+    "coreMeaning": "앞서 소개한 여력 확인을 새 제안 수락 전의 질문으로 회수한다.",
+    "workStage": "plan",
+    "outputType": "새 제안 기준",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P3:a-participation-signal",
+    "coreMeaning": "A가 참여를 돕는 질문을 하되 분위기로 이해도를 판단하지 않는 조건을 연구한다.",
+    "workStage": "midpoint",
+    "outputType": "질문 수집 문서",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P4:recall-change-without-history",
+    "coreMeaning": "도입된 변경 확인과 최소 약속을 미래의 조건부 협업 선택으로 회수한다.",
+    "workStage": "maintenance",
+    "outputType": "다음 확인 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P2:ab-supported-learning",
+    "coreMeaning": "B 수신 정인과 A의 부드러운 전달을 질문할 자리를 남기는 조건으로 연구한다.",
+    "workStage": "feedback",
+    "outputType": "질문·지원표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P2:b-time-to-answer",
+    "coreMeaning": "B의 사전 사고 시간을 결정에 필요한 검토 창으로 연구한다.",
+    "workStage": "review",
+    "outputType": "사전 질문지",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P4:ba-confirm-receipt",
+    "coreMeaning": "B가 받을 자료의 접근·미완료·다음 행동을 A에게 되확인한다.",
+    "workStage": "handoff",
+    "outputType": "인수 확인서",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P4:fatigue-without-rebalance",
+    "coreMeaning": "반복 지원·회의·수정이 누적될 때 실제 작업량과 여력을 확인한다.",
+    "workStage": "maintenance",
+    "outputType": "여력 재검토표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P3:shared-precision-not-proof",
+    "coreMeaning": "둘 다 정확성을 중시해도 확인하는 오류가 같다고 가정하지 않는다.",
+    "workStage": "review",
+    "outputType": "검토 항목표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH09.P2:recall-handoff-interface",
+    "coreMeaning": "실제로 소개된 방법 재량과 인계 규격을 함께 회수한다.",
+    "workStage": "handoff",
+    "outputType": "인계 인터페이스 원칙",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P2:future-and-current-constraint",
+    "coreMeaning": "장기 장애 질문과 현재 실행 제약을 비교해 경로를 고르는 조건을 연구한다.",
+    "workStage": "plan",
+    "outputType": "경로 비교표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH04.P1:shared-values-usable-output",
+    "coreMeaning": "의미를 중요시하는 두 선호를 실제 사용할 사람과 결과물로 좁힌다.",
+    "workStage": "goal",
+    "outputType": "목적·대상표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P4:ba-ask-one-assumption",
+    "coreMeaning": "B의 긴 이유 질문을 현재 결정에 필요한 한 전제로 좁힌다.",
+    "workStage": "review",
+    "outputType": "핵심 질문 카드",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P3:information-silo",
+    "coreMeaning": "일부만 아는 최신 정보가 공동 결과물에 반영되지 않을 조건을 연구한다.",
+    "workStage": "information",
+    "outputType": "버전 확인표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P2:ba-closure-list",
+    "coreMeaning": "A 수신 정재와 B의 수정 관심을 마감 후 빠진 후속 항목 확인으로 연구한다.",
+    "workStage": "delivery",
+    "outputType": "후속 항목표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P3:request-without-input",
+    "coreMeaning": "목적·기한·필수 자료 없이 급하다고만 요청할 때의 비용을 연구한다.",
+    "workStage": "information",
+    "outputType": "요청 항목표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH05.P2:ab-constraint-check",
+    "coreMeaning": "B 수신 편관을 강압의 허가로 쓰지 않고 확인된 제약을 묻는 조건으로 연구한다.",
+    "workStage": "midpoint",
+    "outputType": "제약 점검표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P4:support-not-transfer",
+    "coreMeaning": "동료의 도움과 담당 책임 인수를 다른 계약으로 연구한다.",
+    "workStage": "execution",
+    "outputType": "지원 범위표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH03.P3:b-social-translation",
+    "coreMeaning": "B의 상황 맞춤 선호를 사용자의 실제 반응을 확인하는 질문으로 연구한다.",
+    "workStage": "delivery",
+    "outputType": "사용 질문 기록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P3:a-reroute-proposal",
+    "coreMeaning": "A가 막힌 작업의 다른 경로를 제안할 때 공동 변경 조건을 연구한다.",
+    "workStage": "execution",
+    "outputType": "변경 대안표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P4:meeting-closure-gap",
+    "coreMeaning": "회의에서 의견만 늘고 결정 질문·담당·후속이 남지 않을 부담을 연구한다.",
+    "workStage": "plan",
+    "outputType": "결정 질문표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH07.P4:credit-erasure",
+    "coreMeaning": "발표·작성·검토의 기여가 한 사람의 성과로만 남을 조건을 연구한다.",
+    "workStage": "delivery",
+    "outputType": "기여 확인표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH08.P2:a-limit-revision",
+    "coreMeaning": "A가 새 수정 의견을 필수·선호·후속으로 분리한다.",
+    "workStage": "revision",
+    "outputType": "필수·후속 목록",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH01.P4:repeat-or-project",
+    "coreMeaning": "반복 업무의 안정과 프로젝트의 변경을 다른 협업 조건으로 본다.",
+    "workStage": "maintenance",
+    "outputType": "갱신 메모",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH06.P1:ba-independent-second-view",
+    "coreMeaning": "A 수신 비견 정의와 B의 독립 검토를 같은 결론을 강요하지 않는 질문으로 연구한다.",
+    "workStage": "review",
+    "outputType": "용어 비교 질문",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  },
+  {
+    "id": "cwpr:material:CH02.P1:a-verified-record",
+    "coreMeaning": "A가 전례를 참고하려는 경우 재사용할 기록과 이번 차이를 구분한다.",
+    "workStage": "information",
+    "outputType": "기록 비교표",
+    "meaningIdentity": null,
+    "claimIdentity": null,
+    "meaningReviewRequired": true,
+    "validDifferentApplicationsApproved": 0
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "ownManifest": "compatibility-coworker-specialist-manifest.json",
+  "ownManifestExists": true,
+  "ownedOutputDirectoryReplayed": true,
+  "parentPerformanceNamespaceUnchanged": true,
+  "performanceLogCollision": false,
+  "generationOutputsUnchangedByReceiptFix": true,
+  "finalIndependentRuns": 2,
+  "matchingGeneratedJson": 44,
+  "performanceLogsRemainOutsideGit": true
+}

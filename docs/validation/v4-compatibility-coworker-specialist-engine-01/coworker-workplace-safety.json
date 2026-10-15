@@ -1,0 +1,99 @@
+{
+  "signals": [
+    "THREAT",
+    "COERCION",
+    "RETALIATION",
+    "HARASSMENT",
+    "SURVEILLANCE",
+    "PRIVACY_VIOLATION",
+    "DISCRIMINATION",
+    "ECONOMIC_COERCION",
+    "UNSAFE_PROCEDURE",
+    "AUTHORITY_ABUSE",
+    "UNCONSENTED_DISCLOSURE"
+  ],
+  "actualRisk": "UNKNOWN",
+  "actualAbuseDiagnosed": false,
+  "forcedContactAuthorized": false,
+  "forcedDisclosureAuthorized": false,
+  "legalJudgmentReplacement": false,
+  "syntheticBlocked": [
+    {
+      "id": "synthetic:coworker:negative:unsafe-THREAT",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:coworker:negative:unsafe-COERCION",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:coworker:negative:unsafe-RETALIATION",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:coworker:negative:unsafe-HARASSMENT",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:coworker:negative:unsafe-SURVEILLANCE",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:coworker:negative:unsafe-PRIVACY_VIOLATION",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:coworker:negative:unsafe-DISCRIMINATION",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:coworker:negative:unsafe-ECONOMIC_COERCION",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:coworker:negative:unsafe-UNSAFE_PROCEDURE",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:coworker:negative:unsafe-AUTHORITY_ABUSE",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    },
+    {
+      "id": "synthetic:coworker:negative:unsafe-UNCONSENTED_DISCLOSURE",
+      "reasons": [
+        "SAFETY_CONDITION_FAILED",
+        "UNSAFE_REPAIR_OR_CONTACT_BLOCKED"
+      ]
+    }
+  ]
+}

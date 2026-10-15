@@ -1,0 +1,3052 @@
+[
+  {
+    "topic": "업무 분담",
+    "materialRef": "cwpr:material:CH07.P1:division-gap",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P1",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P1:division-gap",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P1",
+      "address": "CH07.P1",
+      "mode": "JOINT",
+      "readerQuestion": "분담·책임·완료·검토·의존 마감·우선순위에서 어떤 다른 공백이 있는가?",
+      "coreMeaning": "분담 목록에서 아무도 맡지 않은 통합 작업의 부담을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P1.S1",
+          "originalRole": "불일치 또는 확인할 조건",
+          "knowledge": "분담한 항목과 빠진 연결을 구분한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S2",
+          "originalRole": "각자의 성향",
+          "knowledge": "A의 작성과 B의 검토는 자동 통합이 아니다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S3",
+          "originalRole": "다른 이해",
+          "knowledge": "가상 제출본 담당이 비어 있으면 다시 묻는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S4",
+          "originalRole": "답답함의 이유",
+          "knowledge": "소유자 없는 마지막 작업이 갈등의 조건이다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "7bdcdc1310dd783e91f2",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:DUTY:scope-responsibility",
+          "axis": "DUTY",
+          "definition": "책임의 경계를 구분",
+          "condition": "실제 계약과 동의 우선",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "plan",
+      "workFunctions": [
+        "friction",
+        "division"
+      ],
+      "outputType": "통합 담당 질문",
+      "positive": "빠진 담당 발견",
+      "risk": "각자 끝냈다고 공동 완료 처리",
+      "factBomb": "둘 다 자기 일을 했어도 넘길 한 파일이 없을 수 있다.",
+      "twist": "빈 담당 표시가 능력 비난을 줄일 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 공동 문서의 통합자가 없다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "자기 완료 범위 표시",
+        "personB": "남은 통합 작업 확인"
+      },
+      "counterexample": "실제 분담 없으면 과거 누락 단정 금지",
+      "distinctFromOtherParagraphs": "분담의 빈칸",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 공동 문서의 통합자가 없다면",
+        "aChange": "자기 완료 범위 표시",
+        "bChange": "남은 통합 작업 확인",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "통합 담당 질문",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "업무 분담",
+      "checks": [
+        {
+          "field": "task",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibility",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "output",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "책임 경계",
+    "materialRef": "cwpr:material:CH07.P1:responsibility-border",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P1",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P1:responsibility-border",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P1",
+      "address": "CH07.P1",
+      "mode": "JOINT",
+      "readerQuestion": "분담·책임·완료·검토·의존 마감·우선순위에서 어떤 다른 공백이 있는가?",
+      "coreMeaning": "한 번 도운 일이 계속 담당으로 굳어지는 조건을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P1.S1",
+          "originalRole": "불일치 또는 확인할 조건",
+          "knowledge": "지원과 책임 인수를 나눈다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S2",
+          "originalRole": "각자의 성향",
+          "knowledge": "A의 요청과 B의 수락을 따로 확인한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S3",
+          "originalRole": "다른 이해",
+          "knowledge": "가상 도움 이후 다음 담당을 다시 본다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S4",
+          "originalRole": "답답함의 이유",
+          "knowledge": "지원 종료가 없으면 기대가 어긋날 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "983ac049dd4d1607030f",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        },
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "7fdeffb028558576a2a5",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:BOUNDARY:role-border",
+          "axis": "BOUNDARY",
+          "definition": "자기 담당과 타인 담당을 구분",
+          "condition": "합의된 업무·가족 역할 확인",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "execution",
+      "workFunctions": [
+        "friction",
+        "responsibility"
+      ],
+      "outputType": "지원 종료 질문",
+      "positive": "지원 범위의 확인",
+      "risk": "친절한 사람에게 반복 요청 집중",
+      "factBomb": "지난번 도와줬다는 이유가 이번 담당의 근거는 아니다.",
+      "twist": "지원 종료를 정하면 다음 요청도 더 명확해진다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 반복 요청의 담당이 불명확하다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "이번 필요한 범위 제시",
+        "personB": "가능 범위·종료 알림"
+      },
+      "counterexample": "실제 도움 이력은 미입력이다.",
+      "distinctFromOtherParagraphs": "지원과 담당의 경계",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 반복 요청의 담당이 불명확하다면",
+        "aChange": "이번 필요한 범위 제시",
+        "bChange": "가능 범위·종료 알림",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "지원 종료 질문",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "책임 경계",
+      "checks": [
+        {
+          "field": "responsibility",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "handoffAcceptance",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "완료 기준",
+    "materialRef": "cwpr:material:CH07.P1:completion-mismatch",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P1",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P1:completion-mismatch",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P1",
+      "address": "CH07.P1",
+      "mode": "JOINT",
+      "readerQuestion": "분담·책임·완료·검토·의존 마감·우선순위에서 어떤 다른 공백이 있는가?",
+      "coreMeaning": "초안 완료와 사용 가능 완료가 다를 때 인계의 부담을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P1.S1",
+          "originalRole": "불일치 또는 확인할 조건",
+          "knowledge": "두 완료 표현을 각각 확인한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S2",
+          "originalRole": "각자의 성향",
+          "knowledge": "A의 완료와 B의 수신 준비는 다른 정보다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S3",
+          "originalRole": "다른 이해",
+          "knowledge": "가상 검토 전 파일을 최종본으로 받은 경우를 나눈다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S4",
+          "originalRole": "답답함의 이유",
+          "knowledge": "완료 기준 미합의가 문제 조건이다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "7bdcdc1310dd783e91f2",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:PRECISION:completion-quality",
+          "axis": "PRECISION",
+          "definition": "최종 결과물의 누락을 점검",
+          "condition": "완료 수준과 마감이 명시된 때",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "approval",
+      "workFunctions": [
+        "friction",
+        "completion"
+      ],
+      "outputType": "상태 기준표",
+      "positive": "완료의 뜻을 좁히기",
+      "risk": "모호한 끝났다는 말로 상태 전달",
+      "factBomb": "파일이 있다는 말과 바로 써도 된다는 말은 다르다.",
+      "twist": "상태 이름을 나누면 늦었다는 비난이 줄어들 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 초안과 승인본이 섞였다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "현재 파일 상태 표시",
+        "personB": "사용에 필요한 조건 질문"
+      },
+      "counterexample": "실제 승인 권한은 별도 확인",
+      "distinctFromOtherParagraphs": "완료의 서로 다른 뜻",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 초안과 승인본이 섞였다면",
+        "aChange": "현재 파일 상태 표시",
+        "bChange": "사용에 필요한 조건 질문",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "상태 기준표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "완료 기준",
+      "checks": [
+        {
+          "field": "output",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "qualityCriterion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "qualityVerified",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "검토 깊이",
+    "materialRef": "cwpr:material:CH07.P1:review-depth-gap",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P1",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P1:review-depth-gap",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P1",
+      "address": "CH07.P1",
+      "mode": "JOINT",
+      "readerQuestion": "분담·책임·완료·검토·의존 마감·우선순위에서 어떤 다른 공백이 있는가?",
+      "coreMeaning": "항목 오류 검토와 원인 탐색의 깊이가 다를 때 필요한 범위를 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P1.S1",
+          "originalRole": "불일치 또는 확인할 조건",
+          "knowledge": "A의 오류 관심과 B의 원리 질문을 분리한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S2",
+          "originalRole": "각자의 성향",
+          "knowledge": "한 사람이 더 전문적이라는 근거는 아니다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S3",
+          "originalRole": "다른 이해",
+          "knowledge": "가상 수치 수정과 산식 재검토를 나눈다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S4",
+          "originalRole": "답답함의 이유",
+          "knowledge": "검토 깊이 미합의가 작업량을 바꿀 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "A",
+          "sourceKey": "c7fee219fcf7a5b642fd",
+          "sourceUse": "own_entered_type_only",
+          "knowledgeIsRuntimeEvidence": false
+        },
+        {
+          "owner": "B",
+          "sourceKey": "f666c10a6db231abcc92",
+          "sourceUse": "own_entered_type_only",
+          "knowledgeIsRuntimeEvidence": false
+        },
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "99abb271c1ef0a874619",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:PRECISION:error-detection",
+          "axis": "PRECISION",
+          "definition": "작은 오류를 기준에 비추어 발견",
+          "condition": "검증 기준이 합의된 상황",
+          "notIndependentEvidence": true
+        },
+        {
+          "id": "sar:facet:DEPTH:cause-tracing",
+          "axis": "DEPTH",
+          "definition": "표면 결과 뒤의 과정을 탐색",
+          "condition": "실제 과정 정보가 있을 때",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "review",
+      "workFunctions": [
+        "friction",
+        "review"
+      ],
+      "outputType": "검토 수준표",
+      "positive": "필요한 검토의 구분",
+      "risk": "모든 오류를 전면 분석으로 확대",
+      "factBomb": "작은 오류를 찾았다고 항상 전체 원인을 다시 밝혀야 하는 것은 아니다.",
+      "twist": "원인 검토를 후속으로 남겨도 현재 수정은 가능하다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 표 한 칸에서 질문이 커진다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "확인할 오류 범위 제시",
+        "personB": "원인 검토의 필요 근거 질문"
+      },
+      "counterexample": "실제 오류·중요도 확인 전 범위 판정 보류",
+      "distinctFromOtherParagraphs": "검토 깊이의 차이",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [
+          {
+            "owner": "A",
+            "type": "ISTJ",
+            "sourceKey": "c7fee219fcf7a5b642fd",
+            "domain": "THINKING"
+          },
+          {
+            "owner": "B",
+            "type": "INTP",
+            "sourceKey": "f666c10a6db231abcc92",
+            "domain": "THINKING"
+          }
+        ],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 표 한 칸에서 질문이 커진다면",
+        "aChange": "확인할 오류 범위 제시",
+        "bChange": "원인 검토의 필요 근거 질문",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "검토 수준표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "검토 깊이",
+      "checks": [
+        {
+          "field": "technicalReview",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "마감",
+    "materialRef": "cwpr:material:CH07.P1:deadline-dependency",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P1",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P1:deadline-dependency",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P1",
+      "address": "CH07.P1",
+      "mode": "JOINT",
+      "readerQuestion": "분담·책임·완료·검토·의존 마감·우선순위에서 어떤 다른 공백이 있는가?",
+      "coreMeaning": "최종 마감은 같아도 중간 결과를 받아야 할 시점이 다른 조건을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P1.S1",
+          "originalRole": "불일치 또는 확인할 조건",
+          "knowledge": "A의 작성 종료와 B의 작업 시작을 나눈다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S2",
+          "originalRole": "각자의 성향",
+          "knowledge": "각자 가능한 시간은 실제로 묻는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S3",
+          "originalRole": "다른 이해",
+          "knowledge": "가상 인계가 최종 전날이면 B의 시간이 줄 수 있다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S4",
+          "originalRole": "답답함의 이유",
+          "knowledge": "의존성이 숨으면 마감 갈등이 커진다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "0388561cdeef5da930d4",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:DUTY:promise-update",
+          "axis": "DUTY",
+          "definition": "못 지킬 가능성을 미리 알림",
+          "condition": "대안·인수인계를 협의할 수 있을 때",
+          "notIndependentEvidence": true
+        },
+        {
+          "id": "sar:facet:STRATEGY:sequence-design",
+          "axis": "STRATEGY",
+          "definition": "의존 관계에 맞게 순서를 배치",
+          "condition": "담당자의 재량·동의 확인",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "handoff",
+      "workFunctions": [
+        "friction",
+        "deadline"
+      ],
+      "outputType": "의존 일정표",
+      "positive": "중간 인계의 확인",
+      "risk": "최종 시간만 맞추려 함",
+      "factBomb": "내가 늦지 않았어도 동료의 작업 시간은 없을 수 있다.",
+      "twist": "부분 인계가 전체를 기다리는 시간을 줄일 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 B 검토가 A 초안 뒤에만 가능하다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "초안 일부의 준비 시점 알림",
+        "personB": "필수 인계 항목·필요 시점 제시"
+      },
+      "counterexample": "실제 의존성이 없으면 일정 부담 창작 금지",
+      "distinctFromOtherParagraphs": "최종과 중간 마감의 구별",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 B 검토가 A 초안 뒤에만 가능하다면",
+        "aChange": "초안 일부의 준비 시점 알림",
+        "bChange": "필수 인계 항목·필요 시점 제시",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "의존 일정표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "마감",
+      "checks": [
+        {
+          "field": "finalDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "intermediateDeadline",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependency",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "우선순위",
+    "materialRef": "cwpr:material:CH07.P1:priority-conflict",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P1",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P1:priority-conflict",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P1",
+      "address": "CH07.P1",
+      "mode": "JOINT",
+      "readerQuestion": "분담·책임·완료·검토·의존 마감·우선순위에서 어떤 다른 공백이 있는가?",
+      "coreMeaning": "각자 받은 우선순위가 충돌할 때 동료가 임의 서열을 정하지 않는 조건을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P1.S1",
+          "originalRole": "불일치 또는 확인할 조건",
+          "knowledge": "요청의 출처와 실제 시한을 나눈다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S2",
+          "originalRole": "각자의 성향",
+          "knowledge": "A와 B 모두 최종 결정권이 미확인이다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S3",
+          "originalRole": "다른 이해",
+          "knowledge": "가상 두 작업이 같은 시간을 요구한다면 영향을 적는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P1.S4",
+          "originalRole": "답답함의 이유",
+          "knowledge": "권한 있는 조정이 필요한지 확인한다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "0388561cdeef5da930d4",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        },
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "7fdeffb028558576a2a5",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:GOAL_DRIVE:priority-focus",
+          "axis": "GOAL_DRIVE",
+          "definition": "목적에 따라 우선 과제를 고름",
+          "condition": "목표의 실제 소유자·동의를 확인",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "execution",
+      "workFunctions": [
+        "friction",
+        "priority"
+      ],
+      "outputType": "충돌 요청표",
+      "positive": "충돌한 요구의 가시화",
+      "risk": "서로 자신의 급함을 명령으로 전달",
+      "factBomb": "급한 일이 둘이라는 사실이 두 사람의 시간이 두 배라는 뜻은 아니다.",
+      "twist": "미룰 작업을 적으면 필요한 결정이 보일 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 상충한 요청 두 개가 왔다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "자기 요청의 근거 공유",
+        "personB": "밀릴 작업의 영향 기록"
+      },
+      "counterexample": "조직 권한을 성향으로 대체하지 않는다.",
+      "distinctFromOtherParagraphs": "우선순위 권한의 공백",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 상충한 요청 두 개가 왔다면",
+        "aChange": "자기 요청의 근거 공유",
+        "bChange": "밀릴 작업의 영향 기록",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "충돌 요청표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "우선순위",
+      "checks": [
+        {
+          "field": "priority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionOwner",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableCapacity",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "업무 요청",
+    "materialRef": "cwpr:material:CH07.P3:request-without-input",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P3",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P3:request-without-input",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P3",
+      "address": "CH07.P3",
+      "mode": "JOINT",
+      "readerQuestion": "요청·피드백·수정·추가 업무·정보·인계에서 어떤 비용이 생기는가?",
+      "coreMeaning": "목적·기한·필수 자료 없이 급하다고만 요청할 때의 비용을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P3.S1",
+          "originalRole": "반복 문제",
+          "knowledge": "요청자는 필요한 결과를 명시한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S2",
+          "originalRole": "방향별 원인",
+          "knowledge": "수신자는 받은 뜻을 되확인한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S3",
+          "originalRole": "악화 장면",
+          "knowledge": "가상 필요한 파일이 없으면 착수 조건이 부족하다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S4",
+          "originalRole": "직설적 결론",
+          "knowledge": "요청의 감정 강도가 정보를 대신하지 못한다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "607d86e676269d444952",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:COMMUNICATION_STYLE:direct-request",
+          "axis": "COMMUNICATION_STYLE",
+          "definition": "원하는 행동을 명시",
+          "condition": "거절 가능한 실제 선택권이 있을 때",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "information",
+      "workFunctions": [
+        "friction",
+        "request"
+      ],
+      "outputType": "요청 항목표",
+      "positive": "착수 정보의 확인",
+      "risk": "급함으로 설명을 대체",
+      "factBomb": "급하다고 여러 번 말해도 빠진 입력 파일은 생기지 않는다.",
+      "twist": "요청을 한 번 정리하면 반복 질문이 줄어들 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 자료 없이 결과만 요청받는다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "목적·입력·기한 제시",
+        "personB": "누락 입력 표시"
+      },
+      "counterexample": "실제 요청자가 A라는 고정 없음",
+      "distinctFromOtherParagraphs": "업무 요청의 정보 비용",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 자료 없이 결과만 요청받는다면",
+        "aChange": "목적·입력·기한 제시",
+        "bChange": "누락 입력 표시",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "요청 항목표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "업무 요청",
+      "checks": [
+        {
+          "field": "requiredInformation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableCapacity",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "피드백 전달",
+    "materialRef": "cwpr:material:CH07.P3:feedback-as-person-score",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P3",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P3:feedback-as-person-score",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P3",
+      "address": "CH07.P3",
+      "mode": "JOINT",
+      "readerQuestion": "요청·피드백·수정·추가 업무·정보·인계에서 어떤 비용이 생기는가?",
+      "coreMeaning": "작업물의 한 문제를 동료 전체의 능력 평가로 확대할 위험을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P3.S1",
+          "originalRole": "반복 문제",
+          "knowledge": "관찰한 항목을 특정한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S2",
+          "originalRole": "방향별 원인",
+          "knowledge": "원인은 추측 대신 질문한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S3",
+          "originalRole": "악화 장면",
+          "knowledge": "가상 오류를 성격 결함으로 부르지 않는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S4",
+          "originalRole": "직설적 결론",
+          "knowledge": "공개 반복 비난이 부담을 키울 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "99abb271c1ef0a874619",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+          "axis": "COMMUNICATION_STYLE",
+          "definition": "표현과 이해된 뜻을 다시 확인",
+          "condition": "해석 차이를 당사자가 확인할 때",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "feedback",
+      "workFunctions": [
+        "friction",
+        "feedback"
+      ],
+      "outputType": "관찰 의견",
+      "positive": "수정 가능한 의견",
+      "risk": "늘 무능하다는 인격 낙인",
+      "factBomb": "한 번의 오류는 그 사람 전체의 업무 능력을 측정한 결과가 아니다.",
+      "twist": "문제를 좁히면 필요한 수정 자료가 보인다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 표의 오류를 검토한다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "위치·영향만 말함",
+        "personB": "확인 자료·수정 범위 답함"
+      },
+      "counterexample": "실제 괴롭힘은 피드백 차이로 정상화 금지",
+      "distinctFromOtherParagraphs": "작업과 개인 평가의 혼동",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 표의 오류를 검토한다면",
+        "aChange": "위치·영향만 말함",
+        "bChange": "확인 자료·수정 범위 답함",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "관찰 의견",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "피드백 전달",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "senderIntention",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "피드백 수신",
+    "materialRef": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH06.P3",
+    "originalMaterial": {
+      "id": "cwpr:material:CH06.P3:ba-silence-delays-handoff",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH06",
+      "paragraphId": "P3",
+      "address": "CH06.P3",
+      "mode": "BA",
+      "readerQuestion": "B의 세부·침묵·새 대안·의도 해석·접점 요구는 언제 부담이 되는가?",
+      "coreMeaning": "B가 갈등을 피하며 인계 문제를 말하지 않을 조건을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH06.P3.S1",
+          "originalRole": "부담 행동",
+          "knowledge": "조용한 선호와 실제 미보고 이력은 다르다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH06.P3.S2",
+          "originalRole": "검증된 차이",
+          "knowledge": "A는 수신 여부와 사용 가능 여부를 구분한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH06.P3.S3",
+          "originalRole": "의도와 경험",
+          "knowledge": "B가 확인 못한 항목을 안전하게 표시한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH06.P3.S4",
+          "originalRole": "악화 조건",
+          "knowledge": "시간이 없다고 미완료를 숨기면 부담이 커질 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "B",
+          "sourceKey": "59ee9c7408ed5dac4efe",
+          "sourceUse": "own_entered_type_only",
+          "knowledgeIsRuntimeEvidence": false
+        },
+        {
+          "owner": "A",
+          "sourceKey": "ab58584bb46db51081a8",
+          "sourceUse": "own_entered_type_only",
+          "knowledgeIsRuntimeEvidence": false
+        },
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "607d86e676269d444952",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+          "axis": "COMMUNICATION_STYLE",
+          "definition": "표현과 이해된 뜻을 다시 확인",
+          "condition": "해석 차이를 당사자가 확인할 때",
+          "notIndependentEvidence": true
+        },
+        {
+          "id": "sar:facet:DUTY:promise-update",
+          "axis": "DUTY",
+          "definition": "못 지킬 가능성을 미리 알림",
+          "condition": "대안·인수인계를 협의할 수 있을 때",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "handoff",
+      "workFunctions": [
+        "direction",
+        "friction",
+        "handoff"
+      ],
+      "outputType": "인수 상태표",
+      "positive": "남은 질문의 조기 공유",
+      "risk": "읽음 표시만 남기고 문제 유보",
+      "factBomb": "넘겨받았다는 말만으로 이어서 할 수 있다는 뜻은 아니다.",
+      "twist": "짧은 보류 표시가 되돌아갈 작업을 줄일 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 인계 파일이 열리지 않는다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "접근 문제의 질문 수신",
+        "personB": "사용 불가·필요 자료 표시"
+      },
+      "counterexample": "실제 누락·감정 이력 창작 금지",
+      "distinctFromOtherParagraphs": "B 수신의 미확정 비용",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [
+          {
+            "owner": "B",
+            "type": "ISFJ",
+            "sourceKey": "59ee9c7408ed5dac4efe",
+            "domain": "WORK"
+          },
+          {
+            "owner": "A",
+            "type": "ESTP",
+            "sourceKey": "ab58584bb46db51081a8",
+            "domain": "COMMUNICATION"
+          }
+        ],
+        "direction": {
+          "direction": "B_TO_A",
+          "subject": "B",
+          "recipient": "A",
+          "tenGodViewer": "A.dayMaster",
+          "tenGodTarget": "B.dayMaster",
+          "actualProducerRequired": true
+        },
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 인계 파일이 열리지 않는다면",
+        "aChange": "접근 문제의 질문 수신",
+        "bChange": "사용 불가·필요 자료 표시",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "인수 상태표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "피드백 수신",
+      "checks": [
+        {
+          "field": "recipientInterpretation",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requestedChange",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "followupVerification",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": true
+  },
+  {
+    "topic": "수정 횟수·종료",
+    "materialRef": "cwpr:material:CH07.P3:revision-without-stop",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P3",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P3:revision-without-stop",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P3",
+      "address": "CH07.P3",
+      "mode": "JOINT",
+      "readerQuestion": "요청·피드백·수정·추가 업무·정보·인계에서 어떤 비용이 생기는가?",
+      "coreMeaning": "수정 종료 조건이 없어 새 의견이 계속 필수 작업이 될 상황을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P3.S1",
+          "originalRole": "반복 문제",
+          "knowledge": "현재 합의한 완료 기준을 확인한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S2",
+          "originalRole": "방향별 원인",
+          "knowledge": "새 오류와 새 취향을 구별한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S3",
+          "originalRole": "악화 장면",
+          "knowledge": "가상 수정 횟수보다 요청의 성격을 본다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S4",
+          "originalRole": "직설적 결론",
+          "knowledge": "최종 변경 승인자는 별도 확인한다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "7bdcdc1310dd783e91f2",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        },
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "0388561cdeef5da930d4",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:DECISION_STYLE:closure-criteria",
+          "axis": "DECISION_STYLE",
+          "definition": "어떤 정보면 결론을 닫을지 정의",
+          "condition": "결정의 영향과 정보 범위가 명시될 때",
+          "notIndependentEvidence": true
+        },
+        {
+          "id": "sar:facet:PRECISION:completion-quality",
+          "axis": "PRECISION",
+          "definition": "최종 결과물의 누락을 점검",
+          "condition": "완료 수준과 마감이 명시된 때",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "revision",
+      "workFunctions": [
+        "friction",
+        "revision"
+      ],
+      "outputType": "수정 종료표",
+      "positive": "수정 범위의 정리",
+      "risk": "끝없는 고침을 성실함으로 포장",
+      "factBomb": "더 고칠 수 있다는 말과 지금 반드시 고쳐야 한다는 말은 다르다.",
+      "twist": "후속 목록이 현재 완료를 가능하게 할 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 검토마다 새 선호가 붙는다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "필수 근거·완료 기준 제시",
+        "personB": "현재 가능 범위 답함"
+      },
+      "counterexample": "계약·필수 규정 변경은 별도 절차",
+      "distinctFromOtherParagraphs": "수정 종료의 공백",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 검토마다 새 선호가 붙는다면",
+        "aChange": "필수 근거·완료 기준 제시",
+        "bChange": "현재 가능 범위 답함",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "수정 종료표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "수정 횟수·종료",
+      "checks": [
+        {
+          "field": "revisionScope",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "revisionDone",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "qualityCriterion",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "추가 업무",
+    "materialRef": "cwpr:material:CH07.P3:additional-work-hidden",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P3",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P3:additional-work-hidden",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P3",
+      "address": "CH07.P3",
+      "mode": "JOINT",
+      "readerQuestion": "요청·피드백·수정·추가 업무·정보·인계에서 어떤 비용이 생기는가?",
+      "coreMeaning": "짧은 추가 요청에 준비·검토·인계의 숨은 작업이 붙을 조건을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P3.S1",
+          "originalRole": "반복 문제",
+          "knowledge": "새 요청의 전체 단계를 확인한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S2",
+          "originalRole": "방향별 원인",
+          "knowledge": "수락은 실제 가능한 범위로 제한한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S3",
+          "originalRole": "악화 장면",
+          "knowledge": "가상 한 장 수정에도 다른 자료 갱신이 필요할 수 있다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S4",
+          "originalRole": "직설적 결론",
+          "knowledge": "비용을 말하지 못하면 부담이 쌓일 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "7fdeffb028558576a2a5",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:DUTY:scope-responsibility",
+          "axis": "DUTY",
+          "definition": "책임의 경계를 구분",
+          "condition": "실제 계약과 동의 우선",
+          "notIndependentEvidence": true
+        },
+        {
+          "id": "sar:facet:RESOURCE_SENSE:allocation",
+          "axis": "RESOURCE_SENSE",
+          "definition": "중요한 목적에 자원을 배정",
+          "condition": "자원 소유자·동의 확인",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "execution",
+      "workFunctions": [
+        "friction",
+        "scope"
+      ],
+      "outputType": "요청 영향도",
+      "positive": "요청 영향의 가시화",
+      "risk": "금방 할 일이라며 일정 영향 삭제",
+      "factBomb": "작아 보이는 요청에도 다시 확인할 작업은 따로 있다.",
+      "twist": "작업을 나누면 지금 할 일부만 고를 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 작은 변경이 연결 파일을 바꾼다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "의존 작업 확인",
+        "personB": "가능 범위·밀릴 일 알림"
+      },
+      "counterexample": "실제 작업량을 유형으로 산정하지 않는다.",
+      "distinctFromOtherParagraphs": "추가 요청의 연결 비용",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 작은 변경이 연결 파일을 바꾼다면",
+        "aChange": "의존 작업 확인",
+        "bChange": "가능 범위·밀릴 일 알림",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "요청 영향도",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "추가 업무",
+      "checks": [
+        {
+          "field": "additionalRequest",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableCapacity",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "정보 공유",
+    "materialRef": "cwpr:material:CH07.P3:information-silo",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P3",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P3:information-silo",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P3",
+      "address": "CH07.P3",
+      "mode": "JOINT",
+      "readerQuestion": "요청·피드백·수정·추가 업무·정보·인계에서 어떤 비용이 생기는가?",
+      "coreMeaning": "일부만 아는 최신 정보가 공동 결과물에 반영되지 않을 조건을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P3.S1",
+          "originalRole": "반복 문제",
+          "knowledge": "최신 정보의 위치와 버전을 묻는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S2",
+          "originalRole": "방향별 원인",
+          "knowledge": "읽음과 이해·적용은 다르다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S3",
+          "originalRole": "악화 장면",
+          "knowledge": "가상 변경 자료를 한 사람만 알고 있다면 알린다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S4",
+          "originalRole": "직설적 결론",
+          "knowledge": "접근 권한 없는 정보는 별도 통로를 확인한다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "8166189640ff584ab6f6",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        },
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "607d86e676269d444952",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:STABILITY:continuity",
+          "axis": "STABILITY",
+          "definition": "유지·인수인계 체계를 갖춤",
+          "condition": "기능·담당·검토 주기 확인",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "information",
+      "workFunctions": [
+        "friction",
+        "information"
+      ],
+      "outputType": "버전 확인표",
+      "positive": "최신 조건의 공유",
+      "risk": "보냈다는 이유로 적용 완료 가정",
+      "factBomb": "보낸 파일과 동료가 쓰는 파일이 같다는 보장은 없다.",
+      "twist": "버전 하나의 확인이 중복 수정을 줄일 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 서로 다른 파일을 쓰고 있다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "최신본·변경분 표시",
+        "personB": "접근·사용본 확인"
+      },
+      "counterexample": "보안상 공유 금지 정보는 공개하지 않는다.",
+      "distinctFromOtherParagraphs": "정보 전달과 실제 사용의 차이",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 서로 다른 파일을 쓰고 있다면",
+        "aChange": "최신본·변경분 표시",
+        "bChange": "접근·사용본 확인",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "버전 확인표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "정보 공유",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "requiredAccess",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "uncertainty",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "인수인계 누락",
+    "materialRef": "cwpr:material:CH07.P3:handoff-omission",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P3",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P3:handoff-omission",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P3",
+      "address": "CH07.P3",
+      "mode": "JOINT",
+      "readerQuestion": "요청·피드백·수정·추가 업무·정보·인계에서 어떤 비용이 생기는가?",
+      "coreMeaning": "파일만 넘기고 미완료·불확실성·다음 담당을 빠뜨릴 부담을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P3.S1",
+          "originalRole": "반복 문제",
+          "knowledge": "인계 묶음의 상태를 나눈다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S2",
+          "originalRole": "방향별 원인",
+          "knowledge": "실제 인수 수락은 별도 확인한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S3",
+          "originalRole": "악화 장면",
+          "knowledge": "가상 다음 행동이 보이지 않으면 질문한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S4",
+          "originalRole": "직설적 결론",
+          "knowledge": "책임을 일방적으로 넘기지 않는다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "8166189640ff584ab6f6",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:STABILITY:continuity",
+          "axis": "STABILITY",
+          "definition": "유지·인수인계 체계를 갖춤",
+          "condition": "기능·담당·검토 주기 확인",
+          "notIndependentEvidence": true
+        },
+        {
+          "id": "sar:facet:PRECISION:completion-quality",
+          "axis": "PRECISION",
+          "definition": "최종 결과물의 누락을 점검",
+          "condition": "완료 수준과 마감이 명시된 때",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "handoff",
+      "workFunctions": [
+        "friction",
+        "handoff"
+      ],
+      "outputType": "상태 인계표",
+      "positive": "이어갈 정보의 확인",
+      "risk": "전송을 책임 이전으로 간주",
+      "factBomb": "파일을 보냈다고 남은 일을 누가 맡을지 정해진 것은 아니다.",
+      "twist": "미완료 표시 하나가 뒤늦은 추측을 막을 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 인계 자료에 상태가 없다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "미완료·다음 단계 알림",
+        "personB": "받을 범위·이해 확인"
+      },
+      "counterexample": "의료 책임 규칙을 일반 업무에 자동 전이 금지",
+      "distinctFromOtherParagraphs": "인계의 상태·수락 공백",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 인계 자료에 상태가 없다면",
+        "aChange": "미완료·다음 단계 알림",
+        "bChange": "받을 범위·이해 확인",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "상태 인계표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "인수인계 누락",
+      "checks": [
+        {
+          "field": "incompleteItems",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "recipientAcceptance",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "중복 작업",
+    "materialRef": "cwpr:material:CH07.P4:duplicate-edit",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P4",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P4:duplicate-edit",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P4",
+      "address": "CH07.P4",
+      "mode": "JOINT",
+      "readerQuestion": "중복·기여·회의·이견·피로·부당행위는 어떤 다른 문제인가?",
+      "coreMeaning": "서로 최신본을 모른 채 같은 부분을 고칠 조건을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P4.S1",
+          "originalRole": "주의 상황",
+          "knowledge": "각자 고치는 대상과 버전을 표시한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S2",
+          "originalRole": "A의 기대",
+          "knowledge": "합치는 사람을 당연히 A로 정하지 않는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S3",
+          "originalRole": "B의 기대",
+          "knowledge": "가상 충돌한 수정은 내용 기준으로 비교한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S4",
+          "originalRole": "다르게 전달되는 뜻",
+          "knowledge": "기여 경쟁으로 번지면 해결이 멀어질 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "607d86e676269d444952",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:DUTY:scope-responsibility",
+          "axis": "DUTY",
+          "definition": "책임의 경계를 구분",
+          "condition": "실제 계약과 동의 우선",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "revision",
+      "workFunctions": [
+        "friction",
+        "duplicate"
+      ],
+      "outputType": "편집 상태표",
+      "positive": "수정 충돌의 가시화",
+      "risk": "먼저 고친 사람이 무조건 옳다고 판단",
+      "factBomb": "먼저 손댔다는 사실이 최종본의 기준은 아니다.",
+      "twist": "겹친 의견이 다른 기준을 찾는 자료가 될 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 같은 문단이 두 버전으로 갈렸다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "자기 변경·근거 표시",
+        "personB": "수신본·통합 질문"
+      },
+      "counterexample": "실제 중복 이력은 창작하지 않는다.",
+      "distinctFromOtherParagraphs": "중복 편집의 통합 문제",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 같은 문단이 두 버전으로 갈렸다면",
+        "aChange": "자기 변경·근거 표시",
+        "bChange": "수신본·통합 질문",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "편집 상태표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "중복 작업",
+      "checks": [
+        {
+          "field": "latestVersion",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "currentState",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibility",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "기여 인정",
+    "materialRef": "cwpr:material:CH07.P4:credit-erasure",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P4",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P4:credit-erasure",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P4",
+      "address": "CH07.P4",
+      "mode": "JOINT",
+      "readerQuestion": "중복·기여·회의·이견·피로·부당행위는 어떤 다른 문제인가?",
+      "coreMeaning": "발표·작성·검토의 기여가 한 사람의 성과로만 남을 조건을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P4.S1",
+          "originalRole": "주의 상황",
+          "knowledge": "실제 작업 항목을 먼저 확인한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S2",
+          "originalRole": "A의 기대",
+          "knowledge": "의도적 가로채기는 사실 확인 전 단정하지 않는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S3",
+          "originalRole": "B의 기대",
+          "knowledge": "가상 기여 기록과 조직 평가를 구별한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S4",
+          "originalRole": "다르게 전달되는 뜻",
+          "knowledge": "기여 누락 반복은 별도 확인 통로가 필요할 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "1b369a62ec425b1ebbe5",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        },
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "7fdeffb028558576a2a5",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:DUTY:scope-responsibility",
+          "axis": "DUTY",
+          "definition": "책임의 경계를 구분",
+          "condition": "실제 계약과 동의 우선",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "delivery",
+      "workFunctions": [
+        "friction",
+        "recognition"
+      ],
+      "outputType": "기여 확인표",
+      "positive": "작업의 출처 보존",
+      "risk": "보이는 역할만 전체 성과로 인정",
+      "factBomb": "최종 문서를 낸 사람이 검토와 준비까지 모두 한 것은 아니다.",
+      "twist": "기여 목록은 다음 분담의 불균형도 보일 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 공동 결과물의 작성 이력이 빠졌다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "자기 기여·지원 출처 말함",
+        "personB": "확인된 작업 기록"
+      },
+      "counterexample": "실제 인사 평가·권리 판단은 조직·전문 절차",
+      "distinctFromOtherParagraphs": "기여 인정과 평가 권한 구분",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 공동 결과물의 작성 이력이 빠졌다면",
+        "aChange": "자기 기여·지원 출처 말함",
+        "bChange": "확인된 작업 기록",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "기여 확인표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "기여 인정",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibility",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "회의",
+    "materialRef": "cwpr:material:CH07.P4:meeting-closure-gap",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P4",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P4:meeting-closure-gap",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P4",
+      "address": "CH07.P4",
+      "mode": "JOINT",
+      "readerQuestion": "중복·기여·회의·이견·피로·부당행위는 어떤 다른 문제인가?",
+      "coreMeaning": "회의에서 의견만 늘고 결정 질문·담당·후속이 남지 않을 부담을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P4.S1",
+          "originalRole": "주의 상황",
+          "knowledge": "논의할 질문과 결정할 질문을 구분한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S2",
+          "originalRole": "A의 기대",
+          "knowledge": "A/B 중 누가 결정권자인지 추정하지 않는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S3",
+          "originalRole": "B의 기대",
+          "knowledge": "가상 결정이 보류되면 필요한 자료를 적는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S4",
+          "originalRole": "다르게 전달되는 뜻",
+          "knowledge": "반복 회의가 작업 시간을 줄일 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "7bdcdc1310dd783e91f2",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:DECISION_STYLE:closure-criteria",
+          "axis": "DECISION_STYLE",
+          "definition": "어떤 정보면 결론을 닫을지 정의",
+          "condition": "결정의 영향과 정보 범위가 명시될 때",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "plan",
+      "workFunctions": [
+        "friction",
+        "meeting"
+      ],
+      "outputType": "결정 질문표",
+      "positive": "회의 목적의 확인",
+      "risk": "회의를 합의 완료로 착각",
+      "factBomb": "오래 함께 말했어도 다음 할 일이 정해지지 않을 수 있다.",
+      "twist": "짧은 보류 이유가 다음 회의를 줄일 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 회의 뒤 담당이 없다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "자기 다음 행동·질문 표시",
+        "personB": "미결정·필요 자료 정리"
+      },
+      "counterexample": "권한 없는 결정 강요 금지",
+      "distinctFromOtherParagraphs": "회의와 실행 연결의 공백",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 회의 뒤 담당이 없다면",
+        "aChange": "자기 다음 행동·질문 표시",
+        "bChange": "미결정·필요 자료 정리",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "결정 질문표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "회의",
+      "checks": [
+        {
+          "field": "decisionOwner",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "nextAction",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "responsibility",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "결정 지연",
+    "materialRef": "cwpr:material:CH07.P4:meeting-closure-gap",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P4",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P4:meeting-closure-gap",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P4",
+      "address": "CH07.P4",
+      "mode": "JOINT",
+      "readerQuestion": "중복·기여·회의·이견·피로·부당행위는 어떤 다른 문제인가?",
+      "coreMeaning": "회의에서 의견만 늘고 결정 질문·담당·후속이 남지 않을 부담을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P4.S1",
+          "originalRole": "주의 상황",
+          "knowledge": "논의할 질문과 결정할 질문을 구분한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S2",
+          "originalRole": "A의 기대",
+          "knowledge": "A/B 중 누가 결정권자인지 추정하지 않는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S3",
+          "originalRole": "B의 기대",
+          "knowledge": "가상 결정이 보류되면 필요한 자료를 적는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S4",
+          "originalRole": "다르게 전달되는 뜻",
+          "knowledge": "반복 회의가 작업 시간을 줄일 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "7bdcdc1310dd783e91f2",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:DECISION_STYLE:closure-criteria",
+          "axis": "DECISION_STYLE",
+          "definition": "어떤 정보면 결론을 닫을지 정의",
+          "condition": "결정의 영향과 정보 범위가 명시될 때",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "plan",
+      "workFunctions": [
+        "friction",
+        "meeting"
+      ],
+      "outputType": "결정 질문표",
+      "positive": "회의 목적의 확인",
+      "risk": "회의를 합의 완료로 착각",
+      "factBomb": "오래 함께 말했어도 다음 할 일이 정해지지 않을 수 있다.",
+      "twist": "짧은 보류 이유가 다음 회의를 줄일 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 회의 뒤 담당이 없다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "자기 다음 행동·질문 표시",
+        "personB": "미결정·필요 자료 정리"
+      },
+      "counterexample": "권한 없는 결정 강요 금지",
+      "distinctFromOtherParagraphs": "회의와 실행 연결의 공백",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 회의 뒤 담당이 없다면",
+        "aChange": "자기 다음 행동·질문 표시",
+        "bChange": "미결정·필요 자료 정리",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "결정 질문표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "결정 지연",
+      "checks": [
+        {
+          "field": "decisionAuthority",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "dependency",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "의견 충돌",
+    "materialRef": "cwpr:material:CH07.P4:disagreement-becomes-competence",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P4",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P4:disagreement-becomes-competence",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P4",
+      "address": "CH07.P4",
+      "mode": "JOINT",
+      "readerQuestion": "중복·기여·회의·이견·피로·부당행위는 어떤 다른 문제인가?",
+      "coreMeaning": "다른 우선 기준을 상대의 낮은 실력으로 읽을 위험을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P4.S1",
+          "originalRole": "주의 상황",
+          "knowledge": "각자 쓴 기준과 현재 제약을 묻는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S2",
+          "originalRole": "A의 기대",
+          "knowledge": "유형 차이는 실력의 우열이 아니다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S3",
+          "originalRole": "B의 기대",
+          "knowledge": "가상 속도와 오류 위험의 기준을 대조한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S4",
+          "originalRole": "다르게 전달되는 뜻",
+          "knowledge": "공개 능력 경쟁은 정보 공유를 어렵게 할 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "99abb271c1ef0a874619",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+          "axis": "COMMUNICATION_STYLE",
+          "definition": "표현과 이해된 뜻을 다시 확인",
+          "condition": "해석 차이를 당사자가 확인할 때",
+          "notIndependentEvidence": true
+        },
+        {
+          "id": "sar:facet:BOUNDARY:role-border",
+          "axis": "BOUNDARY",
+          "definition": "자기 담당과 타인 담당을 구분",
+          "condition": "합의된 업무·가족 역할 확인",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "feedback",
+      "workFunctions": [
+        "friction",
+        "disagreement"
+      ],
+      "outputType": "판단 기준표",
+      "positive": "다른 판단 이유의 확인",
+      "risk": "의견 불일치를 능력 부족으로 해석",
+      "factBomb": "내 답에 동의하지 않는다고 문제를 이해 못한 것은 아니다.",
+      "twist": "다른 기준이 빠진 제약을 보일 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 두 안이 다른 기준으로 평가됐다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "자기 판단 기준 공유",
+        "personB": "비교할 자료 제안"
+      },
+      "counterexample": "실제 능력 평가 근거 없이 우열 판단 금지",
+      "distinctFromOtherParagraphs": "이견과 능력 낙인의 구별",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 두 안이 다른 기준으로 평가됐다면",
+        "aChange": "자기 판단 기준 공유",
+        "bChange": "비교할 자료 제안",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "판단 기준표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "의견 충돌",
+      "checks": [
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "potentialImpact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "qualityCriterion",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "작업물과 개인 평가",
+    "materialRef": "cwpr:material:CH07.P3:feedback-as-person-score",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P3",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P3:feedback-as-person-score",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P3",
+      "address": "CH07.P3",
+      "mode": "JOINT",
+      "readerQuestion": "요청·피드백·수정·추가 업무·정보·인계에서 어떤 비용이 생기는가?",
+      "coreMeaning": "작업물의 한 문제를 동료 전체의 능력 평가로 확대할 위험을 연구한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P3.S1",
+          "originalRole": "반복 문제",
+          "knowledge": "관찰한 항목을 특정한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S2",
+          "originalRole": "방향별 원인",
+          "knowledge": "원인은 추측 대신 질문한다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S3",
+          "originalRole": "악화 장면",
+          "knowledge": "가상 오류를 성격 결함으로 부르지 않는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P3.S4",
+          "originalRole": "직설적 결론",
+          "knowledge": "공개 반복 비난이 부담을 키울 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "99abb271c1ef0a874619",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:COMMUNICATION_STYLE:intent-check",
+          "axis": "COMMUNICATION_STYLE",
+          "definition": "표현과 이해된 뜻을 다시 확인",
+          "condition": "해석 차이를 당사자가 확인할 때",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "feedback",
+      "workFunctions": [
+        "friction",
+        "feedback"
+      ],
+      "outputType": "관찰 의견",
+      "positive": "수정 가능한 의견",
+      "risk": "늘 무능하다는 인격 낙인",
+      "factBomb": "한 번의 오류는 그 사람 전체의 업무 능력을 측정한 결과가 아니다.",
+      "twist": "문제를 좁히면 필요한 수정 자료가 보인다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 표의 오류를 검토한다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "위치·영향만 말함",
+        "personB": "확인 자료·수정 범위 답함"
+      },
+      "counterexample": "실제 괴롭힘은 피드백 차이로 정상화 금지",
+      "distinctFromOtherParagraphs": "작업과 개인 평가의 혼동",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 표의 오류를 검토한다면",
+        "aChange": "위치·영향만 말함",
+        "bChange": "확인 자료·수정 범위 답함",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "관찰 의견",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "작업물과 개인 평가",
+      "checks": [
+        {
+          "field": "observedArtifact",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "observedIssue",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "personnelEvaluation",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  },
+  {
+    "topic": "반복 피로",
+    "materialRef": "cwpr:material:CH07.P4:fatigue-without-rebalance",
+    "notAdditionalIndependentFact": true,
+    "readerAddress": "CH07.P4",
+    "originalMaterial": {
+      "id": "cwpr:material:CH07.P4:fatigue-without-rebalance",
+      "productKey": "saju_mbti_compatibility",
+      "relationshipCategory": "coworker",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "chapterId": "CH07",
+      "paragraphId": "P4",
+      "address": "CH07.P4",
+      "mode": "JOINT",
+      "readerQuestion": "중복·기여·회의·이견·피로·부당행위는 어떤 다른 문제인가?",
+      "coreMeaning": "반복 지원·회의·수정이 누적될 때 실제 작업량과 여력을 확인한다.",
+      "roleContributions": [
+        {
+          "address": "CH07.P4.S1",
+          "originalRole": "주의 상황",
+          "knowledge": "피로를 유형의 약점으로 판정하지 않는다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S2",
+          "originalRole": "A의 기대",
+          "knowledge": "A/B가 각각 부담을 말할 수 있다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S3",
+          "originalRole": "B의 기대",
+          "knowledge": "가상 지원이 본래 작업을 밀면 범위를 다시 본다.",
+          "notIndependentFact": true
+        },
+        {
+          "address": "CH07.P4.S4",
+          "originalRole": "다르게 전달되는 뜻",
+          "knowledge": "자원 조정은 조직 권한이 필요할 수 있다.",
+          "notIndependentFact": true
+        }
+      ],
+      "ownedSources": [
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "7fdeffb028558576a2a5",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        },
+        {
+          "owner": "GUIDANCE",
+          "sourceKey": "983ac049dd4d1607030f",
+          "sourceUse": "context_guidance_not_person_fact",
+          "knowledgeIsRuntimeEvidence": false
+        }
+      ],
+      "semanticFacets": [
+        {
+          "id": "sar:facet:RECOVERY_NEED:load-recognition",
+          "axis": "RECOVERY_NEED",
+          "definition": "현재 부담과 쉬는 필요를 알아봄",
+          "condition": "실제 생활·업무 부하가 확인될 때",
+          "notIndependentEvidence": true
+        },
+        {
+          "id": "sar:facet:RESOURCE_SENSE:allocation",
+          "axis": "RESOURCE_SENSE",
+          "definition": "중요한 목적에 자원을 배정",
+          "condition": "자원 소유자·동의 확인",
+          "notIndependentEvidence": true
+        }
+      ],
+      "workStage": "maintenance",
+      "workFunctions": [
+        "friction",
+        "fatigue"
+      ],
+      "outputType": "여력 재검토표",
+      "positive": "부담을 조정할 자료",
+      "risk": "더 배려하면 해결된다고 개인에게 전가",
+      "factBomb": "노력만 늘리라는 말로 없는 여력을 채울 수는 없다.",
+      "twist": "줄일 작업을 찾는 것이 협력의 한 방법일 수 있다.",
+      "fictionalScene": {
+        "status": "hypothetical_only",
+        "text": "가상 반복 지원으로 계획이 밀린다면",
+        "isCustomerHistory": false
+      },
+      "actions": {
+        "personA": "작업·지원의 시간 영향 공유",
+        "personB": "가능 여력·조정 요청"
+      },
+      "counterexample": "건강 진단·근로 법률 판단은 전문 영역",
+      "distinctFromOtherParagraphs": "반복 협업의 작업량 문제",
+      "precedingMeaningRefs": [],
+      "introducedMeaningRequirements": [],
+      "requirements": {
+        "policyRef": "cwpr:binding-policy:v1",
+        "typePredicates": [],
+        "direction": null,
+        "canonicalClaim": "no_new_relation_claim",
+        "jobRole": "UNKNOWN",
+        "authority": "UNKNOWN",
+        "workplace": "UNKNOWN",
+        "workHistory": "UNKNOWN",
+        "actualWorkContextRequired": true,
+        "additionalInput": [
+          "actual_task",
+          "current_phase",
+          "output_requirements",
+          "available_time",
+          "verified_responsibility",
+          "verified_decision_authority"
+        ],
+        "introducedRequired": false
+      },
+      "repair": {
+        "firstFactCheck": "가상 반복 지원으로 계획이 밀린다면",
+        "aChange": "작업·지원의 시간 영향 공유",
+        "bChange": "가능 여력·조정 요청",
+        "authority": "UNKNOWN_verify_existing_organization_procedure",
+        "scope": "여력 재검토표",
+        "recheck": "다음 같은 산출물의 전달·검토 때 실제로 달라진 항목과 미완료를 확인. 새 조건이면 재합의.",
+        "improvement": "확인된 상태·담당·요청 범위가 맞는지 본다. 친밀감·복종·인사 평점·성과 보장으로 측정하지 않음.",
+        "safetySupport": "부당행위·강압·위험은 일반 궁합 조율로 정상화하지 않고 안전한 별도 지원·조직 절차를 확인."
+      },
+      "review": "conditional_editorial_research",
+      "bindingState": "unresolved_no_engine",
+      "newCalculatedFacts": 0
+    },
+    "sourceFile": "docs/validation/v4-compatibility-coworker-product-knowledge-01/work-friction-topic-coverage.json",
+    "sourceHash": "10caad8fd4a64f7dcfe2a0f4e77d00abf79069656967059169588c552da32771",
+    "validation": {
+      "topic": "반복 피로",
+      "checks": [
+        {
+          "field": "availableCapacity",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "revisionScope",
+          "state": "UNKNOWN"
+        },
+        {
+          "field": "availableTime",
+          "state": "UNKNOWN"
+        }
+      ],
+      "applicable": false,
+      "actualConflictHistory": "UNKNOWN",
+      "actualConflictDiagnosed": false,
+      "recipientResponseVerified": false,
+      "conditionKind": "POTENTIAL_WORK_FRICTION_ONLY"
+    },
+    "crossChapterOriginalLink": false
+  }
+]
