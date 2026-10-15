@@ -90,7 +90,18 @@
   "LINT": "PASS, warnings 0",
   "BUILD": "PASS, warnings 0; NFT app/server 88 (90 incl Next server), dependency sets identical",
   "DIFF_CHECK": "PASS",
-  "VERCEL_PREVIEW": "VERIFY_EXACT_FINAL_SHA_BRANCH_PROJECT_TARGET_NULL_AFTER_PUSH",
+  "VERCEL_PREVIEW": {
+    "implementation": {
+      "id": "dpl_AhPLPvjp1Nv5wnRNB9enMAvfgw8i",
+      "url": "https://gyeol-report-8mazm7pvo-gyeol-report-s-projects.vercel.app",
+      "state": "READY",
+      "sha": "9e65187a87ad3f0d36a4b072c7c4651a7df25f79",
+      "branch": "v4/annual-fortune-specialist-engine-01",
+      "project": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+      "target": null
+    },
+    "finalHeadReceipt": "/tmp/gyeol-annual-specialist-engine-01-validation/final-task-results.json"
+  },
   "REMAINING_GAPS": "Approval/meaning/role/source-domain conditions and unsupported producers; no customer Writer connection",
   "NEXT_STAGE_READY": "OFFLINE_HANDOFF_ONLY; no Production or sales approval; next task not started"
 }

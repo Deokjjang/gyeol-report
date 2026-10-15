@@ -35,7 +35,19 @@
   "customerApproved": 0,
   "customerSelections": 0,
   "claims": 0,
-  "preview": "CHECK_EXACT_FINAL_BRANCH_HEAD_AFTER_PUSH",
+  "preview": {
+    "implementation": {
+      "id": "dpl_AhPLPvjp1Nv5wnRNB9enMAvfgw8i",
+      "url": "https://gyeol-report-8mazm7pvo-gyeol-report-s-projects.vercel.app",
+      "state": "READY",
+      "sha": "9e65187a87ad3f0d36a4b072c7c4651a7df25f79",
+      "branch": "v4/annual-fortune-specialist-engine-01",
+      "project": "prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+      "target": null
+    },
+    "finalHeadReceipt": "/tmp/gyeol-annual-specialist-engine-01-validation/final-preview-receipt.json",
+    "finalHeadVerifiedAfterDocumentationPush": true
+  },
   "productionApproved": false,
   "diffCheck": "PASS"
 }

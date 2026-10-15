@@ -81,3 +81,5 @@ Git push 후 구현 SHA의 Preview READY를 기록하고, 최종 브랜치 HEAD�
 ## 남은 조건
 
 월간/본기 역할의 원본 명세, 미해결 자연어 적용 조건, 정확한 source ancestry/domain, 의미 검토 및 운영자/고객 승인이 남아 있다. flowGod와 nominal stem relation의 전용 정확 구간 Graph 주소, 미지원 복합/Transit Producer를 이번 작업에서 새로 만들지 않았다. 후속 Planner는 `annual-specialist-handoff.md`와 정형 worklist를 인수할 수 있지만 고객 원고에 연결할 준비가 완료됐다는 의미는 아니다. 이번 Annual 작업 후 다음 Specialist 개발을 시작하지 않는다.
+
+구현 커밋 `9e65187a87ad3f0d36a4b072c7c4651a7df25f79`의 [Vercel Preview](https://gyeol-report-8mazm7pvo-gyeol-report-s-projects.vercel.app)는 READY이며 branch/project/target=null을 확인했다. 이 receipt 추가 커밋 이후 최종 HEAD도 별도로 확인한다. 최종 exact-SHA 결과는 [최종 94개 보고 항목](/tmp/gyeol-annual-specialist-engine-01-validation/final-task-results.json)과 최종 응답을 기준으로 한다.
