@@ -1,0 +1,41 @@
+{
+  "status": "OFFLINE_IMPLEMENTED",
+  "newTests": {
+    "pass": 71,
+    "fail": 0,
+    "skip": 0
+  },
+  "existingRelated": {
+    "pass": 558,
+    "fail": 0,
+    "skip": 0
+  },
+  "knownFailedFiles": {
+    "pass": 5837,
+    "fail": 46,
+    "sameFullSignatures": true
+  },
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": "PASS",
+  "build": "PASS",
+  "warnings": 0,
+  "originalFiles": 4509,
+  "books": 17,
+  "digests": 102,
+  "observedBooks": 11,
+  "observedMonths": 132,
+  "originalMonthlyTextsByteEqual": 132,
+  "oldWorktrees": 45,
+  "dirtyFiles": 11,
+  "deterministicJson": 29,
+  "customerApproved": 0,
+  "customerSelections": 0,
+  "claims": 0,
+  "preview": "CHECK_EXACT_FINAL_BRANCH_HEAD_AFTER_PUSH",
+  "productionApproved": false,
+  "diffCheck": "PASS"
+}

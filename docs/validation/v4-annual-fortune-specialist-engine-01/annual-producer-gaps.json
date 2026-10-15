@@ -1,0 +1,15 @@
+{
+  "scopes": [
+    "natal_dayun_saeun",
+    "natal_saeun_wolun",
+    "natal_dayun_saeun_wolun"
+  ],
+  "compoundVerdict": "UNSUPPORTED_COMPOSITE",
+  "flowGodDedicatedGraphId": "NOT_EXPOSED",
+  "annualStemRelationExactSegmentGraphId": "NOT_EXPOSED",
+  "monthGodNativeRole": "AMBIGUOUS",
+  "unsupportedTransitRetained": true,
+  "birthTimeUnknownNotFilled": true,
+  "referenceViewIsNotFact": true,
+  "sourceGroupSemanticsNotInferred": true
+}

@@ -1,0 +1,8 @@
+{
+  "appServerNftBefore": 88,
+  "appServerNftAfter": 88,
+  "includingNextServerTraces": 90,
+  "allTracePathsAndDependencySetsEqual": true,
+  "newOfflineCodeOrDataIncluded": [],
+  "remoteCompressedFunctionSizeNotAsserted": true
+}

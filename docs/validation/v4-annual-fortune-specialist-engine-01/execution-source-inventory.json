@@ -1,0 +1,564 @@
+[
+  {
+    "file": "src/lib/interpretation-v4/annualEvidence.ts",
+    "sha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+    "exports": [
+      "AnnualClock",
+      "AnnualTime",
+      "annualPeriodTime",
+      "annualTransitMaterials",
+      "annualNarrativeEvidence",
+      "AnnualEvidence",
+      "AnnualMonthEvidence"
+    ],
+    "imports": [
+      "../report-generation/annualFortuneGenerationHandler",
+      "../report-knowledge/annualFortuneEvidence",
+      "../report-generation/reportInputAdapter",
+      "../report-knowledge/annualFortuneYearRules",
+      "../report-knowledge/annualMonthExtendedEvidence",
+      "../saju/constants",
+      "../report-knowledge/annualFortuneReading",
+      "./materialRegistry",
+      "./materialPacket",
+      "./narrativeTypes"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualProductAdapter.ts",
+    "sha256": "6b14c10bed460ad632998d50791a768d964c5629e7e44621c0bc775b2c440d66",
+    "exports": [
+      "ANNUAL_PRODUCT_VERSION",
+      "buildV4AnnualProduct",
+      "AnnualProduct"
+    ],
+    "imports": [
+      "./annualComposer",
+      "./timeProductContext",
+      "./editorialGuard",
+      "./annualEvidence"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualComposer.ts",
+    "sha256": "e8329cd7b325ce17917fbb7ef71e93ab142b66277500479a91cc20c62a5c80ed",
+    "exports": [
+      "composeAnnualFortuneNarrative"
+    ],
+    "imports": [
+      "../report-knowledge/annualFortuneTypes",
+      "../report-knowledge/koreanCopyUtils",
+      "./annualEvidence",
+      "../report-knowledge/annualFortuneYearRules",
+      "./annualMonthNarrative",
+      "./majorContext",
+      "./majorMaterials",
+      "./copyRealizer",
+      "./editorialGuard",
+      "./contentSynthesis",
+      "./periodPlanner",
+      "./annualEvidenceReading",
+      "./narrativeTypes"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualMonthNarrative.ts",
+    "sha256": "240f39a46dc8cadecd9ddd6cf3955b01f53d6dcbad702966a9979c2ca6e79c06",
+    "exports": [
+      "AnnualEditorialState",
+      "annualBehavior",
+      "annualMonthNarrative"
+    ],
+    "imports": [
+      "../report-knowledge/annualFortuneTypes",
+      "../report-knowledge/koreanCopyUtils",
+      "./annualEvidence",
+      "./majorContext",
+      "./narrativeTypes",
+      "./annualSceneDetails",
+      "./majorMaterials",
+      "./annualStories",
+      "./copyRealizer",
+      "./annualRealization",
+      "./contentPeriod",
+      "./periodPlanner",
+      "./annualMonthPractice",
+      "./annualInteractionReading",
+      "./contentEvidence"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualInteractionReading.ts",
+    "sha256": "d007589d7e3acb208617b119d2698b8dc18c52f4eabafcf09bdf3112e87a3320",
+    "exports": [
+      "annualMonthInteractions"
+    ],
+    "imports": [
+      "../report-knowledge/annualMonthJie",
+      "../report-knowledge/annualFortuneTypes",
+      "../report-knowledge/koreanCopyUtils",
+      "./annualEvidence",
+      "./majorContext",
+      "./annualMonthPractice"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualMonthPractice.ts",
+    "sha256": "96c520d83bc67f6b69b436d6340d809b9bd0c68dbd8d9e2b1d8119b82aaffc97",
+    "exports": [
+      "annualMonthPractice"
+    ],
+    "imports": [
+      "../report-knowledge/annualFortuneTypes",
+      "./majorContext",
+      "./monthActions"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualSceneDetails.ts",
+    "sha256": "7ea1cfb3f806cee01e64039e5386b9d92d5ac7b736a879fd49da70e9c14030a5",
+    "exports": [
+      "annualSceneDetail"
+    ],
+    "imports": [
+      "../report-knowledge/annualFortuneTypes",
+      "./majorContext"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualStories.ts",
+    "sha256": "cce67558f2374078809f086a5ee77451962717e396ca161c9ac00a3acb91c085",
+    "exports": [
+      "ANNUAL_MONTH_STORIES",
+      "ANNUAL_TRANSIT_STORIES"
+    ],
+    "imports": [
+      "../report-knowledge/annualFortuneTypes"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/annualRealization.ts",
+    "sha256": "3b7d4331855717483d1b98e061e9222c3d1a92161d2face2e563faf3b72aa430",
+    "exports": [
+      "annualMonthLead",
+      "annualGiftTitle"
+    ],
+    "imports": [
+      "../report-knowledge/annualFortuneTypes",
+      "./annualEvidence",
+      "./majorContext"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/periodPlanner.ts",
+    "sha256": "ed0a1c4b9d35c656bd8c2df9ea72140d696e18167b4cf8743f7d7e75dc1cf39c",
+    "exports": [
+      "PeriodImportance",
+      "planMajorYears",
+      "planAnnualMonths",
+      "annualYearMap",
+      "monthBoundaryDescription",
+      "friendlyTransition"
+    ],
+    "imports": [
+      "./majorEvidence",
+      "./annualEvidence"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/timeProductContext.ts",
+    "sha256": "ca3fd07c2fdd39a43c3e1694f3c36b156c26750a8d5290c31cac0a93958c32c6",
+    "exports": [
+      "TimeProductPeriod",
+      "TimeContextProjection",
+      "createTimeProductContext"
+    ],
+    "imports": [
+      "node:crypto",
+      "./relationshipProductView",
+      "./comprehensiveCandidateAdapter",
+      "./foundationTenGods",
+      "./majorMaterials",
+      "./narrativeBlockRenderer",
+      "./narrativeMemory",
+      "./narrativeHumanSurface",
+      "./narrativeMbtiReason",
+      "./copyRealizer",
+      "../report-knowledge/annualFortuneTypes",
+      "./narrativeTypes",
+      "./comprehensivePlanCore",
+      "./narrativeCore",
+      "./semanticCore"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/contentPeriod.ts",
+    "sha256": "f962f66636864e3c51e7533d92b2abab6e8c88762e0b7573dd27724f1b145ae2",
+    "exports": [
+      "periodExplanation"
+    ],
+    "imports": [
+      "../report-knowledge/annualFortuneTypes",
+      "./narrativeTypes",
+      "./contentEvidence",
+      "./copyRealizer"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/contentEvidence.ts",
+    "sha256": "0c58c4a8275583ec71fe45f15f0df7180c9853d5da853207159193e8a0db464f",
+    "exports": [
+      "projectYinYang",
+      "ContentEvidencePool",
+      "buildContentEvidencePool",
+      "contentFeature",
+      "materialLabel",
+      "fusionDomains",
+      "ChapterEvidencePlan",
+      "ContentSelectionState",
+      "createContentSelection",
+      "assertionPermission",
+      "planChapter"
+    ],
+    "imports": [
+      "../saju/constants",
+      "../report-knowledge/natalTableEvidence",
+      "./strength",
+      "./materialRegistry",
+      "./materialDepth",
+      "./fusionRules",
+      "../saju/types",
+      "./narrativeTypes",
+      "./materialPacket",
+      "./types"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/editorialGuard.ts",
+    "sha256": "ac036a0b8b23d0d84b2d605756ad226830b3e0141988a7a9749eca0eafd6f34f",
+    "exports": [
+      "sentences",
+      "sentenceKey",
+      "narrativeText",
+      "reviewNarrative",
+      "reviewNarrativeCohort"
+    ],
+    "imports": [
+      "./narrativeTypes"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/interpretation-v4/contentQuality.ts",
+    "sha256": "44e50287d61bd338bdd90205069bfc4ee60888382c73de43bbc4eb9f98764453",
+    "exports": [
+      "SEMANTIC_FAMILIES",
+      "auditContent"
+    ],
+    "imports": [
+      "./editorialGuard",
+      "./narrativeTypes"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/report-generation/annualFortuneGenerationHandler.ts",
+    "sha256": "56498fb9dae10f233dda934b209284763c73535b14640f01fd5463fc4b85ce1d",
+    "exports": [
+      "AnnualFortuneGenerationErrorCode",
+      "AnnualFortuneGenerationResult",
+      "AnnualFortuneGenerationHandlerOptions",
+      "generateAnnualFortuneProductDraft",
+      "calculateAnnualFortuneSaju"
+    ],
+    "imports": [
+      "../report-knowledge/bridge/interactionScenes",
+      "./annualMonthlyPublication",
+      "../report-knowledge/annualFortuneReading",
+      "./reportInputEvidence",
+      "../saju/birthTimePrecisionTypes",
+      "../saju/customerDayun",
+      "../report-knowledge/annualFortuneYearRules",
+      "../saju/calculateSaju",
+      "./reportInputAdapter",
+      "./reportInputTypes"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/report-generation/annualMonthlyPublication.ts",
+    "sha256": "8b9659ef27e5b51ac959c42f10e559f013b5b6c7c1447a51172c215b66249a72",
+    "exports": [
+      "buildAnnualMonthlyPublication",
+      "buildAnnualReadingPublication",
+      "annualReadingMatches",
+      "annualMonthlyEvidenceMatches"
+    ],
+    "imports": [
+      "../report-knowledge/annualMonthRelationFacts",
+      "../report-knowledge/annualFortuneTypes",
+      "./annualFortuneReportDraftTypes",
+      "../report-knowledge/annualMonthJie",
+      "./annualMonthJiePublication",
+      "../report-knowledge/annualFortuneReading"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/report-generation/reportInputAdapter.ts",
+    "sha256": "1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+    "exports": [
+      "ReportInputAdapterOptions",
+      "ReportProductKind",
+      "ReportInputAdapterErrorCode",
+      "ReportInputAdapterResult",
+      "GenerationPersonInput",
+      "SinglePersonGenerationInput",
+      "CompatibilityGenerationInput",
+      "ReportGenerationInput",
+      "getReportProductKind",
+      "normalizeReportInputPayload",
+      "toSinglePersonGenerationInput",
+      "toCompatibilityGenerationInput"
+    ],
+    "imports": [
+      "../saju/birthTimePrecisionTypes",
+      "../saju/birthTimePrecision",
+      "../saju/customerDayun",
+      "../report-knowledge/annualFortuneYearRules"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/report-knowledge/annualFortuneEvidence.ts",
+    "sha256": "133314070c86ad93a77aa641f9100ff1c25a0dc98176e1ddb0a61594f53a9a08",
+    "exports": [
+      "AnnualFortuneEvidencePacket",
+      "AnnualPersonInput",
+      "buildAnnualMonthlyFortunes",
+      "buildAnnualFortuneEvidence"
+    ],
+    "imports": [
+      "../saju/customerDayun",
+      "./annualFortuneReading",
+      "./annualMonthJie",
+      "./mbti",
+      "./majorFortuneTypes",
+      "./majorFortuneRules",
+      "./userContextTypes"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/report-knowledge/annualFortuneReading.ts",
+    "sha256": "bd386bc141e177ec330c98225f5d4f4681730abb143642237a2addda70529836",
+    "exports": [
+      "AnnualReadingSegment",
+      "AnnualReadingMonth",
+      "AnnualFortuneReading",
+      "annualRelationLabel",
+      "buildAnnualFortuneReading"
+    ],
+    "imports": [
+      "./annualFortuneEvidence",
+      "./annualMonthJie",
+      "./annualFortuneTypes",
+      "./bridge/interactionScenes",
+      "./annualFortuneYearRules",
+      "./annualFortuneTypes",
+      "./koreanCopyUtils",
+      "./reportContextScenes"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+    "sha256": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe",
+    "exports": [
+      "ANNUAL_FORTUNE_TIME_ZONE",
+      "ANNUAL_FORTUNE_COMMERCE_YEAR_COUNT",
+      "AnnualFortuneSeoulDateParts",
+      "AnnualFortuneCommerceYearPolicy",
+      "getAnnualFortuneSeoulDateParts",
+      "getAnnualFortuneCurrentYear",
+      "getAnnualFortuneCommerceYearPolicy",
+      "isAnnualFortuneCommerceYearSelectable",
+      "getStemElement",
+      "getBranchElement",
+      "getStemYinYang",
+      "getBranchYinYang",
+      "getGeneratedElement",
+      "getAnnualGanjiInfo",
+      "getAnnualMonthGanjiInfo",
+      "getAnnualFortuneYearAccess",
+      "getTenGodForStemPair",
+      "getBranchPairRelations",
+      "getAnnualBranchInteractions"
+    ],
+    "imports": [],
+    "changed": false
+  },
+  {
+    "file": "src/lib/report-knowledge/annualMonthJie.ts",
+    "sha256": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+    "exports": [
+      "ANNUAL_MONTH_CALCULATION_VERSION",
+      "MonthDayunContext",
+      "AnnualJieRelationFact",
+      "AnnualMonthSegment",
+      "AnnualCalendarMonth",
+      "AnnualMonthCalendarInput",
+      "monthPillarText",
+      "getAnnualJieBoundaries",
+      "buildAnnualMonthCalendar"
+    ],
+    "imports": [
+      "../saju/lunarJavascriptPillars",
+      "../saju/solarTerms",
+      "../saju/calendarVersion",
+      "../saju/customerDayun",
+      "./annualMonthRelationFacts",
+      "./annualFortuneYearRules",
+      "./annualFortuneTypes"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/report-knowledge/annualMonthRelationFacts.ts",
+    "sha256": "71eee0d4c83ce665cf35257ba08e0fdd6d7cef30880632539e15314dee73a7fe",
+    "exports": [
+      "AnnualMonthRelationFact",
+      "AnnualMonthClassification",
+      "classifyAnnualMonthFacts",
+      "buildAnnualMonthRelationFacts",
+      "explainAnnualMonthFact",
+      "summarizeAnnualMonthFacts"
+    ],
+    "imports": [
+      "./annualFortuneYearRules"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/report-knowledge/annualMonthExtendedEvidence.ts",
+    "sha256": "2294adaac0464612f2d9b5b433520a06f0c844c2d39b9ec581ed5fee02fe5872",
+    "exports": [
+      "ANNUAL_MONTH_EVIDENCE_VERSION",
+      "MonthFeature",
+      "ExtendedMonthSegment",
+      "AnnualMonthExtendedEvidence",
+      "extendAnnualMonthEvidence",
+      "annualSegmentAt"
+    ],
+    "imports": [
+      "../saju/shinsalConstants",
+      "../saju/shinsalTypes",
+      "./annualMonthJie",
+      "./sajuFeatureExtractionRules",
+      "./sajuPillarFeaturePlacement",
+      "./annualFortuneEvidence"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/report-knowledge/annualFortuneTypes.ts",
+    "sha256": "ad86f0c6e095a433ef2d3696b9411a2cefd5f080e5a17ad5c51a62a4e8d672f2",
+    "exports": [
+      "AnnualFortuneMode",
+      "HeavenlyStem",
+      "EarthlyBranch",
+      "FiveElement",
+      "YinYang",
+      "TenGod",
+      "AnnualGanjiInfo",
+      "AnnualMonthGanjiInfo",
+      "AnnualFortuneYearAccess",
+      "AnnualBranchInteractionType",
+      "AnnualPillarPosition",
+      "AnnualBranchInteraction",
+      "AnnualFortuneYearAccessStatus",
+      "AnnualFortuneDomainFlowKey"
+    ],
+    "imports": [],
+    "changed": false
+  },
+  {
+    "file": "src/lib/saju/customerDayun.ts",
+    "sha256": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+    "exports": [
+      "DAYUN_UNCERTAIN_MESSAGE",
+      "CustomerDayunInput",
+      "DayunTimeRange",
+      "CustomerDayunCycle",
+      "CustomerDayun",
+      "DayunSelection",
+      "formatDayunKst",
+      "calculateCustomerDayun",
+      "selectCustomerDayun"
+    ],
+    "imports": [
+      "node:module",
+      "./calendarVersion",
+      "./lunarJavascriptPillars",
+      "./birthTimePrecision",
+      "./birthTimePrecisionTypes",
+      "../report-knowledge/majorFortuneRules",
+      "../report-knowledge/majorFortuneTypes"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/saju/solarTerms.ts",
+    "sha256": "4069419419f2872c4849883633674edae76ae2bac91cda991efdf8d85cee8e60",
+    "exports": [
+      "getSolarTermContext",
+      "UnsupportedSolarTermYearError",
+      "getSolarTermInstants"
+    ],
+    "imports": [
+      "node:module",
+      "./types"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/saju/lunarJavascriptPillars.ts",
+    "sha256": "eff812c0acb2d730ddeccf4304e150942f36c5c700bb10c4f31e8d0f89cf19f1",
+    "exports": [
+      "LunarJavascriptPillarSet",
+      "createSajuCalendarContext",
+      "getLunarJavascriptPillarsFromSolarDateTime"
+    ],
+    "imports": [
+      "./calendarVersion",
+      "./pillars",
+      "./solarTerms",
+      "./types"
+    ],
+    "changed": false
+  },
+  {
+    "file": "src/lib/saju/calendarVersion.ts",
+    "sha256": "4afd5b85df5f5cd5e2d5b6249077b40c3bca1057aae5662e12fbb1ebd73a07a5",
+    "exports": [
+      "SAJU_CALENDAR_VERSION",
+      "DAYUN_CALCULATION_VERSION",
+      "DAYUN_ACTUAL_CYCLE_COUNT"
+    ],
+    "imports": [],
+    "changed": false
+  }
+]

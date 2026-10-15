@@ -1,0 +1,292 @@
+{
+  "passed": 71,
+  "failed": 0,
+  "pending": 0,
+  "tests": [
+    {
+      "name": "inherits 1792 registry records, 109 researches and 12 kinds",
+      "status": "passed"
+    },
+    {
+      "name": "preserves all 20 research families and 18610 records",
+      "status": "passed"
+    },
+    {
+      "name": "retains twelve original questions, locators and record hashes",
+      "status": "passed"
+    },
+    {
+      "name": "keeps exact 5x109 Binder denominator and twelve Hard Gates",
+      "status": "passed"
+    },
+    {
+      "name": "does not add 124/372/248 Foundation observations to Binder matches",
+      "status": "passed"
+    },
+    {
+      "name": "preserves 11 Books and all 132 monthly observations",
+      "status": "passed"
+    },
+    {
+      "name": "rejects future commerce year without offline policyDate",
+      "status": "passed"
+    },
+    {
+      "name": "validates complete [start,end) KST civil-month ledgers",
+      "status": "passed"
+    },
+    {
+      "name": "blocks ledger corruption gap",
+      "status": "passed"
+    },
+    {
+      "name": "blocks ledger corruption overlap",
+      "status": "passed"
+    },
+    {
+      "name": "blocks ledger corruption reverse",
+      "status": "passed"
+    },
+    {
+      "name": "blocks ledger corruption missing-month",
+      "status": "passed"
+    },
+    {
+      "name": "blocks ledger corruption one-per-month",
+      "status": "passed"
+    },
+    {
+      "name": "validates every original Jie and exact 2026 Ipchun",
+      "status": "passed"
+    },
+    {
+      "name": "retains exact December cycle2 to3 transition and three segments",
+      "status": "passed"
+    },
+    {
+      "name": "separates C2028 April Jie from exact Dayun with no copied post relation",
+      "status": "passed"
+    },
+    {
+      "name": "retains range endpoints separately from August Jie",
+      "status": "passed"
+    },
+    {
+      "name": "before first Dayun never creates a virtual active cycle",
+      "status": "passed"
+    },
+    {
+      "name": "matches explicit stem and branch-main roles, keeps original ambiguity",
+      "status": "passed"
+    },
+    {
+      "name": "nominal annual stem relation cannot cross pre-Ipchun",
+      "status": "passed"
+    },
+    {
+      "name": "preserves five separate annual/month relation sources without 3/4 layer verdicts",
+      "status": "passed"
+    },
+    {
+      "name": "validates actual three participants in H Samhap",
+      "status": "passed"
+    },
+    {
+      "name": "keeps accepted transit observations separate from customer claims",
+      "status": "passed"
+    },
+    {
+      "name": "retains all segments and original focus without a fake display ledger",
+      "status": "passed"
+    },
+    {
+      "name": "keeps unknown MBTI/hour absent",
+      "status": "passed"
+    },
+    {
+      "name": "compares within month, adjacent month and whole-year roots",
+      "status": "passed"
+    },
+    {
+      "name": "109 meanings remain pending and 5886 pair reviews are not confirmed conflicts",
+      "status": "passed"
+    },
+    {
+      "name": "all real approvals, selections and claims remain zero",
+      "status": "passed"
+    },
+    {
+      "name": "preserves natural conditions and source group semantics",
+      "status": "passed"
+    },
+    {
+      "name": "compares 12-month algorithms without asserting universal superiority",
+      "status": "passed"
+    },
+    {
+      "name": "blocks synthetic corruption missingApproval",
+      "status": "passed"
+    },
+    {
+      "name": "blocks synthetic corruption wrongOwner",
+      "status": "passed"
+    },
+    {
+      "name": "blocks synthetic corruption sourceDefinition",
+      "status": "passed"
+    },
+    {
+      "name": "blocks synthetic corruption badSourceHash",
+      "status": "passed"
+    },
+    {
+      "name": "blocks synthetic corruption withheld",
+      "status": "passed"
+    },
+    {
+      "name": "blocks synthetic corruption missingFact",
+      "status": "passed"
+    },
+    {
+      "name": "blocks synthetic corruption wrongProducer",
+      "status": "passed"
+    },
+    {
+      "name": "blocks synthetic corruption forgedValue",
+      "status": "passed"
+    },
+    {
+      "name": "blocks synthetic corruption wrongWindow",
+      "status": "passed"
+    },
+    {
+      "name": "blocks synthetic corruption missingGroupSource",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material role",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material reference",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material effective-year",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material pillar",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material cycle",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material partial",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material range",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material participant",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material life-state",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material event",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material recall",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material transit",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material composite",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material samhap",
+      "status": "passed"
+    },
+    {
+      "name": "holds unsupported monthly material before-first",
+      "status": "passed"
+    },
+    {
+      "name": "actual display is required for recall",
+      "status": "passed"
+    },
+    {
+      "name": "registered comparison retains two actual operands",
+      "status": "passed"
+    },
+    {
+      "name": "synthetic sessions and approvals cannot enter real research",
+      "status": "passed"
+    },
+    {
+      "name": "forged meaning and display are rejected",
+      "status": "passed"
+    },
+    {
+      "name": "same root is not a new calculated fact",
+      "status": "passed"
+    },
+    {
+      "name": "deterministic tie-break and search limit are explicit",
+      "status": "passed"
+    },
+    {
+      "name": "tampered producer packet seal cannot be accepted",
+      "status": "passed"
+    },
+    {
+      "name": "preserves all 4509 existing tracked files including Writer, Books and research",
+      "status": "passed"
+    },
+    {
+      "name": "new modules are never imported by original Runtime",
+      "status": "passed"
+    },
+    {
+      "name": "range interior preserves independent monthly evidence while withholding cycle claims",
+      "status": "passed"
+    },
+    {
+      "name": "selection options cannot mutate the authenticated session",
+      "status": "passed"
+    },
+    {
+      "name": "actual relation identity cannot be moved to another natal position",
+      "status": "passed"
+    },
+    {
+      "name": "exact active Dayun is checked against the original cycle bounds",
+      "status": "passed"
+    },
+    {
+      "name": "a confirmed independent fact survives an uncertain Dayun window",
+      "status": "passed"
+    },
+    {
+      "name": "writes deterministic artifacts without input names or birth dates",
+      "status": "passed"
+    },
+    {
+      "name": "monthly identity rejects source definitions, wrong producer, root and window",
+      "status": "passed"
+    }
+  ],
+  "initialValidationIncident": "The added artifact assertion compared large Buffers with deep equality and exhausted the default 4GB test-worker heap. It was changed to exact-byte SHA256 comparisons. Final tests passed with the original default heap/timeouts; no existing test or limit changed."
+}

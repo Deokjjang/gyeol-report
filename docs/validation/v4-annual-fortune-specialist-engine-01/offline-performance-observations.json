@@ -1,0 +1,85 @@
+{
+  "executions": [
+    {
+      "elapsedMs": 388255.935209,
+      "rssStartBytes": 831586304,
+      "rssEndBytes": 4286660608,
+      "maxRssBytes": 5387665408,
+      "timings": [
+        {
+          "fixtureId": "fixture-annual-A",
+          "foundationMs": 3072.6354169999977,
+          "specialistMs": 745.6422500000044,
+          "rssBytes": 3185623040
+        },
+        {
+          "fixtureId": "fixture-annual-F",
+          "foundationMs": 463.9485840000125,
+          "specialistMs": 145.836707999988,
+          "rssBytes": 3181281280
+        },
+        {
+          "fixtureId": "fixture-annual-transition-C2028",
+          "foundationMs": 2644.9364589999896,
+          "specialistMs": 707.0426659999939,
+          "rssBytes": 3950493696
+        },
+        {
+          "fixtureId": "fixture-annual-ranged-transition",
+          "foundationMs": 2358.2730000000156,
+          "specialistMs": 616.331790999975,
+          "rssBytes": 4738203648
+        },
+        {
+          "fixtureId": "fixture-annual-before-first-dayun",
+          "foundationMs": 2404.217082999996,
+          "specialistMs": 762.3464999999851,
+          "rssBytes": 5386076160
+        }
+      ],
+      "originalMajorGeneratedFilesMatched": 28,
+      "network": "disabled"
+    },
+    {
+      "elapsedMs": 389506.440792,
+      "rssStartBytes": 835141632,
+      "rssEndBytes": 4291100672,
+      "maxRssBytes": 5165842432,
+      "timings": [
+        {
+          "fixtureId": "fixture-annual-A",
+          "foundationMs": 2819.0556249999936,
+          "specialistMs": 977.7915829999984,
+          "rssBytes": 3028697088
+        },
+        {
+          "fixtureId": "fixture-annual-F",
+          "foundationMs": 435.49187499999243,
+          "specialistMs": 150.32895900000585,
+          "rssBytes": 3033432064
+        },
+        {
+          "fixtureId": "fixture-annual-transition-C2028",
+          "foundationMs": 2673.7065000000002,
+          "specialistMs": 699.8007090000028,
+          "rssBytes": 3777462272
+        },
+        {
+          "fixtureId": "fixture-annual-ranged-transition",
+          "foundationMs": 2405.182165999984,
+          "specialistMs": 591.7610419999983,
+          "rssBytes": 4073783296
+        },
+        {
+          "fixtureId": "fixture-annual-before-first-dayun",
+          "foundationMs": 2493.9416250000068,
+          "specialistMs": 603.2701660000021,
+          "rssBytes": 4826972160
+        }
+      ],
+      "originalMajorGeneratedFilesMatched": 28,
+      "network": "disabled"
+    }
+  ],
+  "customerRuntimePerformanceClaim": false
+}

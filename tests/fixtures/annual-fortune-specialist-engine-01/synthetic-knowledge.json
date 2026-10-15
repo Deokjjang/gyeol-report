@@ -1,0 +1,1854 @@
+{
+  "version": "synthetic-annual-v1",
+  "questions": [
+    {
+      "id": "synthetic:annual:q:1",
+      "month": 1,
+      "segmentId": "segment-1",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:1"
+    },
+    {
+      "id": "synthetic:annual:q:2",
+      "month": 2,
+      "segmentId": "segment-2",
+      "priority": "BOUNDARY",
+      "requiredMeaning": "synthetic:annual:meaning:2"
+    },
+    {
+      "id": "synthetic:annual:q:3",
+      "month": 3,
+      "segmentId": "segment-3",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:3"
+    },
+    {
+      "id": "synthetic:annual:q:4",
+      "month": 4,
+      "segmentId": "segment-4",
+      "priority": "BOUNDARY",
+      "requiredMeaning": "synthetic:annual:meaning:4"
+    },
+    {
+      "id": "synthetic:annual:q:5",
+      "month": 5,
+      "segmentId": "segment-5",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:5"
+    },
+    {
+      "id": "synthetic:annual:q:6",
+      "month": 6,
+      "segmentId": "segment-6",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:6"
+    },
+    {
+      "id": "synthetic:annual:q:7",
+      "month": 7,
+      "segmentId": "segment-7",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:7"
+    },
+    {
+      "id": "synthetic:annual:q:8",
+      "month": 8,
+      "segmentId": "segment-8",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:8"
+    },
+    {
+      "id": "synthetic:annual:q:9",
+      "month": 9,
+      "segmentId": "segment-9",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:9"
+    },
+    {
+      "id": "synthetic:annual:q:10",
+      "month": 10,
+      "segmentId": "segment-10",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:10"
+    },
+    {
+      "id": "synthetic:annual:q:11",
+      "month": 11,
+      "segmentId": "segment-11",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:11"
+    },
+    {
+      "id": "synthetic:annual:q:12",
+      "month": 12,
+      "segmentId": "segment-12",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:12"
+    }
+  ],
+  "facts": [
+    {
+      "id": "segment-1",
+      "root": "segment-1",
+      "month": 1,
+      "segmentId": "segment-1",
+      "start": "2026-01-01T00:00:00+09:00",
+      "end": "2026-02-01T00:00:00+09:00",
+      "pillar": "synthetic-month-1",
+      "annual": "synthetic-year-before",
+      "dayun": 1,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-2",
+      "root": "segment-2",
+      "month": 2,
+      "segmentId": "segment-2",
+      "start": "2026-02-04T05:02:08+09:00",
+      "end": "2026-03-01T00:00:00+09:00",
+      "pillar": "synthetic-month-2",
+      "annual": "synthetic-year-after",
+      "dayun": 1,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-3",
+      "root": "segment-3",
+      "month": 3,
+      "segmentId": "segment-3",
+      "start": "2026-03-01T00:00:00+09:00",
+      "end": "2026-04-01T00:00:00+09:00",
+      "pillar": "synthetic-month-3",
+      "annual": "synthetic-year-after",
+      "dayun": 1,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-4",
+      "root": "segment-4",
+      "month": 4,
+      "segmentId": "segment-4",
+      "start": "2026-04-23T21:42:00+09:00",
+      "end": "2026-05-01T00:00:00+09:00",
+      "pillar": "synthetic-month-4",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-5",
+      "root": "segment-5",
+      "month": 5,
+      "segmentId": "segment-5",
+      "start": "2026-05-01T00:00:00+09:00",
+      "end": "2026-06-01T00:00:00+09:00",
+      "pillar": "synthetic-month-5",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-6",
+      "root": "segment-6",
+      "month": 6,
+      "segmentId": "segment-6",
+      "start": "2026-06-01T00:00:00+09:00",
+      "end": "2026-07-01T00:00:00+09:00",
+      "pillar": "synthetic-month-6",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-7",
+      "root": "segment-7",
+      "month": 7,
+      "segmentId": "segment-7",
+      "start": "2026-07-01T00:00:00+09:00",
+      "end": "2026-08-01T00:00:00+09:00",
+      "pillar": "synthetic-month-7",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-8",
+      "root": "segment-8",
+      "month": 8,
+      "segmentId": "segment-8",
+      "start": "2026-08-08T21:59:59+09:00",
+      "end": "2026-09-01T00:00:00+09:00",
+      "pillar": "synthetic-month-8",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-9",
+      "root": "segment-9",
+      "month": 9,
+      "segmentId": "segment-9",
+      "start": "2026-09-01T00:00:00+09:00",
+      "end": "2026-10-01T00:00:00+09:00",
+      "pillar": "synthetic-month-9",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-10",
+      "root": "segment-10",
+      "month": 10,
+      "segmentId": "segment-10",
+      "start": "2026-10-01T00:00:00+09:00",
+      "end": "2026-11-01T00:00:00+09:00",
+      "pillar": "synthetic-month-10",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-11",
+      "root": "segment-11",
+      "month": 11,
+      "segmentId": "segment-11",
+      "start": "2026-11-01T00:00:00+09:00",
+      "end": "2026-12-01T00:00:00+09:00",
+      "pillar": "synthetic-month-11",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "segment-12",
+      "root": "segment-12",
+      "month": 12,
+      "segmentId": "segment-12",
+      "start": "2026-12-01T00:00:00+09:00",
+      "end": "2027-01-01T00:00:00+09:00",
+      "pillar": "synthetic-month-12",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "shared-natal",
+      "root": "shared-natal",
+      "month": 1,
+      "segmentId": "shared-natal",
+      "start": "2026-01-01T00:00:00+09:00",
+      "end": "2027-01-01T00:00:00+09:00",
+      "pillar": "synthetic-month-1",
+      "annual": "synthetic-year-before",
+      "dayun": 1,
+      "uncertainDayun": false,
+      "role": "NATAL_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "natal",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "feb-before",
+      "root": "feb-before",
+      "month": 2,
+      "segmentId": "feb-before",
+      "start": "2026-02-01T00:00:00+09:00",
+      "end": "2026-02-04T05:02:08+09:00",
+      "pillar": "synthetic-old-month",
+      "annual": "synthetic-year-before",
+      "dayun": 1,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "april-before",
+      "root": "april-before",
+      "month": 4,
+      "segmentId": "april-before",
+      "start": "2026-04-01T00:00:00+09:00",
+      "end": "2026-04-04T15:03:06+09:00",
+      "pillar": "synthetic-previous-month",
+      "annual": "synthetic-year-after",
+      "dayun": 1,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "april-middle",
+      "root": "april-middle",
+      "month": 4,
+      "segmentId": "april-middle",
+      "start": "2026-04-04T15:03:06+09:00",
+      "end": "2026-04-23T21:42:00+09:00",
+      "pillar": "synthetic-month-4",
+      "annual": "synthetic-year-after",
+      "dayun": 1,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "aug-range",
+      "root": "aug-range",
+      "month": 8,
+      "segmentId": "aug-range",
+      "start": "2026-08-01T00:00:00+09:00",
+      "end": "2026-08-08T21:59:59+09:00",
+      "pillar": "synthetic-month-8",
+      "annual": "synthetic-year-after",
+      "dayun": null,
+      "uncertainDayun": true,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "may-samhap",
+      "root": "may-samhap",
+      "month": 5,
+      "segmentId": "may-samhap",
+      "start": "2026-05-01T00:00:00+09:00",
+      "end": "2026-06-01T00:00:00+09:00",
+      "pillar": "synthetic-month-5",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "natal_month_samhap",
+      "participants": [
+        "month:\u7533",
+        "natal:\u5b50",
+        "natal:\u8fb0"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "june-branch",
+      "root": "june-branch",
+      "month": 6,
+      "segmentId": "june-branch",
+      "start": "2026-06-01T00:00:00+09:00",
+      "end": "2026-07-01T00:00:00+09:00",
+      "pillar": "synthetic-month-6",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_BRANCH_MAIN",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-branch-main",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "sep-transit",
+      "root": "sep-transit",
+      "month": 9,
+      "segmentId": "sep-transit",
+      "start": "2026-09-01T00:00:00+09:00",
+      "end": "2026-10-01T00:00:00+09:00",
+      "pillar": "synthetic-month-9",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "accepted",
+      "composite": false
+    },
+    {
+      "id": "held-transit",
+      "root": "held-transit",
+      "month": 9,
+      "segmentId": "held-transit",
+      "start": "2026-09-01T00:00:00+09:00",
+      "end": "2026-10-01T00:00:00+09:00",
+      "pillar": "synthetic-month-9",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "held",
+      "composite": false
+    },
+    {
+      "id": "composite",
+      "root": "composite",
+      "month": 5,
+      "segmentId": "composite",
+      "start": "2026-05-01T00:00:00+09:00",
+      "end": "2026-06-01T00:00:00+09:00",
+      "pillar": "synthetic-month-5",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "natal_dayun_saeun_wolun",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": true
+    },
+    {
+      "id": "two-samhap",
+      "root": "two-samhap",
+      "month": 5,
+      "segmentId": "two-samhap",
+      "start": "2026-05-01T00:00:00+09:00",
+      "end": "2026-06-01T00:00:00+09:00",
+      "pillar": "synthetic-month-5",
+      "annual": "synthetic-year-after",
+      "dayun": 2,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "natal_month_samhap",
+      "participants": [
+        "month:\u7533",
+        "natal:\u5b50"
+      ],
+      "transit": "none",
+      "composite": false
+    },
+    {
+      "id": "before-first",
+      "root": "before-first",
+      "month": 6,
+      "segmentId": "before-first",
+      "start": "2026-06-01T00:00:00+09:00",
+      "end": "2026-07-01T00:00:00+09:00",
+      "pillar": "synthetic-month-6",
+      "annual": "synthetic-year-after",
+      "dayun": null,
+      "uncertainDayun": false,
+      "role": "MONTH_STEM",
+      "god": "synthetic-god",
+      "referenceStem": "synthetic-day-master",
+      "targetStem": "synthetic-month-stem",
+      "scope": "monthly",
+      "participants": [
+        "month:stem",
+        "natal:day:stem"
+      ],
+      "transit": "none",
+      "composite": false
+    }
+  ],
+  "materials": [
+    {
+      "id": "synthetic:annual:01-first-shared",
+      "questionId": "synthetic:annual:q:1",
+      "meaning": {
+        "id": "synthetic:annual:meaning:1",
+        "claim": "synthetic:annual:claim:1",
+        "review": "synthetic:annual:review:01-first-shared",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-1",
+        "condition": "synthetic-condition-1",
+        "direct": true,
+        "factIds": [
+          "shared-natal"
+        ],
+        "role": "NATAL_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-before",
+        "pillar": "synthetic-month-1",
+        "dayun": 1,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "natal",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:02-jan-alternative",
+      "questionId": "synthetic:annual:q:1",
+      "meaning": {
+        "id": "synthetic:annual:meaning:1",
+        "claim": "synthetic:annual:claim:1",
+        "review": "synthetic:annual:review:02-jan-alternative",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-1",
+        "condition": "synthetic-condition-1",
+        "direct": false,
+        "factIds": [
+          "segment-1"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-before",
+        "pillar": "synthetic-month-1",
+        "dayun": 1,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:feb-critical",
+      "questionId": "synthetic:annual:q:2",
+      "meaning": {
+        "id": "synthetic:annual:meaning:2",
+        "claim": "synthetic:annual:claim:2",
+        "review": "synthetic:annual:review:feb-critical",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-2",
+        "condition": "synthetic-condition-2",
+        "direct": true,
+        "factIds": [
+          "shared-natal"
+        ],
+        "role": "NATAL_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-2",
+        "dayun": 1,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "natal",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:month-3",
+      "questionId": "synthetic:annual:q:3",
+      "meaning": {
+        "id": "synthetic:annual:meaning:3",
+        "claim": "synthetic:annual:claim:3",
+        "review": "synthetic:annual:review:month-3",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-3",
+        "condition": "synthetic-condition-3",
+        "direct": true,
+        "factIds": [
+          "segment-3"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-3",
+        "dayun": 1,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:month-4",
+      "questionId": "synthetic:annual:q:4",
+      "meaning": {
+        "id": "synthetic:annual:meaning:4",
+        "claim": "synthetic:annual:claim:4",
+        "review": "synthetic:annual:review:month-4",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-4",
+        "condition": "synthetic-condition-4",
+        "direct": true,
+        "factIds": [
+          "segment-4"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-4",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:month-5",
+      "questionId": "synthetic:annual:q:5",
+      "meaning": {
+        "id": "synthetic:annual:meaning:5",
+        "claim": "synthetic:annual:claim:5",
+        "review": "synthetic:annual:review:month-5",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-5",
+        "condition": "synthetic-condition-5",
+        "direct": true,
+        "factIds": [
+          "segment-5"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-5",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:month-6",
+      "questionId": "synthetic:annual:q:6",
+      "meaning": {
+        "id": "synthetic:annual:meaning:6",
+        "claim": "synthetic:annual:claim:6",
+        "review": "synthetic:annual:review:month-6",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-6",
+        "condition": "synthetic-condition-6",
+        "direct": true,
+        "factIds": [
+          "segment-6"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-6",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:month-7",
+      "questionId": "synthetic:annual:q:7",
+      "meaning": {
+        "id": "synthetic:annual:meaning:7",
+        "claim": "synthetic:annual:claim:7",
+        "review": "synthetic:annual:review:month-7",
+        "function": "CONTINUITY",
+        "application": "synthetic-app-7",
+        "condition": "synthetic-condition-7",
+        "direct": true,
+        "factIds": [
+          "segment-7"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-7",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:month-8",
+      "questionId": "synthetic:annual:q:8",
+      "meaning": {
+        "id": "synthetic:annual:meaning:8",
+        "claim": "synthetic:annual:claim:8",
+        "review": "synthetic:annual:review:month-8",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-8",
+        "condition": "synthetic-condition-8",
+        "direct": true,
+        "factIds": [
+          "segment-8"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-8",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:month-9",
+      "questionId": "synthetic:annual:q:9",
+      "meaning": {
+        "id": "synthetic:annual:meaning:9",
+        "claim": "synthetic:annual:claim:9",
+        "review": "synthetic:annual:review:month-9",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-9",
+        "condition": "synthetic-condition-9",
+        "direct": true,
+        "factIds": [
+          "segment-9"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-9",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:month-10",
+      "questionId": "synthetic:annual:q:10",
+      "meaning": {
+        "id": "synthetic:annual:meaning:10",
+        "claim": "synthetic:annual:claim:10",
+        "review": "synthetic:annual:review:month-10",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-10",
+        "condition": "synthetic-condition-10",
+        "direct": true,
+        "factIds": [
+          "segment-10"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-10",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:month-11",
+      "questionId": "synthetic:annual:q:11",
+      "meaning": {
+        "id": "synthetic:annual:meaning:11",
+        "claim": "synthetic:annual:claim:11",
+        "review": "synthetic:annual:review:month-11",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-11",
+        "condition": "synthetic-condition-11",
+        "direct": true,
+        "factIds": [
+          "segment-11"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-11",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:month-12",
+      "questionId": "synthetic:annual:q:12",
+      "meaning": {
+        "id": "synthetic:annual:meaning:12",
+        "claim": "synthetic:annual:claim:12",
+        "review": "synthetic:annual:review:month-12",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-12",
+        "condition": "synthetic-condition-12",
+        "direct": true,
+        "factIds": [
+          "segment-12"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-12",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:april-comparison",
+      "questionId": "synthetic:annual:q:4",
+      "meaning": {
+        "id": "synthetic:annual:meaning:4",
+        "claim": "synthetic:annual:claim:4",
+        "review": "synthetic:annual:review:april-comparison",
+        "function": "VERIFIED_COMPARISON",
+        "application": "synthetic-app-4",
+        "condition": "synthetic-condition-4",
+        "direct": true,
+        "factIds": [
+          "segment-4",
+          "april-middle"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-4",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:may-samhap",
+      "questionId": "synthetic:annual:q:5",
+      "meaning": {
+        "id": "synthetic:annual:meaning:5",
+        "claim": "synthetic:annual:claim:5",
+        "review": "synthetic:annual:review:may-samhap",
+        "function": "VERIFIED_NEW_APPLICATION",
+        "application": "synthetic-app-5",
+        "condition": "synthetic-condition-5",
+        "direct": true,
+        "factIds": [
+          "may-samhap"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-5",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:\u7533",
+          "natal:\u5b50",
+          "natal:\u8fb0"
+        ],
+        "scope": "natal_month_samhap",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:june-branch",
+      "questionId": "synthetic:annual:q:6",
+      "meaning": {
+        "id": "synthetic:annual:meaning:6",
+        "claim": "synthetic:annual:claim:6",
+        "review": "synthetic:annual:review:june-branch",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-6",
+        "condition": "synthetic-condition-6",
+        "direct": true,
+        "factIds": [
+          "june-branch"
+        ],
+        "role": "MONTH_BRANCH_MAIN",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-branch-main",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-6",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:sep-transit",
+      "questionId": "synthetic:annual:q:9",
+      "meaning": {
+        "id": "synthetic:annual:meaning:9",
+        "claim": "synthetic:annual:claim:9",
+        "review": "synthetic:annual:review:sep-transit",
+        "function": "VERIFIED_NEW_APPLICATION",
+        "application": "synthetic-app-9",
+        "condition": "synthetic-condition-9",
+        "direct": true,
+        "factIds": [
+          "sep-transit"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-9",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-role",
+      "questionId": "synthetic:annual:q:5",
+      "meaning": {
+        "id": "synthetic:annual:meaning:5",
+        "claim": "synthetic:annual:claim:5",
+        "review": "synthetic:annual:review:negative-role",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-5",
+        "condition": "synthetic-condition-5",
+        "direct": true,
+        "factIds": [
+          "segment-5"
+        ],
+        "role": "AMBIGUOUS",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-5",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-reference",
+      "questionId": "synthetic:annual:q:5",
+      "meaning": {
+        "id": "synthetic:annual:meaning:5",
+        "claim": "synthetic:annual:claim:5",
+        "review": "synthetic:annual:review:negative-reference",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-5",
+        "condition": "synthetic-condition-5",
+        "direct": true,
+        "factIds": [
+          "segment-5"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "wrong",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-5",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-effective-year",
+      "questionId": "synthetic:annual:q:2",
+      "meaning": {
+        "id": "synthetic:annual:meaning:2",
+        "claim": "synthetic:annual:claim:2",
+        "review": "synthetic:annual:review:negative-effective-year",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-2",
+        "condition": "synthetic-condition-2",
+        "direct": true,
+        "factIds": [
+          "segment-2"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-before",
+        "pillar": "synthetic-month-2",
+        "dayun": 1,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-pillar",
+      "questionId": "synthetic:annual:q:4",
+      "meaning": {
+        "id": "synthetic:annual:meaning:4",
+        "claim": "synthetic:annual:claim:4",
+        "review": "synthetic:annual:review:negative-pillar",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-4",
+        "condition": "synthetic-condition-4",
+        "direct": true,
+        "factIds": [
+          "segment-4"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-previous-month",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-cycle",
+      "questionId": "synthetic:annual:q:4",
+      "meaning": {
+        "id": "synthetic:annual:meaning:4",
+        "claim": "synthetic:annual:claim:4",
+        "review": "synthetic:annual:review:negative-cycle",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-4",
+        "condition": "synthetic-condition-4",
+        "direct": true,
+        "factIds": [
+          "segment-4"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-4",
+        "dayun": 1,
+        "requiresDayun": true,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-partial",
+      "questionId": "synthetic:annual:q:4",
+      "meaning": {
+        "id": "synthetic:annual:meaning:4",
+        "claim": "synthetic:annual:claim:4",
+        "review": "synthetic:annual:review:negative-partial",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-4",
+        "condition": "synthetic-condition-4",
+        "direct": true,
+        "factIds": [
+          "april-middle"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-4",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-range",
+      "questionId": "synthetic:annual:q:8",
+      "meaning": {
+        "id": "synthetic:annual:meaning:8",
+        "claim": "synthetic:annual:claim:8",
+        "review": "synthetic:annual:review:negative-range",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-8",
+        "condition": "synthetic-condition-8",
+        "direct": true,
+        "factIds": [
+          "aug-range"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-8",
+        "dayun": 2,
+        "requiresDayun": true,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-participant",
+      "questionId": "synthetic:annual:q:5",
+      "meaning": {
+        "id": "synthetic:annual:meaning:5",
+        "claim": "synthetic:annual:claim:5",
+        "review": "synthetic:annual:review:negative-participant",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-5",
+        "condition": "synthetic-condition-5",
+        "direct": true,
+        "factIds": [
+          "may-samhap"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-5",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "missing"
+        ],
+        "scope": "natal_month_samhap",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-life-state",
+      "questionId": "synthetic:annual:q:11",
+      "meaning": {
+        "id": "synthetic:annual:meaning:11",
+        "claim": "synthetic:annual:claim:11",
+        "review": "synthetic:annual:review:negative-life-state",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-11",
+        "condition": "synthetic-condition-11",
+        "direct": true,
+        "factIds": [
+          "segment-11"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-11",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [
+          "employed-whole-year"
+        ],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-event",
+      "questionId": "synthetic:annual:q:11",
+      "meaning": {
+        "id": "synthetic:annual:meaning:11",
+        "claim": "synthetic:annual:claim:11",
+        "review": "synthetic:annual:review:negative-event",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-11",
+        "condition": "synthetic-condition-11",
+        "direct": true,
+        "factIds": [
+          "segment-11"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-11",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": "income-guaranteed",
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-recall",
+      "questionId": "synthetic:annual:q:10",
+      "meaning": {
+        "id": "synthetic:annual:meaning:10",
+        "claim": "synthetic:annual:claim:10",
+        "review": "synthetic:annual:review:negative-recall",
+        "function": "VALID_RECALL",
+        "application": "synthetic-app-10",
+        "condition": "synthetic-condition-10",
+        "direct": true,
+        "factIds": [
+          "shared-natal"
+        ],
+        "role": "NATAL_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-10",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "natal",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": "synthetic:annual:display:prior"
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-transit",
+      "questionId": "synthetic:annual:q:9",
+      "meaning": {
+        "id": "synthetic:annual:meaning:9",
+        "claim": "synthetic:annual:claim:9",
+        "review": "synthetic:annual:review:negative-transit",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-9",
+        "condition": "synthetic-condition-9",
+        "direct": true,
+        "factIds": [
+          "held-transit"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-9",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-composite",
+      "questionId": "synthetic:annual:q:5",
+      "meaning": {
+        "id": "synthetic:annual:meaning:5",
+        "claim": "synthetic:annual:claim:5",
+        "review": "synthetic:annual:review:negative-composite",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-5",
+        "condition": "synthetic-condition-5",
+        "direct": true,
+        "factIds": [
+          "composite"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-5",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "natal_dayun_saeun_wolun",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-samhap",
+      "questionId": "synthetic:annual:q:5",
+      "meaning": {
+        "id": "synthetic:annual:meaning:5",
+        "claim": "synthetic:annual:claim:5",
+        "review": "synthetic:annual:review:negative-samhap",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-5",
+        "condition": "synthetic-condition-5",
+        "direct": true,
+        "factIds": [
+          "two-samhap"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-5",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:\u7533",
+          "natal:\u5b50"
+        ],
+        "scope": "natal_month_samhap",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:negative-before-first",
+      "questionId": "synthetic:annual:q:6",
+      "meaning": {
+        "id": "synthetic:annual:meaning:6",
+        "claim": "synthetic:annual:claim:6",
+        "review": "synthetic:annual:review:negative-before-first",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-6",
+        "condition": "synthetic-condition-6",
+        "direct": true,
+        "factIds": [
+          "before-first"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-6",
+        "dayun": 2,
+        "requiresDayun": true,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:range-independent",
+      "questionId": "synthetic:annual:q:8",
+      "meaning": {
+        "id": "synthetic:annual:meaning:8",
+        "claim": "synthetic:annual:claim:8",
+        "review": "synthetic:annual:review:range-independent",
+        "function": "NEW_CALCULATED_FACT",
+        "application": "synthetic-app-8",
+        "condition": "synthetic-condition-8",
+        "direct": true,
+        "factIds": [
+          "aug-range"
+        ],
+        "role": "MONTH_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-8",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "monthly",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    },
+    {
+      "id": "synthetic:annual:oct-new-application",
+      "questionId": "synthetic:annual:q:10",
+      "meaning": {
+        "id": "synthetic:annual:meaning:10",
+        "claim": "synthetic:annual:claim:10",
+        "review": "synthetic:annual:review:oct-application",
+        "function": "VERIFIED_NEW_APPLICATION",
+        "application": "synthetic-app-10",
+        "condition": "synthetic-condition-10",
+        "direct": true,
+        "factIds": [
+          "shared-natal"
+        ],
+        "role": "NATAL_STEM",
+        "god": "synthetic-god",
+        "referenceStem": "synthetic-day-master",
+        "targetStem": "synthetic-month-stem",
+        "annual": "synthetic-year-after",
+        "pillar": "synthetic-month-10",
+        "dayun": 2,
+        "requiresDayun": false,
+        "requiredParticipants": [
+          "month:stem",
+          "natal:day:stem"
+        ],
+        "scope": "natal",
+        "event": null,
+        "requiredLifeState": [],
+        "recallOf": null
+      }
+    }
+  ],
+  "displays": [
+    {
+      "id": "synthetic:annual:display:prior",
+      "owner": "synthetic:annual:owner",
+      "meaningId": "synthetic:annual:meaning:10",
+      "claim": "synthetic:annual:claim:10",
+      "roots": [
+        "synthetic:annual:root:shared-natal"
+      ],
+      "context": "synthetic-condition-10",
+      "actuallyDisplayed": true
+    }
+  ],
+  "rangeQuestions": [
+    {
+      "id": "synthetic:annual:q:1",
+      "month": 1,
+      "segmentId": "segment-1",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:1"
+    },
+    {
+      "id": "synthetic:annual:q:2",
+      "month": 2,
+      "segmentId": "segment-2",
+      "priority": "BOUNDARY",
+      "requiredMeaning": "synthetic:annual:meaning:2"
+    },
+    {
+      "id": "synthetic:annual:q:3",
+      "month": 3,
+      "segmentId": "segment-3",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:3"
+    },
+    {
+      "id": "synthetic:annual:q:4",
+      "month": 4,
+      "segmentId": "segment-4",
+      "priority": "BOUNDARY",
+      "requiredMeaning": "synthetic:annual:meaning:4"
+    },
+    {
+      "id": "synthetic:annual:q:5",
+      "month": 5,
+      "segmentId": "segment-5",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:5"
+    },
+    {
+      "id": "synthetic:annual:q:6",
+      "month": 6,
+      "segmentId": "segment-6",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:6"
+    },
+    {
+      "id": "synthetic:annual:q:7",
+      "month": 7,
+      "segmentId": "segment-7",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:7"
+    },
+    {
+      "id": "synthetic:annual:q:8",
+      "month": 8,
+      "segmentId": "aug-range",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:8"
+    },
+    {
+      "id": "synthetic:annual:q:9",
+      "month": 9,
+      "segmentId": "segment-9",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:9"
+    },
+    {
+      "id": "synthetic:annual:q:10",
+      "month": 10,
+      "segmentId": "segment-10",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:10"
+    },
+    {
+      "id": "synthetic:annual:q:11",
+      "month": 11,
+      "segmentId": "segment-11",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:11"
+    },
+    {
+      "id": "synthetic:annual:q:12",
+      "month": 12,
+      "segmentId": "segment-12",
+      "priority": "ORDINARY",
+      "requiredMeaning": "synthetic:annual:meaning:12"
+    }
+  ],
+  "segments": [
+    "segment-1",
+    "segment-2",
+    "segment-3",
+    "segment-4",
+    "segment-5",
+    "segment-6",
+    "segment-7",
+    "segment-8",
+    "segment-9",
+    "segment-10",
+    "segment-11",
+    "segment-12",
+    "feb-before",
+    "april-before",
+    "april-middle",
+    "aug-range"
+  ]
+}
