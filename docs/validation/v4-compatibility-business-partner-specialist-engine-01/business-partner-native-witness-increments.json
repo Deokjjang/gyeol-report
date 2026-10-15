@@ -1,0 +1,2161 @@
+{
+  "same317CandidatesOneGraph": true,
+  "extraOccurrences": 7,
+  "newIndependentActualRoots": 0,
+  "customerApproval": 0,
+  "rows": [
+    {
+      "originalResearchId": "bppr:material:CH02.P1:a-resource-as-goal",
+      "catalogKey": "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989",
+      "requirementId": "bppr:material:CH02.P1:a-resource-as-goal:native-witness:1",
+      "sourceAssignment": {
+        "owner": "A",
+        "sourceKey": "bbc18a4e615032647a49",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      "sourceHash": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+      "sourceLocator": {
+        "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+        "exportName": "DEEP_TEN_GODS",
+        "pointer": "/4",
+        "originalId": "deep:ten_god:pian_cai",
+        "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "actualProducer": {
+        "file": "src/lib/interpretation-v4/strength.ts",
+        "symbol": "collectStructureAtoms",
+        "version": "v4-structure-evidence-1",
+        "system": "myeongli"
+      },
+      "actualGraphNode": "aeg:node:203aaad0430c29a13e181106be055bdeb543027f278df79ba396f01bfe693817",
+      "actualOwner": "fixture-person-7",
+      "actualDirection": null,
+      "kind": "CALCULATED_NATAL_FACT",
+      "sourceDomain": [],
+      "requiredAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:7185b7aa161596e4f0b4f3949c971e11031ee031cfcfd06f3d4f9c847ece3b75",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47"
+      ],
+      "originalSourceGroups": [
+        {
+          "originalGroupId": "bppr:material:CH02.P1:a-resource-as-goal",
+          "originalMaterialId": "bppr:material:CH02.P1:a-resource-as-goal",
+          "originalDeclaration": {
+            "groupId": "bppr:material:CH02.P1:a-resource-as-goal",
+            "sourceKeys": [
+              "66a9cd49cd16d86ca992",
+              "bbc18a4e615032647a49",
+              "f64a1b254b8c7a0ebd5e"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "66a9cd49cd16d86ca992"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          },
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "bbc18a4e615032647a49",
+            "f64a1b254b8c7a0ebd5e"
+          ],
+          "originalTypePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true,
+          "groupPolicy": "all_direct_sources",
+          "normalizedBinderGroups": [
+            {
+              "originalIndex": 0,
+              "originalId": "bppr:material:CH02.P1:a-resource-as-goal",
+              "semantics": "ALL_DIRECT_SOURCES",
+              "sourceRequirementIds": [
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/0:0",
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/1:1",
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/2:2"
+              ],
+              "typePredicates": [
+                {
+                  "owner": "A",
+                  "type": "ENTJ",
+                  "sourceKey": "66a9cd49cd16d86ca992"
+                }
+              ],
+              "originalDeclaration": {
+                "groupId": "bppr:material:CH02.P1:a-resource-as-goal",
+                "sourceKeys": [
+                  "66a9cd49cd16d86ca992",
+                  "bbc18a4e615032647a49",
+                  "f64a1b254b8c7a0ebd5e"
+                ],
+                "typePredicates": [
+                  {
+                    "owner": "A",
+                    "type": "ENTJ",
+                    "sourceKey": "66a9cd49cd16d86ca992"
+                  }
+                ],
+                "allSourcesWithinGroupRequired": true
+              },
+              "originalTechnicalState": "WITHHELD",
+              "requiresDisplayedLedger": false
+            }
+          ],
+          "sources": [
+            {
+              "key": "66a9cd49cd16d86ca992",
+              "assignment": [
+                {
+                  "owner": "A",
+                  "sourceKey": "66a9cd49cd16d86ca992",
+                  "sourceUse": "own_entered_type_only",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:66a9cd49cd16d86ca992",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "66a9cd49cd16d86ca992",
+                "sourceId": "mbti:ENTJ:traits:money:capitalist_resource_logic",
+                "sourceKind": "individual_mbti",
+                "auditRef": "source-locator-audit.json#66a9cd49cd16d86ca992",
+                "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
+                "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+                "originalState": {
+                  "type": "ENTJ",
+                  "area": "money",
+                  "sourceCoverage": "direct",
+                  "empiricalVerification": "not_established",
+                  "currentRelationshipDomain": "MONEY",
+                  "currentNonRomanticProjection": "not_in_current_scoring_projection",
+                  "businessPartnerPatternExists": false,
+                  "empiricalTypeEffectVerified": false
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 3,
+                "originalId": "bppr:source:66a9cd49cd16d86ca992",
+                "recordSha256": "73c0d4fffd355fc7e9c9f57a80aff69a1ce62ff812945980e0a4d247f4576e10",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "bbc18a4e615032647a49",
+              "assignment": [
+                {
+                  "owner": "A",
+                  "sourceKey": "bbc18a4e615032647a49",
+                  "sourceUse": "actual_natal_condition_required",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:bbc18a4e615032647a49",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "bbc18a4e615032647a49",
+                "sourceId": "deep:ten_god:pian_cai",
+                "sourceKind": "natal_definition",
+                "auditRef": "source-locator-audit.json#bbc18a4e615032647a49",
+                "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+                "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+                "originalState": {
+                  "verification": null,
+                  "review": null,
+                  "class": null,
+                  "traditionalClass": null,
+                  "connectedToRuntime": null,
+                  "approvedForCustomer": null,
+                  "definitionReview": null,
+                  "traditional": null,
+                  "evidenceLevel": null,
+                  "formation": null,
+                  "exclusions": [],
+                  "support": null,
+                  "deferred": [
+                    "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+                  ]
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 19,
+                "originalId": "bppr:source:bbc18a4e615032647a49",
+                "recordSha256": "fe10b4a5bd5252e4869613a2ade33cf4d9c5f92671619fe49393934a8a9ec945",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "f64a1b254b8c7a0ebd5e",
+              "assignment": [
+                {
+                  "owner": "GUIDANCE",
+                  "sourceKey": "f64a1b254b8c7a0ebd5e",
+                  "sourceUse": "context_guidance_not_person_fact",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:f64a1b254b8c7a0ebd5e",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "f64a1b254b8c7a0ebd5e",
+                "sourceId": "external:businessPartner:budget",
+                "sourceKind": "external_context",
+                "auditRef": "source-locator-audit.json#f64a1b254b8c7a0ebd5e",
+                "recordSha256": "b922b342e80d90a0c1e9fd42af77086e31a7ffc043afcae95cdbcefaf8abe491",
+                "originalState": {
+                  "accessedAt": "2026-10-14",
+                  "access": "web_page_text_actually_opened",
+                  "published": null,
+                  "reviewed": null,
+                  "dateStatus": "not_displayed_in_opened_text",
+                  "notMbtiPairValidation": true,
+                  "notMyeongliValidation": true,
+                  "notCustomerObservation": true,
+                  "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+                  "author": "Australian Government / business.gov.au",
+                  "title": "Create a budget",
+                  "url": "https://business.gov.au/finance/financial-tools-and-templates/create-a-budget",
+                  "checkedSection": "168–226",
+                  "summary": "목표를 위한 예산과 현재 자료를 반영하는 전망을 구별하고 실제 비용과 비교하는 안내.",
+                  "scope": "미국·호주식 세금·인건비 분류나 일률적 비율을 한국 사업에 강제하지 않음. 개인 자산·대출 판단 아님.",
+                  "notTypeOrMyeongliValidation": true
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 5,
+                "originalId": "bppr:source:f64a1b254b8c7a0ebd5e",
+                "recordSha256": "638e03ba97bdeaeccf467155f01eeecd132e1c7cb1f60240580956cba4002be5",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            }
+          ],
+          "customerApproved": false
+        }
+      ],
+      "businessContext": "UNKNOWN",
+      "remainingUnknown": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "ALL_AND_GROUP_SOURCES_REQUIRED",
+        "AUTHORITY_REQUIREMENT_UNVERIFIED:resource_commitment",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CONTRACT_NOT_VERIFIED",
+        "CUSTOMER_APPROVAL_PENDING",
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "EXACT_ENTERED_TYPE_REQUIRED",
+        "EXIT_RIGHTS_UNVERIFIED",
+        "INCOMPATIBLE_SOURCE_GROUP",
+        "INHERITED_SOURCE_GROUP_HELD",
+        "IP_OWNERSHIP_UNVERIFIED",
+        "LOSS_ALLOCATION_UNVERIFIED",
+        "MEANING_REVIEW_REQUIRED",
+        "MONEY_DOMAIN_NOT_APPROVED",
+        "MONEY_SOURCE_NOT_PROJECTED",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_ANCESTOR_NOT_APPROVED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SOURCE_DOMAIN_PROJECTION_MISMATCH",
+        "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+        "SOURCE_REFERENCE_UNRESOLVED",
+        "UNVERIFIED_ACTUAL_PARTNERSHIP",
+        "UNVERIFIED_AGENCY_AUTHORITY",
+        "UNVERIFIED_ASSETS",
+        "UNVERIFIED_BUSINESS_CONTEXT",
+        "UNVERIFIED_BUSINESS_STRUCTURE",
+        "UNVERIFIED_CAPITAL",
+        "UNVERIFIED_CASH_FLOW",
+        "UNVERIFIED_CONTRIBUTION",
+        "UNVERIFIED_DEBT",
+        "UNVERIFIED_DECISION_RIGHTS",
+        "UNVERIFIED_EQUITY",
+        "UNVERIFIED_PROFIT",
+        "UNVERIFIED_REVENUE"
+      ],
+      "approvalState": "WITHHELD"
+    },
+    {
+      "originalResearchId": "bppr:material:CH02.P1:a-resource-as-goal",
+      "catalogKey": "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989",
+      "requirementId": "bppr:material:CH02.P1:a-resource-as-goal:native-witness:1",
+      "sourceAssignment": {
+        "owner": "A",
+        "sourceKey": "bbc18a4e615032647a49",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      "sourceHash": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+      "sourceLocator": {
+        "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+        "exportName": "DEEP_TEN_GODS",
+        "pointer": "/4",
+        "originalId": "deep:ten_god:pian_cai",
+        "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "actualProducer": {
+        "file": "src/lib/interpretation-v4/strength.ts",
+        "symbol": "collectStructureAtoms",
+        "version": "v4-structure-evidence-1",
+        "system": "myeongli"
+      },
+      "actualGraphNode": "aeg:node:9711c2a913c66e86363caf4e6350a251f2dcb69b782e317e52d9106f9f045f96",
+      "actualOwner": "fixture-person-7",
+      "actualDirection": null,
+      "kind": "CALCULATED_NATAL_FACT",
+      "sourceDomain": [],
+      "requiredAncestryRoots": [
+        "aeg:root:1e2977dc66c2bc6cc00d7515f297c2e2cffba36618f3f60978bdb2b050ea313d",
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:4b5bea3fb2a3b3ff70e2a2570bd6fec39bfa0507543ad8f2e85b2afe4bd20d6a"
+      ],
+      "originalSourceGroups": [
+        {
+          "originalGroupId": "bppr:material:CH02.P1:a-resource-as-goal",
+          "originalMaterialId": "bppr:material:CH02.P1:a-resource-as-goal",
+          "originalDeclaration": {
+            "groupId": "bppr:material:CH02.P1:a-resource-as-goal",
+            "sourceKeys": [
+              "66a9cd49cd16d86ca992",
+              "bbc18a4e615032647a49",
+              "f64a1b254b8c7a0ebd5e"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "66a9cd49cd16d86ca992"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          },
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "bbc18a4e615032647a49",
+            "f64a1b254b8c7a0ebd5e"
+          ],
+          "originalTypePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true,
+          "groupPolicy": "all_direct_sources",
+          "normalizedBinderGroups": [
+            {
+              "originalIndex": 0,
+              "originalId": "bppr:material:CH02.P1:a-resource-as-goal",
+              "semantics": "ALL_DIRECT_SOURCES",
+              "sourceRequirementIds": [
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/0:0",
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/1:1",
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/2:2"
+              ],
+              "typePredicates": [
+                {
+                  "owner": "A",
+                  "type": "ENTJ",
+                  "sourceKey": "66a9cd49cd16d86ca992"
+                }
+              ],
+              "originalDeclaration": {
+                "groupId": "bppr:material:CH02.P1:a-resource-as-goal",
+                "sourceKeys": [
+                  "66a9cd49cd16d86ca992",
+                  "bbc18a4e615032647a49",
+                  "f64a1b254b8c7a0ebd5e"
+                ],
+                "typePredicates": [
+                  {
+                    "owner": "A",
+                    "type": "ENTJ",
+                    "sourceKey": "66a9cd49cd16d86ca992"
+                  }
+                ],
+                "allSourcesWithinGroupRequired": true
+              },
+              "originalTechnicalState": "WITHHELD",
+              "requiresDisplayedLedger": false
+            }
+          ],
+          "sources": [
+            {
+              "key": "66a9cd49cd16d86ca992",
+              "assignment": [
+                {
+                  "owner": "A",
+                  "sourceKey": "66a9cd49cd16d86ca992",
+                  "sourceUse": "own_entered_type_only",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:66a9cd49cd16d86ca992",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "66a9cd49cd16d86ca992",
+                "sourceId": "mbti:ENTJ:traits:money:capitalist_resource_logic",
+                "sourceKind": "individual_mbti",
+                "auditRef": "source-locator-audit.json#66a9cd49cd16d86ca992",
+                "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
+                "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+                "originalState": {
+                  "type": "ENTJ",
+                  "area": "money",
+                  "sourceCoverage": "direct",
+                  "empiricalVerification": "not_established",
+                  "currentRelationshipDomain": "MONEY",
+                  "currentNonRomanticProjection": "not_in_current_scoring_projection",
+                  "businessPartnerPatternExists": false,
+                  "empiricalTypeEffectVerified": false
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 3,
+                "originalId": "bppr:source:66a9cd49cd16d86ca992",
+                "recordSha256": "73c0d4fffd355fc7e9c9f57a80aff69a1ce62ff812945980e0a4d247f4576e10",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "bbc18a4e615032647a49",
+              "assignment": [
+                {
+                  "owner": "A",
+                  "sourceKey": "bbc18a4e615032647a49",
+                  "sourceUse": "actual_natal_condition_required",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:bbc18a4e615032647a49",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "bbc18a4e615032647a49",
+                "sourceId": "deep:ten_god:pian_cai",
+                "sourceKind": "natal_definition",
+                "auditRef": "source-locator-audit.json#bbc18a4e615032647a49",
+                "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+                "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+                "originalState": {
+                  "verification": null,
+                  "review": null,
+                  "class": null,
+                  "traditionalClass": null,
+                  "connectedToRuntime": null,
+                  "approvedForCustomer": null,
+                  "definitionReview": null,
+                  "traditional": null,
+                  "evidenceLevel": null,
+                  "formation": null,
+                  "exclusions": [],
+                  "support": null,
+                  "deferred": [
+                    "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+                  ]
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 19,
+                "originalId": "bppr:source:bbc18a4e615032647a49",
+                "recordSha256": "fe10b4a5bd5252e4869613a2ade33cf4d9c5f92671619fe49393934a8a9ec945",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "f64a1b254b8c7a0ebd5e",
+              "assignment": [
+                {
+                  "owner": "GUIDANCE",
+                  "sourceKey": "f64a1b254b8c7a0ebd5e",
+                  "sourceUse": "context_guidance_not_person_fact",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:f64a1b254b8c7a0ebd5e",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "f64a1b254b8c7a0ebd5e",
+                "sourceId": "external:businessPartner:budget",
+                "sourceKind": "external_context",
+                "auditRef": "source-locator-audit.json#f64a1b254b8c7a0ebd5e",
+                "recordSha256": "b922b342e80d90a0c1e9fd42af77086e31a7ffc043afcae95cdbcefaf8abe491",
+                "originalState": {
+                  "accessedAt": "2026-10-14",
+                  "access": "web_page_text_actually_opened",
+                  "published": null,
+                  "reviewed": null,
+                  "dateStatus": "not_displayed_in_opened_text",
+                  "notMbtiPairValidation": true,
+                  "notMyeongliValidation": true,
+                  "notCustomerObservation": true,
+                  "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+                  "author": "Australian Government / business.gov.au",
+                  "title": "Create a budget",
+                  "url": "https://business.gov.au/finance/financial-tools-and-templates/create-a-budget",
+                  "checkedSection": "168–226",
+                  "summary": "목표를 위한 예산과 현재 자료를 반영하는 전망을 구별하고 실제 비용과 비교하는 안내.",
+                  "scope": "미국·호주식 세금·인건비 분류나 일률적 비율을 한국 사업에 강제하지 않음. 개인 자산·대출 판단 아님.",
+                  "notTypeOrMyeongliValidation": true
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 5,
+                "originalId": "bppr:source:f64a1b254b8c7a0ebd5e",
+                "recordSha256": "638e03ba97bdeaeccf467155f01eeecd132e1c7cb1f60240580956cba4002be5",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            }
+          ],
+          "customerApproved": false
+        }
+      ],
+      "businessContext": "UNKNOWN",
+      "remainingUnknown": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "ALL_AND_GROUP_SOURCES_REQUIRED",
+        "AUTHORITY_REQUIREMENT_UNVERIFIED:resource_commitment",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CONTRACT_NOT_VERIFIED",
+        "CUSTOMER_APPROVAL_PENDING",
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "EXACT_ENTERED_TYPE_REQUIRED",
+        "EXIT_RIGHTS_UNVERIFIED",
+        "INCOMPATIBLE_SOURCE_GROUP",
+        "INHERITED_SOURCE_GROUP_HELD",
+        "IP_OWNERSHIP_UNVERIFIED",
+        "LOSS_ALLOCATION_UNVERIFIED",
+        "MEANING_REVIEW_REQUIRED",
+        "MONEY_DOMAIN_NOT_APPROVED",
+        "MONEY_SOURCE_NOT_PROJECTED",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_ANCESTOR_NOT_APPROVED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SOURCE_DOMAIN_PROJECTION_MISMATCH",
+        "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+        "SOURCE_REFERENCE_UNRESOLVED",
+        "UNVERIFIED_ACTUAL_PARTNERSHIP",
+        "UNVERIFIED_AGENCY_AUTHORITY",
+        "UNVERIFIED_ASSETS",
+        "UNVERIFIED_BUSINESS_CONTEXT",
+        "UNVERIFIED_BUSINESS_STRUCTURE",
+        "UNVERIFIED_CAPITAL",
+        "UNVERIFIED_CASH_FLOW",
+        "UNVERIFIED_CONTRIBUTION",
+        "UNVERIFIED_DEBT",
+        "UNVERIFIED_DECISION_RIGHTS",
+        "UNVERIFIED_EQUITY",
+        "UNVERIFIED_PROFIT",
+        "UNVERIFIED_REVENUE"
+      ],
+      "approvalState": "WITHHELD"
+    },
+    {
+      "originalResearchId": "bppr:material:CH02.P1:a-resource-as-goal",
+      "catalogKey": "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989",
+      "requirementId": "bppr:material:CH02.P1:a-resource-as-goal:native-witness:1",
+      "sourceAssignment": {
+        "owner": "A",
+        "sourceKey": "bbc18a4e615032647a49",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      "sourceHash": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+      "sourceLocator": {
+        "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+        "exportName": "DEEP_TEN_GODS",
+        "pointer": "/4",
+        "originalId": "deep:ten_god:pian_cai",
+        "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "actualProducer": {
+        "file": "src/lib/interpretation-v4/strength.ts",
+        "symbol": "collectStructureAtoms",
+        "version": "v4-structure-evidence-1",
+        "system": "myeongli"
+      },
+      "actualGraphNode": "aeg:node:ba9b1c8dbd7921cdf6ef3e2104eb0cf13bd93c2de7cf1c7a0abd394cda30040e",
+      "actualOwner": "fixture-person-7",
+      "actualDirection": null,
+      "kind": "CALCULATED_NATAL_FACT",
+      "sourceDomain": [],
+      "requiredAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:507a4b6547393bbc02483680e50a7e59feaaa287c138182f5289a5fbe5500dc2",
+        "aeg:root:7103011f0a5cfb5129554ce8b59e726aec73882401fe343630f3748d9f812967"
+      ],
+      "originalSourceGroups": [
+        {
+          "originalGroupId": "bppr:material:CH02.P1:a-resource-as-goal",
+          "originalMaterialId": "bppr:material:CH02.P1:a-resource-as-goal",
+          "originalDeclaration": {
+            "groupId": "bppr:material:CH02.P1:a-resource-as-goal",
+            "sourceKeys": [
+              "66a9cd49cd16d86ca992",
+              "bbc18a4e615032647a49",
+              "f64a1b254b8c7a0ebd5e"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "66a9cd49cd16d86ca992"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          },
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "bbc18a4e615032647a49",
+            "f64a1b254b8c7a0ebd5e"
+          ],
+          "originalTypePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true,
+          "groupPolicy": "all_direct_sources",
+          "normalizedBinderGroups": [
+            {
+              "originalIndex": 0,
+              "originalId": "bppr:material:CH02.P1:a-resource-as-goal",
+              "semantics": "ALL_DIRECT_SOURCES",
+              "sourceRequirementIds": [
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/0:0",
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/1:1",
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/2:2"
+              ],
+              "typePredicates": [
+                {
+                  "owner": "A",
+                  "type": "ENTJ",
+                  "sourceKey": "66a9cd49cd16d86ca992"
+                }
+              ],
+              "originalDeclaration": {
+                "groupId": "bppr:material:CH02.P1:a-resource-as-goal",
+                "sourceKeys": [
+                  "66a9cd49cd16d86ca992",
+                  "bbc18a4e615032647a49",
+                  "f64a1b254b8c7a0ebd5e"
+                ],
+                "typePredicates": [
+                  {
+                    "owner": "A",
+                    "type": "ENTJ",
+                    "sourceKey": "66a9cd49cd16d86ca992"
+                  }
+                ],
+                "allSourcesWithinGroupRequired": true
+              },
+              "originalTechnicalState": "WITHHELD",
+              "requiresDisplayedLedger": false
+            }
+          ],
+          "sources": [
+            {
+              "key": "66a9cd49cd16d86ca992",
+              "assignment": [
+                {
+                  "owner": "A",
+                  "sourceKey": "66a9cd49cd16d86ca992",
+                  "sourceUse": "own_entered_type_only",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:66a9cd49cd16d86ca992",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "66a9cd49cd16d86ca992",
+                "sourceId": "mbti:ENTJ:traits:money:capitalist_resource_logic",
+                "sourceKind": "individual_mbti",
+                "auditRef": "source-locator-audit.json#66a9cd49cd16d86ca992",
+                "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
+                "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+                "originalState": {
+                  "type": "ENTJ",
+                  "area": "money",
+                  "sourceCoverage": "direct",
+                  "empiricalVerification": "not_established",
+                  "currentRelationshipDomain": "MONEY",
+                  "currentNonRomanticProjection": "not_in_current_scoring_projection",
+                  "businessPartnerPatternExists": false,
+                  "empiricalTypeEffectVerified": false
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 3,
+                "originalId": "bppr:source:66a9cd49cd16d86ca992",
+                "recordSha256": "73c0d4fffd355fc7e9c9f57a80aff69a1ce62ff812945980e0a4d247f4576e10",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "bbc18a4e615032647a49",
+              "assignment": [
+                {
+                  "owner": "A",
+                  "sourceKey": "bbc18a4e615032647a49",
+                  "sourceUse": "actual_natal_condition_required",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:bbc18a4e615032647a49",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "bbc18a4e615032647a49",
+                "sourceId": "deep:ten_god:pian_cai",
+                "sourceKind": "natal_definition",
+                "auditRef": "source-locator-audit.json#bbc18a4e615032647a49",
+                "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+                "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+                "originalState": {
+                  "verification": null,
+                  "review": null,
+                  "class": null,
+                  "traditionalClass": null,
+                  "connectedToRuntime": null,
+                  "approvedForCustomer": null,
+                  "definitionReview": null,
+                  "traditional": null,
+                  "evidenceLevel": null,
+                  "formation": null,
+                  "exclusions": [],
+                  "support": null,
+                  "deferred": [
+                    "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+                  ]
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 19,
+                "originalId": "bppr:source:bbc18a4e615032647a49",
+                "recordSha256": "fe10b4a5bd5252e4869613a2ade33cf4d9c5f92671619fe49393934a8a9ec945",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "f64a1b254b8c7a0ebd5e",
+              "assignment": [
+                {
+                  "owner": "GUIDANCE",
+                  "sourceKey": "f64a1b254b8c7a0ebd5e",
+                  "sourceUse": "context_guidance_not_person_fact",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:f64a1b254b8c7a0ebd5e",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "f64a1b254b8c7a0ebd5e",
+                "sourceId": "external:businessPartner:budget",
+                "sourceKind": "external_context",
+                "auditRef": "source-locator-audit.json#f64a1b254b8c7a0ebd5e",
+                "recordSha256": "b922b342e80d90a0c1e9fd42af77086e31a7ffc043afcae95cdbcefaf8abe491",
+                "originalState": {
+                  "accessedAt": "2026-10-14",
+                  "access": "web_page_text_actually_opened",
+                  "published": null,
+                  "reviewed": null,
+                  "dateStatus": "not_displayed_in_opened_text",
+                  "notMbtiPairValidation": true,
+                  "notMyeongliValidation": true,
+                  "notCustomerObservation": true,
+                  "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+                  "author": "Australian Government / business.gov.au",
+                  "title": "Create a budget",
+                  "url": "https://business.gov.au/finance/financial-tools-and-templates/create-a-budget",
+                  "checkedSection": "168–226",
+                  "summary": "목표를 위한 예산과 현재 자료를 반영하는 전망을 구별하고 실제 비용과 비교하는 안내.",
+                  "scope": "미국·호주식 세금·인건비 분류나 일률적 비율을 한국 사업에 강제하지 않음. 개인 자산·대출 판단 아님.",
+                  "notTypeOrMyeongliValidation": true
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 5,
+                "originalId": "bppr:source:f64a1b254b8c7a0ebd5e",
+                "recordSha256": "638e03ba97bdeaeccf467155f01eeecd132e1c7cb1f60240580956cba4002be5",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            }
+          ],
+          "customerApproved": false
+        }
+      ],
+      "businessContext": "UNKNOWN",
+      "remainingUnknown": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "ALL_AND_GROUP_SOURCES_REQUIRED",
+        "AUTHORITY_REQUIREMENT_UNVERIFIED:resource_commitment",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CONTRACT_NOT_VERIFIED",
+        "CUSTOMER_APPROVAL_PENDING",
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "EXACT_ENTERED_TYPE_REQUIRED",
+        "EXIT_RIGHTS_UNVERIFIED",
+        "INCOMPATIBLE_SOURCE_GROUP",
+        "INHERITED_SOURCE_GROUP_HELD",
+        "IP_OWNERSHIP_UNVERIFIED",
+        "LOSS_ALLOCATION_UNVERIFIED",
+        "MEANING_REVIEW_REQUIRED",
+        "MONEY_DOMAIN_NOT_APPROVED",
+        "MONEY_SOURCE_NOT_PROJECTED",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_ANCESTOR_NOT_APPROVED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SOURCE_DOMAIN_PROJECTION_MISMATCH",
+        "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+        "SOURCE_REFERENCE_UNRESOLVED",
+        "UNVERIFIED_ACTUAL_PARTNERSHIP",
+        "UNVERIFIED_AGENCY_AUTHORITY",
+        "UNVERIFIED_ASSETS",
+        "UNVERIFIED_BUSINESS_CONTEXT",
+        "UNVERIFIED_BUSINESS_STRUCTURE",
+        "UNVERIFIED_CAPITAL",
+        "UNVERIFIED_CASH_FLOW",
+        "UNVERIFIED_CONTRIBUTION",
+        "UNVERIFIED_DEBT",
+        "UNVERIFIED_DECISION_RIGHTS",
+        "UNVERIFIED_EQUITY",
+        "UNVERIFIED_PROFIT",
+        "UNVERIFIED_REVENUE"
+      ],
+      "approvalState": "WITHHELD"
+    },
+    {
+      "originalResearchId": "bppr:material:CH02.P1:a-resource-as-goal",
+      "catalogKey": "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989",
+      "requirementId": "bppr:material:CH02.P1:a-resource-as-goal:native-witness:1",
+      "sourceAssignment": {
+        "owner": "A",
+        "sourceKey": "bbc18a4e615032647a49",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      "sourceHash": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+      "sourceLocator": {
+        "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+        "exportName": "DEEP_TEN_GODS",
+        "pointer": "/4",
+        "originalId": "deep:ten_god:pian_cai",
+        "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "actualProducer": {
+        "file": "src/lib/interpretation-v4/strength.ts",
+        "symbol": "collectStructureAtoms",
+        "version": "v4-structure-evidence-1",
+        "system": "myeongli"
+      },
+      "actualGraphNode": "aeg:node:f8e953c9a7c552c71fcc9fcb42d2b634adeaa5515e4cd383f2b7135ad6516d9f",
+      "actualOwner": "fixture-person-7",
+      "actualDirection": null,
+      "kind": "CALCULATED_NATAL_FACT",
+      "sourceDomain": [],
+      "requiredAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:9c3206c074e15b1c0f33d8521f09c3d240e4613d048bda7d8664da291d4cd8f3",
+        "aeg:root:cbcda3a192abb784c4b9db28af54564e3d29c94df766bf3b92978e59adf57209"
+      ],
+      "originalSourceGroups": [
+        {
+          "originalGroupId": "bppr:material:CH02.P1:a-resource-as-goal",
+          "originalMaterialId": "bppr:material:CH02.P1:a-resource-as-goal",
+          "originalDeclaration": {
+            "groupId": "bppr:material:CH02.P1:a-resource-as-goal",
+            "sourceKeys": [
+              "66a9cd49cd16d86ca992",
+              "bbc18a4e615032647a49",
+              "f64a1b254b8c7a0ebd5e"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "ENTJ",
+                "sourceKey": "66a9cd49cd16d86ca992"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          },
+          "sourceKeys": [
+            "66a9cd49cd16d86ca992",
+            "bbc18a4e615032647a49",
+            "f64a1b254b8c7a0ebd5e"
+          ],
+          "originalTypePredicates": [
+            {
+              "owner": "A",
+              "type": "ENTJ",
+              "sourceKey": "66a9cd49cd16d86ca992"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true,
+          "groupPolicy": "all_direct_sources",
+          "normalizedBinderGroups": [
+            {
+              "originalIndex": 0,
+              "originalId": "bppr:material:CH02.P1:a-resource-as-goal",
+              "semantics": "ALL_DIRECT_SOURCES",
+              "sourceRequirementIds": [
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/0:0",
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/1:1",
+                "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989#/ownedSources/2:2"
+              ],
+              "typePredicates": [
+                {
+                  "owner": "A",
+                  "type": "ENTJ",
+                  "sourceKey": "66a9cd49cd16d86ca992"
+                }
+              ],
+              "originalDeclaration": {
+                "groupId": "bppr:material:CH02.P1:a-resource-as-goal",
+                "sourceKeys": [
+                  "66a9cd49cd16d86ca992",
+                  "bbc18a4e615032647a49",
+                  "f64a1b254b8c7a0ebd5e"
+                ],
+                "typePredicates": [
+                  {
+                    "owner": "A",
+                    "type": "ENTJ",
+                    "sourceKey": "66a9cd49cd16d86ca992"
+                  }
+                ],
+                "allSourcesWithinGroupRequired": true
+              },
+              "originalTechnicalState": "WITHHELD",
+              "requiresDisplayedLedger": false
+            }
+          ],
+          "sources": [
+            {
+              "key": "66a9cd49cd16d86ca992",
+              "assignment": [
+                {
+                  "owner": "A",
+                  "sourceKey": "66a9cd49cd16d86ca992",
+                  "sourceUse": "own_entered_type_only",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:66a9cd49cd16d86ca992",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "66a9cd49cd16d86ca992",
+                "sourceId": "mbti:ENTJ:traits:money:capitalist_resource_logic",
+                "sourceKind": "individual_mbti",
+                "auditRef": "source-locator-audit.json#66a9cd49cd16d86ca992",
+                "recordSha256": "2fd5cb824effc3af530eba2ef7c1972ae831311f61b97619e178718ecc903b51",
+                "sourceFileSha256": "e19ac6a4a676e3f12d56aacb42fc40b4458874640f044c0ebe2176be4f36056e",
+                "originalState": {
+                  "type": "ENTJ",
+                  "area": "money",
+                  "sourceCoverage": "direct",
+                  "empiricalVerification": "not_established",
+                  "currentRelationshipDomain": "MONEY",
+                  "currentNonRomanticProjection": "not_in_current_scoring_projection",
+                  "businessPartnerPatternExists": false,
+                  "empiricalTypeEffectVerified": false
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 3,
+                "originalId": "bppr:source:66a9cd49cd16d86ca992",
+                "recordSha256": "73c0d4fffd355fc7e9c9f57a80aff69a1ce62ff812945980e0a4d247f4576e10",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "bbc18a4e615032647a49",
+              "assignment": [
+                {
+                  "owner": "A",
+                  "sourceKey": "bbc18a4e615032647a49",
+                  "sourceUse": "actual_natal_condition_required",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:bbc18a4e615032647a49",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "bbc18a4e615032647a49",
+                "sourceId": "deep:ten_god:pian_cai",
+                "sourceKind": "natal_definition",
+                "auditRef": "source-locator-audit.json#bbc18a4e615032647a49",
+                "recordSha256": "8a54a02d908cc223152e32dd526251df907f3f944f39a97a1ec6267767a2aca5",
+                "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+                "originalState": {
+                  "verification": null,
+                  "review": null,
+                  "class": null,
+                  "traditionalClass": null,
+                  "connectedToRuntime": null,
+                  "approvedForCustomer": null,
+                  "definitionReview": null,
+                  "traditional": null,
+                  "evidenceLevel": null,
+                  "formation": null,
+                  "exclusions": [],
+                  "support": null,
+                  "deferred": [
+                    "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+                  ]
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 19,
+                "originalId": "bppr:source:bbc18a4e615032647a49",
+                "recordSha256": "fe10b4a5bd5252e4869613a2ade33cf4d9c5f92671619fe49393934a8a9ec945",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "f64a1b254b8c7a0ebd5e",
+              "assignment": [
+                {
+                  "owner": "GUIDANCE",
+                  "sourceKey": "f64a1b254b8c7a0ebd5e",
+                  "sourceUse": "context_guidance_not_person_fact",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:f64a1b254b8c7a0ebd5e",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "f64a1b254b8c7a0ebd5e",
+                "sourceId": "external:businessPartner:budget",
+                "sourceKind": "external_context",
+                "auditRef": "source-locator-audit.json#f64a1b254b8c7a0ebd5e",
+                "recordSha256": "b922b342e80d90a0c1e9fd42af77086e31a7ffc043afcae95cdbcefaf8abe491",
+                "originalState": {
+                  "accessedAt": "2026-10-14",
+                  "access": "web_page_text_actually_opened",
+                  "published": null,
+                  "reviewed": null,
+                  "dateStatus": "not_displayed_in_opened_text",
+                  "notMbtiPairValidation": true,
+                  "notMyeongliValidation": true,
+                  "notCustomerObservation": true,
+                  "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+                  "author": "Australian Government / business.gov.au",
+                  "title": "Create a budget",
+                  "url": "https://business.gov.au/finance/financial-tools-and-templates/create-a-budget",
+                  "checkedSection": "168–226",
+                  "summary": "목표를 위한 예산과 현재 자료를 반영하는 전망을 구별하고 실제 비용과 비교하는 안내.",
+                  "scope": "미국·호주식 세금·인건비 분류나 일률적 비율을 한국 사업에 강제하지 않음. 개인 자산·대출 판단 아님.",
+                  "notTypeOrMyeongliValidation": true
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 5,
+                "originalId": "bppr:source:f64a1b254b8c7a0ebd5e",
+                "recordSha256": "638e03ba97bdeaeccf467155f01eeecd132e1c7cb1f60240580956cba4002be5",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            }
+          ],
+          "customerApproved": false
+        }
+      ],
+      "businessContext": "UNKNOWN",
+      "remainingUnknown": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "ALL_AND_GROUP_SOURCES_REQUIRED",
+        "AUTHORITY_REQUIREMENT_UNVERIFIED:resource_commitment",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CONTRACT_NOT_VERIFIED",
+        "CUSTOMER_APPROVAL_PENDING",
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "EXACT_ENTERED_TYPE_REQUIRED",
+        "EXIT_RIGHTS_UNVERIFIED",
+        "INCOMPATIBLE_SOURCE_GROUP",
+        "INHERITED_SOURCE_GROUP_HELD",
+        "IP_OWNERSHIP_UNVERIFIED",
+        "LOSS_ALLOCATION_UNVERIFIED",
+        "MEANING_REVIEW_REQUIRED",
+        "MONEY_DOMAIN_NOT_APPROVED",
+        "MONEY_SOURCE_NOT_PROJECTED",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_ANCESTOR_NOT_APPROVED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SOURCE_DOMAIN_PROJECTION_MISMATCH",
+        "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+        "SOURCE_REFERENCE_UNRESOLVED",
+        "UNVERIFIED_ACTUAL_PARTNERSHIP",
+        "UNVERIFIED_AGENCY_AUTHORITY",
+        "UNVERIFIED_ASSETS",
+        "UNVERIFIED_BUSINESS_CONTEXT",
+        "UNVERIFIED_BUSINESS_STRUCTURE",
+        "UNVERIFIED_CAPITAL",
+        "UNVERIFIED_CASH_FLOW",
+        "UNVERIFIED_CONTRIBUTION",
+        "UNVERIFIED_DEBT",
+        "UNVERIFIED_DECISION_RIGHTS",
+        "UNVERIFIED_EQUITY",
+        "UNVERIFIED_PROFIT",
+        "UNVERIFIED_REVENUE"
+      ],
+      "approvalState": "WITHHELD"
+    },
+    {
+      "originalResearchId": "bppr:material:CH02.P1:a-opportunity-model",
+      "catalogKey": "kc:v1:42fb6a2622f0a89720ca7b60d9ead719c8da0a735c96b62981e8b1f9fe858b6b",
+      "requirementId": "bppr:material:CH02.P1:a-opportunity-model:native-witness:1",
+      "sourceAssignment": {
+        "owner": "A",
+        "sourceKey": "78ca1a3776c53c2d0b48",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      "sourceHash": "a6d3747f2872f90db9a5075fea446471d0f665fa58ef3d4fb57af24132720b90",
+      "sourceLocator": {
+        "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+        "exportName": "DEEP_TEN_GODS",
+        "pointer": "/7",
+        "originalId": "deep:ten_god:pian_yin",
+        "recordSha256": "a6d3747f2872f90db9a5075fea446471d0f665fa58ef3d4fb57af24132720b90",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "actualProducer": {
+        "file": "src/lib/interpretation-v4/strength.ts",
+        "symbol": "collectStructureAtoms",
+        "version": "v4-structure-evidence-1",
+        "system": "myeongli"
+      },
+      "actualGraphNode": "aeg:node:383a51551a1083048a0c97123393a38361e26aa134abe34aa0ed65cf59e1bb98",
+      "actualOwner": "fixture-person-7",
+      "actualDirection": null,
+      "kind": "CALCULATED_NATAL_FACT",
+      "sourceDomain": [],
+      "requiredAncestryRoots": [
+        "aeg:root:42f46aa4f144152b0ed7d5a9f5d245747218bcc7df0a353077f9b87194d8f353",
+        "aeg:root:9160b40c60e098482ebde14bae16bedae5adeeb38e43811919f6a819dc447cdd",
+        "aeg:root:a14915c3e4e416bbb53db3543385abd51d6d381193bae381ed8022a2f0308b47"
+      ],
+      "originalSourceGroups": [
+        {
+          "originalGroupId": "bppr:material:CH02.P1:a-opportunity-model",
+          "originalMaterialId": "bppr:material:CH02.P1:a-opportunity-model",
+          "originalDeclaration": {
+            "groupId": "bppr:material:CH02.P1:a-opportunity-model",
+            "sourceKeys": [
+              "0ba71def5f7dd66a4424",
+              "78ca1a3776c53c2d0b48",
+              "d8e6b5b9bc1c9e1094f2"
+            ],
+            "typePredicates": [
+              {
+                "owner": "A",
+                "type": "INTP",
+                "sourceKey": "0ba71def5f7dd66a4424"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          },
+          "sourceKeys": [
+            "0ba71def5f7dd66a4424",
+            "78ca1a3776c53c2d0b48",
+            "d8e6b5b9bc1c9e1094f2"
+          ],
+          "originalTypePredicates": [
+            {
+              "owner": "A",
+              "type": "INTP",
+              "sourceKey": "0ba71def5f7dd66a4424"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true,
+          "groupPolicy": "all_direct_sources",
+          "normalizedBinderGroups": [
+            {
+              "originalIndex": 0,
+              "originalId": "bppr:material:CH02.P1:a-opportunity-model",
+              "semantics": "ALL_DIRECT_SOURCES",
+              "sourceRequirementIds": [
+                "kc:v1:42fb6a2622f0a89720ca7b60d9ead719c8da0a735c96b62981e8b1f9fe858b6b#/ownedSources/0:0",
+                "kc:v1:42fb6a2622f0a89720ca7b60d9ead719c8da0a735c96b62981e8b1f9fe858b6b#/ownedSources/1:1",
+                "kc:v1:42fb6a2622f0a89720ca7b60d9ead719c8da0a735c96b62981e8b1f9fe858b6b#/ownedSources/2:2"
+              ],
+              "typePredicates": [
+                {
+                  "owner": "A",
+                  "type": "INTP",
+                  "sourceKey": "0ba71def5f7dd66a4424"
+                }
+              ],
+              "originalDeclaration": {
+                "groupId": "bppr:material:CH02.P1:a-opportunity-model",
+                "sourceKeys": [
+                  "0ba71def5f7dd66a4424",
+                  "78ca1a3776c53c2d0b48",
+                  "d8e6b5b9bc1c9e1094f2"
+                ],
+                "typePredicates": [
+                  {
+                    "owner": "A",
+                    "type": "INTP",
+                    "sourceKey": "0ba71def5f7dd66a4424"
+                  }
+                ],
+                "allSourcesWithinGroupRequired": true
+              },
+              "originalTechnicalState": "WITHHELD",
+              "requiresDisplayedLedger": false
+            }
+          ],
+          "sources": [
+            {
+              "key": "0ba71def5f7dd66a4424",
+              "assignment": [
+                {
+                  "owner": "A",
+                  "sourceKey": "0ba71def5f7dd66a4424",
+                  "sourceUse": "own_entered_type_only",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:0ba71def5f7dd66a4424",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "0ba71def5f7dd66a4424",
+                "sourceId": "mbti:INTP:traits:thinkingStyle:ne_possibility_storm",
+                "sourceKind": "individual_mbti",
+                "auditRef": "source-locator-audit.json#0ba71def5f7dd66a4424",
+                "recordSha256": "8b6feb80da5a30d9390b9ac60b956fcb90f44e727c6e70da42ad218781a16daf",
+                "sourceFileSha256": "752828dc12d5f7114176d739e9e6f5b8ca05fd8facfeeaa331e9d88c163f694e",
+                "originalState": {
+                  "type": "INTP",
+                  "area": "thinkingStyle",
+                  "sourceCoverage": "direct",
+                  "empiricalVerification": "not_established",
+                  "currentRelationshipDomain": "THINKING",
+                  "currentNonRomanticProjection": "not_in_current_scoring_projection",
+                  "businessPartnerPatternExists": false,
+                  "empiricalTypeEffectVerified": false
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 0,
+                "originalId": "bppr:source:0ba71def5f7dd66a4424",
+                "recordSha256": "2e04c5c994774723a137b11fe7b6f68f20cb8a5ba422a169472deb953483153d",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "78ca1a3776c53c2d0b48",
+              "assignment": [
+                {
+                  "owner": "A",
+                  "sourceKey": "78ca1a3776c53c2d0b48",
+                  "sourceUse": "actual_natal_condition_required",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:78ca1a3776c53c2d0b48",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "78ca1a3776c53c2d0b48",
+                "sourceId": "deep:ten_god:pian_yin",
+                "sourceKind": "natal_definition",
+                "auditRef": "source-locator-audit.json#78ca1a3776c53c2d0b48",
+                "recordSha256": "a6d3747f2872f90db9a5075fea446471d0f665fa58ef3d4fb57af24132720b90",
+                "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+                "originalState": {
+                  "verification": null,
+                  "review": null,
+                  "class": null,
+                  "traditionalClass": null,
+                  "connectedToRuntime": null,
+                  "approvedForCustomer": null,
+                  "definitionReview": null,
+                  "traditional": null,
+                  "evidenceLevel": null,
+                  "formation": null,
+                  "exclusions": [],
+                  "support": null,
+                  "deferred": [
+                    "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+                  ]
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 18,
+                "originalId": "bppr:source:78ca1a3776c53c2d0b48",
+                "recordSha256": "36c47131abcb8c0e7c578a1539e199a5fd3af215c8d524e713fcca2d054b3cdf",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "d8e6b5b9bc1c9e1094f2",
+              "assignment": [
+                {
+                  "owner": "GUIDANCE",
+                  "sourceKey": "d8e6b5b9bc1c9e1094f2",
+                  "sourceUse": "context_guidance_not_person_fact",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:d8e6b5b9bc1c9e1094f2",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "d8e6b5b9bc1c9e1094f2",
+                "sourceId": "external:businessPartner:market",
+                "sourceKind": "external_context",
+                "auditRef": "source-locator-audit.json#d8e6b5b9bc1c9e1094f2",
+                "recordSha256": "850ce140dc71ff3733c97ecf6ee1d8cceb5fd6e5cba45da9116a3a5e30e850d6",
+                "originalState": {
+                  "accessedAt": "2026-10-14",
+                  "access": "web_page_text_actually_opened",
+                  "published": null,
+                  "reviewed": null,
+                  "dateStatus": "not_displayed_in_opened_text",
+                  "notMbtiPairValidation": true,
+                  "notMyeongliValidation": true,
+                  "notCustomerObservation": true,
+                  "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+                  "author": "U.S. Small Business Administration",
+                  "title": "Plan your business",
+                  "url": "https://www.sba.gov/counseling/plan-your-business/",
+                  "requestedUrls": [
+                    "https://www.sba.gov/business-guide/plan-your-business/market-research-competitive-analysis",
+                    "https://www.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs"
+                  ],
+                  "checkedSection": "122–163,189–297,301–410",
+                  "summary": "고객 수요·대안·가격을 검토하고 사업별 초기·반복 비용과 가정을 구분하는 계획 안내.",
+                  "scope": "미국 일반 사업 계획. 세금·대출 자격·성공 보장과 환산하지 않음. 이전 두 URL은 같은 통합 페이지로 redirect하므로 출처2개로 세지 않음.",
+                  "notTypeOrMyeongliValidation": true
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 2,
+                "originalId": "bppr:source:d8e6b5b9bc1c9e1094f2",
+                "recordSha256": "47d0b6972cc46fa50aa7135f759f2c6012c6d0f19070de30ee2cc92f7a24bc3a",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            }
+          ],
+          "customerApproved": false
+        }
+      ],
+      "businessContext": "UNKNOWN",
+      "remainingUnknown": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "ALL_AND_GROUP_SOURCES_REQUIRED",
+        "AUTHORITY_REQUIREMENT_UNVERIFIED:trial_scope",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CONTRACT_NOT_VERIFIED",
+        "CUSTOMER_APPROVAL_PENDING",
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "EXACT_ENTERED_TYPE_REQUIRED",
+        "EXIT_RIGHTS_UNVERIFIED",
+        "INCOMPATIBLE_SOURCE_GROUP",
+        "INHERITED_SOURCE_GROUP_HELD",
+        "IP_OWNERSHIP_UNVERIFIED",
+        "LOSS_ALLOCATION_UNVERIFIED",
+        "MEANING_REVIEW_REQUIRED",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_ANCESTOR_NOT_APPROVED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SOURCE_DOMAIN_PROJECTION_MISMATCH",
+        "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+        "SOURCE_REFERENCE_UNRESOLVED",
+        "THINKING_DOMAIN_NOT_APPROVED",
+        "THINKING_SOURCE_NOT_PROJECTED",
+        "UNVERIFIED_ACTUAL_PARTNERSHIP",
+        "UNVERIFIED_AGENCY_AUTHORITY",
+        "UNVERIFIED_ASSETS",
+        "UNVERIFIED_BUSINESS_CONTEXT",
+        "UNVERIFIED_BUSINESS_STRUCTURE",
+        "UNVERIFIED_CAPITAL",
+        "UNVERIFIED_CASH_FLOW",
+        "UNVERIFIED_CONTRIBUTION",
+        "UNVERIFIED_DEBT",
+        "UNVERIFIED_DECISION_RIGHTS",
+        "UNVERIFIED_EQUITY",
+        "UNVERIFIED_PROFIT",
+        "UNVERIFIED_REVENUE"
+      ],
+      "approvalState": "WITHHELD"
+    },
+    {
+      "originalResearchId": "bppr:material:CH03.P1:b-operational-conditions",
+      "catalogKey": "kc:v1:91128707ee4a564a54036be414415a07fad605f8b89ee6ce8d0ef7e772dab57b",
+      "requirementId": "bppr:material:CH03.P1:b-operational-conditions:native-witness:1",
+      "sourceAssignment": {
+        "owner": "B",
+        "sourceKey": "e2ed5b09b1f8185708cd",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      "sourceHash": "c5190449e4eac664419b628d879f0413f683ed7418d0a7b136d474d3d19dd59a",
+      "sourceLocator": {
+        "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+        "exportName": "DEEP_TEN_GODS",
+        "pointer": "/5",
+        "originalId": "deep:ten_god:zheng_cai",
+        "recordSha256": "c5190449e4eac664419b628d879f0413f683ed7418d0a7b136d474d3d19dd59a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "actualProducer": {
+        "file": "src/lib/interpretation-v4/strength.ts",
+        "symbol": "collectStructureAtoms",
+        "version": "v4-structure-evidence-1",
+        "system": "myeongli"
+      },
+      "actualGraphNode": "aeg:node:6af9a99de887e91bc0c5a6942fa20f3e1b0d7f8c01925d0e9ac35221c34148e8",
+      "actualOwner": "fixture-person-8",
+      "actualDirection": null,
+      "kind": "CALCULATED_NATAL_FACT",
+      "sourceDomain": [],
+      "requiredAncestryRoots": [
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:99c4b30bacb785ce727d8f94cc41389e5cb5eb5baeb72574a375208d2edbda99",
+        "aeg:root:ebe353437f03020ed4932b59bc87781016f9ba8c796b9981044c54ae59f6b0fa"
+      ],
+      "originalSourceGroups": [
+        {
+          "originalGroupId": "bppr:material:CH03.P1:b-operational-conditions",
+          "originalMaterialId": "bppr:material:CH03.P1:b-operational-conditions",
+          "originalDeclaration": {
+            "groupId": "bppr:material:CH03.P1:b-operational-conditions",
+            "sourceKeys": [
+              "60699f5629066c047ea1",
+              "e2ed5b09b1f8185708cd",
+              "5b95f1a5a0504d2d0869"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ESFJ",
+                "sourceKey": "60699f5629066c047ea1"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          },
+          "sourceKeys": [
+            "60699f5629066c047ea1",
+            "e2ed5b09b1f8185708cd",
+            "5b95f1a5a0504d2d0869"
+          ],
+          "originalTypePredicates": [
+            {
+              "owner": "B",
+              "type": "ESFJ",
+              "sourceKey": "60699f5629066c047ea1"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true,
+          "groupPolicy": "all_direct_sources",
+          "normalizedBinderGroups": [
+            {
+              "originalIndex": 0,
+              "originalId": "bppr:material:CH03.P1:b-operational-conditions",
+              "semantics": "ALL_DIRECT_SOURCES",
+              "sourceRequirementIds": [
+                "kc:v1:91128707ee4a564a54036be414415a07fad605f8b89ee6ce8d0ef7e772dab57b#/ownedSources/0:0",
+                "kc:v1:91128707ee4a564a54036be414415a07fad605f8b89ee6ce8d0ef7e772dab57b#/ownedSources/1:1",
+                "kc:v1:91128707ee4a564a54036be414415a07fad605f8b89ee6ce8d0ef7e772dab57b#/ownedSources/2:2"
+              ],
+              "typePredicates": [
+                {
+                  "owner": "B",
+                  "type": "ESFJ",
+                  "sourceKey": "60699f5629066c047ea1"
+                }
+              ],
+              "originalDeclaration": {
+                "groupId": "bppr:material:CH03.P1:b-operational-conditions",
+                "sourceKeys": [
+                  "60699f5629066c047ea1",
+                  "e2ed5b09b1f8185708cd",
+                  "5b95f1a5a0504d2d0869"
+                ],
+                "typePredicates": [
+                  {
+                    "owner": "B",
+                    "type": "ESFJ",
+                    "sourceKey": "60699f5629066c047ea1"
+                  }
+                ],
+                "allSourcesWithinGroupRequired": true
+              },
+              "originalTechnicalState": "WITHHELD",
+              "requiresDisplayedLedger": false
+            }
+          ],
+          "sources": [
+            {
+              "key": "60699f5629066c047ea1",
+              "assignment": [
+                {
+                  "owner": "B",
+                  "sourceKey": "60699f5629066c047ea1",
+                  "sourceUse": "own_entered_type_only",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:60699f5629066c047ea1",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "60699f5629066c047ea1",
+                "sourceId": "mbti:ESFJ:traits:workplace:policy_alignment_need",
+                "sourceKind": "individual_mbti",
+                "auditRef": "source-locator-audit.json#60699f5629066c047ea1",
+                "recordSha256": "b056d530ebc30ab49e5858a63a2da18e90be321ff8045292d8cdd6a838be964e",
+                "sourceFileSha256": "40e80ffb692c97690487293c0d59b87715fa6ab25ce6978ec3eefc890525bcf8",
+                "originalState": {
+                  "type": "ESFJ",
+                  "area": "workplace",
+                  "sourceCoverage": "direct",
+                  "empiricalVerification": "not_established",
+                  "currentRelationshipDomain": "WORK",
+                  "currentNonRomanticProjection": "not_in_current_scoring_projection",
+                  "businessPartnerPatternExists": false,
+                  "empiricalTypeEffectVerified": false
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 27,
+                "originalId": "bppr:source:60699f5629066c047ea1",
+                "recordSha256": "1039c6256faa66cf0be3b9e42cb33e658c30df565ac42abcfff9d42f9dfdec2e",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "e2ed5b09b1f8185708cd",
+              "assignment": [
+                {
+                  "owner": "B",
+                  "sourceKey": "e2ed5b09b1f8185708cd",
+                  "sourceUse": "actual_natal_condition_required",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:e2ed5b09b1f8185708cd",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "e2ed5b09b1f8185708cd",
+                "sourceId": "deep:ten_god:zheng_cai",
+                "sourceKind": "natal_definition",
+                "auditRef": "source-locator-audit.json#e2ed5b09b1f8185708cd",
+                "recordSha256": "c5190449e4eac664419b628d879f0413f683ed7418d0a7b136d474d3d19dd59a",
+                "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+                "originalState": {
+                  "verification": null,
+                  "review": null,
+                  "class": null,
+                  "traditionalClass": null,
+                  "connectedToRuntime": null,
+                  "approvedForCustomer": null,
+                  "definitionReview": null,
+                  "traditional": null,
+                  "evidenceLevel": null,
+                  "formation": null,
+                  "exclusions": [],
+                  "support": null,
+                  "deferred": [
+                    "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+                  ]
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 28,
+                "originalId": "bppr:source:e2ed5b09b1f8185708cd",
+                "recordSha256": "6f6ae8b1a18667ed895801e548d692647975367b2c42127cd3c751992fcd5ed4",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "5b95f1a5a0504d2d0869",
+              "assignment": [
+                {
+                  "owner": "GUIDANCE",
+                  "sourceKey": "5b95f1a5a0504d2d0869",
+                  "sourceUse": "context_guidance_not_person_fact",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:5b95f1a5a0504d2d0869",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "5b95f1a5a0504d2d0869",
+                "sourceId": "external:businessPartner:contract",
+                "sourceKind": "external_context",
+                "auditRef": "source-locator-audit.json#5b95f1a5a0504d2d0869",
+                "recordSha256": "68b51753584a329d8bdd2ce1af3b1e8d9dafe9a36871f646be650807cc07d008",
+                "originalState": {
+                  "accessedAt": "2026-10-14",
+                  "access": "web_page_text_actually_opened",
+                  "published": null,
+                  "reviewed": null,
+                  "dateStatus": "not_displayed_in_opened_text",
+                  "notMbtiPairValidation": true,
+                  "notMyeongliValidation": true,
+                  "notCustomerObservation": true,
+                  "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+                  "author": "Australian Government / business.gov.au",
+                  "title": "Prepare a contract",
+                  "url": "https://business.gov.au/people/contractors/prepare-a-contract",
+                  "checkedSection": "257–310,328–365,428–end contract sections",
+                  "summary": "지급 시점·성과 기준·IP 사용·비밀 정보·위험 이전을 별도 확인하는 외주 계약 안내.",
+                  "scope": "호주 hirer/contractor 관계. contractor IP 귀속 기본 규칙·조항 효력을 한국 동업자에게 전용하지 않음. 확인 질문만 전이.",
+                  "notTypeOrMyeongliValidation": true
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 29,
+                "originalId": "bppr:source:5b95f1a5a0504d2d0869",
+                "recordSha256": "e5fe4d90395aedc7e0bbeba87dcfbb57bfa84390b82ed18b7eb0cc5cc147d791",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            }
+          ],
+          "customerApproved": false
+        }
+      ],
+      "businessContext": "UNKNOWN",
+      "remainingUnknown": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "ALL_AND_GROUP_SOURCES_REQUIRED",
+        "AUTHORITY_REQUIREMENT_UNVERIFIED:delivery_scope",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CONTRACT_NOT_VERIFIED",
+        "CUSTOMER_APPROVAL_PENDING",
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "EXACT_ENTERED_TYPE_REQUIRED",
+        "EXIT_RIGHTS_UNVERIFIED",
+        "INCOMPATIBLE_SOURCE_GROUP",
+        "INHERITED_SOURCE_GROUP_HELD",
+        "IP_OWNERSHIP_UNVERIFIED",
+        "LOSS_ALLOCATION_UNVERIFIED",
+        "MEANING_REVIEW_REQUIRED",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_ANCESTOR_NOT_APPROVED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SOURCE_DOMAIN_PROJECTION_MISMATCH",
+        "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+        "SOURCE_REFERENCE_UNRESOLVED",
+        "UNVERIFIED_ACTUAL_PARTNERSHIP",
+        "UNVERIFIED_AGENCY_AUTHORITY",
+        "UNVERIFIED_ASSETS",
+        "UNVERIFIED_BUSINESS_CONTEXT",
+        "UNVERIFIED_BUSINESS_STRUCTURE",
+        "UNVERIFIED_CAPITAL",
+        "UNVERIFIED_CASH_FLOW",
+        "UNVERIFIED_CONTRIBUTION",
+        "UNVERIFIED_DEBT",
+        "UNVERIFIED_DECISION_RIGHTS",
+        "UNVERIFIED_EQUITY",
+        "UNVERIFIED_PROFIT",
+        "UNVERIFIED_REVENUE",
+        "WORK_DOMAIN_NOT_APPROVED",
+        "WORK_SOURCE_NOT_PROJECTED"
+      ],
+      "approvalState": "WITHHELD"
+    },
+    {
+      "originalResearchId": "bppr:material:CH03.P1:b-method-and-data",
+      "catalogKey": "kc:v1:9e800eceacf2d35d068d805228e68d511247478901ec99e73fade2e3d303b319",
+      "requirementId": "bppr:material:CH03.P1:b-method-and-data:native-witness:1",
+      "sourceAssignment": {
+        "owner": "B",
+        "sourceKey": "90e77590d3ea07930ba1",
+        "sourceUse": "actual_natal_condition_required",
+        "knowledgeIsRuntimeEvidence": false
+      },
+      "sourceHash": "46429fe865e9a25fb4e332aa37e7709375a33374caa139c3857d3ef233b41ffd",
+      "sourceLocator": {
+        "file": "src/lib/report-knowledge/foundation-deep/sajuFoundationDeepTenGods.ts",
+        "exportName": "DEEP_TEN_GODS",
+        "pointer": "/2",
+        "originalId": "deep:ten_god:shi_shen",
+        "recordSha256": "46429fe865e9a25fb4e332aa37e7709375a33374caa139c3857d3ef233b41ffd",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+      },
+      "actualProducer": {
+        "file": "src/lib/interpretation-v4/strength.ts",
+        "symbol": "collectStructureAtoms",
+        "version": "v4-structure-evidence-1",
+        "system": "myeongli"
+      },
+      "actualGraphNode": "aeg:node:f9fb5a3697d4addfbe1581ddb59253061a865942e31af46eb1cba35a0b7b36e4",
+      "actualOwner": "fixture-person-8",
+      "actualDirection": null,
+      "kind": "CALCULATED_NATAL_FACT",
+      "sourceDomain": [],
+      "requiredAncestryRoots": [
+        "aeg:root:0f7e61ede349b3926af5f6a341c53b7695971650ccac278f801614314a93a7fb",
+        "aeg:root:626c7ff49d8e08bb2312abd8b3cc23fbf98a4e325e31108ba595003999cb7c62",
+        "aeg:root:b2d51ece79b4b4f1f647b233c8770ea4d88b608cfeb1a298c9a89b47a685429c"
+      ],
+      "originalSourceGroups": [
+        {
+          "originalGroupId": "bppr:material:CH03.P1:b-method-and-data",
+          "originalMaterialId": "bppr:material:CH03.P1:b-method-and-data",
+          "originalDeclaration": {
+            "groupId": "bppr:material:CH03.P1:b-method-and-data",
+            "sourceKeys": [
+              "c0fbe9a4b01f0f51c46b",
+              "90e77590d3ea07930ba1",
+              "f64a1b254b8c7a0ebd5e"
+            ],
+            "typePredicates": [
+              {
+                "owner": "B",
+                "type": "ISTP",
+                "sourceKey": "c0fbe9a4b01f0f51c46b"
+              }
+            ],
+            "allSourcesWithinGroupRequired": true
+          },
+          "sourceKeys": [
+            "c0fbe9a4b01f0f51c46b",
+            "90e77590d3ea07930ba1",
+            "f64a1b254b8c7a0ebd5e"
+          ],
+          "originalTypePredicates": [
+            {
+              "owner": "B",
+              "type": "ISTP",
+              "sourceKey": "c0fbe9a4b01f0f51c46b"
+            }
+          ],
+          "allSourcesWithinGroupRequired": true,
+          "groupPolicy": "all_direct_sources",
+          "normalizedBinderGroups": [
+            {
+              "originalIndex": 0,
+              "originalId": "bppr:material:CH03.P1:b-method-and-data",
+              "semantics": "ALL_DIRECT_SOURCES",
+              "sourceRequirementIds": [
+                "kc:v1:9e800eceacf2d35d068d805228e68d511247478901ec99e73fade2e3d303b319#/ownedSources/0:0",
+                "kc:v1:9e800eceacf2d35d068d805228e68d511247478901ec99e73fade2e3d303b319#/ownedSources/1:1",
+                "kc:v1:9e800eceacf2d35d068d805228e68d511247478901ec99e73fade2e3d303b319#/ownedSources/2:2"
+              ],
+              "typePredicates": [
+                {
+                  "owner": "B",
+                  "type": "ISTP",
+                  "sourceKey": "c0fbe9a4b01f0f51c46b"
+                }
+              ],
+              "originalDeclaration": {
+                "groupId": "bppr:material:CH03.P1:b-method-and-data",
+                "sourceKeys": [
+                  "c0fbe9a4b01f0f51c46b",
+                  "90e77590d3ea07930ba1",
+                  "f64a1b254b8c7a0ebd5e"
+                ],
+                "typePredicates": [
+                  {
+                    "owner": "B",
+                    "type": "ISTP",
+                    "sourceKey": "c0fbe9a4b01f0f51c46b"
+                  }
+                ],
+                "allSourcesWithinGroupRequired": true
+              },
+              "originalTechnicalState": "WITHHELD",
+              "requiresDisplayedLedger": false
+            }
+          ],
+          "sources": [
+            {
+              "key": "c0fbe9a4b01f0f51c46b",
+              "assignment": [
+                {
+                  "owner": "B",
+                  "sourceKey": "c0fbe9a4b01f0f51c46b",
+                  "sourceUse": "own_entered_type_only",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:c0fbe9a4b01f0f51c46b",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "c0fbe9a4b01f0f51c46b",
+                "sourceId": "mbti:ISTP:traits:thinkingStyle:causal_principle_focus",
+                "sourceKind": "individual_mbti",
+                "auditRef": "source-locator-audit.json#c0fbe9a4b01f0f51c46b",
+                "recordSha256": "23be2c7d5afa7bcb0d1966a1f54a33ee2c8fdc417009010538b6045bda0d8d4d",
+                "sourceFileSha256": "c40672de642913263c8cda23efba1c1ac70f34b5bfca6ce29820ff32a2e41e57",
+                "originalState": {
+                  "type": "ISTP",
+                  "area": "thinkingStyle",
+                  "sourceCoverage": "direct",
+                  "empiricalVerification": "not_established",
+                  "currentRelationshipDomain": "THINKING",
+                  "currentNonRomanticProjection": "not_in_current_scoring_projection",
+                  "businessPartnerPatternExists": false,
+                  "empiricalTypeEffectVerified": false
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 30,
+                "originalId": "bppr:source:c0fbe9a4b01f0f51c46b",
+                "recordSha256": "dbb7b6ee5f32d8318ffec4f64578fce3b5ece386c739dd5ff512960b0c3fdcb8",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "90e77590d3ea07930ba1",
+              "assignment": [
+                {
+                  "owner": "B",
+                  "sourceKey": "90e77590d3ea07930ba1",
+                  "sourceUse": "actual_natal_condition_required",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:90e77590d3ea07930ba1",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "90e77590d3ea07930ba1",
+                "sourceId": "deep:ten_god:shi_shen",
+                "sourceKind": "natal_definition",
+                "auditRef": "source-locator-audit.json#90e77590d3ea07930ba1",
+                "recordSha256": "46429fe865e9a25fb4e332aa37e7709375a33374caa139c3857d3ef233b41ffd",
+                "sourceFileSha256": "591db09e4fee5047f7afbc40719874b760fe75d4f3b1ac0296cab1a86b4e02b4",
+                "originalState": {
+                  "verification": null,
+                  "review": null,
+                  "class": null,
+                  "traditionalClass": null,
+                  "connectedToRuntime": null,
+                  "approvedForCustomer": null,
+                  "definitionReview": null,
+                  "traditional": null,
+                  "evidenceLevel": null,
+                  "formation": null,
+                  "exclusions": [],
+                  "support": null,
+                  "deferred": [
+                    "강약을 새로 계산하거나 점수화하지 않는다. 위치별 검토는 별도 연구 기록에 보존한다."
+                  ]
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 31,
+                "originalId": "bppr:source:90e77590d3ea07930ba1",
+                "recordSha256": "5ae7dd24817ff428004e80d3e51471513ef085d59dd9f5a47c6be658d8e6cc01",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            },
+            {
+              "key": "f64a1b254b8c7a0ebd5e",
+              "assignment": [
+                {
+                  "owner": "GUIDANCE",
+                  "sourceKey": "f64a1b254b8c7a0ebd5e",
+                  "sourceUse": "context_guidance_not_person_fact",
+                  "knowledgeIsRuntimeEvidence": false
+                }
+              ],
+              "registry": {
+                "id": "bppr:source:f64a1b254b8c7a0ebd5e",
+                "productKey": "saju_mbti_compatibility",
+                "relationshipCategory": "businessPartner",
+                "connectedToRuntime": false,
+                "approvedForCustomer": false,
+                "existingScoreContribution": false,
+                "runtimeEvidenceIds": [],
+                "key": "f64a1b254b8c7a0ebd5e",
+                "sourceId": "external:businessPartner:budget",
+                "sourceKind": "external_context",
+                "auditRef": "source-locator-audit.json#f64a1b254b8c7a0ebd5e",
+                "recordSha256": "b922b342e80d90a0c1e9fd42af77086e31a7ffc043afcae95cdbcefaf8abe491",
+                "originalState": {
+                  "accessedAt": "2026-10-14",
+                  "access": "web_page_text_actually_opened",
+                  "published": null,
+                  "reviewed": null,
+                  "dateStatus": "not_displayed_in_opened_text",
+                  "notMbtiPairValidation": true,
+                  "notMyeongliValidation": true,
+                  "notCustomerObservation": true,
+                  "application": "conditional_editorial_business_questions_not_personal_legal_or_financial_advice",
+                  "author": "Australian Government / business.gov.au",
+                  "title": "Create a budget",
+                  "url": "https://business.gov.au/finance/financial-tools-and-templates/create-a-budget",
+                  "checkedSection": "168–226",
+                  "summary": "목표를 위한 예산과 현재 자료를 반영하는 전망을 구별하고 실제 비용과 비교하는 안내.",
+                  "scope": "미국·호주식 세금·인건비 분류나 일률적 비율을 한국 사업에 강제하지 않음. 개인 자산·대출 판단 아님.",
+                  "notTypeOrMyeongliValidation": true
+                },
+                "independentCalculatedEvidence": false
+              },
+              "locator": {
+                "file": "src/lib/report-knowledge/compatibility-business-partner-research/sourceRegistry.ts",
+                "exportName": "BP_SOURCES",
+                "index": 5,
+                "originalId": "bppr:source:f64a1b254b8c7a0ebd5e",
+                "recordSha256": "638e03ba97bdeaeccf467155f01eeecd132e1c7cb1f60240580956cba4002be5",
+                "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+              },
+              "missingConditions": []
+            }
+          ],
+          "customerApproved": false
+        }
+      ],
+      "businessContext": "UNKNOWN",
+      "remainingUnknown": [
+        "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+        "ACTUAL_EVIDENCE_NOT_FOUND",
+        "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+        "ALL_AND_GROUP_SOURCES_REQUIRED",
+        "AUTHORITY_REQUIREMENT_UNVERIFIED:trial_scope",
+        "CONTRACT_NOT_MACHINE_CHECKABLE",
+        "CONTRACT_NOT_VERIFIED",
+        "CUSTOMER_APPROVAL_PENDING",
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "EXACT_ENTERED_TYPE_REQUIRED",
+        "EXIT_RIGHTS_UNVERIFIED",
+        "INCOMPATIBLE_SOURCE_GROUP",
+        "INHERITED_SOURCE_GROUP_HELD",
+        "IP_OWNERSHIP_UNVERIFIED",
+        "LOSS_ALLOCATION_UNVERIFIED",
+        "MEANING_REVIEW_REQUIRED",
+        "OPERATOR_APPROVAL_PENDING",
+        "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED",
+        "REQUIRED_ANCESTOR_NOT_APPROVED",
+        "REQUIRED_USER_STATE_NOT_VERIFIED",
+        "SEMANTIC_REVIEW_REQUIRED",
+        "SOURCE_DOMAIN_PROJECTION_MISMATCH",
+        "SOURCE_GROUP_OWNER_TYPE_MISMATCH",
+        "SOURCE_REFERENCE_UNRESOLVED",
+        "THINKING_DOMAIN_NOT_APPROVED",
+        "THINKING_SOURCE_NOT_PROJECTED",
+        "UNVERIFIED_ACTUAL_PARTNERSHIP",
+        "UNVERIFIED_AGENCY_AUTHORITY",
+        "UNVERIFIED_ASSETS",
+        "UNVERIFIED_BUSINESS_CONTEXT",
+        "UNVERIFIED_BUSINESS_STRUCTURE",
+        "UNVERIFIED_CAPITAL",
+        "UNVERIFIED_CASH_FLOW",
+        "UNVERIFIED_CONTRIBUTION",
+        "UNVERIFIED_DEBT",
+        "UNVERIFIED_DECISION_RIGHTS",
+        "UNVERIFIED_EQUITY",
+        "UNVERIFIED_PROFIT",
+        "UNVERIFIED_REVENUE"
+      ],
+      "approvalState": "WITHHELD"
+    }
+  ]
+}

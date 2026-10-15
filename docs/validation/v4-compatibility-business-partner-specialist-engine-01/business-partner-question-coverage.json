@@ -1,0 +1,3013 @@
+{
+  "cases": [
+    {
+      "fixtureId": "fixture-compatibility-businessPartner",
+      "questions": [
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P1",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH01.P1",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:43691973c3d7aea7bb6bb7776e04ab79e7bdeb639f3548b506aa9f935c42faa6",
+            "kc:v1:4bc1cd39f432a1cc8cd61059a0a88696459b603e0d9630a6f32ecb041e5629bb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P1.S1",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH01.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:43691973c3d7aea7bb6bb7776e04ab79e7bdeb639f3548b506aa9f935c42faa6",
+            "kc:v1:4bc1cd39f432a1cc8cd61059a0a88696459b603e0d9630a6f32ecb041e5629bb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P1.S2",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH01.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:43691973c3d7aea7bb6bb7776e04ab79e7bdeb639f3548b506aa9f935c42faa6",
+            "kc:v1:4bc1cd39f432a1cc8cd61059a0a88696459b603e0d9630a6f32ecb041e5629bb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P1.S3",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S3",
+            "originalAddress": "CH01.P1.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:43691973c3d7aea7bb6bb7776e04ab79e7bdeb639f3548b506aa9f935c42faa6",
+            "kc:v1:4bc1cd39f432a1cc8cd61059a0a88696459b603e0d9630a6f32ecb041e5629bb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P1.S4",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S4",
+            "originalAddress": "CH01.P1.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:43691973c3d7aea7bb6bb7776e04ab79e7bdeb639f3548b506aa9f935c42faa6",
+            "kc:v1:4bc1cd39f432a1cc8cd61059a0a88696459b603e0d9630a6f32ecb041e5629bb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P2",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": null,
+            "originalAddress": "CH01.P2",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:ba315353db12b1408262ba71350337ad47898af3739708c29890aba8e8c7598d",
+            "kc:v1:e886a3b33d59396ae3d13ec21114a7740417ad969883dc046545a44c2ab815d3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P2.S1",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S1",
+            "originalAddress": "CH01.P2.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:ba315353db12b1408262ba71350337ad47898af3739708c29890aba8e8c7598d",
+            "kc:v1:e886a3b33d59396ae3d13ec21114a7740417ad969883dc046545a44c2ab815d3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P2.S2",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S2",
+            "originalAddress": "CH01.P2.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:ba315353db12b1408262ba71350337ad47898af3739708c29890aba8e8c7598d",
+            "kc:v1:e886a3b33d59396ae3d13ec21114a7740417ad969883dc046545a44c2ab815d3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P2.S3",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S3",
+            "originalAddress": "CH01.P2.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:ba315353db12b1408262ba71350337ad47898af3739708c29890aba8e8c7598d",
+            "kc:v1:e886a3b33d59396ae3d13ec21114a7740417ad969883dc046545a44c2ab815d3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P2.S4",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S4",
+            "originalAddress": "CH01.P2.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:ba315353db12b1408262ba71350337ad47898af3739708c29890aba8e8c7598d",
+            "kc:v1:e886a3b33d59396ae3d13ec21114a7740417ad969883dc046545a44c2ab815d3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P3",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": null,
+            "originalAddress": "CH01.P3",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:74e2dd7f2d1b26f474811fdbf64f9ff3f716ccf42d58e0a55b0ce3e21be9c837",
+            "kc:v1:9a862f87ec7f16eddc02d3af1fccfefdf91dfdbb817d861d272eef74d3be2256"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P3.S1",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S1",
+            "originalAddress": "CH01.P3.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:74e2dd7f2d1b26f474811fdbf64f9ff3f716ccf42d58e0a55b0ce3e21be9c837",
+            "kc:v1:9a862f87ec7f16eddc02d3af1fccfefdf91dfdbb817d861d272eef74d3be2256"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P3.S2",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S2",
+            "originalAddress": "CH01.P3.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:74e2dd7f2d1b26f474811fdbf64f9ff3f716ccf42d58e0a55b0ce3e21be9c837",
+            "kc:v1:9a862f87ec7f16eddc02d3af1fccfefdf91dfdbb817d861d272eef74d3be2256"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P3.S3",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S3",
+            "originalAddress": "CH01.P3.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:74e2dd7f2d1b26f474811fdbf64f9ff3f716ccf42d58e0a55b0ce3e21be9c837",
+            "kc:v1:9a862f87ec7f16eddc02d3af1fccfefdf91dfdbb817d861d272eef74d3be2256"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P3.S4",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S4",
+            "originalAddress": "CH01.P3.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:74e2dd7f2d1b26f474811fdbf64f9ff3f716ccf42d58e0a55b0ce3e21be9c837",
+            "kc:v1:9a862f87ec7f16eddc02d3af1fccfefdf91dfdbb817d861d272eef74d3be2256"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P4",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": null,
+            "originalAddress": "CH01.P4",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:25380523664c7a345f5bd1825fbd1d53ced01599806b72b6643d3e497621cfdd",
+            "kc:v1:c3e33a780d2d8371fb4acc70087e02c6b5eb7b3d61b58b7a47d4a8d6545679db"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P4.S1",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S1",
+            "originalAddress": "CH01.P4.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:25380523664c7a345f5bd1825fbd1d53ced01599806b72b6643d3e497621cfdd",
+            "kc:v1:c3e33a780d2d8371fb4acc70087e02c6b5eb7b3d61b58b7a47d4a8d6545679db"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P4.S2",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S2",
+            "originalAddress": "CH01.P4.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:25380523664c7a345f5bd1825fbd1d53ced01599806b72b6643d3e497621cfdd",
+            "kc:v1:c3e33a780d2d8371fb4acc70087e02c6b5eb7b3d61b58b7a47d4a8d6545679db"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P4.S3",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S3",
+            "originalAddress": "CH01.P4.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:25380523664c7a345f5bd1825fbd1d53ced01599806b72b6643d3e497621cfdd",
+            "kc:v1:c3e33a780d2d8371fb4acc70087e02c6b5eb7b3d61b58b7a47d4a8d6545679db"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH01.P4.S4",
+          "address": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S4",
+            "originalAddress": "CH01.P4.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:25380523664c7a345f5bd1825fbd1d53ced01599806b72b6643d3e497621cfdd",
+            "kc:v1:c3e33a780d2d8371fb4acc70087e02c6b5eb7b3d61b58b7a47d4a8d6545679db"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P1",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH02.P1",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989",
+            "kc:v1:42fb6a2622f0a89720ca7b60d9ead719c8da0a735c96b62981e8b1f9fe858b6b"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P1.S1",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH02.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989",
+            "kc:v1:42fb6a2622f0a89720ca7b60d9ead719c8da0a735c96b62981e8b1f9fe858b6b"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P1.S2",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH02.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989",
+            "kc:v1:42fb6a2622f0a89720ca7b60d9ead719c8da0a735c96b62981e8b1f9fe858b6b"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P1.S3",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S3",
+            "originalAddress": "CH02.P1.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989",
+            "kc:v1:42fb6a2622f0a89720ca7b60d9ead719c8da0a735c96b62981e8b1f9fe858b6b"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P1.S4",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S4",
+            "originalAddress": "CH02.P1.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0187a129e33d56b1fd94ea0d39255b03365e2c05a4d3171cbbe4be6426b13989",
+            "kc:v1:42fb6a2622f0a89720ca7b60d9ead719c8da0a735c96b62981e8b1f9fe858b6b"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P2",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": null,
+            "originalAddress": "CH02.P2",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:205ac0124ef97682094933f21e2eb1a88c68771964e6ffc5d17ac3959f4078c3",
+            "kc:v1:dc4863735bab78d0e731316493fe3df142b543b5f0404a63abfcda155edb61f3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P2.S1",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S1",
+            "originalAddress": "CH02.P2.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:205ac0124ef97682094933f21e2eb1a88c68771964e6ffc5d17ac3959f4078c3",
+            "kc:v1:dc4863735bab78d0e731316493fe3df142b543b5f0404a63abfcda155edb61f3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P2.S2",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S2",
+            "originalAddress": "CH02.P2.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:205ac0124ef97682094933f21e2eb1a88c68771964e6ffc5d17ac3959f4078c3",
+            "kc:v1:dc4863735bab78d0e731316493fe3df142b543b5f0404a63abfcda155edb61f3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P2.S3",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S3",
+            "originalAddress": "CH02.P2.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:205ac0124ef97682094933f21e2eb1a88c68771964e6ffc5d17ac3959f4078c3",
+            "kc:v1:dc4863735bab78d0e731316493fe3df142b543b5f0404a63abfcda155edb61f3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P2.S4",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S4",
+            "originalAddress": "CH02.P2.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:205ac0124ef97682094933f21e2eb1a88c68771964e6ffc5d17ac3959f4078c3",
+            "kc:v1:dc4863735bab78d0e731316493fe3df142b543b5f0404a63abfcda155edb61f3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P3",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": null,
+            "originalAddress": "CH02.P3",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:0a2c7c32171c0f79f4c794f08442decfa90c262268540cb97deae8873f1500c6",
+            "kc:v1:b3924f92ef7de627aed2b0a4bd36ef3ef13f6da3fb03066881f1adb84816c5fb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P3.S1",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S1",
+            "originalAddress": "CH02.P3.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0a2c7c32171c0f79f4c794f08442decfa90c262268540cb97deae8873f1500c6",
+            "kc:v1:b3924f92ef7de627aed2b0a4bd36ef3ef13f6da3fb03066881f1adb84816c5fb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P3.S2",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S2",
+            "originalAddress": "CH02.P3.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0a2c7c32171c0f79f4c794f08442decfa90c262268540cb97deae8873f1500c6",
+            "kc:v1:b3924f92ef7de627aed2b0a4bd36ef3ef13f6da3fb03066881f1adb84816c5fb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P3.S3",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S3",
+            "originalAddress": "CH02.P3.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0a2c7c32171c0f79f4c794f08442decfa90c262268540cb97deae8873f1500c6",
+            "kc:v1:b3924f92ef7de627aed2b0a4bd36ef3ef13f6da3fb03066881f1adb84816c5fb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P3.S4",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S4",
+            "originalAddress": "CH02.P3.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0a2c7c32171c0f79f4c794f08442decfa90c262268540cb97deae8873f1500c6",
+            "kc:v1:b3924f92ef7de627aed2b0a4bd36ef3ef13f6da3fb03066881f1adb84816c5fb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P4",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": null,
+            "originalAddress": "CH02.P4",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:327089838798a06e848b43c68f3eee89d2dd23f15cc315fe3f631a48291649a3",
+            "kc:v1:45d18911399f92c779f5d99c77bdaa680a56d28212d32f3cf7320d3283f86391"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P4.S1",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S1",
+            "originalAddress": "CH02.P4.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:327089838798a06e848b43c68f3eee89d2dd23f15cc315fe3f631a48291649a3",
+            "kc:v1:45d18911399f92c779f5d99c77bdaa680a56d28212d32f3cf7320d3283f86391"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P4.S2",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S2",
+            "originalAddress": "CH02.P4.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:327089838798a06e848b43c68f3eee89d2dd23f15cc315fe3f631a48291649a3",
+            "kc:v1:45d18911399f92c779f5d99c77bdaa680a56d28212d32f3cf7320d3283f86391"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P4.S3",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S3",
+            "originalAddress": "CH02.P4.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:327089838798a06e848b43c68f3eee89d2dd23f15cc315fe3f631a48291649a3",
+            "kc:v1:45d18911399f92c779f5d99c77bdaa680a56d28212d32f3cf7320d3283f86391"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH02.P4.S4",
+          "address": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S4",
+            "originalAddress": "CH02.P4.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:327089838798a06e848b43c68f3eee89d2dd23f15cc315fe3f631a48291649a3",
+            "kc:v1:45d18911399f92c779f5d99c77bdaa680a56d28212d32f3cf7320d3283f86391"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P1",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH03.P1",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:91128707ee4a564a54036be414415a07fad605f8b89ee6ce8d0ef7e772dab57b",
+            "kc:v1:9e800eceacf2d35d068d805228e68d511247478901ec99e73fade2e3d303b319"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P1.S1",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH03.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:91128707ee4a564a54036be414415a07fad605f8b89ee6ce8d0ef7e772dab57b",
+            "kc:v1:9e800eceacf2d35d068d805228e68d511247478901ec99e73fade2e3d303b319"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P1.S2",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH03.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:91128707ee4a564a54036be414415a07fad605f8b89ee6ce8d0ef7e772dab57b",
+            "kc:v1:9e800eceacf2d35d068d805228e68d511247478901ec99e73fade2e3d303b319"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P1.S3",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S3",
+            "originalAddress": "CH03.P1.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:91128707ee4a564a54036be414415a07fad605f8b89ee6ce8d0ef7e772dab57b",
+            "kc:v1:9e800eceacf2d35d068d805228e68d511247478901ec99e73fade2e3d303b319"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P1.S4",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S4",
+            "originalAddress": "CH03.P1.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:91128707ee4a564a54036be414415a07fad605f8b89ee6ce8d0ef7e772dab57b",
+            "kc:v1:9e800eceacf2d35d068d805228e68d511247478901ec99e73fade2e3d303b319"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P2",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": null,
+            "originalAddress": "CH03.P2",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:4e000bf599c57f3055e1c7d53d87200573627c98e0e2b96c12cdd03f905bf93d",
+            "kc:v1:fcda288ceac92d62fe57f5a69d8d57ad51ced9829da890b0497b17b08ce8f1a6"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P2.S1",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S1",
+            "originalAddress": "CH03.P2.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4e000bf599c57f3055e1c7d53d87200573627c98e0e2b96c12cdd03f905bf93d",
+            "kc:v1:fcda288ceac92d62fe57f5a69d8d57ad51ced9829da890b0497b17b08ce8f1a6"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P2.S2",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S2",
+            "originalAddress": "CH03.P2.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4e000bf599c57f3055e1c7d53d87200573627c98e0e2b96c12cdd03f905bf93d",
+            "kc:v1:fcda288ceac92d62fe57f5a69d8d57ad51ced9829da890b0497b17b08ce8f1a6"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P2.S3",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S3",
+            "originalAddress": "CH03.P2.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4e000bf599c57f3055e1c7d53d87200573627c98e0e2b96c12cdd03f905bf93d",
+            "kc:v1:fcda288ceac92d62fe57f5a69d8d57ad51ced9829da890b0497b17b08ce8f1a6"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P2.S4",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S4",
+            "originalAddress": "CH03.P2.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4e000bf599c57f3055e1c7d53d87200573627c98e0e2b96c12cdd03f905bf93d",
+            "kc:v1:fcda288ceac92d62fe57f5a69d8d57ad51ced9829da890b0497b17b08ce8f1a6"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P3",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": null,
+            "originalAddress": "CH03.P3",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:d1f50bc8e80cb20c9e0124315154f93ce3833e2d23c1ff59b28eb3fea6d8af9d",
+            "kc:v1:e77a953be746487eca605d5e3e8f11800eafe0dedba828ef5d9db47598b8ca13"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P3.S1",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S1",
+            "originalAddress": "CH03.P3.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:d1f50bc8e80cb20c9e0124315154f93ce3833e2d23c1ff59b28eb3fea6d8af9d",
+            "kc:v1:e77a953be746487eca605d5e3e8f11800eafe0dedba828ef5d9db47598b8ca13"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P3.S2",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S2",
+            "originalAddress": "CH03.P3.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:d1f50bc8e80cb20c9e0124315154f93ce3833e2d23c1ff59b28eb3fea6d8af9d",
+            "kc:v1:e77a953be746487eca605d5e3e8f11800eafe0dedba828ef5d9db47598b8ca13"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P3.S3",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S3",
+            "originalAddress": "CH03.P3.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:d1f50bc8e80cb20c9e0124315154f93ce3833e2d23c1ff59b28eb3fea6d8af9d",
+            "kc:v1:e77a953be746487eca605d5e3e8f11800eafe0dedba828ef5d9db47598b8ca13"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P3.S4",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S4",
+            "originalAddress": "CH03.P3.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:d1f50bc8e80cb20c9e0124315154f93ce3833e2d23c1ff59b28eb3fea6d8af9d",
+            "kc:v1:e77a953be746487eca605d5e3e8f11800eafe0dedba828ef5d9db47598b8ca13"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P4",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": null,
+            "originalAddress": "CH03.P4",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:104d31c50ae487eb4d6f361f59ab2870a0ee29c73eba1c5285b0fb8dd8f33549",
+            "kc:v1:7d1e7b4ca1f9ffbd77932ccf8b9c9daef9c6bdf4f40ca4f0362c8b9c26313bb6"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P4.S1",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S1",
+            "originalAddress": "CH03.P4.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:104d31c50ae487eb4d6f361f59ab2870a0ee29c73eba1c5285b0fb8dd8f33549",
+            "kc:v1:7d1e7b4ca1f9ffbd77932ccf8b9c9daef9c6bdf4f40ca4f0362c8b9c26313bb6"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P4.S2",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S2",
+            "originalAddress": "CH03.P4.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:104d31c50ae487eb4d6f361f59ab2870a0ee29c73eba1c5285b0fb8dd8f33549",
+            "kc:v1:7d1e7b4ca1f9ffbd77932ccf8b9c9daef9c6bdf4f40ca4f0362c8b9c26313bb6"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P4.S3",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S3",
+            "originalAddress": "CH03.P4.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:104d31c50ae487eb4d6f361f59ab2870a0ee29c73eba1c5285b0fb8dd8f33549",
+            "kc:v1:7d1e7b4ca1f9ffbd77932ccf8b9c9daef9c6bdf4f40ca4f0362c8b9c26313bb6"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH03.P4.S4",
+          "address": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S4",
+            "originalAddress": "CH03.P4.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:104d31c50ae487eb4d6f361f59ab2870a0ee29c73eba1c5285b0fb8dd8f33549",
+            "kc:v1:7d1e7b4ca1f9ffbd77932ccf8b9c9daef9c6bdf4f40ca4f0362c8b9c26313bb6"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P1",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH04.P1",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:253fe0b528a1572d11aa3cec2b0e6b698af5283f56737787c01b599ded84bcc3",
+            "kc:v1:9eef01d6e8e8cf82a451f79a04be862a4a364c4a446f9226884ddbc0ea70e1a2"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P1.S1",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH04.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:253fe0b528a1572d11aa3cec2b0e6b698af5283f56737787c01b599ded84bcc3",
+            "kc:v1:9eef01d6e8e8cf82a451f79a04be862a4a364c4a446f9226884ddbc0ea70e1a2"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P1.S2",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH04.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:253fe0b528a1572d11aa3cec2b0e6b698af5283f56737787c01b599ded84bcc3",
+            "kc:v1:9eef01d6e8e8cf82a451f79a04be862a4a364c4a446f9226884ddbc0ea70e1a2"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P1.S3",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S3",
+            "originalAddress": "CH04.P1.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:253fe0b528a1572d11aa3cec2b0e6b698af5283f56737787c01b599ded84bcc3",
+            "kc:v1:9eef01d6e8e8cf82a451f79a04be862a4a364c4a446f9226884ddbc0ea70e1a2"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P1.S4",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S4",
+            "originalAddress": "CH04.P1.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:253fe0b528a1572d11aa3cec2b0e6b698af5283f56737787c01b599ded84bcc3",
+            "kc:v1:9eef01d6e8e8cf82a451f79a04be862a4a364c4a446f9226884ddbc0ea70e1a2"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P2",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": null,
+            "originalAddress": "CH04.P2",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:5ca996811b5ce3ef853323355cd4ca920bebd51149ccde0c59b35278220194bb",
+            "kc:v1:f7b2b7805692e02edd042911c7204ec429a95497049521324d3d64fcc3b1aac2"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P2.S1",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S1",
+            "originalAddress": "CH04.P2.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:5ca996811b5ce3ef853323355cd4ca920bebd51149ccde0c59b35278220194bb",
+            "kc:v1:f7b2b7805692e02edd042911c7204ec429a95497049521324d3d64fcc3b1aac2"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P2.S2",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S2",
+            "originalAddress": "CH04.P2.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:5ca996811b5ce3ef853323355cd4ca920bebd51149ccde0c59b35278220194bb",
+            "kc:v1:f7b2b7805692e02edd042911c7204ec429a95497049521324d3d64fcc3b1aac2"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P2.S3",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S3",
+            "originalAddress": "CH04.P2.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:5ca996811b5ce3ef853323355cd4ca920bebd51149ccde0c59b35278220194bb",
+            "kc:v1:f7b2b7805692e02edd042911c7204ec429a95497049521324d3d64fcc3b1aac2"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P2.S4",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S4",
+            "originalAddress": "CH04.P2.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:5ca996811b5ce3ef853323355cd4ca920bebd51149ccde0c59b35278220194bb",
+            "kc:v1:f7b2b7805692e02edd042911c7204ec429a95497049521324d3d64fcc3b1aac2"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P3",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": null,
+            "originalAddress": "CH04.P3",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:51ef0c27e23b083fd38f2b3b6336416a6a463d50f35bbf976677d299b6092c84",
+            "kc:v1:b9f4a4917a9310b173dd273a255148bfbe62692ccaff790585af52328b43e95a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P3.S1",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S1",
+            "originalAddress": "CH04.P3.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:51ef0c27e23b083fd38f2b3b6336416a6a463d50f35bbf976677d299b6092c84",
+            "kc:v1:b9f4a4917a9310b173dd273a255148bfbe62692ccaff790585af52328b43e95a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P3.S2",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S2",
+            "originalAddress": "CH04.P3.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:51ef0c27e23b083fd38f2b3b6336416a6a463d50f35bbf976677d299b6092c84",
+            "kc:v1:b9f4a4917a9310b173dd273a255148bfbe62692ccaff790585af52328b43e95a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P3.S3",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S3",
+            "originalAddress": "CH04.P3.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:51ef0c27e23b083fd38f2b3b6336416a6a463d50f35bbf976677d299b6092c84",
+            "kc:v1:b9f4a4917a9310b173dd273a255148bfbe62692ccaff790585af52328b43e95a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P3.S4",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S4",
+            "originalAddress": "CH04.P3.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:51ef0c27e23b083fd38f2b3b6336416a6a463d50f35bbf976677d299b6092c84",
+            "kc:v1:b9f4a4917a9310b173dd273a255148bfbe62692ccaff790585af52328b43e95a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P4",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": null,
+            "originalAddress": "CH04.P4",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:31e24187d5fd403f3bc21e06729a9d9fc591840d7ccd3112f331d5dfe1649fcd",
+            "kc:v1:adab2265a2b927ed9fce6e63c969cf9280c6e21714f0527dc6d28d4045093400"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P4.S1",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S1",
+            "originalAddress": "CH04.P4.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:31e24187d5fd403f3bc21e06729a9d9fc591840d7ccd3112f331d5dfe1649fcd",
+            "kc:v1:adab2265a2b927ed9fce6e63c969cf9280c6e21714f0527dc6d28d4045093400"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P4.S2",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S2",
+            "originalAddress": "CH04.P4.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:31e24187d5fd403f3bc21e06729a9d9fc591840d7ccd3112f331d5dfe1649fcd",
+            "kc:v1:adab2265a2b927ed9fce6e63c969cf9280c6e21714f0527dc6d28d4045093400"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P4.S3",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S3",
+            "originalAddress": "CH04.P4.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:31e24187d5fd403f3bc21e06729a9d9fc591840d7ccd3112f331d5dfe1649fcd",
+            "kc:v1:adab2265a2b927ed9fce6e63c969cf9280c6e21714f0527dc6d28d4045093400"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH04.P4.S4",
+          "address": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S4",
+            "originalAddress": "CH04.P4.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:31e24187d5fd403f3bc21e06729a9d9fc591840d7ccd3112f331d5dfe1649fcd",
+            "kc:v1:adab2265a2b927ed9fce6e63c969cf9280c6e21714f0527dc6d28d4045093400"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P1",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:0695c634c7547bd9f8e20c3cffa0b9d35b5c086061b496d46fc86004e9e007e4",
+            "kc:v1:07a88e09ace16addca655a42a9090a39580ef00d3788f382bade0997194177cb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P1.S1",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH05.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0695c634c7547bd9f8e20c3cffa0b9d35b5c086061b496d46fc86004e9e007e4",
+            "kc:v1:07a88e09ace16addca655a42a9090a39580ef00d3788f382bade0997194177cb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P1.S2",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH05.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0695c634c7547bd9f8e20c3cffa0b9d35b5c086061b496d46fc86004e9e007e4",
+            "kc:v1:07a88e09ace16addca655a42a9090a39580ef00d3788f382bade0997194177cb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P1.S3",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S3",
+            "originalAddress": "CH05.P1.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0695c634c7547bd9f8e20c3cffa0b9d35b5c086061b496d46fc86004e9e007e4",
+            "kc:v1:07a88e09ace16addca655a42a9090a39580ef00d3788f382bade0997194177cb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P1.S4",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S4",
+            "originalAddress": "CH05.P1.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0695c634c7547bd9f8e20c3cffa0b9d35b5c086061b496d46fc86004e9e007e4",
+            "kc:v1:07a88e09ace16addca655a42a9090a39580ef00d3788f382bade0997194177cb"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P2",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P2",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:a564d92d30f47d01faa7e5e366d63273aaa1d983e79602294a2644378912d66f",
+            "kc:v1:d948c86d61d0442fb37cee8a9bb45b29192adb0e0d8d81a0cd90791d08e59b2c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P2.S1",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S1",
+            "originalAddress": "CH05.P2.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:a564d92d30f47d01faa7e5e366d63273aaa1d983e79602294a2644378912d66f",
+            "kc:v1:d948c86d61d0442fb37cee8a9bb45b29192adb0e0d8d81a0cd90791d08e59b2c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P2.S2",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S2",
+            "originalAddress": "CH05.P2.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:a564d92d30f47d01faa7e5e366d63273aaa1d983e79602294a2644378912d66f",
+            "kc:v1:d948c86d61d0442fb37cee8a9bb45b29192adb0e0d8d81a0cd90791d08e59b2c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P2.S3",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S3",
+            "originalAddress": "CH05.P2.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:a564d92d30f47d01faa7e5e366d63273aaa1d983e79602294a2644378912d66f",
+            "kc:v1:d948c86d61d0442fb37cee8a9bb45b29192adb0e0d8d81a0cd90791d08e59b2c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P2.S4",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S4",
+            "originalAddress": "CH05.P2.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:a564d92d30f47d01faa7e5e366d63273aaa1d983e79602294a2644378912d66f",
+            "kc:v1:d948c86d61d0442fb37cee8a9bb45b29192adb0e0d8d81a0cd90791d08e59b2c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P3",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P3",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:a9dfd2659997cb0c80cb3d043a5d2bd7af4bb55588f04a2442a5ef7594c9fe5e",
+            "kc:v1:c614de0ee2f82c9dfd092b3c7ad0d53c245b24054a65f2e1ec94b5dcbe2ac69c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P3.S1",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S1",
+            "originalAddress": "CH05.P3.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:a9dfd2659997cb0c80cb3d043a5d2bd7af4bb55588f04a2442a5ef7594c9fe5e",
+            "kc:v1:c614de0ee2f82c9dfd092b3c7ad0d53c245b24054a65f2e1ec94b5dcbe2ac69c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P3.S2",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S2",
+            "originalAddress": "CH05.P3.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:a9dfd2659997cb0c80cb3d043a5d2bd7af4bb55588f04a2442a5ef7594c9fe5e",
+            "kc:v1:c614de0ee2f82c9dfd092b3c7ad0d53c245b24054a65f2e1ec94b5dcbe2ac69c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P3.S3",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S3",
+            "originalAddress": "CH05.P3.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:a9dfd2659997cb0c80cb3d043a5d2bd7af4bb55588f04a2442a5ef7594c9fe5e",
+            "kc:v1:c614de0ee2f82c9dfd092b3c7ad0d53c245b24054a65f2e1ec94b5dcbe2ac69c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P3.S4",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S4",
+            "originalAddress": "CH05.P3.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:a9dfd2659997cb0c80cb3d043a5d2bd7af4bb55588f04a2442a5ef7594c9fe5e",
+            "kc:v1:c614de0ee2f82c9dfd092b3c7ad0d53c245b24054a65f2e1ec94b5dcbe2ac69c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P4",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P4",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:6c1a9f6ed991aa189e72d1106566e0fdaeefb0977e8dc21a3afdd44bb8b726b6",
+            "kc:v1:ae134afa35596eabc4dc76a9a54d70e0fdeffcaecf21ab1feac7478e4312d721"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P4.S1",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S1",
+            "originalAddress": "CH05.P4.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:6c1a9f6ed991aa189e72d1106566e0fdaeefb0977e8dc21a3afdd44bb8b726b6",
+            "kc:v1:ae134afa35596eabc4dc76a9a54d70e0fdeffcaecf21ab1feac7478e4312d721"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P4.S2",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S2",
+            "originalAddress": "CH05.P4.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:6c1a9f6ed991aa189e72d1106566e0fdaeefb0977e8dc21a3afdd44bb8b726b6",
+            "kc:v1:ae134afa35596eabc4dc76a9a54d70e0fdeffcaecf21ab1feac7478e4312d721"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P4.S3",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S3",
+            "originalAddress": "CH05.P4.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:6c1a9f6ed991aa189e72d1106566e0fdaeefb0977e8dc21a3afdd44bb8b726b6",
+            "kc:v1:ae134afa35596eabc4dc76a9a54d70e0fdeffcaecf21ab1feac7478e4312d721"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH05.P4.S4",
+          "address": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S4",
+            "originalAddress": "CH05.P4.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:6c1a9f6ed991aa189e72d1106566e0fdaeefb0977e8dc21a3afdd44bb8b726b6",
+            "kc:v1:ae134afa35596eabc4dc76a9a54d70e0fdeffcaecf21ab1feac7478e4312d721"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P1",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:4d57b403d2713783d964e23ecece0682319542728ddc5dfdf799a2b21d3bb2da",
+            "kc:v1:f18d19d9f16ca2b83d9e1b79528b0c542a9281d8ae3db4d31268cd7a86f994c5"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P1.S1",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH06.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4d57b403d2713783d964e23ecece0682319542728ddc5dfdf799a2b21d3bb2da",
+            "kc:v1:f18d19d9f16ca2b83d9e1b79528b0c542a9281d8ae3db4d31268cd7a86f994c5"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P1.S2",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH06.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4d57b403d2713783d964e23ecece0682319542728ddc5dfdf799a2b21d3bb2da",
+            "kc:v1:f18d19d9f16ca2b83d9e1b79528b0c542a9281d8ae3db4d31268cd7a86f994c5"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P1.S3",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S3",
+            "originalAddress": "CH06.P1.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4d57b403d2713783d964e23ecece0682319542728ddc5dfdf799a2b21d3bb2da",
+            "kc:v1:f18d19d9f16ca2b83d9e1b79528b0c542a9281d8ae3db4d31268cd7a86f994c5"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P1.S4",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S4",
+            "originalAddress": "CH06.P1.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4d57b403d2713783d964e23ecece0682319542728ddc5dfdf799a2b21d3bb2da",
+            "kc:v1:f18d19d9f16ca2b83d9e1b79528b0c542a9281d8ae3db4d31268cd7a86f994c5"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P2",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P2",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:2a601ae714116e3eaad5785a34a943996be918cadff8f9ed82532efa407944ff",
+            "kc:v1:46f2ebcb0a2557fe2316080f26d60fbb3024895b04b1ee2fa5f178e0e6d24b02"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P2.S1",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S1",
+            "originalAddress": "CH06.P2.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:2a601ae714116e3eaad5785a34a943996be918cadff8f9ed82532efa407944ff",
+            "kc:v1:46f2ebcb0a2557fe2316080f26d60fbb3024895b04b1ee2fa5f178e0e6d24b02"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P2.S2",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S2",
+            "originalAddress": "CH06.P2.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:2a601ae714116e3eaad5785a34a943996be918cadff8f9ed82532efa407944ff",
+            "kc:v1:46f2ebcb0a2557fe2316080f26d60fbb3024895b04b1ee2fa5f178e0e6d24b02"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P2.S3",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S3",
+            "originalAddress": "CH06.P2.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:2a601ae714116e3eaad5785a34a943996be918cadff8f9ed82532efa407944ff",
+            "kc:v1:46f2ebcb0a2557fe2316080f26d60fbb3024895b04b1ee2fa5f178e0e6d24b02"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P2.S4",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S4",
+            "originalAddress": "CH06.P2.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:2a601ae714116e3eaad5785a34a943996be918cadff8f9ed82532efa407944ff",
+            "kc:v1:46f2ebcb0a2557fe2316080f26d60fbb3024895b04b1ee2fa5f178e0e6d24b02"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P3",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P3",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:7722719ab9c2f17925b215e796d56bf44e3fc5f836d90c43fc86d6efa87828fb",
+            "kc:v1:97693e9594246c1de7df5c7394c97ee7213526f8debd14a31f864e12fc7e531a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P3.S1",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S1",
+            "originalAddress": "CH06.P3.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:7722719ab9c2f17925b215e796d56bf44e3fc5f836d90c43fc86d6efa87828fb",
+            "kc:v1:97693e9594246c1de7df5c7394c97ee7213526f8debd14a31f864e12fc7e531a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P3.S2",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S2",
+            "originalAddress": "CH06.P3.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:7722719ab9c2f17925b215e796d56bf44e3fc5f836d90c43fc86d6efa87828fb",
+            "kc:v1:97693e9594246c1de7df5c7394c97ee7213526f8debd14a31f864e12fc7e531a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P3.S3",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S3",
+            "originalAddress": "CH06.P3.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:7722719ab9c2f17925b215e796d56bf44e3fc5f836d90c43fc86d6efa87828fb",
+            "kc:v1:97693e9594246c1de7df5c7394c97ee7213526f8debd14a31f864e12fc7e531a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P3.S4",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S4",
+            "originalAddress": "CH06.P3.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:7722719ab9c2f17925b215e796d56bf44e3fc5f836d90c43fc86d6efa87828fb",
+            "kc:v1:97693e9594246c1de7df5c7394c97ee7213526f8debd14a31f864e12fc7e531a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P4",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P4",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:45a16f0f49fd2fc66ab4b5e05d1cbe3b2481d4c408e1adc472daded35f9c300c",
+            "kc:v1:a3d25a06806f491158f6536df0d21c0cc9fdd245b35718988cf1fe05fbaad6af"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P4.S1",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S1",
+            "originalAddress": "CH06.P4.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:45a16f0f49fd2fc66ab4b5e05d1cbe3b2481d4c408e1adc472daded35f9c300c",
+            "kc:v1:a3d25a06806f491158f6536df0d21c0cc9fdd245b35718988cf1fe05fbaad6af"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P4.S2",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S2",
+            "originalAddress": "CH06.P4.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:45a16f0f49fd2fc66ab4b5e05d1cbe3b2481d4c408e1adc472daded35f9c300c",
+            "kc:v1:a3d25a06806f491158f6536df0d21c0cc9fdd245b35718988cf1fe05fbaad6af"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P4.S3",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S3",
+            "originalAddress": "CH06.P4.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:45a16f0f49fd2fc66ab4b5e05d1cbe3b2481d4c408e1adc472daded35f9c300c",
+            "kc:v1:a3d25a06806f491158f6536df0d21c0cc9fdd245b35718988cf1fe05fbaad6af"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH06.P4.S4",
+          "address": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S4",
+            "originalAddress": "CH06.P4.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:45a16f0f49fd2fc66ab4b5e05d1cbe3b2481d4c408e1adc472daded35f9c300c",
+            "kc:v1:a3d25a06806f491158f6536df0d21c0cc9fdd245b35718988cf1fe05fbaad6af"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P1",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH07.P1",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:299364237c7be6751dab294938d3dedb6ede1733041136e6910b41c5b738e8e7",
+            "kc:v1:7db400647cb5ff9298a5774cfdcf547dfd08438c8e5e71699ac21124f37acb53",
+            "kc:v1:9b63ca53c485f6819bfe6b20ce43f8a8d2da062d5eb61a4a83542326ff2910b2",
+            "kc:v1:a148c2e26ee3f54629bf92351106faddf31569b9beb5bb7668a53b17556e3f41",
+            "kc:v1:ab3afe0aeebe5adb3340deb1b7abb0d1675975c2c7e177aeffc792bbb4cbacb9"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P1.S1",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH07.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:299364237c7be6751dab294938d3dedb6ede1733041136e6910b41c5b738e8e7",
+            "kc:v1:7db400647cb5ff9298a5774cfdcf547dfd08438c8e5e71699ac21124f37acb53",
+            "kc:v1:9b63ca53c485f6819bfe6b20ce43f8a8d2da062d5eb61a4a83542326ff2910b2",
+            "kc:v1:a148c2e26ee3f54629bf92351106faddf31569b9beb5bb7668a53b17556e3f41",
+            "kc:v1:ab3afe0aeebe5adb3340deb1b7abb0d1675975c2c7e177aeffc792bbb4cbacb9"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P1.S2",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH07.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:299364237c7be6751dab294938d3dedb6ede1733041136e6910b41c5b738e8e7",
+            "kc:v1:7db400647cb5ff9298a5774cfdcf547dfd08438c8e5e71699ac21124f37acb53",
+            "kc:v1:9b63ca53c485f6819bfe6b20ce43f8a8d2da062d5eb61a4a83542326ff2910b2",
+            "kc:v1:a148c2e26ee3f54629bf92351106faddf31569b9beb5bb7668a53b17556e3f41",
+            "kc:v1:ab3afe0aeebe5adb3340deb1b7abb0d1675975c2c7e177aeffc792bbb4cbacb9"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P1.S3",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S3",
+            "originalAddress": "CH07.P1.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:299364237c7be6751dab294938d3dedb6ede1733041136e6910b41c5b738e8e7",
+            "kc:v1:7db400647cb5ff9298a5774cfdcf547dfd08438c8e5e71699ac21124f37acb53",
+            "kc:v1:9b63ca53c485f6819bfe6b20ce43f8a8d2da062d5eb61a4a83542326ff2910b2",
+            "kc:v1:a148c2e26ee3f54629bf92351106faddf31569b9beb5bb7668a53b17556e3f41",
+            "kc:v1:ab3afe0aeebe5adb3340deb1b7abb0d1675975c2c7e177aeffc792bbb4cbacb9"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P1.S4",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S4",
+            "originalAddress": "CH07.P1.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:299364237c7be6751dab294938d3dedb6ede1733041136e6910b41c5b738e8e7",
+            "kc:v1:7db400647cb5ff9298a5774cfdcf547dfd08438c8e5e71699ac21124f37acb53",
+            "kc:v1:9b63ca53c485f6819bfe6b20ce43f8a8d2da062d5eb61a4a83542326ff2910b2",
+            "kc:v1:a148c2e26ee3f54629bf92351106faddf31569b9beb5bb7668a53b17556e3f41",
+            "kc:v1:ab3afe0aeebe5adb3340deb1b7abb0d1675975c2c7e177aeffc792bbb4cbacb9"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P2",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": null,
+            "originalAddress": "CH07.P2",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:40d8df6060e26efe51d939c48b029d55dd3cd520f184de16503f7ae48ce43cbf",
+            "kc:v1:6cda2870dec50489cf25f806844b97dd23a70837437844a48646fd1f31b904d4",
+            "kc:v1:9242f0f5b934e29fca883bd5876563b77e6eca6d337b674754d40b594ca93848",
+            "kc:v1:92d981135231878ddb6d434c6aaf291f50dae09121d9b3bf62d1eec8224bc9aa",
+            "kc:v1:bcad98c983f0e7c634895509dc118b2259e511eb0af782c3f211ab1fe3972ec0"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P2.S1",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S1",
+            "originalAddress": "CH07.P2.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:40d8df6060e26efe51d939c48b029d55dd3cd520f184de16503f7ae48ce43cbf",
+            "kc:v1:6cda2870dec50489cf25f806844b97dd23a70837437844a48646fd1f31b904d4",
+            "kc:v1:9242f0f5b934e29fca883bd5876563b77e6eca6d337b674754d40b594ca93848",
+            "kc:v1:92d981135231878ddb6d434c6aaf291f50dae09121d9b3bf62d1eec8224bc9aa",
+            "kc:v1:bcad98c983f0e7c634895509dc118b2259e511eb0af782c3f211ab1fe3972ec0"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P2.S2",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S2",
+            "originalAddress": "CH07.P2.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:40d8df6060e26efe51d939c48b029d55dd3cd520f184de16503f7ae48ce43cbf",
+            "kc:v1:6cda2870dec50489cf25f806844b97dd23a70837437844a48646fd1f31b904d4",
+            "kc:v1:9242f0f5b934e29fca883bd5876563b77e6eca6d337b674754d40b594ca93848",
+            "kc:v1:92d981135231878ddb6d434c6aaf291f50dae09121d9b3bf62d1eec8224bc9aa",
+            "kc:v1:bcad98c983f0e7c634895509dc118b2259e511eb0af782c3f211ab1fe3972ec0"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P2.S3",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S3",
+            "originalAddress": "CH07.P2.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:40d8df6060e26efe51d939c48b029d55dd3cd520f184de16503f7ae48ce43cbf",
+            "kc:v1:6cda2870dec50489cf25f806844b97dd23a70837437844a48646fd1f31b904d4",
+            "kc:v1:9242f0f5b934e29fca883bd5876563b77e6eca6d337b674754d40b594ca93848",
+            "kc:v1:92d981135231878ddb6d434c6aaf291f50dae09121d9b3bf62d1eec8224bc9aa",
+            "kc:v1:bcad98c983f0e7c634895509dc118b2259e511eb0af782c3f211ab1fe3972ec0"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P2.S4",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S4",
+            "originalAddress": "CH07.P2.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:40d8df6060e26efe51d939c48b029d55dd3cd520f184de16503f7ae48ce43cbf",
+            "kc:v1:6cda2870dec50489cf25f806844b97dd23a70837437844a48646fd1f31b904d4",
+            "kc:v1:9242f0f5b934e29fca883bd5876563b77e6eca6d337b674754d40b594ca93848",
+            "kc:v1:92d981135231878ddb6d434c6aaf291f50dae09121d9b3bf62d1eec8224bc9aa",
+            "kc:v1:bcad98c983f0e7c634895509dc118b2259e511eb0af782c3f211ab1fe3972ec0"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P3",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": null,
+            "originalAddress": "CH07.P3",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:2a1dad9d73a067b98508e7d964fc53ecb2bb93f686736092b69dba2af5b331e9",
+            "kc:v1:402e7fde7a770fe6de8310bdf7de7b312772bc544755723202dd12e3d8502f7d",
+            "kc:v1:44d534559486ab36ef167836ce67f7645c2f0a9a76b3fcf485f76714b5095b3c",
+            "kc:v1:d8e5e6541a52d60c5afd9706ecdaa26a34384c231effe5535641463b2b1998ce",
+            "kc:v1:dd528efeb3c68634d3d481e5acf0226dcee6f6c0119b520b9400447dca1b32d3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P3.S1",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S1",
+            "originalAddress": "CH07.P3.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:2a1dad9d73a067b98508e7d964fc53ecb2bb93f686736092b69dba2af5b331e9",
+            "kc:v1:402e7fde7a770fe6de8310bdf7de7b312772bc544755723202dd12e3d8502f7d",
+            "kc:v1:44d534559486ab36ef167836ce67f7645c2f0a9a76b3fcf485f76714b5095b3c",
+            "kc:v1:d8e5e6541a52d60c5afd9706ecdaa26a34384c231effe5535641463b2b1998ce",
+            "kc:v1:dd528efeb3c68634d3d481e5acf0226dcee6f6c0119b520b9400447dca1b32d3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P3.S2",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S2",
+            "originalAddress": "CH07.P3.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:2a1dad9d73a067b98508e7d964fc53ecb2bb93f686736092b69dba2af5b331e9",
+            "kc:v1:402e7fde7a770fe6de8310bdf7de7b312772bc544755723202dd12e3d8502f7d",
+            "kc:v1:44d534559486ab36ef167836ce67f7645c2f0a9a76b3fcf485f76714b5095b3c",
+            "kc:v1:d8e5e6541a52d60c5afd9706ecdaa26a34384c231effe5535641463b2b1998ce",
+            "kc:v1:dd528efeb3c68634d3d481e5acf0226dcee6f6c0119b520b9400447dca1b32d3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P3.S3",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S3",
+            "originalAddress": "CH07.P3.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:2a1dad9d73a067b98508e7d964fc53ecb2bb93f686736092b69dba2af5b331e9",
+            "kc:v1:402e7fde7a770fe6de8310bdf7de7b312772bc544755723202dd12e3d8502f7d",
+            "kc:v1:44d534559486ab36ef167836ce67f7645c2f0a9a76b3fcf485f76714b5095b3c",
+            "kc:v1:d8e5e6541a52d60c5afd9706ecdaa26a34384c231effe5535641463b2b1998ce",
+            "kc:v1:dd528efeb3c68634d3d481e5acf0226dcee6f6c0119b520b9400447dca1b32d3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P3.S4",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S4",
+            "originalAddress": "CH07.P3.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:2a1dad9d73a067b98508e7d964fc53ecb2bb93f686736092b69dba2af5b331e9",
+            "kc:v1:402e7fde7a770fe6de8310bdf7de7b312772bc544755723202dd12e3d8502f7d",
+            "kc:v1:44d534559486ab36ef167836ce67f7645c2f0a9a76b3fcf485f76714b5095b3c",
+            "kc:v1:d8e5e6541a52d60c5afd9706ecdaa26a34384c231effe5535641463b2b1998ce",
+            "kc:v1:dd528efeb3c68634d3d481e5acf0226dcee6f6c0119b520b9400447dca1b32d3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P4",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": null,
+            "originalAddress": "CH07.P4",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:33d09880998eeb3945f749bd159e44f95633ef35424750e884a28234eb654fc9",
+            "kc:v1:6d2c28d140408f781837d80cdf59a2a078361ab05126a7a1b45b63173e569ab1",
+            "kc:v1:6e5ecb4efbd8d41a330d3098a48ddf91c20c18fd8500860e2aab873b580af477",
+            "kc:v1:ceff46a770360d7faa98c2b54df021f92eda15602ad9f3223cb4c36b34174ecf",
+            "kc:v1:e5deb87e8986ceeff65deb770cc501f3953c51c32f4c5b9d964a3ac32da9435a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P4.S1",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S1",
+            "originalAddress": "CH07.P4.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:33d09880998eeb3945f749bd159e44f95633ef35424750e884a28234eb654fc9",
+            "kc:v1:6d2c28d140408f781837d80cdf59a2a078361ab05126a7a1b45b63173e569ab1",
+            "kc:v1:6e5ecb4efbd8d41a330d3098a48ddf91c20c18fd8500860e2aab873b580af477",
+            "kc:v1:ceff46a770360d7faa98c2b54df021f92eda15602ad9f3223cb4c36b34174ecf",
+            "kc:v1:e5deb87e8986ceeff65deb770cc501f3953c51c32f4c5b9d964a3ac32da9435a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P4.S2",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S2",
+            "originalAddress": "CH07.P4.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:33d09880998eeb3945f749bd159e44f95633ef35424750e884a28234eb654fc9",
+            "kc:v1:6d2c28d140408f781837d80cdf59a2a078361ab05126a7a1b45b63173e569ab1",
+            "kc:v1:6e5ecb4efbd8d41a330d3098a48ddf91c20c18fd8500860e2aab873b580af477",
+            "kc:v1:ceff46a770360d7faa98c2b54df021f92eda15602ad9f3223cb4c36b34174ecf",
+            "kc:v1:e5deb87e8986ceeff65deb770cc501f3953c51c32f4c5b9d964a3ac32da9435a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P4.S3",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S3",
+            "originalAddress": "CH07.P4.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:33d09880998eeb3945f749bd159e44f95633ef35424750e884a28234eb654fc9",
+            "kc:v1:6d2c28d140408f781837d80cdf59a2a078361ab05126a7a1b45b63173e569ab1",
+            "kc:v1:6e5ecb4efbd8d41a330d3098a48ddf91c20c18fd8500860e2aab873b580af477",
+            "kc:v1:ceff46a770360d7faa98c2b54df021f92eda15602ad9f3223cb4c36b34174ecf",
+            "kc:v1:e5deb87e8986ceeff65deb770cc501f3953c51c32f4c5b9d964a3ac32da9435a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH07.P4.S4",
+          "address": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S4",
+            "originalAddress": "CH07.P4.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:33d09880998eeb3945f749bd159e44f95633ef35424750e884a28234eb654fc9",
+            "kc:v1:6d2c28d140408f781837d80cdf59a2a078361ab05126a7a1b45b63173e569ab1",
+            "kc:v1:6e5ecb4efbd8d41a330d3098a48ddf91c20c18fd8500860e2aab873b580af477",
+            "kc:v1:ceff46a770360d7faa98c2b54df021f92eda15602ad9f3223cb4c36b34174ecf",
+            "kc:v1:e5deb87e8986ceeff65deb770cc501f3953c51c32f4c5b9d964a3ac32da9435a"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P1",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH08.P1",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:25f99c2f61b337d0d2c30eeb6bbdc7e427f0d7a145b2537d9a6ff9537e1ec159",
+            "kc:v1:57d044268bf7d341c921e1cfadf67a186d46882f6f5c2a45032a5658824d60e7",
+            "kc:v1:b956a5302c2fc86cb2f569c3fc3ca4142a136c680a7e7d62019243dfc48f8687",
+            "kc:v1:c07024807db58790ccccb92cf38241a892bbf599139b7f5153883d6daa8ad6fb",
+            "kc:v1:cb2635cebe84ec4d90d044e0302639d690472229f0103770965b19c887d0b78c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P1.S1",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH08.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:25f99c2f61b337d0d2c30eeb6bbdc7e427f0d7a145b2537d9a6ff9537e1ec159",
+            "kc:v1:57d044268bf7d341c921e1cfadf67a186d46882f6f5c2a45032a5658824d60e7",
+            "kc:v1:b956a5302c2fc86cb2f569c3fc3ca4142a136c680a7e7d62019243dfc48f8687",
+            "kc:v1:c07024807db58790ccccb92cf38241a892bbf599139b7f5153883d6daa8ad6fb",
+            "kc:v1:cb2635cebe84ec4d90d044e0302639d690472229f0103770965b19c887d0b78c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P1.S2",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH08.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:25f99c2f61b337d0d2c30eeb6bbdc7e427f0d7a145b2537d9a6ff9537e1ec159",
+            "kc:v1:57d044268bf7d341c921e1cfadf67a186d46882f6f5c2a45032a5658824d60e7",
+            "kc:v1:b956a5302c2fc86cb2f569c3fc3ca4142a136c680a7e7d62019243dfc48f8687",
+            "kc:v1:c07024807db58790ccccb92cf38241a892bbf599139b7f5153883d6daa8ad6fb",
+            "kc:v1:cb2635cebe84ec4d90d044e0302639d690472229f0103770965b19c887d0b78c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P1.S3",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S3",
+            "originalAddress": "CH08.P1.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:25f99c2f61b337d0d2c30eeb6bbdc7e427f0d7a145b2537d9a6ff9537e1ec159",
+            "kc:v1:57d044268bf7d341c921e1cfadf67a186d46882f6f5c2a45032a5658824d60e7",
+            "kc:v1:b956a5302c2fc86cb2f569c3fc3ca4142a136c680a7e7d62019243dfc48f8687",
+            "kc:v1:c07024807db58790ccccb92cf38241a892bbf599139b7f5153883d6daa8ad6fb",
+            "kc:v1:cb2635cebe84ec4d90d044e0302639d690472229f0103770965b19c887d0b78c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P1.S4",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S4",
+            "originalAddress": "CH08.P1.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:25f99c2f61b337d0d2c30eeb6bbdc7e427f0d7a145b2537d9a6ff9537e1ec159",
+            "kc:v1:57d044268bf7d341c921e1cfadf67a186d46882f6f5c2a45032a5658824d60e7",
+            "kc:v1:b956a5302c2fc86cb2f569c3fc3ca4142a136c680a7e7d62019243dfc48f8687",
+            "kc:v1:c07024807db58790ccccb92cf38241a892bbf599139b7f5153883d6daa8ad6fb",
+            "kc:v1:cb2635cebe84ec4d90d044e0302639d690472229f0103770965b19c887d0b78c"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P2",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": null,
+            "originalAddress": "CH08.P2",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:36a0515afc3ff29d653255316be970cfdfef7dd01f29a1abd5e8f6be09c9205a",
+            "kc:v1:5bda8dec802b07dcba8d2fad4f849c0ed9782fb52001b2f5153d6fb5da20ca0a",
+            "kc:v1:669c4cd0a6da6ab28a66b7b422ac539b1004c63facf60d9768381f8a7b5ebef7",
+            "kc:v1:6b8fd86b2da5db27234ea29f05317f83a7caa790e552f9e6aaff84e7a14e3201",
+            "kc:v1:7d93eea46ac63c95be9cbe4c8d35b6acddd031085dc800f02957f8d68439e100"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P2.S1",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S1",
+            "originalAddress": "CH08.P2.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:36a0515afc3ff29d653255316be970cfdfef7dd01f29a1abd5e8f6be09c9205a",
+            "kc:v1:5bda8dec802b07dcba8d2fad4f849c0ed9782fb52001b2f5153d6fb5da20ca0a",
+            "kc:v1:669c4cd0a6da6ab28a66b7b422ac539b1004c63facf60d9768381f8a7b5ebef7",
+            "kc:v1:6b8fd86b2da5db27234ea29f05317f83a7caa790e552f9e6aaff84e7a14e3201",
+            "kc:v1:7d93eea46ac63c95be9cbe4c8d35b6acddd031085dc800f02957f8d68439e100"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P2.S2",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S2",
+            "originalAddress": "CH08.P2.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:36a0515afc3ff29d653255316be970cfdfef7dd01f29a1abd5e8f6be09c9205a",
+            "kc:v1:5bda8dec802b07dcba8d2fad4f849c0ed9782fb52001b2f5153d6fb5da20ca0a",
+            "kc:v1:669c4cd0a6da6ab28a66b7b422ac539b1004c63facf60d9768381f8a7b5ebef7",
+            "kc:v1:6b8fd86b2da5db27234ea29f05317f83a7caa790e552f9e6aaff84e7a14e3201",
+            "kc:v1:7d93eea46ac63c95be9cbe4c8d35b6acddd031085dc800f02957f8d68439e100"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P2.S3",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S3",
+            "originalAddress": "CH08.P2.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:36a0515afc3ff29d653255316be970cfdfef7dd01f29a1abd5e8f6be09c9205a",
+            "kc:v1:5bda8dec802b07dcba8d2fad4f849c0ed9782fb52001b2f5153d6fb5da20ca0a",
+            "kc:v1:669c4cd0a6da6ab28a66b7b422ac539b1004c63facf60d9768381f8a7b5ebef7",
+            "kc:v1:6b8fd86b2da5db27234ea29f05317f83a7caa790e552f9e6aaff84e7a14e3201",
+            "kc:v1:7d93eea46ac63c95be9cbe4c8d35b6acddd031085dc800f02957f8d68439e100"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P2.S4",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S4",
+            "originalAddress": "CH08.P2.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:36a0515afc3ff29d653255316be970cfdfef7dd01f29a1abd5e8f6be09c9205a",
+            "kc:v1:5bda8dec802b07dcba8d2fad4f849c0ed9782fb52001b2f5153d6fb5da20ca0a",
+            "kc:v1:669c4cd0a6da6ab28a66b7b422ac539b1004c63facf60d9768381f8a7b5ebef7",
+            "kc:v1:6b8fd86b2da5db27234ea29f05317f83a7caa790e552f9e6aaff84e7a14e3201",
+            "kc:v1:7d93eea46ac63c95be9cbe4c8d35b6acddd031085dc800f02957f8d68439e100"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P3",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": null,
+            "originalAddress": "CH08.P3",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:0451a66131664ea5e5a377835ffe9fef4767146cc937211d3bd299ed4c7953e6",
+            "kc:v1:4d1d3412b1a13c9485112a4e0bfdac5d7b6f05bcd322a5940549cff2cdfcbf8f",
+            "kc:v1:c83c1914d718e51e16dac5ca24d9e350b6b0c0a0c1529f1e30a5349e5dab2d8f",
+            "kc:v1:e4b0e8e6802b628b707935160ef609c852e8cb6f3db01b5cfec06ccf19d44034",
+            "kc:v1:f26235293f8176625cb4665fe35d823589db481d3f278f10969878b6ff29aa41"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P3.S1",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S1",
+            "originalAddress": "CH08.P3.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0451a66131664ea5e5a377835ffe9fef4767146cc937211d3bd299ed4c7953e6",
+            "kc:v1:4d1d3412b1a13c9485112a4e0bfdac5d7b6f05bcd322a5940549cff2cdfcbf8f",
+            "kc:v1:c83c1914d718e51e16dac5ca24d9e350b6b0c0a0c1529f1e30a5349e5dab2d8f",
+            "kc:v1:e4b0e8e6802b628b707935160ef609c852e8cb6f3db01b5cfec06ccf19d44034",
+            "kc:v1:f26235293f8176625cb4665fe35d823589db481d3f278f10969878b6ff29aa41"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P3.S2",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S2",
+            "originalAddress": "CH08.P3.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0451a66131664ea5e5a377835ffe9fef4767146cc937211d3bd299ed4c7953e6",
+            "kc:v1:4d1d3412b1a13c9485112a4e0bfdac5d7b6f05bcd322a5940549cff2cdfcbf8f",
+            "kc:v1:c83c1914d718e51e16dac5ca24d9e350b6b0c0a0c1529f1e30a5349e5dab2d8f",
+            "kc:v1:e4b0e8e6802b628b707935160ef609c852e8cb6f3db01b5cfec06ccf19d44034",
+            "kc:v1:f26235293f8176625cb4665fe35d823589db481d3f278f10969878b6ff29aa41"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P3.S3",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S3",
+            "originalAddress": "CH08.P3.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0451a66131664ea5e5a377835ffe9fef4767146cc937211d3bd299ed4c7953e6",
+            "kc:v1:4d1d3412b1a13c9485112a4e0bfdac5d7b6f05bcd322a5940549cff2cdfcbf8f",
+            "kc:v1:c83c1914d718e51e16dac5ca24d9e350b6b0c0a0c1529f1e30a5349e5dab2d8f",
+            "kc:v1:e4b0e8e6802b628b707935160ef609c852e8cb6f3db01b5cfec06ccf19d44034",
+            "kc:v1:f26235293f8176625cb4665fe35d823589db481d3f278f10969878b6ff29aa41"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P3.S4",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S4",
+            "originalAddress": "CH08.P3.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:0451a66131664ea5e5a377835ffe9fef4767146cc937211d3bd299ed4c7953e6",
+            "kc:v1:4d1d3412b1a13c9485112a4e0bfdac5d7b6f05bcd322a5940549cff2cdfcbf8f",
+            "kc:v1:c83c1914d718e51e16dac5ca24d9e350b6b0c0a0c1529f1e30a5349e5dab2d8f",
+            "kc:v1:e4b0e8e6802b628b707935160ef609c852e8cb6f3db01b5cfec06ccf19d44034",
+            "kc:v1:f26235293f8176625cb4665fe35d823589db481d3f278f10969878b6ff29aa41"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P4",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": null,
+            "originalAddress": "CH08.P4",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:4def48c2765c376ed19b010b5bfdabe85b534c42bbd132d0cff5b5d93440cbe1",
+            "kc:v1:6c17a116d8abccaa9bf813c0f8c9ff17370cc2bf575497a72e0a6712a22f0973",
+            "kc:v1:7aa1085fc4761d98bc128aa65790db28dcb8cb64ed5555144f3bb07b57f9ee4a",
+            "kc:v1:ae3c6f5e85bf68daa6dc5562f933317527f4c81c0187febfc487e503059e91be",
+            "kc:v1:fc4b1c759bdf8eda7020409ef28e5dc710c598f7f2a7140ba9b6b7ac1885ae6e"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P4.S1",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S1",
+            "originalAddress": "CH08.P4.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4def48c2765c376ed19b010b5bfdabe85b534c42bbd132d0cff5b5d93440cbe1",
+            "kc:v1:6c17a116d8abccaa9bf813c0f8c9ff17370cc2bf575497a72e0a6712a22f0973",
+            "kc:v1:7aa1085fc4761d98bc128aa65790db28dcb8cb64ed5555144f3bb07b57f9ee4a",
+            "kc:v1:ae3c6f5e85bf68daa6dc5562f933317527f4c81c0187febfc487e503059e91be",
+            "kc:v1:fc4b1c759bdf8eda7020409ef28e5dc710c598f7f2a7140ba9b6b7ac1885ae6e"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P4.S2",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S2",
+            "originalAddress": "CH08.P4.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4def48c2765c376ed19b010b5bfdabe85b534c42bbd132d0cff5b5d93440cbe1",
+            "kc:v1:6c17a116d8abccaa9bf813c0f8c9ff17370cc2bf575497a72e0a6712a22f0973",
+            "kc:v1:7aa1085fc4761d98bc128aa65790db28dcb8cb64ed5555144f3bb07b57f9ee4a",
+            "kc:v1:ae3c6f5e85bf68daa6dc5562f933317527f4c81c0187febfc487e503059e91be",
+            "kc:v1:fc4b1c759bdf8eda7020409ef28e5dc710c598f7f2a7140ba9b6b7ac1885ae6e"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P4.S3",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S3",
+            "originalAddress": "CH08.P4.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4def48c2765c376ed19b010b5bfdabe85b534c42bbd132d0cff5b5d93440cbe1",
+            "kc:v1:6c17a116d8abccaa9bf813c0f8c9ff17370cc2bf575497a72e0a6712a22f0973",
+            "kc:v1:7aa1085fc4761d98bc128aa65790db28dcb8cb64ed5555144f3bb07b57f9ee4a",
+            "kc:v1:ae3c6f5e85bf68daa6dc5562f933317527f4c81c0187febfc487e503059e91be",
+            "kc:v1:fc4b1c759bdf8eda7020409ef28e5dc710c598f7f2a7140ba9b6b7ac1885ae6e"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH08.P4.S4",
+          "address": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S4",
+            "originalAddress": "CH08.P4.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:4def48c2765c376ed19b010b5bfdabe85b534c42bbd132d0cff5b5d93440cbe1",
+            "kc:v1:6c17a116d8abccaa9bf813c0f8c9ff17370cc2bf575497a72e0a6712a22f0973",
+            "kc:v1:7aa1085fc4761d98bc128aa65790db28dcb8cb64ed5555144f3bb07b57f9ee4a",
+            "kc:v1:ae3c6f5e85bf68daa6dc5562f933317527f4c81c0187febfc487e503059e91be",
+            "kc:v1:fc4b1c759bdf8eda7020409ef28e5dc710c598f7f2a7140ba9b6b7ac1885ae6e"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P1",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH09.P1",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:192cdbda770880e97e6a870a8e3ac9ef4b6d0cd30dc2765b33ce635916598e84",
+            "kc:v1:383cd3d2dfb00f3a52e58e8c00ee5fd18e99d5b8a6dad8ed203b158a805d77ea"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P1.S1",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH09.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:192cdbda770880e97e6a870a8e3ac9ef4b6d0cd30dc2765b33ce635916598e84",
+            "kc:v1:383cd3d2dfb00f3a52e58e8c00ee5fd18e99d5b8a6dad8ed203b158a805d77ea"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P1.S2",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH09.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:192cdbda770880e97e6a870a8e3ac9ef4b6d0cd30dc2765b33ce635916598e84",
+            "kc:v1:383cd3d2dfb00f3a52e58e8c00ee5fd18e99d5b8a6dad8ed203b158a805d77ea"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P1.S3",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S3",
+            "originalAddress": "CH09.P1.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:192cdbda770880e97e6a870a8e3ac9ef4b6d0cd30dc2765b33ce635916598e84",
+            "kc:v1:383cd3d2dfb00f3a52e58e8c00ee5fd18e99d5b8a6dad8ed203b158a805d77ea"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P1.S4",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S4",
+            "originalAddress": "CH09.P1.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:192cdbda770880e97e6a870a8e3ac9ef4b6d0cd30dc2765b33ce635916598e84",
+            "kc:v1:383cd3d2dfb00f3a52e58e8c00ee5fd18e99d5b8a6dad8ed203b158a805d77ea"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P2",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": null,
+            "originalAddress": "CH09.P2",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:1932594f88c8e8de495837ca9a8e77419bd4b5ba5bf61ab7936777125f7a28a2",
+            "kc:v1:4dec56559676f22ee6196e927e8946fde366f659e00fbd6c9a3739b6a6622bd3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P2.S1",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S1",
+            "originalAddress": "CH09.P2.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:1932594f88c8e8de495837ca9a8e77419bd4b5ba5bf61ab7936777125f7a28a2",
+            "kc:v1:4dec56559676f22ee6196e927e8946fde366f659e00fbd6c9a3739b6a6622bd3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P2.S2",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S2",
+            "originalAddress": "CH09.P2.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:1932594f88c8e8de495837ca9a8e77419bd4b5ba5bf61ab7936777125f7a28a2",
+            "kc:v1:4dec56559676f22ee6196e927e8946fde366f659e00fbd6c9a3739b6a6622bd3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P2.S3",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S3",
+            "originalAddress": "CH09.P2.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:1932594f88c8e8de495837ca9a8e77419bd4b5ba5bf61ab7936777125f7a28a2",
+            "kc:v1:4dec56559676f22ee6196e927e8946fde366f659e00fbd6c9a3739b6a6622bd3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P2.S4",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P2",
+            "sentenceRole": "S4",
+            "originalAddress": "CH09.P2.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:1932594f88c8e8de495837ca9a8e77419bd4b5ba5bf61ab7936777125f7a28a2",
+            "kc:v1:4dec56559676f22ee6196e927e8946fde366f659e00fbd6c9a3739b6a6622bd3"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P3",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": null,
+            "originalAddress": "CH09.P3",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:48cfa9c86005fbe3c7d867ec18e08f82a09273dc443b1d37b5243c96a710d1b7",
+            "kc:v1:555c86e300990fda80e0371f46451d6ccae62dfe072f248d0c9454b2d9724a78"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P3.S1",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S1",
+            "originalAddress": "CH09.P3.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:48cfa9c86005fbe3c7d867ec18e08f82a09273dc443b1d37b5243c96a710d1b7",
+            "kc:v1:555c86e300990fda80e0371f46451d6ccae62dfe072f248d0c9454b2d9724a78"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P3.S2",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S2",
+            "originalAddress": "CH09.P3.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:48cfa9c86005fbe3c7d867ec18e08f82a09273dc443b1d37b5243c96a710d1b7",
+            "kc:v1:555c86e300990fda80e0371f46451d6ccae62dfe072f248d0c9454b2d9724a78"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P3.S3",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S3",
+            "originalAddress": "CH09.P3.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:48cfa9c86005fbe3c7d867ec18e08f82a09273dc443b1d37b5243c96a710d1b7",
+            "kc:v1:555c86e300990fda80e0371f46451d6ccae62dfe072f248d0c9454b2d9724a78"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P3.S4",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P3",
+            "sentenceRole": "S4",
+            "originalAddress": "CH09.P3.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:48cfa9c86005fbe3c7d867ec18e08f82a09273dc443b1d37b5243c96a710d1b7",
+            "kc:v1:555c86e300990fda80e0371f46451d6ccae62dfe072f248d0c9454b2d9724a78"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P4",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": null,
+            "originalAddress": "CH09.P4",
+            "level": "PARAGRAPH"
+          },
+          "linkedMaterials": [
+            "kc:v1:507a6579c201a0a78bb842207fc035a5f9c27672cb1f57f9907b707b53b1e99d",
+            "kc:v1:6850d0dedae8931776f456fae76a86523057993a26401432f6c025c96242b2a8"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P4.S1",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S1",
+            "originalAddress": "CH09.P4.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:507a6579c201a0a78bb842207fc035a5f9c27672cb1f57f9907b707b53b1e99d",
+            "kc:v1:6850d0dedae8931776f456fae76a86523057993a26401432f6c025c96242b2a8"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P4.S2",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S2",
+            "originalAddress": "CH09.P4.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:507a6579c201a0a78bb842207fc035a5f9c27672cb1f57f9907b707b53b1e99d",
+            "kc:v1:6850d0dedae8931776f456fae76a86523057993a26401432f6c025c96242b2a8"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P4.S3",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S3",
+            "originalAddress": "CH09.P4.S3",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:507a6579c201a0a78bb842207fc035a5f9c27672cb1f57f9907b707b53b1e99d",
+            "kc:v1:6850d0dedae8931776f456fae76a86523057993a26401432f6c025c96242b2a8"
+          ],
+          "eligible": 0
+        },
+        {
+          "questionId": "psq:v1:saju_mbti_compatibility:businessPartner:CH09.P4.S4",
+          "address": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P4",
+            "sentenceRole": "S4",
+            "originalAddress": "CH09.P4.S4",
+            "level": "SENTENCE_ROLE"
+          },
+          "linkedMaterials": [
+            "kc:v1:507a6579c201a0a78bb842207fc035a5f9c27672cb1f57f9907b707b53b1e99d",
+            "kc:v1:6850d0dedae8931776f456fae76a86523057993a26401432f6c025c96242b2a8"
+          ],
+          "eligible": 0
+        }
+      ]
+    }
+  ],
+  "chapters": 9,
+  "paragraphs": 36,
+  "roles": 144,
+  "roleLinks": 384
+}

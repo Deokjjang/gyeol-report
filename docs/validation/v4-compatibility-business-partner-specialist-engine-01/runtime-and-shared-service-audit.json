@@ -1,0 +1,618 @@
+{
+  "files": [
+    {
+      "file": "src/lib/report-generation/reportInputTypes.ts",
+      "exists": true,
+      "sha256": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
+      "lines": 169,
+      "exports": [
+        "REPORT_PRODUCT_KEYS",
+        "ReportProductKey",
+        "SINGLE_PERSON_REPORT_PRODUCT_KEYS",
+        "SinglePersonReportProductKey",
+        "REPORT_PRODUCT_SLUGS",
+        "ReportProductSlug",
+        "SinglePersonReportProductSlug",
+        "BIRTH_TIME_SLOTS",
+        "BirthTimeSlot",
+        "MBTI_TYPES",
+        "MbtiType",
+        "GENDER_VALUES",
+        "ReportGender",
+        "RELATIONSHIP_STATUSES",
+        "RelationshipStatus",
+        "JOB_STATUSES",
+        "JobStatus",
+        "FOCUS_AREAS",
+        "FocusArea",
+        "COMPATIBILITY_RELATIONSHIP_TYPES",
+        "CompatibilityRelationshipType",
+        "COMPATIBILITY_ROLE_VERSION",
+        "compatibilityRoleLabels",
+        "ReportPersonInputPayload",
+        "SinglePersonReportInputPayload",
+        "CompatibilityReportInputPayload",
+        "ReportInputPayload"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-generation/reportInputAdapter.ts",
+      "exists": true,
+      "sha256": "1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+      "lines": 440,
+      "exports": [
+        "ReportInputAdapterOptions",
+        "ReportProductKind",
+        "ReportInputAdapterErrorCode",
+        "ReportInputAdapterResult",
+        "GenerationPersonInput",
+        "SinglePersonGenerationInput",
+        "CompatibilityGenerationInput",
+        "ReportGenerationInput",
+        "getReportProductKind",
+        "normalizeReportInputPayload",
+        "toSinglePersonGenerationInput",
+        "toCompatibilityGenerationInput"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-generation/compatibilityGenerationHandler.ts",
+      "exists": true,
+      "sha256": "21c3fa87c605b2409be562e0fc04c0ed832e53933fb15968374d0c7be129f7c5",
+      "lines": 517,
+      "exports": [
+        "CompatibilityGenerationErrorCode",
+        "CompatibilityGenerationResult",
+        "CompatibilityGenerationHandlerOptions",
+        "generateCompatibilityProductDraft",
+        "buildCompatibilityEvidenceFromGenerationInput",
+        "calculateCompatibilitySaju"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityEvidence.ts",
+      "exists": true,
+      "sha256": "18cb6fa460fa0b88181253b59600438b0b745d265748a0c18bb983cf58f910c2",
+      "lines": 58,
+      "exports": [
+        "compatibilityNarrativeEvidence",
+        "PairEvidence"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityProductAdapter.ts",
+      "exists": true,
+      "sha256": "bfc8e0844c7eb5bf0711c463745fda00b1cae460ffb19e95e82697d4fd4c7456",
+      "lines": 100,
+      "exports": [
+        "COMPATIBILITY_PRODUCT_VERSION",
+        "buildV4CompatibilityProduct",
+        "CompatibilityProduct"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityComposer.ts",
+      "exists": true,
+      "sha256": "5276c23804195543ac3c17495e7ac7c6f47c544aeb32282728b087c161cfb654",
+      "lines": 60,
+      "exports": [
+        "composeCompatibilityNarrative"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityProductView.ts",
+      "exists": true,
+      "sha256": "99358ed0c7e6ebd3885e47a1d89fafecc84422115d882d869952bc52d6aab1ae",
+      "lines": 46,
+      "exports": [
+        "PairComparison",
+        "projectCompatibilityPairView",
+        "CompatibilityPairView"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "exists": true,
+      "sha256": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "lines": 74,
+      "exports": [
+        "COMPATIBILITY_RELEASE_VERSION",
+        "COMPATIBILITY_READER_CHAPTERS",
+        "PairReleaseSentence",
+        "PairReleaseDraft"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+      "exists": true,
+      "sha256": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+      "lines": 330,
+      "exports": [
+        "renderCompatibilityRelease",
+        "PairReleaseRegistry"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityReleaseValidator.ts",
+      "exists": true,
+      "sha256": "ced3608469c681af82aecbbfc2b64ab878ec8546cf688a00db7a7e556a27909d",
+      "lines": 59,
+      "exports": [
+        "validateCompatibilityRelease"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityReleaseSources.ts",
+      "exists": true,
+      "sha256": "43bf043973defb651064e74708a67c6e4c2d6c8d6eeed0f42feedfa3b08a5468",
+      "lines": 29,
+      "exports": [
+        "pairReleaseSources",
+        "PairReleaseSource",
+        "pairRootName"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityReleaseMaterials.ts",
+      "exists": true,
+      "sha256": "ff8ab20f7052245a1f3b1b15750597174d8145905ee4cd9b5268caae239bd6c5",
+      "lines": 37,
+      "exports": [
+        "PAIR_RELEASE_FACETS",
+        "PAIR_RELEASE_CONTEXT"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityReleaseApplications.ts",
+      "exists": true,
+      "sha256": "1424943be84c007bd416ff3c9ead79d94b2652acb97762ffb983660d2789da73",
+      "lines": 119,
+      "exports": [
+        "PAIR_RELEASE_REPAIR",
+        "PAIR_RELEASE_SCENES"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityCategoryCopy.ts",
+      "exists": true,
+      "sha256": "4ba231a9006519928cad56adda23bdd4b909e9d460536b1780b0d95db8ffa8e8",
+      "lines": 145,
+      "exports": [
+        "pairMove",
+        "compatibilityCategoryCopy"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityInteractions.ts",
+      "exists": true,
+      "sha256": "f7acb8e1bd8c7f1b0bb28625fb34065bc9700f20bb00e30e15d6f3f4e0d53631",
+      "lines": 71,
+      "exports": [
+        "pairProof",
+        "godEffects",
+        "compatibilityDirectionBlock",
+        "compatibilityPairBasis",
+        "compatibilityPairScene"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityHarmony.ts",
+      "exists": true,
+      "sha256": "694faa13bdfb806b59131c9d880d30e706c528ba611aa6cfef6f1490e1383adb",
+      "lines": 97,
+      "exports": [
+        "compatibilityHarmony",
+        "compatibilityElementScene",
+        "compatibilityGoodCards"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/relationshipProductView.ts",
+      "exists": true,
+      "sha256": "5890c8ec936036dc78a7870aa1a8f5ed660a46df8c04f37fdffd0594e435d2d2",
+      "lines": 92,
+      "exports": [
+        "RELATIONSHIP_DOMAINS",
+        "RELATIONSHIP_AXES",
+        "RelationshipProfiles",
+        "RelationshipPlacement",
+        "buildRelationshipProfiles",
+        "projectRelationshipView",
+        "RelationshipView",
+        "selectLoveProductSources"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/relationshipProductNarrative.ts",
+      "exists": true,
+      "sha256": "53be4a83a37c4497d262ee99e37d18906d33500547eb793f7d35a88f345cb30c",
+      "lines": 102,
+      "exports": [
+        "relationshipProof",
+        "createRelationshipRenderer"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/foundationIntegratedProfile.ts",
+      "exists": true,
+      "sha256": "b6640f2021a9919159611bd5a52552d26cbffbe64c35e845d74b60cbe1ebcc30",
+      "lines": 112,
+      "exports": [
+        "INTEGRATED_FOUNDATION_VERSION",
+        "IntegratedFoundationInput",
+        "MyeongliSemanticProfile",
+        "IntegratedProfileResult",
+        "integrateMyeongliFoundation",
+        "buildIntegratedMyeongliProfile"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+      "exists": true,
+      "sha256": "b95f7c05b61f27f42f9a2e5ecccf2811610095afaf08737fb269f6b2dbbca96f",
+      "lines": 83,
+      "exports": [
+        "MbtiAxisSupport",
+        "MbtiAxisLedger",
+        "MbtiSemanticProfile",
+        "aggregateMbtiContributions",
+        "MbtiProfileResult",
+        "projectMbtiSemanticProfile",
+        "buildMbtiSemanticProfile"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+      "exists": true,
+      "sha256": "180e4343baba50532c878d89772eeec8d95fd008cfba46469479cb8ce58bfd17",
+      "lines": 65,
+      "exports": [
+        "buildMyeongliMbtiFusion"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/fusionProfileAdapter.ts",
+      "exists": true,
+      "sha256": "ef0b2a217a4643dd936ebc7f9a21bce5a707dde3d5474d2cc8088d8e3cf56825",
+      "lines": 127,
+      "exports": [
+        "adaptMyeongliFusionSide",
+        "adaptMbtiFusionSide",
+        "fusionProofsForAxis",
+        "validFusionAxis",
+        "validFusionContexts",
+        "inspectFusionInputs"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/compatibilityRelationRules.ts",
+      "exists": true,
+      "sha256": "a4166aa86b20b3771944d28788fa755c7150127d5bb5d99be858cdcdf76f1dd9",
+      "lines": 525,
+      "exports": [
+        "FiveElementRelation",
+        "DayMasterElementRelation",
+        "CrossTenGodRelation",
+        "CompatibilityBranchPosition",
+        "CompatibilityBranchRef",
+        "CompatibilityBranchRelationKind",
+        "CompatibilityBranchRelation",
+        "getDayMasterElementRelation",
+        "getCrossTenGodRelation",
+        "detectCrossBranchRelations",
+        "createBranchRef",
+        "formatBranchRef"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+      "exists": true,
+      "sha256": "c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+      "lines": 109,
+      "exports": [
+        "CompatibilityPersonProfile",
+        "buildCompatibilityDirectionEvidence",
+        "CompatibilityDirectionEvidence",
+        "describeCompatibilityPerson",
+        "compatibilityCategoryScenes"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/mbti/sourceRuntimeAdapter.ts",
+      "exists": true,
+      "sha256": "6672b6f6dd22b310414b3e8694ee3fed7a75d2350c37365dd056d346d43f8dad",
+      "lines": 348,
+      "exports": [
+        "MBTI_SOURCE_TYPES",
+        "MbtiSourceType",
+        "MBTI_REPORT_USE_CASE_KEYS",
+        "MbtiReportUseCaseKey",
+        "MBTI_TRAIT_AREAS",
+        "MbtiTraitArea",
+        "MBTI_PRODUCT_TRAIT_AREAS",
+        "getMbtiProductTraits",
+        "getMbtiFortuneBasis",
+        "MbtiSourceTraitItem",
+        "MbtiRelationshipPair",
+        "MbtiMyeongliBridgeHint",
+        "MbtiSourceProfile",
+        "getMbtiSourceProfile",
+        "getMbtiTraitArea",
+        "getMbtiReportUseCase",
+        "getMbtiRelationshipPair",
+        "getMbtiMyeongliBridgeHints"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/types.ts",
+      "exists": true,
+      "sha256": "f03f634168e33d2171173b5cabca38211e2aa39145f1b72108e4aa30f6325414",
+      "lines": 50,
+      "exports": [
+        "BINDER_VERSION",
+        "BindingGateId",
+        "GateState",
+        "BindingOwner",
+        "EvidenceSelector",
+        "NormalizedSourceRequirement",
+        "KnowledgeBindingSourceGroup",
+        "NormalizedKnowledgeRequirement",
+        "KnowledgeCandidate",
+        "IntroducedMeaning",
+        "KnowledgeBindingRequest",
+        "KnowledgeBindingMatch",
+        "KnowledgeBindingGateResult",
+        "KnowledgeBindingApprovalRequirement",
+        "ApprovalRecord",
+        "KnowledgeBindingApprovalProvider",
+        "KnowledgeBindingDecision",
+        "KnowledgeBindingWithholdReason",
+        "KnowledgeBindingReceipt",
+        "KnowledgeBindingCoverage",
+        "KnowledgeBindingResult",
+        "KnowledgeBindingManifest",
+        "BinderDecisionIndex"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/requirements.ts",
+      "exists": true,
+      "sha256": "72217235f9330ad2be530e2cd3873740005dcfd8bc7586cb433b764eb0e203bb",
+      "lines": 117,
+      "exports": [
+        "interpretationClassification",
+        "adaptKnowledgeRequirement"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/catalog.ts",
+      "exists": true,
+      "sha256": "67cc25ed8d05301be7e0e058edc147b5de700739bfcfa9e9f04b222ce6edf093",
+      "lines": 53,
+      "exports": [
+        "KnowledgeBinderCatalog"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/matching.ts",
+      "exists": true,
+      "sha256": "a110087bd7f8f9da86afb41eb14fe7d2f9a1d19dc4b4125683e24029540c0d0f",
+      "lines": 98,
+      "exports": [
+        "valueAt",
+        "ActualBindingIndex"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/groups.ts",
+      "exists": true,
+      "sha256": "fa889e182c12c6290dd827ccbfb172fee87da30abb456c32fa58964c9987279d",
+      "lines": 33,
+      "exports": [
+        "evaluateSourceGroups",
+        "activeRequirements",
+        "displayedRecall"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/gates.ts",
+      "exists": true,
+      "sha256": "4992cef1457b6f2fc62b766320702f0c009f7fa8fdb88858d91334f206786cfc",
+      "lines": 70,
+      "exports": [
+        "NO_APPROVALS",
+        "validateApproval",
+        "inputConditions",
+        "GateInput",
+        "evaluateTwelveGates"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/engine.ts",
+      "exists": true,
+      "sha256": "8cbb86ffff1ad33c440dfdfc0e370628d3cc40f73867a58775a380acc4bd81b6",
+      "lines": 44,
+      "exports": [
+        "bindKnowledgeCandidate",
+        "bindingCoverage",
+        "bindKnowledge"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/types.ts",
+      "exists": true,
+      "sha256": "280c786a09c335e3b947ef2eab8b3b7528334c64b4239f35e8c2eeef479a940b",
+      "lines": 34,
+      "exports": [
+        "ACTUAL_GRAPH_VERSION",
+        "EvidenceOwner",
+        "EvidenceParticipant",
+        "EvidenceDirection",
+        "EvidenceProducerIdentity",
+        "EvidenceSourceIdentity",
+        "EvidenceFactIdentity",
+        "EvidenceTemporalWindow",
+        "EvidenceCertainty",
+        "EvidenceGraphWithholdReason",
+        "EvidenceAncestry",
+        "NodeKind",
+        "ActualEvidenceNode",
+        "EdgeKind",
+        "ActualEvidenceEdge",
+        "EvidenceGraphContext",
+        "ActualProfiles",
+        "EvidenceGraphDiagnostic",
+        "EvidenceGraphValidationResult",
+        "EvidenceGraphReceipt",
+        "EvidenceGraphCoverage",
+        "ActualEvidenceGraph",
+        "EvidenceGraphBuildResult",
+        "GraphKnowledgeInputs",
+        "GraphInput",
+        "ProducerContract",
+        "PublicArtifacts"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/builder.ts",
+      "exists": true,
+      "sha256": "d282201f04c82d2df377f8c7778e5b7ec22fe9210a659790f46df0865e8ce486",
+      "lines": 40,
+      "exports": [
+        "NodeOptions",
+        "EvidenceBuilder"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/pair.ts",
+      "exists": true,
+      "sha256": "d36e423e2f67cfe7dc2a17a831571c4734df4fa5deefe335902af9428a121a81",
+      "lines": 36,
+      "exports": [
+        "adaptPairEvidence"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/graph.ts",
+      "exists": true,
+      "sha256": "58a48f5f77a7a1a9699a7c7d8e37624db81ef9c09c9d0489c516fa550fa1d390",
+      "lines": 93,
+      "exports": [
+        "evidenceHash",
+        "ActualGraphIndex",
+        "graphCoverage",
+        "bindingRequirements"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/product-specialist-foundation/types.ts",
+      "exists": true,
+      "sha256": "1152b796f050996782122c16fb9300f35462509abde279da431ab64d620ccb57",
+      "lines": 230,
+      "exports": [
+        "SPECIALIST_FOUNDATION_VERSION",
+        "ProductQuestionId",
+        "ProductReaderAddress",
+        "ProductQuestionRequirement",
+        "ProductQuestionContract",
+        "ProductContract",
+        "MaterialLinkKind",
+        "QuestionMaterialLink",
+        "NormalizationState",
+        "NormalizationReceipt",
+        "SpecialistContractOverlay",
+        "SelectorKind",
+        "TypedSelectorContract",
+        "TemporalSelectorWitness",
+        "AnnualSegmentContract",
+        "AnnualMonthContract",
+        "PeriodBindingAttempt",
+        "ProductQuestionCoverage",
+        "SpecialistFoundationResult",
+        "FoundationRunCase",
+        "OperatorReviewItem",
+        "CandidateWithOverlay"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/product-specialist-foundation/questionRegistry.ts",
+      "exists": true,
+      "sha256": "6a3802c74d47c372d589e4aac18e069cab23b47c8b770fefb4b32e0549e621de",
+      "lines": 100,
+      "exports": [
+        "ProductQuestionRegistry"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/product-specialist-foundation/questionIndex.ts",
+      "exists": true,
+      "sha256": "d9c010f2205794208e1d088930deba9587807bfdd5f5bf05de38609f37755f05",
+      "lines": 26,
+      "exports": [
+        "ProductQuestionIndex"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/product-specialist-foundation/binderIntegration.ts",
+      "exists": true,
+      "sha256": "9e8eaa6a2520a2e68d04cea98057d104e4dc15a8e4d1d5a30f8b58d5c951b9bf",
+      "lines": 68,
+      "exports": [
+        "ProductSpecialistFoundation"
+      ],
+      "unchanged": true
+    }
+  ],
+  "runtimeChanged": false,
+  "factsVsSourcesVsProfilesVsEditorialContext": "Existing user input -> each natal computation -> compatibility evidence -> canonical pair/directional producer -> each MBTI/Fusion profile -> unchanged nonromantic projection -> pair comparison -> reader validation/editorial -> actual published edition -> Book. New engine reads producer packets offline only.",
+  "reusedAlgorithms": [
+    "existing Binder12gates",
+    "existing sourceGroup evaluation",
+    "existing ActualBindingIndex",
+    "Love native pair witness integrity",
+    "Coworker source-neutral full ancestry and MBTI hash verification",
+    "generic reviewed meaning conflict and compatible display functions"
+  ],
+  "newPolicy": "Business facts, contract/IP/agency/finance/safety are category-native and never inherited from manager authority or romantic policies.",
+  "typeBoundary": "Original type-only research contracts re-exported in tools composition root; no research or other specialist folder import added to new src. This preserves existing source isolation checks.",
+  "researchLegalBoundary": "Existing documented Korean quorum discrepancy remains unresolved. No statutory quorum or foreign IP rule applied to a person."
+}

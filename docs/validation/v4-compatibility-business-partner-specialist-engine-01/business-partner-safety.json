@@ -1,0 +1,42 @@
+{
+  "signals": [
+    "COERCION",
+    "ECONOMIC_EXPLOITATION",
+    "THREAT",
+    "RETALIATION",
+    "FORCED_LABOR",
+    "PRIVACY_VIOLATION",
+    "UNCONSENTED_RESOURCE_USE",
+    "CONFIDENTIALITY_VIOLATION",
+    "UNFAIR_RISK_TRANSFER",
+    "UNSAFE_PROCEDURE"
+  ],
+  "actualRisk": "UNKNOWN",
+  "forcedContinuation": false,
+  "conflations": {
+    "ideaDemand": "IDEA_IS_NOT_VERIFIED_DEMAND",
+    "trialOffer": "TRIAL_IS_NOT_ACTUAL_OFFER",
+    "interestPurchase": "INTEREST_IS_NOT_ACTUAL_PURCHASE",
+    "contributionCompensation": "CONTRIBUTION_IS_NOT_COMPENSATION",
+    "contributionEquity": "CONTRIBUTION_EQUITY_CONFUSION",
+    "contributionAuthority": "CONTRIBUTION_AUTHORITY_CONFUSION",
+    "equityVoting": "EQUITY_IS_NOT_VOTING_RIGHT",
+    "capitalPaid": "CAPITAL_COMMITMENT_IS_NOT_PAID_CAPITAL",
+    "revenueProfit": "REVENUE_PROFIT_CONFUSION",
+    "profitCash": "PROFIT_CASH_CONFUSION",
+    "invoicePayment": "INVOICE_PAYMENT_CONFUSION",
+    "forecastRevenue": "FORECAST_IS_NOT_ACTUAL_REVENUE",
+    "revenuePersonalAssets": "REVENUE_IS_NOT_PERSONAL_ASSETS",
+    "proposalContract": "PROPOSAL_IS_NOT_CONTRACT",
+    "contractAgency": "CONTRACT_IS_NOT_AGENCY_AUTHORITY",
+    "ipOwnershipUse": "IP_OWNERSHIP_IS_NOT_USAGE_PERMISSION",
+    "ipUseDisclosure": "IP_USAGE_IS_NOT_DISCLOSURE_PERMISSION",
+    "exitDissolution": "INDIVIDUAL_EXIT_IS_NOT_DISSOLUTION",
+    "dissolutionLiquidation": "DISSOLUTION_IS_NOT_LIQUIDATION",
+    "natalWealthCash": "NATAL_WEALTH_IS_NOT_CASH",
+    "directionAuthority": "DIRECTION_IS_NOT_BUSINESS_AUTHORITY",
+    "pairSuccess": "PAIR_RELATION_IS_NOT_BUSINESS_SUCCESS"
+  },
+  "foreignLegalRulesNotApplied": true,
+  "quorumNotResolved": true
+}

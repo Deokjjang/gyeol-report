@@ -1,0 +1,98 @@
+[
+  {
+    "id": "bppr:material:CH03.P4:b-review-without-close",
+    "source": {
+      "owner": "B",
+      "sourceKey": "24425ec34fdb222ac805",
+      "sourceUse": "both_same_person_roots_required",
+      "knowledgeIsRuntimeEvidence": false
+    },
+    "originalLocator": {
+      "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+      "exportName": "COMPLEMENT_FUSION_RESEARCH",
+      "index": 3,
+      "originalId": "fkr:complement:C004",
+      "recordSha256": "b31aed2afb7d3bdc09054942ef18aa30856259200fa27a3c13c019d622629343",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "originalHash": "b31aed2afb7d3bdc09054942ef18aa30856259200fa27a3c13c019d622629343",
+    "originalDomain": null,
+    "verified": true,
+    "match": {
+      "requirementId": "bppr:material:CH03.P4:b-review-without-close:native-witness:2",
+      "sourceCatalogKeys": [],
+      "matchedSourceReferences": [],
+      "matchedActualEvidence": [],
+      "rejectedNodeIds": [
+        "aeg:node:1782a326983928b4c143abbfe65560700c0e025710c9a9060425b61ae099ad03",
+        "aeg:node:8ead3e1b6e4f5816a7c907384b1fd960fe4c7f11209e1c8c585e0b817c3abe3a",
+        "aeg:node:daf89fe4755de062daa825744f76eae77bd1800ed925b23b92fdd8f797e891c4"
+      ],
+      "rejectedReasons": [
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "REQUIRED_ANCESTOR_WITHHELD",
+        "REQUIRED_GRAPH_NODE_WITHHELD"
+      ],
+      "identityMatches": 6,
+      "state": "FAIL",
+      "reasons": [
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "REQUIRED_ANCESTOR_WITHHELD",
+        "REQUIRED_GRAPH_NODE_WITHHELD"
+      ]
+    },
+    "exactDirectionGod": null,
+    "validActualWitnesses": [],
+    "sourceUseState": "WITHHELD_ACTUAL_WITNESS_MISSING",
+    "documentaryIsPersonalFact": false,
+    "originalConditionsPreserved": true
+  },
+  {
+    "id": "bppr:material:CH02.P3:a-correct-assumptions",
+    "source": {
+      "owner": "A",
+      "sourceKey": "bfcb541ba28cf9dd0cce",
+      "sourceUse": "both_same_person_roots_required",
+      "knowledgeIsRuntimeEvidence": false
+    },
+    "originalLocator": {
+      "file": "src/lib/report-knowledge/fusion-knowledge-research/complementFusionResearch.ts",
+      "exportName": "COMPLEMENT_FUSION_RESEARCH",
+      "index": 1,
+      "originalId": "fkr:complement:C002",
+      "recordSha256": "b3061c278a7b32733d7400a2b8b25a81403a010dd3e4b4dfc43efb1a676e15c1",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+    },
+    "originalHash": "b3061c278a7b32733d7400a2b8b25a81403a010dd3e4b4dfc43efb1a676e15c1",
+    "originalDomain": null,
+    "verified": true,
+    "match": {
+      "requirementId": "bppr:material:CH02.P3:a-correct-assumptions:native-witness:2",
+      "sourceCatalogKeys": [],
+      "matchedSourceReferences": [],
+      "matchedActualEvidence": [],
+      "rejectedNodeIds": [
+        "aeg:node:39034dba0ba3314134ff280cca9e3b5ae0649d1703c0dede6243e10f21e85906",
+        "aeg:node:6cad44067c8c87ce8b8458db1c7acd062aa191fc90d84689ec8206ad1ff25e6d",
+        "aeg:node:ea3d8d52826c08a62019698fa3223c59f33b97befbd3398f3a47bfae3c5d5d2c"
+      ],
+      "rejectedReasons": [
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "REQUIRED_ANCESTOR_WITHHELD",
+        "REQUIRED_GRAPH_NODE_WITHHELD"
+      ],
+      "identityMatches": 6,
+      "state": "FAIL",
+      "reasons": [
+        "DISALLOWED_ANCESTOR_DOMAIN",
+        "REQUIRED_ANCESTOR_WITHHELD",
+        "REQUIRED_GRAPH_NODE_WITHHELD"
+      ]
+    },
+    "exactDirectionGod": null,
+    "validActualWitnesses": [],
+    "sourceUseState": "WITHHELD_ACTUAL_WITNESS_MISSING",
+    "documentaryIsPersonalFact": false,
+    "originalConditionsPreserved": true
+  }
+]

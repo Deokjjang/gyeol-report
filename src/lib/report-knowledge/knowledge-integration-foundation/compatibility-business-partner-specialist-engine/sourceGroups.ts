@@ -1,0 +1,7 @@
+import {evaluateSourceGroups} from "../knowledge-binder/groups";
+import type {KnowledgeBindingMatch,KnowledgeCandidate} from "../knowledge-binder/types";
+import type {ActualBindingIndex} from "../knowledge-binder/matching";
+import type {KnowledgeBinderCatalog} from "../knowledge-binder/catalog";
+import type {Material,OriginalSourceView} from "./researchCatalog";
+export function normalizeSourceGroups(material:Material,sources:readonly OriginalSourceView[],candidate:KnowledgeCandidate,catalog:KnowledgeBinderCatalog){return material.requirements.sourceGroups.map(g=>({originalGroupId:g.groupId,originalMaterialId:material.id,originalDeclaration:g,sourceKeys:g.sourceKeys,originalTypePredicates:g.typePredicates,allSourcesWithinGroupRequired:g.allSourcesWithinGroupRequired,groupPolicy:material.requirements.groupPolicy,normalizedBinderGroups:candidate.requirement.sourceGroups.filter(s=>s.originalId===g.groupId),sources:g.sourceKeys.map(key=>{const registry=sources.find(s=>s.key===key);return {key,assignment:material.ownedSources.filter(s=>s.sourceKey===key),registry:registry??null,locator:registry?catalog.originalIds.get(registry.id)?.[0]?.locator:null,missingConditions:registry?[]:["SOURCE_REFERENCE_UNRESOLVED"]};}),customerApproved:false}));}
+export function evaluateBusinessSourceGroups(candidate:KnowledgeCandidate,matches:readonly KnowledgeBindingMatch[],index:ActualBindingIndex,catalog:KnowledgeBinderCatalog){return evaluateSourceGroups(candidate,matches,index,catalog);}
