@@ -1,0 +1,1156 @@
+{
+  "TASK": "V4-GLOBAL-BOOK-PLANNER-01",
+  "BASE_SHA": "fe1764f802985516458663e58e40ced586d95024",
+  "BRANCH": "v4/global-book-planner-01",
+  "COMMIT_SHA": "RESOLVE_AFTER_COMMIT_FROM_BRANCH_HEAD",
+  "REMOTE_SHA_MATCH": "POST_COMMIT_CHECK_REQUIRED",
+  "PLANNER_STATUS": "OFFLINE_IMPLEMENTED",
+  "PLANNER_VERSION": "global-book-planner-v1",
+  "PRODUCT_KEYS": [
+    "annual_fortune",
+    "career_money_study",
+    "love_marriage_child",
+    "major_fortune",
+    "saju_mbti_compatibility",
+    "saju_mbti_full"
+  ],
+  "SPECIALIST_ROUTES": 12,
+  "COMPATIBILITY_CATEGORIES": 7,
+  "READER_CONTRACTS": [
+    {
+      "productKey": "saju_mbti_full",
+      "relationship": null,
+      "chapters": 13,
+      "paragraphs": 52,
+      "roles": 208,
+      "periodSlots": null,
+      "originalReaderVersion": "comprehensive-editorial-quality-fix-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/comprehensiveReleaseContracts.ts",
+      "originalReaderHash": "e8d105999376cb61b6da101fe236ba60e7af47708dfdcf81f894622ef1d956d3",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "career_money_study",
+      "relationship": null,
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "career-editorial-quality-fix-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+      "originalReaderHash": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "love_marriage_child",
+      "relationship": null,
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "love-editorial-quality-fix-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/loveReleaseContracts.ts",
+      "originalReaderHash": "ea860d14a254f063ad1b3925a7e2f64cc6f87af5afcd48b4c69902fb04ae0f54",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "love",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "marriage",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "parentChild",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "coworker",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "managerReport",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "businessPartner",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "saju_mbti_compatibility",
+      "relationship": "friendship",
+      "chapters": 9,
+      "paragraphs": 36,
+      "roles": 144,
+      "periodSlots": null,
+      "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+      "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+      "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "annual_fortune",
+      "relationship": null,
+      "chapters": null,
+      "paragraphs": null,
+      "roles": null,
+      "periodSlots": 12,
+      "originalReaderVersion": null,
+      "originalReaderFile": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+      "originalReaderHash": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    },
+    {
+      "productKey": "major_fortune",
+      "relationship": null,
+      "chapters": null,
+      "paragraphs": null,
+      "roles": null,
+      "periodSlots": 14,
+      "originalReaderVersion": null,
+      "originalReaderFile": "src/lib/report-knowledge/major-fortune-product-research/yearMatrix.ts",
+      "originalReaderHash": "5d68d20479b0bcf7311cff51774eda184cfa63276ebac26782e0e76d57dce17f",
+      "policy": "ORIGINAL_STRUCTURE_ONLY"
+    }
+  ],
+  "QUESTION_REGISTRY_COVERAGE": {
+    "originalQuestions": 2060,
+    "actualRegistryCompileAndArchivedContractMatch": true
+  },
+  "ORIGINAL_CANDIDATE_COVERAGE": {
+    "candidateFixtureEvaluations": 5073,
+    "graphs": 27,
+    "sourceMatches": 11170,
+    "actualEvidenceMatches": 1489,
+    "structuralMatches": 81,
+    "syntheticAddedToOriginalEvaluations": 0
+  },
+  "STRICT_CUSTOMER_POLICY": "PASS / original NO_APPROVALS / all 12 Gate states preserved",
+  "STRICT_CUSTOMER_ASSIGNMENTS": 0,
+  "SYNTHETIC_REHEARSAL": {
+    "registeredRoutes": 12,
+    "syntheticQuestions": 1456,
+    "separateFriendshipDisplayFixture": true
+  },
+  "SYNTHETIC_VERIFIED_BINDER": "Existing native synthetic registries and authentic approval providers, ActualBindingIndex and bindKnowledgeCandidate; native receipt equality plus all additional Specialist constraints",
+  "SYNTHETIC_PLANNER_ASSIGNMENTS": {
+    "defaultTwelveRoutes": 1085,
+    "independentDisplayFixture": 180,
+    "notAddedToActual5073": true
+  },
+  "SYNTHETIC_HARD_GATE_VIOLATIONS": 0,
+  "QUESTION_LINK_VALIDATION": "PASS / exact native questions and material hash links; topic/reference/expression cannot become Primary",
+  "UNVERIFIED_READER_BRIDGES": {
+    "state": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+    "newBridges": 0,
+    "actualReplacements": 0
+  },
+  "CHAPTER_COVERAGE": [
+    {
+      "engine": "comprehensive",
+      "assigned": 1
+    },
+    {
+      "engine": "career",
+      "assigned": 5
+    },
+    {
+      "engine": "love",
+      "assigned": 7
+    },
+    {
+      "engine": "major-fortune",
+      "assigned": 0
+    },
+    {
+      "engine": "annual-fortune",
+      "assigned": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "assigned": 8
+    },
+    {
+      "engine": "compatibility-marriage",
+      "assigned": 8
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "assigned": 8
+    },
+    {
+      "engine": "compatibility-coworker",
+      "assigned": 7
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "assigned": 7
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "assigned": 7
+    },
+    {
+      "engine": "compatibility-friendship",
+      "assigned": 7
+    }
+  ],
+  "PARAGRAPH_COVERAGE": [
+    {
+      "engine": "comprehensive",
+      "assigned": 0
+    },
+    {
+      "engine": "career",
+      "assigned": 0
+    },
+    {
+      "engine": "love",
+      "assigned": 7
+    },
+    {
+      "engine": "major-fortune",
+      "assigned": 0
+    },
+    {
+      "engine": "annual-fortune",
+      "assigned": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "assigned": 32
+    },
+    {
+      "engine": "compatibility-marriage",
+      "assigned": 32
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "assigned": 32
+    },
+    {
+      "engine": "compatibility-coworker",
+      "assigned": 28
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "assigned": 28
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "assigned": 28
+    },
+    {
+      "engine": "compatibility-friendship",
+      "assigned": 28
+    }
+  ],
+  "SENTENCE_ROLE_COVERAGE": [
+    {
+      "engine": "comprehensive",
+      "assigned": 0
+    },
+    {
+      "engine": "career",
+      "assigned": 0
+    },
+    {
+      "engine": "love",
+      "assigned": 0
+    },
+    {
+      "engine": "major-fortune",
+      "assigned": 17
+    },
+    {
+      "engine": "annual-fortune",
+      "assigned": 0
+    },
+    {
+      "engine": "compatibility-love",
+      "assigned": 128
+    },
+    {
+      "engine": "compatibility-marriage",
+      "assigned": 128
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "assigned": 128
+    },
+    {
+      "engine": "compatibility-coworker",
+      "assigned": 112
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "assigned": 112
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "assigned": 112
+    },
+    {
+      "engine": "compatibility-friendship",
+      "assigned": 112
+    }
+  ],
+  "PRIMARY_INFORMATION_ALLOCATION": 1085,
+  "SUPPORTING_INFORMATION_ALLOCATION": {
+    "evidenceSupportGroups": 1085,
+    "sourceAndRootPreserved": true,
+    "newIndependentFacts": 0
+  },
+  "FACT_ROOT_OWNERSHIP": "Original scope/owner/producer/temporal roots preserved; no new canonical root",
+  "FACT_ROOT_REUSE": "Existing native per-product policies; graph roots not equated with Release atoms/facets; no new shared hard cap",
+  "MEANING_IDENTITY": {
+    "actual": "REVIEW_REQUIRED",
+    "rehearsal": "ONLY_ORIGINAL_REGISTERED_SYNTHETIC_IDENTITIES"
+  },
+  "SEMANTIC_DUPLICATION": "Native and exact registered identity conflicts checked; natural-language equivalence/independence not automatically approved",
+  "CONFLICT_GRAPH": "Native constraints reused with cached pair checks and final whole-selection validation; original actual conflict graphs referenced by exact case/field hash",
+  "EXISTING_REUSE_BUDGETS": "PASS / native Source Atom, Facet, Theme, Ownership, period root policies remain separate",
+  "GLOBAL_CONSTRAINT_SELECTION": "Backtracking, root reservation, native constraints, admissible bounds and deterministic ties; no score compensates a failed Gate",
+  "ALGORITHM_COMPARISON": [
+    {
+      "engine": "comprehensive",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 3,
+          "complete": true,
+          "objective": [
+            0,
+            3,
+            0,
+            3,
+            3,
+            31
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 3,
+          "complete": true,
+          "objective": [
+            0,
+            3,
+            0,
+            3,
+            3,
+            31
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 4,
+          "complete": true,
+          "objective": [
+            0,
+            4,
+            0,
+            4,
+            3,
+            30
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:cse:e",
+          "question": "synthetic:cse:q:4"
+        },
+        {
+          "candidate": "synthetic:cse:b",
+          "question": "synthetic:cse:q:1"
+        }
+      ]
+    },
+    {
+      "engine": "career",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 4,
+          "complete": true,
+          "objective": [
+            0,
+            4,
+            0,
+            4,
+            1,
+            40
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 4,
+          "complete": true,
+          "objective": [
+            0,
+            4,
+            0,
+            4,
+            1,
+            40
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 5,
+          "complete": true,
+          "objective": [
+            0,
+            5,
+            0,
+            5,
+            1,
+            50
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:career:f",
+          "question": "synthetic:career:q:5"
+        },
+        {
+          "candidate": "synthetic:career:b",
+          "question": "synthetic:career:q:1"
+        }
+      ]
+    },
+    {
+      "engine": "love",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 6,
+          "complete": true,
+          "objective": [
+            0,
+            6,
+            0,
+            6,
+            1,
+            60
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 6,
+          "complete": true,
+          "objective": [
+            0,
+            6,
+            0,
+            6,
+            1,
+            60
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 7,
+          "complete": true,
+          "objective": [
+            0,
+            7,
+            0,
+            7,
+            1,
+            70
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:love:h",
+          "question": "synthetic:love:q:07"
+        },
+        {
+          "candidate": "synthetic:love:b",
+          "question": "synthetic:love:q:01"
+        }
+      ]
+    },
+    {
+      "engine": "major-fortune",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 16,
+          "complete": true,
+          "objective": [
+            0,
+            16,
+            0,
+            15,
+            2,
+            160
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 16,
+          "complete": true,
+          "objective": [
+            0,
+            16,
+            0,
+            15,
+            2,
+            160
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 17,
+          "complete": true,
+          "objective": [
+            1,
+            17,
+            0,
+            16,
+            3,
+            160
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:major:transition-comparison",
+          "question": "synthetic:major:q:2028:transition"
+        },
+        {
+          "candidate": "synthetic:major:02-alternative",
+          "question": "synthetic:major:q:2023:annual"
+        }
+      ]
+    },
+    {
+      "engine": "annual-fortune",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 11,
+          "complete": true,
+          "objective": [
+            1,
+            11,
+            0,
+            11,
+            3,
+            110
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 11,
+          "complete": true,
+          "objective": [
+            1,
+            11,
+            0,
+            11,
+            3,
+            110
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 12,
+          "complete": true,
+          "objective": [
+            2,
+            12,
+            0,
+            12,
+            3,
+            110
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:annual:feb-critical",
+          "question": "synthetic:annual:q:2"
+        },
+        {
+          "candidate": "synthetic:annual:02-jan-alternative",
+          "question": "synthetic:annual:q:1"
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-love",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 159,
+          "complete": true,
+          "objective": [
+            39,
+            159,
+            19,
+            159,
+            1,
+            1600
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 159,
+          "complete": true,
+          "objective": [
+            39,
+            159,
+            19,
+            159,
+            1,
+            1600
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 160,
+          "complete": true,
+          "objective": [
+            40,
+            160,
+            20,
+            160,
+            1,
+            1600
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:love:material:CH05.P1",
+          "question": "synthetic:love:question:CH05.P1"
+        },
+        {
+          "candidate": "synthetic:love:material:CH01.P1",
+          "question": "synthetic:love:question:CH01.P1"
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-marriage",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 159,
+          "complete": true,
+          "objective": [
+            39,
+            159,
+            19,
+            159,
+            4,
+            1600
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 159,
+          "complete": true,
+          "objective": [
+            39,
+            159,
+            19,
+            159,
+            4,
+            1600
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 160,
+          "complete": true,
+          "objective": [
+            40,
+            160,
+            20,
+            160,
+            4,
+            1600
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:marriage:material:CH05.P1",
+          "question": "synthetic:marriage:question:CH05.P1"
+        },
+        {
+          "candidate": "synthetic:marriage:material:CH01.P1",
+          "question": "synthetic:marriage:question:CH01.P1"
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-parent-child",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 159,
+          "complete": true,
+          "objective": [
+            39,
+            159,
+            19,
+            159,
+            4,
+            8000
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 159,
+          "complete": true,
+          "objective": [
+            39,
+            159,
+            19,
+            159,
+            4,
+            8000
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 160,
+          "complete": true,
+          "objective": [
+            40,
+            160,
+            20,
+            160,
+            4,
+            8000
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:parent-child:material:CH05.P1",
+          "question": "synthetic:parent-child:question:CH05.P1"
+        },
+        {
+          "candidate": "synthetic:parent-child:material:CH01.P1",
+          "question": "synthetic:parent-child:question:CH01.P1"
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-coworker",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 139,
+          "complete": true,
+          "objective": [
+            39,
+            139,
+            19,
+            139,
+            4,
+            7000
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 139,
+          "complete": true,
+          "objective": [
+            39,
+            139,
+            19,
+            139,
+            4,
+            7000
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 140,
+          "complete": true,
+          "objective": [
+            40,
+            140,
+            20,
+            140,
+            4,
+            7000
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:coworker:material:CH05.P1",
+          "question": "synthetic:coworker:question:CH05.P1"
+        },
+        {
+          "candidate": "synthetic:coworker:material:CH01.P1",
+          "question": "synthetic:coworker:question:CH01.P1"
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-manager-report",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 139,
+          "complete": true,
+          "objective": [
+            39,
+            139,
+            19,
+            139,
+            4,
+            7000
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 139,
+          "complete": true,
+          "objective": [
+            39,
+            139,
+            19,
+            139,
+            4,
+            7000
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 140,
+          "complete": true,
+          "objective": [
+            40,
+            140,
+            20,
+            140,
+            4,
+            7000
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:manager-report:material:CH05.P1",
+          "question": "synthetic:manager-report:question:CH05.P1"
+        },
+        {
+          "candidate": "synthetic:manager-report:material:CH01.P1",
+          "question": "synthetic:manager-report:question:CH01.P1"
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-business-partner",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 139,
+          "complete": true,
+          "objective": [
+            59,
+            139,
+            19,
+            139,
+            4,
+            1480
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 139,
+          "complete": true,
+          "objective": [
+            59,
+            139,
+            19,
+            139,
+            4,
+            1480
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 140,
+          "complete": true,
+          "objective": [
+            60,
+            140,
+            20,
+            140,
+            4,
+            1400
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:business-partner:material:CH06.P1",
+          "question": "synthetic:business-partner:question:CH06.P1"
+        },
+        {
+          "candidate": "synthetic:business-partner:material:CH01.P1",
+          "question": "synthetic:business-partner:question:CH01.P1"
+        }
+      ]
+    },
+    {
+      "engine": "compatibility-friendship",
+      "methods": [
+        {
+          "method": "FIRST_ELIGIBLE",
+          "assigned": 139,
+          "complete": true,
+          "objective": [
+            0,
+            139,
+            20,
+            139,
+            4,
+            1479
+          ]
+        },
+        {
+          "method": "QUESTION_FIT_FIRST",
+          "assigned": 139,
+          "complete": true,
+          "objective": [
+            0,
+            139,
+            20,
+            139,
+            4,
+            1479
+          ]
+        },
+        {
+          "method": "GLOBAL_CONSTRAINT_AWARE",
+          "assigned": 140,
+          "complete": true,
+          "objective": [
+            0,
+            140,
+            20,
+            140,
+            4,
+            1400
+          ]
+        }
+      ],
+      "chosenChanges": [
+        {
+          "candidate": "synthetic:friendship:material:CH04.P1",
+          "question": "synthetic:friendship:q:CH04.P1"
+        },
+        {
+          "candidate": "synthetic:friendship:material:CH01.P1",
+          "question": "synthetic:friendship:q:CH01.P1"
+        }
+      ]
+    }
+  ],
+  "MAJOR_FORTUNE_TEMPORAL": {
+    "editorialHorizon": 14,
+    "originalQuestionRoles": 168,
+    "cycleTransitionCalculationsChanged": 0,
+    "unknownRangesNotMadeExact": true
+  },
+  "ANNUAL_FORTUNE_SEGMENTS": {
+    "civilMonths": 12,
+    "registeredSyntheticSegments": 16,
+    "focusSegmentNotWholeMonth": true,
+    "monthlyStemAndBranchMainDistinct": true,
+    "nominalEffectiveAnnualDistinct": true
+  },
+  "COMPATIBILITY_OWNER_DIRECTION": {
+    "categories": 7,
+    "originalABBAAndAToBLabelsPreserved": true,
+    "asymmetricRoles": {
+      "parentChild": {
+        "A": "parent",
+        "B": "child"
+      },
+      "managerReport": {
+        "A": "manager",
+        "B": "report"
+      }
+    },
+    "unenteredMarriageBusinessWorkFriendshipFacts": "UNKNOWN"
+  },
+  "REPAIR_DEPENDENCIES": "Native original friction/meaning/source group/context required; deferred when missing",
+  "RECALL_DISPLAY_DEPENDENCIES": {
+    "plannedIsDisplayed": false,
+    "independentSyntheticDisplay": [
+      {
+        "engine": "compatibility-friendship",
+        "algorithms": [
+          {
+            "method": "FIRST_ELIGIBLE",
+            "assigned": 179,
+            "recall": 20,
+            "repair": 20,
+            "search": {
+              "method": "FIRST_ELIGIBLE",
+              "visited": 0,
+              "complete": true,
+              "optimality": "NOT_CLAIMED",
+              "objective": [
+                0,
+                179,
+                20,
+                159,
+                5,
+                1879
+              ]
+            }
+          },
+          {
+            "method": "QUESTION_FIT_FIRST",
+            "assigned": 179,
+            "recall": 20,
+            "repair": 20,
+            "search": {
+              "method": "QUESTION_FIT_FIRST",
+              "visited": 0,
+              "complete": true,
+              "optimality": "NOT_CLAIMED",
+              "objective": [
+                0,
+                179,
+                20,
+                159,
+                5,
+                1879
+              ]
+            }
+          },
+          {
+            "method": "GLOBAL_CONSTRAINT_AWARE",
+            "assigned": 180,
+            "recall": 20,
+            "repair": 20,
+            "search": {
+              "method": "GLOBAL_CONSTRAINT_AWARE",
+              "visited": 392,
+              "complete": true,
+              "optimality": "EXHAUSTIVE_WITHIN_REGISTERED_POOL",
+              "objective": [
+                0,
+                180,
+                20,
+                160,
+                5,
+                1800
+              ]
+            }
+          }
+        ],
+        "issuedActualCustomerDisplayRecords": 0,
+        "selected": 180,
+        "unfilled": 0
+      }
+    ],
+    "actualCustomerDisplayRecordsIssued": 0
+  },
+  "UNFILLED_READER_QUESTIONS": {
+    "strict": "All original per-fixture questions withheld",
+    "syntheticDefault": 371,
+    "independentFriendshipRenderFixture": 0,
+    "noGenericPrimaryInserted": true
+  },
+  "WITHHOLD_REASONS": "Original Gate reasons plus source/question/identity/owner/direction/period/dependency/native policy diagnostics preserved",
+  "EDITORIAL_HANDOFF": "Typed executable compiler with validation of reader/source/evidence/meaning/condition/display contract; no prose generation or customer assignment",
+  "CUSTOMER_APPROVED": 0,
+  "CUSTOMER_ELIGIBLE": 0,
+  "CUSTOMER_SELECTIONS": 0,
+  "CUSTOMER_CLAIMS": 0,
+  "CUSTOMER_BOOK_ALLOCATIONS": 0,
+  "CALCULATION_PRESERVATION": "PASS / 5509 existing files unchanged and fresh digest comparison",
+  "COMPATIBILITY_SCORE_PRESERVATION": "PASS / original evidence, 20 Friendship cases and full profile bytes identical",
+  "NARRATIVE_PRESERVATION": "PASS / unchanged before/after generated narrative bytes",
+  "BOOK_PRESERVATION": "PASS / 17 Books 102 digests + 20 Friendship cases 140 digests + 40 profiles",
+  "EXISTING_TEST_FAILURES": {
+    "known": "5837 PASS / 46 identical FAIL",
+    "businessPartner": "382 PASS / 1 identical default-budget baseline FAIL across Engine plus Artifacts files"
+  },
+  "NEW_TEST_FAILURES": 0,
+  "NEW_TESTS": "125 PASS / 0 FAIL",
+  "TYPESCRIPT": "0 before / 0 after / 0 new",
+  "LINT": "PASS / 0 warnings",
+  "BUILD": "PASS / 0 observed warnings",
+  "DIFF_CHECK": "PASS",
+  "NFT_TRACE_PRESERVATION": "PASS / 90 paths and dependency sets identical / planner entries 0",
+  "DETERMINISTIC_BUILD": "PASS / 2 independent CLI processes / 518 physical core files byte-identical / source seals unchanged during runs",
+  "PRIVACY_CHECK": "PASS / all physical JSON and decoded gzip leaves plus new code/test/report scanned",
+  "VERCEL_PREVIEW": "POST_COMMIT_EXACT_SHA_READY_CHECK_REQUIRED",
+  "REMAINING_GAPS": [
+    "Actual research approvals remain zero",
+    "Reader/Scheduler bridge unverified",
+    "Actual semantic/domain/context/ancestry gaps remain withheld",
+    "Natural-language semantic independence not established",
+    "Synthetic sparse registry coverage is not a completed customer Book",
+    "Real Editorial/Publication display proof and Official Approval Contract are future scope"
+  ],
+  "NEXT_STAGE_READY": "Offline typed engineering handoff ready; no customer eligibility/publication or deployment approval; following stage not started"
+}

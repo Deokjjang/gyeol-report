@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "synthetic-rehearsal-plan-part-0001.json.gz",
+  "payloadHash": "0985eefd16ceab643c12795dd9db213006ae15289c991916837f831e023c0aa6",
+  "logicalJsonHash": "e8ac5b6a0771a07bc2044ee272d2a39dd34905440746b27827d4301bff5ccddf",
+  "uncompressedBytes": 1670632
+}

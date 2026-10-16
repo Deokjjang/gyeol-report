@@ -1,0 +1,62 @@
+[
+  {
+    "method": "FIRST_ELIGIBLE",
+    "assigned": 179,
+    "recall": 20,
+    "repair": 20,
+    "search": {
+      "method": "FIRST_ELIGIBLE",
+      "visited": 0,
+      "complete": true,
+      "optimality": "NOT_CLAIMED",
+      "objective": [
+        0,
+        179,
+        20,
+        159,
+        5,
+        1879
+      ]
+    }
+  },
+  {
+    "method": "QUESTION_FIT_FIRST",
+    "assigned": 179,
+    "recall": 20,
+    "repair": 20,
+    "search": {
+      "method": "QUESTION_FIT_FIRST",
+      "visited": 0,
+      "complete": true,
+      "optimality": "NOT_CLAIMED",
+      "objective": [
+        0,
+        179,
+        20,
+        159,
+        5,
+        1879
+      ]
+    }
+  },
+  {
+    "method": "GLOBAL_CONSTRAINT_AWARE",
+    "assigned": 180,
+    "recall": 20,
+    "repair": 20,
+    "search": {
+      "method": "GLOBAL_CONSTRAINT_AWARE",
+      "visited": 392,
+      "complete": true,
+      "optimality": "EXHAUSTIVE_WITHIN_REGISTERED_POOL",
+      "objective": [
+        0,
+        180,
+        20,
+        160,
+        5,
+        1800
+      ]
+    }
+  }
+]

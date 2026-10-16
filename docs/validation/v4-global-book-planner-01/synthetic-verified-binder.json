@@ -1,0 +1,48 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 12,
+  "logicalJsonHash": "d06b1578863b9499e383f07ddda7f613217032adf08c9c0cf4f66a66ce5cf75b",
+  "parts": [
+    {
+      "file": "synthetic-verified-binder-part-0001.json",
+      "sha256": "1ca037c92a3acdcd80415d801fc34131865b2bba24e5233c1344b2a4e7ddf9f3",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-verified-binder-part-0002.json",
+      "sha256": "6315ef49167cb2c90fda8aaaff9d5021da8f2ddc6e3a0f0b3c8ddf24ec2c233c",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-verified-binder-part-0003.json",
+      "sha256": "d658ebc625c6b6a7a03bbf1ec5481502ed427341f81ce8edc7344f5d88c5365e",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-verified-binder-part-0004.json",
+      "sha256": "6ec4f15bffa5e637627ff240255463559bba1abc900c430e35583bb6fe07f6dc",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-verified-binder-part-0005.json",
+      "sha256": "7571b77968db07028aca3e105734a59d9913cc83e5b3a8463111b974b10c8563",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-verified-binder-part-0006.json",
+      "sha256": "c700362fc5f7356e6e8620fad3e74eaa6db1ceb16f8e095b4b1f0ba9d1d6f644",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-verified-binder-part-0007.json",
+      "sha256": "3816e0b39862a7689c1ac3f2e12910d997157989aa67f6f26d938e33e29c21f4",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-verified-binder-part-0008.json",
+      "sha256": "4d1fe032321b45353c5bb7bfe95be4a601686129484e007abe0dffb8e25c7da2",
+      "kind": "ITEM"
+    }
+  ]
+}

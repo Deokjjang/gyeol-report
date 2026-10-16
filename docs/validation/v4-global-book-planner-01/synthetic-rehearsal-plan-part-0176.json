@@ -1,0 +1,622 @@
+[
+  {
+    "id": "synthetic:business-partner:question:CH08.P1",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P1",
+      "sentenceRole": null,
+      "originalAddress": "CH08.P1",
+      "level": "PARAGRAPH"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P1.S1",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P1",
+      "sentenceRole": "S1",
+      "originalAddress": "CH08.P1.S1",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P1.S2",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P1",
+      "sentenceRole": "S2",
+      "originalAddress": "CH08.P1.S2",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P1.S3",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P1",
+      "sentenceRole": "S3",
+      "originalAddress": "CH08.P1.S3",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P1.S4",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P1",
+      "sentenceRole": "S4",
+      "originalAddress": "CH08.P1.S4",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P2",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P2",
+      "sentenceRole": null,
+      "originalAddress": "CH08.P2",
+      "level": "PARAGRAPH"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P2.S1",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P2",
+      "sentenceRole": "S1",
+      "originalAddress": "CH08.P2.S1",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P2.S2",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P2",
+      "sentenceRole": "S2",
+      "originalAddress": "CH08.P2.S2",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P2.S3",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P2",
+      "sentenceRole": "S3",
+      "originalAddress": "CH08.P2.S3",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P2.S4",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P2",
+      "sentenceRole": "S4",
+      "originalAddress": "CH08.P2.S4",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P3",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P3",
+      "sentenceRole": null,
+      "originalAddress": "CH08.P3",
+      "level": "PARAGRAPH"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P3.S1",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P3",
+      "sentenceRole": "S1",
+      "originalAddress": "CH08.P3.S1",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P3.S2",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P3",
+      "sentenceRole": "S2",
+      "originalAddress": "CH08.P3.S2",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P3.S3",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P3",
+      "sentenceRole": "S3",
+      "originalAddress": "CH08.P3.S3",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P3.S4",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P3",
+      "sentenceRole": "S4",
+      "originalAddress": "CH08.P3.S4",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P4",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P4",
+      "sentenceRole": null,
+      "originalAddress": "CH08.P4",
+      "level": "PARAGRAPH"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P4.S1",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P4",
+      "sentenceRole": "S1",
+      "originalAddress": "CH08.P4.S1",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P4.S2",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P4",
+      "sentenceRole": "S2",
+      "originalAddress": "CH08.P4.S2",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P4.S3",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P4",
+      "sentenceRole": "S3",
+      "originalAddress": "CH08.P4.S3",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH08.P4.S4",
+    "address": {
+      "chapterId": "CH08",
+      "periodId": null,
+      "paragraphId": "P4",
+      "sentenceRole": "S4",
+      "originalAddress": "CH08.P4.S4",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "CH08_REQUIRES_ACTUAL_PRECEDING_DISPLAY",
+      "NATIVE_SPECIALIST_WITHHELD"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P1",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P1",
+      "sentenceRole": null,
+      "originalAddress": "CH09.P1",
+      "level": "PARAGRAPH"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P1.S1",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P1",
+      "sentenceRole": "S1",
+      "originalAddress": "CH09.P1.S1",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P1.S2",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P1",
+      "sentenceRole": "S2",
+      "originalAddress": "CH09.P1.S2",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P1.S3",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P1",
+      "sentenceRole": "S3",
+      "originalAddress": "CH09.P1.S3",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P1.S4",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P1",
+      "sentenceRole": "S4",
+      "originalAddress": "CH09.P1.S4",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P2",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P2",
+      "sentenceRole": null,
+      "originalAddress": "CH09.P2",
+      "level": "PARAGRAPH"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P2.S1",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P2",
+      "sentenceRole": "S1",
+      "originalAddress": "CH09.P2.S1",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P2.S2",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P2",
+      "sentenceRole": "S2",
+      "originalAddress": "CH09.P2.S2",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P2.S3",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P2",
+      "sentenceRole": "S3",
+      "originalAddress": "CH09.P2.S3",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P2.S4",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P2",
+      "sentenceRole": "S4",
+      "originalAddress": "CH09.P2.S4",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P3",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P3",
+      "sentenceRole": null,
+      "originalAddress": "CH09.P3",
+      "level": "PARAGRAPH"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P3.S1",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P3",
+      "sentenceRole": "S1",
+      "originalAddress": "CH09.P3.S1",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P3.S2",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P3",
+      "sentenceRole": "S2",
+      "originalAddress": "CH09.P3.S2",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P3.S3",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P3",
+      "sentenceRole": "S3",
+      "originalAddress": "CH09.P3.S3",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P3.S4",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P3",
+      "sentenceRole": "S4",
+      "originalAddress": "CH09.P3.S4",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P4",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P4",
+      "sentenceRole": null,
+      "originalAddress": "CH09.P4",
+      "level": "PARAGRAPH"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P4.S1",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P4",
+      "sentenceRole": "S1",
+      "originalAddress": "CH09.P4.S1",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P4.S2",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P4",
+      "sentenceRole": "S2",
+      "originalAddress": "CH09.P4.S2",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P4.S3",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P4",
+      "sentenceRole": "S3",
+      "originalAddress": "CH09.P4.S3",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  },
+  {
+    "id": "synthetic:business-partner:question:CH09.P4.S4",
+    "address": {
+      "chapterId": "CH09",
+      "periodId": null,
+      "paragraphId": "P4",
+      "sentenceRole": "S4",
+      "originalAddress": "CH09.P4.S4",
+      "level": "SENTENCE_ROLE"
+    },
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "NATIVE_SPECIALIST_WITHHELD",
+      "RECALL_ACTUAL_DISPLAY_REQUIRED"
+    ]
+  }
+]

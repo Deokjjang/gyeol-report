@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "editorial-handoff-part-0039.json.gz",
+  "payloadHash": "41ede5789ae8131b491c524ff04c985ef1c10134de4ea8887623ba31e19debb9",
+  "logicalJsonHash": "75bc8fc09cb6bd0629334b9adbd0bbf997d040d3790a000ae26ea6ae8a356220",
+  "uncompressedBytes": 2174284
+}

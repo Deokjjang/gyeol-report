@@ -1,0 +1,39 @@
+{
+  "inheritedSourceResolution": {
+    "added": 525,
+    "remaining": 2677,
+    "domainQueue": 2966,
+    "operatorApproved": 0,
+    "customerApproved": 0
+  },
+  "task": "V4-GLOBAL-BOOK-PLANNER-01",
+  "version": "global-book-planner-v1",
+  "status": "OFFLINE_IMPLEMENTED",
+  "baseSha": "fe1764f802985516458663e58e40ced586d95024",
+  "protectedFiles": 5509,
+  "engines": 12,
+  "productKeys": 6,
+  "compatibilityCategories": 7,
+  "strict": {
+    "graphCases": 27,
+    "candidateEvaluations": 5073,
+    "sourceMatches": 11170,
+    "evidenceMatches": 1489,
+    "structuralMatches": 81,
+    "assignments": 0,
+    "customerApproved": 0
+  },
+  "rehearsal": {
+    "cases": 12,
+    "assignments": 1085,
+    "hardGateViolations": 0,
+    "customerEligible": 0
+  },
+  "newIndependentRoots": 0,
+  "customerSelections": 0,
+  "customerClaims": 0,
+  "customerBookAllocations": 0,
+  "actualDisplayRecordsIssued": 0,
+  "writerImports": 0,
+  "syntheticEvaluationsAddedTo5073": 0
+}

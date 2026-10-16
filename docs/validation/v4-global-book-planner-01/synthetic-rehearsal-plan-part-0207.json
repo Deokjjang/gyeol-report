@@ -1,0 +1,702 @@
+[
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P1.S1",
+    "claim": "synthetic:friendship:claim:CH01.P1.S1",
+    "candidate": "synthetic:friendship:material:CH01.P1.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P1.S2",
+    "claim": "synthetic:friendship:claim:CH01.P1.S2",
+    "candidate": "synthetic:friendship:material:CH01.P1.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P1.S3",
+    "claim": "synthetic:friendship:claim:CH01.P1.S3",
+    "candidate": "synthetic:friendship:material:CH01.P1.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P1.S4",
+    "claim": "synthetic:friendship:claim:CH01.P1.S4",
+    "candidate": "synthetic:friendship:material:CH01.P1.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P2",
+    "claim": "synthetic:friendship:claim:CH01.P2",
+    "candidate": "synthetic:friendship:material:CH01.P2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P2.S1",
+    "claim": "synthetic:friendship:claim:CH01.P2.S1",
+    "candidate": "synthetic:friendship:material:CH01.P2.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P2.S2",
+    "claim": "synthetic:friendship:claim:CH01.P2.S2",
+    "candidate": "synthetic:friendship:material:CH01.P2.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P2.S3",
+    "claim": "synthetic:friendship:claim:CH01.P2.S3",
+    "candidate": "synthetic:friendship:material:CH01.P2.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P2.S4",
+    "claim": "synthetic:friendship:claim:CH01.P2.S4",
+    "candidate": "synthetic:friendship:material:CH01.P2.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P3",
+    "claim": "synthetic:friendship:claim:CH01.P3",
+    "candidate": "synthetic:friendship:material:CH01.P3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P3.S1",
+    "claim": "synthetic:friendship:claim:CH01.P3.S1",
+    "candidate": "synthetic:friendship:material:CH01.P3.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P3.S2",
+    "claim": "synthetic:friendship:claim:CH01.P3.S2",
+    "candidate": "synthetic:friendship:material:CH01.P3.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P3.S3",
+    "claim": "synthetic:friendship:claim:CH01.P3.S3",
+    "candidate": "synthetic:friendship:material:CH01.P3.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P3.S4",
+    "claim": "synthetic:friendship:claim:CH01.P3.S4",
+    "candidate": "synthetic:friendship:material:CH01.P3.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P4",
+    "claim": "synthetic:friendship:claim:CH01.P4",
+    "candidate": "synthetic:friendship:material:CH01.P4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P4.S1",
+    "claim": "synthetic:friendship:claim:CH01.P4.S1",
+    "candidate": "synthetic:friendship:material:CH01.P4.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P4.S2",
+    "claim": "synthetic:friendship:claim:CH01.P4.S2",
+    "candidate": "synthetic:friendship:material:CH01.P4.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P4.S3",
+    "claim": "synthetic:friendship:claim:CH01.P4.S3",
+    "candidate": "synthetic:friendship:material:CH01.P4.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P4.S4",
+    "claim": "synthetic:friendship:claim:CH01.P4.S4",
+    "candidate": "synthetic:friendship:material:CH01.P4.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P1",
+    "claim": "synthetic:friendship:claim:CH02.P1",
+    "candidate": "synthetic:friendship:material:CH02.P1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P1.S1",
+    "claim": "synthetic:friendship:claim:CH02.P1.S1",
+    "candidate": "synthetic:friendship:material:CH02.P1.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P1.S2",
+    "claim": "synthetic:friendship:claim:CH02.P1.S2",
+    "candidate": "synthetic:friendship:material:CH02.P1.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P1.S3",
+    "claim": "synthetic:friendship:claim:CH02.P1.S3",
+    "candidate": "synthetic:friendship:material:CH02.P1.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P1.S4",
+    "claim": "synthetic:friendship:claim:CH02.P1.S4",
+    "candidate": "synthetic:friendship:material:CH02.P1.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P2",
+    "claim": "synthetic:friendship:claim:CH02.P2",
+    "candidate": "synthetic:friendship:material:CH02.P2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P2.S1",
+    "claim": "synthetic:friendship:claim:CH02.P2.S1",
+    "candidate": "synthetic:friendship:material:CH02.P2.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P2.S2",
+    "claim": "synthetic:friendship:claim:CH02.P2.S2",
+    "candidate": "synthetic:friendship:material:CH02.P2.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P2.S3",
+    "claim": "synthetic:friendship:claim:CH02.P2.S3",
+    "candidate": "synthetic:friendship:material:CH02.P2.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P2.S4",
+    "claim": "synthetic:friendship:claim:CH02.P2.S4",
+    "candidate": "synthetic:friendship:material:CH02.P2.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P3",
+    "claim": "synthetic:friendship:claim:CH02.P3",
+    "candidate": "synthetic:friendship:material:CH02.P3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P3.S1",
+    "claim": "synthetic:friendship:claim:CH02.P3.S1",
+    "candidate": "synthetic:friendship:material:CH02.P3.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P3.S2",
+    "claim": "synthetic:friendship:claim:CH02.P3.S2",
+    "candidate": "synthetic:friendship:material:CH02.P3.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P3.S3",
+    "claim": "synthetic:friendship:claim:CH02.P3.S3",
+    "candidate": "synthetic:friendship:material:CH02.P3.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P3.S4",
+    "claim": "synthetic:friendship:claim:CH02.P3.S4",
+    "candidate": "synthetic:friendship:material:CH02.P3.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P4",
+    "claim": "synthetic:friendship:claim:CH02.P4",
+    "candidate": "synthetic:friendship:material:CH02.P4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P4.S1",
+    "claim": "synthetic:friendship:claim:CH02.P4.S1",
+    "candidate": "synthetic:friendship:material:CH02.P4.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P4.S2",
+    "claim": "synthetic:friendship:claim:CH02.P4.S2",
+    "candidate": "synthetic:friendship:material:CH02.P4.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P4.S3",
+    "claim": "synthetic:friendship:claim:CH02.P4.S3",
+    "candidate": "synthetic:friendship:material:CH02.P4.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH02.P4.S4",
+    "claim": "synthetic:friendship:claim:CH02.P4.S4",
+    "candidate": "synthetic:friendship:material:CH02.P4.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P1",
+    "claim": "synthetic:friendship:claim:CH03.P1",
+    "candidate": "synthetic:friendship:material:CH03.P1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P1.S1",
+    "claim": "synthetic:friendship:claim:CH03.P1.S1",
+    "candidate": "synthetic:friendship:material:CH03.P1.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P1.S2",
+    "claim": "synthetic:friendship:claim:CH03.P1.S2",
+    "candidate": "synthetic:friendship:material:CH03.P1.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P1.S3",
+    "claim": "synthetic:friendship:claim:CH03.P1.S3",
+    "candidate": "synthetic:friendship:material:CH03.P1.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P1.S4",
+    "claim": "synthetic:friendship:claim:CH03.P1.S4",
+    "candidate": "synthetic:friendship:material:CH03.P1.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P2",
+    "claim": "synthetic:friendship:claim:CH03.P2",
+    "candidate": "synthetic:friendship:material:CH03.P2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P2.S1",
+    "claim": "synthetic:friendship:claim:CH03.P2.S1",
+    "candidate": "synthetic:friendship:material:CH03.P2.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P2.S2",
+    "claim": "synthetic:friendship:claim:CH03.P2.S2",
+    "candidate": "synthetic:friendship:material:CH03.P2.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P2.S3",
+    "claim": "synthetic:friendship:claim:CH03.P2.S3",
+    "candidate": "synthetic:friendship:material:CH03.P2.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P2.S4",
+    "claim": "synthetic:friendship:claim:CH03.P2.S4",
+    "candidate": "synthetic:friendship:material:CH03.P2.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P3",
+    "claim": "synthetic:friendship:claim:CH03.P3",
+    "candidate": "synthetic:friendship:material:CH03.P3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P3.S1",
+    "claim": "synthetic:friendship:claim:CH03.P3.S1",
+    "candidate": "synthetic:friendship:material:CH03.P3.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P3.S2",
+    "claim": "synthetic:friendship:claim:CH03.P3.S2",
+    "candidate": "synthetic:friendship:material:CH03.P3.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P3.S3",
+    "claim": "synthetic:friendship:claim:CH03.P3.S3",
+    "candidate": "synthetic:friendship:material:CH03.P3.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P3.S4",
+    "claim": "synthetic:friendship:claim:CH03.P3.S4",
+    "candidate": "synthetic:friendship:material:CH03.P3.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P4",
+    "claim": "synthetic:friendship:claim:CH03.P4",
+    "candidate": "synthetic:friendship:material:CH03.P4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P4.S1",
+    "claim": "synthetic:friendship:claim:CH03.P4.S1",
+    "candidate": "synthetic:friendship:material:CH03.P4.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P4.S2",
+    "claim": "synthetic:friendship:claim:CH03.P4.S2",
+    "candidate": "synthetic:friendship:material:CH03.P4.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P4.S3",
+    "claim": "synthetic:friendship:claim:CH03.P4.S3",
+    "candidate": "synthetic:friendship:material:CH03.P4.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH03.P4.S4",
+    "claim": "synthetic:friendship:claim:CH03.P4.S4",
+    "candidate": "synthetic:friendship:material:CH03.P4.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P1",
+    "claim": "synthetic:friendship:claim:CH04.P1",
+    "candidate": "synthetic:friendship:material:CH04.P1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P1.S1",
+    "claim": "synthetic:friendship:claim:CH04.P1.S1",
+    "candidate": "synthetic:friendship:material:CH04.P1.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P1.S2",
+    "claim": "synthetic:friendship:claim:CH04.P1.S2",
+    "candidate": "synthetic:friendship:material:CH04.P1.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P1.S3",
+    "claim": "synthetic:friendship:claim:CH04.P1.S3",
+    "candidate": "synthetic:friendship:material:CH04.P1.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P1.S4",
+    "claim": "synthetic:friendship:claim:CH04.P1.S4",
+    "candidate": "synthetic:friendship:material:CH04.P1.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P2",
+    "claim": "synthetic:friendship:claim:CH04.P2",
+    "candidate": "synthetic:friendship:material:CH04.P2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P2.S1",
+    "claim": "synthetic:friendship:claim:CH04.P2.S1",
+    "candidate": "synthetic:friendship:material:CH04.P2.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P2.S2",
+    "claim": "synthetic:friendship:claim:CH04.P2.S2",
+    "candidate": "synthetic:friendship:material:CH04.P2.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P2.S3",
+    "claim": "synthetic:friendship:claim:CH04.P2.S3",
+    "candidate": "synthetic:friendship:material:CH04.P2.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P2.S4",
+    "claim": "synthetic:friendship:claim:CH04.P2.S4",
+    "candidate": "synthetic:friendship:material:CH04.P2.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P3",
+    "claim": "synthetic:friendship:claim:CH04.P3",
+    "candidate": "synthetic:friendship:material:CH04.P3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P3.S1",
+    "claim": "synthetic:friendship:claim:CH04.P3.S1",
+    "candidate": "synthetic:friendship:material:CH04.P3.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P3.S2",
+    "claim": "synthetic:friendship:claim:CH04.P3.S2",
+    "candidate": "synthetic:friendship:material:CH04.P3.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P3.S3",
+    "claim": "synthetic:friendship:claim:CH04.P3.S3",
+    "candidate": "synthetic:friendship:material:CH04.P3.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P3.S4",
+    "claim": "synthetic:friendship:claim:CH04.P3.S4",
+    "candidate": "synthetic:friendship:material:CH04.P3.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P4",
+    "claim": "synthetic:friendship:claim:CH04.P4",
+    "candidate": "synthetic:friendship:material:CH04.P4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P4.S1",
+    "claim": "synthetic:friendship:claim:CH04.P4.S1",
+    "candidate": "synthetic:friendship:material:CH04.P4.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P4.S2",
+    "claim": "synthetic:friendship:claim:CH04.P4.S2",
+    "candidate": "synthetic:friendship:material:CH04.P4.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P4.S3",
+    "claim": "synthetic:friendship:claim:CH04.P4.S3",
+    "candidate": "synthetic:friendship:material:CH04.P4.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH04.P4.S4",
+    "claim": "synthetic:friendship:claim:CH04.P4.S4",
+    "candidate": "synthetic:friendship:material:CH04.P4.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P1",
+    "claim": "synthetic:friendship:claim:CH05.P1",
+    "candidate": "synthetic:friendship:material:CH05.P1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P1.S1",
+    "claim": "synthetic:friendship:claim:CH05.P1.S1",
+    "candidate": "synthetic:friendship:material:CH05.P1.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P1.S2",
+    "claim": "synthetic:friendship:claim:CH05.P1.S2",
+    "candidate": "synthetic:friendship:material:CH05.P1.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P1.S3",
+    "claim": "synthetic:friendship:claim:CH05.P1.S3",
+    "candidate": "synthetic:friendship:material:CH05.P1.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P1.S4",
+    "claim": "synthetic:friendship:claim:CH05.P1.S4",
+    "candidate": "synthetic:friendship:material:CH05.P1.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P2",
+    "claim": "synthetic:friendship:claim:CH05.P2",
+    "candidate": "synthetic:friendship:material:CH05.P2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P2.S1",
+    "claim": "synthetic:friendship:claim:CH05.P2.S1",
+    "candidate": "synthetic:friendship:material:CH05.P2.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P2.S2",
+    "claim": "synthetic:friendship:claim:CH05.P2.S2",
+    "candidate": "synthetic:friendship:material:CH05.P2.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P2.S3",
+    "claim": "synthetic:friendship:claim:CH05.P2.S3",
+    "candidate": "synthetic:friendship:material:CH05.P2.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P2.S4",
+    "claim": "synthetic:friendship:claim:CH05.P2.S4",
+    "candidate": "synthetic:friendship:material:CH05.P2.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P3",
+    "claim": "synthetic:friendship:claim:CH05.P3",
+    "candidate": "synthetic:friendship:material:CH05.P3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P3.S1",
+    "claim": "synthetic:friendship:claim:CH05.P3.S1",
+    "candidate": "synthetic:friendship:material:CH05.P3.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P3.S2",
+    "claim": "synthetic:friendship:claim:CH05.P3.S2",
+    "candidate": "synthetic:friendship:material:CH05.P3.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P3.S3",
+    "claim": "synthetic:friendship:claim:CH05.P3.S3",
+    "candidate": "synthetic:friendship:material:CH05.P3.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P3.S4",
+    "claim": "synthetic:friendship:claim:CH05.P3.S4",
+    "candidate": "synthetic:friendship:material:CH05.P3.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P4",
+    "claim": "synthetic:friendship:claim:CH05.P4",
+    "candidate": "synthetic:friendship:material:CH05.P4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P4.S1",
+    "claim": "synthetic:friendship:claim:CH05.P4.S1",
+    "candidate": "synthetic:friendship:material:CH05.P4.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P4.S2",
+    "claim": "synthetic:friendship:claim:CH05.P4.S2",
+    "candidate": "synthetic:friendship:material:CH05.P4.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P4.S3",
+    "claim": "synthetic:friendship:claim:CH05.P4.S3",
+    "candidate": "synthetic:friendship:material:CH05.P4.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH05.P4.S4",
+    "claim": "synthetic:friendship:claim:CH05.P4.S4",
+    "candidate": "synthetic:friendship:material:CH05.P4.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P1",
+    "claim": "synthetic:friendship:claim:CH06.P1",
+    "candidate": "synthetic:friendship:material:CH06.P1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P1.S1",
+    "claim": "synthetic:friendship:claim:CH06.P1.S1",
+    "candidate": "synthetic:friendship:material:CH06.P1.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P1.S2",
+    "claim": "synthetic:friendship:claim:CH06.P1.S2",
+    "candidate": "synthetic:friendship:material:CH06.P1.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P1.S3",
+    "claim": "synthetic:friendship:claim:CH06.P1.S3",
+    "candidate": "synthetic:friendship:material:CH06.P1.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P1.S4",
+    "claim": "synthetic:friendship:claim:CH06.P1.S4",
+    "candidate": "synthetic:friendship:material:CH06.P1.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P2",
+    "claim": "synthetic:friendship:claim:CH06.P2",
+    "candidate": "synthetic:friendship:material:CH06.P2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P2.S1",
+    "claim": "synthetic:friendship:claim:CH06.P2.S1",
+    "candidate": "synthetic:friendship:material:CH06.P2.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P2.S2",
+    "claim": "synthetic:friendship:claim:CH06.P2.S2",
+    "candidate": "synthetic:friendship:material:CH06.P2.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P2.S3",
+    "claim": "synthetic:friendship:claim:CH06.P2.S3",
+    "candidate": "synthetic:friendship:material:CH06.P2.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P2.S4",
+    "claim": "synthetic:friendship:claim:CH06.P2.S4",
+    "candidate": "synthetic:friendship:material:CH06.P2.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P3",
+    "claim": "synthetic:friendship:claim:CH06.P3",
+    "candidate": "synthetic:friendship:material:CH06.P3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P3.S1",
+    "claim": "synthetic:friendship:claim:CH06.P3.S1",
+    "candidate": "synthetic:friendship:material:CH06.P3.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P3.S2",
+    "claim": "synthetic:friendship:claim:CH06.P3.S2",
+    "candidate": "synthetic:friendship:material:CH06.P3.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P3.S3",
+    "claim": "synthetic:friendship:claim:CH06.P3.S3",
+    "candidate": "synthetic:friendship:material:CH06.P3.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P3.S4",
+    "claim": "synthetic:friendship:claim:CH06.P3.S4",
+    "candidate": "synthetic:friendship:material:CH06.P3.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P4",
+    "claim": "synthetic:friendship:claim:CH06.P4",
+    "candidate": "synthetic:friendship:material:CH06.P4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P4.S1",
+    "claim": "synthetic:friendship:claim:CH06.P4.S1",
+    "candidate": "synthetic:friendship:material:CH06.P4.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P4.S2",
+    "claim": "synthetic:friendship:claim:CH06.P4.S2",
+    "candidate": "synthetic:friendship:material:CH06.P4.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P4.S3",
+    "claim": "synthetic:friendship:claim:CH06.P4.S3",
+    "candidate": "synthetic:friendship:material:CH06.P4.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH06.P4.S4",
+    "claim": "synthetic:friendship:claim:CH06.P4.S4",
+    "candidate": "synthetic:friendship:material:CH06.P4.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P1",
+    "claim": "synthetic:friendship:claim:CH07.P1",
+    "candidate": "synthetic:friendship:material:CH07.P1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P1.S1",
+    "claim": "synthetic:friendship:claim:CH07.P1.S1",
+    "candidate": "synthetic:friendship:material:CH07.P1.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P1.S2",
+    "claim": "synthetic:friendship:claim:CH07.P1.S2",
+    "candidate": "synthetic:friendship:material:CH07.P1.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P1.S3",
+    "claim": "synthetic:friendship:claim:CH07.P1.S3",
+    "candidate": "synthetic:friendship:material:CH07.P1.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P1.S4",
+    "claim": "synthetic:friendship:claim:CH07.P1.S4",
+    "candidate": "synthetic:friendship:material:CH07.P1.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P2",
+    "claim": "synthetic:friendship:claim:CH07.P2",
+    "candidate": "synthetic:friendship:material:CH07.P2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P2.S1",
+    "claim": "synthetic:friendship:claim:CH07.P2.S1",
+    "candidate": "synthetic:friendship:material:CH07.P2.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P2.S2",
+    "claim": "synthetic:friendship:claim:CH07.P2.S2",
+    "candidate": "synthetic:friendship:material:CH07.P2.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P2.S3",
+    "claim": "synthetic:friendship:claim:CH07.P2.S3",
+    "candidate": "synthetic:friendship:material:CH07.P2.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P2.S4",
+    "claim": "synthetic:friendship:claim:CH07.P2.S4",
+    "candidate": "synthetic:friendship:material:CH07.P2.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P3",
+    "claim": "synthetic:friendship:claim:CH07.P3",
+    "candidate": "synthetic:friendship:material:CH07.P3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P3.S1",
+    "claim": "synthetic:friendship:claim:CH07.P3.S1",
+    "candidate": "synthetic:friendship:material:CH07.P3.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P3.S2",
+    "claim": "synthetic:friendship:claim:CH07.P3.S2",
+    "candidate": "synthetic:friendship:material:CH07.P3.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P3.S3",
+    "claim": "synthetic:friendship:claim:CH07.P3.S3",
+    "candidate": "synthetic:friendship:material:CH07.P3.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P3.S4",
+    "claim": "synthetic:friendship:claim:CH07.P3.S4",
+    "candidate": "synthetic:friendship:material:CH07.P3.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P4",
+    "claim": "synthetic:friendship:claim:CH07.P4",
+    "candidate": "synthetic:friendship:material:CH07.P4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P4.S1",
+    "claim": "synthetic:friendship:claim:CH07.P4.S1",
+    "candidate": "synthetic:friendship:material:CH07.P4.S1"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P4.S2",
+    "claim": "synthetic:friendship:claim:CH07.P4.S2",
+    "candidate": "synthetic:friendship:material:CH07.P4.S2"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P4.S3",
+    "claim": "synthetic:friendship:claim:CH07.P4.S3",
+    "candidate": "synthetic:friendship:material:CH07.P4.S3"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH07.P4.S4",
+    "claim": "synthetic:friendship:claim:CH07.P4.S4",
+    "candidate": "synthetic:friendship:material:CH07.P4.S4"
+  },
+  {
+    "meaning": "synthetic:friendship:meaning:CH01.P1",
+    "claim": "synthetic:friendship:claim:CH01.P1",
+    "candidate": "synthetic:friendship:material:CH01.P1"
+  }
+]

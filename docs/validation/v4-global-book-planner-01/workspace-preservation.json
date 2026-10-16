@@ -1,0 +1,20 @@
+{
+  "existingWorktrees": 58,
+  "allHeadsBranchesStatusesAndTrackedNonignoredUntrackedBytesPreserved": true,
+  "mainUncommittedFiles": 11,
+  "mainShortStatusRows": 3,
+  "preexistingMissingGitMarkers": [
+    "/private/tmp/gyeol-annual-fortune-reader-quality-polish-01",
+    "/private/tmp/gyeol-career-editorial-quality-fix-01",
+    "/private/tmp/gyeol-compatibility-editorial-quality-fix-01",
+    "/private/tmp/gyeol-comprehensive-editorial-quality-fix-01",
+    "/private/tmp/gyeol-love-editorial-quality-fix-01",
+    "/private/tmp/gyeol-major-fortune-reader-quality-polish-01",
+    "/private/tmp/gyeol-six-product-common-editorial-polish-01",
+    "/private/tmp/gyeol-six-product-integration-01"
+  ],
+  "repairsOrPrunes": 0,
+  "originalSnapshotHash": "503d0b92e330f73a25ce0eef0afa7c09f5604c7bdcddc2040e6de89851394dd9",
+  "rawSnapshotsExternal": true,
+  "destructiveGitOperations": 0
+}

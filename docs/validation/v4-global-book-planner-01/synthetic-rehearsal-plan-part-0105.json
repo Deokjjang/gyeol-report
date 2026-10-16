@@ -1,0 +1,1542 @@
+[
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/81",
+      "recordSha256": "84cbeee07651603b1f5a3b793e006a044e2bf4afc59a3f77bf7afe11f650e036",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "84cbeee07651603b1f5a3b793e006a044e2bf4afc59a3f77bf7afe11f650e036",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/82",
+      "recordSha256": "e06bab85bfd9d4b293cf23a19e6465c83f57f3b9a9b12b3960a3d23395ffb939",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "e06bab85bfd9d4b293cf23a19e6465c83f57f3b9a9b12b3960a3d23395ffb939",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/83",
+      "recordSha256": "dc64a15d31cb39ce2c1979f8671dc4ac32d1fc2a839117d2f9ae3c1f543de69a",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "dc64a15d31cb39ce2c1979f8671dc4ac32d1fc2a839117d2f9ae3c1f543de69a",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/84",
+      "recordSha256": "39a7290834e40869a28edf2ca1372af20ed4ebd503287c341df35cc48fd08a31",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "39a7290834e40869a28edf2ca1372af20ed4ebd503287c341df35cc48fd08a31",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/85",
+      "recordSha256": "9cde456f532cd28c8d0b4bb46770ab2883961756fd4af166e36cd1f938c08e3b",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "9cde456f532cd28c8d0b4bb46770ab2883961756fd4af166e36cd1f938c08e3b",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/86",
+      "recordSha256": "bf5f51062c79dc0c96c9816c159306f94aae78678e5ede09f4efb8f0ba95c11c",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "bf5f51062c79dc0c96c9816c159306f94aae78678e5ede09f4efb8f0ba95c11c",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/87",
+      "recordSha256": "5d6e7125a98caf447d1ff8e1b88a2be7101e15c228b9d3a8f204ce1029601dff",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "5d6e7125a98caf447d1ff8e1b88a2be7101e15c228b9d3a8f204ce1029601dff",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/88",
+      "recordSha256": "0233a558d9ec77b875bd5994fb160a03aa1b1c908452ca973275d3ca99ba5ed9",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "0233a558d9ec77b875bd5994fb160a03aa1b1c908452ca973275d3ca99ba5ed9",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/89",
+      "recordSha256": "826743eef4d45e0ceef3c6ce0f7279468c460835e2fc6f4280197e83270a57b4",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "826743eef4d45e0ceef3c6ce0f7279468c460835e2fc6f4280197e83270a57b4",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/90",
+      "recordSha256": "b5756cc7df7f4a20a6b7cf0b6aef1892d64b4dd1ab29eeb0e822a9bfc5c16529",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "b5756cc7df7f4a20a6b7cf0b6aef1892d64b4dd1ab29eeb0e822a9bfc5c16529",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/91",
+      "recordSha256": "590d0ec169c7ebf990033bc6c64e3ec4ea4a3b7da86f76abcee1675a6437f9c3",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "590d0ec169c7ebf990033bc6c64e3ec4ea4a3b7da86f76abcee1675a6437f9c3",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/92",
+      "recordSha256": "8abbc976b3fc2c9e3c0c2f1d8d9dc4dcf160be68112673a823af1f8615130d0a",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "8abbc976b3fc2c9e3c0c2f1d8d9dc4dcf160be68112673a823af1f8615130d0a",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/93",
+      "recordSha256": "81d411f99b0cb0bec36a334d542874b01f643779cf485b971d95f0f1aff8eb51",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "81d411f99b0cb0bec36a334d542874b01f643779cf485b971d95f0f1aff8eb51",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/94",
+      "recordSha256": "1f11140e68648124febcc3b0e00bf2f37325b6febf48add1bc7654d3a6d44efb",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "1f11140e68648124febcc3b0e00bf2f37325b6febf48add1bc7654d3a6d44efb",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/95",
+      "recordSha256": "93523809d33822f718ac361fe48c1dde4fa01eb91086a918de730674cb700447",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "93523809d33822f718ac361fe48c1dde4fa01eb91086a918de730674cb700447",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/96",
+      "recordSha256": "a70b3e1335bdea6094427780bd9e3016601fb0ce49bbc1374031e74121e6d359",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "a70b3e1335bdea6094427780bd9e3016601fb0ce49bbc1374031e74121e6d359",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/97",
+      "recordSha256": "0f11ec20088caebe1d90b5f29fdfe51a314c71925e2a8c58873feeb2aa309eb4",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "0f11ec20088caebe1d90b5f29fdfe51a314c71925e2a8c58873feeb2aa309eb4",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/98",
+      "recordSha256": "d477daaffa6f3fb47093ee49dc04012b1628249a367afe1a7be98f2e35af1273",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "d477daaffa6f3fb47093ee49dc04012b1628249a367afe1a7be98f2e35af1273",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/99",
+      "recordSha256": "ce9691f64fcf57e6bce2fa61c84745afc269719ad50988ac21a80b1c6b94cb2c",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ce9691f64fcf57e6bce2fa61c84745afc269719ad50988ac21a80b1c6b94cb2c",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/100",
+      "recordSha256": "3c10f9c75a18df33d3833db4587900ff30daa872d13afb9e2714d615c0555157",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "3c10f9c75a18df33d3833db4587900ff30daa872d13afb9e2714d615c0555157",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/101",
+      "recordSha256": "c7d3b80dd25f1d855df2012db6c3461be567eb6b5f65199a167671dcc57f137e",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "c7d3b80dd25f1d855df2012db6c3461be567eb6b5f65199a167671dcc57f137e",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/102",
+      "recordSha256": "233cc827f071c4d09c9afaa4b5a1678d7cf145f3da97fb5ebc723e98e41f0069",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "233cc827f071c4d09c9afaa4b5a1678d7cf145f3da97fb5ebc723e98e41f0069",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/103",
+      "recordSha256": "15474d527b463f47a9abd1b560ef53c124fcf344dfd72c579e7718d375ce4a0d",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "15474d527b463f47a9abd1b560ef53c124fcf344dfd72c579e7718d375ce4a0d",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/104",
+      "recordSha256": "0eb0702ac921d3f41a5e0478c36300899665e4013f81f0caeb6d8d8c46681cbd",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "0eb0702ac921d3f41a5e0478c36300899665e4013f81f0caeb6d8d8c46681cbd",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/105",
+      "recordSha256": "ac96882a71e95ca2791c14d2e34262fb8f205d417bdd73d66bb2bca8e51aa96b",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ac96882a71e95ca2791c14d2e34262fb8f205d417bdd73d66bb2bca8e51aa96b",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/106",
+      "recordSha256": "e60a5ea6e8cd3802fb7fd386144d733dc30eaa9f1495f8dabc41522a3c016e57",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "e60a5ea6e8cd3802fb7fd386144d733dc30eaa9f1495f8dabc41522a3c016e57",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/107",
+      "recordSha256": "89527775c14f53971898130b73c6b4b9db9fdc4d4109bb9f9b27688e1372f8dd",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "89527775c14f53971898130b73c6b4b9db9fdc4d4109bb9f9b27688e1372f8dd",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/108",
+      "recordSha256": "79c8bd411d76eab242b3f704003d3576f58d092c2598183b936abe61b80f4baf",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "79c8bd411d76eab242b3f704003d3576f58d092c2598183b936abe61b80f4baf",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/109",
+      "recordSha256": "73847a9e381c18e792ae62e2539804da073c4cd4d59b4da4e442989d901b029c",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "73847a9e381c18e792ae62e2539804da073c4cd4d59b4da4e442989d901b029c",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/110",
+      "recordSha256": "61dc03b41d85d8ba1cc028a5cbefd325ad6d5d9192834031b0e76f8f3edbd8a3",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "61dc03b41d85d8ba1cc028a5cbefd325ad6d5d9192834031b0e76f8f3edbd8a3",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/111",
+      "recordSha256": "ef6875ce5d6ec8e08edadf3a2cbc512252e3f708020a427a49db9de036ffd69b",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ef6875ce5d6ec8e08edadf3a2cbc512252e3f708020a427a49db9de036ffd69b",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/112",
+      "recordSha256": "deccfdfe2014dfe6b229b1bb8de5cf242586ed73397b963d256777d043ab9cd5",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "deccfdfe2014dfe6b229b1bb8de5cf242586ed73397b963d256777d043ab9cd5",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/113",
+      "recordSha256": "ede27e4142a145f99596b41d5e14105cfa876409f4a798fda83f7ccc61507f6e",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ede27e4142a145f99596b41d5e14105cfa876409f4a798fda83f7ccc61507f6e",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/114",
+      "recordSha256": "66c1b1d1ad41b1f1628171dff87a113d72bda0e4e43ddc498f4229bda616efa5",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "66c1b1d1ad41b1f1628171dff87a113d72bda0e4e43ddc498f4229bda616efa5",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/115",
+      "recordSha256": "23c45ce1b03a6aed58e31fa6e1222aa48166224cc1924f42a41aa33b69ddf41f",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "23c45ce1b03a6aed58e31fa6e1222aa48166224cc1924f42a41aa33b69ddf41f",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/116",
+      "recordSha256": "1ba82fccb1b8129c83a68b5c822df687eea07cce8f4fc6bb1e8938eb3a7571aa",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "1ba82fccb1b8129c83a68b5c822df687eea07cce8f4fc6bb1e8938eb3a7571aa",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/117",
+      "recordSha256": "7eaa92f1c861f03f01b324e3e6cd8cbc6f3558a5233af2d8d5cfc58536402067",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "7eaa92f1c861f03f01b324e3e6cd8cbc6f3558a5233af2d8d5cfc58536402067",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/118",
+      "recordSha256": "5f064efb005138ee9fe0435401ab7f533899804f16fd3e58096e93eeca13a277",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "5f064efb005138ee9fe0435401ab7f533899804f16fd3e58096e93eeca13a277",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/119",
+      "recordSha256": "ef8666ab681667b6183229f187cdd33c59cc3f199cf12a7b67506db7bdfda74a",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ef8666ab681667b6183229f187cdd33c59cc3f199cf12a7b67506db7bdfda74a",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/120",
+      "recordSha256": "beb6852d0514c32eab2d856918d601982d075961f6fe2633fbd6f1c29717dbe3",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "beb6852d0514c32eab2d856918d601982d075961f6fe2633fbd6f1c29717dbe3",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/2",
+      "recordSha256": "b2f77b57443a95140d4bb5f63b1e9a04ab35f41482f5088665c8aa9fb04ccf63",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "b2f77b57443a95140d4bb5f63b1e9a04ab35f41482f5088665c8aa9fb04ccf63",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/3",
+      "recordSha256": "1498bd73ad1bd9aa955d3f80b050b9401160f6edf1eac23c576e64bcb850b410",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "1498bd73ad1bd9aa955d3f80b050b9401160f6edf1eac23c576e64bcb850b410",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/4",
+      "recordSha256": "bac2dc3283fd71739e7769339965b5b3d89e412d1830b9236048e4c1c7b3ba24",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "bac2dc3283fd71739e7769339965b5b3d89e412d1830b9236048e4c1c7b3ba24",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/5",
+      "recordSha256": "ebbdaee5f1fa29763a740e1e2887084b170b7b5d97ccadd5705f0de62da87bc0",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ebbdaee5f1fa29763a740e1e2887084b170b7b5d97ccadd5705f0de62da87bc0",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/6",
+      "recordSha256": "35dac22dd5b3b62ff62cbf3705ff28f1c0629b4a6accbfd2d459d9017107e948",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "35dac22dd5b3b62ff62cbf3705ff28f1c0629b4a6accbfd2d459d9017107e948",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/7",
+      "recordSha256": "24a06d4a23e140948389e026d49af6f47c5aa638622d4f1ccc9cc70c160cabb4",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "24a06d4a23e140948389e026d49af6f47c5aa638622d4f1ccc9cc70c160cabb4",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/8",
+      "recordSha256": "935b0772a6bbe630ab50e8dde4837630188ba2549f5e97bd185574fcbb5ab3af",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "935b0772a6bbe630ab50e8dde4837630188ba2549f5e97bd185574fcbb5ab3af",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/9",
+      "recordSha256": "5d8dd4f78c003bf5e1a5984679cefc1ed1a64632d9d2637093e046b4974f3195",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "5d8dd4f78c003bf5e1a5984679cefc1ed1a64632d9d2637093e046b4974f3195",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/10",
+      "recordSha256": "bd0e96ec65ea94995e8890e459a60262366b6bc73b80ce53171c381bf8ebe2d1",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "bd0e96ec65ea94995e8890e459a60262366b6bc73b80ce53171c381bf8ebe2d1",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/11",
+      "recordSha256": "a4a08b959e27bf6c9c1b1045c5e2a8c378dc31a439375325eae2d992c3d0e1aa",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "a4a08b959e27bf6c9c1b1045c5e2a8c378dc31a439375325eae2d992c3d0e1aa",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/12",
+      "recordSha256": "404f890c0c6d0365fa63369311acb2053276ca4425c2e715c76c8cefcbecf6d0",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "404f890c0c6d0365fa63369311acb2053276ca4425c2e715c76c8cefcbecf6d0",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/13",
+      "recordSha256": "22f90aa31b588852a0ebde64ff44f8a2af1dee5d5a31acd6cd8099691983ab83",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "22f90aa31b588852a0ebde64ff44f8a2af1dee5d5a31acd6cd8099691983ab83",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/14",
+      "recordSha256": "8da0fe68378a62f5f1aa10977a5f3f9a4d009e15dad3ded2cd7ca7ca95456395",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "8da0fe68378a62f5f1aa10977a5f3f9a4d009e15dad3ded2cd7ca7ca95456395",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/15",
+      "recordSha256": "1d48eb4da43c798ff7bcf3706d408ea103064aed478dffe9f9e6b3a212002494",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "1d48eb4da43c798ff7bcf3706d408ea103064aed478dffe9f9e6b3a212002494",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/16",
+      "recordSha256": "099a84f909addb272d18513a2dd0ccd14f637b1332abada3c8cafaf17a945673",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "099a84f909addb272d18513a2dd0ccd14f637b1332abada3c8cafaf17a945673",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/17",
+      "recordSha256": "7de537d21c599e2eda0fe7a0184081023f53667de1a7cff91bd73292e009c0c4",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "7de537d21c599e2eda0fe7a0184081023f53667de1a7cff91bd73292e009c0c4",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/18",
+      "recordSha256": "0ae889da6b63652fe77f8396e04264bd2a078455a1c6e21221a16c9e017a4046",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "0ae889da6b63652fe77f8396e04264bd2a078455a1c6e21221a16c9e017a4046",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/19",
+      "recordSha256": "984721648356950e5258f8a0ec1376794c560200f2ea26e30966b4ac74219a5d",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "984721648356950e5258f8a0ec1376794c560200f2ea26e30966b4ac74219a5d",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/20",
+      "recordSha256": "27acdd6fce67ff9501c3e6872f5f7f1ebe951e102b4798fa4a49a35c47d6f7b0",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "27acdd6fce67ff9501c3e6872f5f7f1ebe951e102b4798fa4a49a35c47d6f7b0",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/21",
+      "recordSha256": "f9be5ff8bde25983ab08a9dbb41c161775f60c86a13b95b555a04acf5c9665fc",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "f9be5ff8bde25983ab08a9dbb41c161775f60c86a13b95b555a04acf5c9665fc",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/22",
+      "recordSha256": "ae786671e64cd75dfd92bc3515e21dc5445ddd14a1ff6a0d02ab0cd4e2a67643",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ae786671e64cd75dfd92bc3515e21dc5445ddd14a1ff6a0d02ab0cd4e2a67643",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/23",
+      "recordSha256": "ab6e345e215e327570a24749f58ccea5909e01ea8992eb35420ff8e2452c7ed4",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ab6e345e215e327570a24749f58ccea5909e01ea8992eb35420ff8e2452c7ed4",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/24",
+      "recordSha256": "c24ab8d88a493fa57ee75e48fb4618c5bac17ee704864ffd8689186822cc0670",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "c24ab8d88a493fa57ee75e48fb4618c5bac17ee704864ffd8689186822cc0670",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/25",
+      "recordSha256": "645a56ca4a43fa699ff841d4fb627ee601b73b5317d2bb3ddedad9452ec309e2",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "645a56ca4a43fa699ff841d4fb627ee601b73b5317d2bb3ddedad9452ec309e2",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/26",
+      "recordSha256": "b6d42e52f06443e0fd694512a46e70cd184a00213ce957b9a7ce19c949994edb",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "b6d42e52f06443e0fd694512a46e70cd184a00213ce957b9a7ce19c949994edb",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/27",
+      "recordSha256": "88377a58aa120bfda6f530d996271b4b43a3a2406e106e3be7905aa26cf117c0",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "88377a58aa120bfda6f530d996271b4b43a3a2406e106e3be7905aa26cf117c0",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/28",
+      "recordSha256": "316217ca1546ba1449c0ecb4db3014d64672c70c01ae57d6d0b1a04d55abed95",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "316217ca1546ba1449c0ecb4db3014d64672c70c01ae57d6d0b1a04d55abed95",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/29",
+      "recordSha256": "12af8c5c0f3d25f9ae0d600a234f24f28be5153920f677296607990e062c0d00",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "12af8c5c0f3d25f9ae0d600a234f24f28be5153920f677296607990e062c0d00",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/30",
+      "recordSha256": "64d32edcf04612504d66882ceb5343103c34f517e63781e6b1daa38cfe1353c7",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "64d32edcf04612504d66882ceb5343103c34f517e63781e6b1daa38cfe1353c7",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/31",
+      "recordSha256": "b8138974a21915ea8e06b27c1f499d9ac73230106cedc38209e66c910ceef407",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "b8138974a21915ea8e06b27c1f499d9ac73230106cedc38209e66c910ceef407",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/32",
+      "recordSha256": "28d412bf0a32d41555b1f3973a7ffa8056f3f502700637a4b7bf1ccbe149337d",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "28d412bf0a32d41555b1f3973a7ffa8056f3f502700637a4b7bf1ccbe149337d",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/33",
+      "recordSha256": "ea214393e5ec96ea31f4fb4668f31782283e9ea87f2b65af8f56afc65a041c44",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ea214393e5ec96ea31f4fb4668f31782283e9ea87f2b65af8f56afc65a041c44",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/34",
+      "recordSha256": "74d7e5d9a2e607ab96e51cde4c95fc2b9e2b939fca3c76be5fe9fdfe4f388af5",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "74d7e5d9a2e607ab96e51cde4c95fc2b9e2b939fca3c76be5fe9fdfe4f388af5",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/35",
+      "recordSha256": "5eeaaecac90891ebf0c667ea6bcbe12549f4c22aff04dd4f918c4f4fcd22b950",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "5eeaaecac90891ebf0c667ea6bcbe12549f4c22aff04dd4f918c4f4fcd22b950",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/36",
+      "recordSha256": "4813adb2bbfd5ab774ea76a7dc2657377bf41331bb46ee593ee64794f3bcded4",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "4813adb2bbfd5ab774ea76a7dc2657377bf41331bb46ee593ee64794f3bcded4",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/37",
+      "recordSha256": "850c357c587e2bb38a97f5d0f744d27c2e8f461024b2744214368127d9233121",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "850c357c587e2bb38a97f5d0f744d27c2e8f461024b2744214368127d9233121",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/38",
+      "recordSha256": "9e0dfbcfe673314efae3f4cf88493fe9a6a3103881a450214891bad537ea3305",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "9e0dfbcfe673314efae3f4cf88493fe9a6a3103881a450214891bad537ea3305",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/39",
+      "recordSha256": "ee0d474afcd532292e518927ba39fcc37781efd4a4bbee84761bfd51d583127a",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ee0d474afcd532292e518927ba39fcc37781efd4a4bbee84761bfd51d583127a",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/40",
+      "recordSha256": "855e8f6be73cab1770a9def9d1562a98f9f4601fb2169312d46f3d6e5216c214",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "855e8f6be73cab1770a9def9d1562a98f9f4601fb2169312d46f3d6e5216c214",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/41",
+      "recordSha256": "19ad31a76294eb907b869cd1636b12acbc5018a8aa096c9bed8bc388c28b3eca",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "19ad31a76294eb907b869cd1636b12acbc5018a8aa096c9bed8bc388c28b3eca",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/42",
+      "recordSha256": "a7980174867f292c08a31d11e359afa8f584a378a493d7f39da8e3d5739ba3a4",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "a7980174867f292c08a31d11e359afa8f584a378a493d7f39da8e3d5739ba3a4",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/43",
+      "recordSha256": "dfbda7a15c9183af409d5f99d9cd9c57ec0bb3f9e23bbbf2a4bb7c60361e89b0",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "dfbda7a15c9183af409d5f99d9cd9c57ec0bb3f9e23bbbf2a4bb7c60361e89b0",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/44",
+      "recordSha256": "fb841dd004d800b774b070266a99ecca82476a8f1b526dda6e2496d3752d64a1",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "fb841dd004d800b774b070266a99ecca82476a8f1b526dda6e2496d3752d64a1",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/45",
+      "recordSha256": "8d51ab923bae20d14cc4a5e5be1a320cab33b4e4860e9ffe4493a1a311b70c4f",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "8d51ab923bae20d14cc4a5e5be1a320cab33b4e4860e9ffe4493a1a311b70c4f",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/46",
+      "recordSha256": "56e07c34a7def04ad4151702488f3abd551eb1d854c16f72cd059b58562a36d2",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "56e07c34a7def04ad4151702488f3abd551eb1d854c16f72cd059b58562a36d2",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/47",
+      "recordSha256": "45d21c585c4f86f11245fa57cfdaf2b3866dd593212fe6fd3716b18edb84313d",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "45d21c585c4f86f11245fa57cfdaf2b3866dd593212fe6fd3716b18edb84313d",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/48",
+      "recordSha256": "65098044638d87c922f8607863cbd4f6a25155576f71572b8494c93355c1aced",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "65098044638d87c922f8607863cbd4f6a25155576f71572b8494c93355c1aced",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/49",
+      "recordSha256": "38a15c90d4c8c2126ba64329f149b2770e1512b345f7b9d23003b6a95c08bed6",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "38a15c90d4c8c2126ba64329f149b2770e1512b345f7b9d23003b6a95c08bed6",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/50",
+      "recordSha256": "bd795c8e62fe3f0d3f2b66979b21f74b4e4c1307ddaccd5808a41a881f509e55",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "bd795c8e62fe3f0d3f2b66979b21f74b4e4c1307ddaccd5808a41a881f509e55",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/51",
+      "recordSha256": "0a76e8193a319498764f0713d1e0e1488316c2df1ac68bd71bc9d2d1fd47f268",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "0a76e8193a319498764f0713d1e0e1488316c2df1ac68bd71bc9d2d1fd47f268",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/52",
+      "recordSha256": "1cf4216c4eece5b4824cf473313562e7b7b6c39f54825834b384c58fbbb7cb01",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "1cf4216c4eece5b4824cf473313562e7b7b6c39f54825834b384c58fbbb7cb01",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/53",
+      "recordSha256": "231b0eadc4cb707ce9220bc36259c5e43ab792d6888fda5a1564fd8d970adb1d",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "231b0eadc4cb707ce9220bc36259c5e43ab792d6888fda5a1564fd8d970adb1d",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/54",
+      "recordSha256": "2599b9c92e54a2a6d6a631dfc15df2608b44ba9f04c52277218b69a58a84f77b",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "2599b9c92e54a2a6d6a631dfc15df2608b44ba9f04c52277218b69a58a84f77b",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/55",
+      "recordSha256": "1987480e78f3ba15629af6b5f42badee8709577398184e03e366c9f550585a76",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "1987480e78f3ba15629af6b5f42badee8709577398184e03e366c9f550585a76",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/56",
+      "recordSha256": "04019d00cf4ad8e7803df86ebf925e4dad52f3e725a8ed708dc7353448d32d50",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "04019d00cf4ad8e7803df86ebf925e4dad52f3e725a8ed708dc7353448d32d50",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/57",
+      "recordSha256": "d0151cfc9ac1e53038d0d113cac5f6d7a294bd9882a39f30dceeb45233de91d3",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "d0151cfc9ac1e53038d0d113cac5f6d7a294bd9882a39f30dceeb45233de91d3",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/58",
+      "recordSha256": "d649bb737eb9bd4b99ce0c4a0eb7d15ee7d64331b11c72ca52400eedccd4490a",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "d649bb737eb9bd4b99ce0c4a0eb7d15ee7d64331b11c72ca52400eedccd4490a",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/59",
+      "recordSha256": "9f30cc41e4e04533d4f9347ef352bc63238c0df2de3a672710b6652b97cbf947",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "9f30cc41e4e04533d4f9347ef352bc63238c0df2de3a672710b6652b97cbf947",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/60",
+      "recordSha256": "12a76fda49dd50f02816784ab5807298034a225863cd373d11ebe5db51bc6a97",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "12a76fda49dd50f02816784ab5807298034a225863cd373d11ebe5db51bc6a97",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/61",
+      "recordSha256": "3cd0ab4f9001d1a10f481ecff13683b3f32e17dce4ab9dc256d9287c293ce95f",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "3cd0ab4f9001d1a10f481ecff13683b3f32e17dce4ab9dc256d9287c293ce95f",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/62",
+      "recordSha256": "bda78a434f78dd2ba57f2fced98d3cd4c1aac545941a56bf0b6c90b9c7ba8714",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "bda78a434f78dd2ba57f2fced98d3cd4c1aac545941a56bf0b6c90b9c7ba8714",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/63",
+      "recordSha256": "8714f1448394e4f1e5e00a1057fc1bb97ba2f91bf58ec2557233bf92a97e2c4e",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "8714f1448394e4f1e5e00a1057fc1bb97ba2f91bf58ec2557233bf92a97e2c4e",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/64",
+      "recordSha256": "31377d8d9d387de300c560afce46274dc9830f4254d67658fd74dd4e037e202c",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "31377d8d9d387de300c560afce46274dc9830f4254d67658fd74dd4e037e202c",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/65",
+      "recordSha256": "ef4b9edced36e7282660eeaf0aef469673174a2724c18f84a7a46813f8ed0734",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "ef4b9edced36e7282660eeaf0aef469673174a2724c18f84a7a46813f8ed0734",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/66",
+      "recordSha256": "61a05c8675249c10196353f34f553e4e79d9a030c4ce11d8e7c0bf6f2810ab30",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "61a05c8675249c10196353f34f553e4e79d9a030c4ce11d8e7c0bf6f2810ab30",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/67",
+      "recordSha256": "f8c37aa92601052e1a97cdea6e242aebf3a11d60f89056a53d5b9c11acb86e2a",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "f8c37aa92601052e1a97cdea6e242aebf3a11d60f89056a53d5b9c11acb86e2a",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/68",
+      "recordSha256": "e0829da5783d5ce67590e60336fe9736924b42658758f5f323cb8df9ba6d55dd",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "e0829da5783d5ce67590e60336fe9736924b42658758f5f323cb8df9ba6d55dd",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/69",
+      "recordSha256": "b7e62d120ec6ed29581656b2b55f476dbddab98de205417dbcacff4684febaa9",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "b7e62d120ec6ed29581656b2b55f476dbddab98de205417dbcacff4684febaa9",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/70",
+      "recordSha256": "0f168cd145091c63cacd936b289b8bb3b467cb160bd015b35a642c0bdea88c51",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "0f168cd145091c63cacd936b289b8bb3b467cb160bd015b35a642c0bdea88c51",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/71",
+      "recordSha256": "53bb7d0675a4b18283f219ce5b71d8b9d69595e68061e3be8157d5aecc8f9bc6",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "53bb7d0675a4b18283f219ce5b71d8b9d69595e68061e3be8157d5aecc8f9bc6",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/72",
+      "recordSha256": "0b8663eefa4f925c818a7ad282926661a1fa0f94b0a2bc98b1073c2fc046cd77",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "0b8663eefa4f925c818a7ad282926661a1fa0f94b0a2bc98b1073c2fc046cd77",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/73",
+      "recordSha256": "b95a299ec3b7e04898495d4a3bf3a2bcdf8315ad14aef27b7a6a473bdd52d290",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "b95a299ec3b7e04898495d4a3bf3a2bcdf8315ad14aef27b7a6a473bdd52d290",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/74",
+      "recordSha256": "13b00dc08ac076c6097bce3285b4d3994a362eb582f2028dfeee20637b2cbaff",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "13b00dc08ac076c6097bce3285b4d3994a362eb582f2028dfeee20637b2cbaff",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/75",
+      "recordSha256": "0d7ef0fe9eb90d50611c3004ce9070f613f8cd195af8aa7c4f4d05f39d0c5f0a",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "0d7ef0fe9eb90d50611c3004ce9070f613f8cd195af8aa7c4f4d05f39d0c5f0a",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/76",
+      "recordSha256": "5821af9f4f19bf9b2062cbe20d7554918bf5e5081eb948593deb45aef5e1543e",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "5821af9f4f19bf9b2062cbe20d7554918bf5e5081eb948593deb45aef5e1543e",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/77",
+      "recordSha256": "b96ba08270da8447bb351a7565a135e8eb93b4d45b58564317e57bddf6b4f0cb",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "b96ba08270da8447bb351a7565a135e8eb93b4d45b58564317e57bddf6b4f0cb",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/78",
+      "recordSha256": "fb48a667a781be6d88474bd235e41e5c9c49f127db4618251088acb99b418b26",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "fb48a667a781be6d88474bd235e41e5c9c49f127db4618251088acb99b418b26",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/79",
+      "recordSha256": "9edde1f6a668d9fbb034a7f20178beb104dd77e042aeb7d2fd8b6b9e9d27305e",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "9edde1f6a668d9fbb034a7f20178beb104dd77e042aeb7d2fd8b6b9e9d27305e",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/80",
+      "recordSha256": "41cef4dc7abc38539617593f02a28d80a9b686f295f2dc07d3e244da2c6b63fb",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "41cef4dc7abc38539617593f02a28d80a9b686f295f2dc07d3e244da2c6b63fb",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/121",
+      "recordSha256": "da70357065bc63d3084939b5df0440bac8051347cf005a274f556759b8ff4cd5",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "da70357065bc63d3084939b5df0440bac8051347cf005a274f556759b8ff4cd5",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/122",
+      "recordSha256": "038ab2de83776fab547c9f89a062e4a08dfe48c74dac273f41fe0b4d3ca63868",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "038ab2de83776fab547c9f89a062e4a08dfe48c74dac273f41fe0b4d3ca63868",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/123",
+      "recordSha256": "7ef89f4e3562816368ea706ef0f206497347f36334275fa2fb52d19a71b4251c",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "7ef89f4e3562816368ea706ef0f206497347f36334275fa2fb52d19a71b4251c",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/124",
+      "recordSha256": "5ad82930ee0fb35116147c333d0c422601382517ba60f714ba49e944be6511a0",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "5ad82930ee0fb35116147c333d0c422601382517ba60f714ba49e944be6511a0",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/125",
+      "recordSha256": "b18305873cb871ebf155a0212e7440e357f06d804d2334f7ed4be2c46211f1d7",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "b18305873cb871ebf155a0212e7440e357f06d804d2334f7ed4be2c46211f1d7",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/126",
+      "recordSha256": "45773ea69ab8b83d2741a49e7962dad63c3cca6ed1e40447c0099d86a6d98fe0",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "45773ea69ab8b83d2741a49e7962dad63c3cca6ed1e40447c0099d86a6d98fe0",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/127",
+      "recordSha256": "c81ae9d08e63dbe81c16bdd985b9a6496c2806dd11ba054212a4918800d611dd",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "c81ae9d08e63dbe81c16bdd985b9a6496c2806dd11ba054212a4918800d611dd",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/128",
+      "recordSha256": "a8d7afa58ab98d415bf44c472cb4f23c8b8d3467ae51aeb85c48de4ce040b907",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "a8d7afa58ab98d415bf44c472cb4f23c8b8d3467ae51aeb85c48de4ce040b907",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/129",
+      "recordSha256": "4a97ffce5af943a3dc742e9dadd6936e31944c1ba379ff39c2d0cdc8f5590780",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "4a97ffce5af943a3dc742e9dadd6936e31944c1ba379ff39c2d0cdc8f5590780",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/130",
+      "recordSha256": "4b11b47c37709172111692803aca3a99c1952038bc8150cd6592097f0535be1d",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "4b11b47c37709172111692803aca3a99c1952038bc8150cd6592097f0535be1d",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/131",
+      "recordSha256": "d52aaeaa3495a1aa58af69098753d5500f39cbaf130291084da421af013d3b78",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "d52aaeaa3495a1aa58af69098753d5500f39cbaf130291084da421af013d3b78",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/132",
+      "recordSha256": "18ceaeec72fa3d604ba511cf383cc4f25ef03b8c8eeb2698019a656436fa02da",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "18ceaeec72fa3d604ba511cf383cc4f25ef03b8c8eeb2698019a656436fa02da",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/133",
+      "recordSha256": "f9fb4f659571b065a8bba4390ad098204d75f9ddea7af72e9cf8156abd6d3eeb",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "f9fb4f659571b065a8bba4390ad098204d75f9ddea7af72e9cf8156abd6d3eeb",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/134",
+      "recordSha256": "5bb0944076f01fe729d1b3dd9ee771be6796468cf8be2264858c0bb9304f7bda",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "5bb0944076f01fe729d1b3dd9ee771be6796468cf8be2264858c0bb9304f7bda",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/135",
+      "recordSha256": "6392fa41bb5ace98d4151d9f07208cf9093414e803ece82f45dce37e48ab1ccc",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "6392fa41bb5ace98d4151d9f07208cf9093414e803ece82f45dce37e48ab1ccc",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/136",
+      "recordSha256": "47c12b7ed3e3574ce5c9ea2c0a2210f865c349bd78f7b22008893b0c3b06dcbc",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "47c12b7ed3e3574ce5c9ea2c0a2210f865c349bd78f7b22008893b0c3b06dcbc",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/137",
+      "recordSha256": "105fc0a0cb45f952b4100c8d9d2ffa889e64dafb4a93bfa8a1cf886b995ffe04",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "105fc0a0cb45f952b4100c8d9d2ffa889e64dafb4a93bfa8a1cf886b995ffe04",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/138",
+      "recordSha256": "64cc8ec82293d32c86085b172d279ca2191c48e02308a91e8ef9798bc6ecfbcb",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "64cc8ec82293d32c86085b172d279ca2191c48e02308a91e8ef9798bc6ecfbcb",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/139",
+      "recordSha256": "db6e29fe130d2df88c3dbbe2c4f92762ab4b60601a07ef55f380694cf23e5f0e",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "db6e29fe130d2df88c3dbbe2c4f92762ab4b60601a07ef55f380694cf23e5f0e",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/140",
+      "recordSha256": "08674c1c714ac59dd3cd1cb033643d2dd8af3cc351c13e335f6b0393b779d22d",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "08674c1c714ac59dd3cd1cb033643d2dd8af3cc351c13e335f6b0393b779d22d",
+    "version": "synthetic-manager-report-v1"
+  },
+  {
+    "locator": {
+      "file": "tests/fixtures/compatibility-manager-report-specialist-engine-01/synthetic-knowledge.json",
+      "pointer": "/materials/1",
+      "recordSha256": "65ce9f6ec05a49ec8d8b452bdbe074e8a715b82720f8928882688eeb0bfc6a64",
+      "fileSha256": "ad9cd7ab4023226df598487a60166ad3ba1402103852d3ddf64623fe802ce60d",
+      "sourceVersion": "synthetic-manager-report-v1"
+    },
+    "hash": "65ce9f6ec05a49ec8d8b452bdbe074e8a715b82720f8928882688eeb0bfc6a64",
+    "version": "synthetic-manager-report-v1"
+  }
+]

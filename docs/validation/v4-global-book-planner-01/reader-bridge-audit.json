@@ -1,0 +1,6 @@
+{
+  "status": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+  "newBridges": 0,
+  "strictExactReplacementAssignments": 0,
+  "strictTopicLinksNotPromoted": true
+}

@@ -1,0 +1,254 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "OBJECT",
+  "keys": [
+    "planVersion",
+    "productScope",
+    "relationshipScope",
+    "fixtureId",
+    "mode",
+    "readerContract",
+    "chapterPlans",
+    "paragraphPlans",
+    "sentenceRolePlans",
+    "selectedCandidateReferences",
+    "primaryInformation",
+    "supportingInformation",
+    "evidenceLedger",
+    "sourceProvenance",
+    "canonicalFactRootOwnership",
+    "meaningIdentity",
+    "conflictDecisions",
+    "repetitionBudget",
+    "temporalAssignments",
+    "relationshipAssignments",
+    "conditionalRequirements",
+    "deferredDisplayDependencies",
+    "unfilledQuestions",
+    "withholdReasons",
+    "qualityDiagnostics",
+    "search",
+    "planStatus",
+    "errors",
+    "runtimeUse",
+    "customerApproved",
+    "customerEligible",
+    "customerSelections",
+    "customerClaims",
+    "customerBookAllocations",
+    "actualDisplayRecordsIssued"
+  ],
+  "logicalJsonHash": "ee8eb27494301e168287c3d26c10a1a3f1dad6e1dd6f0dcde60fc39468898a7e",
+  "parts": [
+    {
+      "file": "display-dependencies-part-0006.json",
+      "sha256": "1f4f5dcfbeb5ceb8d4b53bae1e0bebb5ae88a033189a771daf58f1b822e2582a",
+      "kind": "FIELD",
+      "key": "planVersion"
+    },
+    {
+      "file": "display-dependencies-part-0007.json",
+      "sha256": "0ee372a859780eefe9be421979424a70eec1d07071c2d5d8d642d0fb656f5374",
+      "kind": "FIELD",
+      "key": "productScope"
+    },
+    {
+      "file": "display-dependencies-part-0008.json",
+      "sha256": "2b30fd3278f8188686c7e6b274df9ba0f195941cc95de4419800e434f484fb11",
+      "kind": "FIELD",
+      "key": "relationshipScope"
+    },
+    {
+      "file": "display-dependencies-part-0009.json",
+      "sha256": "e379f067a86a2fff128bee14f523818799156d06c53500c06b1dd83f8fafa180",
+      "kind": "FIELD",
+      "key": "fixtureId"
+    },
+    {
+      "file": "display-dependencies-part-0010.json",
+      "sha256": "32e25dac5795a5fade8dc9bbdb0060d04cbd4c25053af7bb5427ab3233147b73",
+      "kind": "FIELD",
+      "key": "mode"
+    },
+    {
+      "file": "display-dependencies-part-0011.json",
+      "sha256": "783df43b19dfaf284bc66c30be9ad5ff21d1ebddc16654c681e436c4d1096df0",
+      "kind": "FIELD",
+      "key": "readerContract"
+    },
+    {
+      "file": "display-dependencies-part-0012.json",
+      "sha256": "15e384754c9d603128cbe5302cd48b113c50d18e21128ca556bee7e4c8796311",
+      "kind": "FIELD",
+      "key": "chapterPlans"
+    },
+    {
+      "file": "display-dependencies-part-0013.json",
+      "sha256": "6b1259c1f6dc5350acdb0db1efd84525fd3e240d568502ca3f51eb45d8a07ed2",
+      "kind": "FIELD",
+      "key": "paragraphPlans"
+    },
+    {
+      "file": "display-dependencies-part-0014.json",
+      "sha256": "abfde36f7939f284fef26e0b5181899a561ea008185f6c18a1092accf8f1d465",
+      "kind": "FIELD",
+      "key": "sentenceRolePlans"
+    },
+    {
+      "file": "display-dependencies-part-0015.json",
+      "sha256": "02246d8faf4a5fb9655d55ab5622cc8632c30b90e0ec2266c948043c4baa6fd3",
+      "kind": "FIELD",
+      "key": "selectedCandidateReferences"
+    },
+    {
+      "file": "display-dependencies-part-0016.json",
+      "sha256": "261bae324ca3a2a8e6c8f1c2495fc172bd234c4dad77321c66ad45173f2c3735",
+      "kind": "FIELD",
+      "key": "primaryInformation"
+    },
+    {
+      "file": "display-dependencies-part-0017.json",
+      "sha256": "9bcf3b8af76e8d06b8224fff6f816def43b830eff745130a0b048bd76b54b0b4",
+      "kind": "FIELD",
+      "key": "supportingInformation"
+    },
+    {
+      "file": "display-dependencies-part-0018.json",
+      "sha256": "c9e6501fe3ac8e58a690df158c8e8c95e668e2e69529b86fc78c68477b875193",
+      "kind": "FIELD",
+      "key": "evidenceLedger"
+    },
+    {
+      "file": "display-dependencies-part-0019.json",
+      "sha256": "5e9d907671b29dd1dc09c38e6da8546d004e667a2106e079c533f5f2dd8abef8",
+      "kind": "FIELD",
+      "key": "sourceProvenance"
+    },
+    {
+      "file": "display-dependencies-part-0020.json",
+      "sha256": "40c0425711843a5eb673bd8e7ea21604aeb19172d0a5b36fb01cdfc516211d84",
+      "kind": "FIELD",
+      "key": "canonicalFactRootOwnership"
+    },
+    {
+      "file": "display-dependencies-part-0021.json",
+      "sha256": "ef8099c020c6d89c549fe72d61cf041a5f1a8d12537cc0e304d68b3db9284e68",
+      "kind": "FIELD",
+      "key": "meaningIdentity"
+    },
+    {
+      "file": "display-dependencies-part-0022.json",
+      "sha256": "fdf4951fd0e6a7f9f5922f3d180ac16d7f1c04aac1c09cf56fdf3b6e4c6d909e",
+      "kind": "FIELD",
+      "key": "conflictDecisions"
+    },
+    {
+      "file": "display-dependencies-part-0023.json",
+      "sha256": "8ab89bf20fee0c295dc3d5638ec821999bbc1519f68114fb79dfe98402dd174e",
+      "kind": "FIELD",
+      "key": "repetitionBudget"
+    },
+    {
+      "file": "display-dependencies-part-0024.json",
+      "sha256": "6586ce6d667aa4e91b693217922dc79a4cf86080727b54b868fb11dd7f1c043e",
+      "kind": "FIELD",
+      "key": "temporalAssignments"
+    },
+    {
+      "file": "display-dependencies-part-0025.json",
+      "sha256": "058bd403d9f2f337fb29d1f1a5742610339eb3ed7d6c025cdd6ec81d78348dc1",
+      "kind": "FIELD",
+      "key": "relationshipAssignments"
+    },
+    {
+      "file": "display-dependencies-part-0026.json",
+      "sha256": "aaa0b6e7bb7539d595ad3d2cfcb73e2694695787b054be19b2dd514625b5b579",
+      "kind": "FIELD",
+      "key": "conditionalRequirements"
+    },
+    {
+      "file": "display-dependencies-part-0027.json",
+      "sha256": "712c5346c8dc41c24187175fb7da7d2c2c9feb8d4a2432b38595b1b97ec05fe2",
+      "kind": "FIELD",
+      "key": "deferredDisplayDependencies"
+    },
+    {
+      "file": "display-dependencies-part-0028.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "kind": "FIELD",
+      "key": "unfilledQuestions"
+    },
+    {
+      "file": "display-dependencies-part-0029.json",
+      "sha256": "16cd2280118f8f18d61cf18db8a42f7c61877e77deefa074f61a1d3b990121db",
+      "kind": "FIELD",
+      "key": "withholdReasons"
+    },
+    {
+      "file": "display-dependencies-part-0030.json",
+      "sha256": "496623a542a2ba881b81a5b475664efac9af35aef7a3c4260a41ed2f9b6c22bf",
+      "kind": "FIELD",
+      "key": "qualityDiagnostics"
+    },
+    {
+      "file": "display-dependencies-part-0031.json",
+      "sha256": "619eb6f699b97a56b141f17f6aca94a10467cc2731d95ce856ba357018a78707",
+      "kind": "FIELD",
+      "key": "search"
+    },
+    {
+      "file": "display-dependencies-part-0032.json",
+      "sha256": "d4dc56476dd73c21f100a800e694ec17a55e05ff5cdb4f3416ef241e370e65e4",
+      "kind": "FIELD",
+      "key": "planStatus"
+    },
+    {
+      "file": "display-dependencies-part-0033.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "kind": "FIELD",
+      "key": "errors"
+    },
+    {
+      "file": "display-dependencies-part-0034.json",
+      "sha256": "03e71f70f1db7ef0322ed906b779d1613928c52776fb4a29796c61a2f7833193",
+      "kind": "FIELD",
+      "key": "runtimeUse"
+    },
+    {
+      "file": "display-dependencies-part-0035.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerApproved"
+    },
+    {
+      "file": "display-dependencies-part-0036.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerEligible"
+    },
+    {
+      "file": "display-dependencies-part-0037.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerSelections"
+    },
+    {
+      "file": "display-dependencies-part-0038.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerClaims"
+    },
+    {
+      "file": "display-dependencies-part-0039.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerBookAllocations"
+    },
+    {
+      "file": "display-dependencies-part-0040.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "actualDisplayRecordsIssued"
+    }
+  ]
+}

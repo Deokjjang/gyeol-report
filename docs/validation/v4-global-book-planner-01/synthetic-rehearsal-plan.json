@@ -1,0 +1,48 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 12,
+  "logicalJsonHash": "c85e2e8c5aea6b1065b8b49557a727b77afd86285cd51ae726777626055c969a",
+  "parts": [
+    {
+      "file": "synthetic-rehearsal-plan-part-0001.json",
+      "sha256": "87f85eae47ad4eb0eefe28a452c56446ed043c1b5e3fde4f506de4b39419c74c",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0002.json",
+      "sha256": "0b5aabbc01941c5a1e5f91febdabece77b68a82cd19493c4a0b82a6557294a8b",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0003.json",
+      "sha256": "7ee2a79c5da5556c71fdd6ff62de0ee18db9006db9fc8d3d279cbd9bc69a8d22",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0004.json",
+      "sha256": "cf9fb4d5fd5702480c486b82bc81d2d5aa22693608957158249075f2d91ee3dd",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0042.json",
+      "sha256": "c6509db3ae280c7f7ff6ab627d2d7b677cd5b4b1acc29c7f0f42ac5afdb4cd7d",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0080.json",
+      "sha256": "04bb03f56453fa61d2d5d7b6b5a091497e35666e5abd8271769fac56a346e565",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0127.json",
+      "sha256": "ca891b3f74a884478780ad80364ced9208aab357e3a2b011e811a347a1458f9d",
+      "kind": "ITEM"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0189.json",
+      "sha256": "7e7066ef7cf7eda56bdc68553d2156217781e329f471644923b87b3002aa235f",
+      "kind": "ITEM"
+    }
+  ]
+}

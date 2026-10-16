@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "question-coverage.json.gz",
+  "payloadHash": "335656dde6f09023c59f3d73eddcabe679f159622ed00a626b7e787e7690d3f8",
+  "logicalJsonHash": "a98643dc1a1e1bb97568b297fa130c1ba6bb51e78af0ef4a46808a7f84471f26",
+  "uncompressedBytes": 6189205
+}

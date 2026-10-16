@@ -1,0 +1,92 @@
+[
+  {
+    "id": "CH01",
+    "paragraphIds": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "assignedQuestions": 20
+  },
+  {
+    "id": "CH02",
+    "paragraphIds": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "assignedQuestions": 20
+  },
+  {
+    "id": "CH03",
+    "paragraphIds": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "assignedQuestions": 20
+  },
+  {
+    "id": "CH04",
+    "paragraphIds": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "assignedQuestions": 20
+  },
+  {
+    "id": "CH05",
+    "paragraphIds": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "assignedQuestions": 20
+  },
+  {
+    "id": "CH06",
+    "paragraphIds": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "assignedQuestions": 20
+  },
+  {
+    "id": "CH07",
+    "paragraphIds": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "assignedQuestions": 20
+  },
+  {
+    "id": "CH08",
+    "paragraphIds": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "assignedQuestions": 20
+  },
+  {
+    "id": "CH09",
+    "paragraphIds": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "assignedQuestions": 0
+  }
+]

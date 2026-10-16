@@ -1,0 +1,9 @@
+{
+  "readerContract": "compatibility-editorial-quality-01-v1",
+  "questionRegistry": "product-specialist-foundation-v1",
+  "knowledgeCatalog": "unified-catalog-v1",
+  "sourceVerification": "source-verification-v1",
+  "graph": "actual-evidence-graph-v1",
+  "binder": "knowledge-binder-v1",
+  "specialistEngine": "compatibility-business-partner-specialist-v1"
+}

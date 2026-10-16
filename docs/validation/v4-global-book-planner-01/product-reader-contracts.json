@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "product-reader-contracts.json.gz",
+  "payloadHash": "04ef00e28fbe7eb2e01c3c7f7cb0dede0945d22e4f6f83d1529bec0945eb6a2f",
+  "logicalJsonHash": "7f9add74f439a7dada200f630124f67ca327ca57696d42b49e2e5cc530a8185a",
+  "uncompressedBytes": 7181378
+}

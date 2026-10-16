@@ -1,0 +1,159 @@
+[
+  {
+    "option": "synthetic:friendship:material:000-coverage-trap",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:verified-MEET",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:verified-DISCLOSE",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:verified-HELP",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:verified-REPAYMENT",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:verified-ADVICE",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:verified-ACTUAL_REPAIR",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:other-friends-independent",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:accepted-favour-not-debt",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:life-change-not-relationship-end",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:voluntary-distance",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:safe-relationship-ending",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:respect-contact-refusal",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:apology-not-forgiveness",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:forgiveness-not-recontact",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_CLAIM_PRIMARY_REUSE",
+      "SAME_MEANING_OR_CLAIM",
+      "SAME_MEANING_WITHOUT_VERIFIED_DISTINCT_APPLICATION"
+    ]
+  },
+  {
+    "option": "synthetic:friendship:scenario:verified-root-reuse",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION"
+    ]
+  }
+]

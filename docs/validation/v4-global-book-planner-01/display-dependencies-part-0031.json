@@ -1,0 +1,14 @@
+{
+  "method": "GLOBAL_CONSTRAINT_AWARE",
+  "visited": 392,
+  "complete": true,
+  "optimality": "EXHAUSTIVE_WITHIN_REGISTERED_POOL",
+  "objective": [
+    0,
+    180,
+    20,
+    160,
+    5,
+    1800
+  ]
+}

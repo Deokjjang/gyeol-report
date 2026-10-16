@@ -1,0 +1,425 @@
+[
+  {
+    "engine": "comprehensive",
+    "fixture": "fixture-comprehensive-A",
+    "originalCase": "global-case-01.json",
+    "originalSemanticAuditHash": "9f380d848599cc61e3ea642631d01ee7cdff6447e674c6bf98e3a7e60eff1986",
+    "fields": {
+      "conflicts": {
+        "hash": "7854609abfc8c5311dea7e601efd9b029ea553b1f182b5acfc2d65e7679a9010",
+        "entries": 2101
+      },
+      "meaningRelations": {
+        "hash": "4d8d65a342053a37169e7fd510b82eb15cfa60a494eef1ab98029e8160ccf5c6",
+        "entries": 3403
+      },
+      "duplicateFactGroups": {
+        "hash": "560f17f8787d322f7555a44908bd62148d9d3b846c4365b72e4951a434587240",
+        "entries": 52
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "comprehensive",
+    "fixture": "fixture-comprehensive-F",
+    "originalCase": "global-case-02.json",
+    "originalSemanticAuditHash": "544f204d3a2d6e64ce8d4818ee8a66211f6a6e6eb9ce79315b39120095124aa3",
+    "fields": {
+      "conflicts": {
+        "hash": "15c52e7b25497631c94ab94502dda62621949287d0d3e7314b852010390c4813",
+        "entries": 526
+      },
+      "meaningRelations": {
+        "hash": "6c7a2229c71c97229217232c5b4997b73f0cdd213dae1dd9946c4b5448058afd",
+        "entries": 2789
+      },
+      "duplicateFactGroups": {
+        "hash": "6cabe197292e51e65e9d0e49a1b30595531f173d49c24a0806a89e4841d06d5b",
+        "entries": 7
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "career",
+    "fixture": "fixture-career-A",
+    "originalCase": "global-case-03.json",
+    "originalSemanticAuditHash": "6f2c4347c107f9be98eb9e06e86bdd1b463618712b3157b89b8f164acc54ce2c",
+    "fields": {
+      "conflicts": {
+        "hash": "e7d3969e76b3eeb60c1ce174a8e0ce266b16dea2020d8d30051e4924105dd113",
+        "entries": 7083
+      },
+      "meaningRelations": {
+        "hash": "039b8ecf44d3749c5ad0170eece302ced44b9c753683331f8ebd7420ae09120d",
+        "entries": 3452
+      },
+      "duplicateFactGroups": {
+        "hash": "f47618b4c580c5a8e86892c2a4613a95da72114505b1b574486e449462535bb5",
+        "entries": 20
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "career",
+    "fixture": "fixture-career-F",
+    "originalCase": "global-case-04.json",
+    "originalSemanticAuditHash": "8078420263f7a28f58a2f6c3cd0bb3a35ad6c92c0475e6281a1d7990c2233552",
+    "fields": {
+      "conflicts": {
+        "hash": "a911fb60f2f2b1ca2104c335b527bf8432063638c9134d1ea533378c7e24aa58",
+        "entries": 5532
+      },
+      "meaningRelations": {
+        "hash": "d71895777a1f6cb671b36b75cfe52116328efcd6d0bee84b1438a6b5d5ab0a42",
+        "entries": 2950
+      },
+      "duplicateFactGroups": {
+        "hash": "3bef593d77b3e5aa642e130a9bf4593ea823a8bc5ff6f0f76742cec3e110e2ec",
+        "entries": 11
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "love",
+    "fixture": "fixture-love-A",
+    "originalCase": "global-case-05.json",
+    "originalSemanticAuditHash": "39bb8c0232efadec5db816fe3755b87b191d9219ebe74c8aa763addc92a82b13",
+    "fields": {
+      "conflicts": {
+        "hash": "f4d5f0ec0e4f60352dd641b5d26a2daf04c69c36f581e890247668e9828b7162",
+        "entries": 4743
+      },
+      "meaningRelations": {
+        "hash": "57ae312920a946742d542a542a50c7683331e1eb980e9aa8928e7467452d35f7",
+        "entries": 4412
+      },
+      "duplicateFactGroups": {
+        "hash": "bd51172c140685c30eb91e1b83b819383efdcc154cf81e5bfc3a5e4d8d4ca995",
+        "entries": 40
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "love",
+    "fixture": "fixture-love-F",
+    "originalCase": "global-case-06.json",
+    "originalSemanticAuditHash": "a7758e020be74d8d1a56c1637c900c356bd14fb70436f533749d0e7dc2ce5db8",
+    "fields": {
+      "conflicts": {
+        "hash": "9d2751cb991ef35d0b7c8e4dd1223f313849f8524bfb2522c41632b3883288b2",
+        "entries": 4425
+      },
+      "meaningRelations": {
+        "hash": "80757a8dd38422cc5be8241867f7b17a2eaa18d49fae9a1146a7d6cab8b5fccc",
+        "entries": 4303
+      },
+      "duplicateFactGroups": {
+        "hash": "bafec9482d2daeb2b8b32f69731c47ffc2b96e2f84819d20510b5e0308aff0fb",
+        "entries": 3
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "compatibility-love",
+    "fixture": "fixture-compatibility-A",
+    "originalCase": "global-case-07.json",
+    "originalSemanticAuditHash": "99b4014e7b778736ca0421568a6827c9590fcc90bee327cf4555c9880ee38ff3",
+    "fields": {
+      "conflicts": {
+        "hash": "eabfa45d4aeda45b8b7b72c8a917f239e46fa7493f03345182e877c5ef037851",
+        "entries": 3160
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "compatibility-marriage",
+    "fixture": "fixture-compatibility-marriage",
+    "originalCase": "global-case-08.json",
+    "originalSemanticAuditHash": "0d5ec7a93ca0192cbbd07116350cf85ebdb4a13f0760446635a4e5f8a5dde5fe",
+    "fields": {
+      "conflicts": {
+        "hash": "046ad0282093d79b5769d9e3f6a1f765e8532194debe6a6a5fc4bcd8ae1daf07",
+        "entries": 6216
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "fixture": "fixture-compatibility-parentChild",
+    "originalCase": "global-case-09.json",
+    "originalSemanticAuditHash": "990e5e4eb7e3a722893fa472031a377dc8e84bf5b9973e1a488e9261c4ea6d6a",
+    "fields": {
+      "conflicts": {
+        "hash": "ccd84470c9c7f517ebfb91bc5c6e4871457ff8bd2c04a3059e6f254d91c2f21b",
+        "entries": 7140
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "compatibility-coworker",
+    "fixture": "fixture-compatibility-coworker",
+    "originalCase": "global-case-10.json",
+    "originalSemanticAuditHash": "0e32eb3f100895de60b6f88e31fc6ab64c58eba6676ff24add5eb856db154424",
+    "fields": {
+      "conflicts": {
+        "hash": "3dbf71399c2eeb889e1f035e357882b04e367c37f172a7c66c0c749259dccc01",
+        "entries": 14706
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "compatibility-manager-report",
+    "fixture": "fixture-compatibility-managerReport",
+    "originalCase": "global-case-11.json",
+    "originalSemanticAuditHash": "b81a29cb9de8fa86aa089b456e6fe10a7e7aad59f25ab362c2a6111430629a33",
+    "fields": {
+      "conflicts": {
+        "hash": "0886739f3b0279369059f02f4c0c1174119dd9b601dfb4ad3a15f74593c79358",
+        "entries": 4560
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "compatibility-business-partner",
+    "fixture": "fixture-compatibility-businessPartner",
+    "originalCase": "global-case-12.json",
+    "originalSemanticAuditHash": "77ed86cda9e65d25ebc20a65791719d34755e1ac4590c7f9302f19d6954c8e1f",
+    "fields": {
+      "conflicts": {
+        "hash": "8374c78ec7370c33973558b57961450571e894860749e4ba3347f620e36a71a7",
+        "entries": 4560
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "compatibility-friendship",
+    "fixture": "fixture-compatibility-friendship",
+    "originalCase": "global-case-13.json",
+    "originalSemanticAuditHash": "303fe35a5edc5c8472da0efeca60e9b57117f95e79fd257b6a3f38a6b92b381a",
+    "fields": {
+      "conflicts": {
+        "hash": "2b5f0aef708a4337488566973767060a23c7bfe64b20cf2d9e7b392de39b093e",
+        "entries": 630
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "major-fortune",
+    "fixture": "fixture-major-A",
+    "originalCase": "global-case-14.json",
+    "originalSemanticAuditHash": "19b6903b10fe4509c585953edf047a7984611ad04a62ed7c73eac74415e280ed",
+    "fields": {
+      "conflicts": {
+        "hash": "7c8b3891c28e3badbe6c7d27b4675e329906d8123145671afc2832c3adfbaf15",
+        "entries": 3916
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "major-fortune",
+    "fixture": "fixture-major-F",
+    "originalCase": "global-case-15.json",
+    "originalSemanticAuditHash": "19b6903b10fe4509c585953edf047a7984611ad04a62ed7c73eac74415e280ed",
+    "fields": {
+      "conflicts": {
+        "hash": "7c8b3891c28e3badbe6c7d27b4675e329906d8123145671afc2832c3adfbaf15",
+        "entries": 3916
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "annual-fortune",
+    "fixture": "fixture-annual-A",
+    "originalCase": "global-case-16.json",
+    "originalSemanticAuditHash": "a43cac48a3db47b7d2c3d94247b349a1c7ed90076025bd1e35a8a46612d0bbd2",
+    "fields": {
+      "conflicts": {
+        "hash": "2276a82517d2e09f084c8d6142df995c1ce76254fe27f8f3e8ea578375e10e4d",
+        "entries": 5886
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "annual-fortune",
+    "fixture": "fixture-annual-F",
+    "originalCase": "global-case-17.json",
+    "originalSemanticAuditHash": "a43cac48a3db47b7d2c3d94247b349a1c7ed90076025bd1e35a8a46612d0bbd2",
+    "fields": {
+      "conflicts": {
+        "hash": "2276a82517d2e09f084c8d6142df995c1ce76254fe27f8f3e8ea578375e10e4d",
+        "entries": 5886
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "major-fortune",
+    "fixture": "fixture-major-transition-C",
+    "originalCase": "global-case-18.json",
+    "originalSemanticAuditHash": "19b6903b10fe4509c585953edf047a7984611ad04a62ed7c73eac74415e280ed",
+    "fields": {
+      "conflicts": {
+        "hash": "7c8b3891c28e3badbe6c7d27b4675e329906d8123145671afc2832c3adfbaf15",
+        "entries": 3916
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "annual-fortune",
+    "fixture": "fixture-annual-transition-C2028",
+    "originalCase": "global-case-19.json",
+    "originalSemanticAuditHash": "a43cac48a3db47b7d2c3d94247b349a1c7ed90076025bd1e35a8a46612d0bbd2",
+    "fields": {
+      "conflicts": {
+        "hash": "2276a82517d2e09f084c8d6142df995c1ce76254fe27f8f3e8ea578375e10e4d",
+        "entries": 5886
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "compatibility-love",
+    "fixture": "fixture-compatibility-unknown-both",
+    "originalCase": "global-case-20.json",
+    "originalSemanticAuditHash": "d588de15abc3996db4feb2d7730a21da67f24e9512bdc363e0bb2fd6e31fb94f",
+    "fields": {
+      "conflicts": {
+        "hash": "d57f12fa3f31547bfd58089b0028f1c758aa904d0477efac87b8a5d93da67baa",
+        "entries": 3160
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "compatibility-love",
+    "fixture": "fixture-compatibility-slot-swap",
+    "originalCase": "global-case-21.json",
+    "originalSemanticAuditHash": "0db5ba1c5df3633c8309ce13c5d4cdf89b1338a257e8cf34b37266a2861d2a9f",
+    "fields": {
+      "conflicts": {
+        "hash": "f41b739e40ca5b833b81bad823643fd57e98e1c52f6b0c104ce186445f7762d2",
+        "entries": 3160
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "comprehensive",
+    "fixture": "fixture-same-natal-different-mbti",
+    "originalCase": "global-case-22.json",
+    "originalSemanticAuditHash": "1cbe77191733a2f2cfcfe120916246dc0d376caba10add0a0b1a23a3ca150c65",
+    "fields": {
+      "conflicts": {
+        "hash": "d1c290ec4170b969479919d2070fc18ce03d25d95009e413ce6a53e012421975",
+        "entries": 1733
+      },
+      "meaningRelations": {
+        "hash": "c11df750187eaddad1072a0135e71b90da2d80e8bd6ea67cd4dfe1af5b585caf",
+        "entries": 3284
+      },
+      "duplicateFactGroups": {
+        "hash": "837aa60e4889369f01db9d9b565e049ca3d2fdd93b05375441cc9b5da8618f67",
+        "entries": 45
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "comprehensive",
+    "fixture": "fixture-same-mbti-different-natal",
+    "originalCase": "global-case-23.json",
+    "originalSemanticAuditHash": "25a7c340b3d12018f35791ba8ecb40434dbe04d71c8ef614d7638a5381a22867",
+    "fields": {
+      "conflicts": {
+        "hash": "0df913d26110c0ca084cdfa46343645d95bba29f7f958295c4036c1a0ed0deca",
+        "entries": 6050
+      },
+      "meaningRelations": {
+        "hash": "a03411d36b6e5ef8990de213d6636291c97122441b15eef9ea8e6a35feb6a0ea",
+        "entries": 4945
+      },
+      "duplicateFactGroups": {
+        "hash": "72ee8170790d9c01bee9e325fd2a057d731bdb98bef7c5b0790f235757acb5a5",
+        "entries": 45
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "career",
+    "fixture": "fixture-same-natal-career",
+    "originalCase": "global-case-24.json",
+    "originalSemanticAuditHash": "4e4973eeefbb96375bbed8b215008a8e72007302feac718702ca98776ae2f732",
+    "fields": {
+      "conflicts": {
+        "hash": "2323e8004cb29f681160995f401a8a713106c9513ce81f08e00eacebefca5a4d",
+        "entries": 4394
+      },
+      "meaningRelations": {
+        "hash": "03e1dffcc04bc5c580341f67d8fe77d4a0abd47b1bfb5c053c661f73dfc90c94",
+        "entries": 2580
+      },
+      "duplicateFactGroups": {
+        "hash": "a65d58a079ae98e329b5fb66bb55d8058ed9561e363beedabfec69abfd0b277e",
+        "entries": 16
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "annual-fortune",
+    "fixture": "fixture-annual-ranged-transition",
+    "originalCase": "global-case-25.json",
+    "originalSemanticAuditHash": "a43cac48a3db47b7d2c3d94247b349a1c7ed90076025bd1e35a8a46612d0bbd2",
+    "fields": {
+      "conflicts": {
+        "hash": "2276a82517d2e09f084c8d6142df995c1ce76254fe27f8f3e8ea578375e10e4d",
+        "entries": 5886
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "annual-fortune",
+    "fixture": "fixture-annual-before-first-dayun",
+    "originalCase": "global-case-26.json",
+    "originalSemanticAuditHash": "a43cac48a3db47b7d2c3d94247b349a1c7ed90076025bd1e35a8a46612d0bbd2",
+    "fields": {
+      "conflicts": {
+        "hash": "2276a82517d2e09f084c8d6142df995c1ce76254fe27f8f3e8ea578375e10e4d",
+        "entries": 5886
+      }
+    },
+    "notReapproved": true
+  },
+  {
+    "engine": "compatibility-love",
+    "fixture": "fixture-compatibility-no-detected-pair",
+    "originalCase": "global-case-27.json",
+    "originalSemanticAuditHash": "1c0b5adf122ad5a20eef6b08fa6e74d6eca911e93607463223ea89f259e39406",
+    "fields": {
+      "conflicts": {
+        "hash": "5d2a648e28e6c46562f52ac2fc168c69c4a95bb2679589388637fbe57b7de482",
+        "entries": 3160
+      }
+    },
+    "notReapproved": true
+  }
+]

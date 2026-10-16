@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "strict-customer-plan.json.gz",
+  "payloadHash": "2981083061dedf46af7ec7bca2681141126a96b5352a41a0a4f3c794773e1986",
+  "logicalJsonHash": "b8d9f495feb375915c217faa5d045b5932272256ab114b02a87dbb7e1903e7f4",
+  "uncompressedBytes": 5724057
+}

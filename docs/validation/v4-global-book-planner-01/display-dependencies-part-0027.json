@@ -1,0 +1,1169 @@
+[
+  {
+    "candidate": "synthetic:friendship:material:CH08.P1",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1",
+        "synthetic:friendship:material:CH07.P3",
+        "synthetic:friendship:material:CH07.P4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P1.S1",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S1",
+        "synthetic:friendship:material:CH07.P3.S1",
+        "synthetic:friendship:material:CH07.P4.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P1.S2",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S2",
+        "synthetic:friendship:material:CH07.P3.S2",
+        "synthetic:friendship:material:CH07.P4.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P1.S3",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S3",
+        "synthetic:friendship:material:CH07.P3.S3",
+        "synthetic:friendship:material:CH07.P4.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P1.S4",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S4",
+        "synthetic:friendship:material:CH07.P3.S4",
+        "synthetic:friendship:material:CH07.P4.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P2",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P3",
+        "synthetic:friendship:material:CH07.P4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P2.S1",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P3.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P3.S1",
+        "synthetic:friendship:material:CH07.P4.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P2.S2",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P3.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P3.S2",
+        "synthetic:friendship:material:CH07.P4.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P2.S3",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P3.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P3.S3",
+        "synthetic:friendship:material:CH07.P4.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P2.S4",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P3.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P3.S4",
+        "synthetic:friendship:material:CH07.P4.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P3",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1",
+        "synthetic:friendship:material:CH07.P4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P3.S1",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S1",
+        "synthetic:friendship:material:CH07.P4.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P3.S2",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S2",
+        "synthetic:friendship:material:CH07.P4.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P3.S3",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S3",
+        "synthetic:friendship:material:CH07.P4.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P3.S4",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S4",
+        "synthetic:friendship:material:CH07.P4.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P4",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1",
+        "synthetic:friendship:material:CH07.P3",
+        "synthetic:friendship:material:CH07.P4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P4.S1",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S1",
+        "synthetic:friendship:material:CH07.P3.S1",
+        "synthetic:friendship:material:CH07.P4.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P4.S2",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S2",
+        "synthetic:friendship:material:CH07.P3.S2",
+        "synthetic:friendship:material:CH07.P4.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P4.S3",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S3",
+        "synthetic:friendship:material:CH07.P3.S3",
+        "synthetic:friendship:material:CH07.P4.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH08.P4.S4",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1.S4",
+        "synthetic:friendship:material:CH07.P3.S4",
+        "synthetic:friendship:material:CH07.P4.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P1",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH04.P1"
+        ],
+        [
+          "synthetic:friendship:material:CH04.P2"
+        ],
+        [
+          "synthetic:friendship:material:CH04.P3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH04.P1",
+        "synthetic:friendship:material:CH04.P2",
+        "synthetic:friendship:material:CH04.P3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P1.S1",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH04.P1.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH04.P2.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH04.P3.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH04.P1.S1",
+        "synthetic:friendship:material:CH04.P2.S1",
+        "synthetic:friendship:material:CH04.P3.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P1.S2",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH04.P1.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH04.P2.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH04.P3.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH04.P1.S2",
+        "synthetic:friendship:material:CH04.P2.S2",
+        "synthetic:friendship:material:CH04.P3.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P1.S3",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH04.P1.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH04.P2.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH04.P3.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH04.P1.S3",
+        "synthetic:friendship:material:CH04.P2.S3",
+        "synthetic:friendship:material:CH04.P3.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P1.S4",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH04.P1.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH04.P2.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH04.P3.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH04.P1.S4",
+        "synthetic:friendship:material:CH04.P2.S4",
+        "synthetic:friendship:material:CH04.P3.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P2",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH01.P2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH01.P2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P2.S1",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH01.P2.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH01.P2.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P2.S2",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH01.P2.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH01.P2.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P2.S3",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH01.P2.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH01.P2.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P2.S4",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH01.P2.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH01.P2.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P3",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH08.P3"
+        ],
+        [
+          "synthetic:friendship:material:CH08.P4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH08.P3",
+        "synthetic:friendship:material:CH08.P4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P3.S1",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH08.P3.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH08.P4.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH08.P3.S1",
+        "synthetic:friendship:material:CH08.P4.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P3.S2",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH08.P3.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH08.P4.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH08.P3.S2",
+        "synthetic:friendship:material:CH08.P4.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P3.S3",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH08.P3.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH08.P4.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH08.P3.S3",
+        "synthetic:friendship:material:CH08.P4.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P3.S4",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH08.P3.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH08.P4.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH08.P3.S4",
+        "synthetic:friendship:material:CH08.P4.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P4",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH04.P2"
+        ],
+        [
+          "synthetic:friendship:material:CH05.P4"
+        ],
+        [
+          "synthetic:friendship:material:CH06.P4"
+        ],
+        [
+          "synthetic:friendship:material:CH08.P3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH04.P2",
+        "synthetic:friendship:material:CH05.P4",
+        "synthetic:friendship:material:CH06.P4",
+        "synthetic:friendship:material:CH08.P3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P4.S1",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH04.P2.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH05.P4.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH06.P4.S1"
+        ],
+        [
+          "synthetic:friendship:material:CH08.P3.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH04.P2.S1",
+        "synthetic:friendship:material:CH05.P4.S1",
+        "synthetic:friendship:material:CH06.P4.S1",
+        "synthetic:friendship:material:CH08.P3.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P4.S2",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH04.P2.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH05.P4.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH06.P4.S2"
+        ],
+        [
+          "synthetic:friendship:material:CH08.P3.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH04.P2.S2",
+        "synthetic:friendship:material:CH05.P4.S2",
+        "synthetic:friendship:material:CH06.P4.S2",
+        "synthetic:friendship:material:CH08.P3.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P4.S3",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH04.P2.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH05.P4.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH06.P4.S3"
+        ],
+        [
+          "synthetic:friendship:material:CH08.P3.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH04.P2.S3",
+        "synthetic:friendship:material:CH05.P4.S3",
+        "synthetic:friendship:material:CH06.P4.S3",
+        "synthetic:friendship:material:CH08.P3.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:material:CH09.P4.S4",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH04.P2.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH05.P4.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH06.P4.S4"
+        ],
+        [
+          "synthetic:friendship:material:CH08.P3.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH04.P2.S4",
+        "synthetic:friendship:material:CH05.P4.S4",
+        "synthetic:friendship:material:CH06.P4.S4",
+        "synthetic:friendship:material:CH08.P3.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:scenario:unconsented-ACTUAL_REPAIR",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1",
+        "synthetic:friendship:material:CH07.P3",
+        "synthetic:friendship:material:CH07.P4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:scenario:verified-ACTUAL_REPAIR",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1",
+        "synthetic:friendship:material:CH07.P3",
+        "synthetic:friendship:material:CH07.P4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": true,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": true
+    }
+  },
+  {
+    "candidate": "synthetic:friendship:scenario:repeated-harm-blocks-repair",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:friendship:material:CH07.P1"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P3"
+        ],
+        [
+          "synthetic:friendship:material:CH07.P4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:friendship:material:CH07.P1",
+        "synthetic:friendship:material:CH07.P3",
+        "synthetic:friendship:material:CH07.P4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": true
+      },
+      "actualDisplayVerified": false
+    }
+  }
+]

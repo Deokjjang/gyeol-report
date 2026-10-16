@@ -1,0 +1,773 @@
+[
+  {
+    "candidate": "synthetic:coworker:material:CH08.P1",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P1.S1",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P1.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P1.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P1.S2",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P1.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P1.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P1.S3",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P1.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P1.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P1.S4",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P1.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P1.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P2",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P2.S1",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P2.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P2.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P2.S2",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P2.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P2.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P2.S3",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P2.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P2.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P2.S4",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P2.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P2.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P3",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P3.S1",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P3.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P3.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P3.S2",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P3.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P3.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P3.S3",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P3.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P3.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P3.S4",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P3.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P3.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P4",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P4.S1",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P4.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P4.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P4.S2",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P4.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P4.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P4.S3",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P4.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P4.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH08.P4.S4",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH07.P4.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "CH07.P4.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P1",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P1.S1",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P1.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P1.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P1.S2",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P1.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P1.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P1.S3",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P1.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P1.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P1.S4",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P1.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P1.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P2",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P2.S1",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P2.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P2.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P2.S2",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P2.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P2.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P2.S3",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P2.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P2.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P2.S4",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P2.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P2.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P3",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P3.S1",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P3.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P3.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P3.S2",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P3.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P3.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P3.S3",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P3.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P3.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P3.S4",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P3.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P3.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P4",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P4.S1",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P4.S1"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P4.S1"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P4.S2",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P4.S2"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P4.S2"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P4.S3",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P4.S3"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P4.S3"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:material:CH09.P4.S4",
+    "dependency": {
+      "kind": "RECALL",
+      "alternatives": [
+        [
+          "synthetic:coworker:material:CH04.P4.S4"
+        ]
+      ],
+      "requiredOriginalIntroductions": [
+        "synthetic:coworker:material:CH04.P4.S4"
+      ],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": {
+        "verifiedBy": "ORIGINAL_SPECIALIST_SESSION",
+        "nativeEligible": false,
+        "externalRegisteredDisplayUsed": false
+      },
+      "actualDisplayVerified": false
+    }
+  },
+  {
+    "candidate": "synthetic:coworker:negative:missing-preceding",
+    "dependency": {
+      "kind": "REPAIR",
+      "alternatives": [],
+      "requiredOriginalIntroductions": [],
+      "plannedIsDisplayed": false,
+      "nativeDisplayProof": null,
+      "actualDisplayVerified": false
+    }
+  }
+]

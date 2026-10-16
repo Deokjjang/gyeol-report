@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "candidate-eligibility.json.gz",
+  "payloadHash": "4874637e5ff46e9cf6953f9c12bf8e69ebdd6ea80e20daec6dd6a621a1786064",
+  "logicalJsonHash": "477abd6a6d23a751a668b62ae0e7f9b0e498ec125ff57009e299cfaac11a28e4",
+  "uncompressedBytes": 6994141
+}

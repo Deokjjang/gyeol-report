@@ -1,0 +1,2433 @@
+[
+  {
+    "id": "synthetic:business-partner:root:natalA",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:natalB",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:mbtiA",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "SOURCE_ATTRIBUTION"
+  },
+  {
+    "id": "synthetic:business-partner:root:mbtiB",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "SOURCE_ATTRIBUTION"
+  },
+  {
+    "id": "synthetic:business-partner:root:pair",
+    "owner": "fixture-pair:synthetic:business-partner:owner:A|synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:AB",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:BA",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P1.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P1.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P1.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P1.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P2.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P2.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P2.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P2.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P3.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P3.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P3.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P3.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P4.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P4.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P4.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH01.P4.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P1.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P1.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P1.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P1.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P2.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P2.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P2.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P2.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P3.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P3.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P3.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P3.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P4.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P4.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P4.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH02.P4.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P1",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P1.S1",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P1.S2",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P1.S3",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P1.S4",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P2",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P2.S1",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P2.S2",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P2.S3",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P2.S4",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P3",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P3.S1",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P3.S2",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P3.S3",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P3.S4",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P4",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P4.S1",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P4.S2",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P4.S3",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH03.P4.S4",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P1.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P1.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P1.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P1.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P2.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P2.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P2.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P2.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P3.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P3.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P3.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P3.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P4.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P4.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P4.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH04.P4.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P1.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P1.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P1.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P1.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P2.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P2.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P2.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P2.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P3.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P3.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P3.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P3.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P4.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P4.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P4.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH05.P4.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P1",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P1.S1",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P1.S2",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P1.S3",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P1.S4",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P2",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P2.S1",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P2.S2",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P2.S3",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P2.S4",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P3",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P3.S1",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P3.S2",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P3.S3",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P3.S4",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P4",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P4.S1",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P4.S2",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P4.S3",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH06.P4.S4",
+    "owner": "synthetic:business-partner:owner:B",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P1.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P1.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P1.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P1.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P2.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P2.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P2.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P2.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P3.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P3.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P3.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P3.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P4.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P4.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P4.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH07.P4.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P1.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P1.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P1.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P1.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P2.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P2.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P2.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P2.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P3.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P3.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P3.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P3.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P4.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P4.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P4.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH08.P4.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P1.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P1.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P1.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P1.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P2.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P2.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P2.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P2.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P3.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P3.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P3.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P3.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P4.S1",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P4.S2",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P4.S3",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  },
+  {
+    "id": "synthetic:business-partner:root:information:CH09.P4.S4",
+    "owner": "synthetic:business-partner:owner:A",
+    "producer": {
+      "file": "tests/fixtures/compatibility-business-partner-specialist-engine-01/synthetic-knowledge.json",
+      "symbol": "declaredSyntheticPair",
+      "version": "synthetic-business-partner-v1",
+      "system": "synthetic-only"
+    },
+    "temporal": null,
+    "independentFact": true,
+    "type": "PRODUCER_OBSERVATION"
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 144,
+  "logicalJsonHash": "73f9c345fa30458cad05b5432da68dd76e256f077577d7e17e0ee1e13f13f7e2",
+  "parts": [
+    {
+      "file": "synthetic-rehearsal-plan-part-0139.json",
+      "sha256": "273012f04dda5d8fcbbe71813590fd681c40384bd5e1576c8bf9b576bed96769",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0140.json",
+      "sha256": "fd0deb05b490a80a3d32004dca90c6aa365e4fd4a554e486b80a7e5e6ab9ac97",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0141.json",
+      "sha256": "3d668ecc2e4de0d919df4640a8177d308e2cedb85c612b16ff898c016c1b8f70",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0142.json",
+      "sha256": "dbc6ebe1edd2e128d17c58e91ddeee62bef5304abf2d13b5ee59c76561559acf",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0143.json",
+      "sha256": "d5fc29ef6f7bd2f77641b0219c3ac4766933589f802be89ed869883692a1dfed",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0144.json",
+      "sha256": "a2074d5a006cfa4b8c10ee1e578d5e2fba084ac1aa13a7c80cc3e4b1527f03ee",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0145.json",
+      "sha256": "c76dca65b1880eaa0b14b860af7fac5184e76708fe21df534f687f96a60b30ec",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0146.json",
+      "sha256": "df8d222c134a8f6ac69389f2f5f57e82907c5a1edb5df84a212ebf30c91d1063",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0147.json",
+      "sha256": "3b8a3a81cd5d7b9d4b3c394e74776c3e42f0b737ecd89d4bbf06a4ef549c4e99",
+      "kind": "CHUNK"
+    }
+  ]
+}

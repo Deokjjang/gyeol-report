@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "display-dependencies-part-0016.json.gz",
+  "payloadHash": "4d4e0eea6c4a1ebbc5474aca00af22d312ff813a9503340ee515107748c073a0",
+  "logicalJsonHash": "fc8148b1eaeca9a329dde23c2b12f9d9369e17d45a50843f551bc02612c33d2b",
+  "uncompressedBytes": 1116516
+}

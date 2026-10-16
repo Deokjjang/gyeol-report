@@ -1,0 +1,10 @@
+[
+  {
+    "option": "synthetic:business-partner:material:000-trap",
+    "reasons": [
+      "ONE_CANDIDATE_PER_QUESTION",
+      "ONE_PRIMARY_PER_READER_QUESTION",
+      "SAME_MEANING_OR_CLAIM"
+    ]
+  }
+]

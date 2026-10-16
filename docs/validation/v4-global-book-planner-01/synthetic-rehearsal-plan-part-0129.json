@@ -1,0 +1,254 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "OBJECT",
+  "keys": [
+    "planVersion",
+    "productScope",
+    "relationshipScope",
+    "fixtureId",
+    "mode",
+    "readerContract",
+    "chapterPlans",
+    "paragraphPlans",
+    "sentenceRolePlans",
+    "selectedCandidateReferences",
+    "primaryInformation",
+    "supportingInformation",
+    "evidenceLedger",
+    "sourceProvenance",
+    "canonicalFactRootOwnership",
+    "meaningIdentity",
+    "conflictDecisions",
+    "repetitionBudget",
+    "temporalAssignments",
+    "relationshipAssignments",
+    "conditionalRequirements",
+    "deferredDisplayDependencies",
+    "unfilledQuestions",
+    "withholdReasons",
+    "qualityDiagnostics",
+    "search",
+    "planStatus",
+    "errors",
+    "runtimeUse",
+    "customerApproved",
+    "customerEligible",
+    "customerSelections",
+    "customerClaims",
+    "customerBookAllocations",
+    "actualDisplayRecordsIssued"
+  ],
+  "logicalJsonHash": "e7efa6306e82fb141a38e5a0b148d935938b099a215779e993131a59ce1574e7",
+  "parts": [
+    {
+      "file": "synthetic-rehearsal-plan-part-0130.json",
+      "sha256": "1f4f5dcfbeb5ceb8d4b53bae1e0bebb5ae88a033189a771daf58f1b822e2582a",
+      "kind": "FIELD",
+      "key": "planVersion"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0131.json",
+      "sha256": "0ee372a859780eefe9be421979424a70eec1d07071c2d5d8d642d0fb656f5374",
+      "kind": "FIELD",
+      "key": "productScope"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0132.json",
+      "sha256": "cf428b360bf3188b07d09e628d8ce1241b502d458fc76f8279b8645a98884cb5",
+      "kind": "FIELD",
+      "key": "relationshipScope"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0133.json",
+      "sha256": "0d8b6e41bbfd0619c36bd0b8da7dd62fd6634174cd5bb845daebfe906e4500c8",
+      "kind": "FIELD",
+      "key": "fixtureId"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0134.json",
+      "sha256": "32e25dac5795a5fade8dc9bbdb0060d04cbd4c25053af7bb5427ab3233147b73",
+      "kind": "FIELD",
+      "key": "mode"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0135.json",
+      "sha256": "412176dae0f18d82a07d2a20f3479c550f7b57f855787c3e3987c68cae16fa57",
+      "kind": "FIELD",
+      "key": "readerContract"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0136.json",
+      "sha256": "c38492d106957e8d177455da45165f0e769fffafa2344c020d4d8235243c5caa",
+      "kind": "FIELD",
+      "key": "chapterPlans"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0137.json",
+      "sha256": "fd3552ace95c7444f6675e1f9225b657381b55cd8dc6fc8c60f19774d759204e",
+      "kind": "FIELD",
+      "key": "paragraphPlans"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0138.json",
+      "sha256": "d26570412049e880cafa1cfe57360db5a5fb745eb7c7b55010bae897715a1d5d",
+      "kind": "FIELD",
+      "key": "sentenceRolePlans"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0148.json",
+      "sha256": "3955cbd97d59bcc4d4e0f356d59b26ac1be37630b46cffa21e076bb2165da155",
+      "kind": "FIELD",
+      "key": "selectedCandidateReferences"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0159.json",
+      "sha256": "6a0042b850a7c661c86ec9bfa4dedb9b176f429e331217750759f86314080040",
+      "kind": "FIELD",
+      "key": "primaryInformation"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0165.json",
+      "sha256": "d5cb1bb936b20946dddb76bee3c7cd42f221764fa0a5df33946ef8d2124c711b",
+      "kind": "FIELD",
+      "key": "supportingInformation"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0166.json",
+      "sha256": "bb1987bfe800c922145a9507301071bf2743f50bce485e363f8fb7852541d1ad",
+      "kind": "FIELD",
+      "key": "evidenceLedger"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0167.json",
+      "sha256": "b35cf688992a45590940a857c87313674f637383386a39e79041c7e54326d368",
+      "kind": "FIELD",
+      "key": "sourceProvenance"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0168.json",
+      "sha256": "46d4de8668f97253bd4f7be629af2957eb849ba4680f0b81962bdbf8b0f23767",
+      "kind": "FIELD",
+      "key": "canonicalFactRootOwnership"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0169.json",
+      "sha256": "e37b7b90349190af909b914a7a825df5c4072ed26c5c817648e50ffbdd33ef02",
+      "kind": "FIELD",
+      "key": "meaningIdentity"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0170.json",
+      "sha256": "89280177314293129e8898ede1c118c2f8230b50035721e7081e04f81c140c9b",
+      "kind": "FIELD",
+      "key": "conflictDecisions"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0171.json",
+      "sha256": "d1de8b639fdb24d39c4ec9cdfc4f9870ce7f7307487982521dc425ef26ad6a00",
+      "kind": "FIELD",
+      "key": "repetitionBudget"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0172.json",
+      "sha256": "9b859bda3ebcb5f0c311c76316f8315b8f31814b9d400c6c63a4c8e229d108f8",
+      "kind": "FIELD",
+      "key": "temporalAssignments"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0173.json",
+      "sha256": "7e7ab34095bb24489ee5aeca640fc5a56eb41652f97748964dbb2714cd4a81ad",
+      "kind": "FIELD",
+      "key": "relationshipAssignments"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0174.json",
+      "sha256": "9182f620dc0901286dbd40210dcf569d3578b04d65ce6cc4e4e71028f822233d",
+      "kind": "FIELD",
+      "key": "conditionalRequirements"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0175.json",
+      "sha256": "6a92f4b2ef278b42dc6333d97f77d04b77fcb563b9af18ae3831666be6177d9b",
+      "kind": "FIELD",
+      "key": "deferredDisplayDependencies"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0176.json",
+      "sha256": "8c56dcdec10a4b4d6a966741de4ac27fb683cc1797e02ecbf47e3072c2e70aa7",
+      "kind": "FIELD",
+      "key": "unfilledQuestions"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0177.json",
+      "sha256": "e39b74f6d7bfe4d1903f8ee6a39c72b94a902f144dbc7ee2ab00e638c23e64f1",
+      "kind": "FIELD",
+      "key": "withholdReasons"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0178.json",
+      "sha256": "734eff139de741d2094f115b97e0422d3f2a96a687751d8b018927b4872f010c",
+      "kind": "FIELD",
+      "key": "qualityDiagnostics"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0179.json",
+      "sha256": "687bfb46a2ab6a562b518892ecf8bb4f7fcc43a6f9394a3b8466441f89a06f20",
+      "kind": "FIELD",
+      "key": "search"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0180.json",
+      "sha256": "7b008130c776553be23822b6e8ce653e30eda23cb82e29d4d6f9ba23dcc51e46",
+      "kind": "FIELD",
+      "key": "planStatus"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0181.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "kind": "FIELD",
+      "key": "errors"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0182.json",
+      "sha256": "03e71f70f1db7ef0322ed906b779d1613928c52776fb4a29796c61a2f7833193",
+      "kind": "FIELD",
+      "key": "runtimeUse"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0183.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerApproved"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0184.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerEligible"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0185.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerSelections"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0186.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerClaims"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0187.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "customerBookAllocations"
+    },
+    {
+      "file": "synthetic-rehearsal-plan-part-0188.json",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "kind": "FIELD",
+      "key": "actualDisplayRecordsIssued"
+    }
+  ]
+}
