@@ -1,0 +1,3680 @@
+[
+  {
+    "family": "functions",
+    "id": "ker:function:opening",
+    "recordHash": "3f590f903579463cdf593dea603d789bc037d51ddb48079e944fb5b6d0839eb2",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:explanation",
+    "recordHash": "9272197600e5c7bb4b0793c3ce3f63386579ba2853426468a199aee8cf14b463",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:concretization",
+    "recordHash": "803c690375e9216d38cf0fbaea935a50b5b69951688673c2a77c336fc26e72af",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:positive",
+    "recordHash": "d07a9f8556e18fffbd6e883b452719de719f5a3e0ed5e3af101b54980da8807a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:risk",
+    "recordHash": "ba63901481bfe3c653d3005941118fa89ae1b3cd93bdfbd3001720b1f64f8568",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:blunt",
+    "recordHash": "093e3c1c68931dde0fb06d444caa4cdc5095f3146a03f346d25b53137825a000",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:twist",
+    "recordHash": "be8ad1c80ac7e665cacf15b84697c66b701a8c989d9987eb50d4c346ee9d55f6",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:comparison",
+    "recordHash": "c728ba28c181827e4f916d29af5b539f1c007450d6c3d42afe5001cc5f16a607",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:fusion",
+    "recordHash": "2661741e4830d036cebba6748c23802226235ccdb86b596adf0abaca9fb39733",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:scene",
+    "recordHash": "af42d44c9777ebac133abed87977e8339e117abe421dc79748fd2b62f3c16667",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:action",
+    "recordHash": "ba7c6e0ef19ebd0e47bcc3ef2368bc0e5eb4ef10a3e26b1d1860170fa60a00db",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:transition",
+    "recordHash": "601871be99c0b3d9b80b164c5b4dc3aca95bfbca1a82e79952cf3617681f5bc4",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:summary",
+    "recordHash": "ee1a8c04aa4f0dc2e72b9e59add9c32fa214b6288ac23e89d77efc8b69bb9104",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "functions",
+    "id": "ker:function:closing",
+    "recordHash": "d7cf0c4f4423685fffa7ecf36150c44633d5e00e0ca9fe77a87655fcac8125e6",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:comprehensive",
+    "recordHash": "4fde1a9cf6ebd5176ef206953668b0a3ca4004ab7f642a4cbdf13319ec2b0299",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:209f2dd332aa98742549",
+      "originalId": "cpr:material:CH01.P1:understand-before-answer",
+      "recordSha256": "d5c8c83b8a93f53cdfbca3486e37add6093d216dbc463108043f5f23ddd06687",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:career",
+    "recordHash": "887d742c84ed1e5e17923fe0bb78a9b2b9654e621364fa920ba8f10c4e2a20c6",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:36e7031d6b957b8e8af9",
+      "originalId": "ckr:material:CH01.P1:request-framing",
+      "recordSha256": "7898afcabf1677c724795136ca4a05ab1e719153b62162578a5c8fc904db4ec7",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:love",
+    "recordHash": "0aafcb40f5813fd8970ef21790eaa78fee1847b39bee6423cef950109263f585",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:2577a774ae93b5a02bc3",
+      "originalId": "lkr:material:CH01.P1:care-asked",
+      "recordSha256": "1d2755961f4decb208074932f613298d8a34b535bef5668e2800a842d5f2782c",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:pair-love",
+    "recordHash": "2bb4e1235eaabf7964c10c1d4f977fd9478413da29b29c596420f5d7aeec32ec",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:f608d6b3a7a9320d4a58",
+      "originalId": "clr:material:CH01.P1:response-and-thought",
+      "recordSha256": "fdd4e5d8ecf6e2a194a461ff1f1fe67a15f3805eee4af78ddb80663ff56d1fe0",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:pair-marriage",
+    "recordHash": "ff6750fb9a636b3997d52375c4c122cdaa98d12bc7dc3f1f5fbd54c630de8fa9",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:8b8b78c40298c00c5487",
+      "originalId": "cmpr:material:CH01.P1:predictability-and-revision",
+      "recordSha256": "eb22baf63923614535ae1046c2e156e532a178cd9bc6d0d26ec9f320b093a388",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:pair-parent-child",
+    "recordHash": "3ddc6e0bcc02599fa526049acb791532aa7e050388ed06f2794927823550e9f4",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:d87197b16b1907002952",
+      "originalId": "pcpr:material:CH01.P1:predictability-with-room-to-try",
+      "recordSha256": "05f677cb1841841f2a93dbf57a4c4e7a756523b74d93cb8294a7db7bef75c557",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:pair-coworker",
+    "recordHash": "c7378c582060afbb2edad42d49ac92135f5f1cb238e04a0c4bafd4907241173a",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:baa6c8d1d7187eece097",
+      "originalId": "cwpr:material:CH01.P1:question-before-start",
+      "recordSha256": "ae6dd80d9ce2077aa9148386625ef8f42f7577f42a4e3b0d066b57ca6455cd40",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:pair-manager-report",
+    "recordHash": "baeff80e2afd23e10406f13332718505980bb6cb005fb793534b3dfe8ffe848e",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:3a24f834e990095106e1",
+      "originalId": "mrpr:material:CH01.P1:goal-method-interface",
+      "recordSha256": "dc410d3619f06d8f22dc06680a87017211f82ea6dd606344b2314c5037e2a8ac",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:pair-business-partner",
+    "recordHash": "30db39f56a31c9b14f02b878363b06ac594b8b9d7661ed67ae231088c3e68171",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:967881edd5da393d6674",
+      "originalId": "bppr:material:CH01.P1:idea-demand-interface",
+      "recordSha256": "9fe7f3009fb7adf5f1758c7de277d0904650943f459d82bac60490253a256399",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:pair-friendship",
+    "recordHash": "3786996a984644b310966c044c8f153cad67c4f31de7903309fd389467360098",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:2375c74243bbfbee1d39",
+      "originalId": "frpr:material:CH01.P1:chosen-time",
+      "recordSha256": "528fa9a2cddba2da7f2123fbb593dccf5520617a4b3a812a02973b32a5f5843c",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:major",
+    "recordHash": "5220f5cfd02c0500f36bf33a3d4666f2200846acc7b5978241aaa89116a99a9d",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:7fc382c0b4166d31afef",
+      "originalId": "mfpr:cycle:stem",
+      "recordSha256": "9fc16f0c38382bee97b92646235ccb787dc46b4ed8ef0139ca2497409b004b64",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "claims",
+    "id": "ker:claim:annual",
+    "recordHash": "daae701264ec83d352c54147654330a92920400d25abb228d736c767d92e54b9",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:35be5c640d2334857c0b",
+      "originalId": "afpr:core:stem",
+      "recordSha256": "c5da79b9a643cdec379a812d95195b7d96ef86a5c06f4931ec4e0f2d63794990",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:comprehensive:1",
+    "recordHash": "97ef9d5ca429ff5125d82396f71db705b97e141e9e1c00dcc05f9f44282afa2c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:comprehensive:2",
+    "recordHash": "dccd2267cda00345ea283b9386cedde1c5533c1998901d3ebfe408de853d2a4b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:career:1",
+    "recordHash": "d4ce11bf251455d4d4dcef45583a6336592fd6782b8cd282ebefd0fb4f7fdff1",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:career:2",
+    "recordHash": "c7c97bd619ca6b170b22927a810be81daddd2d07848692573e4e6754f84c5d3f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:love:1",
+    "recordHash": "9c19e14fbe9191bd78110bfdf40bd7d5bc2ae8a82705e34abec10d4a80b2e371",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:love:2",
+    "recordHash": "1b37d4d2feadc64bbaa3dab062f7f7a64ebeec3e7b2bde7219bb7a1869e2769a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-love:1",
+    "recordHash": "ba01961268b6cb201782ec9eeb89ca60ee319f11bc17a3c5fb1f2e217e24f9f9",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-love:2",
+    "recordHash": "b3bd6305c7ed194f8c65a7e29bcc921fc6fc190f5c013bb29a346c2726e3607c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-marriage:1",
+    "recordHash": "6054acf3303a923174f85ba359895633e30904c7cb175851f9e24fa052c090a7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-marriage:2",
+    "recordHash": "b86ccbb34c4ff18a1a3347d191ebdd252bbce7b619c1988b514fd8654f2612ad",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-parent-child:1",
+    "recordHash": "c786de949edfb85d915a6ae79572ecdb041d3d581554a033a97563903d1b1009",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-parent-child:2",
+    "recordHash": "2d0227f75f4c694ea71953fe476fc02b32d73ec7fd7a40ffd30b6d26cbae7060",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-coworker:1",
+    "recordHash": "3fe89ff89a8e17bc4f9cb73eadab6293f88cc654b65418aaeb7971f7651f2d17",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-coworker:2",
+    "recordHash": "e92f637c437c7aaa34f598f8706300b504ea2b13a00aad096f0b442da19ecc77",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-manager-report:1",
+    "recordHash": "3912c02cbc2ffeadfaca73b98c7efe1737c61378aebb27142867dd89de958cc4",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-manager-report:2",
+    "recordHash": "d0d0732b8d71167ba3006f700cd787db2b1c5a375008b2cfde38aa4d0f028698",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-business-partner:1",
+    "recordHash": "3f053227f9ab008870633afd9f6f8e9c902060bf8dc35068021a5836afb8e5ce",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-business-partner:2",
+    "recordHash": "faf592b791bd0a3154ee4526af28b5a751b14c81a6f3db3f64189cbb043a9a27",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-friendship:1",
+    "recordHash": "956f2dc31b380e0fabefb54c33ec29339b556533f4f7e20c1ff22f72bb9e23c3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:pair-friendship:2",
+    "recordHash": "3d1d90b192fb56bf801188b4c572e02425de5bac8ae7b6d23af0d17a8e9210b2",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:major:1",
+    "recordHash": "71d1debbf9daf1b66d4956dd9341c73fbc3ba5451ea33ec01af712b1abac9bdc",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:major:2",
+    "recordHash": "5a6ec47c307c5e80ac60174649c5b887fa4be0d9c368438b3762fb6dfca86c0e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:annual:1",
+    "recordHash": "685196f180fde76ed00bafbc37423fc53733ad23a6a134778e97f7ec62dc8089",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "expressions",
+    "id": "ker:expression:annual:2",
+    "recordHash": "c814bbf0539dba977ee994fa43890e74001d572976b4becf9699ee0ae3ee4e1a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "products",
+    "id": "ker:product:comprehensive",
+    "recordHash": "a76021f4aac4b84f69e0cd06c1bd62a59d69e0132a7a77da34b6ddc15f3807c5",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:209f2dd332aa98742549",
+      "originalId": "cpr:material:CH01.P1:understand-before-answer",
+      "recordSha256": "d5c8c83b8a93f53cdfbca3486e37add6093d216dbc463108043f5f23ddd06687",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "products",
+    "id": "ker:product:career",
+    "recordHash": "180ed91bf4dabdbc2446ab14f7a8006515a7b67efd8d1ce02fedcf54779f977e",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:36e7031d6b957b8e8af9",
+      "originalId": "ckr:material:CH01.P1:request-framing",
+      "recordSha256": "7898afcabf1677c724795136ca4a05ab1e719153b62162578a5c8fc904db4ec7",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "products",
+    "id": "ker:product:love",
+    "recordHash": "3d20df96f9c83ca7a7df1d91e5476b4e0e8aa65de5331124b2f2d809576e1961",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:2577a774ae93b5a02bc3",
+      "originalId": "lkr:material:CH01.P1:care-asked",
+      "recordSha256": "1d2755961f4decb208074932f613298d8a34b535bef5668e2800a842d5f2782c",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "products",
+    "id": "ker:product:pair-love",
+    "recordHash": "7d800658f5d13d1404b7a9afd38a56efee0c21daae6f665656f2ed9ff046a865",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:f608d6b3a7a9320d4a58",
+      "originalId": "clr:material:CH01.P1:response-and-thought",
+      "recordSha256": "fdd4e5d8ecf6e2a194a461ff1f1fe67a15f3805eee4af78ddb80663ff56d1fe0",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "products",
+    "id": "ker:product:major",
+    "recordHash": "70a7bd9ba2921eb205e6d9a8f0f0b1ae8fdad32337bed5b838a7dfee11f09271",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:7fc382c0b4166d31afef",
+      "originalId": "mfpr:cycle:stem",
+      "recordSha256": "9fc16f0c38382bee97b92646235ccb787dc46b4ed8ef0139ca2497409b004b64",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "products",
+    "id": "ker:product:annual",
+    "recordHash": "980e38544b2fe2d14d7f8d0a4e3ef3e8b43d941f8863cbdb2562cb57e453b842",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:35be5c640d2334857c0b",
+      "originalId": "afpr:core:stem",
+      "recordSha256": "c5da79b9a643cdec379a812d95195b7d96ef86a5c06f4931ec4e0f2d63794990",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "relationships",
+    "id": "ker:relationship:love",
+    "recordHash": "7fa4d8b634c34f99c88cb608a3321e430a79db4d52903958497fa095ed6a0a44",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:f608d6b3a7a9320d4a58",
+      "originalId": "clr:material:CH01.P1:response-and-thought",
+      "recordSha256": "fdd4e5d8ecf6e2a194a461ff1f1fe67a15f3805eee4af78ddb80663ff56d1fe0",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "relationships",
+    "id": "ker:relationship:marriage",
+    "recordHash": "2eb1b85eba319cd1414336658fa4b38aa2ac32c9bb190316fdc453e250a1ae8c",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:8b8b78c40298c00c5487",
+      "originalId": "cmpr:material:CH01.P1:predictability-and-revision",
+      "recordSha256": "eb22baf63923614535ae1046c2e156e532a178cd9bc6d0d26ec9f320b093a388",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "relationships",
+    "id": "ker:relationship:parentChild",
+    "recordHash": "a2ce64e8f934b56754c71706c8e7f844d37ca857a263ac36fde4b861e513c7bb",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:d87197b16b1907002952",
+      "originalId": "pcpr:material:CH01.P1:predictability-with-room-to-try",
+      "recordSha256": "05f677cb1841841f2a93dbf57a4c4e7a756523b74d93cb8294a7db7bef75c557",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "relationships",
+    "id": "ker:relationship:coworker",
+    "recordHash": "d7344b95c6e56d4b9ad13291d9ba1847e7ef098cb9b3ae92a683911ff06d6162",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:baa6c8d1d7187eece097",
+      "originalId": "cwpr:material:CH01.P1:question-before-start",
+      "recordSha256": "ae6dd80d9ce2077aa9148386625ef8f42f7577f42a4e3b0d066b57ca6455cd40",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "relationships",
+    "id": "ker:relationship:managerReport",
+    "recordHash": "a91b16bfb92413774826df38d49d874edd3916bc415b8e9da8deb37ab1b1fdeb",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:3a24f834e990095106e1",
+      "originalId": "mrpr:material:CH01.P1:goal-method-interface",
+      "recordSha256": "dc410d3619f06d8f22dc06680a87017211f82ea6dd606344b2314c5037e2a8ac",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "relationships",
+    "id": "ker:relationship:businessPartner",
+    "recordHash": "da47c1da0b93bfde7661b12e833e7a1aefcbf6311ac8de708b97a233ae4dbbec",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:967881edd5da393d6674",
+      "originalId": "bppr:material:CH01.P1:idea-demand-interface",
+      "recordSha256": "9fe7f3009fb7adf5f1758c7de277d0904650943f459d82bac60490253a256399",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "relationships",
+    "id": "ker:relationship:friendship",
+    "recordHash": "5c43051b4d69aa5a725f9fd87aa39b53c042acef778ff429c790fd092ef873e7",
+    "source": {
+      "catalog": "docs/validation/v4-korean-editorial-knowledge-01/specialized-source-catalog.json",
+      "catalogKey": "source:2375c74243bbfbee1d39",
+      "originalId": "frpr:material:CH01.P1:chosen-time",
+      "recordSha256": "528fa9a2cddba2da7f2123fbb593dccf5520617a4b3a812a02973b32a5f5843c",
+      "sourceVersion": "39a08dcc43c467f0dba71da820d0e879dff91ec1"
+    },
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:day-choice",
+    "recordHash": "0752f9fc57964844b0835ee930b922269689e8fd4d11e4313991a8ae33142723",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:work-brief",
+    "recordHash": "e63877f8d8d778ee7a14d1fc809f029b89ac14e52d0d0289259df53d236c9598",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:money-cost",
+    "recordHash": "c97512d96cc44eb13f8470207a549fa01f4cd95dc1701ea6be5a921cb277de24",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:learning-proof",
+    "recordHash": "7ea8708c05640377a4ccf32cba5cf4dbf435b04782ae52af8b76ec6f71fa7291",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:affection-help",
+    "recordHash": "11bab4c65c5462a75c9a1d3be081f70d2e5e5e75b2f2dd7d8d338daed0c82bc1",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:parenting-choice",
+    "recordHash": "ed99f1dce4d679787ae8417636398ceba7ab5892d9b056183b96a7581f689435",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:long-change",
+    "recordHash": "d7734715f57cae04d6489e264d42a1543a6512326893931e3089cfbd5040502b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:month-window",
+    "recordHash": "3ff93b0e05499a0c9bc139b759165ad69fbbf80e369c14093a0708842e9f0783",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:repair-dialogue",
+    "recordHash": "8d579fca734b3765e1064e972c22747022ab41c47b9217c220553cec1458766a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:contract-bound",
+    "recordHash": "78742e63f000e02fd94b14086050b8537cf9fba728ed9b0b4b4bda78767450ba",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:annual-past",
+    "recordHash": "01aa2cee4809aa94e5784a10a2b6e75e1d768704841ade61a5cdc32d1a63e71f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:major-range",
+    "recordHash": "2513a7860b5a34c81056d9f635b316453a3d75d29ab6829ddd96741dc10968a9",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:pair-love",
+    "recordHash": "deabdf9c6c94b31e9c119d64ef523bfd4c39a81987b72c23e86fb7819a64c143",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:pair-marriage",
+    "recordHash": "11ebdec26173b670a4bdf440b7b3823d6cf03ae4bf400daf8e389ab83022202a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:pair-parentChild",
+    "recordHash": "5adc6e3b3a40a1f6c648fa00f58b8436af28ea8a30a3122cc634754b03cc0ab4",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:pair-coworker",
+    "recordHash": "20f54028a7fe6698663dc647f7bd5b64ae60cea280d180591501186980af8adb",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:pair-managerReport",
+    "recordHash": "b01cc490ffbef1aa844b477d785a864c87add8eb35edddb3e3eda656dac94a86",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:pair-businessPartner",
+    "recordHash": "b07af9a909af49bb6067fc766ff668a661d154658d16231ba84816eb5fbe3b3c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "scenes",
+    "id": "ker:scene:pair-friendship",
+    "recordHash": "ba6a6cfb0cccd20b360cae6e3bc1c0867e525cd8692ead4254b0e9e1ae759a82",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:subject",
+    "recordHash": "c34ff999c219b2461562c1dbdd15bebec3f8a09187c496e619dbbf2a4e219de1",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:topic",
+    "recordHash": "6e64d1ae3695f6f39b68d7037b4490373209e1bf13b4934b695ee8dd858045d8",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:object",
+    "recordHash": "4aed28afc83c522eb96218cf605aed40a71174b507b49fc68fb7306938af5a7f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:with",
+    "recordHash": "bddf63c73539114e2a9b82294e98cbe60ec57c7fb6658829238bb22666313945",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:to-rieul",
+    "recordHash": "d85494c1b8a116ff890e4a3676880449b7ab81e67cf354ce0a7a0710bc05e24e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:name",
+    "recordHash": "396c9d018c82979b75fdaf04f3515f6ef69bbb1d7fa00a4cb25936ab4dfff157",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:honorific-nim",
+    "recordHash": "01bb6a76a6cee4bf5d24905b2ba9a93d88222180e468c186d75a0c718f9ea35a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:foreign",
+    "recordHash": "55395e159ec15766287f5ee5669f23371c1e7093d48a22bee40010e35486c5b7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:mbti",
+    "recordHash": "54e788b0af2d37b87f759e7a77dc556745e79a76db4a2c2b09682442ecf295a8",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:hanja",
+    "recordHash": "02ffe6b69a37fca9543dba0ed2b9e890f1fe24839d13c46ee4ed386f9d42e0c8",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:number",
+    "recordHash": "916ee996360c4e60b492761b9bafc3dc8d987d3de8c80156f037499a54734cde",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:unit",
+    "recordHash": "bc2316d1baf6ccd76ea0467d8df3c76ef91ff0546525ba7e728b830cc0cb4c94",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:quotes",
+    "recordHash": "9f3a35e1782451619e2386409c9fd574212a3e3f53889d09bff16b309513e573",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:parentheses",
+    "recordHash": "d35416369c9c0db49aef2f6ec85712f3b58ff4cc0addd16a465ac3fddaae5a63",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:agreement",
+    "recordHash": "6c7d0d61a359d06550cdbcf3e9a03fcf34ab877d2470b5a4c3bdcb1b5c6d0797",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:direction",
+    "recordHash": "afb17d059611cf18ecdb5a0e0749d4b7aa6254bb67e76ca5e01287a4406aeaa6",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:tense",
+    "recordHash": "878a61b3ec59cc113a8863b4a99a3a011ca54275ca080448abf003236d32c81b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:condition",
+    "recordHash": "460c32bc49dd11a4f8a220bda4bbc36f46f7e042646b24e176c5f7218ba24d84",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:negation",
+    "recordHash": "afef25785eb8d5df66b3f293e56f5ed1a8bfe103894844fd3ba29de4bef46e97",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:respect",
+    "recordHash": "881e01f218ce635e565bb7d25ed9a2508fd725a3cbf72bb28c655af4cb1da988",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:copula",
+    "recordHash": "e98060bd424fe9c5b486356479a72716869424b9377b5a361c344c6c49931f50",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:endings",
+    "recordHash": "05cafddabb0ed39cb3d6b6eb184d3a781c546b8e6b6d56f4f218a9f5cd0a8c3b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:connecting",
+    "recordHash": "d9adffddb5126c7b1706b9ae6ca1d06e5bb45d0b5004ec14d1747f1964e8445b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:irregular",
+    "recordHash": "6f5df524dbbcb74e3f0143f17e9695587ecc3cea9fd38455203d6553330f94ba",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:modifier",
+    "recordHash": "15e4a5a222e9dd966fb19db981cdac48617394df4a929a68acf42102be0021d7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:punctuation",
+    "recordHash": "5b6ba78f32ac1ad44ff6e775c2133bef7fbea0777d75b65da28e54445d5c61e6",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:unknown",
+    "recordHash": "65128c3cbdb74fbd0ee4b1cc2300e5423c9f7dd5775c9c92234b7c41f2bc0a7c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammar",
+    "id": "ker:grammar:time-boundary",
+    "recordHash": "bdaab3b906a6332d37e6082d288fd523baeb22a375a1ef59ba9a689359310acc",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:지우:subject",
+    "recordHash": "9b211998c5ce56226637ce82aa1cf45af061660a46d554070917868670f96418",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:지우:topic",
+    "recordHash": "f04baa6f29eee4610d4a77f383151b5af13ce17fc6e2c1b51dfd4ab4bf436d01",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:지우:object",
+    "recordHash": "1a195e7224a833037c0a4df0916e50d1292bf90d266462587a986850a37bc184",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:지우:with",
+    "recordHash": "8bfdc55baadb7a036f8b3b3fc3770347bd07d93316ddc22b2b9387b7f8bd3815",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:지우:to",
+    "recordHash": "f405777323fad40ef3c9aa60e668030e4893b6c45431efc1b674750618463dee",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:준호:subject",
+    "recordHash": "cd4428a6a89289132b65153763217ba1c3abca0c3514c33e125397ca9c8ef9b3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:준호:topic",
+    "recordHash": "31b4287e506ecd63daf3f76f901ce664f7de6694fbac663139ab51778c5e2ce3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:준호:object",
+    "recordHash": "1aa0d959354fa81186d02ca239ac729417ad5e396a56a81ce1700f8d6d38cbb3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:준호:with",
+    "recordHash": "371d6a09053628882c12660b46c3ccc3b7e624c2aff0a859ef33896c3c03ee41",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:준호:to",
+    "recordHash": "7dbe11d7b55c1fbb9f1ad7257be952e3e7cf3ff3304d9dc6b477aeeb996b2394",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:예린:subject",
+    "recordHash": "2faf7a0b0017354053579d4933d69a34fcb1d4c542d6de87c9a8e61673492c5c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:예린:topic",
+    "recordHash": "56bbedf0df31720d5abc9b911b1420c82241aa4662370527ae38478118371ca1",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:예린:object",
+    "recordHash": "1c7c099081ac1c1db6b29741c15f4b8b203962339309a27f9ed09a6267cd5584",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:예린:with",
+    "recordHash": "b293777909ed1e1f47a75bd61cd19c534268814bd7fcf256811864fd3ec7dafd",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:예린:to",
+    "recordHash": "2d4c22f39decfdb08b7c78e841cfdcae5d7ae22e56e518c8af3171f88e0f9473",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:길:subject",
+    "recordHash": "e33af6db2d48776f37cdce55275e8e073b064c264d97177ebd846f47bd18cdf5",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:길:topic",
+    "recordHash": "d15621161b1515ff359d928e7252b74d976d157a4e70c27613a66598e1c3e1be",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:길:object",
+    "recordHash": "a2378a3db706e6492e8010978f8d1dc659b0f512993797401babc3910e4d9fea",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:길:with",
+    "recordHash": "9c8661c04ca06277a6b06d1bcdb4f2e97de8933b1759a8f5ca46983781dbaddc",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:길:to",
+    "recordHash": "5afb18bec74a0cc97243783ee1f77161cd861ce0bbaabf74d3444b162089067f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:제안:subject",
+    "recordHash": "8bf764c166896576aba62bab813ca892acdb2757d534b2567670b19c4f6971cf",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:제안:topic",
+    "recordHash": "e832110f303f466450195eb086341c6203e0fbc3db970a3b4b9396a940a97c8e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:제안:object",
+    "recordHash": "144f68c59aad2787723972f84bcc485e235d4a3e031dfe3535ca5844b84db48e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:제안:with",
+    "recordHash": "992f7ed5450376bead52a561ddaf38b4c22ceb4fbd8aeb120afdae8e6a32d446",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:제안:to",
+    "recordHash": "a523b4f17b6520402be061a5a7d90fa893c72d04ebb9607a996690bb8b071cd4",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:목소리:subject",
+    "recordHash": "9e6f824006422c3cd5636d57b501752e41e558bc19ddb4a23e6f492f7e84000f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:목소리:topic",
+    "recordHash": "46d011548c6921f596e9b4a0a3d3adf95405ef6d5b5c146dd6da6587f04fcfba",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:목소리:object",
+    "recordHash": "a534310ec1d92c7c7f9b37ee1ed0ff2ede400e38061e85b7c367a01b2caf59cf",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:목소리:with",
+    "recordHash": "5cfc961cc8db47b8180f97e2a1a6eb516071274790d91caa38b25649419917f4",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:목소리:to",
+    "recordHash": "b0dc204094d4b8f82d9d8374e1f4509fcd9ef8a8c3615faf4ecc1089c5b25271",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:quoted-object",
+    "recordHash": "25138337dba3b788db68e242bb3b6552b30fbaf6b045d6df694cc8b8b18bc0e1",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:quoted-subject",
+    "recordHash": "7a24f5c47b208efac48fa1c7a5e6f58a3bd53ca122016d05cd2ae222f29ba4d6",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:quoted-rieul",
+    "recordHash": "8eadadfa510fc18356a85d71b1953c47f4331c4eaf97cf0d30c8f50a12c812b4",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:old-rieul",
+    "recordHash": "f58f1d27388bfbefa6b0e5b9df14a81df55cf7c54d27d0caba83c2a03f7b0648",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:foreign",
+    "recordHash": "10420d247acf20c3018a62687f6bb70fbc89f31ff7399d7591d835869329617e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:symbols",
+    "recordHash": "3d4dac85afea488915d4cd6634a629c81270dac8fd86768c6c9b7f429ae3e139",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:mbti",
+    "recordHash": "e5b5b53769c20e46b722997de0132557a82db77a7b1d74d9a7241c2132b32b3f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:hanja",
+    "recordHash": "199c939e5c79dbd18f7171278f9dcfc82dd0d435ddad5831e71f87fe669ee4e5",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:digit",
+    "recordHash": "921f28241cefe7bcd458f66948e6c2b2dd364f19ced1b96ea1e5874c6a97b16b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:unit",
+    "recordHash": "e3b12440cd011ee66b696fa7d6e3e85fe102aef44896e55146b5e3ceaf6d405b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:parenthesis",
+    "recordHash": "e7601f310f4ed8a5825c222f54ed668ede29a0280b0ffaad990e90abd2000689",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:decimal",
+    "recordHash": "321fa3b9b9e75e1e35786e7c52250cfb5cf9c9029bd4d89e43e0aa608d1c7eef",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:past",
+    "recordHash": "9ae70b88f39c17becd3084c0849ae03691643b466cd3a46ace45689a54c52e1d",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:negative",
+    "recordHash": "20e355d1dd1cdc7f168d23cc5f04cf650e70835a2002c4665f131ce181f59e33",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:honorific",
+    "recordHash": "f74962298badfe6911c7a12ff064ef79bf4da838082aa94ae68969f6000ac786",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "grammarFixtures",
+    "id": "ker:grammar-fixture:copula-collision",
+    "recordHash": "349a1455c50984f97e2039e8b29cb49ee55f7b0107ee452509a85ecf1712b759",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:1",
+    "recordHash": "d20fd19e12912ecfdfd68de782200452a2397e9d1c8afa8f58b1c403260a404c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:2",
+    "recordHash": "7f70b3467af1c54b5e6d132904293fe35d55ebb6832b19085bf925aa79ff97f3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:3",
+    "recordHash": "8a6ca0c94ae331a4bad3aa4341c01f97ca3a5282412c1d389c667f6894037cd6",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:4",
+    "recordHash": "c116d2126952e368de210c6d2444cc405bd64e0d37c246057a99de09da66d6f7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:5",
+    "recordHash": "dd0ab25f40adb7a701f4fc05fe410da21121bab19db9e45c46cae86ebcb98c9e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:6",
+    "recordHash": "60a60e0d34bec751e7f44da1508cdf48248fabcb700ff40b94596599810f10da",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:7",
+    "recordHash": "16a93e58d02695c51ffd56c0d72546f1addd885143f4f2cc89d4c52e91d6bd5d",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:8",
+    "recordHash": "79b013754517a8e0c7204eb6971799a623a89bc4e5749ea01b6a87911700dc23",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:9",
+    "recordHash": "d3df48af1e5fecfdf21e19f698e618d4f88c0f50c6e52f2300840257bb41863c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:10",
+    "recordHash": "a8e63d021cf6c7f388e7e20a851076d4009e34210d40e6f7d362414044fd7191",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:11",
+    "recordHash": "1a4e2f88acec93ccf0a03f720f2e3308d25a579172794feb79f784aa293dd9d0",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:12",
+    "recordHash": "755ed8053e7cb2fe6565d4043251e905fb51e5ccdee15af56fbc7dcbf8bb1551",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:13",
+    "recordHash": "0927db51b3ae050891ee1d0732c4defffc8094041adf45e969363a4b2cd70778",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:14",
+    "recordHash": "713e37ab388dda82b75ba31e16e5e1fcd21754ea44043e13b4d5b07a0f49376d",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "transitions",
+    "id": "ker:transition:15",
+    "recordHash": "d5ebf86cde3407c7dd4d00143ea0d2bc96f5762c0b7ec992aabeca5e9e1e5a25",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:sentence-span",
+    "recordHash": "d225906615c2f515f76d8e9a55033be30d6e28e430876b60aea1b140af525383",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:explain-scene",
+    "recordHash": "3d1135dd1f269731f97f9db818c6027f664395f7ef85602373f9f20681f73904",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:direct-soft",
+    "recordHash": "9b17a62d83cac7bbcc8bbaa1828a6b14a45723b65af4aadb52de9eec888b0010",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:term-density",
+    "recordHash": "e846a37af739aeccec7bd6c6f88f2a22c645ab658274a72fe28bd7a1ddd106a7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:metaphor",
+    "recordHash": "e87d6b3ee34c81cd096f41da6cfe43fd43f1766c5a2971014bf76194229e7363",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:questions",
+    "recordHash": "a900233bd497ed168ea2d20126996024c0d311a798497ed31ec70b54c7b1a441",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:positive-risk",
+    "recordHash": "407103be3031c666e088219e2cdef74dfc29c776a35870a05fa17adab6003463",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:endings",
+    "recordHash": "592e5ee87dde8f766333acc3f546403d59fff7b3802d57bb58585f363e355648",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:openings",
+    "recordHash": "a2569bcd2302b30698198c10af37f41fe5e630721bf4a7641465e058ffd7b47e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:chapter-density",
+    "recordHash": "71c96ddb1e31ce8fc2e3b5df02b915b556d4f7418999f44393bd997321d5d4fd",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:recall",
+    "recordHash": "2935a78b9a8e2849c25e1c27ce7d99e888bb93a50ad96501e59bb0073c89ec44",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rhythm",
+    "id": "ker:rhythm:ending",
+    "recordHash": "58a549c8bb1a0c4fd16f583581bddbc66b35d0d677f3af2a839cf95395b312e6",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:0",
+    "recordHash": "6b5fb1db9a9be6ccb4251fdff527b7444e439beadb5f219c6bd3ccba4cfd2f78",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:1",
+    "recordHash": "a249f2c399c3b29aa03c27861bd34a76bab6cace9a3299d796faa7d45a923500",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:2",
+    "recordHash": "3491269989b877441c187ab14b42c14a1ceb96b47b70eb395df99cc0f8a5249f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:3",
+    "recordHash": "009ebad2c2462d6d3b2c2708f7882854f3809e6c8b11f8ee80a2e95ee0fd0a51",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:4",
+    "recordHash": "4810a321f18bc17adce3f48ff2bd12c4ac3fcbec049226e017732d6e12bb21ba",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:5",
+    "recordHash": "4ffd8ccd76404bf0362d7f626681385c98c1e38e31658218e0fd85b74741dabc",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:6",
+    "recordHash": "dd0300fa41cf042a5250cd1477b4cf7b75e69f0a41ce95031325a83d0d08dec7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:7",
+    "recordHash": "9dcedb8cfb1841a5482d4cdb774bea3a5458bd9f063a1ac096917a78395c750d",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:8",
+    "recordHash": "5723b67c93d9f71fb8ffbc8ebcda1bf372f27e91137f47c937dcd786a340d3eb",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:9",
+    "recordHash": "bee67c36dca2f84badb6bfdbccab03abdca67c55f50307e919744948f06c1f94",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:10",
+    "recordHash": "9f3ecd9494f042414be0593a6fe2d0cc44458af3ce991d47e2392b0bc7d4aee7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:11",
+    "recordHash": "8217e12c88a8a6c3e291d713187102470796797cb3e49cf862bc74204fedbc84",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:12",
+    "recordHash": "284bcb4a8b893de0ba6913af1c32116e7b86b7c90a2b37cbf9e5df439855e36e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:13",
+    "recordHash": "d221f84c3ad3e7b2b5dd92cb9febd9ecc4b9fd1e07872b28bdf655ed0978a3bd",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "terms",
+    "id": "ker:term:14",
+    "recordHash": "48bf53663014d70477310680e2d4fdd506314e56a27a38307a6882fe149d33b4",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P1.S1",
+    "recordHash": "875556c022bebe3fccfca229e5ec83f8f7e65eb3c6d4a36fb8acaf361f9203cd",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P1.S2",
+    "recordHash": "7702402bd82d18496a291618ba631f4b268452defd6762ba994283ea288054cd",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P1.S3",
+    "recordHash": "5ec82c06dda5b296a67c7b09fba100ad92e2228e387f39386d4e40370e0ffa1d",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P1.S4",
+    "recordHash": "91761efbddd254a031730d02d37002d041b4b9a3944c2d2d2dde13e797cac4ee",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P2.S1",
+    "recordHash": "82f676fcad7472711c746fe795a24724aa606a9a8b0185bd2627c3f0b00d7a06",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P2.S2",
+    "recordHash": "7e940782ebf79951684af8264ab6e2c6ec5c854497054de092fde85380c83f0e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P2.S3",
+    "recordHash": "27965ada9598cdc525da177936443398e37877306343dc51e5d50c6bea021de4",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P2.S4",
+    "recordHash": "7f7f9ac91729b1c68918b6e81043c3de8c6b4f0eb28d91d731f696cbe67976f3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P3.S1",
+    "recordHash": "1d763ec017eae2cc2f208700ce86de7ba2cb205616e9bb0540b5a79ec4747afe",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P3.S2",
+    "recordHash": "9c3e6986aea70faef6d3306a46ab890070e1276e28a70bc13641ada7857678c5",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P3.S3",
+    "recordHash": "e1397b6d2665e45df5469cf3a4e78bfaca747bf6c0c27d7449200b49b401689b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P3.S4",
+    "recordHash": "760f200ce3b6a27ab754fdb2887d42673e9c868b913279c9bb9b15807628929e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P4.S1",
+    "recordHash": "4d9f6940339a6520f02315bbc1c7a5156514eb0f078e9ce93073362f71cbcfc2",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P4.S2",
+    "recordHash": "baf152835de6f32701f733cbdbaa82b71b6a0c6332b678f4d14131709bc7fa48",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P4.S3",
+    "recordHash": "baf4698dea2280e2068f626f10c3d43f2fa2b6b0f3849661beaa820ed551d0ff",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH01.P4.S4",
+    "recordHash": "fbd1824b95869e035166059849a6e834afd7a8991384572fe706916f2d4c021e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P1.S1",
+    "recordHash": "6ee8f3212bb53eb59eef327a43c38cd96061756e97538f8153543cd5e21fa315",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P1.S2",
+    "recordHash": "d2652c9ace55008ad044cca446af123f2b7fead92652b077a110af5837ce5118",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P1.S3",
+    "recordHash": "c993e6246736a3fd0bc64147bbc907cf4cdd832befabdb063ec75750da1391d7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P1.S4",
+    "recordHash": "1820c967d778e1c75a2bed863fc0b75ca64947a0fd7ce096ff6079fa4a8a54a4",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P2.S1",
+    "recordHash": "9fb83c021f67091c3db286e7668b6452a7163b29fd680aa049a25a267d42423a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P2.S2",
+    "recordHash": "7a50c5a5eaae8f1fc37058b44433463fa7a74d0c2547aa71670892f4315e1ced",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P2.S3",
+    "recordHash": "7cce2b8a22675fac88918f6d05dddf7e9d91cee59cca4ac9066582c9dd3e1e06",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P2.S4",
+    "recordHash": "3a208e84a90868fccc0c0948e1c7bcfa7328d53efaf26fd15d005c98b0ce7249",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P3.S1",
+    "recordHash": "2963384552c28eac96879ee30502aa696ccaaac4151c637a28c4192cdba5ea0a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P3.S2",
+    "recordHash": "e09b9475c56889af86fd3bde6763ba52a0ac73ae768e55a37335f096929d213c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P3.S3",
+    "recordHash": "bd561c5288129ff10c4cd61afb0be2d679cbd487878ba7aaadae0ff84459909e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P3.S4",
+    "recordHash": "8ef3970e61973a54b9e8e50706f120270a21c0feda8b8c5537e01f6b8376d7ee",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P4.S1",
+    "recordHash": "5c8645ed57e64e292f097c57a733ffb3ebffd280ddeb1eeeda46c4fa6a92140e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P4.S2",
+    "recordHash": "9bf7555d0c7e4311fa6d942811924255f5ab771e0e4212a602a7629e5b576d70",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P4.S3",
+    "recordHash": "ebf253ae345729c9e45928e2abaa8a5312428222f87ef7f93f867e37aaba117e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH02.P4.S4",
+    "recordHash": "a622462ae1cf86054a1e15f909928f9aaf96a94860fbaeb881f1a7b898ac9692",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P1.S1",
+    "recordHash": "c859f52393e38892b6df39404c6ce1087dd26072ce0e2878575844a3e840782d",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P1.S2",
+    "recordHash": "2b44eca19676a3599bf161c3acdd7704adab64dad3b55791da35e0d9950a0ee9",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P1.S3",
+    "recordHash": "94b75e1bc256d5c0de9a1de5157e99de0310165700b4fbd37a620f59f2e3ba37",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P1.S4",
+    "recordHash": "65561b9dc4e35c500195ed5c984faa196b73fcfdef5b546418d687c34cc42228",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P2.S1",
+    "recordHash": "bd696039aa743916cdff8768c3431623454fecabbb758b3cebbb0f013a1736ef",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P2.S2",
+    "recordHash": "2af6dc40f599f1fbc28ff0f7b2a456389966d5542f282847a6ef7a4eb3f54d09",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P2.S3",
+    "recordHash": "b788b436b573a97ccd16aeb9011ad32bb72a43896e55929c010c92ad0aaed051",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P2.S4",
+    "recordHash": "56509963cf601ddaeba7920d91c50c5f21721c4a7ba46f33500ec5a1ab295e3f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P3.S1",
+    "recordHash": "d43748ecfc00f6f947b86256139c7354275dfea21fe7324f8337e8f1ea363246",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P3.S2",
+    "recordHash": "dc524ce3f6ec38a7b2febd0754448e22923bacd154be77fae1f548a4de7c82e8",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P3.S3",
+    "recordHash": "b9462035d6320290e35a0d7301a268b8cc8e5ae4d227a66555d682c7ec4e31f2",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P3.S4",
+    "recordHash": "dfe4ccd249365f504bf159aa1c9e81d89e690868cd6abfd0b73733c6c0e3296b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P4.S1",
+    "recordHash": "1c8b50a059c63c6d1b7cf119eb34618bbc7907f3c8c583e67aa93925d83beea2",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P4.S2",
+    "recordHash": "54a75b594e7407cd42d2332be17e2e2fc76c7b0da8de03d9c3bfeb20a7c1f11c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P4.S3",
+    "recordHash": "a973891c86a9b9bef98712fa63013852f3d451ab2dca87793141c70c90abdce3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH03.P4.S4",
+    "recordHash": "12bc0b9e658f0407195cab434f7854b18b924b732ac350f506ad33909a0151a6",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P1.S1",
+    "recordHash": "62cde4b3773adaafbdf586e07e6d2533c405ae644d1a0d8056cb2c68e0572f7e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P1.S2",
+    "recordHash": "651be9a26ff2ae6c4358a1c8adb1a8df27c836c55627d93a36c4c6a9f6e89b8f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P1.S3",
+    "recordHash": "f6ce213f02e0178dcbb0f919713c532576c14bb08c0125baf1d5a9857d91c185",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P1.S4",
+    "recordHash": "081f2e698f364e5a9299de545dae240ac558ed9d29befeae0c12f2995de2f059",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P2.S1",
+    "recordHash": "77f84c955352155e6d300184da0bd592be61208d2c8c3498cd2ae2e531b776be",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P2.S2",
+    "recordHash": "2fb94cfcc596ea49f209dc5c4ffad7afde520ec6d805df28412e33efb33e5afe",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P2.S3",
+    "recordHash": "2f4c9619b1e9f03484c4963f14108af3a38d44fe7581f4d25b149ebe0e2157dc",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P2.S4",
+    "recordHash": "62736c0b7694e1250a23183ea3ad4b3b3b541e9659341c651352f01a3bcb6bf2",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P3.S1",
+    "recordHash": "6fb86c14d677b9113f9f9baeec81ff12b9b8a0bc92dae3db0ef12723ac1c3869",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P3.S2",
+    "recordHash": "0e33f03dca2046ac0d87c4929630e1a12a5b0fb83ea22a7517367ad0ad8758f7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P3.S3",
+    "recordHash": "268f61ebe8b31ef9c7a51cfd9930f1f24b06edc80b3164e5362d1a383b5eb225",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P3.S4",
+    "recordHash": "84e04a81afea7819a66b38cfefcdb073ac53cfb713d714149ac7ce28e8e5fc8a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P4.S1",
+    "recordHash": "7af19d285aeaac6b5b0cb17d077bf4100c11ea42e66820daaaaf47d178ff8c98",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P4.S2",
+    "recordHash": "6dc3f9d44c279fbd42c7c617e6141866057e49934735b08b8fafbe3febaa8e86",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P4.S3",
+    "recordHash": "ca3e05560ee3b308b649007814961e74f99c5d31d5f858de556caaab85549942",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH04.P4.S4",
+    "recordHash": "8461686e9c8a92473127f305b142eedacb44d66d9a6c797bebbdb8dac63aa00e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P1.S1",
+    "recordHash": "998e78d84be96697d851d646958f6ac4b544bcd90c37dad978e407c04d581e2a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P1.S2",
+    "recordHash": "ff9618528bfa82957735f0dc1daa4d69f373d882c377dee71f753d3ce48f0968",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P1.S3",
+    "recordHash": "c8d4b46d8cab79e9fc43fc597b7517dae8e1b51ae56fbfccc3024e39bd246130",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P1.S4",
+    "recordHash": "6b199de4d858abe8b7f1d0f7ed92aa5cf19e3dbed372a4f57d27e281ab0593ba",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P2.S1",
+    "recordHash": "42f85005e11f7bd344f2d84582ff84c7ebf0e08402240e14c4629aeebc140e1a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P2.S2",
+    "recordHash": "82ad2365868007e43970bd13b70f4648750259f5c05ac38d63cf3a037535f6e8",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P2.S3",
+    "recordHash": "7f44d9921a8331fe6549c3cc03d76a3f0a9696ef9f92153d3c42973e2fd54fc2",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P2.S4",
+    "recordHash": "0533aec14726befdded7c1d50d7f7ce5049cb5478a86e4d9b596edf09ae21276",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P3.S1",
+    "recordHash": "f838825cb25668ca923d1da4bc3f70453a9dea1a4f6efb87d91ce9bf43081650",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P3.S2",
+    "recordHash": "933fc84aeee473a43325be2862c015928630bd1dc31a2fbfdaf5d9dd4591fefa",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P3.S3",
+    "recordHash": "5dc2d62e6ac253cf12f8ad25f3c0e7bc0ed4298e1c6cefd693817a9b895dba65",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P3.S4",
+    "recordHash": "0a8704fbea9a35eb0cd8cef1cfadfd8ceb976ac34f68292e8b6d7c8b96a3a46f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P4.S1",
+    "recordHash": "d9de57ee15b9c3518bf3128d43073fe969397a4eeac33d936a7b63121c1f6c21",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P4.S2",
+    "recordHash": "851b1c64aa83fcbcb3b8fbb3efafac50d2752c7503b89c7297cd35d93ae6ec41",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P4.S3",
+    "recordHash": "fc03ded70e605741b88d6d7275fd67e3980b3d70ec491f9b7fd8e105a69ce270",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH05.P4.S4",
+    "recordHash": "3ba2be6ccb882bc2dd5bde8ce5d7404e6cb35bd2fe56a5ed6b042f01dee87ca9",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P1.S1",
+    "recordHash": "b8c308bb1a6143be342b7ac8beca4f60a3689aa3ab4e867d786ef64b2eecf574",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P1.S2",
+    "recordHash": "29ac2d76d8a393d291668dc2f9883238a4ac83068d7758fb1805d2550f3980c4",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P1.S3",
+    "recordHash": "479849ac07cfc9a3e87d48a10750398896efc5bc31b3e24d46326583caff276c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P1.S4",
+    "recordHash": "66f2798e7394f1d14a424c5ffe621dad27231349c5d335858b2a158448cbd257",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P2.S1",
+    "recordHash": "540490140e0a28336bdaf96ab444cec4e90600d179a76f392b4810fc415c56c0",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P2.S2",
+    "recordHash": "f5e464df6abafde677e0e2efa99993bd3dcc6fc46148bdf6cc3f26ae240cc231",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P2.S3",
+    "recordHash": "cbf02b4f0c5eb7037b0d1a3c7817780e688122af3a5042fc3c1b9abd11dcdd8a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P2.S4",
+    "recordHash": "ab39e1dec07cae3c139a7a8817a1334f32e7b1029d9e110ad69e4d7bb8780bda",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P3.S1",
+    "recordHash": "6ad1fff8de1180c77ac8df84f3c9d8b7b35dd7f7a608aea16f8fbd716544075f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P3.S2",
+    "recordHash": "a34084c2206b881e13c7bc0034d0317528009af218f171fd8000c52da4aff8cc",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P3.S3",
+    "recordHash": "41379f835b2d3b3d4bd5112b348472b8a1816791ff0f747e626965b2d450ab7b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P3.S4",
+    "recordHash": "57930fa0b06f4214b28f3ba7b31bb57aea630a7ea572d5faa4ecd74d8fd9e9a7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P4.S1",
+    "recordHash": "d576d36e5778bd6c49309ff4de1ec9cdd1b500483beb40927987ce2ccf872ccc",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P4.S2",
+    "recordHash": "f4d663c96e134fa803b803947ed3aed7af14d221b26bf4de945a53375fb8aa3b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P4.S3",
+    "recordHash": "78a9bcd31bfd1c0c8ab40e5fae77996077bc4d4bc4b1c12ee19d53896482aa52",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH06.P4.S4",
+    "recordHash": "0b903d06ef8c0cef7f2d19be4e684206ef716353a6e8787db23cf8d71249649d",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P1.S1",
+    "recordHash": "24820b42a23e9877e4abf4faacead1d5c2b721b3cb138ddc8878371d88f529fa",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P1.S2",
+    "recordHash": "3df8f0f972c0a97c310816fa491d416a3efb5b7e2395d06628c3435181a8c5ab",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P1.S3",
+    "recordHash": "c73540ccc918163c81f0fb5e4d3c6fdbd7cfe1c0e4c1137649be16772a36ce1a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P1.S4",
+    "recordHash": "86a8fba5fa72c4d7e1452c32702c7e8d36e464d80458e5f13f9cb0ca240fe9b6",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P2.S1",
+    "recordHash": "07afb75c65875215d1afcd2a2e92eaa65b5a713ca41b8fb61d0e7ed8fdf5a919",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P2.S2",
+    "recordHash": "13bd97d1acd02aedaf1539f7dac06f6958651609e1e705266f3d94f204ff2a78",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P2.S3",
+    "recordHash": "d8c308221c7ee212a415c0093c2e17baf33dd99ab6e47779246d95b27d72b93e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P2.S4",
+    "recordHash": "258f266d66891c69176daaca800c249cd41e36c937f9582c7f43475c023fff2e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P3.S1",
+    "recordHash": "5a192e65701febba91088377a234d7ca30336433c00a4b64e62bb6ff82212ac3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P3.S2",
+    "recordHash": "334ca4370bc072bd372a272a09a9a4ef5bd8a6f1e8e5bb4315cfaac0359f1ea3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P3.S3",
+    "recordHash": "c0967b9d67cff706fdec527ecf7acbfa2030506299e683e9a6bc97162f50f571",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P3.S4",
+    "recordHash": "35189819efedc11bd991cd83674a60438ddc7dfe08eacbe95d71ccbb7182fb8a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P4.S1",
+    "recordHash": "d43f6357ae27ee9ba8b3714a7fcc2a3cd44a52ee972e1888b9a62c1d8deabf59",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P4.S2",
+    "recordHash": "dd34573e95100fb27c5facc9dc6df18a13f1fb8d9ba01ff8c461163d0467a595",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P4.S3",
+    "recordHash": "bc8e3063c8f807956b6e5c36982f7419ad791f0d6ef9102fd3aa7b5b52655824",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH07.P4.S4",
+    "recordHash": "35ebeb36cb2adf69a3e1140fa85116e05febdf58e6e320de42b61674ea0e0a57",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P1.S1",
+    "recordHash": "29079b2944cf672e5433f3c3f45b834b6f6f84ee8322a9696cf7bee2febfba0a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P1.S2",
+    "recordHash": "544d6f7784203bf8d12ee4158d56e401d5c921dfde2db53a7a74b1d332d0fab7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P1.S3",
+    "recordHash": "0156d5fc6ba6dcde65eb1758cb571d07f15d5bccab85a2d3a188c15a84b374ad",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P1.S4",
+    "recordHash": "d56dab6b89d3812b6d622016d436dd58dcbae290d060f479a01fd5c1d65f4ce5",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P2.S1",
+    "recordHash": "8e9588ad4acc7084b32f75d0622c970d0b052fb574ba8203668b9d68e98b390e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P2.S2",
+    "recordHash": "77e9b6fb71d7bea22c6aade2975aa5bfa22494696fd218e490d909fac45c3e3a",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P2.S3",
+    "recordHash": "d9fee82dc54682f1592a27fcc114cb3af61cef2898c67ddefe11106648b2708c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P2.S4",
+    "recordHash": "b0e087b7e99dcb4110a4068e7801dd656b9f631e1a87baab2a263d8f3d16e169",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P3.S1",
+    "recordHash": "089cd41275529cd8598f983f164cc2cd94505eacc5c7159137ef595b0f22b6d3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P3.S2",
+    "recordHash": "fee61572d7cc677b26ba075d9b7ac5e9ab75311ac713599421604d407f1460e0",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P3.S3",
+    "recordHash": "c60e66ae93f5126ea1a86e1970ed498bacd2bb6f2d2e7310e33ec13e4f8d6b2e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P3.S4",
+    "recordHash": "6ef80d5250d0d4bdb3d596e0aaa8ea5f244f706ec888297825138ef6ee5e7fc3",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P4.S1",
+    "recordHash": "042b9e8f99681bac0f0cc299ec8f7a77f8189509772305404b37fc4cb5964b97",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P4.S2",
+    "recordHash": "c9c8028ea71ce185250b459f763f2e30231ab97b3ad2bc4c208bc07565d48101",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P4.S3",
+    "recordHash": "6b8013d0ef61e07b62e3cfee96fbd96d350ad885f6d80680d4e957579dc47760",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH08.P4.S4",
+    "recordHash": "5e89647386f38c7879eff089d32e9388832bcc5c556db0d5dbc5625a8120945c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P1.S1",
+    "recordHash": "03fdd39d48e731de1beb0e627139ea7612c9498e97b13ba053fdf2424be604e7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P1.S2",
+    "recordHash": "6fc43fab84919409e2b53f03ea06c25377cb685306d848a45cd70e16fdab38be",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P1.S3",
+    "recordHash": "fb9ecb498a38de6565ca5c8c91c959416ec66ea8ff72c779726960a1fc81e8d7",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P1.S4",
+    "recordHash": "2f82c97d5936303a28e2e11d0c7e1896f3b0e863b5cd7aa33246e84f345d2e0e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P2.S1",
+    "recordHash": "f05070e9819bf0699d01e0ad3dbd73b2ee1e665ee82d22ba5dc04919ca43dd9e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P2.S2",
+    "recordHash": "fa11231309a768b4fc300f00e7867bcaaf04e7f095eab95f7a2b38c7fb36c527",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P2.S3",
+    "recordHash": "4a899982b5ae5396d82bc2ad7419ba5ccc5e2c7c9579de5d9615f179a33759cc",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P2.S4",
+    "recordHash": "1786570be8c45f747832be011201949c94c49505f189904f17de916645ac340f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P3.S1",
+    "recordHash": "bc0d307d1880f6428b20f2ddf12b817ac9c09950056614b2216b4c7a5ae5947f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P3.S2",
+    "recordHash": "8899439b40515be4bda2a3c58fcd0a656f97b8ab80e5dd48b709d7a0d05c7c59",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P3.S3",
+    "recordHash": "742fc73b05ffe46a06ac2b55b6fb95306c30d72a12b7d3adb63675891741dc87",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P3.S4",
+    "recordHash": "789d526d87ca15f888f0daefa259c7582e6b58d1c2720837851d89f3a55d9fe1",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P4.S1",
+    "recordHash": "b5b10fee0c74d63b57c26e7f02e6008bc8184ed103d7a464fbcc4c815216ce13",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P4.S2",
+    "recordHash": "68f2a005655c154f6b8bd1536de0ddbce9177c73b9b4085009b3db71f214ab14",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P4.S3",
+    "recordHash": "6a1abe590ec84f031218bfadbdc034cb75d31c1706f4a2fdabae069918d45518",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "roles",
+    "id": "ker:role:CH09.P4.S4",
+    "recordHash": "d4e1b8537b6ef7c161781277dde1da466b5d252f8ab8481a4097e937d8a79272",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:0",
+    "recordHash": "9b2a40f96b07162a06094ed2a8fb818610999f9eda169beb10b6f33bd0d98f9e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:1",
+    "recordHash": "cb957725b8fb4dab9a3bc7b151eaa6762ad98741909a454894c3c6b602ac1330",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:2",
+    "recordHash": "352adb75d16b9b1d5957bcb727aa999f42c77b128505c1a2790c6a1f0ec14460",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:3",
+    "recordHash": "ac2881a3deacffb721418054d111d6edc24daff23cca5910fa0a246b0acd61af",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:4",
+    "recordHash": "14ac9138af43e8db81b458c5769e15956cce760ab59bb1909b49eea2a0ce74f8",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:5",
+    "recordHash": "1aeb7a624b6d97803ea4b322db5bb643045b99e6d4f427f8beb04224b79cbff9",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:6",
+    "recordHash": "08010208e54e1c8285dd115e403c1cff4639175fa54a1a76fea881d6bbebcd4d",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:7",
+    "recordHash": "b2cdf99b9734ce7db6e1cc2c7f66958a0652909fa66002c15beb73d4a21f3427",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:8",
+    "recordHash": "029b9d72e13a260bd79d63212bddbde5e224cfcca7fef117e1856b8e0752e363",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:9",
+    "recordHash": "9946f9643dbb2c4686b32a9cbbbcf3ffd5f678237f0c9f2137240f5e8a171afc",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:10",
+    "recordHash": "895a0a1823d97f34671e8dc275379c1bd6f20cc357aa012f3bd62caa105f7971",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:11",
+    "recordHash": "5262acb56659c01dc2d5df3ef95dbbc4c5d0dc8ecbceea957a8206a707107963",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:12",
+    "recordHash": "27faaf7b648f40adacded51e7669eb775a48eed31a23fb2e0e950f9b48b08d68",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "invariants",
+    "id": "ker:invariant:13",
+    "recordHash": "b2daeb86bee14c92064ee83e5d2bfd1f53f4169ed12b0ad016920c61e727e736",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:1",
+    "recordHash": "50aa671ed0b6dabf3ae44ffb2f79572d6edfa16c5d94587306cbe03b40ab4058",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:2",
+    "recordHash": "e106938fc4c994a6bf094160543dd7cb0afba17246ba82fc6dd3bc4eb1cc52d5",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:3",
+    "recordHash": "f0d8470cf51cc363f49dfd49c2a577eefceb0f6c1d29d0c62d83ddcbb12b1c5c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:4",
+    "recordHash": "f77f6d796f4713ba805535ed46ddaca4de10925c709c96143827bd6c2294ff4f",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:5",
+    "recordHash": "553e55baa1ce42c09ebbb6f7073a901387b26bed9cb1a980fd5353ba7ea249a1",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:6",
+    "recordHash": "e5c9d108e90c339ff43535f47fb0fccebd8c0164399f0aeed4cac9862608d766",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:7",
+    "recordHash": "340541d80536eca314774031c3ac10d1ca7f5b91a3d27aafbad09127ff3f7059",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:8",
+    "recordHash": "f4f09d631f30276fb17ec2fac3fd9392b3187f79e8d744978daffb7fcfc2c228",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:9",
+    "recordHash": "50dd6ea4e601b544593b0a0c22b6f081ecbcbd5ef65502bbcd6200581b5ae49e",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:10",
+    "recordHash": "580db7f83f87840a9f6d502606ac8324330373b78c9e9b5d66887948471bf8f5",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:11",
+    "recordHash": "bc156a2c97c5ac67eb0a2b13871075427cee744dab8c39ea537c85fb0a369313",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:12",
+    "recordHash": "8d1532d2da658a9a39be5f79b0a22285ba5722abee5fddb3e293d953ae6c4142",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:13",
+    "recordHash": "9c88aacbcebdc4518b1bee2cd405426e4b8ee085846023cbb885adb227fbe28d",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:14",
+    "recordHash": "d198fc1c3a9829faf09d1ef0b338b071c3de8a6d924a525b15a4b3672b833456",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:15",
+    "recordHash": "813e5503087afb05528d5fb568ea150650a378f84b02f093691b7475131381fb",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:16",
+    "recordHash": "eb89dfacf6adfc6e43dd8001dcf7aad6288592cb48b778c6e67b981aaf049019",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:17",
+    "recordHash": "1010f5cb29c0cdf885d9ead7fc48d293585b38d4fc783445fc4a647bdb27efa1",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:18",
+    "recordHash": "0ef9ba8530b098e96e54af1dc8ee544a1ce52719a0fe1dc84d040f275e8ce962",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:19",
+    "recordHash": "7f1c4245d87c95bcaa94a9bc17ce67d3a93446888d5e807480ef12f75d985a22",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "rejected",
+    "id": "ker:rejected:20",
+    "recordHash": "78ba59c78d5841c9e0fab8dfffeaa8136468c0640e2dbec7bf675afa4078a3bd",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "stages",
+    "id": "ker:binding:evidence",
+    "recordHash": "204683fe0a22ed072de56444eef0eb1851c55c5f6c9e3474417f5814219f4c55",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "stages",
+    "id": "ker:binding:interpretation",
+    "recordHash": "99034d2eaac088b039fcb1509072e91f03325c8ee88ef0fff6e5be1f60a7dc99",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "stages",
+    "id": "ker:binding:claim",
+    "recordHash": "416d8b5a65d2de7e70c44a000209c3d57f5de08294e9cef448a23352caba57d5",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "stages",
+    "id": "ker:binding:allocation",
+    "recordHash": "c1cc3c68a8e545a201ee438d4b7eb88742e3b1ad64fe2142f5fef0bd637b21dd",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "stages",
+    "id": "ker:binding:function",
+    "recordHash": "1f483e733f41ce8640d278ce57e92bea13f5df1ec29a536165cac6aafaac0e51",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "stages",
+    "id": "ker:binding:scene",
+    "recordHash": "f248cdfc957b26c6d00475ad15f534671ed994109c10d2ebf1878edc0bc6dc3d",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "stages",
+    "id": "ker:binding:sentence",
+    "recordHash": "9596a05942070e83c5286c5578ff41c1076e43a64ea75f9d049410a71708d2b8",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "stages",
+    "id": "ker:binding:transition",
+    "recordHash": "5ddc244264375e27748acb71263d069b5ecd3bc72ec8c159acc7b19053f44b61",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "stages",
+    "id": "ker:binding:book-quality",
+    "recordHash": "c97340aab470ad9b020171764eea7fbb5fa20111b2166abcf7cf7b477181aa59",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "sources",
+    "id": "ker:source:runtime",
+    "recordHash": "892ce77cb264f717001dfc776ecd64c71d1217b25b3bfdebf6227257738396ef",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "sources",
+    "id": "ker:source:particles",
+    "recordHash": "d0d1e8e417ad3c0687ee2dd9ce3ada7401e9a257682e004ae98a7fe8322c827b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "sources",
+    "id": "ker:source:euro",
+    "recordHash": "85edcdca7cfa684192459d2a3275a6ab09e72abb0d7d0f676118b8e79fbfeb11",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "sources",
+    "id": "ker:source:with",
+    "recordHash": "b22f9255207cf6e9cccf9a0a004f3dcb4ccf00f1af551651b74b1df55d274ea6",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "sources",
+    "id": "ker:source:quotes",
+    "recordHash": "3cc3f4c7294076f0cd8b2f5d0a277028d410d1d3ae6e83ce1ecc5ff9ec54fb15",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "sources",
+    "id": "ker:source:copula",
+    "recordHash": "c8b2ba2f7e8070919ee381a7dd9352bf0715f1dccc0fc8844d4b6d359bc5173c",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  },
+  {
+    "family": "sources",
+    "id": "ker:source:editorial",
+    "recordHash": "bf2d71688ba3c52e6f125f062d2d51cd592232a2be848f92396ebf723cbbc06b",
+    "source": null,
+    "referenceOnly": true,
+    "customerApproved": false,
+    "connectedToRuntime": false
+  }
+]

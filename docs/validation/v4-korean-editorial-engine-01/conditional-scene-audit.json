@@ -1,0 +1,173 @@
+[
+  {
+    "id": "ker:scene:day-choice",
+    "hash": "0752f9fc57964844b0835ee930b922269689e8fd4d11e4313991a8ae33142723",
+    "product": "saju_mbti_full",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "실제 선택 상황이 있거나 가상으로만 제시",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:work-brief",
+    "hash": "e63877f8d8d778ee7a14d1fc809f029b89ac14e52d0d0289259df53d236c9598",
+    "product": "career_money_study",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "해당 시점 실제 의뢰/과제 있음",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:money-cost",
+    "hash": "c97512d96cc44eb13f8470207a549fa01f4cd95dc1701ea6be5a921cb277de24",
+    "product": "career_money_study",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "실제 예산/구매 선택 있음",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:learning-proof",
+    "hash": "7ea8708c05640377a4ccf32cba5cf4dbf435b04782ae52af8b76ec6f71fa7291",
+    "product": "career_money_study",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "그 시기에 실제 학습 활동 있음",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:affection-help",
+    "hash": "11bab4c65c5462a75c9a1d3be081f70d2e5e5e75b2f2dd7d8d338daed0c82bc1",
+    "product": "love_marriage_child",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "그 시기 실제 친밀 관계가 있거나 조건부",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:parenting-choice",
+    "hash": "ed99f1dce4d679787ae8417636398ceba7ab5892d9b056183b96a7581f689435",
+    "product": "love_marriage_child",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "양육 역할/발달 상태 실제 확인 또는 가정",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:long-change",
+    "hash": "d7734715f57cae04d6489e264d42a1543a6512326893931e3089cfbd5040502b",
+    "product": "major_fortune",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "그 시점 활동/역할 확인; 현재 직업 자동 전용 금지",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:month-window",
+    "hash": "3ff93b0e05499a0c9bc139b759165ad69fbbf80e369c14093a0708842e9f0783",
+    "product": "annual_fortune",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "실제 해당 segment와 선택 상황 확인",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:repair-dialogue",
+    "hash": "8d579fca734b3765e1064e972c22747022ab41c47b9217c220553cec1458766a",
+    "product": "saju_mbti_full",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "실제 과거 다툼으로 단정하지 않음",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:contract-bound",
+    "hash": "78742e63f000e02fd94b14086050b8537cf9fba728ed9b0b4b4bda78767450ba",
+    "product": "career_money_study",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "실제 변경 요청과 결정권 확인",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:annual-past",
+    "hash": "01aa2cee4809aa94e5784a10a2b6e75e1d768704841ade61a5cdc32d1a63e71f",
+    "product": "annual_fortune",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "그해 상황 미입력; 실제 사건 회상 전제 금지",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:major-range",
+    "hash": "2513a7860b5a34c81056d9f635b316453a3d75d29ab6829ddd96741dc10968a9",
+    "product": "major_fortune",
+    "category": null,
+    "status": "hypothetical_only",
+    "required": "실제 transition_uncertain과 후보기간",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:pair-love",
+    "hash": "deabdf9c6c94b31e9c119d64ef523bfd4c39a81987b72c23e86fb7819a64c143",
+    "product": "saju_mbti_compatibility",
+    "category": "love",
+    "status": "hypothetical_only",
+    "required": "actual category roles and relevant life state; no pair fact from category alone",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:pair-marriage",
+    "hash": "11ebdec26173b670a4bdf440b7b3823d6cf03ae4bf400daf8e389ab83022202a",
+    "product": "saju_mbti_compatibility",
+    "category": "marriage",
+    "status": "hypothetical_only",
+    "required": "actual category roles and relevant life state; no pair fact from category alone",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:pair-parentChild",
+    "hash": "5adc6e3b3a40a1f6c648fa00f58b8436af28ea8a30a3122cc634754b03cc0ab4",
+    "product": "saju_mbti_compatibility",
+    "category": "parentChild",
+    "status": "hypothetical_only",
+    "required": "actual category roles and relevant life state; no pair fact from category alone",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:pair-coworker",
+    "hash": "20f54028a7fe6698663dc647f7bd5b64ae60cea280d180591501186980af8adb",
+    "product": "saju_mbti_compatibility",
+    "category": "coworker",
+    "status": "hypothetical_only",
+    "required": "actual category roles and relevant life state; no pair fact from category alone",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:pair-managerReport",
+    "hash": "b01cc490ffbef1aa844b477d785a864c87add8eb35edddb3e3eda656dac94a86",
+    "product": "saju_mbti_compatibility",
+    "category": "managerReport",
+    "status": "hypothetical_only",
+    "required": "actual category roles and relevant life state; no pair fact from category alone",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:pair-businessPartner",
+    "hash": "b07af9a909af49bb6067fc766ff668a661d154658d16231ba84816eb5fbe3b3c",
+    "product": "saju_mbti_compatibility",
+    "category": "businessPartner",
+    "status": "hypothetical_only",
+    "required": "actual category roles and relevant life state; no pair fact from category alone",
+    "notCustomerHistory": true
+  },
+  {
+    "id": "ker:scene:pair-friendship",
+    "hash": "ba6a6cfb0cccd20b360cae6e3bc1c0867e525cd8692ead4254b0e9e1ae759a82",
+    "product": "saju_mbti_compatibility",
+    "category": "friendship",
+    "status": "hypothetical_only",
+    "required": "actual category roles and relevant life state; no pair fact from category alone",
+    "notCustomerHistory": true
+  }
+]

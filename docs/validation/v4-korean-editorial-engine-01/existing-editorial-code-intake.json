@@ -1,0 +1,729 @@
+{
+  "filesReadAndAstInspected": 19,
+  "rows": [
+    {
+      "file": "src/lib/interpretation-v4/copyRealizer.ts",
+      "fileHash": "644aa7ddd71d56d6ce2523307d30a4a2f8ce502abb322f22efac46c4aa733ead",
+      "functions": [
+        {
+          "name": "particle",
+          "bodyHash": "055795aebef99d65be1ae18cdd4166ca9b290424fc16badc09bda08f72fa33ee",
+          "exported": true
+        },
+        {
+          "name": "proof",
+          "bodyHash": "2c921131f4187fac9733b73881499bb4c7e0f2dfa815dce3055dad315167a025",
+          "exported": true
+        },
+        {
+          "name": "takeSeeds",
+          "bodyHash": "87ae09eced097d89ac3be3f4443f3b6996159a39990b6a9576cd76683ec6fd0c",
+          "exported": true
+        },
+        {
+          "name": "paragraph",
+          "bodyHash": "836c423ff487d24256af54678aabb4b642e36df623c446011c8bcd3d59cae2f5",
+          "exported": true
+        },
+        {
+          "name": "editorialParagraph",
+          "bodyHash": "7c04affd0bba67165655e90c27bbf825df47d5a86c69507e84aa6868104205b1",
+          "exported": true
+        },
+        {
+          "name": "materialParagraph",
+          "bodyHash": "c9dec8f83f378ec0e3b65004348d6318ef11e9995f587b8b338812fee3830478",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./materialDepthTypes",
+        "./materialPacket",
+        "./narrativeTypes",
+        "./types",
+        "./narrativeVariation"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/contentSynthesis.ts",
+      "fileHash": "d8d715fbaec4a3a71e2a99fdcb906a5611580f5f6b54b4698e52e399cc72dc4f",
+      "functions": [
+        {
+          "name": "conversationalVoice",
+          "bodyHash": "7af215ae698c7a397399ec89db5fc587179fa2f2e73f2a98e811765bafaa4521",
+          "exported": true
+        },
+        {
+          "name": "realizeChapterVoice",
+          "bodyHash": "bacace8978832ff714bdf33e1fbe696009fd5ba08866fee24139fb4379438493",
+          "exported": true
+        },
+        {
+          "name": "fusionReason",
+          "bodyHash": "9ef08585769fdafb12d81bd3c9e4d28d7020ba045e73140b6134be7745e984f2",
+          "exported": false
+        },
+        {
+          "name": "composeEvidenceChapters",
+          "bodyHash": "cf41155e1a79eec6a8ac90bb80be46fe6849e273ae0a62dcbb80a11a147ce214",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./contentEvidence",
+        "./contentMbti",
+        "./contentRelationshipMbti",
+        "./contentQuality",
+        "./contentWhy",
+        "./productRhythm",
+        "./assertionCopy",
+        "./copyRealizer",
+        "./editorialGuard",
+        "./narrativeTypes",
+        "./materialDepthTypes",
+        "./types",
+        "./comprehensivePlan"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeMemory.ts",
+      "fileHash": "63aa5485f82a46f2fe60af70a766a8565a1ca3dcd8ee32ef02f95924823e32ba",
+      "functions": [
+        {
+          "name": "freshNarrativeMemory",
+          "bodyHash": "4f5de8b9d75ea9b5718cc10498e9784853d4477758401f1db7654d2816e00eb5",
+          "exported": true
+        },
+        {
+          "name": "increment",
+          "bodyHash": "be6d7f163ce0e018015738cd61b0b0d19b4ae00d2b9021d389484cb473d698ef",
+          "exported": false
+        },
+        {
+          "name": "openingFamily",
+          "bodyHash": "12842ca2f8d48dfa8d4fac414dc12c2de1057b2f083feeedc56f3970fd7ae606",
+          "exported": true
+        },
+        {
+          "name": "narrativeWordCount",
+          "bodyHash": "c120445c1b5e15518a74c3d50669d836c2f08f7f388252393550ebeeeb39c878",
+          "exported": true
+        },
+        {
+          "name": "advanceNarrativeMemory",
+          "bodyHash": "db162123ed9c20944133b79b890d4e0109762db2480c8978c7d476d20393ad28",
+          "exported": true
+        },
+        {
+          "name": "parseNarrativeMemory",
+          "bodyHash": "f2529a8324a7311a89700db0dcbc22109bcb766ce0afaaf049e7360e9475ea10",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./narrativeCore",
+        "./narrativeCore",
+        "./narrativeVocabulary"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeEndings.ts",
+      "fileHash": "9ab643aba38466aa4b306870397b8f05ee3438439d19c34f139fa4272ae441a8",
+      "functions": [
+        {
+          "name": "detectEnding",
+          "bodyHash": "f1210e0744163347dc275458e78a6ca1533179176493f68e91cb1dc232b62da8",
+          "exported": true
+        },
+        {
+          "name": "narrativeSurfaces",
+          "bodyHash": "f1580e4030ee416c5b153b59825c29d0fbfe2b643bac4725b6f1a4435ad647f0",
+          "exported": true
+        },
+        {
+          "name": "allowsEnding",
+          "bodyHash": "2b0a086b68e793eea16c985ebf82fffa194ff9880a1f396850e9ad78575ca471",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./narrativeCore",
+        "./narrativeVariant"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeVariation.ts",
+      "fileHash": "1bde848711588316bcce15db0b6ef53371910e5703478f73b97cabad53f7cf47",
+      "functions": [
+        {
+          "name": "expressionLens",
+          "bodyHash": "d81faeda9265f35b1c7c1e80481cf20835c0cea11bedbb46be6183a4e8d024aa",
+          "exported": true
+        },
+        {
+          "name": "expressionFusions",
+          "bodyHash": "9deaa9bfe8cf14c0b3709a6438520eff22fc8388de9ba575ff2e89f291834214",
+          "exported": true
+        },
+        {
+          "name": "realizeEditorialVariant",
+          "bodyHash": "8b331f565fcb0190aa9c6c4d37b34da6682fddd9131c3ac94c65dd4a99e95f1a",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./narrativeTypes",
+        "./narrativeDomainVariants",
+        "./narrativePortraitVariants",
+        "./narrativeLifeVariants",
+        "./materialDepth"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeSurface.ts",
+      "fileHash": "57b5a7d155bd5c1898c9737a62f4edb07cf399dc3ed8a824f5dffec47571606e",
+      "functions": [
+        {
+          "name": "phraseFragments",
+          "bodyHash": "061c1159d332facb548a63c496d0dfc034a7500397e16a94f8a6cff969568422",
+          "exported": true
+        },
+        {
+          "name": "preservePhraseDirectness",
+          "bodyHash": "1d21f7e179f0c12c0b066a47d94337c34b4d5f262fe2c9c6c0eb57f90ac5630d",
+          "exported": true
+        },
+        {
+          "name": "permittedSurfaces",
+          "bodyHash": "acc012a9cf95ee0cbd043774982cb30461645bd43a62f6a15e4df6f4adc8bd38",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./narrativeCore",
+        "./narrativeEndings",
+        "./narrativeVariant",
+        "./narrativeConnectors",
+        "./narrativeVocabulary"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeComposer.ts",
+      "fileHash": "6651fd0ff0891c0ce00d95240b3eeb8b01597b4524b74d71221beb5673ff6021",
+      "functions": [
+        {
+          "name": "selectMaterial",
+          "bodyHash": "7ea2b9e6db48865f56f1de6c07f10e886136a4b1c41c650ac2e517e5f87c2237",
+          "exported": true
+        },
+        {
+          "name": "domainParagraph",
+          "bodyHash": "55571799182b44a5e0b6fd0f44241fae87c0a284f12b0b2b790e12add4c4e0f1",
+          "exported": true
+        },
+        {
+          "name": "domainTitle",
+          "bodyHash": "ede69e50a9b182ca35b5ff3de4fd6bd38328610ee5b1ae8a9d8ea156ec042df5",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./materialPacket",
+        "./materialDepthTypes",
+        "./types",
+        "./narrativeTypes",
+        "./copyRealizer",
+        "./narrativeStories",
+        "./narrativeVariation"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeBlockRenderer.ts",
+      "fileHash": "03bfcd05e7433d541e0ba34bcb0abd32e34f14b58364ac39ee71259a667ae1fa",
+      "functions": [
+        {
+          "name": "availablePhrases",
+          "bodyHash": "ba2e04c7ae55d65be8160deaf3741e890f8cd0df4495e4f55346cd86ffb5aa70",
+          "exported": false
+        },
+        {
+          "name": "selectSentences",
+          "bodyHash": "f297c2cae284d5f3a80d03d66954b1f1c3431d27c63d8bc9dcd19c7b5914c107",
+          "exported": false
+        },
+        {
+          "name": "draftBlock",
+          "bodyHash": "8db71a8b8185aa3d5158aa40ebfad14294172263a53f873725d2f66f8d378469",
+          "exported": false
+        },
+        {
+          "name": "renderNarrativeBlock",
+          "bodyHash": "ce31c90dc56bb48a8bb9122791a9dcf9d70702e65e002d11784e7fa8e9e5540e",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./narrativeCore",
+        "./narrativePatterns",
+        "./narrativeValidator",
+        "./narrativeMemory",
+        "./narrativeEndings",
+        "./narrativeVariant",
+        "./narrativeSurface",
+        "./narrativeConnectors"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeValidator.ts",
+      "fileHash": "9b31bfb9d19a8bb1b39868c5c793d21ed8b4b8594bd4e776b76a551e4abcf0a2",
+      "functions": [
+        {
+          "name": "humanDescriptiveness",
+          "bodyHash": "8fdde0c3d828f7bb757963f940802c6e5295dc16658ca98dd0b6df6a12559983",
+          "exported": true
+        },
+        {
+          "name": "inspectNarrativeSource",
+          "bodyHash": "c907371699dee63b8f926e86cf1d1ab00364e5c0728635e9a5bffdd5d64d7bb6",
+          "exported": true
+        },
+        {
+          "name": "validateNarrativeBlock",
+          "bodyHash": "33d57217f4ba058cf5dd7e7c3371fcf374c1c8b45cfb9a7da1a83e1f057480f3",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./narrativeCore",
+        "./narrativePatterns",
+        "./narrativeConnectors",
+        "./narrativeTerminology",
+        "./narrativeVocabulary",
+        "./narrativeSurface",
+        "./narrativeMemory",
+        "./narrativeEndings",
+        "./narrativeVariant"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/editorialGuard.ts",
+      "fileHash": "ac036a0b8b23d0d84b2d605756ad226830b3e0141988a7a9749eca0eafd6f34f",
+      "functions": [
+        {
+          "name": "narrativeText",
+          "bodyHash": "7ce162aa8125743f5291fa4734d5b699842c7e9148baf669ed6b04d4504cdae0",
+          "exported": true
+        },
+        {
+          "name": "reviewNarrative",
+          "bodyHash": "6964d62f54842d7618dd40e893201c8c4a091436be48ccd6f6c5baed2d583a6a",
+          "exported": true
+        },
+        {
+          "name": "reviewNarrativeCohort",
+          "bodyHash": "e2f17b54b1160ac9614ed8db53375e0838fc240189b04a7bc189b1b147b7a3ae",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./narrativeTypes"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/contentQuality.ts",
+      "fileHash": "44e50287d61bd338bdd90205069bfc4ee60888382c73de43bbc4eb9f98764453",
+      "functions": [
+        {
+          "name": "auditContent",
+          "bodyHash": "dec25460c876a09c5194f28075c49ad1d907733f8e09ae91f61d14dabdb82560",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "./editorialGuard",
+        "./narrativeTypes"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/comprehensiveManuscriptRenderer.ts",
+      "fileHash": "c86f1bfa02ed5b34be2949fdf0f89b3765d13f0200138a8b5790a31c0c339535",
+      "functions": [
+        {
+          "name": "renderComprehensiveManuscript",
+          "bodyHash": "59969ddbd1872ee1914664f6e5b693e3cf350e60e73a5ead04752b373e13f8aa",
+          "exported": true
+        },
+        {
+          "name": "renderSelectedManuscript",
+          "bodyHash": "dc084b52b072890a7eb937c0bf7663ff3208143f5683da028185bd794381cea7",
+          "exported": false
+        }
+      ],
+      "imports": [
+        "./comprehensivePlanCore",
+        "./narrativeMemory",
+        "./comprehensiveSectionRenderer",
+        "./comprehensiveManuscriptValidator",
+        "./comprehensiveManuscriptCore",
+        "./comprehensiveEditorialPlan",
+        "./comprehensiveBridgeRenderer",
+        "./operatingRuleRenderer",
+        "./comprehensiveManuscriptPolish",
+        "./manuscriptQualityAudit",
+        "./manuscriptHumanAudit",
+        "./comprehensiveRenderability"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/careerReleaseRenderer.ts",
+      "fileHash": "2cbfe331f99489448900374409c3187cf1d7977e9f110822ab6233c93b7dbed6",
+      "functions": [
+        {
+          "name": "renderCareerRelease",
+          "bodyHash": "2592dbc66c91742905be6c479c6896bde8dae5a81f25401cfe2f536c516cd52e",
+          "exported": true
+        },
+        {
+          "name": "add",
+          "bodyHash": "decfb96eddb99bc909f5b5b1dad1ec5d44ffebc8ec86cd73a6ab6d0c952f7c3a",
+          "exported": false
+        },
+        {
+          "name": "eligible",
+          "bodyHash": "8f298f90249f0f1094fa720d43c96440a8fd941ee2457638ac451ce8ce148591",
+          "exported": false
+        },
+        {
+          "name": "application",
+          "bodyHash": "b33b3a672607a1e4ea14183e873607468a92aaa1515edc86345df19f8321ed67",
+          "exported": false
+        },
+        {
+          "name": "mbtiLine",
+          "bodyHash": "b85e38b17379200f7f24f16667a06b37668b21eddb0759d3d2352345a89b67a7",
+          "exported": false
+        },
+        {
+          "name": "moneyMbtiLine",
+          "bodyHash": "f639023d8f1bfcc35d828cda6d4ec7087f2945d07926d97756ceb2f01ec006e4",
+          "exported": false
+        },
+        {
+          "name": "tensionParagraph",
+          "bodyHash": "d58c5e5a21e968a1c5d4304b0414702f4c16a829a569fd7e2a666a6fa883c597",
+          "exported": false
+        },
+        {
+          "name": "fusionParagraph",
+          "bodyHash": "a71ebf8f1d6bf07a6e8967fca3210dcf444c1eb0571062ef65a0b7aa61ad54e2",
+          "exported": false
+        }
+      ],
+      "imports": [
+        "./careerProductSelection",
+        "./comprehensivePlanCore",
+        "./narrativeTypes",
+        "./careerNarrativeTypes",
+        "./careerReleaseContracts",
+        "./careerReleaseMaterials",
+        "./careerReleaseSources",
+        "./careerReleaseContext",
+        "./careerStudy",
+        "../report-knowledge/mbti/sourceRuntimeAdapter",
+        "./narrativeMbtiReason",
+        "./narrativeMemory",
+        "./narrativePositiveReward",
+        "./careerReleaseApplications",
+        "./careerNatalMoney",
+        "./copyRealizer",
+        "./contentEvidence",
+        "./careerRecommendations",
+        "./careerWorkNarrative",
+        "./narrativeHumanOutcome",
+        "./careerQualityApplications",
+        "./careerReleaseStudy"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/loveReleaseRenderer.ts",
+      "fileHash": "d4f40b5d69a1f1dfaf8fd911b52559a466ba27b7877e34ad801328b98a18e1ee",
+      "functions": [
+        {
+          "name": "renderLoveRelease",
+          "bodyHash": "d54b2a86f8ceb4232d6d1e2b26d892173c3ae04bb1709496b70abc2b7e0a3cb7",
+          "exported": true
+        },
+        {
+          "name": "add",
+          "bodyHash": "fd20f757319c4340cd2768834d8de8de48b2ebf212f25248e7fb76a6176d2879",
+          "exported": false
+        },
+        {
+          "name": "eligible",
+          "bodyHash": "ce2a4d0bdf9ca213293cb60ab529a577e2b85c263172e66d77ace9a8af6200ec",
+          "exported": false
+        },
+        {
+          "name": "application",
+          "bodyHash": "5daa46e905bbed0508df7e49c7538541ac4fceb99e224c58162ee59b6c806395",
+          "exported": false
+        },
+        {
+          "name": "asset",
+          "bodyHash": "a3a0b8b4d6923112bdcd186e9cd0ae6c65526ef18f671d93a20496a350883c57",
+          "exported": false
+        },
+        {
+          "name": "fusionParagraph",
+          "bodyHash": "e8d25c66511808ab9542fa63fa2fa21edc85b58739f1cc0539fd61f6ac8f8ddf",
+          "exported": false
+        },
+        {
+          "name": "parentParagraph",
+          "bodyHash": "9ca447ffcc9aeaea39ac79bf1bd8cebfa8398ad4e333e374301d404c424ca3a5",
+          "exported": false
+        }
+      ],
+      "imports": [
+        "./loveReleaseContracts",
+        "./loveReleaseMaterials",
+        "./loveReleaseContext",
+        "./loveReleaseSources",
+        "./relationshipProductView",
+        "./narrativeTypes",
+        "./loveNarrativeTypes",
+        "./copyRealizer",
+        "../report-knowledge/mbti/sourceRuntimeAdapter",
+        "./narrativeHumanSurface",
+        "./narrativeHumanOutcome",
+        "./loveReleaseParenting",
+        "./loveReleaseApplications"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+      "fileHash": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+      "functions": [
+        {
+          "name": "renderCompatibilityRelease",
+          "bodyHash": "573aef10d3d9d9f02f069d3a01a0be0a123cf70166c615c6e50e6afb0f268aef",
+          "exported": true
+        },
+        {
+          "name": "take",
+          "bodyHash": "a4b3489406248d2efed3671d253ea59b4572a5f55f4fc3a99d80153f984ab953",
+          "exported": false
+        },
+        {
+          "name": "root",
+          "bodyHash": "8fa7b2f6064822857551674a4445c4ee961086628c420077a20686813eb320a4",
+          "exported": false
+        },
+        {
+          "name": "reason",
+          "bodyHash": "a4a30e171c8834f212bb9dfc694ff8b27e5e9fd1e13eab8136c59a2788337c44",
+          "exported": false
+        },
+        {
+          "name": "node",
+          "bodyHash": "5a885d24da7721e43308258f9924c9f8707fe5867840a5c0f780d20fee5918e7",
+          "exported": false
+        },
+        {
+          "name": "mbti",
+          "bodyHash": "f2a214c02436415201bf70b7386df9a03362abe9ba7de1727c59b1929fa49516",
+          "exported": false
+        },
+        {
+          "name": "relation",
+          "bodyHash": "94f46c9937e686dfb1c3b809e01af6953c77b27adec63733f733381f2df573ce",
+          "exported": false
+        },
+        {
+          "name": "relationDescription",
+          "bodyHash": "f1ddaac115bc6156f79fbe1af4dfd83a5606cb50bc1b90f043b15f1fe1b897e6",
+          "exported": false
+        },
+        {
+          "name": "comparison",
+          "bodyHash": "9e754c7fbcc612698b3c5d31051268b56fc3374f385cb0fd670e91888972b7b2",
+          "exported": false
+        },
+        {
+          "name": "asset",
+          "bodyHash": "7e8f2002cc1a8b60c3c367449a82bb71dbe400cf6d903f9686bd9db3814332e1",
+          "exported": false
+        },
+        {
+          "name": "add",
+          "bodyHash": "31f57e84059315fa4fb0030f4a516176f3840b85ed36447739aa760f39a0db0c",
+          "exported": false
+        },
+        {
+          "name": "fusionGift",
+          "bodyHash": "ec4b228b683bf4dbef653747fb1509b42a0af7412005be31a21788612e732351",
+          "exported": false
+        }
+      ],
+      "imports": [
+        "./compatibilityReleaseContracts",
+        "./compatibilityReleaseMaterials",
+        "./compatibilityReleaseApplications",
+        "./compatibilityReleaseSources",
+        "./compatibilityCategoryCopy",
+        "./compatibilityInteractions",
+        "./compatibilityHarmony",
+        "./copyRealizer",
+        "../report-knowledge/koreanCopyUtils",
+        "./compatibilityTitle",
+        "./editorialGuard",
+        "./narrativeHumanOutcome",
+        "./narrativeHumanSurface",
+        "./semanticCore",
+        "./compatibilityEvidence",
+        "./compatibilityNarrativeTypes",
+        "./compatibilityProductView",
+        "./relationshipProductView",
+        "./narrativeTypes"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/majorComposer.ts",
+      "fileHash": "3252dc1b6c1a6b3721a0d055686233cd7e996232d99f61afca494a8b47c0dcbc",
+      "functions": [
+        {
+          "name": "composeMajorFortuneNarrative",
+          "bodyHash": "433f502a598cfd46ad7a16f682f5f1112bb59de8b97208541ae8d8ff402f4933",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "../report-knowledge/koreanCopyUtils",
+        "./majorEvidence",
+        "./majorContext",
+        "./majorYearNarrative",
+        "./majorBehavior",
+        "./majorDistantScenes",
+        "./majorMaterials",
+        "./copyRealizer",
+        "./editorialGuard",
+        "./contentSynthesis",
+        "./majorEvidenceReading",
+        "./majorYearPersonalization",
+        "./majorPeriodCopy",
+        "./majorInteractionReading",
+        "./contentQuality",
+        "./periodPlanner",
+        "./narrativeTypes"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/majorAnnualStories.ts",
+      "fileHash": "92172f34e8b063346a057363ce52d83ede68bb76e541bba9587e5648c5f56cfa",
+      "functions": [
+        {
+          "name": "majorAnnualStory",
+          "bodyHash": "16480e8273636551d6a37e2fdda70985f5f464c1c67c5a222655e19a223397c9",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "../report-knowledge/annualFortuneTypes",
+        "./majorContext",
+        "../report-knowledge/koreanCopyUtils",
+        "./copyRealizer",
+        "./majorSceneDetails",
+        "./majorDistantScenes"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/annualComposer.ts",
+      "fileHash": "e8329cd7b325ce17917fbb7ef71e93ab142b66277500479a91cc20c62a5c80ed",
+      "functions": [
+        {
+          "name": "crossText",
+          "bodyHash": "09e2f3ffee2b6b5848868e7164650679825140aba2d6eaaac8955681fffa8f98",
+          "exported": false
+        },
+        {
+          "name": "composeAnnualFortuneNarrative",
+          "bodyHash": "aa49d34676462d306862b7d06afa1b1d92295ba5325cc96d30888fc6305a0692",
+          "exported": true
+        }
+      ],
+      "imports": [
+        "../report-knowledge/annualFortuneTypes",
+        "../report-knowledge/koreanCopyUtils",
+        "./annualEvidence",
+        "../report-knowledge/annualFortuneYearRules",
+        "./annualMonthNarrative",
+        "./majorContext",
+        "./majorMaterials",
+        "./copyRealizer",
+        "./editorialGuard",
+        "./contentSynthesis",
+        "./periodPlanner",
+        "./annualEvidenceReading",
+        "./narrativeTypes"
+      ],
+      "unchanged": true
+    },
+    {
+      "file": "src/lib/interpretation-v4/annualStories.ts",
+      "fileHash": "cce67558f2374078809f086a5ee77451962717e396ca161c9ac00a3acb91c085",
+      "functions": [],
+      "imports": [
+        "../report-knowledge/annualFortuneTypes"
+      ],
+      "unchanged": true
+    }
+  ],
+  "actuallyReused": [
+    {
+      "file": "src/lib/report-knowledge/koreanCopyUtils.ts",
+      "symbols": [
+        "withKoreanParticle"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeEndings.ts",
+      "symbols": [
+        "narrativeSurfaces",
+        "detectEnding"
+      ]
+    },
+    {
+      "file": "src/lib/interpretation-v4/narrativeMemory.ts",
+      "symbols": [
+        "freshNarrativeMemory",
+        "memoryCount",
+        "openingFamily",
+        "narrativeSubject"
+      ]
+    }
+  ],
+  "limits": [
+    "Legacy generic particle/whole-copy helpers do not supply typed pronunciation/owner/negation scope; existing safer particle is reused only at known slots.",
+    "Existing paragraph Renderers require their existing NarrativeRequest, seed/material/profiles and publication contracts; they are not a verified Planner-claim adapter.",
+    "Existing Memory helpers are reused in private per-draft state. Customer Renderer memory is not shared.",
+    "Existing surface suffix whitelist is reused after typed construction; no complete morphology or arbitrary whole-prose correction is claimed."
+  ],
+  "existingWriterReplaced": false
+}

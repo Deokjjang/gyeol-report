@@ -1,0 +1,278 @@
+[
+  {
+    "id": "ker:grammar-fixture:지우:subject",
+    "rejected": true,
+    "prohibited": "지우이",
+    "actual": "지우가"
+  },
+  {
+    "id": "ker:grammar-fixture:지우:topic",
+    "rejected": true,
+    "prohibited": "지우은",
+    "actual": "지우는"
+  },
+  {
+    "id": "ker:grammar-fixture:지우:object",
+    "rejected": true,
+    "prohibited": "지우을",
+    "actual": "지우를"
+  },
+  {
+    "id": "ker:grammar-fixture:지우:with",
+    "rejected": true,
+    "prohibited": "지우과",
+    "actual": "지우와"
+  },
+  {
+    "id": "ker:grammar-fixture:지우:to",
+    "rejected": true,
+    "prohibited": "지우으로",
+    "actual": "지우로"
+  },
+  {
+    "id": "ker:grammar-fixture:준호:subject",
+    "rejected": true,
+    "prohibited": "준호이",
+    "actual": "준호가"
+  },
+  {
+    "id": "ker:grammar-fixture:준호:topic",
+    "rejected": true,
+    "prohibited": "준호은",
+    "actual": "준호는"
+  },
+  {
+    "id": "ker:grammar-fixture:준호:object",
+    "rejected": true,
+    "prohibited": "준호을",
+    "actual": "준호를"
+  },
+  {
+    "id": "ker:grammar-fixture:준호:with",
+    "rejected": true,
+    "prohibited": "준호과",
+    "actual": "준호와"
+  },
+  {
+    "id": "ker:grammar-fixture:준호:to",
+    "rejected": true,
+    "prohibited": "준호으로",
+    "actual": "준호로"
+  },
+  {
+    "id": "ker:grammar-fixture:예린:subject",
+    "rejected": true,
+    "prohibited": "예린가",
+    "actual": "예린이"
+  },
+  {
+    "id": "ker:grammar-fixture:예린:topic",
+    "rejected": true,
+    "prohibited": "예린는",
+    "actual": "예린은"
+  },
+  {
+    "id": "ker:grammar-fixture:예린:object",
+    "rejected": true,
+    "prohibited": "예린를",
+    "actual": "예린을"
+  },
+  {
+    "id": "ker:grammar-fixture:예린:with",
+    "rejected": true,
+    "prohibited": "예린와",
+    "actual": "예린과"
+  },
+  {
+    "id": "ker:grammar-fixture:예린:to",
+    "rejected": true,
+    "prohibited": "예린로",
+    "actual": "예린으로"
+  },
+  {
+    "id": "ker:grammar-fixture:길:subject",
+    "rejected": true,
+    "prohibited": "길가",
+    "actual": "길이"
+  },
+  {
+    "id": "ker:grammar-fixture:길:topic",
+    "rejected": true,
+    "prohibited": "길는",
+    "actual": "길은"
+  },
+  {
+    "id": "ker:grammar-fixture:길:object",
+    "rejected": true,
+    "prohibited": "길를",
+    "actual": "길을"
+  },
+  {
+    "id": "ker:grammar-fixture:길:with",
+    "rejected": true,
+    "prohibited": "길와",
+    "actual": "길과"
+  },
+  {
+    "id": "ker:grammar-fixture:길:to",
+    "rejected": true,
+    "prohibited": "길으로",
+    "actual": "길로"
+  },
+  {
+    "id": "ker:grammar-fixture:제안:subject",
+    "rejected": true,
+    "prohibited": "제안가",
+    "actual": "제안이"
+  },
+  {
+    "id": "ker:grammar-fixture:제안:topic",
+    "rejected": true,
+    "prohibited": "제안는",
+    "actual": "제안은"
+  },
+  {
+    "id": "ker:grammar-fixture:제안:object",
+    "rejected": true,
+    "prohibited": "제안를",
+    "actual": "제안을"
+  },
+  {
+    "id": "ker:grammar-fixture:제안:with",
+    "rejected": true,
+    "prohibited": "제안와",
+    "actual": "제안과"
+  },
+  {
+    "id": "ker:grammar-fixture:제안:to",
+    "rejected": true,
+    "prohibited": "제안로",
+    "actual": "제안으로"
+  },
+  {
+    "id": "ker:grammar-fixture:목소리:subject",
+    "rejected": true,
+    "prohibited": "목소리이",
+    "actual": "목소리가"
+  },
+  {
+    "id": "ker:grammar-fixture:목소리:topic",
+    "rejected": true,
+    "prohibited": "목소리은",
+    "actual": "목소리는"
+  },
+  {
+    "id": "ker:grammar-fixture:목소리:object",
+    "rejected": true,
+    "prohibited": "목소리을",
+    "actual": "목소리를"
+  },
+  {
+    "id": "ker:grammar-fixture:목소리:with",
+    "rejected": true,
+    "prohibited": "목소리과",
+    "actual": "목소리와"
+  },
+  {
+    "id": "ker:grammar-fixture:목소리:to",
+    "rejected": true,
+    "prohibited": "목소리으로",
+    "actual": "목소리로"
+  },
+  {
+    "id": "ker:grammar-fixture:quoted-object",
+    "rejected": true,
+    "prohibited": "‘대화’을",
+    "actual": "‘대화’를"
+  },
+  {
+    "id": "ker:grammar-fixture:quoted-subject",
+    "rejected": true,
+    "prohibited": "‘제안’가",
+    "actual": "‘제안’이"
+  },
+  {
+    "id": "ker:grammar-fixture:quoted-rieul",
+    "rejected": true,
+    "prohibited": "‘길’으로",
+    "actual": "‘길’로"
+  },
+  {
+    "id": "ker:grammar-fixture:old-rieul",
+    "rejected": true,
+    "prohibited": "길으로",
+    "actual": "길로"
+  },
+  {
+    "id": "ker:grammar-fixture:foreign",
+    "rejected": true,
+    "prohibited": "Alex가(발음 확인 없이 확정)",
+    "actual": "Alex님이"
+  },
+  {
+    "id": "ker:grammar-fixture:symbols",
+    "rejected": true,
+    "prohibited": "A/B를 이름 전체에서 재치환",
+    "actual": "A $& {{B}}님의 관점"
+  },
+  {
+    "id": "ker:grammar-fixture:mbti",
+    "rejected": true,
+    "prohibited": "INTJ은",
+    "actual": "INTJ 유형에서는"
+  },
+  {
+    "id": "ker:grammar-fixture:hanja",
+    "rejected": true,
+    "prohibited": "庚가",
+    "actual": "일간 표기 ‘庚’:"
+  },
+  {
+    "id": "ker:grammar-fixture:digit",
+    "rejected": true,
+    "prohibited": "항상 3이",
+    "actual": "수량: 3"
+  },
+  {
+    "id": "ker:grammar-fixture:unit",
+    "rejected": true,
+    "prohibited": "3개을",
+    "actual": "3개를"
+  },
+  {
+    "id": "ker:grammar-fixture:parenthesis",
+    "rejected": true,
+    "prohibited": "마지막 글자로 기계적으로 조사 확정",
+    "actual": "검토 기준(예시):"
+  },
+  {
+    "id": "ker:grammar-fixture:decimal",
+    "rejected": true,
+    "prohibited": "버전 3. 14에서 확인합니다.",
+    "actual": "버전 3.14에서 확인합니다."
+  },
+  {
+    "id": "ker:grammar-fixture:past",
+    "rejected": true,
+    "prohibited": "그해 이미 큰돈을 벌었습니다.",
+    "actual": "그해 그런 일이 있었다면"
+  },
+  {
+    "id": "ker:grammar-fixture:negative",
+    "rejected": true,
+    "prohibited": "연락이 적으니 관심이 없습니다.",
+    "actual": "연락이 적다고 관심이 없다는 뜻은 아닙니다."
+  },
+  {
+    "id": "ker:grammar-fixture:honorific",
+    "rejected": true,
+    "prohibited": "예린님의 기준이 말씀하십니다.",
+    "actual": "예린님이 고른 기준"
+  },
+  {
+    "id": "ker:grammar-fixture:copula-collision",
+    "rejected": true,
+    "prohibited": "이 자료는 정보여요.",
+    "actual": "이 자료는 정보예요."
+  }
+]

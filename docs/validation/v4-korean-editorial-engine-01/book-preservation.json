@@ -1,0 +1,12 @@
+{
+  "freshBaseAndCurrent": true,
+  "books": 17,
+  "digests": 102,
+  "friendshipCases": 20,
+  "friendshipDigests": 140,
+  "profiles": 40,
+  "allBytesIdentical": true,
+  "storedBookRoundtrip": true,
+  "calculationEvidenceNarrativeSnapshotsScoresPreserved": true,
+  "productionBookReadsOrWrites": 0
+}

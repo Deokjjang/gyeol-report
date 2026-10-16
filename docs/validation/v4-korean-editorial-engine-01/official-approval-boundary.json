@@ -1,0 +1,17 @@
+{
+  "version": "official-approval-editorial-handoff-v1",
+  "contractDisposition": "SIGNED_APPROVAL_CONTRACT_VERIFIED",
+  "signatureVerificationDelegatedToExistingContract": true,
+  "signatureKinds": [
+    "HUMAN_MEANING_REVIEW_DECISION",
+    "DOMAIN_APPLICABILITY_DECISION",
+    "OPERATOR_AUTHORIZATION",
+    "CUSTOMER_USE_AUTHORIZATION"
+  ],
+  "fourOriginalSignaturesVerified": true,
+  "newSyntheticDefinitionCoveredByOriginalSignature": false,
+  "binderRealApprovalIntegration": "PENDING",
+  "plannerRealApprovalIntegration": "PENDING",
+  "customerUseAuthorized": false,
+  "actualCustomerClaims": 0
+}
