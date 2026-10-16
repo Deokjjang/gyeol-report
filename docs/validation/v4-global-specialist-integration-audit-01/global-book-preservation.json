@@ -1,0 +1,14 @@
+{
+  "fixedBooks": 17,
+  "fixedBookDigests": 102,
+  "storedBookOfflineRoundtrip": true,
+  "fullNarrativeAndBookBytesEqual": true,
+  "friendshipCases": 20,
+  "friendshipDigests": 140,
+  "fullFriendshipNarrativeIntegrationAndBookBytesEqual": true,
+  "fullProfiles": 40,
+  "profileBytesPerSide": 308432008,
+  "fullProfileBytesEqual": true,
+  "existingCustomerBookReadOrWrite": false,
+  "sixProductsAndSevenRelationshipsCovered": true
+}

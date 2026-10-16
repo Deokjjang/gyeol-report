@@ -1,0 +1,75 @@
+{
+  "newIntegration": {
+    "assertions": 106,
+    "pass": 106,
+    "fail": 0,
+    "pending": 0,
+    "testTimeoutCliMs": 30000,
+    "actualCliExecutedInBeforeAll": true
+  },
+  "newArtifacts": {
+    "assertions": 24,
+    "pass": 24,
+    "fail": 0,
+    "pending": 0,
+    "sameRuntimePayloadHashesVerified": true,
+    "finalPublishedArtifactsRechecked": true
+  },
+  "newStorage": {
+    "assertions": 4,
+    "pass": 4,
+    "fail": 0,
+    "pending": 0
+  },
+  "existingRelated": {
+    "rawDefaultBatch": {
+      "files": 26,
+      "passed": 2402,
+      "failed": 9,
+      "pending": 98
+    },
+    "recheck": {
+      "files": 9,
+      "passed": 409,
+      "failed": 0,
+      "pending": 0,
+      "maxWorkers": 1,
+      "testTimeoutMs": 30000,
+      "oldTestOrConfigModified": false
+    },
+    "assertionOccurrences": 2509,
+    "distinctDisplayedFullNames": 2506,
+    "threeDisplayNameCollisions": "original parameterized IDs truncated by Vitest display formatting; preserved file+definition ordinal+fullName identities",
+    "allSameOrderedTestNameLists": true,
+    "overlapNotSummed": true,
+    "allPassedAfterExecutionLimitRecheck": true,
+    "entireSuiteExecuted": false
+  },
+  "businessPartnerHistoricalTimeout": {
+    "exactPristineBaseSha": "0872595559ccd88a0452ad1edfe9f771b1ef4678",
+    "defaultFiveSecondSelectedTestPass": 1,
+    "defaultFiveSecondSelectedTestFail": 0,
+    "filteredUnselectedTests": 360,
+    "historicalTimeoutReproduced": false,
+    "workBranchWhole361DefaultPass": true,
+    "wholeFileCliThirtySecondPass": 361,
+    "wholeFileCliThirtySecondFail": 0,
+    "testOrConfigurationChanged": false
+  },
+  "knownFailures": {
+    "beforePass": 5837,
+    "beforeFail": 46,
+    "finalAfterPass": 5837,
+    "finalAfterFail": 46,
+    "full46NormalizedMessagesEqual": true,
+    "initialOverloadedAfter": {
+      "pass": 5811,
+      "fail": 36,
+      "pending": 36,
+      "hookLimitMs": 180000
+    },
+    "same16FileDefaultRecheckAfterLoadReduced": true
+  },
+  "entireSuiteExecuted": false,
+  "overlappingCohortsNotSummed": true
+}

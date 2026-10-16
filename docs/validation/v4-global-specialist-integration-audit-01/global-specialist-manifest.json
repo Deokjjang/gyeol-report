@@ -1,0 +1,39 @@
+{
+  "version": "global-specialist-integration-v1",
+  "baseSha": "0872595559ccd88a0452ad1edfe9f771b1ef4678",
+  "status": "OFFLINE_IMPLEMENTED_WITH_OPEN_GATES",
+  "engines": 12,
+  "products": [
+    "annual_fortune",
+    "career_money_study",
+    "love_marriage_child",
+    "major_fortune",
+    "saju_mbti_compatibility",
+    "saju_mbti_full"
+  ],
+  "relationships": [
+    "businessPartner",
+    "coworker",
+    "friendship",
+    "love",
+    "managerReport",
+    "marriage",
+    "parentChild"
+  ],
+  "graphCases": 27,
+  "evaluations": 5073,
+  "sourceBefore": 10536,
+  "sourceAfter": 11170,
+  "evidenceBefore": 917,
+  "evidenceAfter": 1489,
+  "structuralBefore": 81,
+  "structuralAfter": 81,
+  "researchRecords": 18610,
+  "actualOperatorApproved": 0,
+  "actualCustomerEligible": 0,
+  "actualSelections": 0,
+  "actualClaims": 0,
+  "bookAllocations": 0,
+  "newCanonicalFactRoots": 0,
+  "confirmedSemanticConflicts": 0
+}

@@ -1,0 +1,43 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 7,
+  "logicalJsonHash": "de22a4e85bda40db1f46b9f1d800e3d2bc9859ce216d27bd0d32dcc17ebb4c23",
+  "parts": [
+    {
+      "file": "global-publication-risk-registry-part-0001-part-0001.json",
+      "sha256": "adbeab6a01689d5758906b55f2fc84ba799907a9abbbd0b048933e9ed4a2fb33",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "global-publication-risk-registry-part-0001-part-0002.json",
+      "sha256": "9c199527a366574770460c86d89f848c495386913c14e95d284240a7671ccd89",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "global-publication-risk-registry-part-0001-part-0003.json",
+      "sha256": "82f58019b00a3098b1ed3f5b8d10171f9f336ed62afe32f67179a667fa3e8189",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "global-publication-risk-registry-part-0001-part-0004.json",
+      "sha256": "77c13f0b40f953919096890765beddfaa7f4d4d7f329d68c4165ed11cf70bf6d",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "global-publication-risk-registry-part-0001-part-0005.json",
+      "sha256": "7c5e834520a18fd4117f92b240bb35675214683d858cac685904ba0ff8463e80",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "global-publication-risk-registry-part-0001-part-0006.json",
+      "sha256": "1f39da6f7c1908bbf4ce30dc10c007611e07f5c54de767d0a48727d90bdf186d",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "global-publication-risk-registry-part-0001-part-0007.json",
+      "sha256": "a98f15526c793a77bf72584170f0565607fb53e8f537e2bbe837d8484d331bf7",
+      "kind": "CHUNK"
+    }
+  ]
+}

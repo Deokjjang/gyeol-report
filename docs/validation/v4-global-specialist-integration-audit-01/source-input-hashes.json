@@ -1,0 +1,21 @@
+{
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/plannerHandoff.ts": "5ea9b71ccf48e8b5e3f2c5cad966f56c2adc61024ceb6da46bfb7c8600e750c4",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/deterministicArtifacts.ts": "1b9aeaf70942110383003167234fa5fa2559b9342403afbb8c2c9164ff382c2a",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/identityIndex.ts": "154eec92da36a1617b1ea6b387a62d16f524f6c7f1d5d351d6aff0b9ad2f52ad",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/withholdRegistry.ts": "b8bfe53f189c25819c3625655a7f5d670d5d3d911619c2842f68cbe41785b232",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/engineRegistry.ts": "bb926c0be36ae376f5bdcfccd83d8dfdd0cf7f86301b3371e4d8d20ed267bc6f",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/foundationCoordinator.ts": "1e3899736250bfeddf9502c2cf6567a02c8d2bb480b3a52bcc79e9a20fd5973c",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/types.ts": "e6ad00531d4b03e341c557a8554ee75aed87536504fcb6950a690340453a92c3",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/foundationScope.ts": "e92c070b950b713ef594d8dfb9f6a527f128ec9921e6e60242d8a1066fb5f3a1",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/scopeValidation.ts": "334b42e9589ed614a1533d423cefd89bf75a246a572d71b3057b849d0534e35b",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/negativeAudit.ts": "4658d64fdac99d15c0f066f9cc4bbfa44e226a34f465bb37018c8b3e314f8102",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/artifactReader.ts": "f1c22f088a4ca818454792a4b992da10f4b1b3099e5a6525dd732f66a2c2a6ae",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-specialist-integration/candidateEnvelope.ts": "24a998a05fff2e8a30258f34dfb8216414256c5cb2f3fdeba5f08a6c23a0ba48",
+  "tools/global-specialist-integration-audit/registry-data.json": "ae3340e36f4c4fee6515f81b3da817de65956c2c526de38695882c09abca0055",
+  "tools/global-specialist-integration-audit/publication.ts": "64f7005f7e23a3db979446c822c5a2ad4162a9e2861a11fd35a53e7df8f1d38c",
+  "tools/global-specialist-integration-audit/invokers.ts": "2beb81d14761b4db688cc535cfd830a9789986a98e8b8ade64ade2e447b957d4",
+  "tools/global-specialist-integration-audit/verify.mjs": "4c2db4169da5b17265cfe20f5e124c99c53fc4eeb6fca3a2413e6976cba49d81",
+  "tests/unit/report-knowledge/globalSpecialistIntegrationShards.test.ts": "62b88f209fb839e7d011b6ee2da30f1cdbcfa6dd5b2ac400db34749ff5fae80c",
+  "tests/unit/report-knowledge/globalSpecialistIntegrationArtifacts.test.ts": "af2eafdf20ce02a47b3ea8c97efe3b5469a7530aa2481c2978d11123e1a5415c",
+  "tests/unit/report-knowledge/globalSpecialistIntegrationAudit.test.ts": "de051366055e1d1b5b76bc631a65ee7b1bfdf17ab21ea9f6599842cd20eb9171"
+}

@@ -1,0 +1,25 @@
+{
+  "independentRuns": [
+    {
+      "run": "one",
+      "generatedJson": 85,
+      "foundationJsonVerified": 64,
+      "baseFilesVerified": 5086,
+      "ownInputsVerified": 19,
+      "network": "disabled",
+      "allGeneratedJsonByteEqual": true
+    },
+    {
+      "run": "two",
+      "generatedJson": 85,
+      "foundationJsonVerified": 64,
+      "baseFilesVerified": 5086,
+      "ownInputsVerified": 19,
+      "network": "disabled",
+      "allGeneratedJsonByteEqual": true
+    }
+  ],
+  "logicalDataShards": "readGlobalArtifact validates exact whole logical JSON hash and all shard byte hashes",
+  "intermediateRuns": "stopped after lint/contract/privacy corrections; an intermediate run failed oversized single-file blocker output; older run-two stopped after same measured issue. None used as final proof. Earlier completed85JSON pair was byte equal but the106test setup then failed ENOENT when writing an external tmpdir receipt; no assertions ran (0pass0fail106pending). Only own test setup directory creation changed; the current19inputhash pair and106assertions are final completion proof.",
+  "performanceLogs": "external only"
+}

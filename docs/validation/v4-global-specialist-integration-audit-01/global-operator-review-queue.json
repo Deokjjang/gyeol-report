@@ -1,0 +1,28 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 5073,
+  "logicalJsonHash": "0739825187771eba66ff9c09522a01fadf9e10c535f45043d4b1ad25de209e40",
+  "parts": [
+    {
+      "file": "global-operator-review-queue-part-0001.json",
+      "sha256": "485b34d1fa14629910df714992dc77d6efd18504c0f03ac3c36af636743f1335",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "global-operator-review-queue-part-0002.json",
+      "sha256": "d9c733a362da9d4ad239b70b4cc08b011d69522f1b287bb4b799efe56ad87e87",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "global-operator-review-queue-part-0003.json",
+      "sha256": "05c810e5b2523befcf5472b15d9a6513055e83cda9d5d91954099364666046b1",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "global-operator-review-queue-part-0004.json",
+      "sha256": "de6637a918834062bd7959353016463eafc5c5d0efe60cfc62f49ffffb4346e5",
+      "kind": "CHUNK"
+    }
+  ]
+}

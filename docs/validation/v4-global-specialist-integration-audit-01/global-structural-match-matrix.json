@@ -1,0 +1,74 @@
+[
+  {
+    "engine": "comprehensive",
+    "before": 23,
+    "after": 23,
+    "customerEligible": 0
+  },
+  {
+    "engine": "career",
+    "before": 0,
+    "after": 0,
+    "customerEligible": 0
+  },
+  {
+    "engine": "love",
+    "before": 6,
+    "after": 6,
+    "customerEligible": 0
+  },
+  {
+    "engine": "major-fortune",
+    "before": 0,
+    "after": 0,
+    "customerEligible": 0
+  },
+  {
+    "engine": "annual-fortune",
+    "before": 0,
+    "after": 0,
+    "customerEligible": 0
+  },
+  {
+    "engine": "compatibility-love",
+    "before": 12,
+    "after": 12,
+    "customerEligible": 0
+  },
+  {
+    "engine": "compatibility-marriage",
+    "before": 4,
+    "after": 4,
+    "customerEligible": 0
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "before": 6,
+    "after": 6,
+    "customerEligible": 0
+  },
+  {
+    "engine": "compatibility-coworker",
+    "before": 14,
+    "after": 14,
+    "customerEligible": 0
+  },
+  {
+    "engine": "compatibility-manager-report",
+    "before": 4,
+    "after": 4,
+    "customerEligible": 0
+  },
+  {
+    "engine": "compatibility-business-partner",
+    "before": 4,
+    "after": 4,
+    "customerEligible": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "before": 8,
+    "after": 8,
+    "customerEligible": 0
+  }
+]

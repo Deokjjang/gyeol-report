@@ -1,0 +1,74 @@
+[
+  {
+    "engine": "comprehensive",
+    "before": 287,
+    "after": 557,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "career",
+    "before": 41,
+    "after": 215,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "love",
+    "before": 34,
+    "after": 49,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "major-fortune",
+    "before": 3,
+    "after": 3,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "annual-fortune",
+    "before": 0,
+    "after": 0,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "compatibility-love",
+    "before": 172,
+    "after": 229,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "compatibility-marriage",
+    "before": 72,
+    "after": 96,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "before": 50,
+    "after": 50,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "compatibility-coworker",
+    "before": 131,
+    "after": 150,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "compatibility-manager-report",
+    "before": 71,
+    "after": 77,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "compatibility-business-partner",
+    "before": 28,
+    "after": 35,
+    "independentFactsIssued": 0
+  },
+  {
+    "engine": "compatibility-friendship",
+    "before": 28,
+    "after": 28,
+    "independentFactsIssued": 0
+  }
+]

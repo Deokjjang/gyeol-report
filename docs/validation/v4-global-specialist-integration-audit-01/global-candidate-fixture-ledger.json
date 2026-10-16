@@ -1,0 +1,191 @@
+[
+  {
+    "engineId": "comprehensive",
+    "fixtureId": "fixture-comprehensive-A",
+    "candidateCount": 200,
+    "graphHash": "c0fc64e56fa992e3193c1e1e2ad60078677ac695590f510150e03f4d2a5d38ea",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "comprehensive",
+    "fixtureId": "fixture-comprehensive-F",
+    "candidateCount": 200,
+    "graphHash": "2dbd6f5f68f96f7a883db4fba98441dc78ee26f159de3db32bbef93e7550ee3b",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "career",
+    "fixtureId": "fixture-career-A",
+    "candidateCount": 268,
+    "graphHash": "fc0c3851fe57a0682f13e775aeec4e99aef54a292793a21a04c0b18c882b3a7c",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "career",
+    "fixtureId": "fixture-career-F",
+    "candidateCount": 268,
+    "graphHash": "cae90fd0a999ccf8f0d57ba029d7bd1fe2b0190c028cf28ccf39fa5ac861b44d",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "love",
+    "fixtureId": "fixture-love-A",
+    "candidateCount": 170,
+    "graphHash": "5bfd2a39c85f085a22901e2a5c7cc43f3786dd62d0c4beaaaa196ff71ab6a402",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "love",
+    "fixtureId": "fixture-love-F",
+    "candidateCount": 170,
+    "graphHash": "c9cb70bfb4635cb3a876fee8fce45d7e1a73f60c895349ca884ef59e9eb4b5ab",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "compatibility-love",
+    "fixtureId": "fixture-compatibility-A",
+    "candidateCount": 190,
+    "graphHash": "b37139d8af9e117909395a99b36e4614e4bb0af2e48684bbdbe52efdb751f039",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "compatibility-marriage",
+    "fixtureId": "fixture-compatibility-marriage",
+    "candidateCount": 222,
+    "graphHash": "fd3bab45447c66865c92be89f603b7646a6c1ff6fc1d4be0d274483c9785272c",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "compatibility-parent-child",
+    "fixtureId": "fixture-compatibility-parentChild",
+    "candidateCount": 235,
+    "graphHash": "42743a9856878544b6b763955cd31d237bccdffaa1ec6998fef034af8b731b6d",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "compatibility-coworker",
+    "fixtureId": "fixture-compatibility-coworker",
+    "candidateCount": 335,
+    "graphHash": "28a38a6ccf4e2730cce277b63ba5e6d62791d8f088f84cf0a1a07e678a90f822",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "compatibility-manager-report",
+    "fixtureId": "fixture-compatibility-managerReport",
+    "candidateCount": 275,
+    "graphHash": "9f1d55189874631f9fd3b4499cb8e76b7698c7f6080924b892f4aa2e1ffde375",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "compatibility-business-partner",
+    "fixtureId": "fixture-compatibility-businessPartner",
+    "candidateCount": 317,
+    "graphHash": "b265331e3effaaedf44c62a1efe4decbbdb046ce104cf09b5e7af906f502ce87",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "compatibility-friendship",
+    "fixtureId": "fixture-compatibility-friendship",
+    "candidateCount": 173,
+    "graphHash": "14ec9b3e45f02d7d33fd577c1a404a35f2b4fde7c9b543e79ca00105b845008f",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "major-fortune",
+    "fixtureId": "fixture-major-A",
+    "candidateCount": 89,
+    "graphHash": "28b37692dae118ac414da6dce6b48fa0578f25b5031fa9e1bcfbab14f0d06e2b",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "major-fortune",
+    "fixtureId": "fixture-major-F",
+    "candidateCount": 89,
+    "graphHash": "5b03a742f4eee6ef98c5a447a6589f6bba279c79bdcd15fe00c9549a862ea114",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-A",
+    "candidateCount": 109,
+    "graphHash": "19c20c280f79e71c463b0fc0d13137feea7a61af25c3b59e6756db14517ac1b3",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-F",
+    "candidateCount": 109,
+    "graphHash": "6e630b77d854b2e1e763f6fee3d629bb74daa67a8bfb0728a7535eae19912a6d",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "major-fortune",
+    "fixtureId": "fixture-major-transition-C",
+    "candidateCount": 89,
+    "graphHash": "482ecdaf8f27152e18f34945eb61b1c22a21bb4308484a0aa50f028facca143d",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-transition-C2028",
+    "candidateCount": 109,
+    "graphHash": "a43fdf8a94dff06f9606e2f9089ce0ae8fda1586949be6e8fabf4e700d7c5143",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "compatibility-love",
+    "fixtureId": "fixture-compatibility-unknown-both",
+    "candidateCount": 190,
+    "graphHash": "695395e7062efb72b65eff5c47646802831a0eca7970ab9a626aa743eb6cb33a",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "compatibility-love",
+    "fixtureId": "fixture-compatibility-slot-swap",
+    "candidateCount": 190,
+    "graphHash": "74441a4967bf82f200b157e4371a4ae10c97a9d08f2774b90c1827ce5cf654c4",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "comprehensive",
+    "fixtureId": "fixture-same-natal-different-mbti",
+    "candidateCount": 200,
+    "graphHash": "34f7241ca66e79479ac51e3cff4dd5b34e2a0bacbd445c436d75d08bc28257ae",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "comprehensive",
+    "fixtureId": "fixture-same-mbti-different-natal",
+    "candidateCount": 200,
+    "graphHash": "08a4d9e83377ac33e6ca84d7b0d9b4eebca5dcb885af0b76ebf8b2618dd60bc4",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "career",
+    "fixtureId": "fixture-same-natal-career",
+    "candidateCount": 268,
+    "graphHash": "8723e6d26c2a51ff62fb0e5bbc0f18ea75ab9e46a3cf7206d7b7cda9fe2b0be1",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-ranged-transition",
+    "candidateCount": 109,
+    "graphHash": "ae79f62e682a5e441e92939a3aa2330c97992cf87137ed337e5eb2b76fc407a9",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "annual-fortune",
+    "fixtureId": "fixture-annual-before-first-dayun",
+    "candidateCount": 109,
+    "graphHash": "7918436436a09a0c0f83977ef39b19d9506c4de3c365bd4cfb43800696d65998",
+    "graphStatus": "PARTIAL"
+  },
+  {
+    "engineId": "compatibility-love",
+    "fixtureId": "fixture-compatibility-no-detected-pair",
+    "candidateCount": 190,
+    "graphHash": "73459a62e915d07450bf8dd6ca91d27ee375f4c37ce18d505c338291c4bdd0d7",
+    "graphStatus": "PARTIAL"
+  }
+]

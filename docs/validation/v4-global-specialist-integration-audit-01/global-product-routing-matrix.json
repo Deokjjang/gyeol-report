@@ -1,0 +1,113 @@
+[
+  {
+    "engineId": "comprehensive",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "fixtureIds": [
+      "fixture-comprehensive-A",
+      "fixture-comprehensive-F",
+      "fixture-same-natal-different-mbti",
+      "fixture-same-mbti-different-natal"
+    ]
+  },
+  {
+    "engineId": "career",
+    "product": "career_money_study",
+    "relationship": null,
+    "fixtureIds": [
+      "fixture-career-A",
+      "fixture-career-F",
+      "fixture-same-natal-career"
+    ]
+  },
+  {
+    "engineId": "love",
+    "product": "love_marriage_child",
+    "relationship": null,
+    "fixtureIds": [
+      "fixture-love-A",
+      "fixture-love-F"
+    ]
+  },
+  {
+    "engineId": "major-fortune",
+    "product": "major_fortune",
+    "relationship": null,
+    "fixtureIds": [
+      "fixture-major-A",
+      "fixture-major-F",
+      "fixture-major-transition-C"
+    ]
+  },
+  {
+    "engineId": "annual-fortune",
+    "product": "annual_fortune",
+    "relationship": null,
+    "fixtureIds": [
+      "fixture-annual-A",
+      "fixture-annual-F",
+      "fixture-annual-transition-C2028",
+      "fixture-annual-ranged-transition",
+      "fixture-annual-before-first-dayun"
+    ]
+  },
+  {
+    "engineId": "compatibility-love",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "fixtureIds": [
+      "fixture-compatibility-A",
+      "fixture-compatibility-unknown-both",
+      "fixture-compatibility-slot-swap",
+      "fixture-compatibility-no-detected-pair"
+    ]
+  },
+  {
+    "engineId": "compatibility-marriage",
+    "product": "saju_mbti_compatibility",
+    "relationship": "marriage",
+    "fixtureIds": [
+      "fixture-compatibility-marriage"
+    ]
+  },
+  {
+    "engineId": "compatibility-parent-child",
+    "product": "saju_mbti_compatibility",
+    "relationship": "parentChild",
+    "fixtureIds": [
+      "fixture-compatibility-parentChild"
+    ]
+  },
+  {
+    "engineId": "compatibility-coworker",
+    "product": "saju_mbti_compatibility",
+    "relationship": "coworker",
+    "fixtureIds": [
+      "fixture-compatibility-coworker"
+    ]
+  },
+  {
+    "engineId": "compatibility-manager-report",
+    "product": "saju_mbti_compatibility",
+    "relationship": "managerReport",
+    "fixtureIds": [
+      "fixture-compatibility-managerReport"
+    ]
+  },
+  {
+    "engineId": "compatibility-business-partner",
+    "product": "saju_mbti_compatibility",
+    "relationship": "businessPartner",
+    "fixtureIds": [
+      "fixture-compatibility-businessPartner"
+    ]
+  },
+  {
+    "engineId": "compatibility-friendship",
+    "product": "saju_mbti_compatibility",
+    "relationship": "friendship",
+    "fixtureIds": [
+      "fixture-compatibility-friendship"
+    ]
+  }
+]
