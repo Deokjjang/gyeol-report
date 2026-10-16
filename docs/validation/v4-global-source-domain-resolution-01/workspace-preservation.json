@@ -1,0 +1,11 @@
+{
+  "existingWorktrees": 54,
+  "existingHeadBranchStatusAndTrackedNonIgnoredFileBytesEqual": true,
+  "originalCheckoutHead": "c048218cc5961e0f53a1deab2603511e17559fc3",
+  "originalCheckoutBranch": "v4/annual-editorial-quality-fix-01",
+  "protectedDirtyFiles": 11,
+  "originalFilesVerified": 5264,
+  "ownInputsVerified": 12,
+  "originalCheckoutUnmodified": true,
+  "masterUnmodified": true
+}

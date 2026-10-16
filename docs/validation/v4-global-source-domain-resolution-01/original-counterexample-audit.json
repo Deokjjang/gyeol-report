@@ -1,0 +1,175 @@
+[
+  {
+    "catalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
+    "originalCounterexample": "상대 진심·외도·이별·현재 갈등을 사실화 금지",
+    "originalProhibitions": [
+      "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+      "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+      "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+    ],
+    "modelCounterexamples": [
+      "연락이 줄었다고 마음이 식었다고 단정할 수 없고 직접 질문에도 답하지 않을 선택권이 있다."
+    ],
+    "originalHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:9e3da72458ebc3ddee386134acc40ead5150c48189fc451397e32790896fb0a3",
+    "originalCounterexample": "성적·합격·학력·문재의 확정 근거로 사용 금지",
+    "originalProhibitions": [
+      "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+      "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+      "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+      "성공·승진·합격·재물 증가·투자 능력 확정"
+    ],
+    "modelCounterexamples": [
+      "이름에 문창이 포함되거나 실제 계산 신호가 있어도 출처 보류가 해제되지 않는다."
+    ],
+    "originalHash": "4df49905c546b8ed5a2937b50d4dd60f2dbc305ff3042c1021dea28b9a7fc8cb",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+    "originalCounterexample": "필수 안전 조치가 필요한 경우에는 선택 가능한 방식과 어른의 책임을 구분해야 한다.",
+    "originalProhibitions": [
+      "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+      "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+      "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+      "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+    ],
+    "modelCounterexamples": [
+      "필수 안전 조치의 책임까지 아이에게 넘기거나 모든 결정을 무조건 맡길 수는 없다."
+    ],
+    "originalHash": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:64063b7c566a59c119b3cecbac692e20ac54bcc9c141c8c4bb4a23c0c668ba87",
+    "originalCounterexample": "거절에 불이익이나 위협이 있다면 조율 가능한 속도 차이로 보지 않는다.",
+    "originalProhibitions": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "modelCounterexamples": [
+      "거절에 위협이나 불이익이 있다면 속도 조율로 해결할 성향 차이가 아니다."
+    ],
+    "originalHash": "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:33f393caeba9d0a42a370288067f39ef9a74bd316d5741e6899709118a5922c8",
+    "originalCounterexample": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitions": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelCounterexamples": [
+      "충이 있어도 창고가 열려 재물이 증가한다거나 이혼한다고 결론낼 수 없다."
+    ],
+    "originalHash": "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:1d11fcaf70c31043139efd97a834f52c2bf8d1b2b036b104b90df6416906b7b7",
+    "originalCounterexample": "대학 맥락 외 성인 전체의 의무·법적 관계로 일반화하지 않는다.",
+    "originalProhibitions": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "modelCounterexamples": [
+      "연락 지연이 애정 부족의 증거가 아니고 자녀가 부모 외로움을 해결할 의무도 없다."
+    ],
+    "originalHash": "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:2a94fa2b4fc69c19549c04dcc463e5f8c9ff35588d13c92ab46b925048287ef3",
+    "originalCounterexample": "실제 기록 없는 선후·기여 판정 금지",
+    "originalProhibitions": "UNKNOWN",
+    "modelCounterexamples": [
+      "최신 파일이 더 정확하다는 보장은 없고 기록 없이 선후·기여를 판정할 수 없다."
+    ],
+    "originalHash": "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:41cfc8c9066bd01f9af7b674c685af42f40626396ab4ef4917a215290f9b387f",
+    "originalCounterexample": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitions": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelCounterexamples": [
+      "해가 있어도 배신·질병·관재나 현재 직장 갈등을 확인할 수 없다."
+    ],
+    "originalHash": "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:0ebc2fd31a00dec595ba3b2ecd0d8af31282c9c1c0b0461bc4887bffede52e3f",
+    "originalCounterexample": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitions": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelCounterexamples": [
+      "辰이 수국·충에 관여하면 기능을 고정하지 못하고 누락된 한 글자를 보충할 수 없다."
+    ],
+    "originalHash": "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148",
+    "originalCounterexample": "NOT_SEPARATELY_DECLARED",
+    "originalProhibitions": "UNKNOWN",
+    "modelCounterexamples": [
+      "B가 해법에 동의하지 않아도 비합리적이라고 평가할 수 없고 실제 효과는 UNKNOWN이다."
+    ],
+    "originalHash": "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+    "originalCounterexample": "NOT_SEPARATELY_DECLARED",
+    "originalProhibitions": [
+      "사고·질환·폭력·승진을 예언하지 않음",
+      "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+    ],
+    "modelCounterexamples": [
+      "실제 압박 맥락이 없으면 위기 사건을 삽입하지 않고 제살을 자동 판정하지 않는다."
+    ],
+    "originalHash": "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+    "operatorApproved": false
+  },
+  {
+    "catalogKey": "kc:v1:782ba0c10ba719cad1f530caa8d037c6fa48f5322f076f9fe171ed44d4720a77",
+    "originalCounterexample": "실제 도움을 줄 사람이 있다는 사실은 신살 관찰만으로 확인되지 않는다.",
+    "originalProhibitions": [
+      "미입력 과거 경험 단정",
+      "미래 사건 예언",
+      "연구 ID의 Evidence 발급"
+    ],
+    "modelCounterexamples": [
+      "같은 7월 첫 segment는 甲午이며 천을귀인 target 未 관찰을 월 전체에 적용할 수 없다."
+    ],
+    "originalHash": "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f",
+    "operatorApproved": false
+  }
+]

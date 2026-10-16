@@ -1,0 +1,81 @@
+{
+  "newTests": {
+    "passed": 63,
+    "failed": 0,
+    "pending": 0,
+    "actualNativeCliRuns": 2
+  },
+  "relatedSourceSemanticStorageTests": {
+    "files": 4,
+    "passed": 110,
+    "failed": 0
+  },
+  "businessPartner": {
+    "currentWholeEngineAndArtifactsPassed": 383,
+    "currentWholeEngineAndArtifactsFailed": 0,
+    "commandTestTimeoutMs": 30000,
+    "originalTestsAndConfigUnchanged": true,
+    "defaultBaseFailureReproduced": true,
+    "baseDefaultFailedTest": "creates genuine deterministic artifacts with no input data and no errors",
+    "defaultBaseFullCohort": {
+      "passed": 382,
+      "failed": 1,
+      "pending": 0
+    },
+    "defaultBaseIsolated": {
+      "passed": 0,
+      "failed": 1,
+      "filtered": 360
+    },
+    "defaultFailureBudgetMs": 5000,
+    "defaultCurrentAndBase30sReceipts": "see final supplemental receipt",
+    "supplementalReceipt": "business-partner-budget-comparison.json",
+    "base30sSelectedPassed": 1,
+    "currentDefaultSelectedFailed": 1,
+    "normalizedDefaultErrorSignaturesEqual": true
+  },
+  "knownFailureCohort": {
+    "files": 16,
+    "beforePass": 5837,
+    "afterPass": 5837,
+    "beforeFail": 46,
+    "afterFail": 46,
+    "pending": 0,
+    "fullNormalizedErrorMessagesEqual": true
+  },
+  "typescript": {
+    "before": 0,
+    "after": 0,
+    "new": 0
+  },
+  "lint": {
+    "passed": true,
+    "warnings": 0
+  },
+  "build": {
+    "basePassed": true,
+    "currentPassed": true,
+    "node": "24.22.0",
+    "next": "16.2.4 Turbopack",
+    "baseWarnings": 0,
+    "currentWarnings": 0,
+    "sourceAndNextConfigUnchanged": true
+  },
+  "nft": {
+    "paths": 90,
+    "appServer": 88,
+    "nextRoot": 2,
+    "dependencySetsEqual": true,
+    "newResolutionCodeOrDataEntries": 0,
+    "sourceAndBuildSettingsUnchanged": true
+  },
+  "fullSuiteRun": false,
+  "intermediateVerificationIssues": [
+    "Temporary dependency copy could not resolve Turbopack postcss; frozen lockfile installation in task-only directories reproduced successful builds.",
+    "Test metadata directory missing initially; created external temp directory and reran all tests.",
+    "CHILDREN expectation initially used the Domain Queue subset; corrected to frozen native policy source and reran all tests."
+  ],
+  "originalWorktrees": 54,
+  "protectedDirtyFiles": 11,
+  "masterAndProductionUnchanged": true
+}

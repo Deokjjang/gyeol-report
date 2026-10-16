@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "operator-review-worklist.json.gz",
+  "payloadHash": "59e3a6c30f5bf6984915736ffa424fa7af30274913b7892a7485af605c155169",
+  "logicalJsonHash": "756e98af2ff77c5949b2ca0bb1263c72151914651f72c4629070e81f375ba58e",
+  "uncompressedBytes": 17067940
+}

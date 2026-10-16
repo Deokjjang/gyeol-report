@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "remaining-blocker-matrix.json.gz",
+  "payloadHash": "43cc150172c5d93433ceba9ec39487adec227942b049ebeab3f1b3adb350b6a5",
+  "logicalJsonHash": "5b12de52c2a3868743ed8d62ef8e0bd4d1b342ccc4f11e9979b2696d5ef7f64f",
+  "uncompressedBytes": 11850527
+}

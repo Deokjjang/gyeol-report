@@ -1,0 +1,20 @@
+{
+  "books": {
+    "cases": 17,
+    "digests": 102,
+    "allFullNarrativesAndBooksByteEqual": true,
+    "allDigestsEqual": true
+  },
+  "pairs": {
+    "cases": 20,
+    "digests": 140,
+    "allFullNarrativesAndBooksByteEqual": true,
+    "allDigestsEqual": true
+  },
+  "profiles": {
+    "cases": 40,
+    "bytesPerSide": 308432008,
+    "allBytesEqual": true
+  },
+  "storedBookOfflineRoundtrip": true
+}

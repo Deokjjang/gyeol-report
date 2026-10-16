@@ -1,0 +1,156 @@
+[
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "career-editorial-quality-fix-01-v1",
+    "system": "editorial-observation",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "annual-product-13d-7c-v1",
+    "system": "editorial-observation",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "major-product-13d-7c-v1",
+    "system": "editorial-observation",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "love-editorial-quality-fix-01-v1",
+    "system": "editorial-observation",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationIntegratedProfile.ts",
+    "symbol": "buildIntegratedMyeongliProfile",
+    "version": "myeongli-semantic-profile-13d-1d-v1",
+    "system": "semantic",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/saju/customerDayun.ts",
+    "symbol": "calculateCustomerDayun",
+    "version": "dayun-kst-sect2-v1",
+    "system": "dayun",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/report-generation/reportInputAdapter.ts",
+    "symbol": "normalizeReportInputPayload",
+    "version": "source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+    "system": "normalized-input",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4RuntimeEvidence",
+    "version": "v4-runtime-evidence-1",
+    "system": "requirement",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/materialPacket.ts",
+    "symbol": "buildMyeongliMaterialPacket",
+    "version": "v4-material-packet-1",
+    "system": "legacy-fusion",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/report-knowledge/annualMonthJie.ts",
+    "symbol": "buildAnnualMonthCalendar",
+    "version": "annual-month-jie-kst-v2",
+    "system": "annual-month",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/report-knowledge/natalTableEvidence.ts",
+    "symbol": "buildCanonicalNatalTable",
+    "version": "canonical-natal-table-v1/saju-calendar-kst-v2",
+    "system": "myeongli",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/compatibilityEvidence.ts",
+    "symbol": "compatibilityNarrativeEvidence",
+    "version": "canonical-rule-stable-person-order-v1",
+    "system": "pair",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "comprehensive-editorial-quality-fix-01-v1",
+    "system": "editorial-observation",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+    "symbol": "buildMbtiSemanticProfile",
+    "version": "mbti-semantic-13d-2a-v1",
+    "system": "mbti",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/foundationSupplement.ts",
+    "symbol": "adaptSupplementTable",
+    "version": "semantic-supplement-13d-1c-v1",
+    "system": "myeongli",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/report-knowledge/compatibilityDirectionEvidence.ts",
+    "symbol": "buildCompatibilityDirectionEvidence",
+    "version": "source-sha256:c37542e33b21d9dc8e69cdb710869595eae5f2101f04004ae011851b094a0f84",
+    "system": "direction",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/strength.ts",
+    "symbol": "collectStructureAtoms",
+    "version": "v4-structure-evidence-1",
+    "system": "myeongli",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/fusionSemanticProfile.ts",
+    "symbol": "buildMyeongliMbtiFusion",
+    "version": "myeongli-mbti-fusion-13d-2b-v1/cross-system-complement-13d-2b-v1",
+    "system": "semantic-fusion",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+    "symbol": "V4Composition.narrative.proof",
+    "version": "compatibility-editorial-quality-01-v1",
+    "system": "editorial-observation",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/saju/calculateSaju.ts",
+    "symbol": "calculateSaju",
+    "version": "saju-calendar-kst-v2",
+    "system": "myeongli",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+    "symbol": "buildMajorFortuneDecadeReading",
+    "version": "major-decade-v2",
+    "system": "major",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  },
+  {
+    "file": "src/lib/report-knowledge/annualMonthExtendedEvidence.ts",
+    "symbol": "extendAnnualMonthEvidence",
+    "version": "annual-month-evidence-v1",
+    "system": "annual-month-extension",
+    "support": "ACTUAL_GRAPH_PRODUCER_OBSERVED_NOT_UNIVERSAL_SUPPORT"
+  }
+]

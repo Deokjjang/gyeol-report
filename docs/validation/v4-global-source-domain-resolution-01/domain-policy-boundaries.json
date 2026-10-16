@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "domain-policy-boundaries.json.gz",
+  "payloadHash": "874b9e00b2b41c59dc14c62c1e3a29eec9ebd663589269d782f074f6c0721c0b",
+  "logicalJsonHash": "4b0aa12adb81d4aa6d809cb03b82da8888307a9e2025976c476ef8ea40b28c74",
+  "uncompressedBytes": 6338414
+}

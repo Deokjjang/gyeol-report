@@ -1,0 +1,9 @@
+{
+  "allNewLogicalJsonFilesScanned": 43,
+  "additionalFixedInputTermsChecked": 37,
+  "coreActualGraphInputTermScan": true,
+  "compressedPayloadScan": true,
+  "filenameOnlyHashManifestException": "Two frozen filenames describe token-hash design/RPC; every manifest value is SHA256, no credential value",
+  "findings": 0,
+  "passed": true
+}

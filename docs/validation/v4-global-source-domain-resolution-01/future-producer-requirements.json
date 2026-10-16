@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "future-producer-requirements.json.gz",
+  "payloadHash": "070c9398488630c4c318e27be88faef5321d0bcf847d4fc69d8fbcdde7032d06",
+  "logicalJsonHash": "98e32c362de92af3de02eeb8c2f00c2e9dda35c3943979a91f5df5ebb1e65e52",
+  "uncompressedBytes": 23421245
+}

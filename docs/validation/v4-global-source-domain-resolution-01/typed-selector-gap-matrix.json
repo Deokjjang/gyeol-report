@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "typed-selector-gap-matrix.json.gz",
+  "payloadHash": "5ac76696758ddd805a4fa70250aa33cc00f2e6d3ecd32c2fdf094361dbc88800",
+  "logicalJsonHash": "578950e9caa56ae366d6d5439719187794266b94e73faec20c242b2abcfa31c7",
+  "uncompressedBytes": 9320479
+}

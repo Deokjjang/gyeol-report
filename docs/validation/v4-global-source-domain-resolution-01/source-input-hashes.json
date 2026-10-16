@@ -1,0 +1,14 @@
+{
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/binderReevaluation.ts": "bc2e7ddb59de1e9252019211cbf8ef939df94079660b0b5d62187f256b708329",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/domainPolicyAnalyzer.ts": "68d3551213b2483cf418c30c526af3e0f8cde79ee99d8c9b07f654507c1a23ff",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/engine.ts": "7ca79b673f97c176621057b5310597df1f7248cff67ed4a01b021d07debfc83c",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/exactSourceResolver.ts": "4bb423693944b0a7ebe7087546feb7b76d2e161e0644c0f8412c06dab0938a5a",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/priorityEngine.ts": "ce8f445681471859842d3ee780799877b2c669fdd706d6ec6e2263cf5acefe97",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/resolutionIndex.ts": "54124b190e6216faea30770503c14d7238a3db3bfc14997b7083ff8c5dcb177e",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/semanticReviewPackets.ts": "0efae4af9d26e2279823833f14b2f8d7d11917e953e83c5271619204d561d5ed",
+  "src/lib/report-knowledge/knowledge-integration-foundation/global-source-domain-resolution/types.ts": "4f962a00d5098100aa2bfbafa64472f75fa2609ddef0838d140d63211835b164",
+  "tests/unit/report-knowledge/globalSourceDomainResolution.test.ts": "fd09e707764685a6cbe700c45d1d07f801bb96d06734afd062b61dd4cc4ad955",
+  "tools/global-source-domain-resolution/meaning-reviews.json": "62217c1caba48fa6d7413fca328c1f3dd527454451dd4cf8f87802bbfa583f07",
+  "tools/global-source-domain-resolution/reevaluation.ts": "959548bab5b63bca0750679acae8a5a74ef5cbe0970812d34742931c843d261b",
+  "tools/global-source-domain-resolution/verify.mjs": "d0d42d8c3c0cde395ccbe52d5f88f89f9094302db2c8a3588ad5dae10a429615"
+}

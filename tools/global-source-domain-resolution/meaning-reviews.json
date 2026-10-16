@@ -1,0 +1,254 @@
+[
+  {
+    "catalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
+    "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
+    "expectedRecordHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+    "engine": "comprehensive",
+    "primaryMeaning": "분석은 상대의 뜻을 확인할 질문을 정리하는 데 쓸 수 있다. 분석 결과로 상대 진심을 확정할 근거는 아니다.",
+    "relatedButDifferentMeaning": "전략적 사고와 상대의 동의·실제 감정은 서로 다른 정보다.",
+    "requiredConditions": [
+      "본인 INTJ trait의 실제 연결과 현재 관계 맥락·당사자 답 확인."
+    ],
+    "counterexamples": [
+      "연락이 줄었다고 마음이 식었다고 단정할 수 없고 직접 질문에도 답하지 않을 선택권이 있다."
+    ],
+    "validConditionalApplication": "관찰·추측·직접 들은 답을 구분하는 조건부 질문.",
+    "unusableInterpretation": "상대의 외도·갈등·이별 또는 사용자의 논리 능력 결함 판정.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:9e3da72458ebc3ddee386134acc40ead5150c48189fc451397e32790896fb0a3",
+    "originalId": "ckr:material:CH08.P1:held-munchang-exam",
+    "expectedRecordHash": "4df49905c546b8ed5a2937b50d4dd60f2dbc305ff3042c1021dea28b9a7fc8cb",
+    "engine": "career",
+    "primaryMeaning": "문창의 전통 배치와 현행 계산표의 차이가 남아 있어 긍정 자료 배정을 보류하는 연구다.",
+    "relatedButDifferentMeaning": "학습 상징의 출처 확인과 시험 성적·합격의 증명은 다르다.",
+    "requiredConditions": [
+      "전통 배치/현행 표 차이를 원문 판본과 대조한 후 별도 승인."
+    ],
+    "counterexamples": [
+      "이름에 문창이 포함되거나 실제 계산 신호가 있어도 출처 보류가 해제되지 않는다."
+    ],
+    "validConditionalApplication": "보류 이유를 검토자에게 인수하고 다른 승인된 자료를 별도로 확인.",
+    "unusableInterpretation": "시험 운·문재·합격률을 해당 자료에서 승인.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+    "originalId": "lkr:material:CH08.P4:parent-consent-respect",
+    "expectedRecordHash": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+    "engine": "love",
+    "primaryMeaning": "본인의 자율성 참고 서술을 양육을 선택할 경우의 경계 존중 행동으로 제안한 연구다.",
+    "relatedButDifferentMeaning": "부모 역할의 자율성 참고와 자녀의 실제 성격·발달·안전 상황은 다르다.",
+    "requiredConditions": [
+      "본인 MBTI 원천·양육 맥락과 실제 보호 책임 확인. 자녀 사실에는 별도 자녀 입력 필요."
+    ],
+    "counterexamples": [
+      "필수 안전 조치의 책임까지 아이에게 넘기거나 모든 결정을 무조건 맡길 수는 없다."
+    ],
+    "validConditionalApplication": "접촉 대신 가능한 다른 인사 방법을 고르게 하는 가상 장면.",
+    "unusableInterpretation": "자녀 존재·나이·피해 사실 또는 양육 성공의 판정.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:64063b7c566a59c119b3cecbac692e20ac54bcc9c141c8c4bb4a23c0c668ba87",
+    "originalId": "clr:material:CH05.P4:ab-offer-not-reservation",
+    "expectedRecordHash": "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860",
+    "engine": "compatibility-love",
+    "primaryMeaning": "A의 제안이 B의 선택·수정·거절 가능성을 남길 때 적극성이 조건부 도움이 될 수 있다.",
+    "relatedButDifferentMeaning": "A의 준비 행동과 B의 동의는 별개의 사실이며 A→B를 역방향으로 복사할 수 없다.",
+    "requiredConditions": [
+      "A/B 각각의 정확한 owned source·방향 근거·현재 요청·거절 안전성."
+    ],
+    "counterexamples": [
+      "거절에 위협이나 불이익이 있다면 속도 조율로 해결할 성향 차이가 아니다."
+    ],
+    "validConditionalApplication": "조사와 확정을 나누고 작은 만남 제안 후 수정할 시간을 남기는 조건부 장면.",
+    "unusableInterpretation": "실제 교제·호감·향후 관계 진행 또는 B의 일정에 대한 권리.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:33f393caeba9d0a42a370288067f39ef9a74bd316d5741e6899709118a5922c8",
+    "originalId": "cmpr:relation:rr:combination:chung:丑未",
+    "expectedRecordHash": "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+    "engine": "compatibility-marriage",
+    "primaryMeaning": "丑未의 구성은 서로 다른 토의 위치·장간을 검토할 정의다. 공동생활 결과를 예측하지 않는다.",
+    "relatedButDifferentMeaning": "동일 오행 토라는 분류와 두 자리의 구성 차이, 교차 검출과 원국 내부 관계는 다르다.",
+    "requiredConditions": [
+      "두 실제 소유자·기둥·관계 ID·기간·성립 조건과 원래 출처/판본 검토."
+    ],
+    "counterexamples": [
+      "충이 있어도 창고가 열려 재물이 증가한다거나 이혼한다고 결론낼 수 없다."
+    ],
+    "validConditionalApplication": "확인된 관계 구성의 차이를 설명하는 추가 검토 후보.",
+    "unusableInterpretation": "혼인·동거 사실이나 재정 분담·사고·이혼의 단정.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:1d11fcaf70c31043139efd97a834f52c2bf8d1b2b036b104b90df6416906b7b7",
+    "originalId": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+    "expectedRecordHash": "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450",
+    "engine": "compatibility-parent-child",
+    "primaryMeaning": "성인 자녀 B의 연락 경계는 부모 A가 지원 방식을 조정할 정보가 될 수 있다는 맥락 지침이다.",
+    "relatedButDifferentMeaning": "부모 지원 책임과 자녀 응답 의무는 같지 않으며 대학생 지침을 성인 전체로 일반화하지 않는다.",
+    "requiredConditions": [
+      "fixed-ab-v1 A부모/B자녀·B→A·ADULT 맥락·현재 동의·원천 지침 범위."
+    ],
+    "counterexamples": [
+      "연락 지연이 애정 부족의 증거가 아니고 자녀가 부모 외로움을 해결할 의무도 없다."
+    ],
+    "validConditionalApplication": "가능한 연락 통로·방문·지원 범위를 서로 묻는 조건부 대화.",
+    "unusableInterpretation": "발달·능력 판정, 미성년 지침의 성인 전용, 부모의 영구 통제권.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:2a94fa2b4fc69c19549c04dcc463e5f8c9ff35588d13c92ab46b925048287ef3",
+    "originalId": "cwpr:material:CH08.P3:b-state-integration-limit",
+    "expectedRecordHash": "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8",
+    "engine": "compatibility-coworker",
+    "primaryMeaning": "B의 수정 대상·버전·미통합 항목을 A에게 알려 중복 편집의 비교 범위를 좁히는 지침이다.",
+    "relatedButDifferentMeaning": "수신 확인·수정 통합·업무 수락·최종 승인·기여도는 서로 다른 상태다.",
+    "requiredConditions": [
+      "동일 실제 과제·산출물·단계·책임·결정 권한, CH07.P4의 실제 표시 이력 확인."
+    ],
+    "counterexamples": [
+      "최신 파일이 더 정확하다는 보장은 없고 기록 없이 선후·기여를 판정할 수 없다."
+    ],
+    "validConditionalApplication": "양쪽 수정본이 다를 때 충돌 항목표로 미통합·담당을 확인하는 가상 장면.",
+    "unusableInterpretation": "직장 권한·성과·복종 또는 현재 갈등 이력을 생성.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:41cfc8c9066bd01f9af7b674c685af42f40626396ab4ef4917a215290f9b387f",
+    "originalId": "mrpr:relation:rr:combination:hae:寅巳",
+    "expectedRecordHash": "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+    "engine": "compatibility-manager-report",
+    "primaryMeaning": "寅巳 해의 원래 정의와 형의 겹침을 구분할 자료이며 숨은 적의의 증거는 아니다.",
+    "relatedButDifferentMeaning": "교차 해의 검출, 순환형 일부의 구성, 상사/팀원의 실제 권한은 다른 층이다.",
+    "requiredConditions": [
+      "실제 양쪽 person ID·기둥·relation ID·refs·성립 조건 및 다른 申·亥 관계 확인."
+    ],
+    "counterexamples": [
+      "해가 있어도 배신·질병·관재나 현재 직장 갈등을 확인할 수 없다."
+    ],
+    "validConditionalApplication": "검증된 교차 관계의 구성과 단일 관계 해석 한계를 설명하는 검토 후보.",
+    "unusableInterpretation": "상하관계 권한·실력·평가·승진이나 적의를 판정.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:0ebc2fd31a00dec595ba3b2ecd0d8af31282c9c1c0b0461bc4887bffede52e3f",
+    "originalId": "bppr:relation:rr:combination:yukhap:辰酉",
+    "expectedRecordHash": "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e",
+    "engine": "compatibility-business-partner",
+    "primaryMeaning": "辰酉 육합의 위치와 금의 여력·다른 배합 조건을 검토하는 자료다. 사업 성공 자료가 아니다.",
+    "relatedButDifferentMeaning": "토생금의 요소 관계와 육합 배합은 구분되며 실제 계약·지분은 별도 사실이다.",
+    "requiredConditions": [
+      "실제 양쪽 소유자·기둥·관계 ID·refs·기간·다른 관계·정책 경계 확인."
+    ],
+    "counterexamples": [
+      "辰이 수국·충에 관여하면 기능을 고정하지 못하고 누락된 한 글자를 보충할 수 없다."
+    ],
+    "validConditionalApplication": "지원 요소와 배합 조건을 나눠 원래 정의를 검토.",
+    "unusableInterpretation": "MONEY/INVESTMENT 허용, 이익·계약권·지분·사업 성과의 단정.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148",
+    "originalId": "frpr:direction:CH05.P2",
+    "expectedRecordHash": "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9",
+    "engine": "compatibility-friendship",
+    "primaryMeaning": "A가 해결 아이디어를 건네는 것이 B에게 도움인지 현재 요청과 개입 경계를 통해 확인하는 방향 지침이다.",
+    "relatedButDifferentMeaning": "A의 제안과 B의 실제 수용 효과는 다르며 같은 십성의 양방향 차이를 인위적으로 만들지 않는다.",
+    "requiredConditions": [
+      "A→B·수신자 B 일간·subject/recipient refs·개인 source와 현재 요청 확인."
+    ],
+    "counterexamples": [
+      "B가 해법에 동의하지 않아도 비합리적이라고 평가할 수 없고 실제 효과는 UNKNOWN이다."
+    ],
+    "validConditionalApplication": "지금 필요한 반응과 원치 않는 개입을 묻는 조건부 질문.",
+    "unusableInterpretation": "해결 효과 보장, 동의 없는 개입, 역방향 근거 복사.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+    "originalId": "mfpr:god:편관",
+    "expectedRecordHash": "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+    "engine": "major-fortune",
+    "primaryMeaning": "편관 대운의 긴급 요구·책임 범위를 원국 대응 조건과 구분해 살피는 편집 연구다.",
+    "relatedButDifferentMeaning": "정관의 합의 기준, 편관의 압박 대응, 원국·대운·세운의 동일 십성은 같은 사실이 아니다.",
+    "requiredConditions": [
+      "실제 cycle ID·기간·교운·원국 자리와 오행 조건 확인. 조상 tr:god:편관의 traditionalRef는 설명문으로 정확한 원천 ID가 없어 보류."
+    ],
+    "counterexamples": [
+      "실제 압박 맥락이 없으면 위기 사건을 삽입하지 않고 제살을 자동 판정하지 않는다."
+    ],
+    "validConditionalApplication": "급한 업무가 있을 경우 승인선·지원·거절·위임 범위를 검토하는 조건부 예.",
+    "unusableInterpretation": "사고·질환·폭력·승진 예언이나 미검증 원국-대운 인과.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  },
+  {
+    "catalogKey": "kc:v1:782ba0c10ba719cad1f530caa8d037c6fa48f5322f076f9fe171ed44d4720a77",
+    "originalId": "afpr:case-study:canonical-help",
+    "expectedRecordHash": "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f",
+    "engine": "annual-fortune",
+    "primaryMeaning": "천을귀인 관찰의 기준은 원국 庚 일간을 anchor로 한 2026년 7월 두 번째 segment 未 월지다. 도움의 출현을 뜻하지 않는다.",
+    "relatedButDifferentMeaning": "원국 귀인과 월운 target 관찰, 월간 정재와 월지 본기 정인, 첫째/둘째 segment는 구분된다.",
+    "requiredConditions": [
+      "정확한 owner·reference stem/target·[2026-07-07 10:56:57, 2026-08-01)·원래 producer 확인."
+    ],
+    "counterexamples": [
+      "같은 7월 첫 segment는 甲午이며 천을귀인 target 未 관찰을 월 전체에 적용할 수 없다."
+    ],
+    "validConditionalApplication": "막힌 과제가 있고 도움을 구할 수 있다면 질문 범위를 좁혀 직접 적용하는 조건부 장면.",
+    "unusableInterpretation": "후원자 출현 보장, 원국 귀인의 월운 복제, 월간/본기 혼합 또는 실제 경험 창작.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false
+  }
+]
