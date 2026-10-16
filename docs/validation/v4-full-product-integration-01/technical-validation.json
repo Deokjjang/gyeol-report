@@ -1,0 +1,24 @@
+{
+  "node": "24.22.0",
+  "next": "16.2.4",
+  "typescriptBefore": 0,
+  "typescriptAfter": 0,
+  "newTypeErrors": 0,
+  "lint": "PASS",
+  "observedLintWarnings": 0,
+  "productionBuildBase": "PASS",
+  "productionBuildCurrent": "PASS",
+  "observedBuildWarnings": 0,
+  "logs": {
+    "typescript-base.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typescript-verified.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lint-verified.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build-base-final.log": "45cb86bca5e965f694fdaa05b48d4210dea032723a46fc5ecb7a0a160d7fa102",
+    "build-current-sealed.log": "8edde1ae27a3f6e19bc1193ab84c75234834cfda95576aee21b8b633de33be43"
+  },
+  "diffCheck": "PASS: staged additions only",
+  "intermediateRuns": "Draft source-seal mismatches rejected changed development input; sandbox build stalled, and a duplicate build attempt was rejected by the original Next lock. Final isolated builds and two unchanged-input CLI runs are authoritative. No settings changed.",
+  "finalPackagingBuild": "PASS",
+  "finalPackagingBuildLogSha256": "d750c1245d6631f74d3830c886dc4d48d1ce5da8fa1e1752489e3b86a587e653",
+  "nftAfterAllReportFilesAdded": "90 exact paths/dependency sets; integration runtime entries0"
+}

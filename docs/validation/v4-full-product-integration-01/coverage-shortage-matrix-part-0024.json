@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "coverage-shortage-matrix-part-0024.json.gz",
+  "payloadHash": "b33312af14f5821d6eaab235af0c825a4963510bb946590e63b4c8361a0e3b2f",
+  "logicalJsonHash": "e75d06eae13a2e37f0d22db7e69056681f45b1063f05bece22cbc8f6d3ff1f2a",
+  "uncompressedBytes": 1873418
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/actualFixture.ts",
+    "sha256": "faaa9ad96044f7745361988e236e50ddb0964c64825ce3f0f182f80d03b07cca"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/bookAdapter.ts",
+    "sha256": "71f00a7e90ba44bc208893b6e28a0409443b5e047a539fed3d0e2f902a104f52"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/coverage.ts",
+    "sha256": "f2917fc35f52a0dada9c5690c9a495e910a7550b6e02813404918c5cb10965b8"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/engine.ts",
+    "sha256": "39c4d9f3951c1c4a10d8b742d0b588d917811f20f7e4e9abd173dd3de6e6ba5a"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/readerBridge.ts",
+    "sha256": "38062260deac89008cca75782d207a5e6bc1ca0a206e958acc17021e0a8e2f81"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/readerCatalog.ts",
+    "sha256": "55ae16a9e35063aa584844375266feebfb559341e0fe46bb9287ee5cdd14142c"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/sourcePins.ts",
+    "sha256": "f8055c5729a5c37b44ce91158883feadfaf18c032f21ebddac02e1aadaf946a4"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/storedPublication.ts",
+    "sha256": "79353dc7bd50ab74a7694b77d97242aac8f9bbb54c401e67d3c19949558f83d3"
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/types.ts",
+    "sha256": "73b9343ac0bac78cb967af9d51e2baef8a8f5ff68bd37453166505c6788ae1c6"
+  },
+  {
+    "file": "tests/fixtures/full-product-integration-01/reader-source-pins.json",
+    "sha256": "015af4cdf2263f8ff6a54547221bd3a53502f89f79766363e447145c75ba793d"
+  },
+  {
+    "file": "tools/full-product-integration/bootstrap.mjs",
+    "sha256": "f193bd339b3f3efb0df3caef485cc3862ef1155bab3e6b888fc6f634273270a6"
+  },
+  {
+    "file": "tools/full-product-integration/verify.mjs",
+    "sha256": "eb5851b4ab9c9726416f7deabf859c783982588a2dea1d872abfb0566c622975"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "status": "NOT_STARTED",
+  "customerRuntimeEnabled": false,
+  "wholeBookCompleted": false,
+  "customerReady": false,
+  "required": [
+    "Exact original Reader/Scheduler bridges",
+    "Source/domain/meaning resolution without gate changes",
+    "Real approvals and independently authorized customer activation",
+    "CHILDREN and adult-child authority review",
+    "Legacy fallback and existing pair publication risk review",
+    "Human reading"
+  ]
+}

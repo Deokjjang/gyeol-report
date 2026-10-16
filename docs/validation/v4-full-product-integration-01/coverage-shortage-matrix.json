@@ -1,0 +1,148 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_SHARDS_V1",
+  "shape": "ARRAY",
+  "entries": 52,
+  "logicalJsonHash": "00d71ecbfe9684c01917fee7c9a1894ca194633d51d52ba50b6666839f7520c0",
+  "parts": [
+    {
+      "file": "coverage-shortage-matrix-part-0001.json",
+      "sha256": "9e3ffd87ab6b79c2d46a143752c33d430f04dc741df9657f565f4ea6357e8119",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0002.json",
+      "sha256": "39f3239980e0e9f16fa04d6bc9c368e63450f790002807ac624b01f8dfce996e",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0003.json",
+      "sha256": "53565868691e42b878fe23d925fc0cfdf19d967c8c0ff0f5b49373689e1a594e",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0004.json",
+      "sha256": "547d72600c176d4142030fba17ec27ecd649b200a92168062659df272920a1d0",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0005.json",
+      "sha256": "386bab097fff8a6e1ddf6a88ba1411e45eb569d290b04b4afcefa82235d928e8",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0006.json",
+      "sha256": "1e41176614962de6023d3c7d145e57c854e3be9e567a01e706674879d612b74c",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0007.json",
+      "sha256": "bb86544f47431ea9011ec991bb40c89fb118d1936bd6d869fa4219e7fc2c1f8d",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0008.json",
+      "sha256": "d6e1b52bbb8bc4394a5409b08d2c79fc0d5b1d142c705b7d845681cb7aeb5d56",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0009.json",
+      "sha256": "980d855d006ce923ef5e330e4a6137cce6b8903db04d94bbb2d19b248630e96a",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0010.json",
+      "sha256": "c94b92983830e5aebc3259e94816997c4a21cc2f17820e2ba702e2e0e9fd8cf1",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0011.json",
+      "sha256": "0fc147171a1e964dd3be55dbec843302fcf988dddab3f9be73c8d7dee48a9af0",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0012.json",
+      "sha256": "ff9d2ba22abedebf95d3291295c04d431b1bd40e12589f1230862591d09a43be",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0013.json",
+      "sha256": "f3a607bc00df96e262751ddaf464173a04b1ec64e1c74c26940143472e217d48",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0014.json",
+      "sha256": "9c58d5e140410ed65312b053c1fee819ac1046671aa80b5a9346ab15f9ee14d9",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0015.json",
+      "sha256": "767278baeb9aec8afd2e285c94c881aeb8c4573dced9929a2d4cb92f28c65b70",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0016.json",
+      "sha256": "613cf67187603735da4b9d944c903506b370d87c8f38139e255f0625245b3012",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0017.json",
+      "sha256": "f818e1f0632e9db57065426c4a02d7315d753b872f5d75e67ceafcc09ecc22ac",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0018.json",
+      "sha256": "e80531aed3879233936b8da71d5f74d7c781aa12b77db80995f546470a47c9f1",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0019.json",
+      "sha256": "3686bf202601e15e6f814f00346329a0163cb827f9893448447e6213a38e24dc",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0020.json",
+      "sha256": "0502810d87fa71e0c530a899b2efa019420f30d9a3b30f4a960d78cea276aee4",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0021.json",
+      "sha256": "249fe9f203dad7a66cafc407b22faf4acbb8e1f2c726da90a69272b77a41fdcf",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0022.json",
+      "sha256": "3865c6289d08db701642131a54ab88eaa8190d67e24b21636b9873f61e0ea69b",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0023.json",
+      "sha256": "159d399520fe313ee4b70bfec79e73a339830915d4fb6eb68340bac8a69d0b56",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0024.json",
+      "sha256": "80f73c1fee071dd191ee32ee7687dfa7749a091d0a8366cd34d640e70303228d",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0025.json",
+      "sha256": "cae44be2de9bf3ec757a9b4481c8a742a448f45f1dd287461e22119e7d8d7fff",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0026.json",
+      "sha256": "a72f84fef4242c34c4a5a0ea0827de91ba73cf2aee1d1c1b724de94e84fcfa0c",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0027.json",
+      "sha256": "58f7049d118dc12814da7267d65e8f7affa2f6dce5022689efda7b01e451cd93",
+      "kind": "CHUNK"
+    },
+    {
+      "file": "coverage-shortage-matrix-part-0028.json",
+      "sha256": "1f7ebf3bfd41c26f2f21a659c1fd6f3a6a74b31b9f4f638338598174e3e5acd6",
+      "kind": "CHUNK"
+    }
+  ]
+}

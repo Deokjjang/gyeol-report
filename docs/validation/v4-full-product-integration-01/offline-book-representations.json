@@ -1,0 +1,1273 @@
+[
+  {
+    "engine": "comprehensive",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "saju_mbti_full",
+      "relationship": null,
+      "sourcePlanHash": "938fd1c68b3b02bde7c31d387750a06a6f24bf11eedf9f21e66b017f3295e2c7",
+      "readerContract": {
+        "productKey": "saju_mbti_full",
+        "relationship": null,
+        "chapters": 13,
+        "paragraphs": 52,
+        "roles": 208,
+        "periodSlots": null,
+        "originalReaderVersion": "comprehensive-editorial-quality-fix-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/comprehensiveReleaseContracts.ts",
+        "originalReaderHash": "e8d105999376cb61b6da101fe236ba60e7af47708dfdcf81f894622ef1d956d3",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "b3dfd0841d13f1369c37d5459815664d9436964a6f43dfa1e239ea180972caad",
+      "pages": [],
+      "placements": [],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "career",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "career_money_study",
+      "relationship": null,
+      "sourcePlanHash": "5a17aa3e9b8520dc96e25beed5d13ca43a74fb8dccdcb80c0b534066fc0b1cf8",
+      "readerContract": {
+        "productKey": "career_money_study",
+        "relationship": null,
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "periodSlots": null,
+        "originalReaderVersion": "career-editorial-quality-fix-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/careerReleaseContracts.ts",
+        "originalReaderHash": "b3c1dfe55893d731a6cbdf974db303ba33e028961b4f44e9aef534659f1ba79a",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "95f475b6d34e7c2fdcbd30d4207eaff1835e31930e3deb76b009e3290673efcb",
+      "pages": [],
+      "placements": [],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "love",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "love_marriage_child",
+      "relationship": null,
+      "sourcePlanHash": "7324153584ef64af3c7086f36e423330f6a86bba602d4123125cdbc19225d2c6",
+      "readerContract": {
+        "productKey": "love_marriage_child",
+        "relationship": null,
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "periodSlots": null,
+        "originalReaderVersion": "love-editorial-quality-fix-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/loveReleaseContracts.ts",
+        "originalReaderHash": "ea860d14a254f063ad1b3925a7e2f64cc6f87af5afcd48b4c69902fb04ae0f54",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "8c57153bee6f3a905ce10e72ae62fd70ae918c18d08270f19b04449d1a6b6ea7",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:48d09b7d9b16a442af282fb22eb993ac1b15d32901ff515fdb4e7f79f51228f4",
+          "title": "CH02.P1",
+          "paragraphs": [
+            {
+              "text": "누군가에게 도움을 건네는 상황이라면, 상대가 원하는 도움의 종류를 물어볼 수 있죠. 누군가에게 도움을 건네는 상황이라면, 도움이 필요한지 직접 묻고 멈출 조건을 물어볼 수 있습니다.",
+              "notes": [],
+              "anchorId": "offline-native:48d09b7d9b16a442af282fb22eb993ac1b15d32901ff515fdb4e7f79f51228f4"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:c7b6d617a3614825da6f209baf4f3b96f0b2a0bef1ec43ed3e050f4150a026c8",
+          "title": "CH03.P1",
+          "paragraphs": [
+            {
+              "text": "내가 편한 친밀감의 방식을 살펴본다면, 내가 원하는 거리와 상대에게 확인할 동의를 구분해 볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:c7b6d617a3614825da6f209baf4f3b96f0b2a0bef1ec43ed3e050f4150a026c8"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:love:q:02",
+          "originalAddress": {
+            "chapterId": "CH02",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH02.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:48d09b7d9b16a442af282fb22eb993ac1b15d32901ff515fdb4e7f79f51228f4",
+          "paragraphId": "kee:paragraph:07ffcdf657d4476620b1862057e16f8f168c0384288f4711f021bc24d1219ef8",
+          "sentenceIds": [
+            "kee:sentence:c1ee9d6629983d187a967feaa82b8e1a8d6bac2e07c7b641588410de849dcde5",
+            "kee:sentence:d6192c5bbd775361c130f40f1efa40706c83cf32cb5e421de6507d52808b1b32"
+          ],
+          "ledgerHash": "75797c3925be3f2c655b20379fa7076b48f493e5fa4d680a47cbd5cefbcc8332"
+        },
+        {
+          "questionId": "synthetic:love:q:03",
+          "originalAddress": {
+            "chapterId": "CH03",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH03.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:c7b6d617a3614825da6f209baf4f3b96f0b2a0bef1ec43ed3e050f4150a026c8",
+          "paragraphId": "kee:paragraph:0a2f4b757889575d33ba6f48230754150881c187131d976f3edc777ec931b9c6",
+          "sentenceIds": [
+            "kee:sentence:88ed421a094af5e9fa84a4917be3bf5bd555b106c3e419c31822d88dc44dcb4d"
+          ],
+          "ledgerHash": "cae855b68ff0f636ab139ef43b9e287ed9681f7a5ecbed6e360eea1ec48894c5"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "major-fortune",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "major_fortune",
+      "relationship": null,
+      "sourcePlanHash": "fd814f1b19c5664c4755604ad531613285436af419c574d7f34ca73b2a4a5c3e",
+      "readerContract": {
+        "productKey": "major_fortune",
+        "relationship": null,
+        "chapters": null,
+        "paragraphs": null,
+        "roles": null,
+        "periodSlots": 14,
+        "originalReaderVersion": null,
+        "originalReaderFile": "src/lib/report-knowledge/major-fortune-product-research/yearMatrix.ts",
+        "originalReaderHash": "5d68d20479b0bcf7311cff51774eda184cfa63276ebac26782e0e76d57dce17f",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "e1b653b337257d49696a03b777d6256080a7ebbff8634ab47d0fd77b3abd2f02",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:d904d168dd4f7fc9cad637ddedb5a778c85b70d61e016a687aee01089ae0a991",
+          "title": "synthetic:major:q:2028:transition",
+          "paragraphs": [
+            {
+              "text": "전환 이후의 장기 조건을 살펴보는 상황이라면, 2028년 4월 23일 21시 42분 이후와 그 이전의 적용 구간을 구분해 볼 수 있습니다. 전환 이후의 장기 조건을 살펴보는 상황이라면, 전환 이전의 근거를 이후에 적용하고 있지 않은지를 물어볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:d904d168dd4f7fc9cad637ddedb5a778c85b70d61e016a687aee01089ae0a991"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:5d586586ad584782a71e8e003662681d018b3daeb7f972a9ab2a5cb5baa71b89",
+          "title": "synthetic:major:q:2023:background",
+          "paragraphs": [
+            {
+              "text": "장기 배경을 설명하는 구간을 읽는다면, 2018년 4월 23일 21시 42분부터 2028년 4월 23일 21시 42분 전까지의 범위를 확인해 볼 수 있죠. 장기 배경을 설명하는 구간을 읽는다면, 전환 이전의 근거를 이후에 적용하고 있지 않은지를 물어볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:5d586586ad584782a71e8e003662681d018b3daeb7f972a9ab2a5cb5baa71b89"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:major:q:2028:transition",
+          "originalAddress": {
+            "chapterId": null,
+            "periodId": "2028",
+            "paragraphId": null,
+            "sentenceRole": "transition",
+            "originalAddress": "synthetic:major:q:2028:transition",
+            "level": "PERIOD_ROLE"
+          },
+          "pageId": "offline-native:d904d168dd4f7fc9cad637ddedb5a778c85b70d61e016a687aee01089ae0a991",
+          "paragraphId": "kee:paragraph:72d384e9c3063a9d8150bf51b90450eaff665a87435680072334f64e4118a426",
+          "sentenceIds": [
+            "kee:sentence:5d6796a69d2993abc1340b4b0e45ea6181760a3e995e0bde7718c31a6d32f49d",
+            "kee:sentence:4556968ca72f519238b7593104e17c8c878b36abf150d25e686ecedbf7d0f7c4"
+          ],
+          "ledgerHash": "eb005545b5796dd226dcd0f4c6c5b50698be6db96d7f53d6893d387e2b65a789"
+        },
+        {
+          "questionId": "synthetic:major:q:2023:background",
+          "originalAddress": {
+            "chapterId": null,
+            "periodId": "2023",
+            "paragraphId": null,
+            "sentenceRole": "background",
+            "originalAddress": "synthetic:major:q:2023:background",
+            "level": "PERIOD_ROLE"
+          },
+          "pageId": "offline-native:5d586586ad584782a71e8e003662681d018b3daeb7f972a9ab2a5cb5baa71b89",
+          "paragraphId": "kee:paragraph:229535e1bbb43517c1a6f968dc280eb8b3649815180421c1de85c1531bfb78f9",
+          "sentenceIds": [
+            "kee:sentence:7c0272c6920314e8ffa707363a4410aba6a5ecf8c1a4ef68a6369f63267ed8a1",
+            "kee:sentence:74ed26521724322a111ea11bdce1c4bf4adf0b69d721e6ab8e0f573bf9c66663"
+          ],
+          "ledgerHash": "ddee48602774e53c4f2e44ab6d08d72f47115f35a0a12e7b73cbf189d21cc3e8"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "annual-fortune",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "annual_fortune",
+      "relationship": null,
+      "sourcePlanHash": "50fad97870018c90ddca2fc024e3d8fa95f96a56d223314900c810200e067d67",
+      "readerContract": {
+        "productKey": "annual_fortune",
+        "relationship": null,
+        "chapters": null,
+        "paragraphs": null,
+        "roles": null,
+        "periodSlots": 12,
+        "originalReaderVersion": null,
+        "originalReaderFile": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+        "originalReaderHash": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "2cff6684388c8ff4f8a84f5f769fa597d5d37920e21f623d9af27bd4775fe8f3",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:9cf10176d3611a5e116783c29b1f747212bf475f364c439c653cd5258e8daf4a",
+          "title": "synthetic:annual:q:2",
+          "paragraphs": [
+            {
+              "text": "2월의 해석 근거를 검토한다면, 원국 천간의 근거와 월간의 근거를 구분해 볼 수 있어요. 2월의 해석 근거를 검토한다면, 대표 구간 밖에도 같은 설명을 적용할 근거가 있는지를 물어볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:9cf10176d3611a5e116783c29b1f747212bf475f364c439c653cd5258e8daf4a"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:b0c0e2442835099d4fad3644f0b791f55e72182e707aa04f13ec0a6bcb011529",
+          "title": "synthetic:annual:q:4",
+          "paragraphs": [
+            {
+              "text": "4월 안의 실제 구간을 비교한다면, 각 구간의 시작과 끝, 월간에 해당하는 근거를 확인해 볼 수 있습니다. 4월 안의 실제 구간을 비교한다면, 대표 구간 밖에도 같은 설명을 적용할 근거가 있는지를 물어볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:b0c0e2442835099d4fad3644f0b791f55e72182e707aa04f13ec0a6bcb011529"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:annual:q:2",
+          "originalAddress": {
+            "chapterId": null,
+            "periodId": "month-2",
+            "paragraphId": null,
+            "sentenceRole": null,
+            "originalAddress": "synthetic:annual:q:2",
+            "level": "PERIOD"
+          },
+          "pageId": "offline-native:9cf10176d3611a5e116783c29b1f747212bf475f364c439c653cd5258e8daf4a",
+          "paragraphId": "kee:paragraph:7b5046c8fb8df5901fc8a801ae9308d383e5ad27d4126eaade2b2ca3ed700efb",
+          "sentenceIds": [
+            "kee:sentence:7ad437042477e52fd1e4f4c0e3cca63e10de0d12d04e7e08a96dd035e498d041",
+            "kee:sentence:af3bc25d36eb3bd9b965c57668f25071d42fd1d98075259a939abd1a76f97247"
+          ],
+          "ledgerHash": "3a43b64713542971a5e57d372879a4abead2753de84e6210a4ddc973ee8943cb"
+        },
+        {
+          "questionId": "synthetic:annual:q:4",
+          "originalAddress": {
+            "chapterId": null,
+            "periodId": "month-4",
+            "paragraphId": null,
+            "sentenceRole": null,
+            "originalAddress": "synthetic:annual:q:4",
+            "level": "PERIOD"
+          },
+          "pageId": "offline-native:b0c0e2442835099d4fad3644f0b791f55e72182e707aa04f13ec0a6bcb011529",
+          "paragraphId": "kee:paragraph:0c735b968abf3c6f96de6410ddff1cff73405f72b6a4dbd097d7cbd343460c41",
+          "sentenceIds": [
+            "kee:sentence:be99367745a915c5b8ef3b9bbb0d7b545fc7f2172e2b6a70028465329bf16c3e",
+            "kee:sentence:dfb0c140f36f4c2345711497ee0968d6dfb9be868ad7462169a450a78c444055"
+          ],
+          "ledgerHash": "8da8f19a2f9c4313b482bc02e222f70bd1e7a08d99584fd25c0116545d7004da"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "compatibility-love",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "saju_mbti_compatibility",
+      "relationship": "love",
+      "sourcePlanHash": "1f780161c5deb60ac05e8fd74de9a021500c62366ca51387ff5ced06668bdb55",
+      "readerContract": {
+        "productKey": "saju_mbti_compatibility",
+        "relationship": "love",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "periodSlots": null,
+        "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+        "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "a579b0f249a572b60b02361bf956bb7ee9b19a6d7b90913e90f158aa91368599",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:f8971e5b8a0fc52012a53d08fa6d171fe6383a8bd375898b5e996f763e394f55",
+          "title": "CH05.P1",
+          "paragraphs": [
+            {
+              "text": "A가 B에게 연락을 제안하는 상황이라면, 원하는 연락 방식과 거절할 선택을 물어볼 수 있어요. A가 B에게 연락을 제안하는 상황이라면, 원치 않는 연락을 거절할 수 있는지를 물어볼 수 있어요.",
+              "notes": [],
+              "anchorId": "offline-native:f8971e5b8a0fc52012a53d08fa6d171fe6383a8bd375898b5e996f763e394f55"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:af3853487388740ab8848d4da0c2229bcc6fb7a47aab4e07b7065e08d3b941cf",
+          "title": "CH06.P1",
+          "paragraphs": [
+            {
+              "text": "B가 A에게 답할 방식을 정하는 상황이라면, 말할 수 있는 범위와 기다릴 수 있는 시간을 확인해 볼 수 있죠. B가 A에게 답할 방식을 정하는 상황이라면, 원치 않는 연락을 거절할 수 있는지를 물어볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:af3853487388740ab8848d4da0c2229bcc6fb7a47aab4e07b7065e08d3b941cf"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:love:question:CH05.P1",
+          "originalAddress": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:f8971e5b8a0fc52012a53d08fa6d171fe6383a8bd375898b5e996f763e394f55",
+          "paragraphId": "kee:paragraph:2f2358bc4eb5df4d3947ddffe154e1b3c3b8e20f07829cab46882e2afdf51573",
+          "sentenceIds": [
+            "kee:sentence:f617aef0e6051a236889cca54f091662f9346725ded53964829a6e00299a94f8",
+            "kee:sentence:65e0db55a69cb1e703e9e451fe25b64554e565bfd2feaa5934022edb8b7b6061"
+          ],
+          "ledgerHash": "58512449adf0377a2269767594786bd19614d439ca93bb9679e891a19e74d546"
+        },
+        {
+          "questionId": "synthetic:love:question:CH06.P1",
+          "originalAddress": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:af3853487388740ab8848d4da0c2229bcc6fb7a47aab4e07b7065e08d3b941cf",
+          "paragraphId": "kee:paragraph:c5e4a67c7977ecc6d5d64342cfc095515f9a4ed4625faa78531092bbd3391d96",
+          "sentenceIds": [
+            "kee:sentence:3d73f13500b3e217108d11f5d4ae6080e84d3e02fdff3062d3691107bc31bcee",
+            "kee:sentence:a44583164ef6a5c83db083f17346767f657142ec83c1c31b35e3584f313e0383"
+          ],
+          "ledgerHash": "1002f3e3eaa9d6af09363e25bfc15b533887b55ae5d4fb576e6e2cc17e9a9d00"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "compatibility-marriage",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "saju_mbti_compatibility",
+      "relationship": "marriage",
+      "sourcePlanHash": "ca6a6a6041c3bae4cf0ce179c0f6b2d19df785d619c95be087c8f02ae8642610",
+      "readerContract": {
+        "productKey": "saju_mbti_compatibility",
+        "relationship": "marriage",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "periodSlots": null,
+        "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+        "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "e33c1acb3f2b4bc870f9a9eb50352802c54299017517e34f288f59d6bfc839d2",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:fd4190eaf8d2114fdcbf30c62a8b3b5a6f75c105ffeba741a7418cbb0a096a02",
+          "title": "CH05.P1",
+          "paragraphs": [
+            {
+              "text": "함께 집안일을 정하는 상황이라면, 결정과 실행, 다음 주기의 확인을 누가 맡을지를 구분해 볼 수 있습니다. 함께 집안일을 정하는 상황이라면, 바뀐 생활 조건에 다시 동의했는지를 물어볼 수 있습니다.",
+              "notes": [],
+              "anchorId": "offline-native:fd4190eaf8d2114fdcbf30c62a8b3b5a6f75c105ffeba741a7418cbb0a096a02"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:97b7924cca7903275ed7b1da622df6dd0e0ebdac96dead2f26a61da078d07e17",
+          "title": "CH06.P1",
+          "paragraphs": [
+            {
+              "text": "생활 방식을 바꾸자고 제안하는 상황이라면, 기존 약속과 새로 동의할 범위를 비교해 볼 수 있습니다. 생활 방식을 바꾸자고 제안하는 상황이라면, 바뀐 생활 조건에 다시 동의했는지를 물어볼 수 있어요.",
+              "notes": [],
+              "anchorId": "offline-native:97b7924cca7903275ed7b1da622df6dd0e0ebdac96dead2f26a61da078d07e17"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:marriage:question:CH05.P1",
+          "originalAddress": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:fd4190eaf8d2114fdcbf30c62a8b3b5a6f75c105ffeba741a7418cbb0a096a02",
+          "paragraphId": "kee:paragraph:b1a1f39d121b0f4e093635e765fa969732092dbbd02c193d25a1c17e8077b6bc",
+          "sentenceIds": [
+            "kee:sentence:6927e99606eb61b1fa81cc95962359033e4ed429669a02c4cf0c3d2c840347c9",
+            "kee:sentence:63c09d84ba44ee0b75e234d9ec619e57ba1d69e936e3e988ad9110d82daa0e56"
+          ],
+          "ledgerHash": "c8679da6e65a2421757ae4b2751666790edfc5e3f574e0e5f4b1d3b0b61045fd"
+        },
+        {
+          "questionId": "synthetic:marriage:question:CH06.P1",
+          "originalAddress": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:97b7924cca7903275ed7b1da622df6dd0e0ebdac96dead2f26a61da078d07e17",
+          "paragraphId": "kee:paragraph:28c309a04fb7cf1adba40fbb89555356814c7193b5e925047a0fd3a7c9f29c62",
+          "sentenceIds": [
+            "kee:sentence:85b6ef1eb3790a81534d73cce5d253f943fa9de804c72d53dd38a543a909f372",
+            "kee:sentence:f8f2ba609577973c0f69ce64cfe202e8aa95e15db0cb4101674ba4070a5cabe1"
+          ],
+          "ledgerHash": "6a288be6ef316dac8db6619065a640594876900e86b73a0bef45680753865f82"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "compatibility-parent-child",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "saju_mbti_compatibility",
+      "relationship": "parentChild",
+      "sourcePlanHash": "f9e475e909db0cec35d012ed7c67cca4c543b3784a7d30f8f98d8d66850fa06d",
+      "readerContract": {
+        "productKey": "saju_mbti_compatibility",
+        "relationship": "parentChild",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "periodSlots": null,
+        "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+        "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "d9d48db2773d6e83ef30eba3f3f6ffbd0f2080c73e8ac1ce4a30e0d646f13708",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:29676571dcdd9470ec4b4ca61b0fa38a3017e7c037d46f2d47ccee996385bbef",
+          "title": "CH05.P1",
+          "paragraphs": [
+            {
+              "text": "부모 A가 자녀 B에게 설명하는 상황이라면, 부모가 맡아야 할 보호 책임과 자녀가 선택할 범위를 구분해 볼 수 있습니다. 부모 A가 자녀 B에게 설명하는 상황이라면, 자녀가 설명을 거절해도 보호 책임이 유지되는지를 물어볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:29676571dcdd9470ec4b4ca61b0fa38a3017e7c037d46f2d47ccee996385bbef"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:6f0c5ef57a3d491790f6d28c943cf2fee3d4b315b70c4e03e65a6066cf669b7f",
+          "title": "CH06.P1",
+          "paragraphs": [
+            {
+              "text": "자녀 B가 부모 A에게 의견을 전하는 상황이라면, 자녀가 말할 선택과 부모가 맡을 조정 책임을 남길 수 있어요. 자녀 B가 부모 A에게 의견을 전하는 상황이라면, 자녀가 설명을 거절해도 보호 책임이 유지되는지를 물어볼 수 있어요.",
+              "notes": [],
+              "anchorId": "offline-native:6f0c5ef57a3d491790f6d28c943cf2fee3d4b315b70c4e03e65a6066cf669b7f"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:parent-child:question:CH05.P1",
+          "originalAddress": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:29676571dcdd9470ec4b4ca61b0fa38a3017e7c037d46f2d47ccee996385bbef",
+          "paragraphId": "kee:paragraph:fcfef525571e457ca1b22249c9d39fc90a8e8849d66907388cd5de732bcd0ecb",
+          "sentenceIds": [
+            "kee:sentence:2d0d87e298c5e12a2673dcd8b916d3d9d41f515d9164d4822b64b0a727dbbd24",
+            "kee:sentence:f576f5ef59fabaf22022cfdb638b23beb0f3beafd767caae0c18b5d53d1e4e56"
+          ],
+          "ledgerHash": "879a59979dfb8199aa12c7e836bd045dce9640aa382eb476db5343a48469af15"
+        },
+        {
+          "questionId": "synthetic:parent-child:question:CH06.P1",
+          "originalAddress": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:6f0c5ef57a3d491790f6d28c943cf2fee3d4b315b70c4e03e65a6066cf669b7f",
+          "paragraphId": "kee:paragraph:b3ef2e1b2cac273ed0e9ff2e162ef2a5ea29cd0dd128927d4608faf25194060e",
+          "sentenceIds": [
+            "kee:sentence:1d1a09a475a39eec6032c7a9087c43da0e7e22fc2709ba99d252f2b02b7e4d32",
+            "kee:sentence:b56617a1ec8891a1fe2e79ab979b4a4048854516b7ef60f286c99454181a4f66"
+          ],
+          "ledgerHash": "1aa7765a2fa4ab96a2b9aa9b889f98bc454c32420aa08e020179d7dc28ff7683"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "compatibility-coworker",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "saju_mbti_compatibility",
+      "relationship": "coworker",
+      "sourcePlanHash": "94e787dbe5f9a08f6b044e562de87a4bd1db3ac210a17e7365754efec027e18e",
+      "readerContract": {
+        "productKey": "saju_mbti_compatibility",
+        "relationship": "coworker",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "periodSlots": null,
+        "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+        "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "eaa647489b0cdb46b102e732cd1218bef66dc8d620645fb2acd6c05f0de7998b",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:dc2eefbefe61fc3d44e8d5dcf2b4125a4536ee58e789357fc46e155bbc429dc9",
+          "title": "CH05.P1",
+          "paragraphs": [
+            {
+              "text": "업무 결과물을 넘기는 상황이라면, 전달했다는 사실과 상대가 수락했다는 확인을 구분해 볼 수 있어요. 업무 결과물을 넘기는 상황이라면, 인계 뒤 누가 수락을 확인할지를 물어볼 수 있어요.",
+              "notes": [],
+              "anchorId": "offline-native:dc2eefbefe61fc3d44e8d5dcf2b4125a4536ee58e789357fc46e155bbc429dc9"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:2417468e5541d6aed5ed5755ae69d7824d0e650712039c365bbb2f8eea649765",
+          "title": "CH06.P1",
+          "paragraphs": [
+            {
+              "text": "현장 정보를 함께 검토하는 상황이라면, 수정 의견과 실제 승인 권한을 구분해 볼 수 있어요. 현장 정보를 함께 검토하는 상황이라면, 인계 뒤 누가 수락을 확인할지를 물어볼 수 있습니다.",
+              "notes": [],
+              "anchorId": "offline-native:2417468e5541d6aed5ed5755ae69d7824d0e650712039c365bbb2f8eea649765"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:coworker:question:CH05.P1",
+          "originalAddress": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:dc2eefbefe61fc3d44e8d5dcf2b4125a4536ee58e789357fc46e155bbc429dc9",
+          "paragraphId": "kee:paragraph:9d86d62e84f45c9bcfaf14458bee07ded9ef486089ddb224c2c5a341d420903d",
+          "sentenceIds": [
+            "kee:sentence:d12a71fd5bb4c9545dc9faccc30c5e782ee74fc125cca07043f981179c474b88",
+            "kee:sentence:00a10640400f114260ae7e4c90880fb3334cbb318d69a78c48a0f7147dfc85a6"
+          ],
+          "ledgerHash": "e98fbc8ddcadbcc8e91f03ad45f5283815913ddf7914c95b4c5d4f33f3420d83"
+        },
+        {
+          "questionId": "synthetic:coworker:question:CH06.P1",
+          "originalAddress": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:2417468e5541d6aed5ed5755ae69d7824d0e650712039c365bbb2f8eea649765",
+          "paragraphId": "kee:paragraph:188739cb750f42caae02c9ff5406923976bf9a7cae911acc82b1ab4f7a449b65",
+          "sentenceIds": [
+            "kee:sentence:d18af0b49ca003aeb4c54925d05ebb44dfe70b99494f38003c35360304e2e691",
+            "kee:sentence:6c334ae4b0e5141b5aff71ae717d441d9b8c30c2c02df5fc2679dc194467de50"
+          ],
+          "ledgerHash": "ef65d5285671a8addc002e3562ca35119d2b17aa56762f0f29f128af29d0021f"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "compatibility-manager-report",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "saju_mbti_compatibility",
+      "relationship": "managerReport",
+      "sourcePlanHash": "8bdea2a7c619567636000f4b50a5d1b90e077f3a42c4c03bc9902a2b090ae5ee",
+      "readerContract": {
+        "productKey": "saju_mbti_compatibility",
+        "relationship": "managerReport",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "periodSlots": null,
+        "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+        "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "bf87123282e60b785f3a4b8d013505c08169177f97fead3ff76b035f0463eab7",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:bc56034145998d8776a0689220752e4aee53b6ad6a9f90a75d62c302e434d4a7",
+          "title": "CH05.P1",
+          "paragraphs": [
+            {
+              "text": "상사 A가 팀원 B에게 업무를 맡기는 상황이라면, 위임한 업무와 별도로 확인해야 할 결정권을 구분해 볼 수 있습니다. 상사 A가 팀원 B에게 업무를 맡기는 상황이라면, 팀원에게 실행 자원과 거절할 경로가 있는지를 물어볼 수 있어요.",
+              "notes": [],
+              "anchorId": "offline-native:bc56034145998d8776a0689220752e4aee53b6ad6a9f90a75d62c302e434d4a7"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:c4c8df4719b5d4e0efd8c1cda58dbd19a13a04dad182938237ff4a5e381d0a08",
+          "title": "CH06.P1",
+          "paragraphs": [
+            {
+              "text": "팀원 B가 상사 A에게 진행 상황을 보고한다면, 팀원의 실행 범위와 상사가 조정할 자원을 확인해 볼 수 있습니다. 팀원 B가 상사 A에게 진행 상황을 보고한다면, 팀원에게 실행 자원과 거절할 경로가 있는지를 물어볼 수 있어요.",
+              "notes": [],
+              "anchorId": "offline-native:c4c8df4719b5d4e0efd8c1cda58dbd19a13a04dad182938237ff4a5e381d0a08"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:manager-report:question:CH05.P1",
+          "originalAddress": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:bc56034145998d8776a0689220752e4aee53b6ad6a9f90a75d62c302e434d4a7",
+          "paragraphId": "kee:paragraph:45288ce67822e1a4e2d76efd5e86f2278cc1c3044b52209728545a2c99b7ff3b",
+          "sentenceIds": [
+            "kee:sentence:8b7a94232f4ac732d86faab1908adb56b19adfc8cd539e89dd9e59ae885100f0",
+            "kee:sentence:c4d9bee85f1e9d252924bdb2237d6a435b75c3365f4a89fe35d52c30c88108d9"
+          ],
+          "ledgerHash": "b828a8bc8c892386ff4203e87fd1a6f1bfdb00ae5e6525359856534ade5de18e"
+        },
+        {
+          "questionId": "synthetic:manager-report:question:CH06.P1",
+          "originalAddress": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:c4c8df4719b5d4e0efd8c1cda58dbd19a13a04dad182938237ff4a5e381d0a08",
+          "paragraphId": "kee:paragraph:dec3e74f3c77935930641de1d733acbb2424e972a976b535f6dca65b746ea9ce",
+          "sentenceIds": [
+            "kee:sentence:9caa0ed7f889665008b7ab252ebb9139a15cd66223d752097b3c791ed24b70e6",
+            "kee:sentence:fdfae0f8cc835737526837735a2d3567bce8ac2a970f38bf379cdcd5c3e44614"
+          ],
+          "ledgerHash": "75a284a7464efb2ecd62fbcc9fc0a18a9b6473c310941232f6bd191cdd5b4188"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "compatibility-business-partner",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "saju_mbti_compatibility",
+      "relationship": "businessPartner",
+      "sourcePlanHash": "f3cd84ccafbd37f9e714ed86cadd1dfaed49e5c6429d420c5431abec40433cdb",
+      "readerContract": {
+        "productKey": "saju_mbti_compatibility",
+        "relationship": "businessPartner",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "periodSlots": null,
+        "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+        "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "f6a37c11368dcd62dc22d73412b9f8448a231cb88d7f2704bba41d2a736ad5c8",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:155fa28023e900a54e93e865e932a14f487759bffe8b30f5243db2211fdc6d74",
+          "title": "CH05.P1",
+          "paragraphs": [
+            {
+              "text": "두 사람이 새 제안을 검토하는 상황이라면, 매출과 실제 입금, 비용을 뺀 이익을 구분해 볼 수 있습니다. 두 사람이 새 제안을 검토하는 상황이라면, 실제 권한과 비용 부담에 별도의 합의가 있는지를 물어볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:155fa28023e900a54e93e865e932a14f487759bffe8b30f5243db2211fdc6d74"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:e05aa6aa48b7fed80e6338e3da8a1d1391b940500926121b6397853162016b36",
+          "title": "CH06.P1",
+          "paragraphs": [
+            {
+              "text": "운영 범위를 바꾸자고 제안하는 상황이라면, 의견을 낼 범위와 별도로 합의할 결정권을 구분해 볼 수 있습니다. 운영 범위를 바꾸자고 제안하는 상황이라면, 실제 권한과 비용 부담에 별도의 합의가 있는지를 물어볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:e05aa6aa48b7fed80e6338e3da8a1d1391b940500926121b6397853162016b36"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:business-partner:question:CH05.P1",
+          "originalAddress": {
+            "chapterId": "CH05",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH05.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:155fa28023e900a54e93e865e932a14f487759bffe8b30f5243db2211fdc6d74",
+          "paragraphId": "kee:paragraph:658a6baa56bde8613c709c6dcf5a38c432676d34fc69fc8a100918c38c33c430",
+          "sentenceIds": [
+            "kee:sentence:2dc6d55e43bb4b1e6d88d7f9ad6970de83781e9c63354b520b9871502576a1d3",
+            "kee:sentence:e5f3be4ad4e256fa748f9f4c1d389b3e4f825629a74cb728744b75666e3ead32"
+          ],
+          "ledgerHash": "40ab6506ea0a57359cd5e3141a7eb55115b0f9ad4bb408fd8e7d414d4bbcdb2b"
+        },
+        {
+          "questionId": "synthetic:business-partner:question:CH06.P1",
+          "originalAddress": {
+            "chapterId": "CH06",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH06.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:e05aa6aa48b7fed80e6338e3da8a1d1391b940500926121b6397853162016b36",
+          "paragraphId": "kee:paragraph:f212bf7c2ea84dacfddbb74b3a85f2b4a4dc0a34abd45def651162cb85bf3d3c",
+          "sentenceIds": [
+            "kee:sentence:b87e9e56ffc0de320dc49672962cbc6ea1a08ea2d45bb222703b73c73dad9494",
+            "kee:sentence:4771402cb49307da573f73a6d3ba659dbe18fcb80d0c8f16f9a50bea4540fe77"
+          ],
+          "ledgerHash": "0dd73d97aa8d2534a5a9e9d87c6a1b217edb0d15ce4098fae671b278331dba12"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "compatibility-friendship",
+    "displayFixture": false,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "saju_mbti_compatibility",
+      "relationship": "friendship",
+      "sourcePlanHash": "1a086e04c977b0b72cebcaf23a9c66ba1f344e7d8d0d014fe8dbe10791742345",
+      "readerContract": {
+        "productKey": "saju_mbti_compatibility",
+        "relationship": "friendship",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "periodSlots": null,
+        "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+        "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "90902f201dc2f949412051fe85e300279dbab279a42cc23a5cad5b9dfb582f16",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:ec19e402b72374bb18245b7402be8ed7f8d8472fd8e13967aa2fd0ca79202b93",
+          "title": "CH01.P1.S1",
+          "paragraphs": [
+            {
+              "text": "다시 만날 시간을 제안하는 상황이라면, 함께할 시간과 각자가 거절할 선택을 남길 수 있죠. 다시 만날 시간을 제안하는 상황이라면, 서로 다시 만나지 않을 선택도 존중할 수 있는지를 물어볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:ec19e402b72374bb18245b7402be8ed7f8d8472fd8e13967aa2fd0ca79202b93"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:a5337a5230d7fa964491b8fae6ba6d33715aeea0f43eab6e684a051e9e2058a8",
+          "title": "CH01.P1.S2",
+          "paragraphs": [
+            {
+              "text": "서로 다른 모임에 참여하는 상황이라면, 친밀함과 각자의 다른 만남을 구분해 볼 수 있습니다.",
+              "notes": [],
+              "anchorId": "offline-native:a5337a5230d7fa964491b8fae6ba6d33715aeea0f43eab6e684a051e9e2058a8"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:131b478b1f0fa52d3e87685fedd5ff968d1bbb54fb8acf3381d1ec2370aaecbb",
+          "title": "CH04.P1",
+          "paragraphs": [
+            {
+              "text": "서로 연락할 방식을 정하는 상황이라면, 연락할 여유와 답을 재촉하지 않을 범위를 확인해 볼 수 있어요.",
+              "notes": [],
+              "anchorId": "offline-native:131b478b1f0fa52d3e87685fedd5ff968d1bbb54fb8acf3381d1ec2370aaecbb"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:63f1c803980271fb19992b53ab13cb2c54384b6f562402ddf44d2fe8f7f05efe",
+          "title": "CH07.P1.S1",
+          "paragraphs": [
+            {
+              "text": "약속 제안에서 거절할 선택이 제한되는 상황이라면, 함께할 시간과 각자가 거절할 선택을 남길 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:63f1c803980271fb19992b53ab13cb2c54384b6f562402ddf44d2fe8f7f05efe"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:friendship:q:CH01.P1.S1",
+          "originalAddress": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH01.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "pageId": "offline-native:ec19e402b72374bb18245b7402be8ed7f8d8472fd8e13967aa2fd0ca79202b93",
+          "paragraphId": "kee:paragraph:70b62a64b74f988ac94404d490bbbbf46b06e775df6538b95f3f3179f2210263",
+          "sentenceIds": [
+            "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+            "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+          ],
+          "ledgerHash": "d1c234967bc1d67bcba3636aff6be99344f8bd62b868f203e38452db0ae0909d"
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH01.P1.S2",
+          "originalAddress": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH01.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "pageId": "offline-native:a5337a5230d7fa964491b8fae6ba6d33715aeea0f43eab6e684a051e9e2058a8",
+          "paragraphId": "kee:paragraph:11b25f05e338766141598fb216947f93d43d523ddbadf228e11af92881bfd552",
+          "sentenceIds": [
+            "kee:sentence:867d58352e0fd5916e93afa46227d137ee023cbc35320f19d3f048ce095c93df"
+          ],
+          "ledgerHash": "c564827c72e34b4b11684a2f0d7c83e31479a62bc4ac54e025991cab07931d2f"
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH04.P1",
+          "originalAddress": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH04.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:131b478b1f0fa52d3e87685fedd5ff968d1bbb54fb8acf3381d1ec2370aaecbb",
+          "paragraphId": "kee:paragraph:cd49876a494e71085d863b50abdabe5e4b98cca861507bf2aaa86ef6b109be3b",
+          "sentenceIds": [
+            "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f"
+          ],
+          "ledgerHash": "9f9a264ee532a736d3fa3f8bbfef59cf14b13be5ac2f930d4818f91353ce3b4f"
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH07.P1.S1",
+          "originalAddress": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH07.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "pageId": "offline-native:63f1c803980271fb19992b53ab13cb2c54384b6f562402ddf44d2fe8f7f05efe",
+          "paragraphId": "kee:paragraph:d0b93f3ce99544048547b31e1f469893d33fdff0448a8771eda1915b0f2921a2",
+          "sentenceIds": [
+            "kee:sentence:4b491129990705575d77014c12ba15ec807b5bb2d228b6fafd1512d82e62c0c2"
+          ],
+          "ledgerHash": "003a7de7502514bd934217719fc7aca0c2f68c6f5f3725a76f74d682f18381d4"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  },
+  {
+    "engine": "compatibility-friendship",
+    "displayFixture": true,
+    "book": {
+      "version": "offline-synthetic-book-representation-v1",
+      "edition": "SYNTHETIC_TEST_ONLY",
+      "product": "saju_mbti_compatibility",
+      "relationship": "friendship",
+      "sourcePlanHash": "8302a7617b98e69e3106943e6232d8631e6c8a8b3b1ae23c0b7058c573efa3ed",
+      "readerContract": {
+        "productKey": "saju_mbti_compatibility",
+        "relationship": "friendship",
+        "chapters": 9,
+        "paragraphs": 36,
+        "roles": 144,
+        "periodSlots": null,
+        "originalReaderVersion": "compatibility-editorial-quality-01-v1",
+        "originalReaderFile": "src/lib/interpretation-v4/compatibilityReleaseContracts.ts",
+        "originalReaderHash": "f23c265a45819d8bc8ddd2b950686ba1bb2f97a35c905f0dd968572f9a172575",
+        "policy": "ORIGINAL_STRUCTURE_ONLY"
+      },
+      "temporalContractHash": "90902f201dc2f949412051fe85e300279dbab279a42cc23a5cad5b9dfb582f16",
+      "pages": [
+        {
+          "kind": "narrative",
+          "id": "offline-native:ec19e402b72374bb18245b7402be8ed7f8d8472fd8e13967aa2fd0ca79202b93",
+          "title": "CH01.P1.S1",
+          "paragraphs": [
+            {
+              "text": "다시 만날 시간을 제안하는 상황이라면, 함께할 시간과 각자가 거절할 선택을 남길 수 있죠. 다시 만날 시간을 제안하는 상황이라면, 서로 다시 만나지 않을 선택도 존중할 수 있는지를 물어볼 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:ec19e402b72374bb18245b7402be8ed7f8d8472fd8e13967aa2fd0ca79202b93"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:a5337a5230d7fa964491b8fae6ba6d33715aeea0f43eab6e684a051e9e2058a8",
+          "title": "CH01.P1.S2",
+          "paragraphs": [
+            {
+              "text": "서로 다른 모임에 참여하는 상황이라면, 친밀함과 각자의 다른 만남을 구분해 볼 수 있습니다.",
+              "notes": [],
+              "anchorId": "offline-native:a5337a5230d7fa964491b8fae6ba6d33715aeea0f43eab6e684a051e9e2058a8"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:131b478b1f0fa52d3e87685fedd5ff968d1bbb54fb8acf3381d1ec2370aaecbb",
+          "title": "CH04.P1",
+          "paragraphs": [
+            {
+              "text": "서로 연락할 방식을 정하는 상황이라면, 연락할 여유와 답을 재촉하지 않을 범위를 확인해 볼 수 있어요.",
+              "notes": [],
+              "anchorId": "offline-native:131b478b1f0fa52d3e87685fedd5ff968d1bbb54fb8acf3381d1ec2370aaecbb"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:63f1c803980271fb19992b53ab13cb2c54384b6f562402ddf44d2fe8f7f05efe",
+          "title": "CH07.P1.S1",
+          "paragraphs": [
+            {
+              "text": "약속 제안에서 거절할 선택이 제한되는 상황이라면, 함께할 시간과 각자가 거절할 선택을 남길 수 있죠.",
+              "notes": [],
+              "anchorId": "offline-native:63f1c803980271fb19992b53ab13cb2c54384b6f562402ddf44d2fe8f7f05efe"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:e3426b6e1cab2bfa4ae4326307fa076d0113539a020d67fa1a46bfe07e5a5a31",
+          "title": "CH08.P1.S1",
+          "paragraphs": [
+            {
+              "text": "서로 다시 대화하기를 원하고 안전한 상황이라면, 다시 말할 범위와 대화를 멈출 선택을 확인해 볼 수 있어요.",
+              "notes": [],
+              "anchorId": "offline-native:e3426b6e1cab2bfa4ae4326307fa076d0113539a020d67fa1a46bfe07e5a5a31"
+            }
+          ],
+          "notes": []
+        },
+        {
+          "kind": "narrative",
+          "id": "offline-native:cee3d6a54f01ee21956b4f47f8914a64eb66dd5d54868e3bb0e2f001f4e05a57",
+          "title": "CH09.P1",
+          "paragraphs": [
+            {
+              "text": "서로 연락할 방식을 정하는 상황이라면, 연락할 여유와 답을 재촉하지 않을 범위를 확인해 볼 수 있다는 뜻이에요.",
+              "notes": [],
+              "anchorId": "offline-native:cee3d6a54f01ee21956b4f47f8914a64eb66dd5d54868e3bb0e2f001f4e05a57"
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "placements": [
+        {
+          "questionId": "synthetic:friendship:q:CH01.P1.S1",
+          "originalAddress": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH01.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "pageId": "offline-native:ec19e402b72374bb18245b7402be8ed7f8d8472fd8e13967aa2fd0ca79202b93",
+          "paragraphId": "kee:paragraph:70b62a64b74f988ac94404d490bbbbf46b06e775df6538b95f3f3179f2210263",
+          "sentenceIds": [
+            "kee:sentence:94783bf1ade9b9fee76585dd15ded2c1408a2163def17751f097af560c33e7b5",
+            "kee:sentence:49ec0aed7960ba8356d6ab9d2143cabdc90bdc480c838bf3f22f654dfc599cb5"
+          ],
+          "ledgerHash": "d1c234967bc1d67bcba3636aff6be99344f8bd62b868f203e38452db0ae0909d"
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH01.P1.S2",
+          "originalAddress": {
+            "chapterId": "CH01",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S2",
+            "originalAddress": "CH01.P1.S2",
+            "level": "SENTENCE_ROLE"
+          },
+          "pageId": "offline-native:a5337a5230d7fa964491b8fae6ba6d33715aeea0f43eab6e684a051e9e2058a8",
+          "paragraphId": "kee:paragraph:11b25f05e338766141598fb216947f93d43d523ddbadf228e11af92881bfd552",
+          "sentenceIds": [
+            "kee:sentence:867d58352e0fd5916e93afa46227d137ee023cbc35320f19d3f048ce095c93df"
+          ],
+          "ledgerHash": "c564827c72e34b4b11684a2f0d7c83e31479a62bc4ac54e025991cab07931d2f"
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH04.P1",
+          "originalAddress": {
+            "chapterId": "CH04",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH04.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:131b478b1f0fa52d3e87685fedd5ff968d1bbb54fb8acf3381d1ec2370aaecbb",
+          "paragraphId": "kee:paragraph:cd49876a494e71085d863b50abdabe5e4b98cca861507bf2aaa86ef6b109be3b",
+          "sentenceIds": [
+            "kee:sentence:3fd737da9d75afd208b0bbc66aedc33caecf093eee51911c86244d3591f5b41f"
+          ],
+          "ledgerHash": "9f9a264ee532a736d3fa3f8bbfef59cf14b13be5ac2f930d4818f91353ce3b4f"
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH07.P1.S1",
+          "originalAddress": {
+            "chapterId": "CH07",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH07.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "pageId": "offline-native:63f1c803980271fb19992b53ab13cb2c54384b6f562402ddf44d2fe8f7f05efe",
+          "paragraphId": "kee:paragraph:d0b93f3ce99544048547b31e1f469893d33fdff0448a8771eda1915b0f2921a2",
+          "sentenceIds": [
+            "kee:sentence:4b491129990705575d77014c12ba15ec807b5bb2d228b6fafd1512d82e62c0c2"
+          ],
+          "ledgerHash": "003a7de7502514bd934217719fc7aca0c2f68c6f5f3725a76f74d682f18381d4"
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH08.P1.S1",
+          "originalAddress": {
+            "chapterId": "CH08",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": "S1",
+            "originalAddress": "CH08.P1.S1",
+            "level": "SENTENCE_ROLE"
+          },
+          "pageId": "offline-native:e3426b6e1cab2bfa4ae4326307fa076d0113539a020d67fa1a46bfe07e5a5a31",
+          "paragraphId": "kee:paragraph:2c637947d791afaadcbc1d36263e228b5a3973ea3f5d2e7af711233007ec6694",
+          "sentenceIds": [
+            "kee:sentence:83043b8710427925a11b86760df41e4670c37dc600fd9723d47e3873a47c7f5b"
+          ],
+          "ledgerHash": "dcac130d01dc567631905165a71359ff807382e11d38559bfee30dce7e06d133"
+        },
+        {
+          "questionId": "synthetic:friendship:q:CH09.P1",
+          "originalAddress": {
+            "chapterId": "CH09",
+            "periodId": null,
+            "paragraphId": "P1",
+            "sentenceRole": null,
+            "originalAddress": "CH09.P1",
+            "level": "PARAGRAPH"
+          },
+          "pageId": "offline-native:cee3d6a54f01ee21956b4f47f8914a64eb66dd5d54868e3bb0e2f001f4e05a57",
+          "paragraphId": "kee:paragraph:dc964b1d06f5be807068c9996e7d1e1da99ee248aca454cdd4a8af0667f26863",
+          "sentenceIds": [
+            "kee:sentence:641b6881b963fd9bf7907cef08a98e33c2e1aaafe24b5b7ad672b5b4e1f2b868"
+          ],
+          "ledgerHash": "bbc632f00e921d97afd732e8e20562965e60ba67c34cba30226b8cc528fb6f17"
+        }
+      ],
+      "wholeBookCompleted": false,
+      "customerEdition": false,
+      "publisherValidation": "NOT_A_CUSTOMER_PUBLICATION"
+    },
+    "roundtrip": true
+  }
+]
