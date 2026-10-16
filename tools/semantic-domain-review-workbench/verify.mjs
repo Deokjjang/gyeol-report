@@ -1,0 +1,6 @@
+import fs from 'node:fs';import path from 'node:path';import {bootstrap}from'./bootstrap.mjs';
+const root=process.cwd(),destination='docs/validation/v4-semantic-domain-review-workbench-01',out=path.resolve(process.argv[2]||destination);
+if(process.argv.length>3||out===root||out.startsWith(root+path.sep)&&out!==path.join(root,destination)||out!==path.join(root,destination)&&fs.existsSync(out)&&fs.readdirSync(out).length)throw Error('UNSAFE_OR_NONEMPTY_WORKBENCH_OUTPUT');
+const b=bootstrap(root),{SourceReader}=b.require('../../src/lib/report-knowledge/knowledge-integration-foundation/sourceReader.ts'),{SemanticDomainReviewWorkbench}=b.require('../../src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/engine.ts');
+const config=JSON.parse(fs.readFileSync('docs/validation/v4-knowledge-unified-catalog-01/compiler-config.json','utf8')),reader=new SourceReader(root,async file=>b.require(file),config.knownSourceVersions);
+const result=await new SemanticDomainReviewWorkbench(root,reader,b.frozen,b.verifyVersion).run(out);b.verify();process.stdout.write(JSON.stringify({status:'OFFLINE_WORKBENCH_IMPLEMENTED_REVIEW_DRAFT_ONLY',reviewUnits:result.progress.distinctReviewUnits,directMaterials:result.progress.directMaterialReadings,cards:result.cards.length,approvalRecordsIssued:0})+'\n');

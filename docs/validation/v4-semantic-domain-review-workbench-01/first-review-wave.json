@@ -1,0 +1,366 @@
+{
+  "uniqueOriginals": 36,
+  "inherited12": 12,
+  "additionalOriginals": 24,
+  "additionalNeverPreviouslyReviewed": 24,
+  "applicationCards": 37,
+  "engines": [
+    "annual-fortune",
+    "career",
+    "compatibility-business-partner",
+    "compatibility-coworker",
+    "compatibility-friendship",
+    "compatibility-love",
+    "compatibility-manager-report",
+    "compatibility-marriage",
+    "compatibility-parent-child",
+    "comprehensive",
+    "love",
+    "major-fortune"
+  ],
+  "products": [
+    "annual_fortune",
+    "career_money_study",
+    "love_marriage_child",
+    "major_fortune",
+    "saju_mbti_compatibility",
+    "saju_mbti_full"
+  ],
+  "relationships": [
+    "businessPartner",
+    "coworker",
+    "friendship",
+    "love",
+    "managerReport",
+    "marriage",
+    "parentChild"
+  ],
+  "materials": [
+    {
+      "catalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
+      "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
+      "recordHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "contentHash": "076416ee7eeef41267c9b980e102ebcb60afb193452ea1fe30ff52320d692cbd",
+      "reviewUnits": [
+        "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:9e3da72458ebc3ddee386134acc40ead5150c48189fc451397e32790896fb0a3",
+      "originalId": "ckr:material:CH08.P1:held-munchang-exam",
+      "recordHash": "4df49905c546b8ed5a2937b50d4dd60f2dbc305ff3042c1021dea28b9a7fc8cb",
+      "contentHash": "d7fccde573aad913bad6e48ca45100e1a3b24fa5951cc38036d90c9222087234",
+      "reviewUnits": [
+        "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+      "originalId": "lkr:material:CH08.P4:parent-consent-respect",
+      "recordHash": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "contentHash": "a4c16d982965f13f94fb4054c712fa806b8d66140237ef7bd08da540441ab992",
+      "reviewUnits": [
+        "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+        "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:64063b7c566a59c119b3cecbac692e20ac54bcc9c141c8c4bb4a23c0c668ba87",
+      "originalId": "clr:material:CH05.P4:ab-offer-not-reservation",
+      "recordHash": "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860",
+      "contentHash": "2aadf1c50d7ef062db42b07605d471461db7f9e397c53211f1e7d825b5da6ba8",
+      "reviewUnits": [
+        "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:33f393caeba9d0a42a370288067f39ef9a74bd316d5741e6899709118a5922c8",
+      "originalId": "cmpr:relation:rr:combination:chung:丑未",
+      "recordHash": "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+      "contentHash": "01ba3bc76a82d88b19faf0bfabc664c2562c7d397f5e036034ea10ac982c0e81",
+      "reviewUnits": [
+        "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:1d11fcaf70c31043139efd97a834f52c2bf8d1b2b036b104b90df6416906b7b7",
+      "originalId": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+      "recordHash": "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450",
+      "contentHash": "b7af434f6c4150f206205bd008f76fdbfd10d39f050ccd823698a0e311399680",
+      "reviewUnits": [
+        "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:2a94fa2b4fc69c19549c04dcc463e5f8c9ff35588d13c92ab46b925048287ef3",
+      "originalId": "cwpr:material:CH08.P3:b-state-integration-limit",
+      "recordHash": "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8",
+      "contentHash": "2445441ebaf883ed521e4abbc829a47fb0a5b3268505cefc223b9fd684741b78",
+      "reviewUnits": [
+        "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:41cfc8c9066bd01f9af7b674c685af42f40626396ab4ef4917a215290f9b387f",
+      "originalId": "mrpr:relation:rr:combination:hae:寅巳",
+      "recordHash": "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+      "contentHash": "75d64053bbe68f6102c14d31b7e61fb598fc7416daf3e5962ffeda55ce9f3d5f",
+      "reviewUnits": [
+        "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:0ebc2fd31a00dec595ba3b2ecd0d8af31282c9c1c0b0461bc4887bffede52e3f",
+      "originalId": "bppr:relation:rr:combination:yukhap:辰酉",
+      "recordHash": "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e",
+      "contentHash": "21119a01862db41c0be6f0df4362a11ed1de4a3a50b478c255bcf2b94e932a44",
+      "reviewUnits": [
+        "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148",
+      "originalId": "frpr:direction:CH05.P2",
+      "recordHash": "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9",
+      "contentHash": "09a130e99e86f33e262629d4a9a70039c3b1e9072173471f452a0dc0a76bf09c",
+      "reviewUnits": [
+        "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+      "originalId": "mfpr:god:편관",
+      "recordHash": "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+      "contentHash": "10993221e14d533f3d8430aab44d5f99ffdfcc44a8e051caad38d7160814c15f",
+      "reviewUnits": [
+        "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:782ba0c10ba719cad1f530caa8d037c6fa48f5322f076f9fe171ed44d4720a77",
+      "originalId": "afpr:case-study:canonical-help",
+      "recordHash": "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f",
+      "contentHash": "812047dc8de4287340db42565e9dfff822cf5fd860d714c2982f02f7ac3a9950",
+      "reviewUnits": [
+        "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:f1b38034b268c0f1b71ee86146b08b79cf308d3123d9ee76c562f007470ba6d2",
+      "originalId": "cpr:material:CH04.P2:private-criteria",
+      "recordHash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+      "contentHash": "e93d91997862d48d4bcafef22c56b6a9c5e7492d77c767454ab7b5576e2ca2e6",
+      "reviewUnits": [
+        "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:90c89a8371ab3360ffcd2bc0cfc9c056e53651ca9f66cd4c78877e6140b87c07",
+      "originalId": "cpr:material:CH04.P3:firm-boundary-close",
+      "recordHash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+      "contentHash": "ce83cc04061513fea0c07fece310fb9235104814556651e7b143d89d89f3e0ac",
+      "reviewUnits": [
+        "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:196dcaae6dde2be60fcd7783d6bf043f151ce2b02936e47058f40f52e07713c1",
+      "originalId": "ckr:material:CH01.P1:capacity-entry",
+      "recordHash": "28d6d55ccfa87593a7ac936e1f0bef7907fbb1c8ee103dcd4d5549d624c264f2",
+      "contentHash": "58ecdd0fe40c88c24410031980ecce27ae679095d7a8b62265b1a68d158cb5f0",
+      "reviewUnits": [
+        "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:0517da0c93edacebc8821fef8adff3ca69cc645933c4af91d1c7c2e32ef76e34",
+      "originalId": "ckr:material:CH01.P1:draft-as-question",
+      "recordHash": "fea1e0d1980f1c578773af917e2eb5f00238466c59bd32925b445960127a373d",
+      "contentHash": "29b8898886ca6467f4f2e68800f7b720cb2d1e10c9fa2d0e8959e76b4f6c438d",
+      "reviewUnits": [
+        "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:fc8eef747023e03565a2fbd70eb354e8d081452bf47bfa54f9a691cab8d9f659",
+      "originalId": "lkr:material:CH01.P1:shared-meaning",
+      "recordHash": "c5f8c16b61e464ddd39bbef45d46cbf2a4c1c131bde1c92f198071c15c1de7af",
+      "contentHash": "501018e37f7e70d13d78778605f567ab54b3c5bcdcb134cd635799def1cc6740",
+      "reviewUnits": [
+        "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:1ef70b9a7398f0645362164298d47f6a0edf6e1c727fb6ff94cf68aa6550f94e",
+      "originalId": "lkr:material:CH02.P3:new-experience-design",
+      "recordHash": "5570f5e98b255a473cd59d52ac5a0081a56befdb72589904f29a5afb3d2193e2",
+      "contentHash": "b36d5c479dc4ff7bb4072e5eb8df624c17ebdf449397a1701c7b5f8eeaddf9e8",
+      "reviewUnits": [
+        "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:36f26b15e65f3bd9d0151e55a684ebeed5e5319247aa7ea0da9ad879df99767b",
+      "originalId": "clr:relation:rr:combination:chung:丑未",
+      "recordHash": "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+      "contentHash": "eb4e7e772d82a1de1b3355ccf1a147916f7d43628fe3511a35e97d08a9c15c1a",
+      "reviewUnits": [
+        "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:b68ecfb094a8a089c1a4ca0321fb863a06498a96eef8436138b3863230b4e630",
+      "originalId": "clr:relation:rr:combination:hae:寅巳",
+      "recordHash": "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+      "contentHash": "3b48d4c331924d9d1b412b2ed37b7a5d40a97f9323d66915c90e6e94f2a21059",
+      "reviewUnits": [
+        "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:c59923ee4522241d210f32668e53930e059660e095add2d8ff1d63d4c85b4b10",
+      "originalId": "cmpr:relation:rr:combination:hae:寅巳",
+      "recordHash": "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb",
+      "contentHash": "7fd1186b2842581c317c696de8c2a4f2860fb35305c13121021d0ca675d028d1",
+      "reviewUnits": [
+        "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:4aed307c0692be91f0c9bba68d9797556532cf7fd38595e6c710cbc610fc43a4",
+      "originalId": "cmpr:relation:rr:combination:yukhap:巳申",
+      "recordHash": "13625bee6557f487259edc667722b8b5fa5b752d10989ea9d2b2192880beb841",
+      "contentHash": "b0ba763a08f05998d528f7cc01e216a141ee88f5a94752af2abf9d5a0b7b621d",
+      "reviewUnits": [
+        "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:6ab0b1951fa728013e959e7e51ab1f171141b6d984aef8e237bd0bc0e427ab1b",
+      "originalId": "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+      "recordHash": "aae419bcdcee2f0482c38b4e67ec3e8cf3e5eb8970e2bec5ab906f8ee48ecc78",
+      "contentHash": "7362a4d3991aa8e5bbfbf9733f2101951c155fb128cab6b9de39ba473d9ff76f",
+      "reviewUnits": [
+        "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:1d9c21e732a08bdafc3278bcb0f8433a204d45fa1424ed793866ba87e803585c",
+      "originalId": "pcpr:relation:rr:combination:chung:丑未",
+      "recordHash": "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e",
+      "contentHash": "d004f4ad36942d54f0aefe1704fdbb0c2394ecbdf881ec77fe09396b6ed9aeed",
+      "reviewUnits": [
+        "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:9ac5588d55af280557777fe935746fd10e662b5e67ce14b2ea42c7990d2d9ae3",
+      "originalId": "cwpr:material:CH08.P2:a-change-with-record",
+      "recordHash": "7a3abbcc84154a6ecb0130da1c3cd3f164fc70105d9f2a062df36bc30deaffb3",
+      "contentHash": "25dbc1d2e44a5f57f64f0e69430e6ba3fbc0ed471fa99b175ed82083d39b86b7",
+      "reviewUnits": [
+        "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:d1b474f653c75dc8cf25587e34eed56c513465cefbfe9046198635635a2414de",
+      "originalId": "cwpr:material:CH08.P2:a-do-not-claim-authority",
+      "recordHash": "a5de4edc83cc25af0a273f9b5a85e23ed4c9b4b4b655b1eed97a45b7587b5def",
+      "contentHash": "dcc4543536ab768cfe5ef2f945eed5d54595eac7db59bc9f821c455d0b870bb3",
+      "reviewUnits": [
+        "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:73a564b45d2d464c02aea4ab291cd4cc7ee0a30d80cec339bb05db85ee813f63",
+      "originalId": "mrpr:relation:rr:combination:chung:丑未",
+      "recordHash": "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875",
+      "contentHash": "472cd7b4805a1ab9f272f82a34618514f8024d237adf394f9954c56cf10bc74c",
+      "reviewUnits": [
+        "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:a5d232b90b7ae2c45dd1beb5f76ad2d47d9f41c965257449e526ecf3224dd1f2",
+      "originalId": "mrpr:relation:rr:combination:yukhap:巳申",
+      "recordHash": "95b9fbd5286e8545ee97f208ea6faf25010fc5c31e3405e8b00a5208bd8ce4f9",
+      "contentHash": "bc55b8753b2f873c64a06f549c5a8f7752f3e66a15b32a569eabf3a2bc79bfe1",
+      "reviewUnits": [
+        "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:91063bd66e09dfdfdb8f97ab4ddfb8402a5a789cb2f01eeb5952a94dd4bdefe2",
+      "originalId": "bppr:relation:rr:combination:chung:丑未",
+      "recordHash": "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a",
+      "contentHash": "472cd7b4805a1ab9f272f82a34618514f8024d237adf394f9954c56cf10bc74c",
+      "reviewUnits": [
+        "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:77b7c75d85d00e016e118eb362d0dfccd06f9087a257795ac9774bd2dba4c1f5",
+      "originalId": "bppr:relation:rr:combination:hae:寅巳",
+      "recordHash": "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae",
+      "contentHash": "75d64053bbe68f6102c14d31b7e61fb598fc7416daf3e5962ffeda55ce9f3d5f",
+      "reviewUnits": [
+        "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:47e9b22b46608162f41e74c13051f3e233a4950dd012a11c7b2b0d0a104ac386",
+      "originalId": "frpr:direction:CH05.P1",
+      "recordHash": "042ef39c83ba350664a0b1f332354dcb557ddf8435971700ddf8bb6c9b7c779f",
+      "contentHash": "0b7862b1f8b5970b1f3e4b34f666105f758a2d28a69a98a5ad0fc82eb949d2d0",
+      "reviewUnits": [
+        "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:c3f88dafdcbe897c16393cc4098f610e217c0dbf0fcbe133bf9894b58eda4e26",
+      "originalId": "frpr:direction:CH05.P3",
+      "recordHash": "bddc966b05ab93f63ddf3119b004cde0f01628ec78c704f8c5c7bd8dffe3e7e9",
+      "contentHash": "4a0c79cb898160c1e7af091684d0e49fc43dfc6742a53f770bb53ba21972c862",
+      "reviewUnits": [
+        "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+      "originalId": "mfpr:god:편인",
+      "recordHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+      "contentHash": "937d31d45c53c03dfd2a198f6ccedab7c9e6d0856152f30737f637cb67096dd7",
+      "reviewUnits": [
+        "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+      "originalId": "mfpr:god:편재",
+      "recordHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+      "contentHash": "9f64009e70ed60386b269b77209926ee523edde01907348c4d1ad597d018a725",
+      "reviewUnits": [
+        "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:df323d5890e2d9d0ca709b029a9d6d20ba4bbc412f5ca952b51510dd8b6852bf",
+      "originalId": "afpr:annual-god:겁재",
+      "recordHash": "a32399c0966714c7f5606b59721436927ab86158b4cbcc5f43e6021ca8cfc445",
+      "contentHash": "90ba7c5f7d7b010dc181054412ff8ed12dae903d621fe592d170e3cab17c496a",
+      "reviewUnits": [
+        "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6"
+      ]
+    },
+    {
+      "catalogKey": "kc:v1:fa5bd4bf855eee54a03e8e74d33732753832a9d02a43452cce36f2d64257e3d7",
+      "originalId": "afpr:annual-god:비견",
+      "recordHash": "354838430544fbe561878e879a2278ad7be39902f6343fb9f7d29d890fb748d7",
+      "contentHash": "5aff5020901a6ff6dd04d1943ac74669e65cb286ec72bcce9878b9ff54944552",
+      "reviewUnits": [
+        "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785"
+      ]
+    }
+  ],
+  "notCustomerApproval": true
+}

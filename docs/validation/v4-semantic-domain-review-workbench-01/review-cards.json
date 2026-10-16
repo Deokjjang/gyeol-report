@@ -1,0 +1,7 @@
+{
+  "format": "GYEOL_GLOBAL_AUDIT_GZIP_V1",
+  "payloadFile": "review-cards.json.gz",
+  "payloadHash": "09823014a2b111e2e847569b669cb706807ccaf02f0edf1914251e68f43a8bf2",
+  "logicalJsonHash": "0a1efc4a00fdab3d24a8932718b11f28a10bc0faa01dff59365c009363b3c01d",
+  "uncompressedBytes": 2673987
+}

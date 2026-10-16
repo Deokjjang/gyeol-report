@@ -1,0 +1,1228 @@
+[
+  {
+    "reviewUnitId": "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/career-product-research/chapter08Materials.ts",
+        "exportName": "CH08_MATERIALS",
+        "index": 5,
+        "originalId": "ckr:material:CH08.P1:held-munchang-exam",
+        "recordSha256": "4df49905c546b8ed5a2937b50d4dd60f2dbc305ff3042c1021dea28b9a7fc8cb",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "cfd3222ac3345870a08adf30ab5c61c5021fa8fd667999c8e73cdb01dce5be41"
+      },
+      "matchedCatalogKey": "kc:v1:9e3da72458ebc3ddee386134acc40ead5150c48189fc451397e32790896fb0a3",
+      "originalId": "ckr:material:CH08.P1:held-munchang-exam",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "4df49905c546b8ed5a2937b50d4dd60f2dbc305ff3042c1021dea28b9a7fc8cb",
+      "actualHash": "4df49905c546b8ed5a2937b50d4dd60f2dbc305ff3042c1021dea28b9a7fc8cb",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/major-fortune-product-research/tenGodResearch.ts",
+        "exportName": "MAJOR_TEN_GOD_RESEARCH",
+        "index": 4,
+        "originalId": "mfpr:god:편재",
+        "recordSha256": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "5f62dea761af7d28847862e7d045c449f8f6df0fb864b0923f273aa2a71bcba8"
+      },
+      "matchedCatalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+      "originalId": "mfpr:god:편재",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+      "actualHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:13a21964211c50667bd6ad3d3a9531b92d9ee1aaff422a977166d274d1e87dae"
+        ],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      }
+    ],
+    "traditionalReferenceState": "TRADITIONAL_REFERENCE_UNVERIFIED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/love-product-research/chapter08Materials.ts",
+        "exportName": "CH08_MATERIALS",
+        "index": 24,
+        "originalId": "lkr:material:CH08.P4:parent-consent-respect",
+        "recordSha256": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "25d29a00a4f383426dae82b4207d2aa2e469be26660fb26a8fac73ab9e712214"
+      },
+      "matchedCatalogKey": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+      "originalId": "lkr:material:CH08.P4:parent-consent-respect",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "actualHash": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/career-product-research/chapter01Materials.ts",
+        "exportName": "CH01_MATERIALS",
+        "index": 4,
+        "originalId": "ckr:material:CH01.P1:capacity-entry",
+        "recordSha256": "28d6d55ccfa87593a7ac936e1f0bef7907fbb1c8ee103dcd4d5549d624c264f2",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "85e4761830101328e552667cb344079c09617fd3fe1ec947f280bc4db7e110b4"
+      },
+      "matchedCatalogKey": "kc:v1:196dcaae6dde2be60fcd7783d6bf043f151ce2b02936e47058f40f52e07713c1",
+      "originalId": "ckr:material:CH01.P1:capacity-entry",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "28d6d55ccfa87593a7ac936e1f0bef7907fbb1c8ee103dcd4d5549d624c264f2",
+      "actualHash": "28d6d55ccfa87593a7ac936e1f0bef7907fbb1c8ee103dcd4d5549d624c264f2",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/major-fortune-product-research/tenGodResearch.ts",
+        "exportName": "MAJOR_TEN_GOD_RESEARCH",
+        "index": 8,
+        "originalId": "mfpr:god:편인",
+        "recordSha256": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "5f62dea761af7d28847862e7d045c449f8f6df0fb864b0923f273aa2a71bcba8"
+      },
+      "matchedCatalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+      "originalId": "mfpr:god:편인",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+      "actualHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:27b6ee4bb042a262d0f5e085089bc046f2d88429cb1d1e7b6f010685684fbd1c"
+        ],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:3b856c0d7d89fb4ac637bd8fc432434afac9e316b9eb278a6f3032ee2e40458c"
+        ],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      }
+    ],
+    "traditionalReferenceState": "TRADITIONAL_REFERENCE_UNVERIFIED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-coworker-research/chapter08Materials.ts",
+        "exportName": "CW_CH08_MATERIALS",
+        "index": 11,
+        "originalId": "cwpr:material:CH08.P2:a-do-not-claim-authority",
+        "recordSha256": "a5de4edc83cc25af0a273f9b5a85e23ed4c9b4b4b655b1eed97a45b7587b5def",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "22c1595bee4f0952197c67e14ffddd489d3e198d80646ad0775095f51324b4e3"
+      },
+      "matchedCatalogKey": "kc:v1:d1b474f653c75dc8cf25587e34eed56c513465cefbfe9046198635635a2414de",
+      "originalId": "cwpr:material:CH08.P2:a-do-not-claim-authority",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "a5de4edc83cc25af0a273f9b5a85e23ed4c9b4b4b655b1eed97a45b7587b5def",
+      "actualHash": "a5de4edc83cc25af0a273f9b5a85e23ed4c9b4b4b655b1eed97a45b7587b5def",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-manager-report-research/canonicalRelationResearch.ts",
+        "exportName": "MR_CANONICAL_RELATIONS",
+        "index": 62,
+        "originalId": "mrpr:relation:rr:combination:yukhap:巳申",
+        "recordSha256": "95b9fbd5286e8545ee97f208ea6faf25010fc5c31e3405e8b00a5208bd8ce4f9",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "d008888d541940e566824aa6202db4258db7fdfe0aca7553a42641894a787de3"
+      },
+      "matchedCatalogKey": "kc:v1:a5d232b90b7ae2c45dd1beb5f76ad2d47d9f41c965257449e526ecf3224dd1f2",
+      "originalId": "mrpr:relation:rr:combination:yukhap:巳申",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "95b9fbd5286e8545ee97f208ea6faf25010fc5c31e3405e8b00a5208bd8ce4f9",
+      "actualHash": "95b9fbd5286e8545ee97f208ea6faf25010fc5c31e3405e8b00a5208bd8ce4f9",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-love-research/canonicalRelationResearch.ts",
+        "exportName": "LOVE_CANONICAL_RELATION_RESEARCH",
+        "index": 20,
+        "originalId": "clr:relation:rr:combination:hae:寅巳",
+        "recordSha256": "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "660a9001c5d3afff729011bcac5869629804b03b61bc08a94cf8eac91b6e3945"
+      },
+      "matchedCatalogKey": "kc:v1:b68ecfb094a8a089c1a4ca0321fb863a06498a96eef8436138b3863230b4e630",
+      "originalId": "clr:relation:rr:combination:hae:寅巳",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+      "actualHash": "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/chapter06Materials.ts",
+        "exportName": "PC_CH06_MATERIALS",
+        "index": 7,
+        "originalId": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+        "recordSha256": "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "c3acc1177caff60dfae0ed11009bd9fa958651b0fb078e1656b3b0619e95850c"
+      },
+      "matchedCatalogKey": "kc:v1:1d11fcaf70c31043139efd97a834f52c2bf8d1b2b036b104b90df6416906b7b7",
+      "originalId": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450",
+      "actualHash": "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-love-research/canonicalRelationResearch.ts",
+        "exportName": "LOVE_CANONICAL_RELATION_RESEARCH",
+        "index": 13,
+        "originalId": "clr:relation:rr:combination:chung:丑未",
+        "recordSha256": "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "660a9001c5d3afff729011bcac5869629804b03b61bc08a94cf8eac91b6e3945"
+      },
+      "matchedCatalogKey": "kc:v1:36f26b15e65f3bd9d0151e55a684ebeed5e5319247aa7ea0da9ad879df99767b",
+      "originalId": "clr:relation:rr:combination:chung:丑未",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+      "actualHash": "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-friendship-research/directionalResearch.ts",
+        "exportName": "FRIENDSHIP_DIRECTIONS",
+        "index": 0,
+        "originalId": "frpr:direction:CH05.P1",
+        "recordSha256": "042ef39c83ba350664a0b1f332354dcb557ddf8435971700ddf8bb6c9b7c779f",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "0ce2ac6f67ab66abae360da008e1018069fffd124ce2aff178f322b17718e552"
+      },
+      "matchedCatalogKey": "kc:v1:47e9b22b46608162f41e74c13051f3e233a4950dd012a11c7b2b0d0a104ac386",
+      "originalId": "frpr:direction:CH05.P1",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "042ef39c83ba350664a0b1f332354dcb557ddf8435971700ddf8bb6c9b7c779f",
+      "actualHash": "042ef39c83ba350664a0b1f332354dcb557ddf8435971700ddf8bb6c9b7c779f",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/annual-fortune-product-research/annualTenGodResearch.ts",
+        "exportName": "ANNUAL_TEN_GOD_RESEARCH",
+        "index": 0,
+        "originalId": "afpr:annual-god:비견",
+        "recordSha256": "354838430544fbe561878e879a2278ad7be39902f6343fb9f7d29d890fb748d7",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "2eb243bc5224c4a7a1dce84f0b6a25f500f248f037c7754c212711cf68429c47"
+      },
+      "matchedCatalogKey": "kc:v1:fa5bd4bf855eee54a03e8e74d33732753832a9d02a43452cce36f2d64257e3d7",
+      "originalId": "afpr:annual-god:비견",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "354838430544fbe561878e879a2278ad7be39902f6343fb9f7d29d890fb748d7",
+      "actualHash": "354838430544fbe561878e879a2278ad7be39902f6343fb9f7d29d890fb748d7",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/love-product-research/chapter08Materials.ts",
+        "exportName": "CH08_MATERIALS",
+        "index": 24,
+        "originalId": "lkr:material:CH08.P4:parent-consent-respect",
+        "recordSha256": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "25d29a00a4f383426dae82b4207d2aa2e469be26660fb26a8fac73ab9e712214"
+      },
+      "matchedCatalogKey": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+      "originalId": "lkr:material:CH08.P4:parent-consent-respect",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "actualHash": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-manager-report-research/canonicalRelationResearch.ts",
+        "exportName": "MR_CANONICAL_RELATIONS",
+        "index": 20,
+        "originalId": "mrpr:relation:rr:combination:hae:寅巳",
+        "recordSha256": "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "d008888d541940e566824aa6202db4258db7fdfe0aca7553a42641894a787de3"
+      },
+      "matchedCatalogKey": "kc:v1:41cfc8c9066bd01f9af7b674c685af42f40626396ab4ef4917a215290f9b387f",
+      "originalId": "mrpr:relation:rr:combination:hae:寅巳",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+      "actualHash": "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/love-product-research/chapter01Materials.ts",
+        "exportName": "CH01_MATERIALS",
+        "index": 3,
+        "originalId": "lkr:material:CH01.P1:shared-meaning",
+        "recordSha256": "c5f8c16b61e464ddd39bbef45d46cbf2a4c1c131bde1c92f198071c15c1de7af",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "1fcb8bf5bf86b8b16372c297e25123c1ae7a3396dc4efe58763b7d18406adfc2"
+      },
+      "matchedCatalogKey": "kc:v1:fc8eef747023e03565a2fbd70eb354e8d081452bf47bfa54f9a691cab8d9f659",
+      "originalId": "lkr:material:CH01.P1:shared-meaning",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "c5f8c16b61e464ddd39bbef45d46cbf2a4c1c131bde1c92f198071c15c1de7af",
+      "actualHash": "c5f8c16b61e464ddd39bbef45d46cbf2a4c1c131bde1c92f198071c15c1de7af",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-business-partner-research/canonicalRelationResearch.ts",
+        "exportName": "BP_CANONICAL_RELATIONS",
+        "index": 20,
+        "originalId": "bppr:relation:rr:combination:hae:寅巳",
+        "recordSha256": "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "2dc7493d03a17808bffc18a55fe612fd8b19c9845203e000fdd140ceb26408d8"
+      },
+      "matchedCatalogKey": "kc:v1:77b7c75d85d00e016e118eb362d0dfccd06f9087a257795ac9774bd2dba4c1f5",
+      "originalId": "bppr:relation:rr:combination:hae:寅巳",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae",
+      "actualHash": "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/career-product-research/chapter01Materials.ts",
+        "exportName": "CH01_MATERIALS",
+        "index": 2,
+        "originalId": "ckr:material:CH01.P1:draft-as-question",
+        "recordSha256": "fea1e0d1980f1c578773af917e2eb5f00238466c59bd32925b445960127a373d",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "85e4761830101328e552667cb344079c09617fd3fe1ec947f280bc4db7e110b4"
+      },
+      "matchedCatalogKey": "kc:v1:0517da0c93edacebc8821fef8adff3ca69cc645933c4af91d1c7c2e32ef76e34",
+      "originalId": "ckr:material:CH01.P1:draft-as-question",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "fea1e0d1980f1c578773af917e2eb5f00238466c59bd32925b445960127a373d",
+      "actualHash": "fea1e0d1980f1c578773af917e2eb5f00238466c59bd32925b445960127a373d",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/comprehensive-product-research/chapter04Materials.ts",
+        "exportName": "CH04_MATERIALS",
+        "index": 3,
+        "originalId": "cpr:material:CH04.P2:private-criteria",
+        "recordSha256": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "931c8738b8a5986a74cb221c0d63fed607e28000dbaa72f07294680e159af096"
+      },
+      "matchedCatalogKey": "kc:v1:f1b38034b268c0f1b71ee86146b08b79cf308d3123d9ee76c562f007470ba6d2",
+      "originalId": "cpr:material:CH04.P2:private-criteria",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+      "actualHash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-coworker-research/chapter08Materials.ts",
+        "exportName": "CW_CH08_MATERIALS",
+        "index": 6,
+        "originalId": "cwpr:material:CH08.P2:a-change-with-record",
+        "recordSha256": "7a3abbcc84154a6ecb0130da1c3cd3f164fc70105d9f2a062df36bc30deaffb3",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "22c1595bee4f0952197c67e14ffddd489d3e198d80646ad0775095f51324b4e3"
+      },
+      "matchedCatalogKey": "kc:v1:9ac5588d55af280557777fe935746fd10e662b5e67ce14b2ea42c7990d2d9ae3",
+      "originalId": "cwpr:material:CH08.P2:a-change-with-record",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "7a3abbcc84154a6ecb0130da1c3cd3f164fc70105d9f2a062df36bc30deaffb3",
+      "actualHash": "7a3abbcc84154a6ecb0130da1c3cd3f164fc70105d9f2a062df36bc30deaffb3",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-business-partner-research/canonicalRelationResearch.ts",
+        "exportName": "BP_CANONICAL_RELATIONS",
+        "index": 61,
+        "originalId": "bppr:relation:rr:combination:yukhap:辰酉",
+        "recordSha256": "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "2dc7493d03a17808bffc18a55fe612fd8b19c9845203e000fdd140ceb26408d8"
+      },
+      "matchedCatalogKey": "kc:v1:0ebc2fd31a00dec595ba3b2ecd0d8af31282c9c1c0b0461bc4887bffede52e3f",
+      "originalId": "bppr:relation:rr:combination:yukhap:辰酉",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e",
+      "actualHash": "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/major-fortune-product-research/tenGodResearch.ts",
+        "exportName": "MAJOR_TEN_GOD_RESEARCH",
+        "index": 6,
+        "originalId": "mfpr:god:편관",
+        "recordSha256": "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "5f62dea761af7d28847862e7d045c449f8f6df0fb864b0923f273aa2a71bcba8"
+      },
+      "matchedCatalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+      "originalId": "mfpr:god:편관",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+      "actualHash": "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      }
+    ],
+    "traditionalReferenceState": "TRADITIONAL_REFERENCE_UNVERIFIED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/comprehensive-product-research/chapter10Materials.ts",
+        "exportName": "CH10_MATERIALS",
+        "index": 6,
+        "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
+        "recordSha256": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "b773c3b26896810f5f9a39c5da22415dbfe23607e063d1a1c2cc262e0c1c3e5f"
+      },
+      "matchedCatalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
+      "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "actualHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-coworker-research/chapter08Materials.ts",
+        "exportName": "CW_CH08_MATERIALS",
+        "index": 14,
+        "originalId": "cwpr:material:CH08.P3:b-state-integration-limit",
+        "recordSha256": "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "22c1595bee4f0952197c67e14ffddd489d3e198d80646ad0775095f51324b4e3"
+      },
+      "matchedCatalogKey": "kc:v1:2a94fa2b4fc69c19549c04dcc463e5f8c9ff35588d13c92ab46b925048287ef3",
+      "originalId": "cwpr:material:CH08.P3:b-state-integration-limit",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8",
+      "actualHash": "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/canonicalRelationResearch.ts",
+        "exportName": "PC_CANONICAL_RELATIONS",
+        "index": 13,
+        "originalId": "pcpr:relation:rr:combination:chung:丑未",
+        "recordSha256": "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "baf28d1ab739c7f35e4d6dacaedacab95b4dffb9bddf2d409996cf6b885b0985"
+      },
+      "matchedCatalogKey": "kc:v1:1d9c21e732a08bdafc3278bcb0f8433a204d45fa1424ed793866ba87e803585c",
+      "originalId": "pcpr:relation:rr:combination:chung:丑未",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e",
+      "actualHash": "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/love-product-research/chapter02Materials.ts",
+        "exportName": "CH02_MATERIALS",
+        "index": 9,
+        "originalId": "lkr:material:CH02.P3:new-experience-design",
+        "recordSha256": "5570f5e98b255a473cd59d52ac5a0081a56befdb72589904f29a5afb3d2193e2",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "bd2c98ea95c807c9ee47ce6510e0aad0cceb83401e61fd214c62c21d837b8dfd"
+      },
+      "matchedCatalogKey": "kc:v1:1ef70b9a7398f0645362164298d47f6a0edf6e1c727fb6ff94cf68aa6550f94e",
+      "originalId": "lkr:material:CH02.P3:new-experience-design",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "5570f5e98b255a473cd59d52ac5a0081a56befdb72589904f29a5afb3d2193e2",
+      "actualHash": "5570f5e98b255a473cd59d52ac5a0081a56befdb72589904f29a5afb3d2193e2",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/annual-fortune-product-research/annualTenGodResearch.ts",
+        "exportName": "ANNUAL_TEN_GOD_RESEARCH",
+        "index": 1,
+        "originalId": "afpr:annual-god:겁재",
+        "recordSha256": "a32399c0966714c7f5606b59721436927ab86158b4cbcc5f43e6021ca8cfc445",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "2eb243bc5224c4a7a1dce84f0b6a25f500f248f037c7754c212711cf68429c47"
+      },
+      "matchedCatalogKey": "kc:v1:df323d5890e2d9d0ca709b029a9d6d20ba4bbc412f5ca952b51510dd8b6852bf",
+      "originalId": "afpr:annual-god:겁재",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "a32399c0966714c7f5606b59721436927ab86158b4cbcc5f43e6021ca8cfc445",
+      "actualHash": "a32399c0966714c7f5606b59721436927ab86158b4cbcc5f43e6021ca8cfc445",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-parent-child-research/chapter03Materials.ts",
+        "exportName": "PC_CH03_MATERIALS",
+        "index": 10,
+        "originalId": "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+        "recordSha256": "aae419bcdcee2f0482c38b4e67ec3e8cf3e5eb8970e2bec5ab906f8ee48ecc78",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "1d4926cb3563a10acf56172b088896f2c0d3157b40a41fc2fba336105f31cbb3"
+      },
+      "matchedCatalogKey": "kc:v1:6ab0b1951fa728013e959e7e51ab1f171141b6d984aef8e237bd0bc0e427ab1b",
+      "originalId": "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "aae419bcdcee2f0482c38b4e67ec3e8cf3e5eb8970e2bec5ab906f8ee48ecc78",
+      "actualHash": "aae419bcdcee2f0482c38b4e67ec3e8cf3e5eb8970e2bec5ab906f8ee48ecc78",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-love-research/chapter05Materials.ts",
+        "exportName": "CH05_MATERIALS",
+        "index": 10,
+        "originalId": "clr:material:CH05.P4:ab-offer-not-reservation",
+        "recordSha256": "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "4fcafd7a1686995ba360292a443da60bb69307e3787668d582acb437de527b7e"
+      },
+      "matchedCatalogKey": "kc:v1:64063b7c566a59c119b3cecbac692e20ac54bcc9c141c8c4bb4a23c0c668ba87",
+      "originalId": "clr:material:CH05.P4:ab-offer-not-reservation",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860",
+      "actualHash": "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-friendship-research/directionalResearch.ts",
+        "exportName": "FRIENDSHIP_DIRECTIONS",
+        "index": 1,
+        "originalId": "frpr:direction:CH05.P2",
+        "recordSha256": "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "0ce2ac6f67ab66abae360da008e1018069fffd124ce2aff178f322b17718e552"
+      },
+      "matchedCatalogKey": "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148",
+      "originalId": "frpr:direction:CH05.P2",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9",
+      "actualHash": "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-business-partner-research/canonicalRelationResearch.ts",
+        "exportName": "BP_CANONICAL_RELATIONS",
+        "index": 13,
+        "originalId": "bppr:relation:rr:combination:chung:丑未",
+        "recordSha256": "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "2dc7493d03a17808bffc18a55fe612fd8b19c9845203e000fdd140ceb26408d8"
+      },
+      "matchedCatalogKey": "kc:v1:91063bd66e09dfdfdb8f97ab4ddfb8402a5a789cb2f01eeb5952a94dd4bdefe2",
+      "originalId": "bppr:relation:rr:combination:chung:丑未",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a",
+      "actualHash": "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-marriage-research/canonicalRelationResearch.ts",
+        "exportName": "MARRIAGE_CANONICAL_RELATIONS",
+        "index": 20,
+        "originalId": "cmpr:relation:rr:combination:hae:寅巳",
+        "recordSha256": "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "2c7d12749e1bcdc684a7923367dd7d464ef5fac30b7314dd19f742b6877b7cce"
+      },
+      "matchedCatalogKey": "kc:v1:c59923ee4522241d210f32668e53930e059660e095add2d8ff1d63d4c85b4b10",
+      "originalId": "cmpr:relation:rr:combination:hae:寅巳",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb",
+      "actualHash": "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/annual-fortune-product-research/observedApplicationResearch.ts",
+        "exportName": "ANNUAL_OBSERVED_APPLICATIONS",
+        "index": 7,
+        "originalId": "afpr:case-study:canonical-help",
+        "recordSha256": "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "7d083ef7a96bde87861a6a83498b125e324dbbedee0e202e5964c495406b0d6f"
+      },
+      "matchedCatalogKey": "kc:v1:782ba0c10ba719cad1f530caa8d037c6fa48f5322f076f9fe171ed44d4720a77",
+      "originalId": "afpr:case-study:canonical-help",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f",
+      "actualHash": "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-friendship-research/directionalResearch.ts",
+        "exportName": "FRIENDSHIP_DIRECTIONS",
+        "index": 2,
+        "originalId": "frpr:direction:CH05.P3",
+        "recordSha256": "bddc966b05ab93f63ddf3119b004cde0f01628ec78c704f8c5c7bd8dffe3e7e9",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "0ce2ac6f67ab66abae360da008e1018069fffd124ce2aff178f322b17718e552"
+      },
+      "matchedCatalogKey": "kc:v1:c3f88dafdcbe897c16393cc4098f610e217c0dbf0fcbe133bf9894b58eda4e26",
+      "originalId": "frpr:direction:CH05.P3",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "bddc966b05ab93f63ddf3119b004cde0f01628ec78c704f8c5c7bd8dffe3e7e9",
+      "actualHash": "bddc966b05ab93f63ddf3119b004cde0f01628ec78c704f8c5c7bd8dffe3e7e9",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-manager-report-research/canonicalRelationResearch.ts",
+        "exportName": "MR_CANONICAL_RELATIONS",
+        "index": 13,
+        "originalId": "mrpr:relation:rr:combination:chung:丑未",
+        "recordSha256": "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "d008888d541940e566824aa6202db4258db7fdfe0aca7553a42641894a787de3"
+      },
+      "matchedCatalogKey": "kc:v1:73a564b45d2d464c02aea4ab291cd4cc7ee0a30d80cec339bb05db85ee813f63",
+      "originalId": "mrpr:relation:rr:combination:chung:丑未",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875",
+      "actualHash": "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/comprehensive-product-research/chapter04Materials.ts",
+        "exportName": "CH04_MATERIALS",
+        "index": 8,
+        "originalId": "cpr:material:CH04.P3:firm-boundary-close",
+        "recordSha256": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "931c8738b8a5986a74cb221c0d63fed607e28000dbaa72f07294680e159af096"
+      },
+      "matchedCatalogKey": "kc:v1:90c89a8371ab3360ffcd2bc0cfc9c056e53651ca9f66cd4c78877e6140b87c07",
+      "originalId": "cpr:material:CH04.P3:firm-boundary-close",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+      "actualHash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-marriage-research/canonicalRelationResearch.ts",
+        "exportName": "MARRIAGE_CANONICAL_RELATIONS",
+        "index": 13,
+        "originalId": "cmpr:relation:rr:combination:chung:丑未",
+        "recordSha256": "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "2c7d12749e1bcdc684a7923367dd7d464ef5fac30b7314dd19f742b6877b7cce"
+      },
+      "matchedCatalogKey": "kc:v1:33f393caeba9d0a42a370288067f39ef9a74bd316d5741e6899709118a5922c8",
+      "originalId": "cmpr:relation:rr:combination:chung:丑未",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+      "actualHash": "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+    "recordHashState": "RESEARCH_RECORD_HASH_VALID",
+    "originalProof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/compatibility-marriage-research/canonicalRelationResearch.ts",
+        "exportName": "MARRIAGE_CANONICAL_RELATIONS",
+        "index": 62,
+        "originalId": "cmpr:relation:rr:combination:yukhap:巳申",
+        "recordSha256": "13625bee6557f487259edc667722b8b5fa5b752d10989ea9d2b2192880beb841",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "2c7d12749e1bcdc684a7923367dd7d464ef5fac30b7314dd19f742b6877b7cce"
+      },
+      "matchedCatalogKey": "kc:v1:4aed307c0692be91f0c9bba68d9797556532cf7fd38595e6c710cbc610fc43a4",
+      "originalId": "cmpr:relation:rr:combination:yukhap:巳申",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "13625bee6557f487259edc667722b8b5fa5b752d10989ea9d2b2192880beb841",
+      "actualHash": "13625bee6557f487259edc667722b8b5fa5b752d10989ea9d2b2192880beb841",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "technicalOriginalContentRead": true,
+    "sourceIntegrityGate": [],
+    "traditionalReferenceState": "ORIGINAL_ANCESTRY_POLICY_RETAINED",
+    "meaningReview": "MEANING_REVIEW_MAY_BE_PROPOSED",
+    "customerUse": "CUSTOMER_USE_NOT_APPROVED",
+    "sourceGatePromoted": false
+  }
+]

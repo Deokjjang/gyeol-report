@@ -1,0 +1,14 @@
+{
+  "baseTypescriptDiagnostics": 0,
+  "currentTypescriptDiagnostics": 0,
+  "newTypescriptDiagnostics": 0,
+  "lint": "PASS",
+  "baseProductionBuild": "PASS",
+  "currentProductionBuild": "PASS",
+  "baseBuildWarnings": 0,
+  "currentBuildWarnings": 0,
+  "node": "24.22.0",
+  "next": "16.2.4",
+  "configurationChanges": 0,
+  "typescriptSuppressionAdded": 0
+}

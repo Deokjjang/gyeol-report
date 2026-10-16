@@ -1,0 +1,3298 @@
+{
+  "mbti": [
+    {
+      "reviewUnitId": "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1",
+      "material": "kc:v1:9e3da72458ebc3ddee386134acc40ead5150c48189fc451397e32790896fb0a3",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895",
+      "material": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+      "material": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "autonomy_parent",
+            "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "autonomy_parent",
+            "label": "자율성 지향 부모",
+            "plainKo": "INFP 부모는 원리·원칙적이고 엄격한 부모보다 자녀의 자율성을 지향한다. 아이가 자기 의견과 자아를 형성하고 흥미 있는 일을 찾을 권리를 주고 싶어 한다.",
+            "strongLine": "당신은 아이를 틀에 맞추기보다, 아이가 자기만의 결을 찾도록 곁을 지켜주는 부모에 가깝습니다.",
+            "positiveUse": "아이의 개성, 흥미, 자기표현, 창의성을 존중한다.",
+            "risk": "일상 규칙과 생활 틀을 세우는 데 어려움을 겪을 수 있다.",
+            "matchingMyeongliSignals": [
+              "정인",
+              "비견",
+              "목"
+            ],
+            "productDomains": [
+              "parenting",
+              "child"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "a774966c542fc4b8e0e2ce91264c0322afdfaf7a0e842f0749223aa764d83cc1",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6",
+      "material": "kc:v1:196dcaae6dde2be60fcd7783d6bf043f151ce2b02936e47058f40f52e07713c1",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ESFJ.json",
+            "pointer": "/traits/career/5",
+            "originalId": "relationship_service_revenue",
+            "recordSha256": "ee77c52c20df829ecdee5655e8c6615ab9961c1799b48e4bbf6fc78548d8ee0b",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "relationship_service_revenue",
+            "label": "관계 서비스 수익",
+            "plainKo": "ESFJ는 사람을 기억하고 챙기는 능력이 서비스 품질과 재방문으로 이어질 때 커리어가 강해진다. 고객 응대, 교육 운영, 의료·복지 접점, 커뮤니티 관리처럼 관계 신뢰가 곧 성과가 되는 업무에서 돈과 평판이 함께 쌓인다.",
+            "strongLine": "ESFJ의 커리어는 사람을 편하게 만드는 능력이 반복 고객과 신뢰로 이어질 때 값이 올라갑니다.",
+            "positiveUse": "고객 관리, 멤버십 운영, 교육·의료 서비스, 행사 운영, 커뮤니티 케어에서 안정적인 성과를 만든다.",
+            "risk": "고객과 조직의 기대를 모두 맞추려 하면 서비스 범위가 넓어지고 감정 노동이 커진다.",
+            "matchingMyeongliSignals": [
+              "식신",
+              "정재",
+              "도화"
+            ],
+            "productDomains": [
+              "career",
+              "money"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "2e453650f06b3d94d48cf598cc308f3d25bf31f0a942930b77c83ce7b3fc30b2",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ESFP.json",
+            "pointer": "/traits/workplace/5",
+            "originalId": "responsive_team_needed",
+            "recordSha256": "0dcecb2fb32829e32998134c9394531c35ec6111ba90f17547cc5fc880fcea54",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "responsive_team_needed",
+            "label": "반응 있는 팀 필요",
+            "plainKo": "ESFP는 혼자 오래 고립되어 반응 없는 일을 반복하면 에너지가 급격히 떨어진다. 고객, 동료, 관객처럼 즉각적인 피드백이 있는 환경에서 몰입이 살아나지만, 그만큼 감정 노동과 인정 욕구 관리가 필요하다.",
+            "strongLine": "당신은 반응 없는 자리에서 버티기보다, 사람의 표정과 피드백이 오가는 자리에서 성과가 살아납니다.",
+            "positiveUse": "고객 접점, 팀 프로젝트, 라이브 운영, 교육·행사 진행에서 분위기를 읽고 빠르게 조정한다.",
+            "risk": "반응이 적으면 동기를 잃고, 반응이 지나치게 많으면 감정 소모가 커진다.",
+            "matchingMyeongliSignals": [
+              "도화",
+              "홍염",
+              "비견"
+            ],
+            "productDomains": [
+              "career",
+              "general"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "d447767f8161c63bf663c83755ef2d0066cf5842e1aa372cd42e2885e4cd0026",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc",
+      "material": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400",
+      "material": "kc:v1:d1b474f653c75dc8cf25587e34eed56c513465cefbfe9046198635635a2414de",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISFJ.json",
+            "pointer": "/traits/workplace/5",
+            "originalId": "recognition_and_boundary",
+            "recordSha256": "99ed9bc67643d3617dd626e8771fca98d8de0cb2486a5e7f37cc51218a6403b3",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "recognition_and_boundary",
+            "label": "인정과 업무 경계",
+            "plainKo": "ISFJ는 조용히 더 챙기고 더 확인하는 방식으로 팀을 받친다. 하지만 감사 표현 없이 추가 업무만 쌓이면 서운함을 말하지 못한 채 소진되므로, 역할 범위와 인정 방식이 함께 필요하다.",
+            "strongLine": "당신은 조용히 버티는 사람이지만, 인정 없는 희생이 반복되면 일터에서 마음이 먼저 닫힙니다.",
+            "positiveUse": "팀의 빈틈을 메우고 고객과 구성원이 놓치기 쉬운 세부를 꾸준히 챙긴다.",
+            "risk": "거절을 늦게 하면 성실함이 장점이 아니라 과부하의 통로가 된다.",
+            "matchingMyeongliSignals": [
+              "정인",
+              "정관",
+              "토"
+            ],
+            "productDomains": [
+              "career",
+              "general"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "01d7778d9a98adb3a306b4171f70a7ff600ad0c264ac46eb33b6b5e92e67feee",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INTJ.json",
+            "pointer": "/traits/workplace/6",
+            "originalId": "authority_scope_alignment",
+            "recordSha256": "aa12a8ce8541783c81b1d43babc5d8ebda672e6a5c2dfa1f8691cca7c80f1305",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "authority_scope_alignment",
+            "label": "권한-책임 정렬",
+            "plainKo": "INTJ는 책임 범위와 의사결정 권한이 분리된 조직에서 빠르게 냉소가 쌓인다. 무엇을 결정할 수 있는지, 어떤 기준으로 평가받는지, 어느 지점까지 자율인지가 명확해야 성과가 난다.",
+            "strongLine": "당신은 책임만 주고 권한은 막아두는 구조에서 가장 빨리 식습니다.",
+            "positiveUse": "역할 범위, 결정권, 평가 기준을 문서로 정리하면 장기 프로젝트에서 높은 집중력을 낸다.",
+            "risk": "권한이 흐린 조직에 오래 있으면 개선 제안보다 퇴장 계산이 먼저 시작된다.",
+            "matchingMyeongliSignals": [
+              "정관",
+              "편관",
+              "비견"
+            ],
+            "productDomains": [
+              "career",
+              "general"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "8dcc6b745f572e296f0958ce3f440d728fe90e09ebec286a6d7aba035159d779",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+      "material": "kc:v1:a5d232b90b7ae2c45dd1beb5f76ad2d47d9f41c965257449e526ecf3224dd1f2",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+      "material": "kc:v1:b68ecfb094a8a089c1a4ca0321fb863a06498a96eef8436138b3863230b4e630",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+      "material": "kc:v1:1d11fcaf70c31043139efd97a834f52c2bf8d1b2b036b104b90df6416906b7b7",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+      "material": "kc:v1:36f26b15e65f3bd9d0151e55a684ebeed5e5319247aa7ea0da9ad879df99767b",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f",
+      "material": "kc:v1:47e9b22b46608162f41e74c13051f3e233a4950dd012a11c7b2b0d0a104ac386",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785",
+      "material": "kc:v1:fa5bd4bf855eee54a03e8e74d33732753832a9d02a43452cce36f2d64257e3d7",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+      "material": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/parenting/0",
+            "originalId": "autonomy_parent",
+            "recordSha256": "a65ddd52d6d456055f3c4295e83288d06957129fe8c5d65307521ca586732fb0",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "autonomy_parent",
+            "label": "자율성 지향 부모",
+            "plainKo": "INFP 부모는 원리·원칙적이고 엄격한 부모보다 자녀의 자율성을 지향한다. 아이가 자기 의견과 자아를 형성하고 흥미 있는 일을 찾을 권리를 주고 싶어 한다.",
+            "strongLine": "당신은 아이를 틀에 맞추기보다, 아이가 자기만의 결을 찾도록 곁을 지켜주는 부모에 가깝습니다.",
+            "positiveUse": "아이의 개성, 흥미, 자기표현, 창의성을 존중한다.",
+            "risk": "일상 규칙과 생활 틀을 세우는 데 어려움을 겪을 수 있다.",
+            "matchingMyeongliSignals": [
+              "정인",
+              "비견",
+              "목"
+            ],
+            "productDomains": [
+              "parenting",
+              "child"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "a774966c542fc4b8e0e2ce91264c0322afdfaf7a0e842f0749223aa764d83cc1",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+      "material": "kc:v1:41cfc8c9066bd01f9af7b674c685af42f40626396ab4ef4917a215290f9b387f",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+      "material": "kc:v1:fc8eef747023e03565a2fbd70eb354e8d081452bf47bfa54f9a691cab8d9f659",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/love/0",
+            "originalId": "deep_emotional_bond",
+            "recordSha256": "6f1967dae9a1f0c3c53563ea39076f7aa21f1184dbac71032fbe19cef74e3fab",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "deep_emotional_bond",
+            "label": "강렬한 정서 교감",
+            "plainKo": "INFP는 내면을 중시하고 상대와 강렬한 정서적 교감을 추구한다. 낭만적이고 사람에 대한 책임감이 강해 사랑에 빠지면 헌신적인 면모가 나타난다.",
+            "strongLine": "당신에게 사랑은 가벼운 호감이 아니라, 마음의 가장 깊은 방에 누군가를 들이는 일입니다.",
+            "positiveUse": "깊은 정서적 유대, 헌신, 진심 어린 배려를 만든다.",
+            "risk": "상대에게 마음을 다 걸면 작은 비판이나 실망도 크게 다친다.",
+            "matchingMyeongliSignals": [
+              "정인",
+              "도화",
+              "홍염"
+            ],
+            "productDomains": [
+              "love",
+              "marriage"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "4888690e72d016c568182bcbdb2136030631829e94c23953addb042e18ebfcdc",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+      "material": "kc:v1:77b7c75d85d00e016e118eb362d0dfccd06f9087a257795ac9774bd2dba4c1f5",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c",
+      "material": "kc:v1:0517da0c93edacebc8821fef8adff3ca69cc645933c4af91d1c7c2e32ef76e34",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ENFP.json",
+            "pointer": "/traits/study/0",
+            "originalId": "interest_switch_learning",
+            "recordSha256": "31a0c3d2cdbe0337ed28d07ec72a476f42ba7ec2bd3f32666f5c44b3e8fea233",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "interest_switch_learning",
+            "label": "관심 스위치 학습",
+            "plainKo": "ENFP는 관심이 있으면 매우 열심히 하고 높은 성취도 가능하지만, 관심이 없으면 버티기 어렵다. 공부의 성패는 의지보다 의미와 흥미를 어떻게 붙이는지에 달려 있다.",
+            "strongLine": "ENFP의 공부는 마음이 켜지는 순간 속도가 나고, 꺼지는 순간 멈춘다.",
+            "positiveUse": "주제를 자기 경험, 사람, 미래 가능성과 연결하면 몰입이 살아난다.",
+            "risk": "싫은 과목을 완전히 버리면 학업 편차가 커진다.",
+            "matchingMyeongliSignals": [
+              "문창",
+              "편인",
+              "식신"
+            ],
+            "productDomains": [
+              "study",
+              "child"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "ed925c9ebaa025096eba365ec309a21bc478b29dd44da6c7f15bf1a9931d7b51",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISTP.json",
+            "pointer": "/traits/money/4",
+            "originalId": "tool_hobby_budget_limit",
+            "recordSha256": "9bfabd9a26bb34191d2fd8b66e3d342bc5c819f198348582b906763a720cfa3d",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "tool_hobby_budget_limit",
+            "label": "도구·취미 한도",
+            "plainKo": "ISTP는 관심 분야 장비, 공구, 기계, 게임, 이동수단, 취미 도구에는 돈을 아끼지 않는다. 본인에게는 쓸모 있는 투자처럼 느껴지지만, 사용 빈도와 수익 연결이 없으면 비용만 쌓인다. 필요한 것과 갖고 싶은 것을 분리해야 한다.",
+            "strongLine": "당신은 쓸데없는 소비는 싫어하지만, 관심 장비 앞에서는 지갑이 훨씬 빨리 열립니다.",
+            "positiveUse": "도구와 장비 지출을 생산성, 기술 숙련, 부수입, 장기 사용 가치와 연결한다.",
+            "risk": "지금 당장 써보고 싶은 마음이 강해지면 생활비와 저축보다 장비 업그레이드가 먼저 온다.",
+            "matchingMyeongliSignals": [
+              "식신",
+              "편재",
+              "금"
+            ],
+            "productDomains": [
+              "money",
+              "career",
+              "general"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "2d642ba9ad179d1c2177146d2cc6de57812f4b2f753ed6914046117f79b82a41",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ENFJ.json",
+            "pointer": "/traits/workplace/0",
+            "originalId": "collaborative_environment",
+            "recordSha256": "a122642407d729f4339eaecff56962c62fd39c0c0d5cc2a4060caf8880487a7c",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "collaborative_environment",
+            "label": "협력 환경 선호",
+            "plainKo": "ENFJ는 혼자 오래 버티는 일보다 사람들과 목표를 나누고 협력하는 환경에서 에너지가 살아난다. 관계의 의미가 보일수록 책임감도 강해진다.",
+            "strongLine": "ENFJ는 혼자 성과를 쌓는 자리보다 함께 움직이는 자리에서 리더십이 살아난다.",
+            "positiveUse": "팀 프로젝트, 교육 현장, 조직문화, 공익 활동에서 사람들을 묶는다.",
+            "risk": "혼자 집중해야 하는 업무가 길어지면 동기와 활력이 떨어진다.",
+            "matchingMyeongliSignals": [
+              "비견",
+              "정관"
+            ],
+            "productDomains": [
+              "career"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "1f11496ae17d915862f752eb85949797663501908b62e682e4eb46369b6f59e8",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INFJ.json",
+            "pointer": "/traits/workplace/1",
+            "originalId": "calm_deep_work",
+            "recordSha256": "04dcc8e537c5d8eb7184881885c793a01aef659a36ca55124697dd6b96ea3da4",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "calm_deep_work",
+            "label": "조용한 몰입 환경",
+            "plainKo": "소음과 사람 많은 공간에 민감하고, 타인의 에너지를 잘 흡수한다. 감정 소모가 적고 조용히 집중할 수 있는 환경이 업무 효율을 크게 좌우한다.",
+            "strongLine": "당신에게 좋은 환경은 자극이 많은 곳이 아니라, 깊이 들어갈 수 있는 여백이 보장되는 곳입니다.",
+            "positiveUse": "조용한 연구, 상담, 글쓰기, 기획 업무에서 몰입도가 올라간다.",
+            "risk": "끊임없는 회의, 소음, 대면 대응이 많은 곳에서는 말수가 줄고 소진이 빨라진다.",
+            "matchingMyeongliSignals": [
+              "편인",
+              "수",
+              "정인"
+            ],
+            "productDomains": [
+              "career",
+              "general"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "e5836f7e32cff6b9c2255fe43d813deb25d7cb54cfe08ccb5bb78a5b5a691aba",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/study/0",
+            "originalId": "storytelling_learning",
+            "recordSha256": "755a3f723c3fee625f3d87b22006a625c0565f207ecb4587e7f5b2662539e660",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "storytelling_learning",
+            "label": "스토리텔링 학습",
+            "plainKo": "INFP는 암기와 반복보다 창의력, 상상력, 스토리텔링을 통한 학습에서 더 잘 열린다. 자기만의 의미가 붙은 정보는 오래 기억할 수 있다.",
+            "strongLine": "당신은 외우기 위해 배우는 사람보다, 이야기가 생길 때 오래 기억하는 사람입니다.",
+            "positiveUse": "문학, 역사, 언어, 예술, 글쓰기, 발표형 과제에서 강점이 난다.",
+            "risk": "실용성이나 의미가 느껴지지 않는 과목은 동기가 급격히 떨어진다.",
+            "matchingMyeongliSignals": [
+              "문창",
+              "식신",
+              "정인"
+            ],
+            "productDomains": [
+              "study",
+              "child"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "74e162346d8a23067253ca8a7f88966d4343b6f25e2f87279cb26a3c1d9387fd",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISFJ.json",
+            "pointer": "/traits/money/4",
+            "originalId": "care_labor_underpricing",
+            "recordSha256": "ed71f81eba2119ae610e819c57b964d7b5186fe47e107072a5fbeb8010246d1d",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "care_labor_underpricing",
+            "label": "돌봄 저평가",
+            "plainKo": "ISFJ는 챙김과 돌봄을 자연스럽게 해내기 때문에 그 노동의 값을 낮게 잡기 쉽다. 남들이 귀찮아하는 일정 관리, 고객 응대, 정리, 기록, 보살핌이 실제로는 돈이 되는 능력이다. 친절함을 당연한 성격으로만 두면 보상 구조가 약해진다.",
+            "strongLine": "당신이 당연하게 해주는 챙김은 사실 돈으로 환산될 수 있는 실무 능력입니다.",
+            "positiveUse": "의료, 교육, 돌봄, 운영 지원, 고객 관리에서 신뢰와 반복 수입을 만든다.",
+            "risk": "좋은 사람이고 싶어 정당한 비용 청구를 미루면 헌신은 쌓이고 수입은 작아진다.",
+            "matchingMyeongliSignals": [
+              "정재",
+              "식신",
+              "귀인"
+            ],
+            "productDomains": [
+              "money",
+              "career",
+              "general"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "4838c9037943460d6722ae75209a0ab2e1d2964ba6753e307e23e4e6fa8fd644",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ENFP.json",
+            "pointer": "/traits/career/2",
+            "originalId": "arts_and_creative_field",
+            "recordSha256": "ba4318d84b0c2e732802b68038e5fd29d7830cfee344ed7b79e97d192d4f0cd1",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "arts_and_creative_field",
+            "label": "예술·창작성",
+            "plainKo": "상상력, 표현력, 감정의 진정성, 스토리텔링이 강해 예술 분야에서 재능을 발휘하기 쉽다. 자기만의 색과 감정을 작품이나 콘텐츠로 풀어낼 수 있다.",
+            "strongLine": "ENFP의 창작은 기교보다 살아 있는 감정과 가능성의 확장에서 나온다.",
+            "positiveUse": "글쓰기, 공연, 음악, 영상, 디자인, 콘텐츠 제작에서 개성과 생동감을 만든다.",
+            "risk": "영감에 의존하면 꾸준한 제작 루틴과 마감 관리가 흔들린다.",
+            "matchingMyeongliSignals": [
+              "도화",
+              "홍염",
+              "식신"
+            ],
+            "productDomains": [
+              "career",
+              "general"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "b869cc84353a3cc8c74e1f59780c12fca632a3aaa0410dcfd8d002ffa1cefe5c",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ESTP.json",
+            "pointer": "/traits/study/3",
+            "originalId": "error_record_short_loop",
+            "recordSha256": "c0cdf4b5e294a122133295ae3fbf0b7502d6ed3b1c5e463241d24a9730b77bb8",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "error_record_short_loop",
+            "label": "짧은 오답 루프",
+            "plainKo": "ESTP는 실전 문제를 빠르게 풀고 경쟁 상황에서 에너지가 살아난다. 다만 맞고 틀린 이유를 기록하지 않으면 같은 실수를 속도로 덮기 쉬우니, 오답은 길게 쓰기보다 원인 한 줄과 다음 행동으로 짧게 남겨야 한다.",
+            "strongLine": "당신은 많이 앉아 있는 공부보다, 틀린 이유를 바로 잡는 짧은 오답 루프가 더 잘 맞습니다.",
+            "positiveUse": "타이머 문제풀이, 즉각 채점, 한 줄 오답, 재도전 세트로 실전 성과를 끌어올린다.",
+            "risk": "기록 없이 감으로만 넘기면 시험장에서 같은 함정에 다시 걸린다.",
+            "matchingMyeongliSignals": [
+              "문창",
+              "상관",
+              "금"
+            ],
+            "productDomains": [
+              "study",
+              "career"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "973c5b84aecefcf2645eb9b26b4bb845a1b6fde70e9f462d035b4ad390690aa4",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/workplace/5",
+            "originalId": "feedback_safety_contract",
+            "recordSha256": "f292d0d3dc5fd93f4e0a2a1fa001ab700b37ac91dee6428e60b229a2ae2f61a3",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "feedback_safety_contract",
+            "label": "피드백 안전장치",
+            "plainKo": "INFP는 결과물에 자기 마음을 많이 담기 때문에 차가운 평가를 인격 거절처럼 받아들이기 쉽다. 기준, 수정 범위, 마감 횟수가 정해져 있으면 피드백을 상처보다 개선 과정으로 받아들이기 수월하다.",
+            "strongLine": "당신에게 좋은 일터는 마음을 꺾는 곳이 아니라, 기준을 분명히 세워 작품을 살리는 곳입니다.",
+            "positiveUse": "편집, 디자인, 글쓰기, 교육, 상담 업무에서 섬세한 수정과 깊은 공감을 결과물로 만든다.",
+            "risk": "피드백 방식이 거칠면 말없이 위축되고 필요한 협업까지 피할 수 있다.",
+            "matchingMyeongliSignals": [
+              "정인",
+              "식신",
+              "수"
+            ],
+            "productDomains": [
+              "career",
+              "general"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "0538ca9d5145cf101f797c5836f60fde727e5ca2d2c86ddd103dd1cde416b145",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISTJ.json",
+            "pointer": "/traits/career/1",
+            "originalId": "precision_profession_fit",
+            "recordSha256": "75b46369562b562b90b9679bc81dced930fc577293a8bd32d18e85918cf9bc49",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "precision_profession_fit",
+            "label": "정밀 직업 적합",
+            "plainKo": "회계, 세무, 감정평가, 공인중개, 노무, 금융, 의료, 컴퓨터 관련 직무처럼 정확성과 규정 해석이 필요한 분야와 잘 맞는다.",
+            "strongLine": "당신은 감각으로 찍는 일보다, 규정과 수치를 정확히 맞추는 일에서 돈값을 합니다.",
+            "positiveUse": "전문 자격, 데이터 확인, 계약과 문서 검토, 실수 방지로 평가를 받는다.",
+            "risk": "창의적 실험이나 관계 영업만 요구하는 일에서는 장점이 덜 보인다.",
+            "matchingMyeongliSignals": [
+              "정재",
+              "정관",
+              "문창",
+              "금"
+            ],
+            "productDomains": [
+              "career",
+              "money",
+              "study"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "5ac72f71ad2cc7439ddf310f630bab4d1f90d87a2f92bd22bde9e8fb330cde75",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INTP.json",
+            "pointer": "/traits/money/4",
+            "originalId": "irregular_income_buffer",
+            "recordSha256": "d530f80264012752e9baf5dd721d4f5ffad37adb069b34fdc8b1fd757a671620",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "irregular_income_buffer",
+            "label": "불규칙 수입 완충",
+            "plainKo": "지식 기반 수입, 프리랜스, 기술 프로젝트는 INTP에게 잘 맞지만 수입 리듬이 일정하지 않을 수 있다. 흥미가 붙은 일은 깊게 파고들어 돈으로 연결하지만, 영업과 마감이 약하면 월별 현금흐름이 흔들린다. 그래서 자유로운 수입 구조일수록 최소 생활비와 비상자금이 먼저 필요하다.",
+            "strongLine": "당신에게 자유로운 돈은 매력적이지만, 완충자금이 없으면 자유가 바로 불안으로 바뀝니다.",
+            "positiveUse": "프로젝트 단위 수입을 장기 평균으로 보고 고정비, 세금, 휴식 기간 비용을 미리 떼어 둔다.",
+            "risk": "이번에 잘 벌었다는 감각으로 다음 수입 공백을 과소평가하면 생활 안정이 흔들린다.",
+            "matchingMyeongliSignals": [
+              "편재",
+              "정재",
+              "편인"
+            ],
+            "productDomains": [
+              "money",
+              "career",
+              "daeun"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "34232ed281cfad723a9078c4a4368345c3a53d08b03e7ec4b89c20abed1fe4d4",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/career/4",
+            "originalId": "media_community_fit",
+            "recordSha256": "debd2a57a58c0087106714982c5b6368dbe25e26a715a9891f144a99d72a65fc",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "media_community_fit",
+            "label": "미디어·커뮤니티",
+            "plainKo": "PD, 인터넷 방송인, 커뮤니티 관리자, 파워블로거, 비평가, 사진사, 여행가처럼 감성·스토리·커뮤니티 감각이 필요한 분야도 INFP의 적성 분야로 정리된다.",
+            "strongLine": "당신은 사람과 콘텐츠 사이에 감정의 결을 만들고, 취향이 맞는 사람들을 조용히 모으는 힘이 있습니다.",
+            "positiveUse": "콘텐츠 기획, 커뮤니티 운영, 비평, 사진, 여행 글쓰기에서 강점이 된다.",
+            "risk": "대중 반응과 악성 피드백에 과하게 흔들릴 수 있다.",
+            "matchingMyeongliSignals": [
+              "도화",
+              "식신",
+              "역마"
+            ],
+            "productDomains": [
+              "career",
+              "saeun"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "1a2547b5752a076682230568a5d4ff3f9457cfd31567ca9c58ffaebf27a2e692",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INTJ.json",
+            "pointer": "/traits/career/7",
+            "originalId": "strategy_to_asset_work",
+            "recordSha256": "a0c74c16243ff88d7f4cff400220089812fe6cea28f204999827d07aaf9bd539",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "strategy_to_asset_work",
+            "label": "전략 자산화 업무",
+            "plainKo": "INTJ는 단기 처리보다 한 번 만든 구조가 계속 성과를 내는 일을 선호한다. 매뉴얼, 알고리즘, 분석 모델, 운영 시스템처럼 지식이 자산으로 남는 업무에서 돈과 성장이 연결된다.",
+            "strongLine": "당신의 커리어는 바쁘게 처리하는 일보다, 오래 쓰일 시스템을 만들 때 값이 올라갑니다.",
+            "positiveUse": "전략 기획, 제품 구조 설계, 자동화, 연구 모델, 운영 개선에서 장기 성과를 만든다.",
+            "risk": "당장 필요한 실행과 관계 조율을 낮게 보면 좋은 설계도 조직 안에서 채택되지 않는다.",
+            "matchingMyeongliSignals": [
+              "편인",
+              "정재",
+              "정관"
+            ],
+            "productDomains": [
+              "career",
+              "money"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "3fd08610620120342789ba6e5c2fda5278508e900fd25107f1a096399865e799",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISFP.json",
+            "pointer": "/traits/study/3",
+            "originalId": "arts_literature_preference",
+            "recordSha256": "9ded9785447853619b133e93f96f0037ec00efdea474b3d05e5de02a1fe78256",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "arts_literature_preference",
+            "label": "예체능·문과 감각",
+            "plainKo": "예체능 과목과 문학·언어 쪽에 흥미를 보일 수 있다. 반대로 과학과 공학처럼 논리적이고 이론적인 과목은 약하게 느낄 수 있다.",
+            "strongLine": "당신은 공식보다 색, 문장, 몸의 감각, 장면으로 배울 때 훨씬 편합니다.",
+            "positiveUse": "예술, 언어, 문학, 디자인, 퍼포먼스 기반 공부에서 몰입한다.",
+            "risk": "취약 과목을 감각적으로 연결하지 못하면 포기감이 커진다.",
+            "matchingMyeongliSignals": [
+              "도화",
+              "식신",
+              "문창"
+            ],
+            "productDomains": [
+              "study",
+              "career"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "0ba797375df71f99522c438289eb97f525cf34dcf0cd030b73cdb5f252b90c5a",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ESFP.json",
+            "pointer": "/traits/career/5",
+            "originalId": "experience_content_revenue",
+            "recordSha256": "3d4133287fd090c31ce0c2ea4cf4a7c46d841220eb9cdb5b7dcf949475c13c5c",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "experience_content_revenue",
+            "label": "경험 콘텐츠 수익",
+            "plainKo": "ESFP는 사람의 반응을 읽고 분위기를 살리는 힘이 콘텐츠, 행사, 서비스, 고객 경험으로 이어질 때 커리어가 강해진다. 즐거움을 만드는 능력이 반복 프로그램, 예약, 판매 구조와 만나야 수입 안정성이 생긴다.",
+            "strongLine": "ESFP의 커리어는 즐거운 장면을 만드는 힘이 고객 경험과 반복 수익으로 연결될 때 값이 올라갑니다.",
+            "positiveUse": "이벤트, 공연, 콘텐츠, 매장 경험, 고객 응대, 커뮤니티 활동에서 사람의 감정 온도를 빠르게 끌어올린다.",
+            "risk": "현장 분위기만 살리고 정산, 일정, 후속 관리를 놓치면 실제 성과가 낮게 평가된다.",
+            "matchingMyeongliSignals": [
+              "도화",
+              "식신",
+              "편재"
+            ],
+            "productDomains": [
+              "career",
+              "money"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "6623e5a7f58a8c90101bbc6b119f40c44344e40fd51d01020a9a3c0df2078378",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISFP.json",
+            "pointer": "/traits/study/2",
+            "originalId": "concrete_praise_learning",
+            "recordSha256": "d07b97834e43016a7378a78bca60d07781ce3334dcf74df998eb4184cd4b2b1c",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "concrete_praise_learning",
+            "label": "구체 칭찬 반응",
+            "plainKo": "막연한 칭찬보다 무엇이 좋았는지 구체적으로 말해줄 때 더 잘 받아들인다. 자기 생각을 적극적으로 표현하도록 이끌어주는 환경이 필요하다.",
+            "strongLine": "당신은 잘했다는 말보다, 무엇이 좋았는지 정확히 들을 때 더 살아납니다.",
+            "positiveUse": "피드백을 작업물 개선으로 연결한다.",
+            "risk": "강한 비판이나 막연한 지적 앞에서는 자존감이 흔들린다.",
+            "matchingMyeongliSignals": [
+              "식신",
+              "정인",
+              "도화"
+            ],
+            "productDomains": [
+              "study",
+              "child",
+              "career"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "9e04c3f44e5f97ae1b38c946e4b6ad375aca2e3789d42fd00d0fdf90331cc40f",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/career/0",
+            "originalId": "creative_arts_fit",
+            "recordSha256": "05ac73a5b66796844d653ec9b26a42197c28448ea02f7cd65fe93a9403cffb8c",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "creative_arts_fit",
+            "label": "예술·창작 적합",
+            "plainKo": "INFP는 음악, 미술, 무용, 문학, 게임, 만화, 애니메이션처럼 상상력과 감정 표현이 중요한 분야에서 활약하기 쉽다. 감정이 풍부한 이야기를 엮어 깊은 공감을 불러일으킬 수 있다.",
+            "strongLine": "당신은 감정을 설명하기보다 작품으로 만들어 사람의 마음에 도착시키는 재능이 있습니다.",
+            "positiveUse": "작가, 배우, 가수, 화가, 디자이너, 콘텐츠 제작자, 작사가 같은 직업에서 강점이 난다.",
+            "risk": "자기 작품에 대한 직설적 비판에 쉽게 흔들리고 초고를 너무 빨리 지울 수 있다.",
+            "matchingMyeongliSignals": [
+              "도화",
+              "식신",
+              "문창"
+            ],
+            "productDomains": [
+              "career",
+              "study"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "4c474f456d83c7334ec128fff06d404c46606aa5ad72e1d7fdd77db8314d5aa0",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ENFP.json",
+            "pointer": "/traits/workplace/4",
+            "originalId": "follow_through_system",
+            "recordSha256": "160060c2a6b61a740d693e91674d1f46ab2aa96dda3e7962d866c242cd420fd1",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "follow_through_system",
+            "label": "후속 관리 시스템",
+            "plainKo": "ENFP는 시작과 확산에는 강하지만 반복 확인, 문서 정리, 마감 후 조치가 길어지면 에너지가 떨어진다. 체크리스트, 담당자, 짧은 마감 단위가 있어야 자유로운 발상이 실제 결과로 남는다.",
+            "strongLine": "당신의 자유는 관리가 없을 때가 아니라, 최소한의 후속 장치가 있을 때 더 오래 살아납니다.",
+            "positiveUse": "기획 초기, 고객 접점, 팀 아이디어 발굴에서 활력을 만들고 실행의 첫 움직임을 빠르게 만든다.",
+            "risk": "후속 관리가 개인 기억에만 의존하면 약속 변동과 누락이 반복된다.",
+            "matchingMyeongliSignals": [
+              "정관",
+              "편재",
+              "화"
+            ],
+            "productDomains": [
+              "career",
+              "study"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "7115bb32ced9c562e9d9a0d3afc45ed9eff2bf11e0ceab1beae4ac6097898826",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISFP.json",
+            "pointer": "/traits/study/0",
+            "originalId": "hands_on_learning",
+            "recordSha256": "d7db7054d9c2cb768a76ad525f9abfd8437d208b1271321187abe459b6474b6c",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "hands_on_learning",
+            "label": "직접 경험 학습",
+            "plainKo": "오감을 통해 직접 느끼고 해보는 방식이 가장 잘 맞는다. 이론만 듣는 공부보다 역할극, 상황극, 실습, 제작, 예체능 활동에서 몰입이 잘 된다.",
+            "strongLine": "당신은 책상 앞 이론보다, 직접 해보고 몸으로 익힐 때 훨씬 빨리 배웁니다.",
+            "positiveUse": "미술, 음악, 체육, 공예, 실습형 과목, 현장 교육에서 강점을 낸다.",
+            "risk": "논리적이고 추상적인 과목에서는 흥미와 성취가 떨어질 수 있다.",
+            "matchingMyeongliSignals": [
+              "식신",
+              "도화",
+              "역마"
+            ],
+            "productDomains": [
+              "study",
+              "career"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "c37f0847535e05f8475b57270ac2018cedc356f0fe1598bdfba7eb9a8017b7f9",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISFP.json",
+            "pointer": "/traits/career/0",
+            "originalId": "artistic_expression_fit",
+            "recordSha256": "5ba5c04be3ef82e1f3dad88c3ca92d836bf1a0570a520f324ef88d49b7f025bb",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "artistic_expression_fit",
+            "label": "예술 표현 적합",
+            "plainKo": "색상, 질감, 색조, 음악, 몸의 움직임처럼 감각으로 표현하는 분야에 강하다. 내적 가치와 외향 감각이 결합될 때 작업물이 살아난다.",
+            "strongLine": "당신은 머리로 설명하는 일보다, 감각으로 보여주는 일에서 훨씬 살아납니다.",
+            "positiveUse": "음악, 미술, 디자인, 연기, 촬영, 미용, 패션, 공예에서 강점이 드러난다.",
+            "risk": "성과와 일정 관리가 약하면 재능이 결과물로 고정되지 않는다.",
+            "matchingMyeongliSignals": [
+              "도화",
+              "홍염",
+              "식신"
+            ],
+            "productDomains": [
+              "career"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "fca436133bf35738b43eb3c0312a12b30cfec94ee0933d1f4310023d70969793",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ENFP.json",
+            "pointer": "/traits/money/3",
+            "originalId": "possibility_spending_spread",
+            "recordSha256": "c0b961d8ed074bed2c0b0f406afd78c973a971efdc71fd7968399755a7d31fd2",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "possibility_spending_spread",
+            "label": "가능성 지출 분산",
+            "plainKo": "ENFP는 좋은 사람, 흥미로운 강의, 새 모임, 새로운 사업 아이디어를 보면 돈을 써볼 이유를 빨리 찾는다. 각각은 미래 가능성처럼 보이지만, 동시에 열리면 돈과 에너지가 흩어진다. 가능성 지출은 예산과 종료 기준이 있어야 성과로 남는다.",
+            "strongLine": "당신은 가능성을 보고 돈을 쓰는 사람이라서, 가능성마다 한도를 정해야 실제 결과가 남습니다.",
+            "positiveUse": "배움, 네트워킹, 장비, 콘텐츠 실험에 작은 예산을 배정해 빠르게 시장 반응을 확인한다.",
+            "risk": "설렘이 생길 때마다 결제하면 경험은 많아져도 저축과 실행 집중력이 약해진다.",
+            "matchingMyeongliSignals": [
+              "편재",
+              "겁재",
+              "역마"
+            ],
+            "productDomains": [
+              "money",
+              "study",
+              "career"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "dd7d29b4fb8f9bd47b8db0b42e18e12c832e8e59117935ff4285f210647dd6be",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISFP.json",
+            "pointer": "/traits/career/6",
+            "originalId": "taste_to_service_value",
+            "recordSha256": "7675eac45d02cf5b66e0043643767a5a99e07057526dbccd990ab29af48c9dec",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "taste_to_service_value",
+            "label": "취향 서비스 가치",
+            "plainKo": "ISFP는 감각, 취향, 손의 완성도를 고객이 체감하는 결과로 바꿀 때 커리어가 안정된다. 디자인, 미용, 음식, 돌봄, 공간, 현장 서비스처럼 말보다 결과물과 분위기로 신뢰를 만드는 업무가 잘 맞는다.",
+            "strongLine": "당신의 커리어는 취향과 섬세함이 고객이 느끼는 품질로 바뀔 때 값이 올라갑니다.",
+            "positiveUse": "디자인, 뷰티, 공예, 현장 서비스, 돌봄, 공간 연출에서 조용하지만 선명한 만족을 만든다.",
+            "risk": "가격과 범위를 분명히 말하지 않으면 좋은 결과를 내고도 보상에서 밀릴 수 있다.",
+            "matchingMyeongliSignals": [
+              "식신",
+              "도화",
+              "정재"
+            ],
+            "productDomains": [
+              "career",
+              "money"
+            ],
+            "sourceCoverage": "inferred"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "inferred",
+          "sourceTextHash": "636185b27360e1339a4ae5e778831fe0aae1dbfdebe9a8fc0425dc580579db01",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856",
+      "material": "kc:v1:f1b38034b268c0f1b71ee86146b08b79cf308d3123d9ee76c562f007470ba6d2",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INTJ.json",
+            "pointer": "/traits/identity/1",
+            "originalId": "independent_decision_maker",
+            "recordSha256": "d270a153acb4895739ebf3c4b0e422814bd21da6cfa60048773d3ba361483ba8",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "independent_decision_maker",
+            "label": "독립적 결정",
+            "plainKo": "중요한 판단은 혼자 정리하고 싶어 한다. 함께 떠들며 정답을 찾기보다, 충분히 생각한 뒤 자기 기준으로 결론을 내릴 때 마음이 안정된다.",
+            "strongLine": "당신은 사람들 사이에서 확신을 얻기보다, 혼자 정리한 구조 속에서 확신을 얻습니다.",
+            "positiveUse": "책임 범위가 명확한 연구, 기획, 분석, 개발, 전략 업무에서 강한 몰입을 만든다.",
+            "risk": "상대가 합의 과정에 참여하지 못했다고 느끼면 관계와 조직에서 고립된다.",
+            "matchingMyeongliSignals": [
+              "비견",
+              "편인",
+              "정관"
+            ],
+            "productDomains": [
+              "general",
+              "career",
+              "compatibility"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "56c56c2b037a8242f00aa739b6faa3ff8d2bbef6b7538d2a445894bf89df7b66",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1",
+      "material": "kc:v1:9ac5588d55af280557777fe935746fd10e662b5e67ce14b2ea42c7990d2d9ae3",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+      "material": "kc:v1:0ebc2fd31a00dec595ba3b2ecd0d8af31282c9c1c0b0461bc4887bffede52e3f",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+      "material": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+      "material": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INTJ.json",
+            "pointer": "/traits/love/1",
+            "originalId": "strategic_romance_awkwardness",
+            "recordSha256": "ec80331bcc0c5669f8dc7c3279aa9c332de9570ad282c028e0c761619d38a20f",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "strategic_romance_awkwardness",
+            "label": "전략적 어색함",
+            "plainKo": "연애 초반에는 무엇을 해야 하는지, 어떤 행동이 맞는지 분석하려 든다. 사랑도 이해해야 할 이론이나 해결해야 할 과제처럼 접근할 수 있다.",
+            "strongLine": "당신은 사랑을 느끼기 전에 사랑의 작동 방식을 이해하려는 사람입니다.",
+            "positiveUse": "경험이 쌓이면 관계의 패턴을 학습하고 안정적인 방식으로 성숙해진다.",
+            "risk": "상대는 계산적이거나 마음이 덜 열린 사람으로 느낄 수 있다.",
+            "matchingMyeongliSignals": [
+              "편인",
+              "정관",
+              "수"
+            ],
+            "productDomains": [
+              "love",
+              "compatibility"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "ae79b3bcfba031cd46f41013e0c5ed40b23c59d7ab3d97f98c7a671e482099a6",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+      "material": "kc:v1:2a94fa2b4fc69c19549c04dcc463e5f8c9ff35588d13c92ab46b925048287ef3",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+      "material": "kc:v1:1d9c21e732a08bdafc3278bcb0f8433a204d45fa1424ed793866ba87e803585c",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+      "material": "kc:v1:1ef70b9a7398f0645362164298d47f6a0edf6e1c727fb6ff94cf68aa6550f94e",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/INFP.json",
+            "pointer": "/traits/love/1",
+            "originalId": "artistic_dates",
+            "recordSha256": "814540157d57cd6ebd42a2e9a7011d25724c847217defacde8632caeb848b7ff",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "artistic_dates",
+            "label": "예술적 데이트",
+            "plainKo": "창의적이고 예술적인 INFP는 영화, 전시회, 음악, 책, 산책처럼 감성과 상상을 자극하는 데이트를 즐긴다.",
+            "strongLine": "당신의 데이트는 소란스러운 이벤트보다 함께 감상을 나누고 의미를 발견하는 시간에 더 가깝습니다.",
+            "positiveUse": "예술적 경험을 통해 자연스럽게 마음을 열고 관계의 추억을 만든다.",
+            "risk": "상대가 감상과 의미를 전혀 공유하지 않으면 빠르게 거리감을 느낀다.",
+            "matchingMyeongliSignals": [
+              "도화",
+              "식신",
+              "문창"
+            ],
+            "productDomains": [
+              "love",
+              "compatibility"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "cdc773d68cf3b0bf9ad29a669e1f22679da91474943fdb6464f86426911ca4f2",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6",
+      "material": "kc:v1:df323d5890e2d9d0ca709b029a9d6d20ba4bbc412f5ca952b51510dd8b6852bf",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e",
+      "material": "kc:v1:6ab0b1951fa728013e959e7e51ab1f171141b6d984aef8e237bd0bc0e427ab1b",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISFJ.json",
+            "pointer": "/traits/child/0",
+            "originalId": "model_student_child",
+            "recordSha256": "418b40896e874ebcb53b79ae979c69019a06b15aca08f3062c8e937f01e080f2",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "model_student_child",
+            "label": "모범생 아이",
+            "plainKo": "어른의 권위와 규칙을 잘 따르고 숙제와 공부를 성실히 수행한다. 부모와 교사에게는 착한 아이로 보이지만 자기 주장과 감정 표현은 늦을 수 있다.",
+            "strongLine": "ISFJ 아이는 말을 잘 듣는 것처럼 보여도, 속마음을 잘 말한다는 뜻은 아닙니다.",
+            "positiveUse": "학교생활, 과제, 규칙, 또래 관계에서 큰 문제를 덜 만든다.",
+            "risk": "갈등을 피하려다 자기 의견을 숨기고 눈치를 많이 본다.",
+            "matchingMyeongliSignals": [
+              "정관",
+              "정인",
+              "토"
+            ],
+            "productDomains": [
+              "child",
+              "study"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "14f3f857795e62edeb593345aaff5ab18e2989e617080d3858ddd83b08318196",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+      "material": "kc:v1:64063b7c566a59c119b3cecbac692e20ac54bcc9c141c8c4bb4a23c0c668ba87",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ISFJ.json",
+            "pointer": "/traits/love/0",
+            "originalId": "slow_trust_love",
+            "recordSha256": "0afe6707005e20976ebc353e404321c21ea0ed026a2657c1527a5d42fb51ea84",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "slow_trust_love",
+            "label": "느린 신뢰 연애",
+            "plainKo": "연애를 빨리 시작하기보다 여러 번 상대를 살펴본 뒤 안정감을 느낄 때 마음을 연다. 시작은 느려도 한 번 들어가면 오래 책임지고 깊게 챙긴다.",
+            "strongLine": "당신의 연애는 빠른 설렘보다, 오래 믿을 수 있는 사람인지 확인하는 데서 시작됩니다.",
+            "positiveUse": "신뢰 기반 장기 연애와 생활을 함께 생각하는 관계에 강하다.",
+            "risk": "상대가 관심 없다고 느끼면 확인하기보다 조용히 마음을 접을 수 있다.",
+            "matchingMyeongliSignals": [
+              "정인",
+              "정재",
+              "토"
+            ],
+            "productDomains": [
+              "love",
+              "marriage"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "1082bff955dc2d8a6998adc620c762bd267d62629882d623557b4281946740d0",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        },
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ESTP.json",
+            "pointer": "/traits/love/2",
+            "originalId": "active_affection",
+            "recordSha256": "02aeee57825775dcb952f27e5b4e59a0df348a1f33388b3cc9087722388040be",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "active_affection",
+            "label": "적극적 애정",
+            "plainKo": "ESTP는 애정 표현과 스킨십에도 적극적인 편이다. 마음을 무겁게 설명하기보다 직접적인 관심, 장난, 행동, 신체적 친밀감으로 표현한다.",
+            "strongLine": "당신의 애정은 조용한 고백보다 가까이 다가가고 함께 즐기는 행동으로 먼저 드러납니다.",
+            "positiveUse": "연애 초반의 긴장감을 풀고 관계의 물리적 친밀감을 빠르게 높인다.",
+            "risk": "상대의 속도와 경계를 충분히 확인하지 않으면 부담으로 닿을 수 있다.",
+            "matchingMyeongliSignals": [
+              "도화",
+              "홍염",
+              "식신"
+            ],
+            "productDomains": [
+              "love"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "082619685cb501b63e9c006374387deca74eef734192e4961b42fb72d7941ef3",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+      "material": "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+      "material": "kc:v1:91063bd66e09dfdfdb8f97ab4ddfb8402a5a789cb2f01eeb5952a94dd4bdefe2",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+      "material": "kc:v1:c59923ee4522241d210f32668e53930e059660e095add2d8ff1d63d4c85b4b10",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+      "material": "kc:v1:782ba0c10ba719cad1f530caa8d037c6fa48f5322f076f9fe171ed44d4720a77",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8",
+      "material": "kc:v1:c3f88dafdcbe897c16393cc4098f610e217c0dbf0fcbe133bf9894b58eda4e26",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+      "material": "kc:v1:73a564b45d2d464c02aea4ab291cd4cc7ee0a30d80cec339bb05db85ee813f63",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa",
+      "material": "kc:v1:90c89a8371ab3360ffcd2bc0cfc9c056e53651ca9f66cd4c78877e6140b87c07",
+      "sourceDescriptions": [
+        {
+          "locator": {
+            "file": "docs/product/mbti/source/ENFJ.json",
+            "pointer": "/traits/relationships/1",
+            "originalId": "warm_but_selective_cutoff",
+            "recordSha256": "18c723e122ea6f08084a0a002c61b2ef92a36d4ac4fb53f186d625f50dd088f4",
+            "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc"
+          },
+          "original": {
+            "id": "warm_but_selective_cutoff",
+            "label": "따뜻하지만 단호함",
+            "plainKo": "ENFJ는 호감 있는 사람에게는 크게 베풀지만, 싫어하는 사람에게는 선을 긋는 면도 있다. 따뜻함과 관계 기준이 함께 존재한다.",
+            "strongLine": "ENFJ는 누구에게나 다정해 보여도 마음의 문은 가치와 신뢰에 따라 열린다.",
+            "positiveUse": "중요한 사람에게 깊은 헌신과 신뢰를 준다.",
+            "risk": "불건강할 때는 자기 편과 아닌 사람을 나누며 비난으로 흐를 수 있다.",
+            "matchingMyeongliSignals": [
+              "정관",
+              "비견",
+              "겁재"
+            ],
+            "productDomains": [
+              "compatibility",
+              "love",
+              "general"
+            ],
+            "sourceCoverage": "direct"
+          },
+          "claimLayer": "MBTI_SOURCE_DESCRIPTION",
+          "sourceCoverage": "direct",
+          "sourceTextHash": "f5d7f1f9a23cfeba09d31e8e8a0aed6f070d1c49a3339c312b8ca2a7adf6ff11",
+          "actualTypeOwnerRequired": true,
+          "actualBehaviourEstablished": false,
+          "empiricalVerification": "NOT_ESTABLISHED_BY_SOURCE_COVERAGE"
+        }
+      ],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "SOURCE_TEXT_RECHECKED_APPLICATION_REQUIRES_REVIEW",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+      "material": "kc:v1:33f393caeba9d0a42a370288067f39ef9a74bd316d5741e6899709118a5922c8",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+      "material": "kc:v1:4aed307c0692be91f0c9bba68d9797556532cf7fd38595e6c710cbc610fc43a4",
+      "sourceDescriptions": [],
+      "meaningReviewMethod": "MECHANICAL_SCOPE_BOUNDARY_VALIDATION_NOT_DIRECT_MODEL_READING",
+      "state": "NO_PRIMARY_MBTI_SOURCE_IN_THIS_PACKET",
+      "unknownMbtiCannotBeFilled": true,
+      "oppositeOwnerCannotBeCopied": true
+    }
+  ],
+  "fusionScopeOriginal": {
+    "catalogKey": "kc:v1:ad2653e05b91dc9660124758ea2a35b41478ad9131695b7524a0d16365a29f2f",
+    "originalId": "fkr:scope:individual",
+    "original": {
+      "id": "fkr:scope:individual",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "review": "conditional_editorial_not_empirical",
+      "sourceRefs": [
+        "repo:binding-blueprint",
+        "authored:fusion-research"
+      ],
+      "scope": "individual",
+      "requires": [
+        "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+        "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+        "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+      ],
+      "failures": [
+        "OWNER_MISMATCH",
+        "PRIOR_ONLY",
+        "REFERENCE_ONLY",
+        "MISSING_CONDITION",
+        "RESEARCH_ID_IS_NOT_EVIDENCE"
+      ],
+      "independentFactsAdded": 0,
+      "counterpartInferenceAllowed": false,
+      "periodCalculationFromMbtiAllowed": false
+    },
+    "proof": {
+      "locator": {
+        "file": "src/lib/report-knowledge/fusion-knowledge-research/fusionScopeResearch.ts",
+        "exportName": "FUSION_SCOPE_RESEARCH",
+        "index": 0,
+        "originalId": "fkr:scope:individual",
+        "recordSha256": "ae2bb3fdaac78743d1f7e43d5211c9c4b6fef7aec562eb597d1ae2c40f10d51c",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "413cb5804e8612d915cdea6a1e8268d177be1fc4222a0d1072dcaaa73fe25a54"
+      },
+      "matchedCatalogKey": "kc:v1:ad2653e05b91dc9660124758ea2a35b41478ad9131695b7524a0d16365a29f2f",
+      "originalId": "fkr:scope:individual",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "ae2bb3fdaac78743d1f7e43d5211c9c4b6fef7aec562eb597d1ae2c40f10d51c",
+      "actualHash": "ae2bb3fdaac78743d1f7e43d5211c9c4b6fef7aec562eb597d1ae2c40f10d51c",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "contentFields": [
+      {
+        "pointer": "/requires/0",
+        "text": "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node"
+      },
+      {
+        "pointer": "/requires/1",
+        "text": "출처 버전·hash·성립 조건·기존 방향·같은 Context"
+      },
+      {
+        "pointer": "/requires/2",
+        "text": "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+      },
+      {
+        "pointer": "/failures/0",
+        "text": "OWNER_MISMATCH"
+      },
+      {
+        "pointer": "/failures/1",
+        "text": "PRIOR_ONLY"
+      },
+      {
+        "pointer": "/failures/2",
+        "text": "REFERENCE_ONLY"
+      },
+      {
+        "pointer": "/failures/3",
+        "text": "MISSING_CONDITION"
+      },
+      {
+        "pointer": "/failures/4",
+        "text": "RESEARCH_ID_IS_NOT_EVIDENCE"
+      }
+    ],
+    "contentHash": "e41dfacc7e4e399d6b7e08597e9a1ea059e03747e6d605974cc080457e11e489",
+    "sourceVersionVerified": true
+  },
+  "fusion": [
+    {
+      "reviewUnitId": "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:30f76c5735c88c2b14be78da0c31b6ddbdb0ac9765a36469131240b44a3fba45"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:aeffc01e09c67666e28b982caa18acf42c71b84300c0b8eaee0f9ad764dcd465"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:8e6a7e86ae589601666b06a54965dd6adbe8b16e70494671737e2ad39d32c287",
+        "actual-node-address-v1:91faf580493566237be153251786be9cde7e3eb5ffed2f1ed6abae217201387a"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:7992a7270b5136dc5f34d96bc1433809e62494213178651d151d4f6d76b9c57d",
+        "actual-node-address-v1:dce5df130707e1617a948172c703a3fb1c89a9251c561b7851f605687b866f26"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:889edfbefec2acf3584c5dd9f7e94542d1bcb977066e0ee0e57f6fe2d0142fd4"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:fe6d3f19149d57fff5a4a203d74a79f344d931b744e191084c8856062d00b721"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:d992ece330b18ff6b7542f2eccf4d8cc67aac1b08c95b7aa94b5c693c1d5df5d",
+        "actual-node-address-v1:e2b95527924ccad55bb9d6dc3f732e785598e0333a7ccee54ab3710136f190a4",
+        "actual-node-address-v1:fbaf3b7f24d111cbc80ebf35b3d9a6001b6e9d17b239e562ed2b089d7d1f5559"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:3007e2e4a6cd2e7a62deacbeaf7dd9e3ceeff6b9e601026865a3599148fb49ac"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:53eeb7ed2574bb304edebde9e06bdbca619a9c292817349f276f03cbfe1f514a",
+        "actual-node-address-v1:640b682063ff4c2ae4f24d8a9c78f8dc763b007ff8153752299ee27f0d4f6833",
+        "actual-node-address-v1:c45a80634eeb37bac2d5aff1e4d5d30c0b777afd7e7ca3a36ef37f44f18fabdd"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:500b444154f7f15bf7c7c1227aca480743d31ce1043f923191c0d9daef4cf57f"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:5cfdd545d0ee14dc07aa49bfca6a4ae19bbad5d21f9d4642f2670d091e87db2a"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:f2b886bb0c37ffb509bdbe3cbebc8e309ddbee2404171329647baf0d62182348"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:05fb0c9ef84fb26b4e2b94b765775f118f7331215d69e7af18310237f7320207"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:9df84b6d4d179de6757cf99243a50a0186364dd085db8c1f8a0264a21464bfa7",
+        "actual-node-address-v1:d362b80adf161bc0afb3c3b2ad0c642510e3d6e7c2624f55d1e1df66207012d9"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:5c4f8f7540f0e37f3e73899249219b55671c59c36e62efd685726e51796cc53e"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:889edfbefec2acf3584c5dd9f7e94542d1bcb977066e0ee0e57f6fe2d0142fd4"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:a6c4e9a4052b9e2ccba9c773fcd7325db83f93a1b0e9a51067691efe29f6cf57"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:c53ee8284a755feee01862bf60e184862fc29b8455a685dbb2f2bc43379193e4"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:5eca2904afd7660bbf077b7803863ce297b61ed697f53b7d638e0e85e3695440"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:4b84a2d18d093c70fc301e90b889206769a5c19ef605d0531e27aecf1aaa25ae"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:4b3b003a5d4b628e299880b497385f5d610d357cef2f05c87d0d677a05fc0e40"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:cfb0b293941f77faf6fbd27b96287f61d5d34f0e27e61145e736c1a27043142e"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:3bb684680cb15ca8a02e22fc2110ca37b0adcda8b189f5d482692deabd2a8845",
+        "actual-node-address-v1:78991b42089135d0d900604e282b06df77700ddde10c10cf0c15d8b94899cd71",
+        "actual-node-address-v1:99241cc9109e3a1b910d03cfc080b94f3a4dfe62e8a590ae0d3955bb2b2e226e",
+        "actual-node-address-v1:c1de0fa72aaff63faa836bf2c5a59c885c2df846463414731a340949fb997ad9",
+        "actual-node-address-v1:d42b29245a16bb570e1b20618f4b3b712180dcdd870ef759f22f70b9e23ed514",
+        "actual-node-address-v1:e839c505338e49586aa0bb1083b244a77097b73cf0c94b3f78c2ff878936f4d0"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:500b444154f7f15bf7c7c1227aca480743d31ce1043f923191c0d9daef4cf57f"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:f9541324def63b066a37ee3da8c657f0d3b3f8c4da3cbd2a64a1a9cfb42eac64"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:f6e036f24c2ead88cf3640549aa689bd703bda197002bbcd21ce2d5801a8cc82"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:500b444154f7f15bf7c7c1227aca480743d31ce1043f923191c0d9daef4cf57f"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:b321fc3d4500ac4719691307c82f9aaaf1e973cd73dea509327ccd7bae993201"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:844efa34db188dd91fa3003dcab1ba6cd2204808347e9cda57c70a2c4f4b3104",
+        "actual-node-address-v1:8758b58ac46ced51bbff9b81b69eaa670a163f24382909049bae24d759a27f2c"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:fae82b4257730e5c6bc6cf9ebc39b5bc542ef7011bbb0c78c0a0b399700ac1d3"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    },
+    {
+      "reviewUnitId": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+      "claimLayer": "FUSION_CONDITIONAL_MEANING",
+      "originalScopeContract": {
+        "id": "fkr:scope:individual",
+        "connectedToRuntime": false,
+        "approvedForCustomer": false,
+        "existingScoreContribution": false,
+        "runtimeEvidenceIds": [],
+        "review": "conditional_editorial_not_empirical",
+        "sourceRefs": [
+          "repo:binding-blueprint",
+          "authored:fusion-research"
+        ],
+        "scope": "individual",
+        "requires": [
+          "동일 개인의 원국 명리 Evidence와 실제 primary MBTI source node",
+          "출처 버전·hash·성립 조건·기존 방향·같은 Context",
+          "별도 산출물의 의미 대응이며 독립 명리 사실과 MBTI 자료만 보존"
+        ],
+        "failures": [
+          "OWNER_MISMATCH",
+          "PRIOR_ONLY",
+          "REFERENCE_ONLY",
+          "MISSING_CONDITION",
+          "RESEARCH_ID_IS_NOT_EVIDENCE"
+        ],
+        "independentFactsAdded": 0,
+        "counterpartInferenceAllowed": false,
+        "periodCalculationFromMbtiAllowed": false
+      },
+      "actualRequirements": [],
+      "actualWitnesses": [
+        "actual-node-address-v1:17c9ef592d2e5d6c5f70a06305988833c7ca99b0528730b8bc96ad0c6b00aba3"
+      ],
+      "requiredAncestry": [
+        []
+      ],
+      "state": "NO_FUSION_CLAIM_ESTABLISHED",
+      "sameOwnerTwoPrimaryRootsRequired": true,
+      "sourceAssignmentRuleContextDirectionRequired": true,
+      "newIndependentFacts": 0,
+      "personalFusionIsNotPairScore": true,
+      "missingSourceIsNotReplaced": true
+    }
+  ],
+  "traditionalAndModernLayerSeparated": true
+}

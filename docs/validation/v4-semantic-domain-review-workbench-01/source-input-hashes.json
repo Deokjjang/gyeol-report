@@ -1,0 +1,17 @@
+{
+  "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/applicability.ts": "a2ca8029d81981da4ed852099083d056100330aaba8432884ac8834051468243",
+  "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/decisionImpact.ts": "36134b21404fc43e240ad8c59c0a8116574775f01d477907e3b49b18f92ac90f",
+  "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/engine.ts": "91003514663c1a1a6422e8e962203073be9a27fcf3c0f09b2a1c7044cb49400c",
+  "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/offlineUi.ts": "5131f40b18e34f9bab5b5f7518d54f133340be41e7decc7d6f492efa96fe4f5e",
+  "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/privacy.ts": "aed2782a8999bb8c1b33789cfaa46eebd86e492c5f5724b47ae350ce4dd7fe56",
+  "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/reviewDraftValidator.ts": "7687d0d9d745bb8fd9db1de4d6e14fc7afddf5509c993b03a9d421221c5e18c6",
+  "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/reviewUnitIndex.ts": "d6ce3fd82ea6b384db1688f56cc02ba05eb117b08b5c4460c51968b476d8853a",
+  "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/semanticIdentity.ts": "2a3d83e79eeb5c9fe72748ea94969fbb18f5112baa6f21c7ae208eccd5128788",
+  "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/sourceReaderAdapter.ts": "930e7390a8b49bab522a73b3a9c6ccdf0c7822cd731d82facede5bf957264de4",
+  "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/types.ts": "421d13f0c57058f1bc237f53be22f66875b14d133863113818bcedebc6c430c2",
+  "tools/semantic-domain-review-workbench/bootstrap.mjs": "78f3a406268aa6ffce2890fa01a37a4b25c4c6e5b966ee0322b05f42b83e3d4a",
+  "tools/semantic-domain-review-workbench/direct-readings.json": "c01407951121d3f3921c3c648b4431da855de89b78b02904b219ac548aa78652",
+  "tools/semantic-domain-review-workbench/validate-review-draft.mjs": "281c01a3206373627ec9e39d16927f624cc2d29ee3778ad4b8d15f79a29718ae",
+  "tools/semantic-domain-review-workbench/verify.mjs": "af5a3e5507c4163c3afba92936a8f6408281079c0ee04eabdd6c4b7d4628d7a6",
+  "tests/unit/report-knowledge/semanticDomainReviewWorkbench.test.ts": "c7b1936203a766101dfb883e17409677d4e8c82a4b92a74e8e98920377c26f62"
+}

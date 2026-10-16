@@ -1,0 +1,944 @@
+[
+  {
+    "catalogKey": "kc:v1:f1b38034b268c0f1b71ee86146b08b79cf308d3123d9ee76c562f007470ba6d2",
+    "originalId": "cpr:material:CH04.P2:private-criteria",
+    "expectedRecordHash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+    "engine": "comprehensive",
+    "primaryMeaning": "개인 판단을 정돈할 공간과 공동 응답 기한을 나누는 질문이다.",
+    "relatedButDifferentMeaning": "CH03 원천 간 긴장이 아닌 사적 판단 환경",
+    "requiredConditions": [
+      "실제 혼자 생각할 여건과 공동 결정의 권한·기한"
+    ],
+    "counterexamples": [
+      "외향적 행동을 가면으로 해석하지 않음"
+    ],
+    "validConditionalApplication": "혼자 기준을 적을 여건과 공동 응답 기한이 확인된다면 중간 생각을 공유할 범위를 물을 수 있다.",
+    "unusableInterpretation": "내향적 진심·외향적 가면이나 독단적 결정권을 확인한 자료가 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/coreMeaning",
+      "/readerQuestion"
+    ],
+    "says": "개인 판단을 정돈할 공간과 공동 응답 기한을 나누는 질문이다.",
+    "doesNotSay": "내향적 진심·외향적 가면이나 독단적 결정권을 확인한 자료가 아니다.",
+    "missingUserFacts": "실제 혼자 생각할 여건과 공동 결정의 권한·기한",
+    "safeExample": "혼자 기준을 적을 여건과 공동 응답 기한이 확인된다면 중간 생각을 공유할 범위를 물을 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/coreMeaning",
+        "explanation": "개인 판단을 정돈할 공간과 공동 응답 기한을 나누는 질문이다."
+      },
+      {
+        "layer": "PRACTICAL_REFLECTION_QUESTION",
+        "field": "/readerQuestion",
+        "explanation": "고객 사실의 관찰이 아니라 원래 독자 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:90c89a8371ab3360ffcd2bc0cfc9c056e53651ca9f66cd4c78877e6140b87c07",
+    "originalId": "cpr:material:CH04.P3:firm-boundary-close",
+    "expectedRecordHash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+    "engine": "comprehensive",
+    "primaryMeaning": "친절하게 도우면서도 수용할 요청의 경계를 정할 수 있다는 조건부 응용이다.",
+    "relatedButDifferentMeaning": "CH06 단점 규정과 달리 친밀도 안의 선택권",
+    "requiredConditions": [
+      "실제 요청·본인이 밝힌 경계·거절의 안전"
+    ],
+    "counterexamples": [
+      "갈등·관계 단절을 이미 겪은 사실로 쓰지 않음"
+    ],
+    "validConditionalApplication": "요청과 감당 가능한 범위를 확인한다면 가능한 도움과 어려운 부탁을 나눠 말해볼 수 있다.",
+    "unusableInterpretation": "관계 단절·배신을 이미 겪었다거나 ENFJ가 반드시 거절한다는 사실이 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/coreMeaning",
+      "/readerQuestion"
+    ],
+    "says": "친절하게 도우면서도 수용할 요청의 경계를 정할 수 있다는 조건부 응용이다.",
+    "doesNotSay": "관계 단절·배신을 이미 겪었다거나 ENFJ가 반드시 거절한다는 사실이 아니다.",
+    "missingUserFacts": "실제 요청·본인이 밝힌 경계·거절의 안전",
+    "safeExample": "요청과 감당 가능한 범위를 확인한다면 가능한 도움과 어려운 부탁을 나눠 말해볼 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/coreMeaning",
+        "explanation": "친절하게 도우면서도 수용할 요청의 경계를 정할 수 있다는 조건부 응용이다."
+      },
+      {
+        "layer": "PRACTICAL_REFLECTION_QUESTION",
+        "field": "/readerQuestion",
+        "explanation": "고객 사실의 관찰이 아니라 원래 독자 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:196dcaae6dde2be60fcd7783d6bf043f151ce2b02936e47058f40f52e07713c1",
+    "originalId": "ckr:material:CH01.P1:capacity-entry",
+    "expectedRecordHash": "28d6d55ccfa87593a7ac936e1f0bef7907fbb1c8ee103dcd4d5549d624c264f2",
+    "engine": "career",
+    "primaryMeaning": "새 일의 투입과 지킬 결과를 같이 보며 작은 착수 규모를 비교하는 연구다.",
+    "relatedButDifferentMeaning": "CH06 남는 자원 계산보다 착수 때 규모를 정하는 사고",
+    "requiredConditions": [
+      "입력된 직무·예산·운영량·현재 의무"
+    ],
+    "counterexamples": [
+      "실제 예산·운영량 없이 가능한 규모를 정답으로 제시할 수 없음"
+    ],
+    "validConditionalApplication": "실제 운영 자료가 있고 시험이 허용된다면 작은 준비량의 투입과 결과를 함께 비교할 수 있다.",
+    "unusableInterpretation": "실제 카페 운영·자본·고객 수·최적 준비량을 계산하지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/coreMeaning",
+      "/readerQuestion"
+    ],
+    "says": "새 일의 투입과 지킬 결과를 같이 보며 작은 착수 규모를 비교하는 연구다.",
+    "doesNotSay": "실제 카페 운영·자본·고객 수·최적 준비량을 계산하지 않는다.",
+    "missingUserFacts": "입력된 직무·예산·운영량·현재 의무",
+    "safeExample": "실제 운영 자료가 있고 시험이 허용된다면 작은 준비량의 투입과 결과를 함께 비교할 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/coreMeaning",
+        "explanation": "새 일의 투입과 지킬 결과를 같이 보며 작은 착수 규모를 비교하는 연구다."
+      },
+      {
+        "layer": "PRACTICAL_REFLECTION_QUESTION",
+        "field": "/readerQuestion",
+        "explanation": "고객 사실의 관찰이 아니라 원래 독자 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:0517da0c93edacebc8821fef8adff3ca69cc645933c4af91d1c7c2e32ef76e34",
+    "originalId": "ckr:material:CH01.P1:draft-as-question",
+    "expectedRecordHash": "fea1e0d1980f1c578773af917e2eb5f00238466c59bd32925b445960127a373d",
+    "engine": "career",
+    "primaryMeaning": "시안을 정답보다 요청을 구체화하는 질문으로 사용하는 연구다.",
+    "relatedButDifferentMeaning": "CH03 추천 디자인 직업과 달리 시작할 때 표현을 정보로 쓰는 방식",
+    "requiredConditions": [
+      "실제 요청·안전 규정·비교할 요소·시험 목적"
+    ],
+    "counterexamples": [
+      "안전·규정상 허용된 답이 정해졌다면 자유 시안은 부적절"
+    ],
+    "validConditionalApplication": "자유 시안이 허용된 과제라면 두 작은 안에서 확인할 차이를 먼저 정해볼 수 있다.",
+    "unusableInterpretation": "디자인 능력·고객의 승인·자유로운 제작 권한이 확인됐다는 뜻이 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/coreMeaning",
+      "/readerQuestion"
+    ],
+    "says": "시안을 정답보다 요청을 구체화하는 질문으로 사용하는 연구다.",
+    "doesNotSay": "디자인 능력·고객의 승인·자유로운 제작 권한이 확인됐다는 뜻이 아니다.",
+    "missingUserFacts": "실제 요청·안전 규정·비교할 요소·시험 목적",
+    "safeExample": "자유 시안이 허용된 과제라면 두 작은 안에서 확인할 차이를 먼저 정해볼 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/coreMeaning",
+        "explanation": "시안을 정답보다 요청을 구체화하는 질문으로 사용하는 연구다."
+      },
+      {
+        "layer": "PRACTICAL_REFLECTION_QUESTION",
+        "field": "/readerQuestion",
+        "explanation": "고객 사실의 관찰이 아니라 원래 독자 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:fc8eef747023e03565a2fbd70eb354e8d081452bf47bfa54f9a691cab8d9f659",
+    "originalId": "lkr:material:CH01.P1:shared-meaning",
+    "expectedRecordHash": "c5f8c16b61e464ddd39bbef45d46cbf2a4c1c131bde1c92f198071c15c1de7af",
+    "engine": "love",
+    "primaryMeaning": "깊은 유대를 원한다는 본인의 유형 서술을 서로의 이유를 묻는 질문으로 옮기는 제안이다.",
+    "relatedButDifferentMeaning": "CH03의 관계 선택 기준 이전에 사랑의 의미를 읽는 방식",
+    "requiredConditions": [
+      "본인의 실제 유형·현재 가치·상대가 직접 밝힌 이유"
+    ],
+    "counterexamples": [
+      "가벼운 경험을 즐기는 것이 지금 더 중요하다면 깊은 가치 대화가 필요한 때가 아닐 수 있다."
+    ],
+    "validConditionalApplication": "가치 대화를 원하고 상대도 참여한다면 같은 장면에서 각자가 좋았던 이유를 나란히 적어볼 수 있다.",
+    "unusableInterpretation": "상대도 같은 약속·가치를 느꼈거나 영혼의 짝이라는 증거가 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/coreMeaning",
+      "/readerQuestion"
+    ],
+    "says": "깊은 유대를 원한다는 본인의 유형 서술을 서로의 이유를 묻는 질문으로 옮기는 제안이다.",
+    "doesNotSay": "상대도 같은 약속·가치를 느꼈거나 영혼의 짝이라는 증거가 아니다.",
+    "missingUserFacts": "본인의 실제 유형·현재 가치·상대가 직접 밝힌 이유",
+    "safeExample": "가치 대화를 원하고 상대도 참여한다면 같은 장면에서 각자가 좋았던 이유를 나란히 적어볼 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/coreMeaning",
+        "explanation": "깊은 유대를 원한다는 본인의 유형 서술을 서로의 이유를 묻는 질문으로 옮기는 제안이다."
+      },
+      {
+        "layer": "PRACTICAL_REFLECTION_QUESTION",
+        "field": "/readerQuestion",
+        "explanation": "고객 사실의 관찰이 아니라 원래 독자 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:1ef70b9a7398f0645362164298d47f6a0edf6e1c727fb6ff94cf68aa6550f94e",
+    "originalId": "lkr:material:CH02.P3:new-experience-design",
+    "expectedRecordHash": "5570f5e98b255a473cd59d52ac5a0081a56befdb72589904f29a5afb3d2193e2",
+    "engine": "love",
+    "primaryMeaning": "작은 경험에 둘의 취향과 의미를 담되 상대가 선택할 몫을 남기는 연구다.",
+    "relatedButDifferentMeaning": "활동 수보다 둘의 의미를 구성하는 감각",
+    "requiredConditions": [
+      "본인의 유형 원천·양쪽 취향·준비 여력·현재 동의"
+    ],
+    "counterexamples": [
+      "두 사람이 평범한 반복을 좋아한다면 새로운 경험을 준비하는 일이 필요한 매력은 아닐 수 있다."
+    ],
+    "validConditionalApplication": "둘이 경험을 함께 고르길 원한다면 준비의 크기보다 상대가 바꿀 부분을 먼저 물어볼 수 있다.",
+    "unusableInterpretation": "예술 재능·소비 여력·상대의 참여 의사를 계산한 자료가 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/coreMeaning",
+      "/readerQuestion"
+    ],
+    "says": "작은 경험에 둘의 취향과 의미를 담되 상대가 선택할 몫을 남기는 연구다.",
+    "doesNotSay": "예술 재능·소비 여력·상대의 참여 의사를 계산한 자료가 아니다.",
+    "missingUserFacts": "본인의 유형 원천·양쪽 취향·준비 여력·현재 동의",
+    "safeExample": "둘이 경험을 함께 고르길 원한다면 준비의 크기보다 상대가 바꿀 부분을 먼저 물어볼 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/coreMeaning",
+        "explanation": "작은 경험에 둘의 취향과 의미를 담되 상대가 선택할 몫을 남기는 연구다."
+      },
+      {
+        "layer": "PRACTICAL_REFLECTION_QUESTION",
+        "field": "/readerQuestion",
+        "explanation": "고객 사실의 관찰이 아니라 원래 독자 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:36f26b15e65f3bd9d0151e55a684ebeed5e5319247aa7ea0da9ad879df99767b",
+    "originalId": "clr:relation:rr:combination:chung:丑未",
+    "expectedRecordHash": "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+    "engine": "compatibility-love",
+    "primaryMeaning": "丑·未 두 실제 자리의 충 분류와 서로 다른 저장 구성을 비교한다. 만남의 조율은 후속 조건부 질문이다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "양쪽 실제 기둥·cross relation ID·성립과 배제·현재 만남 맥락"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "실제 교차 충과 참여 위치가 확인되고 대화가 안전하다면 두 사람의 만남 조건을 각각 확인하는 질문을 검토할 수 있다.",
+    "unusableInterpretation": "충이 실제 갈등·이별·사고를 만든다는 인과나 개고재물의 보편 법칙을 말하지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/traditional/text"
+    ],
+    "says": "丑·未 두 실제 자리의 충 분류와 서로 다른 저장 구성을 비교한다. 만남의 조율은 후속 조건부 질문이다.",
+    "doesNotSay": "충이 실제 갈등·이별·사고를 만든다는 인과나 개고재물의 보편 법칙을 말하지 않는다.",
+    "missingUserFacts": "양쪽 실제 기둥·cross relation ID·성립과 배제·현재 만남 맥락",
+    "safeExample": "실제 교차 충과 참여 위치가 확인되고 대화가 안전하다면 두 사람의 만남 조건을 각각 확인하는 질문을 검토할 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "TRADITIONAL_SYMBOLIC_MEANING",
+        "field": "/traditional/text",
+        "explanation": "丑·未 두 실제 자리의 충 분류와 서로 다른 저장 구성을 비교한다. 만남의 조율은 후속 조건부 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:b68ecfb094a8a089c1a4ca0321fb863a06498a96eef8436138b3863230b4e630",
+    "originalId": "clr:relation:rr:combination:hae:寅巳",
+    "expectedRecordHash": "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+    "engine": "compatibility-love",
+    "primaryMeaning": "寅·巳의 육해와 일부 형이 겹친다는 분류를 보존한다. 연애 표현 조율은 별도 연구 응용이다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "실제 위치·다른 관계·양쪽 Owner·producer·현재 표현 맥락"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "실제 교차 관계와 배제 조건이 확인된다면 표현의 뜻을 당사자에게 확인하는 질문을 검토할 수 있다.",
+    "unusableInterpretation": "형·해의 겹침은 적의·배신·질병이나 위험 배수의 관찰이 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/traditional/text"
+    ],
+    "says": "寅·巳의 육해와 일부 형이 겹친다는 분류를 보존한다. 연애 표현 조율은 별도 연구 응용이다.",
+    "doesNotSay": "형·해의 겹침은 적의·배신·질병이나 위험 배수의 관찰이 아니다.",
+    "missingUserFacts": "실제 위치·다른 관계·양쪽 Owner·producer·현재 표현 맥락",
+    "safeExample": "실제 교차 관계와 배제 조건이 확인된다면 표현의 뜻을 당사자에게 확인하는 질문을 검토할 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "TRADITIONAL_SYMBOLIC_MEANING",
+        "field": "/traditional/text",
+        "explanation": "寅·巳의 육해와 일부 형이 겹친다는 분류를 보존한다. 연애 표현 조율은 별도 연구 응용이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:c59923ee4522241d210f32668e53930e059660e095add2d8ff1d63d4c85b4b10",
+    "originalId": "cmpr:relation:rr:combination:hae:寅巳",
+    "expectedRecordHash": "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb",
+    "engine": "compatibility-marriage",
+    "primaryMeaning": "寅巳의 관계 분류를 공동생활의 협력·차이 질문에 참고하려는 조건부 응용이다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "양쪽 실제 관계 ID·기둥·공동생활 여부·동의"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "실제 공동생활 맥락과 양쪽 참여 근거가 있다면 각자의 생활 조건을 확인하는 질문을 검토할 수 있다.",
+    "unusableInterpretation": "실제 혼인·동거·가사 분담이나 재정 결과를 확정하지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/traditional/text"
+    ],
+    "says": "寅巳의 관계 분류를 공동생활의 협력·차이 질문에 참고하려는 조건부 응용이다.",
+    "doesNotSay": "실제 혼인·동거·가사 분담이나 재정 결과를 확정하지 않는다.",
+    "missingUserFacts": "양쪽 실제 관계 ID·기둥·공동생활 여부·동의",
+    "safeExample": "실제 공동생활 맥락과 양쪽 참여 근거가 있다면 각자의 생활 조건을 확인하는 질문을 검토할 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "TRADITIONAL_SYMBOLIC_MEANING",
+        "field": "/traditional/text",
+        "explanation": "寅巳의 관계 분류를 공동생활의 협력·차이 질문에 참고하려는 조건부 응용이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:4aed307c0692be91f0c9bba68d9797556532cf7fd38595e6c710cbc610fc43a4",
+    "originalId": "cmpr:relation:rr:combination:yukhap:巳申",
+    "expectedRecordHash": "13625bee6557f487259edc667722b8b5fa5b752d10989ea9d2b2192880beb841",
+    "engine": "compatibility-marriage",
+    "primaryMeaning": "巳申 육합과 형·파의 겹침을 구분하며 결속과 제약을 하나의 길흉으로 줄이지 않는다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "실제 두 자리·계절 조건·양쪽 person·원래 배제"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "실제 관계와 전거의 층위를 확인한다면 공동생활에서 함께 유지할 조건과 조정할 조건을 따로 물을 수 있다.",
+    "unusableInterpretation": "합이 형·파를 지우거나 혼인 성공·위험 세 배를 보장한다는 설명이 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/traditional/text"
+    ],
+    "says": "巳申 육합과 형·파의 겹침을 구분하며 결속과 제약을 하나의 길흉으로 줄이지 않는다.",
+    "doesNotSay": "합이 형·파를 지우거나 혼인 성공·위험 세 배를 보장한다는 설명이 아니다.",
+    "missingUserFacts": "실제 두 자리·계절 조건·양쪽 person·원래 배제",
+    "safeExample": "실제 관계와 전거의 층위를 확인한다면 공동생활에서 함께 유지할 조건과 조정할 조건을 따로 물을 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "TRADITIONAL_SYMBOLIC_MEANING",
+        "field": "/traditional/text",
+        "explanation": "巳申 육합과 형·파의 겹침을 구분하며 결속과 제약을 하나의 길흉으로 줄이지 않는다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:6ab0b1951fa728013e959e7e51ab1f171141b6d984aef8e237bd0bc0e427ab1b",
+    "originalId": "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+    "expectedRecordHash": "aae419bcdcee2f0482c38b4e67ec3e8cf3e5eb8970e2bec5ab906f8ee48ecc78",
+    "engine": "compatibility-parent-child",
+    "primaryMeaning": "TEEN 맥락 B의 규칙 준수 유형 참고와 실제 선택을 분리하며 부모에게 안전한 의견 통로를 요구하는 연구다.",
+    "relatedButDifferentMeaning": "자녀의 조용한 동의와 자유로운 선택 분리",
+    "requiredConditions": [
+      "fixed-ab-v1·B 실제 ISFJ 원천·TEEN 맥락·현재 선택·성인 보호 책임"
+    ],
+    "counterexamples": [
+      "실제 숨긴 감정이나 과거 억압을 추정하지 않는다."
+    ],
+    "validConditionalApplication": "실제 청소년 맥락과 안전이 확인된다면 부모가 불이익 없이 동의를 수정할 통로를 마련했는지 물을 수 있다.",
+    "unusableInterpretation": "아이가 감정을 숨겼거나 억압을 겪었다는 관찰·발달 평가가 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/coreMeaning",
+      "/readerQuestion"
+    ],
+    "says": "TEEN 맥락 B의 규칙 준수 유형 참고와 실제 선택을 분리하며 부모에게 안전한 의견 통로를 요구하는 연구다.",
+    "doesNotSay": "아이가 감정을 숨겼거나 억압을 겪었다는 관찰·발달 평가가 아니다.",
+    "missingUserFacts": "fixed-ab-v1·B 실제 ISFJ 원천·TEEN 맥락·현재 선택·성인 보호 책임",
+    "safeExample": "실제 청소년 맥락과 안전이 확인된다면 부모가 불이익 없이 동의를 수정할 통로를 마련했는지 물을 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/coreMeaning",
+        "explanation": "TEEN 맥락 B의 규칙 준수 유형 참고와 실제 선택을 분리하며 부모에게 안전한 의견 통로를 요구하는 연구다."
+      },
+      {
+        "layer": "PRACTICAL_REFLECTION_QUESTION",
+        "field": "/readerQuestion",
+        "explanation": "고객 사실의 관찰이 아니라 원래 독자 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:1d9c21e732a08bdafc3278bcb0f8433a204d45fa1424ed793866ba87e803585c",
+    "originalId": "pcpr:relation:rr:combination:chung:丑未",
+    "expectedRecordHash": "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e",
+    "engine": "compatibility-parent-child",
+    "primaryMeaning": "丑未 충 분류의 원래 배제를 지키며 부모·자녀 역할에서 참고 가능한 조건을 검토한다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "실제 두 기둥·관계 ID·고정 역할·발달 맥락·보호 책임"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "실제 역할과 교차 근거가 확인되더라도 보호 책임을 유지하며 현재 필요한 지원을 별도로 확인해야 한다.",
+    "unusableInterpretation": "양육 성공·가족 불행·자녀 복종·친자 관계를 판정하지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/traditional/text"
+    ],
+    "says": "丑未 충 분류의 원래 배제를 지키며 부모·자녀 역할에서 참고 가능한 조건을 검토한다.",
+    "doesNotSay": "양육 성공·가족 불행·자녀 복종·친자 관계를 판정하지 않는다.",
+    "missingUserFacts": "실제 두 기둥·관계 ID·고정 역할·발달 맥락·보호 책임",
+    "safeExample": "실제 역할과 교차 근거가 확인되더라도 보호 책임을 유지하며 현재 필요한 지원을 별도로 확인해야 한다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "TRADITIONAL_SYMBOLIC_MEANING",
+        "field": "/traditional/text",
+        "explanation": "丑未 충 분류의 원래 배제를 지키며 부모·자녀 역할에서 참고 가능한 조건을 검토한다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:9ac5588d55af280557777fe935746fd10e662b5e67ce14b2ea42c7990d2d9ae3",
+    "originalId": "cwpr:material:CH08.P2:a-change-with-record",
+    "expectedRecordHash": "7a3abbcc84154a6ecb0130da1c3cd3f164fc70105d9f2a062df36bc30deaffb3",
+    "engine": "compatibility-coworker",
+    "primaryMeaning": "A가 전달한 버전·변경분·미확정 상태를 B가 확인할 수 있게 하자는 회수형 연구다.",
+    "relatedButDifferentMeaning": "A 정보 전달 행동의 변경",
+    "requiredConditions": [
+      "실제 같은 과제·변경 기록·승인선·앞서 표시된 information-silo 의미"
+    ],
+    "counterexamples": [
+      "실제 승인·보안 조건은 별도"
+    ],
+    "validConditionalApplication": "앞선 정보 공유 공백이 같은 과제에서 실제 표시됐다면 A는 변경과 미확정을 기록하고 B에게 적용 항목을 되물을 수 있다.",
+    "unusableInterpretation": "최신 정보의 전달이 변경 허가나 실제 업무 이력이라는 뜻이 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/coreMeaning",
+      "/readerQuestion"
+    ],
+    "says": "A가 전달한 버전·변경분·미확정 상태를 B가 확인할 수 있게 하자는 회수형 연구다.",
+    "doesNotSay": "최신 정보의 전달이 변경 허가나 실제 업무 이력이라는 뜻이 아니다.",
+    "missingUserFacts": "실제 같은 과제·변경 기록·승인선·앞서 표시된 information-silo 의미",
+    "safeExample": "앞선 정보 공유 공백이 같은 과제에서 실제 표시됐다면 A는 변경과 미확정을 기록하고 B에게 적용 항목을 되물을 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/coreMeaning",
+        "explanation": "A가 전달한 버전·변경분·미확정 상태를 B가 확인할 수 있게 하자는 회수형 연구다."
+      },
+      {
+        "layer": "PRACTICAL_REFLECTION_QUESTION",
+        "field": "/readerQuestion",
+        "explanation": "고객 사실의 관찰이 아니라 원래 독자 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:d1b474f653c75dc8cf25587e34eed56c513465cefbfe9046198635635a2414de",
+    "originalId": "cwpr:material:CH08.P2:a-do-not-claim-authority",
+    "expectedRecordHash": "a5de4edc83cc25af0a273f9b5a85e23ed4c9b4b4b655b1eed97a45b7587b5def",
+    "engine": "compatibility-coworker",
+    "primaryMeaning": "A의 확신과 실제 결정권을 분리하고 B의 기준과 비교 자료를 듣는 회수형 질문이다.",
+    "relatedButDifferentMeaning": "A의 권한 오인 방지",
+    "requiredConditions": [
+      "실제 과제·정식 권한·같은 Owner·앞서 표시된 의견 차이 의미"
+    ],
+    "counterexamples": [
+      "정식 권한 없으면 최종 결정 보류"
+    ],
+    "validConditionalApplication": "정식 권한과 같은 과제가 확인된다면 자기 기준과 제안을 구분해 말하고 다른 기준을 비교할 수 있다.",
+    "unusableInterpretation": "단호한 유형이 동료의 능력을 평가하거나 최종안을 명령할 권한을 만들지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/coreMeaning",
+      "/readerQuestion"
+    ],
+    "says": "A의 확신과 실제 결정권을 분리하고 B의 기준과 비교 자료를 듣는 회수형 질문이다.",
+    "doesNotSay": "단호한 유형이 동료의 능력을 평가하거나 최종안을 명령할 권한을 만들지 않는다.",
+    "missingUserFacts": "실제 과제·정식 권한·같은 Owner·앞서 표시된 의견 차이 의미",
+    "safeExample": "정식 권한과 같은 과제가 확인된다면 자기 기준과 제안을 구분해 말하고 다른 기준을 비교할 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/coreMeaning",
+        "explanation": "A의 확신과 실제 결정권을 분리하고 B의 기준과 비교 자료를 듣는 회수형 질문이다."
+      },
+      {
+        "layer": "PRACTICAL_REFLECTION_QUESTION",
+        "field": "/readerQuestion",
+        "explanation": "고객 사실의 관찰이 아니라 원래 독자 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:73a564b45d2d464c02aea4ab291cd4cc7ee0a30d80cec339bb05db85ee813f63",
+    "originalId": "mrpr:relation:rr:combination:chung:丑未",
+    "expectedRecordHash": "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875",
+    "engine": "compatibility-manager-report",
+    "primaryMeaning": "丑未 교차 충과 실제 구성·출처를 확인하는 연구를 상하 역할의 적용 질문과 구분한다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "실제 교차 ID·참여 위치·조직 역할·정식 평가 권한"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "교차 근거와 역할이 확인돼도 평가·승인 권한은 조직 절차에서 별도로 확인해야 한다.",
+    "unusableInterpretation": "충을 업무 실력·성과·갈등 이력·인사 권한으로 환산하지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/traditional/text"
+    ],
+    "says": "丑未 교차 충과 실제 구성·출처를 확인하는 연구를 상하 역할의 적용 질문과 구분한다.",
+    "doesNotSay": "충을 업무 실력·성과·갈등 이력·인사 권한으로 환산하지 않는다.",
+    "missingUserFacts": "실제 교차 ID·참여 위치·조직 역할·정식 평가 권한",
+    "safeExample": "교차 근거와 역할이 확인돼도 평가·승인 권한은 조직 절차에서 별도로 확인해야 한다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "TRADITIONAL_SYMBOLIC_MEANING",
+        "field": "/traditional/text",
+        "explanation": "丑未 교차 충과 실제 구성·출처를 확인하는 연구를 상하 역할의 적용 질문과 구분한다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:a5d232b90b7ae2c45dd1beb5f76ad2d47d9f41c965257449e526ecf3224dd1f2",
+    "originalId": "mrpr:relation:rr:combination:yukhap:巳申",
+    "expectedRecordHash": "95b9fbd5286e8545ee97f208ea6faf25010fc5c31e3405e8b00a5208bd8ce4f9",
+    "engine": "compatibility-manager-report",
+    "primaryMeaning": "巳申 육합·형·파의 층위를 보존하고 상하 관계의 조건부 적용을 검토한다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "실제 관계 ID·기둥·계절 조건·권한·원래 배제"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "실제 구성과 업무 맥락이 확인된다면 협력할 조건을 질문하되 승인 권한과 성과 판단은 별도로 남긴다.",
+    "unusableInterpretation": "합이 협력 성공을 보장하거나 인사 권한을 부여하지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/traditional/text"
+    ],
+    "says": "巳申 육합·형·파의 층위를 보존하고 상하 관계의 조건부 적용을 검토한다.",
+    "doesNotSay": "합이 협력 성공을 보장하거나 인사 권한을 부여하지 않는다.",
+    "missingUserFacts": "실제 관계 ID·기둥·계절 조건·권한·원래 배제",
+    "safeExample": "실제 구성과 업무 맥락이 확인된다면 협력할 조건을 질문하되 승인 권한과 성과 판단은 별도로 남긴다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "TRADITIONAL_SYMBOLIC_MEANING",
+        "field": "/traditional/text",
+        "explanation": "巳申 육합·형·파의 층위를 보존하고 상하 관계의 조건부 적용을 검토한다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:91063bd66e09dfdfdb8f97ab4ddfb8402a5a789cb2f01eeb5952a94dd4bdefe2",
+    "originalId": "bppr:relation:rr:combination:chung:丑未",
+    "expectedRecordHash": "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a",
+    "engine": "compatibility-business-partner",
+    "primaryMeaning": "丑未 충의 실제 참여 구성을 참고하는 연구이며 사업의 실제 계약 판단과 분리한다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "실제 양쪽 기둥·relation ID·사업 맥락·계약·손익 자료"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "실제 교차 근거와 사업 맥락이 있다면 확인할 업무 조건을 정리할 수 있으나 계약·재무 판단은 별도 자료가 필요하다.",
+    "unusableInterpretation": "충이 손실·분쟁·계약 위반을 예언하거나 지분을 산출하지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/traditional/text"
+    ],
+    "says": "丑未 충의 실제 참여 구성을 참고하는 연구이며 사업의 실제 계약 판단과 분리한다.",
+    "doesNotSay": "충이 손실·분쟁·계약 위반을 예언하거나 지분을 산출하지 않는다.",
+    "missingUserFacts": "실제 양쪽 기둥·relation ID·사업 맥락·계약·손익 자료",
+    "safeExample": "실제 교차 근거와 사업 맥락이 있다면 확인할 업무 조건을 정리할 수 있으나 계약·재무 판단은 별도 자료가 필요하다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "TRADITIONAL_SYMBOLIC_MEANING",
+        "field": "/traditional/text",
+        "explanation": "丑未 충의 실제 참여 구성을 참고하는 연구이며 사업의 실제 계약 판단과 분리한다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:77b7c75d85d00e016e118eb362d0dfccd06f9087a257795ac9774bd2dba4c1f5",
+    "originalId": "bppr:relation:rr:combination:hae:寅巳",
+    "expectedRecordHash": "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae",
+    "engine": "compatibility-business-partner",
+    "primaryMeaning": "寅巳 육해·형의 겹침을 구분하며 사업 파트너 응용의 출처·권한 조건을 검토한다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "실제 관계·위치·다른 관계·사업 역할·동의·권한"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "실제 근거와 역할을 확인한다면 서로의 설명을 확인하는 질문을 검토하되 계약 사실은 추정하지 않는다.",
+    "unusableInterpretation": "배신·분쟁·현금 부족이나 어느 쪽의 책임을 계산한 결과가 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/traditional/text"
+    ],
+    "says": "寅巳 육해·형의 겹침을 구분하며 사업 파트너 응용의 출처·권한 조건을 검토한다.",
+    "doesNotSay": "배신·분쟁·현금 부족이나 어느 쪽의 책임을 계산한 결과가 아니다.",
+    "missingUserFacts": "실제 관계·위치·다른 관계·사업 역할·동의·권한",
+    "safeExample": "실제 근거와 역할을 확인한다면 서로의 설명을 확인하는 질문을 검토하되 계약 사실은 추정하지 않는다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "TRADITIONAL_SYMBOLIC_MEANING",
+        "field": "/traditional/text",
+        "explanation": "寅巳 육해·형의 겹침을 구분하며 사업 파트너 응용의 출처·권한 조건을 검토한다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:47e9b22b46608162f41e74c13051f3e233a4950dd012a11c7b2b0d0a104ac386",
+    "originalId": "frpr:direction:CH05.P1",
+    "expectedRecordHash": "042ef39c83ba350664a0b1f332354dcb557ddf8435971700ddf8bb6c9b7c779f",
+    "engine": "compatibility-friendship",
+    "primaryMeaning": "A의 새 제안과 B가 고를 참여 범위가 별도라는 A→B 방향 질문이다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "실제 수신자 일간·방향 ID·개인 원천·현재 요청·거절 가능성"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "B가 제안을 받고 참여 범위를 정할 수 있다면 작은 선택지부터 뜻을 물을 수 있다.",
+    "unusableInterpretation": "B의 실제 흥미·동의·친밀도·우정 기간을 관찰한 자료가 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/question"
+    ],
+    "says": "A의 새 제안과 B가 고를 참여 범위가 별도라는 A→B 방향 질문이다.",
+    "doesNotSay": "B의 실제 흥미·동의·친밀도·우정 기간을 관찰한 자료가 아니다.",
+    "missingUserFacts": "실제 수신자 일간·방향 ID·개인 원천·현재 요청·거절 가능성",
+    "safeExample": "B가 제안을 받고 참여 범위를 정할 수 있다면 작은 선택지부터 뜻을 물을 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/question",
+        "explanation": "A의 새 제안과 B가 고를 참여 범위가 별도라는 A→B 방향 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:c3f88dafdcbe897c16393cc4098f610e217c0dbf0fcbe133bf9894b58eda4e26",
+    "originalId": "frpr:direction:CH05.P3",
+    "expectedRecordHash": "bddc966b05ab93f63ddf3119b004cde0f01628ec78c704f8c5c7bd8dffe3e7e9",
+    "engine": "compatibility-friendship",
+    "primaryMeaning": "A의 호의를 B의 빚으로 만들지 않도록 수락 규모와 부담 조건을 묻는 A→B 질문이다.",
+    "relatedButDifferentMeaning": "관계 분류와 이 상품의 현실 적용은 서로 다른 검토 대상이다.",
+    "requiredConditions": [
+      "실제 호의·현재 요청·양쪽 Owner·수신자 십성·자발적 거절"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "호의를 주고받을 실제 상황이 있다면 같은 비용의 보답을 전제하지 않고 수락 가능한 규모를 물을 수 있다.",
+    "unusableInterpretation": "A가 실제로 과하게 베풀었거나 B가 빚졌다는 사건 기록이 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/question"
+    ],
+    "says": "A의 호의를 B의 빚으로 만들지 않도록 수락 규모와 부담 조건을 묻는 A→B 질문이다.",
+    "doesNotSay": "A가 실제로 과하게 베풀었거나 B가 빚졌다는 사건 기록이 아니다.",
+    "missingUserFacts": "실제 호의·현재 요청·양쪽 Owner·수신자 십성·자발적 거절",
+    "safeExample": "호의를 주고받을 실제 상황이 있다면 같은 비용의 보답을 전제하지 않고 수락 가능한 규모를 물을 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/question",
+        "explanation": "A의 호의를 B의 빚으로 만들지 않도록 수락 규모와 부담 조건을 묻는 A→B 질문이다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+    "originalId": "mfpr:god:편인",
+    "expectedRecordHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+    "engine": "major-fortune",
+    "primaryMeaning": "대운 편인은 다른 관점을 조사할 질문과 작은 적용을 연결하는 장기 과제의 조건부 연구다.",
+    "relatedButDifferentMeaning": "정인의 공유 기반보다 기존 답과 다른 관점 검토",
+    "requiredConditions": [
+      "실제 cycle ID·기간·원국 조건·생조 분포·검증 종료 기준"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "해당 대운과 원국 근거가 확인되고 탐색할 과제가 있다면 조사를 끝낼 질문과 작은 적용 범위를 정리할 수 있다.",
+    "unusableInterpretation": "원국 편인·식신의 성립 없이 도식·질병·천재성이나 결정 유예 경험을 확정하지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/core"
+    ],
+    "says": "대운 편인은 다른 관점을 조사할 질문과 작은 적용을 연결하는 장기 과제의 조건부 연구다.",
+    "doesNotSay": "원국 편인·식신의 성립 없이 도식·질병·천재성이나 결정 유예 경험을 확정하지 않는다.",
+    "missingUserFacts": "실제 cycle ID·기간·원국 조건·생조 분포·검증 종료 기준",
+    "safeExample": "해당 대운과 원국 근거가 확인되고 탐색할 과제가 있다면 조사를 끝낼 질문과 작은 적용 범위를 정리할 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/core",
+        "explanation": "대운 편인은 다른 관점을 조사할 질문과 작은 적용을 연결하는 장기 과제의 조건부 연구다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+    "originalId": "mfpr:god:편재",
+    "expectedRecordHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+    "engine": "major-fortune",
+    "primaryMeaning": "대운 편재는 외부 접점과 선택 범위를 비용·회수·기존 의무와 비교하는 연구다.",
+    "relatedButDifferentMeaning": "정재의 반복 운영보다 외부 변수를 다루는 선택 조건",
+    "requiredConditions": [
+      "실제 cycle ID·원국 재성·자원 조건·비용·회수 시점"
+    ],
+    "counterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "validConditionalApplication": "실제 제안과 자원 자료가 있다면 감당할 양과 중단 가능한 조건을 비교하는 질문으로 검토할 수 있다.",
+    "unusableInterpretation": "유입 가능성을 회수된 수익·횡재·외도·사업 성공으로 바꾸지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/core"
+    ],
+    "says": "대운 편재는 외부 접점과 선택 범위를 비용·회수·기존 의무와 비교하는 연구다.",
+    "doesNotSay": "유입 가능성을 회수된 수익·횡재·외도·사업 성공으로 바꾸지 않는다.",
+    "missingUserFacts": "실제 cycle ID·원국 재성·자원 조건·비용·회수 시점",
+    "safeExample": "실제 제안과 자원 자료가 있다면 감당할 양과 중단 가능한 조건을 비교하는 질문으로 검토할 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/core",
+        "explanation": "대운 편재는 외부 접점과 선택 범위를 비용·회수·기존 의무와 비교하는 연구다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:df323d5890e2d9d0ca709b029a9d6d20ba4bbc412f5ca952b51510dd8b6852bf",
+    "originalId": "afpr:annual-god:겁재",
+    "expectedRecordHash": "a32399c0966714c7f5606b59721436927ab86158b4cbcc5f43e6021ca8cfc445",
+    "engine": "annual-fortune",
+    "primaryMeaning": "선택 연도 겁재를 공동 힘·자원의 몫이라는 질문으로 삼되 월별 조건은 별도로 본다.",
+    "relatedButDifferentMeaning": "비견의 독자 기준과 달리 공동 투입의 합의",
+    "requiredConditions": [
+      "실효 연주·일간과 target 천간·정확한 구간·실제 소유와 동의"
+    ],
+    "counterexamples": [
+      "협업이 없는데 경쟁·배신·손실 사건을 가정하지 않는다."
+    ],
+    "validConditionalApplication": "실제 공동 자원이 있다면 기여·비용·명의와 각자의 회수 항목을 다른 칸에서 확인할 수 있다.",
+    "unusableInterpretation": "협업이 없는데 배신·손실·경쟁 사건을 만드는 원고가 아니다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/meaning"
+    ],
+    "says": "선택 연도 겁재를 공동 힘·자원의 몫이라는 질문으로 삼되 월별 조건은 별도로 본다.",
+    "doesNotSay": "협업이 없는데 배신·손실·경쟁 사건을 만드는 원고가 아니다.",
+    "missingUserFacts": "실효 연주·일간과 target 천간·정확한 구간·실제 소유와 동의",
+    "safeExample": "실제 공동 자원이 있다면 기여·비용·명의와 각자의 회수 항목을 다른 칸에서 확인할 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/meaning",
+        "explanation": "선택 연도 겁재를 공동 힘·자원의 몫이라는 질문으로 삼되 월별 조건은 별도로 본다."
+      }
+    ]
+  },
+  {
+    "catalogKey": "kc:v1:fa5bd4bf855eee54a03e8e74d33732753832a9d02a43452cce36f2d64257e3d7",
+    "originalId": "afpr:annual-god:비견",
+    "expectedRecordHash": "354838430544fbe561878e879a2278ad7be39902f6343fb9f7d29d890fb748d7",
+    "engine": "annual-fortune",
+    "primaryMeaning": "선택 연도 비견은 독자 판단의 범위와 공동 검토선을 구분하는 질문이다.",
+    "relatedButDifferentMeaning": "겁재의 공동 자원 배분과 달리 독자 기준의 범위",
+    "requiredConditions": [
+      "실효 연주·기준 일간·월간/본기 역할·구간·실제 권한"
+    ],
+    "counterexamples": [
+      "권한이 없는 과제에 독자 결정을 강제하지 않는다."
+    ],
+    "validConditionalApplication": "실제 권한과 과제 범위가 확인된다면 혼자 끝낼 부분과 공동 승인할 부분을 나눠볼 수 있다.",
+    "unusableInterpretation": "유형이나 십성만으로 과제의 권한·승진·단독 결정 정당성이 생기지 않는다.",
+    "reviewState": "MODEL_PROPOSED_REVIEW",
+    "operatorApproved": false,
+    "customerApproved": false,
+    "originalRecordActuallyRead": true,
+    "supportingExternalPagesFreshlyRead": false,
+    "sourceFields": [
+      "/meaning"
+    ],
+    "says": "선택 연도 비견은 독자 판단의 범위와 공동 검토선을 구분하는 질문이다.",
+    "doesNotSay": "유형이나 십성만으로 과제의 권한·승진·단독 결정 정당성이 생기지 않는다.",
+    "missingUserFacts": "실효 연주·기준 일간·월간/본기 역할·구간·실제 권한",
+    "safeExample": "실제 권한과 과제 범위가 확인된다면 혼자 끝낼 부분과 공동 승인할 부분을 나눠볼 수 있다.",
+    "unsafeFactExample": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+    "unsafeFutureExample": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+    "claimLayers": [
+      {
+        "layer": "MODERN_BEHAVIOURAL_HYPOTHESIS",
+        "field": "/meaning",
+        "explanation": "선택 연도 비견은 독자 판단의 범위와 공동 검토선을 구분하는 질문이다."
+      }
+    ]
+  }
+]

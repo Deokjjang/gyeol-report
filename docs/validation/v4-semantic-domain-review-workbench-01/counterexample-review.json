@@ -1,0 +1,1862 @@
+[
+  {
+    "reviewUnitId": "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1",
+    "originalCounterexamples": "성적·합격·학력·문재의 확정 근거로 사용 금지",
+    "originalDisallowed": [
+      "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+      "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+      "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+      "성공·승진·합격·재물 증가·투자 능력 확정"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "성적·합격·학력·문재의 확정 근거로 사용 금지"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+        "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+        "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+        "성공·승진·합격·재물 증가·투자 능력 확정"
+      ],
+      {
+        "disallowed": [
+          "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+          "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+          "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+          "성공·승진·합격·재물 증가·투자 능력 확정"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "이름에 문창이 포함되거나 실제 계산 신호가 있어도 출처 보류가 해제되지 않는다."
+    ],
+    "requiredConditions": [
+      "전통 배치/현행 표 차이를 원문 판본과 대조한 후 별도 승인."
+    ],
+    "missingActualContext": "전통 배치/현행 표 차이를 원문 판본과 대조한 후 별도 승인.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "보류 이유를 검토자에게 인수하고 다른 승인된 자료를 별도로 확인.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "시험 운·문재·합격률을 해당 자료에서 승인.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895",
+    "originalCounterexamples": "NOT_SEPARATELY_DECLARED",
+    "originalDisallowed": [
+      "횡재·투자 수익·외도·사업 성공을 예언하지 않음",
+      "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      null,
+      {
+        "forbidden": [
+          "횡재·투자 수익·외도·사업 성공을 예언하지 않음",
+          "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+        ]
+      },
+      {}
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 cycle ID·원국 재성·자원 조건·비용·회수 시점"
+    ],
+    "missingActualContext": "실제 cycle ID·원국 재성·자원 조건·비용·회수 시점",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 제안과 자원 자료가 있다면 감당할 양과 중단 가능한 조건을 비교하는 질문으로 검토할 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+    "originalCounterexamples": "필수 안전 조치가 필요한 경우에는 선택 가능한 방식과 어른의 책임을 구분해야 한다.",
+    "originalDisallowed": [
+      "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+      "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+      "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+      "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "필수 안전 조치가 필요한 경우에는 선택 가능한 방식과 어른의 책임을 구분해야 한다."
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+        "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+        "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+        "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+      ],
+      {
+        "disallowed": [
+          "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+          "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+          "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+          "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "필수 안전 조치의 책임까지 아이에게 넘기거나 모든 결정을 무조건 맡길 수는 없다."
+    ],
+    "requiredConditions": [
+      "본인 MBTI 원천·양육 맥락과 실제 보호 책임 확인. 자녀 사실에는 별도 자녀 입력 필요."
+    ],
+    "missingActualContext": "본인 MBTI 원천·양육 맥락과 실제 보호 책임 확인. 자녀 사실에는 별도 자녀 입력 필요.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "접촉 대신 가능한 다른 인사 방법을 고르게 하는 가상 장면.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "자녀 존재·나이·피해 사실 또는 양육 성공의 판정.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6",
+    "originalCounterexamples": "실제 예산·운영량 없이 가능한 규모를 정답으로 제시할 수 없음",
+    "originalDisallowed": [
+      "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+      "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+      "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+      "성공·승진·합격·재물 증가·투자 능력 확정"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "실제 예산·운영량 없이 가능한 규모를 정답으로 제시할 수 없음"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+        "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+        "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+        "성공·승진·합격·재물 증가·투자 능력 확정"
+      ],
+      {
+        "disallowed": [
+          "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+          "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+          "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+          "성공·승진·합격·재물 증가·투자 능력 확정"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "실제 예산·운영량 없이 가능한 규모를 정답으로 제시할 수 없음"
+    ],
+    "requiredConditions": [
+      "입력된 직무·예산·운영량·현재 의무"
+    ],
+    "missingActualContext": "입력된 직무·예산·운영량·현재 의무",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 운영 자료가 있고 시험이 허용된다면 작은 준비량의 투입과 결과를 함께 비교할 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc",
+    "originalCounterexamples": "NOT_SEPARATELY_DECLARED",
+    "originalDisallowed": [
+      "고독·질병·임신 문제·천재성을 확정하지 않음",
+      "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      null,
+      {
+        "forbidden": [
+          "고독·질병·임신 문제·천재성을 확정하지 않음",
+          "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+        ]
+      },
+      {}
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 cycle ID·기간·원국 조건·생조 분포·검증 종료 기준"
+    ],
+    "missingActualContext": "실제 cycle ID·기간·원국 조건·생조 분포·검증 종료 기준",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "해당 대운과 원국 근거가 확인되고 탐색할 과제가 있다면 조사를 끝낼 질문과 작은 적용 범위를 정리할 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400",
+    "originalCounterexamples": "정식 권한 없으면 최종 결정 보류",
+    "originalDisallowed": "NOT_SEPARATELY_DECLARED",
+    "normalizedOriginalCounterexamples": [
+      "정식 권한 없으면 최종 결정 보류"
+    ],
+    "normalizedOriginalProhibitions": [
+      null,
+      {}
+    ],
+    "modelProposedCounterexamples": [
+      "정식 권한 없으면 최종 결정 보류"
+    ],
+    "requiredConditions": [
+      "실제 과제·정식 권한·같은 Owner·앞서 표시된 의견 차이 의미"
+    ],
+    "missingActualContext": "실제 과제·정식 권한·같은 Owner·앞서 표시된 의견 차이 의미",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "정식 권한과 같은 과제가 확인된다면 자기 기준과 제안을 구분해 말하고 다른 기준을 비교할 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+    "originalCounterexamples": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 관계 ID·기둥·계절 조건·권한·원래 배제"
+    ],
+    "missingActualContext": "실제 관계 ID·기둥·계절 조건·권한·원래 배제",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 구성과 업무 맥락이 확인된다면 협력할 조건을 질문하되 승인 권한과 성과 판단은 별도로 남긴다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+    "originalCounterexamples": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 위치·다른 관계·양쪽 Owner·producer·현재 표현 맥락"
+    ],
+    "missingActualContext": "실제 위치·다른 관계·양쪽 Owner·producer·현재 표현 맥락",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 교차 관계와 배제 조건이 확인된다면 표현의 뜻을 당사자에게 확인하는 질문을 검토할 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+    "originalCounterexamples": "대학 맥락 외 성인 전체의 의무·법적 관계로 일반화하지 않는다.",
+    "originalDisallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "대학 맥락 외 성인 전체의 의무·법적 관계로 일반화하지 않는다."
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+        "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+        "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+        "성인 자녀를 영구적 허락 대상으로 해석",
+        "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+        "연애·배우자·성적 매력의 부모·자녀 전용",
+        "연구 ID를 계산 Evidence ID로 승격",
+        "실제 경험을 가상 장면으로부터 창작"
+      ],
+      {
+        "disallowed": [
+          "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+          "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+          "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+          "성인 자녀를 영구적 허락 대상으로 해석",
+          "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+          "연애·배우자·성적 매력의 부모·자녀 전용",
+          "연구 ID를 계산 Evidence ID로 승격",
+          "실제 경험을 가상 장면으로부터 창작"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "연락 지연이 애정 부족의 증거가 아니고 자녀가 부모 외로움을 해결할 의무도 없다."
+    ],
+    "requiredConditions": [
+      "fixed-ab-v1 A부모/B자녀·B→A·ADULT 맥락·현재 동의·원천 지침 범위."
+    ],
+    "missingActualContext": "fixed-ab-v1 A부모/B자녀·B→A·ADULT 맥락·현재 동의·원천 지침 범위.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "가능한 연락 통로·방문·지원 범위를 서로 묻는 조건부 대화.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "발달·능력 판정, 미성년 지침의 성인 전용, 부모의 영구 통제권.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "originalCounterexamples": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "양쪽 실제 기둥·cross relation ID·성립과 배제·현재 만남 맥락"
+    ],
+    "missingActualContext": "양쪽 실제 기둥·cross relation ID·성립과 배제·현재 만남 맥락",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 교차 충과 참여 위치가 확인되고 대화가 안전하다면 두 사람의 만남 조건을 각각 확인하는 질문을 검토할 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f",
+    "originalCounterexamples": "NOT_SEPARATELY_DECLARED",
+    "originalDisallowed": "NOT_SEPARATELY_DECLARED",
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      null,
+      {}
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 수신자 일간·방향 ID·개인 원천·현재 요청·거절 가능성"
+    ],
+    "missingActualContext": "실제 수신자 일간·방향 ID·개인 원천·현재 요청·거절 가능성",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "B가 제안을 받고 참여 범위를 정할 수 있다면 작은 선택지부터 뜻을 물을 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785",
+    "originalCounterexamples": "권한이 없는 과제에 독자 결정을 강제하지 않는다.",
+    "originalDisallowed": [
+      "입력받지 않은 과거 경험 단정",
+      "성공·실패·수입·질병·혼인 사건 예언",
+      "근거 없는 시주·복합 관계 생성"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "권한이 없는 과제에 독자 결정을 강제하지 않는다."
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      {
+        "disallowed": [
+          "입력받지 않은 과거 경험 단정",
+          "성공·실패·수입·질병·혼인 사건 예언",
+          "근거 없는 시주·복합 관계 생성"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "권한이 없는 과제에 독자 결정을 강제하지 않는다."
+    ],
+    "requiredConditions": [
+      "실효 연주·기준 일간·월간/본기 역할·구간·실제 권한"
+    ],
+    "missingActualContext": "실효 연주·기준 일간·월간/본기 역할·구간·실제 권한",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 권한과 과제 범위가 확인된다면 혼자 끝낼 부분과 공동 승인할 부분을 나눠볼 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+    "originalCounterexamples": "필수 안전 조치가 필요한 경우에는 선택 가능한 방식과 어른의 책임을 구분해야 한다.",
+    "originalDisallowed": [
+      "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+      "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+      "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+      "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "필수 안전 조치가 필요한 경우에는 선택 가능한 방식과 어른의 책임을 구분해야 한다."
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+        "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+        "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+        "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+      ],
+      {
+        "disallowed": [
+          "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+          "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+          "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+          "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "필수 안전 조치의 책임까지 아이에게 넘기거나 모든 결정을 무조건 맡길 수는 없다."
+    ],
+    "requiredConditions": [
+      "본인 MBTI 원천·양육 맥락과 실제 보호 책임 확인. 자녀 사실에는 별도 자녀 입력 필요."
+    ],
+    "missingActualContext": "본인 MBTI 원천·양육 맥락과 실제 보호 책임 확인. 자녀 사실에는 별도 자녀 입력 필요.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "접촉 대신 가능한 다른 인사 방법을 고르게 하는 가상 장면.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "자녀 존재·나이·피해 사실 또는 양육 성공의 판정.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "originalCounterexamples": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "해가 있어도 배신·질병·관재나 현재 직장 갈등을 확인할 수 없다."
+    ],
+    "requiredConditions": [
+      "실제 양쪽 person ID·기둥·relation ID·refs·성립 조건 및 다른 申·亥 관계 확인."
+    ],
+    "missingActualContext": "실제 양쪽 person ID·기둥·relation ID·refs·성립 조건 및 다른 申·亥 관계 확인.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "검증된 교차 관계의 구성과 단일 관계 해석 한계를 설명하는 검토 후보.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "상하관계 권한·실력·평가·승진이나 적의를 판정.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+    "originalCounterexamples": "가벼운 경험을 즐기는 것이 지금 더 중요하다면 깊은 가치 대화가 필요한 때가 아닐 수 있다.",
+    "originalDisallowed": [
+      "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+      "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+      "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+      "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "가벼운 경험을 즐기는 것이 지금 더 중요하다면 깊은 가치 대화가 필요한 때가 아닐 수 있다."
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+        "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+        "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+        "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+      ],
+      {
+        "disallowed": [
+          "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+          "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+          "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+          "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "가벼운 경험을 즐기는 것이 지금 더 중요하다면 깊은 가치 대화가 필요한 때가 아닐 수 있다."
+    ],
+    "requiredConditions": [
+      "본인의 실제 유형·현재 가치·상대가 직접 밝힌 이유"
+    ],
+    "missingActualContext": "본인의 실제 유형·현재 가치·상대가 직접 밝힌 이유",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "가치 대화를 원하고 상대도 참여한다면 같은 장면에서 각자가 좋았던 이유를 나란히 적어볼 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+    "originalCounterexamples": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 관계·위치·다른 관계·사업 역할·동의·권한"
+    ],
+    "missingActualContext": "실제 관계·위치·다른 관계·사업 역할·동의·권한",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 근거와 역할을 확인한다면 서로의 설명을 확인하는 질문을 검토하되 계약 사실은 추정하지 않는다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c",
+    "originalCounterexamples": "안전·규정상 허용된 답이 정해졌다면 자유 시안은 부적절",
+    "originalDisallowed": [
+      "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+      "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+      "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+      "성공·승진·합격·재물 증가·투자 능력 확정"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "안전·규정상 허용된 답이 정해졌다면 자유 시안은 부적절"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+        "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+        "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+        "성공·승진·합격·재물 증가·투자 능력 확정"
+      ],
+      {
+        "disallowed": [
+          "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+          "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+          "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+          "성공·승진·합격·재물 증가·투자 능력 확정"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "안전·규정상 허용된 답이 정해졌다면 자유 시안은 부적절"
+    ],
+    "requiredConditions": [
+      "실제 요청·안전 규정·비교할 요소·시험 목적"
+    ],
+    "missingActualContext": "실제 요청·안전 규정·비교할 요소·시험 목적",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "자유 시안이 허용된 과제라면 두 작은 안에서 확인할 차이를 먼저 정해볼 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856",
+    "originalCounterexamples": "외향적 행동을 가면으로 해석하지 않음",
+    "originalDisallowed": [
+      "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+      "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+      "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      "외향적 행동을 가면으로 해석하지 않음"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+        "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+        "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+      ],
+      {
+        "exclusions": [
+          "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+          "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+          "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "외향적 행동을 가면으로 해석하지 않음"
+    ],
+    "requiredConditions": [
+      "실제 혼자 생각할 여건과 공동 결정의 권한·기한"
+    ],
+    "missingActualContext": "실제 혼자 생각할 여건과 공동 결정의 권한·기한",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "혼자 기준을 적을 여건과 공동 응답 기한이 확인된다면 중간 생각을 공유할 범위를 물을 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1",
+    "originalCounterexamples": "실제 승인·보안 조건은 별도",
+    "originalDisallowed": "NOT_SEPARATELY_DECLARED",
+    "normalizedOriginalCounterexamples": [
+      "실제 승인·보안 조건은 별도"
+    ],
+    "normalizedOriginalProhibitions": [
+      null,
+      {}
+    ],
+    "modelProposedCounterexamples": [
+      "실제 승인·보안 조건은 별도"
+    ],
+    "requiredConditions": [
+      "실제 같은 과제·변경 기록·승인선·앞서 표시된 information-silo 의미"
+    ],
+    "missingActualContext": "실제 같은 과제·변경 기록·승인선·앞서 표시된 information-silo 의미",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "앞선 정보 공유 공백이 같은 과제에서 실제 표시됐다면 A는 변경과 미확정을 기록하고 B에게 적용 항목을 되물을 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+    "originalCounterexamples": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "辰이 수국·충에 관여하면 기능을 고정하지 못하고 누락된 한 글자를 보충할 수 없다."
+    ],
+    "requiredConditions": [
+      "실제 양쪽 소유자·기둥·관계 ID·refs·기간·다른 관계·정책 경계 확인."
+    ],
+    "missingActualContext": "실제 양쪽 소유자·기둥·관계 ID·refs·기간·다른 관계·정책 경계 확인.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "지원 요소와 배합 조건을 나눠 원래 정의를 검토.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "MONEY/INVESTMENT 허용, 이익·계약권·지분·사업 성과의 단정.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+    "originalCounterexamples": "NOT_SEPARATELY_DECLARED",
+    "originalDisallowed": [
+      "사고·질환·폭력·승진을 예언하지 않음",
+      "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      null,
+      {
+        "forbidden": [
+          "사고·질환·폭력·승진을 예언하지 않음",
+          "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+        ]
+      },
+      {}
+    ],
+    "modelProposedCounterexamples": [
+      "실제 압박 맥락이 없으면 위기 사건을 삽입하지 않고 제살을 자동 판정하지 않는다."
+    ],
+    "requiredConditions": [
+      "실제 cycle ID·기간·교운·원국 자리와 오행 조건 확인. 조상 tr:god:편관의 traditionalRef는 설명문으로 정확한 원천 ID가 없어 보류."
+    ],
+    "missingActualContext": "실제 cycle ID·기간·교운·원국 자리와 오행 조건 확인. 조상 tr:god:편관의 traditionalRef는 설명문으로 정확한 원천 ID가 없어 보류.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "급한 업무가 있을 경우 승인선·지원·거절·위임 범위를 검토하는 조건부 예.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "사고·질환·폭력·승진 예언이나 미검증 원국-대운 인과.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+    "originalCounterexamples": "상대 진심·외도·이별·현재 갈등을 사실화 금지",
+    "originalDisallowed": [
+      "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+      "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+      "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      "상대 진심·외도·이별·현재 갈등을 사실화 금지"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+        "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+        "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+      ],
+      {
+        "exclusions": [
+          "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+          "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+          "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "연락이 줄었다고 마음이 식었다고 단정할 수 없고 직접 질문에도 답하지 않을 선택권이 있다."
+    ],
+    "requiredConditions": [
+      "본인 INTJ trait의 실제 연결과 현재 관계 맥락·당사자 답 확인."
+    ],
+    "missingActualContext": "본인 INTJ trait의 실제 연결과 현재 관계 맥락·당사자 답 확인.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "관찰·추측·직접 들은 답을 구분하는 조건부 질문.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "상대의 외도·갈등·이별 또는 사용자의 논리 능력 결함 판정.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+    "originalCounterexamples": "실제 기록 없는 선후·기여 판정 금지",
+    "originalDisallowed": "NOT_SEPARATELY_DECLARED",
+    "normalizedOriginalCounterexamples": [
+      "실제 기록 없는 선후·기여 판정 금지"
+    ],
+    "normalizedOriginalProhibitions": [
+      null,
+      {}
+    ],
+    "modelProposedCounterexamples": [
+      "최신 파일이 더 정확하다는 보장은 없고 기록 없이 선후·기여를 판정할 수 없다."
+    ],
+    "requiredConditions": [
+      "동일 실제 과제·산출물·단계·책임·결정 권한, CH07.P4의 실제 표시 이력 확인."
+    ],
+    "missingActualContext": "동일 실제 과제·산출물·단계·책임·결정 권한, CH07.P4의 실제 표시 이력 확인.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "양쪽 수정본이 다를 때 충돌 항목표로 미통합·담당을 확인하는 가상 장면.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "직장 권한·성과·복종 또는 현재 갈등 이력을 생성.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "originalCounterexamples": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 두 기둥·관계 ID·고정 역할·발달 맥락·보호 책임"
+    ],
+    "missingActualContext": "실제 두 기둥·관계 ID·고정 역할·발달 맥락·보호 책임",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 역할과 교차 근거가 확인되더라도 보호 책임을 유지하며 현재 필요한 지원을 별도로 확인해야 한다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+    "originalCounterexamples": "두 사람이 평범한 반복을 좋아한다면 새로운 경험을 준비하는 일이 필요한 매력은 아닐 수 있다.",
+    "originalDisallowed": [
+      "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+      "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+      "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+      "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "두 사람이 평범한 반복을 좋아한다면 새로운 경험을 준비하는 일이 필요한 매력은 아닐 수 있다."
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+        "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+        "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+        "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+      ],
+      {
+        "disallowed": [
+          "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+          "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+          "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+          "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "두 사람이 평범한 반복을 좋아한다면 새로운 경험을 준비하는 일이 필요한 매력은 아닐 수 있다."
+    ],
+    "requiredConditions": [
+      "본인의 유형 원천·양쪽 취향·준비 여력·현재 동의"
+    ],
+    "missingActualContext": "본인의 유형 원천·양쪽 취향·준비 여력·현재 동의",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "둘이 경험을 함께 고르길 원한다면 준비의 크기보다 상대가 바꿀 부분을 먼저 물어볼 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6",
+    "originalCounterexamples": "협업이 없는데 경쟁·배신·손실 사건을 가정하지 않는다.",
+    "originalDisallowed": [
+      "입력받지 않은 과거 경험 단정",
+      "성공·실패·수입·질병·혼인 사건 예언",
+      "근거 없는 시주·복합 관계 생성"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "협업이 없는데 경쟁·배신·손실 사건을 가정하지 않는다."
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "입력받지 않은 과거 경험 단정",
+        "성공·실패·수입·질병·혼인 사건 예언",
+        "근거 없는 시주·복합 관계 생성"
+      ],
+      {
+        "disallowed": [
+          "입력받지 않은 과거 경험 단정",
+          "성공·실패·수입·질병·혼인 사건 예언",
+          "근거 없는 시주·복합 관계 생성"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "협업이 없는데 경쟁·배신·손실 사건을 가정하지 않는다."
+    ],
+    "requiredConditions": [
+      "실효 연주·일간과 target 천간·정확한 구간·실제 소유와 동의"
+    ],
+    "missingActualContext": "실효 연주·일간과 target 천간·정확한 구간·실제 소유와 동의",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 공동 자원이 있다면 기여·비용·명의와 각자의 회수 항목을 다른 칸에서 확인할 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e",
+    "originalCounterexamples": "실제 숨긴 감정이나 과거 억압을 추정하지 않는다.",
+    "originalDisallowed": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "실제 숨긴 감정이나 과거 억압을 추정하지 않는다."
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+        "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+        "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+        "성인 자녀를 영구적 허락 대상으로 해석",
+        "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+        "연애·배우자·성적 매력의 부모·자녀 전용",
+        "연구 ID를 계산 Evidence ID로 승격",
+        "실제 경험을 가상 장면으로부터 창작"
+      ],
+      {
+        "disallowed": [
+          "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+          "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+          "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+          "성인 자녀를 영구적 허락 대상으로 해석",
+          "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+          "연애·배우자·성적 매력의 부모·자녀 전용",
+          "연구 ID를 계산 Evidence ID로 승격",
+          "실제 경험을 가상 장면으로부터 창작"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "실제 숨긴 감정이나 과거 억압을 추정하지 않는다."
+    ],
+    "requiredConditions": [
+      "fixed-ab-v1·B 실제 ISFJ 원천·TEEN 맥락·현재 선택·성인 보호 책임"
+    ],
+    "missingActualContext": "fixed-ab-v1·B 실제 ISFJ 원천·TEEN 맥락·현재 선택·성인 보호 책임",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 청소년 맥락과 안전이 확인된다면 부모가 불이익 없이 동의를 수정할 통로를 마련했는지 물을 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+    "originalCounterexamples": "거절에 불이익이나 위협이 있다면 조율 가능한 속도 차이로 보지 않는다.",
+    "originalDisallowed": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "거절에 불이익이나 위협이 있다면 조율 가능한 속도 차이로 보지 않는다."
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "결혼·이별·외도·실제 호감·과거 사건의 단정",
+        "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+        "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+        "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+      ],
+      {
+        "disallowed": [
+          "결혼·이별·외도·실제 호감·과거 사건의 단정",
+          "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+          "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+          "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "거절에 위협이나 불이익이 있다면 속도 조율로 해결할 성향 차이가 아니다."
+    ],
+    "requiredConditions": [
+      "A/B 각각의 정확한 owned source·방향 근거·현재 요청·거절 안전성."
+    ],
+    "missingActualContext": "A/B 각각의 정확한 owned source·방향 근거·현재 요청·거절 안전성.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "조사와 확정을 나누고 작은 만남 제안 후 수정할 시간을 남기는 조건부 장면.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 교제·호감·향후 관계 진행 또는 B의 일정에 대한 권리.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+    "originalCounterexamples": "NOT_SEPARATELY_DECLARED",
+    "originalDisallowed": "NOT_SEPARATELY_DECLARED",
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      null,
+      {}
+    ],
+    "modelProposedCounterexamples": [
+      "B가 해법에 동의하지 않아도 비합리적이라고 평가할 수 없고 실제 효과는 UNKNOWN이다."
+    ],
+    "requiredConditions": [
+      "A→B·수신자 B 일간·subject/recipient refs·개인 source와 현재 요청 확인."
+    ],
+    "missingActualContext": "A→B·수신자 B 일간·subject/recipient refs·개인 source와 현재 요청 확인.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "지금 필요한 반응과 원치 않는 개입을 묻는 조건부 질문.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "해결 효과 보장, 동의 없는 개입, 역방향 근거 복사.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "originalCounterexamples": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 양쪽 기둥·relation ID·사업 맥락·계약·손익 자료"
+    ],
+    "missingActualContext": "실제 양쪽 기둥·relation ID·사업 맥락·계약·손익 자료",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 교차 근거와 사업 맥락이 있다면 확인할 업무 조건을 정리할 수 있으나 계약·재무 판단은 별도 자료가 필요하다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+    "originalCounterexamples": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "양쪽 실제 관계 ID·기둥·공동생활 여부·동의"
+    ],
+    "missingActualContext": "양쪽 실제 관계 ID·기둥·공동생활 여부·동의",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 공동생활 맥락과 양쪽 참여 근거가 있다면 각자의 생활 조건을 확인하는 질문을 검토할 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+    "originalCounterexamples": "실제 도움을 줄 사람이 있다는 사실은 신살 관찰만으로 확인되지 않는다.",
+    "originalDisallowed": [
+      "미입력 과거 경험 단정",
+      "미래 사건 예언",
+      "연구 ID의 Evidence 발급"
+    ],
+    "normalizedOriginalCounterexamples": [
+      "실제 도움을 줄 사람이 있다는 사실은 신살 관찰만으로 확인되지 않는다."
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "미입력 과거 경험 단정",
+        "미래 사건 예언",
+        "연구 ID의 Evidence 발급"
+      ],
+      {
+        "disallowed": [
+          "미입력 과거 경험 단정",
+          "미래 사건 예언",
+          "연구 ID의 Evidence 발급"
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "같은 7월 첫 segment는 甲午이며 천을귀인 target 未 관찰을 월 전체에 적용할 수 없다."
+    ],
+    "requiredConditions": [
+      "정확한 owner·reference stem/target·[2026-07-07 10:56:57, 2026-08-01)·원래 producer 확인."
+    ],
+    "missingActualContext": "정확한 owner·reference stem/target·[2026-07-07 10:56:57, 2026-08-01)·원래 producer 확인.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "막힌 과제가 있고 도움을 구할 수 있다면 질문 범위를 좁혀 직접 적용하는 조건부 장면.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "후원자 출현 보장, 원국 귀인의 월운 복제, 월간/본기 혼합 또는 실제 경험 창작.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8",
+    "originalCounterexamples": "NOT_SEPARATELY_DECLARED",
+    "originalDisallowed": "NOT_SEPARATELY_DECLARED",
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      null,
+      {}
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 호의·현재 요청·양쪽 Owner·수신자 십성·자발적 거절"
+    ],
+    "missingActualContext": "실제 호의·현재 요청·양쪽 Owner·수신자 십성·자발적 거절",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "호의를 주고받을 실제 상황이 있다면 같은 비용의 보답을 전제하지 않고 수락 가능한 규모를 물을 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "originalCounterexamples": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 교차 ID·참여 위치·조직 역할·정식 평가 권한"
+    ],
+    "missingActualContext": "실제 교차 ID·참여 위치·조직 역할·정식 평가 권한",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "교차 근거와 역할이 확인돼도 평가·승인 권한은 조직 절차에서 별도로 확인해야 한다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa",
+    "originalCounterexamples": "갈등·관계 단절을 이미 겪은 사실로 쓰지 않음",
+    "originalDisallowed": [
+      "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+      "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+      "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      "갈등·관계 단절을 이미 겪은 사실로 쓰지 않음"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+        "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+        "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+      ],
+      {
+        "exclusions": [
+          "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+          "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+          "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "갈등·관계 단절을 이미 겪은 사실로 쓰지 않음"
+    ],
+    "requiredConditions": [
+      "실제 요청·본인이 밝힌 경계·거절의 안전"
+    ],
+    "missingActualContext": "실제 요청·본인이 밝힌 경계·거절의 안전",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "요청과 감당 가능한 범위를 확인한다면 가능한 도움과 어려운 부탁을 나눠 말해볼 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "originalCounterexamples": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "충이 있어도 창고가 열려 재물이 증가한다거나 이혼한다고 결론낼 수 없다."
+    ],
+    "requiredConditions": [
+      "두 실제 소유자·기둥·관계 ID·기간·성립 조건과 원래 출처/판본 검토."
+    ],
+    "missingActualContext": "두 실제 소유자·기둥·관계 ID·기간·성립 조건과 원래 출처/판본 검토.",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "확인된 관계 구성의 차이를 설명하는 추가 검토 후보.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "혼인·동거 사실이나 재정 분담·사고·이혼의 단정.",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "상징·유형만으로 미래 성공·재물·관계 결과를 확정하는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  },
+  {
+    "reviewUnitId": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+    "originalCounterexamples": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalDisallowed": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "normalizedOriginalCounterexamples": [
+      null,
+      "UNKNOWN"
+    ],
+    "normalizedOriginalProhibitions": [
+      [
+        "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+        "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+      ],
+      {
+        "exclusions": [
+          "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+          "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+        ]
+      }
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredConditions": [
+      "실제 두 자리·계절 조건·양쪽 person·원래 배제"
+    ],
+    "missingActualContext": "실제 두 자리·계절 조건·양쪽 person·원래 배제",
+    "illustrations": [
+      {
+        "kind": "VALID_CONDITIONAL_ILLUSTRATION",
+        "text": "실제 관계와 전거의 층위를 확인한다면 공동생활에서 함께 유지할 조건과 조정할 조건을 따로 물을 수 있다.",
+        "state": "MODEL_PROPOSED_NOT_APPROVED"
+      },
+      {
+        "kind": "INVALID_FACT_ASSERTION",
+        "text": "실제 입력 없이 상대가 이 일 때문에 상처받았거나 고객이 이미 이런 일을 겪었다고 단정하는 문장",
+        "state": "BLOCKED_WITHOUT_ACTUAL_FACT"
+      },
+      {
+        "kind": "UNSUPPORTED_FUTURE_PREDICTION",
+        "text": "이 유형이나 상징 때문에 미래의 성공·재물·혼인 결과가 반드시 생긴다는 문장",
+        "state": "BLOCKED"
+      }
+    ],
+    "originalAndProposalSeparated": true
+  }
+]

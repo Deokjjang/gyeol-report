@@ -1,0 +1,1201 @@
+[
+  {
+    "proposalId": "identity-proposal:a98039cda073dfeb234ce4b808b2bba1c0f067a88ffbdfcd1cd8011b1c5fafef",
+    "left": "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1",
+    "right": "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "4df49905c546b8ed5a2937b50d4dd60f2dbc305ff3042c1021dea28b9a7fc8cb",
+      "28d6d55ccfa87593a7ac936e1f0bef7907fbb1c8ee103dcd4d5549d624c264f2"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:4c5b7cfecd54abf827838240f4ea0f70ad8600c6caf3921bf11d705f9c522b30",
+    "left": "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1",
+    "right": "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "4df49905c546b8ed5a2937b50d4dd60f2dbc305ff3042c1021dea28b9a7fc8cb",
+      "fea1e0d1980f1c578773af917e2eb5f00238466c59bd32925b445960127a373d"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:ed007a6c08cc0576879dabcad76399c1ed21d028136bf980b29ca7416e24dd3d",
+    "left": "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895",
+    "right": "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc",
+    "relations": [
+      "DIFFERENT_TEMPORAL_SCOPE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+      "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:4edaf52005794da6a21903d39991d7ad0257d3038446b374854f8842bc439ef1",
+    "left": "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895",
+    "right": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+    "relations": [
+      "DIFFERENT_TEMPORAL_SCOPE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+      "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:1c5cb7ea5885c439a913a178b470c59502a59043627bee677685c9f6bdf6eeaa",
+    "left": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+    "right": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+    "relations": [
+      "POTENTIAL_SAME_MEANING",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_CLAIM",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 원문을 재사용하되 상품·조건이 다른 적용 판정은 독립적으로 남긴다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:39d82216e54f71d468f7a26989fb21764340bd9177644dac41a41e2e2aab18bf",
+    "left": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+    "right": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "c5f8c16b61e464ddd39bbef45d46cbf2a4c1c131bde1c92f198071c15c1de7af"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:2aa8b1c715157e420651cb620f0d9c39310fe11da38c60b478c405c3190f348a",
+    "left": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+    "right": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "5570f5e98b255a473cd59d52ac5a0081a56befdb72589904f29a5afb3d2193e2"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:0908cd532cbb11911076ea5b75abe3358651a36adc5b79a890c4538286e312df",
+    "left": "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6",
+    "right": "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "28d6d55ccfa87593a7ac936e1f0bef7907fbb1c8ee103dcd4d5549d624c264f2",
+      "fea1e0d1980f1c578773af917e2eb5f00238466c59bd32925b445960127a373d"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:b8d75d7359b52e9868fb8a9fc5e33ad9d639a0f37f3c5f3fbfa842dbcbba47a2",
+    "left": "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc",
+    "right": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+    "relations": [
+      "DIFFERENT_TEMPORAL_SCOPE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+      "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:588029fa375dcc0d957a7f255b64304ea5703faa28570463b5cbe522c8fc60fe",
+    "left": "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400",
+    "right": "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "a5de4edc83cc25af0a273f9b5a85e23ed4c9b4b4b655b1eed97a45b7587b5def",
+      "7a3abbcc84154a6ecb0130da1c3cd3f164fc70105d9f2a062df36bc30deaffb3"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:3c554b7e4ca1e0f38175a9fb1ee468816a9030cd107f473e9f5571c3889c8afd",
+    "left": "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400",
+    "right": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+    "relations": [
+      "DIFFERENT_OWNER",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "a5de4edc83cc25af0a273f9b5a85e23ed4c9b4b4b655b1eed97a45b7587b5def",
+      "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:cb7fa90d76ada93e95ec470f8320f7f35635e13962887cc07bb2ec376696e26e",
+    "left": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+    "right": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "95b9fbd5286e8545ee97f208ea6faf25010fc5c31e3405e8b00a5208bd8ce4f9",
+      "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:494ca9834e64c348f9ebac81bd3a51c10af88ab27a6f90b1f533e3972221a928",
+    "left": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+    "right": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "95b9fbd5286e8545ee97f208ea6faf25010fc5c31e3405e8b00a5208bd8ce4f9",
+      "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:b2526d230f4d05cdb560d812d352213e827d369da937428a0970ffcda666e24a",
+    "left": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+    "right": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "95b9fbd5286e8545ee97f208ea6faf25010fc5c31e3405e8b00a5208bd8ce4f9",
+      "13625bee6557f487259edc667722b8b5fa5b752d10989ea9d2b2192880beb841"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:417baa0041abcff2b2dcefdfb3e0a158b18d42280d0413b5e1a24f57e5e0dead",
+    "left": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+    "right": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+      "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:7b11898c31d248cd9634aee0cd261ab2404593521897b9632633874114956793",
+    "left": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+    "right": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+      "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:8b0b1baebc1c1e7f282f1cfcbb25526034e34565b2bfaff6c42722799c8a82ef",
+    "left": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+    "right": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+      "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:c1d7944740d4850669fcb1fa7d52664f584c917bb2a5360fd4d254f11edb4f9a",
+    "left": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+    "right": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+    "relations": [
+      "DIFFERENT_OWNER",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+      "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:89db53a7ecd357e22fff10978782dc5f7baa2084031032dbe1de9d4af5c85f81",
+    "left": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+    "right": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+      "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:34a17da35489bbbccec7b4d653131bd2fe0dff010514e089ed26533553470902",
+    "left": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+    "right": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "relations": [
+      "DIFFERENT_OWNER",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450",
+      "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:7f538173edc363184dff6be12f78aa6b31564c99ba77129dc9d3eafe84d99140",
+    "left": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+    "right": "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e",
+    "relations": [
+      "DIFFERENT_OWNER",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450",
+      "aae419bcdcee2f0482c38b4e67ec3e8cf3e5eb8970e2bec5ab906f8ee48ecc78"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:3f8e969f75c9a0a1154003ff76fb2b8990cb27a572463e5f72783c24cc917fc9",
+    "left": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "right": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+      "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:295b94ca62606faa28749414290cfbd62d93ba0a3227b0d8275b7f2d0538b9e8",
+    "left": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "right": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+    "relations": [
+      "DIFFERENT_OWNER",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+      "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:50fae0072a76e0dcf3ed698ff1b055651a419debe379d324fdbf80c977d96c1c",
+    "left": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "right": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+      "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:b51d98ef2379eff699ac0689ae4a6f297dfaf7dbb4688f4716b3c0659e68722e",
+    "left": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "right": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+      "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:4b86ddea800cafa207c9286b21890e61f98d682f040289802c810c23055feca8",
+    "left": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "right": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+      "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:f392d567e7899db9d754148f90c753235daa32af69fc28dfc7cbc2a6ee3c56e8",
+    "left": "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f",
+    "right": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "042ef39c83ba350664a0b1f332354dcb557ddf8435971700ddf8bb6c9b7c779f",
+      "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:04d5484e1df4e42efe0fca454b0a2bd4012291bf2982a5bf53b4c2e9a79e79b2",
+    "left": "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f",
+    "right": "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "042ef39c83ba350664a0b1f332354dcb557ddf8435971700ddf8bb6c9b7c779f",
+      "bddc966b05ab93f63ddf3119b004cde0f01628ec78c704f8c5c7bd8dffe3e7e9"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:93f57f10cc23fda2394152ca6913155f1da875a1ab41155cf3e1fd9430de830b",
+    "left": "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785",
+    "right": "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "354838430544fbe561878e879a2278ad7be39902f6343fb9f7d29d890fb748d7",
+      "a32399c0966714c7f5606b59721436927ab86158b4cbcc5f43e6021ca8cfc445"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:b4f3159228c136be6b759392cc681397972b13fe64c65193c476b93cb2ddef86",
+    "left": "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785",
+    "right": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+    "relations": [
+      "DIFFERENT_TEMPORAL_SCOPE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "354838430544fbe561878e879a2278ad7be39902f6343fb9f7d29d890fb748d7",
+      "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:4dc4ee23d9e2d64ec2aca9f88601ed4809ee716da0612a0744c24bfe2325f7a5",
+    "left": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+    "right": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "c5f8c16b61e464ddd39bbef45d46cbf2a4c1c131bde1c92f198071c15c1de7af"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:bf8f6cb076a92f35a2faab8572ccf0b5a9da1fc3069716502a70b0f4ae038336",
+    "left": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+    "right": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "5570f5e98b255a473cd59d52ac5a0081a56befdb72589904f29a5afb3d2193e2"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:656dced0ea4c7291a9ce429e3afd7f1531b5d875b0798f8c8f62c3d50b386293",
+    "left": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "right": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+      "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:ff11ad662a605332864ca5918ad4b89a15deb8adfdde209ad5474eb25921fda6",
+    "left": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "right": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+      "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:94f0aa3801afe2f6e0b115bbe40477748878fea2dd5bf90dcb31ed791154ff43",
+    "left": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "right": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+      "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:9acc381eba960015c7e5d8487868f9849dc779ab31de5bac8373c3dfdba3ed66",
+    "left": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+    "right": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "c5f8c16b61e464ddd39bbef45d46cbf2a4c1c131bde1c92f198071c15c1de7af",
+      "5570f5e98b255a473cd59d52ac5a0081a56befdb72589904f29a5afb3d2193e2"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:2168da42654831f6634ba9f8f40c2a71c6d3e7a60d93be087803b1cf51f45436",
+    "left": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+    "right": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae",
+      "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:11b98e79f0c50d2f3c879bf89961243ec64d9a2b1cc5c88bde8cf476d159f82f",
+    "left": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+    "right": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae",
+      "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:8bac2f1139c429aee0e56277fb460185c527fd99504375747759696687c2bc6d",
+    "left": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+    "right": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae",
+      "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:d523adffffe836deaf87d24020facceb78ab33d99cb433a49a3458cefb24bfed",
+    "left": "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856",
+    "right": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+      "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:480d9e53286577921eecdf5f14a85b62a35a91631e86457bf0897650d224a59f",
+    "left": "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856",
+    "right": "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+      "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:c9a846c9e1ebb40abf965e5b1cb7d1d7be5c5575ba558e4a23da235a1d84d041",
+    "left": "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1",
+    "right": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+    "relations": [
+      "DIFFERENT_OWNER",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "7a3abbcc84154a6ecb0130da1c3cd3f164fc70105d9f2a062df36bc30deaffb3",
+      "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:ec5ee7778f2c78b932aa12deb1d20ff7d36d444b0cf89906b8ca0cbf2b15696d",
+    "left": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+    "right": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e",
+      "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:d2f1fd1180f0d2cbc58af2e4ffccc3244a0ec3f263341cf0e7ad432604524fdb",
+    "left": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+    "right": "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:e252d6bc22b0f7fd62327707d0cf0a628c5ab317173a56a3824df9bc9f6b27b5",
+    "left": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "right": "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e",
+    "relations": [
+      "DIFFERENT_OWNER",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e",
+      "aae419bcdcee2f0482c38b4e67ec3e8cf3e5eb8970e2bec5ab906f8ee48ecc78"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:2247db4caeac612958c77e027d23112f1c93b1860e82d6f5cf96368babe8aca3",
+    "left": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "right": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e",
+      "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:1f78160439c28209251f0e617b707114d95e659e9a6be31a9feb9f7a56222073",
+    "left": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "right": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e",
+      "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:df146d79f7602a423147920429b090479cb4b08c5e7e0f9e0c67d421976101d8",
+    "left": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "right": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e",
+      "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:60221747c214e65d5929e787f1f68a7aaa6f56134f9d755ac5c5c0ba7d90b44f",
+    "left": "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6",
+    "right": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+    "relations": [
+      "DIFFERENT_TEMPORAL_SCOPE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "a32399c0966714c7f5606b59721436927ab86158b4cbcc5f43e6021ca8cfc445",
+      "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:75bb59282797c69d80c1c1df4775b94a3a5636fe87a531818d058f3402d3ab9f",
+    "left": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+    "right": "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9",
+      "bddc966b05ab93f63ddf3119b004cde0f01628ec78c704f8c5c7bd8dffe3e7e9"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:fc83f06e92645f8fd1efb4f9a80b308fe748bf2b3a2d07524f1d06faa5eeb053",
+    "left": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "right": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a",
+      "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:b3948861eb148912288bb22f063a38e1c342b771aa3a8ba78c91f8c16f315a6c",
+    "left": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "right": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a",
+      "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:7d8e806bf317deb53d05a95c80ea1d27467e575c40852361b2f7997902e18172",
+    "left": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+    "right": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb",
+      "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:faf982fcd9c1deb55c42897de0f5a6c66cd69c49c54ff9494bc2fbf2aa8a25a5",
+    "left": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+    "right": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb",
+      "13625bee6557f487259edc667722b8b5fa5b752d10989ea9d2b2192880beb841"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:b9d5c6296adbf0bd6757e5e1aade59cd20b74801d436e8f842954d6af6fae92e",
+    "left": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "right": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "POTENTIAL_SAME_FACT",
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "같은 관계 정의를 참고해도 생활 질문·역할·실제 두 사람의 계산 사실까지 같아지지는 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875",
+      "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653"
+    ]
+  },
+  {
+    "proposalId": "identity-proposal:81e3f5453c9f4d4256f9d7aff4ea4a97e8e64ebc3cedf006254f3a45d2aee31f",
+    "left": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "right": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "소유자·기간·관계·적용 조건을 먼저 대조한다. 표현이나 축 이름만으로 같은 의미라고 확정하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+      "13625bee6557f487259edc667722b8b5fa5b752d10989ea9d2b2192880beb841"
+    ]
+  },
+  {
+    "proposalId": "inherited-model-relation:266b05f701bdc32897152d431db89b14cec4d523bbb15b54be5fbcda0a3ea771",
+    "left": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+    "right": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "관계 분석에서 당사자 뜻을 묻는 것과 산출물 버전 통합을 확인하는 것은 모두 확인 질문을 쓰더라도 대상·권한·원천이 다르다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8"
+    ]
+  },
+  {
+    "proposalId": "inherited-model-relation:b7b48515074b646cf85a3b071c8a24eef31bfa703997aa96384b995ed858bd0d",
+    "left": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+    "right": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "가상 양육의 접촉 동의와 성인 자녀 연락 경계는 자율성을 공유하지만 보호 책임·발달 맥락·source owner를 교환할 수 없다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450"
+    ]
+  },
+  {
+    "proposalId": "inherited-model-relation:16800ec040f3dd40e3710ed245dc8992d8a14a6ddb37d0dad68e003f7c0772e9",
+    "left": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+    "right": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+    "relations": [
+      "DIFFERENT_RELATIONSHIP_ROLE",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "가상 양육의 접촉 동의와 성인 자녀 연락 경계는 자율성을 공유하지만 보호 책임·발달 맥락·source owner를 교환할 수 없다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450"
+    ]
+  },
+  {
+    "proposalId": "inherited-model-relation:252e0d4010e314c46bb350d129111e8efe0b42bf28a62ba849fc93d9b1a347d8",
+    "left": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+    "right": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+    "relations": [
+      "RELATED_BUT_NOT_EQUIVALENT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "A의 제안과 수신자의 선택을 분리한다는 조건은 관련되지만 연애 일정과 친구 문제 해결 개입은 다른 요청·관계 맥락이다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860",
+      "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9"
+    ]
+  },
+  {
+    "proposalId": "inherited-model-relation:349bdae5a98285ab570b5c8626d60f849cd1e08f14c74d760a2f3250c7e36850",
+    "left": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "right": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "丑未 충과 寅巳 해는 관계 종류·참여 글자·전통 정의가 다르다. 교차 검출의 존재를 같은 생활 결과로 합치지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+      "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a"
+    ]
+  },
+  {
+    "proposalId": "inherited-model-relation:45f76d82df8c5e4753c753a3a85c39119333f97dc265de6eb2e96cf706846ba8",
+    "left": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "right": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+    "relations": [
+      "DIFFERENT_ACTUAL_CONTEXT",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "寅巳 해와 辰酉 육합은 다른 구성과 서로 다른 전문 정책을 가진다. 상하 권한이나 사업 지분으로 전이하지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+      "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e"
+    ]
+  },
+  {
+    "proposalId": "inherited-model-relation:75a30d95b30833757a232533020fecae3045e8c33dc0a0b95de0052560b0765e",
+    "left": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+    "right": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+    "relations": [
+      "DIFFERENT_TEMPORAL_SCOPE",
+      "OPERATOR_REVIEW_REQUIRED"
+    ],
+    "reason": "편관의 10년 주기 역할과 월운 未 target 천을귀인 관찰은 시간·기준점·원천이 다르다. 도움이나 압박을 실제 사건으로 합치지 않는다.",
+    "applicationState": "PROPOSED_NEW_APPLICATION",
+    "state": "PROPOSED",
+    "verifiedSameFact": false,
+    "actuallyApprovedRelation": false,
+    "originalHashes": [
+      "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+      "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f"
+    ]
+  }
+]

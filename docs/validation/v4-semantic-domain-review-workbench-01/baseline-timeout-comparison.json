@@ -1,0 +1,36 @@
+{
+  "historicalReceipt": {
+    "file": "docs/validation/v4-global-source-domain-resolution-01/business-partner-budget-comparison.json",
+    "sha256": "211dd3c53300eacbebc4c215cd8c1af3cc41e0f115ff3ececbb059a594f3049d",
+    "previousDefaultFailurePreserved": true
+  },
+  "baseFullDefault": {
+    "passed": 383,
+    "failed": 0,
+    "pendingOrFiltered": 0
+  },
+  "currentFullDefault": {
+    "passed": 383,
+    "failed": 0,
+    "pendingOrFiltered": 0
+  },
+  "baseSelectedDefault": {
+    "passed": 1,
+    "failed": 0,
+    "pendingOrFiltered": 360
+  },
+  "currentSelectedDefault": {
+    "passed": 1,
+    "failed": 0,
+    "pendingOrFiltered": 360
+  },
+  "currentFullCli30s": {
+    "passed": 383,
+    "failed": 0,
+    "pendingOrFiltered": 0
+  },
+  "defaultFailureReproducedThisRun": false,
+  "defaultTimeoutSettingChanged": false,
+  "oldTestAndFixtureChanged": false,
+  "interpretation": "Historical budget-sensitive failure remains recorded; current passing timings are not a fix or a guaranteed margin. Raw durations are external only."
+}

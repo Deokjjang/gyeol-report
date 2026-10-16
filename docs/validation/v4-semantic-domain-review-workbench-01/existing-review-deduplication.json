@@ -1,0 +1,311 @@
+{
+  "rows": [
+    {
+      "catalogKey": "kc:v1:012935a14b54e8de2245d0baaca79ff48816478033895ef9a8135c61961b603d",
+      "hash": "cf91873bc939d6c90be8b8cbb72b554ead63f210c30b9f43a84538dd7d90ae20",
+      "originalId": "afpr:month-god:비견",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:012935a14b54e8de2245d0baaca79ff48816478033895ef9a8135c61961b603d"
+    },
+    {
+      "catalogKey": "kc:v1:02b2b60aa89990bc218be59d9b2c8c12d6381845478fd53a743764c08db01b8b",
+      "hash": "044f4c6671fe4b8c48081a6d9a655abdb508720de589dff8ddbd074a03917d4f",
+      "originalId": "ckr:material:CH09.P2:guard-precision-loop",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:02b2b60aa89990bc218be59d9b2c8c12d6381845478fd53a743764c08db01b8b"
+    },
+    {
+      "catalogKey": "kc:v1:00000010cb927f7f53d2dcc014fc491bcd1a2427e3ff64b0746b418e056b092a",
+      "hash": "4a4f937baa1096b61fac91ab50aa010d1ee86262696aeb974e3e7d6c829c1a65",
+      "originalId": "bppr:stage:customer_review",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:00000010cb927f7f53d2dcc014fc491bcd1a2427e3ff64b0746b418e056b092a"
+    },
+    {
+      "catalogKey": "kc:v1:01a3f8cbd237b7e72fd0506d875905b288fdff28d007a9f5148fac31f65492dc",
+      "hash": "11b55b936c5b01ace93cad9b7855261f52761b488c573fb5bf2c2dce44178da4",
+      "originalId": "cwpr:material:CH01.P3:pace-and-done",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:01a3f8cbd237b7e72fd0506d875905b288fdff28d007a9f5148fac31f65492dc"
+    },
+    {
+      "catalogKey": "kc:v1:053a4b8224f19473a8cc66bc218e0318a6c30cfa44b5b43a8cb990e20e28f2b1",
+      "hash": "d4d225d28144ce3f4a21b0a16a397cf77c2a6484a462168154aaaa5be008c17f",
+      "originalId": "frpr:material:CH06.P4:ba-availability-boundary",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:053a4b8224f19473a8cc66bc218e0318a6c30cfa44b5b43a8cb990e20e28f2b1"
+    },
+    {
+      "catalogKey": "kc:v1:0033e911ee19d737bab5aabc4414c64c40d8cc53538d94c4a455ae59a20c9da1",
+      "hash": "168bf51a8a7a15a80cbd91b9b55bffad47d1600d2938527f509abb3ffb697ab4",
+      "originalId": "clr:material:CH01.P2:clash-without-prophecy",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:0033e911ee19d737bab5aabc4414c64c40d8cc53538d94c4a455ae59a20c9da1"
+    },
+    {
+      "catalogKey": "kc:v1:04660e1b2b218df18be0665c608efd00d23e57da1643ddc22bddc6085dadd73a",
+      "hash": "1d8e7be7cd99d8d6507335d3d4945e705feea132af46967ce9a03ae77dd1440e",
+      "originalId": "mrpr:material:CH08.P3:report-name-blocked-resource",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:04660e1b2b218df18be0665c608efd00d23e57da1643ddc22bddc6085dadd73a"
+    },
+    {
+      "catalogKey": "kc:v1:01d1f7fd3bd65a432f56a08da9ae78681c24e9b4ca236967846f917deb944af6",
+      "hash": "0f9b26185e1eb763632d55a0922cb45202d53aa7dcfbb9af9c2fe7ffa5e0c039",
+      "originalId": "cmpr:view:autonomyResearch:material:CH06.P1:ba-receivable-help",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:01d1f7fd3bd65a432f56a08da9ae78681c24e9b4ca236967846f917deb944af6"
+    },
+    {
+      "catalogKey": "kc:v1:002f8d7e0b5426b9fcab400c42b03b796a795b7576cfb9d8ab17ea75d7ff033c",
+      "hash": "dc6f4e94b407e6f79476d36589fd271fe2eab5af757d7c4d758ad25e0a49b261",
+      "originalId": "pcpr:view:childToParentResearch:material:CH06.P3:ba-care-becomes-parent-dependence",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:002f8d7e0b5426b9fcab400c42b03b796a795b7576cfb9d8ab17ea75d7ff033c"
+    },
+    {
+      "catalogKey": "kc:v1:0089d0d0c26d2ebe5a83bd65d685064f1bbda72e29b26867c7b9ed6798214c1f",
+      "hash": "4367daa6d3a89eeeb39bbd8b552d296a66c5ce3156a1aacb3f647d9a62d11876",
+      "originalId": "csr:boundary:season_command:love",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:0089d0d0c26d2ebe5a83bd65d685064f1bbda72e29b26867c7b9ed6798214c1f"
+    },
+    {
+      "catalogKey": "kc:v1:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399",
+      "hash": "43245e9d41aebd7158a18e383c0f016fc71cedddeef211a5ce80ebb0ea7cced7",
+      "originalId": "cpr:material:CH04.P4:soft-precise-request",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:029b33d7644322db0b23af392082344ffe5d5e331c2033549d02de26b705e399"
+    },
+    {
+      "catalogKey": "kc:v1:03b87f4edd6bbc620796713c001a7e0c7d24be44a1eafd13b5589e840dc12b27",
+      "hash": "6fad0e04f851115760faafd92a44021abea8341fd07d7f17b62abc0ac6f2e42a",
+      "originalId": "fkr:complement:C070",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:03b87f4edd6bbc620796713c001a7e0c7d24be44a1eafd13b5589e840dc12b27"
+    },
+    {
+      "catalogKey": "kc:v1:016a91a88367bba40f28169bf192aee597271b73ecef705bc29cfc9b30ae2dc8",
+      "hash": "94b75e1bc256d5c0de9a1de5157e99de0310165700b4fbd37a620f59f2e3ba37",
+      "originalId": "ker:role:CH03.P1.S3",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:016a91a88367bba40f28169bf192aee597271b73ecef705bc29cfc9b30ae2dc8"
+    },
+    {
+      "catalogKey": "kc:v1:06cd6c4bd7d4da824bf30fb992effb58924aac57ce54cf73561c4e9b60c51f54",
+      "hash": "48db0a4e4ef38f1381ee9677ad72e8c2592afc5e2f8c0507321bf8a17127fd4c",
+      "originalId": "lkr:paragraph:CH03.P3",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:06cd6c4bd7d4da824bf30fb992effb58924aac57ce54cf73561c4e9b60c51f54"
+    },
+    {
+      "catalogKey": "kc:v1:0a0a70f177e22f8454ba4e3506f31ab1378a5e32f6bae2293b1d32b9072aa866",
+      "hash": "7bd8d8e53ab8299249a099a23d59a75d76689efff1143dc144abd55b533cf224",
+      "originalId": "mfpr:domain:long_term_choice",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:0a0a70f177e22f8454ba4e3506f31ab1378a5e32f6bae2293b1d32b9072aa866"
+    },
+    {
+      "catalogKey": "kc:v1:0058b650fc310378e9f9808e60937065b91ba05167ccb47f8657c76f51164ba1",
+      "hash": "0becc01f691f0486a86d394aef970b1746350acfada360acbcbad3609cf5e2c1",
+      "originalId": "mkr:ESTP:strengths:02",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:0058b650fc310378e9f9808e60937065b91ba05167ccb47f8657c76f51164ba1"
+    },
+    {
+      "catalogKey": "kc:v1:000040bec615b97086f942d3afbc705fa39359618f782f402a1ead3e8b8e2974",
+      "hash": "699839ce73fd05100ee9399ba7f28c8e9fec83fc0971ed226fd807f518fe302e",
+      "originalId": "mpr:INFP:ENTJ",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:000040bec615b97086f942d3afbc705fa39359618f782f402a1ead3e8b8e2974"
+    },
+    {
+      "catalogKey": "kc:v1:01d7054249778b31287b032458577c9c7aaf39001ba441aca5258addc90ee9a1",
+      "hash": "2e4a46413f0ad501b00acac45e200fbe64c25e19ea6b7e504bcd2fabf4d5f882",
+      "originalId": "rr:application:banhap:marriage",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:01d7054249778b31287b032458577c9c7aaf39001ba441aca5258addc90ee9a1"
+    },
+    {
+      "catalogKey": "kc:v1:017daacba6ba7227be40f1aca1f7339006a1a1a0abc36bb74b5e7c20e9eec428",
+      "hash": "adcc60b04852167aa1c611df156e715a05ed6b46f154d02c9f4109adb9dca8f9",
+      "originalId": "sar:axis:CREATION",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:017daacba6ba7227be40f1aca1f7339006a1a1a0abc36bb74b5e7c20e9eec428"
+    },
+    {
+      "catalogKey": "kc:v1:003a5082d9c62526200e7689aa2041ea8d05fb6fa59fb0d120b0824fc0da0c97",
+      "hash": "4970b88f2933a409f2742a2ec74dcccb981c7199a6d5759f9e53ab817216644e",
+      "originalId": "tr:domain:natal_saeun:personality",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:003a5082d9c62526200e7689aa2041ea8d05fb6fa59fb0d120b0824fc0da0c97"
+    },
+    {
+      "catalogKey": "kc:v1:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a",
+      "hash": "2a8982d784bd073ab545c867faa5861e87bc118befa59516dc529c1e9d01141f",
+      "originalId": "frpr:trait:ESTJ:child:mature_hardworking_child",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:01b5373a6f69f42b7d563be8aceb76ed1623558096f82b574af128c433990f2a"
+    },
+    {
+      "catalogKey": "kc:v1:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c",
+      "hash": "3fdd89b1155f55bd9f186dbeb19571295338613ceb7a206d6332d78170134da8",
+      "originalId": "frpr:trait:ENFP:child:anti_conservative_child",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:03ae0a642d03007db8124738c849876f853c92b4ed0122c5d65ec3dce161082c"
+    },
+    {
+      "catalogKey": "kc:v1:2e0012df384e009cab130eaf3b69aefb68109a9d6c8441a6212e4ac29c48ba4f",
+      "hash": "bed64d6cd6776f0864318f1af60ea87071adfb03bc1e54103ff013352534969c",
+      "originalId": "sar:tag:wealth",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:2e0012df384e009cab130eaf3b69aefb68109a9d6c8441a6212e4ac29c48ba4f"
+    },
+    {
+      "catalogKey": "kc:v1:5f27bea5585d2f2ed25e974ee82d817f9bf57bc877a24b9ff193029f8fb06f7d",
+      "hash": "59b665e8bafc5125783e09bc785219e5b63e5cc72059f1faf97c74b80cf2ae8e",
+      "originalId": "sar:axis:ACTION_TEMPO",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:5f27bea5585d2f2ed25e974ee82d817f9bf57bc877a24b9ff193029f8fb06f7d"
+    },
+    {
+      "catalogKey": "kc:v1:dbb4b922595f857f4819206ec8927e23bb96f3897cff431760ad3a6a8d2fb8b7",
+      "hash": "57b46a7775c71b9ae72a9e3815a5e75cd00eddfc4150c7554e4f5bca62b69644",
+      "originalId": "sar:facet:PRECISION:error-detection",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:dbb4b922595f857f4819206ec8927e23bb96f3897cff431760ad3a6a8d2fb8b7"
+    },
+    {
+      "catalogKey": "kc:v1:b670d2d83bbe6e70df70c2a8fcb9faf8a13f73de3628f823a72a02f0e124b60e",
+      "hash": "6df4a35a1fda1a6561c0fe0a596e72822146fa877e5db137ee44db24e2882729",
+      "originalId": "frpr:binding:all-ancestors",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:b670d2d83bbe6e70df70c2a8fcb9faf8a13f73de3628f823a72a02f0e124b60e"
+    },
+    {
+      "catalogKey": "kc:v1:2d501cdce864f73ea464143a18b4f1b51c9713e55110a08e610d448c8c3ef354",
+      "hash": "33c1a1fa1fd54d5c41fcb9d33051a228de9ffae239f81ddf791fa53551a5fef1",
+      "originalId": "sar:context:work:work",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:2d501cdce864f73ea464143a18b4f1b51c9713e55110a08e610d448c8c3ef354"
+    },
+    {
+      "catalogKey": "kc:v1:ad2653e05b91dc9660124758ea2a35b41478ad9131695b7524a0d16365a29f2f",
+      "hash": "ae2bb3fdaac78743d1f7e43d5211c9c4b6fef7aec562eb597d1ae2c40f10d51c",
+      "originalId": "fkr:scope:individual",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:ad2653e05b91dc9660124758ea2a35b41478ad9131695b7524a0d16365a29f2f"
+    },
+    {
+      "catalogKey": "kc:v1:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904",
+      "hash": "e67eda87c27dfd7765480fb10550da0a2ca79b671be17571ec97aefc987f9db9",
+      "originalId": "bppr:work-trait:ENFJ:career:activist_leadership",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:0003fc1dd82b256d77c3b4ba5f81935542d00a39df9225787bbeb6b624838904"
+    },
+    {
+      "catalogKey": "kc:v1:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23",
+      "hash": "708a1a631baa5da3bb790b9c32bd98ffd8b9c9fffe1d68bd8e0aa6453de1f9a5",
+      "originalId": "bppr:work-trait:ENFJ:money:support_limit_rule",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:032ccb9b4086badcfcbba7ee3773bbfacf3a44b52770b1dc388a7e75782c6d23"
+    },
+    {
+      "catalogKey": "kc:v1:0126f5c31cc1383f14144c6d884f71ef3e003580cb5bda90e5645b2f0ae6139b",
+      "hash": "ee875edcea71f076c08b7483b83477ff228db8d37be8b790b2460c191e6f02a9",
+      "originalId": "deep:application:day_pillar:丙寅:personality",
+      "origin": "SEMANTIC_DOMAIN_31",
+      "reviewId": "sdv:review:0126f5c31cc1383f14144c6d884f71ef3e003580cb5bda90e5645b2f0ae6139b"
+    },
+    {
+      "catalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
+      "hash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+      "originalId": "cpr:material:CH10.P3:romance-as-problem-set",
+      "origin": "RESOLUTION_12",
+      "reviewId": "c45e91082b93da7b02fa0a50ccd79140a4177e57cf6248741a48d4b3e866df22"
+    },
+    {
+      "catalogKey": "kc:v1:9e3da72458ebc3ddee386134acc40ead5150c48189fc451397e32790896fb0a3",
+      "hash": "4df49905c546b8ed5a2937b50d4dd60f2dbc305ff3042c1021dea28b9a7fc8cb",
+      "originalId": "ckr:material:CH08.P1:held-munchang-exam",
+      "origin": "RESOLUTION_12",
+      "reviewId": "048604413494b473dc6e7901dca5605e8ee3d6d1fdfe87745ca69f8c2f1a8f0e"
+    },
+    {
+      "catalogKey": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+      "hash": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+      "originalId": "lkr:material:CH08.P4:parent-consent-respect",
+      "origin": "RESOLUTION_12",
+      "reviewId": "d08c7e3b3d8e8f9dcbcbb8ce99eb4f36f2a8494cccf464adc3fba6eb4b8c509d"
+    },
+    {
+      "catalogKey": "kc:v1:64063b7c566a59c119b3cecbac692e20ac54bcc9c141c8c4bb4a23c0c668ba87",
+      "hash": "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860",
+      "originalId": "clr:material:CH05.P4:ab-offer-not-reservation",
+      "origin": "RESOLUTION_12",
+      "reviewId": "8410eb72e5e7d8dbdd93d7b7bd6a284a14097d78cdb1452d2b48d77e0e85c9ce"
+    },
+    {
+      "catalogKey": "kc:v1:33f393caeba9d0a42a370288067f39ef9a74bd316d5741e6899709118a5922c8",
+      "hash": "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+      "originalId": "cmpr:relation:rr:combination:chung:丑未",
+      "origin": "RESOLUTION_12",
+      "reviewId": "c5f46e0ed40e7df28b33bf3056ab9aadb43cd1445d708dec5ec39087eeb229b2"
+    },
+    {
+      "catalogKey": "kc:v1:1d11fcaf70c31043139efd97a834f52c2bf8d1b2b036b104b90df6416906b7b7",
+      "hash": "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450",
+      "originalId": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+      "origin": "RESOLUTION_12",
+      "reviewId": "1ef26d3e8971a3addf4444bd94afbbb33c708961fc6ca6c0afac259296a94629"
+    },
+    {
+      "catalogKey": "kc:v1:2a94fa2b4fc69c19549c04dcc463e5f8c9ff35588d13c92ab46b925048287ef3",
+      "hash": "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8",
+      "originalId": "cwpr:material:CH08.P3:b-state-integration-limit",
+      "origin": "RESOLUTION_12",
+      "reviewId": "f7c85438cefaef97404e788ff741ee4a81c4b0351826c092b34da5442427982f"
+    },
+    {
+      "catalogKey": "kc:v1:41cfc8c9066bd01f9af7b674c685af42f40626396ab4ef4917a215290f9b387f",
+      "hash": "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+      "originalId": "mrpr:relation:rr:combination:hae:寅巳",
+      "origin": "RESOLUTION_12",
+      "reviewId": "13147e137470e475ad855629c02adcd8297836e6a5d5ee780aa851a49eb8bc0a"
+    },
+    {
+      "catalogKey": "kc:v1:0ebc2fd31a00dec595ba3b2ecd0d8af31282c9c1c0b0461bc4887bffede52e3f",
+      "hash": "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e",
+      "originalId": "bppr:relation:rr:combination:yukhap:辰酉",
+      "origin": "RESOLUTION_12",
+      "reviewId": "b7d49290f0ae5de1666b7e2bf048ac8d40bd984626c1f2c323b3747f8b2ad066"
+    },
+    {
+      "catalogKey": "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148",
+      "hash": "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9",
+      "originalId": "frpr:direction:CH05.P2",
+      "origin": "RESOLUTION_12",
+      "reviewId": "a7d32fb6a8d45f0244f73160c4c0bcb2dadb73e55aaaf4bf8b0fe6d56cd0ad1e"
+    },
+    {
+      "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+      "hash": "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+      "originalId": "mfpr:god:편관",
+      "origin": "RESOLUTION_12",
+      "reviewId": "51e408a9df615cd435204db4ba3323d44e5b25f0aab8a1fc8f6e0af9b6fe1c0e"
+    },
+    {
+      "catalogKey": "kc:v1:782ba0c10ba719cad1f530caa8d037c6fa48f5322f076f9fe171ed44d4720a77",
+      "hash": "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f",
+      "originalId": "afpr:case-study:canonical-help",
+      "origin": "RESOLUTION_12",
+      "reviewId": "bcd79cc5bfbe89d877e00e3ab68c01bb2671fd61a04fccda06c68d0339e938f7"
+    }
+  ],
+  "prior31": 31,
+  "resolution12": 12,
+  "distinctOriginals": 43,
+  "overlap": 0,
+  "newWaveMaterialsAlsoPreviouslyReviewed": [],
+  "countsAreNotOperatorReviews": true
+}
