@@ -1,4 +1,6 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { gzipSync, gunzipSync } from "node:zlib";
 import { canonicalJson, hash } from "../sourceReader";
 import { BINDING_HARD_GATES } from "../types";
 import { bindingCoverage } from "../knowledge-binder/engine";
@@ -6,7 +8,7 @@ import type { GlobalSpecialistAuditCoordinator } from "./foundationCoordinator";
 import type { ProductSpecialistFoundation } from "../product-specialist-foundation/binderIntegration";
 import type { CandidateEnvelope } from "./types";
 import { digest } from "./candidateEnvelope";
-import { SHARD_FORMAT } from "./artifactReader";
+import { SHARD_FORMAT, GZIP_FORMAT } from "./artifactReader";
 import { isRecord } from "../normalization";
 
 export class DeterministicArtifactWriter {
@@ -18,6 +20,13 @@ export class DeterministicArtifactWriter {
     if (Buffer.byteLength(text) >= 49 * 1024 * 1024) {const logicalHash = hash(text); text = ""; this.writeShards(name, value, logicalHash); return;}
     for (const term of this.forbidden) if (term.length > 1 && text.includes(term)) throw Error("PRIVATE_INPUT_IN_GLOBAL_ARTIFACT:" + name);
     if (/(?:access_token|service_role|TOSS_SECRET|SUPABASE_SERVICE_ROLE)/i.test(text)) throw Error("SECRET_IN_GLOBAL_ARTIFACT");
+    if (Buffer.byteLength(text) >= 1024 * 1024) {
+      const payloadFile = name + ".gz", compressed = gzipSync(text, {level: 9});
+      const payloadHash = createHash("sha256").update(compressed).digest("hex");
+      writeFileSync(this.out + "/" + payloadFile, compressed); this.files[payloadFile] = payloadHash;
+      this.write(name, {format: GZIP_FORMAT, payloadFile, payloadHash, logicalJsonHash: hash(text), uncompressedBytes: Buffer.byteLength(text)});
+      return;
+    }
     writeFileSync(this.out + "/" + name, text); this.files[name] = hash(text);
   }
   private writeShards(name: string, value: unknown, logicalJsonHash: string) {
@@ -51,8 +60,9 @@ export class DeterministicArtifactWriter {
   }
   finish() {
     for (const [name, expected] of Object.entries(this.files)) {
-      const text = readFileSync(this.out + "/" + name, "utf8");
-      if (hash(text) !== expected) throw Error("OUTPUT_CHANGED_AFTER_CAPTURE:" + name);
+      const bytes = readFileSync(this.out + "/" + name);
+      if (createHash("sha256").update(bytes).digest("hex") !== expected) throw Error("OUTPUT_CHANGED_AFTER_CAPTURE:" + name);
+      const text = (name.endsWith(".json.gz") ? gunzipSync(bytes, {maxOutputLength: 49 * 1024 * 1024}) : bytes).toString("utf8");
       for (const term of this.forbidden) if (term.length > 1 && text.includes(term)) throw Error("PRIVATE_INPUT_IN_FINAL_GLOBAL_OUTPUT:" + name);
     }
     this.write("global-deterministic-validation.json", {version: "global-specialist-artifacts-v1", files: {...this.files}, performanceLogs: "EXTERNAL_ONLY", canonicalFactRootsIssued: 0});

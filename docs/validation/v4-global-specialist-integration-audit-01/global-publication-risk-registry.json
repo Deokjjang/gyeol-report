@@ -10,7 +10,7 @@
   "parts": [
     {
       "file": "global-publication-risk-registry-part-0001.json",
-      "sha256": "91a170d20e1c5564a73f3afeae04433b6c717f61363f45d42787587f6b81f97f",
+      "sha256": "7bbd6901d4c9abc08ec4b5f6f9d0ca7f357d602a19cfbe2c6c10f661db4d0252",
       "kind": "FIELD",
       "key": "results"
     },

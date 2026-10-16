@@ -147,7 +147,7 @@
   "BUILD": "PASS0warnings",
   "DIFF_CHECK": "PASS",
   "NFT_TRACE_PRESERVATION": "88App/Server+2NextRoot=90; exact dependency sets unchanged; new integration/JSON entries0",
-  "DETERMINISTIC_BUILD": "2freshCLI executions; every generated JSON including all shards byte identical;64Foundation JSON reproduced perrun",
+  "DETERMINISTIC_BUILD": "2freshCLI executions; every JSON and gzip payload byte identical; all original logical JSON hashes preserved;64Foundation JSON reproduced perrun",
   "PRIVACY_CHECK": "PASS final full-output forbidden names/DOB and secret checks; publicMajorObservation excludes raw input; real customer access0",
   "VERCEL_PREVIEW": "POST_COMMIT_EXACT_SHA_READY_RECEIPT_OUTSIDE_GIT",
   "REMAINING_GAPS": [

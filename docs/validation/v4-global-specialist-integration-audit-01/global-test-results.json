@@ -16,8 +16,8 @@
     "finalPublishedArtifactsRechecked": true
   },
   "newStorage": {
-    "assertions": 4,
-    "pass": 4,
+    "assertions": 6,
+    "pass": 6,
     "fail": 0,
     "pending": 0
   },

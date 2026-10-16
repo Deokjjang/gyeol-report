@@ -1,16 +1,28 @@
 import {readFileSync} from "node:fs";
 import {join} from "node:path";
+import {createHash} from "node:crypto";
+import {gunzipSync} from "node:zlib";
 import {hash} from "../sourceReader";
 import {isRecord} from "../normalization";
 export const SHARD_FORMAT = "GYEOL_GLOBAL_AUDIT_SHARDS_V1";
+export const GZIP_FORMAT = "GYEOL_GLOBAL_AUDIT_GZIP_V1";
 export function readGlobalArtifact(directory: string, name: string): unknown {
   const cache = new Map<string, unknown>();
   const read = (file: string, expected?: string, depth = 0): unknown => {
     if (!/^[a-z0-9-]+\.json$/.test(file) || depth > 32) throw Error("UNSAFE_GLOBAL_ARTIFACT_REFERENCE");
-    const text = readFileSync(join(directory, file), "utf8");
+    let text = readFileSync(join(directory, file), "utf8");
     if (expected && hash(text) !== expected) throw Error("GLOBAL_ARTIFACT_SHARD_HASH_MISMATCH");
     if (cache.has(file)) return cache.get(file);
-    const raw: unknown = JSON.parse(text);
+    let raw: unknown = JSON.parse(text);
+    if (isRecord(raw) && raw.format === GZIP_FORMAT) {
+      if (typeof raw.payloadFile !== "string" || !/^[a-z0-9-]+\.json\.gz$/.test(raw.payloadFile) || typeof raw.payloadHash !== "string" || typeof raw.logicalJsonHash !== "string" || typeof raw.uncompressedBytes !== "number" || !Number.isSafeInteger(raw.uncompressedBytes) || raw.uncompressedBytes <= 0 || raw.uncompressedBytes >= 49 * 1024 * 1024) throw Error("INVALID_GLOBAL_GZIP_MANIFEST");
+      const compressed = readFileSync(join(directory, raw.payloadFile));
+      if (createHash("sha256").update(compressed).digest("hex") !== raw.payloadHash) throw Error("GLOBAL_GZIP_PAYLOAD_HASH_MISMATCH");
+      const bytes = gunzipSync(compressed, {maxOutputLength: raw.uncompressedBytes});
+      text = bytes.toString("utf8");
+      if (bytes.length !== raw.uncompressedBytes || hash(text) !== raw.logicalJsonHash) throw Error("GLOBAL_GZIP_LOGICAL_HASH_MISMATCH");
+      raw = JSON.parse(text);
+    }
     if (!isRecord(raw) || raw.format !== SHARD_FORMAT) {cache.set(file, raw); return raw;}
     if (!Array.isArray(raw.parts) || typeof raw.logicalJsonHash !== "string") throw Error("INVALID_GLOBAL_ARTIFACT_MANIFEST");
     const parts = raw.parts.map(p => {if (!isRecord(p) || typeof p.file !== "string" || typeof p.sha256 !== "string") throw Error("INVALID_GLOBAL_ARTIFACT_PART"); return {meta: p, value: read(p.file, p.sha256, depth + 1)};});

@@ -6,22 +6,22 @@
   "parts": [
     {
       "file": "global-meaning-review-index-part-0001.json",
-      "sha256": "485b34d1fa14629910df714992dc77d6efd18504c0f03ac3c36af636743f1335",
+      "sha256": "a6ac6fe96553fe9af7f4e18fd9658fe0cd8e13d961536afe3aa258fc68a5140a",
       "kind": "CHUNK"
     },
     {
       "file": "global-meaning-review-index-part-0002.json",
-      "sha256": "d9c733a362da9d4ad239b70b4cc08b011d69522f1b287bb4b799efe56ad87e87",
+      "sha256": "08ecae3dd067bb2f0c519cf7f69bea257db517dc4ed274275f830dfe239eed52",
       "kind": "CHUNK"
     },
     {
       "file": "global-meaning-review-index-part-0003.json",
-      "sha256": "05c810e5b2523befcf5472b15d9a6513055e83cda9d5d91954099364666046b1",
+      "sha256": "1f7718308ef741b05a323b9e399314ca17cbb0bd407226a67887ce99357d6ba0",
       "kind": "CHUNK"
     },
     {
       "file": "global-meaning-review-index-part-0004.json",
-      "sha256": "de6637a918834062bd7959353016463eafc5c5d0efe60cfc62f49ffffb4346e5",
+      "sha256": "c1073f92c5df7243286669ac6544e2967c12272f6be872d38fe080f8e6bc845b",
       "kind": "CHUNK"
     }
   ]

@@ -23,7 +23,7 @@
 
 핵심 산출물은 global registry/invocation/interface/routing,27case 원본receipt/envelope/native contract/handoff, source/evidence/reader/temporal/group/domain/gate/root indexes, 의미/차단/운영자 queue,7유형 publication risk와 planner readiness다. 전체 필수74개 보고 항목은 `global-final-report-fields.json`에 있다. Source6490참조는3288기술복구/3202보류, domain2966·meaning/operator/customer 검토는 그대로다. source-overlap은 검토 후보이며 의미 동치나 고객 ranking이 아니다.
 
-검증: 신규 실제통합106, 저장/변조4, 산출물24개 테스트 통과. 관련 기존26파일은 최초 병렬 실행2402 PASS/9시간초과/98미실행이었다. 실패·hook시간초과9파일을 단일worker·명령행30초에서 전체409개 재실행해 모두 통과했다. 중복 합산 없이2509개 assertion 발생을 확인했다. Vitest 표시명 축약에 따른3개 이름 충돌은 파일+선언순번으로 구분하며 원래 순서/개수를 대조했다. 전체 Suite PASS를 주장하지 않는다.
+검증: 신규 실제통합106, 저장/변조6, 산출물24개 테스트 통과. 관련 기존26파일은 최초 병렬 실행2402 PASS/9시간초과/98미실행이었다. 실패·hook시간초과9파일을 단일worker·명령행30초에서 전체409개 재실행해 모두 통과했다. 중복 합산 없이2509개 assertion 발생을 확인했다. Vitest 표시명 축약에 따른3개 이름 충돌은 파일+선언순번으로 구분하며 원래 순서/개수를 대조했다. 전체 Suite PASS를 주장하지 않는다.
 
 기존 알려진16파일은 수정 전·부하 감소 후 같은 기본 설정에서5837 PASS/46 FAIL/0미실행이며46개 전체 정규화 오류 메시지가 동일하다. 초기 병렬검증 중 Book hook180초 초과 기록도 보존한다. BusinessPartner 과거5초 문제는 현재 정확한 Base에서 선택1개 PASS(360개 필터)로 재현되지 않았고, 작업 브랜치 기본 전체361개 및 명령행30초 전체361개가 모두 통과했다. 원래 테스트와 설정은 수정하지 않았다. 시간/RSS·원시 실행 로그는 Git 외부에만 둔다.
 
@@ -87,3 +87,5 @@ Global Planner 입력 스키마는 준비됐으나 고객 선택은 불가하다
 Root/claim/meaning은 서로 다른 값으로 유지한다. 원본 native semantic audit의 same-fact, claim, new-application, conflict, review 상태는 각 case에 그대로 남는다. 전역 source-overlap group은 잠재 검토 후보일 뿐, 같은 원천을 같은 사실·의미로 확정하거나 새로운 검증된 응용으로 승인하지 않는다. Verified relation 및 confirmed semantic conflict는0이다.
 
 `global-source-provenance-index.json`은 CatalogKey별 원본 위치·source check를 한 번 저장한다. 그 안의 originalRequirement는 최초 관찰의 추적용 값이며 모든 fixture에 공통 적용하는 matcher가 아니다. 실제 fixture별 selector/owner/direction/time 요구는 각 case의 Envelope와 컴파일된 handoff를 기준으로 확인한다. 서로 다른 fixture의 요구를 이 전역 provenance 항목으로 대체하지 않는다.
+
+Preview 리소스 검증: 첫 원격 빌드는 TypeScript 단계 장기 대기로 중단했고, 동일 SHA 재실행에서 OOM 및 build worker SIGKILL이 확인됐다. Node24/25의 로컬 cold TypeScript와4GiB cold Next build는 통과했다. 기존 엔진·원천 DB·Next 설정을 변경하지 않고 이번 신규 감사 산출물에만1MiB 이상 JSON leaf의 무손실 gzip 저장층을 적용했다. JSON manifest는 payload SHA·원래 JSON hash·복원 크기를 포함하며, Reader는49MiB 미만 복원 상한과 모든 hash를 검증한다. 원래 f0de150 감사 데이터의 전체 논리 JSON hash와 실제 두 번의 새 엔진 실행 결과를 대조한다. 기존 원천 Hash/Encoding과 모든 Receipt·gate·원고는 변경하지 않는다. 정확한 물리 용량, 성능 및 최종 Preview 영수증은 Git 외부 로그에 기록한다.
