@@ -1,0 +1,29 @@
+{
+  "originalInterface": [
+    "lookup(requirement)",
+    "verifyAuthenticity(approval)"
+  ],
+  "originalApprovalRequirementFields": [
+    "canonicalFactRoots",
+    "catalogKey",
+    "claimIdentity",
+    "contexts",
+    "evaluatedAt",
+    "evidenceIds",
+    "graphVersion",
+    "meaningIdentity",
+    "originalRecordHash",
+    "product",
+    "prohibitedInference",
+    "relationship",
+    "semanticVerificationVersion",
+    "sourceVerificationVersion",
+    "sourceVersion",
+    "temporalWitnesses"
+  ],
+  "allOriginalFieldsRetained": true,
+  "positiveLookupAndVerify": true,
+  "forcedTrueProviderRejected": true,
+  "actualProviderAlwaysNull": true,
+  "notRegisteredInCustomerRuntime": true
+}

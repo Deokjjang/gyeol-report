@@ -1,0 +1,89 @@
+{
+  "files": [
+    {
+      "file": "approval-audit-receipt.json",
+      "sha256": "0875e2ae51e3dbc28df4ca4cdfda4b1e2eb0b9b3516be8f9879bb5f51462a783"
+    },
+    {
+      "file": "approval-schema.json",
+      "sha256": "825e94e8d489b6b8e729203ecf71f041dd2e952fb78ca454466cb68ec6ff0dd0"
+    },
+    {
+      "file": "approval-scope-audit.json",
+      "sha256": "e6ff61725655c3a5966acc5f4dc80a7cc995916b3375dd26a6959691aea74009"
+    },
+    {
+      "file": "approval-validity-tests.json",
+      "sha256": "bafd846cf3094ab2ecee4540e780e92f07a6e1eace8b976745cc99d3bb90ba5f"
+    },
+    {
+      "file": "binder-gate-preservation.json",
+      "sha256": "2afd40712daad19bfe28510eec1511b0756f5421563638191f27d7a1f6435630"
+    },
+    {
+      "file": "evidence-scope-binding.json",
+      "sha256": "5b1c519ebaf58bb39dd1a8ddd4dd0a426f6f40702179899e98ef079030230d3f"
+    },
+    {
+      "file": "future-activation-handoff.json",
+      "sha256": "2e36551eb47263011a0e7047162b8fe9b931b2c4c041fccf2de77db963b8568e"
+    },
+    {
+      "file": "negative-security-tests.json",
+      "sha256": "1447791ee813012559dca4a47a93fe1321c40c09ca04d7baf270fe998d28eeb4"
+    },
+    {
+      "file": "official-approval-manifest.json",
+      "sha256": "70b701d132a91e452df1c8330dc60cc415ad45cec17e59bd50fb943fb99b712b"
+    },
+    {
+      "file": "planner-approval-boundary.json",
+      "sha256": "01cbdfb1bca98835456fda53dc1f2aee50be7402813115979d613f9cb10e91c1"
+    },
+    {
+      "file": "provider-compatibility.json",
+      "sha256": "38368fee266cb70031c15d5c9cb9030cbbdfe277d07cfb24f1f62439b998c76e"
+    },
+    {
+      "file": "review-draft-boundary.json",
+      "sha256": "bd20081fbad311cfa46774dc211622ecb90eb57d71a7dca808bd608af4928208"
+    },
+    {
+      "file": "revocation-tests.json",
+      "sha256": "ef891ccaacd6ae3f99e35b7ab8db66ad5a6f094cfb6a46b1d07c49c62047566e"
+    },
+    {
+      "file": "signature-verification-results.json",
+      "sha256": "437f4acaf0396f1458d5e55dfb26f1f3492e02c05afef461dd1c009497d9fefb"
+    },
+    {
+      "file": "signed-applicability-contract.json",
+      "sha256": "45693dd10260182b8a8caf048cdaae3738592eae84bed232aec7bf99a52bcc3c"
+    },
+    {
+      "file": "signed-customer-use-contract.json",
+      "sha256": "8f0fe9403930da5e9bb5602f4ba30aa1521d3d0feb69215ab8b024f2436ef1aa"
+    },
+    {
+      "file": "signed-meaning-decision-contract.json",
+      "sha256": "1161faa63950e0c02337cb2fb634bffb4087cbaf73fe322ec4d95d3847fbd9fb"
+    },
+    {
+      "file": "signed-operator-authorization-contract.json",
+      "sha256": "0fb49d0b18eccdc2bde76e9640aa8c50511e064d4bec7612d04e197abeff6f59"
+    },
+    {
+      "file": "source-hash-binding.json",
+      "sha256": "62629d1951ec6b19d689fa18e105454aab391be647f78cac98bc741ca2630303"
+    },
+    {
+      "file": "synthetic-approval-rehearsal.json",
+      "sha256": "182790a726a2af88a695b456ff2243ec48252ba9042eb088f7ebb8b233671575"
+    },
+    {
+      "file": "trusted-reviewer-registry-schema.json",
+      "sha256": "4e0f0d22c463b1e5b29e4c28ec41a5eeac6d53a59dcc2551ab05ae06f77ae089"
+    }
+  ],
+  "privateKeysExported": 0
+}

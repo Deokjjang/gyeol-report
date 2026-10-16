@@ -1,0 +1,84 @@
+[
+  {
+    "name": "06 expired reviewer authority",
+    "rejected": true,
+    "reasons": [
+      "REVIEWER_AUTHORITY_EXPIRED_OR_NOT_YET_VALID",
+      "REVIEWER_AUTHORITY_SNAPSHOT_CHANGED_REAPPROVAL_REQUIRED"
+    ]
+  },
+  {
+    "name": "27 use before validity begins",
+    "rejected": true,
+    "reasons": [
+      "APPROVAL_NOT_YET_VALID",
+      "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+      "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+      "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "28 expired approval",
+    "rejected": true,
+    "reasons": [
+      "APPROVAL_EXPIRED",
+      "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+      "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+      "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "reversed validity",
+    "rejected": true,
+    "reasons": [
+      "INVALID_APPROVAL_WINDOW",
+      "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+      "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+      "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "invalid date normalization",
+    "rejected": true,
+    "reasons": [
+      "INVALID_APPROVAL_DATE",
+      "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+      "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+      "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "future issuance",
+    "rejected": true,
+    "reasons": [
+      "APPROVAL_NOT_YET_VALID",
+      "SEPARATE_APPLICABILITY_DECISION_REQUIRED",
+      "SEPARATE_CUSTOMER_AUTHORIZATION_REQUIRED",
+      "SEPARATE_OPERATOR_AUTHORIZATION_REQUIRED"
+    ]
+  },
+  {
+    "name": "stale revocation registry",
+    "rejected": true,
+    "reasons": [
+      "REVOCATION_LEDGER_STALE_OR_INVALID"
+    ]
+  },
+  {
+    "name": "invalid verification date",
+    "rejected": true,
+    "reasons": [
+      "INVALID_APPROVAL_DATE",
+      "REVIEWER_AUTHORITY_EXPIRED_OR_NOT_YET_VALID",
+      "REVOCATION_LEDGER_STALE_OR_INVALID"
+    ]
+  },
+  {
+    "name": "verification before evaluatedAt",
+    "rejected": true,
+    "reasons": [
+      "REVOCATION_LEDGER_STALE_OR_INVALID",
+      "VERIFICATION_PRECEDES_EVALUATION"
+    ]
+  }
+]

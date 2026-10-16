@@ -1,0 +1,31 @@
+{
+  "version": "official-approval-contract-v1",
+  "verifiedStage": "CUSTOMER_USE_AUTHORIZATION",
+  "verifiedBeforeRevocation": true,
+  "scopeHash": "7c349e4f10bfe1b44178d461d806d41f292d49477992fbbdb4dcf8b427263d65",
+  "requirementHash": "2dda9ff7ef3d0a38adc78150f4ea99bf1dab2fe961cf7538088ca9d475d0284a",
+  "decisionKinds": [
+    "HUMAN_MEANING_REVIEW_DECISION",
+    "DOMAIN_APPLICABILITY_DECISION",
+    "OPERATOR_AUTHORIZATION",
+    "CUSTOMER_USE_AUTHORIZATION"
+  ],
+  "signatureVerified": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "scopeVerified": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "remainingGatesPreserved": true,
+  "postRevocationRejected": true,
+  "actualOperatorApproved": 0,
+  "actualCustomerEligible": 0,
+  "actualBookAllocations": 0,
+  "perInputFullSignedPayloadAuthorityLedgerHashes": "Verified within process; ephemeral key-dependent values excluded from deterministic public artifact"
+}

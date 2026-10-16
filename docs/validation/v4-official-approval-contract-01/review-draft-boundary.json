@@ -1,0 +1,12 @@
+{
+  "reviewUnits": 6965,
+  "originalReadings": 36,
+  "scopedCards": 37,
+  "draftDecisions": 0,
+  "operatorApproved": 0,
+  "customerApproved": 0,
+  "draftConversion": "FORBIDDEN",
+  "furtherReviewIsOfficialApproval": false,
+  "originalWorkbenchHash": "eeef646bf5b38e5ccc7791b92e1b8d4e253eb665c1cd85420e06a963059cbda6",
+  "originalPilotHash": "43cab91bc8564bc695249ff7d747f9cbf5c545bd5fe175aa915d7a646ee2157d"
+}

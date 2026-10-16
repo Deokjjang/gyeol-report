@@ -1,0 +1,124 @@
+{
+  "TASK": "V4-OFFICIAL-APPROVAL-CONTRACT-01",
+  "BASE_SHA": "16afa43981db46a4cd936f120bfcc5cf86d58c54",
+  "BRANCH": "v4/official-approval-contract-01",
+  "COMMIT_SHA": "RESOLVED_POST_COMMIT_IN_EXTERNAL_RELEASE_RECEIPT",
+  "REMOTE_SHA_MATCH": "RESOLVED_POST_PUSH_IN_EXTERNAL_RELEASE_RECEIPT",
+  "APPROVAL_CONTRACT_STATUS": "OFFICIAL_APPROVAL_CONTRACT / OFFLINE_IMPLEMENTED",
+  "APPROVAL_SCHEMA": "Executable exact OfficialApprovalEnvelope and four separate linked decisions; all original Binder requirement fields retained",
+  "SIGNATURE_ALGORITHM": "Ed25519 / Node builtin crypto / canonical SPKI key and strict 64-byte signature encoding",
+  "SIGNED_PAYLOAD_CANONICALIZATION": "SourceReader compatible sorted-key canonical plain JSON; finite IEEE-754 JSON values; explicit domain + NUL + complete envelope excluding signature; no claim of full RFC8785 compliance",
+  "SIGNATURE_VALIDATION": "PASS / cryptographic verification, algorithm/version/key/full-payload binding; unsigned/invalid/downgraded signatures rejected",
+  "TRUSTED_REVIEWER_REGISTRY": "External authenticated hash pins, immutable signed authority snapshot reference, SPKI fingerprint, explicit mode and version; real key enrollment remains pending",
+  "REVIEWER_AUTHORITY_SCOPE": "Exact current identity/key/decision/product/relationship/domain/source-family/window; expiry, revocation, role loss and reattribution blocked",
+  "SIGNED_MEANING_DECISION": "Separate exact original meaning, proposal, approved interpretation, conditions, actual evidence/context, counterexamples and prohibitions",
+  "SIGNED_DOMAIN_APPLICABILITY": "Separate signed applicability and meaning-decision hash; native explicit prohibitions cannot be overridden",
+  "SIGNED_CUSTOMER_USE_AUTHORIZATION": "Separate customer decision plus distinct operator authorization; linked full preceding decision hashes; actual issuance 0",
+  "REVIEW_DRAFT_BOUNDARY": "Workbench 6965 units /36 originals /37 cards preserved; draft decisions0; APPROVE_FOR_FURTHER_REVIEW cannot convert to approval",
+  "SOURCE_HASH_BINDING": "PASS / exact original material, record/file/version/source-proof/review-packet and frozen policy/source pins revalidated",
+  "MEANING_CLAIM_BINDING": "PASS / exact registered identities and approved scope; missing values withheld, no automatic semantic approval",
+  "PRODUCT_RELATIONSHIP_SCOPE": "PASS / exact product, relationship, domain and contexts; no wildcard or subset expansion",
+  "EVIDENCE_OWNER_DIRECTION_SCOPE": "PASS / fixture, evidence, complete required ancestry, producer/source-group/root/owner/direction scopes; cross-fixture/group replay rejected",
+  "TEMPORAL_SCOPE": "PASS / exact original witnesses and ranges; no computed boundary change or scope expansion",
+  "VALIDITY_WINDOW": "Explicit issuedAt/validFrom/validUntil/evaluatedAt/verificationTime, half-open windows, both historical and explicit current use checks",
+  "REVOCATION_LEDGER": "Signed target hash/scope/reason/effective time, trusted revoker, externally pinned current ledger id/hash/revision/freshness; missing/stale/replayed registry blocks use",
+  "KEY_REVOCATION": "PASS / current key/role revocation invalidates previously issued adapter records",
+  "KEY_ROTATION": "PASS / signed existing-key event, already trusted replacement, no permission escalation, old-key and backdated replacement-key use rejected",
+  "EXISTING_BINDER_COMPATIBILITY": "PASS / original lookup/verifyAuthenticity and ApprovalRecord; selected signed synthetic native receipts byte-identical; real runtime registration0",
+  "TWELVE_HARD_GATE_PRESERVATION": "PASS / original implementation unchanged; signed approval cannot compensate any remaining FAIL/UNKNOWN/REVIEW_REQUIRED Gate",
+  "EXISTING_PLANNER_BOUNDARY": "PASS / all27 strict plan hashes preserved with assignments0; original planner/provider policy unchanged; direct allocation forgery rejected",
+  "SYNTHETIC_SIGNED_APPROVAL_TESTS": {
+    "newUnitTests": "146 PASS /0 FAIL",
+    "actualResearchApprovals": 0,
+    "independentRegistriesAndEphemeralKeys": true
+  },
+  "SYNTHETIC_BINDER_REHEARSAL": {
+    "routes": 12,
+    "registeredMaterials": 1835,
+    "verifiedBundles": 1824,
+    "selectedReceiptHashesMatchOriginal": true,
+    "independentFriendshipDisplay": true,
+    "syntheticAddedToActual5073": 0
+  },
+  "SYNTHETIC_PLANNER_REHEARSAL": {
+    "defaultAssignments": 1085,
+    "separateFriendshipDisplay": 180,
+    "originalPlanHashesIdentical": true,
+    "providerInjectedIntoPlanner": false
+  },
+  "NEGATIVE_SECURITY_TESTS": {
+    "executedCliCases": 90,
+    "escapes": 0,
+    "additionalUnitIdentityRolePolicyRotationChecks": "PASS",
+    "actualAssignmentInsertion": "Rejected with original strict policy error"
+  },
+  "ACTUAL_OPERATOR_APPROVED": 0,
+  "ACTUAL_CUSTOMER_APPROVED": 0,
+  "ACTUAL_CUSTOMER_ELIGIBLE": 0,
+  "ACTUAL_CUSTOMER_SELECTIONS": 0,
+  "ACTUAL_CUSTOMER_CLAIMS": 0,
+  "ACTUAL_BOOK_ALLOCATIONS": 0,
+  "APPROVAL_RECORDS_ISSUED": "ACTUAL0 / process-local synthetic test objects only",
+  "TRUSTED_REAL_KEYS_REGISTERED": 0,
+  "PRIVATE_KEYS_IN_REPOSITORY": 0,
+  "ORIGINAL_RECEIPT_PRESERVATION": "PASS /5073 actual evaluation receipt hashes retained; 11170 source /1489 evidence /81 structural; synthetic not added",
+  "SOURCE_PRESERVATION": "PASS /6058 Base tracked files and20 Research families byte-identical",
+  "BINDER_PRESERVATION": "PASS / original files and NO_APPROVALS real policy unchanged; no real Gate promotion",
+  "PLANNER_PRESERVATION": "PASS / original files,12route default1085 and independent display180 plans unchanged; strict actual0",
+  "CALCULATION_PRESERVATION": "PASS / fresh before-after digests identical; no calculation/score edits",
+  "NARRATIVE_PRESERVATION": "PASS / original source and generated narrative bytes identical; no writer/editorial changes",
+  "BOOK_PRESERVATION": "PASS /17 Books102digests +20Friendship140digests +40profiles; stored roundtrip unchanged; Production accessed0",
+  "EXISTING_TEST_FAILURES": {
+    "known": "5837 PASS /46 identical FAIL at Base and final",
+    "businessPartner": "382 PASS /1 identical default5000ms baseline FAIL separately",
+    "fullRepositorySuiteClaimed": false
+  },
+  "NEW_TEST_FAILURES": 0,
+  "TYPESCRIPT": "0 before /0 after /0 new",
+  "LINT": "PASS /0 warnings",
+  "BUILD": "PASS /Next16.2.4 /Node24.22.0 /0 observed warnings",
+  "DIFF_CHECK": "PASS / staged and final checks",
+  "NFT_TRACE_PRESERVATION": "PASS /90 paths and dependency sets equal /new approval runtime entries0",
+  "DETERMINISTIC_BUILD": {
+    "independentCliRuns": 2,
+    "byteIdenticalJsonFiles": 22,
+    "executionModulesSealed": 18,
+    "perInputFullReceiptByteEquality": true,
+    "randomEphemeralKeyDependentValuesExported": false
+  },
+  "PRIVACY_CHECK": "PASS / all new source/test/report/artifact files scanned; private keys and actual customer data not exported",
+  "VERCEL_PREVIEW": "RESOLVED_AFTER_COMMIT_IN_EXTERNAL_RELEASE_RECEIPT",
+  "FUTURE_ACTIVATION_GAPS": [
+    {
+      "id": "REAL_IDENTITY_AND_EXTERNAL_KEYS",
+      "state": "PENDING",
+      "automatic": false
+    },
+    {
+      "id": "AUTHENTICATED_CURRENT_TRUST_AND_REVOCATION_PINS",
+      "state": "PENDING",
+      "automatic": false
+    },
+    {
+      "id": "FOUR_SEPARATE_HUMAN_DECISIONS",
+      "state": "PENDING",
+      "automatic": false
+    },
+    {
+      "id": "BINDER_REAL_GATE_INTEGRATION",
+      "state": "NOT_ENABLED",
+      "automatic": false
+    },
+    {
+      "id": "PLANNER_BRIDGE_AND_REAL_APPROVAL_INTEGRATION",
+      "state": "NOT_ENABLED",
+      "automatic": false
+    },
+    {
+      "id": "CUSTOMER_RUNTIME_ACTIVATION",
+      "state": "NOT_ENABLED",
+      "automatic": false
+    }
+  ],
+  "NEXT_STAGE_READY": "Offline typed approval-state handoff ready; actual identity/enrollment, human decisions, Binder/Planner/customer activation pending; Korean Editorial Engine and following stage not started"
+}

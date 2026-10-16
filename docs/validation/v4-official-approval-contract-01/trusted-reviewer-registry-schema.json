@@ -1,0 +1,38 @@
+{
+  "fields": [
+    "registryId",
+    "registryVersion",
+    "mode",
+    "authorities"
+  ],
+  "authorityFields": [
+    "authorityRef",
+    "reviewerId",
+    "keyId",
+    "publicKeySpki",
+    "publicKeyFingerprint",
+    "allowedDecisionKinds",
+    "allowedProducts",
+    "allowedRelationships",
+    "allowedDomains",
+    "allowedSourceFamilies",
+    "validFrom",
+    "validUntil",
+    "revoked",
+    "registryVersion",
+    "identityBoundary"
+  ],
+  "trustAnchorFields": [
+    "mode",
+    "registryHash",
+    "ledgerHash",
+    "ledgerId",
+    "minimumRevision",
+    "registryVersion"
+  ],
+  "registryTrust": "External authenticated hash pin, explicit version, current authority checks; signed authorityRef commits to the complete immutable authority snapshot; not supplied by an approval envelope",
+  "actualRegistryEntries": 0,
+  "syntheticKeys": "PROCESS_LOCAL_EPHEMERAL_NOT_EXPORTED",
+  "realIdentityAttestation": "FUTURE_EXPLICIT_PROCEDURE_REQUIRED",
+  "rotationDoesNotGrantPermissions": true
+}
