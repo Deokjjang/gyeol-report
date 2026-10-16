@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "permittedHashScriptAndStyleApplied": true,
+  "violations": [
+    {
+      "directive": "script-src-elem",
+      "blockedURI": "https://example.invalid/pilot.js"
+    },
+    {
+      "directive": "script-src-elem",
+      "blockedURI": "inline"
+    },
+    {
+      "directive": "connect-src",
+      "blockedURI": "https://example.invalid/pilot"
+    },
+    {
+      "directive": "font-src",
+      "blockedURI": "https://example.invalid/pilot.woff2"
+    },
+    {
+      "directive": "img-src",
+      "blockedURI": "https://example.invalid/pilot.png"
+    }
+  ],
+  "untrustedInlineScriptExecuted": false,
+  "externalResponses": 0,
+  "xssTextOnly": true,
+  "console": [
+    {
+      "type": "error",
+      "text": "Loading the script 'https://example.invalid/pilot.js' violates the following Content Security Policy directive: \"script-src 'sha256-8NVtDrhDBfYTopabyveqFP05GKhs7NYd63jaNqU3IFQ='\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+    },
+    {
+      "type": "error",
+      "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'sha256-8NVtDrhDBfYTopabyveqFP05GKhs7NYd63jaNqU3IFQ=''. Either the 'unsafe-inline' keyword, a hash ('sha256-2rIqbbgW29+bp1tRDAY9A1B+mJJQerN2x3nCKQNhi6s='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked."
+    },
+    {
+      "type": "error",
+      "text": "Connecting to 'https://example.invalid/pilot' violates the following Content Security Policy directive: \"connect-src 'none'\". The action has been blocked."
+    },
+    {
+      "type": "error",
+      "text": "Fetch API cannot load https://example.invalid/pilot. Refused to connect because it violates the document's Content Security Policy."
+    },
+    {
+      "type": "error",
+      "text": "Loading the font 'https://example.invalid/pilot.woff2' violates the following Content Security Policy directive: \"font-src 'none'\". The action has been blocked."
+    },
+    {
+      "type": "error",
+      "text": "Loading the image 'https://example.invalid/pilot.png' violates the following Content Security Policy directive: \"img-src 'none'\". The action has been blocked."
+    }
+  ],
+  "networkProbeDomain": "example.invalid",
+  "policyRelaxed": false
+}

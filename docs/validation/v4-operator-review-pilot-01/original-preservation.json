@@ -1,0 +1,18 @@
+{
+  "baseSha": "428199630a1a70796cf79ba3234cf2a74c1be0ba",
+  "baseTrackedFiles": 5427,
+  "unchangedTrackedFiles": 5426,
+  "onlyChangedExistingFile": "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-review-workbench/offlineUi.ts",
+  "researchFamilies": 20,
+  "researchRecords": 18610,
+  "specialistEngines": 12,
+  "actualGraphs": 27,
+  "originalEvaluations": 5073,
+  "technicalResolutions": 525,
+  "sourceRemaining": 2677,
+  "domainDecisions": 2966,
+  "structuralOccurrences": 81,
+  "structuralDistinctOriginals": 65,
+  "majorSourceIntegrityFailures": 30,
+  "allOriginalSourceDomainBinderSpecialistFilesUnchanged": true
+}

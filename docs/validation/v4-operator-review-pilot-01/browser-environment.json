@@ -1,0 +1,25 @@
+{
+  "chrome": {
+    "name": "Google Chrome",
+    "version": "155.0.8059.84",
+    "headless": true,
+    "platform": "darwin",
+    "arch": "arm64",
+    "access": "file://"
+  },
+  "node": "24.22.0 build / 25.9.0 QA",
+  "os": "macOS arm64",
+  "browserDependencies": "independent /tmp/gyeol-operator-review-pilot-01-tools; repository package and lock unchanged",
+  "safari": {
+    "status": "UNVERIFIED",
+    "name": "SessionNotCreatedError",
+    "message": "Could not create a session: You must enable 'Allow remote automation' in the Developer section of Safari Settings to control Safari via WebDriver."
+  },
+  "cua": {
+    "status": "UNAVAILABLE",
+    "error": "Native apps: Error: Sky Computer Use native pipe startup failed"
+  },
+  "testURLScheme": "file://",
+  "localHttpServerUsed": false,
+  "remoteReviewServerUsed": false
+}

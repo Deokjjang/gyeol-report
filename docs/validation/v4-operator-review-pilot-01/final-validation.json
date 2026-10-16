@@ -1,0 +1,272 @@
+{
+  "status": "CHROME_BROWSER_ACCEPTANCE_PASS_SAFARI_UNVERIFIED",
+  "requiredChecks": [
+    {
+      "number": 1,
+      "check": "Exact Base SHA",
+      "status": "PASS"
+    },
+    {
+      "number": 2,
+      "check": "Existing 6965 Unit",
+      "status": "PASS"
+    },
+    {
+      "number": 3,
+      "check": "Existing 36 Original",
+      "status": "PASS"
+    },
+    {
+      "number": 4,
+      "check": "Existing 37 Card",
+      "status": "PASS"
+    },
+    {
+      "number": 5,
+      "check": "12 Engine Coverage",
+      "status": "PASS"
+    },
+    {
+      "number": 6,
+      "check": "7 Relationship Coverage",
+      "status": "PASS"
+    },
+    {
+      "number": 7,
+      "check": "Existing Source Hash",
+      "status": "PASS"
+    },
+    {
+      "number": 8,
+      "check": "Existing Packet Hash",
+      "status": "PASS"
+    },
+    {
+      "number": 9,
+      "check": "ReviewUnit Identity",
+      "status": "PASS"
+    },
+    {
+      "number": 10,
+      "check": "Actual Browser Load",
+      "status": "PASS"
+    },
+    {
+      "number": 11,
+      "check": "Desktop Layout",
+      "status": "PASS"
+    },
+    {
+      "number": 12,
+      "check": "Tablet Layout",
+      "status": "PASS"
+    },
+    {
+      "number": 13,
+      "check": "Mobile Layout",
+      "status": "PASS"
+    },
+    {
+      "number": 14,
+      "check": "Small Mobile Layout",
+      "status": "PASS"
+    },
+    {
+      "number": 15,
+      "check": "Horizontal Overflow",
+      "status": "PASS"
+    },
+    {
+      "number": 16,
+      "check": "Long Source ID Wrapping",
+      "status": "PASS"
+    },
+    {
+      "number": 17,
+      "check": "Long Korean Text Wrapping",
+      "status": "PASS"
+    },
+    {
+      "number": 18,
+      "check": "Search",
+      "status": "PASS"
+    },
+    {
+      "number": 19,
+      "check": "All Filters",
+      "status": "PASS"
+    },
+    {
+      "number": 20,
+      "check": "READ Filter",
+      "status": "PASS"
+    },
+    {
+      "number": 21,
+      "check": "UNREAD Filter",
+      "status": "PASS"
+    },
+    {
+      "number": 22,
+      "check": "DRAFT_SELECTED Filter",
+      "status": "PASS"
+    },
+    {
+      "number": 23,
+      "check": "Card Navigation",
+      "status": "PASS"
+    },
+    {
+      "number": 24,
+      "check": "Detailed Source Expansion",
+      "status": "PASS"
+    },
+    {
+      "number": 25,
+      "check": "Domain/Gate Details",
+      "status": "PASS"
+    },
+    {
+      "number": 26,
+      "check": "Checkbox Interaction",
+      "status": "PASS"
+    },
+    {
+      "number": 27,
+      "check": "Decision Select Interaction",
+      "status": "PASS"
+    },
+    {
+      "number": 28,
+      "check": "Reviewer Notes",
+      "status": "PASS"
+    },
+    {
+      "number": 29,
+      "check": "In-Memory Draft State",
+      "status": "PASS"
+    },
+    {
+      "number": 30,
+      "check": "Page Reload Risk",
+      "status": "PASS"
+    },
+    {
+      "number": 31,
+      "check": "Unsaved Draft Warning",
+      "status": "PASS"
+    },
+    {
+      "number": 32,
+      "check": "Actual JSON Download",
+      "status": "PASS"
+    },
+    {
+      "number": 33,
+      "check": "Downloaded JSON Parse",
+      "status": "PASS"
+    },
+    {
+      "number": 34,
+      "check": "Draft CLI Validation",
+      "status": "PASS"
+    },
+    {
+      "number": 35,
+      "check": "Actual JSON Import",
+      "status": "PASS"
+    },
+    {
+      "number": 36,
+      "check": "Import State Restoration",
+      "status": "PASS"
+    },
+    {
+      "number": 37,
+      "check": "Invalid Draft Rejection",
+      "status": "PASS"
+    },
+    {
+      "number": 38,
+      "check": "Atomic Import Validation",
+      "status": "PASS"
+    },
+    {
+      "number": 39,
+      "check": "CSP Enforcement",
+      "status": "PASS"
+    },
+    {
+      "number": 40,
+      "check": "External Request Blocking",
+      "status": "PASS"
+    },
+    {
+      "number": 41,
+      "check": "XSS Safe Rendering",
+      "status": "PASS"
+    },
+    {
+      "number": 42,
+      "check": "Keyboard Navigation",
+      "status": "PASS"
+    },
+    {
+      "number": 43,
+      "check": "Focus Visibility",
+      "status": "PASS"
+    },
+    {
+      "number": 44,
+      "check": "ARIA Status",
+      "status": "PASS"
+    },
+    {
+      "number": 45,
+      "check": "Review Progress Display",
+      "status": "PASS"
+    },
+    {
+      "number": 46,
+      "check": "Model Proposal/Actual Review Separation",
+      "status": "PASS"
+    },
+    {
+      "number": 47,
+      "check": "Actual Approval0",
+      "status": "PASS"
+    },
+    {
+      "number": 48,
+      "check": "Actual Claims0",
+      "status": "PASS"
+    },
+    {
+      "number": 49,
+      "check": "Existing Binder Unchanged",
+      "status": "PASS"
+    },
+    {
+      "number": 50,
+      "check": "Existing Book Unchanged",
+      "status": "PASS"
+    }
+  ],
+  "authorityCountsAllZero": true,
+  "salesOrProductionApproval": false,
+  "nextStage": "HUMAN_DRAFT_REVIEW_ONLY",
+  "notStarted": [
+    "Operator Approval Provider",
+    "Customer Approval",
+    "Global Planner",
+    "Korean Editorial Engine",
+    "Customer Runtime Integration"
+  ],
+  "remainingGaps": [
+    "Safari remote automation unavailable",
+    "CUA Native Pipe startup failure",
+    "Native screen reader session unverified",
+    "Native mobile hardware unverified",
+    "Absolute continuous peak RSS not measured; observed sampled peak reported"
+  ]
+}

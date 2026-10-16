@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "layouts": [
+    {
+      "width": 390,
+      "height": 844,
+      "allCards": 37,
+      "maxHorizontalOverflow": 0,
+      "sourceWrapping": true,
+      "controlsReachable": true,
+      "status": "PASS"
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "allCards": 37,
+      "maxHorizontalOverflow": 0,
+      "sourceWrapping": true,
+      "controlsReachable": true,
+      "status": "PASS"
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "allCards": 37,
+      "maxHorizontalOverflow": 0,
+      "sourceWrapping": true,
+      "controlsReachable": true,
+      "status": "PASS"
+    }
+  ],
+  "screenshots": [
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-390-header.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-390-filters.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-390-comparison.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-390-draft.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-390-source.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-375-header.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-375-filters.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-375-comparison.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-375-draft.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-375-source.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-320-header.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-320-filters.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-320-comparison.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-320-draft.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-320-source.png"
+  ],
+  "nativeMobileHardwareSession": "UNVERIFIED_DESKTOP_CHROME_VIEWPORT_EMULATION"
+}

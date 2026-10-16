@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "layouts": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "allCards": 37,
+      "maxHorizontalOverflow": 0,
+      "sourceWrapping": true,
+      "controlsReachable": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "allCards": 37,
+      "maxHorizontalOverflow": 0,
+      "sourceWrapping": true,
+      "controlsReachable": true,
+      "status": "PASS"
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "allCards": 37,
+      "maxHorizontalOverflow": 0,
+      "sourceWrapping": true,
+      "controlsReachable": true,
+      "status": "PASS"
+    }
+  ],
+  "screenshots": [
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1920-header.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1920-filters.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1920-comparison.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1920-draft.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1920-source.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1440-header.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1440-filters.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1440-comparison.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1440-draft.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1440-source.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1024-header.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1024-filters.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1024-comparison.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1024-draft.png",
+    "/tmp/gyeol-operator-review-pilot-01-validation/chrome-final/viewport-1024-source.png"
+  ],
+  "nativeMobileHardwareSession": "NOT_APPLICABLE"
+}

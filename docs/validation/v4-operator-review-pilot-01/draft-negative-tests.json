@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "catalogKey",
+      "reason": "가져오기 차단: DRAFT_SCOPE_OR_HASH_MISMATCH:catalogKey:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "originalResearchId",
+      "reason": "가져오기 차단: DRAFT_SCOPE_OR_HASH_MISMATCH:originalResearchId:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "originalRecordHash",
+      "reason": "가져오기 차단: DRAFT_SCOPE_OR_HASH_MISMATCH:originalRecordHash:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "originalSourceVersion",
+      "reason": "가져오기 차단: DRAFT_SCOPE_OR_HASH_MISMATCH:originalSourceVersion:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "productScope",
+      "reason": "가져오기 차단: DRAFT_SCOPE_OR_HASH_MISMATCH:productScope:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "relationshipScope",
+      "reason": "가져오기 차단: DRAFT_SCOPE_OR_HASH_MISMATCH:relationshipScope:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "reviewPacketHash",
+      "reason": "가져오기 차단: DRAFT_SCOPE_OR_HASH_MISMATCH:reviewPacketHash:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "sourceProofHash",
+      "reason": "가져오기 차단: DRAFT_SCOPE_OR_HASH_MISMATCH:sourceProofHash:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate",
+      "reason": "가져오기 차단: DUPLICATE_DECISION:37",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "unknownUnit",
+      "reason": "가져오기 차단: UNKNOWN_REVIEW_UNIT:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "missingField",
+      "reason": "가져오기 차단: REQUIRED_REVIEW_FIELDS_MISSING:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "decision",
+      "reason": "가져오기 차단: INVALID_DECISION_CHOICE:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "approval",
+      "reason": "가져오기 차단: UNSUPPORTED_APPROVAL_FIELD, INVALID_DECISION_SHAPE:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "extra",
+      "reason": "가져오기 차단: INVALID_DECISION_SHAPE:0",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "oversized",
+      "reason": "가져오기 차단: DRAFT_TOO_LARGE",
+      "atomic": true,
+      "status": "PASS"
+    },
+    {
+      "name": "malformed",
+      "reason": "가져오기 차단: Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+      "atomic": true,
+      "status": "PASS"
+    }
+  ],
+  "validatorChanged": false,
+  "allRejectedAtomically": true
+}

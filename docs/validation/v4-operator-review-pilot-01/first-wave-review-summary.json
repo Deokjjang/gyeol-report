@@ -1,0 +1,6060 @@
+[
+  {
+    "reviewUnitId": "review-unit-v1:04ff78e189998bf73cbdbe78eb8cc745bfdd1180b12c62ed71ccecf063434eb1",
+    "originalResearchId": "ckr:material:CH08.P1:held-munchang-exam",
+    "catalogKey": "kc:v1:9e3da72458ebc3ddee386134acc40ead5150c48189fc451397e32790896fb0a3",
+    "recordHash": "4df49905c546b8ed5a2937b50d4dd60f2dbc305ff3042c1021dea28b9a7fc8cb",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "91d0a17a0fc76222c09c90cb2565142eb73d35ede89bb8033a61d1dfc4d80e78",
+    "packetHash": "605430bb6dd7225c8e6f18642cd4d9ef3d7c8024b62d203f02c18c926659fb5b",
+    "product": "career_money_study",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/coreMeaning",
+        "text": "문창의 배치 전거와 현행 표 대조가 남은 보류 연구"
+      }
+    ],
+    "modelSummary": "문창의 전통 배치와 현행 계산표의 차이가 남아 있어 긍정 자료 배정을 보류하는 연구다.",
+    "originalDoesNotEstablish": "시험 운·문재·합격률을 해당 자료에서 승인.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "ckr:source:47fcf46be449c285af54"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "성적·합격·학력·문재의 확정 근거로 사용 금지",
+    "originalProhibitedInferences": [
+      "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+      "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+      "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+      "성공·승진·합격·재물 증가·투자 능력 확정"
+    ],
+    "modelProposedCounterexamples": [
+      "이름에 문창이 포함되거나 실제 계산 신호가 있어도 출처 보류가 해제되지 않는다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "전통 배치/현행 표 차이를 원문 판본과 대조한 후 별도 승인."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "전통 배치/현행 표 차이를 원문 판본과 대조한 후 별도 승인.",
+    "largestApplicationRisk": "시험 운·문재·합격률을 해당 자료에서 승인.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCER_SUPPORT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "EXACT_PRODUCER_REQUIREMENT_MISSING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_REQUIREMENT_MISSING"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "INCOMPLETE_REQUIRED_ANCESTRY"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_DOMAIN_POLICY",
+      "REQUEST_ACTUAL_EVIDENCE",
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 0,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:14f117b796f0276b39f4a7f16bb95db9f7cd0bcb097ec661f1fe24c47bcfa895",
+    "originalResearchId": "mfpr:god:편재",
+    "catalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+    "recordHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "7bf8d720762587ce5f99e42f98ce7e0ef532d8ef6f6646595a3c3fbe0faf275d",
+    "packetHash": "52c3073861eb56fc8ed5e73d842f289afcee18b9c5a55303330845d3ad08521a",
+    "product": "major_fortune",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/core",
+        "text": "외부 자원·접점과 선택 범위"
+      }
+    ],
+    "modelSummary": "대운 편재는 외부 접점과 선택 범위를 비용·회수·기존 의무와 비교하는 연구다.",
+    "originalDoesNotEstablish": "유입 가능성을 회수된 수익·횡재·외도·사업 성공으로 바꾸지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "FAIL"
+      ],
+      "traditionalReference": "UNVERIFIED_TRADITIONAL_REF",
+      "supportingOriginalIds": [
+        "mfpr:source:editorial",
+        "tr:god:편재",
+        "repo-gods",
+        "editorial",
+        "mfpr:god:편재",
+        "mfpr:source:decade"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:30f76c5735c88c2b14be78da0c31b6ddbdb0ac9765a36469131240b44a3fba45"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person",
+          "GUIDANCE"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": "dayun",
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        },
+        {
+          "scope": "dayun",
+          "requiredWindow": null,
+          "originalWitnesses": [
+            {
+              "scope": "dayun",
+              "start": "2018-04-23T21:42:00+09:00",
+              "endExclusive": "2028-04-23T21:42:00+09:00",
+              "certainty": "confirmed",
+              "originalBounds": {
+                "cycle": {
+                  "index": 3,
+                  "ganji": "壬申",
+                  "tenGod": "편재",
+                  "elements": [
+                    "수",
+                    "금"
+                  ],
+                  "startYear": 2018,
+                  "endYear": 2027,
+                  "theme": "밖의 기회와 자원을 연결하는 것"
+                },
+                "startSolarRange": {
+                  "earliestKst": "2018-04-23T21:42:00+09:00",
+                  "latestKst": "2018-04-23T21:42:00+09:00"
+                },
+                "nextTransition": {
+                  "year": 2028,
+                  "dateLabel": "2028-04-23 21:42 한국시간",
+                  "startSolarKst": "2028-04-23T21:42:00+09:00",
+                  "startSolarRange": {
+                    "earliestKst": "2028-04-23T21:42:00+09:00",
+                    "latestKst": "2028-04-23T21:42:00+09:00"
+                  },
+                  "before": {
+                    "index": 3,
+                    "ganji": "壬申",
+                    "tenGod": "편재",
+                    "elements": [
+                      "수",
+                      "금"
+                    ],
+                    "startYear": 2018,
+                    "endYear": 2027,
+                    "theme": "밖의 기회와 자원을 연결하는 것"
+                  },
+                  "after": {
+                    "index": 4,
+                    "ganji": "辛未",
+                    "tenGod": "상관",
+                    "elements": [
+                      "금",
+                      "토"
+                    ],
+                    "startYear": 2028,
+                    "endYear": 2037,
+                    "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+                  }
+                }
+              },
+              "compatibleCombination": true,
+              "transitionRange": {
+                "earliestKst": "2018-04-23T21:42:00+09:00",
+                "latestKst": "2018-04-23T21:42:00+09:00"
+              }
+            }
+          ],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [
+        "SOURCE_INCOMPLETE"
+      ],
+      "explicitProhibition": false,
+      "requiredAncestry": [
+        {
+          "root": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+          "requiredSourceKeys": [
+            "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+            "kc:v1:310cca31e1ab44ec8b7d4733ac5af11ef6065ff597b91c0f0afc21914388afd1",
+            "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+            "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+            "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490"
+          ],
+          "contextualSourceKeys": [],
+          "cycleEdges": [],
+          "conditionalGroupOwners": [],
+          "sourceReferenceKeys": [
+            "sv:ref:cb997d611e1a0f3edd9534ece0fbe205a38f7a3a0d4e5ebad6dc831753cf1c1b"
+          ],
+          "incompleteReferenceKeys": [
+            "sv:ref:cb997d611e1a0f3edd9534ece0fbe205a38f7a3a0d4e5ebad6dc831753cf1c1b"
+          ],
+          "prohibitions": [],
+          "documentaryAndFutureAreNotCalculatedAncestors": true
+        }
+      ],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "별도 선언 없음; 전체 원본 카드 확인",
+    "originalProhibitedInferences": [
+      "횡재·투자 수익·외도·사업 성공을 예언하지 않음",
+      "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 cycle ID·원국 재성·자원 조건·비용·회수 시점"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 cycle ID·원국 재성·자원 조건·비용·회수 시점",
+    "largestApplicationRisk": "유입 가능성을 회수된 수익·횡재·외도·사업 성공으로 바꾸지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ]
+      },
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "INCOMPLETE_REQUIRED_ANCESTRY"
+        ]
+      },
+      {
+        "gate": "TIME_INTERSECTION",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_PERIOD_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_EXACT_ORIGINAL",
+      "REQUEST_DOMAIN_POLICY",
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 0,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:16113b812644bbaccbedaba0d56728a43edd2f262d9ce397b35a6222eabc8944",
+    "originalResearchId": "lkr:material:CH08.P4:parent-consent-respect",
+    "catalogKey": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+    "recordHash": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "254360780395ede92bf54303452cf4b67419e69d791c671cde620eec877197d3",
+    "packetHash": "8891472532e5e72869dba3675ee88b6c7f18bab591818e9d30fd97852790ac5b",
+    "product": "love_marriage_child",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/coreMeaning",
+        "text": "자기 선택을 존중하는 양육 강점을 몸·정보·취향의 경계를 설명하는 행동으로 연구한다."
+      }
+    ],
+    "modelSummary": "본인의 자율성 참고 서술을 양육을 선택할 경우의 경계 존중 행동으로 제안한 연구다.",
+    "originalDoesNotEstablish": "자녀 존재·나이·피해 사실 또는 양육 성공의 판정.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "lkr:source:10d4177606458102491b",
+        "autonomy_parent"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:aeffc01e09c67666e28b982caa18acf42c71b84300c0b8eaee0f9ad764dcd465"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "필수 안전 조치가 필요한 경우에는 선택 가능한 방식과 어른의 책임을 구분해야 한다.",
+    "originalProhibitedInferences": [
+      "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+      "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+      "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+      "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+    ],
+    "modelProposedCounterexamples": [
+      "필수 안전 조치의 책임까지 아이에게 넘기거나 모든 결정을 무조건 맡길 수는 없다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "본인 MBTI 원천·양육 맥락과 실제 보호 책임 확인. 자녀 사실에는 별도 자녀 입력 필요."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "본인 MBTI 원천·양육 맥락과 실제 보호 책임 확인. 자녀 사실에는 별도 자녀 입력 필요.",
+    "largestApplicationRisk": "자녀 존재·나이·피해 사실 또는 양육 성공의 판정.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:26bc543d779c926a91bdd35019d6437aa65a7f674be5a7988a97eb3b01599cb6",
+    "originalResearchId": "ckr:material:CH01.P1:capacity-entry",
+    "catalogKey": "kc:v1:196dcaae6dde2be60fcd7783d6bf043f151ce2b02936e47058f40f52e07713c1",
+    "recordHash": "28d6d55ccfa87593a7ac936e1f0bef7907fbb1c8ee103dcd4d5549d624c264f2",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "e621e97f4eebe9459b3045f7fa21146c4b32bb9f16f41c66e5ebd3496dd28dba",
+    "packetHash": "57bafd7ebc7785b70f4f6783c97ef44230f53d69a8d1918833b5ce4de6d476d7",
+    "product": "career_money_study",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/readerQuestion",
+        "text": "타고난 업무 성향"
+      },
+      {
+        "pointer": "/coreMeaning",
+        "text": "가능한 투입과 지킬 결과를 동시에 확인하는 시작 방식"
+      }
+    ],
+    "modelSummary": "새 일의 투입과 지킬 결과를 같이 보며 작은 착수 규모를 비교하는 연구다.",
+    "originalDoesNotEstablish": "실제 카페 운영·자본·고객 수·최적 준비량을 계산하지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "ckr:source:079248d9db39848db6cd",
+        "foundation:ten_god:zheng_cai",
+        "ckr:source:9c00dd07d98a425ce1c5",
+        "deep:ten_god:zheng_cai",
+        "relationship_service_revenue",
+        "responsive_team_needed",
+        "ckr:source:0b4c5f82e25554523be7",
+        "ckr:source:e2ed5b09b1f8185708cd"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:8e6a7e86ae589601666b06a54965dd6adbe8b16e70494671737e2ad39d32c287",
+        "actual-node-address-v1:91faf580493566237be153251786be9cde7e3eb5ffed2f1ed6abae217201387a"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "실제 예산·운영량 없이 가능한 규모를 정답으로 제시할 수 없음",
+    "originalProhibitedInferences": [
+      "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+      "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+      "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+      "성공·승진·합격·재물 증가·투자 능력 확정"
+    ],
+    "modelProposedCounterexamples": [
+      "실제 예산·운영량 없이 가능한 규모를 정답으로 제시할 수 없음"
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "입력된 직무·예산·운영량·현재 의무"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "입력된 직무·예산·운영량·현재 의무",
+    "largestApplicationRisk": "실제 카페 운영·자본·고객 수·최적 준비량을 계산하지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN",
+          "FAIL"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "ACTUAL_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "INCOMPLETE_REQUIRED_ANCESTRY"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_DOMAIN_POLICY",
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 0,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:27ffd5b0576085ca6e0bace7a984e8afe0ef404872cf7ec92b7947091ad90ecc",
+    "originalResearchId": "mfpr:god:편인",
+    "catalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+    "recordHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "99bcb9eda85bac6281d367d64ade8928b417e03aebba1d1e269a220b66187496",
+    "packetHash": "c23ee7b8626d2778e19b6e8b3e875ae6e2af8871175cf9aef06d3ed65e38193d",
+    "product": "major_fortune",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/core",
+        "text": "선택적 탐색과 다른 관점"
+      }
+    ],
+    "modelSummary": "대운 편인은 다른 관점을 조사할 질문과 작은 적용을 연결하는 장기 과제의 조건부 연구다.",
+    "originalDoesNotEstablish": "원국 편인·식신의 성립 없이 도식·질병·천재성이나 결정 유예 경험을 확정하지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "FAIL"
+      ],
+      "traditionalReference": "UNVERIFIED_TRADITIONAL_REF",
+      "supportingOriginalIds": [
+        "mfpr:source:editorial",
+        "repo-gods",
+        "editorial",
+        "tr:god:편인",
+        "mfpr:source:decade",
+        "mfpr:god:편인"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:7992a7270b5136dc5f34d96bc1433809e62494213178651d151d4f6d76b9c57d",
+        "actual-node-address-v1:dce5df130707e1617a948172c703a3fb1c89a9251c561b7851f605687b866f26"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person",
+          "GUIDANCE"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": "dayun",
+          "requiredWindow": null,
+          "originalWitnesses": [
+            {
+              "scope": "dayun",
+              "start": "2023-07-15T08:00:00+09:00",
+              "endExclusive": "2033-07-15T08:00:00+09:00",
+              "certainty": "confirmed",
+              "originalBounds": {
+                "cycle": {
+                  "index": 4,
+                  "ganji": "戊寅",
+                  "tenGod": "편인",
+                  "elements": [
+                    "토",
+                    "목"
+                  ],
+                  "startYear": 2023,
+                  "endYear": 2032,
+                  "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+                },
+                "startSolarRange": {
+                  "earliestKst": "2023-07-15T08:00:00+09:00",
+                  "latestKst": "2023-07-15T08:00:00+09:00"
+                },
+                "nextTransition": {
+                  "year": 2033,
+                  "dateLabel": "2033-07-15 08:00 한국시간",
+                  "startSolarKst": "2033-07-15T08:00:00+09:00",
+                  "startSolarRange": {
+                    "earliestKst": "2033-07-15T08:00:00+09:00",
+                    "latestKst": "2033-07-15T08:00:00+09:00"
+                  },
+                  "before": {
+                    "index": 4,
+                    "ganji": "戊寅",
+                    "tenGod": "편인",
+                    "elements": [
+                      "토",
+                      "목"
+                    ],
+                    "startYear": 2023,
+                    "endYear": 2032,
+                    "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+                  },
+                  "after": {
+                    "index": 5,
+                    "ganji": "丁丑",
+                    "tenGod": "정관",
+                    "elements": [
+                      "화",
+                      "토"
+                    ],
+                    "startYear": 2033,
+                    "endYear": 2042,
+                    "theme": "신뢰를 자리와 역할로 바꾸는 것"
+                  }
+                }
+              },
+              "compatibleCombination": true,
+              "transitionRange": {
+                "earliestKst": "2023-07-15T08:00:00+09:00",
+                "latestKst": "2023-07-15T08:00:00+09:00"
+              }
+            }
+          ],
+          "participantRequirements": null
+        },
+        {
+          "scope": "dayun",
+          "requiredWindow": null,
+          "originalWitnesses": [
+            {
+              "scope": "dayun",
+              "start": "2023-06-14T02:00:00+09:00",
+              "endExclusive": "2033-10-15T23:59:59+09:00",
+              "certainty": "conditional",
+              "originalBounds": {
+                "cycle": {
+                  "index": 4,
+                  "ganji": "戊寅",
+                  "tenGod": "편인",
+                  "elements": [
+                    "토",
+                    "목"
+                  ],
+                  "startYear": 2023,
+                  "endYear": 2032,
+                  "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+                },
+                "startSolarRange": {
+                  "earliestKst": "2023-06-14T02:00:00+09:00",
+                  "latestKst": "2023-10-15T23:59:59+09:00"
+                },
+                "nextTransition": {
+                  "year": 2033,
+                  "dateLabel": "2033-06-14 02:00~2033-10-15 23:59 한국시간",
+                  "startSolarKst": null,
+                  "startSolarRange": {
+                    "earliestKst": "2033-06-14T02:00:00+09:00",
+                    "latestKst": "2033-10-15T23:59:59+09:00"
+                  },
+                  "before": {
+                    "index": 4,
+                    "ganji": "戊寅",
+                    "tenGod": "편인",
+                    "elements": [
+                      "토",
+                      "목"
+                    ],
+                    "startYear": 2023,
+                    "endYear": 2032,
+                    "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+                  },
+                  "after": {
+                    "index": 5,
+                    "ganji": "丁丑",
+                    "tenGod": "정관",
+                    "elements": [
+                      "화",
+                      "토"
+                    ],
+                    "startYear": 2033,
+                    "endYear": 2042,
+                    "theme": "신뢰를 자리와 역할로 바꾸는 것"
+                  }
+                }
+              },
+              "compatibleCombination": true,
+              "transitionRange": {
+                "earliestKst": "2023-06-14T02:00:00+09:00",
+                "latestKst": "2023-10-15T23:59:59+09:00"
+              }
+            }
+          ],
+          "participantRequirements": null
+        },
+        {
+          "scope": "dayun",
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [
+        "SOURCE_INCOMPLETE"
+      ],
+      "explicitProhibition": false,
+      "requiredAncestry": [
+        {
+          "root": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+          "requiredSourceKeys": [
+            "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+            "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+            "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+            "kc:v1:73c33fe751a4abd085090038cb55a728d140418a6617a88091bbbca17390ecf4",
+            "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490",
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "contextualSourceKeys": [],
+          "cycleEdges": [],
+          "conditionalGroupOwners": [],
+          "sourceReferenceKeys": [
+            "sv:ref:1b6a268b627dd5ad8b2b3859035a8b046c6802a801f56e668cb15e5fa1346af2"
+          ],
+          "incompleteReferenceKeys": [
+            "sv:ref:1b6a268b627dd5ad8b2b3859035a8b046c6802a801f56e668cb15e5fa1346af2"
+          ],
+          "prohibitions": [],
+          "documentaryAndFutureAreNotCalculatedAncestors": true
+        }
+      ],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "별도 선언 없음; 전체 원본 카드 확인",
+    "originalProhibitedInferences": [
+      "고독·질병·임신 문제·천재성을 확정하지 않음",
+      "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 cycle ID·기간·원국 조건·생조 분포·검증 종료 기준"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 cycle ID·기간·원국 조건·생조 분포·검증 종료 기준",
+    "largestApplicationRisk": "원국 편인·식신의 성립 없이 도식·질병·천재성이나 결정 유예 경험을 확정하지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ]
+      },
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "INCOMPLETE_REQUIRED_ANCESTRY",
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      },
+      {
+        "gate": "TIME_INTERSECTION",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONDITIONAL_INTERSECTION",
+          "ACTUAL_PERIOD_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_EXACT_ORIGINAL",
+      "REQUEST_DOMAIN_POLICY",
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 0,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:3a09a215d6292844220e662009d0ed0cd27f298c369a333dc580bc22747f2400",
+    "originalResearchId": "cwpr:material:CH08.P2:a-do-not-claim-authority",
+    "catalogKey": "kc:v1:d1b474f653c75dc8cf25587e34eed56c513465cefbfe9046198635635a2414de",
+    "recordHash": "a5de4edc83cc25af0a273f9b5a85e23ed4c9b4b4b655b1eed97a45b7587b5def",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "e0d4a710b838eca70114cf74b30495331ca85893796e561acddca3758f031b7c",
+    "packetHash": "becc9b68582432923b5731a7d04fb87dfb5132d2b2544c168ae85be128b72cda",
+    "product": "saju_mbti_compatibility",
+    "relationship": "coworker",
+    "originalCoreClaim": [
+      {
+        "pointer": "/readerQuestion",
+        "text": "A는 변경·피드백·수정·추가 요청·인계·권한을 어떻게 조정하는가?"
+      },
+      {
+        "pointer": "/coreMeaning",
+        "text": "A가 다른 의견을 평가하거나 명령하기 전 기준과 권한을 확인한다."
+      }
+    ],
+    "modelSummary": "A의 확신과 실제 결정권을 분리하고 B의 기준과 비교 자료를 듣는 회수형 질문이다.",
+    "originalDoesNotEstablish": "단호한 유형이 동료의 능력을 평가하거나 최종안을 명령할 권한을 만들지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "cwpr:source:7fdeffb028558576a2a5",
+        "cwpr:source:7bdcdc1310dd783e91f2",
+        "recognition_and_boundary",
+        "cwpr:source:c537d089d3ff0412ed96",
+        "cwpr:source:c782e08817e7f4ae8cd7",
+        "cwpr:source:99abb271c1ef0a874619",
+        "cwpr:source:1b369a62ec425b1ebbe5",
+        "authority_scope_alignment"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:889edfbefec2acf3584c5dd9f7e94542d1bcb977066e0ee0e57f6fe2d0142fd4"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "GUIDANCE",
+          "A"
+        ]
+      ],
+      "direction": [
+        [
+          "A_TO_B"
+        ]
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "정식 권한 없으면 최종 결정 보류",
+    "originalProhibitedInferences": "전체 원본 카드의 금지 조건 확인",
+    "modelProposedCounterexamples": [
+      "정식 권한 없으면 최종 결정 보류"
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 과제·정식 권한·같은 Owner·앞서 표시된 의견 차이 의미"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 과제·정식 권한·같은 Owner·앞서 표시된 의견 차이 의미",
+    "largestApplicationRisk": "단호한 유형이 동료의 능력을 평가하거나 최종안을 명령할 권한을 만들지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED",
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:431a7dd96215f14384db9d0223c9ec6159bd81af7c399a9cb71015f2932456dc",
+    "originalResearchId": "mrpr:relation:rr:combination:yukhap:巳申",
+    "catalogKey": "kc:v1:a5d232b90b7ae2c45dd1beb5f76ad2d47d9f41c965257449e526ecf3224dd1f2",
+    "recordHash": "95b9fbd5286e8545ee97f208ea6faf25010fc5c31e3405e8b00a5208bd8ce4f9",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "23c91fceabb28f45dd0d2f2b2989609ce9f701ed9feb9db928c1a9021b375fde",
+    "packetHash": "7d91c80e24f06135ebe538ecabf3aff2675e44b41f1bac3186a98833bd626c53",
+    "product": "saju_mbti_compatibility",
+    "relationship": "managerReport",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "육합 쌍이자 현행 형·파의 겹침이다. 고전 원리와 현대 파 표를 같은 전거로 합치지 않는다."
+      }
+    ],
+    "modelSummary": "巳申 육합·형·파의 층위를 보존하고 상하 관계의 조건부 적용을 검토한다.",
+    "originalDoesNotEstablish": "합이 협력 성공을 보장하거나 인사 권한을 부여하지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:fe6d3f19149d57fff5a4a203d74a79f344d931b744e191084c8856062d00b721"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 관계 ID·기둥·계절 조건·권한·원래 배제"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 관계 ID·기둥·계절 조건·권한·원래 배제",
+    "largestApplicationRisk": "합이 협력 성공을 보장하거나 인사 권한을 부여하지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:449dc748b29d61562990b1d3bf3363854b75903a2e8a54a7f5e53053722a59c4",
+    "originalResearchId": "clr:relation:rr:combination:hae:寅巳",
+    "catalogKey": "kc:v1:b68ecfb094a8a089c1a4ca0321fb863a06498a96eef8436138b3863230b4e630",
+    "recordHash": "ec6a418ef0c02fe1d3f59e26e8a328d58f76336384c06b27eb071b05dd00e792",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "9ce1dbb367ae214653075e9b17b89cc914131ac677df2f26569a0b43a536549d",
+    "packetHash": "233cac3d01f919b58c6ac15787388c09e56a69c64fde8f0e686b066ef7130b8b",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "육해와 순환형 일부가 겹치는 쌍이다."
+      }
+    ],
+    "modelSummary": "寅·巳의 육해와 일부 형이 겹친다는 분류를 보존한다. 연애 표현 조율은 별도 연구 응용이다.",
+    "originalDoesNotEstablish": "형·해의 겹침은 적의·배신·질병이나 위험 배수의 관찰이 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:d992ece330b18ff6b7542f2eccf4d8cc67aac1b08c95b7aa94b5c693c1d5df5d",
+        "actual-node-address-v1:e2b95527924ccad55bb9d6dc3f732e785598e0333a7ccee54ab3710136f190a4",
+        "actual-node-address-v1:fbaf3b7f24d111cbc80ebf35b3d9a6001b6e9d17b239e562ed2b089d7d1f5559"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 위치·다른 관계·양쪽 Owner·producer·현재 표현 맥락"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 위치·다른 관계·양쪽 Owner·producer·현재 표현 맥락",
+    "largestApplicationRisk": "형·해의 겹침은 적의·배신·질병이나 위험 배수의 관찰이 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 3,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:459a3a3dbc231af64f19c184387dca52bfed0be7daf90a7439b37e670e6942a4",
+    "originalResearchId": "pcpr:material:CH06.P2:ba-adult-boundary-informs-contact",
+    "catalogKey": "kc:v1:1d11fcaf70c31043139efd97a834f52c2bf8d1b2b036b104b90df6416906b7b7",
+    "recordHash": "1a331b7dffc8a7563c17c6cc651e3714c0ef652321237e7a3fc19ad267a6f450",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "4977cebe7f020a7f7c123d9d9ac514c473fc19125c29a7df195bbdf9bb29d9bd",
+    "packetHash": "3efad52ce293822d9dd4d620938837be4b4e26e6b8e40e72f2820d7578df72d8",
+    "product": "saju_mbti_compatibility",
+    "relationship": "parentChild",
+    "originalCoreClaim": [
+      {
+        "pointer": "/coreMeaning",
+        "text": "성인 자녀가 정한 연락 경계가 부모의 지원 방식을 다시 정할 정보가 되는 조건을 연구한다."
+      }
+    ],
+    "modelSummary": "성인 자녀 B의 연락 경계는 부모 A가 지원 방식을 조정할 정보가 될 수 있다는 맥락 지침이다.",
+    "originalDoesNotEstablish": "발달·능력 판정, 미성년 지침의 성인 전용, 부모의 영구 통제권.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "pcpr:source:58ee6bd5417794df4aec"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:3007e2e4a6cd2e7a62deacbeaf7dd9e3ceeff6b9e601026865a3599148fb49ac"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "GUIDANCE",
+          "B"
+        ]
+      ],
+      "direction": [
+        [
+          "B_TO_A"
+        ]
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "대학 맥락 외 성인 전체의 의무·법적 관계로 일반화하지 않는다.",
+    "originalProhibitedInferences": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "modelProposedCounterexamples": [
+      "연락 지연이 애정 부족의 증거가 아니고 자녀가 부모 외로움을 해결할 의무도 없다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "fixed-ab-v1 A부모/B자녀·B→A·ADULT 맥락·현재 동의·원천 지침 범위."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "fixed-ab-v1 A부모/B자녀·B→A·ADULT 맥락·현재 동의·원천 지침 범위.",
+    "largestApplicationRisk": "발달·능력 판정, 미성년 지침의 성인 전용, 부모의 영구 통제권.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:4e74ac9fa221427fd9daa3ce0225bd60ec0ce803be25af9e1ecf728d146374d5",
+    "originalResearchId": "clr:relation:rr:combination:chung:丑未",
+    "catalogKey": "kc:v1:36f26b15e65f3bd9d0151e55a684ebeed5e5319247aa7ea0da9ad879df99767b",
+    "recordHash": "5d27c0a34907b387a98d300e76aca14def22e8534addf9ca3b08745e2ca68a29",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "c68d353c40a74439850868ee1d7579cdd7904cfafd8a1e2c9ee8a8a5073f8610",
+    "packetHash": "e3676dc45acb222224d395e36c4620be74d6bcc7aa8a3d213ecfb47ecb936adf",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "사고지 토의 충이다. 충해야 창고가 열린다는 보편 결론은 미확정이다."
+      }
+    ],
+    "modelSummary": "丑·未 두 실제 자리의 충 분류와 서로 다른 저장 구성을 비교한다. 만남의 조율은 후속 조건부 질문이다.",
+    "originalDoesNotEstablish": "충이 실제 갈등·이별·사고를 만든다는 인과나 개고재물의 보편 법칙을 말하지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:53eeb7ed2574bb304edebde9e06bdbca619a9c292817349f276f03cbfe1f514a",
+        "actual-node-address-v1:640b682063ff4c2ae4f24d8a9c78f8dc763b007ff8153752299ee27f0d4f6833",
+        "actual-node-address-v1:c45a80634eeb37bac2d5aff1e4d5d30c0b777afd7e7ca3a36ef37f44f18fabdd"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "양쪽 실제 기둥·cross relation ID·성립과 배제·현재 만남 맥락"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "양쪽 실제 기둥·cross relation ID·성립과 배제·현재 만남 맥락",
+    "largestApplicationRisk": "충이 실제 갈등·이별·사고를 만든다는 인과나 개고재물의 보편 법칙을 말하지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 3,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:546099cb92d114feb3abed80b1d90e979e39913e139c39d6191d43370e677a1f",
+    "originalResearchId": "frpr:direction:CH05.P1",
+    "catalogKey": "kc:v1:47e9b22b46608162f41e74c13051f3e233a4950dd012a11c7b2b0d0a104ac386",
+    "recordHash": "042ef39c83ba350664a0b1f332354dcb557ddf8435971700ddf8bb6c9b7c779f",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "20084eb4bc2d08b034d6680bf30ddb36b059ef689c0674fdf86a8389dd86aac8",
+    "packetHash": "57aaa8fedc84e321a6286e734d45498d39cb3eaae0c32779411bd06af6db3f52",
+    "product": "saju_mbti_compatibility",
+    "relationship": "friendship",
+    "originalCoreClaim": [
+      {
+        "pointer": "/question",
+        "text": "A의 새로운 제안은 B에게 어떤 자극으로 받아들여질까?"
+      }
+    ],
+    "modelSummary": "A의 새 제안과 B가 고를 참여 범위가 별도라는 A→B 방향 질문이다.",
+    "originalDoesNotEstablish": "B의 실제 흥미·동의·친밀도·우정 기간을 관찰한 자료가 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "frpr:direction:CH05.P1"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:500b444154f7f15bf7c7c1227aca480743d31ce1043f923191c0d9daef4cf57f"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "A"
+        ]
+      ],
+      "direction": [
+        [
+          "A_TO_B"
+        ]
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [
+        {
+          "root": "kc:v1:47e9b22b46608162f41e74c13051f3e233a4950dd012a11c7b2b0d0a104ac386",
+          "requiredSourceKeys": [
+            "kc:v1:47e9b22b46608162f41e74c13051f3e233a4950dd012a11c7b2b0d0a104ac386"
+          ],
+          "contextualSourceKeys": [],
+          "cycleEdges": [],
+          "conditionalGroupOwners": [],
+          "sourceReferenceKeys": [],
+          "incompleteReferenceKeys": [],
+          "prohibitions": [],
+          "documentaryAndFutureAreNotCalculatedAncestors": true
+        }
+      ],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "별도 선언 없음; 전체 원본 카드 확인",
+    "originalProhibitedInferences": "전체 원본 카드의 금지 조건 확인",
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 수신자 일간·방향 ID·개인 원천·현재 요청·거절 가능성"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 수신자 일간·방향 ID·개인 원천·현재 요청·거절 가능성",
+    "largestApplicationRisk": "B의 실제 흥미·동의·친밀도·우정 기간을 관찰한 자료가 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5993b08182efc78df3dd9bd976e7ab85c58444220e40e9f08422ce213e646785",
+    "originalResearchId": "afpr:annual-god:비견",
+    "catalogKey": "kc:v1:fa5bd4bf855eee54a03e8e74d33732753832a9d02a43452cce36f2d64257e3d7",
+    "recordHash": "354838430544fbe561878e879a2278ad7be39902f6343fb9f7d29d890fb748d7",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "266b318bd024c3856e451f3dff2fd89798f03488b2aa14bebf7ac0cec153fdf7",
+    "packetHash": "40931f9819de7e586b0907b5cbba7c69e7cbb20d4cd35e68b25808b05f2e267d",
+    "product": "annual_fortune",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/meaning",
+        "text": "선택 연도 비견의 질문은 자기 기준과 독자 선택이며, 한 해의 다른 월 조건과 비교할 기준이다."
+      }
+    ],
+    "modelSummary": "선택 연도 비견은 독자 판단의 범위와 공동 검토선을 구분하는 질문이다.",
+    "originalDoesNotEstablish": "유형이나 십성만으로 과제의 권한·승진·단독 결정 정당성이 생기지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "afpr:source:annual-reading",
+        "afpr:source:editorial"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "GUIDANCE"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": "annual",
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "권한이 없는 과제에 독자 결정을 강제하지 않는다.",
+    "originalProhibitedInferences": [
+      "입력받지 않은 과거 경험 단정",
+      "성공·실패·수입·질병·혼인 사건 예언",
+      "근거 없는 시주·복합 관계 생성"
+    ],
+    "modelProposedCounterexamples": [
+      "권한이 없는 과제에 독자 결정을 강제하지 않는다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실효 연주·기준 일간·월간/본기 역할·구간·실제 권한"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실효 연주·기준 일간·월간/본기 역할·구간·실제 권한",
+    "largestApplicationRisk": "유형이나 십성만으로 과제의 권한·승진·단독 결정 정당성이 생기지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCER_SUPPORT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "EXACT_PRODUCER_REQUIREMENT_MISSING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_REQUIREMENT_MISSING"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      },
+      {
+        "gate": "TIME_INTERSECTION",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_PERIOD_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_ACTUAL_EVIDENCE",
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 0,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5ac48e6169d0fa0914c14e3748447872e45d17307c9c6802adf52a6db12afcfa",
+    "originalResearchId": "lkr:material:CH08.P4:parent-consent-respect",
+    "catalogKey": "kc:v1:0d833ac1ce2b1eea3f758e286210d16d8f853122d1d5afacf1bae212045d58c7",
+    "recordHash": "28b225ae78edc02ee82519bc8b3da8f21bdf97a52a4869d1d6ec3c030fa37008",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "254360780395ede92bf54303452cf4b67419e69d791c671cde620eec877197d3",
+    "packetHash": "74272321e99e47b858579b9f97e0d25895a11d2f37d129ba4b89241942a0c6d4",
+    "product": "love_marriage_child",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/coreMeaning",
+        "text": "자기 선택을 존중하는 양육 강점을 몸·정보·취향의 경계를 설명하는 행동으로 연구한다."
+      }
+    ],
+    "modelSummary": "본인의 자율성 참고 서술을 양육을 선택할 경우의 경계 존중 행동으로 제안한 연구다.",
+    "originalDoesNotEstablish": "자녀 존재·나이·피해 사실 또는 양육 성공의 판정.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "lkr:source:10d4177606458102491b",
+        "autonomy_parent"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "필수 안전 조치가 필요한 경우에는 선택 가능한 방식과 어른의 책임을 구분해야 한다.",
+    "originalProhibitedInferences": [
+      "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+      "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+      "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+      "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+    ],
+    "modelProposedCounterexamples": [
+      "필수 안전 조치의 책임까지 아이에게 넘기거나 모든 결정을 무조건 맡길 수는 없다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "본인 MBTI 원천·양육 맥락과 실제 보호 책임 확인. 자녀 사실에는 별도 자녀 입력 필요."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "본인 MBTI 원천·양육 맥락과 실제 보호 책임 확인. 자녀 사실에는 별도 자녀 입력 필요.",
+    "largestApplicationRisk": "자녀 존재·나이·피해 사실 또는 양육 성공의 판정.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "UNKNOWN_MBTI"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_ACTUAL_EVIDENCE",
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 0,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:5e4c2fe0c9cf06aa434b7b0778aad0602b132d40edae63bc07d5eff90f3c5dae",
+    "originalResearchId": "mrpr:relation:rr:combination:hae:寅巳",
+    "catalogKey": "kc:v1:41cfc8c9066bd01f9af7b674c685af42f40626396ab4ef4917a215290f9b387f",
+    "recordHash": "ea2781bcd925ff1f4f76950759a04c5a4b102c326bb3306e396aa46fbc38e42a",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "272eb6e569dbf2a0435da023e570b07bd4d7e55af06812268615f11e7a9a0d34",
+    "packetHash": "22bf435578308a5c5dcfd6cedc1a45fcaf97c2821e63eee0470897f144de6025",
+    "product": "saju_mbti_compatibility",
+    "relationship": "managerReport",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "육해와 순환형 일부가 겹치는 쌍이다."
+      }
+    ],
+    "modelSummary": "寅巳 해의 원래 정의와 형의 겹침을 구분할 자료이며 숨은 적의의 증거는 아니다.",
+    "originalDoesNotEstablish": "상하관계 권한·실력·평가·승진이나 적의를 판정.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:5cfdd545d0ee14dc07aa49bfca6a4ae19bbad5d21f9d4642f2670d091e87db2a"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "해가 있어도 배신·질병·관재나 현재 직장 갈등을 확인할 수 없다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 양쪽 person ID·기둥·relation ID·refs·성립 조건 및 다른 申·亥 관계 확인."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 양쪽 person ID·기둥·relation ID·refs·성립 조건 및 다른 申·亥 관계 확인.",
+    "largestApplicationRisk": "상하관계 권한·실력·평가·승진이나 적의를 판정.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:6fb89263ce5aa9a307d3c4a07f239f5bf1b4f5ba9580513ce355373983f20625",
+    "originalResearchId": "lkr:material:CH01.P1:shared-meaning",
+    "catalogKey": "kc:v1:fc8eef747023e03565a2fbd70eb354e8d081452bf47bfa54f9a691cab8d9f659",
+    "recordHash": "c5f8c16b61e464ddd39bbef45d46cbf2a4c1c131bde1c92f198071c15c1de7af",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "bf1faa53e814f2b12bb49819cecf152f409a437aaac3944e3a996658faadd732",
+    "packetHash": "39d95a754faeb6227dff76ff0647bf5d55935e88cfe377e4d83e7dc51379e49a",
+    "product": "love_marriage_child",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/readerQuestion",
+        "text": "나의 기본적인 연애 스타일"
+      },
+      {
+        "pointer": "/coreMeaning",
+        "text": "감정적 유대의 깊이를 거창한 운명보다 서로 중요하게 여기는 의미를 알아가는 과정으로 연구한다."
+      }
+    ],
+    "modelSummary": "깊은 유대를 원한다는 본인의 유형 서술을 서로의 이유를 묻는 질문으로 옮기는 제안이다.",
+    "originalDoesNotEstablish": "상대도 같은 약속·가치를 느꼈거나 영혼의 짝이라는 증거가 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "lkr:source:1ad75d65f36179f32968",
+        "deep_emotional_bond"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:f2b886bb0c37ffb509bdbe3cbebc8e309ddbee2404171329647baf0d62182348"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "가벼운 경험을 즐기는 것이 지금 더 중요하다면 깊은 가치 대화가 필요한 때가 아닐 수 있다.",
+    "originalProhibitedInferences": [
+      "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+      "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+      "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+      "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+    ],
+    "modelProposedCounterexamples": [
+      "가벼운 경험을 즐기는 것이 지금 더 중요하다면 깊은 가치 대화가 필요한 때가 아닐 수 있다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "본인의 실제 유형·현재 가치·상대가 직접 밝힌 이유"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "본인의 실제 유형·현재 가치·상대가 직접 밝힌 이유",
+    "largestApplicationRisk": "상대도 같은 약속·가치를 느꼈거나 영혼의 짝이라는 증거가 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "UNKNOWN_MBTI"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:7e49413ef271e70f0cc3ab43744f20160f0e5445317ea4973c799eff33450e20",
+    "originalResearchId": "bppr:relation:rr:combination:hae:寅巳",
+    "catalogKey": "kc:v1:77b7c75d85d00e016e118eb362d0dfccd06f9087a257795ac9774bd2dba4c1f5",
+    "recordHash": "46cc4ca110fad9c03f96246c7f8d00dd58a3af2c9bba2ae7219863db2b031cae",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "7f680f4e1be4776c33f1362c6936c1aa07288f24d6a41571f5706ee28384b567",
+    "packetHash": "3f8884d3bcb9a53076d46e70a25908ebf52cccc9d976acc4fdc8a32bfcf1afd5",
+    "product": "saju_mbti_compatibility",
+    "relationship": "businessPartner",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "육해와 순환형 일부가 겹치는 쌍이다."
+      }
+    ],
+    "modelSummary": "寅巳 육해·형의 겹침을 구분하며 사업 파트너 응용의 출처·권한 조건을 검토한다.",
+    "originalDoesNotEstablish": "배신·분쟁·현금 부족이나 어느 쪽의 책임을 계산한 결과가 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:05fb0c9ef84fb26b4e2b94b765775f118f7331215d69e7af18310237f7320207"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 관계·위치·다른 관계·사업 역할·동의·권한"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 관계·위치·다른 관계·사업 역할·동의·권한",
+    "largestApplicationRisk": "배신·분쟁·현금 부족이나 어느 쪽의 책임을 계산한 결과가 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:85c43ec8805b90d79e0c3c10e168f1b4a82c1ef7bd80f8052abb810a16b1172c",
+    "originalResearchId": "ckr:material:CH01.P1:draft-as-question",
+    "catalogKey": "kc:v1:0517da0c93edacebc8821fef8adff3ca69cc645933c4af91d1c7c2e32ef76e34",
+    "recordHash": "fea1e0d1980f1c578773af917e2eb5f00238466c59bd32925b445960127a373d",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "8a0846acc1338205af9d771651dcbde0efd2ed923228baeb48f55df0427a0b06",
+    "packetHash": "66e9c7160744f42669980f2bd2acc49a114f5765c23559f1cfa6454a0693017d",
+    "product": "career_money_study",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/readerQuestion",
+        "text": "타고난 업무 성향"
+      },
+      {
+        "pointer": "/coreMeaning",
+        "text": "말로 모호한 요청을 작은 시안으로 확인하는 시작 방식"
+      }
+    ],
+    "modelSummary": "시안을 정답보다 요청을 구체화하는 질문으로 사용하는 연구다.",
+    "originalDoesNotEstablish": "디자인 능력·고객의 승인·자유로운 제작 권한이 확인됐다는 뜻이 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "ckr:source:079248d9db39848db6cd",
+        "foundation:ten_god:shang_guan",
+        "ckr:source:53113e9ff18319b22c8a",
+        "ckr:source:2f83590d0543224f2684",
+        "ckr:source:331d66e109fedda15aa9",
+        "interest_switch_learning",
+        "tool_hobby_budget_limit",
+        "collaborative_environment",
+        "calm_deep_work",
+        "storytelling_learning",
+        "care_labor_underpricing",
+        "ckr:source:428155544a315487e6a6",
+        "ckr:source:8c7eb0318961ed4e1cce",
+        "arts_and_creative_field",
+        "ckr:source:1949199fcd8a2e08e71e",
+        "ckr:source:cd19631fd0781dd2ef4c",
+        "ckr:source:cf6e4b6c104165d3fff3",
+        "ckr:source:cdc60c6b316ee8a858c1",
+        "ckr:source:6047f491aa9082328a86",
+        "deep:ten_god:shang_guan",
+        "error_record_short_loop",
+        "ckr:source:a78eebeaa12bff33d79b",
+        "feedback_safety_contract",
+        "precision_profession_fit",
+        "irregular_income_buffer",
+        "deep:ten_god:zheng_guan",
+        "media_community_fit",
+        "ckr:source:5697e5371d9b4b34d523",
+        "ckr:source:90e77590d3ea07930ba1",
+        "strategy_to_asset_work",
+        "foundation:ten_god:shi_shen",
+        "ckr:source:cca22a892a0cdcc5f2e8",
+        "ckr:source:ba9c4a59def3be6ff655",
+        "arts_literature_preference",
+        "ckr:source:ce1defc1af72408fec4a",
+        "ckr:source:1668268fb9233e277c7b",
+        "experience_content_revenue",
+        "ckr:source:d3f1d896063ae672f97b",
+        "concrete_praise_learning",
+        "ckr:source:1d7da5209fe3284e2d3e",
+        "creative_arts_fit",
+        "ckr:source:d5a3f16c5cef50521cd4",
+        "ckr:source:f23be8c338fde8896938",
+        "foundation:ten_god:zheng_guan",
+        "ckr:source:248692af90259c9eebe4",
+        "ckr:source:1288e7c671389c17eb7d",
+        "follow_through_system",
+        "deep:ten_god:shi_shen",
+        "hands_on_learning",
+        "artistic_expression_fit",
+        "possibility_spending_spread",
+        "ckr:source:53f96587bbaa900e8b0e",
+        "taste_to_service_value",
+        "ckr:source:76c5466694297d1a36cf"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:9df84b6d4d179de6757cf99243a50a0186364dd085db8c1f8a0264a21464bfa7",
+        "actual-node-address-v1:d362b80adf161bc0afb3c3b2ad0c642510e3d6e7c2624f55d1e1df66207012d9"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "안전·규정상 허용된 답이 정해졌다면 자유 시안은 부적절",
+    "originalProhibitedInferences": [
+      "직업·경력·소득·고객 수·자격·가족·건강·과거 사건을 입력 없이 사실로 보충",
+      "직무 분류·직업 상태를 명리 사실·점수·추천 순위로 변환",
+      "기간·Pair 근거를 본인 원국 성향이나 직장 상대의 성격으로 자동 사용",
+      "성공·승진·합격·재물 증가·투자 능력 확정"
+    ],
+    "modelProposedCounterexamples": [
+      "안전·규정상 허용된 답이 정해졌다면 자유 시안은 부적절"
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 요청·안전 규정·비교할 요소·시험 목적"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 요청·안전 규정·비교할 요소·시험 목적",
+    "largestApplicationRisk": "디자인 능력·고객의 승인·자유로운 제작 권한이 확인됐다는 뜻이 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN",
+          "FAIL"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "ACTUAL_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "INCOMPLETE_REQUIRED_ANCESTRY"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_DOMAIN_POLICY",
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 0,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:919a3b43cc1c6e772d3b28080628cdac715284178b547d744f180f4465d50856",
+    "originalResearchId": "cpr:material:CH04.P2:private-criteria",
+    "catalogKey": "kc:v1:f1b38034b268c0f1b71ee86146b08b79cf308d3123d9ee76c562f007470ba6d2",
+    "recordHash": "a6608832bc1f80805e631c4278a8f8b344d47e53f983f0f1608d413f213cf10f",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "dd0e5312478c474422902d04e15f5ddbaf7f19436e760fe98e08b686588cded4",
+    "packetHash": "7f2dfe5b79a642f07cd53ac3e70c1d058d32270b291d63b380ee0ce7f6f61618",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/readerQuestion",
+        "text": "혼자 정리할 때 어떤 여건이 필요한가?"
+      },
+      {
+        "pointer": "/coreMeaning",
+        "text": "혼자 판단 기준을 정리할 때 필요한 시간"
+      }
+    ],
+    "modelSummary": "개인 판단을 정돈할 공간과 공동 응답 기한을 나누는 질문이다.",
+    "originalDoesNotEstablish": "내향적 진심·외향적 가면이나 독단적 결정권을 확인한 자료가 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "independent_decision_maker"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:5c4f8f7540f0e37f3e73899249219b55671c59c36e62efd685726e51796cc53e"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "외향적 행동을 가면으로 해석하지 않음",
+    "originalProhibitedInferences": [
+      "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+      "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+      "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "외향적 행동을 가면으로 해석하지 않음"
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 혼자 생각할 여건과 공동 결정의 권한·기한"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 혼자 생각할 여건과 공동 결정의 권한·기한",
+    "largestApplicationRisk": "내향적 진심·외향적 가면이나 독단적 결정권을 확인한 자료가 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "FAIL",
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "UNKNOWN_MBTI"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:9349b850cda441b851a1d67911aef1048039ec21b5d3bf765dab4a833d0047d1",
+    "originalResearchId": "cwpr:material:CH08.P2:a-change-with-record",
+    "catalogKey": "kc:v1:9ac5588d55af280557777fe935746fd10e662b5e67ce14b2ea42c7990d2d9ae3",
+    "recordHash": "7a3abbcc84154a6ecb0130da1c3cd3f164fc70105d9f2a062df36bc30deaffb3",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "9da5776b956b394776767e87e1d5b1ae2409e719366ffd925af80e96297acc6b",
+    "packetHash": "84dc7a855998626ff6ddda2cab7bb4f6663339352c18f5842094a766f5ebb943",
+    "product": "saju_mbti_compatibility",
+    "relationship": "coworker",
+    "originalCoreClaim": [
+      {
+        "pointer": "/readerQuestion",
+        "text": "A는 변경·피드백·수정·추가 요청·인계·권한을 어떻게 조정하는가?"
+      },
+      {
+        "pointer": "/coreMeaning",
+        "text": "A가 바꾼 정보를 B가 확인할 수 있는 변경 기록으로 남긴다."
+      }
+    ],
+    "modelSummary": "A가 전달한 버전·변경분·미확정 상태를 B가 확인할 수 있게 하자는 회수형 연구다.",
+    "originalDoesNotEstablish": "최신 정보의 전달이 변경 허가나 실제 업무 이력이라는 뜻이 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "cwpr:source:8166189640ff584ab6f6",
+        "cwpr:source:607d86e676269d444952",
+        "cwpr:source:0388561cdeef5da930d4"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:889edfbefec2acf3584c5dd9f7e94542d1bcb977066e0ee0e57f6fe2d0142fd4"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "GUIDANCE",
+          "A"
+        ]
+      ],
+      "direction": [
+        [
+          "A_TO_B"
+        ]
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "실제 승인·보안 조건은 별도",
+    "originalProhibitedInferences": "전체 원본 카드의 금지 조건 확인",
+    "modelProposedCounterexamples": [
+      "실제 승인·보안 조건은 별도"
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 같은 과제·변경 기록·승인선·앞서 표시된 information-silo 의미"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 같은 과제·변경 기록·승인선·앞서 표시된 information-silo 의미",
+    "largestApplicationRisk": "최신 정보의 전달이 변경 허가나 실제 업무 이력이라는 뜻이 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED",
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:a3a3921b97ea4748bc3cbf8ea59d8d7919b7b009690bf4892c135b445be2e878",
+    "originalResearchId": "bppr:relation:rr:combination:yukhap:辰酉",
+    "catalogKey": "kc:v1:0ebc2fd31a00dec595ba3b2ecd0d8af31282c9c1c0b0461bc4887bffede52e3f",
+    "recordHash": "a81e52769579182e09ee357e41ccf6bdb00471c81e84476ed7b487404e61421e",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "c092ed25b74476861c5303dc5ebee755f0cd958ef54fbca6adbc5ca068f13750",
+    "packetHash": "5576ec779a3c93bd09a7a7e68326833e15b7a1bf328ccc60f4c67853f7a88966",
+    "product": "saju_mbti_compatibility",
+    "relationship": "businessPartner",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "육합이며 卯酉충의 해법 예가 있으나 원국 전체의 배합 조건이 필요하다."
+      }
+    ],
+    "modelSummary": "辰酉 육합의 위치와 금의 여력·다른 배합 조건을 검토하는 자료다. 사업 성공 자료가 아니다.",
+    "originalDoesNotEstablish": "MONEY/INVESTMENT 허용, 이익·계약권·지분·사업 성과의 단정.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:a6c4e9a4052b9e2ccba9c773fcd7325db83f93a1b0e9a51067691efe29f6cf57"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "辰이 수국·충에 관여하면 기능을 고정하지 못하고 누락된 한 글자를 보충할 수 없다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 양쪽 소유자·기둥·관계 ID·refs·기간·다른 관계·정책 경계 확인."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 양쪽 소유자·기둥·관계 ID·refs·기간·다른 관계·정책 경계 확인.",
+    "largestApplicationRisk": "MONEY/INVESTMENT 허용, 이익·계약권·지분·사업 성과의 단정.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:a7a734c1d533c29e541b60a61bd6d9ce07c642004364b4cf4ad502ffeefe6fe3",
+    "originalResearchId": "mfpr:god:편관",
+    "catalogKey": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+    "recordHash": "f2950e5c9c0b01f173ba811bdb29a27df97a078ea57db6dfa44f66a73a71f26d",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "ba0dd1aa042bf14db65a06fc115f19e52fd0fc19165f2dc9392cf6575adfb902",
+    "packetHash": "a74ca2fe32a0939325df5bf5fd96162d6fef9d6e60567e877681fc977027e3cf",
+    "product": "major_fortune",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/core",
+        "text": "긴급 요구와 책임의 한계"
+      }
+    ],
+    "modelSummary": "편관 대운의 긴급 요구·책임 범위를 원국 대응 조건과 구분해 살피는 편집 연구다.",
+    "originalDoesNotEstablish": "사고·질환·폭력·승진 예언이나 미검증 원국-대운 인과.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "FAIL"
+      ],
+      "traditionalReference": "UNVERIFIED_TRADITIONAL_REF",
+      "supportingOriginalIds": [
+        "mfpr:source:editorial",
+        "repo-gods",
+        "editorial",
+        "tr:god:편관",
+        "mfpr:god:편관",
+        "mfpr:source:decade"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person",
+          "GUIDANCE"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": "dayun",
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [
+        "SOURCE_INCOMPLETE"
+      ],
+      "explicitProhibition": false,
+      "requiredAncestry": [
+        {
+          "root": "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+          "requiredSourceKeys": [
+            "kc:v1:17e517f5ddff781fe6e62a4bdee37d0c65b9d82c95d64eb84ec0e5c7a71d6fca",
+            "kc:v1:3c12d9facda8e5d557c4673936f351faede6787f3ecebccda24fc0760b0d83aa",
+            "kc:v1:3d13f31bc0644d615757714ce6cfdc77b7c1bdefb058afe53f22d33bd7147daf",
+            "kc:v1:5ad19f8ef1ad91f07f9cb295b626287ad31aba8fba59b4dfe66552c3b2015531",
+            "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5",
+            "kc:v1:9850b3ca7724e48a50d219a184d94faa558eadf694ae2e2bbe40573676db2490"
+          ],
+          "contextualSourceKeys": [],
+          "cycleEdges": [],
+          "conditionalGroupOwners": [],
+          "sourceReferenceKeys": [
+            "sv:ref:077286e77877fea635d2ddf52650de80d3070899d1e2648bd438c4e779e97bbd"
+          ],
+          "incompleteReferenceKeys": [
+            "sv:ref:077286e77877fea635d2ddf52650de80d3070899d1e2648bd438c4e779e97bbd"
+          ],
+          "prohibitions": [],
+          "documentaryAndFutureAreNotCalculatedAncestors": true
+        }
+      ],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "별도 선언 없음; 전체 원본 카드 확인",
+    "originalProhibitedInferences": [
+      "사고·질환·폭력·승진을 예언하지 않음",
+      "동일 십성을 원국·대운·세운에서 같은 fact로 병합하지 않음"
+    ],
+    "modelProposedCounterexamples": [
+      "실제 압박 맥락이 없으면 위기 사건을 삽입하지 않고 제살을 자동 판정하지 않는다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 cycle ID·기간·교운·원국 자리와 오행 조건 확인. 조상 tr:god:편관의 traditionalRef는 설명문으로 정확한 원천 ID가 없어 보류."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 cycle ID·기간·교운·원국 자리와 오행 조건 확인. 조상 tr:god:편관의 traditionalRef는 설명문으로 정확한 원천 ID가 없어 보류.",
+    "largestApplicationRisk": "사고·질환·폭력·승진 예언이나 미검증 원국-대운 인과.",
+    "remainingGates": [
+      {
+        "gate": "SOURCE_INTEGRITY",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ]
+      },
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "INCOMPLETE_REQUIRED_ANCESTRY"
+        ]
+      },
+      {
+        "gate": "TIME_INTERSECTION",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_PERIOD_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_EXACT_ORIGINAL",
+      "REQUEST_DOMAIN_POLICY",
+      "REQUEST_ACTUAL_EVIDENCE",
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 0,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:aee379e4082b818dfb42ec7906d9204c9bf4b425c19745459c88e0cfe32355a9",
+    "originalResearchId": "cpr:material:CH10.P3:romance-as-problem-set",
+    "catalogKey": "kc:v1:1135d377127b1d51f5f392d5f52ed47738f78395add7ffe3cab74e9c0fd061a1",
+    "recordHash": "88472bce3da711f7d13b1769099fea549735c4e0cc89ae10d9d703ba66f353a2",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "b0129b70355a27d15cab1b12a2498ab7c3d1a7cf1c1c838018a9be22174b1251",
+    "packetHash": "5c5055b5a27683175e5b171e074ff78fabd9dcbcf9a5729e44e7d1b3bb269dea",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/coreMeaning",
+        "text": "관계를 잘하려는 분석이 당사자의 말보다 앞설 위험"
+      }
+    ],
+    "modelSummary": "분석은 상대의 뜻을 확인할 질문을 정리하는 데 쓸 수 있다. 분석 결과로 상대 진심을 확정할 근거는 아니다.",
+    "originalDoesNotEstablish": "상대의 외도·갈등·이별 또는 사용자의 논리 능력 결함 판정.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "strategic_romance_awkwardness"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:c53ee8284a755feee01862bf60e184862fc29b8455a685dbb2f2bc43379193e4"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "상대 진심·외도·이별·현재 갈등을 사실화 금지",
+    "originalProhibitedInferences": [
+      "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+      "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+      "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "연락이 줄었다고 마음이 식었다고 단정할 수 없고 직접 질문에도 답하지 않을 선택권이 있다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "본인 INTJ trait의 실제 연결과 현재 관계 맥락·당사자 답 확인."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "본인 INTJ trait의 실제 연결과 현재 관계 맥락·당사자 답 확인.",
+    "largestApplicationRisk": "상대의 외도·갈등·이별 또는 사용자의 논리 능력 결함 판정.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "FAIL",
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "UNKNOWN_MBTI"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:afb46395b309ac2a5b1927d84353d5b4d4502bdc7f53896d3d6c75011b691702",
+    "originalResearchId": "cwpr:material:CH08.P3:b-state-integration-limit",
+    "catalogKey": "kc:v1:2a94fa2b4fc69c19549c04dcc463e5f8c9ff35588d13c92ab46b925048287ef3",
+    "recordHash": "4ac4c1b1a60cf20ad659d3458d75ac3f277606318e033096aeb7e43090eeeaa8",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "7264f3cd8fc9b66e49b63ddd25fea5e0edd061544e210db66eff5cc2de51b8d0",
+    "packetHash": "6847d8dd792cb9c65196e5c76ba66fad9a629765f09817d163d23e602b4389f9",
+    "product": "saju_mbti_compatibility",
+    "relationship": "coworker",
+    "originalCoreClaim": [
+      {
+        "pointer": "/coreMeaning",
+        "text": "B가 자기 수정의 대상·버전·통합 상태를 A에게 표시한다."
+      }
+    ],
+    "modelSummary": "B의 수정 대상·버전·미통합 항목을 A에게 알려 중복 편집의 비교 범위를 좁히는 지침이다.",
+    "originalDoesNotEstablish": "직장 권한·성과·복종 또는 현재 갈등 이력을 생성.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "cwpr:source:607d86e676269d444952",
+        "cwpr:source:0388561cdeef5da930d4"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:5eca2904afd7660bbf077b7803863ce297b61ed697f53b7d638e0e85e3695440"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "GUIDANCE",
+          "B"
+        ]
+      ],
+      "direction": [
+        [
+          "B_TO_A"
+        ]
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "실제 기록 없는 선후·기여 판정 금지",
+    "originalProhibitedInferences": "전체 원본 카드의 금지 조건 확인",
+    "modelProposedCounterexamples": [
+      "최신 파일이 더 정확하다는 보장은 없고 기록 없이 선후·기여를 판정할 수 없다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "동일 실제 과제·산출물·단계·책임·결정 권한, CH07.P4의 실제 표시 이력 확인."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "동일 실제 과제·산출물·단계·책임·결정 권한, CH07.P4의 실제 표시 이력 확인.",
+    "largestApplicationRisk": "직장 권한·성과·복종 또는 현재 갈등 이력을 생성.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUALLY_DISPLAYED_COMPATIBLE_MEANING_REQUIRED",
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:b5b9cf261b5aa517b9ab47dce0ecb843c4cebe5d6d8b58ce61694faccdb71a0e",
+    "originalResearchId": "pcpr:relation:rr:combination:chung:丑未",
+    "catalogKey": "kc:v1:1d9c21e732a08bdafc3278bcb0f8433a204d45fa1424ed793866ba87e803585c",
+    "recordHash": "b724d48eb026803eee8774f58123e2be5cf9e296e21a7935ae0229dfd782be3e",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "3162eded2064a2d0116d2a0a868592e61f7fc08bfbc9dff836f81bd5dd63cc23",
+    "packetHash": "2d76cbf2ec0bae7af40236d1dfaedd8b2f300097b17ffb088bf43386d148b3c5",
+    "product": "saju_mbti_compatibility",
+    "relationship": "parentChild",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "사고지 토의 충이다. 충해야 창고가 열린다는 보편 결론은 미확정이다."
+      }
+    ],
+    "modelSummary": "丑未 충 분류의 원래 배제를 지키며 부모·자녀 역할에서 참고 가능한 조건을 검토한다.",
+    "originalDoesNotEstablish": "양육 성공·가족 불행·자녀 복종·친자 관계를 판정하지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:4b84a2d18d093c70fc301e90b889206769a5c19ef605d0531e27aecf1aaa25ae"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 두 기둥·관계 ID·고정 역할·발달 맥락·보호 책임"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 두 기둥·관계 ID·고정 역할·발달 맥락·보호 책임",
+    "largestApplicationRisk": "양육 성공·가족 불행·자녀 복종·친자 관계를 판정하지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:ba09ae15fbce32dd35c706607bd987416b3d2664c2606aa88846766740f6338e",
+    "originalResearchId": "lkr:material:CH02.P3:new-experience-design",
+    "catalogKey": "kc:v1:1ef70b9a7398f0645362164298d47f6a0edf6e1c727fb6ff94cf68aa6550f94e",
+    "recordHash": "5570f5e98b255a473cd59d52ac5a0081a56befdb72589904f29a5afb3d2193e2",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "ecb515e3d143dddcd1c0b17efbed2331f98df4ab83c2a13904106b261139f6ee",
+    "packetHash": "7119f616da571615eb9aa67b29e566059300107ca6710f3416cf575e92b5b26d",
+    "product": "love_marriage_child",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/readerQuestion",
+        "text": "나만의 특별한 연애 장점"
+      },
+      {
+        "pointer": "/coreMeaning",
+        "text": "둘의 취향을 반영한 작은 경험을 만드는 감각을 연구한다."
+      }
+    ],
+    "modelSummary": "작은 경험에 둘의 취향과 의미를 담되 상대가 선택할 몫을 남기는 연구다.",
+    "originalDoesNotEstablish": "예술 재능·소비 여력·상대의 참여 의사를 계산한 자료가 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "lkr:source:ba4aed5f58e7de310848",
+        "artistic_dates"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:4b3b003a5d4b628e299880b497385f5d610d357cef2f05c87d0d677a05fc0e40"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "두 사람이 평범한 반복을 좋아한다면 새로운 경험을 준비하는 일이 필요한 매력은 아닐 수 있다.",
+    "originalProhibitedInferences": [
+      "상대의 MBTI·사주·속마음·동의·과거 사건을 본인 입력에서 생성",
+      "parenting을 child로 전이하거나 자녀 존재·나이·성격·건강·성적·진로 추정",
+      "호감·결혼·출산·재물·안전·외도·이별을 상징이나 유형만으로 보장",
+      "위협·폭력·감시·강요를 성향 차이로 정상화하거나 화해 의무 부과"
+    ],
+    "modelProposedCounterexamples": [
+      "두 사람이 평범한 반복을 좋아한다면 새로운 경험을 준비하는 일이 필요한 매력은 아닐 수 있다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "본인의 유형 원천·양쪽 취향·준비 여력·현재 동의"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "본인의 유형 원천·양쪽 취향·준비 여력·현재 동의",
+    "largestApplicationRisk": "예술 재능·소비 여력·상대의 참여 의사를 계산한 자료가 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "UNKNOWN_MBTI"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:bbad7836b4a303f2d9dfc68f1d69142edfe0c96336d9e6e68e8f7fa20439bed6",
+    "originalResearchId": "afpr:annual-god:겁재",
+    "catalogKey": "kc:v1:df323d5890e2d9d0ca709b029a9d6d20ba4bbc412f5ca952b51510dd8b6852bf",
+    "recordHash": "a32399c0966714c7f5606b59721436927ab86158b4cbcc5f43e6021ca8cfc445",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "ff054196e1ebeeb48a63fe0867b3854db12bbe525ceeb28e72bc730f2d85146b",
+    "packetHash": "be81eeb2f9a49a5620facb533abcc756b80692ce85993569e09b7da9264ceeb1",
+    "product": "annual_fortune",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/meaning",
+        "text": "선택 연도 겁재의 질문은 함께 쓰는 힘과 자원의 몫이며, 한 해의 다른 월 조건과 비교할 기준이다."
+      }
+    ],
+    "modelSummary": "선택 연도 겁재를 공동 힘·자원의 몫이라는 질문으로 삼되 월별 조건은 별도로 본다.",
+    "originalDoesNotEstablish": "협업이 없는데 배신·손실·경쟁 사건을 만드는 원고가 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "afpr:source:annual-reading",
+        "afpr:source:editorial"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "GUIDANCE"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": "annual",
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "협업이 없는데 경쟁·배신·손실 사건을 가정하지 않는다.",
+    "originalProhibitedInferences": [
+      "입력받지 않은 과거 경험 단정",
+      "성공·실패·수입·질병·혼인 사건 예언",
+      "근거 없는 시주·복합 관계 생성"
+    ],
+    "modelProposedCounterexamples": [
+      "협업이 없는데 경쟁·배신·손실 사건을 가정하지 않는다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실효 연주·일간과 target 천간·정확한 구간·실제 소유와 동의"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실효 연주·일간과 target 천간·정확한 구간·실제 소유와 동의",
+    "largestApplicationRisk": "협업이 없는데 배신·손실·경쟁 사건을 만드는 원고가 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCER_SUPPORT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "EXACT_PRODUCER_REQUIREMENT_MISSING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_REQUIREMENT_MISSING"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      },
+      {
+        "gate": "TIME_INTERSECTION",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_PERIOD_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_ACTUAL_EVIDENCE",
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 0,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:bd476818775f92259e906e1c23d5c41863f55d716e34d119ab6df087ff40fc5e",
+    "originalResearchId": "pcpr:material:CH03.P4:b-agreement-can-hide-unasked-view",
+    "catalogKey": "kc:v1:6ab0b1951fa728013e959e7e51ab1f171141b6d984aef8e237bd0bc0e427ab1b",
+    "recordHash": "aae419bcdcee2f0482c38b4e67ec3e8cf3e5eb8970e2bec5ab906f8ee48ecc78",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "5d2c210f107af4a9cc9956620792f1864fdbc9ae6d6882895f7b52e3c582ca5e",
+    "packetHash": "d069bdf8f71dad99ae0dd7f122d7236a647e2c13a316fb35e2de863ea86202e3",
+    "product": "saju_mbti_compatibility",
+    "relationship": "parentChild",
+    "originalCoreClaim": [
+      {
+        "pointer": "/readerQuestion",
+        "text": "자녀의 응답·동의·활동 참고를 실제 마음과 어떻게 구분하는가?"
+      },
+      {
+        "pointer": "/coreMeaning",
+        "text": "B의 규칙 준수 참고가 말하지 않은 의견을 지우지 않도록 연구한다."
+      }
+    ],
+    "modelSummary": "TEEN 맥락 B의 규칙 준수 유형 참고와 실제 선택을 분리하며 부모에게 안전한 의견 통로를 요구하는 연구다.",
+    "originalDoesNotEstablish": "아이가 감정을 숨겼거나 억압을 겪었다는 관찰·발달 평가가 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "pcpr:source:ee509907f7d870f38308",
+        "pcpr:source:4d0792e403615a91db52",
+        "model_student_child",
+        "pcpr:source:aaac0cf1c3f696a21cc6",
+        "pcpr:source:a98212d9a6491c70cd80"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:cfb0b293941f77faf6fbd27b96287f61d5d34f0e27e61145e736c1a27043142e"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "B",
+          "GUIDANCE"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "실제 숨긴 감정이나 과거 억압을 추정하지 않는다.",
+    "originalProhibitedInferences": [
+      "자녀의 성적·지능·적성·정서·발달·실제 행동·미래 성격 단정",
+      "부모 유형으로 양육 성공률·좋은/나쁜 부모 판정",
+      "부모 감정·안전·가족 유지 책임을 미성년 자녀에게 전가",
+      "성인 자녀를 영구적 허락 대상으로 해석",
+      "역할 없는 과거 입력에 부모/자녀를 자동 생성",
+      "연애·배우자·성적 매력의 부모·자녀 전용",
+      "연구 ID를 계산 Evidence ID로 승격",
+      "실제 경험을 가상 장면으로부터 창작"
+    ],
+    "modelProposedCounterexamples": [
+      "실제 숨긴 감정이나 과거 억압을 추정하지 않는다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "fixed-ab-v1·B 실제 ISFJ 원천·TEEN 맥락·현재 선택·성인 보호 책임"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "fixed-ab-v1·B 실제 ISFJ 원천·TEEN 맥락·현재 선택·성인 보호 책임",
+    "largestApplicationRisk": "아이가 감정을 숨겼거나 억압을 겪었다는 관찰·발달 평가가 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:c3dd46879f874810f1034bb06230e4a7559448eab2f26ca20fa8f49a698d611e",
+    "originalResearchId": "clr:material:CH05.P4:ab-offer-not-reservation",
+    "catalogKey": "kc:v1:64063b7c566a59c119b3cecbac692e20ac54bcc9c141c8c4bb4a23c0c668ba87",
+    "recordHash": "f9b5b7b49f57207669900188d33aa6143ddb53e3fee1deb53b591798540cc860",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "f39fee9f402c64a5b47ec901a380712bdc3daa28d9a1d6bf9dbcf8f9ea203a59",
+    "packetHash": "c288cb19f2a71483dc3a5932bab41378b206518418262956d6fa74798a34718c",
+    "product": "saju_mbti_compatibility",
+    "relationship": "love",
+    "originalCoreClaim": [
+      {
+        "pointer": "/coreMeaning",
+        "text": "A의 적극적인 제안을 B의 일정에 대한 예약권과 구분한다."
+      }
+    ],
+    "modelSummary": "A의 제안이 B의 선택·수정·거절 가능성을 남길 때 적극성이 조건부 도움이 될 수 있다.",
+    "originalDoesNotEstablish": "실제 교제·호감·향후 관계 진행 또는 B의 일정에 대한 권리.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "slow_trust_love",
+        "active_affection",
+        "clr:source:d048a1db929d8e81a67f",
+        "clr:source:d88467512c1c5489e7d0"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:3bb684680cb15ca8a02e22fc2110ca37b0adcda8b189f5d482692deabd2a8845",
+        "actual-node-address-v1:78991b42089135d0d900604e282b06df77700ddde10c10cf0c15d8b94899cd71",
+        "actual-node-address-v1:99241cc9109e3a1b910d03cfc080b94f3a4dfe62e8a590ae0d3955bb2b2e226e",
+        "actual-node-address-v1:c1de0fa72aaff63faa836bf2c5a59c885c2df846463414731a340949fb997ad9",
+        "actual-node-address-v1:d42b29245a16bb570e1b20618f4b3b712180dcdd870ef759f22f70b9e23ed514",
+        "actual-node-address-v1:e839c505338e49586aa0bb1083b244a77097b73cf0c94b3f78c2ff878936f4d0"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "A",
+          "B"
+        ]
+      ],
+      "direction": [
+        [
+          "A_TO_B"
+        ]
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "거절에 불이익이나 위협이 있다면 조율 가능한 속도 차이로 보지 않는다.",
+    "originalProhibitedInferences": [
+      "결혼·이별·외도·실제 호감·과거 사건의 단정",
+      "공통 축·합·유형 차이를 성공 또는 갈등의 보장으로 사용",
+      "같은 root를 개인·Pair·Fusion의 독립 세 근거로 집계",
+      "계보 미검증 Pair 이름을 과학적 관계 예측으로 승격"
+    ],
+    "modelProposedCounterexamples": [
+      "거절에 위협이나 불이익이 있다면 속도 조율로 해결할 성향 차이가 아니다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "A/B 각각의 정확한 owned source·방향 근거·현재 요청·거절 안전성."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "A/B 각각의 정확한 owned source·방향 근거·현재 요청·거절 안전성.",
+    "largestApplicationRisk": "실제 교제·호감·향후 관계 진행 또는 B의 일정에 대한 권리.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN",
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "UNKNOWN_MBTI",
+          "WRONG_OWNER"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN",
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND",
+          "WRONG_OWNER"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:c689f40eeb08bd8c45d83c9a4d6320579e2d550d252d8078eb139979082f9ec8",
+    "originalResearchId": "frpr:direction:CH05.P2",
+    "catalogKey": "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148",
+    "recordHash": "09654a0fa2bdd6e0129e817aae6425be395f3e65915265ecbcbfc3a0765463a9",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "e724f5531e12aa68a883bd95eb3480548766b6ed106d55b2204559674799a36f",
+    "packetHash": "4e6f031e8c1afa1c08cb8760887b230aaa3adfde0f1cf3da65d507b8a7565d82",
+    "product": "saju_mbti_compatibility",
+    "relationship": "friendship",
+    "originalCoreClaim": [
+      {
+        "pointer": "/question",
+        "text": "A의 해결 아이디어는 언제 B에게 도움이 될까?"
+      }
+    ],
+    "modelSummary": "A가 해결 아이디어를 건네는 것이 B에게 도움인지 현재 요청과 개입 경계를 통해 확인하는 방향 지침이다.",
+    "originalDoesNotEstablish": "해결 효과 보장, 동의 없는 개입, 역방향 근거 복사.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "frpr:direction:CH05.P2"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:500b444154f7f15bf7c7c1227aca480743d31ce1043f923191c0d9daef4cf57f"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "A"
+        ]
+      ],
+      "direction": [
+        [
+          "A_TO_B"
+        ]
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [
+        {
+          "root": "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148",
+          "requiredSourceKeys": [
+            "kc:v1:0565b44bc9f8f0d76def20e0b94c11c93da638f66e46dd2c6729bc4024c82148"
+          ],
+          "contextualSourceKeys": [],
+          "cycleEdges": [],
+          "conditionalGroupOwners": [],
+          "sourceReferenceKeys": [],
+          "incompleteReferenceKeys": [],
+          "prohibitions": [],
+          "documentaryAndFutureAreNotCalculatedAncestors": true
+        }
+      ],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "별도 선언 없음; 전체 원본 카드 확인",
+    "originalProhibitedInferences": "전체 원본 카드의 금지 조건 확인",
+    "modelProposedCounterexamples": [
+      "B가 해법에 동의하지 않아도 비합리적이라고 평가할 수 없고 실제 효과는 UNKNOWN이다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "A→B·수신자 B 일간·subject/recipient refs·개인 source와 현재 요청 확인."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "A→B·수신자 B 일간·subject/recipient refs·개인 source와 현재 요청 확인.",
+    "largestApplicationRisk": "해결 효과 보장, 동의 없는 개입, 역방향 근거 복사.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:cac1f17502779b695230161a17bdde9714667aba087b377eb830806a9ebd20e8",
+    "originalResearchId": "bppr:relation:rr:combination:chung:丑未",
+    "catalogKey": "kc:v1:91063bd66e09dfdfdb8f97ab4ddfb8402a5a789cb2f01eeb5952a94dd4bdefe2",
+    "recordHash": "9b41b4e33ac8e7db2dc00b1139e2f2bd221d4b552ea87d3058f021a936d79e5a",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "31ca2d9e60442deb02dfab51dcc3e84aa03cd1287f214dc493f50d388fde4d6e",
+    "packetHash": "fa4b20877a3968f9a44c300b488c85d998443f9fc9173a3945e67079d9c62a92",
+    "product": "saju_mbti_compatibility",
+    "relationship": "businessPartner",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "사고지 토의 충이다. 충해야 창고가 열린다는 보편 결론은 미확정이다."
+      }
+    ],
+    "modelSummary": "丑未 충의 실제 참여 구성을 참고하는 연구이며 사업의 실제 계약 판단과 분리한다.",
+    "originalDoesNotEstablish": "충이 손실·분쟁·계약 위반을 예언하거나 지분을 산출하지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:f9541324def63b066a37ee3da8c657f0d3b3f8c4da3cbd2a64a1a9cfb42eac64"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 양쪽 기둥·relation ID·사업 맥락·계약·손익 자료"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 양쪽 기둥·relation ID·사업 맥락·계약·손익 자료",
+    "largestApplicationRisk": "충이 손실·분쟁·계약 위반을 예언하거나 지분을 산출하지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:d8e73cd04aa3771a6c77552940ac9b45eac3102fced4bed5485bf414cce96dc5",
+    "originalResearchId": "cmpr:relation:rr:combination:hae:寅巳",
+    "catalogKey": "kc:v1:c59923ee4522241d210f32668e53930e059660e095add2d8ff1d63d4c85b4b10",
+    "recordHash": "033578c53b7f04cf7dc9c8007de3b53eae33b3a378021cda7a14e6654a7ebfdb",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "000bf97c9694b57e11a85a06c4ff97553b9cbb8c6f5c9d6483baa773279b33d6",
+    "packetHash": "97de28f9fea80fea9cbaa34337d7442b7518e273413e6f23ff17fd26f266bd9c",
+    "product": "saju_mbti_compatibility",
+    "relationship": "marriage",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "육해와 순환형 일부가 겹치는 쌍이다."
+      }
+    ],
+    "modelSummary": "寅巳의 관계 분류를 공동생활의 협력·차이 질문에 참고하려는 조건부 응용이다.",
+    "originalDoesNotEstablish": "실제 혼인·동거·가사 분담이나 재정 결과를 확정하지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:f6e036f24c2ead88cf3640549aa689bd703bda197002bbcd21ce2d5801a8cc82"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "해를 적의·배신·장애·질병의 사실로 만드는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "양쪽 실제 관계 ID·기둥·공동생활 여부·동의"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "양쪽 실제 관계 ID·기둥·공동생활 여부·동의",
+    "largestApplicationRisk": "실제 혼인·동거·가사 분담이나 재정 결과를 확정하지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e052b32db11df0eaf51eec4bdb294b8db34009c9bc6b6927374419f28ee1bed2",
+    "originalResearchId": "afpr:case-study:canonical-help",
+    "catalogKey": "kc:v1:782ba0c10ba719cad1f530caa8d037c6fa48f5322f076f9fe171ed44d4720a77",
+    "recordHash": "275d4b552a0ea163e44e08297d052ae80526617d0113c8ddfdafd8c57f247f1f",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "6a526e045acfd04cde3dc290f50ecf20e7a2e22a0348cc843a6ebb5903f1197b",
+    "packetHash": "a9c7f923a38e66b72108094828a561f765f879dd4407517dc2880629db50a57b",
+    "product": "annual_fortune",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/meaning",
+        "text": "선택된 천을귀인 재료는 실제 월운 target의 canonical 관찰에 따른다."
+      }
+    ],
+    "modelSummary": "천을귀인 관찰의 기준은 원국 庚 일간을 anchor로 한 2026년 7월 두 번째 segment 未 월지다. 도움의 출현을 뜻하지 않는다.",
+    "originalDoesNotEstablish": "후원자 출현 보장, 원국 귀인의 월운 복제, 월간/본기 혼합 또는 실제 경험 창작.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "afpr:source:annual-evidence",
+        "afpr:source:jie",
+        "afpr:source:interaction",
+        "afpr:source:editorial"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "GUIDANCE"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": "UNKNOWN",
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "실제 도움을 줄 사람이 있다는 사실은 신살 관찰만으로 확인되지 않는다.",
+    "originalProhibitedInferences": [
+      "미입력 과거 경험 단정",
+      "미래 사건 예언",
+      "연구 ID의 Evidence 발급"
+    ],
+    "modelProposedCounterexamples": [
+      "같은 7월 첫 segment는 甲午이며 천을귀인 target 未 관찰을 월 전체에 적용할 수 없다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "정확한 owner·reference stem/target·[2026-07-07 10:56:57, 2026-08-01)·원래 producer 확인."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "정확한 owner·reference stem/target·[2026-07-07 10:56:57, 2026-08-01)·원래 producer 확인.",
+    "largestApplicationRisk": "후원자 출현 보장, 원국 귀인의 월운 복제, 월간/본기 혼합 또는 실제 경험 창작.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCER_SUPPORT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "EXACT_PRODUCER_REQUIREMENT_MISSING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_REQUIREMENT_MISSING"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED",
+          "INCOMPLETE_REQUIRED_ANCESTRY"
+        ]
+      },
+      {
+        "gate": "TIME_INTERSECTION",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "UNKNOWN_INTERVAL"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_EXACT_ORIGINAL",
+      "REQUEST_EDITION",
+      "REQUEST_SOURCE_POINTER",
+      "REQUEST_DOMAIN_POLICY",
+      "REQUEST_ACTUAL_EVIDENCE",
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 0,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e48e51851f8ee6ad275f5b31cb17400a31bbf895c7a713f7bfe8b46238def6c8",
+    "originalResearchId": "frpr:direction:CH05.P3",
+    "catalogKey": "kc:v1:c3f88dafdcbe897c16393cc4098f610e217c0dbf0fcbe133bf9894b58eda4e26",
+    "recordHash": "bddc966b05ab93f63ddf3119b004cde0f01628ec78c704f8c5c7bd8dffe3e7e9",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "67cb87d143e203c857275fba57ce8da51f7cce9d58047f93f885a4540cefb39a",
+    "packetHash": "f9dac68f8a68da720f218b6e739a79e5b31b95ba96b58e99062821271918dee7",
+    "product": "saju_mbti_compatibility",
+    "relationship": "friendship",
+    "originalCoreClaim": [
+      {
+        "pointer": "/question",
+        "text": "A의 호의가 B에게 갚아야 할 빚처럼 느껴질 때는 언제일까?"
+      }
+    ],
+    "modelSummary": "A의 호의를 B의 빚으로 만들지 않도록 수락 규모와 부담 조건을 묻는 A→B 질문이다.",
+    "originalDoesNotEstablish": "A가 실제로 과하게 베풀었거나 B가 빚졌다는 사건 기록이 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "frpr:direction:CH05.P3"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:500b444154f7f15bf7c7c1227aca480743d31ce1043f923191c0d9daef4cf57f"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "A"
+        ]
+      ],
+      "direction": [
+        [
+          "A_TO_B"
+        ]
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [
+        {
+          "root": "kc:v1:c3f88dafdcbe897c16393cc4098f610e217c0dbf0fcbe133bf9894b58eda4e26",
+          "requiredSourceKeys": [
+            "kc:v1:c3f88dafdcbe897c16393cc4098f610e217c0dbf0fcbe133bf9894b58eda4e26"
+          ],
+          "contextualSourceKeys": [],
+          "cycleEdges": [],
+          "conditionalGroupOwners": [],
+          "sourceReferenceKeys": [],
+          "incompleteReferenceKeys": [],
+          "prohibitions": [],
+          "documentaryAndFutureAreNotCalculatedAncestors": true
+        }
+      ],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "별도 선언 없음; 전체 원본 카드 확인",
+    "originalProhibitedInferences": "전체 원본 카드의 금지 조건 확인",
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 호의·현재 요청·양쪽 Owner·수신자 십성·자발적 거절"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 호의·현재 요청·양쪽 Owner·수신자 십성·자발적 거절",
+    "largestApplicationRisk": "A가 실제로 과하게 베풀었거나 B가 빚졌다는 사건 기록이 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:e70edf52191b009fab1482fe06e161056fd3fb2246d02a96a0d2d84aa60faefe",
+    "originalResearchId": "mrpr:relation:rr:combination:chung:丑未",
+    "catalogKey": "kc:v1:73a564b45d2d464c02aea4ab291cd4cc7ee0a30d80cec339bb05db85ee813f63",
+    "recordHash": "33338d96d88af51b2673d1d55955868c28a841228e722d8efac4c32af1831875",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "491e2f7147bfa4db6674b28a34405ffc456b7060994d25145d5ee6dea2459d7a",
+    "packetHash": "ddbf28f1ba3a91dcca34d0244ca861f32f1cc248d1bee874ac81ca1e946b49df",
+    "product": "saju_mbti_compatibility",
+    "relationship": "managerReport",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "사고지 토의 충이다. 충해야 창고가 열린다는 보편 결론은 미확정이다."
+      }
+    ],
+    "modelSummary": "丑未 교차 충과 실제 구성·출처를 확인하는 연구를 상하 역할의 적용 질문과 구분한다.",
+    "originalDoesNotEstablish": "충을 업무 실력·성과·갈등 이력·인사 권한으로 환산하지 않는다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:b321fc3d4500ac4719691307c82f9aaaf1e973cd73dea509327ccd7bae993201"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 교차 ID·참여 위치·조직 역할·정식 평가 권한"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 교차 ID·참여 위치·조직 역할·정식 평가 권한",
+    "largestApplicationRisk": "충을 업무 실력·성과·갈등 이력·인사 권한으로 환산하지 않는다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE",
+          "REQUIRED_USER_STATE_NOT_VERIFIED"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:f414eea3d7da6f6f5f1a4949bba88ec732d97f0cef676c918805206a75932afa",
+    "originalResearchId": "cpr:material:CH04.P3:firm-boundary-close",
+    "catalogKey": "kc:v1:90c89a8371ab3360ffcd2bc0cfc9c056e53651ca9f66cd4c78877e6140b87c07",
+    "recordHash": "41d80198cd17956568367bf476b60642957b24f4f41810478178a9d2cee63e51",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "f3247258440fe121d1d25b7179b17d3f1bfc1f578f5ffcbfd11c8764d05563b0",
+    "packetHash": "20f34e35ff8d1518ba02db887d41f39b20a26ec925756651a44c814ef364389b",
+    "product": "saju_mbti_full",
+    "relationship": null,
+    "originalCoreClaim": [
+      {
+        "pointer": "/readerQuestion",
+        "text": "가까워지면 어떤 표현 선택이 달라질 수 있는가?"
+      },
+      {
+        "pointer": "/coreMeaning",
+        "text": "따뜻함과 선택 기준이 가까운 관계에서 공존할 가능성"
+      }
+    ],
+    "modelSummary": "친절하게 도우면서도 수용할 요청의 경계를 정할 수 있다는 조건부 응용이다.",
+    "originalDoesNotEstablish": "관계 단절·배신을 이미 겪었다거나 ENFJ가 반드시 거절한다는 사실이 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": [
+        "warm_but_selective_cutoff"
+      ]
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:844efa34db188dd91fa3003dcab1ba6cd2204808347e9cda57c70a2c4f4b3104",
+        "actual-node-address-v1:8758b58ac46ced51bbff9b81b69eaa670a163f24382909049bae24d759a27f2c"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "person"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": "갈등·관계 단절을 이미 겪은 사실로 쓰지 않음",
+    "originalProhibitedInferences": [
+      "미입력 직업·수입·가족 구성·교제·과거 사건을 개인 사실로 만들지 않는다.",
+      "기간 근거를 타고난 성격으로, Pair 자료를 한 개인의 사실로 전환하지 않는다.",
+      "sourceCoverage direct/inferred와 원천 수록을 실증 검증·개인 적합 승인으로 승격하지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "갈등·관계 단절을 이미 겪은 사실로 쓰지 않음"
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 요청·본인이 밝힌 경계·거절의 안전"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 요청·본인이 밝힌 경계·거절의 안전",
+    "largestApplicationRisk": "관계 단절·배신을 이미 겪었다거나 ENFJ가 반드시 거절한다는 사실이 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      },
+      {
+        "gate": "ACTUAL_CALCULATED_FACT",
+        "states": [
+          "UNKNOWN",
+          "FAIL"
+        ],
+        "reasons": [
+          "ACTUAL_EVIDENCE_NOT_FOUND",
+          "UNKNOWN_MBTI"
+        ]
+      },
+      {
+        "gate": "ACTUAL_OWNER",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_OWNER_EVIDENCE_NOT_FOUND"
+        ]
+      },
+      {
+        "gate": "ALL_ANCESTOR_DOMAINS",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 2,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:fe3ca6f309282fa30c0b1277a5035775418226b3b46618b1264a7936b0273dfe",
+    "originalResearchId": "cmpr:relation:rr:combination:chung:丑未",
+    "catalogKey": "kc:v1:33f393caeba9d0a42a370288067f39ef9a74bd316d5741e6899709118a5922c8",
+    "recordHash": "07cc54c08243402a93318f210d7002a5d7d9ad33346e9851b3aaab91691c0653",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "7f99dd1c4c579f5a97f5cc0c7042bfa913ee18f2b70a54988fe1df7f91262e8e",
+    "packetHash": "f5b492ca554a23915e51b7f4e6ad26bfc58d1c0c73165ff3e6ac11b716c9586e",
+    "product": "saju_mbti_compatibility",
+    "relationship": "marriage",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "사고지 토의 충이다. 충해야 창고가 열린다는 보편 결론은 미확정이다."
+      }
+    ],
+    "modelSummary": "丑未의 구성은 서로 다른 토의 위치·장간을 검토할 정의다. 공동생활 결과를 예측하지 않는다.",
+    "originalDoesNotEstablish": "혼인·동거 사실이나 재정 분담·사고·이혼의 단정.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:fae82b4257730e5c6bc6cf9ebc39b5bc542ef7011bbb0c78c0a0b399700ac1d3"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "사고·이혼·실직의 발생을 쌍에서 단정하는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "충이 있어도 창고가 열려 재물이 증가한다거나 이혼한다고 결론낼 수 없다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "두 실제 소유자·기둥·관계 ID·기간·성립 조건과 원래 출처/판본 검토."
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "두 실제 소유자·기둥·관계 ID·기간·성립 조건과 원래 출처/판본 검토.",
+    "largestApplicationRisk": "혼인·동거 사실이나 재정 분담·사고·이혼의 단정.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  },
+  {
+    "reviewUnitId": "review-unit-v1:ff5bf0f98d07ec27f4fda6b18c6529cb37f35f84a5da251e4da592277581d47f",
+    "originalResearchId": "cmpr:relation:rr:combination:yukhap:巳申",
+    "catalogKey": "kc:v1:4aed307c0692be91f0c9bba68d9797556532cf7fd38595e6c710cbc610fc43a4",
+    "recordHash": "13625bee6557f487259edc667722b8b5fa5b752d10989ea9d2b2192880beb841",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "sourceProofHash": "fa51120113199ef20c59a447ca893350fa13c86291d3b97d5a64e6d655a9dbd0",
+    "packetHash": "0c5458f65b7fdbb48169152ba944c44fba785fdc7850d003b8d7b70711d36147",
+    "product": "saju_mbti_compatibility",
+    "relationship": "marriage",
+    "originalCoreClaim": [
+      {
+        "pointer": "/traditional/text",
+        "text": "육합 쌍이자 현행 형·파의 겹침이다. 고전 원리와 현대 파 표를 같은 전거로 합치지 않는다."
+      }
+    ],
+    "modelSummary": "巳申 육합과 형·파의 겹침을 구분하며 결속과 제약을 하나의 길흉으로 줄이지 않는다.",
+    "originalDoesNotEstablish": "합이 형·파를 지우거나 혼인 성공·위험 세 배를 보장한다는 설명이 아니다.",
+    "source": {
+      "recordProof": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL",
+      "recordHashValid": true,
+      "originalGate": [
+        "NO_REMAINING_GATE_DECLARED_NOT_NEW_PASS"
+      ],
+      "traditionalReference": "ORIGINAL_POLICY_RETAINED",
+      "supportingOriginalIds": []
+    },
+    "actualGraphWitness": {
+      "addresses": [
+        "actual-node-address-v1:17c9ef592d2e5d6c5f70a06305988833c7ca99b0528730b8bc96ad0c6b00aba3"
+      ],
+      "detailsInOriginalCard": "scopePolicy.actualGraphWitnessDetails",
+      "owner": [
+        [
+          "PAIR"
+        ]
+      ],
+      "direction": [
+        []
+      ],
+      "temporal": [
+        {
+          "scope": null,
+          "requiredWindow": null,
+          "originalWitnesses": [],
+          "participantRequirements": null
+        }
+      ],
+      "fixtureOnlyNotNewCustomerFacts": true
+    },
+    "domain": {
+      "states": [],
+      "explicitProhibition": false,
+      "requiredAncestry": [],
+      "customerUse": "WITHHELD"
+    },
+    "originalCounterexamples": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "originalProhibitedInferences": [
+      "짝의 한 글자가 없는데 합록·공허 이론으로 채우는 경우.",
+      "표의 구성과 실제 기둥·소유자·기간이 확인되지 않으면 적용하지 않는다. 미상 시주·누락 지지를 채우지 않는다."
+    ],
+    "modelProposedCounterexamples": [
+      "원래 성립·배제 조건이 미확인되면 응용을 보류한다."
+    ],
+    "requiredUserContext": {
+      "conditions": [
+        "실제 두 자리·계절 조건·양쪽 person·원래 배제"
+      ],
+      "fullOriginalRequirementsInCard": "unit.requiredActualContext"
+    },
+    "notEntered": "실제 두 자리·계절 조건·양쪽 person·원래 배제",
+    "largestApplicationRisk": "합이 형·파를 지우거나 혼인 성공·위험 세 배를 보장한다는 설명이 아니다.",
+    "remainingGates": [
+      {
+        "gate": "INTERPRETATION_REVIEW",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "SEMANTIC_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "ACTUAL_USER_STATE",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "CONTRACT_NOT_MACHINE_CHECKABLE"
+        ]
+      },
+      {
+        "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+        ]
+      },
+      {
+        "gate": "PRODUCT_SPECIALISM",
+        "states": [
+          "UNKNOWN"
+        ],
+        "reasons": [
+          "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+        ]
+      },
+      {
+        "gate": "CUSTOMER_APPROVAL",
+        "states": [
+          "REVIEW_REQUIRED"
+        ],
+        "reasons": [
+          "CUSTOMER_APPROVAL_PENDING",
+          "OPERATOR_APPROVAL_PENDING"
+        ]
+      }
+    ],
+    "operatorQuestions": [
+      "원문이 말한 범위와 모델 제안의 차이를 확인했습니까?",
+      "동일 개인·방향·기간·상품·관계·Source Group 조건이 실제 충족됩니까?",
+      "반례와 Required Ancestry의 금지 Domain을 빠짐없이 확인했습니까?",
+      "입력받지 않은 경험·권한·동의·미래 사건을 추가하지 않았습니까?",
+      "다른 자료와 같은 사실인지, 별도 조건의 응용인지 사람이 검토했습니까?"
+    ],
+    "recommendedNextWork": [
+      "REQUEST_CONTEXT",
+      "REQUEST_HUMAN_MEANING_REVIEW"
+    ],
+    "structuralOccurrences": 1,
+    "decision": "UNSELECTED",
+    "approvalIssued": false
+  }
+]

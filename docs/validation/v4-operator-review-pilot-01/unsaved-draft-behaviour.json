@@ -1,0 +1,17 @@
+{
+  "before": {
+    "notesLostOnReloadWithoutWarning": true,
+    "receipt": "/tmp/gyeol-operator-review-pilot-01-validation/baseline-browser.json"
+  },
+  "after": {
+    "dirtyIndicator": true,
+    "exportDownloadReminder": true,
+    "beforeunloadSeenAndCancelledWithStateRetained": true,
+    "confirmedReloadLosesMemoryAsDocumented": true,
+    "importRestoresState": true,
+    "browserMaySuppressBeforeunload": true,
+    "forcedBrowserTerminationProtected": false,
+    "autosaveOrUpload": false,
+    "draftFormatUnchanged": true
+  }
+}
