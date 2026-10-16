@@ -1,0 +1,1242 @@
+{
+  "nodes": [
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-1"
+        },
+        "producer": {
+          "file": "src/lib/interpretation-v4/strength.ts",
+          "symbol": "collectStructureAtoms",
+          "version": "v4-structure-evidence-1",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": "hour:visible:乙",
+          "observationPointer": "/calculationObservations/person/structureAtoms/hour:visible:乙",
+          "addressability": "ORIGINAL_ID",
+          "rootId": "fixture-root-10304",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "god": "傷官",
+          "position": "hour",
+          "location": "visible",
+          "stem": "乙",
+          "element": "WOOD",
+          "weight": 1,
+          "provenance": [
+            "pillars:hour:乙巳",
+            "getTenGod:壬:乙:傷官",
+            "saju/analyze.ts:analyzeVisibleTenGods"
+          ]
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-1",
+            "position": "hour",
+            "slot": "visible",
+            "value": "乙"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [],
+        "id": "fixture-comprehensive-A:node:919",
+        "ancestry": {
+          "parentIds": [
+            "fixture-comprehensive-A:node:3097",
+            "fixture-comprehensive-A:node:3461"
+          ],
+          "rootIds": [
+            "fixture-root-6131",
+            "fixture-root-10304",
+            "fixture-root-16675"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "VERIFIED",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-A:node:919",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-1"
+        },
+        "producer": {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "symbol": "calculateSaju",
+          "version": "saju-calendar-kst-v2",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": null,
+          "observationPointer": "/calculations/person/pillars/day/stem",
+          "addressability": "PRODUCER_OBSERVATION_ONLY",
+          "rootId": "fixture-root-6131",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "position": "day",
+          "slot": "stem",
+          "value": "壬",
+          "isDayMaster": true,
+          "birthTimePrecision": "exact"
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-1",
+            "position": "day",
+            "slot": "stem",
+            "value": "壬"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [
+          {
+            "code": "UNADDRESSABLE_PRODUCER_OBSERVATION",
+            "refs": [
+              "/calculations/person/pillars/day/stem"
+            ]
+          }
+        ],
+        "id": "fixture-comprehensive-A:node:3097",
+        "ancestry": {
+          "parentIds": [],
+          "rootIds": [
+            "fixture-root-6131"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "PARTIAL",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-A:node:3097",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-1"
+        },
+        "producer": {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "symbol": "calculateSaju",
+          "version": "saju-calendar-kst-v2",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": null,
+          "observationPointer": "/calculations/person/pillars/hour/stem",
+          "addressability": "PRODUCER_OBSERVATION_ONLY",
+          "rootId": "fixture-root-16675",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "position": "hour",
+          "slot": "stem",
+          "value": "乙",
+          "isDayMaster": false,
+          "birthTimePrecision": "exact"
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-1",
+            "position": "hour",
+            "slot": "stem",
+            "value": "乙"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [
+          {
+            "code": "UNADDRESSABLE_PRODUCER_OBSERVATION",
+            "refs": [
+              "/calculations/person/pillars/hour/stem"
+            ]
+          }
+        ],
+        "id": "fixture-comprehensive-A:node:3461",
+        "ancestry": {
+          "parentIds": [],
+          "rootIds": [
+            "fixture-root-16675"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "PARTIAL",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-A:node:3461",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-1"
+        },
+        "producer": {
+          "file": "src/lib/interpretation-v4/strength.ts",
+          "symbol": "collectStructureAtoms",
+          "version": "v4-structure-evidence-1",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": "year:visible:壬",
+          "observationPointer": "/calculationObservations/person/structureAtoms/year:visible:壬",
+          "addressability": "ORIGINAL_ID",
+          "rootId": "fixture-root-2537",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "god": "比肩",
+          "position": "year",
+          "location": "visible",
+          "stem": "壬",
+          "element": "WATER",
+          "weight": 1,
+          "provenance": [
+            "pillars:year:壬申",
+            "getTenGod:壬:壬:比肩",
+            "saju/analyze.ts:analyzeVisibleTenGods"
+          ]
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-1",
+            "position": "year",
+            "slot": "visible",
+            "value": "壬"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [],
+        "id": "fixture-comprehensive-A:node:2394",
+        "ancestry": {
+          "parentIds": [
+            "fixture-comprehensive-A:node:1002",
+            "fixture-comprehensive-A:node:3097"
+          ],
+          "rootIds": [
+            "fixture-root-2537",
+            "fixture-root-6131",
+            "fixture-root-7939"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "VERIFIED",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-A:node:2394",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-1"
+        },
+        "producer": {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "symbol": "calculateSaju",
+          "version": "saju-calendar-kst-v2",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": null,
+          "observationPointer": "/calculations/person/pillars/year/stem",
+          "addressability": "PRODUCER_OBSERVATION_ONLY",
+          "rootId": "fixture-root-7939",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "position": "year",
+          "slot": "stem",
+          "value": "壬",
+          "isDayMaster": false,
+          "birthTimePrecision": "exact"
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-1",
+            "position": "year",
+            "slot": "stem",
+            "value": "壬"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [
+          {
+            "code": "UNADDRESSABLE_PRODUCER_OBSERVATION",
+            "refs": [
+              "/calculations/person/pillars/year/stem"
+            ]
+          }
+        ],
+        "id": "fixture-comprehensive-A:node:1002",
+        "ancestry": {
+          "parentIds": [],
+          "rootIds": [
+            "fixture-root-7939"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "PARTIAL",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-A:node:1002",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-1"
+        },
+        "producer": {
+          "file": "src/lib/interpretation-v4/strength.ts",
+          "symbol": "collectStructureAtoms",
+          "version": "v4-structure-evidence-1",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": "year:SUB:壬",
+          "observationPointer": "/calculationObservations/person/structureAtoms/year:SUB:壬",
+          "addressability": "ORIGINAL_ID",
+          "rootId": "fixture-root-15605",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "god": "比肩",
+          "position": "year",
+          "location": "SUB",
+          "stem": "壬",
+          "element": "WATER",
+          "weight": 0.3,
+          "provenance": [
+            "pillars:year:壬申",
+            "getTenGod:壬:壬:比肩",
+            "saju/constants.ts:HIDDEN_STEMS:申:壬:SUB:0.3"
+          ]
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-1",
+            "position": "year",
+            "slot": "SUB",
+            "value": "壬"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [],
+        "id": "fixture-comprehensive-A:node:394",
+        "ancestry": {
+          "parentIds": [
+            "fixture-comprehensive-A:node:187",
+            "fixture-comprehensive-A:node:3097"
+          ],
+          "rootIds": [
+            "fixture-root-4202",
+            "fixture-root-6131",
+            "fixture-root-15605"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "VERIFIED",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-A:node:394",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-1"
+        },
+        "producer": {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "symbol": "calculateSaju",
+          "version": "saju-calendar-kst-v2",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": null,
+          "observationPointer": "/calculations/person/pillars/year/branch",
+          "addressability": "PRODUCER_OBSERVATION_ONLY",
+          "rootId": "fixture-root-4202",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "position": "year",
+          "slot": "branch",
+          "value": "申",
+          "isDayMaster": false,
+          "birthTimePrecision": "exact"
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-1",
+            "position": "year",
+            "slot": "branch",
+            "value": "申"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [
+          {
+            "code": "UNADDRESSABLE_PRODUCER_OBSERVATION",
+            "refs": [
+              "/calculations/person/pillars/year/branch"
+            ]
+          }
+        ],
+        "id": "fixture-comprehensive-A:node:187",
+        "ancestry": {
+          "parentIds": [],
+          "rootIds": [
+            "fixture-root-4202"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "PARTIAL",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-A:node:187",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "node": {
+        "kind": "MBTI_SOURCE_NODE",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-1"
+        },
+        "producer": {
+          "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+          "symbol": "buildMbtiSemanticProfile",
+          "version": "mbti-semantic-13d-2a-v1",
+          "system": "mbti"
+        },
+        "fact": {
+          "producerEvidenceId": "mbti:ENFJ:traits:identity:compassionate_facilitator:plainKo",
+          "observationPointer": "/profiles/person/mbti/sourceNodes/824",
+          "addressability": "ORIGINAL_ID",
+          "rootId": "fixture-root-3942",
+          "rootType": "SOURCE_ATTRIBUTION",
+          "independentFact": false
+        },
+        "value": {
+          "type": "ENFJ",
+          "sourceDomain": "IDENTITY",
+          "classification": "SCORING_SEMANTIC",
+          "sourceCoverage": "direct",
+          "value": "ENFJ는 사람을 향한 연민과 이해심이 강하다. 타인의 관심사와 필요를 진지하게 듣고, 그 사람이 더 편안하고 성장할 수 있도록 실제로 움직인다.",
+          "sourcePath": "/traits/identity/0/plainKo",
+          "empiricallyValidatedPersonality": false
+        },
+        "participants": [],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [
+          {
+            "file": "docs/product/mbti/source/ENFJ.json",
+            "pointer": "/traits/identity/0/plainKo",
+            "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "catalogKeys": [
+              "kc:v1:50b2c4840898a225b7fb1e7fdb5e29e2c55e9a15f086dbca5a1edac5c2f851ad"
+            ],
+            "sourceReferenceKeys": [
+              "sv:ref:edf18959a876c25f4a9ee75c0ba5e4ba6bec79a00f55191901be394acc384c08"
+            ],
+            "semanticDecisionKeys": [],
+            "state": "VERIFIED",
+            "originalClassification": "SCORING_SEMANTIC",
+            "sourceCoverage": "direct"
+          }
+        ],
+        "blockers": [],
+        "id": "fixture-comprehensive-A:node:2553",
+        "ancestry": {
+          "parentIds": [
+            "fixture-comprehensive-A:node:3205"
+          ],
+          "rootIds": [
+            "fixture-root-3942",
+            "fixture-root-9394"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": [
+            "IDENTITY"
+          ]
+        },
+        "status": "VERIFIED",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-A:node:2553",
+          "producerFactVerified": false,
+          "sourceReferenceVerified": true,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "node": {
+        "kind": "MBTI_INPUT_TYPE",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-1"
+        },
+        "producer": {
+          "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+          "symbol": "buildMbtiSemanticProfile",
+          "version": "mbti-semantic-13d-2a-v1",
+          "system": "mbti"
+        },
+        "fact": {
+          "producerEvidenceId": null,
+          "observationPointer": "/input/person/mbtiType",
+          "addressability": "PRODUCER_OBSERVATION_ONLY",
+          "rootId": "fixture-root-9394",
+          "rootType": "SELF_REPORTED_INPUT",
+          "independentFact": false
+        },
+        "value": {
+          "type": "ENFJ",
+          "selfReported": true,
+          "empiricallyValidatedPersonality": false
+        },
+        "participants": [],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [],
+        "id": "fixture-comprehensive-A:node:3205",
+        "ancestry": {
+          "parentIds": [],
+          "rootIds": [
+            "fixture-root-9394"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "VERIFIED",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-A:node:3205",
+          "producerFactVerified": false,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-A",
+      "node": {
+        "kind": "MBTI_SOURCE_NODE",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-1"
+        },
+        "producer": {
+          "file": "src/lib/interpretation-v4/mbtiSemanticProfile.ts",
+          "symbol": "buildMbtiSemanticProfile",
+          "version": "mbti-semantic-13d-2a-v1",
+          "system": "mbti"
+        },
+        "fact": {
+          "producerEvidenceId": "mbti:ENFJ:traits:workplace:collaborative_environment:plainKo",
+          "observationPointer": "/profiles/person/mbti/sourceNodes/1433",
+          "addressability": "ORIGINAL_ID",
+          "rootId": "fixture-root-19463",
+          "rootType": "SOURCE_ATTRIBUTION",
+          "independentFact": false
+        },
+        "value": {
+          "type": "ENFJ",
+          "sourceDomain": "WORK",
+          "classification": "SCORING_SEMANTIC",
+          "sourceCoverage": "direct",
+          "value": "ENFJ는 혼자 오래 버티는 일보다 사람들과 목표를 나누고 협력하는 환경에서 에너지가 살아난다. 관계의 의미가 보일수록 책임감도 강해진다.",
+          "sourcePath": "/traits/workplace/0/plainKo",
+          "empiricallyValidatedPersonality": false
+        },
+        "participants": [],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [
+          {
+            "file": "docs/product/mbti/source/ENFJ.json",
+            "pointer": "/traits/workplace/0/plainKo",
+            "fileSha256": "04422dcc0008ceb4dfa6b5d92738db73db9cc5961ff90d1a56e87dfedc2a98c8",
+            "catalogKeys": [
+              "kc:v1:1f5f6f3c964b3e86f13af856e4a71cc3035953508238ce7129956743e1cc452b"
+            ],
+            "sourceReferenceKeys": [
+              "sv:ref:5763e5f5a846dd1d4b93f99c81ad6c3778acbc1574d217f02bb7279d1291d4aa"
+            ],
+            "semanticDecisionKeys": [],
+            "state": "VERIFIED",
+            "originalClassification": "SCORING_SEMANTIC",
+            "sourceCoverage": "direct"
+          }
+        ],
+        "blockers": [],
+        "id": "fixture-comprehensive-A:node:2556",
+        "ancestry": {
+          "parentIds": [
+            "fixture-comprehensive-A:node:3205"
+          ],
+          "rootIds": [
+            "fixture-root-9394",
+            "fixture-root-19463"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": [
+            "WORK"
+          ]
+        },
+        "status": "VERIFIED",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-A:node:2556",
+          "producerFactVerified": false,
+          "sourceReferenceVerified": true,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-F",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-2"
+        },
+        "producer": {
+          "file": "src/lib/interpretation-v4/strength.ts",
+          "symbol": "collectStructureAtoms",
+          "version": "v4-structure-evidence-1",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": "month:MAIN:乙",
+          "observationPointer": "/calculationObservations/person/structureAtoms/month:MAIN:乙",
+          "addressability": "ORIGINAL_ID",
+          "rootId": "fixture-root-6128",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "god": "傷官",
+          "position": "month",
+          "location": "MAIN",
+          "stem": "乙",
+          "element": "WOOD",
+          "weight": 0.6,
+          "provenance": [
+            "pillars:month:癸卯",
+            "getTenGod:壬:乙:傷官",
+            "saju/constants.ts:HIDDEN_STEMS:卯:乙:MAIN:0.6"
+          ]
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-2",
+            "position": "month",
+            "slot": "MAIN",
+            "value": "乙"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [],
+        "id": "fixture-comprehensive-F:node:56",
+        "ancestry": {
+          "parentIds": [
+            "fixture-comprehensive-F:node:35",
+            "fixture-comprehensive-F:node:147"
+          ],
+          "rootIds": [
+            "fixture-root-4087",
+            "fixture-root-6128",
+            "fixture-root-15083"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "VERIFIED",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-F:node:56",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-F",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-2"
+        },
+        "producer": {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "symbol": "calculateSaju",
+          "version": "saju-calendar-kst-v2",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": null,
+          "observationPointer": "/calculations/person/pillars/day/stem",
+          "addressability": "PRODUCER_OBSERVATION_ONLY",
+          "rootId": "fixture-root-4087",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "position": "day",
+          "slot": "stem",
+          "value": "壬",
+          "isDayMaster": true,
+          "birthTimePrecision": "unknown"
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-2",
+            "position": "day",
+            "slot": "stem",
+            "value": "壬"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [
+          {
+            "code": "UNADDRESSABLE_PRODUCER_OBSERVATION",
+            "refs": [
+              "/calculations/person/pillars/day/stem"
+            ]
+          }
+        ],
+        "id": "fixture-comprehensive-F:node:147",
+        "ancestry": {
+          "parentIds": [],
+          "rootIds": [
+            "fixture-root-4087"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "PARTIAL",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-F:node:147",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-F",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-2"
+        },
+        "producer": {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "symbol": "calculateSaju",
+          "version": "saju-calendar-kst-v2",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": null,
+          "observationPointer": "/calculations/person/pillars/month/branch",
+          "addressability": "PRODUCER_OBSERVATION_ONLY",
+          "rootId": "fixture-root-15083",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "position": "month",
+          "slot": "branch",
+          "value": "卯",
+          "isDayMaster": false,
+          "birthTimePrecision": "unknown"
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-2",
+            "position": "month",
+            "slot": "branch",
+            "value": "卯"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [
+          {
+            "code": "UNADDRESSABLE_PRODUCER_OBSERVATION",
+            "refs": [
+              "/calculations/person/pillars/month/branch"
+            ]
+          }
+        ],
+        "id": "fixture-comprehensive-F:node:35",
+        "ancestry": {
+          "parentIds": [],
+          "rootIds": [
+            "fixture-root-15083"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "PARTIAL",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-F:node:35",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-F",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-2"
+        },
+        "producer": {
+          "file": "src/lib/interpretation-v4/strength.ts",
+          "symbol": "collectStructureAtoms",
+          "version": "v4-structure-evidence-1",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": "year:MAIN:庚",
+          "observationPointer": "/calculationObservations/person/structureAtoms/year:MAIN:庚",
+          "addressability": "ORIGINAL_ID",
+          "rootId": "fixture-root-14886",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "god": "偏印",
+          "position": "year",
+          "location": "MAIN",
+          "stem": "庚",
+          "element": "METAL",
+          "weight": 0.6,
+          "provenance": [
+            "pillars:year:壬申",
+            "getTenGod:壬:庚:偏印",
+            "saju/constants.ts:HIDDEN_STEMS:申:庚:MAIN:0.6"
+          ]
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-2",
+            "position": "year",
+            "slot": "MAIN",
+            "value": "庚"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [],
+        "id": "fixture-comprehensive-F:node:88",
+        "ancestry": {
+          "parentIds": [
+            "fixture-comprehensive-F:node:42",
+            "fixture-comprehensive-F:node:147"
+          ],
+          "rootIds": [
+            "fixture-root-4087",
+            "fixture-root-14886",
+            "fixture-root-18539"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "VERIFIED",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-F:node:88",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    },
+    {
+      "fixtureId": "fixture-comprehensive-F",
+      "node": {
+        "kind": "CALCULATED_NATAL_FACT",
+        "owner": {
+          "slot": "person",
+          "fixtureOwnerId": "fixture-person-2"
+        },
+        "producer": {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "symbol": "calculateSaju",
+          "version": "saju-calendar-kst-v2",
+          "system": "myeongli"
+        },
+        "fact": {
+          "producerEvidenceId": null,
+          "observationPointer": "/calculations/person/pillars/year/branch",
+          "addressability": "PRODUCER_OBSERVATION_ONLY",
+          "rootId": "fixture-root-18539",
+          "rootType": "PRODUCER_OBSERVATION",
+          "independentFact": true
+        },
+        "value": {
+          "position": "year",
+          "slot": "branch",
+          "value": "申",
+          "isDayMaster": false,
+          "birthTimePrecision": "unknown"
+        },
+        "participants": [
+          {
+            "owner": "fixture-person-2",
+            "position": "year",
+            "slot": "branch",
+            "value": "申"
+          }
+        ],
+        "temporal": null,
+        "certainty": "confirmed",
+        "direction": null,
+        "sources": [],
+        "blockers": [
+          {
+            "code": "UNADDRESSABLE_PRODUCER_OBSERVATION",
+            "refs": [
+              "/calculations/person/pillars/year/branch"
+            ]
+          }
+        ],
+        "id": "fixture-comprehensive-F:node:42",
+        "ancestry": {
+          "parentIds": [],
+          "rootIds": [
+            "fixture-root-18539"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "status": "PARTIAL",
+        "customerApproved": false
+      },
+      "existingReceipt": [
+        {
+          "nodeId": "fixture-comprehensive-F:node:42",
+          "producerFactVerified": true,
+          "sourceReferenceVerified": false,
+          "ownerVerified": true,
+          "directionVerified": null,
+          "temporalScopeVerified": null,
+          "ancestryComplete": true,
+          "customerApproved": false,
+          "semanticReviewRequired": true,
+          "customerApprovalRequired": true
+        }
+      ],
+      "reproducedProducerAndValueMatched": true,
+      "existingAddressUnchanged": true
+    }
+  ],
+  "originalGraphShards": [
+    {
+      "fixture": "fixture-comprehensive-A",
+      "file": "docs/validation/v4-actual-evidence-graph-01/shards/fixture-comprehensive-A-nodes.json",
+      "allNodesMatched": 3628,
+      "originalHash": "271e1764c89e36e2d4230b77b7d1d084b0c6fcb1f7de930f1c0bba8fb9a13dad"
+    },
+    {
+      "fixture": "fixture-comprehensive-F",
+      "file": "docs/validation/v4-actual-evidence-graph-01/shards/fixture-comprehensive-F-nodes.json",
+      "allNodesMatched": 163,
+      "originalHash": "628f7b0c950c10d50e8317232b90c3be15fd46a911a111d84edddfec5f21b456"
+    }
+  ],
+  "sourceIdsAreNotActualFacts": true,
+  "newIndependentFacts": 0
+}

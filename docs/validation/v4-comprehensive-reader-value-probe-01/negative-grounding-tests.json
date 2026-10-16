@@ -1,0 +1,131 @@
+{
+  "cases": [
+    {
+      "name": "wrong producer evidence",
+      "rejected": true,
+      "reason": "CALCULATED_FACT_NOT_VERIFIED",
+      "authorityIssued": 0
+    },
+    {
+      "name": "wrong calculated value",
+      "rejected": true,
+      "reason": "EXPECTED_FACT_VALUE_MISMATCH",
+      "authorityIssued": 0
+    },
+    {
+      "name": "wrong owner",
+      "rejected": true,
+      "reason": "CALCULATED_FACT_NOT_VERIFIED",
+      "authorityIssued": 0
+    },
+    {
+      "name": "missing existing fact root",
+      "rejected": true,
+      "reason": "CALCULATED_FACT_NOT_VERIFIED",
+      "authorityIssued": 0
+    },
+    {
+      "name": "unknown hour",
+      "rejected": true,
+      "reason": "UNKNOWN_HOUR_FACT",
+      "authorityIssued": 0
+    },
+    {
+      "name": "invented missing MBTI",
+      "rejected": true,
+      "reason": "UNKNOWN_MBTI_APPLICATION",
+      "authorityIssued": 0
+    },
+    {
+      "name": "original unknown MBTI prohibition",
+      "rejected": true,
+      "reason": "RESEARCH_UNKNOWN_MBTI_POLICY",
+      "authorityIssued": 0
+    },
+    {
+      "name": "unverified hypothesis",
+      "rejected": true,
+      "reason": "UNVERIFIED_OR_PROHIBITED_CLAIM",
+      "authorityIssued": 0
+    },
+    {
+      "name": "prohibited assertion",
+      "rejected": true,
+      "reason": "UNVERIFIED_OR_PROHIBITED_CLAIM",
+      "authorityIssued": 0
+    },
+    {
+      "name": "invented past experience",
+      "rejected": true,
+      "reason": "UNSUPPORTED_PERSONAL_OR_FUTURE_ASSERTION",
+      "authorityIssued": 0
+    },
+    {
+      "name": "future guarantee",
+      "rejected": true,
+      "reason": "UNSUPPORTED_PERSONAL_OR_FUTURE_ASSERTION",
+      "authorityIssued": 0
+    },
+    {
+      "name": "missing research field",
+      "rejected": true,
+      "reason": "UNKNOWN_OR_MISSING_RESEARCH_FIELD",
+      "authorityIssued": 0
+    },
+    {
+      "name": "conditional claim promoted to fact",
+      "rejected": true,
+      "reason": "CONDITIONAL_SCOPE_NOT_EXPLICIT",
+      "authorityIssued": 0
+    },
+    {
+      "name": "connective adds personal fact",
+      "rejected": true,
+      "reason": "CONNECTIVE_CANNOT_ADD_PERSONAL_FACT",
+      "authorityIssued": 0
+    },
+    {
+      "name": "unknown input root",
+      "rejected": true,
+      "reason": "INPUT_ROOT_NOT_VERIFIED",
+      "authorityIssued": 0
+    },
+    {
+      "name": "forged customerAssignable",
+      "rejected": true,
+      "authorityIssued": 0
+    },
+    {
+      "name": "forged customerApproved",
+      "rejected": true,
+      "authorityIssued": 0
+    },
+    {
+      "name": "forged customerEligible",
+      "rejected": true,
+      "authorityIssued": 0
+    },
+    {
+      "name": "forged customerSelections",
+      "rejected": true,
+      "authorityIssued": 0
+    },
+    {
+      "name": "forged claimsEmitted",
+      "rejected": true,
+      "authorityIssued": 0
+    },
+    {
+      "name": "forged bookAllocations",
+      "rejected": true,
+      "authorityIssued": 0
+    }
+  ],
+  "passed": 21,
+  "customerUse": {
+    "ok": false,
+    "code": "RESEARCH_ONLY_NOT_CUSTOMER_APPROVED",
+    "gatePromotions": 0
+  },
+  "syntheticApprovalRecordsCreated": 0
+}

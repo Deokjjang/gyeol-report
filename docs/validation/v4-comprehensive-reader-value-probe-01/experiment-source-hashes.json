@@ -1,0 +1,42 @@
+{
+  "files": [
+    {
+      "path": "tests/unit/report-knowledge/comprehensiveReaderValueProbe.test.ts",
+      "sha256": "529be8be3c82e31286654367b75f5a94af092aeec34f60673bd6df78fc392f20"
+    },
+    {
+      "path": "tools/comprehensive-reader-value-probe/context.mjs",
+      "sha256": "bd9a8561fe7da786a7d0581f598ed82b28b1314061c711c9b25abfea4971b4ef"
+    },
+    {
+      "path": "tools/comprehensive-reader-value-probe/guards.mjs",
+      "sha256": "8a04a947ffa0cafd514437ec4b6ec60e173b1e365e48c643c5708fd17eef4b37"
+    },
+    {
+      "path": "tools/comprehensive-reader-value-probe/html.mjs",
+      "sha256": "653b36f07e983627dac17078a02ac8d021930b57cd850ed71cd5f9e58a6a1fcb"
+    },
+    {
+      "path": "tools/comprehensive-reader-value-probe/model-reviews.json",
+      "sha256": "5cdd026cb0fdaf90d5f422da853ee545216c0535188ec7cc436d23eaa2d3d0e2"
+    },
+    {
+      "path": "tools/comprehensive-reader-value-probe/negative-cases.mjs",
+      "sha256": "610cf5a74462b42fda65930722e660c8e40cba8a53ebe0dfd0681b9c0a64a70c"
+    },
+    {
+      "path": "tools/comprehensive-reader-value-probe/prototypes.json",
+      "sha256": "ccd479efebdd459866639786e20ebce47ce719f6c60d1a2deb1d38d9c58cf97c"
+    },
+    {
+      "path": "tools/comprehensive-reader-value-probe/run.mjs",
+      "sha256": "2a769dfc22f9853b410fca179a04391883415c8ee558acaea9e964e37b3de102"
+    },
+    {
+      "path": "tools/comprehensive-reader-value-probe/verify-html.mjs",
+      "sha256": "a08d0f761ae5d1ff655e82b613e8566b56f7b7c8c2a2c77ba48707a1793e2104"
+    }
+  ],
+  "existingFilesChanged": 0,
+  "scope": "Only new offline experiment tool, authored prototypes/reviews and test"
+}

@@ -1,0 +1,16 @@
+{
+  "freshBeforeAfterRuns": true,
+  "books": 17,
+  "digests": 102,
+  "friendshipCases": 20,
+  "friendshipDigests": 140,
+  "profiles": 40,
+  "profileBytesPerSide": 308432008,
+  "allCalculationsEvidenceNarrativeBookSnapshotBytesIdentical": true,
+  "storedBookRoundtrip": true,
+  "productionBooksAccessedOrWritten": 0,
+  "hashes": {
+    "books": "1a31dda3eeb646b1553a31d96bb4d9eb86f09a8c1ad200ecf41e3c707cb904fd",
+    "pairs": "0f86374d5acd6f251f496c8733f852c975ecfcb0606659f7fd81604634722cd0"
+  }
+}

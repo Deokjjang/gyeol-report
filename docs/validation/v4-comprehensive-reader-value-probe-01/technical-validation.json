@@ -1,0 +1,78 @@
+{
+  "baseSha": "b88cf5dd6f7dda903a568955c4f736408b856c86",
+  "typescript": {
+    "beforeDiagnostics": 0,
+    "currentDiagnostics": 0,
+    "newDiagnostics": 0,
+    "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false"
+  },
+  "lint": {
+    "status": "PASS",
+    "command": "node node_modules/eslint/bin/eslint.js"
+  },
+  "productionBuild": {
+    "status": "PASS",
+    "node": "24.22.0",
+    "next": "16.2.4",
+    "command": "NODE_OPTIONS=--max-old-space-size=4096 node node_modules/next/dist/bin/next build",
+    "warningsObserved": 0,
+    "deploymentPerformed": false
+  },
+  "newExperimentTests": {
+    "passed": 19,
+    "failed": 0,
+    "filteredOrPending": 0,
+    "failures": []
+  },
+  "existingComprehensiveSpecialistTests": {
+    "passed": 62,
+    "failed": 0,
+    "filteredOrPending": 0,
+    "failures": []
+  },
+  "negativeProbes": {
+    "passed": 21,
+    "failed": 0
+  },
+  "knownFailureSuite": {
+    "before": {
+      "passed": 5837,
+      "failed": 46
+    },
+    "after": {
+      "passed": 5837,
+      "failed": 46
+    },
+    "normalizedFailureSignaturesIdentical": true,
+    "fullRepositorySuiteClaimed": false
+  },
+  "businessPartnerDefault": {
+    "pastExactBasePassed": 383,
+    "freshBase": "382 PASS / 1 FAIL",
+    "current": "382 PASS / 1 FAIL",
+    "currentIsolated": "0 PASS / 1 FAIL / 360 FILTERED",
+    "signaturesIdentical": true,
+    "sourceAndTimeoutChanges": 0
+  },
+  "browser": {
+    "status": "PASS",
+    "viewports": 7,
+    "exactParagraphs": 16,
+    "externalRequests": 0,
+    "humanReaderApproval": false
+  },
+  "newRegressionsObserved": 0,
+  "diffCheck": "PASS: git diff --cached --check",
+  "rawLogsExternal": true,
+  "logHashes": {
+    "new-tests-final.json": "4f574778defe51672eec556d88a868b8b315797107f9285a93ea4db15933e0b2",
+    "related-tests.json": "c87ae7d8b623f21e81621065d7614f2219f552e2ca4c49b33c15d2e5adc868f0",
+    "current-known.json": "1991b202235395b097d7e811b05278445347670c0aa6abd660e087f07ad7f95c",
+    "bp-base-default.json": "9cba62cdfa370c4884656e7e66f014e0c642789de3d37cde82165f55d451a5ac",
+    "bp-current-default.json": "b5cd95ee57a68249a5e7e57359de76c8e32e47218a049d74de8f085d951d8eaa",
+    "bp-current-isolated.json": "c833caf8f286c62386eca09593f8a794257022fde2597891e8c24f3fca0a6d34",
+    "typescript-final.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lint-final.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build.log": "133436ce0f7e654a543ce6f8f571f70963b1f52eb24426515542659404859732"
+  }
+}

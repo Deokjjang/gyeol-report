@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "independentCLIRuns": 2,
+  "physicalFiles": 23,
+  "files": [
+    {
+      "file": "actual-graph-witness-ledger.json",
+      "sha256": "aa5dd8aa67dae1996ad2aa21130e84696d000ce0db6782e87cd7788256be64cb",
+      "bytes": 38133
+    },
+    {
+      "file": "baseline-published-edition-audit.json",
+      "sha256": "07bbf23cb4dab5d9e51b904e676fce48d955de21571fda34219a71a9619bc3e7",
+      "bytes": 5917
+    },
+    {
+      "file": "baseline-published-paragraphs.json",
+      "sha256": "a2e6c16af12bbb0914ea42ba20a085a8fb9408ef8b9a55cef5f64378a19e7cc6",
+      "bytes": 27122
+    },
+    {
+      "file": "comparison-html-integrity.json",
+      "sha256": "8bafd5066970df450b0afb22d2d3b0cf6ddb0977d32468c68ba88a101671471f",
+      "bytes": 197
+    },
+    {
+      "file": "conditional-meaning-coverage.json",
+      "sha256": "35ac62a91a53f0048c4fba7908920ab76612b7107a805a4981028bfac0ac7382",
+      "bytes": 70464
+    },
+    {
+      "file": "experiment-manifest.json",
+      "sha256": "5db834413d063219636f2b0e68bed4a2442de037f14deea2511f555a110ce2f9",
+      "bytes": 1293
+    },
+    {
+      "file": "experimental-prose.json",
+      "sha256": "b30004abfb99a082e1ef31bc1afe965288e88526cbe73f869c6dbd92c892fe8f",
+      "bytes": 8455
+    },
+    {
+      "file": "global-deterministic-validation.json",
+      "sha256": "48cd18643f895dd44a18f576bd25765224d47083a40a6dafcf53bbc2ff16fe43",
+      "bytes": 2319
+    },
+    {
+      "file": "grounding-violation-audit.json",
+      "sha256": "29caeddc7ddd653225b5fb8506746fce97764327cac54ef1d8c445483a1fdd6d",
+      "bytes": 519
+    },
+    {
+      "file": "model-evaluation-limitations.json",
+      "sha256": "c63afe66a76a5ffd0e04c4911d002bb87e1c1df3c463433048ee64acb7068173",
+      "bytes": 360
+    },
+    {
+      "file": "negative-grounding-tests.json",
+      "sha256": "aac1ca333805c9ed7c5f36086081ed4ed7dd745cd8829c447b4ab32cc7eadba6",
+      "bytes": 3126
+    },
+    {
+      "file": "next-stage-decision.json",
+      "sha256": "1345c052c2cb6a9f534ca3a728f6db4f2365a1600fb7ab090f36af5d2500f5b9",
+      "bytes": 468
+    },
+    {
+      "file": "paragraph-comparison.json",
+      "sha256": "502303285d54869603fe0c039865a04f9cd08022042d78432d6dc4a31557b165",
+      "bytes": 121099
+    },
+    {
+      "file": "quality-evaluation.json",
+      "sha256": "35f815b481faf7ea6d05b3d650577753fe37e01de305ee466fe6fbe26d6d5fb2",
+      "bytes": 176864
+    },
+    {
+      "file": "reader-bridge-audit.json",
+      "sha256": "e60a3b23923e7153ab6af68ee5c16bd975b7f4b4829f45d5e0156b071e28a4ee",
+      "bytes": 4937
+    },
+    {
+      "file": "reader-value-comparison.html",
+      "sha256": "5be22a962a5193991e8de16f55d7a8f827f0e35ae436572cffdfd0c1b8cd5ff3",
+      "bytes": 79200
+    },
+    {
+      "file": "remaining-blockers.json",
+      "sha256": "9407848f96649db1a1575cdfadcef1e47e139192a59ea366b4c909011ee66087",
+      "bytes": 5438
+    },
+    {
+      "file": "research-inventory.json",
+      "sha256": "e874e2b757c51dcfc1e83e76f8b43c8e350823f0ca08ac3a290147c69f9bdb47",
+      "bytes": 114165
+    },
+    {
+      "file": "research-source-ledger.json",
+      "sha256": "48a457043f5320cde86d2969c722fc4f9ba99df6813b69c5b15f1e808a9be3ca",
+      "bytes": 550240
+    },
+    {
+      "file": "research-value-assessment.json",
+      "sha256": "0d9abc9ae35f0457093257e6c3ec3ffa4f04cb0df9d2f48e8f5265736d777065",
+      "bytes": 739
+    },
+    {
+      "file": "selected-fixtures.json",
+      "sha256": "527cfbfc28e8ab8d3a90e94b112b839fb904e03d2d547f803c9892ffd6d08df7",
+      "bytes": 2487
+    },
+    {
+      "file": "semantic-repetition-analysis.json",
+      "sha256": "da2f8bda69632d00fdfc7c3226b692bdb85846733142260612c9d73b1aacfbf8",
+      "bytes": 13425
+    },
+    {
+      "file": "sentence-claim-ledger.json",
+      "sha256": "f6330ae68997df12c74dca3317c691abe0af5670252891fe903d740f4965cc0e",
+      "bytes": 348258
+    }
+  ],
+  "measurementAndGitReceiptsExcludedFromCore": true
+}

@@ -1,0 +1,103 @@
+{
+  "status": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+  "existingReaderChapters": 13,
+  "existingSchedulerSections": 10,
+  "numberMappingCreated": false,
+  "exactReplacementCount": 0,
+  "comparisons": [
+    {
+      "id": "probe-ga-1",
+      "relation": "EVIDENCE_SUPPORTED_TOPIC_COMPARISON",
+      "sameSpecificCalculatedRoots": [
+        "fixture-root-10304"
+      ],
+      "exactCounterpartVerified": false,
+      "readerSchedulerBridge": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+      "replacementAllowed": false,
+      "baselinePurpose": "같은 장점이지만 이유는 다르다",
+      "researchQuestion": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?",
+      "explanation": "같은 실제 계산 root를 참조하지만 질문·의미·문단 배정의 정확한 대응은 미검증입니다."
+    },
+    {
+      "id": "probe-ga-2",
+      "relation": "EDITORIAL_TOPIC_COMPARISON_ONLY",
+      "sameSpecificCalculatedRoots": [],
+      "exactCounterpartVerified": false,
+      "readerSchedulerBridge": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+      "replacementAllowed": false,
+      "baselinePurpose": "의외로 잘할 수 있는 것",
+      "researchQuestion": "예상과 다른 장점은 어떤 조합에서 가능한가?",
+      "explanation": "같은 입력의 관련 주제를 비교합니다. 실제 근거·질문이 달라 기존 문단의 교체안으로 볼 수 없습니다."
+    },
+    {
+      "id": "probe-ga-3",
+      "relation": "EDITORIAL_TOPIC_COMPARISON_ONLY",
+      "sameSpecificCalculatedRoots": [],
+      "exactCounterpartVerified": false,
+      "readerSchedulerBridge": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+      "replacementAllowed": false,
+      "baselinePurpose": "가장 특징적인 단점",
+      "researchQuestion": "좋은 기능이 언제 비용이 되는가?",
+      "explanation": "같은 입력의 관련 주제를 비교합니다. 실제 근거·질문이 달라 기존 문단의 교체안으로 볼 수 없습니다."
+    },
+    {
+      "id": "probe-ga-4",
+      "relation": "EDITORIAL_TOPIC_COMPARISON_ONLY",
+      "sameSpecificCalculatedRoots": [],
+      "exactCounterpartVerified": false,
+      "readerSchedulerBridge": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+      "replacementAllowed": false,
+      "baselinePurpose": "나는 어떻게 일하는 사람인가",
+      "researchQuestion": "실제 일에서 나는 무엇부터 맞추는가?",
+      "explanation": "같은 입력의 관련 주제를 비교합니다. 실제 근거·질문이 달라 기존 문단의 교체안으로 볼 수 없습니다."
+    },
+    {
+      "id": "probe-na-1",
+      "relation": "EVIDENCE_SUPPORTED_TOPIC_COMPARISON",
+      "sameSpecificCalculatedRoots": [
+        "fixture-root-6128"
+      ],
+      "exactCounterpartVerified": false,
+      "readerSchedulerBridge": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+      "replacementAllowed": false,
+      "baselinePurpose": "내가 가진 입체적인 모습",
+      "researchQuestion": "나를 관통하는 장점과 이면은 어떤 조건에서 갈리는가?",
+      "explanation": "같은 실제 계산 root를 참조하지만 질문·의미·문단 배정의 정확한 대응은 미검증입니다."
+    },
+    {
+      "id": "probe-na-2",
+      "relation": "EDITORIAL_TOPIC_COMPARISON_ONLY",
+      "sameSpecificCalculatedRoots": [],
+      "exactCounterpartVerified": false,
+      "readerSchedulerBridge": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+      "replacementAllowed": false,
+      "baselinePurpose": "두 번째 재능",
+      "researchQuestion": "이 기능은 무엇을 가능하게 하는가?",
+      "explanation": "같은 입력의 관련 주제를 비교합니다. 실제 근거·질문이 달라 기존 문단의 교체안으로 볼 수 없습니다."
+    },
+    {
+      "id": "probe-na-3",
+      "relation": "EVIDENCE_SUPPORTED_TOPIC_COMPARISON",
+      "sameSpecificCalculatedRoots": [
+        "fixture-root-6128"
+      ],
+      "exactCounterpartVerified": false,
+      "readerSchedulerBridge": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+      "replacementAllowed": false,
+      "baselinePurpose": "맞지 않는 업무환경",
+      "researchQuestion": "좋은 기능이 언제 비용이 되는가?",
+      "explanation": "같은 실제 계산 root를 참조하지만 질문·의미·문단 배정의 정확한 대응은 미검증입니다."
+    },
+    {
+      "id": "probe-na-4",
+      "relation": "EDITORIAL_TOPIC_COMPARISON_ONLY",
+      "sameSpecificCalculatedRoots": [],
+      "exactCounterpartVerified": false,
+      "readerSchedulerBridge": "READER_SCHEDULER_BRIDGE_UNVERIFIED",
+      "replacementAllowed": false,
+      "baselinePurpose": "인간관계 팩폭",
+      "researchQuestion": "우정에서 내 좋은 뜻이 어디서 어긋날 수 있는가?",
+      "explanation": "같은 입력의 관련 주제를 비교합니다. 실제 근거·질문이 달라 기존 문단의 교체안으로 볼 수 없습니다."
+    }
+  ]
+}

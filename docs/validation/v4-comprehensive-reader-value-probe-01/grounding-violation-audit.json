@@ -1,0 +1,17 @@
+{
+  "authoredSentences": 32,
+  "missingSourceOrFactWitness": 0,
+  "unsupportedPersonalAssertionsEmitted": 0,
+  "futureEventsAsserted": 0,
+  "unknownMbtiFilled": 0,
+  "unknownHourFilled": 0,
+  "wholeMaterialPromotions": 0,
+  "customerGateBypasses": 0,
+  "customerUse": {
+    "ok": false,
+    "code": "RESEARCH_ONLY_NOT_CUSTOMER_APPROVED",
+    "gatePromotions": 0
+  },
+  "allOriginalGateResultsRetained": true,
+  "limitations": "Contract checks and direct model reading, not empirical validation of personality claims"
+}
