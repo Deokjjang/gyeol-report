@@ -1,0 +1,558 @@
+[
+  {
+    "id": "frpr:material:CH08.P1:facts-before-repair",
+    "original": [
+      {
+        "materialIds": [
+          "frpr:material:CH07.P1:contact-interpretation-gap"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH07.P3:unrequested-ledger"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH07.P4:third-party-context"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      }
+    ],
+    "evaluation": {
+      "evaluations": [
+        {
+          "index": 0,
+          "materialIds": [
+            "frpr:material:CH07.P1:contact-interpretation-gap"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH07.P1:contact-interpretation-gap"
+          ],
+          "incompatible": [
+            "frpr:material:CH07.P1:contact-interpretation-gap"
+          ]
+        },
+        {
+          "index": 1,
+          "materialIds": [
+            "frpr:material:CH07.P3:unrequested-ledger"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH07.P3:unrequested-ledger"
+          ],
+          "incompatible": [
+            "frpr:material:CH07.P3:unrequested-ledger"
+          ]
+        },
+        {
+          "index": 2,
+          "materialIds": [
+            "frpr:material:CH07.P4:third-party-context"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH07.P4:third-party-context"
+          ],
+          "incompatible": [
+            "frpr:material:CH07.P4:third-party-context"
+          ]
+        }
+      ],
+      "selectedGroup": null,
+      "pass": false,
+      "reasons": [
+        "INCOMPATIBLE_INTRODUCED_GROUP",
+        "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED"
+      ],
+      "sourceGroupSemanticsUnchanged": true
+    },
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "frpr:material:CH08.P2:a-apology-scope",
+    "original": [
+      {
+        "materialIds": [
+          "frpr:material:CH07.P3:unrequested-ledger"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH07.P4:third-party-context"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      }
+    ],
+    "evaluation": {
+      "evaluations": [
+        {
+          "index": 0,
+          "materialIds": [
+            "frpr:material:CH07.P3:unrequested-ledger"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH07.P3:unrequested-ledger"
+          ],
+          "incompatible": [
+            "frpr:material:CH07.P3:unrequested-ledger"
+          ]
+        },
+        {
+          "index": 1,
+          "materialIds": [
+            "frpr:material:CH07.P4:third-party-context"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH07.P4:third-party-context"
+          ],
+          "incompatible": [
+            "frpr:material:CH07.P4:third-party-context"
+          ]
+        }
+      ],
+      "selectedGroup": null,
+      "pass": false,
+      "reasons": [
+        "INCOMPATIBLE_INTRODUCED_GROUP",
+        "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED"
+      ],
+      "sourceGroupSemanticsUnchanged": true
+    },
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "frpr:material:CH08.P3:b-repair-boundary",
+    "original": [
+      {
+        "materialIds": [
+          "frpr:material:CH07.P1:contact-interpretation-gap"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH07.P4:third-party-context"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      }
+    ],
+    "evaluation": {
+      "evaluations": [
+        {
+          "index": 0,
+          "materialIds": [
+            "frpr:material:CH07.P1:contact-interpretation-gap"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH07.P1:contact-interpretation-gap"
+          ],
+          "incompatible": [
+            "frpr:material:CH07.P1:contact-interpretation-gap"
+          ]
+        },
+        {
+          "index": 1,
+          "materialIds": [
+            "frpr:material:CH07.P4:third-party-context"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH07.P4:third-party-context"
+          ],
+          "incompatible": [
+            "frpr:material:CH07.P4:third-party-context"
+          ]
+        }
+      ],
+      "selectedGroup": null,
+      "pass": false,
+      "reasons": [
+        "INCOMPATIBLE_INTRODUCED_GROUP",
+        "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED"
+      ],
+      "sourceGroupSemanticsUnchanged": true
+    },
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "frpr:material:CH08.P4:repair-recheck",
+    "original": [
+      {
+        "materialIds": [
+          "frpr:material:CH07.P1:contact-interpretation-gap"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH07.P3:unrequested-ledger"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH07.P4:third-party-context"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      }
+    ],
+    "evaluation": {
+      "evaluations": [
+        {
+          "index": 0,
+          "materialIds": [
+            "frpr:material:CH07.P1:contact-interpretation-gap"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH07.P1:contact-interpretation-gap"
+          ],
+          "incompatible": [
+            "frpr:material:CH07.P1:contact-interpretation-gap"
+          ]
+        },
+        {
+          "index": 1,
+          "materialIds": [
+            "frpr:material:CH07.P3:unrequested-ledger"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH07.P3:unrequested-ledger"
+          ],
+          "incompatible": [
+            "frpr:material:CH07.P3:unrequested-ledger"
+          ]
+        },
+        {
+          "index": 2,
+          "materialIds": [
+            "frpr:material:CH07.P4:third-party-context"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH07.P4:third-party-context"
+          ],
+          "incompatible": [
+            "frpr:material:CH07.P4:third-party-context"
+          ]
+        }
+      ],
+      "selectedGroup": null,
+      "pass": false,
+      "reasons": [
+        "INCOMPATIBLE_INTRODUCED_GROUP",
+        "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED"
+      ],
+      "sourceGroupSemanticsUnchanged": true
+    },
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "frpr:material:CH09.P1:recall-chosen-enjoyment",
+    "original": [
+      {
+        "materialIds": [
+          "frpr:material:CH04.P1:shared-interest-specific"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH04.P2:difference-with-choice"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH04.P3:low-performance-company"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      }
+    ],
+    "evaluation": {
+      "evaluations": [
+        {
+          "index": 0,
+          "materialIds": [
+            "frpr:material:CH04.P1:shared-interest-specific"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH04.P1:shared-interest-specific"
+          ],
+          "incompatible": [
+            "frpr:material:CH04.P1:shared-interest-specific"
+          ]
+        },
+        {
+          "index": 1,
+          "materialIds": [
+            "frpr:material:CH04.P2:difference-with-choice"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH04.P2:difference-with-choice"
+          ],
+          "incompatible": [
+            "frpr:material:CH04.P2:difference-with-choice"
+          ]
+        },
+        {
+          "index": 2,
+          "materialIds": [
+            "frpr:material:CH04.P3:low-performance-company"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH04.P3:low-performance-company"
+          ],
+          "incompatible": [
+            "frpr:material:CH04.P3:low-performance-company"
+          ]
+        }
+      ],
+      "selectedGroup": null,
+      "pass": false,
+      "reasons": [
+        "INCOMPATIBLE_INTRODUCED_GROUP",
+        "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED"
+      ],
+      "sourceGroupSemanticsUnchanged": true
+    },
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "frpr:material:CH09.P2:recall-symbol-limits",
+    "original": [
+      {
+        "materialIds": [
+          "frpr:material:CH01.P2:symbol-not-trust"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      }
+    ],
+    "evaluation": {
+      "evaluations": [
+        {
+          "index": 0,
+          "materialIds": [
+            "frpr:material:CH01.P2:symbol-not-trust"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH01.P2:symbol-not-trust"
+          ],
+          "incompatible": [
+            "frpr:material:CH01.P2:symbol-not-trust"
+          ]
+        }
+      ],
+      "selectedGroup": null,
+      "pass": false,
+      "reasons": [
+        "INCOMPATIBLE_INTRODUCED_GROUP",
+        "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED"
+      ],
+      "sourceGroupSemanticsUnchanged": true
+    },
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "frpr:material:CH09.P3:recall-changed-lives",
+    "original": [
+      {
+        "materialIds": [
+          "frpr:material:CH08.P3:b-repair-boundary"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH08.P4:repair-recheck"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      }
+    ],
+    "evaluation": {
+      "evaluations": [
+        {
+          "index": 0,
+          "materialIds": [
+            "frpr:material:CH08.P3:b-repair-boundary"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH08.P3:b-repair-boundary"
+          ],
+          "incompatible": [
+            "frpr:material:CH08.P3:b-repair-boundary"
+          ]
+        },
+        {
+          "index": 1,
+          "materialIds": [
+            "frpr:material:CH08.P4:repair-recheck"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH08.P4:repair-recheck"
+          ],
+          "incompatible": [
+            "frpr:material:CH08.P4:repair-recheck"
+          ]
+        }
+      ],
+      "selectedGroup": null,
+      "pass": false,
+      "reasons": [
+        "INCOMPATIBLE_INTRODUCED_GROUP",
+        "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED"
+      ],
+      "sourceGroupSemanticsUnchanged": true
+    },
+    "customerDisplayLedgerIssued": false
+  },
+  {
+    "id": "frpr:material:CH09.P4:recall-without-prophecy",
+    "original": [
+      {
+        "materialIds": [
+          "frpr:material:CH04.P2:difference-with-choice"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH05.P4:ab-other-friends"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH06.P4:ba-availability-boundary"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      },
+      {
+        "materialIds": [
+          "frpr:material:CH08.P3:b-repair-boundary"
+        ],
+        "allActuallyDisplayed": true,
+        "samePeopleContextRootsAndDirection": true,
+        "compatibleDisplayedSubsetOnly": true
+      }
+    ],
+    "evaluation": {
+      "evaluations": [
+        {
+          "index": 0,
+          "materialIds": [
+            "frpr:material:CH04.P2:difference-with-choice"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH04.P2:difference-with-choice"
+          ],
+          "incompatible": [
+            "frpr:material:CH04.P2:difference-with-choice"
+          ]
+        },
+        {
+          "index": 1,
+          "materialIds": [
+            "frpr:material:CH05.P4:ab-other-friends"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH05.P4:ab-other-friends"
+          ],
+          "incompatible": [
+            "frpr:material:CH05.P4:ab-other-friends"
+          ]
+        },
+        {
+          "index": 2,
+          "materialIds": [
+            "frpr:material:CH06.P4:ba-availability-boundary"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH06.P4:ba-availability-boundary"
+          ],
+          "incompatible": [
+            "frpr:material:CH06.P4:ba-availability-boundary"
+          ]
+        },
+        {
+          "index": 3,
+          "materialIds": [
+            "frpr:material:CH08.P3:b-repair-boundary"
+          ],
+          "state": "WITHHELD",
+          "missing": [
+            "frpr:material:CH08.P3:b-repair-boundary"
+          ],
+          "incompatible": [
+            "frpr:material:CH08.P3:b-repair-boundary"
+          ]
+        }
+      ],
+      "selectedGroup": null,
+      "pass": false,
+      "reasons": [
+        "INCOMPATIBLE_INTRODUCED_GROUP",
+        "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED"
+      ],
+      "sourceGroupSemanticsUnchanged": true
+    },
+    "customerDisplayLedgerIssued": false
+  }
+]

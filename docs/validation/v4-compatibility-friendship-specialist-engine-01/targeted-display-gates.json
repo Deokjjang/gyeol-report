@@ -1,0 +1,29 @@
+[
+  {
+    "case": "CH09.P2 without CH01.P2",
+    "actualBinderInvoked": true,
+    "held": 5,
+    "allHeld": true,
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "INCOMPATIBLE_INTRODUCED_GROUP"
+    ]
+  },
+  {
+    "case": "CH08 without displayed CH07",
+    "actualBinderInvoked": true,
+    "held": 23,
+    "allHeld": true,
+    "reasons": [
+      "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+      "ACTUAL_CONTEXT_REQUIRED:conflictObserved",
+      "ACTUAL_CONTEXT_REQUIRED:contactConsent",
+      "ACTUAL_CONTEXT_REQUIRED:contactRefusal",
+      "ACTUAL_CONTEXT_REQUIRED:pastConflict",
+      "ACTUAL_CONTEXT_REQUIRED:repairConsent",
+      "ACTUAL_CONTEXT_REQUIRED:safeRecontact",
+      "INCOMPATIBLE_INTRODUCED_GROUP",
+      "UNSAFE_OR_UNCONSENTED_CONTACT"
+    ]
+  }
+]

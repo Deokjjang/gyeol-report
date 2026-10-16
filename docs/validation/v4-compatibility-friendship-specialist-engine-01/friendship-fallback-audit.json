@@ -1,0 +1,72 @@
+[
+  {
+    "id": "L0",
+    "draft": {
+      "version": "compatibility-editorial-quality-01-v1",
+      "chapters": 9,
+      "paragraphs": 36,
+      "digest": "6de7ce91abff945d334636c5f5680bfc6f0a0ac14474f40bc00f2cef12fc321c"
+    },
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": [
+        "BODY_LENGTH"
+      ]
+    },
+    "editorial": [
+      {
+        "severity": "Major",
+        "code": "REPEATED_LONG_PHRASE",
+        "location": "CH01.P3 / CH02.P1"
+      },
+      {
+        "severity": "Major",
+        "code": "REPEATED_LONG_PHRASE",
+        "location": "CH02.P2 / CH03.P2"
+      },
+      {
+        "severity": "Major",
+        "code": "REPEATED_LONG_PHRASE",
+        "location": "CH02.P3 / CH03.P3"
+      }
+    ],
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "bookDigest": "277823abbf550e309e66c6ceb01cd4fc882acf49e4d22e715bab4b3bf5b5c36e",
+    "fallback": true
+  },
+  {
+    "id": "M0",
+    "draft": {
+      "version": "compatibility-editorial-quality-01-v1",
+      "chapters": 9,
+      "paragraphs": 36,
+      "digest": "6de7ce91abff945d334636c5f5680bfc6f0a0ac14474f40bc00f2cef12fc321c"
+    },
+    "validation": {
+      "hardErrors": [],
+      "qualityIssues": [
+        "BODY_LENGTH"
+      ]
+    },
+    "editorial": [
+      {
+        "severity": "Major",
+        "code": "REPEATED_LONG_PHRASE",
+        "location": "CH01.P3 / CH02.P1"
+      },
+      {
+        "severity": "Major",
+        "code": "REPEATED_LONG_PHRASE",
+        "location": "CH02.P2 / CH03.P2"
+      },
+      {
+        "severity": "Major",
+        "code": "REPEATED_LONG_PHRASE",
+        "location": "CH02.P3 / CH03.P3"
+      }
+    ],
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "bookDigest": "277823abbf550e309e66c6ceb01cd4fc882acf49e4d22e715bab4b3bf5b5c36e",
+    "fallback": true
+  }
+]

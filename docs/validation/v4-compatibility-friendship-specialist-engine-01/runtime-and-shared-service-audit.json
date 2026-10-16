@@ -1,0 +1,441 @@
+[
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/types.ts",
+    "sha256": "f03f634168e33d2171173b5cabca38211e2aa39145f1b72108e4aa30f6325414",
+    "unchanged": true,
+    "exports": [
+      "BINDER_VERSION",
+      "BindingGateId",
+      "GateState",
+      "BindingOwner",
+      "EvidenceSelector",
+      "NormalizedSourceRequirement",
+      "KnowledgeBindingSourceGroup",
+      "NormalizedKnowledgeRequirement",
+      "KnowledgeCandidate",
+      "IntroducedMeaning",
+      "KnowledgeBindingRequest",
+      "KnowledgeBindingMatch",
+      "KnowledgeBindingGateResult",
+      "KnowledgeBindingApprovalRequirement",
+      "ApprovalRecord",
+      "KnowledgeBindingApprovalProvider",
+      "KnowledgeBindingDecision",
+      "KnowledgeBindingWithholdReason",
+      "KnowledgeBindingReceipt",
+      "KnowledgeBindingCoverage",
+      "KnowledgeBindingResult",
+      "KnowledgeBindingManifest",
+      "BinderDecisionIndex"
+    ],
+    "lines": 50
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/requirements.ts",
+    "sha256": "72217235f9330ad2be530e2cd3873740005dcfd8bc7586cb433b764eb0e203bb",
+    "unchanged": true,
+    "exports": [
+      "interpretationClassification",
+      "adaptKnowledgeRequirement"
+    ],
+    "lines": 117
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/catalog.ts",
+    "sha256": "67cc25ed8d05301be7e0e058edc147b5de700739bfcfa9e9f04b222ce6edf093",
+    "unchanged": true,
+    "exports": [
+      "KnowledgeBinderCatalog"
+    ],
+    "lines": 53
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/matching.ts",
+    "sha256": "a110087bd7f8f9da86afb41eb14fe7d2f9a1d19dc4b4125683e24029540c0d0f",
+    "unchanged": true,
+    "exports": [
+      "valueAt",
+      "ActualBindingIndex"
+    ],
+    "lines": 98
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/groups.ts",
+    "sha256": "fa889e182c12c6290dd827ccbfb172fee87da30abb456c32fa58964c9987279d",
+    "unchanged": true,
+    "exports": [
+      "evaluateSourceGroups",
+      "activeRequirements",
+      "displayedRecall"
+    ],
+    "lines": 33
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/gates.ts",
+    "sha256": "4992cef1457b6f2fc62b766320702f0c009f7fa8fdb88858d91334f206786cfc",
+    "unchanged": true,
+    "exports": [
+      "NO_APPROVALS",
+      "validateApproval",
+      "inputConditions",
+      "GateInput",
+      "evaluateTwelveGates"
+    ],
+    "lines": 70
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/knowledge-binder/engine.ts",
+    "sha256": "8cbb86ffff1ad33c440dfdfc0e370628d3cc40f73867a58775a380acc4bd81b6",
+    "unchanged": true,
+    "exports": [
+      "bindKnowledgeCandidate",
+      "bindingCoverage",
+      "bindKnowledge"
+    ],
+    "lines": 44
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/types.ts",
+    "sha256": "280c786a09c335e3b947ef2eab8b3b7528334c64b4239f35e8c2eeef479a940b",
+    "unchanged": true,
+    "exports": [
+      "ACTUAL_GRAPH_VERSION",
+      "EvidenceOwner",
+      "EvidenceParticipant",
+      "EvidenceDirection",
+      "EvidenceProducerIdentity",
+      "EvidenceSourceIdentity",
+      "EvidenceFactIdentity",
+      "EvidenceTemporalWindow",
+      "EvidenceCertainty",
+      "EvidenceGraphWithholdReason",
+      "EvidenceAncestry",
+      "NodeKind",
+      "ActualEvidenceNode",
+      "EdgeKind",
+      "ActualEvidenceEdge",
+      "EvidenceGraphContext",
+      "ActualProfiles",
+      "EvidenceGraphDiagnostic",
+      "EvidenceGraphValidationResult",
+      "EvidenceGraphReceipt",
+      "EvidenceGraphCoverage",
+      "ActualEvidenceGraph",
+      "EvidenceGraphBuildResult",
+      "GraphKnowledgeInputs",
+      "GraphInput",
+      "ProducerContract",
+      "PublicArtifacts"
+    ],
+    "lines": 34
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/builder.ts",
+    "sha256": "d282201f04c82d2df377f8c7778e5b7ec22fe9210a659790f46df0865e8ce486",
+    "unchanged": true,
+    "exports": [
+      "NodeOptions",
+      "EvidenceBuilder"
+    ],
+    "lines": 40
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/pair.ts",
+    "sha256": "d36e423e2f67cfe7dc2a17a831571c4734df4fa5deefe335902af9428a121a81",
+    "unchanged": true,
+    "exports": [
+      "adaptPairEvidence"
+    ],
+    "lines": 36
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/graph.ts",
+    "sha256": "58a48f5f77a7a1a9699a7c7d8e37624db81ef9c09c9d0489c516fa550fa1d390",
+    "unchanged": true,
+    "exports": [
+      "evidenceHash",
+      "ActualGraphIndex",
+      "graphCoverage",
+      "bindingRequirements"
+    ],
+    "lines": 93
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/product-specialist-foundation/types.ts",
+    "sha256": "1152b796f050996782122c16fb9300f35462509abde279da431ab64d620ccb57",
+    "unchanged": true,
+    "exports": [
+      "SPECIALIST_FOUNDATION_VERSION",
+      "ProductQuestionId",
+      "ProductReaderAddress",
+      "ProductQuestionRequirement",
+      "ProductQuestionContract",
+      "ProductContract",
+      "MaterialLinkKind",
+      "QuestionMaterialLink",
+      "NormalizationState",
+      "NormalizationReceipt",
+      "SpecialistContractOverlay",
+      "SelectorKind",
+      "TypedSelectorContract",
+      "TemporalSelectorWitness",
+      "AnnualSegmentContract",
+      "AnnualMonthContract",
+      "PeriodBindingAttempt",
+      "ProductQuestionCoverage",
+      "SpecialistFoundationResult",
+      "FoundationRunCase",
+      "OperatorReviewItem",
+      "CandidateWithOverlay"
+    ],
+    "lines": 230
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/product-specialist-foundation/questionRegistry.ts",
+    "sha256": "6a3802c74d47c372d589e4aac18e069cab23b47c8b770fefb4b32e0549e621de",
+    "unchanged": true,
+    "exports": [
+      "ProductQuestionRegistry"
+    ],
+    "lines": 100
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/product-specialist-foundation/questionIndex.ts",
+    "sha256": "d9c010f2205794208e1d088930deba9587807bfdd5f5bf05de38609f37755f05",
+    "unchanged": true,
+    "exports": [
+      "ProductQuestionIndex"
+    ],
+    "lines": 26
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/product-specialist-foundation/binderIntegration.ts",
+    "sha256": "9e8eaa6a2520a2e68d04cea98057d104e4dc15a8e4d1d5a30f8b58d5c951b9bf",
+    "unchanged": true,
+    "exports": [
+      "ProductSpecialistFoundation"
+    ],
+    "lines": 68
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/pairWitness.ts",
+    "sha256": "f42366470cf25acf87e7ac79ded36d263b92eda72defd4e71c405bf019249130",
+    "unchanged": true,
+    "exports": [
+      "SUPPORTED_CROSS_RELATIONS",
+      "pairWitnessErrors",
+      "observePairWitnesses"
+    ],
+    "lines": 43
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/workDomainBoundary.ts",
+    "sha256": "793ceb4f3c91f841aa8aa31aab97c8cba83a69b3bf0628363d8b13d4d560c80a",
+    "unchanged": true,
+    "exports": [
+      "COWORKER_DOMAINS",
+      "domainReasons",
+      "validateAncestry"
+    ],
+    "lines": 14
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/sourceGroups.ts",
+    "sha256": "5e375f3bdc762884b3b9330eb06356f0c475f9e294909c1d388c864a8d391bca",
+    "unchanged": true,
+    "exports": [
+      "DisplayGroup",
+      "DisplayExpectation",
+      "compatibleDisplayedGroup",
+      "normalizeSourceGroups",
+      "evaluateManagerSourceGroups"
+    ],
+    "lines": 14
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/engine.ts",
+    "sha256": "713323b8fa5cf6f5ef20bddd3e3a929e1526d894c263a7ddc6a9f53970286c8e",
+    "unchanged": true,
+    "exports": [
+      "CompatibilityBusinessPartnerSpecialistEngine",
+      "CompatibilityBusinessPartnerResult"
+    ],
+    "lines": 61
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/candidateIndex.ts",
+    "sha256": "020e8ffd3f92c1ee07916fde5e6f8e858732b4bf6980c0e14b157f894656d313",
+    "unchanged": true,
+    "exports": [
+      "CompatibilityBusinessPartnerIndex"
+    ],
+    "lines": 21
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/researchCatalog.ts",
+    "sha256": "488bc4a9ac28ce994e27cdcddd779822d6e13823fc263385371efa0e78e04c3a",
+    "unchanged": true,
+    "exports": [
+      "Material",
+      "OriginalSourceView",
+      "WorkTrait",
+      "PairSource",
+      "readBusinessPartnerResearch"
+    ],
+    "lines": 15
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/requirementAdapter.ts",
+    "sha256": "288edfed07819767dbee2e90592ecf983e70ab2cda7ec5f565c09111dc97fa9d",
+    "unchanged": true,
+    "exports": [
+      "adaptBusinessPartnerMaterial"
+    ],
+    "lines": 12
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/selection.ts",
+    "sha256": "c3c4a7931491e99b765646d5a8a2aa45ea98125b31d9c55ca3de870256891210",
+    "unchanged": true,
+    "exports": [
+      "SYNTHETIC_FILE",
+      "Question",
+      "SyntheticMeaning",
+      "Option",
+      "Method",
+      "Session",
+      "createVerifiedSession",
+      "optionsFor",
+      "optionPolicy",
+      "selectionViolations",
+      "selectSynthetic"
+    ],
+    "lines": 119
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-love-specialist-engine/engine.ts",
+    "sha256": "28738fd9691f662de078b2c43e9c200b16494f654af2e07d9a0040282e9a5b97",
+    "unchanged": true,
+    "exports": [
+      "CompatibilityLoveSpecialistEngine",
+      "CompatibilityLoveResult"
+    ],
+    "lines": 56
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-coworker-specialist-engine/engine.ts",
+    "sha256": "ced63ab049f9cd1112e700948c465cd0837fe1cd649dc4d7e25823ccb32bdd7d",
+    "unchanged": true,
+    "exports": [
+      "CompatibilityCoworkerSpecialistEngine",
+      "CompatibilityCoworkerResult"
+    ],
+    "lines": 57
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-parent-child-specialist-engine/engine.ts",
+    "sha256": "da7040149a3f29f52688dd8de5b6ccaf4595c9f7195a80e8c0b1b3e40e27f110",
+    "unchanged": true,
+    "exports": [
+      "CompatibilityParentChildSpecialistEngine",
+      "CompatibilityParentChildResult"
+    ],
+    "lines": 75
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/love-specialist-engine/engine.ts",
+    "sha256": "da2cff41d9f02c66b048b5d5e434fc741f6d6f8a09286825d93303c7d997fa2c",
+    "unchanged": true,
+    "exports": [
+      "LoveSpecialistEngine"
+    ],
+    "lines": 38
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-marriage-specialist-engine/engine.ts",
+    "sha256": "1427ad7955cf19592302c7d026b43599dfe2b0d56e5ac63577e0baeaf5448bd7",
+    "unchanged": true,
+    "exports": [
+      "CompatibilityMarriageSpecialistEngine",
+      "CompatibilityMarriageResult"
+    ],
+    "lines": 65
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-business-partner-specialist-engine/engine.ts",
+    "sha256": "713323b8fa5cf6f5ef20bddd3e3a929e1526d894c263a7ddc6a9f53970286c8e",
+    "unchanged": true,
+    "exports": [
+      "CompatibilityBusinessPartnerSpecialistEngine",
+      "CompatibilityBusinessPartnerResult"
+    ],
+    "lines": 61
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/career-specialist-engine/engine.ts",
+    "sha256": "bbd39ca730fea9f86dacff68724f3952fd0f80917cebaa7552e524ad88c692c1",
+    "unchanged": true,
+    "exports": [
+      "CareerSpecialistEngine"
+    ],
+    "lines": 34
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/semantic-domain-verification/engine.ts",
+    "sha256": "13f550ea4f7855f914c3128de05f36ed0f6d073d9cf29fa942e598235f51c71c",
+    "unchanged": true,
+    "exports": [
+      "originalField",
+      "SemanticDomainVerificationEngine"
+    ],
+    "lines": 209
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/source-verification/engine.ts",
+    "sha256": "025fa7d04099074e4a3ad79adae9ed6f51cc796fcc939036257116b81c2fd33f",
+    "unchanged": true,
+    "exports": [
+      "SourceVerificationEngine"
+    ],
+    "lines": 326
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/engine.ts",
+    "sha256": "1e958f5d819c9bd99a0bf518706feabf81a8d09896713835f68e9f0a7f4bc5a4",
+    "unchanged": true,
+    "exports": [
+      "AnnualFortuneSpecialistEngine"
+    ],
+    "lines": 39
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/comprehensive-specialist-engine/engine.ts",
+    "sha256": "4dbd9310600d0ce18ad0e6618efb310e1ea05618380cdf2fdd627b496e8f5bac",
+    "unchanged": true,
+    "exports": [
+      "gatePass",
+      "structurallyMatched",
+      "ComprehensiveSpecialistEngine"
+    ],
+    "lines": 72
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-manager-report-specialist-engine/engine.ts",
+    "sha256": "7f094c5477259c91c381ac2c2549d34f8002395122025395cd1ccc855db83d9f",
+    "unchanged": true,
+    "exports": [
+      "CompatibilityManagerReportSpecialistEngine",
+      "CompatibilityManagerReportResult"
+    ],
+    "lines": 60
+  },
+  {
+    "file": "src/lib/report-knowledge/knowledge-integration-foundation/major-fortune-specialist-engine/engine.ts",
+    "sha256": "007df65cd8ff1b5fb4518fc8be53ef5706899548913f0947f2fae5a2d15394ad",
+    "unchanged": true,
+    "exports": [
+      "MajorFortuneSpecialistEngine"
+    ],
+    "lines": 34
+  }
+]

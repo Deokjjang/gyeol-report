@@ -1,0 +1,14 @@
+{
+  "separate": [
+    "disclosure",
+    "listeningRequested",
+    "informationOwner",
+    "sharingPermission",
+    "permissionScope",
+    "permissionWithdrawn",
+    "disclosureHistory",
+    "trustObserved"
+  ],
+  "disclosureIsSharingConsent": false,
+  "actualFacts": "UNKNOWN"
+}

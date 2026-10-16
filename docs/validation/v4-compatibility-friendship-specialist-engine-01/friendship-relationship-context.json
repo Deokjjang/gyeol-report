@@ -1,0 +1,7629 @@
+{
+  "fields": [
+    "oldFriends",
+    "childhoodFriends",
+    "sameSchool",
+    "sameWorkplace",
+    "regularMeetings",
+    "pastConflict",
+    "moneyTransactions",
+    "sharedSecrets",
+    "jealousy",
+    "oneSidedRelationship",
+    "currentlyEstranged",
+    "closeness",
+    "friendshipDuration",
+    "currentContactFrequency",
+    "meetingOffer",
+    "meetingAcceptance",
+    "availableTime",
+    "contactRequest",
+    "contactConsent",
+    "contactRefusal",
+    "responseDeadlineAgreement",
+    "reconnectionIntent",
+    "otherFriends",
+    "groupInvitation",
+    "invitationCapacity",
+    "actualExclusion",
+    "repeatedHarm",
+    "disclosure",
+    "listeningRequested",
+    "adviceRequested",
+    "helpReceived",
+    "informationOwner",
+    "sharingPermission",
+    "permissionScope",
+    "permissionWithdrawn",
+    "disclosureHistory",
+    "trustObserved",
+    "helpOffer",
+    "helpRequest",
+    "helpAcceptance",
+    "voluntaryHelp",
+    "timeCost",
+    "moneyCost",
+    "emotionalCost",
+    "expectedReciprocity",
+    "explicitAgreement",
+    "actualDebt",
+    "supportBoundary",
+    "professionalSupportNeeded",
+    "lifeChange",
+    "relationshipRedefinition",
+    "distanceChoice",
+    "endChoice",
+    "conflictObserved",
+    "repairConsent",
+    "safeRecontact",
+    "apology",
+    "apologyAcceptance",
+    "forgiveness",
+    "closenessRestored",
+    "relationshipContinued"
+  ],
+  "materials": [
+    {
+      "id": "frpr:material:CH01.P1:chosen-time",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH01.P2:symbol-not-trust",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH01.P3:reference-not-person",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH01.P4:no-exclusive-contract",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH02.P1:a-invitation",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH02.P2:a-disclosure-control",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH02.P3:a-curiosity-gift",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH02.P4:a-unsolicited-help",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH03.P1:b-participation-range",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH03.P2:b-support-network",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH03.P3:b-detail-memory",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH03.P4:b-unspoken-cost",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH04.P1:shared-interest-specific",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH04.P2:difference-with-choice",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH04.P3:low-performance-company",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH04.P4:trust-not-access",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH05.P1:ab-invitation-received",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH05.P2:ab-options-not-orders",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH05.P3:ab-favour-debt",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH05.P4:ab-other-friends",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH06.P1:ba-response-meaning",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH06.P2:ba-recognition-not-rating",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH06.P3:ba-comparison-pressure",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH06.P4:ba-availability-boundary",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH07.P1:contact-interpretation-gap",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH07.P2:clash-not-failed-friendship",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH07.P3:unrequested-ledger",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH07.P4:third-party-context",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH08.P1:facts-before-repair",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH08.P2:a-apology-scope",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH08.P3:b-repair-boundary",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH08.P4:repair-recheck",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH09.P1:recall-chosen-enjoyment",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH09.P2:recall-symbol-limits",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH09.P3:recall-changed-lives",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    },
+    {
+      "id": "frpr:material:CH09.P4:recall-without-prophecy",
+      "actual": {
+        "oldFriends": "UNKNOWN",
+        "childhoodFriends": "UNKNOWN",
+        "sameSchool": "UNKNOWN",
+        "sameWorkplace": "UNKNOWN",
+        "regularMeetings": "UNKNOWN",
+        "pastConflict": "UNKNOWN",
+        "moneyTransactions": "UNKNOWN",
+        "sharedSecrets": "UNKNOWN",
+        "jealousy": "UNKNOWN",
+        "oneSidedRelationship": "UNKNOWN",
+        "currentlyEstranged": "UNKNOWN",
+        "closeness": "UNKNOWN",
+        "friendshipDuration": "UNKNOWN",
+        "currentContactFrequency": "UNKNOWN"
+      },
+      "context": {
+        "oldFriends": {
+          "state": "UNKNOWN"
+        },
+        "childhoodFriends": {
+          "state": "UNKNOWN"
+        },
+        "sameSchool": {
+          "state": "UNKNOWN"
+        },
+        "sameWorkplace": {
+          "state": "UNKNOWN"
+        },
+        "regularMeetings": {
+          "state": "UNKNOWN"
+        },
+        "pastConflict": {
+          "state": "UNKNOWN"
+        },
+        "moneyTransactions": {
+          "state": "UNKNOWN"
+        },
+        "sharedSecrets": {
+          "state": "UNKNOWN"
+        },
+        "jealousy": {
+          "state": "UNKNOWN"
+        },
+        "oneSidedRelationship": {
+          "state": "UNKNOWN"
+        },
+        "currentlyEstranged": {
+          "state": "UNKNOWN"
+        },
+        "closeness": {
+          "state": "UNKNOWN"
+        },
+        "friendshipDuration": {
+          "state": "UNKNOWN"
+        },
+        "currentContactFrequency": {
+          "state": "UNKNOWN"
+        },
+        "meetingOffer": {
+          "state": "UNKNOWN"
+        },
+        "meetingAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "availableTime": {
+          "state": "UNKNOWN"
+        },
+        "contactRequest": {
+          "state": "UNKNOWN"
+        },
+        "contactConsent": {
+          "state": "UNKNOWN"
+        },
+        "contactRefusal": {
+          "state": "UNKNOWN"
+        },
+        "responseDeadlineAgreement": {
+          "state": "UNKNOWN"
+        },
+        "reconnectionIntent": {
+          "state": "UNKNOWN"
+        },
+        "otherFriends": {
+          "state": "UNKNOWN"
+        },
+        "groupInvitation": {
+          "state": "UNKNOWN"
+        },
+        "invitationCapacity": {
+          "state": "UNKNOWN"
+        },
+        "actualExclusion": {
+          "state": "UNKNOWN"
+        },
+        "repeatedHarm": {
+          "state": "UNKNOWN"
+        },
+        "disclosure": {
+          "state": "UNKNOWN"
+        },
+        "listeningRequested": {
+          "state": "UNKNOWN"
+        },
+        "adviceRequested": {
+          "state": "UNKNOWN"
+        },
+        "helpReceived": {
+          "state": "UNKNOWN"
+        },
+        "informationOwner": {
+          "state": "UNKNOWN"
+        },
+        "sharingPermission": {
+          "state": "UNKNOWN"
+        },
+        "permissionScope": {
+          "state": "UNKNOWN"
+        },
+        "permissionWithdrawn": {
+          "state": "UNKNOWN"
+        },
+        "disclosureHistory": {
+          "state": "UNKNOWN"
+        },
+        "trustObserved": {
+          "state": "UNKNOWN"
+        },
+        "helpOffer": {
+          "state": "UNKNOWN"
+        },
+        "helpRequest": {
+          "state": "UNKNOWN"
+        },
+        "helpAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "voluntaryHelp": {
+          "state": "UNKNOWN"
+        },
+        "timeCost": {
+          "state": "UNKNOWN"
+        },
+        "moneyCost": {
+          "state": "UNKNOWN"
+        },
+        "emotionalCost": {
+          "state": "UNKNOWN"
+        },
+        "expectedReciprocity": {
+          "state": "UNKNOWN"
+        },
+        "explicitAgreement": {
+          "state": "UNKNOWN"
+        },
+        "actualDebt": {
+          "state": "UNKNOWN"
+        },
+        "supportBoundary": {
+          "state": "UNKNOWN"
+        },
+        "professionalSupportNeeded": {
+          "state": "UNKNOWN"
+        },
+        "lifeChange": {
+          "state": "UNKNOWN"
+        },
+        "relationshipRedefinition": {
+          "state": "UNKNOWN"
+        },
+        "distanceChoice": {
+          "state": "UNKNOWN"
+        },
+        "endChoice": {
+          "state": "UNKNOWN"
+        },
+        "conflictObserved": {
+          "state": "UNKNOWN"
+        },
+        "repairConsent": {
+          "state": "UNKNOWN"
+        },
+        "safeRecontact": {
+          "state": "UNKNOWN"
+        },
+        "apology": {
+          "state": "UNKNOWN"
+        },
+        "apologyAcceptance": {
+          "state": "UNKNOWN"
+        },
+        "forgiveness": {
+          "state": "UNKNOWN"
+        },
+        "closenessRestored": {
+          "state": "UNKNOWN"
+        },
+        "relationshipContinued": {
+          "state": "UNKNOWN"
+        }
+      },
+      "requirements": [
+        "actual_request_and_consent",
+        "current_available_time",
+        "observed_behavior_not_inferred_history",
+        "safe_voluntary_interaction"
+      ]
+    }
+  ],
+  "conceptIsObservation": false,
+  "lifeContextIsInevitableSequence": false
+}

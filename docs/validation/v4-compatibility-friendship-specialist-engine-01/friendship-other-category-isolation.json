@@ -1,0 +1,78 @@
+{
+  "actualFoundationCases": [
+    {
+      "fixtureId": "fixture-compatibility-A",
+      "category": "love",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "customerEligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-marriage",
+      "category": "marriage",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "customerEligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-parentChild",
+      "category": "parentChild",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "customerEligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-coworker",
+      "category": "coworker",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "customerEligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-managerReport",
+      "category": "managerReport",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "customerEligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-businessPartner",
+      "category": "businessPartner",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "customerEligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-unknown-both",
+      "category": "love",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "customerEligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-slot-swap",
+      "category": "love",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "customerEligible": 0,
+      "errors": []
+    },
+    {
+      "fixtureId": "fixture-compatibility-no-detected-pair",
+      "category": "love",
+      "graphUnchanged": true,
+      "catalogUnchanged": true,
+      "customerEligible": 0,
+      "errors": []
+    }
+  ],
+  "sourceProtection": "ALL_BASE_TRACKED_BYTES_CHECKED",
+  "otherSpecialistPoliciesChanged": false
+}

@@ -1,0 +1,21 @@
+{
+  "category": "friendship",
+  "roleVersion": "compatibility-fixed-ab-v1",
+  "roles": {
+    "personA": "A",
+    "personB": "B"
+  },
+  "actualHistory": "UNKNOWN",
+  "sourceInventoryIsEvidence": false,
+  "allMentionedSystemsAreAnd": false,
+  "voluntaryRelationship": true,
+  "nonExclusive": true,
+  "invitationIsAcceptance": false,
+  "helpIsDebt": false,
+  "disclosureIsSharingPermission": false,
+  "apologyIsForgiveness": false,
+  "forgivenessIsRecontact": false,
+  "distanceIsFailure": false,
+  "continuedFriendshipGuaranteed": false,
+  "customerSelection": false
+}

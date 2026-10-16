@@ -1,0 +1,572 @@
+{
+  "cases": [
+    {
+      "number": 1,
+      "case": "A/B own sources",
+      "executionKind": "option",
+      "reference": "material:CH02.P1",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 2,
+      "case": "Actual canonical pair",
+      "executionKind": "option",
+      "reference": "material:CH01.P2",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 3,
+      "case": "Unsupported pair",
+      "executionKind": "variant",
+      "reference": "unsupportedRelation",
+      "isActualCustomerApproval": false,
+      "eligible": 145,
+      "held": 87,
+      "fullReasonsReference": "friendship-synthetic-selection.json#/negatives/20"
+    },
+    {
+      "number": 4,
+      "case": "A→B recipient god",
+      "executionKind": "option",
+      "reference": "material:CH05.P1",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 5,
+      "case": "B→A recipient god",
+      "executionKind": "option",
+      "reference": "material:CH06.P1",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 6,
+      "case": "Same received god",
+      "executionKind": "variant",
+      "reference": "sameGod",
+      "isActualCustomerApproval": false,
+      "eligible": 155,
+      "held": 77,
+      "fullReasonsReference": "friendship-synthetic-selection.json#/negatives/10"
+    },
+    {
+      "number": 7,
+      "case": "Wrong owner",
+      "executionKind": "variant",
+      "reference": "wrongOwner",
+      "isActualCustomerApproval": false,
+      "eligible": 0,
+      "held": 232,
+      "fullReasonsReference": "friendship-synthetic-selection.json#/negatives/5"
+    },
+    {
+      "number": 8,
+      "case": "Wrong direction",
+      "executionKind": "variant",
+      "reference": "wrongDirection",
+      "isActualCustomerApproval": false,
+      "eligible": 115,
+      "held": 117,
+      "fullReasonsReference": "friendship-synthetic-selection.json#/negatives/6"
+    },
+    {
+      "number": 9,
+      "case": "One unknown MBTI",
+      "executionKind": "variant",
+      "reference": "unknownMbtiA",
+      "isActualCustomerApproval": false,
+      "eligible": 75,
+      "held": 157,
+      "fullReasonsReference": "friendship-synthetic-selection.json#/negatives/0"
+    },
+    {
+      "number": 10,
+      "case": "Missing own Fusion root",
+      "executionKind": "variant",
+      "reference": "missingFusionRoot",
+      "isActualCustomerApproval": false,
+      "eligible": 75,
+      "held": 157,
+      "fullReasonsReference": "friendship-synthetic-selection.json#/negatives/8"
+    },
+    {
+      "number": 11,
+      "case": "Pair reference only",
+      "executionKind": "option",
+      "reference": "scenario:pair-reference-only",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "ACTUAL_INFORMATION_ROOT_REQUIRED",
+        "SOURCE_DECLARATION_NOT_PERSONAL_FACT"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 12,
+      "case": "CHILDREN required ancestry",
+      "executionKind": "variant",
+      "reference": "children",
+      "isActualCustomerApproval": false,
+      "eligible": 55,
+      "held": 177,
+      "fullReasonsReference": "friendship-synthetic-selection.json#/negatives/12"
+    },
+    {
+      "number": 13,
+      "case": "Inventory only",
+      "executionKind": "variant",
+      "reference": "inventoryOnly",
+      "isActualCustomerApproval": false,
+      "eligible": 0,
+      "held": 232,
+      "fullReasonsReference": "friendship-synthetic-selection.json#/negatives/21"
+    },
+    {
+      "number": 14,
+      "case": "Unknown duration",
+      "executionKind": "option",
+      "reference": "scenario:unverified-friendshipDuration",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "UNVERIFIED_FRIENDSHIP_FACT:friendshipDuration"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 15,
+      "case": "Unknown closeness",
+      "executionKind": "option",
+      "reference": "scenario:unverified-closeness",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "UNVERIFIED_FRIENDSHIP_FACT:closeness"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 16,
+      "case": "Unknown contact frequency",
+      "executionKind": "option",
+      "reference": "scenario:unverified-currentContactFrequency",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "UNVERIFIED_FRIENDSHIP_FACT:currentContactFrequency"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 17,
+      "case": "Unknown past conflict",
+      "executionKind": "option",
+      "reference": "scenario:unverified-pastConflict",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "UNVERIFIED_FRIENDSHIP_FACT:pastConflict"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 18,
+      "case": "Unknown money transaction",
+      "executionKind": "option",
+      "reference": "scenario:unverified-moneyTransactions",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "UNVERIFIED_FRIENDSHIP_FACT:moneyTransactions"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 19,
+      "case": "Hypothetical same school",
+      "executionKind": "option",
+      "reference": "scenario:unverified-sameSchool",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "UNVERIFIED_FRIENDSHIP_FACT:sameSchool"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 20,
+      "case": "Verified meeting consent",
+      "executionKind": "option",
+      "reference": "scenario:verified-MEET",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 21,
+      "case": "Unconsented repeated invitation",
+      "executionKind": "option",
+      "reference": "scenario:unconsented-MEET",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "ACTUAL_CONTEXT_REQUIRED:availableTime",
+        "ACTUAL_CONTEXT_REQUIRED:meetingAcceptance"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 22,
+      "case": "No information permission",
+      "executionKind": "option",
+      "reference": "scenario:unconsented-DISCLOSE",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "ACTUAL_CONTEXT_REQUIRED:informationOwner",
+        "INFORMATION_OWNER_NOT_VERIFIED"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 23,
+      "case": "Other friends independent",
+      "executionKind": "option",
+      "reference": "scenario:other-friends-independent",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 24,
+      "case": "Assumed exclusion",
+      "executionKind": "option",
+      "reference": "scenario:unverified-actualExclusion",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "UNVERIFIED_FRIENDSHIP_FACT:actualExclusion"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 25,
+      "case": "Repeated harm blocks repair",
+      "executionKind": "option",
+      "reference": "scenario:repeated-harm-blocks-repair",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "UNSAFE_OR_UNCONSENTED_CONTACT"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 26,
+      "case": "Favour acceptance not debt",
+      "executionKind": "option",
+      "reference": "scenario:accepted-favour-not-debt",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 27,
+      "case": "Verified debt is not gift",
+      "executionKind": "option",
+      "reference": "scenario:verified-REPAYMENT",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 28,
+      "case": "Emotional support boundary",
+      "executionKind": "option",
+      "reference": "scenario:verified-HELP",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 29,
+      "case": "Contact gap is not proved history",
+      "executionKind": "option",
+      "reference": "scenario:unverified-currentContactFrequency",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "UNVERIFIED_FRIENDSHIP_FACT:currentContactFrequency"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 30,
+      "case": "Life rhythm change",
+      "executionKind": "option",
+      "reference": "scenario:life-change-not-relationship-end",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 31,
+      "case": "Relationship redefinition requires fact",
+      "executionKind": "unit",
+      "reference": "never invents current friendship fact",
+      "isActualCustomerApproval": false,
+      "passedTestNames": [
+        "never invents current friendship fact oldFriends",
+        "never invents current friendship fact childhoodFriends",
+        "never invents current friendship fact sameSchool",
+        "never invents current friendship fact sameWorkplace",
+        "never invents current friendship fact regularMeetings",
+        "never invents current friendship fact pastConflict",
+        "never invents current friendship fact moneyTransactions",
+        "never invents current friendship fact sharedSecrets",
+        "never invents current friendship fact jealousy",
+        "never invents current friendship fact oneSidedRelationship",
+        "never invents current friendship fact currentlyEstranged",
+        "never invents current friendship fact closeness",
+        "never invents current friendship fact friendshipDuration",
+        "never invents current friendship fact currentContactFrequency",
+        "never invents current friendship fact meetingOffer",
+        "never invents current friendship fact meetingAcceptance",
+        "never invents current friendship fact availableTime",
+        "never invents current friendship fact contactRequest",
+        "never invents current friendship fact contactConsent",
+        "never invents current friendship fact contactRefusal",
+        "never invents current friendship fact responseDeadlineAgreement",
+        "never invents current friendship fact reconnectionIntent",
+        "never invents current friendship fact otherFriends",
+        "never invents current friendship fact groupInvitation",
+        "never invents current friendship fact invitationCapacity",
+        "never invents current friendship fact actualExclusion",
+        "never invents current friendship fact repeatedHarm",
+        "never invents current friendship fact disclosure",
+        "never invents current friendship fact listeningRequested",
+        "never invents current friendship fact adviceRequested",
+        "never invents current friendship fact helpReceived",
+        "never invents current friendship fact informationOwner",
+        "never invents current friendship fact sharingPermission",
+        "never invents current friendship fact permissionScope",
+        "never invents current friendship fact permissionWithdrawn",
+        "never invents current friendship fact disclosureHistory",
+        "never invents current friendship fact trustObserved",
+        "never invents current friendship fact helpOffer",
+        "never invents current friendship fact helpRequest",
+        "never invents current friendship fact helpAcceptance",
+        "never invents current friendship fact voluntaryHelp",
+        "never invents current friendship fact timeCost",
+        "never invents current friendship fact moneyCost",
+        "never invents current friendship fact emotionalCost",
+        "never invents current friendship fact expectedReciprocity",
+        "never invents current friendship fact explicitAgreement",
+        "never invents current friendship fact actualDebt",
+        "never invents current friendship fact supportBoundary",
+        "never invents current friendship fact professionalSupportNeeded",
+        "never invents current friendship fact lifeChange",
+        "never invents current friendship fact relationshipRedefinition",
+        "never invents current friendship fact distanceChoice",
+        "never invents current friendship fact endChoice",
+        "never invents current friendship fact conflictObserved",
+        "never invents current friendship fact repairConsent",
+        "never invents current friendship fact safeRecontact",
+        "never invents current friendship fact apology",
+        "never invents current friendship fact apologyAcceptance",
+        "never invents current friendship fact forgiveness",
+        "never invents current friendship fact closenessRestored",
+        "never invents current friendship fact relationshipContinued"
+      ]
+    },
+    {
+      "number": 32,
+      "case": "Voluntary distance",
+      "executionKind": "option",
+      "reference": "scenario:voluntary-distance",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 33,
+      "case": "Safe ending",
+      "executionKind": "option",
+      "reference": "scenario:safe-relationship-ending",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 34,
+      "case": "CH08 without displayed CH07",
+      "executionKind": "display",
+      "reference": "CH08 without displayed CH07",
+      "isActualCustomerApproval": false,
+      "actualBinderInvoked": true,
+      "held": 23,
+      "allHeld": true,
+      "reasons": [
+        "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+        "ACTUAL_CONTEXT_REQUIRED:conflictObserved",
+        "ACTUAL_CONTEXT_REQUIRED:contactConsent",
+        "ACTUAL_CONTEXT_REQUIRED:contactRefusal",
+        "ACTUAL_CONTEXT_REQUIRED:pastConflict",
+        "ACTUAL_CONTEXT_REQUIRED:repairConsent",
+        "ACTUAL_CONTEXT_REQUIRED:safeRecontact",
+        "INCOMPATIBLE_INTRODUCED_GROUP",
+        "UNSAFE_OR_UNCONSENTED_CONTACT"
+      ]
+    },
+    {
+      "number": 35,
+      "case": "Compatible displayed group",
+      "executionKind": "option",
+      "reference": "material:CH08.P1",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 36,
+      "case": "Mixed group pieces",
+      "executionKind": "unit",
+      "reference": "uses complete alternatives, never mixes pieces",
+      "isActualCustomerApproval": false,
+      "passedTestNames": [
+        "uses complete alternatives, never mixes pieces of two groups"
+      ]
+    },
+    {
+      "number": 37,
+      "case": "CH08 no actual display",
+      "executionKind": "no-display",
+      "reference": "REPAIR",
+      "isActualCustomerApproval": false,
+      "held": 20,
+      "allHeld": true
+    },
+    {
+      "number": 38,
+      "case": "CH09 no actual display",
+      "executionKind": "no-display",
+      "reference": "RECALL",
+      "isActualCustomerApproval": false,
+      "held": 20,
+      "allHeld": true
+    },
+    {
+      "number": 39,
+      "case": "CH09 compatible display",
+      "executionKind": "option",
+      "reference": "material:CH09.P1",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 40,
+      "case": "CH09.P2 without CH01.P2",
+      "executionKind": "display",
+      "reference": "CH09.P2 without CH01.P2",
+      "isActualCustomerApproval": false,
+      "actualBinderInvoked": true,
+      "held": 5,
+      "allHeld": true,
+      "reasons": [
+        "ACTUAL_COMPATIBLE_DISPLAY_REQUIRED",
+        "INCOMPATIBLE_INTRODUCED_GROUP"
+      ]
+    },
+    {
+      "number": 41,
+      "case": "Same fact root reuse",
+      "executionKind": "unit",
+      "reference": "reserves a future question root",
+      "isActualCustomerApproval": false,
+      "passedTestNames": [
+        "reserves a future question root and meaning instead of greedily consuming both"
+      ]
+    },
+    {
+      "number": 42,
+      "case": "Same meaning variation",
+      "executionKind": "unit",
+      "reference": "examines630pairs",
+      "isActualCustomerApproval": false,
+      "passedTestNames": [
+        "examines630pairs without issuing semantic approvals or new roots"
+      ]
+    },
+    {
+      "number": 43,
+      "case": "Verified distinct application",
+      "executionKind": "option",
+      "reference": "scenario:verified-root-reuse",
+      "isActualCustomerApproval": false,
+      "eligible": true,
+      "reasons": [],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 44,
+      "case": "Forced recontact",
+      "executionKind": "option",
+      "reference": "scenario:forcedContact",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "FORCED_RECONTACT"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 45,
+      "case": "Forced forgiveness",
+      "executionKind": "option",
+      "reference": "scenario:forcedForgiveness",
+      "isActualCustomerApproval": false,
+      "eligible": false,
+      "reasons": [
+        "FORCED_FORGIVENESS"
+      ],
+      "allTwelveGatesExecuted": true
+    },
+    {
+      "number": 46,
+      "case": "Future root reservation",
+      "executionKind": "unit",
+      "reference": "reserves a future question root",
+      "isActualCustomerApproval": false,
+      "passedTestNames": [
+        "reserves a future question root and meaning instead of greedily consuming both"
+      ]
+    }
+  ],
+  "coverage": 46,
+  "algorithmsUseSameRegisteredCandidateInputs": true,
+  "comparisonScope": "all native candidate contexts plus separately evaluated producer variants and direct display/group/unit gates; not46 independent full optimizer runs",
+  "realCustomerApprovals": 0
+}

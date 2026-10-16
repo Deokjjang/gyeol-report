@@ -1,0 +1,265 @@
+[
+  {
+    "original": {
+      "id": "frpr:life:reconnection",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "key": "reconnection",
+      "question": "오랜만에 연락하고 싶다면 먼저 무엇을 물을까?",
+      "actualState": "UNKNOWN",
+      "possibleSituation": {
+        "status": "hypothetical_only",
+        "text": "실제 오래된 우정·단절은 UNKNOWN이며 가상으로만 설정"
+      },
+      "newInformation": "연락 재개 의사와 예전 친밀감의 복원은 다름",
+      "positive": "현재의 관심과 참여 범위를 새로 알아갈 수 있다.",
+      "risk": "예전의 사적 정보 접근권이 돌아왔다고 여긴다.",
+      "action": "다시 대화할 의사를 먼저 묻고 현재 범위를 따른다.",
+      "counterexample": "상대가 답하지 않거나 원하지 않으면 재접촉을 강제하지 않는다.",
+      "sourceRefs": [
+        "frpr:source:hall",
+        "frpr:source:khullar"
+      ],
+      "materialAddresses": [
+        "CH03.P3",
+        "CH08.P3"
+      ],
+      "inevitableSequence": false
+    },
+    "materials": [
+      {
+        "id": "frpr:material:CH08.P3:b-repair-boundary",
+        "address": "CH08.P3",
+        "mode": "REPAIR"
+      },
+      {
+        "id": "frpr:material:CH03.P3:b-detail-memory",
+        "address": "CH03.P3",
+        "mode": "SELF_B"
+      }
+    ],
+    "actualState": "UNKNOWN"
+  },
+  {
+    "original": {
+      "id": "frpr:life:network-change",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "key": "network-change",
+      "question": "새로운 친구가 생겼을 때 기존 만남은 어떻게 고를까?",
+      "actualState": "UNKNOWN",
+      "possibleSituation": {
+        "status": "hypothetical_only",
+        "text": "새 모임의 소식을 듣고 둘의 만남을 다시 정하는 가상 상황"
+      },
+      "newInformation": "제3자의 존재와 기존 약속의 이행은 별도",
+      "positive": "다른 관계를 제한하지 않고 필요한 연결을 말할 수 있다.",
+      "risk": "대체되었다는 추측으로 관계를 통제한다.",
+      "action": "기존 약속과 별도 모임의 선택을 분리해 묻는다.",
+      "counterexample": "실제 반복 배제가 확인되면 단순 추측으로 축소하지 않는다.",
+      "sourceRefs": [
+        "frpr:source:krems",
+        "frpr:source:deci"
+      ],
+      "materialAddresses": [
+        "CH05.P4",
+        "CH07.P4"
+      ],
+      "inevitableSequence": false
+    },
+    "materials": [
+      {
+        "id": "frpr:material:CH05.P4:ab-other-friends",
+        "address": "CH05.P4",
+        "mode": "AB"
+      },
+      {
+        "id": "frpr:material:CH07.P4:third-party-context",
+        "address": "CH07.P4",
+        "mode": "JOINT"
+      }
+    ],
+    "actualState": "UNKNOWN"
+  },
+  {
+    "original": {
+      "id": "frpr:life:deeper-talk",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "key": "deeper-talk",
+      "question": "더 사적인 이야기를 나누고 싶다면 무엇을 확인할까?",
+      "actualState": "UNKNOWN",
+      "possibleSituation": {
+        "status": "hypothetical_only",
+        "text": "기존보다 개인적인 고민을 말하려는 가상 상황"
+      },
+      "newInformation": "공개할 정보·지원의 종류·전달 범위를 나눔",
+      "positive": "말한 사람이 공개의 범위를 고를 수 있다.",
+      "risk": "친해지려면 같은 양을 공개해야 한다고 요구한다.",
+      "action": "듣기를 원하는지와 다른 사람에게 전해도 되는지 별도로 묻는다.",
+      "counterexample": "많이 공개하지 않아도 함께 즐기는 우정은 가능하다.",
+      "sourceRefs": [
+        "frpr:source:laurenceau",
+        "frpr:source:deci"
+      ],
+      "materialAddresses": [
+        "CH02.P2",
+        "CH04.P4"
+      ],
+      "inevitableSequence": false
+    },
+    "materials": [
+      {
+        "id": "frpr:material:CH04.P4:trust-not-access",
+        "address": "CH04.P4",
+        "mode": "JOINT"
+      },
+      {
+        "id": "frpr:material:CH02.P2:a-disclosure-control",
+        "address": "CH02.P2",
+        "mode": "SELF_A"
+      }
+    ],
+    "actualState": "UNKNOWN"
+  },
+  {
+    "original": {
+      "id": "frpr:life:redefinition",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "key": "redefinition",
+      "question": "관계의 형태를 바꾸거나 끝낼 때 무엇을 남길까?",
+      "actualState": "UNKNOWN",
+      "possibleSituation": {
+        "status": "hypothetical_only",
+        "text": "연락·활동·공개의 범위를 줄이거나 종료를 고려하는 가상 상황"
+      },
+      "newInformation": "거리 두기·활동 제한·종료는 별도 선택",
+      "positive": "지금 동의할 수 있는 범위와 안전을 명확히 할 수 있다.",
+      "risk": "계속 친해야 좋은 우정이었다고 평가한다.",
+      "action": "당사자의 유지 의사와 접촉 범위를 확인하고 종료 선택도 남긴다.",
+      "counterexample": "위해가 있는 관계에서는 좋은 기억을 유지 압박으로 사용하지 않는다.",
+      "sourceRefs": [
+        "frpr:source:khullar"
+      ],
+      "materialAddresses": [
+        "CH08.P3",
+        "CH09.P4"
+      ],
+      "inevitableSequence": false
+    },
+    "materials": [
+      {
+        "id": "frpr:material:CH08.P3:b-repair-boundary",
+        "address": "CH08.P3",
+        "mode": "REPAIR"
+      },
+      {
+        "id": "frpr:material:CH09.P4:recall-without-prophecy",
+        "address": "CH09.P4",
+        "mode": "RECALL"
+      }
+    ],
+    "actualState": "UNKNOWN"
+  },
+  {
+    "original": {
+      "id": "frpr:life:new-routine",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "key": "new-routine",
+      "question": "생활 리듬이 달라지면 무엇을 다시 합의할까?",
+      "actualState": "UNKNOWN",
+      "possibleSituation": {
+        "status": "hypothetical_only",
+        "text": "가상의 이사·돌봄·새 일정으로 이전 만남 방식이 어려운 상황"
+      },
+      "newInformation": "가용 자원의 변경과 우정의 가치 구분",
+      "positive": "지금 가능한 활동과 채널을 새로 고를 수 있다.",
+      "risk": "예전 빈도를 애정 시험으로 강요한다.",
+      "action": "현재 가능 범위와 원하는 연결을 각각 확인한다.",
+      "counterexample": "연락을 계속할 의사가 없으면 새 방식을 반드시 찾을 의무는 없다.",
+      "sourceRefs": [
+        "frpr:source:khullar",
+        "frpr:source:deci"
+      ],
+      "materialAddresses": [
+        "CH09.P3",
+        "CH06.P4"
+      ],
+      "inevitableSequence": false
+    },
+    "materials": [
+      {
+        "id": "frpr:material:CH06.P4:ba-availability-boundary",
+        "address": "CH06.P4",
+        "mode": "BA"
+      },
+      {
+        "id": "frpr:material:CH09.P3:recall-changed-lives",
+        "address": "CH09.P3",
+        "mode": "RECALL"
+      }
+    ],
+    "actualState": "UNKNOWN"
+  },
+  {
+    "original": {
+      "id": "frpr:life:meeting",
+      "relationshipType": "friendship",
+      "connectedToRuntime": false,
+      "approvedForCustomer": false,
+      "existingScoreContribution": false,
+      "runtimeEvidenceIds": [],
+      "key": "meeting",
+      "question": "처음 추가 만남을 원한다면 무엇을 제안할까?",
+      "actualState": "UNKNOWN",
+      "possibleSituation": {
+        "status": "hypothetical_only",
+        "text": "같은 모임에서 알게 됐지만 사적 친밀함은 확인하지 않은 상황"
+      },
+      "newInformation": "접촉 기회와 선택한 초대를 구분",
+      "positive": "작은 활동을 통해 다시 만날 의사를 물을 수 있다.",
+      "risk": "같은 소속을 친밀감의 합의로 오인한다.",
+      "action": "목적·시간·거절 가능성을 함께 제안한다.",
+      "counterexample": "같은 소속이어도 사적인 만남은 원하지 않을 수 있다.",
+      "sourceRefs": [
+        "frpr:source:hall",
+        "frpr:source:deci"
+      ],
+      "materialAddresses": [
+        "CH01.P1",
+        "CH02.P1"
+      ],
+      "inevitableSequence": false
+    },
+    "materials": [
+      {
+        "id": "frpr:material:CH02.P1:a-invitation",
+        "address": "CH02.P1",
+        "mode": "SELF_A"
+      },
+      {
+        "id": "frpr:material:CH01.P1:chosen-time",
+        "address": "CH01.P1",
+        "mode": "JOINT"
+      }
+    ],
+    "actualState": "UNKNOWN"
+  }
+]

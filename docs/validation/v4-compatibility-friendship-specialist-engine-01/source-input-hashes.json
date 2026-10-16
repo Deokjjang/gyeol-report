@@ -1,0 +1,20 @@
+{
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/artifacts.ts": "92e42e2a7ca7e0abe0658d0bc3596feaeea932a3c53ceb77f17935788b2407dc",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/candidateIndex.ts": "f7c0b2f2c83ca108f0931f472783030696505a330b4015a6d3757d3dfa1c7c62",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/conflictGraph.ts": "095d62e2e5c2d84b18bb99da7a017db80d25da18872bc82a8ca03e16c29199d1",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/engine.ts": "06a9cf9c615118309b180b5bd51a21df9bd7082d5c0b448a97ca0c9fa3f9ee54",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/introducedGroups.ts": "4447af5b31807df5f951017eb5b8e93f0ff31e0e9c818abe959f96797a211463",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/observations.ts": "61b0ff0e9c9f2379969944029c1e99e71e42dfa61f6c9e1e275fddc693cbea18",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/relationshipContext.ts": "af0fa605871114fc28276a49daaf82ac83ae4ccc1c007ddaadcb4ad1e01579d3",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/requirementAdapter.ts": "ba9b71064f51d88a97b517aa95ebdded3754001bed39cfc1e40f3521733a5a54",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/researchCatalog.ts": "6c650df9723fb141f0a2db839365b8dc7448207fc8c8162a4d35c14fcdc191da",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/selection.ts": "0d737985b832dfab50e4ac750d53dbcede34ddc3ad53d3c1ca0ff8a53e5ad16a",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/sourceInventoryResolver.ts": "55638962feb481c7c14147bbbd290c706d953578dab5b6192b340011fc1ee8a5",
+  "src/lib/report-knowledge/knowledge-integration-foundation/compatibility-friendship-specialist-engine/synthetic.ts": "88ca35cb57974d622e0451a8a80144b05c34eeeacd2ae0fa2ae9850b04b1dc22",
+  "tests/fixtures/compatibility-friendship-specialist-engine-01/synthetic-knowledge.json": "27380fcb5669f6c993a42f72354e6e3454304ee61276fff17617afed36c633cb",
+  "tests/unit/report-knowledge/compatibilityFriendshipSpecialistArtifacts.test.ts": "d1ebe322aa4c5ed34dfb004e39cabd52b2efd5e482eef129d46019ded6b24bd7",
+  "tests/unit/report-knowledge/compatibilityFriendshipSpecialistEngine.test.ts": "d17f95306faf5a4286b50702e2acbf8347267746f44b5b04ea9674f2f028e0fa",
+  "tools/compatibility-friendship-specialist-engine/researchTypes.ts": "9f24e373bd16adef8b1672cfc6d1f2892b4663016b43d0e9363470dad1425bcf",
+  "tools/compatibility-friendship-specialist-engine/sharedServices.ts": "380b43f2316f2b062ac82f1f179464aa0b9cac9f70526e92260efcac19548e46",
+  "tools/compatibility-friendship-specialist-engine/verify.mjs": "dc7781e1715785e1e4b562a18013039224588a870c183372916a62e516460215"
+}

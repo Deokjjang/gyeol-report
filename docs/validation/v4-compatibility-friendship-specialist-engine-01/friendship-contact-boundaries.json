@@ -1,0 +1,15 @@
+{
+  "separate": [
+    "meetingOffer",
+    "meetingAcceptance",
+    "availableTime",
+    "contactRequest",
+    "contactConsent",
+    "contactRefusal",
+    "responseDeadlineAgreement",
+    "reconnectionIntent"
+  ],
+  "frequentContactRequired": false,
+  "unlimitedResponseDuty": false,
+  "actualFacts": "UNKNOWN"
+}

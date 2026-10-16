@@ -1,0 +1,62 @@
+[
+  {
+    "category": "love",
+    "materials": 80,
+    "graphCases": 4,
+    "actualWitnessOccurrences": 229,
+    "structuralMatches": 12,
+    "manifestSha256": "c3fd619ced92af63cd1ba52943f65a43fcb0c5c4a93a89cd9958039d53207045",
+    "allOriginalSourcesAndOutputsPreserved": true,
+    "validation": "existing related engine/artifact tests and full Base byte protection; not rerunning every specialist CLI"
+  },
+  {
+    "category": "marriage",
+    "materials": 112,
+    "graphCases": 1,
+    "actualWitnessOccurrences": 96,
+    "structuralMatches": 4,
+    "manifestSha256": "d6f430dc8256f2a545c6c97730da701a08007bda40fe7d1886285eeebe002b80",
+    "allOriginalSourcesAndOutputsPreserved": true,
+    "validation": "existing related engine/artifact tests and full Base byte protection; not rerunning every specialist CLI"
+  },
+  {
+    "category": "parent-child",
+    "materials": 120,
+    "graphCases": 1,
+    "actualWitnessOccurrences": 50,
+    "structuralMatches": 6,
+    "manifestSha256": "87322751dc870ea16e01648664bd19161fc62277344f9d60d8eca13bafd5cb71",
+    "allOriginalSourcesAndOutputsPreserved": true,
+    "validation": "existing related engine/artifact tests and full Base byte protection; not rerunning every specialist CLI"
+  },
+  {
+    "category": "coworker",
+    "materials": 172,
+    "graphCases": 1,
+    "actualWitnessOccurrences": 150,
+    "structuralMatches": 14,
+    "manifestSha256": "50c3ebf5e45419aee341f88f4878dbf70e2b6ff93f7131db2120b34a3de17565",
+    "allOriginalSourcesAndOutputsPreserved": true,
+    "validation": "existing related engine/artifact tests and full Base byte protection; not rerunning every specialist CLI"
+  },
+  {
+    "category": "manager-report",
+    "materials": 96,
+    "graphCases": 1,
+    "actualWitnessOccurrences": 77,
+    "structuralMatches": 4,
+    "manifestSha256": "c99181acd682aef6cd04240826d06ab087a1e5f2494bfce119955e0917a6e4eb",
+    "allOriginalSourcesAndOutputsPreserved": true,
+    "validation": "existing related engine/artifact tests and full Base byte protection; not rerunning every specialist CLI"
+  },
+  {
+    "category": "business-partner",
+    "materials": 96,
+    "graphCases": 1,
+    "actualWitnessOccurrences": 35,
+    "structuralMatches": 4,
+    "manifestSha256": "15cde14050f1f669c79785fbe255f000bab90adbb83b891578e09e6b6673b51c",
+    "allOriginalSourcesAndOutputsPreserved": true,
+    "validation": "existing related engine/artifact tests and full Base byte protection; not rerunning every specialist CLI"
+  }
+]
