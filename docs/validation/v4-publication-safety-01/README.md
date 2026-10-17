@@ -67,7 +67,7 @@ Snapshot draft union에 `V4CustomerReport`를 추가했고 기존 오프라인 �
 
 독립 최종 생성2회는39사례와20개 code/input hash를 전후 봉인했고7개 물리 산출물이 byte 동일했다. Source 기술 검증도 독립2회 동일했다. 실제 generator loop wall은 411.88/410.09초, user CPU 423.14/421.31초, Node maxRSS 1.097/1.057GiB다. bootstrap 준비와 환경 정보는 논리 결과에 섞지 않았다. CLI Node25.9.0, build Node24.22.0을 각각 양쪽 동일하게 사용했다. heap8GiB는 테스트 설정이며 최소 필요량이 아니다. [결정론·리소스](deterministic-validation.json).
 
-원본 checkout의11 dirty 파일·브랜치·HEAD는 정확히 보존됐다. 기존62개 중45개는 파일/상태까지 같고17개 오래된 /private/tmp checkout은 작업 중단 이후 .git 표시 파일과 소스가 사라진 상태를 관찰했다. 원인은 확정하지 못했으며 이 작업에서 해당 경로를 삭제/정리한 명령은 없다. 17개는 시작 당시 clean이었고 HEAD/branch ref는 모두 유지된다. 자동 복원/정리는 하지 않았다. 전체 worktree 파일 보존 PASS라고 주장하지 않는다. [관찰한 정확한 경로·수량](workspace-preservation.json). Git 외부 전후 전체 hash ledger를 보관한다.
+원본 checkout의11 dirty 파일·브랜치·HEAD는 정확히 보존됐다. 기존62개 중45개는 파일/상태까지 같고17개 오래된 /private/tmp checkout에서 파일 감소를 관찰했다. 이 중15개는 시작 당시 .git 표시 파일이 있는 clean checkout이었으나 중단 이후 표시 파일과 소스가 유실됐다. 나머지2개는 시작부터 .git 표시 파일이 없는 기존 prunable 상태였고 남아 있던 파일이 추가로 줄었다. 기존8개 prunable 중 이2개가 포함되며 새로 prunable이 된 checkout은15개다. 원인은 확정하지 못했으며 이 작업에서 해당 경로를 삭제/정리한 명령은 없다. 62개 HEAD/branch ref는 모두 유지된다. 자동 복원/정리는 하지 않았다. 전체 worktree 파일 보존 PASS라고 주장하지 않는다. [관찰한 정확한 경로·수량](workspace-preservation.json). Git 외부 전후 전체 hash ledger를 보관한다.
 
 Source/Domain/2060 Bridge/실제 승인,7개 Source-limited Book,기존56개 실패/시간 예산,17개 checkout drift,고객 적용 승인 및 사람의 전체 독해가 남는다. 다음 Technical Stabilization은 인계 자료만 준비했고 시작하지 않았다. [handoff](technical-stabilization-handoff.json). [전체 최종 필드](final-report-fields.json), [실행 manifest](publication-safety-manifest.json), [privacy](privacy-audit.json), [원래 참조 hash](original-reference-hashes.json).
 

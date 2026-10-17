@@ -9,7 +9,7 @@
   "files": [
     {
       "file": "docs/validation/v4-publication-safety-01/README.md",
-      "sha256": "d15e42035c1d18a170683cea5aa8155191a311e192d67ecf4685ea8b3425f353"
+      "sha256": "375b08fcc9d29c500686d287497c91936ccf0e97a2d5cc6faad2bb598aa00fd2"
     },
     {
       "file": "docs/validation/v4-publication-safety-01/adult-child-authority-validation.json",
@@ -109,7 +109,7 @@
     },
     {
       "file": "docs/validation/v4-publication-safety-01/workspace-preservation.json",
-      "sha256": "759b021ade9e16d6a839c4b91dd4fb92568de688af9a00d6e2026895046d2bf6"
+      "sha256": "95d7446c32ad7f5022a54fcc0b3212d9dcb1eab9170acec7a5b8653d3ceca04e"
     },
     {
       "file": "src/lib/interpretation-v4/compatibilityProductAdapter.ts",

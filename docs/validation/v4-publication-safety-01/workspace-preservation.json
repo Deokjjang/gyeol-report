@@ -11,7 +11,8 @@
       "sourceFilesBefore": 29,
       "sourceFilesAfter": 0,
       "dirtyAtStart": true,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": false
     },
     {
       "path": "/private/tmp/gyeol-career-product-knowledge-01",
@@ -20,7 +21,8 @@
       "sourceFilesBefore": 2654,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-compatibility-love-product-knowledge-01",
@@ -29,7 +31,8 @@
       "sourceFilesBefore": 2831,
       "sourceFilesAfter": 272,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-comprehensive-product-knowledge-01",
@@ -38,7 +41,8 @@
       "sourceFilesBefore": 2575,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-foundation-saju-deep-knowledge-03",
@@ -47,7 +51,8 @@
       "sourceFilesBefore": 2153,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-foundation-saju-knowledge-completion-02",
@@ -56,7 +61,8 @@
       "sourceFilesBefore": 2132,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-foundation-saju-knowledge-expansion-01",
@@ -65,7 +71,8 @@
       "sourceFilesBefore": 2110,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-fusion-semantic-knowledge-depth-01",
@@ -74,7 +81,8 @@
       "sourceFilesBefore": 2501,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-love-marriage-child-product-knowledge-01",
@@ -83,7 +91,8 @@
       "sourceFilesBefore": 2735,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-mbti-16type-knowledge-depth-01",
@@ -92,7 +101,8 @@
       "sourceFilesBefore": 2321,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-mbti-pair-relation-knowledge-01",
@@ -101,7 +111,8 @@
       "sourceFilesBefore": 2374,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-release-technical-stabilization-01",
@@ -110,7 +121,8 @@
       "sourceFilesBefore": 2094,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-saju-composite-structure-knowledge-01",
@@ -119,7 +131,8 @@
       "sourceFilesBefore": 2185,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-saju-relation-knowledge-01",
@@ -128,7 +141,8 @@
       "sourceFilesBefore": 2241,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-saju-temporal-interaction-knowledge-01",
@@ -137,7 +151,8 @@
       "sourceFilesBefore": 2275,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-semantic-axis-knowledge-expansion-01",
@@ -146,7 +161,8 @@
       "sourceFilesBefore": 2433,
       "sourceFilesAfter": 0,
       "dirtyAtStart": false,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": true
     },
     {
       "path": "/private/tmp/gyeol-six-product-common-editorial-polish-01",
@@ -155,9 +171,13 @@
       "sourceFilesBefore": 886,
       "sourceFilesAfter": 581,
       "dirtyAtStart": true,
-      "gitMarkerAfter": false
+      "gitMarkerAfter": false,
+      "gitMarkerBefore": false
     }
   ],
   "cause": "UNDETERMINED; observed after task interruption; no cleanup/deletion command for original worktrees was executed",
-  "restorationAttempted": false
+  "restorationAttempted": false,
+  "existingPrunableAtStart": 8,
+  "newlyMissingGitMarkers": 15,
+  "previouslyPrunableWithFurtherFileLoss": 2
 }
