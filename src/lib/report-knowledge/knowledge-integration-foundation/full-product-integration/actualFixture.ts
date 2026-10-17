@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { generateV4ShadowReport, type V4ShadowClock } from '../../../interpretation-v4/runtimeShadow';
-import type { V4RuntimeEvidence } from '../../../interpretation-v4/runtimeProjection';
+import { projectV4Composition, type V4RuntimeEvidence } from '../../../interpretation-v4/runtimeProjection';
+import { createProductPreviewSnapshot } from '../../../report-generation/productPreviewSnapshot';
 import { observeActualProfiles } from '../actual-evidence-graph/producers';
 import { buildActualEvidenceGraph } from '../actual-evidence-graph/engine';
 import type { KnowledgeBindingRequest, KnowledgeBindingReceipt } from '../knowledge-binder/types';
@@ -63,14 +64,11 @@ export async function integrateActualFixture(root: string, selection: { product:
   const planning = prepareStrictRequest({ entry, registry: services.foundation.registry, envelopes: native.envelopes, receipts: native.receipts,
     witnesses: [...coordinator.witnesses.values()], originalInputProof: { source: ACTUAL_FIXTURE_FILE, sha256: hash(bytes) }, nativeConflicts: native.semantic });
   const session = integrateProduct(root, planning);
-  // The old factory's TypeScript draft union omits V4 although its runtime
-  // accepts V4. Keep that protected contract unchanged and pass the exact
-  // preview DTO as unknown to its existing schema + V4 Publisher/Reader.
-  // Do not falsely cast a V4 draft to a legacy draft type.
   const reportId = 'offline-integration-' + fixture.product + '-' + fixture.id;
-  const snapshot = { id: reportId, reportId, createdAtIso: evidence.generatedAt, productKey: evidence.productType,
-    productSlug: evidence.input.productSlug, productType: evidence.productType, productVersion: 'v4',
-    draft: generated.draft, evidencePacket: evidence, access: { mode: 'preview', isPaid: false, isUnlocked: false } };
+  const created = createProductPreviewSnapshot({ reportId, createdAtIso: evidence.generatedAt, productKey: evidence.productType,
+    productSlug: evidence.input.productSlug, draft: projectV4Composition(evidence.composition), evidencePacket: evidence });
+  if (!created.ok) return { ok: false as const, stage: 'EXISTING_SNAPSHOT_FACTORY', reasons: [created.error] };
+  const snapshot = created.value;
   const publication = inspectStoredPublication(snapshot), reopened = reopenStoredPublication(JSON.stringify(snapshot));
   if (!publication.ok || !reopened.ok) return { ok: false as const, stage: 'EXISTING_PUBLISHER_REOPEN', reasons: [...publication.errors, ...reopened.errors] };
   if (before !== digest(evidence) || publication.bookHash !== reopened.bookHash) throw Error('EXISTING_CALCULATION_OR_BOOK_CHANGED');

@@ -1,0 +1,519 @@
+{
+  "originalFallbackCases": [
+    {
+      "id": "love/O/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "love/Q/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "marriage/M/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "marriage/N/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "marriage/AB/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "parent-child/L/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "parent-child/M/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "coworker/L/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "coworker/M/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "coworker/AG/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "manager-report/L/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "manager-report/M/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "manager-report/AL/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "business-partner/L/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "business-partner/M/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "business-partner/AO/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "friendship/L0/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    },
+    {
+      "id": "friendship/M0/0",
+      "readerEditionBefore": "compatibility-editorial-quality-01-v1",
+      "publishedEditionBefore": "compatibility-product-13d-7b-v1",
+      "hardErrorsBefore": [],
+      "editorialBefore": [
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH01.P3 / CH02.P1"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P2 / CH03.P2"
+        },
+        {
+          "severity": "Major",
+          "code": "REPEATED_LONG_PHRASE",
+          "location": "CH02.P3 / CH03.P3"
+        }
+      ],
+      "readerEditionAfter": "compatibility-publication-safety-01-v1",
+      "publishedEditionAfter": "compatibility-publication-safety-01-v1",
+      "errors": []
+    }
+  ],
+  "diagnosticLegacySelectedButWithheld": [
+    "coworker/W/0",
+    "manager-report/AJ/0",
+    "manager-report/AK/0",
+    "business-partner/AM/0",
+    "business-partner/AN/0",
+    "friendship/A0/0",
+    "friendship/H0/0"
+  ],
+  "publishedNewLegacyFallbacks": 0,
+  "unverifiedLegacyAlwaysWithheld": true,
+  "withheldCases": [
+    {
+      "id": "coworker/W/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "manager-report/AJ/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "manager-report/AK/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "business-partner/AM/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "business-partner/AN/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "friendship/A0/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    },
+    {
+      "id": "friendship/H0/0",
+      "errors": [
+        "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+        "READER_9_36_144_REQUIRED",
+        "UNVERIFIED_LEGACY_FALLBACK"
+      ]
+    }
+  ],
+  "styleAndProvenanceChecksDistinct": true,
+  "publicPaidWorkerChanged": false,
+  "customerActivationRequired": true
+}

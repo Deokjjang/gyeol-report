@@ -1,0 +1,13 @@
+{
+  "docs/validation/v4-full-product-integration-01/README.md": "454ca62cf9fd765f6d9e7dd59d0606b805a0679f5f70ec07917a3f70785c0715",
+  "docs/validation/v4-full-product-integration-01/integration-manifest.json": "2e6433146063b2d28954e0adc63b1ed1b083776d19a86d0638e02db0bd964bdc",
+  "docs/validation/v4-full-product-integration-01/publication-safety-issue-audit.json": "617a113fdd3cb9b04e2dcb5ecfb7b1510c76d13e6f63fe2cc233c2ed77725553",
+  "docs/validation/v4-full-product-integration-01/publication-safety-handoff.json": "831240e8b2484fb0be197360ed16fe3f270d76d8b5bd090c56cda154bc6c14d4",
+  "docs/validation/v4-full-product-integration-01/reader-bridge-audit.json": "6fc0829a7da12c77b64283fc99306c5700040b5d64354dbab3dcac3eab9b8e91",
+  "docs/validation/v4-full-product-integration-01/book-contract-preservation.json": "9a03247b94fffd711f7fd161af4dcedaf9d35c4c382c047db719d41926b86a33",
+  "docs/validation/v4-full-product-integration-01/regression-comparison.json": "e11904a99c94bedb1854f9416af4930b3825eb2948eed211c7083b6c843e734c",
+  "docs/validation/v4-global-specialist-integration-audit-01/README.md": "57cbb07b93607398a821e6f5a8aa328c29f0981d18675b2a3af46a5f450faa8e",
+  "docs/validation/v4-global-source-domain-resolution-01/README.md": "3554609a29bf31e7889676e63663c614d4b64f364b68a825142c7bfbe91d6442",
+  "docs/validation/v4-compatibility-parent-child-specialist-engine-01/parent-child-adult-v-audit.json": "bc30dfc868b2b2abac3f134f9196829719c1b92c1e634249b48296ce0383fca5",
+  "docs/validation/v4-compatibility-parent-child-specialist-engine-01/parent-child-adult-autonomy.json": "d81cda7050809f3ea3abdc553f482ce2f610cd56b4874136722af3b2d0463db3"
+}

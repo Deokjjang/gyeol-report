@@ -1,0 +1,748 @@
+[
+  {
+    "id": "coworker/W/0",
+    "inputHash": "ecf3bc44e20c613561053825012d9a13565f05055d5bb1eb4810ba8399f7c35a",
+    "address": "CH07.P1",
+    "product": "saju_mbti_compatibility",
+    "relationship": "coworker",
+    "readerQuestion": "가장 중요한 차이",
+    "customerSchedulerBridge": "UNVERIFIED",
+    "sourceGroup": "EXISTING_WRITER_COMPARISON_NOT_NEW_RESEARCH_APPROVAL",
+    "before": "수정 의견이 결과물에 관한 말인지 능력 평가인지 모호해질 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. {personA}님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다. {personB}님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다. 수정을 더 하자는 의견과 지금 넘기자는 의견은 완성도의 문제와 일정의 문제를 다른 순서로 말하는 중일 수 있습니다.",
+    "beforeHash": "7505654bf788828656ac4d2c5ad82aa8adcfc219c9370b0f73d57f7c710d2d68",
+    "provenance": [
+      {
+        "owner": "personA",
+        "roots": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "3528898eacc364d20de96b3d76c5d553b0b86af66be2182872487084f66ca2d6",
+            "sourcePath": "/traits/child/1/plainKo",
+            "domain": "CHILDREN",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "b7a8c9b9faa18c7ccf418742685c56549e4da05d275acbec86bbca58d32026ec",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "cb64f981aaac6a220cf51240cf7ff3789f8f63dbe7c0e6fbca9d751d6c2b76e5",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": [
+          "PROHIBITED_ANCESTOR_DOMAIN:mbti:INTP:traits:child:socially_detached_child:plainKo"
+        ]
+      },
+      {
+        "owner": "personB",
+        "roots": [
+          "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "196678f292fea9434f0bedaee0913a19d4fca91ff0404fe77617a3c4cf39090c",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "7db9f8cd2fee11d467028550293c7929520783ac3fdb3c0009396810c33debda",
+            "sourcePath": "/traits/relationships/1/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "ab6f524bbe8d9eb6ba31e521cad2e26f2d6f36d5e28d5d407143e176c838066a",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "originalChildrenReproduced": true,
+    "afterHash": "96f2200cab7c89ee0645b8ea5d1c16a5f216d38c2c4d1ba21553649df5e41488",
+    "after": "성향의 뚜렷한 대립보다 서로의 여건을 잘못 짐작하는 순간을 먼저 살펴볼 만합니다. 수정 의견이 결과물에 관한 말인지 능력 평가인지 모호해질 때 같은 기준을 중요하게 여겨도 감당할 수 있는 시간과 힘은 다를 수 있습니다. {personA}님이 가능한 몫과 {personB}님이 기대하는 몫을 따로 말해보면, 마음의 차이와 상황의 차이를 나눠볼 수 있습니다. 평소 잘 맞는다는 이유로 어려운 부탁도 괜찮으리라고 여기면, 거절하지 못한 작은 부담이 뒤늦게 드러날 수 있습니다.",
+    "correctedSourceChecks": [],
+    "safeToPublish": false,
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "newCustomerAllocations": 0
+  },
+  {
+    "id": "manager-report/AJ/0",
+    "inputHash": "7f049b79c19df4ab949c4da9c653d5c9bf5eea6dcfd30fc51bbedbb574f49fda",
+    "address": "CH07.P1",
+    "product": "saju_mbti_compatibility",
+    "relationship": "managerReport",
+    "readerQuestion": "가장 중요한 차이",
+    "customerSchedulerBridge": "UNVERIFIED",
+    "sourceGroup": "EXISTING_WRITER_COMPARISON_NOT_NEW_RESEARCH_APPROVAL",
+    "before": "늦어진 보고의 원인보다 태도부터 평가할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. {personA}님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다. {personB}님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다. 상사의 확인 질문이 팀원에게는 불신으로, 팀원의 짧은 보고가 상사에게는 진행을 알 수 없다는 불안으로 전달될 수 있습니다.",
+    "beforeHash": "0fea8ae84589430da9c8763372d087a5fb5ceb6b4194d0d96d7c177576a5082a",
+    "provenance": [
+      {
+        "owner": "personA",
+        "roots": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "3528898eacc364d20de96b3d76c5d553b0b86af66be2182872487084f66ca2d6",
+            "sourcePath": "/traits/child/1/plainKo",
+            "domain": "CHILDREN",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "b7a8c9b9faa18c7ccf418742685c56549e4da05d275acbec86bbca58d32026ec",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "cb64f981aaac6a220cf51240cf7ff3789f8f63dbe7c0e6fbca9d751d6c2b76e5",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": [
+          "PROHIBITED_ANCESTOR_DOMAIN:mbti:INTP:traits:child:socially_detached_child:plainKo"
+        ]
+      },
+      {
+        "owner": "personB",
+        "roots": [
+          "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "196678f292fea9434f0bedaee0913a19d4fca91ff0404fe77617a3c4cf39090c",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "7db9f8cd2fee11d467028550293c7929520783ac3fdb3c0009396810c33debda",
+            "sourcePath": "/traits/relationships/1/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "ab6f524bbe8d9eb6ba31e521cad2e26f2d6f36d5e28d5d407143e176c838066a",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "originalChildrenReproduced": true,
+    "afterHash": "4ea137fa7b7f2c09a132a34b4236d557ad401302757fdda0091b3347d095c886",
+    "after": "성향의 뚜렷한 대립보다 서로의 여건을 잘못 짐작하는 순간을 먼저 살펴볼 만합니다. 늦어진 보고의 원인보다 태도부터 평가할 때 같은 기준을 중요하게 여겨도 감당할 수 있는 시간과 힘은 다를 수 있습니다. {personA}님이 가능한 몫과 {personB}님이 기대하는 몫을 따로 말해보면, 마음의 차이와 상황의 차이를 나눠볼 수 있습니다. 평소 잘 맞는다는 이유로 어려운 부탁도 괜찮으리라고 여기면, 거절하지 못한 작은 부담이 뒤늦게 드러날 수 있습니다.",
+    "correctedSourceChecks": [],
+    "safeToPublish": false,
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "newCustomerAllocations": 0
+  },
+  {
+    "id": "manager-report/AK/0",
+    "inputHash": "7f049b79c19df4ab949c4da9c653d5c9bf5eea6dcfd30fc51bbedbb574f49fda",
+    "address": "CH07.P1",
+    "product": "saju_mbti_compatibility",
+    "relationship": "managerReport",
+    "readerQuestion": "가장 중요한 차이",
+    "customerSchedulerBridge": "UNVERIFIED",
+    "sourceGroup": "EXISTING_WRITER_COMPARISON_NOT_NEW_RESEARCH_APPROVAL",
+    "before": "늦어진 보고의 원인보다 태도부터 평가할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. {personA}님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다. {personB}님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다. 상사의 확인 질문이 팀원에게는 불신으로, 팀원의 짧은 보고가 상사에게는 진행을 알 수 없다는 불안으로 전달될 수 있습니다.",
+    "beforeHash": "0fea8ae84589430da9c8763372d087a5fb5ceb6b4194d0d96d7c177576a5082a",
+    "provenance": [
+      {
+        "owner": "personA",
+        "roots": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "3528898eacc364d20de96b3d76c5d553b0b86af66be2182872487084f66ca2d6",
+            "sourcePath": "/traits/child/1/plainKo",
+            "domain": "CHILDREN",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "b7a8c9b9faa18c7ccf418742685c56549e4da05d275acbec86bbca58d32026ec",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "cb64f981aaac6a220cf51240cf7ff3789f8f63dbe7c0e6fbca9d751d6c2b76e5",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": [
+          "PROHIBITED_ANCESTOR_DOMAIN:mbti:INTP:traits:child:socially_detached_child:plainKo"
+        ]
+      },
+      {
+        "owner": "personB",
+        "roots": [
+          "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "196678f292fea9434f0bedaee0913a19d4fca91ff0404fe77617a3c4cf39090c",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "7db9f8cd2fee11d467028550293c7929520783ac3fdb3c0009396810c33debda",
+            "sourcePath": "/traits/relationships/1/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "ab6f524bbe8d9eb6ba31e521cad2e26f2d6f36d5e28d5d407143e176c838066a",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "originalChildrenReproduced": true,
+    "afterHash": "4ea137fa7b7f2c09a132a34b4236d557ad401302757fdda0091b3347d095c886",
+    "after": "성향의 뚜렷한 대립보다 서로의 여건을 잘못 짐작하는 순간을 먼저 살펴볼 만합니다. 늦어진 보고의 원인보다 태도부터 평가할 때 같은 기준을 중요하게 여겨도 감당할 수 있는 시간과 힘은 다를 수 있습니다. {personA}님이 가능한 몫과 {personB}님이 기대하는 몫을 따로 말해보면, 마음의 차이와 상황의 차이를 나눠볼 수 있습니다. 평소 잘 맞는다는 이유로 어려운 부탁도 괜찮으리라고 여기면, 거절하지 못한 작은 부담이 뒤늦게 드러날 수 있습니다.",
+    "correctedSourceChecks": [],
+    "safeToPublish": false,
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "newCustomerAllocations": 0
+  },
+  {
+    "id": "business-partner/AM/0",
+    "inputHash": "82ac1225bb4ac4396f8908c442d962194702ac9381e082803d41d43eedcea898",
+    "address": "CH07.P1",
+    "product": "saju_mbti_compatibility",
+    "relationship": "businessPartner",
+    "readerQuestion": "가장 중요한 차이",
+    "customerSchedulerBridge": "UNVERIFIED",
+    "sourceGroup": "EXISTING_WRITER_COMPARISON_NOT_NEW_RESEARCH_APPROVAL",
+    "before": "기대 매출은 이야기하면서 실패 비용은 따로 묻지 않을 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. {personA}님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다. {personB}님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다. 전망이 좋다는 말과 지금 비용을 감당할 수 있다는 말은 다른 질문이므로 같은 찬성으로 묶으면 안 됩니다.",
+    "beforeHash": "5ccc850c627a00dd46f1094318f99a5b0c7ac87d4f7b32c3a15c9ad783bd0719",
+    "provenance": [
+      {
+        "owner": "personA",
+        "roots": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "3528898eacc364d20de96b3d76c5d553b0b86af66be2182872487084f66ca2d6",
+            "sourcePath": "/traits/child/1/plainKo",
+            "domain": "CHILDREN",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "b7a8c9b9faa18c7ccf418742685c56549e4da05d275acbec86bbca58d32026ec",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "cb64f981aaac6a220cf51240cf7ff3789f8f63dbe7c0e6fbca9d751d6c2b76e5",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": [
+          "PROHIBITED_ANCESTOR_DOMAIN:mbti:INTP:traits:child:socially_detached_child:plainKo"
+        ]
+      },
+      {
+        "owner": "personB",
+        "roots": [
+          "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "196678f292fea9434f0bedaee0913a19d4fca91ff0404fe77617a3c4cf39090c",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "7db9f8cd2fee11d467028550293c7929520783ac3fdb3c0009396810c33debda",
+            "sourcePath": "/traits/relationships/1/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "ab6f524bbe8d9eb6ba31e521cad2e26f2d6f36d5e28d5d407143e176c838066a",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "originalChildrenReproduced": true,
+    "afterHash": "8bcff3cb20abfef57d554ecf8b5d358a150cf0aae8029deebc331b67ffa06024",
+    "after": "성향의 뚜렷한 대립보다 서로의 여건을 잘못 짐작하는 순간을 먼저 살펴볼 만합니다. 기대 매출은 이야기하면서 실패 비용은 따로 묻지 않을 때 같은 기준을 중요하게 여겨도 감당할 수 있는 시간과 힘은 다를 수 있습니다. {personA}님이 가능한 몫과 {personB}님이 기대하는 몫을 따로 말해보면, 마음의 차이와 상황의 차이를 나눠볼 수 있습니다. 평소 잘 맞는다는 이유로 어려운 부탁도 괜찮으리라고 여기면, 거절하지 못한 작은 부담이 뒤늦게 드러날 수 있습니다.",
+    "correctedSourceChecks": [],
+    "safeToPublish": false,
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "newCustomerAllocations": 0
+  },
+  {
+    "id": "business-partner/AN/0",
+    "inputHash": "82ac1225bb4ac4396f8908c442d962194702ac9381e082803d41d43eedcea898",
+    "address": "CH07.P1",
+    "product": "saju_mbti_compatibility",
+    "relationship": "businessPartner",
+    "readerQuestion": "가장 중요한 차이",
+    "customerSchedulerBridge": "UNVERIFIED",
+    "sourceGroup": "EXISTING_WRITER_COMPARISON_NOT_NEW_RESEARCH_APPROVAL",
+    "before": "기대 매출은 이야기하면서 실패 비용은 따로 묻지 않을 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. {personA}님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다. {personB}님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다. 전망이 좋다는 말과 지금 비용을 감당할 수 있다는 말은 다른 질문이므로 같은 찬성으로 묶으면 안 됩니다.",
+    "beforeHash": "5ccc850c627a00dd46f1094318f99a5b0c7ac87d4f7b32c3a15c9ad783bd0719",
+    "provenance": [
+      {
+        "owner": "personA",
+        "roots": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "3528898eacc364d20de96b3d76c5d553b0b86af66be2182872487084f66ca2d6",
+            "sourcePath": "/traits/child/1/plainKo",
+            "domain": "CHILDREN",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "b7a8c9b9faa18c7ccf418742685c56549e4da05d275acbec86bbca58d32026ec",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "cb64f981aaac6a220cf51240cf7ff3789f8f63dbe7c0e6fbca9d751d6c2b76e5",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": [
+          "PROHIBITED_ANCESTOR_DOMAIN:mbti:INTP:traits:child:socially_detached_child:plainKo"
+        ]
+      },
+      {
+        "owner": "personB",
+        "roots": [
+          "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "196678f292fea9434f0bedaee0913a19d4fca91ff0404fe77617a3c4cf39090c",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "7db9f8cd2fee11d467028550293c7929520783ac3fdb3c0009396810c33debda",
+            "sourcePath": "/traits/relationships/1/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "ab6f524bbe8d9eb6ba31e521cad2e26f2d6f36d5e28d5d407143e176c838066a",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "originalChildrenReproduced": true,
+    "afterHash": "8bcff3cb20abfef57d554ecf8b5d358a150cf0aae8029deebc331b67ffa06024",
+    "after": "성향의 뚜렷한 대립보다 서로의 여건을 잘못 짐작하는 순간을 먼저 살펴볼 만합니다. 기대 매출은 이야기하면서 실패 비용은 따로 묻지 않을 때 같은 기준을 중요하게 여겨도 감당할 수 있는 시간과 힘은 다를 수 있습니다. {personA}님이 가능한 몫과 {personB}님이 기대하는 몫을 따로 말해보면, 마음의 차이와 상황의 차이를 나눠볼 수 있습니다. 평소 잘 맞는다는 이유로 어려운 부탁도 괜찮으리라고 여기면, 거절하지 못한 작은 부담이 뒤늦게 드러날 수 있습니다.",
+    "correctedSourceChecks": [],
+    "safeToPublish": false,
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "newCustomerAllocations": 0
+  },
+  {
+    "id": "friendship/A0/0",
+    "inputHash": "439e79565bcf493cbb526e8d3d2a1af36c7421cee343181e780ad6456642c066",
+    "address": "CH07.P1",
+    "product": "saju_mbti_compatibility",
+    "relationship": "friendship",
+    "readerQuestion": "가장 중요한 차이",
+    "customerSchedulerBridge": "UNVERIFIED",
+    "sourceGroup": "EXISTING_WRITER_COMPARISON_NOT_NEW_RESEARCH_APPROVAL",
+    "before": "만나기 어렵다는 답을 우정의 순위로 해석할 때 두 사람의 다른 첫 반응이 드러날 수 있습니다. {personA}님 쪽에서는 가까운 사이라도 혼자 결정하고 지킬 영역이 필요합니다. {personB}님에게는 다른 방향도 있습니다: 좋은 일이 생기면 혼자 끝내기보다 누군가와 함께 나누고 싶어 합니다. 자주 만나야 가까운 친구라는 기대와 간격이 있어도 믿는다는 기대는 연락 횟수만으로 맞출 수 없습니다.",
+    "beforeHash": "916f8ef702f95bd4a723aa0ec6af9946891df0cc908fccc9c4ec16872b04fc28",
+    "provenance": [
+      {
+        "owner": "personA",
+        "roots": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "3528898eacc364d20de96b3d76c5d553b0b86af66be2182872487084f66ca2d6",
+            "sourcePath": "/traits/child/1/plainKo",
+            "domain": "CHILDREN",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "b7a8c9b9faa18c7ccf418742685c56549e4da05d275acbec86bbca58d32026ec",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "cb64f981aaac6a220cf51240cf7ff3789f8f63dbe7c0e6fbca9d751d6c2b76e5",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": [
+          "PROHIBITED_ANCESTOR_DOMAIN:mbti:INTP:traits:child:socially_detached_child:plainKo"
+        ]
+      },
+      {
+        "owner": "personB",
+        "roots": [
+          "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+          "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+          "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:ESFJ:traits:relationships:conservative_partner_preference:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "196678f292fea9434f0bedaee0913a19d4fca91ff0404fe77617a3c4cf39090c",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:inclusion_drive:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "7db9f8cd2fee11d467028550293c7929520783ac3fdb3c0009396810c33debda",
+            "sourcePath": "/traits/relationships/1/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:ESFJ:traits:relationships:small_talk_bonding:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "ab6f524bbe8d9eb6ba31e521cad2e26f2d6f36d5e28d5d407143e176c838066a",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "originalChildrenReproduced": true,
+    "afterHash": "8c39b6f92d60002360a30edce2bc56744208e4d3a6761f5c161f53192765d2b3",
+    "after": "성향의 뚜렷한 대립보다 서로의 여건을 잘못 짐작하는 순간을 먼저 살펴볼 만합니다. 만나기 어렵다는 답을 우정의 순위로 해석할 때 같은 기준을 중요하게 여겨도 감당할 수 있는 시간과 힘은 다를 수 있습니다. {personA}님이 가능한 몫과 {personB}님이 기대하는 몫을 따로 말해보면, 마음의 차이와 상황의 차이를 나눠볼 수 있습니다. 평소 잘 맞는다는 이유로 어려운 부탁도 괜찮으리라고 여기면, 거절하지 못한 작은 부담이 뒤늦게 드러날 수 있습니다.",
+    "correctedSourceChecks": [],
+    "safeToPublish": false,
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "newCustomerAllocations": 0
+  },
+  {
+    "id": "friendship/H0/0",
+    "inputHash": "db317dda3fc50b79597d6c21ad93ad9b8bcc7c7811739fd3141c485b20e902d4",
+    "address": "CH04.P1",
+    "product": "saju_mbti_compatibility",
+    "relationship": "friendship",
+    "readerQuestion": "두 사람의 공통점",
+    "customerSchedulerBridge": "UNVERIFIED",
+    "sourceGroup": "EXISTING_WRITER_COMPARISON_NOT_NEW_RESEARCH_APPROVAL",
+    "before": "두 사람에게 함께 기대해볼 장점은 상대의 하루를 전부 확인하지 않는 여유입니다. 한 번은 친구의 취미를 배우고 다음에는 자기 취향을 소개할 때, 서로 무엇을 기대하는지 설명하는 시간이 줄어들 수 있습니다. 공통점의 좋은 쓰임은 늘 같은 답을 내는 데보다, 상대가 중요하게 보는 질문을 빠뜨리지 않는 데 있습니다. 둘이 모두 익숙하게 넘기는 부분이 있다면 다른 의견도 한 번 들어보는 편이, 닮은 장점이 같은 실수로 굳는 것을 막아줍니다.",
+    "beforeHash": "b8b4fe550e9234381fd1f762564933a92399de1473cd570903b5d34ad511ae44",
+    "provenance": [
+      {
+        "owner": "personA",
+        "roots": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "3528898eacc364d20de96b3d76c5d553b0b86af66be2182872487084f66ca2d6",
+            "sourcePath": "/traits/child/1/plainKo",
+            "domain": "CHILDREN",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "b7a8c9b9faa18c7ccf418742685c56549e4da05d275acbec86bbca58d32026ec",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "cb64f981aaac6a220cf51240cf7ff3789f8f63dbe7c0e6fbca9d751d6c2b76e5",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": [
+          "PROHIBITED_ANCESTOR_DOMAIN:mbti:INTP:traits:child:socially_detached_child:plainKo"
+        ]
+      },
+      {
+        "owner": "personB",
+        "roots": [
+          "mbti:INTP:traits:child:socially_detached_child:plainKo",
+          "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+          "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo"
+        ],
+        "ancestors": [
+          {
+            "id": "mbti:INTP:traits:child:socially_detached_child:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "3528898eacc364d20de96b3d76c5d553b0b86af66be2182872487084f66ca2d6",
+            "sourcePath": "/traits/child/1/plainKo",
+            "domain": "CHILDREN",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:low_need_for_human_ties:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "b7a8c9b9faa18c7ccf418742685c56549e4da05d275acbec86bbca58d32026ec",
+            "sourcePath": "/traits/relationships/0/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          },
+          {
+            "id": "mbti:INTP:traits:relationships:quiet_cutoff_pattern:plainKo",
+            "kind": "MBTI",
+            "sourceHash": "cb64f981aaac6a220cf51240cf7ff3789f8f63dbe7c0e6fbca9d751d6c2b76e5",
+            "sourcePath": "/traits/relationships/3/plainKo",
+            "domain": "RELATIONSHIPS",
+            "parents": []
+          }
+        ],
+        "errors": [
+          "PROHIBITED_ANCESTOR_DOMAIN:mbti:INTP:traits:child:socially_detached_child:plainKo"
+        ]
+      }
+    ],
+    "originalChildrenReproduced": true,
+    "afterHash": "e2c7d69db82041b641f06d7abb8857c8f029a49b34273ba20e736458fb09cd9f",
+    "after": "{personA}님과 {personB}님이 같은 일을 잘해야만 함께할 수 있는 것은 아닙니다. {personA}님의 할 수 있는 도움을 구체적으로 말하는 태도는 함께할 일에 보탤 한 가지 자원입니다. {personB}님에게 있는 대화의 온도가 달라지는 순간을 알아채는 감각은 그와 나란히 살펴볼 다른 기여입니다. 공통점을 찾는 데만 힘을 쓰기보다 어떤 부분을 서로 맡길 수 있는지 나누면, 다름을 유지하면서도 같은 결과에 힘을 보탤 수 있습니다.",
+    "correctedSourceChecks": [
+      {
+        "address": "CH04.P1.S3",
+        "owner": "personB",
+        "direction": null,
+        "source": "313b38ee316c7f0e3181b95f:editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY:natal:day:stem:己:SOCIAL_ATTUNEMENT",
+        "roots": [
+          "natal:day:stem:己",
+          "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY"
+        ],
+        "ancestors": [
+          {
+            "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+            "kind": "EDITORIAL_CANDIDATE",
+            "sourceHash": "e85dbc13545ac9d9cf380a946fec71c4d67d922e6c69e9ad4f5e3ea54c8b70c4",
+            "sourcePath": null,
+            "domain": null,
+            "parents": [
+              "natal:day:stem:己",
+              "natal:hour:stem:己",
+              "natal:ten-god:day:MAIN:丙",
+              "natal:ten-god:hour:MAIN:丙",
+              "natal:year:stem:乙",
+              "supplement:marker:HONGYEOM",
+              "P02_GOOD_RELATION_RECIPROCITY"
+            ]
+          },
+          {
+            "id": "natal:day:stem:己",
+            "kind": "MYEONGLI",
+            "sourceHash": "e53775ff576dc4882bf453217ac8158c991749ebcf598ba127133458b099c4d8",
+            "sourcePath": null,
+            "domain": null,
+            "parents": []
+          },
+          {
+            "id": "natal:hour:stem:己",
+            "kind": "MYEONGLI",
+            "sourceHash": "2a9dd7a4ff99eb9d746d032d043a77f1c7f765386514670820f639b839859fa8",
+            "sourcePath": null,
+            "domain": null,
+            "parents": []
+          },
+          {
+            "id": "natal:ten-god:day:MAIN:丙",
+            "kind": "MYEONGLI",
+            "sourceHash": "dc8c5b256edab68906128cda689b3b17cac29c15b4be179716046b83820e0551",
+            "sourcePath": null,
+            "domain": null,
+            "parents": []
+          },
+          {
+            "id": "natal:ten-god:hour:MAIN:丙",
+            "kind": "MYEONGLI",
+            "sourceHash": "ff905751b427a57e81e89283d3670bc5725b3e4cd08d08b0ec66f84d2083b190",
+            "sourcePath": null,
+            "domain": null,
+            "parents": []
+          },
+          {
+            "id": "natal:year:stem:乙",
+            "kind": "MYEONGLI",
+            "sourceHash": "24f7bcd32fb4c0fd1f415f955f7898aa889af211c927c693ae7bd6f9c647188a",
+            "sourcePath": null,
+            "domain": null,
+            "parents": []
+          },
+          {
+            "id": "P02_GOOD_RELATION_RECIPROCITY",
+            "kind": "CLAIM",
+            "sourceHash": "d962d40cf0c5ab621b7c1445f6bf4c1e1dee41ebecab246ed5ebfd799c8f0814",
+            "sourcePath": null,
+            "domain": null,
+            "parents": [
+              "natal:day:stem:己",
+              "natal:hour:stem:己",
+              "natal:ten-god:day:MAIN:丙",
+              "natal:ten-god:hour:MAIN:丙",
+              "natal:year:stem:乙",
+              "supplement:marker:HONGYEOM"
+            ]
+          },
+          {
+            "id": "supplement:marker:HONGYEOM",
+            "kind": "MYEONGLI",
+            "sourceHash": "8c38c151c112956c1811fc3fa0ae43a5aeb261c00e291b3c1d768c05cfd94301",
+            "sourcePath": null,
+            "domain": null,
+            "parents": []
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "safeToPublish": false,
+    "publishedEdition": "compatibility-product-13d-7b-v1",
+    "newCustomerAllocations": 0
+  }
+]

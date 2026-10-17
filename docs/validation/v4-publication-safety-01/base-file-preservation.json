@@ -1,0 +1,12 @@
+{
+  "baseFiles": 6268,
+  "modified": [
+    "src/lib/interpretation-v4/compatibilityProductAdapter.ts",
+    "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+    "src/lib/report-generation/productPreviewSnapshot.ts",
+    "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/actualFixture.ts",
+    "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts"
+  ],
+  "unchanged": 6263,
+  "originalResearchAndDatabaseFilesChanged": 0
+}

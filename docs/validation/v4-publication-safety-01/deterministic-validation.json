@@ -1,0 +1,35 @@
+{
+  "independentFullGeneratorProcesses": 2,
+  "casesPerProcess": 39,
+  "physicalFilesByteEqual": 7,
+  "allOutputHashesEqual": true,
+  "originalInputHashesMatch": true,
+  "sourceInputsSealedPerProcess": 20,
+  "fixedClock": "2026-10-12T12:00:00+09:00",
+  "sourceRiskProofProcesses": 2,
+  "sourceRiskOutputsEqual": true,
+  "resources": [
+    {
+      "wallMs": 411875.882166,
+      "cpuMicros": {
+        "user": 423136771,
+        "system": 3673133
+      },
+      "maxRSSBytes": 1177731072,
+      "nodeVersion": "v25.9.0",
+      "heapIsTestSettingNotMinimum": true
+    },
+    {
+      "wallMs": 410086.718333,
+      "cpuMicros": {
+        "user": 421313865,
+        "system": 3630500
+      },
+      "maxRSSBytes": 1135460352,
+      "nodeVersion": "v25.9.0",
+      "heapIsTestSettingNotMinimum": true
+    }
+  ],
+  "heap8GiBIsTestSettingNotMinimum": true,
+  "intermediateReportsExcluded": true
+}

@@ -1,0 +1,165 @@
+{
+  "status": "PASS",
+  "filesScanned": 38,
+  "privateNameAndBirthDateTermsChecked": 42,
+  "rawCustomerAccesses": 0,
+  "externalProseApiCalls": 0,
+  "nonNullOriginalPersonIdRejected": true,
+  "rawInputsAndGenerationLogsExternal": true,
+  "files": [
+    {
+      "file": "docs/validation/v4-publication-safety-01/README.md",
+      "sha256": "d15e42035c1d18a170683cea5aa8155191a311e192d67ecf4685ea8b3425f353"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/adult-child-authority-validation.json",
+      "sha256": "20619bf74ff82255331e5f81a1f8dbba33f027666bf5e106c16040d003fc6541"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/artifact-storage-validation.json",
+      "sha256": "50064fe5d93784c90e8844448772deadb0dccd58c287295142fd583e859fff17"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/base-file-preservation.json",
+      "sha256": "498b00561b32d025d5ddf7ae13b17ea8297e7affc62e6e28e3e73533eed7ebec"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/before-after-publication.json",
+      "sha256": "21d43a390ab15f8cd0c9179995418ee6cfcb795fe6fe39125e530bce0ec4e6bb"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/before-after-publication.json.gz",
+      "sha256": "d7513e361f7ce96c381d5416c6f3007e72936821450cfdbc531f7abcd2056fcb"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/book-preservation.json",
+      "sha256": "c0f2f9b9970e2daeb8150fa924b3a144a8a9c021c5a328e2e32309a70de9f839"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/children-provenance-validation.json",
+      "sha256": "f4c932c6f39729042316e46ab21f485eef4f3e51a7eb4ca5c70772a6eb3012ab"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/compatibility-publication-validation.json",
+      "sha256": "21c4fc96ff5c039efacde146aa25812fc5a9c05ca8d916b5561c3133a8ec8192"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/deterministic-validation.json",
+      "sha256": "fa2075b4d211516dd1804e4580ade10b7c5238d42f2950bd2a8f7463b01a0349"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/final-report-fields.json",
+      "sha256": "da5ae402f99e0b0bac7987741a8e514ec25f2159237c70835ad9a3f36bed75dd"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/legacy-fallback-validation.json",
+      "sha256": "a05a5231f4238022d155d54cc58506fdbfad62421d2fbec0b68e59d56e877d29"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/negative-validation.json",
+      "sha256": "9e08ba3b943beff8e7d72690617a22054ae1f9733130ea0562b9a0d0db236798"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/nft-trace-preservation.json",
+      "sha256": "5d0b3e152210660801b5277077873f40f18f19595bbce32e9cd043d47bd86d87"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/original-reference-hashes.json",
+      "sha256": "041c7fffdbcebfe2cdf15a520ded0c411b4b0537cba9cb2b0081e57792b6b0f1"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/publication-risk-resolution.json",
+      "sha256": "8c8125c7815cb32c504a5941740cfd8637eab5568a974d2fd0dbc3e271c4acd7"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/publication-safety-manifest.json",
+      "sha256": "60ce477349b1808fa04d648efc5e17698fa2c3b18676f55615b6d4218f9bfb6f"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/publication-source-shortages.json",
+      "sha256": "0920bbe8b80e6c9366e2be5ac3ef18ebbbf5958d074d2215f1b9cbc5f6933382"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/publication-source-shortages.json.gz",
+      "sha256": "e4ea9ace9545724781ba0938031bfdd9c0b44d1a3ffcc807d1937ee3b424c792"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/regression-comparison.json",
+      "sha256": "860c615695abd07d814d59991591226b5041f8e91f15d05a0f0d70af874495a3"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/snapshot-contract-validation.json",
+      "sha256": "0bb092a6b987b6e359d05e03dad5f73041415af0f0f6ad41dd341e99d1639f53"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/source-domain-validation.json",
+      "sha256": "3a10c6dbfc7465f862b44d11c6001ad564516dcc6a2433b474c4e8951a1da1c2"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/source-input-hashes.json",
+      "sha256": "b4f29c143fca1d7c757e149f570390f6dcb746c58e015659b15a6e88ca335cab"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/technical-stabilization-handoff.json",
+      "sha256": "7a30cecd2c5884127a201bfb4eed71ff6af7e3f7ff4202ff5d19019885c859b0"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/technical-validation.json",
+      "sha256": "da7c8a43bffed9b5110264d45292b319138ff3f7727c701769e4baa3ecdd1794"
+    },
+    {
+      "file": "docs/validation/v4-publication-safety-01/workspace-preservation.json",
+      "sha256": "759b021ade9e16d6a839c4b91dd4fb92568de688af9a00d6e2026895046d2bf6"
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityProductAdapter.ts",
+      "sha256": "a02bfc2e1cfab018a8b1fa8ab43e679aec6a18628363f56b5b3197264b272d36"
+    },
+    {
+      "file": "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+      "sha256": "1ef6ab02d9a7cedc08aea244158ad806dae1ce0caedca1250054d5a9129cdf63"
+    },
+    {
+      "file": "src/lib/interpretation-v4/publication-safety/ancestry.ts",
+      "sha256": "a60d9232fa12a298e116b6ad356406a76ce8140c95ff0985cd7fee360a9b1cf3"
+    },
+    {
+      "file": "src/lib/interpretation-v4/publication-safety/engine.ts",
+      "sha256": "66cfd188a2d345c74c26ca45cd68c649feb3d14a91b4643065355c05ae63cd73"
+    },
+    {
+      "file": "src/lib/report-generation/productPreviewSnapshot.ts",
+      "sha256": "4bb50d7dfda76f4e4b739971c938ca69ab9f0f66384782734ed69fb92e66b8d2"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/actualFixture.ts",
+      "sha256": "aed6ca7dbdd62327ca98a3332064b6df23ae4be556ea64171c5f7142dcb7d430"
+    },
+    {
+      "file": "tests/fixtures/publication-safety-01/source-revision-contract.json",
+      "sha256": "afdcb18f96f9a6252c96b23c3a050d71473b6c27385affa97752d790b1f30580"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/publicationSafety.test.ts",
+      "sha256": "4440b932504e5395bac32396df5b5ca5b937715c671b38a7703c58695c45369b"
+    },
+    {
+      "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts",
+      "sha256": "aa1b778b20661a932a9175f2a370b33ce20444a4a1403672a4d482df5a547c6a"
+    },
+    {
+      "file": "tools/publication-safety/bootstrap.mjs",
+      "sha256": "72a583034b8728be3ac424c0ec5a622ddf8c126b4d6474c1f996d1848f1c34c6"
+    },
+    {
+      "file": "tools/publication-safety/source-risk-verify.mjs",
+      "sha256": "b00ead2875e8b386664941fa071e05f8b306465d79b60da876d8c997ec67b272"
+    },
+    {
+      "file": "tools/publication-safety/verify.mjs",
+      "sha256": "76071b20abed59cc0edff8211e13c1ebfe6c4dc56b72c6a917c7f70c92082247"
+    }
+  ],
+  "auditItselfExcluded": true,
+  "gzipLeavesDecodedAndScanned": 2
+}

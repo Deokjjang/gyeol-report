@@ -1,0 +1,7 @@
+{
+  "routesBefore": 90,
+  "routesAfter": 90,
+  "rawDependencySetEquality": true,
+  "newOfflineTraceEntries": 0,
+  "runtimeGenerationPolicyChanged": false
+}

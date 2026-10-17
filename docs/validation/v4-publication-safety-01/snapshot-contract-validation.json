@@ -1,0 +1,15 @@
+{
+  "explicitV4DraftType": "V4CustomerReport",
+  "factory": "createProductPreviewSnapshot",
+  "typeCastToLegacy": false,
+  "originalV2V3ValidatorDispatchChanged": false,
+  "oldV4BookFixtures": 17,
+  "originalDigestCount": 102,
+  "originalWholeJsonByteEquality": true,
+  "newOfflineRoundtrips": 32,
+  "newBooksWithheld": 7,
+  "originalReaderAuthorizationGranted": false,
+  "oldSnapshotRegenerated": false,
+  "contentDigestIsAuthorization": false,
+  "offlinePrivateReceiptIsCustomerApproval": false
+}

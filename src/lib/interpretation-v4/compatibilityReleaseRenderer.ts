@@ -36,16 +36,19 @@ const RELATION_MEANING: Record<string, string> = {
 /** Generation-time editorial allocation only. Registry keys group existing
  * candidates, atoms, blocks and relations; registry/material IDs are not canonical evidence. */
 export function renderCompatibilityRelease(e: PairEvidence, people: { personA: PairPerson; personB: PairPerson },
-  views: { personA: RelationshipView; personB: RelationshipView }, pair: CompatibilityPairView, legacy: CompatibilityNarrative) {
+  views: { personA: RelationshipView; personB: RelationshipView }, pair: CompatibilityPairView, legacy: CompatibilityNarrative, publicationSafety = false) {
   const a = people.personA, b = people.personB, A = `${a.name}님`, B = `${b.name}님`, ctx = PAIR_RELEASE_CONTEXT[e.category], scene = PAIR_RELEASE_SCENES[e.category];
   const copy = compatibilityCategoryCopy(e.category, a, b);
+
   const registry: Record<string, Source> = {}, used = new Set<string>(), committed = new Map<string, number>();
-  const draft: PairReleaseDraft = { version: COMPATIBILITY_RELEASE_VERSION, chapters: [], bodyLength: 0, shortages: [] };
+  const draft: PairReleaseDraft = { version: publicationSafety ? "compatibility-publication-safety-01-v1" : COMPATIBILITY_RELEASE_VERSION, chapters: [], bodyLength: 0, shortages: [] };
   const rootTerms = new Set<string>();
   const register = (source: Source) => { registry[source.id] = source; return source; };
-  const personSource = (slot: "personA" | "personB") => register({ id: people[slot].personId, proof: people[slot].proof, individual: [], nodes: [], fusions: [...people[slot].proof.fusionIds], canonical: [], relations: [], subject: people[slot].personId, slot });
+  // General conditional guidance uses the entered role declaration, not every
+  // unrelated natal/Fusion material carried by the legacy person packet.
+  const personSource = (slot: "personA" | "personB") => register({ id: people[slot].personId, proof: publicationSafety ? { ...emptyProof, sourceRefs: [`person:${people[slot].personId}`, `compatibilityRoleLabels:${e.roleVersion}:${e.category}:${e.roles[slot]}`] } : people[slot].proof, individual: [], nodes: [], fusions: publicationSafety ? [] : [...people[slot].proof.fusionIds], canonical: [], relations: [], subject: people[slot].personId, slot });
   const pa = personSource("personA"), pb = personSource("personB");
-  const combined = register({ id: "opening", proof: pairProof(a.proof, b.proof), individual: [], nodes: [], fusions: [...new Set([...a.proof.fusionIds, ...b.proof.fusionIds])], canonical: [], relations: [] });
+  const combined = register({ id: "opening", proof: publicationSafety ? pairProof(pa.proof, pb.proof) : pairProof(a.proof, b.proof), individual: [], nodes: [], fusions: publicationSafety ? [] : [...new Set([...a.proof.fusionIds, ...b.proof.fusionIds])], canonical: [], relations: [] });
   const L = (text: string, source: Source, application: Line["application"] = "CONDITIONAL_APPLICATION"): Line => ({ text, source, application });
   const pool = { personA: pairReleaseSources(views.personA), personB: pairReleaseSources(views.personB) };
   function take(slot: "personA" | "personB", preferred: string[], avoid: PairReleaseSource[] = []) {
@@ -67,12 +70,13 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
     if (rootTerms.has(key)) return `${people[slot].name}님의 ${pairRootName(r)}에서 읽은 성향은 ${application}.`;
     return `${people[slot].name}님의 ${particle(pairRootName(r), "은", "는")} ‘${noun(r.atom.easyMeaning)}’이라는 뜻으로, ${application}.`;
   }
-  function node(slot: "personA" | "personB", axis?: SemanticAxis) {
+  function node(slot: "personA" | "personB", axis?: SemanticAxis, distinctOpening = false) {
     const domains = e.category === "love" ? ["LOVE", "RELATIONSHIPS", "COMMUNICATION", "IDENTITY"] : e.category === "marriage" ? ["MARRIAGE", "RELATIONSHIPS", "COMMUNICATION", "IDENTITY"] : ["COMMUNICATION", "RELATIONSHIPS", "IDENTITY"];
     return views[slot].profiles.mbti.contributions.flatMap(c => {
       const n = views[slot].nodes.find(n => n.id === c.sourceNodeId && n.classification === "SCORING_SEMANTIC" && domains.includes(n.sourceDomain!) && n.id.endsWith(":plainKo"));
       const action = mbtiHumanBehavior(c.axis, c.rawValue);
-      return n && action ? [{ n, axis: c.axis, sign: Math.sign(c.rawValue), action }] : [];
+      const openingAction = distinctOpening && draft.chapters[0]?.paragraphs.find(p => p.id === "CH01.P3")?.sentences.some(s => s.text.includes(action ?? ""));
+      return n && action && !openingAction ? [{ n, axis: c.axis, sign: Math.sign(c.rawValue), action }] : [];
     }).sort((x, y) => Number(y.axis === axis) - Number(x.axis === axis) || domains.indexOf(x.n.sourceDomain!) - domains.indexOf(y.n.sourceDomain!) || x.n.id.localeCompare(y.n.id))[0];
   }
   function mbti(slot: "personA" | "personB", n: NonNullable<ReturnType<typeof node>>["n"]) {
@@ -168,7 +172,7 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
       const base = root(row.slot, r), s = register({ ...base, id: `${base.id}:fusion:${f.id}`, nodes: [n.sourceNodeId], fusions: [f.id], proof: { ...base.proof, fusionIds: [f.id], sourceRefs: [...base.proof.sourceRefs, f.id, n.sourceNodeId] } });
       const surface = f.type === "REINFORCE" ? REINFORCE_OUTCOMES[f.myeongli.side.axis] ?? humanOutcome(f.myeongli.side.axis, f.myeongli.side.direction)! : fusionHumanSurface(r.candidate) ?? f.sourceDescription;
       if (used.has(sentenceKey(sentences(surface)[0]))) continue;
-      return add(c, 2, [L(reason(row.slot, r, "가까운 사람에게 건넬 강점의 바탕입니다"), base, "SOURCE"),
+      return add(c, 2, [L(reason(row.slot, r, publicationSafety && c === 2 ? "상대의 기대와 본인이 보탤 수 있는 도움을 구분해볼 바탕입니다" : "가까운 사람에게 건넬 강점의 바탕입니다"), base, "SOURCE"),
         L(`${row.p.name}님의 ${row.p.mbti} 선호에서도 ${action}`, mbti(row.slot, v.nodes.find(x => x.id === n.sourceNodeId)!), "SOURCE"),
         L(sentences(surface)[0], s),
         L(c === 1 ? `${scene.gift}, ${row.p.name}님이 할 수 있는 도움과 상대가 원하는 도움을 맞춰보면 이 장점을 덜 소모하면서 쓸 수 있습니다` : `${row.p.name}님이 상대를 챙기면서 자기 수고도 알릴 수 있다면, 배려가 당연한 역할이 되어 혼자 지치는 상황을 줄일 수 있습니다`, s)]);
@@ -179,21 +183,21 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
     const { slot, p, core, need, gift, risk } = row, other = rows[1 - i], P = `${p.name}님`, Q = `${other.p.name}님`, c = i + 1;
     draft.chapters[c].title = `${p.name}님은 이 관계에서 어떤 사람인가`;
     if (core) {
-      const s = root(slot, core), n = node(slot, core.material.axis);
+      const s = root(slot, core), n = node(slot, core.material.axis, publicationSafety);
       const lines = [L(i === 0 ? `${P}의 관계 성향은 ${particle(core.material.act, "을", "를")} 중심으로 살펴볼 수 있습니다` : `${P}에게서 먼저 읽을 면은 ${core.material.act}입니다`, s, "SOURCE"),
         L(reason(slot, core, i === 0 ? "상대와 함께 정할 때도 자신의 기준이 생기는 이유를 보여줍니다" : "상대에게 다가가고 자기 뜻을 지키는 바탕이 됩니다"), s, "SOURCE")];
       if (n) lines.push(L(i === 0 ? `${p.mbti}의 선호를 함께 보면 ${n.action}` : `${P}의 ${p.mbti} 선호에서 함께 살필 반응도 있습니다: ${humanOutcome(n.axis, n.sign)}`, mbti(slot, n.n), "SOURCE"));
-      else lines.push(L(i === 0 ? "유형보다 지금 원하는 대화의 순서와 속도를 직접 알려주는 편이 상대에게도 도움이 됩니다" : "MBTI를 모르는 상태에서는 어떤 반응이 편한지 직접 듣고, 짧은 대답만으로 마음을 정해두지 않는 편이 좋습니다", s));
+      else lines.push(L(publicationSafety && p.mbti ? `유형으로 설명할 별도 근거가 부족한 부분은 ${P}이 직접 편한 대화 순서와 속도를 알려주는 편이 좋습니다` : i === 0 ? "유형보다 지금 원하는 대화의 순서와 속도를 직접 알려주는 편이 상대에게도 도움이 됩니다" : "MBTI를 모르는 상태에서는 어떤 반응이 편한지 직접 듣고, 짧은 대답만으로 마음을 정해두지 않는 편이 좋습니다", s));
       lines.push(L(i === 0 ? `${Q}이 ${particle(act(other), "을", "를")} 중요하게 여긴다는 점까지 함께 보면, 자기 기준을 전하는 것과 상대가 받아들일 준비를 하는 것은 다른 과정임을 알 수 있습니다` : `${Q}에게 익숙한 ${particle(act(other), "을", "를")} 함께 생각하면, ${P}의 편안함만으로 둘의 대화가 끝났다고 여기기는 어렵습니다`, own(other)));
       add(c, 0, lines);
     }
     if (need) { const m = need.material, s = root(slot, need); add(c, 1, [
-      L(`${P}에게 ${particle(m.need, "은", "는")} 편하게 자기 의견을 내기 위한 조건입니다`, s, "SOURCE"),
+      L(publicationSafety && i === 1 ? `${P}이 ${Q}의 제안을 받아들일 때도 ${withKoreanParticle(`‘${m.need}’`, "subject")} 충족되는지 따로 확인할 필요가 있습니다` : `${P}에게 ${particle(m.need, "은", "는")} 편하게 자기 의견을 내기 위한 조건입니다`, s, "SOURCE"),
       L(reason(slot, need, i === 0 ? "어떤 상황에서 상대를 덜 경계하고 만날 수 있는지 설명해줍니다" : "억지로 맞추기보다 자기 의견을 편하게 낼 조건을 보여줍니다"), s, "SOURCE"),
       L(i === 0 && e.category === "parentChild" ? `부모 ${P}은 이 필요를 자녀에게 맡기기보다 성인에게 구할 지원과 스스로 쉴 시간을 챙기는 편이 좋습니다` : i === 0 && e.category === "managerReport" ? `상사 ${P}이 원하는 보고의 기준을 먼저 설명하면, 팀원 ${Q}이 기대를 눈치로 맞히는 일을 줄일 수 있습니다` : i === 0 ? `${scene.need}, ${P}이 꼭 필요한 조건과 조정할 수 있는 조건을 나눠 말하면 ${Q}도 구체적으로 응답할 수 있습니다` : `${Q}의 제안을 듣는 ${P}은 무엇이 편하고 어디부터 어려운지 알려줄 수 있으며, 찬반만 답할 때보다 함께 바꿀 부분이 잘 보입니다`, s),
       L(i === 0 ? "원하는 것을 모두 받아달라는 요구와 필요한 것을 설명하는 일은 다르며, 어려운 조건을 미리 말해야 함께 바꿀 방법도 보입니다" : "괜찮다는 답을 오래 유지하는 것보다 감당하기 어려워지는 지점을 일찍 알리는 편이, 상대에게도 약속을 지킬 기회를 줍니다", s)]); }
     if (!fusionGift(row, c) && gift) { const m = gift.material, s = root(slot, gift); add(c, 2, [
-      L(`${P}이 관계에 보탤 수 있는 장점은 ${m.gift}입니다`, s, "SOURCE"),
+      L(publicationSafety && i === 1 && m.gift === rows[0].gift?.material.gift ? `${P}은 ${withKoreanParticle(`‘${m.gift}’`, "object")} 일방적인 호의로 쓰기보다 ${Q}이 원하는 도움을 확인하는 데 활용해볼 수 있습니다` : `${P}이 관계에 보탤 수 있는 장점은 ${m.gift}입니다`, s, "SOURCE"),
       L(reason(slot, gift, i === 0 ? "함께할 일을 나누는 데 쓸 수 있는 개인적인 자원입니다" : "상대의 빈자리를 전부 떠맡지 않고도 기여할 수 있는 바탕입니다"), s, "SOURCE"),
       L(i === 0 ? `${scene.gift}, ${Q}이 혼자 해결하기 어려운 부분을 말하면 ${P}은 자신이 가능한 몫을 골라 보탤 수 있습니다` : `${P}이 가능한 도움을 먼저 말하고 ${Q}이 필요한 부분을 고르면, 막연히 잘해주려는 수고를 실제로 쓸 곳에 나눌 수 있습니다`, s),
       L(i === 0 ? "상대의 일을 전부 대신하기보다 도움이 필요한 지점 하나를 함께 끝내면, 호의가 이어질 만큼의 여유도 남습니다" : "받은 도움을 알아주는 말이 돌아오면 혼자 더 챙겨야 한다는 부담을 덜 수 있으며, 도움이 필요 없는 때도 편하게 알릴 수 있습니다", s)]); }
@@ -252,7 +256,7 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
     if (from.risk && to.need) { const rs = root(from.slot, from.risk), ns = root(to.slot, to.need); add(c, 3, [
       L(i === 0 ? `${P}이 영향을 건네기 전에 시도할 일은 ‘${from.risk.material.adjust}’입니다` : `${P}은 ‘${from.risk.material.adjust}’부터 시작해 ${Q}에게 어떤 도움이 필요한지 들을 수 있습니다`, rs),
       L(i === 0 ? `${Q}에게 ${particle(to.need.material.need, "을", "를")} 남기는 방법을 물으면, 호의를 줄이기보다 받아들일 수 있는 형태로 바꿀 수 있습니다` : `${Q}이 바라는 ${particle(to.need.material.need, "을", "를")} 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다`, ns),
-      L(e.category === "parentChild" ? i === 0 ? "부모는 해도 되는 범위와 위험할 때 도울 방법을 설명하고, 자녀가 직접 고를 작은 선택을 남길 수 있습니다" : "자녀는 해보고 싶은 일과 도움이 필요한 곳을 말할 수 있으며, 부모가 안전과 최종 결정의 책임을 맡아야 합니다" : e.category === "managerReport" ? i === 0 ? "상사는 꼭 지킬 결과와 팀원이 바꿔도 되는 방법을 구분해 전달해야, 자율성을 주었다는 말이 실제 권한이 됩니다" : "팀원은 직접 판단한 부분과 상사의 결정이 필요한 부분을 나눠 보고하면, 제안의 책임 범위를 분명하게 지킬 수 있습니다" : i === 0 ? `${P}이 제안을 확정하기 전에 ${Q}이 수정하거나 거절할 수 있는 시점을 정해두면, 서로의 속도가 달라도 함께 판단할 자리가 생깁니다` : `${P}은 무엇을 해주겠다는 말 뒤에 ${Q}이 직접 고를 부분도 밝혀둘 수 있으며, 답이 늦어도 준비한 도움부터 밀어붙이지 않는 편이 좋습니다`, rs),
+      L(e.category === "parentChild" ? i === 0 ? "부모는 해도 되는 범위와 위험할 때 도울 방법을 설명하고, 자녀가 직접 고를 작은 선택을 남길 수 있습니다" : publicationSafety ? "자녀는 해보고 싶은 일과 필요한 도움을 직접 말할 수 있으며, 부모는 위험과 지원 방법을 설명하되 조언을 건네는 일과 자녀의 결정을 대신하는 일을 구분해야 합니다" : "자녀는 해보고 싶은 일과 도움이 필요한 곳을 말할 수 있으며, 부모가 안전과 최종 결정의 책임을 맡아야 합니다" : e.category === "managerReport" ? i === 0 ? "상사는 꼭 지킬 결과와 팀원이 바꿔도 되는 방법을 구분해 전달해야, 자율성을 주었다는 말이 실제 권한이 됩니다" : "팀원은 직접 판단한 부분과 상사의 결정이 필요한 부분을 나눠 보고하면, 제안의 책임 범위를 분명하게 지킬 수 있습니다" : i === 0 ? `${P}이 제안을 확정하기 전에 ${Q}이 수정하거나 거절할 수 있는 시점을 정해두면, 서로의 속도가 달라도 함께 판단할 자리가 생깁니다` : `${P}은 무엇을 해주겠다는 말 뒤에 ${Q}이 직접 고를 부분도 밝혀둘 수 있으며, 답이 늦어도 준비한 도움부터 밀어붙이지 않는 편이 좋습니다`, rs),
       L(i === 0 ? `${Q}이 자기 답을 낼 수 있을 때 ${P}의 자극도 따르라는 요구보다 새로운 선택의 계기로 남습니다` : `${Q}이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, ${P}도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다`, ds)]); }
   }
   if (friction) { const s = comparison(friction); add(6, 0, [
@@ -290,7 +294,7 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
     const repairs = r && PAIR_RELEASE_REPAIR[r.material.axis], repair = repairs?.[r?.material.sign === -1 ? 1 : 0] ?? "실제로 한 말과 상대가 이해한 뜻을 나눠서 확인하기";
     add(7, i + 1, [L(i === 0 ? `${P}이 다툼 뒤 시도할 회복 행동은 ‘${repair}’입니다` : `${P} 쪽에서는 ‘${repair}’부터 해볼 수 있으며, 이해를 고쳤다는 신호를 ${Q}에게도 알려주는 편이 좋습니다`, s),
       L(i === 0 ? `${Q}이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다` : `${Q}의 설명과 동의하기 어려운 부분을 구분해 말하면, 상대의 뜻을 이해하는 일과 무조건 받아들이는 일을 나눌 수 있습니다`, s),
-      L(i === 0 ? ctx.ruleA : ctx.ruleB, s),
+      L(i === 0 ? publicationSafety && e.category === "parentChild" ? "부모는 필요한 지원과 위험을 설명하고 자녀의 의견을 들어야 하며, 나이와 실제 보호 권한을 모른 채 모든 선택을 대신 결정할 수 있다고 여겨서는 안 됩니다" : ctx.ruleA : ctx.ruleB, s),
       L(i === 0 ? "합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다" : "조정해본 뒤에도 불편한 부분을 남겨두어야 괜찮다고 끝낸 화해가 반복되지 않으며, 가능한 대안도 함께 고를 수 있습니다", s)]);
   }
   add(7, 3, [L(`${particle(ctx.agreement, "은", "는")} 화해 뒤 확인할 공동 기준이 될 수 있습니다`, combined),

@@ -1,0 +1,871 @@
+{
+  "cases": [
+    "parent-child/V/0",
+    "parent-child/A/0",
+    "parent-child/L/0",
+    "parent-child/M/0",
+    "route/compatibility/parentChild"
+  ],
+  "birthDateVariantsAreFictionalNotLegalAuthorityProof": true,
+  "actualFacts": {
+    "ageVerified": false,
+    "guardianship": "UNKNOWN",
+    "consent": "UNKNOWN",
+    "supportNeed": "UNKNOWN",
+    "legalAuthority": "UNKNOWN"
+  },
+  "hypotheticalSupportPromotionsRejected": [
+    "INDEPENDENT",
+    "NEEDS_SUPPORT"
+  ],
+  "actualUnknownPromotionsRejected": [
+    "age",
+    "guardianship",
+    "consent",
+    "supportNeed",
+    "legalAuthority"
+  ],
+  "changes": [
+    {
+      "case": "parent-child/L/0",
+      "address": "CH06.P4",
+      "classification": "INTENDED_SAFETY_CORRECTION",
+      "reason": "Unverified parental authority removed",
+      "beforeTextHash": "e751fe308f6878607e34e607a7b0ed860d2ee559681c7e8352359b1ba7413409",
+      "afterTextHash": "4f1291dcfb19c997582ea4e3294359766049d5b9ce42122646fab2d2807fe442",
+      "before": "{personB}님은 ‘사람에 대한 판단을 빼고 바꿀 행동 하나만 말하기’부터 시작해 {personA}님에게 어떤 도움이 필요한지 들을 수 있습니다. {personA}님이 바라는 바뀌는 이유를 미리 알 수 있는 약속을 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다. 자녀는 해보고 싶은 일과 도움이 필요한 곳을 말할 수 있으며, 부모가 안전과 최종 결정의 책임을 맡아야 합니다. {personA}님이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, {personB}님도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다.",
+      "after": "{personB}님은 ‘도움이 필요한지 묻고 내가 감당할 몫도 정하기’부터 시작해 {personA}님에게 어떤 도움이 필요한지 들을 수 있습니다. {personA}님이 바라는 바뀌는 이유를 미리 알 수 있는 약속을 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다. 자녀는 해보고 싶은 일과 필요한 도움을 직접 말할 수 있으며, 부모는 위험과 지원 방법을 설명하되 조언을 건네는 일과 자녀의 결정을 대신하는 일을 구분해야 합니다. {personA}님이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, {personB}님도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다.",
+      "sourceBefore": [
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff",
+          "roots": [],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        }
+      ],
+      "sourceAfter": [
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:己",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff",
+          "roots": [],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        }
+      ]
+    },
+    {
+      "case": "parent-child/L/0",
+      "address": "CH08.P2",
+      "classification": "INTENDED_SAFETY_CORRECTION",
+      "reason": "Unverified parental authority removed",
+      "beforeTextHash": "b37c50aa111c5c92f29afc707ceafda31280ca1c087b5241fa06c9a07d6aa37a",
+      "afterTextHash": "26c8db6f5ace794f86ddcfc0fae10abfdd0ddd6dafb63ef2a6b9bb51ef1e094d",
+      "before": "{personA}님이 다툼 뒤 시도할 회복 행동은 ‘평가처럼 들린 말에서 사람에 대한 판단을 걷어내고, 바꿀 행동만 다시 설명하기’입니다. {personB}님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 안전의 최종 책임은 부모에게 있으며, 자녀의 거절에도 이유를 말할 자리를 남겨야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.",
+      "after": "{personA}님이 다툼 뒤 시도할 회복 행동은 ‘상대가 원했던 도움과 내가 먼저 한 일을 나눠보고, 다음에 물어볼 질문을 정하기’입니다. {personB}님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 부모는 필요한 지원과 위험을 설명하고 자녀의 의견을 들어야 하며, 나이와 실제 보호 권한을 모른 채 모든 선택을 대신 결정할 수 있다고 여겨서는 안 됩니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.",
+      "sourceBefore": [
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        }
+      ],
+      "sourceAfter": [
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        }
+      ]
+    },
+    {
+      "case": "parent-child/M/0",
+      "address": "CH06.P4",
+      "classification": "INTENDED_SAFETY_CORRECTION",
+      "reason": "Unverified parental authority removed",
+      "beforeTextHash": "e751fe308f6878607e34e607a7b0ed860d2ee559681c7e8352359b1ba7413409",
+      "afterTextHash": "4f1291dcfb19c997582ea4e3294359766049d5b9ce42122646fab2d2807fe442",
+      "before": "{personB}님은 ‘사람에 대한 판단을 빼고 바꿀 행동 하나만 말하기’부터 시작해 {personA}님에게 어떤 도움이 필요한지 들을 수 있습니다. {personA}님이 바라는 바뀌는 이유를 미리 알 수 있는 약속을 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다. 자녀는 해보고 싶은 일과 도움이 필요한 곳을 말할 수 있으며, 부모가 안전과 최종 결정의 책임을 맡아야 합니다. {personA}님이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, {personB}님도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다.",
+      "after": "{personB}님은 ‘도움이 필요한지 묻고 내가 감당할 몫도 정하기’부터 시작해 {personA}님에게 어떤 도움이 필요한지 들을 수 있습니다. {personA}님이 바라는 바뀌는 이유를 미리 알 수 있는 약속을 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다. 자녀는 해보고 싶은 일과 필요한 도움을 직접 말할 수 있으며, 부모는 위험과 지원 방법을 설명하되 조언을 건네는 일과 자녀의 결정을 대신하는 일을 구분해야 합니다. {personA}님이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, {personB}님도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다.",
+      "sourceBefore": [
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR024",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff",
+          "roots": [],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        }
+      ],
+      "sourceAfter": [
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:己",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        },
+        {
+          "id": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff",
+          "roots": [],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b36da8848e44eeca5a03abf1:to:3265a4c7e0fa7a829d2c80ff"
+        }
+      ]
+    },
+    {
+      "case": "parent-child/M/0",
+      "address": "CH08.P2",
+      "classification": "INTENDED_SAFETY_CORRECTION",
+      "reason": "Unverified parental authority removed",
+      "beforeTextHash": "b37c50aa111c5c92f29afc707ceafda31280ca1c087b5241fa06c9a07d6aa37a",
+      "afterTextHash": "26c8db6f5ace794f86ddcfc0fae10abfdd0ddd6dafb63ef2a6b9bb51ef1e094d",
+      "before": "{personA}님이 다툼 뒤 시도할 회복 행동은 ‘평가처럼 들린 말에서 사람에 대한 판단을 걷어내고, 바꿀 행동만 다시 설명하기’입니다. {personB}님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 안전의 최종 책임은 부모에게 있으며, 자녀의 거절에도 이유를 말할 자리를 남겨야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.",
+      "after": "{personA}님이 다툼 뒤 시도할 회복 행동은 ‘상대가 원했던 도움과 내가 먼저 한 일을 나눠보고, 다음에 물어볼 질문을 정하기’입니다. {personB}님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 부모는 필요한 지원과 위험을 설명하고 자녀의 의견을 들어야 하며, 나이와 실제 보호 권한을 모른 채 모든 선택을 대신 결정할 수 있다고 여겨서는 안 됩니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.",
+      "sourceBefore": [
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C060:social:COMMUNICATION_STYLE:1:PRECISION:1",
+          "roots": [
+            "natal:month:stem:庚"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        }
+      ],
+      "sourceAfter": [
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:CLAIM:P02_GOOD_RELATION_RECIPROCITY",
+          "roots": [
+            "natal:day:stem:己"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        }
+      ]
+    },
+    {
+      "case": "parent-child/V/0",
+      "address": "CH06.P4",
+      "classification": "INTENDED_SAFETY_CORRECTION",
+      "reason": "Unverified parental authority removed",
+      "beforeTextHash": "d94eb1935e88ab541d1181f3432ccb31d7bcc30c601df1abf102c1921739bd9c",
+      "afterTextHash": "3f1b6bb3ae1fb9413b552584037a23a95e2a28514ac98cf8bfb29d122268cd6a",
+      "before": "{personB}님은 ‘지금 듣고 있는지와 답할 준비가 됐는지를 구분하기’부터 시작해 {personA}님에게 어떤 도움이 필요한지 들을 수 있습니다. {personA}님이 바라는 반응을 잠시 멈출 수 있는 쉼을 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다. 자녀는 해보고 싶은 일과 도움이 필요한 곳을 말할 수 있으며, 부모가 안전과 최종 결정의 책임을 맡아야 합니다. {personA}님이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, {personB}님도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다.",
+      "after": "{personB}님은 ‘지금 듣고 있는지와 답할 준비가 됐는지를 구분하기’부터 시작해 {personA}님에게 어떤 도움이 필요한지 들을 수 있습니다. {personA}님이 바라는 반응을 잠시 멈출 수 있는 쉼을 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다. 자녀는 해보고 싶은 일과 필요한 도움을 직접 말할 수 있으며, 부모는 위험과 지원 방법을 설명하되 조언을 건네는 일과 자녀의 결정을 대신하는 일을 구분해야 합니다. {personA}님이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, {personB}님도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다.",
+      "sourceBefore": [
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+          "roots": [
+            "foundation:element:FIRE:STRONG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "db6748882f5eb77507e102f1:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C086:recovery:RECOVERY_NEED:1:DEPTH:1",
+          "roots": [
+            "foundation:element:WATER:STRONG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "db6748882f5eb77507e102f1:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C050:social:EXPRESSION:1:SOCIAL_ATTUNEMENT:1",
+          "roots": [
+            "foundation:element:FIRE:STRONG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "db6748882f5eb77507e102f1:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "db6748882f5eb77507e102f1:to:bce7c2342b51e1211f1e8e9b",
+          "roots": [],
+          "nodes": [],
+          "fusion": [],
+          "direction": "db6748882f5eb77507e102f1:to:bce7c2342b51e1211f1e8e9b"
+        }
+      ],
+      "sourceAfter": [
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:EXPRESSION:social:EXPRESSION:1:EXPRESSION:1",
+          "roots": [
+            "foundation:element:FIRE:STRONG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "db6748882f5eb77507e102f1:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_WATER",
+          "roots": [
+            "foundation:element:WATER:STRONG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "db6748882f5eb77507e102f1:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:EXPRESSION:social:EXPRESSION:1:EXPRESSION:1",
+          "roots": [
+            "foundation:element:FIRE:STRONG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "db6748882f5eb77507e102f1:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "db6748882f5eb77507e102f1:to:bce7c2342b51e1211f1e8e9b",
+          "roots": [],
+          "nodes": [],
+          "fusion": [],
+          "direction": "db6748882f5eb77507e102f1:to:bce7c2342b51e1211f1e8e9b"
+        }
+      ]
+    },
+    {
+      "case": "parent-child/V/0",
+      "address": "CH08.P2",
+      "classification": "INTENDED_SAFETY_CORRECTION",
+      "reason": "Unverified parental authority removed",
+      "beforeTextHash": "d88d93fabfece536c2fe594b10703fa97f104425ab18b9b7a44b05937aec4894",
+      "afterTextHash": "1039b51aa9ff952770cc3c9478dabdf436f94bab87d28c2b548c4e127afca660",
+      "before": "{personA}님이 다툼 뒤 시도할 회복 행동은 ‘혼자 정했던 부분을 다시 펼쳐놓고, 상대가 직접 고를 항목을 되돌려주기’입니다. {personB}님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 안전의 최종 책임은 부모에게 있으며, 자녀의 거절에도 이유를 말할 자리를 남겨야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.",
+      "after": "{personA}님이 다툼 뒤 시도할 회복 행동은 ‘표정에서 짐작했던 뜻을 질문으로 확인하고, 실제로 들은 답에 맞춰 이해를 고쳐보기’입니다. {personB}님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 부모는 필요한 지원과 위험을 설명하고 자녀의 의견을 들어야 하며, 나이와 실제 보호 권한을 모른 채 모든 선택을 대신 결정할 수 있다고 여겨서는 안 됩니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.",
+      "sourceBefore": [
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+          "roots": [
+            "natal:ten-god:hour:visible:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+          "roots": [
+            "natal:ten-god:hour:visible:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+          "roots": [
+            "natal:ten-god:hour:visible:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+          "roots": [
+            "natal:ten-god:hour:visible:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        }
+      ],
+      "sourceAfter": [
+        {
+          "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:癸",
+          "roots": [
+            "natal:day:stem:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:癸",
+          "roots": [
+            "natal:day:stem:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:癸",
+          "roots": [
+            "natal:day:stem:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:癸",
+          "roots": [
+            "natal:day:stem:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        }
+      ]
+    },
+    {
+      "case": "parent-child/A/0",
+      "address": "CH06.P4",
+      "classification": "INTENDED_SAFETY_CORRECTION",
+      "reason": "Unverified parental authority removed",
+      "beforeTextHash": "d94eb1935e88ab541d1181f3432ccb31d7bcc30c601df1abf102c1921739bd9c",
+      "afterTextHash": "3f1b6bb3ae1fb9413b552584037a23a95e2a28514ac98cf8bfb29d122268cd6a",
+      "before": "{personB}님은 ‘지금 듣고 있는지와 답할 준비가 됐는지를 구분하기’부터 시작해 {personA}님에게 어떤 도움이 필요한지 들을 수 있습니다. {personA}님이 바라는 반응을 잠시 멈출 수 있는 쉼을 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다. 자녀는 해보고 싶은 일과 도움이 필요한 곳을 말할 수 있으며, 부모가 안전과 최종 결정의 책임을 맡아야 합니다. {personA}님이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, {personB}님도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다.",
+      "after": "{personB}님은 ‘지금 듣고 있는지와 답할 준비가 됐는지를 구분하기’부터 시작해 {personA}님에게 어떤 도움이 필요한지 들을 수 있습니다. {personA}님이 바라는 반응을 잠시 멈출 수 있는 쉼을 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다. 자녀는 해보고 싶은 일과 필요한 도움을 직접 말할 수 있으며, 부모는 위험과 지원 방법을 설명하되 조언을 건네는 일과 자녀의 결정을 대신하는 일을 구분해야 합니다. {personA}님이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, {personB}님도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다.",
+      "sourceBefore": [
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C050:social:SOCIAL_ATTUNEMENT:1:EXPRESSION:1",
+          "roots": [
+            "natal:hour:stem:丁"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "a6087b4db6adc2243b55b164:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C086:recovery:RECOVERY_NEED:1:DEPTH:1",
+          "roots": [
+            "foundation:element:WATER:STRONG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "a6087b4db6adc2243b55b164:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C050:social:SOCIAL_ATTUNEMENT:1:EXPRESSION:1",
+          "roots": [
+            "natal:hour:stem:丁"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "a6087b4db6adc2243b55b164:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "a6087b4db6adc2243b55b164:to:bce7c2342b51e1211f1e8e9b",
+          "roots": [],
+          "nodes": [],
+          "fusion": [],
+          "direction": "a6087b4db6adc2243b55b164:to:bce7c2342b51e1211f1e8e9b"
+        }
+      ],
+      "sourceAfter": [
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C050:social:SOCIAL_ATTUNEMENT:1:EXPRESSION:1",
+          "roots": [
+            "natal:hour:stem:丁"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "a6087b4db6adc2243b55b164:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "editorial:MYEONGLI_PATTERN:synthesis:foundation:YIN_YANG_ELEMENT:YIN_WATER",
+          "roots": [
+            "foundation:element:WATER:STRONG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "a6087b4db6adc2243b55b164:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C050:social:SOCIAL_ATTUNEMENT:1:EXPRESSION:1",
+          "roots": [
+            "natal:hour:stem:丁"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "a6087b4db6adc2243b55b164:to:bce7c2342b51e1211f1e8e9b"
+        },
+        {
+          "id": "a6087b4db6adc2243b55b164:to:bce7c2342b51e1211f1e8e9b",
+          "roots": [],
+          "nodes": [],
+          "fusion": [],
+          "direction": "a6087b4db6adc2243b55b164:to:bce7c2342b51e1211f1e8e9b"
+        }
+      ]
+    },
+    {
+      "case": "parent-child/A/0",
+      "address": "CH08.P2",
+      "classification": "INTENDED_SAFETY_CORRECTION",
+      "reason": "Unverified parental authority removed",
+      "beforeTextHash": "d88d93fabfece536c2fe594b10703fa97f104425ab18b9b7a44b05937aec4894",
+      "afterTextHash": "1039b51aa9ff952770cc3c9478dabdf436f94bab87d28c2b548c4e127afca660",
+      "before": "{personA}님이 다툼 뒤 시도할 회복 행동은 ‘혼자 정했던 부분을 다시 펼쳐놓고, 상대가 직접 고를 항목을 되돌려주기’입니다. {personB}님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 안전의 최종 책임은 부모에게 있으며, 자녀의 거절에도 이유를 말할 자리를 남겨야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.",
+      "after": "{personA}님이 다툼 뒤 시도할 회복 행동은 ‘표정에서 짐작했던 뜻을 질문으로 확인하고, 실제로 들은 답에 맞춰 이해를 고쳐보기’입니다. {personB}님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 부모는 필요한 지원과 위험을 설명하고 자녀의 의견을 들어야 하며, 나이와 실제 보호 권한을 모른 채 모든 선택을 대신 결정할 수 있다고 여겨서는 안 됩니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.",
+      "sourceBefore": [
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+          "roots": [
+            "natal:ten-god:hour:visible:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+          "roots": [
+            "natal:ten-god:hour:visible:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+          "roots": [
+            "natal:ten-god:hour:visible:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR089",
+          "roots": [
+            "natal:ten-god:hour:visible:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        }
+      ],
+      "sourceAfter": [
+        {
+          "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:癸",
+          "roots": [
+            "natal:day:stem:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:癸",
+          "roots": [
+            "natal:day:stem:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:癸",
+          "roots": [
+            "natal:day:stem:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:MYEONGLI_PATTERN:single:natal:day:stem:癸",
+          "roots": [
+            "natal:day:stem:癸"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        }
+      ]
+    },
+    {
+      "case": "route/compatibility/parentChild",
+      "address": "CH06.P4",
+      "classification": "INTENDED_SAFETY_CORRECTION",
+      "reason": "Unverified parental authority removed",
+      "beforeTextHash": "bd34bb31f80c12e7a96007f67858ddb2698d5eba7a6d7677141395fe74f7345f",
+      "afterTextHash": "36901fe6b009785932f44774b186c69aa1031c802e97f53c89562f018ef2eb1f",
+      "before": "{personB}님은 ‘마음이 상한 부분과 동의하기 어려운 내용을 따로 말하기’부터 시작해 {personA}님에게 어떤 도움이 필요한지 들을 수 있습니다. {personA}님이 바라는 바뀌는 이유를 미리 알 수 있는 약속을 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다. 자녀는 해보고 싶은 일과 도움이 필요한 곳을 말할 수 있으며, 부모가 안전과 최종 결정의 책임을 맡아야 합니다. {personA}님이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, {personB}님도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다.",
+      "after": "{personB}님은 ‘마음이 상한 부분과 동의하기 어려운 내용을 따로 말하기’부터 시작해 {personA}님에게 어떤 도움이 필요한지 들을 수 있습니다. {personA}님이 바라는 바뀌는 이유를 미리 알 수 있는 약속을 건드리지 않도록 도움을 제안하면, 거절도 관계를 끊는 말 대신 범위를 맞추는 대답이 됩니다. 자녀는 해보고 싶은 일과 필요한 도움을 직접 말할 수 있으며, 부모는 위험과 지원 방법을 설명하되 조언을 건네는 일과 자녀의 결정을 대신하는 일을 구분해야 합니다. {personA}님이 이번 제안에서 고른 부분과 보류한 부분을 알려주면, {personB}님도 다음에는 필요한 범위에 맞춰 의견을 건넬 수 있습니다.",
+      "sourceBefore": [
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+          "roots": [
+            "foundation:yin_yang:EXTREME_YIN"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C076:social:STABILITY:1:SOCIAL_ATTUNEMENT:1",
+          "roots": [
+            "foundation:element:EARTH:STRONG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+        },
+        {
+          "id": "editorial:FUSION:fusion:COMPLEMENT:C055:social:COMMUNICATION_STYLE:-1:CARE:1",
+          "roots": [
+            "foundation:yin_yang:EXTREME_YIN"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+        },
+        {
+          "id": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "roots": [],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+        }
+      ],
+      "sourceAfter": [
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:COMMUNICATION_STYLE:social:COMMUNICATION_STYLE:-1:COMMUNICATION_STYLE:-1",
+          "roots": [
+            "foundation:yin_yang:EXTREME_YIN"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR018",
+          "roots": [
+            "foundation:element:EARTH:STRONG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+        },
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:COMMUNICATION_STYLE:social:COMMUNICATION_STYLE:-1:COMMUNICATION_STYLE:-1",
+          "roots": [
+            "foundation:yin_yang:EXTREME_YIN"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+        },
+        {
+          "id": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8",
+          "roots": [],
+          "nodes": [],
+          "fusion": [],
+          "direction": "b425792e04d53877ee951f97:to:29a2534854378270a988c1f8"
+        }
+      ]
+    },
+    {
+      "case": "route/compatibility/parentChild",
+      "address": "CH08.P2",
+      "classification": "INTENDED_SAFETY_CORRECTION",
+      "reason": "Unverified parental authority removed",
+      "beforeTextHash": "eea9405e95cacdf51657552fad73e1554e8ad44d5c02d86ee53a7f750311f036",
+      "afterTextHash": "867a9e5a8f00b79b1b891a63e957ba1693933214e6d78e18cba90c45d777fbb4",
+      "before": "{personA}님이 다툼 뒤 시도할 회복 행동은 ‘평가처럼 들린 말에서 사람에 대한 판단을 걷어내고, 바꿀 행동만 다시 설명하기’입니다. {personB}님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 안전의 최종 책임은 부모에게 있으며, 자녀의 거절에도 이유를 말할 자리를 남겨야 합니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.",
+      "after": "{personA}님이 다툼 뒤 시도할 회복 행동은 ‘대답을 더 요구하기 전에 상대가 아직 정리 중인지 묻고 다시 이야기할 시간을 잡기’입니다. {personB}님이 한 말을 요약해 확인하고 자신이 달리 이해한 부분을 나중에 보태면, 해명이 상대의 이야기를 끊는 말로 도착하지 않습니다. 부모는 필요한 지원과 위험을 설명하고 자녀의 의견을 들어야 하며, 나이와 실제 보호 권한을 모른 채 모든 선택을 대신 결정할 수 있다고 여겨서는 안 됩니다. 합의한 변화는 다음에 비슷한 상황이 왔을 때 직접 보여주고, 지키기 어려워졌다면 다시 말할 시점을 놓치지 않는 편이 좋습니다.",
+      "sourceBefore": [
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR054",
+          "roots": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR054",
+          "roots": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR054",
+          "roots": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:PERSONAL_RESONANCE:resonance:PR054",
+          "roots": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        }
+      ],
+      "sourceAfter": [
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:EXPRESSION:social:EXPRESSION:1:EXPRESSION:1",
+          "roots": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:EXPRESSION:social:EXPRESSION:1:EXPRESSION:1",
+          "roots": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:EXPRESSION:social:EXPRESSION:1:EXPRESSION:1",
+          "roots": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        },
+        {
+          "id": "editorial:FUSION:fusion:REINFORCE:EXPRESSION:social:EXPRESSION:1:EXPRESSION:1",
+          "roots": [
+            "foundation:yin_yang:STRONG_YANG"
+          ],
+          "nodes": [],
+          "fusion": [],
+          "direction": null
+        }
+      ]
+    }
+  ],
+  "existingStoredEditionsChanged": false
+}

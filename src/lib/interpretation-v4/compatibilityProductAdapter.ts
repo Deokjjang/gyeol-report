@@ -13,14 +13,14 @@ import type { NarrativeBlock } from "./narrativeTypes";
 import type { SajuCalcResult } from "../saju/types";
 import { renderCompatibilityRelease } from "./compatibilityReleaseRenderer";
 import { validateCompatibilityRelease } from "./compatibilityReleaseValidator";
-import { COMPATIBILITY_RELEASE_VERSION } from "./compatibilityReleaseContracts";
 
 export const COMPATIBILITY_PRODUCT_VERSION = "compatibility-product-13d-7b-v1";
 const digest = (v: unknown) => createHash("sha256").update(JSON.stringify(v)).digest("hex");
 
 /** A/B individual cores once each, canonical pair once. All pair categories,
  * index, directionality and existing interaction scenes remain authoritative. */
-export function buildV4CompatibilityProduct(payload: unknown, calculated?: { personA: SajuCalcResult; personB: SajuCalcResult }) {
+export function buildV4CompatibilityProduct(payload: unknown, calculated?: { personA: SajuCalcResult; personB: SajuCalcResult }, offline?: { publicationSafety: true; views: { personA: RelationshipView; personB: RelationshipView } }) {
+  if (offline && (process.env.VERCEL || typeof window !== "undefined")) return { ok: false as const, errors: ["PUBLICATION_SAFETY_OFFLINE_ONLY"] };
   const normalized = normalizeReportInputPayload(payload);
   if (!normalized.ok || normalized.value.kind !== "compatibility") return { ok: false as const, errors: ["RELATIONSHIP_PAIR_INPUT_INVALID"] };
   const input = normalized.value;
@@ -35,7 +35,7 @@ export function buildV4CompatibilityProduct(payload: unknown, calculated?: { per
   const profilesA = buildRelationshipProfiles({ calculation: calculations.personA, name: input.personA.name, mbti: input.personA.mbtiType, context });
   const profilesB = buildRelationshipProfiles({ calculation: calculations.personB, name: input.personB.name, mbti: input.personB.mbtiType, context });
   if (!profilesA.ok || !profilesB.ok) return { ok: false as const, errors: ["RELATIONSHIP_PAIR_PERSON_INVALID"] };
-  const a = projectRelationshipView(profilesA.profiles, romantic), b = projectRelationshipView(profilesB.profiles, romantic);
+  const a = offline?.views.personA ?? projectRelationshipView(profilesA.profiles, romantic), b = offline?.views.personB ?? projectRelationshipView(profilesB.profiles, romantic);
   const pair = projectCompatibilityPairView(a, b, canonical);
   const stableKey = digest([COMPATIBILITY_PRODUCT_VERSION, e.category, e.invariant]);
   function personCore(view: RelationshipView, slot: "personA" | "personB") {
@@ -82,16 +82,18 @@ export function buildV4CompatibilityProduct(payload: unknown, calculated?: { per
     return s;
   });
   const narrative = { ...canonical.narrative, opening: canonical.narrative.opening.filter(b => !b.id.startsWith("pair-core-") && !b.id.startsWith("pair-shared-")), sections };
-  const reader = renderCompatibilityRelease(e, canonical.persons, { personA: a, personB: b }, pair, narrative);
+  const reader = renderCompatibilityRelease(e, canonical.persons, { personA: a, personB: b }, pair, narrative, offline?.publicationSafety);
   const readerValidation = validateCompatibilityRelease(reader.draft, e, { personA: a, personB: b }, reader.registry);
   const readerEditorial = reviewNarrative(reader.narrative);
   const publish = !readerValidation.hardErrors.length && !readerEditorial.some(i => i.severity !== "Minor")
     && reader.narrative.opening.length > 0 && reader.narrative.sections.every(s => s.blocks.length > 0);
   const published = publish ? reader.narrative : narrative;
-  return { ...canonical, narrative: published, writerVersion: publish ? COMPATIBILITY_RELEASE_VERSION : COMPATIBILITY_PRODUCT_VERSION, editorial: reviewNarrative(published),
+  const readerVersion = reader.draft.version;
+  return { ...canonical, narrative: published, writerVersion: publish ? readerVersion : COMPATIBILITY_PRODUCT_VERSION, editorial: reviewNarrative(published),
     integration: { version: COMPATIBILITY_PRODUCT_VERSION, pair,
       readerEdition: reader.draft, readerValidation, readerEditorial, readerAllocation: reader.allocation,
-      publishedEdition: publish ? COMPATIBILITY_RELEASE_VERSION : COMPATIBILITY_PRODUCT_VERSION,
+      ...(offline ? { publicationSafetyRegistry: reader.registry } : {}),
+      publishedEdition: publish ? readerVersion : COMPATIBILITY_PRODUCT_VERSION,
       individualDigests: { personA: digest({ m: a.profiles.myeongli, b: a.profiles.mbti, f: a.profiles.fusion, c: a.profiles.claims, r: a.profiles.resonance }),
         personB: digest({ m: b.profiles.myeongli, b: b.profiles.mbti, f: b.profiles.fusion, c: b.profiles.claims, r: b.profiles.resonance }) },
       represented: { personA: coreA.represented, personB: coreB.represented },

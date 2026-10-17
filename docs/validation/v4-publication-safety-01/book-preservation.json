@@ -1,0 +1,13 @@
+{
+  "oldFixtureBooks": 17,
+  "fullOriginalBookAndPacketJsonByteEqual": true,
+  "oldDigestCount": 102,
+  "newOfflineBooks": 32,
+  "newBooksWithheld": 7,
+  "originalCalculationsUnchanged": 39,
+  "newScoreAndDirectionChanged": 0,
+  "underlyingMbtiFusionProfileDigestsChanged": 0,
+  "unaffectedFiveProductNarrativesChanged": 0,
+  "productionDatabaseAccesses": 0,
+  "existingCustomerBooksRewritten": 0
+}
