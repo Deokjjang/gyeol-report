@@ -1,0 +1,142 @@
+{
+  "status": "PARTIAL_TECHNICAL_COMPLETION_NOT_CUSTOMER_AUTHORIZATION",
+  "verifiedMonths": [
+    5,
+    7,
+    12
+  ],
+  "remainingMonths": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    9,
+    10,
+    11
+  ],
+  "nextPriority": "Month10 exact reading-instant/focus/all-unselected binding, then separately scoped month3/9 comparisons; preserve simultaneous Binder time gates.",
+  "requiredFactsAndContracts": [
+    {
+      "month": 1,
+      "state": "MISSING_ADJACENT_YEAR_SOURCE",
+      "requirements": [
+        "ADJACENT_YEAR_CANONICAL_SEGMENT"
+      ],
+      "existingProducer": [
+        "buildAnnualMonthCalendar"
+      ],
+      "reason": "All four actual ledgers begin at January. Previous December is absent; generic prior comparison must be withheld. Do not manufacture an adjacent-year segment."
+    },
+    {
+      "month": 2,
+      "state": "ANNUAL_STEM_RELATION_ADDRESS_REQUIRED",
+      "requirements": [
+        "SEGMENT_STEM_RELATION_VALIDITY"
+      ],
+      "existingProducer": [
+        "annualNarrativeEvidence.annualStemRelations",
+        "validateNominalStemRelation"
+      ],
+      "reason": "Effective annual before/after exists. Existing validateNominalStemRelation explicitly returns NO_DEDICATED_SEGMENT_STEM_RELATION_GRAPH_ID, or WRONG_EFFECTIVE_ANNUAL. A nominal relation cannot be extrapolated over pre-Ipchun segments."
+    },
+    {
+      "month": 3,
+      "state": "CROSS_PERIOD_COMPARISON_CONTRACT_PENDING",
+      "requirements": [
+        "VERIFIED_BEFORE_AFTER_SIGNATURE_PAIR"
+      ],
+      "existingProducer": [
+        "buildAnnualMonthCalendar",
+        "compareAnnualSegments"
+      ],
+      "reason": "Month pillars, relation facts and adjacent segment nodes exist. The current Binder tests simultaneous time intersection; a before/after comparison needs a separately scoped comparison witness. Stable signatures must remain continuity, not new change."
+    },
+    {
+      "month": 4,
+      "state": "RELATION_UNIT_WITH_PARTICIPANTS_REQUIRED",
+      "requirements": [
+        "RELATION_OCCURRENCE_WITH_PARTICIPANTS"
+      ],
+      "existingProducer": [
+        "buildAnnualMonthCalendar",
+        "validateAnnualRelation"
+      ],
+      "reason": "Existing relation Graph nodes carry original affectedPillars/participants/roots. Current verified Units cover day-master/god relations, not relation occurrences. No generic god Unit or missing participant may substitute."
+    },
+    {
+      "month": 6,
+      "state": "ROLE_AND_SCOPE_SOURCE_REVIEW_REQUIRED",
+      "requirements": [
+        "ROLE_DECLARED_PREVIOUS_GOD_OCCURRENCE"
+      ],
+      "existingProducer": [
+        "buildAnnualMonthCalendar",
+        "declaredMonthlyRole"
+      ],
+      "reason": "Previous same god does not formally declare stem versus branch-main role or exact prior occurrence. Matching labels alone do not authorize previous/current relation scope or an interpretation."
+    },
+    {
+      "month": 8,
+      "state": "CONDITIONAL_CYCLE_FACT_CONTRACT_REQUIRED",
+      "requirements": [
+        "CONDITIONAL_DAYUN_COUNTERPART_SCOPE"
+      ],
+      "existingProducer": [
+        "calculateCustomerDayun",
+        "buildAnnualMonthCalendar"
+      ],
+      "reason": "Actual uncertainty ranges and candidate cycles may exist in original raw/Graph data. Existing confirmed-only semantic Units cannot represent conditional counterparts. Do not select both as confirmed or infer a missing range."
+    },
+    {
+      "month": 9,
+      "state": "ADJACENT_SEGMENT_COMPARISON_PENDING",
+      "requirements": [
+        "VERIFIED_ADJACENT_SEGMENT_PAIR"
+      ],
+      "existingProducer": [
+        "buildAnnualMonthCalendar",
+        "compareAnnualSegments"
+      ],
+      "reason": "August-last, September-first and actual new-Jie segments are present in the four ledgers. Their non-overlapping windows cannot be selected as one simultaneous Binder fact. Comparison contract remains separate."
+    },
+    {
+      "month": 10,
+      "state": "DEFERRED_EXACT_FOCUS_CONTRACT",
+      "requirements": [
+        "EXPLICIT_READING_FOCUS_BINDING_CONTRACT"
+      ],
+      "existingProducer": [
+        "annualNarrativeEvidence",
+        "actual-evidence-graph/periods.ts"
+      ],
+      "reason": "Original reading instant and focus/unselected segments are present. Graph boundary nodes already carry focus/timePosition; exact reading-instant, focus and all unselected requirement binding is deferred from this two-contract batch. No missing producer is claimed."
+    },
+    {
+      "month": 11,
+      "state": "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED",
+      "requirements": [
+        "ACTUAL_CONTEXT_TIMESTAMP"
+      ],
+      "existingProducer": [
+        "annualNarrativeEvidence",
+        "normalized userContext"
+      ],
+      "reason": "Actual period time and original hypothetical scene status are known. Actual user Context timestamp is absent in all four inputs. Reading time cannot substitute; hypothetical research scenes are not customer history."
+    }
+  ],
+  "guardrails": [
+    "No new calculations, fake adjacent-year segments or relations",
+    "No promotion of monthly-god diagnostic alternatives; all ten remain ROLE_AMBIGUOUS",
+    "No Context timestamp/history invention",
+    "No semantic/customer approval from technical source verification",
+    "No Planner/Writer/Book/customer runtime changes"
+  ],
+  "unmatchedUnitsRemaining": 396,
+  "unresolvedOriginalStudyScopes": "New July context links do not create a default DAYUN_STEM god field or resolve annual-wide god study scope.",
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "automaticFollowupStarted": false
+}
