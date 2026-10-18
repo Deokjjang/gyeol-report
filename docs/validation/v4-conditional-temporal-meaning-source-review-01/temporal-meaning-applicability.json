@@ -1,0 +1,2421 @@
+{
+  "summary": {
+    "status": "PARTIAL",
+    "originalMeaningFields": 30,
+    "commonMeanings": 10,
+    "independentPeriodSpecificTraditionalMeanings": 0,
+    "exactDefinitionProofs": 10,
+    "externalSourcesReviewed": 11,
+    "conditionalProposals": 30,
+    "conceptualProposalsRequiringReview": 24,
+    "weakMeaningBridges": 6,
+    "exactConditionalMeaningSourcesUnverified": 30,
+    "sourceIntegrityBefore": 30,
+    "sourceIntegrityAfter": 30,
+    "actualFixtures": 6,
+    "newCalculationObservations": 429,
+    "newVerifiedCalculations": 429,
+    "scopedLinks": 294,
+    "reusedCalculationObservations": 749,
+    "customerApproval": 0,
+    "customerClaims": 0,
+    "customerReaderBridge": 0,
+    "newIndependentFacts": 0
+  },
+  "archive": {
+    "file": "/Users/Deokmin/Documents/gyeol-validation/v4-temporal-ten-god-source-contract-01/actual-verified/calculation-observations.json",
+    "sha256": "748e4cedc112315db3cb73cc9291864ffaa860ebca5fa3f791c581ef79e2d781",
+    "observations": 767,
+    "verifiedObservationsReused": 749,
+    "unknownObservationsHeld": 18,
+    "unmodified": true
+  },
+  "independentFactsAdded": 0,
+  "units": [
+    {
+      "originalResearchId": "tr:god:편재",
+      "field": "dayun",
+      "packetHash": "580cbe76013eac2ec2d9539de7cf64485c428f2b91517d88455ea90c60e82439",
+      "scope": "dayun",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 27,
+      "archivedScopedObservationCount": 18,
+      "archivedObservationSetHash": "7149f0426676d41f99e8ba0ee668c7152f310f7d0a8fe8591e7c596351ec830c",
+      "currentActualLinkCount": 9,
+      "currentScopedLinkCount": 9,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-transition-C",
+          "packetHash": "580cbe76013eac2ec2d9539de7cf64485c428f2b91517d88455ea90c60e82439",
+          "calculatedTenGod": "편재",
+          "originLayer": "DAYUN_STEM",
+          "owner": "fixture-person-11",
+          "referenceStem": "戊",
+          "targetStem": "壬",
+          "actualProducer": {
+            "file": "src/lib/saju/customerDayun.ts",
+            "symbol": "calculateCustomerDayun",
+            "version": "dayun-kst-sect2-v1",
+            "system": "dayun"
+          },
+          "effectiveInterval": {
+            "scope": "dayun",
+            "start": "2018-04-23T21:42:00+09:00",
+            "endExclusive": "2028-04-23T21:42:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "cycle": {
+                "index": 3,
+                "ganji": "壬申",
+                "tenGod": "편재",
+                "elements": [
+                  "수",
+                  "금"
+                ],
+                "startYear": 2018,
+                "endYear": 2027,
+                "theme": "밖의 기회와 자원을 연결하는 것"
+              },
+              "startSolarRange": {
+                "earliestKst": "2018-04-23T21:42:00+09:00",
+                "latestKst": "2018-04-23T21:42:00+09:00"
+              },
+              "nextTransition": {
+                "year": 2028,
+                "dateLabel": "2028-04-23 21:42 한국시간",
+                "startSolarKst": "2028-04-23T21:42:00+09:00",
+                "startSolarRange": {
+                  "earliestKst": "2028-04-23T21:42:00+09:00",
+                  "latestKst": "2028-04-23T21:42:00+09:00"
+                },
+                "before": {
+                  "index": 3,
+                  "ganji": "壬申",
+                  "tenGod": "편재",
+                  "elements": [
+                    "수",
+                    "금"
+                  ],
+                  "startYear": 2018,
+                  "endYear": 2027,
+                  "theme": "밖의 기회와 자원을 연결하는 것"
+                },
+                "after": {
+                  "index": 4,
+                  "ganji": "辛未",
+                  "tenGod": "상관",
+                  "elements": [
+                    "금",
+                    "토"
+                  ],
+                  "startYear": 2028,
+                  "endYear": 2037,
+                  "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+                }
+              }
+            },
+            "compatibleCombination": true,
+            "transitionRange": {
+              "earliestKst": "2018-04-23T21:42:00+09:00",
+              "latestKst": "2018-04-23T21:42:00+09:00"
+            }
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-transition-C2028",
+          "packetHash": "580cbe76013eac2ec2d9539de7cf64485c428f2b91517d88455ea90c60e82439",
+          "calculatedTenGod": "편재",
+          "originLayer": "DAYUN_STEM",
+          "owner": "fixture-person-11",
+          "referenceStem": "戊",
+          "targetStem": "壬",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2028-02-01T00:00:00+09:00",
+            "endExclusive": "2028-02-04T16:31:13+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "calendar_month_start"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:편재",
+      "field": "saeun",
+      "packetHash": "69f495df6ecf4c89b5575217c2d9d9d98d38fd80232e62ba0f7f39822db04d10",
+      "scope": "annual",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 5,
+      "archivedScopedObservationCount": 0,
+      "archivedObservationSetHash": "7801a4cc3e5154fc1f2b77a0669bc2f91ec2aff88dd188c1e54c3d6f082cd98c",
+      "currentActualLinkCount": 5,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "69f495df6ecf4c89b5575217c2d9d9d98d38fd80232e62ba0f7f39822db04d10",
+          "calculatedTenGod": "편재",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "甲",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2034,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "69f495df6ecf4c89b5575217c2d9d9d98d38fd80232e62ba0f7f39822db04d10",
+          "calculatedTenGod": "편재",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "甲",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2024,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:편재",
+      "field": "wolun",
+      "packetHash": "16dd9ed370cddf3462288620c34ff88c1e2d2a436104469f738aeffbbe5f1de1",
+      "scope": "month",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 27,
+      "archivedScopedObservationCount": 27,
+      "archivedObservationSetHash": "5b0aa0f7cf39e6cebf620a0035bbf39d73dbbc135ad5c93c6225f28aa320cdfc",
+      "currentActualLinkCount": 13,
+      "currentScopedLinkCount": 13,
+      "linkSamples": [
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "16dd9ed370cddf3462288620c34ff88c1e2d2a436104469f738aeffbbe5f1de1",
+          "calculatedTenGod": "편재",
+          "originLayer": "MONTH_BRANCH_MAIN",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "甲",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-03-01T00:00:00+09:00",
+            "endExclusive": "2026-03-05T22:59:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "calendar_month_start"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "16dd9ed370cddf3462288620c34ff88c1e2d2a436104469f738aeffbbe5f1de1",
+          "calculatedTenGod": "편재",
+          "originLayer": "MONTH_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "甲",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-07-01T00:00:00+09:00",
+            "endExclusive": "2026-07-07T10:56:57+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "calendar_month_start"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:식신",
+      "field": "dayun",
+      "packetHash": "ac5ee18c1ccd7c14529b8a583ea9bd8f0ee57a27ebaf42ad29abb301c2b132d6",
+      "scope": "dayun",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 0,
+      "archivedScopedObservationCount": 0,
+      "archivedObservationSetHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "currentActualLinkCount": 0,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [],
+      "actualWitnessState": "NO_MATCHING_ACTUAL_ORIGIN_OBSERVATION_IN_THIS_COHORT"
+    },
+    {
+      "originalResearchId": "tr:god:식신",
+      "field": "saeun",
+      "packetHash": "235399b3e7341d50a786d9d924337b7616194487c0ac6455bcfa5922c53ad0f0",
+      "scope": "annual",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 9,
+      "archivedScopedObservationCount": 6,
+      "archivedObservationSetHash": "72dc8e62fc31961456d05007911a1c6fc01490177a1c5e18949b17f2bf74d88d",
+      "currentActualLinkCount": 3,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "235399b3e7341d50a786d9d924337b7616194487c0ac6455bcfa5922c53ad0f0",
+          "calculatedTenGod": "식신",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "壬",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2032,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-F",
+          "packetHash": "235399b3e7341d50a786d9d924337b7616194487c0ac6455bcfa5922c53ad0f0",
+          "calculatedTenGod": "식신",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-10",
+          "referenceStem": "庚",
+          "targetStem": "壬",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2032,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:식신",
+      "field": "wolun",
+      "packetHash": "fbdf7b2431b96c5aaa3a2a70f318994f487a0af9d8167a7e11f5e7af9e555e1c",
+      "scope": "month",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 21,
+      "archivedScopedObservationCount": 21,
+      "archivedObservationSetHash": "c29003371d088a44bd00e1c8697f43221242bbede2bc86dcce7646732d05d48d",
+      "currentActualLinkCount": 12,
+      "currentScopedLinkCount": 12,
+      "linkSamples": [
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "fbdf7b2431b96c5aaa3a2a70f318994f487a0af9d8167a7e11f5e7af9e555e1c",
+          "calculatedTenGod": "식신",
+          "originLayer": "MONTH_BRANCH_MAIN",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "壬",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-11-07T18:52:05+09:00",
+            "endExclusive": "2026-12-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:입동"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "fbdf7b2431b96c5aaa3a2a70f318994f487a0af9d8167a7e11f5e7af9e555e1c",
+          "calculatedTenGod": "식신",
+          "originLayer": "MONTH_BRANCH_MAIN",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "壬",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-12-01T00:00:00+09:00",
+            "endExclusive": "2026-12-07T11:52:32+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "calendar_month_start"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:정인",
+      "field": "dayun",
+      "packetHash": "4221c6a23e0f91f56834d81d75a8db7cf428075b3609ae364df5f57b84cb4a36",
+      "scope": "dayun",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 0,
+      "archivedScopedObservationCount": 0,
+      "archivedObservationSetHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "currentActualLinkCount": 0,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [],
+      "actualWitnessState": "NO_MATCHING_ACTUAL_ORIGIN_OBSERVATION_IN_THIS_COHORT"
+    },
+    {
+      "originalResearchId": "tr:god:정인",
+      "field": "saeun",
+      "packetHash": "41bd3cc71eafa02ae849f2934ec4c932f1bd58803176ea3a53f56db9a250f1a7",
+      "scope": "annual",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 6,
+      "archivedScopedObservationCount": 3,
+      "archivedObservationSetHash": "4a8e573f828404ca406be14002e208e774fb4ec2ae0ffbf20bad3654999444aa",
+      "currentActualLinkCount": 6,
+      "currentScopedLinkCount": 3,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "41bd3cc71eafa02ae849f2934ec4c932f1bd58803176ea3a53f56db9a250f1a7",
+          "calculatedTenGod": "정인",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "己",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2029,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-F",
+          "packetHash": "41bd3cc71eafa02ae849f2934ec4c932f1bd58803176ea3a53f56db9a250f1a7",
+          "calculatedTenGod": "정인",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-10",
+          "referenceStem": "庚",
+          "targetStem": "己",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2029,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:정인",
+      "field": "wolun",
+      "packetHash": "712d0c47b27024b85d094fd0d3f8217969824c3bb06ee984f14f1e22d1358a28",
+      "scope": "month",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 28,
+      "archivedScopedObservationCount": 28,
+      "archivedObservationSetHash": "7caa81bea4acbe8f164baf099c3ebca247b16055e1c4956035b68e8807024187",
+      "currentActualLinkCount": 20,
+      "currentScopedLinkCount": 20,
+      "linkSamples": [
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "712d0c47b27024b85d094fd0d3f8217969824c3bb06ee984f14f1e22d1358a28",
+          "calculatedTenGod": "정인",
+          "originLayer": "MONTH_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "己",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-11-07T18:52:05+09:00",
+            "endExclusive": "2026-12-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:입동"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "712d0c47b27024b85d094fd0d3f8217969824c3bb06ee984f14f1e22d1358a28",
+          "calculatedTenGod": "정인",
+          "originLayer": "MONTH_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "己",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-12-01T00:00:00+09:00",
+            "endExclusive": "2026-12-07T11:52:32+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "calendar_month_start"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:겁재",
+      "field": "dayun",
+      "packetHash": "0b04f278f98aed387a2fe26461277e95fdd31f3d58439c02bc770c90840f718f",
+      "scope": "dayun",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 0,
+      "archivedScopedObservationCount": 0,
+      "archivedObservationSetHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "currentActualLinkCount": 0,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [],
+      "actualWitnessState": "NO_MATCHING_ACTUAL_ORIGIN_OBSERVATION_IN_THIS_COHORT"
+    },
+    {
+      "originalResearchId": "tr:god:겁재",
+      "field": "saeun",
+      "packetHash": "ccb1e372b2a76812d3e9ad23b060e0780e4c3f935350856d79446c34a4bdb84c",
+      "scope": "annual",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 3,
+      "archivedScopedObservationCount": 0,
+      "archivedObservationSetHash": "f8aa1cb19384c359c5ad38b73174303f0e7cf025592da89c2996a0c034dafc45",
+      "currentActualLinkCount": 3,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "ccb1e372b2a76812d3e9ad23b060e0780e4c3f935350856d79446c34a4bdb84c",
+          "calculatedTenGod": "겁재",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "辛",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2031,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-F",
+          "packetHash": "ccb1e372b2a76812d3e9ad23b060e0780e4c3f935350856d79446c34a4bdb84c",
+          "calculatedTenGod": "겁재",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-10",
+          "referenceStem": "庚",
+          "targetStem": "辛",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2031,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:겁재",
+      "field": "wolun",
+      "packetHash": "1e0557224738fcaa5fe6d2d147109205b338ade0f131aa31454a1a0009af9c49",
+      "scope": "month",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 23,
+      "archivedScopedObservationCount": 23,
+      "archivedObservationSetHash": "fd615ade653ccc17e88249e6f16a6ea2eeb711323f96a1f02fdd7fcf86640786",
+      "currentActualLinkCount": 14,
+      "currentScopedLinkCount": 14,
+      "linkSamples": [
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "1e0557224738fcaa5fe6d2d147109205b338ade0f131aa31454a1a0009af9c49",
+          "calculatedTenGod": "겁재",
+          "originLayer": "MONTH_BRANCH_MAIN",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "辛",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-09-07T23:41:16+09:00",
+            "endExclusive": "2026-10-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:백로"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "1e0557224738fcaa5fe6d2d147109205b338ade0f131aa31454a1a0009af9c49",
+          "calculatedTenGod": "겁재",
+          "originLayer": "MONTH_BRANCH_MAIN",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "辛",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-10-01T00:00:00+09:00",
+            "endExclusive": "2026-10-08T15:29:17+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "calendar_month_start"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:정관",
+      "field": "dayun",
+      "packetHash": "d58a6ff50f4aa43d98f31f4a8e9faacca98c20fde9f7a7b714551c3ea80c6d7c",
+      "scope": "dayun",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 2,
+      "archivedScopedObservationCount": 0,
+      "archivedObservationSetHash": "74aadbda41e62de9776b79318f83611a84d485fdf8c862b4020c54d3abb47554",
+      "currentActualLinkCount": 2,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "d58a6ff50f4aa43d98f31f4a8e9faacca98c20fde9f7a7b714551c3ea80c6d7c",
+          "calculatedTenGod": "정관",
+          "originLayer": "DAYUN_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "丁",
+          "actualProducer": {
+            "file": "src/lib/saju/customerDayun.ts",
+            "symbol": "calculateCustomerDayun",
+            "version": "dayun-kst-sect2-v1",
+            "system": "dayun"
+          },
+          "effectiveInterval": {
+            "scope": "dayun",
+            "start": "2033-07-15T08:00:00+09:00",
+            "endExclusive": null,
+            "certainty": "conditional",
+            "originalBounds": {
+              "cycle": {
+                "index": 5,
+                "ganji": "丁丑",
+                "tenGod": "정관",
+                "elements": [
+                  "화",
+                  "토"
+                ],
+                "startYear": 2033,
+                "endYear": 2042,
+                "theme": "신뢰를 자리와 역할로 바꾸는 것"
+              },
+              "startSolarRange": {
+                "earliestKst": "2033-07-15T08:00:00+09:00",
+                "latestKst": "2033-07-15T08:00:00+09:00"
+              },
+              "nextTransition": null
+            },
+            "compatibleCombination": true,
+            "transitionRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            }
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-F",
+          "packetHash": "d58a6ff50f4aa43d98f31f4a8e9faacca98c20fde9f7a7b714551c3ea80c6d7c",
+          "calculatedTenGod": "정관",
+          "originLayer": "DAYUN_STEM",
+          "owner": "fixture-person-10",
+          "referenceStem": "庚",
+          "targetStem": "丁",
+          "actualProducer": {
+            "file": "src/lib/saju/customerDayun.ts",
+            "symbol": "calculateCustomerDayun",
+            "version": "dayun-kst-sect2-v1",
+            "system": "dayun"
+          },
+          "effectiveInterval": {
+            "scope": "dayun",
+            "start": "2033-06-14T02:00:00+09:00",
+            "endExclusive": null,
+            "certainty": "conditional",
+            "originalBounds": {
+              "cycle": {
+                "index": 5,
+                "ganji": "丁丑",
+                "tenGod": "정관",
+                "elements": [
+                  "화",
+                  "토"
+                ],
+                "startYear": 2033,
+                "endYear": 2042,
+                "theme": "신뢰를 자리와 역할로 바꾸는 것"
+              },
+              "startSolarRange": {
+                "earliestKst": "2033-06-14T02:00:00+09:00",
+                "latestKst": "2033-10-15T23:59:59+09:00"
+              },
+              "nextTransition": null
+            },
+            "compatibleCombination": true,
+            "transitionRange": {
+              "earliestKst": "2033-06-14T02:00:00+09:00",
+              "latestKst": "2033-10-15T23:59:59+09:00"
+            }
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:정관",
+      "field": "saeun",
+      "packetHash": "15f939b8c2b6b2ed644a960be32da55a185e31f0da780c3fdb9a3db98100dcc0",
+      "scope": "annual",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 4,
+      "archivedScopedObservationCount": 0,
+      "archivedObservationSetHash": "30e6c122ce036e629e5eff019ca8aa9dc300b08ca637fe521f8bc809712a2fc7",
+      "currentActualLinkCount": 4,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "15f939b8c2b6b2ed644a960be32da55a185e31f0da780c3fdb9a3db98100dcc0",
+          "calculatedTenGod": "정관",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "丁",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2027,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-F",
+          "packetHash": "15f939b8c2b6b2ed644a960be32da55a185e31f0da780c3fdb9a3db98100dcc0",
+          "calculatedTenGod": "정관",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-10",
+          "referenceStem": "庚",
+          "targetStem": "丁",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2027,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:정관",
+      "field": "wolun",
+      "packetHash": "915a8e4755f76e90f6b17191fe0b2056de970d36dc9fb83d2d1aebc6a1ca086d",
+      "scope": "month",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 24,
+      "archivedScopedObservationCount": 24,
+      "archivedObservationSetHash": "60629a5ba847e136c1351c3deb003bc18e1d4c7cc165e6ce4e79f9890f910018",
+      "currentActualLinkCount": 12,
+      "currentScopedLinkCount": 12,
+      "linkSamples": [
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "915a8e4755f76e90f6b17191fe0b2056de970d36dc9fb83d2d1aebc6a1ca086d",
+          "calculatedTenGod": "정관",
+          "originLayer": "MONTH_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "丁",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-09-07T23:41:16+09:00",
+            "endExclusive": "2026-10-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:백로"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "915a8e4755f76e90f6b17191fe0b2056de970d36dc9fb83d2d1aebc6a1ca086d",
+          "calculatedTenGod": "정관",
+          "originLayer": "MONTH_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "丁",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-10-01T00:00:00+09:00",
+            "endExclusive": "2026-10-08T15:29:17+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "calendar_month_start"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:상관",
+      "field": "dayun",
+      "packetHash": "0d8c38a70277e4b3f037bb09653d2e46c99af9e00848c3900f913d4238e80120",
+      "scope": "dayun",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 18,
+      "archivedScopedObservationCount": 17,
+      "archivedObservationSetHash": "c62201bd3d95492c29b8a757aa038076a3ef3f07b949a1a5783bf7dde8a603ca",
+      "currentActualLinkCount": 18,
+      "currentScopedLinkCount": 17,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-transition-C",
+          "packetHash": "0d8c38a70277e4b3f037bb09653d2e46c99af9e00848c3900f913d4238e80120",
+          "calculatedTenGod": "상관",
+          "originLayer": "DAYUN_STEM",
+          "owner": "fixture-person-11",
+          "referenceStem": "戊",
+          "targetStem": "辛",
+          "actualProducer": {
+            "file": "src/lib/saju/customerDayun.ts",
+            "symbol": "calculateCustomerDayun",
+            "version": "dayun-kst-sect2-v1",
+            "system": "dayun"
+          },
+          "effectiveInterval": {
+            "scope": "dayun",
+            "start": "2028-04-23T21:42:00+09:00",
+            "endExclusive": null,
+            "certainty": "conditional",
+            "originalBounds": {
+              "cycle": {
+                "index": 4,
+                "ganji": "辛未",
+                "tenGod": "상관",
+                "elements": [
+                  "금",
+                  "토"
+                ],
+                "startYear": 2028,
+                "endYear": 2037,
+                "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+              },
+              "startSolarRange": {
+                "earliestKst": "2028-04-23T21:42:00+09:00",
+                "latestKst": "2028-04-23T21:42:00+09:00"
+              },
+              "nextTransition": null
+            },
+            "compatibleCombination": true,
+            "transitionRange": {
+              "earliestKst": "2028-04-23T21:42:00+09:00",
+              "latestKst": "2028-04-23T21:42:00+09:00"
+            }
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-transition-C2028",
+          "packetHash": "0d8c38a70277e4b3f037bb09653d2e46c99af9e00848c3900f913d4238e80120",
+          "calculatedTenGod": "상관",
+          "originLayer": "DAYUN_STEM",
+          "owner": "fixture-person-11",
+          "referenceStem": "戊",
+          "targetStem": "辛",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2028-05-05T08:12:12+09:00",
+            "endExclusive": "2028-06-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:입하"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:상관",
+      "field": "saeun",
+      "packetHash": "82352fc8e4f7c40f10a32ac41e11165417b0ca1f827c04830be8452a8e34c28b",
+      "scope": "annual",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 50,
+      "archivedScopedObservationCount": 45,
+      "archivedObservationSetHash": "bdcc23921e5f966da329a35c0379abf736ff31e9ea4b2d9d7f93adb738461d82",
+      "currentActualLinkCount": 5,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "82352fc8e4f7c40f10a32ac41e11165417b0ca1f827c04830be8452a8e34c28b",
+          "calculatedTenGod": "상관",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "癸",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2023,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "82352fc8e4f7c40f10a32ac41e11165417b0ca1f827c04830be8452a8e34c28b",
+          "calculatedTenGod": "상관",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "癸",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2033,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:상관",
+      "field": "wolun",
+      "packetHash": "2feb2d03df2c4fde317e5c66e474cbc5151a4638cc20958cc99f3a42376de856",
+      "scope": "month",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 20,
+      "archivedScopedObservationCount": 20,
+      "archivedObservationSetHash": "b7d92119a25586d7e853ae4035ec92749cbd6a67881bf5d3b5fd61950e84b662",
+      "currentActualLinkCount": 12,
+      "currentScopedLinkCount": 12,
+      "linkSamples": [
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "2feb2d03df2c4fde317e5c66e474cbc5151a4638cc20958cc99f3a42376de856",
+          "calculatedTenGod": "상관",
+          "originLayer": "MONTH_BRANCH_MAIN",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "癸",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-12-07T11:52:32+09:00",
+            "endExclusive": "2027-01-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:대설"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "2feb2d03df2c4fde317e5c66e474cbc5151a4638cc20958cc99f3a42376de856",
+          "calculatedTenGod": "상관",
+          "originLayer": "MONTH_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "癸",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-05-05T20:48:44+09:00",
+            "endExclusive": "2026-06-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:입하"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:편관",
+      "field": "dayun",
+      "packetHash": "731dc0b975428f7e256f2a1265da7998c3758a2087d224112410a035dde3fc36",
+      "scope": "dayun",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 15,
+      "archivedScopedObservationCount": 15,
+      "archivedObservationSetHash": "2ceb0cc7066450c59822fee55821e0e6b3752c7df7594ab8d307df01865455f2",
+      "currentActualLinkCount": 0,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:편관",
+      "field": "saeun",
+      "packetHash": "01c210e2ff5a923c660660dfeefb717378f76845986b62b88576d3d6a35bdddc",
+      "scope": "annual",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 48,
+      "archivedScopedObservationCount": 42,
+      "archivedObservationSetHash": "cea015cf986d750bda27ae155dbf8ef5efb3155b696ef7f2c858afb027c9e135",
+      "currentActualLinkCount": 48,
+      "currentScopedLinkCount": 42,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "01c210e2ff5a923c660660dfeefb717378f76845986b62b88576d3d6a35bdddc",
+          "calculatedTenGod": "편관",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "丙",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2036,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "01c210e2ff5a923c660660dfeefb717378f76845986b62b88576d3d6a35bdddc",
+          "calculatedTenGod": "편관",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "丙",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2026,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:편관",
+      "field": "wolun",
+      "packetHash": "b318003a6f9421583caaeb3316ccf6c950211bac24cfc9cffc4ac695efb953e4",
+      "scope": "month",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 24,
+      "archivedScopedObservationCount": 24,
+      "archivedObservationSetHash": "8491ecf78769ff4aaf9b23fe2b90ab85f398fda3cf2502958f4562db2fba9e46",
+      "currentActualLinkCount": 13,
+      "currentScopedLinkCount": 13,
+      "linkSamples": [
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "b318003a6f9421583caaeb3316ccf6c950211bac24cfc9cffc4ac695efb953e4",
+          "calculatedTenGod": "편관",
+          "originLayer": "MONTH_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "丙",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-09-01T00:00:00+09:00",
+            "endExclusive": "2026-09-07T23:41:16+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "calendar_month_start"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "b318003a6f9421583caaeb3316ccf6c950211bac24cfc9cffc4ac695efb953e4",
+          "calculatedTenGod": "편관",
+          "originLayer": "MONTH_BRANCH_MAIN",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "丙",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-05-05T20:48:44+09:00",
+            "endExclusive": "2026-06-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:입하"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:편인",
+      "field": "dayun",
+      "packetHash": "4a6b2af0dff3727788f61fcb2f45ff91566c1901e19f7789191168cbc3513469",
+      "scope": "dayun",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 50,
+      "archivedScopedObservationCount": 49,
+      "archivedObservationSetHash": "de0065c696c0517aac4080715bdb55aa2718e94e429b1fcc3d088fdfc823f055",
+      "currentActualLinkCount": 50,
+      "currentScopedLinkCount": 49,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "4a6b2af0dff3727788f61fcb2f45ff91566c1901e19f7789191168cbc3513469",
+          "calculatedTenGod": "편인",
+          "originLayer": "DAYUN_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "戊",
+          "actualProducer": {
+            "file": "src/lib/saju/customerDayun.ts",
+            "symbol": "calculateCustomerDayun",
+            "version": "dayun-kst-sect2-v1",
+            "system": "dayun"
+          },
+          "effectiveInterval": {
+            "scope": "dayun",
+            "start": "2023-07-15T08:00:00+09:00",
+            "endExclusive": "2033-07-15T08:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "cycle": {
+                "index": 4,
+                "ganji": "戊寅",
+                "tenGod": "편인",
+                "elements": [
+                  "토",
+                  "목"
+                ],
+                "startYear": 2023,
+                "endYear": 2032,
+                "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+              },
+              "startSolarRange": {
+                "earliestKst": "2023-07-15T08:00:00+09:00",
+                "latestKst": "2023-07-15T08:00:00+09:00"
+              },
+              "nextTransition": {
+                "year": 2033,
+                "dateLabel": "2033-07-15 08:00 한국시간",
+                "startSolarKst": "2033-07-15T08:00:00+09:00",
+                "startSolarRange": {
+                  "earliestKst": "2033-07-15T08:00:00+09:00",
+                  "latestKst": "2033-07-15T08:00:00+09:00"
+                },
+                "before": {
+                  "index": 4,
+                  "ganji": "戊寅",
+                  "tenGod": "편인",
+                  "elements": [
+                    "토",
+                    "목"
+                  ],
+                  "startYear": 2023,
+                  "endYear": 2032,
+                  "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+                },
+                "after": {
+                  "index": 5,
+                  "ganji": "丁丑",
+                  "tenGod": "정관",
+                  "elements": [
+                    "화",
+                    "토"
+                  ],
+                  "startYear": 2033,
+                  "endYear": 2042,
+                  "theme": "신뢰를 자리와 역할로 바꾸는 것"
+                }
+              }
+            },
+            "compatibleCombination": true,
+            "transitionRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            }
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-F",
+          "packetHash": "4a6b2af0dff3727788f61fcb2f45ff91566c1901e19f7789191168cbc3513469",
+          "calculatedTenGod": "편인",
+          "originLayer": "DAYUN_STEM",
+          "owner": "fixture-person-10",
+          "referenceStem": "庚",
+          "targetStem": "戊",
+          "actualProducer": {
+            "file": "src/lib/saju/customerDayun.ts",
+            "symbol": "calculateCustomerDayun",
+            "version": "dayun-kst-sect2-v1",
+            "system": "dayun"
+          },
+          "effectiveInterval": {
+            "scope": "dayun",
+            "start": "2023-06-14T02:00:00+09:00",
+            "endExclusive": "2033-10-15T23:59:59+09:00",
+            "certainty": "conditional",
+            "originalBounds": {
+              "cycle": {
+                "index": 4,
+                "ganji": "戊寅",
+                "tenGod": "편인",
+                "elements": [
+                  "토",
+                  "목"
+                ],
+                "startYear": 2023,
+                "endYear": 2032,
+                "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+              },
+              "startSolarRange": {
+                "earliestKst": "2023-06-14T02:00:00+09:00",
+                "latestKst": "2023-10-15T23:59:59+09:00"
+              },
+              "nextTransition": {
+                "year": 2033,
+                "dateLabel": "2033-06-14 02:00~2033-10-15 23:59 한국시간",
+                "startSolarKst": null,
+                "startSolarRange": {
+                  "earliestKst": "2033-06-14T02:00:00+09:00",
+                  "latestKst": "2033-10-15T23:59:59+09:00"
+                },
+                "before": {
+                  "index": 4,
+                  "ganji": "戊寅",
+                  "tenGod": "편인",
+                  "elements": [
+                    "토",
+                    "목"
+                  ],
+                  "startYear": 2023,
+                  "endYear": 2032,
+                  "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+                },
+                "after": {
+                  "index": 5,
+                  "ganji": "丁丑",
+                  "tenGod": "정관",
+                  "elements": [
+                    "화",
+                    "토"
+                  ],
+                  "startYear": 2033,
+                  "endYear": 2042,
+                  "theme": "신뢰를 자리와 역할로 바꾸는 것"
+                }
+              }
+            },
+            "compatibleCombination": true,
+            "transitionRange": {
+              "earliestKst": "2023-06-14T02:00:00+09:00",
+              "latestKst": "2023-10-15T23:59:59+09:00"
+            }
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:편인",
+      "field": "saeun",
+      "packetHash": "378c72fcdc4810327412fac5b6c3aac639fda90342c4e7e96f47f4d381fd2174",
+      "scope": "annual",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 4,
+      "archivedScopedObservationCount": 0,
+      "archivedObservationSetHash": "4d75ada2c2dd997b125dae7a79f27acda2c1c2ef125896b54515f0d8be9cea91",
+      "currentActualLinkCount": 4,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "378c72fcdc4810327412fac5b6c3aac639fda90342c4e7e96f47f4d381fd2174",
+          "calculatedTenGod": "편인",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "戊",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2028,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-F",
+          "packetHash": "378c72fcdc4810327412fac5b6c3aac639fda90342c4e7e96f47f4d381fd2174",
+          "calculatedTenGod": "편인",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-10",
+          "referenceStem": "庚",
+          "targetStem": "戊",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2028,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:편인",
+      "field": "wolun",
+      "packetHash": "66fed58abb525f118517cfe6aee46998e6a08fbe67cb6e188df6f20711605370",
+      "scope": "month",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 29,
+      "archivedScopedObservationCount": 29,
+      "archivedObservationSetHash": "29b67b5e3ac7d3272bfcc1188658502823be921f87ba7d15d3435739890d08e5",
+      "currentActualLinkCount": 19,
+      "currentScopedLinkCount": 19,
+      "linkSamples": [
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "66fed58abb525f118517cfe6aee46998e6a08fbe67cb6e188df6f20711605370",
+          "calculatedTenGod": "편인",
+          "originLayer": "MONTH_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "戊",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-10-08T15:29:17+09:00",
+            "endExclusive": "2026-11-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:한로"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "66fed58abb525f118517cfe6aee46998e6a08fbe67cb6e188df6f20711605370",
+          "calculatedTenGod": "편인",
+          "originLayer": "MONTH_BRANCH_MAIN",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "戊",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-10-08T15:29:17+09:00",
+            "endExclusive": "2026-11-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:한로"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:정재",
+      "field": "dayun",
+      "packetHash": "125dab5f0a72583f9d43f409da701abc4e461d4844d0921938991e1debfd1d42",
+      "scope": "dayun",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 17,
+      "archivedScopedObservationCount": 8,
+      "archivedObservationSetHash": "77e51f21e70e1c2b30e163068f19c8acc09a14dd45b65a4ed108bfbfb7630826",
+      "currentActualLinkCount": 0,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:정재",
+      "field": "saeun",
+      "packetHash": "a762e2d1ae73c7df969b87b7f77a5562accff157ca666ab60c18866385129c6d",
+      "scope": "annual",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 12,
+      "archivedScopedObservationCount": 6,
+      "archivedObservationSetHash": "690d7974bf4a83f8d0a07ba1bca764e1da5ec6b8617edf00e109bd05e040d154",
+      "currentActualLinkCount": 12,
+      "currentScopedLinkCount": 6,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "a762e2d1ae73c7df969b87b7f77a5562accff157ca666ab60c18866385129c6d",
+          "calculatedTenGod": "정재",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "乙",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2035,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "a762e2d1ae73c7df969b87b7f77a5562accff157ca666ab60c18866385129c6d",
+          "calculatedTenGod": "정재",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "乙",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2025,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:정재",
+      "field": "wolun",
+      "packetHash": "e44ec7184a0637ed58fb66a67d22009454e16af907a429355d473950c7b9362d",
+      "scope": "month",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 26,
+      "archivedScopedObservationCount": 26,
+      "archivedObservationSetHash": "0e4550f30a2cbe736f3e532a5a8475927acf9db7fee5074f715fef0dabb0499c",
+      "currentActualLinkCount": 14,
+      "currentScopedLinkCount": 14,
+      "linkSamples": [
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "e44ec7184a0637ed58fb66a67d22009454e16af907a429355d473950c7b9362d",
+          "calculatedTenGod": "정재",
+          "originLayer": "MONTH_BRANCH_MAIN",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "乙",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-03-05T22:59:00+09:00",
+            "endExclusive": "2026-04-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:경칩"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "e44ec7184a0637ed58fb66a67d22009454e16af907a429355d473950c7b9362d",
+          "calculatedTenGod": "정재",
+          "originLayer": "MONTH_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "乙",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-07-07T10:56:57+09:00",
+            "endExclusive": "2026-08-01T00:00:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "jie:소서"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:비견",
+      "field": "dayun",
+      "packetHash": "001943594cb6c3deab85d08a17cd9d686b40870dcf9bcf77b13e664979a74af9",
+      "scope": "dayun",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 0,
+      "archivedScopedObservationCount": 0,
+      "archivedObservationSetHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "currentActualLinkCount": 0,
+      "currentScopedLinkCount": 0,
+      "linkSamples": [],
+      "actualWitnessState": "NO_MATCHING_ACTUAL_ORIGIN_OBSERVATION_IN_THIS_COHORT"
+    },
+    {
+      "originalResearchId": "tr:god:비견",
+      "field": "saeun",
+      "packetHash": "d082896dc759ea06fe4d4b3f82a27683b814223e40435e39f0d33b8c8c2a650e",
+      "scope": "annual",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 25,
+      "archivedScopedObservationCount": 22,
+      "archivedObservationSetHash": "ba9919e88b1cb761b4ff2c18394381f1c8de6dd40be06b019079982f658a5b54",
+      "currentActualLinkCount": 25,
+      "currentScopedLinkCount": 22,
+      "linkSamples": [
+        {
+          "fixture": "fixture-major-A",
+          "packetHash": "d082896dc759ea06fe4d4b3f82a27683b814223e40435e39f0d33b8c8c2a650e",
+          "calculatedTenGod": "비견",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "庚",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2030,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-major-F",
+          "packetHash": "d082896dc759ea06fe4d4b3f82a27683b814223e40435e39f0d33b8c8c2a650e",
+          "calculatedTenGod": "비견",
+          "originLayer": "ANNUAL_STEM",
+          "owner": "fixture-person-10",
+          "referenceStem": "庚",
+          "targetStem": "庚",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+            "symbol": "buildMajorFortuneDecadeReading",
+            "version": "major-decade-v2",
+            "system": "major"
+          },
+          "effectiveInterval": {
+            "scope": "annual",
+            "start": null,
+            "endExclusive": null,
+            "certainty": "unknown",
+            "originalBounds": {
+              "nominalYear": 2030,
+              "transitionSafe": false
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "WITHHELD",
+          "status": "WITHHELD",
+          "reasons": [
+            "ACTUAL_SCOPED_CALCULATION_REQUIRED",
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    },
+    {
+      "originalResearchId": "tr:god:비견",
+      "field": "wolun",
+      "packetHash": "a48a1a002366302a04e75e08b1ebd0274ae4f338d335014e716bf71ab23bde27",
+      "scope": "month",
+      "archiveIsNotCustomerApproval": true,
+      "archivedActualObservationCount": 26,
+      "archivedScopedObservationCount": 26,
+      "archivedObservationSetHash": "1ab50df8fc4b520b7663ab3b0cf8000228a94fb52554a6710da3e2017561ce30",
+      "currentActualLinkCount": 17,
+      "currentScopedLinkCount": 17,
+      "linkSamples": [
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "a48a1a002366302a04e75e08b1ebd0274ae4f338d335014e716bf71ab23bde27",
+          "calculatedTenGod": "비견",
+          "originLayer": "MONTH_STEM",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "庚",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-03-01T00:00:00+09:00",
+            "endExclusive": "2026-03-05T22:59:00+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "calendar_month_start"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        },
+        {
+          "fixture": "fixture-annual-A",
+          "packetHash": "a48a1a002366302a04e75e08b1ebd0274ae4f338d335014e716bf71ab23bde27",
+          "calculatedTenGod": "비견",
+          "originLayer": "MONTH_BRANCH_MAIN",
+          "owner": "fixture-person-9",
+          "referenceStem": "庚",
+          "targetStem": "庚",
+          "actualProducer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "effectiveInterval": {
+            "scope": "month",
+            "start": "2026-09-01T00:00:00+09:00",
+            "endExclusive": "2026-09-07T23:41:16+09:00",
+            "certainty": "confirmed",
+            "originalBounds": {
+              "boundaryReason": [
+                "calendar_month_start"
+              ]
+            },
+            "compatibleCombination": true
+          },
+          "technicalLinkage": "SCOPED_CALCULATION_LINK_VERIFIED",
+          "status": "WITHHELD",
+          "reasons": [
+            "MEANING_REVIEW_REQUIRED",
+            "PRODUCT_REVIEW_REQUIRED",
+            "CUSTOMER_APPROVAL_PENDING"
+          ],
+          "customerApproved": false,
+          "newIndependentFacts": 0
+        }
+      ],
+      "actualWitnessState": "AVAILABLE_NOT_APPROVAL"
+    }
+  ],
+  "actualLinkCount": 340,
+  "fullExecutedReceipt": "/Users/Deokmin/Documents/gyeol-validation/v4-conditional-temporal-meaning-source-review-01/actual-review-verified/temporal-meaning-applicability.json",
+  "allModernContextAndNatalElementConditionsFulfilled": false,
+  "unknownTime": "기존 unknown/conditional 구간은 보류; 시간·대운 context 미생성",
+  "boundaryPolicy": "기존 입춘·절입·교운의 start-inclusive/end-exclusive 교집합; 범위 확대 없음"
+}

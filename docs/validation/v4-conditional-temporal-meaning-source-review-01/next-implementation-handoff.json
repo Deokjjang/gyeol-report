@@ -1,0 +1,99 @@
+{
+  "status": "PARTIAL",
+  "nextImplementationTask": "검토된 공통 의미와 기간 조건의 독립 전문가 검토 및 부족한 직접 Source·실제 Context 검증",
+  "nextTaskStarted": false,
+  "availableAPIs": [
+    "reviewTemporalMeaning",
+    "applyTemporalMeaningReview",
+    "TemporalTenGodSourceResolver.temporalContract",
+    "verifyTemporalTenGodCalculation"
+  ],
+  "mustRetain": [
+    "원본 연구 hash/version/ID 및 inheritedRole",
+    "기존 12 Hard Gates와 Domain/Source ancestry",
+    "실제 Owner/Direction/기준·대상·기간",
+    "독립적 의미·상품·공식 고객 승인",
+    "unknown/conditional 전환 및 정확한 endpoints 부재 보류"
+  ],
+  "unverifiedMeaningFields": 30,
+  "weakConceptualBridges": [
+    "비견/dayun",
+    "비견/saeun",
+    "비견/wolun",
+    "편인/dayun",
+    "편인/saeun",
+    "편인/wolun"
+  ],
+  "actualDayunOriginWitnessGaps": [
+    "식신/dayun",
+    "정인/dayun",
+    "겁재/dayun",
+    "비견/dayun"
+  ],
+  "noAutomaticIntegration": true,
+  "formationProducer": 0,
+  "officialApprovals": 0,
+  "customerClaims": 0,
+  "readerBridge": 0,
+  "sourceIntegrityFailuresBefore": 30,
+  "sourceIntegrityFailuresAfter": 30,
+  "remainingIndependentTechnicalDebt": [
+    "Major/Annual Specialist historical compatibilityProductAdapter.ts frozen hash expectations; keep unchanged"
+  ],
+  "workspacePolicy": {
+    "ACTIVE_PERSISTENT_WORKSPACE_INTEGRITY": "68 existing states/hash sets identical at precommit; 915 forensic files identical",
+    "registeredBefore": 68,
+    "registeredAfter": 69,
+    "originalDirtyFilesPreserved": 11,
+    "existingLegacyTempPathsInspected": 61,
+    "LEGACY_TEMP_WORKTREE_RISK": "33 distinct historical incident paths; ignored/unrecorded contents UNVERIFIED; root cause UNDETERMINED",
+    "importantNewUncommittedLoss": "NONE_OBSERVED_IN_RECORDED_SCOPE",
+    "gitMetadataChanges": "new branch/worktree/index/ref/reflog; scoped commit/objects and upstream/remote-ref later intentional",
+    "ignoredCoverageLimit": "historical ignored files not wholly inventoried; not asserted loss-free"
+  },
+  "verification": {
+    "newTests": {
+      "pass": 67,
+      "fail": 0
+    },
+    "existingTemporalTests": {
+      "pass": 49,
+      "fail": 0
+    },
+    "otherRelatedTests": {
+      "files": 13,
+      "pass": 887,
+      "fail": 2
+    },
+    "totalSelected": {
+      "pass": 1003,
+      "fail": 2
+    },
+    "wholeSuiteExecuted": false,
+    "baselineFailureMessagesUnchanged": true,
+    "typescriptStrictDiagnostics": 0,
+    "lintErrors": 0,
+    "lintWarnings": 0,
+    "webpackBuild": "PASS",
+    "observedBuildWarnings": 0,
+    "books": 17,
+    "bookDigests": 102,
+    "bookDigestsIdentical": true,
+    "publicationSafeOffline": 32,
+    "publicationWithheld": 7,
+    "readerBridge": 0,
+    "customerApproval": 0,
+    "runtimeRoots": 46,
+    "runtimeModules": 700,
+    "runtimeDigestUnchanged": true,
+    "nftTraces": 90,
+    "newOfflineTraceEntries": 0,
+    "syntheticPaths": 12,
+    "syntheticDigestsUnchanged": true,
+    "originalWorktreesPreserved": 68,
+    "forensicFilesPreserved": 915,
+    "originalDirtyFilesPreserved": 11,
+    "legacyTempPathsInspected": 61,
+    "newImportantUncommittedLoss": "NONE_OBSERVED_IN_RECORDED_SCOPE"
+  }
+}
