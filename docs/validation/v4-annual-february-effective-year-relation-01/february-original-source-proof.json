@@ -1,0 +1,159 @@
+{
+  "month": 2,
+  "id": "afpr:month-slot:02",
+  "proof": {
+    "locator": {
+      "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+      "exportName": "ANNUAL_MONTH_MATRIX",
+      "index": 1,
+      "originalId": "afpr:month-slot:02",
+      "recordSha256": "757b56db6d32f93f0a35671827024b3a9fc53a2cb8440069eed005f55cc8b11b",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+    },
+    "matchedCatalogKey": "kc:v1:0bd5d11a8985319e3d07e4311d392b51b13e8ca3c28b3e5d6f9cc5ae9c6b7056",
+    "originalId": "afpr:month-slot:02",
+    "role": "ORIGINAL_RECORD",
+    "expectedHash": "757b56db6d32f93f0a35671827024b3a9fc53a2cb8440069eed005f55cc8b11b",
+    "actualHash": "757b56db6d32f93f0a35671827024b3a9fc53a2cb8440069eed005f55cc8b11b",
+    "hashAlgorithm": "SHA256_JSON_INSERTION",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+  },
+  "originalRequirements": [
+    "selectedYear + actual civil month bounds",
+    "every canonical segment",
+    "effective annual before/after + annualStemRelations validity"
+  ],
+  "originalRecord": {
+    "id": "afpr:month-slot:02",
+    "productKey": "annual_fortune",
+    "connectedToRuntime": false,
+    "approvedForCustomer": false,
+    "existingScoreContribution": false,
+    "runtimeEvidenceIds": [],
+    "scope": "civil_month",
+    "meaning": "유효 연주와 월주가 함께 바뀌는 실제 경계",
+    "positive": "같은 달 안의 서로 다른 연주 조건을 구별한다.",
+    "risk": "연간 천간합을 입춘 전 구간에 자동 연장",
+    "twist": "같은 약속도 변경된 기간 조건에서 다시 비교할 수 있다.",
+    "action": "입춘 직전·정각·직후의 연주와 관계 source를 분리한다.",
+    "scene": {
+      "text": "가상으로 2월 초 회의의 조건을 입춘 뒤 결정과 별도로 적는다.",
+      "hypothetical": true,
+      "isCustomerHistory": false
+    },
+    "counterexample": "달 전체를 하나의 연주나 하나의 관계로 합치지 않는다.",
+    "requires": [
+      "selectedYear + actual civil month bounds",
+      "every canonical segment",
+      "effective annual before/after + annualStemRelations validity"
+    ],
+    "disallowed": [
+      "입력받지 않은 과거 경험 단정",
+      "성공·실패·수입·질병·혼인 사건 예언",
+      "근거 없는 시주·복합 관계 생성"
+    ],
+    "sourceRefs": [
+      "afpr:source:jie",
+      "afpr:source:month-copy",
+      "afpr:source:editorial"
+    ],
+    "verification": "conditional_editorial_not_calculated_fact",
+    "month": 2,
+    "jieName": "입춘",
+    "primaryMeaning": "유효 연주와 월주가 함께 바뀌는 실제 경계",
+    "secondaryMeaning": "입춘 전후 원국·대운·월운 관계의 참가자 재확인",
+    "duplicateMeaningGroup": "actual_fact_root_and_scope_not_month_name",
+    "previousMonthDifference": "compare actual prior last/current first/new Jie signatures; absent prior source -> withhold",
+    "nextMonthConnection": "only if next canonical segment is present; continuity or comparison without new event",
+    "notFixedToYear": true,
+    "notMonthlyFate": true,
+    "segmentCountFixed": false,
+    "informationFunctionNotCalculatedEvidence": true
+  },
+  "meaningIdentity": null,
+  "claimIdentity": null,
+  "producerCodeProof": [
+    {
+      "file": "src/lib/interpretation-v4/annualEvidence.ts",
+      "actualHash": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+      "expectedHash": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+      "sourceVersion": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/saju/constants.ts",
+      "actualHash": "709f977a2dd80f397f1bfb249d115896f1b97acfd4880b07253f1474badccfaa",
+      "expectedHash": "709f977a2dd80f397f1bfb249d115896f1b97acfd4880b07253f1474badccfaa",
+      "sourceVersion": "709f977a2dd80f397f1bfb249d115896f1b97acfd4880b07253f1474badccfaa",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/annualMonthJie.ts",
+      "actualHash": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+      "expectedHash": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+      "sourceVersion": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+      "actualHash": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe",
+      "expectedHash": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe",
+      "sourceVersion": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/saju/calculateSaju.ts",
+      "actualHash": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd",
+      "expectedHash": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd",
+      "sourceVersion": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/natal.ts",
+      "actualHash": "d67f68564d255b101b5a3c18933baa37fd642d3e838147684ef8aec5a6a9d602",
+      "expectedHash": "d67f68564d255b101b5a3c18933baa37fd642d3e838147684ef8aec5a6a9d602",
+      "sourceVersion": "d67f68564d255b101b5a3c18933baa37fd642d3e838147684ef8aec5a6a9d602",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    },
+    {
+      "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/periods.ts",
+      "actualHash": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+      "expectedHash": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+      "sourceVersion": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+      "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+    }
+  ],
+  "originalCombinationSource": {
+    "file": "src/lib/saju/constants.ts",
+    "symbol": "STEM_COMBINATIONS",
+    "originalTable": [
+      [
+        "甲",
+        "己"
+      ],
+      [
+        "乙",
+        "庚"
+      ],
+      [
+        "丙",
+        "辛"
+      ],
+      [
+        "丁",
+        "壬"
+      ],
+      [
+        "戊",
+        "癸"
+      ]
+    ],
+    "tableHash": "cfca3789a298deff5b97aef5aba38fe9f7cd3e986ecee7206445ddff797b421d",
+    "fileHash": "709f977a2dd80f397f1bfb249d115896f1b97acfd4880b07253f1474badccfaa"
+  },
+  "sourceVersionKind": "Original research commit plus content-addressed original producer code; not invented original Producer version metadata",
+  "meaningApproval": false,
+  "newRelationFact": false
+}

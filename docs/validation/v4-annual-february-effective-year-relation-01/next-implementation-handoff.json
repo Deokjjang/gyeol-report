@@ -1,0 +1,50 @@
+{
+  "status": "FEBRUARY_TECHNICAL_EFFECTIVE_YEAR_DECLARATION_SCOPE_COMPLETE_NOT_CUSTOMER_AUTHORIZATION",
+  "verifiedMonthsBefore": [
+    3,
+    4,
+    5,
+    7,
+    9,
+    10,
+    12
+  ],
+  "verifiedMonthsAfter": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    9,
+    10,
+    12
+  ],
+  "remainingMonths": [
+    1,
+    6,
+    8,
+    11
+  ],
+  "februaryCandidates": 4,
+  "februaryTypedBindings": 8,
+  "annualCandidatesBefore": 31,
+  "annualCandidatesAfter": 35,
+  "majorCandidates": 2,
+  "unmatchedUnits": 396,
+  "newFactRoots": 0,
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "plannerAssignments": 0,
+  "nextImplementationTask": "Separately scoped remaining-month Source contracts after a new user instruction; not started.",
+  "blockers": [
+    "No dedicated segment stem relation Graph Fact address; scope Witness is not a Relation Fact",
+    "Missing monthly contracts 01/06/08/11",
+    "30 original Source Integrity FAIL unchanged",
+    "10 monthly ten-god roles remain ambiguous",
+    "Meaning/Product/Customer approval pending",
+    "Two exact-Base stale protected-hash tests and October 5000ms timeout require independent review",
+    "Historical ignored/unrecorded temporary-worktree loss remains UNVERIFIED"
+  ],
+  "automaticFollowupStarted": false
+}
