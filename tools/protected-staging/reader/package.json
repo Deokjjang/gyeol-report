@@ -1,0 +1,6 @@
+{
+  "name": "gyeol-protected-review-reader",
+  "private": true,
+  "scripts": { "build": "next build --webpack", "dev": "next dev --webpack --hostname 127.0.0.1 --port 4318" },
+  "dependencies": { "next": "16.2.4", "react": "19.2.4", "react-dom": "19.2.4" }
+}

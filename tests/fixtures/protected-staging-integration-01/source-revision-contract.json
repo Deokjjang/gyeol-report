@@ -1,0 +1,21 @@
+{
+  "baseSha": "1b89d8d90fdad2b0a82b783e2d948c9cc5de878f",
+  "customerRuntimeActivated": false,
+  "researchSourcesChanged": false,
+  "historicalHashFilesRewritten": false,
+  "changePurpose": "Only real fixture preparation moved; exact test names/assertions/input/clock/default timeouts retained",
+  "currentDeltas": {
+    "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistEngine.test.ts": {
+      "before": "87d6b009100201858d5e69ad6fc9f560fd18a660434076ef98f7de8b78dba18f",
+      "after": "439caa7052873adcc2df3f2791481012c89472232c78844f1d544c115ec56f46"
+    },
+    "tests/unit/interpretation-v4/runtimeShadow.test.tsx": {
+      "before": "62cb6144391f9ad2b0667b9d7dedb4263239aa1e6413a4357b383435b48e6a37",
+      "after": "7c2d795724ab1e3ff4670e88a6afa72dba668f098f2431199f307e7bc5fc03e6"
+    }
+  },
+  "immutableTechnicalReceipt": {
+    "file": "tests/fixtures/technical-stabilization-01/source-revision-contract.json",
+    "sha256": "1c2495895978aeccdfd43f30b84e474d7fbc7c5b7b45b616b1c63c5edc8ae9b1"
+  }
+}

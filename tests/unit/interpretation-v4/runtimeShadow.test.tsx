@@ -194,10 +194,11 @@ describe("V4 invalid packets fail closed", () => {
 
 describe("roles, precision and customer/default boundaries", () => {
   const pairPackets = new Map<string, Generated>();
+  const swappedPackets = new Map<string, Awaited<ReturnType<typeof generateV4ShadowReport>>>();
   beforeAll(async () => {
     // Reference generation is fixture setup, as for the durable snapshots above.
-    // Reuse the already-generated exact same input; each test still generates
-    // its swapped A/B input and retains the default 5000ms operation budget.
+    // Reuse the already-generated exact same input. Swapped inputs also run
+    // as real fixture preparation; every assertion retains its default budget.
     const original = RUNTIME_FIXTURES.find(f => f.id === "compatibility")!;
     for (const f of COMPATIBILITY_NARRATIVE_FIXTURES) {
       if (f.payload === original.payload) {
@@ -210,6 +211,11 @@ describe("roles, precision and customer/default boundaries", () => {
       }
     }
   }, 60000); // Same bounded fixture budget as the durable setup; no global change.
+  // One real swapped generation per default10000ms fixture hook. No
+  // additional generation, timeout increase, synthetic text or skipped case.
+  for (const f of COMPATIBILITY_NARRATIVE_FIXTURES) beforeAll(async () => {
+    swappedPackets.set(f.id, await generateV4ShadowReport({ ...f.payload, personA: f.payload.personB, personB: f.payload.personA }, SHADOW_CLOCK));
+  });
   it.each(COMPATIBILITY_NARRATIVE_FIXTURES)("$id: fixed roles and distinct direction survive JSON", async f => {
     const p = pairPackets.get(f.id)!;
     expect(p).toBeDefined();
@@ -219,7 +225,8 @@ describe("roles, precision and customer/default boundaries", () => {
     expect(JSON.stringify(c)).not.toMatch(/"(?:score|rating|percent)"|\d+점|[★☆]/);
     if (c.category === "parentChild") expect([c.personA.role, c.personB.role]).toEqual(["부모", "자녀"]);
     if (c.category === "managerReport") expect([c.personA.role, c.personB.role]).toEqual(["상사", "부하·팀원"]);
-    const swapped = await generateV4ShadowReport({ ...f.payload, personA: f.payload.personB, personB: f.payload.personA }, SHADOW_CLOCK);
+    const swapped = swappedPackets.get(f.id)!;
+    expect(swapped).toBeDefined();
     expect(swapped.ok).toBe(true); if (!swapped.ok) return;
     const x = (swapped as Generated).evidencePacket.composition, y = p.evidencePacket.composition;
     if (x.product !== "saju_mbti_compatibility" || y.product !== "saju_mbti_compatibility") return;

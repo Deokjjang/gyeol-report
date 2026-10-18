@@ -1,0 +1,7 @@
+{
+  "version": "protected-review-deployment-1",
+  "approvedProjectId": null,
+  "protectionVerified": false,
+  "allowedEnvironment": "preview",
+  "customerRuntimeAuthorized": false
+}
