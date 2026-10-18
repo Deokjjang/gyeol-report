@@ -1,0 +1,686 @@
+{
+  "baseSha": "5895a4bf68e06fb3bcd456ed4d53deab6bbe36f0",
+  "nativeEngines": {
+    "MajorFortuneSpecialistEngine": 3,
+    "AnnualFortuneSpecialistEngine": 4
+  },
+  "nativeReceiptsReboundAndCompared": 703,
+  "originalDiagnosticAndReceiptExact": true,
+  "originalResearchProofs": 2,
+  "allTwelveGatesPreservedPerOriginalSpecialistReceipt": true,
+  "sourceCohortFoundationBefore": 30,
+  "sourceCohortFoundationAfter": 30,
+  "sourceCohortSpecialist": 30,
+  "sourceCohortStates": "30 FAIL remain in each respective cohort",
+  "sourceCohortHashesComparedToBase": true,
+  "originalRootsDistinct": 246,
+  "newFactRoots": 0,
+  "originalRootReferenceOccurrences": 855,
+  "receiptSelectedRootsAreNotExpandedWithUnitReferenceRoots": true,
+  "originalFoundationLinksReproduced": [
+    {
+      "fixture": "fixture-major-A",
+      "unitId": "actual-semantic-unit:v1:3aa33ac80554bb7f24bc9cc0d817a477ceb83a1306b9190f35e0f1b634aa7955",
+      "originalNodeId": "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01",
+      "originalFoundationReceiptIds": [
+        "kb:receipt:23112a724c7b5f34235c7a5878cc137d75b5a63424773afd672779eabad08c83"
+      ],
+      "originalSpecialistReceiptId": "kb:receipt:c170afd66324ba641fee6ab945b63f9a165b5fd2181c3fcfbaec45db0ecc84de",
+      "originalSpecialistReceiptHash": "1beec57999b25f316ac31bfd2a89180b6fbcfae9c6b1aa62809f4fd5fd36e797",
+      "originalResearchId": "mfpr:god:편인",
+      "originalCatalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+      "originalResearchRecordHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalResearchProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/major-fortune-product-research/tenGodResearch.ts",
+          "exportName": "MAJOR_TEN_GOD_RESEARCH",
+          "index": 8,
+          "originalId": "mfpr:god:편인",
+          "recordSha256": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "5f62dea761af7d28847862e7d045c449f8f6df0fb864b0923f273aa2a71bcba8"
+        },
+        "matchedCatalogKey": "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+        "originalId": "mfpr:god:편인",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+        "actualHash": "495a36a7d798d5d76b6782d54ae4ae44a853f0948d391a656f4f200e55ec15ea",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalReceiptFactRoots": [
+        "aeg:root:b2ae1af55e13caebb5e7bc7d1fb1560bc55001710285e32f96a626eb991ebcf7"
+      ],
+      "verifiedUnitFactRoots": [
+        "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087",
+        "aeg:root:b2ae1af55e13caebb5e7bc7d1fb1560bc55001710285e32f96a626eb991ebcf7"
+      ],
+      "additionalReferenceRootsNotNativeSelections": [
+        "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087"
+      ],
+      "originalClaimIdentity": null,
+      "originalMeaningIdentity": null,
+      "origin": "DAYUN_STEM",
+      "referenceStem": "庚",
+      "targetStem": "戊",
+      "calculatedTenGod": "편인",
+      "temporalScope": "dayun",
+      "effectiveInterval": {
+        "scope": "dayun",
+        "start": "2023-07-15T08:00:00+09:00",
+        "endExclusive": "2033-07-15T08:00:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "cycle": {
+            "index": 4,
+            "ganji": "戊寅",
+            "tenGod": "편인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2023,
+            "endYear": 2032,
+            "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+          },
+          "startSolarRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          },
+          "nextTransition": {
+            "year": 2033,
+            "dateLabel": "2033-07-15 08:00 한국시간",
+            "startSolarKst": "2033-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            },
+            "before": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "after": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            }
+          }
+        },
+        "compatibleCombination": true,
+        "transitionRange": {
+          "earliestKst": "2023-07-15T08:00:00+09:00",
+          "latestKst": "2023-07-15T08:00:00+09:00"
+        }
+      },
+      "actualReviewStates": [
+        "SPECIALIST_CANDIDATE_LINKED",
+        "SOURCE_HELD",
+        "MEANING_REVIEW_REQUIRED",
+        "CONTEXT_REQUIRED",
+        "PRODUCT_REVIEW_REQUIRED",
+        "APPROVAL_PENDING"
+      ],
+      "allTwelveGateResults": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "requirementFields": [
+            "originalRecordHash",
+            "sourceVerificationVersion"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [
+            "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "requirementFields": [
+            "originalReviewState"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e",
+            "sdv:decision:6725ad50c27088cfe5613989cadb9a4f2769660760322f6e7a12a7b6a087d8a9"
+          ],
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "requirementFields": [
+            "producerRequirements"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [],
+          "nextAction": null
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "requirementFields": [
+            "sourceRequirements",
+            "sourceGroups"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [],
+          "nextAction": null
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "requirementFields": [
+            "requiredOwner"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [],
+          "nextAction": null
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "requirementFields": [
+            "requiredDirection"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [],
+          "nextAction": null
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "requirementFields": [
+            "allActualAndResearchRequiredAncestors"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [
+            "INCOMPLETE_REQUIRED_ANCESTRY"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "requirementFields": [
+            "requiredTemporalScope",
+            "requiredWindow"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [],
+          "nextAction": null
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "requirementFields": [
+            "/natalRequired",
+            "/elementRequired"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "requirementFields": [
+            "counterexamples",
+            "prohibitions",
+            "introducedLedger"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "requirementFields": [
+            "product",
+            "relationship",
+            "readerQuestion",
+            "coreMeaning"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "requirementFields": [
+            "operatorApproval",
+            "customerApproval",
+            "originalRecordHash",
+            "approvalScope"
+          ],
+          "actualEvidence": [
+            "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+          ],
+          "originalReferences": [
+            "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+          ],
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        }
+      ]
+    },
+    {
+      "fixture": "fixture-major-C",
+      "unitId": "actual-semantic-unit:v1:9076f7dc54bcd264b977cbc80e3f11c2febddcd4212ece013cd4d8ac3df3fb29",
+      "originalNodeId": "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815",
+      "originalFoundationReceiptIds": [
+        "kb:receipt:5c29274664580f3ddc80545102c33960d3193e91c68dadaf60789390d110d49c"
+      ],
+      "originalSpecialistReceiptId": "kb:receipt:ead05b967dcc798879d636cf917a196c8c71c007de50d9e1ffae625c133aee50",
+      "originalSpecialistReceiptHash": "f89d9e86b90487fe1c61eae4cb06853e4fdf726b0d722e192d584cd9f0ab4f41",
+      "originalResearchId": "mfpr:god:편재",
+      "originalCatalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+      "originalResearchRecordHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+      "originalSourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "originalResearchProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/major-fortune-product-research/tenGodResearch.ts",
+          "exportName": "MAJOR_TEN_GOD_RESEARCH",
+          "index": 4,
+          "originalId": "mfpr:god:편재",
+          "recordSha256": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "5f62dea761af7d28847862e7d045c449f8f6df0fb864b0923f273aa2a71bcba8"
+        },
+        "matchedCatalogKey": "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+        "originalId": "mfpr:god:편재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+        "actualHash": "ace8a820b7e7e538103ed3b871c5012f3f734e6a6b7d1f9e90b04601b4311127",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "originalReceiptFactRoots": [
+        "aeg:root:8798f961438227c0d62f05ccda7cb9f5520ba84fc3ff087878af135bd8ad9c5f"
+      ],
+      "verifiedUnitFactRoots": [
+        "aeg:root:8798f961438227c0d62f05ccda7cb9f5520ba84fc3ff087878af135bd8ad9c5f",
+        "aeg:root:8a5530427b2a3c5ee46ff93104c037cff6b31b32fa334127aae71d6212f1ca38"
+      ],
+      "additionalReferenceRootsNotNativeSelections": [
+        "aeg:root:8a5530427b2a3c5ee46ff93104c037cff6b31b32fa334127aae71d6212f1ca38"
+      ],
+      "originalClaimIdentity": null,
+      "originalMeaningIdentity": null,
+      "origin": "DAYUN_STEM",
+      "referenceStem": "戊",
+      "targetStem": "壬",
+      "calculatedTenGod": "편재",
+      "temporalScope": "dayun",
+      "effectiveInterval": {
+        "scope": "dayun",
+        "start": "2018-04-23T21:42:00+09:00",
+        "endExclusive": "2028-04-23T21:42:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "cycle": {
+            "index": 3,
+            "ganji": "壬申",
+            "tenGod": "편재",
+            "elements": [
+              "수",
+              "금"
+            ],
+            "startYear": 2018,
+            "endYear": 2027,
+            "theme": "밖의 기회와 자원을 연결하는 것"
+          },
+          "startSolarRange": {
+            "earliestKst": "2018-04-23T21:42:00+09:00",
+            "latestKst": "2018-04-23T21:42:00+09:00"
+          },
+          "nextTransition": {
+            "year": 2028,
+            "dateLabel": "2028-04-23 21:42 한국시간",
+            "startSolarKst": "2028-04-23T21:42:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2028-04-23T21:42:00+09:00",
+              "latestKst": "2028-04-23T21:42:00+09:00"
+            },
+            "before": {
+              "index": 3,
+              "ganji": "壬申",
+              "tenGod": "편재",
+              "elements": [
+                "수",
+                "금"
+              ],
+              "startYear": 2018,
+              "endYear": 2027,
+              "theme": "밖의 기회와 자원을 연결하는 것"
+            },
+            "after": {
+              "index": 4,
+              "ganji": "辛未",
+              "tenGod": "상관",
+              "elements": [
+                "금",
+                "토"
+              ],
+              "startYear": 2028,
+              "endYear": 2037,
+              "theme": "익숙한 답을 바꾸고 내 목소리를 내는 것"
+            }
+          }
+        },
+        "compatibleCombination": true,
+        "transitionRange": {
+          "earliestKst": "2018-04-23T21:42:00+09:00",
+          "latestKst": "2018-04-23T21:42:00+09:00"
+        }
+      },
+      "actualReviewStates": [
+        "SPECIALIST_CANDIDATE_LINKED",
+        "SOURCE_HELD",
+        "MEANING_REVIEW_REQUIRED",
+        "CONTEXT_REQUIRED",
+        "PRODUCT_REVIEW_REQUIRED",
+        "APPROVAL_PENDING"
+      ],
+      "allTwelveGateResults": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "FAIL",
+          "requirementFields": [
+            "originalRecordHash",
+            "sourceVerificationVersion"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [
+            "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "requirementFields": [
+            "originalReviewState"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f",
+            "sdv:decision:cd0ecbc50c7610c8cf65ff322c610e5a0d410a99a34dafe8246d4b5f6ebfc22c"
+          ],
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "requirementFields": [
+            "producerRequirements"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [],
+          "nextAction": null
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "requirementFields": [
+            "sourceRequirements",
+            "sourceGroups"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [],
+          "nextAction": null
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "requirementFields": [
+            "requiredOwner"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [],
+          "nextAction": null
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "requirementFields": [
+            "requiredDirection"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [],
+          "nextAction": null
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "FAIL",
+          "requirementFields": [
+            "allActualAndResearchRequiredAncestors"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [
+            "INCOMPLETE_REQUIRED_ANCESTRY"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "requirementFields": [
+            "requiredTemporalScope",
+            "requiredWindow"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [],
+          "nextAction": null
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "requirementFields": [
+            "/natalRequired",
+            "/elementRequired"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "requirementFields": [
+            "counterexamples",
+            "prohibitions",
+            "introducedLedger"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "requirementFields": [
+            "product",
+            "relationship",
+            "readerQuestion",
+            "coreMeaning"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "requirementFields": [
+            "operatorApproval",
+            "customerApproval",
+            "originalRecordHash",
+            "approvalScope"
+          ],
+          "actualEvidence": [
+            "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+          ],
+          "originalReferences": [
+            "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+          ],
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ],
+          "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+        }
+      ]
+    }
+  ],
+  "unmatchedEvidence": 420,
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0
+}
