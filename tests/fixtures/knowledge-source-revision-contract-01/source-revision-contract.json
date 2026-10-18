@@ -1,0 +1,17 @@
+{
+  "baseSha": "fdc93c0a60b20bbdd848a7ba1535afad588506b3",
+  "customerRuntimeActivated": false,
+  "researchSourcesChanged": false,
+  "historicalHashFilesRewritten": false,
+  "changePurpose": "Only two frozen-file assertions connected to the existing exact version chain; original historical receipts retained",
+  "currentDeltas": {
+    "tests/unit/report-knowledge/knowledgeSourceVerification.test.ts": {
+      "before": "88011c334b7b7cd3d0f89d41dbe448b34e998180b8853c045b155ec1e91a801e",
+      "after": "f52d02c96b7d6659c0c19da84f266bc8a6fb2d820316dc469704b5f28e6d2517"
+    },
+    "tests/unit/report-knowledge/knowledgeSemanticDomainVerification.test.ts": {
+      "before": "f406b07b78c0dac9c13f9dbb61b970ebfdc6981d3b372648e24f32d8b5e0b63d",
+      "after": "88bb001e21e86a07c1a139ee1f3e80d3bb6fc2b6351a6185efd74a876322a304"
+    }
+  }
+}

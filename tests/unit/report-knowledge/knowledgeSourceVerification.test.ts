@@ -1,3 +1,4 @@
+import { expectVersionedFile } from "../../helpers/versionedProtection";
 import { mkdtempSync, readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
@@ -147,7 +148,7 @@ it("20 keeps future/calculated Evidence requirements separate from real source r
   expect(artifacts.manifest.technicallyRecovered).toBe(artifacts.receipts.filter(technicallyVerified).length);
 });
 it("21 preserves every frozen base source/file hash including all research and original catalogs", () => {
-  for (const [file, digest] of frozen) expect(hash(readFileSync(file)), file).toBe(digest);
+  for (const [file, digest] of frozen) expectVersionedFile(file, digest);
 });
 it("22 keeps all existing catalog keys unique and preserves original locator/ID identities", () => {
   expect(records).toHaveLength(18610 + 4799); expect(new Set(records.map(r => r.catalogKey)).size).toBe(records.length);
