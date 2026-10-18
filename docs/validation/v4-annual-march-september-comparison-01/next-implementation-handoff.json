@@ -1,0 +1,60 @@
+{
+  "status": "MARCH_SEPTEMBER_TECHNICAL_COMPARISON_COMPLETE_NOT_CUSTOMER_AUTHORIZATION",
+  "verifiedMonthsBefore": [
+    5,
+    7,
+    10,
+    12
+  ],
+  "verifiedMonthsAfter": [
+    3,
+    5,
+    7,
+    9,
+    10,
+    12
+  ],
+  "remainingMonths": [
+    1,
+    2,
+    4,
+    6,
+    8,
+    11
+  ],
+  "march": {
+    "candidates": 2,
+    "withheldFixtures": [
+      "fixture-annual-F",
+      "fixture-annual-ranged-transition"
+    ]
+  },
+  "september": {
+    "candidates": 3,
+    "withheldFixtures": [
+      "fixture-annual-F"
+    ]
+  },
+  "annualCandidatesBefore": 24,
+  "annualCandidatesAfter": 29,
+  "majorCandidates": 2,
+  "unmatchedUnits": 396,
+  "nextImplementationTask": "Separately scoped remaining-month native Source contracts and withheld-condition review, only after a new user instruction. Not started.",
+  "blockers": [
+    "6 monthly contracts remain incomplete",
+    "Actual unknown-hour element relation dependencies remain withheld",
+    "30 pre-existing Source Integrity FAIL unchanged",
+    "10 monthly ten-god research items remain ROLE_AMBIGUOUS",
+    "Meaning, Product and Customer approvals pending",
+    "Two exact-Base stale preservation-hash tests remain failing",
+    "Historical ignored/unrecorded temporary-worktree loss remains UNVERIFIED"
+  ],
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "newFactRoots": 0,
+  "newUnits": 0,
+  "independentFactsAdded": 0,
+  "plannerRuntimeWriterBookChanges": 0,
+  "automaticFollowupStarted": false
+}
