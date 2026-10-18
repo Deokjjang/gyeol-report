@@ -1,0 +1,304 @@
+{
+  "definitionsResolved": 10,
+  "conditionalApplicationsUnresolved": 10,
+  "sourceSummaryReferencesConvertedIntoIds": 0,
+  "calculationObservations": {
+    "graphFixtures": 27,
+    "sourceRecords": 10,
+    "definitionSourcesResolved": 10,
+    "conditionalSourcesUnresolved": 10,
+    "majorBeforeFail": 30,
+    "majorAfterFail": 30,
+    "calculationObservations": 767,
+    "verifiedCalculations": 749,
+    "temporalScopesValid": 685,
+    "customerApprovals": 0,
+    "customerClaims": 0,
+    "customerReaderBridges": 0
+  },
+  "originSupport": {
+    "ANNUAL_STEM": {
+      "observations": 166,
+      "actualCalculationVerified": 166,
+      "temporalScopeValid": 124,
+      "unverifiedReasons": {}
+    },
+    "DAYUN_STEM": {
+      "observations": 129,
+      "actualCalculationVerified": 129,
+      "temporalScopeValid": 107,
+      "unverifiedReasons": {}
+    },
+    "FLOW_GOD": {
+      "observations": 123,
+      "actualCalculationVerified": 105,
+      "temporalScopeValid": 105,
+      "unverifiedReasons": {
+        "ACTUAL_FLOW_ANNUAL_TARGET_ROOT_REQUIRED": 18,
+        "CUSTOMER_APPROVAL_PENDING": 18,
+        "MEANING_REVIEW_REQUIRED": 18
+      }
+    },
+    "MONTH_BRANCH_MAIN": {
+      "observations": 124,
+      "actualCalculationVerified": 124,
+      "temporalScopeValid": 124,
+      "unverifiedReasons": {}
+    },
+    "MONTH_STEM": {
+      "observations": 124,
+      "actualCalculationVerified": 124,
+      "temporalScopeValid": 124,
+      "unverifiedReasons": {}
+    },
+    "NATAL_STEM": {
+      "observations": 101,
+      "actualCalculationVerified": 101,
+      "temporalScopeValid": 101,
+      "unverifiedReasons": {}
+    }
+  },
+  "boundaryExamples": [
+    {
+      "fixture": "fixture-annual-A",
+      "origin": "ANNUAL_STEM",
+      "owner": "fixture-person-9",
+      "referenceStem": "庚",
+      "targetStem": "丙",
+      "calculatedTenGod": "편관",
+      "nominalAnnualPillar": "丙午",
+      "effectiveAnnualPillar": "丙午",
+      "effectiveInterval": {
+        "scope": "month",
+        "start": "2026-02-04T05:02:08+09:00",
+        "endExclusive": "2026-03-01T00:00:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "jie:입춘"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "calculationObservationInterval": {
+        "start": "2026-02-04T05:02:08+09:00",
+        "endExclusive": "2027-01-01T00:00:00+09:00"
+      },
+      "supportingFactNodes": [
+        "aeg:node:b912b6d85426ae2b567ac9b4ffe8f5ab4fd6b74c0396082fc21a19c6bea0cd40",
+        "aeg:node:fc951440eb6cd6180888cf1297d4f35914af57fa9132d51625a8dce7655cf985"
+      ],
+      "canonicalFactRoots": [
+        "aeg:root:ad0d554c57e3e436053232bde5c0b1b08d283cc00073ae3d5df0e635c6e896a6",
+        "aeg:root:ed8bdc3c96621d4e92b17734909ee3fcc14405c1147f85c21aea6ba403d34822"
+      ],
+      "producer": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "version": "annual-month-jie-kst-v2",
+        "system": "annual-month"
+      },
+      "calculationSource": {
+        "file": "src/lib/interpretation-v4/annualEvidence.ts",
+        "symbol": "annualNarrativeEvidence",
+        "fileSha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-annual-A",
+      "origin": "ANNUAL_STEM",
+      "owner": "fixture-person-9",
+      "referenceStem": "庚",
+      "targetStem": "乙",
+      "calculatedTenGod": "정재",
+      "nominalAnnualPillar": "丙午",
+      "effectiveAnnualPillar": "乙巳",
+      "effectiveInterval": {
+        "scope": "month",
+        "start": "2026-02-01T00:00:00+09:00",
+        "endExclusive": "2026-02-04T05:02:08+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "calendar_month_start"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "calculationObservationInterval": {
+        "start": "2026-01-01T00:00:00+09:00",
+        "endExclusive": "2026-02-04T05:02:08+09:00"
+      },
+      "supportingFactNodes": [
+        "aeg:node:c3120cbcce8b0a31e7c58b07e409118dc73697849bdd7dbd160f8bb3ea7362e8",
+        "aeg:node:fc951440eb6cd6180888cf1297d4f35914af57fa9132d51625a8dce7655cf985"
+      ],
+      "canonicalFactRoots": [
+        "aeg:root:1dfd151f77124b51a25ae65536f16bd753a55e47b2f650dc8f7b3912ae4d2f2f",
+        "aeg:root:ed8bdc3c96621d4e92b17734909ee3fcc14405c1147f85c21aea6ba403d34822"
+      ],
+      "producer": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "version": "annual-month-jie-kst-v2",
+        "system": "annual-month"
+      },
+      "calculationSource": {
+        "file": "src/lib/interpretation-v4/annualEvidence.ts",
+        "symbol": "annualNarrativeEvidence",
+        "fileSha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-annual-transition-C2028",
+      "origin": "FLOW_GOD",
+      "owner": "fixture-person-11",
+      "referenceStem": "壬",
+      "targetStem": "戊",
+      "calculatedTenGod": "편관",
+      "nominalAnnualPillar": "戊申",
+      "effectiveAnnualPillar": "戊申",
+      "effectiveInterval": {
+        "scope": "month",
+        "start": "2028-04-01T00:00:00+09:00",
+        "endExclusive": "2028-04-04T15:03:06+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "calendar_month_start"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "calculationObservationInterval": {
+        "start": "2028-02-04T16:31:13+09:00",
+        "endExclusive": "2028-04-23T21:42:00+09:00"
+      },
+      "supportingFactNodes": [
+        "aeg:node:a0e8f904e357aaa7bd9d6e8756370a3cb805239cbf49bf9025b0818f91208f6e",
+        "aeg:node:f062d4a0d0169325a50222209669131c549bb452ec8eaadcc0be65c7dbae5867"
+      ],
+      "canonicalFactRoots": [
+        "aeg:root:7ece390da2eb9e1bae2a14c6da6a1883ed14521f2c6fc2826bebc0599476db39",
+        "aeg:root:f0b4c6d42051fab607f898b85b6c578ca5f49c60c6f48a9b4cd4ebcb67911418"
+      ],
+      "producer": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "version": "annual-month-jie-kst-v2",
+        "system": "annual-month"
+      },
+      "calculationSource": {
+        "file": "src/lib/interpretation-v4/annualEvidence.ts",
+        "symbol": "annualNarrativeEvidence",
+        "fileSha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-annual-transition-C2028",
+      "origin": "FLOW_GOD",
+      "owner": "fixture-person-11",
+      "referenceStem": "辛",
+      "targetStem": "戊",
+      "calculatedTenGod": "정인",
+      "nominalAnnualPillar": "戊申",
+      "effectiveAnnualPillar": "戊申",
+      "effectiveInterval": {
+        "scope": "month",
+        "start": "2028-04-23T21:42:00+09:00",
+        "endExclusive": "2028-05-01T00:00:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "dayun_transition"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "calculationObservationInterval": {
+        "start": "2028-04-23T21:42:00+09:00",
+        "endExclusive": "2029-01-01T00:00:00+09:00"
+      },
+      "supportingFactNodes": [
+        "aeg:node:63876bfe0a318061141c9de63cac79aabafbac30aa03c940db0963fed4d3b10b",
+        "aeg:node:a39a8fc0de7e23efb9e9629dad18ce16ca3724512772495fcdfd35a8ea67ba61"
+      ],
+      "canonicalFactRoots": [
+        "aeg:root:4aa717026cd1cbb60a75f5f1f458cbb1920e40b627ffea6ae9c3de907ce0ab84",
+        "aeg:root:d1c4e5d7552dc1167745937d74290bdcdb250d848748d4b46b9eb37af452e609"
+      ],
+      "producer": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "version": "annual-month-jie-kst-v2",
+        "system": "annual-month"
+      },
+      "calculationSource": {
+        "file": "src/lib/interpretation-v4/annualEvidence.ts",
+        "symbol": "annualNarrativeEvidence",
+        "fileSha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-annual-transition-C2028",
+      "origin": "FLOW_GOD",
+      "owner": "fixture-person-11",
+      "referenceStem": "壬",
+      "targetStem": "戊",
+      "calculatedTenGod": "편관",
+      "nominalAnnualPillar": "戊申",
+      "effectiveAnnualPillar": "戊申",
+      "effectiveInterval": {
+        "scope": "month",
+        "start": "2028-04-04T15:03:06+09:00",
+        "endExclusive": "2028-04-23T21:42:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "jie:청명"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "calculationObservationInterval": {
+        "start": "2028-02-04T16:31:13+09:00",
+        "endExclusive": "2028-04-23T21:42:00+09:00"
+      },
+      "supportingFactNodes": [
+        "aeg:node:04ac35a6e1840c29432ff9c096c2c5e8f0cddee4350f33ecca4098e09b1d4960",
+        "aeg:node:c9631b50ddd5b27d1a5b26cc0f875b7ddc0ef7f25a544a540b3d06304c6c5bbe"
+      ],
+      "canonicalFactRoots": [
+        "aeg:root:0db3339776f86827fb7032ccbdfa2a2bae00c78d955b0bd174c6b17f0c62548a",
+        "aeg:root:f0b4c6d42051fab607f898b85b6c578ca5f49c60c6f48a9b4cd4ebcb67911418"
+      ],
+      "producer": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "version": "annual-month-jie-kst-v2",
+        "system": "annual-month"
+      },
+      "calculationSource": {
+        "file": "src/lib/interpretation-v4/annualEvidence.ts",
+        "symbol": "annualNarrativeEvidence",
+        "fileSha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "customerApproved": false
+    }
+  ],
+  "limitations": [
+    "NATAL_STEM validates existing visible stem observations; hidden natal roles are not generalized by this contract.",
+    "Major annual observations lack exact endpoints; nominalAnnualPillar is separate and effectiveAnnualPillar remains null.",
+    "18 ranged-transition FLOW_GOD observations remain withheld because no certainty-compatible unique cycle/annual target-root contract is established.",
+    "Repository definition verification does not independently re-review external traditional sources or validate conditional temporal meanings."
+  ]
+}

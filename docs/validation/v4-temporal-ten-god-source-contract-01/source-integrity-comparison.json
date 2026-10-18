@@ -1,0 +1,1889 @@
+{
+  "originalCohort": "10 mfpr:god records x 3 existing major fixtures",
+  "beforeFail": 30,
+  "afterFail": 30,
+  "sourceFailuresResolved": 0,
+  "sourceFailuresRemaining": 30,
+  "exactOriginalFailureGateAndIdMultiplicityMatched": true,
+  "nativeAllTwelveGatesUnchanged": true,
+  "definitionProofsAreSeparateFromConditionalSourceEligibility": true,
+  "rows": [
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:상관",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:0eef28cb9021688b08710dbbc0656761ce2eafadbfebcf880cfab18c84ef6f59"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:0eef28cb9021688b08710dbbc0656761ce2eafadbfebcf880cfab18c84ef6f59"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 3,
+          "originalId": "tr:god:상관",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:5381bb0b7907cc82490ad8c9c556c0ad77ab2542278af1197f8524e6ff08c373",
+        "originalId": "tr:god:상관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+        "actualHash": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:정재",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:224c876e0f0941788981137e3c1991ab681cc28c56bc5176c784e248eaaebdcb"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:224c876e0f0941788981137e3c1991ab681cc28c56bc5176c784e248eaaebdcb"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 5,
+          "originalId": "tr:god:정재",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:b8a0a78cd15f49376ea231a1a05acddfb2bc0d03eee4cbd7514e53727a8f11fe",
+        "originalId": "tr:god:정재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+        "actualHash": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:식신",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:2813820e4d44d0197e4b8c68bcab92741556813645989d3afb0b9f08256bcb0e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:2813820e4d44d0197e4b8c68bcab92741556813645989d3afb0b9f08256bcb0e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 2,
+          "originalId": "tr:god:식신",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:339567f16c8a4bb8c54ee4a79e9b1d6b17c86f3ced86c798c1bcf52da40f0932",
+        "originalId": "tr:god:식신",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+        "actualHash": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:정관",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:55acb9b6408668d6477ac17e827d0ae22c191f4edb0c6215a0a536c06c9fe606"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:55acb9b6408668d6477ac17e827d0ae22c191f4edb0c6215a0a536c06c9fe606"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 7,
+          "originalId": "tr:god:정관",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:53185eff214991f20fde00532547cbb360fced2d837118cdb831fe986e3bb20c",
+        "originalId": "tr:god:정관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+        "actualHash": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:겁재",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:5eab7ae68576112ef396ea93dc38ad2e3a17ec61892efa7eb1e332c4f3a88e01"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:5eab7ae68576112ef396ea93dc38ad2e3a17ec61892efa7eb1e332c4f3a88e01"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 1,
+          "originalId": "tr:god:겁재",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:4e9ccf3540667401adaa5a909524387a7b05569b6e323a5a466a7a7b78cc3853",
+        "originalId": "tr:god:겁재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+        "actualHash": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:편관",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 6,
+          "originalId": "tr:god:편관",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:5ad19f8ef1ad91f07f9cb295b626287ad31aba8fba59b4dfe66552c3b2015531",
+        "originalId": "tr:god:편관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+        "actualHash": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:비견",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8a266c97103d91c03db4d56dcaac5e2d0a63c3886ab8740c2389ecf7c321c0e3"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8a266c97103d91c03db4d56dcaac5e2d0a63c3886ab8740c2389ecf7c321c0e3"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 0,
+          "originalId": "tr:god:비견",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:f48b6ddad8c2c43b22469cc755457c048f18df3331d6d904cc41e67d5ee4b8e8",
+        "originalId": "tr:god:비견",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+        "actualHash": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:편재",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 4,
+          "originalId": "tr:god:편재",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:310cca31e1ab44ec8b7d4733ac5af11ef6065ff597b91c0f0afc21914388afd1",
+        "originalId": "tr:god:편재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+        "actualHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:편인",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:27b6ee4bb042a262d0f5e085089bc046f2d88429cb1d1e7b6f010685684fbd1c"
+        ],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:27b6ee4bb042a262d0f5e085089bc046f2d88429cb1d1e7b6f010685684fbd1c"
+        ],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 8,
+          "originalId": "tr:god:편인",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:73c33fe751a4abd085090038cb55a728d140418a6617a88091bbbca17390ecf4",
+        "originalId": "tr:god:편인",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+        "actualHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:정인",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:e0cede37d555c4f5ab21f531641fbcdf7507b30303c205a2be073f6a6e80b5b5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:e0cede37d555c4f5ab21f531641fbcdf7507b30303c205a2be073f6a6e80b5b5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 9,
+          "originalId": "tr:god:정인",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:33c2a18abbef12ad6ca028a6457af23184d999e40f8e1c628af771aaaa09e382",
+        "originalId": "tr:god:정인",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+        "actualHash": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:상관",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:0eef28cb9021688b08710dbbc0656761ce2eafadbfebcf880cfab18c84ef6f59"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:0eef28cb9021688b08710dbbc0656761ce2eafadbfebcf880cfab18c84ef6f59"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 3,
+          "originalId": "tr:god:상관",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:5381bb0b7907cc82490ad8c9c556c0ad77ab2542278af1197f8524e6ff08c373",
+        "originalId": "tr:god:상관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+        "actualHash": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": false,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:정재",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:224c876e0f0941788981137e3c1991ab681cc28c56bc5176c784e248eaaebdcb"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:224c876e0f0941788981137e3c1991ab681cc28c56bc5176c784e248eaaebdcb"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 5,
+          "originalId": "tr:god:정재",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:b8a0a78cd15f49376ea231a1a05acddfb2bc0d03eee4cbd7514e53727a8f11fe",
+        "originalId": "tr:god:정재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+        "actualHash": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": false,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:식신",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:2813820e4d44d0197e4b8c68bcab92741556813645989d3afb0b9f08256bcb0e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:2813820e4d44d0197e4b8c68bcab92741556813645989d3afb0b9f08256bcb0e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 2,
+          "originalId": "tr:god:식신",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:339567f16c8a4bb8c54ee4a79e9b1d6b17c86f3ced86c798c1bcf52da40f0932",
+        "originalId": "tr:god:식신",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+        "actualHash": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": false,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:정관",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:55acb9b6408668d6477ac17e827d0ae22c191f4edb0c6215a0a536c06c9fe606"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:55acb9b6408668d6477ac17e827d0ae22c191f4edb0c6215a0a536c06c9fe606"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 7,
+          "originalId": "tr:god:정관",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:53185eff214991f20fde00532547cbb360fced2d837118cdb831fe986e3bb20c",
+        "originalId": "tr:god:정관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+        "actualHash": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": false,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:겁재",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:5eab7ae68576112ef396ea93dc38ad2e3a17ec61892efa7eb1e332c4f3a88e01"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:5eab7ae68576112ef396ea93dc38ad2e3a17ec61892efa7eb1e332c4f3a88e01"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 1,
+          "originalId": "tr:god:겁재",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:4e9ccf3540667401adaa5a909524387a7b05569b6e323a5a466a7a7b78cc3853",
+        "originalId": "tr:god:겁재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+        "actualHash": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": false,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:편관",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 6,
+          "originalId": "tr:god:편관",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:5ad19f8ef1ad91f07f9cb295b626287ad31aba8fba59b4dfe66552c3b2015531",
+        "originalId": "tr:god:편관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+        "actualHash": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": false,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:비견",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8a266c97103d91c03db4d56dcaac5e2d0a63c3886ab8740c2389ecf7c321c0e3"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8a266c97103d91c03db4d56dcaac5e2d0a63c3886ab8740c2389ecf7c321c0e3"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 0,
+          "originalId": "tr:god:비견",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:f48b6ddad8c2c43b22469cc755457c048f18df3331d6d904cc41e67d5ee4b8e8",
+        "originalId": "tr:god:비견",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+        "actualHash": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": false,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:편재",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 4,
+          "originalId": "tr:god:편재",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:310cca31e1ab44ec8b7d4733ac5af11ef6065ff597b91c0f0afc21914388afd1",
+        "originalId": "tr:god:편재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+        "actualHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": false,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:편인",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:3b856c0d7d89fb4ac637bd8fc432434afac9e316b9eb278a6f3032ee2e40458c"
+        ],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:3b856c0d7d89fb4ac637bd8fc432434afac9e316b9eb278a6f3032ee2e40458c"
+        ],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 8,
+          "originalId": "tr:god:편인",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:73c33fe751a4abd085090038cb55a728d140418a6617a88091bbbca17390ecf4",
+        "originalId": "tr:god:편인",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+        "actualHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": false,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:정인",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:e0cede37d555c4f5ab21f531641fbcdf7507b30303c205a2be073f6a6e80b5b5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:e0cede37d555c4f5ab21f531641fbcdf7507b30303c205a2be073f6a6e80b5b5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 9,
+          "originalId": "tr:god:정인",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:33c2a18abbef12ad6ca028a6457af23184d999e40f8e1c628af771aaaa09e382",
+        "originalId": "tr:god:정인",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+        "actualHash": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": false,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:상관",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:0eef28cb9021688b08710dbbc0656761ce2eafadbfebcf880cfab18c84ef6f59"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:0eef28cb9021688b08710dbbc0656761ce2eafadbfebcf880cfab18c84ef6f59"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 3,
+          "originalId": "tr:god:상관",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:5381bb0b7907cc82490ad8c9c556c0ad77ab2542278af1197f8524e6ff08c373",
+        "originalId": "tr:god:상관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+        "actualHash": "e67b38c01e2c59119d4252dbfd51b9cdee47345be660b38ccad65c2f14f83336",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:정재",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:224c876e0f0941788981137e3c1991ab681cc28c56bc5176c784e248eaaebdcb"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:224c876e0f0941788981137e3c1991ab681cc28c56bc5176c784e248eaaebdcb"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 5,
+          "originalId": "tr:god:정재",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:b8a0a78cd15f49376ea231a1a05acddfb2bc0d03eee4cbd7514e53727a8f11fe",
+        "originalId": "tr:god:정재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+        "actualHash": "2722dac82480e160224c7ef79a0cbc335abe0470fbb109f9d1f970bac28c8b96",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:식신",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:2813820e4d44d0197e4b8c68bcab92741556813645989d3afb0b9f08256bcb0e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:2813820e4d44d0197e4b8c68bcab92741556813645989d3afb0b9f08256bcb0e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 2,
+          "originalId": "tr:god:식신",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:339567f16c8a4bb8c54ee4a79e9b1d6b17c86f3ced86c798c1bcf52da40f0932",
+        "originalId": "tr:god:식신",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+        "actualHash": "333338cea579b6134c53c7a46065d5acb290b4d52e7b18303fa77a6ac7d3c19b",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:정관",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:55acb9b6408668d6477ac17e827d0ae22c191f4edb0c6215a0a536c06c9fe606"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:55acb9b6408668d6477ac17e827d0ae22c191f4edb0c6215a0a536c06c9fe606"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 7,
+          "originalId": "tr:god:정관",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:53185eff214991f20fde00532547cbb360fced2d837118cdb831fe986e3bb20c",
+        "originalId": "tr:god:정관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+        "actualHash": "92e2aa5479b78c6a2f46616af1ae92195cd5a19de01003e975140f681d240f67",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:겁재",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:5eab7ae68576112ef396ea93dc38ad2e3a17ec61892efa7eb1e332c4f3a88e01"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:5eab7ae68576112ef396ea93dc38ad2e3a17ec61892efa7eb1e332c4f3a88e01"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 1,
+          "originalId": "tr:god:겁재",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:4e9ccf3540667401adaa5a909524387a7b05569b6e323a5a466a7a7b78cc3853",
+        "originalId": "tr:god:겁재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+        "actualHash": "9863d8642beb06774fa12710950d04a4b6581e431a25de663f5c26dabc8a3e0a",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:편관",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 6,
+          "originalId": "tr:god:편관",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:5ad19f8ef1ad91f07f9cb295b626287ad31aba8fba59b4dfe66552c3b2015531",
+        "originalId": "tr:god:편관",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+        "actualHash": "ea096abda77e0e956ddfb8652cc89ca97a3dca68fb9012d7b199f22220a4b9e3",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:비견",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8a266c97103d91c03db4d56dcaac5e2d0a63c3886ab8740c2389ecf7c321c0e3"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8a266c97103d91c03db4d56dcaac5e2d0a63c3886ab8740c2389ecf7c321c0e3"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 0,
+          "originalId": "tr:god:비견",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:f48b6ddad8c2c43b22469cc755457c048f18df3331d6d904cc41e67d5ee4b8e8",
+        "originalId": "tr:god:비견",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+        "actualHash": "919bb133baec54197fba1fff05feeb8abe8490a9d59144651968ee4b7cf80320",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:편재",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:13a21964211c50667bd6ad3d3a9531b92d9ee1aaff422a977166d274d1e87dae"
+        ],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:13a21964211c50667bd6ad3d3a9531b92d9ee1aaff422a977166d274d1e87dae"
+        ],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 4,
+          "originalId": "tr:god:편재",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:310cca31e1ab44ec8b7d4733ac5af11ef6065ff597b91c0f0afc21914388afd1",
+        "originalId": "tr:god:편재",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+        "actualHash": "9f5d5e2edbbd312f743bc4f0df801f314e84a0195802761bf1d9a89c0b563a7c",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:편인",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 8,
+          "originalId": "tr:god:편인",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:73c33fe751a4abd085090038cb55a728d140418a6617a88091bbbca17390ecf4",
+        "originalId": "tr:god:편인",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+        "actualHash": "437fe0b48e8196037c751e7a6ce72278cca1a9102b10693e184cb5a5004a8f64",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    },
+    {
+      "fixture": "fixture-major-transition-C",
+      "originalId": "mfpr:god:정인",
+      "beforeGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:e0cede37d555c4f5ab21f531641fbcdf7507b30303c205a2be073f6a6e80b5b5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "afterGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:e0cede37d555c4f5ab21f531641fbcdf7507b30303c205a2be073f6a6e80b5b5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true,
+      "inheritedSourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/temporal-interaction-research/temporalGodRoles.ts",
+          "exportName": "TEMPORAL_GOD_ROLES",
+          "index": 9,
+          "originalId": "tr:god:정인",
+          "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+          "recordSha256": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+          "fileSha256": "127aefa3c6273f51cd40680ffe6ae2b53d5051cc68237f23c745304fa8dbc9ad"
+        },
+        "matchedCatalogKey": "kc:v1:33c2a18abbef12ad6ca028a6457af23184d999e40f8e1c628af771aaaa09e382",
+        "originalId": "tr:god:정인",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+        "actualHash": "986a593480c8ec2a38cd30dd3b2e8e8b432032f80adcc69689cce30df34b3aae",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "565c4613d4e01d65510380e0f597c535f81396c0",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "sourceResolved": true,
+      "sourceUnresolved": true,
+      "producerSupported": true,
+      "temporalScopeValid": true,
+      "meaningReviewRequired": true,
+      "customerApproved": false
+    }
+  ],
+  "otherDenominators": {
+    "globalCandidateFixture5073": "historical artifacts preserved; not rerun as a full Global audit",
+    "globalHeldSource2677": "historical global overlay preserved; no denominator rewrite",
+    "actualGraphFixtures27": "rerun using identical existing input recipes; 109333 nodes / 351274 edges"
+  }
+}
