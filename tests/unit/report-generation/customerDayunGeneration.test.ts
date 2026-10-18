@@ -11,8 +11,11 @@ import { buildOpenAIAnnualFortuneReportWriterMessages } from "../../../src/lib/r
 import { POST as validateInput } from "../../../src/app/api/reports/validate-input/route";
 import { POST as prepareCheckout } from "../../../src/app/api/payment-checkout/prepare/route";
 
-const storage = vi.hoisted(() => ({ create: vi.fn(async (record: unknown) => ({ ok: true, value: record })) }));
+const storage = vi.hoisted(() => ({ create: vi.fn(async (record: unknown) => ({ ok: true, value: record })), bind: vi.fn(async () => true) }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: () => storage }));
+// Real same-origin and binding logic; only external auth/library ports are local.
+vi.mock("../../../src/lib/account/supabase", () => ({ createAccountPort: () => ({ currentUser: async () => null, finish: (response: Response) => response }) }));
+vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => ({ bind: storage.bind }) }));
 
 const clock = () => new Date("2026-09-21T12:00:00+09:00");
 const person = { name: "지민", birthDate: "2001-06-22", birthTime: "13:30", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" };
@@ -27,7 +30,7 @@ function input(productKey = "major_fortune", changes: object = {}, selectedYear 
   return r.value;
 }
 const fetchSpy = vi.fn(() => { throw new Error("external calls forbidden"); });
-beforeEach(() => { vi.useFakeTimers(); vi.setSystemTime(clock()); vi.stubGlobal("fetch", fetchSpy); fetchSpy.mockClear(); });
+beforeEach(() => { vi.useFakeTimers(); vi.setSystemTime(clock()); vi.stubGlobal("fetch", fetchSpy); fetchSpy.mockClear(); storage.create.mockClear(); storage.bind.mockReset().mockResolvedValue(true); });
 afterEach(() => { expect(fetchSpy).not.toHaveBeenCalled(); vi.useRealTimers(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 
 describe("customer Dayun production boundaries", () => {
@@ -41,15 +44,42 @@ describe("customer Dayun production boundaries", () => {
     for (const changes of [{ gender: "" }, { gender: "invalid" }, { gender: undefined }, { birthTime: "", birthTimeUnknown: true }, {}]) {
       storage.create.mockClear();
       const p = payload(product, changes);
-      const r = await prepareCheckout(new Request("https://example.test/api/payment-checkout/prepare", {
-        method: "POST", body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: product, ready: true, inputSnapshot: {
+      const r = await prepareCheckout(new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
+        method: "POST", headers: { origin: "https://gyeolreport.com", "content-type": "application/json" }, body: JSON.stringify({ consent: adultCheckoutConsent(), provider: "toss", productType: product, ready: true, inputSnapshot: {
           displayName: p.person.name, birthDate: p.person.birthDate, reportInputPayload: p,
         } }),
       }));
       const valid = Object.keys(changes).length === 0;
-      expect(r.status, JSON.stringify(await r.clone().json())).toBe(valid ? 200 : 400);
+      expect(r.status, await r.clone().text()).toBe(valid ? 200 : 400);
+      expect(r.headers.get("content-type")).toContain("application/json");
+      expect((await r.json()).ok).toBe(valid);
       expect(storage.create).toHaveBeenCalledTimes(valid ? 1 : 0);
+      expect(storage.bind).toHaveBeenCalledTimes(valid ? 1 : 0);
+      if (valid) expect(storage.create.mock.calls[0][0]).toMatchObject({ inputSnapshot: { bookGeneration: { version: "v4", evaluatedAt: clock().toISOString() } } });
     }
+  });
+  it.each([undefined, "https://example.test", "https://gyeolreport.com.example.test"])("rejects missing/foreign Origin %s before writes", async origin => {
+    const p = payload();
+    const response = await prepareCheckout(new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
+      method: "POST", headers: origin ? { origin } : {}, body: JSON.stringify({ provider: "toss", productType: "major_fortune", consent: adultCheckoutConsent(), inputSnapshot: { reportInputPayload: p } }),
+    }));
+    expect(response.status).toBe(403);
+    expect(await response.text()).toBe("");
+    expect(storage.create).not.toHaveBeenCalled();
+    expect(storage.bind).not.toHaveBeenCalled();
+  });
+  it("failed owner binding cannot become a successful checkout", async () => {
+    vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
+    vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key");
+    vi.stubEnv("TOSS_CONFIRM_API_ENABLED", "1");
+    storage.bind.mockResolvedValue(false);
+    const response = await prepareCheckout(new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
+      method: "POST", headers: { origin: "https://gyeolreport.com" }, body: JSON.stringify({ provider: "toss", productType: "major_fortune", consent: adultCheckoutConsent(), inputSnapshot: { reportInputPayload: payload() } }),
+    }));
+    expect(response.status).toBe(503);
+    expect(await response.json()).toMatchObject({ ok: false, error: { code: "PAYMENT_CHECKOUT_UNAVAILABLE" } });
+    expect(storage.create).toHaveBeenCalledTimes(1);
+    expect(storage.bind).toHaveBeenCalledTimes(1);
   });
   it.each(["major_fortune", "annual_fortune"])("uses the same customer basis with the %s writer enabled", async product => {
     const handler = product === "major_fortune" ? generateMajorFortuneProductDraft : generateAnnualFortuneProductDraft;

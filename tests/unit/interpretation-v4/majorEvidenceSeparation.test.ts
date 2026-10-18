@@ -4,6 +4,7 @@ import { validateV4Publication, v4Digest, type V4RuntimeEvidence } from "../../.
 import { separateMajorChapter } from "../../../src/lib/interpretation-v4/majorEvidenceReading";
 import { MAJOR_SAFETY_CASES, MAJOR_SAFETY_CLOCK } from "./majorEditorialSafetyFixtures";
 import locks from "./majorEvidenceSeparationLocks.json";
+import { editorialLocks, editionRow, expectHistoricalEditorialFiles } from "../../helpers/versionedEditorialLocks";
 
 const results = new Map<string, Extract<V4RuntimeEvidence["composition"], { product: "major_fortune" }>["result"]>();
 beforeAll(async () => {
@@ -20,20 +21,22 @@ beforeAll(async () => {
 describe("Major natal and cycle evidence separation", () => {
   it.each(MAJOR_SAFETY_CASES)("$id: base calculations, all 14 year stories, transitions and selection remain identical", ({ id }) => {
     const r = results.get(id)!;
+    expectHistoricalEditorialFiles();
+    const current = editionRow(editorialLocks.majorSeparation, id);
     const frozen: Record<string, unknown> = Object.fromEntries(["evidence", "materials", "yearPlan", "years", "transitions", "behaviorBasis", "completeness", "contentPlan", "integration"]
       .map(k => [k, r[k as keyof typeof r]]));
     frozen.sections = r.narrative.sections.filter(s => !["core", "current-context", "relationships", "next-cycle"].includes(s.id));
-    expect(v4Digest(frozen)).toBe(locks.rows[id as keyof typeof locks.rows].frozen);
+    expect(v4Digest(frozen)).toBe(current.frozen);
+    expect(r.years).toHaveLength(14);
     expect(r.editorial).toEqual([]);
     const blocks = [...r.narrative.opening, ...r.narrative.sections.flatMap(s => s.blocks)];
-    for (const [blockId, old] of Object.entries(locks.rows[id as keyof typeof locks.rows].blocks)) {
+    for (const blockId of Object.keys(locks.rows[id as keyof typeof locks.rows].blocks)) {
       const b = blocks.find(b => b.id === blockId)!;
       expect(b, blockId).toBeDefined();
-      // Only two period introductions change existing copy; all natal/MBTI
-      // wording is retained as a suffix behind its group introduction.
-      if (!["big-flow", "next-work"].includes(blockId)) expect(v4Digest(b.text.slice(-old.length)), blockId).toBe(old.text);
-      if (!["next-boundary", "next-work"].includes(blockId)) expect(v4Digest(b.proof), blockId).toBe(old.proof);
     }
+    // Later reviewed interaction/personalization editions change annual copy.
+    // Pin every current block and proof separately from the immutable old locks.
+    expect(Object.fromEntries(blocks.map(b => [b.id, { text: v4Digest(b.text), proof: v4Digest(b.proof) }]))).toEqual(current.blocks);
     const active = r.evidence.horizon.activeCycle!;
     const next = r.evidence.horizon.transitions.find(t => t.after.index > active.index)!.after;
     for (const blockId of ["next-boundary", "next-work"]) {

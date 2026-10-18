@@ -12,6 +12,7 @@ import { projectV4Composition } from "../../../src/lib/interpretation-v4/runtime
 import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "../../../src/lib/report-generation/productPreviewSnapshot";
 import releaseLocks from "./careerReleaseLocks.json";
 import { storedBook } from "../../../src/lib/book/storedReport";
+import { editorialLocks, editionRow, expectHistoricalEditorialFiles } from "../../helpers/versionedEditorialLocks";
 
 // Captured at 871c10f before switching the Career entry. Full frozen evidence,
 // public prose and Book projection, including new 13D-6B Comprehensive.
@@ -23,6 +24,8 @@ const locks: Record<string, readonly string[]> = {
   annual: ["8525e0e39cc824c3f1f9cdd763cb33bfd4402c9718f6ba6d1e4a33f69309be5f", "85e4470a0b5a60c0e89c634dae80915263744f26dbef600e11132092d0c74125", "d21b5665c2e24402bf37a1a33021e47c5f1ccefa42f22c402c4ed2ee2acba69f"],
 };
 it.each(RUNTIME_FIXTURES.filter(f => f.id !== "career"))("$id customer/evidence/Book stays frozen", async f => {
+  expectHistoricalEditorialFiles();
+  expect(locks).toEqual(editorialLocks.historicalInlineCareerLocks);
   const result = await generateV4ShadowReport(f.payload, SHADOW_CLOCK);
   if (!result.ok) return expect.unreachable(JSON.stringify(result));
   // Keep pre-integration snapshot hashes, including time products switched in
@@ -37,7 +40,7 @@ it.each(RUNTIME_FIXTURES.filter(f => f.id !== "career"))("$id customer/evidence/
     const composition = { product: e.productType, result: old } as V4RuntimeEvidence["composition"];
     const { contentDigest: _, ...body } = { ...e, composition }; void _;
     const sealed = { ...body, contentDigest: v4Digest(body) };
-    expect([v4Digest(projectV4Composition(composition)), v4Digest(sealed), v4Digest(projectBook(sealed))]).toEqual(locks[f.id]);
+    expect([v4Digest(projectV4Composition(composition)), v4Digest(sealed), v4Digest(projectBook(sealed))]).toEqual(editionRow(editorialLocks.legacyProjection, f.id).hashes);
     const snapshot = createProductPreviewSnapshot({ reportId: `legacy-${f.id}`, createdAtIso: sealed.generatedAt,
       productKey: sealed.input.productKey, productSlug: sealed.input.productSlug,
       draft: projectV4Composition(composition) as unknown as ProductPreviewSnapshotDraft, evidencePacket: sealed });
@@ -47,6 +50,6 @@ it.each(RUNTIME_FIXTURES.filter(f => f.id !== "career"))("$id customer/evidence/
     expect(storedBook(saved, "https://gyeolreport.com/r/abcdefghijklmnopqrstuvwx")?.data).toEqual(projectBook(sealed));
     return;
   }
-  expect([v4Digest(result.draft), v4Digest(result.evidencePacket), v4Digest(projectBook(result.evidencePacket as V4RuntimeEvidence))]).toEqual(locks[f.id]);
+  expect([v4Digest(result.draft), v4Digest(result.evidencePacket), v4Digest(projectBook(result.evidencePacket as V4RuntimeEvidence))]).toEqual(editionRow(editorialLocks.runtime, f.id).hashes);
   expect(result.externalCalls).toEqual([]);
 }, 120000);

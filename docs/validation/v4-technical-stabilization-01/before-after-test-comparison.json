@@ -1,0 +1,536 @@
+{
+  "baselineBefore": {
+    "pass": 6898,
+    "fail": 55,
+    "total": 6953
+  },
+  "sameExistingIdentitiesAfter": {
+    "pass": 6953,
+    "fail": 0,
+    "missing": 0
+  },
+  "finalSuperset": {
+    "pass": 7152,
+    "fail": 0,
+    "total": 7152
+  },
+  "beforeCommands": [
+    {
+      "name": "related",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/app/dev/bookRuntime.test.tsx",
+        "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+        "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+        "tests/unit/interpretation-v4/koreanNarrativeCore.test.ts",
+        "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+        "tests/unit/report-generation/customerDayunGeneration.test.ts",
+        "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/before-baseline/related.json"
+      ],
+      "exitCode": 1,
+      "wallSeconds": 345.6067243749276,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 5837,
+      "numFailedTests": 46,
+      "numPendingTests": 0,
+      "numTotalTests": 5883
+    },
+    {
+      "name": "business-partner",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistEngine.test.ts",
+        "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/before-baseline/business-partner.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 220.22413362492807,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 383,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 383
+    },
+    {
+      "name": "runtime",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/before-baseline/runtime.json"
+      ],
+      "exitCode": 1,
+      "wallSeconds": 102.84878395905253,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 31,
+      "numFailedTests": 9,
+      "numPendingTests": 0,
+      "numTotalTests": 40
+    },
+    {
+      "name": "governance",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/report-knowledge/koreanEditorialEngine.test.ts",
+        "tests/unit/report-knowledge/globalBookPlanner.test.ts",
+        "tests/unit/report-knowledge/officialApprovalContract.test.ts",
+        "tests/unit/report-knowledge/fullProductIntegration.test.ts",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/before-baseline/governance.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 76.08404424996115,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 558,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 558
+    },
+    {
+      "name": "publication",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/interpretation-v4/publicationSafety.test.ts",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/before-baseline/publication.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 38.49773300008383,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 30,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 30
+    },
+    {
+      "name": "tsc",
+      "command": [
+        "pnpm",
+        "exec",
+        "tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 14.409359875018708,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true
+    },
+    {
+      "name": "lint",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 19.946071291924454,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true
+    },
+    {
+      "name": "build",
+      "command": [
+        "pnpm",
+        "exec",
+        "next",
+        "build",
+        "--webpack"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 31.960469500045292,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true
+    },
+    {
+      "name": "governance-slots",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/report-knowledge/koreanEditorialSlots.test.ts",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/before-slots/governance-slots.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 0.4244668340543285,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 59,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 59
+    }
+  ],
+  "afterCommands": [
+    {
+      "name": "related",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/app/dev/bookRuntime.test.tsx",
+        "tests/unit/interpretation-v4/annualSafety.test.ts",
+        "tests/unit/interpretation-v4/majorEvidenceSeparation.test.ts",
+        "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+        "tests/unit/interpretation-v4/careerRelease.test.ts",
+        "tests/unit/interpretation-v4/comprehensiveEditorialPlan.test.ts",
+        "tests/unit/interpretation-v4/foundationAdapter.test.ts",
+        "tests/unit/interpretation-v4/koreanNarrativeCore.test.ts",
+        "tests/unit/interpretation-v4/comprehensiveAllocation.test.ts",
+        "tests/unit/report-generation/customerDayunGeneration.test.ts",
+        "tests/unit/report-knowledge/compatibilityBusinessPartnerResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityCoworkerResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityLoveResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityManagerReportResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityMarriageResearch.test.ts",
+        "tests/unit/report-knowledge/compatibilityParentChildResearch.test.ts",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/after-recheck/related.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 272.5611330420943,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 5887,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 5887
+    },
+    {
+      "name": "business-partner",
+      "exitCode": 0,
+      "numPassedTests": 383,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 383,
+      "commands": [
+        [
+          "pnpm",
+          "exec",
+          "vitest",
+          "run",
+          "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistEngine.test.ts",
+          "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts",
+          "--fileParallelism=false",
+          "--reporter=json",
+          "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/after-final/business-partner.json"
+        ],
+        [
+          "pnpm",
+          "exec",
+          "vitest",
+          "run",
+          "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts",
+          "--fileParallelism=false",
+          "--reporter=json",
+          "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/after-recheck/artifacts.json"
+        ]
+      ],
+      "sourceReports": [
+        "after-final/business-partner.json (unchanged engine only)",
+        "after-recheck/artifacts.json"
+      ],
+      "wallSeconds": null,
+      "timingNote": "Composite selection; no single execution duration invented",
+      "node": "24.22.0",
+      "defaultTimeoutUnchanged": true
+    },
+    {
+      "name": "runtime",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/after-final/runtime.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 100.63241333398037,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 40,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 40
+    },
+    {
+      "name": "governance",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/report-knowledge/koreanEditorialEngine.test.ts",
+        "tests/unit/report-knowledge/globalBookPlanner.test.ts",
+        "tests/unit/report-knowledge/officialApprovalContract.test.ts",
+        "tests/unit/report-knowledge/fullProductIntegration.test.ts",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/after-final/governance.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 75.89331375004258,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 558,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 558
+    },
+    {
+      "name": "governance-slots",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/report-knowledge/koreanEditorialSlots.test.ts",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/after-final/governance-slots.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 0.4038878750288859,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 59,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 59
+    },
+    {
+      "name": "publication",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/interpretation-v4/publicationSafety.test.ts",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/after-final/publication.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 38.68831100000534,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 30,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 30
+    },
+    {
+      "name": "contracts",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/interpretation-v4/editionContracts.test.ts",
+        "tests/unit/interpretation-v4/moduleContracts.test.ts",
+        "tests/unit/interpretation-v4/sourceRevisionContracts.test.ts",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/after-recheck/contracts.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 3.428592541953549,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 32,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 32
+    },
+    {
+      "name": "ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "tests/unit/components/BookUxFinishing.test.tsx",
+        "tests/unit/components/KakaoShare.test.tsx",
+        "tests/unit/app/dev/coverflowAuto.test.ts",
+        "tests/unit/app/bookPublicFlow.test.tsx",
+        "tests/unit/sharing/bookSharing.test.tsx",
+        "tests/unit/sharing/bookOgPresentation.test.tsx",
+        "tests/unit/account/library.test.tsx",
+        "tests/unit/account/libraryMigration.test.ts",
+        "tests/unit/app/dev/bookReading13b.test.tsx",
+        "tests/unit/app/dev/bookPreview.test.tsx",
+        "--fileParallelism=false",
+        "--reporter=json",
+        "--outputFile=/Users/Deokmin/Documents/gyeol-validation/v4-technical-stabilization-01/after-recheck/ui.json"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 114.29315387492534,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true,
+      "numPassedTests": 163,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTotalTests": 163
+    },
+    {
+      "name": "tsc",
+      "command": [
+        "pnpm",
+        "exec",
+        "tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 13.901603250065818,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true
+    },
+    {
+      "name": "lint",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 18.597324041998945,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true
+    },
+    {
+      "name": "build",
+      "command": [
+        "pnpm",
+        "exec",
+        "next",
+        "build",
+        "--webpack"
+      ],
+      "exitCode": 0,
+      "wallSeconds": 28.39486154098995,
+      "node": "24.22.0",
+      "pnpm": "10.33.0",
+      "defaultTimeoutUnchanged": true
+    }
+  ],
+  "fullRepositoryExecuted": false,
+  "failedCaseComparisons": "failure-root-cause-matrix.json",
+  "existingIdentitiesPreserved": true,
+  "caseIdentity": "file + actual printed fullName + stable occurrence in unchanged fixture order; Vitest truncates some parameter IDs",
+  "duplicatePrintedNamesDisambiguated": true,
+  "resultSelectionProvenance": {
+    "unaffectedExecutedCohortsRetained": [
+      "BusinessPartner engine",
+      "runtime",
+      "governance",
+      "governance-slots",
+      "publication"
+    ],
+    "affectedCohortsRetested": [
+      "related",
+      "artifacts",
+      "contracts",
+      "ui",
+      "tsc",
+      "lint",
+      "build"
+    ],
+    "prior18FileContractSha256": "b86575ae2e9051139743cd6d58ec90f21d86a2c1f5d4c28d2213c8c19374dd9d",
+    "currentModifiedTests": 19,
+    "applicationAndResearchSourceChanges": 0,
+    "priorRawReportsPreserved": true,
+    "everyCaseResultComesFromAnActualRun": true
+  },
+  "additionalUiHookBaseline": {
+    "file": "tests/unit/app/dev/bookReading13b.test.tsx",
+    "sourceSha": "7ef25fcc0ae6f7765473433a826cb7cf96068a7b",
+    "fileSha256": "0300db25f1e78aba177a6c633a3714599afecd627201c5443c23e4de5e7d1b6a",
+    "exactBaseTestAndRuntimeUnchanged": true,
+    "actualError": "Hook timed out in 10000ms.",
+    "suiteFailed": 1,
+    "assertionsNotRun": 16,
+    "rawEvidence": "after-final/ui.json"
+  },
+  "additionalUiFiles": [
+    "unit/account/library.test.tsx",
+    "unit/account/libraryMigration.test.ts",
+    "unit/app/bookPublicFlow.test.tsx",
+    "unit/components/BookUxFinishing.test.tsx",
+    "unit/components/KakaoShare.test.tsx",
+    "unit/sharing/bookOgPresentation.test.tsx",
+    "unit/sharing/bookSharing.test.tsx",
+    "unit/app/dev/bookPreview.test.tsx",
+    "unit/app/dev/bookReading13b.test.tsx",
+    "unit/app/dev/coverflowAuto.test.ts"
+  ],
+  "intermediateDiagnostics": {
+    "bookTestPublicSectionIdAssumption": "corrected to internal saved section ID before final run;3 transient failures retained in group-book.json",
+    "bindingNegativeMissingMockConfig": "added mock-only config so test reaches binding;1 transient failure retained in group-allocation-dayun.json",
+    "newTypeDiagnostic": "one callback narrowing diagnostic corrected; final strict0",
+    "focusedFilters": "Intermediates used -t to select a problem group; final files run in full with0pending"
+  }
+}

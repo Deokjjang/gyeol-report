@@ -1,5 +1,7 @@
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { isVerifiedBookConsumer } from "./bookBoundary";
+import moduleContract from "../../fixtures/technical-stabilization-01/module-contract.json";
+import { customerRuntimeGraph, readModuleGraph, runtimeImports } from "../../helpers/moduleDependencyGraph";
 import { renderToString } from "react-dom/server";
 import { PGlite } from "@electric-sql/pglite";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
@@ -191,10 +193,27 @@ describe("V4 invalid packets fail closed", () => {
 });
 
 describe("roles, precision and customer/default boundaries", () => {
+  const pairPackets = new Map<string, Generated>();
+  beforeAll(async () => {
+    // Reference generation is fixture setup, as for the durable snapshots above.
+    // Reuse the already-generated exact same input; each test still generates
+    // its swapped A/B input and retains the default 5000ms operation budget.
+    const original = RUNTIME_FIXTURES.find(f => f.id === "compatibility")!;
+    for (const f of COMPATIBILITY_NARRATIVE_FIXTURES) {
+      if (f.payload === original.payload) {
+        expect(packets.get("compatibility")).toBeDefined();
+        pairPackets.set(f.id, packets.get("compatibility")!);
+      } else {
+        const g = await generateV4ShadowReport(f.payload, SHADOW_CLOCK);
+        expect(g).toMatchObject({ ok: true, externalCalls: [] });
+        if (g.ok) pairPackets.set(f.id, g as Generated);
+      }
+    }
+  }, 60000); // Same bounded fixture budget as the durable setup; no global change.
   it.each(COMPATIBILITY_NARRATIVE_FIXTURES)("$id: fixed roles and distinct direction survive JSON", async f => {
-    const g = await generateV4ShadowReport(f.payload, SHADOW_CLOCK);
-    expect(g).toMatchObject({ ok: true }); if (!g.ok) return;
-    const p = g as Generated, c = p.draft.compatibility!;
+    const p = pairPackets.get(f.id)!;
+    expect(p).toBeDefined();
+    const c = p.draft.compatibility!;
     expect(c.category).toBe(f.payload.relationshipType);
     expect(c.aToB).not.toEqual(c.bToA);
     expect(JSON.stringify(c)).not.toMatch(/"(?:score|rating|percent)"|\d+점|[★☆]/);
@@ -251,12 +270,16 @@ describe("roles, precision and customer/default boundaries", () => {
     expect(stableV4Json(base)).toBe(stableV4Json(changed));
   });
   it("no public route or default runtime imports shadow generation, projection or renderer", () => {
-    const allowed = new Set(["lib/interpretation-v4/runtimeShadow.ts", "lib/interpretation-v4/runtimeProjection.ts"]);
-    for (const f of readdirSync("src", { recursive: true }).filter((f): f is string => typeof f === "string" && /\.tsx?$/.test(f))) {
+    const graph = readModuleGraph(), actual = customerRuntimeGraph(graph);
+    expect(actual).toEqual(moduleContract.customer);
+    expect(actual.blocked).toEqual([]);
+    expect(actual.unresolved).toEqual([]);
+    const allowed = new Set(["src/lib/interpretation-v4/runtimeShadow.ts", "src/lib/interpretation-v4/runtimeProjection.ts"]);
+    for (const f of actual.files) {
       if (allowed.has(f)) continue;
-      const source = readFileSync(`src/${f}`, "utf8");
-      if (isVerifiedBookConsumer(`src/${f}`, source)) continue;
-      expect(source, f).not.toMatch(/(?:from\s*|import\s*\()["'][^"']*(?:runtimeShadow|runtimeProjection|V4ShadowReportView)["']/);
+      const source = readFileSync(f, "utf8");
+      if (isVerifiedBookConsumer(f, source)) continue;
+      for (const specifier of runtimeImports(source, f).specifiers) expect(specifier, f).not.toMatch(/\/(?:runtimeShadow|runtimeProjection|V4ShadowReportView)(?:\.tsx?)?$/);
     }
     for (const f of ["runtimeShadow.ts", "runtimeProjection.ts"]) {
       const source = readFileSync(`src/lib/interpretation-v4/${f}`, "utf8");

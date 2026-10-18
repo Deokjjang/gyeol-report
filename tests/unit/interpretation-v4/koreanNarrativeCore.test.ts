@@ -1,6 +1,7 @@
+import moduleContract from "../../fixtures/technical-stabilization-01/module-contract.json";
+import { layerImports, readModuleGraph, runtimeImports } from "../../helpers/moduleDependencyGraph";
 import { afterAll, describe, expect, it } from "vitest";
-import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { SENTENCE_ROLES, ENDING_STYLES, type NarrativeRequest } from "../../../src/lib/interpretation-v4/narrativeCore";
 import { renderNarrativeBlock, NARRATIVE_PIPELINE_STEPS } from "../../../src/lib/interpretation-v4/narrativeBlockRenderer";
 import { NARRATIVE_PATTERNS } from "../../../src/lib/interpretation-v4/narrativePatterns";
@@ -250,24 +251,11 @@ describe("narrative output is not accepted merely because it has source IDs", ()
   });
   it("no runtime/customer imports, dependencies, clocks, randomness, external services", () => {
     const names = ["narrativeCore", "narrativeVariant", "narrativePatterns", "narrativeVocabulary", "narrativeConnectors", "narrativeEndings", "narrativeTerminology", "narrativeMemory", "narrativeSurface", "narrativeValidator", "narrativeBlockRenderer"];
-    function walk(dir: string): string[] { return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [join(dir, e.name)] : []); }
-    for (const file of walk("src")) {
-      const text = readFileSync(file, "utf8");
-      // Actual product adapters were integrated after this language-only gate.
-      // Permit exactly their existing language dependencies, never reverse imports.
-      const approved: Record<string, string[]> = {
-        careerProductNarrative: ["narrativeCore", "narrativeMemory", "narrativeBlockRenderer"],
-        relationshipProductNarrative: ["narrativeCore", "narrativeMemory", "narrativeBlockRenderer"],
-        timeProductContext: ["narrativeCore", "narrativeMemory", "narrativeBlockRenderer"],
-        comprehensiveRenderability: ["narrativeCore", "narrativeVariant", "narrativeSurface"],
-      };
-      const consumer = Object.keys(approved).find(n => file === `src/lib/interpretation-v4/${n}.ts`);
-      if (consumer) {
-        for (const name of names.filter(n => !approved[consumer].includes(n))) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
-        continue;
-      }
-      if (names.some(n => file === `src/lib/interpretation-v4/${n}.ts`)) expect(text).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(|runtimeShadow|bookProjection|from ["'][^"']*(?:Composer|supabase|openai|toss|guidanceProfile|claimProfile|fusionSemanticProfile)/);
-      else if (!["narrativeSceneCore", "narrativeTitleCore", "comprehensiveNarrativeAdapter", "comprehensiveManuscriptCore", "comprehensiveSectionRenderer", "comprehensiveBridgeRenderer", "comprehensiveManuscriptValidator", "comprehensiveManuscriptRenderer", "comprehensiveManuscriptPolish", "narrativeMbtiReason", "operatingRuleRenderer", "manuscriptQualityAudit", "narrativeHumanFirst", "narrativeRhythm", "manuscriptHumanAudit"].some(n => file === `src/lib/interpretation-v4/${n}.ts`)) for (const name of names) expect(text, file).not.toMatch(new RegExp(`["'][^"']*/${name}["']`));
+    expect(layerImports(readModuleGraph(), names)).toEqual(moduleContract.layers.language);
+    for (const name of names) {
+      const file = `src/lib/interpretation-v4/${name}.ts`, text = readFileSync(file, "utf8");
+      expect(text, file).not.toMatch(/Math\.random|Date\.now|new Date|process\.env|fetch\(|calculateSaju\(/);
+      expect(runtimeImports(text, file).specifiers.join("\n"), file).not.toMatch(/runtimeShadow|bookProjection|Composer|supabase|openai|toss|guidanceProfile|claimProfile|fusionSemanticProfile/);
     }
   });
 });

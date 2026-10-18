@@ -14,15 +14,18 @@ import { composeMajorFortuneNarrative } from "../../../src/lib/interpretation-v4
 import { narrativeText } from "../../../src/lib/interpretation-v4/editorialGuard";
 import { MAJOR_NARRATIVE_FIXTURES, MAJOR_EVALUATED_AT } from "./majorFixtures";
 import { ANNUAL_NARRATIVE_FIXTURES as fixtures, ANNUAL_CLOCK } from "./annualFixtures";
+import { editorialLocks, editionRow, expectHistoricalEditorialFiles } from "../../helpers/versionedEditorialLocks";
 
 // Reviewed Phase 7A Major prose. Original Phase 6A hashes and immutable
 // evidence/proof hashes remain in finalEditorialBaseline.json.
 const MAJOR_HASHES = Object.entries(contentBaseline.rows).filter(([id]) => id.startsWith("major-")).sort(([a], [b]) => a.localeCompare(b)).map(([, row]) => row.after);
 const must = async (payload: unknown, clock = ANNUAL_CLOCK) => { const r = await composeAnnualFortuneNarrative(payload, clock); expect(r.ok, JSON.stringify(r.ok ? "ok" : r.errors)).toBe(true); if (!r.ok) return null!; return r; };
 describe("Annual V4 canonical evidence, clock and regression boundaries", () => {
-  it.each(MAJOR_NARRATIVE_FIXTURES.map((f, i) => ({ ...f, hash: MAJOR_HASHES[i] })))("$id: V4 Major byte hash unchanged", async ({ payload, hash }) => {
+  it.each(MAJOR_NARRATIVE_FIXTURES.map((f, i) => ({ ...f, hash: MAJOR_HASHES[i] })))("$id: V4 Major byte hash unchanged", async ({ id, payload, hash }) => {
+    expectHistoricalEditorialFiles();
+    expect(hash).toBe(editionRow(editorialLocks.historicalMajorNarratives, id));
     const r = await composeMajorFortuneNarrative(payload, MAJOR_EVALUATED_AT); expect(r.ok).toBe(true); if (!r.ok) return;
-    expect(createHash("sha256").update(JSON.stringify(r.narrative)).digest("hex")).toBe(hash);
+    expect(createHash("sha256").update(JSON.stringify(r.narrative)).digest("hex")).toBe(editionRow(editorialLocks.majorNarratives, id).narrativeHash);
   });
   it.each(fixtures)("$id: same canonical generation, monthly extension, exact segments; V3 unchanged", async f => {
     const inputBefore = JSON.stringify(f.payload);

@@ -1,0 +1,203 @@
+{
+  "node": "24.22.0",
+  "globalTimeoutChanged": false,
+  "defaultTestBudgetMs": 5000,
+  "referenceFixtureHookBudgetMs": 60000,
+  "existingDurableHookBudgetMs": 60000,
+  "pairCaseTimings": [
+    {
+      "name": "roles, precision and customer/default boundaries '01-love': fixed roles and distinct direction survive JSON",
+      "beforeMs": 6581.682000000001,
+      "beforeStatus": "failed",
+      "afterMs": 3199.9858340000064,
+      "afterStatus": "passed"
+    },
+    {
+      "name": "roles, precision and customer/default boundaries '02-marriage': fixed roles and distinct direction survive JSON",
+      "beforeMs": 5191.835792000005,
+      "beforeStatus": "failed",
+      "afterMs": 2532.1925420000043,
+      "afterStatus": "passed"
+    },
+    {
+      "name": "roles, precision and customer/default boundaries '03-parent': fixed roles and distinct direction survive JSON",
+      "beforeMs": 6021.017666,
+      "beforeStatus": "failed",
+      "afterMs": 2949.393250000001,
+      "afterStatus": "passed"
+    },
+    {
+      "name": "roles, precision and customer/default boundaries '04-coworker': fixed roles and distinct direction survive JSON",
+      "beforeMs": 8687.239416000004,
+      "beforeStatus": "failed",
+      "afterMs": 4264.485708000007,
+      "afterStatus": "passed"
+    },
+    {
+      "name": "roles, precision and customer/default boundaries '05-manager': fixed roles and distinct direction survive JSON",
+      "beforeMs": 6380.603209000008,
+      "beforeStatus": "failed",
+      "afterMs": 3119.012832999986,
+      "afterStatus": "passed"
+    },
+    {
+      "name": "roles, precision and customer/default boundaries '06-business': fixed roles and distinct direction survive JSON",
+      "beforeMs": 7399.467291000008,
+      "beforeStatus": "failed",
+      "afterMs": 3666.372417000006,
+      "afterStatus": "passed"
+    },
+    {
+      "name": "roles, precision and customer/default boundaries '07-friend': fixed roles and distinct direction survive JSON",
+      "beforeMs": 5784.311625000002,
+      "beforeStatus": "failed",
+      "afterMs": 2815.898583000002,
+      "afterStatus": "passed"
+    },
+    {
+      "name": "roles, precision and customer/default boundaries '08-love': fixed roles and distinct direction survive JSON",
+      "beforeMs": 5249.552374999999,
+      "beforeStatus": "failed",
+      "afterMs": 2561.79574999999,
+      "afterStatus": "passed"
+    }
+  ],
+  "pairGenerationsBefore": 16,
+  "pairGenerationsAfter": 15,
+  "exactExistingReferenceReused": 1,
+  "referenceSetupMovedOutsideSwappedOperation": true,
+  "noAssertionRemoved": true,
+  "pgliteDiagnostic": {
+    "node": "v24.22.0",
+    "coldInitializationAndFirstQueryMs": 523.84225,
+    "schemaAndMigrationsMs": 44.62987499999997,
+    "files": [
+      {
+        "file": "supabase/migrations/0001_create_reports_table.sql",
+        "ms": 2.5715000000000146,
+        "sha256": "7f014dbef38c0565227f21f85d42a447e632a5a17108c4770a247b5229151df5"
+      },
+      {
+        "file": "supabase/migrations/0002_reports_insert_rls_policy.sql",
+        "ms": 0.7372500000000173,
+        "sha256": "acb65ae6c172f05df1b8beece3d1b48409d0a355646dacd40006784d142d3ff6"
+      },
+      {
+        "file": "supabase/migrations/0003_find_paid_report_by_access_token_hash_rpc.sql",
+        "ms": 0.5217920000000049,
+        "sha256": "35ec3f166ea04030dc6f06c08b6de68f60f86a6f24484870b7a37b968f308289"
+      },
+      {
+        "file": "supabase/migrations/0004_create_payment_orders_table.sql",
+        "ms": 1.7059580000000096,
+        "sha256": "aa523a089c3c4ec216fc4ded0b9c43ff8cc9dd8310bc02179062932764d1d49c"
+      },
+      {
+        "file": "supabase/migrations/0005_create_ready_payment_order_rpc.sql",
+        "ms": 2.067833999999948,
+        "sha256": "d9031d1c5b89ea309da65916671a87a48a0d79e456906ac59997edc4fd0a7995"
+      },
+      {
+        "file": "supabase/migrations/0006_update_ready_payment_order_rpc_launch_price.sql",
+        "ms": 0.4183749999999691,
+        "sha256": "f6fad7fd4c609bcb977aeaa8c735840df423025e80300cb4367afca0cedbb4d8"
+      },
+      {
+        "file": "supabase/migrations/0007_mark_toss_payment_order_paid_rpc.sql",
+        "ms": 0.45408400000007987,
+        "sha256": "1f4b4a45f5bfe9b5f76c7dcbefc3e606925d2c9880d4b422d7d106d5dc713486"
+      },
+      {
+        "file": "supabase/migrations/0008_fulfill_paid_saju_mbti_report_rpc.sql",
+        "ms": 0.3810829999999896,
+        "sha256": "f87275efc654db5bc326d274074b940aea410394812ac7d844c6e35ca8f90e0c"
+      },
+      {
+        "file": "supabase/migrations/0009_get_paid_saju_mbti_report_result_rpc.sql",
+        "ms": 0.20974999999998545,
+        "sha256": "83bbe148e1d4d8cf5e1cf208e48beee67c42e7811704857a9c4608c426c99b1f"
+      },
+      {
+        "file": "supabase/migrations/0010_save_comprehensive_report_draft_snapshot_rpc.sql",
+        "ms": 0.3273339999999507,
+        "sha256": "e0e9428fddc7ce06c99b6a9237b4c2f437fe361cf4c09ebda89edcfd5389db78"
+      },
+      {
+        "file": "supabase/migrations/0011_get_generated_comprehensive_report_result_rpc.sql",
+        "ms": 0.1957919999999831,
+        "sha256": "6b01ecbdfeb3634c110c69edd3d331316f04433a7c1ca5939a195ef31367b20c"
+      },
+      {
+        "file": "supabase/migrations/0012_support_comprehensive_v2_report_snapshot.sql",
+        "ms": 0.8352499999999736,
+        "sha256": "6362377cb6804f7fae9367384a4e4f57b176e4b9c6813cafbd2a20cd287a8d97"
+      },
+      {
+        "file": "supabase/migrations/0013_paid_report_reliability.sql",
+        "ms": 8.949499999999944,
+        "sha256": "94918d4736e9964c723036c542da3f31883937d9e62c1b7a89014d81202cd69f"
+      },
+      {
+        "file": "supabase/migrations/20260920163924_production_reliability_reconcile.sql",
+        "ms": 14.595667000000049,
+        "sha256": "ceb8d06803c278c6834ad51981b44fb23473104036bfd9767a0c559ea504d11c"
+      },
+      {
+        "file": "scripts/paid_report_quarantine_recovery_patch.sql",
+        "ms": 1.1739159999999629,
+        "sha256": "bcbda098c1be05d9bae5349b0c02dbf96ba054dca3eadef5645bac61bdd2e295"
+      },
+      {
+        "file": "scripts/paid_payment_confirm_recovery_queue_patch.sql",
+        "ms": 1.8272500000000491,
+        "sha256": "197c319471c5f7d68e50387142241427db8e72db53ef47112d34f35d72242927"
+      },
+      {
+        "file": "scripts/paid_report_publish_expiry_patch.sql",
+        "ms": 3.5707499999999754,
+        "sha256": "18d4b7be7395dd1b8c0090265494511d87708bec1af06fad43c8adb1a8de8f34"
+      },
+      {
+        "file": "scripts/paid_report_external_call_guard_patch.sql",
+        "ms": 1.7305410000000165,
+        "sha256": "19c46ca34fbedbc378bdc5e9e29dbca103223e5777fb099d9a389781ba994da5"
+      },
+      {
+        "file": "supabase/migrations/20260929113608_report_share_links.sql",
+        "ms": 1.0002920000000586,
+        "sha256": "1e847268d9734ea447caacd7de4aefe06b473a95aac4069c63aa43748511c8b0"
+      }
+    ],
+    "network": "disabled",
+    "productionDbCalls": 0,
+    "note": "Independent diagnostic; reference fixture generation is separate and timeout failures occurred in pair generation cases without SQL calls"
+  },
+  "businessPartnerHistoricalNotReproduced": {
+    "file": "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistEngine.test.ts",
+    "name": "creates genuine deterministic artifacts with no input data and no errors",
+    "classification": "UNDETERMINED",
+    "historicalReportedFailure": true,
+    "reproduced": false,
+    "beforeStatus": "passed",
+    "beforeDurationMs": 3425.6981249999953,
+    "afterStatus": "passed",
+    "afterDurationMs": 3416.3215839999903,
+    "resolution": "No engine/artifact code change; do not attribute causality to Node version without a controlled comparison."
+  },
+  "productionLatencyMeasured": false,
+  "productionCachingRetriesOrWorkerPoliciesChanged": false,
+  "timingsAreObservationalNotAProductionSpeedupClaim": true,
+  "rawIntermediateRuntime": "group-runtime-final/runtime.json",
+  "additionalUiHook": {
+    "file": "tests/unit/app/dev/bookReading13b.test.tsx",
+    "sourceSha": "7ef25fcc0ae6f7765473433a826cb7cf96068a7b",
+    "fileSha256": "0300db25f1e78aba177a6c633a3714599afecd627201c5443c23e4de5e7d1b6a",
+    "exactBaseTestAndRuntimeUnchanged": true,
+    "actualError": "Hook timed out in 10000ms.",
+    "suiteFailed": 1,
+    "assertionsNotRun": 16,
+    "rawEvidence": "after-final/ui.json",
+    "fixedBy": "One real fixture per scoped default10000ms hook; pure checks separated; no timeout increase",
+    "finalUiCases": 163
+  }
+}

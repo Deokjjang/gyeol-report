@@ -1,0 +1,50 @@
+{
+  "books": 17,
+  "digests": 102,
+  "rawPacketsAndBooksByteEqual": true,
+  "archivedContractMatches": 17,
+  "uiBookFilesByteEqual": [
+    "love.json",
+    "pair-06-business.json",
+    "full-approximate.json",
+    "major.json",
+    "full-unknown.json",
+    "pair-02-marriage.json",
+    "compatibility.json",
+    "comprehensive.json",
+    "pair-03-parent.json",
+    "pair-04-coworker.json",
+    "pair-07-friend.json",
+    "manifest.json",
+    "annual.json",
+    "career.json",
+    "pair-05-manager.json",
+    "pair-08-love.json"
+  ],
+  "publicationPhysicalFiles": {
+    "compatibility-publication-validation.json": "21c4fc96ff5c039efacde146aa25812fc5a9c05ca8d916b5561c3133a8ec8192",
+    "children-provenance-validation.json": "f4c932c6f39729042316e46ab21f485eef4f3e51a7eb4ca5c70772a6eb3012ab",
+    "before-after-publication.json": "77291f52e5af46aa4096bdcb02dda1a4b9c4e622f5809a40ad774b2c76bb29cf",
+    "negative-validation.json": "9e08ba3b943beff8e7d72690617a22054ae1f9733130ea0562b9a0d0db236798",
+    "publication-safety-manifest.json": "60ce477349b1808fa04d648efc5e17698fa2c3b18676f55615b6d4218f9bfb6f"
+  },
+  "intentionalSourceStampChanges": [
+    "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts"
+  ],
+  "nftFiles": 90,
+  "nftDependencySetsEqual": true,
+  "customerRuntimeGraphEqual": true,
+  "productionDbCalls": 0,
+  "oldStoredFixturesUnchanged": {
+    "tests/fixtures/completed-report/career-editorial-base.json": "9be7e6619158fac6ba133a2bbf216e12d68690f7f0056ee981b05938e80879fe",
+    "tests/fixtures/completed-report/love-editorial-base.json": "7dbaa70fb8cf79e17d88308e8f3551d951edef2d9d7fc293eab281d06feee4d2",
+    "tests/fixtures/completed-report/compatibility-editorial-base.json": "d4c4bc4a21b35309936940a1c1a2b133ceb83ad3d50b95a34a8c5421a9bd39bd"
+  },
+  "sixProducts": true,
+  "sevenCompatibilityCategories": true,
+  "major14Years": true,
+  "annual12Months": true,
+  "newCustomerSnapshotsOverwritten": 0,
+  "productionDataRead": false,
+  "sourceReopenValidations": "after-verified/runtime.json and after-verified/contracts.json"
+}

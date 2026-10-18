@@ -18,6 +18,7 @@ import { RUNTIME_FIXTURES, SHADOW_CLOCK, singleRuntimeInput } from "./runtimeFix
 import releaseLocks from "./careerReleaseLocks.json";
 import { CAREER_STUDY_BRIDGES } from "../../../src/lib/interpretation-v4/careerStudy";
 import { CAREER_STATUS_COPY, careerStatusCopy } from "../../../src/lib/interpretation-v4/careerReleaseContext";
+import { editorialLocks, editionRow, expectHistoricalEditorialFiles } from "../../helpers/versionedEditorialLocks";
 const A = NARRATIVE_FIXTURES[0];
 export const CAREER_RELEASE_FIXTURES = [
   { ...A, id: "A" }, { ...NARRATIVE_FIXTURES[1], id: "B" },
@@ -112,6 +113,8 @@ describe("Career editorial reader edition", () => {
     expect(validateCareerRelease(inventedRoute, p, candidates, r.narrative).hardErrors).toContain("CH03.P2:UNKNOWN_RECOMMENDATION");
   }, 120000);
   it.each(RUNTIME_FIXTURES)("$id previous saved edition remains identical", async f => {
+    expectHistoricalEditorialFiles();
+    expect(releaseLocks).toEqual(editorialLocks.historicalReleaseLocks);
     if (f.id === "career") {
       const old = JSON.parse(readFileSync("tests/fixtures/completed-report/career-editorial-base.json", "utf8"));
       expect(storedBook(old.snapshot)?.data).toEqual(old.book);
@@ -119,7 +122,7 @@ describe("Career editorial reader edition", () => {
     }
     if (f.id !== "career") {
       const generated = await generateV4ShadowReport(f.payload, SHADOW_CLOCK); if (!generated.ok) return expect.unreachable();
-      expect([v4Digest(generated.draft), v4Digest(generated.evidencePacket), v4Digest(projectBook(generated.evidencePacket as V4RuntimeEvidence))]).toEqual(releaseLocks[f.id as keyof typeof releaseLocks]);
+      expect([v4Digest(generated.draft), v4Digest(generated.evidencePacket), v4Digest(projectBook(generated.evidencePacket as V4RuntimeEvidence))]).toEqual(editionRow(editorialLocks.runtime, f.id).hashes);
     }
   }, 120000);
 });

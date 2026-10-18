@@ -9,16 +9,20 @@ import { BookReader } from "../../../../src/app/dev/book-preview/BookReader";
 import { canStartReadingGesture, readingGestureDirection, hasReadingSelection } from "../../../../src/components/book/readingGesture";
 import type { V4RuntimeEvidence } from "../../../../src/lib/interpretation-v4/runtimeProjection";
 import type { BookData, BookPage } from "../../../../src/app/dev/book-preview/bookTypes";
-const books = new Map<string, BookData>();
-beforeAll(async () => {
-  for (const f of RUNTIME_FIXTURES) {
-    const r = await generateV4ShadowReport(f.payload, SHADOW_CLOCK); expect(r.ok).toBe(true); if (!r.ok) continue;
-    books.set(f.id, projectBook(r.evidencePacket as V4RuntimeEvidence)!);
-  }
-});
 describe("Phase13B stable chapter navigation and complete presentation", () => {
-  it.each(RUNTIME_FIXTURES)("$id: front and end navigation share real targets and numbers", ({ id }) => {
-    const b = books.get(id)!;
+  // Each real fixture uses the unchanged default10000ms hook budget. Pure
+  // navigation/gesture checks no longer depend on generating all six Books.
+  for (const fixture of RUNTIME_FIXTURES) describe(fixture.id, () => {
+    let b: BookData;
+    beforeAll(async () => {
+      const generated = await generateV4ShadowReport(fixture.payload, SHADOW_CLOCK);
+      expect(generated.ok).toBe(true);
+      if (!generated.ok) return;
+      const projected = projectBook(generated.evidencePacket as V4RuntimeEvidence);
+      expect(projected).not.toBeNull();
+      b = projected!;
+    });
+    it("front and end navigation share real targets and numbers", () => {
     expect(b.pages[1]).toMatchObject({ kind: "contents", title: "이 책에서 만나게 될 이야기" });
     expect(b.pages.at(-2)).toMatchObject({ kind: "contents", title: "다시 펼쳐보기" });
     const front = b.pages[1], end = b.pages.at(-2)!;
@@ -48,6 +52,11 @@ describe("Phase13B stable chapter navigation and complete presentation", () => {
       }
     }
   });
+    if (fixture.id === "comprehensive") it("old scoreless / no-ID Book data remains renderable", () => {
+    const old: BookPage = { kind: "narrative", title: "저장된 장", paragraphs: [{ text: "저장된 본문입니다.", notes: [] }], notes: [] };
+    expect(renderToStaticMarkup(<BookReader data={b} page={old} onPage={() => {}} onNote={() => {}} onShare={() => {}} />)).toContain("저장된 본문입니다.");
+  });
+  });
   it("short chapters join without losing text, original heading, anchor or note numbering", () => {
     const input: BookPage[] = [
       { kind: "cover", title: "표지", names: "서윤", headline: "표지" },
@@ -64,11 +73,7 @@ describe("Phase13B stable chapter navigation and complete presentation", () => {
     expect(toc.entries.map(e => e.targetId)).toEqual(["core", "work"]);
     expect(toc.entries[0].page).toBe(toc.entries[1].page);
   });
-  it("old scoreless / no-ID Book data remains renderable", () => {
-    const b = books.get("comprehensive")!;
-    const old: BookPage = { kind: "narrative", title: "저장된 장", paragraphs: [{ text: "저장된 본문입니다.", notes: [] }], notes: [] };
-    expect(renderToStaticMarkup(<BookReader data={b} page={old} onPage={() => {}} onNote={() => {}} onShare={() => {}} />)).toContain("저장된 본문입니다.");
-  });
+
 });
 describe("Text selection owns text; only deliberate empty-margin movement turns", () => {
   const start = { x: 260, y: 240, startedAt: 100 };

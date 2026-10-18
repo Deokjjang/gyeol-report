@@ -1,0 +1,21 @@
+{
+  "fixedIntegrationClock": "2026-10-12T12:00:00+09:00",
+  "nodeBothRuns": "24.22.0",
+  "independentActualGenerationRuns": 2,
+  "booksByteEqual": 17,
+  "bookDigestMatches": 102,
+  "uiGoldenBooksByteEqual": 15,
+  "publicationPhysicalFiles": {
+    "compatibility-publication-validation.json": "21c4fc96ff5c039efacde146aa25812fc5a9c05ca8d916b5561c3133a8ec8192",
+    "children-provenance-validation.json": "f4c932c6f39729042316e46ab21f485eef4f3e51a7eb4ca5c70772a6eb3012ab",
+    "before-after-publication.json": "77291f52e5af46aa4096bdcb02dda1a4b9c4e622f5809a40ad774b2c76bb29cf",
+    "negative-validation.json": "9e08ba3b943beff8e7d72690617a22054ae1f9733130ea0562b9a0d0db236798",
+    "publication-safety-manifest.json": "60ce477349b1808fa04d648efc5e17698fa2c3b18676f55615b6d4218f9bfb6f"
+  },
+  "sourceStampChanges": [
+    "tests/unit/report-knowledge/compatibilityBusinessPartnerSpecialistArtifacts.test.ts"
+  ],
+  "sourceStampReason": "Only a test file received an exact independently sealed technical revision; every calculation/Writer/Publisher source stayed byte-identical.",
+  "largeRawOutputsStoredExternally": true,
+  "sourceDataNeverReplacedByMockProse": true
+}
