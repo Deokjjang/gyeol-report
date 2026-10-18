@@ -1,0 +1,1779 @@
+{
+  "summary": {
+    "status": "IMPLEMENTED_WITH_EXPLICIT_WITHHOLDS",
+    "actualFixtures": 7,
+    "registeredFixtures": 6,
+    "existingRangeRecipe": 1,
+    "verifiedFactUnits": 422,
+    "unverifiedUnitsIssued": 0,
+    "withheldAttempts": 164,
+    "byOrigin": {
+      "NATAL_STEM": {
+        "verified": 25,
+        "withheld": 0
+      },
+      "DAYUN_STEM": {
+        "verified": 51,
+        "withheld": 63
+      },
+      "ANNUAL_STEM": {
+        "verified": 99,
+        "withheld": 42
+      },
+      "MONTH_STEM": {
+        "verified": 99,
+        "withheld": 0
+      },
+      "MONTH_BRANCH_MAIN": {
+        "verified": 99,
+        "withheld": 0
+      },
+      "FLOW_GOD": {
+        "verified": 49,
+        "withheld": 59
+      }
+    },
+    "dayMasterUnits": 7,
+    "originalRootsDistinct": 246,
+    "rootReferenceOccurrences": 855,
+    "newIndependentFacts": 0,
+    "sourceIntegrityFailBefore": 30,
+    "sourceIntegrityFailAfter": 30,
+    "customerClaims": 0,
+    "customerReaderBridge": 0,
+    "customerApprovals": 0,
+    "syntheticMeaningDefinitionsUsed": 0,
+    "syntheticMeaningFileReads": 0,
+    "conditionalReviewsRemainPending": true,
+    "meaningLinkCounts": {
+      "scoped": 348,
+      "withheld": 0,
+      "notApplicable": 74
+    }
+  },
+  "countingPolicy": "Role/interval projections, not independently issued facts. NATAL_STEM includes seven separate day-master identity Units. Annual/dayun component Units may retain a native month window. Original root union is counted once.",
+  "cases": [
+    {
+      "fixture": "fixture-major-A",
+      "actualGraphHash": "a3ed6c93dd6feec168d3ab4e3122c3d45effb5864365f5455ff751cdc11f4fb9",
+      "originalCalculationHash": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+      "handoffHash": "89880240be950081e920512d257d68737c4c54af93c2572d54c936c79578f580",
+      "verifiedUnits": 5,
+      "withheldAttempts": 15,
+      "verifiedByOrigin": {
+        "DAYUN_STEM": 1,
+        "NATAL_STEM": 4
+      },
+      "heldByOrigin": {
+        "ANNUAL_STEM": 14,
+        "DAYUN_STEM": 1
+      },
+      "rootReferences": 12,
+      "distinctOriginalRoots": 8,
+      "nativeReceiptLinkedUnits": 1,
+      "graphUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "actualGraphHash": "a2dcaf9ce74b529acee68b2bb1d2e9498e9e1051bcd97cb58397fdb12c912650",
+      "originalCalculationHash": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+      "handoffHash": "d227072b79ce80a9fadab7496e297d3e48f8e0b34c8f43f2b09f99d9b47d7e79",
+      "verifiedUnits": 3,
+      "withheldAttempts": 16,
+      "verifiedByOrigin": {
+        "NATAL_STEM": 3
+      },
+      "heldByOrigin": {
+        "ANNUAL_STEM": 14,
+        "DAYUN_STEM": 2
+      },
+      "rootReferences": 7,
+      "distinctOriginalRoots": 5,
+      "nativeReceiptLinkedUnits": 0,
+      "graphUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "actualGraphHash": "55e5908dc36e60531fb93acbdf7e4a15a1381fcdd31e690aa11b9ec1fb388a83",
+      "originalCalculationHash": "666d22660b0b76edae5040842b3d648075a13a73c81c1e5a4721f1c0601e1a74",
+      "handoffHash": "b11783427427ea3e9afbe53d79b663ff575ff1a285a67d6a679a9e5df4bfcc79",
+      "verifiedUnits": 5,
+      "withheldAttempts": 15,
+      "verifiedByOrigin": {
+        "DAYUN_STEM": 1,
+        "NATAL_STEM": 4
+      },
+      "heldByOrigin": {
+        "ANNUAL_STEM": 14,
+        "DAYUN_STEM": 1
+      },
+      "rootReferences": 12,
+      "distinctOriginalRoots": 8,
+      "nativeReceiptLinkedUnits": 1,
+      "graphUnchanged": true
+    },
+    {
+      "fixture": "fixture-annual-A",
+      "actualGraphHash": "5bb2ed4694075a62d71921c2ffe955c872ece9a4e7a5d85e9efec53b23bb9269",
+      "originalCalculationHash": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+      "handoffHash": "5ab4f2779ae1a7b2694ffb28d4446b6461f081ac293b2080a5ae50965ac0bfee",
+      "verifiedUnits": 124,
+      "withheldAttempts": 0,
+      "verifiedByOrigin": {
+        "ANNUAL_STEM": 24,
+        "DAYUN_STEM": 24,
+        "FLOW_GOD": 24,
+        "MONTH_BRANCH_MAIN": 24,
+        "MONTH_STEM": 24,
+        "NATAL_STEM": 4
+      },
+      "heldByOrigin": {},
+      "rootReferences": 250,
+      "distinctOriginalRoots": 56,
+      "nativeReceiptLinkedUnits": 0,
+      "graphUnchanged": true
+    },
+    {
+      "fixture": "fixture-annual-F",
+      "actualGraphHash": "b0b781c2ba3011bcdfa2764ae843ca569de7223b4c2c5ff586c5637ea268f068",
+      "originalCalculationHash": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+      "handoffHash": "45ec8d71af4744d3de76b63066f66ef6653390a01e0cbb8657f6174f2801bc54",
+      "verifiedUnits": 75,
+      "withheldAttempts": 48,
+      "verifiedByOrigin": {
+        "ANNUAL_STEM": 24,
+        "MONTH_BRANCH_MAIN": 24,
+        "MONTH_STEM": 24,
+        "NATAL_STEM": 3
+      },
+      "heldByOrigin": {
+        "DAYUN_STEM": 24,
+        "FLOW_GOD": 24
+      },
+      "rootReferences": 151,
+      "distinctOriginalRoots": 53,
+      "nativeReceiptLinkedUnits": 0,
+      "graphUnchanged": true
+    },
+    {
+      "fixture": "fixture-annual-C2028",
+      "actualGraphHash": "b9b900a9138e1649ec60393ee1f0ffe9de99080d465465d4c2b2eba473292850",
+      "originalCalculationHash": "666d22660b0b76edae5040842b3d648075a13a73c81c1e5a4721f1c0601e1a74",
+      "handoffHash": "58d024acb24e46b138c32631be6614ef040e3bbb8899fecfe0f412934a307366",
+      "verifiedUnits": 129,
+      "withheldAttempts": 0,
+      "verifiedByOrigin": {
+        "ANNUAL_STEM": 25,
+        "DAYUN_STEM": 25,
+        "FLOW_GOD": 25,
+        "MONTH_BRANCH_MAIN": 25,
+        "MONTH_STEM": 25,
+        "NATAL_STEM": 4
+      },
+      "heldByOrigin": {},
+      "rootReferences": 260,
+      "distinctOriginalRoots": 59,
+      "nativeReceiptLinkedUnits": 0,
+      "graphUnchanged": true
+    },
+    {
+      "fixture": "fixture-annual-ranged-transition",
+      "actualGraphHash": "cefd56b7cfa1fcc0cd59dacd3187a3640c26b21082e2f8a25614c7c049719ad8",
+      "originalCalculationHash": "401d01e6527f6178f5eca071e303cad00042737d3864d450c9f1aa874958b07a",
+      "handoffHash": "6afc42548b8f6f25dc2b33e09a2d79318d10945b8622d4da9f9bd54005ca34cd",
+      "verifiedUnits": 81,
+      "withheldAttempts": 70,
+      "verifiedByOrigin": {
+        "ANNUAL_STEM": 26,
+        "MONTH_BRANCH_MAIN": 26,
+        "MONTH_STEM": 26,
+        "NATAL_STEM": 3
+      },
+      "heldByOrigin": {
+        "DAYUN_STEM": 35,
+        "FLOW_GOD": 35
+      },
+      "rootReferences": 163,
+      "distinctOriginalRoots": 57,
+      "nativeReceiptLinkedUnits": 0,
+      "graphUnchanged": true
+    }
+  ],
+  "unitExamples": [
+    {
+      "version": "actual-calculation-semantic-unit-v1",
+      "evidenceKind": "VERIFIED_CALCULATED_FACT",
+      "factType": "TEN_GOD_RELATION",
+      "originalEvidenceNodeId": "aeg:node:1b0a71e4b326babfb80c126e63e19cb2c57edd21f30915ead1950aaec9006a2f",
+      "originalEvidenceKind": "CALCULATED_NATAL_FACT",
+      "originalProducer": {
+        "file": "src/lib/interpretation-v4/strength.ts",
+        "symbol": "collectStructureAtoms",
+        "version": "v4-structure-evidence-1",
+        "system": "myeongli"
+      },
+      "producerVersion": "v4-structure-evidence-1",
+      "sourceIdentity": "foundation:ten_god:shi_shen",
+      "sourceHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+          "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+          "pointer": "/101",
+          "originalId": "foundation:ten_god:shi_shen",
+          "recordSha256": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+        },
+        "matchedCatalogKey": "kc:v1:9b152e3595d83ebff2cf40367c15801ccf604daae4a2e3572b9661f222bfce7b",
+        "originalId": "foundation:ten_god:shi_shen",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+        "actualHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "producerSources": [
+        {
+          "file": "src/lib/interpretation-v4/strength.ts",
+          "sha256": "fc299d2191e02ae3befa90193a26569ed93f9ede7de70307563a04ca732f9f3d"
+        },
+        {
+          "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+          "sha256": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe"
+        },
+        {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "sha256": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd"
+        },
+        {
+          "file": "src/lib/saju/tenGods.ts",
+          "sha256": "e453f787f1b1f1e15af875196c7630321c283a8a75dd5d4b8a60783672376960"
+        }
+      ],
+      "calculationSource": {
+        "file": "src/lib/saju/tenGods.ts",
+        "symbol": "getTenGod",
+        "fileSha256": "e453f787f1b1f1e15af875196c7630321c283a8a75dd5d4b8a60783672376960",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "canonicalFactRoot": "aeg:root:1a3858aff8fd6c4342c951ec92f1d56e857b697876f970ecb9548626acd309eb",
+      "canonicalFactRoots": [
+        "aeg:root:1a3858aff8fd6c4342c951ec92f1d56e857b697876f970ecb9548626acd309eb",
+        "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087",
+        "aeg:root:7f48fd9ebd0ad6e66c1b5efae9574a3b7fa7010e557892cd0aa78412a91dc8e7"
+      ],
+      "completeAncestry": {
+        "complete": true,
+        "original": {
+          "parentIds": [
+            "aeg:node:32782d4bce25c721325232b708a627c1eaa9641a5af3a4ae3e32987771561636",
+            "aeg:node:f6b345f6cca824190d00055ddb4f0564bfb5184c5ce098e646eb70b6fa788934"
+          ],
+          "rootIds": [
+            "aeg:root:1a3858aff8fd6c4342c951ec92f1d56e857b697876f970ecb9548626acd309eb",
+            "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087",
+            "aeg:root:7f48fd9ebd0ad6e66c1b5efae9574a3b7fa7010e557892cd0aa78412a91dc8e7"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "nodes": [
+          {
+            "nodeId": "aeg:node:1b0a71e4b326babfb80c126e63e19cb2c57edd21f30915ead1950aaec9006a2f",
+            "producer": {
+              "file": "src/lib/interpretation-v4/strength.ts",
+              "symbol": "collectStructureAtoms",
+              "version": "v4-structure-evidence-1",
+              "system": "myeongli"
+            },
+            "ancestry": {
+              "parentIds": [
+                "aeg:node:32782d4bce25c721325232b708a627c1eaa9641a5af3a4ae3e32987771561636",
+                "aeg:node:f6b345f6cca824190d00055ddb4f0564bfb5184c5ce098e646eb70b6fa788934"
+              ],
+              "rootIds": [
+                "aeg:root:1a3858aff8fd6c4342c951ec92f1d56e857b697876f970ecb9548626acd309eb",
+                "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087",
+                "aeg:root:7f48fd9ebd0ad6e66c1b5efae9574a3b7fa7010e557892cd0aa78412a91dc8e7"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:1a3858aff8fd6c4342c951ec92f1d56e857b697876f970ecb9548626acd309eb"
+          },
+          {
+            "nodeId": "aeg:node:32782d4bce25c721325232b708a627c1eaa9641a5af3a4ae3e32987771561636",
+            "producer": {
+              "file": "src/lib/saju/calculateSaju.ts",
+              "symbol": "calculateSaju",
+              "version": "saju-calendar-kst-v2",
+              "system": "myeongli"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [
+                "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087"
+          },
+          {
+            "nodeId": "aeg:node:f6b345f6cca824190d00055ddb4f0564bfb5184c5ce098e646eb70b6fa788934",
+            "producer": {
+              "file": "src/lib/saju/calculateSaju.ts",
+              "symbol": "calculateSaju",
+              "version": "saju-calendar-kst-v2",
+              "system": "myeongli"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [
+                "aeg:root:7f48fd9ebd0ad6e66c1b5efae9574a3b7fa7010e557892cd0aa78412a91dc8e7"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:7f48fd9ebd0ad6e66c1b5efae9574a3b7fa7010e557892cd0aa78412a91dc8e7"
+          }
+        ]
+      },
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-major-A",
+        "originalPersonId": null
+      },
+      "direction": null,
+      "referenceStem": "庚",
+      "targetStem": "壬",
+      "calculatedTenGod": "食神",
+      "definitionLabel": "식신",
+      "referenceBasis": "NATAL_DAY_MASTER",
+      "originLayer": "NATAL_STEM",
+      "temporalScope": "natal",
+      "effectiveInterval": null,
+      "calculationCertainty": "confirmed",
+      "nominalAnnualPillar": null,
+      "effectiveAnnualPillar": null,
+      "supportedMeaningScope": "CALCULATED_TEN_GOD_RELATION_ONLY",
+      "requiredContext": {
+        "interpretation": "SEPARATE_NATAL_ELEMENT_AND_ACTUAL_CONTEXT_REQUIRED",
+        "observedPersonalEvents": 0
+      },
+      "prohibitedInference": [
+        "조건부 생활 조언을 계산 사실로 전환 금지",
+        "미입력 소득·직업·권한·경험·미래 사건 생성 금지",
+        "원국 일간 기준과 대운간 기준 십성 교환 금지",
+        "명목 연주를 실효 연주로 교환 금지",
+        "계산·Source 검증을 의미·상품·고객 승인으로 전환 금지"
+      ],
+      "customerAuthorizationState": "CUSTOMER_APPROVAL_PENDING",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "calculationVerified": true,
+      "sourceDefinitionVerified": true,
+      "customerApproved": false,
+      "customerClaims": 0,
+      "newIndependentFacts": 0,
+      "originalGraphNodeStatus": "VERIFIED",
+      "originalBlockers": [],
+      "calculationWitness": {
+        "nodeId": "aeg:node:1b0a71e4b326babfb80c126e63e19cb2c57edd21f30915ead1950aaec9006a2f",
+        "owner": "fixture-person-major-A",
+        "origin": "NATAL_STEM",
+        "god": "食神",
+        "referenceStem": "庚",
+        "targetStem": "壬",
+        "window": null
+      },
+      "unitId": "actual-semantic-unit:v1:d889f5c0446dc47f7fdadd18e59de260b0a594e62a39b92b05e6956a01a2b316"
+    },
+    {
+      "version": "actual-calculation-semantic-unit-v1",
+      "evidenceKind": "VERIFIED_CALCULATED_FACT",
+      "factType": "TEN_GOD_RELATION",
+      "originalEvidenceNodeId": "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01",
+      "originalEvidenceKind": "CALCULATED_PERIOD_FACT",
+      "originalProducer": {
+        "file": "src/lib/saju/customerDayun.ts",
+        "symbol": "calculateCustomerDayun",
+        "version": "dayun-kst-sect2-v1",
+        "system": "dayun"
+      },
+      "producerVersion": "dayun-kst-sect2-v1",
+      "sourceIdentity": "foundation:ten_god:pian_yin",
+      "sourceHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+          "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+          "pointer": "/107",
+          "originalId": "foundation:ten_god:pian_yin",
+          "recordSha256": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+        },
+        "matchedCatalogKey": "kc:v1:78414608ffc187305ff822fab675909daa8dbdfc3bdd332951de0b6ecf3658c0",
+        "originalId": "foundation:ten_god:pian_yin",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+        "actualHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "producerSources": [
+        {
+          "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+          "sha256": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe"
+        },
+        {
+          "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+          "sha256": "a64f62449cc09b079996ae70a1d8397dda8e111558dc18fb61e19e0261e596f4"
+        },
+        {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "sha256": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd"
+        },
+        {
+          "file": "src/lib/saju/customerDayun.ts",
+          "sha256": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123"
+        }
+      ],
+      "calculationSource": {
+        "file": "src/lib/report-knowledge/majorFortuneDecadeReading.ts",
+        "symbol": "buildMajorFortuneDecadeReading",
+        "fileSha256": "a64f62449cc09b079996ae70a1d8397dda8e111558dc18fb61e19e0261e596f4",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "canonicalFactRoot": "aeg:root:b2ae1af55e13caebb5e7bc7d1fb1560bc55001710285e32f96a626eb991ebcf7",
+      "canonicalFactRoots": [
+        "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087",
+        "aeg:root:b2ae1af55e13caebb5e7bc7d1fb1560bc55001710285e32f96a626eb991ebcf7"
+      ],
+      "completeAncestry": {
+        "complete": true,
+        "original": {
+          "parentIds": [],
+          "rootIds": [
+            "aeg:root:b2ae1af55e13caebb5e7bc7d1fb1560bc55001710285e32f96a626eb991ebcf7"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "nodes": [
+          {
+            "nodeId": "aeg:node:32782d4bce25c721325232b708a627c1eaa9641a5af3a4ae3e32987771561636",
+            "producer": {
+              "file": "src/lib/saju/calculateSaju.ts",
+              "symbol": "calculateSaju",
+              "version": "saju-calendar-kst-v2",
+              "system": "myeongli"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [
+                "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087"
+          },
+          {
+            "nodeId": "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01",
+            "producer": {
+              "file": "src/lib/saju/customerDayun.ts",
+              "symbol": "calculateCustomerDayun",
+              "version": "dayun-kst-sect2-v1",
+              "system": "dayun"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [
+                "aeg:root:b2ae1af55e13caebb5e7bc7d1fb1560bc55001710285e32f96a626eb991ebcf7"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:b2ae1af55e13caebb5e7bc7d1fb1560bc55001710285e32f96a626eb991ebcf7"
+          }
+        ]
+      },
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-major-A",
+        "originalPersonId": null
+      },
+      "direction": null,
+      "referenceStem": "庚",
+      "targetStem": "戊",
+      "calculatedTenGod": "편인",
+      "definitionLabel": "편인",
+      "referenceBasis": "NATAL_DAY_MASTER",
+      "originLayer": "DAYUN_STEM",
+      "temporalScope": "dayun",
+      "effectiveInterval": {
+        "scope": "dayun",
+        "start": "2023-07-15T08:00:00+09:00",
+        "endExclusive": "2033-07-15T08:00:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "cycle": {
+            "index": 4,
+            "ganji": "戊寅",
+            "tenGod": "편인",
+            "elements": [
+              "토",
+              "목"
+            ],
+            "startYear": 2023,
+            "endYear": 2032,
+            "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+          },
+          "startSolarRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          },
+          "nextTransition": {
+            "year": 2033,
+            "dateLabel": "2033-07-15 08:00 한국시간",
+            "startSolarKst": "2033-07-15T08:00:00+09:00",
+            "startSolarRange": {
+              "earliestKst": "2033-07-15T08:00:00+09:00",
+              "latestKst": "2033-07-15T08:00:00+09:00"
+            },
+            "before": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "after": {
+              "index": 5,
+              "ganji": "丁丑",
+              "tenGod": "정관",
+              "elements": [
+                "화",
+                "토"
+              ],
+              "startYear": 2033,
+              "endYear": 2042,
+              "theme": "신뢰를 자리와 역할로 바꾸는 것"
+            }
+          }
+        },
+        "compatibleCombination": true,
+        "transitionRange": {
+          "earliestKst": "2023-07-15T08:00:00+09:00",
+          "latestKst": "2023-07-15T08:00:00+09:00"
+        }
+      },
+      "calculationCertainty": "confirmed",
+      "nominalAnnualPillar": null,
+      "effectiveAnnualPillar": null,
+      "supportedMeaningScope": "CALCULATED_TEN_GOD_RELATION_ONLY",
+      "requiredContext": {
+        "interpretation": "SEPARATE_NATAL_ELEMENT_AND_ACTUAL_CONTEXT_REQUIRED",
+        "observedPersonalEvents": 0
+      },
+      "prohibitedInference": [
+        "조건부 생활 조언을 계산 사실로 전환 금지",
+        "미입력 소득·직업·권한·경험·미래 사건 생성 금지",
+        "원국 일간 기준과 대운간 기준 십성 교환 금지",
+        "명목 연주를 실효 연주로 교환 금지",
+        "계산·Source 검증을 의미·상품·고객 승인으로 전환 금지"
+      ],
+      "customerAuthorizationState": "CUSTOMER_APPROVAL_PENDING",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "calculationVerified": true,
+      "sourceDefinitionVerified": true,
+      "customerApproved": false,
+      "customerClaims": 0,
+      "newIndependentFacts": 0,
+      "originalGraphNodeStatus": "PARTIAL",
+      "originalBlockers": [
+        {
+          "code": "UNADDRESSABLE_PRODUCER_OBSERVATION",
+          "refs": [
+            "/composition/result/evidence/horizon/cycles/4"
+          ]
+        }
+      ],
+      "calculationWitness": {
+        "nodeId": "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01",
+        "owner": "fixture-person-major-A",
+        "origin": "DAYUN_STEM",
+        "god": "편인",
+        "referenceStem": "庚",
+        "targetStem": "戊",
+        "cycleIndex": 4,
+        "window": {
+          "scope": "dayun",
+          "start": "2023-07-15T08:00:00+09:00",
+          "endExclusive": "2033-07-15T08:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "cycle": {
+              "index": 4,
+              "ganji": "戊寅",
+              "tenGod": "편인",
+              "elements": [
+                "토",
+                "목"
+              ],
+              "startYear": 2023,
+              "endYear": 2032,
+              "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+            },
+            "startSolarRange": {
+              "earliestKst": "2023-07-15T08:00:00+09:00",
+              "latestKst": "2023-07-15T08:00:00+09:00"
+            },
+            "nextTransition": {
+              "year": 2033,
+              "dateLabel": "2033-07-15 08:00 한국시간",
+              "startSolarKst": "2033-07-15T08:00:00+09:00",
+              "startSolarRange": {
+                "earliestKst": "2033-07-15T08:00:00+09:00",
+                "latestKst": "2033-07-15T08:00:00+09:00"
+              },
+              "before": {
+                "index": 4,
+                "ganji": "戊寅",
+                "tenGod": "편인",
+                "elements": [
+                  "토",
+                  "목"
+                ],
+                "startYear": 2023,
+                "endYear": 2032,
+                "theme": "남들이 지나친 단서를 자기 언어로 엮는 것"
+              },
+              "after": {
+                "index": 5,
+                "ganji": "丁丑",
+                "tenGod": "정관",
+                "elements": [
+                  "화",
+                  "토"
+                ],
+                "startYear": 2033,
+                "endYear": 2042,
+                "theme": "신뢰를 자리와 역할로 바꾸는 것"
+              }
+            }
+          },
+          "compatibleCombination": true,
+          "transitionRange": {
+            "earliestKst": "2023-07-15T08:00:00+09:00",
+            "latestKst": "2023-07-15T08:00:00+09:00"
+          }
+        }
+      },
+      "unitId": "actual-semantic-unit:v1:3aa33ac80554bb7f24bc9cc0d817a477ceb83a1306b9190f35e0f1b634aa7955"
+    },
+    {
+      "version": "actual-calculation-semantic-unit-v1",
+      "evidenceKind": "VERIFIED_CALCULATED_FACT",
+      "factType": "TEN_GOD_RELATION",
+      "originalEvidenceNodeId": "aeg:node:1001e7344b4c4ac76af3f3009d97a9860f972dbac0046635b2214135131bcb1c",
+      "originalEvidenceKind": "CALCULATED_PERIOD_FACT",
+      "originalProducer": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "version": "annual-month-jie-kst-v2",
+        "system": "annual-month"
+      },
+      "producerVersion": "annual-month-jie-kst-v2",
+      "sourceIdentity": "foundation:ten_god:zheng_cai",
+      "sourceHash": "7f13e36ff2725cf74251e1ae66f401e14415b1063f4f5990577568e60602866f",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+          "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+          "pointer": "/104",
+          "originalId": "foundation:ten_god:zheng_cai",
+          "recordSha256": "7f13e36ff2725cf74251e1ae66f401e14415b1063f4f5990577568e60602866f",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+        },
+        "matchedCatalogKey": "kc:v1:0a0f7e4b0c0476956cb6c9b83245c78fba539685963aabb21aedc9bb39506766",
+        "originalId": "foundation:ten_god:zheng_cai",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "7f13e36ff2725cf74251e1ae66f401e14415b1063f4f5990577568e60602866f",
+        "actualHash": "7f13e36ff2725cf74251e1ae66f401e14415b1063f4f5990577568e60602866f",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "producerSources": [
+        {
+          "file": "src/lib/interpretation-v4/annualEvidence.ts",
+          "sha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533"
+        },
+        {
+          "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+          "sha256": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe"
+        },
+        {
+          "file": "src/lib/report-knowledge/annualMonthJie.ts",
+          "sha256": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f"
+        },
+        {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "sha256": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd"
+        }
+      ],
+      "calculationSource": {
+        "file": "src/lib/interpretation-v4/annualEvidence.ts",
+        "symbol": "annualNarrativeEvidence",
+        "fileSha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "canonicalFactRoot": "aeg:root:ab386638cebbd7507eb3a08279158a98ef37c29262fcecbee2e0987c5915c307",
+      "canonicalFactRoots": [
+        "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d",
+        "aeg:root:ab386638cebbd7507eb3a08279158a98ef37c29262fcecbee2e0987c5915c307"
+      ],
+      "completeAncestry": {
+        "complete": true,
+        "original": {
+          "parentIds": [
+            "aeg:node:fbdb7ba556de214dd4eec60fda665670583a6a2400528686ec508b771974b96e"
+          ],
+          "rootIds": [
+            "aeg:root:ab386638cebbd7507eb3a08279158a98ef37c29262fcecbee2e0987c5915c307"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "nodes": [
+          {
+            "nodeId": "aeg:node:0016d3f6c99a4242aaffdd0d5fe640d7c2efbde5886c9acceab23e9781ec266a",
+            "producer": {
+              "file": "src/lib/saju/calculateSaju.ts",
+              "symbol": "calculateSaju",
+              "version": "saju-calendar-kst-v2",
+              "system": "myeongli"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [
+                "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d"
+          },
+          {
+            "nodeId": "aeg:node:1001e7344b4c4ac76af3f3009d97a9860f972dbac0046635b2214135131bcb1c",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [
+                "aeg:node:fbdb7ba556de214dd4eec60fda665670583a6a2400528686ec508b771974b96e"
+              ],
+              "rootIds": [
+                "aeg:root:ab386638cebbd7507eb3a08279158a98ef37c29262fcecbee2e0987c5915c307"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:ab386638cebbd7507eb3a08279158a98ef37c29262fcecbee2e0987c5915c307"
+          },
+          {
+            "nodeId": "aeg:node:fbdb7ba556de214dd4eec60fda665670583a6a2400528686ec508b771974b96e",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": null
+          }
+        ]
+      },
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-annual-A",
+        "originalPersonId": null
+      },
+      "direction": null,
+      "referenceStem": "庚",
+      "targetStem": "乙",
+      "calculatedTenGod": "정재",
+      "definitionLabel": "정재",
+      "referenceBasis": "NATAL_DAY_MASTER",
+      "originLayer": "ANNUAL_STEM",
+      "temporalScope": "month",
+      "effectiveInterval": {
+        "scope": "month",
+        "start": "2026-01-01T00:00:00+09:00",
+        "endExclusive": "2026-01-05T17:23:10+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "calendar_month_start"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "calculationCertainty": "confirmed",
+      "nominalAnnualPillar": "丙午",
+      "effectiveAnnualPillar": "乙巳",
+      "supportedMeaningScope": "CALCULATED_TEN_GOD_RELATION_ONLY",
+      "requiredContext": {
+        "interpretation": "SEPARATE_NATAL_ELEMENT_AND_ACTUAL_CONTEXT_REQUIRED",
+        "observedPersonalEvents": 0
+      },
+      "prohibitedInference": [
+        "조건부 생활 조언을 계산 사실로 전환 금지",
+        "미입력 소득·직업·권한·경험·미래 사건 생성 금지",
+        "원국 일간 기준과 대운간 기준 십성 교환 금지",
+        "명목 연주를 실효 연주로 교환 금지",
+        "계산·Source 검증을 의미·상품·고객 승인으로 전환 금지"
+      ],
+      "customerAuthorizationState": "CUSTOMER_APPROVAL_PENDING",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "calculationVerified": true,
+      "sourceDefinitionVerified": true,
+      "customerApproved": false,
+      "customerClaims": 0,
+      "newIndependentFacts": 0,
+      "originalGraphNodeStatus": "VERIFIED",
+      "originalBlockers": [],
+      "calculationWitness": {
+        "nodeId": "aeg:node:1001e7344b4c4ac76af3f3009d97a9860f972dbac0046635b2214135131bcb1c",
+        "owner": "fixture-person-annual-A",
+        "origin": "ANNUAL_STEM",
+        "god": "정재",
+        "referenceStem": "庚",
+        "targetStem": "乙",
+        "window": {
+          "scope": "month",
+          "start": "2026-01-01T00:00:00+09:00",
+          "endExclusive": "2026-01-05T17:23:10+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "calendar_month_start"
+            ]
+          },
+          "compatibleCombination": true
+        }
+      },
+      "unitId": "actual-semantic-unit:v1:fc478d40db2cc2ded8f9dc96565aa17cf51add9e2e4e280e26d4c9b5ac94cf1c"
+    },
+    {
+      "version": "actual-calculation-semantic-unit-v1",
+      "evidenceKind": "VERIFIED_CALCULATED_FACT",
+      "factType": "TEN_GOD_RELATION",
+      "originalEvidenceNodeId": "aeg:node:2740b79d2afcfd6acb8fff0237c51ca5993959da4165159a34b1d48ace2cc245",
+      "originalEvidenceKind": "CALCULATED_PERIOD_FACT",
+      "originalProducer": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "version": "annual-month-jie-kst-v2",
+        "system": "annual-month"
+      },
+      "producerVersion": "annual-month-jie-kst-v2",
+      "sourceIdentity": "foundation:ten_god:shi_shen",
+      "sourceHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+          "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+          "pointer": "/101",
+          "originalId": "foundation:ten_god:shi_shen",
+          "recordSha256": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+        },
+        "matchedCatalogKey": "kc:v1:9b152e3595d83ebff2cf40367c15801ccf604daae4a2e3572b9661f222bfce7b",
+        "originalId": "foundation:ten_god:shi_shen",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+        "actualHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "producerSources": [
+        {
+          "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+          "sha256": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe"
+        },
+        {
+          "file": "src/lib/report-knowledge/annualMonthJie.ts",
+          "sha256": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f"
+        },
+        {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "sha256": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd"
+        }
+      ],
+      "calculationSource": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "fileSha256": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "canonicalFactRoot": null,
+      "canonicalFactRoots": [
+        "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d",
+        "aeg:root:96bde23c04436f4f4776002e8d05b8c228cec44e09be2387930ec9ecc373c16f"
+      ],
+      "completeAncestry": {
+        "complete": true,
+        "original": {
+          "parentIds": [
+            "aeg:node:0016d3f6c99a4242aaffdd0d5fe640d7c2efbde5886c9acceab23e9781ec266a",
+            "aeg:node:4be53c1bda6b4945e8259657f850a01a4becd0fddcb0a6f1e66fc25883646835",
+            "aeg:node:bf108acb6cad11e39de8eff97390c36c054f16b1913192b40b3fe3cf7998af7e"
+          ],
+          "rootIds": [
+            "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d",
+            "aeg:root:96bde23c04436f4f4776002e8d05b8c228cec44e09be2387930ec9ecc373c16f"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "nodes": [
+          {
+            "nodeId": "aeg:node:0016d3f6c99a4242aaffdd0d5fe640d7c2efbde5886c9acceab23e9781ec266a",
+            "producer": {
+              "file": "src/lib/saju/calculateSaju.ts",
+              "symbol": "calculateSaju",
+              "version": "saju-calendar-kst-v2",
+              "system": "myeongli"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [
+                "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d"
+          },
+          {
+            "nodeId": "aeg:node:2740b79d2afcfd6acb8fff0237c51ca5993959da4165159a34b1d48ace2cc245",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [
+                "aeg:node:0016d3f6c99a4242aaffdd0d5fe640d7c2efbde5886c9acceab23e9781ec266a",
+                "aeg:node:4be53c1bda6b4945e8259657f850a01a4becd0fddcb0a6f1e66fc25883646835",
+                "aeg:node:bf108acb6cad11e39de8eff97390c36c054f16b1913192b40b3fe3cf7998af7e"
+              ],
+              "rootIds": [
+                "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d",
+                "aeg:root:96bde23c04436f4f4776002e8d05b8c228cec44e09be2387930ec9ecc373c16f"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": null
+          },
+          {
+            "nodeId": "aeg:node:4be53c1bda6b4945e8259657f850a01a4becd0fddcb0a6f1e66fc25883646835",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [
+                "aeg:node:bf108acb6cad11e39de8eff97390c36c054f16b1913192b40b3fe3cf7998af7e"
+              ],
+              "rootIds": [
+                "aeg:root:96bde23c04436f4f4776002e8d05b8c228cec44e09be2387930ec9ecc373c16f"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:96bde23c04436f4f4776002e8d05b8c228cec44e09be2387930ec9ecc373c16f"
+          },
+          {
+            "nodeId": "aeg:node:bf108acb6cad11e39de8eff97390c36c054f16b1913192b40b3fe3cf7998af7e",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": null
+          }
+        ]
+      },
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-annual-A",
+        "originalPersonId": null
+      },
+      "direction": null,
+      "referenceStem": "庚",
+      "targetStem": "壬",
+      "calculatedTenGod": "식신",
+      "definitionLabel": "식신",
+      "referenceBasis": "NATAL_DAY_MASTER",
+      "originLayer": "MONTH_STEM",
+      "temporalScope": "month",
+      "effectiveInterval": {
+        "scope": "month",
+        "start": "2026-04-05T03:40:00+09:00",
+        "endExclusive": "2026-05-01T00:00:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "jie:청명"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "calculationCertainty": "confirmed",
+      "nominalAnnualPillar": "丙午",
+      "effectiveAnnualPillar": "丙午",
+      "supportedMeaningScope": "CALCULATED_TEN_GOD_RELATION_ONLY",
+      "requiredContext": {
+        "interpretation": "SEPARATE_NATAL_ELEMENT_AND_ACTUAL_CONTEXT_REQUIRED",
+        "observedPersonalEvents": 0
+      },
+      "prohibitedInference": [
+        "조건부 생활 조언을 계산 사실로 전환 금지",
+        "미입력 소득·직업·권한·경험·미래 사건 생성 금지",
+        "원국 일간 기준과 대운간 기준 십성 교환 금지",
+        "명목 연주를 실효 연주로 교환 금지",
+        "계산·Source 검증을 의미·상품·고객 승인으로 전환 금지"
+      ],
+      "customerAuthorizationState": "CUSTOMER_APPROVAL_PENDING",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "calculationVerified": true,
+      "sourceDefinitionVerified": true,
+      "customerApproved": false,
+      "customerClaims": 0,
+      "newIndependentFacts": 0,
+      "originalGraphNodeStatus": "VERIFIED",
+      "originalBlockers": [],
+      "calculationWitness": {
+        "nodeId": "aeg:node:2740b79d2afcfd6acb8fff0237c51ca5993959da4165159a34b1d48ace2cc245",
+        "owner": "fixture-person-annual-A",
+        "origin": "MONTH_STEM",
+        "god": "식신",
+        "referenceStem": "庚",
+        "targetStem": "壬",
+        "window": {
+          "scope": "month",
+          "start": "2026-04-05T03:40:00+09:00",
+          "endExclusive": "2026-05-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "jie:청명"
+            ]
+          },
+          "compatibleCombination": true
+        }
+      },
+      "unitId": "actual-semantic-unit:v1:79861cbd024bd4f9143d8c8483a6466d1c53258ce5e66fe102f3b28a789240b2"
+    },
+    {
+      "version": "actual-calculation-semantic-unit-v1",
+      "evidenceKind": "VERIFIED_CALCULATED_FACT",
+      "factType": "TEN_GOD_RELATION",
+      "originalEvidenceNodeId": "aeg:node:2740b79d2afcfd6acb8fff0237c51ca5993959da4165159a34b1d48ace2cc245",
+      "originalEvidenceKind": "CALCULATED_PERIOD_FACT",
+      "originalProducer": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "version": "annual-month-jie-kst-v2",
+        "system": "annual-month"
+      },
+      "producerVersion": "annual-month-jie-kst-v2",
+      "sourceIdentity": "foundation:ten_god:pian_yin",
+      "sourceHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+          "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+          "pointer": "/107",
+          "originalId": "foundation:ten_god:pian_yin",
+          "recordSha256": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+        },
+        "matchedCatalogKey": "kc:v1:78414608ffc187305ff822fab675909daa8dbdfc3bdd332951de0b6ecf3658c0",
+        "originalId": "foundation:ten_god:pian_yin",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+        "actualHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "producerSources": [
+        {
+          "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+          "sha256": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe"
+        },
+        {
+          "file": "src/lib/report-knowledge/annualMonthJie.ts",
+          "sha256": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f"
+        },
+        {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "sha256": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd"
+        },
+        {
+          "file": "src/lib/saju/constants.ts",
+          "sha256": "709f977a2dd80f397f1bfb249d115896f1b97acfd4880b07253f1474badccfaa"
+        }
+      ],
+      "calculationSource": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "fileSha256": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "canonicalFactRoot": null,
+      "canonicalFactRoots": [
+        "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d",
+        "aeg:root:96bde23c04436f4f4776002e8d05b8c228cec44e09be2387930ec9ecc373c16f"
+      ],
+      "completeAncestry": {
+        "complete": true,
+        "original": {
+          "parentIds": [
+            "aeg:node:0016d3f6c99a4242aaffdd0d5fe640d7c2efbde5886c9acceab23e9781ec266a",
+            "aeg:node:4be53c1bda6b4945e8259657f850a01a4becd0fddcb0a6f1e66fc25883646835",
+            "aeg:node:bf108acb6cad11e39de8eff97390c36c054f16b1913192b40b3fe3cf7998af7e"
+          ],
+          "rootIds": [
+            "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d",
+            "aeg:root:96bde23c04436f4f4776002e8d05b8c228cec44e09be2387930ec9ecc373c16f"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "nodes": [
+          {
+            "nodeId": "aeg:node:0016d3f6c99a4242aaffdd0d5fe640d7c2efbde5886c9acceab23e9781ec266a",
+            "producer": {
+              "file": "src/lib/saju/calculateSaju.ts",
+              "symbol": "calculateSaju",
+              "version": "saju-calendar-kst-v2",
+              "system": "myeongli"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [
+                "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d"
+          },
+          {
+            "nodeId": "aeg:node:2740b79d2afcfd6acb8fff0237c51ca5993959da4165159a34b1d48ace2cc245",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [
+                "aeg:node:0016d3f6c99a4242aaffdd0d5fe640d7c2efbde5886c9acceab23e9781ec266a",
+                "aeg:node:4be53c1bda6b4945e8259657f850a01a4becd0fddcb0a6f1e66fc25883646835",
+                "aeg:node:bf108acb6cad11e39de8eff97390c36c054f16b1913192b40b3fe3cf7998af7e"
+              ],
+              "rootIds": [
+                "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d",
+                "aeg:root:96bde23c04436f4f4776002e8d05b8c228cec44e09be2387930ec9ecc373c16f"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": null
+          },
+          {
+            "nodeId": "aeg:node:4be53c1bda6b4945e8259657f850a01a4becd0fddcb0a6f1e66fc25883646835",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [
+                "aeg:node:bf108acb6cad11e39de8eff97390c36c054f16b1913192b40b3fe3cf7998af7e"
+              ],
+              "rootIds": [
+                "aeg:root:96bde23c04436f4f4776002e8d05b8c228cec44e09be2387930ec9ecc373c16f"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:96bde23c04436f4f4776002e8d05b8c228cec44e09be2387930ec9ecc373c16f"
+          },
+          {
+            "nodeId": "aeg:node:bf108acb6cad11e39de8eff97390c36c054f16b1913192b40b3fe3cf7998af7e",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": null
+          }
+        ]
+      },
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-annual-A",
+        "originalPersonId": null
+      },
+      "direction": null,
+      "referenceStem": "庚",
+      "targetStem": "戊",
+      "calculatedTenGod": "편인",
+      "definitionLabel": "편인",
+      "referenceBasis": "NATAL_DAY_MASTER",
+      "originLayer": "MONTH_BRANCH_MAIN",
+      "temporalScope": "month",
+      "effectiveInterval": {
+        "scope": "month",
+        "start": "2026-04-05T03:40:00+09:00",
+        "endExclusive": "2026-05-01T00:00:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "jie:청명"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "calculationCertainty": "confirmed",
+      "nominalAnnualPillar": "丙午",
+      "effectiveAnnualPillar": "丙午",
+      "supportedMeaningScope": "CALCULATED_TEN_GOD_RELATION_ONLY",
+      "requiredContext": {
+        "interpretation": "SEPARATE_NATAL_ELEMENT_AND_ACTUAL_CONTEXT_REQUIRED",
+        "observedPersonalEvents": 0
+      },
+      "prohibitedInference": [
+        "조건부 생활 조언을 계산 사실로 전환 금지",
+        "미입력 소득·직업·권한·경험·미래 사건 생성 금지",
+        "원국 일간 기준과 대운간 기준 십성 교환 금지",
+        "명목 연주를 실효 연주로 교환 금지",
+        "계산·Source 검증을 의미·상품·고객 승인으로 전환 금지"
+      ],
+      "customerAuthorizationState": "CUSTOMER_APPROVAL_PENDING",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "calculationVerified": true,
+      "sourceDefinitionVerified": true,
+      "customerApproved": false,
+      "customerClaims": 0,
+      "newIndependentFacts": 0,
+      "originalGraphNodeStatus": "VERIFIED",
+      "originalBlockers": [],
+      "calculationWitness": {
+        "nodeId": "aeg:node:2740b79d2afcfd6acb8fff0237c51ca5993959da4165159a34b1d48ace2cc245",
+        "owner": "fixture-person-annual-A",
+        "origin": "MONTH_BRANCH_MAIN",
+        "god": "편인",
+        "referenceStem": "庚",
+        "targetStem": "戊",
+        "window": {
+          "scope": "month",
+          "start": "2026-04-05T03:40:00+09:00",
+          "endExclusive": "2026-05-01T00:00:00+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "jie:청명"
+            ]
+          },
+          "compatibleCombination": true
+        }
+      },
+      "unitId": "actual-semantic-unit:v1:07c8d7c96b355366761624899c5715d41c036e5e4eccb10663aa493c332e75ea"
+    },
+    {
+      "version": "actual-calculation-semantic-unit-v1",
+      "evidenceKind": "VERIFIED_CALCULATED_FACT",
+      "factType": "TEN_GOD_RELATION",
+      "originalEvidenceNodeId": "aeg:node:1aad9ae5ce65b3abc96fc67e5b8630d9f7ab32900e025b651cdf764e92009d89",
+      "originalEvidenceKind": "CALCULATED_PERIOD_FACT",
+      "originalProducer": {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "symbol": "buildAnnualMonthCalendar",
+        "version": "annual-month-jie-kst-v2",
+        "system": "annual-month"
+      },
+      "producerVersion": "annual-month-jie-kst-v2",
+      "sourceIdentity": "foundation:ten_god:pian_yin",
+      "sourceHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+          "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+          "pointer": "/107",
+          "originalId": "foundation:ten_god:pian_yin",
+          "recordSha256": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+        },
+        "matchedCatalogKey": "kc:v1:78414608ffc187305ff822fab675909daa8dbdfc3bdd332951de0b6ecf3658c0",
+        "originalId": "foundation:ten_god:pian_yin",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+        "actualHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "producerSources": [
+        {
+          "file": "src/lib/interpretation-v4/annualEvidence.ts",
+          "sha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533"
+        },
+        {
+          "file": "src/lib/report-knowledge/annualFortuneYearRules.ts",
+          "sha256": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe"
+        },
+        {
+          "file": "src/lib/report-knowledge/annualMonthJie.ts",
+          "sha256": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f"
+        },
+        {
+          "file": "src/lib/saju/customerDayun.ts",
+          "sha256": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123"
+        }
+      ],
+      "calculationSource": {
+        "file": "src/lib/interpretation-v4/annualEvidence.ts",
+        "symbol": "annualNarrativeEvidence",
+        "fileSha256": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "canonicalFactRoot": null,
+      "canonicalFactRoots": [
+        "aeg:root:df21da64438970f66a8d7a3c948b94198cf3fb9a1cfc6219c96bff205c2460a1",
+        "aeg:root:e888c5f01dad90c4734f069cde782834436889343c2a373571e683445170ab08"
+      ],
+      "completeAncestry": {
+        "complete": true,
+        "original": {
+          "parentIds": [
+            "aeg:node:10ddb31e44e274766552cc1d5246e9952a71612fb468d7ae035d0cb4200d2d6a",
+            "aeg:node:2a29311f3687250155a2f8351fe73d9d142dd70b5badee592df6ec0c66bc8171"
+          ],
+          "rootIds": [
+            "aeg:root:df21da64438970f66a8d7a3c948b94198cf3fb9a1cfc6219c96bff205c2460a1"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "nodes": [
+          {
+            "nodeId": "aeg:node:10ddb31e44e274766552cc1d5246e9952a71612fb468d7ae035d0cb4200d2d6a",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": null
+          },
+          {
+            "nodeId": "aeg:node:1aad9ae5ce65b3abc96fc67e5b8630d9f7ab32900e025b651cdf764e92009d89",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [
+                "aeg:node:10ddb31e44e274766552cc1d5246e9952a71612fb468d7ae035d0cb4200d2d6a",
+                "aeg:node:2a29311f3687250155a2f8351fe73d9d142dd70b5badee592df6ec0c66bc8171"
+              ],
+              "rootIds": [
+                "aeg:root:df21da64438970f66a8d7a3c948b94198cf3fb9a1cfc6219c96bff205c2460a1"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": null
+          },
+          {
+            "nodeId": "aeg:node:2a29311f3687250155a2f8351fe73d9d142dd70b5badee592df6ec0c66bc8171",
+            "producer": {
+              "file": "src/lib/saju/customerDayun.ts",
+              "symbol": "calculateCustomerDayun",
+              "version": "dayun-kst-sect2-v1",
+              "system": "dayun"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [
+                "aeg:root:df21da64438970f66a8d7a3c948b94198cf3fb9a1cfc6219c96bff205c2460a1"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:df21da64438970f66a8d7a3c948b94198cf3fb9a1cfc6219c96bff205c2460a1"
+          },
+          {
+            "nodeId": "aeg:node:405d317a68c6c4f07e96230241ca325cb68ca6ba7092a3a8f6498f3963eba4f0",
+            "producer": {
+              "file": "src/lib/report-knowledge/annualMonthJie.ts",
+              "symbol": "buildAnnualMonthCalendar",
+              "version": "annual-month-jie-kst-v2",
+              "system": "annual-month"
+            },
+            "ancestry": {
+              "parentIds": [
+                "aeg:node:10ddb31e44e274766552cc1d5246e9952a71612fb468d7ae035d0cb4200d2d6a"
+              ],
+              "rootIds": [
+                "aeg:root:e888c5f01dad90c4734f069cde782834436889343c2a373571e683445170ab08"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:e888c5f01dad90c4734f069cde782834436889343c2a373571e683445170ab08"
+          }
+        ]
+      },
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-annual-A",
+        "originalPersonId": null
+      },
+      "direction": null,
+      "referenceStem": "戊",
+      "targetStem": "丙",
+      "calculatedTenGod": "편인",
+      "definitionLabel": "편인",
+      "referenceBasis": "DAYUN_STEM",
+      "originLayer": "FLOW_GOD",
+      "temporalScope": "month",
+      "effectiveInterval": {
+        "scope": "month",
+        "start": "2026-12-01T00:00:00+09:00",
+        "endExclusive": "2026-12-07T11:52:32+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "calendar_month_start"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "calculationCertainty": "confirmed",
+      "nominalAnnualPillar": "丙午",
+      "effectiveAnnualPillar": "丙午",
+      "supportedMeaningScope": "CALCULATED_TEN_GOD_RELATION_ONLY",
+      "requiredContext": {
+        "interpretation": "SEPARATE_NATAL_ELEMENT_AND_ACTUAL_CONTEXT_REQUIRED",
+        "observedPersonalEvents": 0
+      },
+      "prohibitedInference": [
+        "조건부 생활 조언을 계산 사실로 전환 금지",
+        "미입력 소득·직업·권한·경험·미래 사건 생성 금지",
+        "원국 일간 기준과 대운간 기준 십성 교환 금지",
+        "명목 연주를 실효 연주로 교환 금지",
+        "계산·Source 검증을 의미·상품·고객 승인으로 전환 금지"
+      ],
+      "customerAuthorizationState": "CUSTOMER_APPROVAL_PENDING",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "calculationVerified": true,
+      "sourceDefinitionVerified": true,
+      "customerApproved": false,
+      "customerClaims": 0,
+      "newIndependentFacts": 0,
+      "originalGraphNodeStatus": "VERIFIED",
+      "originalBlockers": [],
+      "calculationWitness": {
+        "nodeId": "aeg:node:1aad9ae5ce65b3abc96fc67e5b8630d9f7ab32900e025b651cdf764e92009d89",
+        "owner": "fixture-person-annual-A",
+        "origin": "FLOW_GOD",
+        "god": "편인",
+        "referenceStem": "戊",
+        "targetStem": "丙",
+        "cycleIndex": 4,
+        "window": {
+          "scope": "month",
+          "start": "2026-12-01T00:00:00+09:00",
+          "endExclusive": "2026-12-07T11:52:32+09:00",
+          "certainty": "confirmed",
+          "originalBounds": {
+            "boundaryReason": [
+              "calendar_month_start"
+            ]
+          },
+          "compatibleCombination": true
+        }
+      },
+      "unitId": "actual-semantic-unit:v1:3e3724f285f975e819f92183013c3bc41271554c65715f5393ac2f0e52878d35"
+    },
+    {
+      "version": "actual-calculation-semantic-unit-v1",
+      "evidenceKind": "VERIFIED_CALCULATED_FACT",
+      "factType": "NATAL_DAY_MASTER",
+      "originalEvidenceNodeId": "aeg:node:32782d4bce25c721325232b708a627c1eaa9641a5af3a4ae3e32987771561636",
+      "originalEvidenceKind": "CALCULATED_NATAL_FACT",
+      "originalProducer": {
+        "file": "src/lib/saju/calculateSaju.ts",
+        "symbol": "calculateSaju",
+        "version": "saju-calendar-kst-v2",
+        "system": "myeongli"
+      },
+      "producerVersion": "saju-calendar-kst-v2",
+      "sourceIdentity": "foundation:day_master:庚",
+      "sourceHash": "86052773f61c70151852fc74324ed654daa17ef86f208cf1733b6d5b80dc6386",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+          "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+          "pointer": "/20",
+          "originalId": "foundation:day_master:庚",
+          "recordSha256": "86052773f61c70151852fc74324ed654daa17ef86f208cf1733b6d5b80dc6386",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+        },
+        "matchedCatalogKey": "kc:v1:bead4026bffad2aed646ef1b4e50dffa5fc12999c7d241642537237b2bbefe57",
+        "originalId": "foundation:day_master:庚",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "86052773f61c70151852fc74324ed654daa17ef86f208cf1733b6d5b80dc6386",
+        "actualHash": "86052773f61c70151852fc74324ed654daa17ef86f208cf1733b6d5b80dc6386",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "producerSources": [
+        {
+          "file": "src/lib/saju/calculateSaju.ts",
+          "sha256": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd"
+        }
+      ],
+      "calculationSource": {
+        "file": "src/lib/saju/calculateSaju.ts",
+        "symbol": "calculateSaju",
+        "fileSha256": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd",
+        "versionBasis": "EXACT_FROZEN_SOURCE_HASH"
+      },
+      "canonicalFactRoot": "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087",
+      "canonicalFactRoots": [
+        "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087"
+      ],
+      "completeAncestry": {
+        "complete": true,
+        "original": {
+          "parentIds": [],
+          "rootIds": [
+            "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087"
+          ],
+          "missingIds": [],
+          "complete": true,
+          "cycle": false,
+          "domains": []
+        },
+        "nodes": [
+          {
+            "nodeId": "aeg:node:32782d4bce25c721325232b708a627c1eaa9641a5af3a4ae3e32987771561636",
+            "producer": {
+              "file": "src/lib/saju/calculateSaju.ts",
+              "symbol": "calculateSaju",
+              "version": "saju-calendar-kst-v2",
+              "system": "myeongli"
+            },
+            "ancestry": {
+              "parentIds": [],
+              "rootIds": [
+                "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087"
+              ],
+              "missingIds": [],
+              "complete": true,
+              "cycle": false,
+              "domains": []
+            },
+            "factRoot": "aeg:root:46518282e1a86fac06a9f6c7b46a5ab6a995d6dc33f995224cb03dc03364e087"
+          }
+        ]
+      },
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-major-A",
+        "originalPersonId": null
+      },
+      "direction": null,
+      "referenceStem": "庚",
+      "targetStem": "庚",
+      "calculatedTenGod": null,
+      "definitionLabel": "경금",
+      "referenceBasis": "NATAL_DAY_MASTER",
+      "originLayer": "NATAL_STEM",
+      "temporalScope": "natal",
+      "effectiveInterval": null,
+      "calculationCertainty": "confirmed",
+      "nominalAnnualPillar": null,
+      "effectiveAnnualPillar": null,
+      "supportedMeaningScope": "CALCULATED_STEM_IDENTITY_ONLY",
+      "requiredContext": {
+        "interpretation": "SEPARATE_NATAL_ELEMENT_AND_ACTUAL_CONTEXT_REQUIRED",
+        "observedPersonalEvents": 0
+      },
+      "prohibitedInference": [
+        "조건부 생활 조언을 계산 사실로 전환 금지",
+        "미입력 소득·직업·권한·경험·미래 사건 생성 금지",
+        "원국 일간 기준과 대운간 기준 십성 교환 금지",
+        "명목 연주를 실효 연주로 교환 금지",
+        "계산·Source 검증을 의미·상품·고객 승인으로 전환 금지"
+      ],
+      "customerAuthorizationState": "CUSTOMER_APPROVAL_PENDING",
+      "meaningReview": "MEANING_REVIEW_REQUIRED",
+      "productReview": "PRODUCT_REVIEW_REQUIRED",
+      "calculationVerified": true,
+      "sourceDefinitionVerified": true,
+      "customerApproved": false,
+      "customerClaims": 0,
+      "newIndependentFacts": 0,
+      "originalGraphNodeStatus": "PARTIAL",
+      "originalBlockers": [
+        {
+          "code": "UNADDRESSABLE_PRODUCER_OBSERVATION",
+          "refs": [
+            "/calculations/person/pillars/day/stem"
+          ]
+        }
+      ],
+      "calculationWitness": null,
+      "unitId": "actual-semantic-unit:v1:9307258ea34d4f3b37986bf27061c26c16a5dfeb9fcf2729c5876b0f16361eac"
+    }
+  ],
+  "fullUnitReceipt": {
+    "file": "/Users/Deokmin/Documents/gyeol-validation/v4-actual-calculation-semantic-bridge-01/actual-run-serialized/actual-units.json",
+    "sha256": "3fd8787d279321f4876815b8fe9cefad24d91d56d2d3a8dd6adb8e453aad8dac"
+  },
+  "withheldReasons": {
+    "ACTUAL_SCOPED_CALCULATION_REQUIRED:ACTUAL_FLOW_ANNUAL_TARGET_ROOT_REQUIRED|CUSTOMER_APPROVAL_PENDING|MEANING_REVIEW_REQUIRED": 18,
+    "ACTUAL_SCOPED_CALCULATION_REQUIRED:CUSTOMER_APPROVAL_PENDING|MEANING_REVIEW_REQUIRED|UNADDRESSABLE_PRODUCER_OBSERVATION|UNKNOWN_CONDITIONAL_OR_OUTSIDE_EFFECTIVE_INTERVAL": 1,
+    "ACTUAL_SCOPED_CALCULATION_REQUIRED:CUSTOMER_APPROVAL_PENDING|MEANING_REVIEW_REQUIRED|UNADDRESSABLE_PRODUCER_OBSERVATION|UNKNOWN_CONDITIONAL_OR_OUTSIDE_EFFECTIVE_INTERVAL|UNKNOWN_INTERVAL": 3,
+    "ACTUAL_SCOPED_CALCULATION_REQUIRED:CUSTOMER_APPROVAL_PENDING|MEANING_REVIEW_REQUIRED|UNCERTAIN_TRANSITION|UNKNOWN_CONDITIONAL_OR_OUTSIDE_EFFECTIVE_INTERVAL": 18,
+    "CONFIRMED_ANCESTRY_INTERVAL_REQUIRED": 82,
+    "DIRECT_CALCULATED_NODE_REQUIRED": 42
+  }
+}

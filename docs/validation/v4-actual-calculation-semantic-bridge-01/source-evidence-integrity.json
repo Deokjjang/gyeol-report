@@ -1,0 +1,994 @@
+{
+  "sourceDefinitionProofs": {
+    "foundation:day_master:庚": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/20",
+        "originalId": "foundation:day_master:庚",
+        "recordSha256": "86052773f61c70151852fc74324ed654daa17ef86f208cf1733b6d5b80dc6386",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:bead4026bffad2aed646ef1b4e50dffa5fc12999c7d241642537237b2bbefe57",
+      "originalId": "foundation:day_master:庚",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "86052773f61c70151852fc74324ed654daa17ef86f208cf1733b6d5b80dc6386",
+      "actualHash": "86052773f61c70151852fc74324ed654daa17ef86f208cf1733b6d5b80dc6386",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:ten_god:shi_shen": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/101",
+        "originalId": "foundation:ten_god:shi_shen",
+        "recordSha256": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:9b152e3595d83ebff2cf40367c15801ccf604daae4a2e3572b9661f222bfce7b",
+      "originalId": "foundation:ten_god:shi_shen",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+      "actualHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:ten_god:zheng_yin": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/108",
+        "originalId": "foundation:ten_god:zheng_yin",
+        "recordSha256": "7098bd99043e8c73d05217bc8908293875ca89dc07cd2ff70af16b065b32f339",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:2fec992c4ea4ba573135babf09bd0309cc2e71953fea133796ca0969f25a9ef9",
+      "originalId": "foundation:ten_god:zheng_yin",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "7098bd99043e8c73d05217bc8908293875ca89dc07cd2ff70af16b065b32f339",
+      "actualHash": "7098bd99043e8c73d05217bc8908293875ca89dc07cd2ff70af16b065b32f339",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:ten_god:zheng_cai": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/104",
+        "originalId": "foundation:ten_god:zheng_cai",
+        "recordSha256": "7f13e36ff2725cf74251e1ae66f401e14415b1063f4f5990577568e60602866f",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:0a0f7e4b0c0476956cb6c9b83245c78fba539685963aabb21aedc9bb39506766",
+      "originalId": "foundation:ten_god:zheng_cai",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "7f13e36ff2725cf74251e1ae66f401e14415b1063f4f5990577568e60602866f",
+      "actualHash": "7f13e36ff2725cf74251e1ae66f401e14415b1063f4f5990577568e60602866f",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:ten_god:pian_yin": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/107",
+        "originalId": "foundation:ten_god:pian_yin",
+        "recordSha256": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:78414608ffc187305ff822fab675909daa8dbdfc3bdd332951de0b6ecf3658c0",
+      "originalId": "foundation:ten_god:pian_yin",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+      "actualHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:day_master:戊": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/16",
+        "originalId": "foundation:day_master:戊",
+        "recordSha256": "87c341f4594cfad09e0606e310f32dd1e7469989ea92fa9decb053c2f6cb9e7a",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:f5c5b8dfae999f2737f564d39f2f530be3de8a5de0bb8a2860273125cbb7f272",
+      "originalId": "foundation:day_master:戊",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "87c341f4594cfad09e0606e310f32dd1e7469989ea92fa9decb053c2f6cb9e7a",
+      "actualHash": "87c341f4594cfad09e0606e310f32dd1e7469989ea92fa9decb053c2f6cb9e7a",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:ten_god:qi_sha": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/105",
+        "originalId": "foundation:ten_god:qi_sha",
+        "recordSha256": "772e2f835195bbd7ae171796d6507aa2ec10a4efdb9dd0be7535729ef4a3b80d",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:44d01056444fa00e4d6041ca102102b88c0bf7a799ee127c84edb820d28bc45e",
+      "originalId": "foundation:ten_god:qi_sha",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "772e2f835195bbd7ae171796d6507aa2ec10a4efdb9dd0be7535729ef4a3b80d",
+      "actualHash": "772e2f835195bbd7ae171796d6507aa2ec10a4efdb9dd0be7535729ef4a3b80d",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:ten_god:pian_cai": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/103",
+        "originalId": "foundation:ten_god:pian_cai",
+        "recordSha256": "b2ced2072ff8bd848e6ff31903bbcde59b742102f5f3893e8b72bf8ea21dd966",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:c5c0d871e151a457847ba619b2d3154431073098466562a73dacf427f975915c",
+      "originalId": "foundation:ten_god:pian_cai",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "b2ced2072ff8bd848e6ff31903bbcde59b742102f5f3893e8b72bf8ea21dd966",
+      "actualHash": "b2ced2072ff8bd848e6ff31903bbcde59b742102f5f3893e8b72bf8ea21dd966",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:ten_god:zheng_guan": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/106",
+        "originalId": "foundation:ten_god:zheng_guan",
+        "recordSha256": "94995b8c136aa8e30fd19773f8b71c5711beb46091f3f80e01e4c5af1152ce71",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:d77c0d49e49aba3e4041ac1c6eac63ccdbd555ea7d5b555e8c3b56a7bc071a92",
+      "originalId": "foundation:ten_god:zheng_guan",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "94995b8c136aa8e30fd19773f8b71c5711beb46091f3f80e01e4c5af1152ce71",
+      "actualHash": "94995b8c136aa8e30fd19773f8b71c5711beb46091f3f80e01e4c5af1152ce71",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:ten_god:jie_cai": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/100",
+        "originalId": "foundation:ten_god:jie_cai",
+        "recordSha256": "898c4c8609dc4c637c4ee3ee9369c6011dbbede7294b246751b42b8811999239",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:0f7ae0a306f62a79cd9712d463a808483898cc04eb1798e37716725167de2037",
+      "originalId": "foundation:ten_god:jie_cai",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "898c4c8609dc4c637c4ee3ee9369c6011dbbede7294b246751b42b8811999239",
+      "actualHash": "898c4c8609dc4c637c4ee3ee9369c6011dbbede7294b246751b42b8811999239",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:ten_god:bijian": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/99",
+        "originalId": "foundation:ten_god:bijian",
+        "recordSha256": "bdcbc44a5a262791cabcfd3165daad55831189de4069200af638a4dedf667e6e",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:463e90d79129329b1355a1fd4c182341000d4376d59d88fd9eef16af8c9b23dc",
+      "originalId": "foundation:ten_god:bijian",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "bdcbc44a5a262791cabcfd3165daad55831189de4069200af638a4dedf667e6e",
+      "actualHash": "bdcbc44a5a262791cabcfd3165daad55831189de4069200af638a4dedf667e6e",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:ten_god:shang_guan": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/102",
+        "originalId": "foundation:ten_god:shang_guan",
+        "recordSha256": "bc99009644343d85b0161b881f90ac0fc7e9954cfd65f69a4f187d4e08344c3b",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:01306240ac8c33d06e3c934dc6d04b09a2e5968f94addb42e8de124f82bf1f89",
+      "originalId": "foundation:ten_god:shang_guan",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "bc99009644343d85b0161b881f90ac0fc7e9954cfd65f69a4f187d4e08344c3b",
+      "actualHash": "bc99009644343d85b0161b881f90ac0fc7e9954cfd65f69a4f187d4e08344c3b",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    },
+    "foundation:day_master:甲": {
+      "locator": {
+        "file": "src/lib/report-knowledge/sajuFoundationKnowledge.ts",
+        "exportName": "SAJU_FOUNDATION_KNOWLEDGE",
+        "pointer": "/8",
+        "originalId": "foundation:day_master:甲",
+        "recordSha256": "18314601519e210863adb5a9fa299f243a6c37c553116f9183ad43f30780e699",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "fileSha256": "dc07e71f187bb49dc4b1cd43bd7b93f244444791d24682140f208eacd89c63c2"
+      },
+      "matchedCatalogKey": "kc:v1:983b5c6ab74a28c2a4ec2556ee3d564015df4d6870d105a29c04d00a04819b0d",
+      "originalId": "foundation:day_master:甲",
+      "role": "ORIGINAL_RECORD",
+      "expectedHash": "18314601519e210863adb5a9fa299f243a6c37c553116f9183ad43f30780e699",
+      "actualHash": "18314601519e210863adb5a9fa299f243a6c37c553116f9183ad43f30780e699",
+      "hashAlgorithm": "SHA256_JSON_INSERTION",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+    }
+  },
+  "exactSourceDefinitions": 13,
+  "tenGodDefinitionIds": [
+    "foundation:ten_god:bijian",
+    "foundation:ten_god:jie_cai",
+    "foundation:ten_god:pian_cai",
+    "foundation:ten_god:pian_yin",
+    "foundation:ten_god:qi_sha",
+    "foundation:ten_god:shang_guan",
+    "foundation:ten_god:shi_shen",
+    "foundation:ten_god:zheng_cai",
+    "foundation:ten_god:zheng_guan",
+    "foundation:ten_god:zheng_yin"
+  ],
+  "dayMasterDefinitionIds": [
+    "foundation:day_master:庚",
+    "foundation:day_master:戊",
+    "foundation:day_master:甲"
+  ],
+  "producerSourceHashes": {
+    "src/lib/saju/calculateSaju.ts": "512dabfdb1d9bea14dd739fb3ead53565a88c953e7f498b4c37cbd4b85650cbd",
+    "src/lib/interpretation-v4/strength.ts": "fc299d2191e02ae3befa90193a26569ed93f9ede7de70307563a04ca732f9f3d",
+    "src/lib/report-knowledge/annualFortuneYearRules.ts": "9fe7ec48a5c605984ba17d245bb60c4a7097c2eae031643812e16b0371e317fe",
+    "src/lib/saju/tenGods.ts": "e453f787f1b1f1e15af875196c7630321c283a8a75dd5d4b8a60783672376960",
+    "src/lib/report-knowledge/majorFortuneDecadeReading.ts": "a64f62449cc09b079996ae70a1d8397dda8e111558dc18fb61e19e0261e596f4",
+    "src/lib/saju/customerDayun.ts": "d4249f81df903de85ce7ea088696b2dc7522eca36a9ee8e6a841655d6d899123",
+    "src/lib/interpretation-v4/annualEvidence.ts": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+    "src/lib/report-knowledge/annualMonthJie.ts": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+    "src/lib/saju/constants.ts": "709f977a2dd80f397f1bfb249d115896f1b97acfd4880b07253f1474badccfaa"
+  },
+  "sourceHashVersionVerified": true,
+  "originalProducerIdentityVersionPreserved": true,
+  "allOriginalNodeRootAncestryOwnerDirectionIntervalsPreserved": true,
+  "originalRootsDistinct": 246,
+  "rootReferenceOccurrences": 855,
+  "newIndependentFacts": 0,
+  "newFactRoots": 0,
+  "sourceFailuresBefore": 30,
+  "sourceFailuresAfter": 30,
+  "sourceFailureCohort": [
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:상관",
+      "beforeReceiptHash": "eb952d7f9121f37d28f7852c976e187d3833dcf8bc47e848cbcfcb48719468ed",
+      "afterReceiptHash": "eb952d7f9121f37d28f7852c976e187d3833dcf8bc47e848cbcfcb48719468ed",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:0eef28cb9021688b08710dbbc0656761ce2eafadbfebcf880cfab18c84ef6f59"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:정재",
+      "beforeReceiptHash": "507b6f1ff80eec25cfbe3381cf329948a029f325f4e1c7e16fac143136b7072f",
+      "afterReceiptHash": "507b6f1ff80eec25cfbe3381cf329948a029f325f4e1c7e16fac143136b7072f",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:224c876e0f0941788981137e3c1991ab681cc28c56bc5176c784e248eaaebdcb"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:식신",
+      "beforeReceiptHash": "1ee40dd0f2a894440e87c7c1a7f4862491c133dfc6766e901953dea07cbd421d",
+      "afterReceiptHash": "1ee40dd0f2a894440e87c7c1a7f4862491c133dfc6766e901953dea07cbd421d",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:2813820e4d44d0197e4b8c68bcab92741556813645989d3afb0b9f08256bcb0e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:정관",
+      "beforeReceiptHash": "732fd342580d439de352432519baa42a7b66ea0f9b3c63a28652f1152ca315b6",
+      "afterReceiptHash": "732fd342580d439de352432519baa42a7b66ea0f9b3c63a28652f1152ca315b6",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:55acb9b6408668d6477ac17e827d0ae22c191f4edb0c6215a0a536c06c9fe606"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:겁재",
+      "beforeReceiptHash": "731b197c838acd7698d4a8674f7c468bf06a9c94c3f785f2b87f8939bfb18623",
+      "afterReceiptHash": "731b197c838acd7698d4a8674f7c468bf06a9c94c3f785f2b87f8939bfb18623",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:5eab7ae68576112ef396ea93dc38ad2e3a17ec61892efa7eb1e332c4f3a88e01"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:편관",
+      "beforeReceiptHash": "b99bc1e2cc21bc2cf209708d17b085563ba64247b6bab1b5ee35dbc1d985068f",
+      "afterReceiptHash": "b99bc1e2cc21bc2cf209708d17b085563ba64247b6bab1b5ee35dbc1d985068f",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:비견",
+      "beforeReceiptHash": "812c85a9af1e126a023b36ba2336408598401654d1fd43b04d11e0268520ceb0",
+      "afterReceiptHash": "812c85a9af1e126a023b36ba2336408598401654d1fd43b04d11e0268520ceb0",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8a266c97103d91c03db4d56dcaac5e2d0a63c3886ab8740c2389ecf7c321c0e3"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:편재",
+      "beforeReceiptHash": "36c8a7b59387e7d94abe0d4e99b7832d1b56996805a4415aa1aeeeee1dcb47e1",
+      "afterReceiptHash": "36c8a7b59387e7d94abe0d4e99b7832d1b56996805a4415aa1aeeeee1dcb47e1",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:편인",
+      "beforeReceiptHash": "515f17d2bcb7e5e29250dc2aef66655d98470bfd25da2d1f34814091c981b021",
+      "afterReceiptHash": "515f17d2bcb7e5e29250dc2aef66655d98470bfd25da2d1f34814091c981b021",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:b6f62c500342e43cc849f6081055d8e7706e533aa36d3e00a24c03ddbadaae01"
+        ],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-A",
+      "originalId": "mfpr:god:정인",
+      "beforeReceiptHash": "1c2c424f41f00f6e80dc163464969c45f7700f0e1b0d513590aa4bbf8c1fdb2a",
+      "afterReceiptHash": "1c2c424f41f00f6e80dc163464969c45f7700f0e1b0d513590aa4bbf8c1fdb2a",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:e0cede37d555c4f5ab21f531641fbcdf7507b30303c205a2be073f6a6e80b5b5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:상관",
+      "beforeReceiptHash": "8f041173e90f4d6bc3c2db44f0b162d77ba0a42a9ae9be17566d8421ad5e957f",
+      "afterReceiptHash": "8f041173e90f4d6bc3c2db44f0b162d77ba0a42a9ae9be17566d8421ad5e957f",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:0eef28cb9021688b08710dbbc0656761ce2eafadbfebcf880cfab18c84ef6f59"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:정재",
+      "beforeReceiptHash": "55dc2a0337ec85c4a4293d5775f10efc25b502d509490e09bdcd91bd75895a27",
+      "afterReceiptHash": "55dc2a0337ec85c4a4293d5775f10efc25b502d509490e09bdcd91bd75895a27",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:224c876e0f0941788981137e3c1991ab681cc28c56bc5176c784e248eaaebdcb"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:식신",
+      "beforeReceiptHash": "4d8661c5b4993a6cbbaaefcb32478d6d0c4e07a6db273228b04792457271e006",
+      "afterReceiptHash": "4d8661c5b4993a6cbbaaefcb32478d6d0c4e07a6db273228b04792457271e006",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:2813820e4d44d0197e4b8c68bcab92741556813645989d3afb0b9f08256bcb0e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:정관",
+      "beforeReceiptHash": "9fcb9486718da120a8c3f231e15418e7093dff8775d5d092bfdec8278b6a0c42",
+      "afterReceiptHash": "9fcb9486718da120a8c3f231e15418e7093dff8775d5d092bfdec8278b6a0c42",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:55acb9b6408668d6477ac17e827d0ae22c191f4edb0c6215a0a536c06c9fe606"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:겁재",
+      "beforeReceiptHash": "3092e4cebfab34099868ef0b9c93b1c3e8f1f56e49a50820510a5654159164f0",
+      "afterReceiptHash": "3092e4cebfab34099868ef0b9c93b1c3e8f1f56e49a50820510a5654159164f0",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:5eab7ae68576112ef396ea93dc38ad2e3a17ec61892efa7eb1e332c4f3a88e01"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:편관",
+      "beforeReceiptHash": "facb09e43a2591ac4cd23a829acdc14b87e8d29724e808f5f71f25e0b4f3acf8",
+      "afterReceiptHash": "facb09e43a2591ac4cd23a829acdc14b87e8d29724e808f5f71f25e0b4f3acf8",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:비견",
+      "beforeReceiptHash": "bdf463d76315071f17eb6ae31e509e02e2dd5171030164ebe1ea9162f0566423",
+      "afterReceiptHash": "bdf463d76315071f17eb6ae31e509e02e2dd5171030164ebe1ea9162f0566423",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8a266c97103d91c03db4d56dcaac5e2d0a63c3886ab8740c2389ecf7c321c0e3"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:편재",
+      "beforeReceiptHash": "8182735f5e9be60753105a59fd625b098ee46eabd200b924ddfa8f7a7fb543bb",
+      "afterReceiptHash": "8182735f5e9be60753105a59fd625b098ee46eabd200b924ddfa8f7a7fb543bb",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:편인",
+      "beforeReceiptHash": "49874c762164267ba9c4b974aff157d9fbef2f55d49d80f6299e5a2aa81e4e1b",
+      "afterReceiptHash": "49874c762164267ba9c4b974aff157d9fbef2f55d49d80f6299e5a2aa81e4e1b",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:580b9636f1fd185b6ad8cfe7df08167b32af57af30f650308402165e5b1a569c"
+        ],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-F",
+      "originalId": "mfpr:god:정인",
+      "beforeReceiptHash": "773c3412ea815c7bcca2da85aed2f63904ed87409b9b6c17bceb7c540ad2d0cc",
+      "afterReceiptHash": "773c3412ea815c7bcca2da85aed2f63904ed87409b9b6c17bceb7c540ad2d0cc",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:e0cede37d555c4f5ab21f531641fbcdf7507b30303c205a2be073f6a6e80b5b5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "originalId": "mfpr:god:상관",
+      "beforeReceiptHash": "2b4bff7e735138195f0248105b8fe3d6a12aa5884132c11b2e296df433501075",
+      "afterReceiptHash": "2b4bff7e735138195f0248105b8fe3d6a12aa5884132c11b2e296df433501075",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:0eef28cb9021688b08710dbbc0656761ce2eafadbfebcf880cfab18c84ef6f59"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "originalId": "mfpr:god:정재",
+      "beforeReceiptHash": "8c12af422840be7f7d3367800594aff228984960e35a5e904db4077c7b84a047",
+      "afterReceiptHash": "8c12af422840be7f7d3367800594aff228984960e35a5e904db4077c7b84a047",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:224c876e0f0941788981137e3c1991ab681cc28c56bc5176c784e248eaaebdcb"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "originalId": "mfpr:god:식신",
+      "beforeReceiptHash": "6d9f6eab4d7629fbd2ec97a9666f8d9d4a4cc4a5a3ee3bda2e5e17de58498672",
+      "afterReceiptHash": "6d9f6eab4d7629fbd2ec97a9666f8d9d4a4cc4a5a3ee3bda2e5e17de58498672",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:2813820e4d44d0197e4b8c68bcab92741556813645989d3afb0b9f08256bcb0e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "originalId": "mfpr:god:정관",
+      "beforeReceiptHash": "caf6f74c4bc93df5a8de0635f18e0481024ae83856844d376e27783195baffd2",
+      "afterReceiptHash": "caf6f74c4bc93df5a8de0635f18e0481024ae83856844d376e27783195baffd2",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:55acb9b6408668d6477ac17e827d0ae22c191f4edb0c6215a0a536c06c9fe606"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "originalId": "mfpr:god:겁재",
+      "beforeReceiptHash": "df641b40ccad453fdb9fcfb19d6fdebdeb4f2327a72914e1fefd4977e9a14b17",
+      "afterReceiptHash": "df641b40ccad453fdb9fcfb19d6fdebdeb4f2327a72914e1fefd4977e9a14b17",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:5eab7ae68576112ef396ea93dc38ad2e3a17ec61892efa7eb1e332c4f3a88e01"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "originalId": "mfpr:god:편관",
+      "beforeReceiptHash": "e1fb81cf23d3fb12370fe04ff66d6f4ed57aeffdd482ee368985bb416f4392da",
+      "afterReceiptHash": "e1fb81cf23d3fb12370fe04ff66d6f4ed57aeffdd482ee368985bb416f4392da",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8947a06620c339f0a1b0b31cbd4612a5b370a8c51c43343a289d3a31bf4102f5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "originalId": "mfpr:god:비견",
+      "beforeReceiptHash": "a91454c69b8011353b2fa4d150425c25f0669f2d8e45db7bbbf973ca1836eb8e",
+      "afterReceiptHash": "a91454c69b8011353b2fa4d150425c25f0669f2d8e45db7bbbf973ca1836eb8e",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:8a266c97103d91c03db4d56dcaac5e2d0a63c3886ab8740c2389ecf7c321c0e3"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "originalId": "mfpr:god:편재",
+      "beforeReceiptHash": "b88a54bbc0cb91032689facac015fa4d8a9e233628fb17faa1f2a630e13eac4c",
+      "afterReceiptHash": "b88a54bbc0cb91032689facac015fa4d8a9e233628fb17faa1f2a630e13eac4c",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [
+          "aeg:node:699e71ae6871289a65fc06e02e93686655d2fb055f23540f30219064f97ad815"
+        ],
+        "originalReferences": [
+          "kc:v1:97240056c324b701c14b863662084f2d519ff55f1dfdeac9d59eca2010baf28f"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "originalId": "mfpr:god:편인",
+      "beforeReceiptHash": "02af70f0c73304e395230d85da16c97a3a3bac694cf1a5c73d11440a77d52ca3",
+      "afterReceiptHash": "02af70f0c73304e395230d85da16c97a3a3bac694cf1a5c73d11440a77d52ca3",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:c9081e98f19d9ed8e330743238cc5abf14cea049132483ef174736897a17c50e"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    },
+    {
+      "fixture": "fixture-major-C",
+      "originalId": "mfpr:god:정인",
+      "beforeReceiptHash": "cff182ad5703bcde54f3e12366041407f3093a2dc99d66b6ad8df911ebb7adfa",
+      "afterReceiptHash": "cff182ad5703bcde54f3e12366041407f3093a2dc99d66b6ad8df911ebb7adfa",
+      "sourceGate": {
+        "gate": "SOURCE_INTEGRITY",
+        "state": "FAIL",
+        "requirementFields": [
+          "originalRecordHash",
+          "sourceVerificationVersion"
+        ],
+        "actualEvidence": [],
+        "originalReferences": [
+          "kc:v1:e0cede37d555c4f5ab21f531641fbcdf7507b30303c205a2be073f6a6e80b5b5"
+        ],
+        "reasons": [
+          "SOURCE_HASH_VERSION_OR_REFERENCE_MISMATCH"
+        ],
+        "nextAction": "Supply the exact missing source/producer/input/review contract; preserve current calculations and keep this scoped use withheld."
+      },
+      "allTwelveGatesUnchanged": true
+    }
+  ],
+  "customerApprovals": 0,
+  "operatorApprovals": 0,
+  "customerClaims": 0,
+  "customerReaderBridge": 0,
+  "syntheticMeaningDefinitionFileReads": 0,
+  "technicalDefinitionNotInterpretationApproval": true,
+  "fullReceipt": "/Users/Deokmin/Documents/gyeol-validation/v4-actual-calculation-semantic-bridge-01/actual-run-serialized/actual-units.json"
+}
