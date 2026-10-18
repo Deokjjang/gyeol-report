@@ -1,0 +1,78 @@
+{
+  "rows": [
+    {
+      "id": "ker:term:2",
+      "term": "십성",
+      "mode": "VERIFIED_REVISION_CHAIN",
+      "status": "TECHNICALLY_VERIFIED_SOURCE",
+      "recordHash": "3491269989b877441c187ab14b42c14a1ceb96b47b70eb395df99cc0f8a5249f",
+      "originalSourceHash": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+      "currentSourceHash": "1ef6ab02d9a7cedc08aea244158ad806dae1ce0caedca1250054d5a9129cdf63",
+      "revision": {
+        "sourceFile": "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+        "originalSourceHash": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+        "currentSourceHash": "1ef6ab02d9a7cedc08aea244158ad806dae1ce0caedca1250054d5a9129cdf63",
+        "revisionCommit": "0a8e685b07f5cd60226ced986d4e3fe92f392b64",
+        "revisionContract": "tests/fixtures/technical-stabilization-01/source-revision-contract.json",
+        "originalPublicationReceipt": "tests/fixtures/publication-safety-01/source-revision-contract.json",
+        "reviewedProof": "docs/validation/v4-knowledge-source-revision-contract-01/source-drift-resolution.json",
+        "meaningApproved": false,
+        "customerApproved": false,
+        "newIndependentFacts": 0
+      },
+      "rawMismatch": true
+    },
+    {
+      "id": "ker:term:6",
+      "term": "충",
+      "mode": "VERIFIED_REVISION_CHAIN",
+      "status": "TECHNICALLY_VERIFIED_SOURCE",
+      "recordHash": "dd0300fa41cf042a5250cd1477b4cf7b75e69f0a41ce95031325a83d0d08dec7",
+      "originalSourceHash": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+      "currentSourceHash": "1ef6ab02d9a7cedc08aea244158ad806dae1ce0caedca1250054d5a9129cdf63",
+      "revision": {
+        "sourceFile": "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+        "originalSourceHash": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+        "currentSourceHash": "1ef6ab02d9a7cedc08aea244158ad806dae1ce0caedca1250054d5a9129cdf63",
+        "revisionCommit": "0a8e685b07f5cd60226ced986d4e3fe92f392b64",
+        "revisionContract": "tests/fixtures/technical-stabilization-01/source-revision-contract.json",
+        "originalPublicationReceipt": "tests/fixtures/publication-safety-01/source-revision-contract.json",
+        "reviewedProof": "docs/validation/v4-knowledge-source-revision-contract-01/source-drift-resolution.json",
+        "meaningApproved": false,
+        "customerApproved": false,
+        "newIndependentFacts": 0
+      },
+      "rawMismatch": true
+    },
+    {
+      "id": "ker:term:7",
+      "term": "합",
+      "mode": "VERIFIED_REVISION_CHAIN",
+      "status": "TECHNICALLY_VERIFIED_SOURCE",
+      "recordHash": "9dcedb8cfb1841a5482d4cdb774bea3a5458bd9f063a1ac096917a78395c750d",
+      "originalSourceHash": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+      "currentSourceHash": "1ef6ab02d9a7cedc08aea244158ad806dae1ce0caedca1250054d5a9129cdf63",
+      "revision": {
+        "sourceFile": "src/lib/interpretation-v4/compatibilityReleaseRenderer.ts",
+        "originalSourceHash": "48b54e1d5c6112f8f678b406c731afd1b0ffd90679aa0039443f343c9cb37999",
+        "currentSourceHash": "1ef6ab02d9a7cedc08aea244158ad806dae1ce0caedca1250054d5a9129cdf63",
+        "revisionCommit": "0a8e685b07f5cd60226ced986d4e3fe92f392b64",
+        "revisionContract": "tests/fixtures/technical-stabilization-01/source-revision-contract.json",
+        "originalPublicationReceipt": "tests/fixtures/publication-safety-01/source-revision-contract.json",
+        "reviewedProof": "docs/validation/v4-knowledge-source-revision-contract-01/source-drift-resolution.json",
+        "meaningApproved": false,
+        "customerApproved": false,
+        "newIndependentFacts": 0
+      },
+      "rawMismatch": true
+    }
+  ],
+  "rawCatalogMismatches": 3,
+  "originalRegistryRecords": 392,
+  "registryDigest": "3376df28663f81f1bae4984212257fd3724aea65c68f355b94824e5a49f19b70",
+  "grammarFixtures": 46,
+  "grammarPassed": 46,
+  "meaningApproved": false,
+  "customerApproved": false,
+  "actualCustomerClaims": 0
+}

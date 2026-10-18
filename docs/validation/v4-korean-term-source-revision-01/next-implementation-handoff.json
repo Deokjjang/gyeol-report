@@ -1,0 +1,21 @@
+{
+  "status": "NOT_STARTED",
+  "overallWorkspacePreservation": "BLOCKED_BY_UNEXPLAINED_TEMPORARY_WORKTREE_FILE_LOSS",
+  "immediateSeparateReviewNeeded": "Review the recorded 17 temporary worktree losses and preserve remaining metadata/objects; do not automatically restore/prune/remove/repair",
+  "nextKnowledgeTask": "V4-TEMPORAL-TEN-GOD-SOURCE-CONTRACT-01",
+  "nextKnowledgeTaskStarted": false,
+  "rawCatalogHistoricalMismatchesRetained": 3,
+  "unsupportedFormationContextsRetained": true,
+  "authenticActualResearchClaimBridge": "NOT_IMPLEMENTED_OR_APPROVED",
+  "sourceTechnicalProofIsNotMeaningOrCustomerApproval": true,
+  "customerReaderBridges": 0,
+  "operatorAndCustomerApprovals": 0,
+  "forbiddenAutomaticWork": [
+    "Formation Producer development",
+    "DB expansion",
+    "Specialist/Planner/Writer changes",
+    "worktree recovery or cleanup",
+    "customer activation",
+    "master/Production/DB/payment/Auth/Worker changes"
+  ]
+}

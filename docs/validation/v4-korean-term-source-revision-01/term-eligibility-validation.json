@@ -1,0 +1,169 @@
+{
+  "scope": "OFFLINE_AUTHENTIC_SYNTHETIC_CLAIMS_ONLY",
+  "before": [
+    {
+      "claim": "synthetic:parent-child:meaning:CH05.P1:claim",
+      "owner": "synthetic:parent-child:owner:A",
+      "direction": "A_TO_B",
+      "witnessCount": 2,
+      "results": [
+        {
+          "status": "WITHHELD",
+          "reason": "REQUIRED_SOURCE_NOT_VERIFIED",
+          "termId": "ker:term:2",
+          "text": "",
+          "newIndependentFacts": 0
+        },
+        {
+          "status": "WITHHELD",
+          "reason": "REQUIRED_SOURCE_NOT_VERIFIED",
+          "termId": "ker:term:6",
+          "text": "",
+          "newIndependentFacts": 0
+        },
+        {
+          "status": "WITHHELD",
+          "reason": "REQUIRED_SOURCE_NOT_VERIFIED",
+          "termId": "ker:term:7",
+          "text": "",
+          "newIndependentFacts": 0
+        }
+      ]
+    },
+    {
+      "claim": "synthetic:parent-child:meaning:CH06.P1:claim",
+      "owner": "synthetic:parent-child:owner:B",
+      "direction": "B_TO_A",
+      "witnessCount": 2,
+      "results": [
+        {
+          "status": "WITHHELD",
+          "reason": "REQUIRED_SOURCE_NOT_VERIFIED",
+          "termId": "ker:term:2",
+          "text": "",
+          "newIndependentFacts": 0
+        },
+        {
+          "status": "WITHHELD",
+          "reason": "REQUIRED_SOURCE_NOT_VERIFIED",
+          "termId": "ker:term:6",
+          "text": "",
+          "newIndependentFacts": 0
+        },
+        {
+          "status": "WITHHELD",
+          "reason": "REQUIRED_SOURCE_NOT_VERIFIED",
+          "termId": "ker:term:7",
+          "text": "",
+          "newIndependentFacts": 0
+        }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "claim": "synthetic:parent-child:meaning:CH05.P1:claim",
+      "owner": "synthetic:parent-child:owner:A",
+      "direction": "A_TO_B",
+      "witnessCount": 2,
+      "results": [
+        {
+          "status": "WITHHELD",
+          "reason": "MISSING_REQUIRED_CONTEXT",
+          "termId": "ker:term:2",
+          "text": "",
+          "newIndependentFacts": 0
+        },
+        {
+          "status": "WITHHELD",
+          "reason": "MISSING_REQUIRED_CONTEXT",
+          "termId": "ker:term:6",
+          "text": "",
+          "newIndependentFacts": 0
+        },
+        {
+          "status": "WITHHELD",
+          "reason": "MISSING_REQUIRED_CONTEXT",
+          "termId": "ker:term:7",
+          "text": "",
+          "newIndependentFacts": 0
+        }
+      ]
+    },
+    {
+      "claim": "synthetic:parent-child:meaning:CH06.P1:claim",
+      "owner": "synthetic:parent-child:owner:B",
+      "direction": "B_TO_A",
+      "witnessCount": 2,
+      "results": [
+        {
+          "status": "WITHHELD",
+          "reason": "MISSING_REQUIRED_CONTEXT",
+          "termId": "ker:term:2",
+          "text": "",
+          "newIndependentFacts": 0
+        },
+        {
+          "status": "WITHHELD",
+          "reason": "MISSING_REQUIRED_CONTEXT",
+          "termId": "ker:term:6",
+          "text": "",
+          "newIndependentFacts": 0
+        },
+        {
+          "status": "WITHHELD",
+          "reason": "MISSING_REQUIRED_CONTEXT",
+          "termId": "ker:term:7",
+          "text": "",
+          "newIndependentFacts": 0
+        }
+      ]
+    }
+  ],
+  "sourceVerifiedDoesNotApproveMeaningOrClaim": true,
+  "existingActualTenGodContextCheck": {
+    "fixture": "compatibility/A from original source-locks.json",
+    "directionsChecked": 2,
+    "bothPassed": true,
+    "newCalculation": false,
+    "newClaim": false,
+    "checks": [
+      "exact original Producer/file/version",
+      "reference recipient day stem and target subject day stem",
+      "original tenGod in intact original root",
+      "Owner/Direction witness identity",
+      "both participants and actual day-stem parents",
+      "natal scope only"
+    ],
+    "negativeVariants": [
+      "missing participant",
+      "missing tenGod",
+      "changed tenGod",
+      "wrong reference",
+      "wrong direction",
+      "wrong owner",
+      "synthetic producer",
+      "missing parent",
+      "period promotion"
+    ]
+  },
+  "hap": {
+    "originalId": "ker:term:6",
+    "source": "TECHNICALLY_VERIFIED_SOURCE",
+    "explanation": "WITHHELD:MISSING_REQUIRED_CONTEXT",
+    "newFormationProducer": false
+  },
+  "chung": {
+    "originalId": "ker:term:7",
+    "source": "TECHNICALLY_VERIFIED_SOURCE",
+    "explanation": "WITHHELD:MISSING_REQUIRED_CONTEXT",
+    "newFormationProducer": false
+  },
+  "termMemoryAndAuthenticInputRegression": "PASS",
+  "unchangedOtherTerms": 12,
+  "meaningApproved": false,
+  "customerApproved": false,
+  "actualCustomerClaims": 0,
+  "actualCustomerBooks": 0,
+  "newIndependentFacts": 0
+}
