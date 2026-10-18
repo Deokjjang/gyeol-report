@@ -1,0 +1,2192 @@
+{
+  "technicalVersion": "native-month-pair-requirement-v1",
+  "candidateVersion": "actual-specialist-native-requirement-candidate-v2",
+  "originalResearchId": "afpr:month-slot:05",
+  "sourceProof": {
+    "locator": {
+      "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+      "exportName": "ANNUAL_MONTH_MATRIX",
+      "index": 4,
+      "originalId": "afpr:month-slot:05",
+      "recordSha256": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+      "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+      "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+    },
+    "matchedCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+    "originalId": "afpr:month-slot:05",
+    "role": "ORIGINAL_RECORD",
+    "expectedHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+    "actualHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+    "hashAlgorithm": "SHA256_JSON_INSERTION",
+    "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+    "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+  },
+  "exactOriginalClause": "month stemTenGod/branchTenGod + main-hidden-stem convention",
+  "scope": "Only civil May, every canonical segment, both original roles. Does not resolve missing requiredRole in monthly-god studies.",
+  "originalPrimaryRoot": "null preserved for derived monthly nodes; exact original ancestry root set used",
+  "fixtures": 4,
+  "newBinderEvaluations": 8,
+  "newInternalCandidates": 8,
+  "newUnitLinks": 16,
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "allOriginalConditionsPreserved": true,
+  "originalNativeReceiptsUntouched": true,
+  "newTestPassed": 26,
+  "newTestFailed": 0,
+  "candidates": [
+    {
+      "fixture": "fixture-annual-A",
+      "candidateId": "actual-specialist-native:v2:6c1f880309e29b9b6fe1dd30af07521f8c5a2b51b0bef453e42ec47eb64c3f10",
+      "candidateHash": "3f60e9681cd68e05aea9daf041d4af632925fe69aae644203a3ea1ee1fe6f30f",
+      "originalResearchId": "afpr:month-slot:05",
+      "originalCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 4,
+          "originalId": "afpr:month-slot:05",
+          "recordSha256": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+        "originalId": "afpr:month-slot:05",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "actualHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "segmentPointer": "/composition/result/evidence/raw/calendarMonths/4/segments/0",
+      "window": {
+        "scope": "month",
+        "start": "2026-05-01T00:00:00+09:00",
+        "endExclusive": "2026-05-05T20:48:44+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "calendar_month_start"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "verifiedActualUnitIds": [
+        "actual-semantic-unit:v1:3ad12a6db325549fd81620cd0c1f68c205b264c0cd8a693c0477aa58726d58b7",
+        "actual-semantic-unit:v1:dfc04624f198a578b74f44571130eff89f5ff657769f24d196d0b4fcb1f150e5"
+      ],
+      "roles": [
+        {
+          "unitId": "actual-semantic-unit:v1:3ad12a6db325549fd81620cd0c1f68c205b264c0cd8a693c0477aa58726d58b7",
+          "role": "MONTH_STEM",
+          "nodeId": "aeg:node:9303aefc7836ec95e463e6e1644ce27f8829ea8dc8edcd89a30534db02a63d40",
+          "referenceStem": "庚",
+          "targetStem": "壬",
+          "tenGod": "식신",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:shi_shen",
+          "sourceHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d",
+            "aeg:root:aee685cf3ccbf3efeb9e70733280fa10d703bd298e44b4d9a5a7e5490a458fb4"
+          ],
+          "completeAncestryHash": "055e7594fd6eabd23aecef5165335ddaac455418c4009a2085f3960a1c862043"
+        },
+        {
+          "unitId": "actual-semantic-unit:v1:dfc04624f198a578b74f44571130eff89f5ff657769f24d196d0b4fcb1f150e5",
+          "role": "MONTH_BRANCH_MAIN",
+          "nodeId": "aeg:node:9303aefc7836ec95e463e6e1644ce27f8829ea8dc8edcd89a30534db02a63d40",
+          "referenceStem": "庚",
+          "targetStem": "戊",
+          "tenGod": "편인",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:pian_yin",
+          "sourceHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d",
+            "aeg:root:aee685cf3ccbf3efeb9e70733280fa10d703bd298e44b4d9a5a7e5490a458fb4"
+          ],
+          "completeAncestryHash": "055e7594fd6eabd23aecef5165335ddaac455418c4009a2085f3960a1c862043"
+        }
+      ],
+      "originalNativeReceiptId": "kb:receipt:57f3787fcbaa14c7f13ea6497ce3db477c71897720c2ca8210ef4c4a880c0026",
+      "originalNativeReceiptHash": "64ec33331edbfcba7597bf27d575092394d5ccb03b2901da3aef35048db6bdee",
+      "originalSelected": [],
+      "typedNativeReceiptId": "kb:receipt:881b262ae3a46f9b690c17839cacd217f8cdbc5671709165a34aa682875769f2",
+      "typedNativeReceiptHash": "d940abbf4b0743b23a5afd36caadae166c6d5fead1f3079dd3bd0423f8046a48",
+      "typedSelected": [
+        "aeg:node:6a066d82514cc16ec0368dc88d3924df7ec7b673c4a02d26bdd13715fb9a6811",
+        "aeg:node:9303aefc7836ec95e463e6e1644ce27f8829ea8dc8edcd89a30534db02a63d40"
+      ],
+      "typedFactRoots": [
+        "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d",
+        "aeg:root:aee685cf3ccbf3efeb9e70733280fa10d703bd298e44b4d9a5a7e5490a458fb4"
+      ],
+      "additionalReferenceRoots": [],
+      "originalGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "EXACT_PRODUCER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_OWNER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+          ]
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_PERIOD_REQUIRED"
+          ]
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "typedGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "reviewStates": [
+        "ACTUAL_CONTEXT_REQUIRED",
+        "MEANING_REVIEW_REQUIRED",
+        "PRODUCT_REVIEW_REQUIRED",
+        "CUSTOMER_APPROVAL_PENDING"
+      ],
+      "allOriginalConditionsPreserved": true,
+      "customerUseAllowed": false
+    },
+    {
+      "fixture": "fixture-annual-A",
+      "candidateId": "actual-specialist-native:v2:ac743f13ac0d3c1a0ac43a12db1d547366e542c418c954e2a8a422c6904ef066",
+      "candidateHash": "b0df1e007ee9351efd34f37924e6f4e6eb6ed2436259937cee7ea828c45b70d1",
+      "originalResearchId": "afpr:month-slot:05",
+      "originalCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 4,
+          "originalId": "afpr:month-slot:05",
+          "recordSha256": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+        "originalId": "afpr:month-slot:05",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "actualHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "segmentPointer": "/composition/result/evidence/raw/calendarMonths/4/segments/1",
+      "window": {
+        "scope": "month",
+        "start": "2026-05-05T20:48:44+09:00",
+        "endExclusive": "2026-06-01T00:00:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "jie:입하"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "verifiedActualUnitIds": [
+        "actual-semantic-unit:v1:cae6a5db329b43ff543833dd13e6ada7712f5545367692fc98b2e2f4077894f1",
+        "actual-semantic-unit:v1:d9aded5b10f13a0fa86e474bae288dc4bf05df0904907456c31c91e98f0ab4db"
+      ],
+      "roles": [
+        {
+          "unitId": "actual-semantic-unit:v1:cae6a5db329b43ff543833dd13e6ada7712f5545367692fc98b2e2f4077894f1",
+          "role": "MONTH_STEM",
+          "nodeId": "aeg:node:cc23b7f026532de5f2cc07f783b9f660042072051f7008fe686788858b90147d",
+          "referenceStem": "庚",
+          "targetStem": "癸",
+          "tenGod": "상관",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:shang_guan",
+          "sourceHash": "bc99009644343d85b0161b881f90ac0fc7e9954cfd65f69a4f187d4e08344c3b",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:2c4a4793fcebca796c1ba291fd12bb66af22b80a6b25fe9670f684144c2bd138",
+            "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d"
+          ],
+          "completeAncestryHash": "974566cd16a367e176e32d389e3e3b2d01077756061b96d1110eef590b38d582"
+        },
+        {
+          "unitId": "actual-semantic-unit:v1:d9aded5b10f13a0fa86e474bae288dc4bf05df0904907456c31c91e98f0ab4db",
+          "role": "MONTH_BRANCH_MAIN",
+          "nodeId": "aeg:node:cc23b7f026532de5f2cc07f783b9f660042072051f7008fe686788858b90147d",
+          "referenceStem": "庚",
+          "targetStem": "丙",
+          "tenGod": "편관",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:qi_sha",
+          "sourceHash": "772e2f835195bbd7ae171796d6507aa2ec10a4efdb9dd0be7535729ef4a3b80d",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:2c4a4793fcebca796c1ba291fd12bb66af22b80a6b25fe9670f684144c2bd138",
+            "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d"
+          ],
+          "completeAncestryHash": "974566cd16a367e176e32d389e3e3b2d01077756061b96d1110eef590b38d582"
+        }
+      ],
+      "originalNativeReceiptId": "kb:receipt:57f3787fcbaa14c7f13ea6497ce3db477c71897720c2ca8210ef4c4a880c0026",
+      "originalNativeReceiptHash": "64ec33331edbfcba7597bf27d575092394d5ccb03b2901da3aef35048db6bdee",
+      "originalSelected": [],
+      "typedNativeReceiptId": "kb:receipt:d752d63c88e402af690db0135f88ca69ec602388541b05cf06b5d5b82e46481b",
+      "typedNativeReceiptHash": "b8538c24982af67c5a7f696c09c7579d1f187d52bf00a87677b284c239e2063e",
+      "typedSelected": [
+        "aeg:node:cc23b7f026532de5f2cc07f783b9f660042072051f7008fe686788858b90147d",
+        "aeg:node:df38a7be317843d38a4143af6ed88e7db12b1ed186ef22a2daf5fa187420204c"
+      ],
+      "typedFactRoots": [
+        "aeg:root:2c4a4793fcebca796c1ba291fd12bb66af22b80a6b25fe9670f684144c2bd138",
+        "aeg:root:67c4ca9bcf234d1f4af9443279b87e8537de52b10b90ecc352ba9abfe2938b8d"
+      ],
+      "additionalReferenceRoots": [],
+      "originalGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "EXACT_PRODUCER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_OWNER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+          ]
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_PERIOD_REQUIRED"
+          ]
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "typedGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "reviewStates": [
+        "ACTUAL_CONTEXT_REQUIRED",
+        "MEANING_REVIEW_REQUIRED",
+        "PRODUCT_REVIEW_REQUIRED",
+        "CUSTOMER_APPROVAL_PENDING"
+      ],
+      "allOriginalConditionsPreserved": true,
+      "customerUseAllowed": false
+    },
+    {
+      "fixture": "fixture-annual-F",
+      "candidateId": "actual-specialist-native:v2:ab0bbc60067558a60316910b19f102f88904d3473df93e8f38c175c31cfc3161",
+      "candidateHash": "25d3c1ca0f593ce27f5bb6b7f2324ce50043ce706922415bc8890164c1d8fff8",
+      "originalResearchId": "afpr:month-slot:05",
+      "originalCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 4,
+          "originalId": "afpr:month-slot:05",
+          "recordSha256": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+        "originalId": "afpr:month-slot:05",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "actualHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "segmentPointer": "/composition/result/evidence/raw/calendarMonths/4/segments/0",
+      "window": {
+        "scope": "month",
+        "start": "2026-05-01T00:00:00+09:00",
+        "endExclusive": "2026-05-05T20:48:44+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "calendar_month_start"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "verifiedActualUnitIds": [
+        "actual-semantic-unit:v1:5b50a8c1ca43509ddf9c0f403f5c7820ecd384df00cad11f13f74117be27e29c",
+        "actual-semantic-unit:v1:864c322a8c906041b8d09739675db9c252825648a8e87804c43806185957c24b"
+      ],
+      "roles": [
+        {
+          "unitId": "actual-semantic-unit:v1:5b50a8c1ca43509ddf9c0f403f5c7820ecd384df00cad11f13f74117be27e29c",
+          "role": "MONTH_STEM",
+          "nodeId": "aeg:node:3b868b358dfbb9436bd0e0c9614ca3ea3a070c98b3dccb8594be167795ee45fc",
+          "referenceStem": "庚",
+          "targetStem": "壬",
+          "tenGod": "식신",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:shi_shen",
+          "sourceHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:24c665b4f682274f846144723497da9c62456123da8933738c887ed5e93551a4",
+            "aeg:root:5ec4fcc9a3cc769bb8f4d6d79a68fad5d29f9c883edeccfccea7bcb9c046ea29"
+          ],
+          "completeAncestryHash": "39b7969bd09383bbdc21f847cd48c9415804e9c4ae3490cf64873ce0bfcea7a1"
+        },
+        {
+          "unitId": "actual-semantic-unit:v1:864c322a8c906041b8d09739675db9c252825648a8e87804c43806185957c24b",
+          "role": "MONTH_BRANCH_MAIN",
+          "nodeId": "aeg:node:3b868b358dfbb9436bd0e0c9614ca3ea3a070c98b3dccb8594be167795ee45fc",
+          "referenceStem": "庚",
+          "targetStem": "戊",
+          "tenGod": "편인",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:pian_yin",
+          "sourceHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:24c665b4f682274f846144723497da9c62456123da8933738c887ed5e93551a4",
+            "aeg:root:5ec4fcc9a3cc769bb8f4d6d79a68fad5d29f9c883edeccfccea7bcb9c046ea29"
+          ],
+          "completeAncestryHash": "39b7969bd09383bbdc21f847cd48c9415804e9c4ae3490cf64873ce0bfcea7a1"
+        }
+      ],
+      "originalNativeReceiptId": "kb:receipt:50ce3bd8962eee04567959a3dfcb7da26c1539bd387f72c8fc53fcf843e26de9",
+      "originalNativeReceiptHash": "1f01416d2a38e397ef39ed67dc066a632a69aabd49fb84f359d189cf6120a1b7",
+      "originalSelected": [],
+      "typedNativeReceiptId": "kb:receipt:313466c49b33d03f7e0af6d977809b1e5948126bf48831f5902fd2ef6a70decb",
+      "typedNativeReceiptHash": "905b716241149e8e66c2655300089d2e78882e0757f6ff566d59f0476adc3f6d",
+      "typedSelected": [
+        "aeg:node:3b868b358dfbb9436bd0e0c9614ca3ea3a070c98b3dccb8594be167795ee45fc",
+        "aeg:node:a0b417be47d7af8a3cd3fe0e6ed97b8302815ab13a7c4237ac3764926845a6c1"
+      ],
+      "typedFactRoots": [
+        "aeg:root:24c665b4f682274f846144723497da9c62456123da8933738c887ed5e93551a4",
+        "aeg:root:5ec4fcc9a3cc769bb8f4d6d79a68fad5d29f9c883edeccfccea7bcb9c046ea29"
+      ],
+      "additionalReferenceRoots": [],
+      "originalGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "EXACT_PRODUCER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_OWNER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+          ]
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_PERIOD_REQUIRED"
+          ]
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "typedGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "reviewStates": [
+        "ACTUAL_CONTEXT_REQUIRED",
+        "MEANING_REVIEW_REQUIRED",
+        "PRODUCT_REVIEW_REQUIRED",
+        "CUSTOMER_APPROVAL_PENDING"
+      ],
+      "allOriginalConditionsPreserved": true,
+      "customerUseAllowed": false
+    },
+    {
+      "fixture": "fixture-annual-F",
+      "candidateId": "actual-specialist-native:v2:fbfcc6fe863d7de6205e806ddaf5dc5337d85f4058120959064e7c0a5bc8804a",
+      "candidateHash": "cf1386d9861dbdc833f086f382ab457c18a910735daaf8beee49894cb6f6896e",
+      "originalResearchId": "afpr:month-slot:05",
+      "originalCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 4,
+          "originalId": "afpr:month-slot:05",
+          "recordSha256": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+        "originalId": "afpr:month-slot:05",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "actualHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "segmentPointer": "/composition/result/evidence/raw/calendarMonths/4/segments/1",
+      "window": {
+        "scope": "month",
+        "start": "2026-05-05T20:48:44+09:00",
+        "endExclusive": "2026-06-01T00:00:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "jie:입하"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "verifiedActualUnitIds": [
+        "actual-semantic-unit:v1:a381335cfa8a60071f51ae0d13c6f439aec27dfbcf24e825f4a2ffa8d3dd710b",
+        "actual-semantic-unit:v1:c74d61178b6d28878a035eacad256c31c290c47cb7e385a6226fdc7b6382d7e4"
+      ],
+      "roles": [
+        {
+          "unitId": "actual-semantic-unit:v1:a381335cfa8a60071f51ae0d13c6f439aec27dfbcf24e825f4a2ffa8d3dd710b",
+          "role": "MONTH_STEM",
+          "nodeId": "aeg:node:96a17bbfc5a34b51e84239f7c824e0090750425e7a9aaed79061caa8b032e44a",
+          "referenceStem": "庚",
+          "targetStem": "癸",
+          "tenGod": "상관",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:shang_guan",
+          "sourceHash": "bc99009644343d85b0161b881f90ac0fc7e9954cfd65f69a4f187d4e08344c3b",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:0283d8246f577b4d89dd0674f56699968d2aa9bfd1752d1d6c6b7773761ebe73",
+            "aeg:root:5ec4fcc9a3cc769bb8f4d6d79a68fad5d29f9c883edeccfccea7bcb9c046ea29"
+          ],
+          "completeAncestryHash": "d816eb5e8f183e51c71860a366cd7b6ee86b238f11983953523e6c209ceb83e8"
+        },
+        {
+          "unitId": "actual-semantic-unit:v1:c74d61178b6d28878a035eacad256c31c290c47cb7e385a6226fdc7b6382d7e4",
+          "role": "MONTH_BRANCH_MAIN",
+          "nodeId": "aeg:node:96a17bbfc5a34b51e84239f7c824e0090750425e7a9aaed79061caa8b032e44a",
+          "referenceStem": "庚",
+          "targetStem": "丙",
+          "tenGod": "편관",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:qi_sha",
+          "sourceHash": "772e2f835195bbd7ae171796d6507aa2ec10a4efdb9dd0be7535729ef4a3b80d",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:0283d8246f577b4d89dd0674f56699968d2aa9bfd1752d1d6c6b7773761ebe73",
+            "aeg:root:5ec4fcc9a3cc769bb8f4d6d79a68fad5d29f9c883edeccfccea7bcb9c046ea29"
+          ],
+          "completeAncestryHash": "d816eb5e8f183e51c71860a366cd7b6ee86b238f11983953523e6c209ceb83e8"
+        }
+      ],
+      "originalNativeReceiptId": "kb:receipt:50ce3bd8962eee04567959a3dfcb7da26c1539bd387f72c8fc53fcf843e26de9",
+      "originalNativeReceiptHash": "1f01416d2a38e397ef39ed67dc066a632a69aabd49fb84f359d189cf6120a1b7",
+      "originalSelected": [],
+      "typedNativeReceiptId": "kb:receipt:aa134e384f9021eb4bdecae0a895964780011d15a80f46c056f61f0d492b21c4",
+      "typedNativeReceiptHash": "d7e58342f90007608560dc535dd86819f2c07b7b4d3b5aa9b0fe50fcfbba681c",
+      "typedSelected": [
+        "aeg:node:03ddf300cf82a272f6750eae68d639e462da8c2e9ea423a2f8cbe72f92922bfe",
+        "aeg:node:96a17bbfc5a34b51e84239f7c824e0090750425e7a9aaed79061caa8b032e44a"
+      ],
+      "typedFactRoots": [
+        "aeg:root:0283d8246f577b4d89dd0674f56699968d2aa9bfd1752d1d6c6b7773761ebe73",
+        "aeg:root:5ec4fcc9a3cc769bb8f4d6d79a68fad5d29f9c883edeccfccea7bcb9c046ea29"
+      ],
+      "additionalReferenceRoots": [],
+      "originalGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "EXACT_PRODUCER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_OWNER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+          ]
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_PERIOD_REQUIRED"
+          ]
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "typedGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "reviewStates": [
+        "ACTUAL_CONTEXT_REQUIRED",
+        "MEANING_REVIEW_REQUIRED",
+        "PRODUCT_REVIEW_REQUIRED",
+        "CUSTOMER_APPROVAL_PENDING"
+      ],
+      "allOriginalConditionsPreserved": true,
+      "customerUseAllowed": false
+    },
+    {
+      "fixture": "fixture-annual-C2028",
+      "candidateId": "actual-specialist-native:v2:92876b3f88f5ff269533cf43d36502760b263c2ba90bed8a06c052279f0d1423",
+      "candidateHash": "307adb989db1f0dfc49c38ab053f9d97fcfdd58aa0ec865481fc5b948af9f5f3",
+      "originalResearchId": "afpr:month-slot:05",
+      "originalCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 4,
+          "originalId": "afpr:month-slot:05",
+          "recordSha256": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+        "originalId": "afpr:month-slot:05",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "actualHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "segmentPointer": "/composition/result/evidence/raw/calendarMonths/4/segments/0",
+      "window": {
+        "scope": "month",
+        "start": "2028-05-01T00:00:00+09:00",
+        "endExclusive": "2028-05-05T08:12:12+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "calendar_month_start"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "verifiedActualUnitIds": [
+        "actual-semantic-unit:v1:1a41894f2c1db866bd2d85aec3fda2efc3c0c03f469cfeb413fb866ec0e0f593",
+        "actual-semantic-unit:v1:74b837151dee0f20898ba5c09ee9b99b06479d05d8ed877d269c54114163124f"
+      ],
+      "roles": [
+        {
+          "unitId": "actual-semantic-unit:v1:1a41894f2c1db866bd2d85aec3fda2efc3c0c03f469cfeb413fb866ec0e0f593",
+          "role": "MONTH_STEM",
+          "nodeId": "aeg:node:b73036caaa4c6007f268d3890d43a14f79142361540378704b945a132ecd6792",
+          "referenceStem": "戊",
+          "targetStem": "丙",
+          "tenGod": "편인",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:pian_yin",
+          "sourceHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:0fc7f0b1fb8c90f563abc043852971ff84d534663324039f3d9f8a3211e23f99",
+            "aeg:root:fc3dacdd854fa31d7809a4715c091ba4c9b8e79534d625e9ea3b877592ea63c1"
+          ],
+          "completeAncestryHash": "d118abbd78d34ebb50822ebafc6e3a2012b28a37909d4140a0313c68d9dd1e05"
+        },
+        {
+          "unitId": "actual-semantic-unit:v1:74b837151dee0f20898ba5c09ee9b99b06479d05d8ed877d269c54114163124f",
+          "role": "MONTH_BRANCH_MAIN",
+          "nodeId": "aeg:node:b73036caaa4c6007f268d3890d43a14f79142361540378704b945a132ecd6792",
+          "referenceStem": "戊",
+          "targetStem": "戊",
+          "tenGod": "비견",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:bijian",
+          "sourceHash": "bdcbc44a5a262791cabcfd3165daad55831189de4069200af638a4dedf667e6e",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:0fc7f0b1fb8c90f563abc043852971ff84d534663324039f3d9f8a3211e23f99",
+            "aeg:root:fc3dacdd854fa31d7809a4715c091ba4c9b8e79534d625e9ea3b877592ea63c1"
+          ],
+          "completeAncestryHash": "d118abbd78d34ebb50822ebafc6e3a2012b28a37909d4140a0313c68d9dd1e05"
+        }
+      ],
+      "originalNativeReceiptId": "kb:receipt:f9875f12a15fab17bdd8dfb49e6bf6eb9da7d6f47e072e3df593f03155db4671",
+      "originalNativeReceiptHash": "7ac2e4e3e0c8938ed34e452b0a0842cb7851f325978069d269059a73ef296726",
+      "originalSelected": [],
+      "typedNativeReceiptId": "kb:receipt:24f2c131d2d7c83ab3cc06e66ead5a3305e4b7af0cc0ac2e1f64ead3d9caddf4",
+      "typedNativeReceiptHash": "1ac757c1838dfe5ad93d630893da6922e6d5dce42ab2617349d10b6691e31bfc",
+      "typedSelected": [
+        "aeg:node:45ce93cb40b5c1e9db9f17573aaf5f091f1ea9e7fee022c40392eff6b85a37e6",
+        "aeg:node:b73036caaa4c6007f268d3890d43a14f79142361540378704b945a132ecd6792"
+      ],
+      "typedFactRoots": [
+        "aeg:root:0fc7f0b1fb8c90f563abc043852971ff84d534663324039f3d9f8a3211e23f99",
+        "aeg:root:fc3dacdd854fa31d7809a4715c091ba4c9b8e79534d625e9ea3b877592ea63c1"
+      ],
+      "additionalReferenceRoots": [],
+      "originalGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "EXACT_PRODUCER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_OWNER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+          ]
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_PERIOD_REQUIRED"
+          ]
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "typedGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "reviewStates": [
+        "ACTUAL_CONTEXT_REQUIRED",
+        "MEANING_REVIEW_REQUIRED",
+        "PRODUCT_REVIEW_REQUIRED",
+        "CUSTOMER_APPROVAL_PENDING"
+      ],
+      "allOriginalConditionsPreserved": true,
+      "customerUseAllowed": false
+    },
+    {
+      "fixture": "fixture-annual-C2028",
+      "candidateId": "actual-specialist-native:v2:969bd590353848b82b186b5f91dcd069db5a6ee3b0327ca4207350ac58d25453",
+      "candidateHash": "59609c8411e9714371567b8427b25a288663d7d68e5ee9d1b589e0e2f5ec4213",
+      "originalResearchId": "afpr:month-slot:05",
+      "originalCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 4,
+          "originalId": "afpr:month-slot:05",
+          "recordSha256": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+        "originalId": "afpr:month-slot:05",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "actualHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "segmentPointer": "/composition/result/evidence/raw/calendarMonths/4/segments/1",
+      "window": {
+        "scope": "month",
+        "start": "2028-05-05T08:12:12+09:00",
+        "endExclusive": "2028-06-01T00:00:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "jie:입하"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "verifiedActualUnitIds": [
+        "actual-semantic-unit:v1:5d957fd0605c56b3592857acd1b584f8504a25eca8284d240fbebb0f455fdba0",
+        "actual-semantic-unit:v1:1df18181a4b7ef36d166579ec4fa07762001b3ee7a7e8015ff5e43b1dea37467"
+      ],
+      "roles": [
+        {
+          "unitId": "actual-semantic-unit:v1:5d957fd0605c56b3592857acd1b584f8504a25eca8284d240fbebb0f455fdba0",
+          "role": "MONTH_STEM",
+          "nodeId": "aeg:node:2bf53d32770a2ca2bfe3b32039aa27af31a0ad77afb9de5a5d05b51cc8b90e40",
+          "referenceStem": "戊",
+          "targetStem": "丁",
+          "tenGod": "정인",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:zheng_yin",
+          "sourceHash": "7098bd99043e8c73d05217bc8908293875ca89dc07cd2ff70af16b065b32f339",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:0fc7f0b1fb8c90f563abc043852971ff84d534663324039f3d9f8a3211e23f99",
+            "aeg:root:180c6d93210538fc3f394191837b940405844c85be2d9acbbed2ef03ffe08b75"
+          ],
+          "completeAncestryHash": "47aefc047fe5665c897bc8530b30384bae9e4ae27bcbb9d8ade60b1e352ffb3a"
+        },
+        {
+          "unitId": "actual-semantic-unit:v1:1df18181a4b7ef36d166579ec4fa07762001b3ee7a7e8015ff5e43b1dea37467",
+          "role": "MONTH_BRANCH_MAIN",
+          "nodeId": "aeg:node:2bf53d32770a2ca2bfe3b32039aa27af31a0ad77afb9de5a5d05b51cc8b90e40",
+          "referenceStem": "戊",
+          "targetStem": "丙",
+          "tenGod": "편인",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:pian_yin",
+          "sourceHash": "8576a3bbd78f37bde19bbf118910500e4498d448ec6a7ffc4432dfba0387858a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:0fc7f0b1fb8c90f563abc043852971ff84d534663324039f3d9f8a3211e23f99",
+            "aeg:root:180c6d93210538fc3f394191837b940405844c85be2d9acbbed2ef03ffe08b75"
+          ],
+          "completeAncestryHash": "47aefc047fe5665c897bc8530b30384bae9e4ae27bcbb9d8ade60b1e352ffb3a"
+        }
+      ],
+      "originalNativeReceiptId": "kb:receipt:f9875f12a15fab17bdd8dfb49e6bf6eb9da7d6f47e072e3df593f03155db4671",
+      "originalNativeReceiptHash": "7ac2e4e3e0c8938ed34e452b0a0842cb7851f325978069d269059a73ef296726",
+      "originalSelected": [],
+      "typedNativeReceiptId": "kb:receipt:81e6b6a7e195675be9288060f51bfa7b881148c3e42c16b61b312927c74c5a90",
+      "typedNativeReceiptHash": "d33ad478834024ce83e2cde2b03b40a54f4821f8e13482a8c379a857063bc092",
+      "typedSelected": [
+        "aeg:node:2bf53d32770a2ca2bfe3b32039aa27af31a0ad77afb9de5a5d05b51cc8b90e40",
+        "aeg:node:9fa6cdecc19c4bc2a96d234d47936212176488e864abc6a214519eea70c7bfa9"
+      ],
+      "typedFactRoots": [
+        "aeg:root:0fc7f0b1fb8c90f563abc043852971ff84d534663324039f3d9f8a3211e23f99",
+        "aeg:root:180c6d93210538fc3f394191837b940405844c85be2d9acbbed2ef03ffe08b75"
+      ],
+      "additionalReferenceRoots": [],
+      "originalGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "EXACT_PRODUCER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_OWNER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+          ]
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_PERIOD_REQUIRED"
+          ]
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "typedGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "reviewStates": [
+        "ACTUAL_CONTEXT_REQUIRED",
+        "MEANING_REVIEW_REQUIRED",
+        "PRODUCT_REVIEW_REQUIRED",
+        "CUSTOMER_APPROVAL_PENDING"
+      ],
+      "allOriginalConditionsPreserved": true,
+      "customerUseAllowed": false
+    },
+    {
+      "fixture": "fixture-annual-ranged-transition",
+      "candidateId": "actual-specialist-native:v2:5f0a421fdfb6b99c2035acecedc8bd3999e4a9515c62bc83ec9b66639aabc011",
+      "candidateHash": "19c008601aa64d863fcaa5c2fb77dda0be64d1723a3260f862602e1a3570a099",
+      "originalResearchId": "afpr:month-slot:05",
+      "originalCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 4,
+          "originalId": "afpr:month-slot:05",
+          "recordSha256": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+        "originalId": "afpr:month-slot:05",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "actualHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "segmentPointer": "/composition/result/evidence/raw/calendarMonths/4/segments/0",
+      "window": {
+        "scope": "month",
+        "start": "2027-05-01T00:00:00+09:00",
+        "endExclusive": "2027-05-06T02:25:12+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "calendar_month_start"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "verifiedActualUnitIds": [
+        "actual-semantic-unit:v1:0167f2b8143a93c8dbb847d63561d4ec38ec2140702542467ce03b71a5f0242d",
+        "actual-semantic-unit:v1:507057bd7699722c2258f994eeeea6ad3fab893cfabecb5af208746164246275"
+      ],
+      "roles": [
+        {
+          "unitId": "actual-semantic-unit:v1:0167f2b8143a93c8dbb847d63561d4ec38ec2140702542467ce03b71a5f0242d",
+          "role": "MONTH_STEM",
+          "nodeId": "aeg:node:cf5d7b82814489e488510b6593b85bea7460a038a9b92e985b0dcba257c8a74f",
+          "referenceStem": "甲",
+          "targetStem": "甲",
+          "tenGod": "비견",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:bijian",
+          "sourceHash": "bdcbc44a5a262791cabcfd3165daad55831189de4069200af638a4dedf667e6e",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:2cd83a32cfd6cc7f43497cabf8ac53cfc315d6082c055477dd313daa1c5c2c59",
+            "aeg:root:364f01ea8aed9c4790f836775b57e9260736b5b57fc72b9724fa6a454b58a44c"
+          ],
+          "completeAncestryHash": "18d6025fdebb9c2f5969a7ebcf144f560b77d3b5d90de36a649e4aabccbc2ad9"
+        },
+        {
+          "unitId": "actual-semantic-unit:v1:507057bd7699722c2258f994eeeea6ad3fab893cfabecb5af208746164246275",
+          "role": "MONTH_BRANCH_MAIN",
+          "nodeId": "aeg:node:cf5d7b82814489e488510b6593b85bea7460a038a9b92e985b0dcba257c8a74f",
+          "referenceStem": "甲",
+          "targetStem": "戊",
+          "tenGod": "편재",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:pian_cai",
+          "sourceHash": "b2ced2072ff8bd848e6ff31903bbcde59b742102f5f3893e8b72bf8ea21dd966",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:2cd83a32cfd6cc7f43497cabf8ac53cfc315d6082c055477dd313daa1c5c2c59",
+            "aeg:root:364f01ea8aed9c4790f836775b57e9260736b5b57fc72b9724fa6a454b58a44c"
+          ],
+          "completeAncestryHash": "18d6025fdebb9c2f5969a7ebcf144f560b77d3b5d90de36a649e4aabccbc2ad9"
+        }
+      ],
+      "originalNativeReceiptId": "kb:receipt:84c8e71701d668ba7c7fe03fabda43ac883805914df259ccc64f0abac9645227",
+      "originalNativeReceiptHash": "a871330b4491c5b97dac8e79c33c60b868905f15c1a951419465fa57ba95f61e",
+      "originalSelected": [],
+      "typedNativeReceiptId": "kb:receipt:e6d10f489f08385441ae6570326664c40810a6956527003665f3f593f392f824",
+      "typedNativeReceiptHash": "ad3ce45c8ce9fecc45a652c756c68368aebd2445ffe3d9881c242731baac96ac",
+      "typedSelected": [
+        "aeg:node:19433488bfbe775ff6aef8bc7dbf038ce01a33781937e65bb7d5705f5c565cdf",
+        "aeg:node:cf5d7b82814489e488510b6593b85bea7460a038a9b92e985b0dcba257c8a74f"
+      ],
+      "typedFactRoots": [
+        "aeg:root:2cd83a32cfd6cc7f43497cabf8ac53cfc315d6082c055477dd313daa1c5c2c59",
+        "aeg:root:364f01ea8aed9c4790f836775b57e9260736b5b57fc72b9724fa6a454b58a44c"
+      ],
+      "additionalReferenceRoots": [],
+      "originalGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "EXACT_PRODUCER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_OWNER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+          ]
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_PERIOD_REQUIRED"
+          ]
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "typedGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "reviewStates": [
+        "ACTUAL_CONTEXT_REQUIRED",
+        "MEANING_REVIEW_REQUIRED",
+        "PRODUCT_REVIEW_REQUIRED",
+        "CUSTOMER_APPROVAL_PENDING"
+      ],
+      "allOriginalConditionsPreserved": true,
+      "customerUseAllowed": false
+    },
+    {
+      "fixture": "fixture-annual-ranged-transition",
+      "candidateId": "actual-specialist-native:v2:b76e61655bf648f00a441cf4491d1c18727a7b33efe45b8ddd3d7b8980ff8cf7",
+      "candidateHash": "e3f9296996ca40e81a2b4ca0b674e17ddbc20cfa962c59f7b85a381bb32327dc",
+      "originalResearchId": "afpr:month-slot:05",
+      "originalCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+      "sourceProof": {
+        "locator": {
+          "file": "src/lib/report-knowledge/annual-fortune-product-research/monthMatrix.ts",
+          "exportName": "ANNUAL_MONTH_MATRIX",
+          "index": 4,
+          "originalId": "afpr:month-slot:05",
+          "recordSha256": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "fileSha256": "261d8167c98dbc339d3090b8477edecfe770d0e5e1c8573088601640f03a96e3"
+        },
+        "matchedCatalogKey": "kc:v1:eb258806d50b0e12e86cfc07d62f799f7b3c05c3bc25138d7fdb0aea2df3fa71",
+        "originalId": "afpr:month-slot:05",
+        "role": "ORIGINAL_RECORD",
+        "expectedHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "actualHash": "025e86bd5b175fc3f440867ebceee4deb5d6591ed6902ddce85c4d8a9b017012",
+        "hashAlgorithm": "SHA256_JSON_INSERTION",
+        "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+        "reviewState": "TECHNICAL_PROOF_VERIFIED_NOT_CONTENT_OR_CUSTOMER_APPROVAL"
+      },
+      "segmentPointer": "/composition/result/evidence/raw/calendarMonths/4/segments/1",
+      "window": {
+        "scope": "month",
+        "start": "2027-05-06T02:25:12+09:00",
+        "endExclusive": "2027-06-01T00:00:00+09:00",
+        "certainty": "confirmed",
+        "originalBounds": {
+          "boundaryReason": [
+            "jie:입하"
+          ]
+        },
+        "compatibleCombination": true
+      },
+      "verifiedActualUnitIds": [
+        "actual-semantic-unit:v1:69a1964dda7256b93ed6c8da4497cd4fa9d8ca3e382b060299518e585fc8035f",
+        "actual-semantic-unit:v1:35544b902625ce378bce8a9f520876c1b93f1f7f56eee2a064dcbdb327460760"
+      ],
+      "roles": [
+        {
+          "unitId": "actual-semantic-unit:v1:69a1964dda7256b93ed6c8da4497cd4fa9d8ca3e382b060299518e585fc8035f",
+          "role": "MONTH_STEM",
+          "nodeId": "aeg:node:2011c6d5fc2b540e86d4aeef55aec285f0969ce8b8e8a45c161ddd3e5ff0217b",
+          "referenceStem": "甲",
+          "targetStem": "乙",
+          "tenGod": "겁재",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:jie_cai",
+          "sourceHash": "898c4c8609dc4c637c4ee3ee9369c6011dbbede7294b246751b42b8811999239",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:2cd83a32cfd6cc7f43497cabf8ac53cfc315d6082c055477dd313daa1c5c2c59",
+            "aeg:root:3c97962755abcfdff06967d390f152c773b13932cdb27ae21bc214ef53abec0e"
+          ],
+          "completeAncestryHash": "1944006ae298c8f88d0bd193494f4277d50ee9fb17a3aecd986949fb62ede3d3"
+        },
+        {
+          "unitId": "actual-semantic-unit:v1:35544b902625ce378bce8a9f520876c1b93f1f7f56eee2a064dcbdb327460760",
+          "role": "MONTH_BRANCH_MAIN",
+          "nodeId": "aeg:node:2011c6d5fc2b540e86d4aeef55aec285f0969ce8b8e8a45c161ddd3e5ff0217b",
+          "referenceStem": "甲",
+          "targetStem": "丙",
+          "tenGod": "식신",
+          "producer": {
+            "file": "src/lib/report-knowledge/annualMonthJie.ts",
+            "symbol": "buildAnnualMonthCalendar",
+            "version": "annual-month-jie-kst-v2",
+            "system": "annual-month"
+          },
+          "sourceIdentity": "foundation:ten_god:shi_shen",
+          "sourceHash": "1faa86777dc89387411c777e0e864ce790e9f1b93e396007037b4aba2ce9249a",
+          "sourceVersion": "6d471db103d53dd9165e4832744501a686e59edc",
+          "primaryRoot": null,
+          "unitRoots": [
+            "aeg:root:2cd83a32cfd6cc7f43497cabf8ac53cfc315d6082c055477dd313daa1c5c2c59",
+            "aeg:root:3c97962755abcfdff06967d390f152c773b13932cdb27ae21bc214ef53abec0e"
+          ],
+          "completeAncestryHash": "1944006ae298c8f88d0bd193494f4277d50ee9fb17a3aecd986949fb62ede3d3"
+        }
+      ],
+      "originalNativeReceiptId": "kb:receipt:84c8e71701d668ba7c7fe03fabda43ac883805914df259ccc64f0abac9645227",
+      "originalNativeReceiptHash": "a871330b4491c5b97dac8e79c33c60b868905f15c1a951419465fa57ba95f61e",
+      "originalSelected": [],
+      "typedNativeReceiptId": "kb:receipt:7139b9366bf9c02ec52128a960191cdc0720c6391433b060ec42fc47a9a7991e",
+      "typedNativeReceiptHash": "cba6ea5e100850c9986f65d9568c64c99be28194ec2db2a308524cbd244bae50",
+      "typedSelected": [
+        "aeg:node:1ffc0653cff5f6b07e1f1c2736241154e03d19e00f0f60c24fb10c08ebf17b4f",
+        "aeg:node:2011c6d5fc2b540e86d4aeef55aec285f0969ce8b8e8a45c161ddd3e5ff0217b"
+      ],
+      "typedFactRoots": [
+        "aeg:root:2cd83a32cfd6cc7f43497cabf8ac53cfc315d6082c055477dd313daa1c5c2c59",
+        "aeg:root:3c97962755abcfdff06967d390f152c773b13932cdb27ae21bc214ef53abec0e"
+      ],
+      "additionalReferenceRoots": [],
+      "originalGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "EXACT_PRODUCER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_OWNER_REQUIREMENT_MISSING"
+          ]
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_ANCESTRY_NOT_SUPPLIED"
+          ]
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "UNKNOWN",
+          "reasons": [
+            "ACTUAL_PERIOD_REQUIRED"
+          ]
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "typedGates": [
+        {
+          "gate": "SOURCE_INTEGRITY",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "INTERPRETATION_REVIEW",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "SEMANTIC_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCER_SUPPORT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_CALCULATED_FACT",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_OWNER",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_DIRECTION",
+          "state": "NOT_APPLICABLE",
+          "reasons": []
+        },
+        {
+          "gate": "ALL_ANCESTOR_DOMAINS",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "TIME_INTERSECTION",
+          "state": "PASS",
+          "reasons": []
+        },
+        {
+          "gate": "ACTUAL_USER_STATE",
+          "state": "UNKNOWN",
+          "reasons": [
+            "CONTRACT_NOT_MACHINE_CHECKABLE"
+          ]
+        },
+        {
+          "gate": "COUNTEREXAMPLES_AND_PROHIBITIONS",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "ORIGINAL_COUNTEREXAMPLE_REVIEW_REQUIRED"
+          ]
+        },
+        {
+          "gate": "PRODUCT_SPECIALISM",
+          "state": "UNKNOWN",
+          "reasons": [
+            "SPECIALIST_QUESTION_OR_MEANING_UNKNOWN"
+          ]
+        },
+        {
+          "gate": "CUSTOMER_APPROVAL",
+          "state": "REVIEW_REQUIRED",
+          "reasons": [
+            "CUSTOMER_APPROVAL_PENDING",
+            "OPERATOR_APPROVAL_PENDING"
+          ]
+        }
+      ],
+      "reviewStates": [
+        "ACTUAL_CONTEXT_REQUIRED",
+        "MEANING_REVIEW_REQUIRED",
+        "PRODUCT_REVIEW_REQUIRED",
+        "CUSTOMER_APPROVAL_PENDING"
+      ],
+      "allOriginalConditionsPreserved": true,
+      "customerUseAllowed": false
+    }
+  ]
+}
