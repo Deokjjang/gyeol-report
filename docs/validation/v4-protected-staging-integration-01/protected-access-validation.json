@@ -1,0 +1,43 @@
+{
+  "baseSha": "1b89d8d90fdad2b0a82b783e2d948c9cc5de878f",
+  "existingCustomerRuntimeChanged": false,
+  "customerAuthorized": false,
+  "humanQualityApproved": false,
+  "status": "PROTECTED_DEPLOYMENT_BLOCKED",
+  "independentProjectExists": false,
+  "existingProject": "gyeol-report/prj_Iqp9hru3W1oQ6YLvGmvWl98yDUbc",
+  "existingProjectProtectionChanged": false,
+  "existingProjectPreviewIsStaging": false,
+  "remoteUnauthenticated": "UNVERIFIED",
+  "remoteUnauthorized": "UNVERIFIED",
+  "remoteAuthorized": "UNVERIFIED",
+  "remoteDirectApiAndStatic": "UNVERIFIED",
+  "remoteShareableAndBypass": "UNVERIFIED",
+  "localProduction404": {
+    "localNextStartProduction": true,
+    "rows": [
+      {
+        "path": "/",
+        "method": "GET",
+        "status": 404,
+        "noStore": true
+      },
+      {
+        "path": "/api/verify",
+        "method": "POST",
+        "status": 404,
+        "noStore": true
+      }
+    ],
+    "remoteVerified": false
+  },
+  "requiredAdminActions": [
+    "Create a separate Preview-only project; do not deploy/promote Production",
+    "Root tools/protected-staging/reader; include source outside root; existing frozen root dependency install",
+    "Enable Vercel Authentication and explicit reviewer allowlist",
+    "Verify no Shareable Link/Protection Bypass can expose review data",
+    "Review exact project/protection pin separately; current committed policy denies all Vercel requests",
+    "Configure only independent public review key; never copy operating credentials",
+    "Verify exact commit/branch/project/Preview READY and actual allowed/denied access before uploading fictitious Books"
+  ]
+}
