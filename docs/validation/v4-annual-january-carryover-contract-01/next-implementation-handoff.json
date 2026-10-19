@@ -1,0 +1,53 @@
+{
+  "status": "JANUARY_TECHNICAL_CONTRACT_VERIFIED_NOT_CUSTOMER_AUTHORIZATION",
+  "verifiedMonthsBefore": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "verifiedMonthsAfter": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "remainingMonths": [
+    6,
+    11
+  ],
+  "januaryCandidates": 4,
+  "januaryTypedBindings": 8,
+  "annualCandidatesBefore": 38,
+  "annualCandidatesAfter": 42,
+  "majorCandidates": 2,
+  "unmatchedUnits": 396,
+  "newFactRoots": 0,
+  "newCalculatedGraphFacts": 0,
+  "customerClaims": 0,
+  "customerApprovals": 0,
+  "customerReaderBridges": 0,
+  "plannerAssignments": 0,
+  "crossYearSourceMeaningApproved": false,
+  "nextImplementationTask": "Not started. Requires a separate user instruction.",
+  "remainingBlockers": [
+    "Remaining monthly contracts 06/11",
+    "30 original Source Integrity FAIL unchanged",
+    "10 monthly ten-god roles remain ambiguous",
+    "Meaning/Product/Customer approval pending",
+    "Two stale protected-hash test failures and historical October 5000ms timing sensitivity remain separate baseline issues",
+    "Historical ignored/unrecorded temporary-worktree loss remains UNVERIFIED"
+  ],
+  "automaticFollowupStarted": false
+}
