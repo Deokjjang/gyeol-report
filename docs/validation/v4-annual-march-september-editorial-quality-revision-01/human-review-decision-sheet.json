@@ -1,0 +1,485 @@
+{
+  "purpose": "OFFLINE_DECISION_SHEET_NOT_APPROVAL_ENVELOPE",
+  "reviewer": null,
+  "humanReviewCompleted": false,
+  "meaningApproved": false,
+  "productApproved": false,
+  "customerApproved": false,
+  "decisions": [
+    {
+      "fixtureId": "fixture-annual-A",
+      "month": 3,
+      "paragraphId": "annual-editorial-paragraph:v1:7e654630631dfa4c988cdb58003298ce161a0946e4fe2097d43f38a43de5b8ef",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-A",
+      "month": 3,
+      "paragraphId": "annual-editorial-paragraph:v1:845debdbd902c20f98eeb9be33585844f1702f2bef85250eb23b2322c80f2143",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-A",
+      "month": 3,
+      "paragraphId": "annual-editorial-paragraph:v1:ba75c66fe18d9134569ecb9cbbb30b3b18ef6b0df82be3786599fcbaa4b1f5a0",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-A",
+      "month": 3,
+      "paragraphId": "annual-editorial-paragraph:v1:8f68262dd6deedb9f15f3db808c9c8f09978ba8d8b8edc9a9583823839a3b14f",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-A",
+      "month": 3,
+      "paragraphId": "annual-editorial-paragraph:v1:81c8448a723b9f55f4cbfd5d31daa07f6211b6ff1c93d56e90c4bbdfc59e38d1",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-A",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:4d7b4bdcb69b3e37ab2375d7e4f7eba16041f6108f68ab14b153080a78db9d2e",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-A",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:94cba9120423f243021eeee188bcda4693fd5f77598aec20e398faf1fa6041f9",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-A",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:25908ec5d691c0edd9acbfb08f7895dd6d457ad7d29c92989f4d88238dac4c36",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-A",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:6deb530b36b077d86f0b15abb0b186c6990d03c10af272ae961e7e5f42015716",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-A",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:5e2720bc804cb8cab6c0087fc18afda54e353eb63fc9f31a5bd19c5ddac91d3d",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "month": 3,
+      "paragraphId": "annual-editorial-paragraph:v1:87b0aacfc71c6d3ecadfffc86223bb9fd64a10bf73164a2cdd1218c57d6b8b33",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "month": 3,
+      "paragraphId": "annual-editorial-paragraph:v1:f431a8dd2b0c784105ec2203c76440118f0be0036af7d954326d90c83787e53a",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "month": 3,
+      "paragraphId": "annual-editorial-paragraph:v1:1d39c91b6ff008adca2ddcc6fad77cf0b7cc6c9c39c763b65cf463b5e11489ba",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "month": 3,
+      "paragraphId": "annual-editorial-paragraph:v1:6d7749b9852e285aa25c34edf2aa68e1aac8bf58ca4acdf600e281ed2abc99c2",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "month": 3,
+      "paragraphId": "annual-editorial-paragraph:v1:52dde8d04b5fe91a1080e7c06beb4046074c17047742238841289b3875846744",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:b36b575b9fd019027a8196bad624da8858f8d2690de0981b96c9df565e294b43",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:34de0d5c7e035c09ff77e283d3236daaa022c5f0d4c454514cd6814f38b92901",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:4d01d937f50bce27f876a5f75b5de141d030740c560bac12828abefe096e29ff",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:6a1028b0ea381f8a0bfb28072f48444039e2eb7615aa688381542e471d4e929a",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:643e480e1f50fabe00a1231e2c416b00e5a1513ebe73cac35770f2dc6b2a0ba4",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-ranged-transition",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:9671ba3c6ac9a9132204ef4ae6e55b1f49ecedae99d370bbdc413f6dfda8422e",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-ranged-transition",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:09d755b453e23a4244e3c07507d01cb3681481ea3c7ff1b647599508aaa68cd8",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-ranged-transition",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:f1f22b3b2b7e2bb48b9e48f99ac297af7f0fdabc963722c7c53d59bb5a1daf02",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-ranged-transition",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:0bd20f3b84bc84c94ed3e64e10304320b40aa2c060a2dbd07c4f48191a8d66da",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    },
+    {
+      "fixtureId": "fixture-annual-ranged-transition",
+      "month": 9,
+      "paragraphId": "annual-editorial-paragraph:v1:106b4f9e958c90272130ca65ff463a22d1034d62a49b9a37f0508be3b48ecb54",
+      "selected": "UNSELECTED",
+      "choices": [
+        "KEEP",
+        "REVISE",
+        "WITHHOLD",
+        "SOURCE_REQUIRED",
+        "CONTEXT_REQUIRED"
+      ],
+      "reviewer": null,
+      "humanReviewCompleted": false,
+      "meaningApproved": false,
+      "productApproved": false,
+      "customerApproved": false,
+      "officialApprovalEnvelope": null
+    }
+  ]
+}
