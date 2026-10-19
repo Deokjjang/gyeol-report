@@ -1,3 +1,4 @@
+import { READER_INNER_PORTRAIT, READER_TALENT_PORTRAIT, READER_PORTRAIT_ENDING, READER_WORK_PORTRAIT, READER_MONEY_PORTRAIT } from "./comprehensivePortraitMaterials";
 import { reviewedMbtiBehavior } from "./contentMbti";
 import type { NarrativeInput, ComprehensiveNarrative, NarrativeBlock } from "./narrativeTypes";
 import type { ComprehensiveEditorialPlan, ComprehensivePlanInputs, ComprehensiveSectionId } from "./comprehensivePlanCore";
@@ -11,7 +12,7 @@ import { humanizeSourceClause } from "./comprehensiveManuscriptPolish";
 import { humanMbtiReason } from "./narrativeMbtiReason";
 import { freshNarrativeMemory } from "./narrativeMemory";
 import { withKoreanParticle } from "../report-knowledge/koreanCopyUtils";
-import { READER_FIRST_IMPRESSION, READER_PRIORITIES, READER_TALENT_PRACTICE, READER_FRIEND_VALUE, READER_MONEY_VALUE, READER_TALENT_SELECTION } from "./comprehensiveReaderApplications";
+import { READER_FIRST_IMPRESSION, READER_TALENT_PRACTICE, READER_FRIEND_VALUE, READER_MONEY_VALUE, READER_TALENT_SELECTION } from "./comprehensiveReaderApplications";
 
 export type ReleaseSentence = {
   chapterId: string; paragraphId: string; sentenceRole: string; roleDescription: string; text: string;
@@ -97,7 +98,7 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
     // Later chapters apply already introduced proof to genuinely different
     // reader questions. They do not spend another primary-definition slot.
     const base=recall?pool.filter(s=>introduced.has(s.atom.id)):pool;
-    const material=(s:ReleaseSource)=>current.id==="CH04"&&p===0?READER_FIRST_IMPRESSION[s.facet]:current.id==="CH09"&&p===1?READER_MONEY_VALUE[s.facet]??RELEASE_MONEY_VALUE[s.facet]:context==="money"&&s.direction===1&&RELEASE_MONEY_AXES[s.axis]?RELEASE_MONEY_AXES[s.axis]:context==="positive"?RELEASE_POSITIVE[s.facet]:current.id==="CH12"&&p===1?READER_FRIEND_VALUE[s.facet]:current.id==="CH12"&&p===3?s.axis==="LEARNING"&&s.direction===1?RELEASE_SOCIAL_LEARNING_FIT:RELEASE_SOCIAL_FIT[s.facet]:RELEASE_FACETS[s.facet].applications[context];
+    const material=(s:ReleaseSource)=>current.id==="CH04"&&p===0?READER_FIRST_IMPRESSION[s.facet]:current.id==="CH09"&&p===1?READER_MONEY_VALUE[s.facet]??RELEASE_MONEY_VALUE[s.facet]:context==="money"&&risk&&s.direction===1&&RELEASE_MONEY_AXES[s.axis]?RELEASE_MONEY_AXES[s.axis]:context==="money"&&!risk?READER_MONEY_PORTRAIT[s.facet]:context==="positive"?RELEASE_POSITIVE[s.facet]:current.id==="CH12"&&p===1?READER_FRIEND_VALUE[s.facet]:current.id==="CH12"&&p===3?s.axis==="LEARNING"&&s.direction===1?RELEASE_SOCIAL_LEARNING_FIT:RELEASE_SOCIAL_FIT[s.facet]:context==="work"&&!risk?READER_WORK_PORTRAIT[s.facet]:context==="inner"?READER_INNER_PORTRAIT[s.facet]:context==="strength"?READER_TALENT_PORTRAIT[s.facet]:RELEASE_FACETS[s.facet].applications[context];
     const wealth=base.filter(s=>s.atom.sourceType==="ten_god"&&["正財","偏財"].includes(s.atom.sourceKey));
     const eligibleBase=current.id==="CH09"&&p===1&&wealth.length?wealth:base;
     let candidates=eligibleBase.filter(s=>{const a=material(s);
@@ -224,10 +225,11 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
       case "CH01": {
         application(0,"identity");
         const day=profiles.myeongli.foundation.pillars.find(e=>e.metadata?.isDayMaster===true), branch=profiles.myeongli.foundation.pillars.find(e=>e.metadata?.pillar==="day"&&e.sourceType==="earthly_branch");
-        if(day&&branch) facts(1,[day,branch],[`일간은 ${releaseAtomName(day).replace("일간 ","")}이며, 명리에서는 자신의 기본 성향을 읽는 출발점으로 봅니다.`,
-          `${input.calculation.pillars.day.stem}${input.calculation.pillars.day.branch} 일주는 이 일간과 일지의 조합으로, ${clause(day.easyMeaning)}이라는 면을 가까운 일상에서 살펴볼 수 있습니다.`,
-          `${releaseAtomName(branch)}에는 ${clause(branch.easyMeaning)}이라는 의미도 있어, 같은 사람 안에서 다른 필요가 함께 작동할 수 있습니다.`,
-          "기본 성향에 다른 기둥과 십성의 조건이 더해져, 한 글자만으로 전체를 정하지 않습니다."],"day-master-and-pillar");
+        const combination=profiles.myeongli.synthesisCandidates.find(c=>c.strength!=="SUPPORT"&&c.evidenceIds.length>1&&c.evidenceIds.includes(day?.id??"")&&c.evidenceIds.every(id=>profiles.myeongli.evidence.some(e=>e.id===id)));
+        if(day&&branch) facts(1,[day,branch,...profiles.myeongli.evidence.filter(e=>combination?.evidenceIds.includes(e.id))],[`일간은 ${releaseAtomName(day).replace("일간 ","")}이며, 명리에서는 자신의 기본 성향을 읽는 출발점으로 봅니다.`,
+          `${input.calculation.pillars.day.stem}${input.calculation.pillars.day.branch} 일주는 이 일간과 일지의 조합으로, ${meaningQuote(day.easyMeaning)} 면을 가까운 일상에서 살펴볼 수 있습니다.`,
+          `${releaseAtomName(branch)}에는 ${meaningQuote(branch.easyMeaning)} 의미도 있어, 같은 사람 안에서 다른 필요가 함께 작동할 수 있습니다.`,
+          combination?sentence(combination.humanDescription):"이 일간의 기본 성향과 일지에서 읽은 생활의 요구가 나란히 있어, 같은 사람도 상황에 따라 다른 면을 보일 수 있습니다."],"day-master-and-pillar");
         fusionParagraph(2,"REINFORCE");
         if(coreSource){const f=RELEASE_FACETS[coreSource.facet];add(3,[f.risk,f.applications.strength![1],f.applications.stress![1],f.applications.direction![2]],{source:coreSource.candidate.id,ids:[coreSource.atom.id],theme:coreSource.candidate.semanticTheme,context:"identity",material:"core:contrast"});
           for(const c of ["strength","stress","direction"])blockMeaning(`${coreSource.facet}:${c}`);}
@@ -254,7 +256,9 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
             "작은 계획·기록·대화로 시험하면, 평가 대신 균형을 찾는 방법이 남습니다."],"element-balance");
           const alternate=elements.find(e=>e.id!==row.id&&pool.some(s=>s.atom.id===e.id&&RELEASE_FACETS[s.facet].applications.direction!.every(t=>!seenText.has(t))));
           const use=alternate&&pool.find(s=>s.atom.id===alternate.id&&RELEASE_FACETS[s.facet].applications.direction!.every(t=>!seenText.has(t)));
-          if(use){const a=RELEASE_FACETS[use.facet].applications.direction!;facts(3,[row,use.atom],[`${names[row.sourceKey]}의 쓰임에 ${names[use.atom.sourceKey]}의 ${meaningQuote(use.atom.easyMeaning)} 면을 함께 고려해 봅니다.`,a[0],a[1],a[2]],"element-use-in-life");}
+          if(use){const a=RELEASE_FACETS[use.facet].applications.direction!;
+            const pair=profiles.myeongli.synthesisCandidates.find(c=>c.strength!=="SUPPORT"&&["ELEMENT_PAIR","STRONGEST_WEAKEST","YIN_YANG_ELEMENT"].includes(c.source)&&c.evidenceIds.includes(row.id)&&c.evidenceIds.every(id=>profiles.myeongli.evidence.some(e=>e.id===id))&&!hasText(sentence(c.humanDescription)));
+            facts(3,[row,use.atom,...profiles.myeongli.evidence.filter(e=>pair?.evidenceIds.includes(e.id))],[pair?sentence(pair.humanDescription):`${names[row.sourceKey]}의 쓰임에 ${names[use.atom.sourceKey]}의 ${meaningQuote(use.atom.easyMeaning)} 면을 함께 고려해 봅니다.`,a[0],a[1],a[2]],"element-use-in-life");}
           else facts(3,[row],[`${names[row.sourceKey]}의 작동 방식을 생활에 쓸 때는 어떤 상황에서 도움이 되는지 먼저 살펴보세요.`,"새 일을 시작한다면 익숙한 방식으로 작은 부분을 해 보고, 그 방식만으로 풀리지 않은 조건은 따로 남겨 볼 수 있습니다.","좋아진 결과와 여전히 필요한 도움을 나누면, 타고난 기질을 모든 상황의 정답으로 쓰지 않고 필요한 곳에 배정하게 됩니다."],"element-use-in-life");
         } else {
           const natal=profiles.myeongli.foundation.pillars.filter(e=>e.metadata?.pillar!=="hour");
@@ -370,10 +374,10 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
         const shadow=chapters.find(c=>c.id==="CH06")?.paragraphs[0]?.sentences[0];
         const overuse=shadow&&pool.find(s=>s.atom.id===shadow.evidenceIds[0]&&s.axis===shadow.provenance.axis&&s.direction===shadow.provenance.direction);
         const emit=(p:number,s:ReleaseSource,texts:string[],material:string)=>add(p,texts,{source:s.candidate.id,ids:[s.atom.id],theme:s.candidate.semanticTheme,context:"direction",material,recall:true,axis:s.axis,direction:s.direction});
-        if(core){const a=RELEASE_FACETS[core.facet].applications.direction!;emit(0,core,[`첫 장에서 읽은 ${meaningQuote(core.atom.easyMeaning)} 성향을 선택에 쓸 때는, 잘할 수 있는지와 지금 필요한 일을 구분해 보세요.`,a[0],a[1]],"core:decision-criterion");}
-        if(talent){emit(1,talent,[`재능을 쓸 과제는 ${meaningQuote(talent.atom.easyMeaning)} 힘이 실제 결과에 필요한지를 기준으로 고를 수 있습니다.`,READER_TALENT_SELECTION[talent.facet],"그 과제에서 바꿀 부분 하나와 이미 충분한 부분 하나를 구분하면, 장점을 더 세게 쓰는 대신 어디에 써야 하는지 판단하게 됩니다."],`talent:bounded-use:${talent.facet}`);}
-        if(overuse){emit(2,overuse,[`팩폭 장에서 본 약점은 문제가 커진 뒤 반성하기보다 선택 직전에 확인할 신호로 쓸 수 있습니다.`,RELEASE_CLOSINGS[overuse.facet][1],READER_TALENT_PRACTICE[overuse.facet][2]],`shadow:before-choice:${overuse.facet}`);}
-        if(core&&talent&&overuse){const added=add(3,[READER_PRIORITIES[core.facet][0],READER_PRIORITIES[talent.facet][1],READER_PRIORITIES[overuse.facet][2]],{source:core.candidate.id,ids:[core.atom.id],theme:core.candidate.semanticTheme,context:"direction",material:"core:three-domain-priority",recall:true,axis:core.axis,direction:core.direction});
+        if(core){emit(0,core,[`첫 장에서 읽은 ${meaningQuote(core.atom.easyMeaning)} 면은 당신이 세상을 만나는 하나의 방식입니다.`,`이 힘은 ${RELEASE_FACETS[core.facet].image}처럼, 작은 선택이 쌓일수록 자신의 방식으로 드러날 수 있습니다.`,"앞으로의 자신을 한 가지 성향에 가두기보다, 어느 순간 그 힘이 필요한지 알아보는 여지가 남습니다."],"core:decision-criterion");}
+        if(talent){emit(1,talent,[`이 책에서 살펴본 재능의 바탕에는 ${meaningQuote(talent.atom.easyMeaning)} 면이 있습니다.`,READER_TALENT_SELECTION[talent.facet],"남보다 많은 것을 해내는 날만이 아니라 자기 능력이 필요한 곳을 알아보는 날에도 성장은 일어날 수 있습니다."],`talent:bounded-use:${talent.facet}`);}
+        if(overuse){emit(2,overuse,[`팩폭에서 본 모습도 강점과 떨어진 다른 사람이 아니라, 같은 힘이 지나치게 쓰인 한 장면입니다.`,RELEASE_CLOSINGS[overuse.facet][1],"약점이 보인 날의 자신만으로 오래 쌓아 온 장점까지 지울 필요는 없습니다."],`shadow:before-choice:${overuse.facet}`);}
+        if(core&&talent&&overuse){const added=add(3,[READER_PORTRAIT_ENDING[core.facet][0],READER_PORTRAIT_ENDING[talent.facet][1],READER_PORTRAIT_ENDING[overuse.facet][2]],{source:core.candidate.id,ids:[core.atom.id],theme:core.candidate.semanticTheme,context:"direction",material:"core:portrait-ending",recall:true,axis:core.axis,direction:core.direction});
           if(added){const last=current.paragraphs.at(-1)!;[core,talent,overuse].forEach((source,index)=>{const sent=last.sentences[index];sent.sourceCandidateId=source.candidate.id;sent.evidenceIds=[source.atom.id];sent.semanticTheme=source.candidate.semanticTheme;sent.provenance={...sent.provenance,source:source.candidate.id,axis:source.axis,direction:source.direction};
               const ownership=rootOwnership.get(source.atom.id);if(ownership&&!ownership.applications.includes(last.id))ownership.applications.push(last.id);
             });last.legacySections=[...new Set(plan.evidenceOwnership.filter(o=>last.sentences.some(s=>s.evidenceIds.includes(o.evidenceId))).map(o=>o.primaryOwner))];}
