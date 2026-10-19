@@ -1,3 +1,5 @@
+import { readableBookText } from "../../../src/lib/book/readerCopy";
+import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import timeProductLocks from "../../fixtures/release-technical-01/time-product-locks.json";
 import { describe, it, expect, vi } from "vitest";
 vi.mock("server-only", () => ({}));
@@ -92,7 +94,7 @@ describe("Compatibility reader release", () => {
     for (const p of book.pages) {
       const html = renderToStaticMarkup(createElement(BookReader, {data:book, page:p, onNote:()=>{}, onPage:()=>{}, onShare:()=>{}}));
       if (p.kind === "contents") for (const row of p.entries) expect(book.pages[row.page].id === row.targetId || book.pages[row.page].anchors?.includes(row.targetId)).toBe(true);
-      if (p.kind === "narrative") for (const paragraph of p.paragraphs) { expect(html).toContain(`id="${paragraph.anchorId}"`); expect(html).toContain(renderToStaticMarkup(createElement("span",null,paragraph.text)).slice(6,-7)); }
+      if (p.kind === "narrative") for (const paragraph of p.paragraphs) { expect(html).toContain(`id="${paragraph.anchorId}"`); expect(html).toContain(renderToStaticMarkup(createElement("span",null,readableBookText(paragraph.text,book.people.map(p=>p.name)))).slice(6,-7)); }
     }
     const snapshot = createProductPreviewSnapshot({reportId:`synthetic-new-pair-${index}`, createdAtIso:e.generatedAt, productKey:e.input.productKey, productSlug:e.input.productSlug, draft:generated.draft as unknown as ProductPreviewSnapshotDraft,evidencePacket:e});
     if (!snapshot.ok) return expect.unreachable();
@@ -149,16 +151,17 @@ describe("Compatibility reader release", () => {
     expect(r.integration.readerEdition.chapters[2].paragraphs[1].purpose).toBe("Bobby님이 관계에서 중요하게 여기는 것");
     expect(r.integration.readerValidation.hardErrors).toEqual([]);
   },120000);
-  it.each(RUNTIME_FIXTURES.filter(f=>f.id!=="compatibility"))("$id text, evidence and Book stay at their frozen integrated edition", async f=>{
-    // Major/Annual were released after these original boundary locks. Their
-    // integrated output is frozen at 964e6b9; original historical locks remain.
+  it.each(RUNTIME_FIXTURES.filter(f=>f.id!=="compatibility"))("$id common edition keeps frozen foundations and reviewed Book", async f=>{
+    // Historical fixtures stay intact. The common editorial edition has its
+    // own output lock plus signatures from the pre-upgrade calculation/source baseline.
     const timeLock = f.id === "major" || f.id === "annual" ? timeProductLocks[f.id] : null;
     if (timeLock) {
       expect(f.payload).toEqual(timeLock.payload);
       expect(SHADOW_CLOCK).toEqual(timeLock.clock);
     }
     const r=await generateV4ShadowReport(f.payload,SHADOW_CLOCK);if(!r.ok)return expect.unreachable();
-    expect([v4Digest(r.draft),v4Digest(r.evidencePacket),v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(timeLock?.hashes ?? locks[f.id as keyof typeof locks]);
+    expectEditorialFoundations(r.evidencePacket as V4RuntimeEvidence,f.payload,SHADOW_CLOCK);
+    expect([v4Digest(r.draft),v4Digest(r.evidencePacket),v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.compatibilityRelease[f.id as keyof typeof editorialLocks.groups.compatibilityRelease]);
   },120000);
   it.each(["parentChild", "managerReport"] as const)("%s swapped people keep fixed A/B responsibilities", relationshipType=>{
     const payload={...base,relationshipType}, a=build(payload),b=build({...payload,personA:payload.personB,personB:payload.personA});
@@ -224,8 +227,7 @@ describe("Final assembly preserves complete compatibility Books", () => {
     expect(result.integration.readerValidation.hardErrors).toEqual([]);
     expect(result.integration.publishedEdition).toBe(COMPATIBILITY_RELEASE_VERSION);
     expect(edition.chapters.map(c => c.paragraphs.length)).toEqual(Array(9).fill(4));
-    if (!["love", "marriage"].includes(relationshipType)) expect(result.integration.readerEditorial)
-      .toContainEqual({ severity: "Major", code: "REPEATED_LONG_PHRASE", location: "CH03.P1 / CH06.P3" });
+    expect(result.integration.readerEditorial).toEqual([]);
     const book = projectBook(e); if (!book) return expect.unreachable("Book missing");
     expect(book.pages.flatMap(p => p.kind === "narrative" ? p.paragraphs.map(p => p.text) : []))
       .toEqual(edition.chapters.flatMap(c => c.paragraphs.map(p => p.text)));

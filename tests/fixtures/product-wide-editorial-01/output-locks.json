@@ -1,0 +1,455 @@
+{
+  "base": "aa82faa271dad0a03604c859c8bbb0161aa711c6",
+  "baselineIncludesFinalAssemblyFix": "f15bc25e78a4434c91441946799bcfbf6bbcd998",
+  "revision": "V4-PRODUCT-WIDE-EDITORIAL-UPGRADE-01",
+  "groups": {
+    "career": {
+      "05-major-fortune": "7536fb94e0329d09ecf38a3fe3484cd7e7749ff5928417ba9eb56f9857801e1b",
+      "01-comprehensive": "d7ca73586eb621a7f56060811a62a3a47a8424c2d38039a38582056631298cb6",
+      "06-annual-fortune": "9b70bb5cfdd707995825f0236948a27fb4eaad0d09f07b4c2241f0bcd82205b4",
+      "04-compatibility": "3fcec89bac986a6dc5209de0adaa6f8ad8057dd4e9fccace855df979eb161b41",
+      "03-love": "dcce55906db9d3a907bc666e2924863292604fcb8ce86e41ab1c57a8aad85720"
+    },
+    "love": {
+      "01-comprehensive": [
+        "07657d820a2213d76a22cd33c94a583c375c7854cc9b875c0366784b14de6bd0",
+        "402911e4e03f3d124b677b3695d5fe3b5b85fd752e56ff09e44d3b016ca2d081",
+        "082242d0d203c038476d6ab0f4b509ccdac23272eb79c8f7a552e7d5527bb53e"
+      ],
+      "02-career": [
+        "5d42d8ac6ff3b7b1707c0aa5d2bd82518a7a39455dfb0528921fbf67e1e441d2",
+        "bafeb8547fdb04f9de93f83f0f87e9d5a9f7daee3b3e9782c4c817a8c1c25f1a",
+        "e8668949d84d6497a95e79f51059f9193bf94637c8c62839a9fa343f7e5f2601"
+      ],
+      "04-compatibility": [
+        "c929b82cdcc2b38f4ec15a6fde17a1017ed92bd5c820965992ba68066f27c4f7",
+        "253383654112f58faa6a02fdad49ec03e44061e73edc0b3b0c2e37417a54c35d",
+        "e54f9608340942e8222c77e45e88a48f02eae51b04b224efc1276c476633d159"
+      ],
+      "05-major-fortune": [
+        "4e695f96492074aa37386a4fef49efa79399c946ecf8e6f19233c46da0869792",
+        "9ee466c4beece2f6af80d73bcf528de167bc33c454409f6b565275ef93c3806a",
+        "c9e19efd3821f48984cf17859ac4ec57a61a7fd50e17d81899b859f8d9e20102"
+      ],
+      "06-annual-fortune": [
+        "f7d71bcd8217fb336d0a22cf07b98d034c50969e1071573b34df4366c8be7318",
+        "fa8c1ef0294e4692dc514169a220e3cb07eb93b95f0bf5034241d7fc6890b5da",
+        "417f7d19f24290596553082972f70ad481a18dc73396c58bd4f9afd25bb391a4"
+      ]
+    },
+    "compatibilityQuality": {
+      "01-comprehensive": [
+        "07657d820a2213d76a22cd33c94a583c375c7854cc9b875c0366784b14de6bd0",
+        "402911e4e03f3d124b677b3695d5fe3b5b85fd752e56ff09e44d3b016ca2d081",
+        "082242d0d203c038476d6ab0f4b509ccdac23272eb79c8f7a552e7d5527bb53e"
+      ],
+      "02-career": [
+        "5d42d8ac6ff3b7b1707c0aa5d2bd82518a7a39455dfb0528921fbf67e1e441d2",
+        "bafeb8547fdb04f9de93f83f0f87e9d5a9f7daee3b3e9782c4c817a8c1c25f1a",
+        "e8668949d84d6497a95e79f51059f9193bf94637c8c62839a9fa343f7e5f2601"
+      ],
+      "03-love": [
+        "eea02ec4c81ee9e9331348b7cc62f76293db830d23ebd68dfcd7ff004e4f5e21",
+        "fe824d4f890d2abe84b790d5d8ee0df0e0449a92ad6b0bf34428fbb9fe4d9b69",
+        "c2ea4d853b746d36983ecbaa5a6d92cad6b91dda5d4edd8c36361f6d4d20dc51"
+      ],
+      "05-major-fortune": [
+        "4e695f96492074aa37386a4fef49efa79399c946ecf8e6f19233c46da0869792",
+        "9ee466c4beece2f6af80d73bcf528de167bc33c454409f6b565275ef93c3806a",
+        "c9e19efd3821f48984cf17859ac4ec57a61a7fd50e17d81899b859f8d9e20102"
+      ],
+      "06-annual-fortune": [
+        "f7d71bcd8217fb336d0a22cf07b98d034c50969e1071573b34df4366c8be7318",
+        "fa8c1ef0294e4692dc514169a220e3cb07eb93b95f0bf5034241d7fc6890b5da",
+        "417f7d19f24290596553082972f70ad481a18dc73396c58bd4f9afd25bb391a4"
+      ]
+    },
+    "compatibilityRelease": {
+      "comprehensive": [
+        "ea49089c0d3cfc4b5b2dbccc273db92a91fc2efa5aabce8f30f4061b8cb01546",
+        "336be152d576a8ae010deaf1d515fab1b4e2c96d403a7e76e4ba0ee0bfbebac4",
+        "9f4b0e8dfbcd1cad2a3663b27d96a2fbb4f94d0210e7d888c62599a637b6f9fc"
+      ],
+      "career": [
+        "bb8f612be323b25a2c2362ed18279f7208db49113d21b357f2d1f04825f46399",
+        "a6dc617da3b45b825ab9afcc7ba4a3566b8881d19b084f979f7a27aad2f28cdb",
+        "1bd598f6f581e4ac305a28bf37a9bc38e1970f5f7078d6b89833d742c0613b42"
+      ],
+      "love": [
+        "c31bc8ccfbfd7c384945286d254ce581cff01b3b5b8f6cdf5597c81bc83a4406",
+        "1af1bb6218f3a16bde0c180c2c15f3d8ea4b22a45f233b79ff938f8208fc3c4f",
+        "ba89007ce6d79f8729379701cded967f114448a9fd638a9241eafadc4e8a3516"
+      ],
+      "major": [
+        "d65e340cf8a92501e2a5d77eddb5fca7a3229a4e48f838f995cf24b7ff15f612",
+        "001ef8e32f4e74c442597ed493d234f8e6f8eab118781b79feb70021d6353cd8",
+        "7b866f92db307381f13f8159e2ab295f4ddcaff96a5e3aed9abf35898ad998a1"
+      ],
+      "annual": [
+        "e1622dd6b0af9f5ddbc4c27a0e7847472a34c87093f5e3a2788313aa82dcf796",
+        "ad6985e6462cd1d234887d85e27802ae8c77a8a84dffc730bb16b935e187f8ab",
+        "d03ce392d43b29a9f3dbb4b187dea8c6b96fae3bed1ca977dae377c09f02460c"
+      ]
+    },
+    "major": {
+      "01-business": "5dcd182ee11da95e1bcc00ed8c77c7468546778e192361f6d651ab78f7c87448",
+      "02-employee": "1e8fb7edb94a2971e54ead662135c71d2326588018f29c2ed1b31d2c27fa2a5f",
+      "03-freelance": "6beac8544a9b37c9e4e938c20a18d59955ad79a0a8aed6f7960e339463c8e96e",
+      "04-time-unknown": "7582d612b7f5d291602e5ece59dcb7798468786160b1fac08e7d251ca130776e",
+      "05-mbti-unknown": "a4c28040ede1bd1a323fe76fd27bc2d2ae24ef81b99aa40eefbdb32a35180b0f",
+      "06-both-unknown": "4e0fd3fab2e8a90ae2aecdf0036b13bb2971190b5e596309fbc71d95b6405ff6"
+    }
+  },
+  "preservation": {
+    "4099c8cee256809f6ad54cda8e5cfed335f7857fa7757bd0470471daf02a4ae9": {
+      "calculations": "a548408b8af9716eee3c7f9613c194ce4f5934b2a0ca220ea3675b29bc5ccb11",
+      "mbtiTables": "c3e57873fd1e2f23581aec07e4c8f88e2a88664c112eb15410c791e713d8c207",
+      "natalTables": "8199ead216ad4e5a938057371ae3cda9c8aef2981f48f63b99766f1f211c77f1",
+      "materials": "1ee63fe06524b834c3e29b10685366ca13a627ee5def818d1dcc3dd1dc9f9cd7",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "49a277e902f565caac4c9ba3a454e91b4a2b0bd74502c0179537ecc7005b62ce",
+      "periods": "9d6f941a4516363e87804462faeeb59cc552f7f7318177dc01124ea998b396b5",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "f86f40a300dfe8ebee41100fbba91874c8cefede4d0c99c87e58371d80dbd495": {
+      "calculations": "89e0559c46846256e5fcc6ea353e9d9d58380c865a0514aab87c00d54fd8f3b5",
+      "mbtiTables": "ba22360b4f5318ffa0803dde0fef49145cb912fd5d5cb713d29f7066b6da2ef9",
+      "natalTables": "1031197d3421d5fa8436286b75bd42596307c6ff71390d5d6ba2ce9e2d43d916",
+      "materials": "21f4364a827778a075762ae5dd347b546761a34f7252a249ce1081d46826de21",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "5b5a778d536dbf6af99953f5c6f62979e65690573da38699caca001cf261b0c8": {
+      "calculations": "0a8e0934a33806cd0be6be7885173246450d69422fa94c0ecc8b08fb0fe14294",
+      "mbtiTables": "a9d87740db60c2314bca154b83c45018bdc8134e32afeb384f1a9dae50ae8763",
+      "natalTables": "3d790d6eeaedf50863c7b01f797f3869a63a47eec45dc90068d5023826bf528b",
+      "materials": "02bd7e37abbe8f1225ffa53445a822c3dc7af77f8a36d1c5e6b1282da1c15575",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "4d3bcefdeb890b84be3ce8ee67016a545b13c798cf7d103b864a6f2e6017e0a3",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "aa37608231712c502d865e92661877a40fd7a22c6d86d4bfa32a22386a0c22d4": {
+      "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+      "mbtiTables": "1f1cbdd9d889692c51806ed17910587f97f7874860ebab65de0aa7dfa878bab5",
+      "natalTables": "36fcdfbfe5fa25e039c920c1f036ee215a4c389ae159fa16e226347461c03cfe",
+      "materials": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "index": "827b40a39f07ec3fcc5d4f0ababcb9c11cf92344bf6270f214f94832261aafeb",
+      "directions": "08ca208c805c457fce4f40475321591defad150c01bd3ae8b69c0bd2e7df58e6",
+      "individuals": "6f211dc1a58d879d14b6d4bd00f544f5b0a1a3a3240a73e4a951a34a04360b7f",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "28c786071c3fd65fc8587a894013175cdce12172e05f1aef8ccfd1673b393c57": {
+      "calculations": "1c46f577701e75dd77957c6b6043cd9a6bdc6197f0f0c66f2ee50e99e2e53b72",
+      "mbtiTables": "482f150bbd083b2f84a75da4eef9a96ff45633ec8c100fd232aa539ec993ff38",
+      "natalTables": "b8dc319e62b171fdad6ae62c1323c4a58fe21c469873d0dbebcd965c88e29083",
+      "materials": "f4e26913fb5da724ddb7ae434e85c896f2277aafaa7939b45007ddc23f050138",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "933ac6e9b8d17fd0a8050724718520d3c344f9621e693fda819d956ddd25f868",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "5d6623d8a2f4ebedfa01f305ead8eef1ab8b52b3a914966c7a858ac60e38ea3c": {
+      "calculations": "a40fe08474cc5f68c0a7100c05d795edfd105ab0fa68b403333e1b8a046b1731",
+      "mbtiTables": "9d9757efcc98d8778a18714e08717ab0b79bd2b53b06ffb7766742e42e1880b0",
+      "natalTables": "fd23d449047b8a43564539091fc8ba8aa99ad726cadbd536384e1bd3ef967326",
+      "materials": "67b8789b557aaedbf3131c389e5b0368fa5ee32a376f1926046509a2f68b3572",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "713e0e48fbf3a6df06a5ce322fe1d1805d236076a6d03cef9991f0248124cdfa",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "5ff3c0ae5d389b2d919f90b07026532f9fe3e73ebb4ff5a2d2aace9afa70e61c": {
+      "calculations": "775a59ebb9b6f6559ab4f2ca35cded018a7be714954a45718fc8bbe6625acfd1",
+      "mbtiTables": "c3e57873fd1e2f23581aec07e4c8f88e2a88664c112eb15410c791e713d8c207",
+      "natalTables": "650bed2db1522f61e20e6f83e7dc994b8898594c194b2a0cdb831257d8b2bf02",
+      "materials": "c64115ac21c9e8d158e9d5b028629c1b919fc72c1e4d11f7f2fece98a5c5735d",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "4d35724ce07e547e4afd5071b800b4aade3dc7e0a747181ec9451da1b7f3c82a": {
+      "calculations": "10b74c57294bfd52c92fca0c7a795e0171ea7797edf12552df02d9c749bad4da",
+      "mbtiTables": "9d9757efcc98d8778a18714e08717ab0b79bd2b53b06ffb7766742e42e1880b0",
+      "natalTables": "f5c6acd2b93f797c7b7e7f4479a6fb3f824e7c644d82df707810059f2b9adc59",
+      "materials": "50d1725c091c791c7301e7cc8a7e6b8db82a10b38fe497dda9234cc0de6800b0",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "ee04da0c9f723ed547b8f93a1f3d8d244363ac6588837be51f7c4fb202688d47",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "3120de3708e86d1398d202075172038d1ea503321e75cfec8723a4089bbd4aa9": {
+      "calculations": "826d164bc98759ebb523c7dc0c14e09bebf96eee1584bcfebf81882104e91181",
+      "mbtiTables": "cd95d081498c3e2c372b8f46eaceda8fe44ddcc5f504ca174079dbad463ee719",
+      "natalTables": "0162e924d7714392eb34bcfcd44b41b631e10d10cf92c833fae86f1ee5b713f3",
+      "materials": "0678e524fa19c1f68e4bbf2bc7e79cd08fd6b62e65db58e6023567bb9e422dfd",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "7201e1645d3c156e2321654a3b844db3b6a1f347b4612d814cf2a11cb67fb10b",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": null
+    },
+    "db9c5841a47f5ed9604b5a22960c1948a70bf2f93cc6e7408ad0eb97a1576ff9": {
+      "calculations": "362db80c5e12e37dc26352e628ebb06eb9830f372e74668281a70267db9ea420",
+      "mbtiTables": "6a5daf5912d1767589a70e3b40406c25af5024d24231220e99f33b662eddd82e",
+      "natalTables": "df06e61575f9c176fbf0deac3add93a4ae1b7ecc7eb5a0299b34fd7612a44ec2",
+      "materials": "9cb20fff07047f03c7d0f532bf1ff784460614c2e4ab2ec85f9ead8c7294658b",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "ea6561e10ff5f69c993e524c3dd40903f7586de19417970fd69f97abba1cecee",
+      "periods": "52e3d4b038adadcdd1ec6462266259a60b70fd13dd38455ca26e14dbe9d98ace",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "f4a7df859b62918dd1a1a89196fd31b5d07a17a2e2e3ceacfd36d8a302a71ab6": {
+      "calculations": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+      "mbtiTables": "8ccb93b833a4999aaa2bc1439eea30659ef5022fcc2e719e4b107d665df54078",
+      "natalTables": "b92ce0b17a4139c9b13131e4d8803db2363be7d900ce53f0085d33ace89e7bf5",
+      "materials": "3f568f80cac2cbb2e05113d3f20369c61a7426cc0808b46b928bddb0c683d714",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "5c346812a0205505f95e099f1a9d5756a3b6306b2323c84853cfa0c3789f16d3",
+      "periods": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "years": null,
+      "months": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "a4c9d8353ffbad927cd82a68807fcd7f0afbaf87ef6a12234667c0e9b860df5a": {
+      "calculations": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+      "mbtiTables": "8ccb93b833a4999aaa2bc1439eea30659ef5022fcc2e719e4b107d665df54078",
+      "natalTables": "b92ce0b17a4139c9b13131e4d8803db2363be7d900ce53f0085d33ace89e7bf5",
+      "materials": "3f568f80cac2cbb2e05113d3f20369c61a7426cc0808b46b928bddb0c683d714",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "5c346812a0205505f95e099f1a9d5756a3b6306b2323c84853cfa0c3789f16d3",
+      "periods": "69559ba8a85cea15a3f84690d871d7e0141f718edc8ac6ce9aa3a99f9dcf2908",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "c9fe9a6f1293afd1a02f9314d2702a143fa128d143918b48515411a825d6302b": {
+      "calculations": "775a59ebb9b6f6559ab4f2ca35cded018a7be714954a45718fc8bbe6625acfd1",
+      "mbtiTables": "c3e57873fd1e2f23581aec07e4c8f88e2a88664c112eb15410c791e713d8c207",
+      "natalTables": "650bed2db1522f61e20e6f83e7dc994b8898594c194b2a0cdb831257d8b2bf02",
+      "materials": "c64115ac21c9e8d158e9d5b028629c1b919fc72c1e4d11f7f2fece98a5c5735d",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "9103458c7bdd54b354c390e28f9fa8f90f29408b252705d4179d1c0d32bf4662",
+      "periods": "84ef2117cb8de13377daa0922e6a2dd8429d3b89137aaff6997830dcc0d69c55",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "1dd2e1ec024c9201474b37aa854e9b36146d120a0a0d95d9697fa6b0d2386a42": {
+      "calculations": "666d22660b0b76edae5040842b3d648075a13a73c81c1e5a4721f1c0601e1a74",
+      "mbtiTables": "39d01937f73e23c1fdbb27106c0a2541631918e73b30900e5ff479d6b785fdb0",
+      "natalTables": "6fdacfb9f16017521ba061ef0ab07c71348fbec0b16ef2a6aa44d749fc57cebc",
+      "materials": "3565bdb1051839462112048a105a9554756ce252924cba5634f0c1c2f06fb6dd",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "47d7d813706b4baeefd52a72c2a19ec9c692255134f124b335e889fb419f4467",
+      "periods": "2a2ff3ddc8c95ee2a3a1a1f30d7b9ff2000d244f50c7e33437382c05d1a433dd",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "c4229b46db98fb570a2a7e8a13c109f4293bd5f6c64578f49d55f2ec554f66c2": {
+      "calculations": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+      "mbtiTables": "8ccb93b833a4999aaa2bc1439eea30659ef5022fcc2e719e4b107d665df54078",
+      "natalTables": "2186a991ffba640320d03b8a0c7de9f34ee7ad00a0839a36b23038c1a963b954",
+      "materials": "6738c47062d40b54bbf4220c4cf60852c282772633f4d1303e2ecefa24c946cd",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "e53add681431d75f7564e48a0a3ed66300237d1268473e5617c23025e9a44570",
+      "periods": "37251cf1670b805e973f5531c5e649acfe6aa3bd392aa219bc4180e6433d7d89",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "b7f72cc685f7029c0baa3b9b7b2eb8df7d81cc71d75021a4f105348f57ab6a6f": {
+      "calculations": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+      "mbtiTables": "737b092d3740383053331b6dd494811d007c0417ea5f2635d8e9846ba2f840e5",
+      "natalTables": "b92ce0b17a4139c9b13131e4d8803db2363be7d900ce53f0085d33ace89e7bf5",
+      "materials": "57afb8d0b055c32faa64b973752b51764fdf2ddf677e4033660d1373b89f6083",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "c1515b7b300c3d0c56738b974bdebbc11760d4a35e09fb6517cd3d12eb0e0137",
+      "periods": "69559ba8a85cea15a3f84690d871d7e0141f718edc8ac6ce9aa3a99f9dcf2908",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    },
+    "4def086473feed97a1858fbaf731c85072481aa02706c4d7c4fa5fd627c54277": {
+      "calculations": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+      "mbtiTables": "737b092d3740383053331b6dd494811d007c0417ea5f2635d8e9846ba2f840e5",
+      "natalTables": "2186a991ffba640320d03b8a0c7de9f34ee7ad00a0839a36b23038c1a963b954",
+      "materials": "e516d33072762c5ac82a97eecaf8686aaf21fffe1f4983af261d53b679e18278",
+      "index": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "directions": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "individuals": "f1a2b95d03f7ff3382e1240b08fa6a80386cdd2485a8044577be415edefb8a0b",
+      "periods": "37251cf1670b805e973f5531c5e649acfe6aa3bd392aa219bc4180e6433d7d89",
+      "years": [
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036
+      ],
+      "months": null
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { readableBookText } from "../../../../src/lib/book/readerCopy";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
@@ -93,7 +94,7 @@ describe("actual V4 packet → book pages; no new calculation or prose", () => {
       expect(html.replace(/<[^>]*>/g, "")).not.toMatch(/\b(?:metal|water|career_shift)\b/);
       if (page.kind === "narrative") {
         for (const p of page.paragraphs) {
-          expect(html).toContain(renderToStaticMarkup(<span>{p.text}</span>).slice(6, -7));
+          expect(html).toContain(renderToStaticMarkup(<span>{readableBookText(p.text, data.people.map(person => person.name))}</span>).slice(6, -7));
           expect(p.notes.every(n => n >= 1 && n <= page.notes.length)).toBe(true);
         }
         if (page.notes.length) expect(html).toContain('aria-label="이 장의 각주"');

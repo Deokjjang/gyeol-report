@@ -1,3 +1,4 @@
+import { reviewedMbtiBehavior } from "./contentMbti";
 import type { NarrativeInput, ComprehensiveNarrative, NarrativeBlock } from "./narrativeTypes";
 import type { ComprehensiveEditorialPlan, ComprehensivePlanInputs, ComprehensiveSectionId } from "./comprehensivePlanCore";
 import type { ComprehensiveManuscriptDraft } from "./comprehensiveManuscriptCore";
@@ -51,6 +52,7 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
   const hasText = (text:string) => [...seenText].some(prior=>prior.includes(text));
   const introduced = new Set<string>();
   const selectedStrengths: ReleaseSource[]=[];
+  const mbtiMemory = freshNarrativeMemory();
   let coreSource: ReleaseSource | undefined;
   let current:ReleaseChapter;
   const blockMeaning=(key:string)=>{memory.meanings.add(key);preflight?.blocked.add(key);};
@@ -66,6 +68,8 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
       sourceCandidateId:!refs.fusion?.length&&refs.mbti?.length&&usesMbti(text)?refs.mbti[0]:refs.source,evidenceIds:[...new Set(refs.ids)],mbtiSourceNodeIds:usesMbti(text)?[...(refs.mbti??[])]:[],fusionIds:[...(refs.fusion??[])],semanticTheme:refs.theme,context:refs.context,
       provenance:{materialId:refs.material,source:refs.source,application:refs.recall?"RECALL":refs.material.startsWith("fact:")?"FACT":"CONDITIONAL_APPLICATION",...(refs.axis?{axis:refs.axis,direction:refs.direction}:{})}}));
     unique.forEach(t=>seenText.add(t));
+    for (const id of new Set(sentences.flatMap(s => s.mbtiSourceNodeIds))) mbtiMemory.usedEvidence[id] = (mbtiMemory.usedEvidence[id] ?? 0) + 1;
+    if (sentences.some(s => s.mbtiSourceNodeIds.length)) mbtiMemory.usedExplicitMbtiMentions++;
     if(current.id!=="CH13")refs.ids.forEach(id=>introduced.add(id));
     for(const evidenceId of refs.ids) {const entry=rootOwnership.get(evidenceId);if(entry)entry.applications.push(id);else rootOwnership.set(evidenceId,{evidenceId,owner:id,applications:[]});}
     const legacySections=[...new Set(plan.evidenceOwnership.filter(o=>refs.ids.includes(o.evidenceId)).map(o=>o.primaryOwner))];
@@ -80,10 +84,10 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
     const term=`${s.atom.sourceType}:${s.atom.sourceKey}`;
     // Reusing proof in a new domain must still explain the connection. A
     // definition budget is not a reason to silently drop the Myeongli reason.
-    const root = `${releaseAtomName(s.atom)}에서는 ${meaningQuote(s.atom.easyMeaning)} 면을 읽습니다.`;
+    const root = `${releaseAtomName(s.atom)}의 쉬운 뜻은 ${meaningQuote(s.atom.easyMeaning)} 것입니다.`;
     const introducedTerm=terms.has(term);
     terms.add(term);
-    if(current.id>="CH04"&&n&&type&&explicitMbti<7){mbtiNodes.add(n.sourceNodeId);mbtiAxes.add(`${s.axis}:${s.direction}`);explicitMbti++;return {text:`${introducedTerm?"":root+" "}${type}의 ${mbtiDomainLabels[n.sourceDomain]??"선택 방식"} 자료에서도 ${mbtiHumanBehavior(s.axis,s.direction)}`,mbti:[n.sourceNodeId]};}
+    if(current.id>="CH04"&&n&&type&&explicitMbti<7){mbtiNodes.add(n.sourceNodeId);mbtiAxes.add(`${s.axis}:${s.direction}`);explicitMbti++;return {text:`${introducedTerm?"":root+" "}${type}의 ${withKoreanParticle(mbtiDomainLabels[n.sourceDomain]??"선택 방식", "object")} 보면 ${reviewedMbtiBehavior(profiles.mbti.sourceNodes.find(node=>node.id===n.sourceNodeId)!) ?? mbtiHumanBehavior(s.axis,s.direction)}`,mbti:[n.sourceNodeId]};}
     return {text:introducedTerm?"":root,mbti:[]};
   }
   function application(p:number,context:ReleaseContext,preferred:readonly string[]=[],risk=false,intro?:string) {
@@ -157,7 +161,7 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
     const eligible=list.filter(f=>!f.priorHeavy&&!f.amplifierOnly&&f.strength!=="SUPPORT"&&(f.type!=="TENSION"||f.conditionSplit?.resolved));
     const options=eligible.filter(f=>!usedFusion.has(f.id))
       .flatMap(f=>{
-        const mbti=humanMbtiReason(profiles,f,kind==="REINFORCE"?"C2":"C3",freshNarrativeMemory());
+        const mbti=humanMbtiReason(profiles,f,kind==="REINFORCE"?"C2":"C3",mbtiMemory);
         const atom=profiles.myeongli.evidence.find(e=>f.myeongli.evidenceIds.includes(e.id)&&(e.axes[f.myeongli.side.axis]??0)*f.myeongli.side.direction>0);
         const source=plan.candidates.find(c=>c.fusionIds.includes(f.id)&&c.sourceType==="FUSION"&&!c.invalidReasons.length&&c.primaryEligible);
         if(!mbti||!atom||!source)return [];
@@ -167,7 +171,7 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
         const applied=facet?.[1].applications[context];
         const mbtiFacet=Object.values(RELEASE_FACETS).find(r=>r.axes.some(([axis,direction])=>axis===f.mbti.side.axis&&direction===f.mbti.side.direction));
         const mbtiApplication=mbtiFacet?.applications[context]?.find(t=>![...seenText].some(prior=>prior.includes(t))&&!applied?.includes(t));
-        const mbtiText=mbtiAxes.has(`${f.mbti.side.axis}:${f.mbti.side.direction}`)&&mbtiApplication?`${profiles.mbti.mbtiType}의 ${mbtiDomainLabels[mbti.domain??"IDENTITY"]??"행동 선호"} 자료를 이 상황에 적용하면, ${mbtiApplication}`:mbti.text;
+        const mbtiText=mbtiAxes.has(`${f.mbti.side.axis}:${f.mbti.side.direction}`)&&mbtiApplication?`${profiles.mbti.mbtiType}의 ${mbtiDomainLabels[mbti.domain??"IDENTITY"]??"행동 선호"}에서 보이는 모습은 이렇습니다: ${mbtiApplication}`:mbti.text;
         const split=f.conditionSplit?.resolved?f.conditionSplit.sides:undefined;
         const texts=f.type==="TENSION"?[side,`${releaseAtomName(atom)}에는 ${meaningQuote(atom.easyMeaning)} 뜻이 담겨 있습니다.`,mbtiText,split?`${split.myeongli}의 반응과 ${split.mbti}의 반응을 나누어 보면, 한쪽이 진짜 성격이고 다른 쪽이 거짓이라는 결론 없이 각 필요를 살필 수 있습니다.`:humanizeSourceClause(f.sourceDescription)]
           :[scope??side,`${releaseAtomName(atom)}에서는 ${meaningQuote(atom.easyMeaning)} 명리적 이유를 읽습니다.`,mbtiText,applied?.[1]??humanizeSourceClause(f.sourceDescription)];
@@ -198,7 +202,7 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
           const mbtiApplication=mbtiFacet?.applications[context]?.find(t=>!a.includes(t)&&![...seenText].some(prior=>prior.includes(t)))
             ??mbtiFacet?.applications.work?.find(t=>![...seenText].some(prior=>prior.includes(t)));
           if(!mbtiApplication)continue;
-          const texts=[scope??a[0],bridge,`${profiles.mbti.mbtiType}의 ${mbtiDomainLabels[node.sourceDomain??"IDENTITY"]??"행동 선호"} 자료를 이 상황에 적용하면, ${mbtiApplication}`,a[1]];
+          const texts=[scope??a[0],bridge,`${profiles.mbti.mbtiType}의 ${mbtiDomainLabels[node.sourceDomain??"IDENTITY"]??"행동 선호"}에서 보이는 모습은 이렇습니다: ${mbtiApplication}`,a[1]];
           if(texts.some(t=>seenText.has(sentence(t)))||fusionBridges.has(bridge))continue;
           usedFusion.add(f.id);mbtiNodes.add(node.id);mbtiAxes.add(`${f.mbti.side.axis}:${f.mbti.side.direction}`);explicitMbti++;
           blockMeaning(`${facet[0]}:${context}`);
@@ -265,7 +269,7 @@ function renderReleasePass(input: NarrativeInput, profiles: ComprehensivePlanInp
         const source=f&&plan.candidates.find(c=>c.fusionIds.includes(f.id)&&c.primaryEligible&&!c.invalidReasons.length);
         const facet=f&&Object.entries(RELEASE_FACETS).find(([,r])=>r.axes.some(([a,d])=>a===f.myeongli.side.axis&&d===f.myeongli.side.direction));
         const a=facet?.[1].applications.inner;
-        const mbti=f&&humanMbtiReason(profiles,f,"C3",freshNarrativeMemory());
+        const mbti=f&&humanMbtiReason(profiles,f,"C3",mbtiMemory);
         const atom=f&&profiles.myeongli.evidence.find(e=>f.myeongli.evidenceIds.includes(e.id)&&(e.axes[f.myeongli.side.axis]??0)*f.myeongli.side.direction>0);
 
         const texts=f&&a&&mbti&&atom?[`${releaseAtomName(atom)}의 ${meaningQuote(atom.easyMeaning)} 면과 ${profiles.mbti.mbtiType}의 행동 선호를 함께 활용할 때는 순서를 정하는 편이 좋습니다.`,

@@ -76,7 +76,7 @@ export function createMajorYearPersonalization(e: MajorEvidence, reserved: reado
     const focus = domain === "money" ? "지출 기준" : domain === "study" ? "학습 습관" : domain === "relationships" ? "관계 속 경계" : "역할 선택";
     if (reading || fusion || question) {
       const lens = reading ? `${reading.behavior} ${reading.combined}` : fusion ? conversationalVoice(fusion.insightSeed, 1) : "";
-      const intro = reading || fusion ? `${e.input.mbti}의 평소 반응과 타고난 ${label} 성향을 나란히 보면 선택의 기준도 보입니다.`
+      const intro = reading || fusion ? reading?.kind === "tension" ? `타고난 ${label} 성향과 실제 선택이 다른 방향을 향할 때도 있습니다.` : `이때 쓸 수 있는 타고난 힘은 ${label}입니다.`
         : `${withKoreanParticle(focus, "object")} 생각할 때 원국의 ${withKoreanParticle(label, "subject")} 어떤 모습인지 떠올려볼까요?`;
       const text = [intro, lens, question?.text].filter(Boolean).join(" ");
       if (question) reserve(question);

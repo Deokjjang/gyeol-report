@@ -1,3 +1,4 @@
+import { reviewedMbtiBehavior } from "./contentMbti";
 import { COMPATIBILITY_RELEASE_VERSION, COMPATIBILITY_READER_CHAPTERS, type PairReleaseDraft, type PairReleaseSentence } from "./compatibilityReleaseContracts";
 import { PAIR_RELEASE_CONTEXT, PAIR_RELEASE_FACETS } from "./compatibilityReleaseMaterials";
 import { PAIR_RELEASE_SCENES, PAIR_RELEASE_REPAIR } from "./compatibilityReleaseApplications";
@@ -74,10 +75,12 @@ export function renderCompatibilityRelease(e: PairEvidence, people: { personA: P
     const domains = e.category === "love" ? ["LOVE", "RELATIONSHIPS", "COMMUNICATION", "IDENTITY"] : e.category === "marriage" ? ["MARRIAGE", "RELATIONSHIPS", "COMMUNICATION", "IDENTITY"] : ["COMMUNICATION", "RELATIONSHIPS", "IDENTITY"];
     return views[slot].profiles.mbti.contributions.flatMap(c => {
       const n = views[slot].nodes.find(n => n.id === c.sourceNodeId && n.classification === "SCORING_SEMANTIC" && domains.includes(n.sourceDomain!) && n.id.endsWith(":plainKo"));
-      const action = mbtiHumanBehavior(c.axis, c.rawValue);
+      const action = n && (reviewedMbtiBehavior(n) ?? mbtiHumanBehavior(c.axis, c.rawValue));
       const openingAction = distinctOpening && draft.chapters[0]?.paragraphs.find(p => p.id === "CH01.P3")?.sentences.some(s => s.text.includes(action ?? ""));
       return n && action && !openingAction ? [{ n, axis: c.axis, sign: Math.sign(c.rawValue), action }] : [];
-    }).sort((x, y) => Number(y.axis === axis) - Number(x.axis === axis) || domains.indexOf(x.n.sourceDomain!) - domains.indexOf(y.n.sourceDomain!) || x.n.id.localeCompare(y.n.id))[0];
+    }).sort((x, y) => Number(y.axis === axis) - Number(x.axis === axis)
+      || Number(draft.chapters.some(ch => ch.paragraphs.some(p => p.sentences.some(s => s.mbtiSourceNodeIds.includes(x.n.id)))))
+        - Number(draft.chapters.some(ch => ch.paragraphs.some(p => p.sentences.some(s => s.mbtiSourceNodeIds.includes(y.n.id))))) || domains.indexOf(x.n.sourceDomain!) - domains.indexOf(y.n.sourceDomain!) || x.n.id.localeCompare(y.n.id))[0];
   }
   function mbti(slot: "personA" | "personB", n: NonNullable<ReturnType<typeof node>>["n"]) {
     return register({ id: `${people[slot].personId}:${n.id}`, proof: { ...emptyProof, sourceRefs: [n.sourcePath] }, individual: [], nodes: [n.id], fusions: [], canonical: [], relations: [], subject: people[slot].personId, slot });

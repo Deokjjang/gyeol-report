@@ -1,3 +1,4 @@
+import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { beforeAll, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { readFileSync } from "node:fs";
@@ -77,7 +78,7 @@ describe("Love quality edition: actual paid generator without external calls", (
       for (const root of s.evidenceIds) expect(profiles.myeongli.evidence.some(a => a.id === root
         && fusion.myeongli.evidenceIds.includes(root) && (a.axes[fusion.myeongli.side.axis] ?? 0) * fusion.myeongli.side.direction > 0)).toBe(true);
     }
-  });
+  }, 120000);
   it("uses different current-relationship questions for single, dating and married readers", () => {
     const current = (id: string) => {
       const e = runs.get(id)!.evidencePacket as V4RuntimeEvidence;
@@ -110,10 +111,11 @@ describe("Love quality edition: actual paid generator without external calls", (
     expect(rendered.draft.chapters.flatMap(c => c.paragraphs.flatMap(p => p.sentences)).filter(s => s.fusionIds.length)
       .flatMap(s => s.mbtiSourceNodeIds)).not.toContain(nodeId);
   });
-  it.each(["01-comprehensive", "02-career", "04-compatibility", "05-major-fortune", "06-annual-fortune"] as const)("%s keeps exact base narrative, evidence and Book", async id => {
+  it.each(["01-comprehensive", "02-career", "04-compatibility", "05-major-fortune", "06-annual-fortune"] as const)("%s keeps engine baseline and reviewed common narrative/Book", async id => {
     const baseline = locks[id], r = await generateV4ShadowReport(baseline.input, clock);
     expect(r.ok).toBe(true); if (!r.ok) return;
-    expect([v4Digest(r.draft), v4Digest(r.evidencePacket), v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(baseline.digests);
+    expectEditorialFoundations(r.evidencePacket as V4RuntimeEvidence, baseline.input, clock);
+    expect([v4Digest(r.draft), v4Digest(r.evidencePacket), v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.love[id]);
   }, 120000);
 });
 

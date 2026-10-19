@@ -1,3 +1,4 @@
+import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { describe, expect, it, vi } from "vitest";
@@ -78,9 +79,10 @@ describe("career specialist questions, actual occupation and source boundaries",
     expect(storedBook(old.snapshot, "https://example.test/r/previous-career-token")?.data).toEqual(old.book);
     expect(JSON.stringify(old.snapshot)).toBe(before);
   });
-  it.each(fixture("other-products") as { id: string; payload: unknown; sha256: string }[])("$id full result and Book match the actual baseline", async ({ payload, sha256 }) => {
+  it.each(fixture("other-products") as { id: string; payload: unknown; sha256: string }[])("$id full result matches the reviewed common edition; engine baseline stays fixed", async ({ id, payload }) => {
     const generated = await generateV4ShadowReport(payload, CAREER_QUALITY_CLOCK);
     expect(generated.ok).toBe(true);
-    expect(hash({ generated, book: generated.ok ? projectBook(generated.evidencePacket as V4RuntimeEvidence) : null })).toBe(sha256);
+    if (generated.ok) expectEditorialFoundations(generated.evidencePacket as V4RuntimeEvidence, payload, CAREER_QUALITY_CLOCK);
+    expect(hash({ generated, book: generated.ok ? projectBook(generated.evidencePacket as V4RuntimeEvidence) : null })).toBe(editorialLocks.groups.career[id as keyof typeof editorialLocks.groups.career]);
   }, 120000);
 });

@@ -1,3 +1,5 @@
+import { withKoreanParticle } from "../report-knowledge/koreanCopyUtils";
+import { reviewedMbtiBehavior } from "./contentMbti";
 import type { CareerProfiles } from "./careerProductSelection";
 import type { EditorialCandidate } from "./comprehensivePlanCore";
 import type { NarrativeInput, NarrativeState, NarrativeBlock, NarrativeProof } from "./narrativeTypes";
@@ -31,6 +33,7 @@ const quote = (s: string) => s.replace(/[.!?]$/, "").replace(/입니다$/, "");
  * is a diagnostic, never a new payment/Worker failure or a made-up source. */
 export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfiles, candidates: readonly EditorialCandidate[], legacy: CareerNarrative, state: NarrativeState) {
   const jobFunction = careerWorkNarrative(input).workFunction;
+  const mbtiMemory = freshNarrativeMemory();
   const jobSteps = input.context.detailJob ? CAREER_JOB_STEPS[jobFunction] : undefined;
   const scene = (r: CareerReleaseSource) => (input.context.detailJob && CAREER_JOB_SCENES[jobFunction]?.[r.facet]) || CAREER_RELEASE_MATERIALS[r.facet].scene;
   const economic = (r: CareerReleaseSource) => CAREER_ECONOMIC_USE[r.facet];
@@ -58,6 +61,8 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
         ...(l.refs.row ? { axis: l.refs.row.axis, direction: l.refs.row.direction } : {}), sourceRefs: [...(l.refs.sourceRefs ?? [])] } }));
     actual.forEach(l => { seen.add(l.text); l.refs.roots?.forEach(id => introduced.add(id)); });
     current.paragraphs.push({ id, purpose: contract.purpose, text: actual.map(l => l.text).join(" "), sentences });
+    for (const id of new Set(sentences.flatMap(s => s.mbtiSourceNodeIds))) mbtiMemory.usedEvidence[id] = (mbtiMemory.usedEvidence[id] ?? 0) + 1;
+    if (sentences.some(s => s.mbtiSourceNodeIds.length)) mbtiMemory.usedExplicitMbtiMentions++;
     return true;
   }
   function eligible(preferred: readonly string[], risk: boolean, recall: boolean) {
@@ -87,21 +92,26 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
     return undefined;
   }
   function mbtiLine(row: CareerReleaseSource, domains: readonly string[], material: string): Line | undefined {
-    const node = profiles.mbti.annotations.find(a => domains.includes(a.sourceDomain) && a.annotationConfidence !== "REFERENCE_ONLY"
-      && (a.axes[row.axis] ?? 0) * row.direction > 0 && profiles.mbti.sourceNodes.some(n => n.id === a.sourceNodeId && n.classification === "SCORING_SEMANTIC"));
-    const behavior = node && mbtiHumanBehavior(row.axis, row.direction);
+    const node = profiles.mbti.annotations.filter(a => domains.includes(a.sourceDomain) && a.annotationConfidence !== "REFERENCE_ONLY"
+      && (a.axes[row.axis] ?? 0) * row.direction > 0 && profiles.mbti.sourceNodes.some(n => n.id === a.sourceNodeId && n.classification === "SCORING_SEMANTIC"))
+      .sort((a,b) => Number(!!reviewedMbtiBehavior(profiles.mbti.sourceNodes.find(n => n.id === b.sourceNodeId)!)) - Number(!!reviewedMbtiBehavior(profiles.mbti.sourceNodes.find(n => n.id === a.sourceNodeId)!))
+        || (mbtiMemory.usedEvidence[a.sourceNodeId] ?? 0) - (mbtiMemory.usedEvidence[b.sourceNodeId] ?? 0) || a.sourceNodeId.localeCompare(b.sourceNodeId))[0];
+    const actualNode = node && profiles.mbti.sourceNodes.find(n => n.id === node.sourceNodeId);
+    const behavior = actualNode && (reviewedMbtiBehavior(actualNode) ?? mbtiHumanBehavior(row.axis, row.direction));
     if (!node || !behavior || !profiles.mbti.mbtiType) return;
     return { text: `${profiles.mbti.mbtiType}의 금전 판단에서는 ${behavior}`,
       refs: { source: node.sourceNodeId, nodes: [node.sourceNodeId], theme: row.candidate.semanticTheme, material, sourceRefs: [node.sourceNodeId] } };
   }
   function moneyMbtiLine(): Line | undefined {
-    for (const a of profiles.mbti.annotations.filter(a => a.sourceDomain === "MONEY" && a.annotationConfidence !== "REFERENCE_ONLY")) {
+    for (const a of profiles.mbti.annotations.filter(a => a.sourceDomain === "MONEY" && a.annotationConfidence !== "REFERENCE_ONLY")
+      .sort((a,b) => (mbtiMemory.usedEvidence[a.sourceNodeId] ?? 0) - (mbtiMemory.usedEvidence[b.sourceNodeId] ?? 0) || a.sourceNodeId.localeCompare(b.sourceNodeId))) {
       if (!profiles.mbti.sourceNodes.some(n => n.id === a.sourceNodeId && n.classification === "SCORING_SEMANTIC")) continue;
       const axes = Object.entries(a.axes).sort((a, b) => Math.abs(b[1] ?? 0) - Math.abs(a[1] ?? 0));
       for (const [axis, value] of axes) {
         if (!value) continue;
-        const behavior = mbtiHumanBehavior(axis as CareerReleaseSource["axis"], value > 0 ? 1 : -1);
-        if (behavior && profiles.mbti.mbtiType) return { text: `금전 자료에서 읽는 ${profiles.mbti.mbtiType}의 선호는 이렇습니다: ${behavior}`,
+        const actualNode = profiles.mbti.sourceNodes.find(n => n.id === a.sourceNodeId)!;
+        const behavior = reviewedMbtiBehavior(actualNode) ?? mbtiHumanBehavior(axis as CareerReleaseSource["axis"], value > 0 ? 1 : -1);
+        if (behavior && profiles.mbti.mbtiType) return { text: `돈을 고를 때 ${profiles.mbti.mbtiType}에게 먼저 눈에 들어오는 것은 이쪽입니다: ${behavior}`,
           refs: { source: a.sourceNodeId, nodes: [a.sourceNodeId], theme: "MONEY_DECISION", material: "money:actual-mbti", sourceRefs: [a.sourceNodeId] } };
       }
     }
@@ -111,12 +121,12 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
       const f = profiles.fusion.tensions.find(f => f.id === c.sourceId && f.conditionSplit?.resolved && ["work", "learning"].includes(f.primaryContext));
       const sides = f?.conditionSplit?.sides;
       const atom = f && profiles.myeongli.evidence.find(a => f.myeongli.evidenceIds.includes(a.id) && (a.axes[f.myeongli.side.axis] ?? 0) * f.myeongli.side.direction > 0);
-      const n = f && humanMbtiReason(profiles, f, "C8", freshNarrativeMemory());
+      const n = f && humanMbtiReason(profiles, f, "C8", mbtiMemory);
       if (!f || !sides || !atom || !n) continue;
       const refs: Refs = { source: c.id, roots: [atom.id], nodes: [n.nodeId], fusion: [f.id], theme: c.semanticTheme, material: "fusion:current-conditions", sourceRefs: [f.id] };
       if (add(p, [
         { text: `${careerAtomName(atom)}의 근거에서는 ${humanOutcome(f.myeongli.side.axis, f.myeongli.side.direction)}`, refs: { ...refs, nodes: [], fusion: [] } },
-        { text: `${profiles.mbti.mbtiType}에서 읽는 다른 선호는 이렇습니다: ${mbtiHumanBehavior(f.mbti.side.axis, f.mbti.side.direction)}`, refs },
+        { text: `${n.text}`, refs },
         { text: `${sides.myeongli}에는 첫 번째 반응을, ${sides.mbti}에는 두 번째 선호를 살펴볼 만합니다.`, refs },
         { text: jobSteps?.[1] ?? "작은 과제에서 두 반응을 확인한 뒤, 다음 역할에 필요한 쪽을 선택하세요.", refs },
       ])) return true;
@@ -130,11 +140,11 @@ export function renderCareerRelease(input: NarrativeInput, profiles: CareerProfi
       const f = [...profiles.fusion.reinforce, ...profiles.fusion.complements].find(f => f.id === c.sourceId);
       if (!f) continue;
       const atom = profiles.myeongli.evidence.find(a => f.myeongli.evidenceIds.includes(a.id) && (a.axes[f.myeongli.side.axis] ?? 0) * f.myeongli.side.direction > 0);
-      const n = humanMbtiReason(profiles, f, "C8", freshNarrativeMemory());
+      const n = humanMbtiReason(profiles, f, "C8", mbtiMemory);
       if (!atom || !n) continue;
       const refs: Refs = { source: c.id, roots: [atom.id], nodes: [n.nodeId], fusion: [f.id], theme: c.semanticTheme, material: `fusion:${key}`, sourceRefs: [c.sourceId] };
       const texts = key === "work-basis" ? [
-        `${particle(careerAtomName(atom), "이", "가")} 이 업무 방식을 설명하는 실제 명리 근거입니다.`,
+        `${withKoreanParticle(careerAtomName(atom), "subject")} 이렇게 일하는 힘을 설명합니다.`,
         atom.humanDescription ?? atom.easyMeaning,
         split(n.text)[0],
         c.sourceText,

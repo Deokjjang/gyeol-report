@@ -1,3 +1,4 @@
+import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { describe, it, expect, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { createElement } from "react";
@@ -109,8 +110,9 @@ describe("Compatibility actual quality edition at c048218 base", () => {
     for(const id of ["marriage","parentChild","coworker","managerReport","businessPartner","friendship"])
       for(const chapter of [0,3,4,5,6,7,8]) expect(manuscripts.get(id)!.paragraphs.slice(chapter*4,chapter*4+4)).not.toEqual(a.paragraphs.slice(chapter*4,chapter*4+4));
   });
-  it.each(fixtures.otherProducts)("$id actual full manuscript, evidence and Book unchanged",async f=>{
+  it.each(fixtures.otherProducts)("$id reviewed common manuscript/Book retains engine baseline",async f=>{
     const g=await generateV4ShadowReport(f.input,clock);if(!g.ok)return expect.unreachable();
-    expect([g.draft,g.evidencePacket,projectBook(g.evidencePacket as V4RuntimeEvidence)].map(v4Digest)).toEqual(f.digests);
+    expectEditorialFoundations(g.evidencePacket as V4RuntimeEvidence,f.input,clock);
+    expect([g.draft,g.evidencePacket,projectBook(g.evidencePacket as V4RuntimeEvidence)].map(v4Digest)).toEqual(editorialLocks.groups.compatibilityQuality[f.id as keyof typeof editorialLocks.groups.compatibilityQuality]);
   },120000);
 });

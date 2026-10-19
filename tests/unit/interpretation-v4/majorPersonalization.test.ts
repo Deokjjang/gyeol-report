@@ -1,3 +1,4 @@
+import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { beforeAll, describe, expect, it } from "vitest";
 import { generateV4ShadowReport } from "../../../src/lib/interpretation-v4/runtimeShadow";
 import { v4Digest, type V4RuntimeEvidence } from "../../../src/lib/interpretation-v4/runtimeProjection";
@@ -9,6 +10,7 @@ import locks from "./majorPersonalizationLocks.json";
 
 type Result = Extract<V4RuntimeEvidence["composition"], { product: "major_fortune" }>["result"];
 const results = new Map<string, Result>();
+const packets = new Map<string, V4RuntimeEvidence>();
 beforeAll(async () => {
   for (const f of MAJOR_SAFETY_CASES) {
     const g = await generateV4ShadowReport(f.payload, MAJOR_SAFETY_CLOCK);
@@ -16,20 +18,21 @@ beforeAll(async () => {
     if (!g.ok) continue;
     const e = g.evidencePacket as V4RuntimeEvidence;
     if (e.composition.product !== "major_fortune") continue;
-    results.set(f.id, e.composition.result);
+    results.set(f.id, e.composition.result); packets.set(f.id,e);
     expect(await generateV4ShadowReport(f.payload, MAJOR_SAFETY_CLOCK)).toEqual(g);
   }
 }, 120000);
 
 const normalize = (text: string) => text.replace(/\d{4}년/g, "<YEAR>");
 describe("Major evidence-bound personalization", () => {
-  it.each(MAJOR_SAFETY_CASES)("$id: immutable calculations, periods, non-year copy and original provenance", ({ id, payload }) => {
+  it.each(MAJOR_SAFETY_CASES)("$id: immutable calculations/periods/provenance with reviewed common copy", ({ id, payload }) => {
     const r = results.get(id)!;
     const invariant = { ...Object.fromEntries(["evidence", "materials", "yearPlan", "transitions", "behaviorBasis", "completeness", "contentPlan", "integration"].map(k => [k, r[k as keyof Result]])),
       narrative: { ...r.narrative, sections: r.narrative.sections.filter(s => !s.id.startsWith("year-")) },
       years: r.years.map(y => ({ ...Object.fromEntries(Object.entries(y).filter(([key]) => key !== "blocks")), blockIds: y.blocks.map(b => b.id) })) };
     const old = locks.rows[id as keyof typeof locks.rows];
-    expect(v4Digest(invariant)).toBe(old.invariant);
+    expectEditorialFoundations(packets.get(id)!, payload, MAJOR_SAFETY_CLOCK);
+    expect(v4Digest(invariant)).toBe(editorialLocks.groups.major[id as keyof typeof editorialLocks.groups.major]);
     expect(r.editorial).toEqual([]);
     for (const y of r.years) for (const b of y.blocks) {
       const previous = locks.proofs[old.proofs[b.id as keyof typeof old.proofs] as keyof typeof locks.proofs];

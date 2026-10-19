@@ -1,3 +1,4 @@
+import { reviewedMbtiBehavior } from "./contentMbti";
 import { LOVE_RELEASE_VERSION, LOVE_READER_CHAPTERS, type LoveReleaseDraft, type LoveReleaseSentence } from "./loveReleaseContracts";
 import { LOVE_RELEASE_MATERIALS } from "./loveReleaseMaterials";
 import { LOVE_RELEASE_CONTEXT } from "./loveReleaseContext";
@@ -91,7 +92,8 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
       const node = view.nodes.filter(n => row.mbtiSourceNodeIds.includes(n.id) && fusion.mbti.sourceNodeIds.includes(n.id)
         && ["LOVE", "RELATIONSHIPS", "COMMUNICATION", "MARRIAGE"].includes(n.sourceDomain!) && n.classification === "SCORING_SEMANTIC"
         && profiles.mbti.annotations.some(a => a.sourceNodeId === n.id && a.annotationConfidence !== "REFERENCE_ONLY" && (a.axes[side.axis] ?? 0) * side.direction > 0))
-        .sort((a, b) => Number(b.sourceDomain === "LOVE") - Number(a.sourceDomain === "LOVE") || a.id.localeCompare(b.id))[0];
+        .sort((a, b) => Number(b.sourceDomain === "LOVE") - Number(a.sourceDomain === "LOVE")
+          || Number(!!reviewedMbtiBehavior(b)) - Number(!!reviewedMbtiBehavior(a)) || a.id.localeCompare(b.id))[0];
       const atom = profiles.myeongli.evidence.filter(a => row.myeongliEvidenceIds.includes(a.id) && fusion.myeongli.evidenceIds.includes(a.id)
         && a.tier !== "AMPLIFIER" && (a.axes[fusion.myeongli.side.axis] ?? 0) * fusion.myeongli.side.direction > 0)
         .sort((a, b) => (usedRoots.get(a.id) ?? 0) - (usedRoots.get(b.id) ?? 0) || b.weight - a.weight || a.id.localeCompare(b.id))[0];
@@ -101,7 +103,7 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
       const source: Refs = { source: row.id, roots: [atom.id], nodes: [node.id], fusion: [fusion.id], theme: row.semanticTheme, material: `fusion:${fusion.type}`, refs: [row.sourceId] };
       const m = Object.values(LOVE_RELEASE_MATERIALS).find(m => m.axes.some(([axis, sign]) => axis === fusion.myeongli.side.axis && sign === fusion.myeongli.side.direction));
       const mbtiText = node.id.includes(":boundary_against_cruelty:") ? `${profiles.mbti.mbtiType}의 관계 성향에서도, 무례하거나 불공평한 대우에는 거리를 두고 자기 기준을 지키려는 면을 살펴볼 만합니다.`
-        : `${profiles.mbti.mbtiType}에서는 ${behavior.replace(/합니다\.$/, "하는 경향을 참고할 만합니다.").replace(/봅니다\.$/, "보는 경향을 참고할 만합니다.")}`;
+        : `${profiles.mbti.mbtiType}에서는 ${reviewedMbtiBehavior(node) ?? behavior.replace(/합니다\.$/, "하는 경향을 참고할 만합니다.").replace(/봅니다\.$/, "보는 경향을 참고할 만합니다.")}`;
       const conclusion = fusion.type === "REINFORCE" && m ? (side.axis === "BOUNDARY" ? "가까워지고 싶은 마음과 별개로 서로 존중받을 선을 중요하게 본다는 점이 겹치며, 친밀함을 위해 불편한 대우까지 참을 필요는 없다는 기준으로 활용할 만합니다."
         : `두 해석이 만나는 지점은 ${m.need}이며, 유형 설명에 나를 맞추기보다 실제 관계에서 이 조건이 편안함을 주는지 살펴보면 좋습니다.`)
         : fusion.type === "COMPLEMENT" ? fusionHumanSurface(row) : undefined;
@@ -225,7 +227,8 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
         const node = view.nodes.filter(n => n.classification === "SCORING_SEMANTIC"
           && ["LOVE", "RELATIONSHIPS", "COMMUNICATION", "MARRIAGE"].includes(n.sourceDomain!)
           && profiles.mbti.annotations.some(a => a.sourceNodeId === n.id && a.annotationConfidence !== "REFERENCE_ONLY" && (a.axes[r.axis] ?? 0) * r.direction > 0))
-          .sort((a, b) => Number(b.sourceDomain === "LOVE") - Number(a.sourceDomain === "LOVE") || a.id.localeCompare(b.id))[0];
+          .sort((a, b) => Number(b.sourceDomain === "LOVE") - Number(a.sourceDomain === "LOVE")
+          || Number(!!reviewedMbtiBehavior(b)) - Number(!!reviewedMbtiBehavior(a)) || a.id.localeCompare(b.id))[0];
         add(1, [
           `${loveSourceName(r.atom)}에서 읽은 ${particle(m.label, "은", "는")} 장점이지만, 언제 어떻게 쓰는지에 따라 상대가 받는 느낌은 달라질 수 있습니다.`,
           `문제는 ${particle(m.need, "을", "를")} 원하는 마음이 강해질 때, 상대도 같은 방법을 원한다는 전제를 먼저 둘 수 있다는 점입니다.`,
