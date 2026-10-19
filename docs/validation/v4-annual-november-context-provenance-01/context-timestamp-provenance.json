@@ -1,0 +1,378 @@
+{
+  "version": "annual-november-context-provenance-v1",
+  "sourceAudit": {
+    "reviewedFiles": [
+      {
+        "file": "src/lib/report-generation/reportInputTypes.ts",
+        "actualHash": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
+        "expectedHash": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
+        "sourceVersion": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/report-knowledge/userContextTypes.ts",
+        "actualHash": "5fd8d7abb0c1ae02e9dc41dd149abd18620b2851c32482f7a9b75c93c785b6c9",
+        "expectedHash": "5fd8d7abb0c1ae02e9dc41dd149abd18620b2851c32482f7a9b75c93c785b6c9",
+        "sourceVersion": "5fd8d7abb0c1ae02e9dc41dd149abd18620b2851c32482f7a9b75c93c785b6c9",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/report-generation/reportInputAdapter.ts",
+        "actualHash": "1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+        "expectedHash": "1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+        "sourceVersion": "1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/interpretation-v4/annualEvidence.ts",
+        "actualHash": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+        "expectedHash": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+        "sourceVersion": "89f8d78841501317f4623a6f130c74d95ac5c9110a2eb27f257f089cec7b6533",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/interpretation-v4/runtimeShadow.ts",
+        "actualHash": "6c0fe9e34c523442d4964bcb2328eb4964f2eb9426c3ca0ae0d472f7b79adef2",
+        "expectedHash": "6c0fe9e34c523442d4964bcb2328eb4964f2eb9426c3ca0ae0d472f7b79adef2",
+        "sourceVersion": "6c0fe9e34c523442d4964bcb2328eb4964f2eb9426c3ca0ae0d472f7b79adef2",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/interpretation-v4/runtimeProjection.ts",
+        "actualHash": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+        "expectedHash": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+        "sourceVersion": "793ef8b1dce3b693e01a6a243a7dfcca793af467b7ac232b1219523029a2feee",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/engine.ts",
+        "actualHash": "df22dcc02f8e07bbe522f06a6ffee7e83a022d06e78b8cdd36f6bc8d4f10171d",
+        "expectedHash": "df22dcc02f8e07bbe522f06a6ffee7e83a022d06e78b8cdd36f6bc8d4f10171d",
+        "sourceVersion": "df22dcc02f8e07bbe522f06a6ffee7e83a022d06e78b8cdd36f6bc8d4f10171d",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/full-product-integration/actualCalculationAdapter.ts",
+        "actualHash": "c247b0144b3019915b848dfe6f36a7ac898605beb30d7e3a861d5684dd88a47f",
+        "expectedHash": "c247b0144b3019915b848dfe6f36a7ac898605beb30d7e3a861d5684dd88a47f",
+        "sourceVersion": "c247b0144b3019915b848dfe6f36a7ac898605beb30d7e3a861d5684dd88a47f",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/report-knowledge/annualMonthJie.ts",
+        "actualHash": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+        "expectedHash": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+        "sourceVersion": "555676ca85aefd8812ebad1f4bc7ff863a9eb78e92a8ce977c79f792f0b12d5f",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/boundaryValidator.ts",
+        "actualHash": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440",
+        "expectedHash": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440",
+        "sourceVersion": "ecca715f9d7b8ed4f1e3eabf49aab58b8c972f36d1c4b6b30e46ebce69041440",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/annual-fortune-specialist-engine/annualIdentity.ts",
+        "actualHash": "4ff12d10dffb5e0bcd6442849161d2ec9abee8a82dd27737501e47298ebba228",
+        "expectedHash": "4ff12d10dffb5e0bcd6442849161d2ec9abee8a82dd27737501e47298ebba228",
+        "sourceVersion": "4ff12d10dffb5e0bcd6442849161d2ec9abee8a82dd27737501e47298ebba228",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      },
+      {
+        "file": "src/lib/report-knowledge/knowledge-integration-foundation/actual-evidence-graph/periods.ts",
+        "actualHash": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+        "expectedHash": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+        "sourceVersion": "70413c47eb8f8819b3b7542cff932f3ac05e132dcd859b629265d1b60ae46753",
+        "verification": "REPOSITORY_CODE_ONLY_NOT_MEANING_APPROVAL"
+      }
+    ],
+    "inputContract": "SinglePersonReportInputPayload.userContext: relationshipStatus, jobStatus, detailJob, focusAreas; no observation timestamp",
+    "normalizedInput": "normalizeUserContext projects those four fields only; no additional capturedAt authority",
+    "graphProducer": "Original CONTEXT_INPUT /input/userContext is payload provenance only. Original producer node has temporal=null.",
+    "offlineSource": "Source-locked A/F/C2028 and existing Ranged recipe have reading/generated/graph clocks but no authenticated observation time linked to context payload.",
+    "sourceLockedFixtureFile": {
+      "file": "tests/fixtures/six-product-integration-01/source-locks.json",
+      "sha256": "8fffe0410a9fb947d76474defbf208974dce613670dc1de3168477c5eaf0d913",
+      "verification": "Existing readerSourcePins and runActualCalculationFixture validation, plus exact Base Graph/Calculation/Native digest comparison"
+    },
+    "existingRangedRecipeSource": {
+      "file": "tools/annual-june-same-god/verify.mjs",
+      "sha256": "de5e5b406d10031449908fe4ca160f333313357b6a67d3e270610bc5462909c2"
+    },
+    "scopeLimitation": "Bounded audit of actual producer/input/Graph/fixture contracts; no production DB or private external source queried.",
+    "timestampSource": null,
+    "authenticatedObservationContractImplemented": false,
+    "authenticatedSourceMissing": true,
+    "sourceFreeCallerValues": "Negative diagnostics only; never an authenticated positive fixture.",
+    "generatedReadingEvaluationPolicyTimesAreObservationTimes": false,
+    "suppliedFieldsAreNotTimestampedObservations": true
+  },
+  "contextPayloads": [
+    {
+      "fixtureId": "fixture-annual-A",
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-annual-A",
+        "originalPersonId": null
+      },
+      "originalSourceId": "aeg:node:27e6c02f9d1bdfaa960cc00972cfd43bba27b368f88702dd968b9facf9a62256",
+      "originalSourceHash": "3e3e5eb848e840ecbb304fa034da9a2d8c0f2efea4698d73707e35ce49b3a104",
+      "sourceProducer": {
+        "file": "src/lib/report-generation/reportInputAdapter.ts",
+        "symbol": "normalizeReportInputPayload",
+        "version": "source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+        "system": "normalized-input"
+      },
+      "sourceVersion": "source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+      "sourcePointer": "/input/userContext",
+      "contextPayloadHash": "1f9c7b47d17cf7b1c60762df7139d80f5e7339356da8d2f0799d5e27fc8b5999",
+      "packetContentDigest": "7aec511fbb279a56780f130f9070affbb5941f7474bf54a907cfb39e4068e363",
+      "suppliedContextFields": [
+        "relationshipStatus",
+        "jobStatus",
+        "detailJob",
+        "focusAreas"
+      ],
+      "observedContextFields": [],
+      "observationTemporalScope": null,
+      "originalRootReferences": [
+        "aeg:root:03b8fb70c8ff9a6e73e59a3801f6f9cbeaf9565ded3935a7b8f5553396328fad"
+      ],
+      "contextPayloadIdentityVerified": true,
+      "contextObservationTimestamp": null,
+      "contextTimestampSource": null,
+      "contextProvenanceState": "CONTEXT_TIMESTAMP_MISSING",
+      "contextProvenanceVerified": false,
+      "authenticated": false,
+      "readingInstant": "2026-10-12T12:00:00+09:00",
+      "graphEvaluationInstant": "2026-10-12T12:00:00+09:00",
+      "generatedAt": "2026-10-12T12:00:00+09:00",
+      "policyDate": null,
+      "clockSourcePointers": {
+        "readingInstant": "/composition/result/evidence/clock/currentDate",
+        "graphEvaluationInstant": "/graph/context/evaluatedAt",
+        "generatedAt": "/generatedAt",
+        "policyDate": "/composition/result/evidence/clock/policyDate",
+        "contextObservedAt": null
+      },
+      "timestampSubstitutionAllowed": false,
+      "futureStateGuaranteed": false,
+      "customerHistoryInferred": false,
+      "blockingReasons": [
+        "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED"
+      ],
+      "newFactRoots": 0,
+      "customerUseAllowed": false,
+      "originalGraphNodeReference": "aeg:node:27e6c02f9d1bdfaa960cc00972cfd43bba27b368f88702dd968b9facf9a62256",
+      "completeAncestryNodeReferences": [
+        "aeg:node:27e6c02f9d1bdfaa960cc00972cfd43bba27b368f88702dd968b9facf9a62256"
+      ]
+    },
+    {
+      "fixtureId": "fixture-annual-F",
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-annual-F",
+        "originalPersonId": null
+      },
+      "originalSourceId": "aeg:node:14e0bc8a3a62114ceac65370966c4d9e846bb99c091a57306fd7999bbea4ce64",
+      "originalSourceHash": "f0ec3e1a8dc08e32930bf0d640d0f4baf681ac7018145a9672b8432a3fdae23d",
+      "sourceProducer": {
+        "file": "src/lib/report-generation/reportInputAdapter.ts",
+        "symbol": "normalizeReportInputPayload",
+        "version": "source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+        "system": "normalized-input"
+      },
+      "sourceVersion": "source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+      "sourcePointer": "/input/userContext",
+      "contextPayloadHash": "1f9c7b47d17cf7b1c60762df7139d80f5e7339356da8d2f0799d5e27fc8b5999",
+      "packetContentDigest": "50a72bc5584c54a57630dce53b3fb39db0abef0a1b5f349be9d0121501249860",
+      "suppliedContextFields": [
+        "relationshipStatus",
+        "jobStatus",
+        "detailJob",
+        "focusAreas"
+      ],
+      "observedContextFields": [],
+      "observationTemporalScope": null,
+      "originalRootReferences": [
+        "aeg:root:f4ad46a66279a229cc077239c8741e09e53f42457d24a9f53c6993cc80b7fe28"
+      ],
+      "contextPayloadIdentityVerified": true,
+      "contextObservationTimestamp": null,
+      "contextTimestampSource": null,
+      "contextProvenanceState": "CONTEXT_TIMESTAMP_MISSING",
+      "contextProvenanceVerified": false,
+      "authenticated": false,
+      "readingInstant": "2026-10-12T12:00:00+09:00",
+      "graphEvaluationInstant": "2026-10-12T12:00:00+09:00",
+      "generatedAt": "2026-10-12T12:00:00+09:00",
+      "policyDate": null,
+      "clockSourcePointers": {
+        "readingInstant": "/composition/result/evidence/clock/currentDate",
+        "graphEvaluationInstant": "/graph/context/evaluatedAt",
+        "generatedAt": "/generatedAt",
+        "policyDate": "/composition/result/evidence/clock/policyDate",
+        "contextObservedAt": null
+      },
+      "timestampSubstitutionAllowed": false,
+      "futureStateGuaranteed": false,
+      "customerHistoryInferred": false,
+      "blockingReasons": [
+        "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED"
+      ],
+      "newFactRoots": 0,
+      "customerUseAllowed": false,
+      "originalGraphNodeReference": "aeg:node:14e0bc8a3a62114ceac65370966c4d9e846bb99c091a57306fd7999bbea4ce64",
+      "completeAncestryNodeReferences": [
+        "aeg:node:14e0bc8a3a62114ceac65370966c4d9e846bb99c091a57306fd7999bbea4ce64"
+      ]
+    },
+    {
+      "fixtureId": "fixture-annual-C2028",
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-annual-C2028",
+        "originalPersonId": null
+      },
+      "originalSourceId": "aeg:node:d39ae8cc35751126c1a2e89e9515490e8f9ab6d927fecc6003ea42c4bf87a9ac",
+      "originalSourceHash": "d1dbdfe50633069f81adef10f2174bb6f5af4f59e59f5800697bee28e9a58031",
+      "sourceProducer": {
+        "file": "src/lib/report-generation/reportInputAdapter.ts",
+        "symbol": "normalizeReportInputPayload",
+        "version": "source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+        "system": "normalized-input"
+      },
+      "sourceVersion": "source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+      "sourcePointer": "/input/userContext",
+      "contextPayloadHash": "70249b30a3f3d6f808588f662a67fcdbb7d17e9cd503d3db3e72e893fbe5febb",
+      "packetContentDigest": "8f187d1bcca279300e39320895c4f00d8b64d3f564ceac2376293b5b549bbe2d",
+      "suppliedContextFields": [
+        "relationshipStatus",
+        "jobStatus",
+        "detailJob",
+        "focusAreas"
+      ],
+      "observedContextFields": [],
+      "observationTemporalScope": null,
+      "originalRootReferences": [
+        "aeg:root:9645c00297ec8070a1859c951bde8bdde1225ba1dc838e8fca635b0bb6571ff3"
+      ],
+      "contextPayloadIdentityVerified": true,
+      "contextObservationTimestamp": null,
+      "contextTimestampSource": null,
+      "contextProvenanceState": "CONTEXT_TIMESTAMP_MISSING",
+      "contextProvenanceVerified": false,
+      "authenticated": false,
+      "readingInstant": "2026-10-12T12:00:00+09:00",
+      "graphEvaluationInstant": "2026-10-12T12:00:00+09:00",
+      "generatedAt": "2026-10-12T12:00:00+09:00",
+      "policyDate": "2028-10-12T12:00:00+09:00",
+      "clockSourcePointers": {
+        "readingInstant": "/composition/result/evidence/clock/currentDate",
+        "graphEvaluationInstant": "/graph/context/evaluatedAt",
+        "generatedAt": "/generatedAt",
+        "policyDate": "/composition/result/evidence/clock/policyDate",
+        "contextObservedAt": null
+      },
+      "timestampSubstitutionAllowed": false,
+      "futureStateGuaranteed": false,
+      "customerHistoryInferred": false,
+      "blockingReasons": [
+        "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED"
+      ],
+      "newFactRoots": 0,
+      "customerUseAllowed": false,
+      "originalGraphNodeReference": "aeg:node:d39ae8cc35751126c1a2e89e9515490e8f9ab6d927fecc6003ea42c4bf87a9ac",
+      "completeAncestryNodeReferences": [
+        "aeg:node:d39ae8cc35751126c1a2e89e9515490e8f9ab6d927fecc6003ea42c4bf87a9ac"
+      ]
+    },
+    {
+      "fixtureId": "fixture-annual-ranged-transition",
+      "owner": {
+        "slot": "person",
+        "fixtureOwnerId": "fixture-person-annual-ranged-transition",
+        "originalPersonId": null
+      },
+      "originalSourceId": "aeg:node:bfdb847ab831990fb1b6447fb96089cac47bfeaff3a5db0de59bf5fed769ba0f",
+      "originalSourceHash": "272b834c52e29b9fa565d8c5300fe2ac9d2592bdb9ffd80189885141f7a59b8c",
+      "sourceProducer": {
+        "file": "src/lib/report-generation/reportInputAdapter.ts",
+        "symbol": "normalizeReportInputPayload",
+        "version": "source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+        "system": "normalized-input"
+      },
+      "sourceVersion": "source-sha256:1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497",
+      "sourcePointer": "/input/userContext",
+      "contextPayloadHash": "1f9c7b47d17cf7b1c60762df7139d80f5e7339356da8d2f0799d5e27fc8b5999",
+      "packetContentDigest": "a06f35049658f12713f2b91648422bc8f5b595d147e0cdcf6eeed3932d4639e6",
+      "suppliedContextFields": [
+        "relationshipStatus",
+        "jobStatus",
+        "detailJob",
+        "focusAreas"
+      ],
+      "observedContextFields": [],
+      "observationTemporalScope": null,
+      "originalRootReferences": [
+        "aeg:root:819777ed949b0bf9f521cefded59dce84f3738790ea06eb2424cf6607366ab1c"
+      ],
+      "contextPayloadIdentityVerified": true,
+      "contextObservationTimestamp": null,
+      "contextTimestampSource": null,
+      "contextProvenanceState": "CONTEXT_TIMESTAMP_MISSING",
+      "contextProvenanceVerified": false,
+      "authenticated": false,
+      "readingInstant": "2026-10-12T12:00:00+09:00",
+      "graphEvaluationInstant": "2026-10-12T12:00:00+09:00",
+      "generatedAt": "2026-10-12T12:00:00+09:00",
+      "policyDate": "2027-10-12T12:00:00+09:00",
+      "clockSourcePointers": {
+        "readingInstant": "/composition/result/evidence/clock/currentDate",
+        "graphEvaluationInstant": "/graph/context/evaluatedAt",
+        "generatedAt": "/generatedAt",
+        "policyDate": "/composition/result/evidence/clock/policyDate",
+        "contextObservedAt": null
+      },
+      "timestampSubstitutionAllowed": false,
+      "futureStateGuaranteed": false,
+      "customerHistoryInferred": false,
+      "blockingReasons": [
+        "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED"
+      ],
+      "newFactRoots": 0,
+      "customerUseAllowed": false,
+      "originalGraphNodeReference": "aeg:node:bfdb847ab831990fb1b6447fb96089cac47bfeaff3a5db0de59bf5fed769ba0f",
+      "completeAncestryNodeReferences": [
+        "aeg:node:bfdb847ab831990fb1b6447fb96089cac47bfeaff3a5db0de59bf5fed769ba0f"
+      ]
+    }
+  ],
+  "sourceScene": {
+    "text": "가상으로 그때 과제가 생긴 경우의 투입 한도를 정한다.",
+    "hypothetical": true,
+    "isCustomerHistory": false
+  },
+  "sceneVerification": "CONDITIONAL_SCENE_SOURCE_VERIFIED",
+  "customerSceneVerification": "CUSTOMER_SCENE_NOT_VERIFIED",
+  "customerHistoryInferred": false,
+  "customerLifeStatusCreated": false,
+  "futureLifeStatusGuaranteed": false,
+  "readingClockSemantics": "AnnualClock.currentDate; reused annualPeriodTime half-open period classifier",
+  "graphClockSemantics": "Graph context.evaluatedAt; original temporalPosition preserved separately",
+  "generatedClockSemantics": "Packet.generatedAt; original runtime contract may equal reading/Graph clock but cannot establish context observation time",
+  "policyClockSemantics": "AnnualClock.policyDate; existing offline future-year policy check only",
+  "requiredFutureSourceContract": [
+    "Original Source ID and full hash",
+    "Original producer/version",
+    "Context payload hash",
+    "Fixture and Owner binding",
+    "Original observation timestamp",
+    "Actually observed field names",
+    "Exact temporal scope; no future-state guarantee"
+  ],
+  "blockingReason": "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED",
+  "customerApproval": false
+}
