@@ -85,7 +85,9 @@ export function buildV4CompatibilityProduct(payload: unknown, calculated?: { per
   const reader = renderCompatibilityRelease(e, canonical.persons, { personA: a, personB: b }, pair, narrative, offline?.publicationSafety);
   const readerValidation = validateCompatibilityRelease(reader.draft, e, { personA: a, personB: b }, reader.registry);
   const readerEditorial = reviewNarrative(reader.narrative);
-  const publish = !readerValidation.hardErrors.length && !readerEditorial.some(i => i.severity !== "Minor")
+  // Phrase repetition remains visible for human review; it must not replace
+  // a complete, source-validated Book with the shorter previous edition.
+  const publish = !readerValidation.hardErrors.length && !readerEditorial.some(i => i.severity !== "Minor" && i.code !== "REPEATED_LONG_PHRASE")
     && reader.narrative.opening.length > 0 && reader.narrative.sections.every(s => s.blocks.length > 0);
   const published = publish ? reader.narrative : narrative;
   const readerVersion = reader.draft.version;

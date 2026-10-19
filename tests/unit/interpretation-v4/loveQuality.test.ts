@@ -7,6 +7,7 @@ import { projectBook } from "../../../src/app/dev/book-preview/bookProjection";
 import { createProductPreviewSnapshot, type ProductPreviewSnapshotDraft } from "../../../src/lib/report-generation/productPreviewSnapshot";
 import { storedBook } from "../../../src/lib/book/storedReport";
 import { buildRelationshipProfiles, projectRelationshipView } from "../../../src/lib/interpretation-v4/relationshipProductView";
+import * as loveSources from "../../../src/lib/interpretation-v4/loveReleaseSources";
 import { renderLoveRelease } from "../../../src/lib/interpretation-v4/loveReleaseRenderer";
 import { LOVE_RELEASE_VERSION } from "../../../src/lib/interpretation-v4/loveReleaseContracts";
 import fixtures from "./loveQualityFixtures.json";
@@ -114,4 +115,48 @@ describe("Love quality edition: actual paid generator without external calls", (
     expect(r.ok).toBe(true); if (!r.ok) return;
     expect([v4Digest(r.draft), v4Digest(r.evidencePacket), v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(baseline.digests);
   }, 120000);
+});
+
+
+describe("Final assembly retains Love questions when novelty slots are exhausted", () => {
+  const payload = { ...fixtures[0].payload,
+    person: { ...fixtures[0].payload.person, name: "이소율", birthDate: "1990-02-08", birthTime: "16:10", gender: "FEMALE", mbtiType: "ESFP" },
+    userContext: { ...fixtures[0].payload.userContext, jobStatus: "employee", detailJob: "문화행사 기획자", relationshipStatus: "dating" },
+  };
+  it("keeps all 36 existing question texts with actual eligible evidence", async () => {
+    const generated = await generateV4ShadowReport(payload, clock);
+    if (!generated.ok) return expect.unreachable(JSON.stringify(generated));
+    const e = generated.evidencePacket as V4RuntimeEvidence;
+    if (e.composition.product !== "love_marriage_child" || !("integration" in e.composition.result) || e.input.kind === "compatibility") return expect.unreachable();
+    const result = e.composition.result, edition = result.integration.readerEdition;
+    expect(result.integration.readerValidation).toEqual({ hardErrors: [], qualityIssues: [] });
+    expect(edition.chapters.map(c => c.paragraphs.length)).toEqual(Array(9).fill(4));
+    expect(edition.chapters[3].paragraphs.map(p => p.id)).toContain("CH04.P3");
+    expect(edition.chapters[7].paragraphs.map(p => p.id)).toEqual(["CH08.P1", "CH08.P2", "CH08.P3", "CH08.P4"]);
+    const built = buildRelationshipProfiles({ calculation: e.calculations.person, name: e.input.person.name, mbti: e.input.person.mbtiType, context: e.input.userContext });
+    if (!built.ok) return expect.unreachable();
+    const atoms = new Set(built.profiles.myeongli.evidence.map(a => a.id));
+    const sentences = edition.chapters.flatMap(c => c.paragraphs.flatMap(p => p.sentences));
+    expect(sentences.flatMap(s => s.evidenceIds).every(id => atoms.has(id))).toBe(true);
+    expect(new Set(sentences.map(s => s.text)).size).toBe(sentences.length);
+    const book = projectBook(e);
+    expect(book?.pages.flatMap(p => p.kind === "narrative" ? p.paragraphs.map(p => p.text) : []))
+      .toEqual(edition.chapters.flatMap(c => c.paragraphs.map(p => p.text)));
+    expect(validateV4Publication("love_marriage_child", generated.draft, e)).toEqual({ ok: true, errors: [] });
+  }, 120000);
+  it("does not manufacture source-based paragraphs when no eligible source exists", () => {
+    const e = runs.get("A")!.evidencePacket as V4RuntimeEvidence;
+    if (e.composition.product !== "love_marriage_child" || e.input.kind === "compatibility") return expect.unreachable();
+    const input = { calculation: e.calculations.person, name: e.input.person.name, mbti: e.input.person.mbtiType, context: e.input.userContext };
+    const built = buildRelationshipProfiles(input); if (!built.ok) return expect.unreachable();
+    const spy = vi.spyOn(loveSources, "loveReleaseSources").mockReturnValue([]);
+    try {
+      const release = renderLoveRelease(input, projectRelationshipView(built.profiles), e.composition.result.narrative, e.composition.result.materials);
+      expect(release.draft.shortages.length).toBeGreaterThan(0);
+      // Independently supported Fusion can remain. The empty source pool
+      // must not manufacture the identity question's source-based paragraph.
+      expect(release.draft.chapters[0].paragraphs.map(p => p.id)).not.toContain("CH01.P1");
+      expect(release.draft.shortages).toContain("CH01.P1:NO_INDEPENDENT_IDENTITY_MATERIAL");
+    } finally { spy.mockRestore(); }
+  });
 });

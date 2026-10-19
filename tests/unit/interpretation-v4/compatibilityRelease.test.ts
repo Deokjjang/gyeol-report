@@ -9,6 +9,7 @@ import { v4Digest, validateV4Publication, type V4RuntimeEvidence } from "../../.
 import { buildV4CompatibilityProduct, type CompatibilityProduct } from "../../../src/lib/interpretation-v4/compatibilityProductAdapter";
 import { composeCompatibilityNarrative } from "../../../src/lib/interpretation-v4/compatibilityComposer";
 import { renderCompatibilityRelease } from "../../../src/lib/interpretation-v4/compatibilityReleaseRenderer";
+import * as editorialGuard from "../../../src/lib/interpretation-v4/editorialGuard";
 import * as releaseRenderer from "../../../src/lib/interpretation-v4/compatibilityReleaseRenderer";
 import { COMPATIBILITY_PRODUCT_VERSION } from "../../../src/lib/interpretation-v4/compatibilityProductAdapter";
 import { validateCompatibilityRelease } from "../../../src/lib/interpretation-v4/compatibilityReleaseValidator";
@@ -204,4 +205,44 @@ describe("Compatibility reader release", () => {
     const fake=structuredClone(out.draft);fake.chapters[0].paragraphs[1].sentences[0].relationIds=["wonjin:invented"];
     expect(validateCompatibilityRelease(fake,canonical.evidence,views,out.registry).hardErrors).toContain("CH01.P2:INVENTED_PAIR_RELATION");
   },120000);
+});
+
+
+describe("Final assembly preserves complete compatibility Books", () => {
+  // This actual pair produced a valid 36-paragraph reader edition, but five
+  // non-romantic categories silently selected the older 23-paragraph edition.
+  const payload = { ...base,
+    personA: { ...base.personA, name: "강현우", birthDate: "1990-04-26", birthTime: "11:10", gender: "MALE", mbtiType: "INTP" },
+    personB: { ...base.personB, name: "오지안", birthDate: "1994-12-05", birthTime: "06:50", gender: "FEMALE", mbtiType: "ESTJ" },
+  };
+  it.each(categories)("%s retains every supported paragraph despite phrase repetition", async relationshipType => {
+    const generated = await generateV4ShadowReport({ ...payload, relationshipType }, SHADOW_CLOCK);
+    if (!generated.ok) return expect.unreachable(JSON.stringify(generated));
+    const e = generated.evidencePacket as V4RuntimeEvidence;
+    if (e.composition.product !== "saju_mbti_compatibility" || !("integration" in e.composition.result)) return expect.unreachable();
+    const result = e.composition.result, edition = result.integration.readerEdition;
+    expect(result.integration.readerValidation.hardErrors).toEqual([]);
+    expect(result.integration.publishedEdition).toBe(COMPATIBILITY_RELEASE_VERSION);
+    expect(edition.chapters.map(c => c.paragraphs.length)).toEqual(Array(9).fill(4));
+    if (!["love", "marriage"].includes(relationshipType)) expect(result.integration.readerEditorial)
+      .toContainEqual({ severity: "Major", code: "REPEATED_LONG_PHRASE", location: "CH03.P1 / CH06.P3" });
+    const book = projectBook(e); if (!book) return expect.unreachable("Book missing");
+    expect(book.pages.flatMap(p => p.kind === "narrative" ? p.paragraphs.map(p => p.text) : []))
+      .toEqual(edition.chapters.flatMap(c => c.paragraphs.map(p => p.text)));
+    expect(book.pages.find(p => p.kind === "pair")?.directions).toHaveLength(2);
+    expect(validateV4Publication("saju_mbti_compatibility", generated.draft, e)).toEqual({ ok: true, errors: [] });
+  }, 120000);
+  it.each([
+    { severity: "Blocker" as const, code: "INTERNAL_SOURCE_EXPOSED" },
+    { severity: "Blocker" as const, code: "UNSUPPORTED_GUARANTEE" },
+    { severity: "Major" as const, code: "TECHNICAL_OR_META_COPY" },
+  ])("still rejects $code in the new edition", issue => {
+    const actual = editorialGuard.reviewNarrative;
+    const spy = vi.spyOn(editorialGuard, "reviewNarrative").mockImplementation(report => {
+      const issues = actual(report);
+      return report.opening.some(b => b.id === "CH01.P1") ? [...issues, { ...issue, location: "text" }] : issues;
+    });
+    try { expect(build(payload).integration.publishedEdition).toBe(COMPATIBILITY_PRODUCT_VERSION); }
+    finally { spy.mockRestore(); }
+  }, 120000);
 });

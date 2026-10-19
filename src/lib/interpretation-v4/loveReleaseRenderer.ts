@@ -47,9 +47,9 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
     current.paragraphs.push({ id, purpose, text: actual.map(l => l.text).join(" "), sentences });
     actual.forEach(l => seen.add(l.text)); return true;
   }
-  function eligible(preferred: readonly string[], factBomb: boolean, recall: boolean) {
+  function eligible(preferred: readonly string[], factBomb: boolean, recall: boolean, reuse = false) {
     return pool.filter(r => r.candidate.factBomb === factBomb && (!recall || chosen.some(s => s.atom.id === r.atom.id && s.facet === r.facet))
-      && (recall || (used.get(r.facet) ?? 0) < 6) && !current.paragraphs.some(p => p.sentences.some(s => s.provenance.materialId.startsWith(`love:${r.facet}:`))))
+      && (reuse || recall || (used.get(r.facet) ?? 0) < 6) && (reuse || !current.paragraphs.some(p => p.sentences.some(s => s.provenance.materialId.startsWith(`love:${r.facet}:`)))))
       .sort((a, b) => (current.id === "CH01" && !current.paragraphs.length ? Number(!!b.atom.metadata?.isDayMaster) - Number(!!a.atom.metadata?.isDayMaster) : 0)
         || (current.id === "CH01" && !current.paragraphs.length ? Math.abs(b.atom.axes[b.axis] ?? 0) - Math.abs(a.atom.axes[a.axis] ?? 0) : 0)
         || Number(preferred.includes(b.facet)) - Number(preferred.includes(a.facet)) || (current.id === "CH06" && !current.paragraphs.length ? Number(b.candidate.rank === "SIGNATURE") - Number(a.candidate.rank === "SIGNATURE") || b.candidate.priorityScore - a.candidate.priorityScore || b.atom.weight - a.atom.weight : 0)
@@ -60,7 +60,10 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
         || (usedRoots.get(a.atom.id) ?? 0) - (usedRoots.get(b.atom.id) ?? 0) || b.atom.weight - a.atom.weight || a.candidate.id.localeCompare(b.candidate.id));
   }
   function application(p: number, key: string, make: (m: Material, r: LoveReleaseSource) => string[], preferred: readonly string[] = [], factBomb = false, recall = false) {
-    for (const r of eligible(preferred, factBomb, recall)) {
+    const fresh = eligible(preferred, factBomb, recall);
+    // Novelty limits are not missing evidence. If they exhaust a supported
+    // question, reuse a verified source with this question's existing copy.
+    for (const r of fresh.length ? fresh : eligible(preferred, factBomb, recall, true)) {
       const lines = make(LOVE_RELEASE_MATERIALS[r.facet], r).flatMap(text => loveSentences(text).map(text => ({ text, refs: refs(r, key, recall) })));
       if (!add(p, lines)) continue;
       used.set(r.facet, (used.get(r.facet) ?? 0) + 1); usedRoots.set(r.atom.id, (usedRoots.get(r.atom.id) ?? 0) + 1); terms.add(termKey(r)); chosen.push(r); return r;
