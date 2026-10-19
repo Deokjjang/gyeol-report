@@ -1,0 +1,1529 @@
+{
+  "baseSha": "8f3f75891e007da7c3a57304b4f2e08fbda4fcf3",
+  "status": "OFFLINE_FACTUAL_PREVIEW_IMPLEMENTED",
+  "summary": {
+    "fixtures": 7,
+    "annualFixtures": 4,
+    "verifiedUnits": 422,
+    "withheldAttempts": 164,
+    "originalReceipts": 703,
+    "originalSourceFail": 30,
+    "majorCandidates": 2,
+    "annualCandidatesBefore": 42,
+    "annualCandidatesAfter": 42,
+    "novemberCandidates": 0,
+    "actualNovemberSegments": 8,
+    "novemberTypedBindings": 8,
+    "novemberWithheldFixtures": 4,
+    "contextTimestampsFound": 0,
+    "contextTimestampsMissing": 4,
+    "periodFactsVerified": 8,
+    "sourceScenesVerified": 8,
+    "customerHistoryInferred": 0,
+    "periodPositions": [
+      {
+        "fixture": "fixture-annual-A",
+        "pointer": "/composition/result/evidence/raw/calendarMonths/10/segments/0",
+        "position": "FUTURE"
+      },
+      {
+        "fixture": "fixture-annual-A",
+        "pointer": "/composition/result/evidence/raw/calendarMonths/10/segments/1",
+        "position": "FUTURE"
+      },
+      {
+        "fixture": "fixture-annual-F",
+        "pointer": "/composition/result/evidence/raw/calendarMonths/10/segments/0",
+        "position": "FUTURE"
+      },
+      {
+        "fixture": "fixture-annual-F",
+        "pointer": "/composition/result/evidence/raw/calendarMonths/10/segments/1",
+        "position": "FUTURE"
+      },
+      {
+        "fixture": "fixture-annual-C2028",
+        "pointer": "/composition/result/evidence/raw/calendarMonths/10/segments/0",
+        "position": "FUTURE"
+      },
+      {
+        "fixture": "fixture-annual-C2028",
+        "pointer": "/composition/result/evidence/raw/calendarMonths/10/segments/1",
+        "position": "FUTURE"
+      },
+      {
+        "fixture": "fixture-annual-ranged-transition",
+        "pointer": "/composition/result/evidence/raw/calendarMonths/10/segments/0",
+        "position": "FUTURE"
+      },
+      {
+        "fixture": "fixture-annual-ranged-transition",
+        "pointer": "/composition/result/evidence/raw/calendarMonths/10/segments/1",
+        "position": "FUTURE"
+      }
+    ],
+    "verifiedMonthsBefore": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      12
+    ],
+    "verifiedMonthsAfter": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      12
+    ],
+    "juneRoleSourceResolution": "ROLE_SOURCE_DECISION_REQUIRED",
+    "juneObservationsPreserved": true,
+    "unmatchedBefore": 396,
+    "unmatchedAfter": 396,
+    "originalRoots": 246,
+    "rootReferenceOccurrences": 855,
+    "newFactRoots": 0,
+    "newUnitLinks": 0,
+    "independentFactsAdded": 0,
+    "independentMeaningsAdded": 0,
+    "customerClaims": 0,
+    "customerApprovals": 0,
+    "customerReaderBridges": 0,
+    "syntheticMeaningFileReads": 0,
+    "monthSections": 48,
+    "factualSentenceRecords": 1052,
+    "factualParagraphs": 99,
+    "offlineFactualPreview": "IMPLEMENTED",
+    "customerEdition": false,
+    "wholeBookCompleted": false,
+    "customerReady": false,
+    "meaningApproved": false,
+    "htmlLedgerVerified": true
+  },
+  "fixtures": [
+    {
+      "fixture": "fixture-annual-A",
+      "year": 2026,
+      "months": 12,
+      "paragraphs": 24,
+      "sentenceRecords": 249,
+      "functions": {
+        "BOUNDARY": 12,
+        "COMPARISON": 23,
+        "DAYUN": 24,
+        "PERIOD": 24,
+        "PILLAR": 24,
+        "READING_POSITION": 24,
+        "RELATION": 87,
+        "TEN_GOD_ROLE": 24,
+        "WITHHOLD": 7
+      },
+      "perFixtureMonthContracts": [
+        {
+          "month": 1,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-january-carryover-candidate:v1:0307fd2c1451f466ad55798219b9cf9752bdf607bc9fdb01184a14bf743a33e5"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 2,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-february-relation-candidate:v1:cd8ed8bfa704140dbadb01e720894dbb2d50d496c0e2b42ffc483e5014067cd5"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 3,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-comparison-candidate:v1:a994a6c2a23d46974cf934092cd5ffd59eaaa80c5c390cb6d340abb11ee96348"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 4,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-april-relation-candidate:v1:b1cbe640c8995ab021f992b42904132d17459b261b01979074fc11f4cb1ac19c"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 5,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "actual-specialist-native:v2:6c1f880309e29b9b6fe1dd30af07521f8c5a2b51b0bef453e42ec47eb64c3f10",
+            "actual-specialist-native:v2:ac743f13ac0d3c1a0ac43a12db1d547366e542c418c954e2a8a422c6904ef066"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 6,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "ROLE_SOURCE_DECISION_REQUIRED"
+        },
+        {
+          "month": 7,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-month-matrix:v1:360d8461c438f4afdac6a9872cc36d07bc2e0f7e24f3be215ea5b9c362e5eaa6",
+            "annual-month-matrix:v1:7b8abfd81085e96443e722db8ef50d9eb0006aefb0aa0f70828991ec0cc431ee"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 8,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-august-dayun-candidate:v1:3c0635eb18b5dbd4caea05a2e393cee7bd10b43f86d5c8223ff53e98926b76f3"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 9,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-comparison-candidate:v1:639dcbf7b42bfd5d127761fcc14013d4357d0efaa530a6e5120415e84363464a"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 10,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-october-focus:v1:74acfd7ced4ac018cdd0fe1c3b6203b738f1bc0ea188fb5bdcf7e8126df77878"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 11,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED"
+        },
+        {
+          "month": 12,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-month-matrix:v1:4a7c089056f1186435fb391b20bbfd75d10fdec4f03db16e2354c12b2f0fbccc",
+            "annual-month-matrix:v1:6441f8f011383cce79571cae4a20d748f13ba18356e3da1a60bc69b412032ec3"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        }
+      ],
+      "withheldGraphNodeCount": 9,
+      "previewHash": "de0fe9c7b8521002aae44cac710c667001c2aa98195fc0105fb5b47112e18c00"
+    },
+    {
+      "fixture": "fixture-annual-F",
+      "year": 2026,
+      "months": 12,
+      "paragraphs": 24,
+      "sentenceRecords": 260,
+      "functions": {
+        "BOUNDARY": 12,
+        "COMPARISON": 23,
+        "DAYUN": 24,
+        "PERIOD": 24,
+        "PILLAR": 24,
+        "READING_POSITION": 24,
+        "RELATION": 73,
+        "TEN_GOD_ROLE": 24,
+        "WITHHOLD": 32
+      },
+      "perFixtureMonthContracts": [
+        {
+          "month": 1,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-january-carryover-candidate:v1:6bb474d5ff23a328468b7a5b74637c8f9302c74d21cf48b294e1f7a0aa35ceb3"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 2,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-february-relation-candidate:v1:ee6dc761abc769c7943e0e475a3404d2202509def448a6ce84a85c69713b81be"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 3,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 4,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 5,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "actual-specialist-native:v2:ab0bbc60067558a60316910b19f102f88904d3473df93e8f38c175c31cfc3161",
+            "actual-specialist-native:v2:fbfcc6fe863d7de6205e806ddaf5dc5337d85f4058120959064e7c0a5bc8804a"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 6,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "ROLE_SOURCE_DECISION_REQUIRED"
+        },
+        {
+          "month": 7,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 8,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-august-dayun-candidate:v1:288b973cbf83b47036d3afa5e13665355cd54192ad636fffb04aa5683ff38514"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 9,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 10,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-october-focus:v1:5d11bd2356775bb821a36180d8f1317380c02e4ea5d06ac38419122bcb6c334e"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 11,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED"
+        },
+        {
+          "month": 12,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-month-matrix:v1:ecf628d954ae8ef4a18e262118ceda6297db9af1935c3d9149fae6f3e5dd6e1d",
+            "annual-month-matrix:v1:a74c15707ad39332616615cd1af4dcd1160da9e3905d187a81f754545829aef9"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        }
+      ],
+      "withheldGraphNodeCount": 49,
+      "previewHash": "694a42ff550f49520f59d103a01439c9518312aeda6d0cf5ac51b3e530c0dc18"
+    },
+    {
+      "fixture": "fixture-annual-C2028",
+      "year": 2028,
+      "months": 12,
+      "paragraphs": 25,
+      "sentenceRecords": 265,
+      "functions": {
+        "BOUNDARY": 12,
+        "COMPARISON": 24,
+        "DAYUN": 25,
+        "PERIOD": 25,
+        "PILLAR": 25,
+        "READING_POSITION": 25,
+        "RELATION": 97,
+        "TEN_GOD_ROLE": 25,
+        "WITHHOLD": 7
+      },
+      "perFixtureMonthContracts": [
+        {
+          "month": 1,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-january-carryover-candidate:v1:bf680ac6904473ac36fc21d303aa38e35b318555061917c1618c2301b625d796"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 2,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-february-relation-candidate:v1:222056da6e25c3d880c35cc439355bdb031250d2f5ba69ac38011ff93b811fdc"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 3,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-comparison-candidate:v1:3af223036089d3a27ac0c91f0f27fbf9feb1144ad0489ae911277510b2c20cfa"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 4,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-april-relation-candidate:v1:6ec25eba36a2496b675151a0e176bf3a96dc2530115380e2cc81413201310cb7"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 5,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "actual-specialist-native:v2:92876b3f88f5ff269533cf43d36502760b263c2ba90bed8a06c052279f0d1423",
+            "actual-specialist-native:v2:969bd590353848b82b186b5f91dcd069db5a6ee3b0327ca4207350ac58d25453"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 6,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "ROLE_SOURCE_DECISION_REQUIRED"
+        },
+        {
+          "month": 7,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-month-matrix:v1:d132b049a2ff672629be4c3bd1c5ec24c31aeac391990118dbe844f8583ea2e5",
+            "annual-month-matrix:v1:2a79e3573cc631a28116257cacf86e0f87e8d2cd5faa1d9fd4a907f08e27a674"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 8,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-august-dayun-candidate:v1:296f40259e75251c413ad65737bb3509adb2a62b7d8d1a88bbb8bdadf3082ae7"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 9,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-comparison-candidate:v1:edf6c7d8fe927df69643d407db29c3e4b68d7230b6e47e97637cc1f95be1215c"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 10,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-october-focus:v1:101e50051b11004fdd5498dcbdfe197a6974a53affe96108c5a5dde564d2db20"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 11,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED"
+        },
+        {
+          "month": 12,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-month-matrix:v1:4681ed7bafbb8b744a717183b62f4dbf479deb8001809ae9ed75cf38e0bd67bb",
+            "annual-month-matrix:v1:c82c75dab601816e8d51941eb5ae84c3c4e66a4789b8ef05c15bd54f0ed5f719"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        }
+      ],
+      "withheldGraphNodeCount": 9,
+      "previewHash": "34329c9e79dac5a88f8ead352c693fa90c1badf94434b4b0e276ab8129eb69ce"
+    },
+    {
+      "fixture": "fixture-annual-ranged-transition",
+      "year": 2027,
+      "months": 12,
+      "paragraphs": 26,
+      "sentenceRecords": 278,
+      "functions": {
+        "BOUNDARY": 12,
+        "COMPARISON": 25,
+        "DAYUN": 26,
+        "PERIOD": 26,
+        "PILLAR": 26,
+        "READING_POSITION": 26,
+        "RELATION": 73,
+        "TEN_GOD_ROLE": 26,
+        "WITHHOLD": 38
+      },
+      "perFixtureMonthContracts": [
+        {
+          "month": 1,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-january-carryover-candidate:v1:fab65b3b7ed82a45c7e809b69792750268bd08c0264efcab72a7491b43600fd3"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 2,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-february-relation-candidate:v1:22f149321bc4d7b55580956a0515e025ece0268f3a1b7cd4df43a98c6e205ab7"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 3,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 4,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 5,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "actual-specialist-native:v2:5f0a421fdfb6b99c2035acecedc8bd3999e4a9515c62bc83ec9b66639aabc011",
+            "actual-specialist-native:v2:b76e61655bf648f00a441cf4491d1c18727a7b33efe45b8ddd3d7b8980ff8cf7"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 6,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "ROLE_SOURCE_DECISION_REQUIRED"
+        },
+        {
+          "month": 7,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 8,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 9,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-comparison-candidate:v1:9f4670cc4754d0a8c469db3a6093380e5fdb34843d965fde32ec1f96968e0070"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 10,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-october-focus:v1:fea689339f0650643bfa46eff1f74ef27188e781e5d4076b9d19f7c1b3a318e7"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        },
+        {
+          "month": 11,
+          "state": "ORIGINAL_RESEARCH_APPLICATION_WITHHELD",
+          "candidateIds": [],
+          "originalResearchApplication": "ACTUAL_CONTEXT_TIMESTAMP_REQUIRED"
+        },
+        {
+          "month": 12,
+          "state": "TECHNICAL_MONTH_CONTRACT_VERIFIED",
+          "candidateIds": [
+            "annual-month-matrix:v1:fc3f310a704bc684801c67501f92aea8a4989445446bf5f768425956a86ce70b",
+            "annual-month-matrix:v1:16e947ff98bb827a58f4c78157e5b39d95d168951b78bcd11e3dd8020ec0da7c"
+          ],
+          "originalResearchApplication": "MEANING_REVIEW_REQUIRED"
+        }
+      ],
+      "withheldGraphNodeCount": 71,
+      "previewHash": "894a66ca0b191e38da33b5fe643528f9b8e7687b3bd8a9576995518386d1a1d3"
+    }
+  ],
+  "counting": "Sentence records are bounded statements; a record may contain joined factual clauses. Paragraphs are original canonical segment groups, not customer Book paragraphs. Root sets are original Graph roots, never independent new facts. Global 10/12 contract coverage is distinct from each-fixture applicability.",
+  "ledger": {
+    "rows": 1052,
+    "linked": 1052,
+    "sourceVerified": 1052,
+    "unverified": 0,
+    "distinctAncestryNodes": 909,
+    "sourceRecords": 12,
+    "exactReconstruction": true,
+    "htmlTextIdHashExactlyMatched": true,
+    "textHashesIndependentlyRecomputed": true,
+    "newFactRoots": 0,
+    "sourceReviewWitnessReferencesVerifiedAgainstExactBase": 18
+  },
+  "strictIntegration": {
+    "factualSyntheticDefinitionReads": 0,
+    "existingStrictDefinitionIntegrityReads": 12,
+    "existingDefinitionAndWriterUntouched": true,
+    "syntheticMeaningPromotedToCustomer": false,
+    "originalRegistryScopeChecks": [
+      {
+        "fixture": "fixture-annual-A",
+        "graphHash": "5bb2ed4694075a62d71921c2ffe955c872ece9a4e7a5d85e9efec53b23bb9269",
+        "originalRegistryScopeHash": "56f92d81ff369ebc130db7c38d0ad76a8c80a27bc67ae8ec3e265d97f0cdfd67",
+        "registeredCalculationFixture": true,
+        "reason": null,
+        "customerAuthorizationConferred": false,
+        "registryExtended": false
+      },
+      {
+        "fixture": "fixture-annual-F",
+        "graphHash": "b0b781c2ba3011bcdfa2764ae843ca569de7223b4c2c5ff586c5637ea268f068",
+        "originalRegistryScopeHash": "56f92d81ff369ebc130db7c38d0ad76a8c80a27bc67ae8ec3e265d97f0cdfd67",
+        "registeredCalculationFixture": true,
+        "reason": null,
+        "customerAuthorizationConferred": false,
+        "registryExtended": false
+      },
+      {
+        "fixture": "fixture-annual-C2028",
+        "graphHash": "b9b900a9138e1649ec60393ee1f0ffe9de99080d465465d4c2b2eba473292850",
+        "originalRegistryScopeHash": "56f92d81ff369ebc130db7c38d0ad76a8c80a27bc67ae8ec3e265d97f0cdfd67",
+        "registeredCalculationFixture": false,
+        "reason": "ENGINE_GRAPH_SCOPE_MISMATCH",
+        "customerAuthorizationConferred": false,
+        "registryExtended": false
+      },
+      {
+        "fixture": "fixture-annual-ranged-transition",
+        "graphHash": "cefd56b7cfa1fcc0cd59dacd3187a3640c26b21082e2f8a25614c7c049719ad8",
+        "originalRegistryScopeHash": "56f92d81ff369ebc130db7c38d0ad76a8c80a27bc67ae8ec3e265d97f0cdfd67",
+        "registeredCalculationFixture": true,
+        "reason": null,
+        "customerAuthorizationConferred": false,
+        "registryExtended": false
+      }
+    ],
+    "customerScopeDenials": [
+      {
+        "fixture": "fixture-annual-C2028",
+        "graphHash": "b9b900a9138e1649ec60393ee1f0ffe9de99080d465465d4c2b2eba473292850",
+        "originalRegistryScopeHash": "56f92d81ff369ebc130db7c38d0ad76a8c80a27bc67ae8ec3e265d97f0cdfd67",
+        "registeredCalculationFixture": false,
+        "reason": "ENGINE_GRAPH_SCOPE_MISMATCH",
+        "customerAuthorizationConferred": false,
+        "registryExtended": false
+      }
+    ],
+    "originalReaderQuestions": 2060,
+    "registeredActualAnnual": [
+      {
+        "fixture": "fixture-annual-A",
+        "product": "annual_fortune",
+        "relationship": null,
+        "inputHash": "24570ac1d536d1aa9942c8d1f4ce3f7c18ed1839684819ea9b472f0328851056",
+        "calculationHash": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+        "profileHash": "6a0d00c60bba4d3cfb7f258118f1cfefaa0106bdb4d8987c920002e2e7aee957",
+        "actualGraphHash": "02235cf2343ea2c395710292a831dabda78e67416f3a52932097b524f7646bc4",
+        "nativeReceiptHash": "e18f733a8b224a2ff3686a4188d44ebad7ec7bd9382745e94691591bac4e6fc8",
+        "evidenceHash": "654c5764944af0a6f29bde9fb0c9dbeb437c77f1abdb87201a7cf5b47866613a",
+        "nativeEvaluations": 109,
+        "graphValidation": "PARTIAL",
+        "graphNodes": 4391,
+        "existingBookHash": "da0bc604b4ded64cbfa83349cf8054fb8fef57102e4b2e6a6bfca21f45577944",
+        "storedRoundtrip": true,
+        "existingWriterIsNotNewEditorialIntegration": true,
+        "newCustomerSentences": 0,
+        "newCustomerAllocations": 0,
+        "graphCalendarRecalculations": 0,
+        "strictMode": "STRICT_CUSTOMER_POLICY",
+        "customerSentences": 0,
+        "customerClaims": 0,
+        "customerAllocations": 0,
+        "customerPages": 0,
+        "bookReady": false,
+        "selectedMeaningDefinitions": 0,
+        "syntheticDefinitionPromotedToCustomer": false
+      },
+      {
+        "fixture": "fixture-annual-F",
+        "product": "annual_fortune",
+        "relationship": null,
+        "inputHash": "66da201c4af52717a1ab99dc6ec88ef53ca1e7eba1981f3c0b29d6ec99e48fd0",
+        "calculationHash": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+        "profileHash": "9d670d124f60fdf2cfbd9e928a3726183a15ade0981a51682223d73c3a37c7a3",
+        "actualGraphHash": "fe31fff7fa71ff778b1f82be37f2e50d666802a5fd7efa4dc927acae9df1bacb",
+        "nativeReceiptHash": "0f94fbc2692a45b41bcb22c99be6ab3c470dcce1754c0b240f6e8d890490d040",
+        "evidenceHash": "9e003508ed772c7d6cb82484d48633e9263069f44bd2790b860bdf1a6a5fe236",
+        "nativeEvaluations": 109,
+        "graphValidation": "PARTIAL",
+        "graphNodes": 530,
+        "existingBookHash": "ee4a6cc847a0940c9d5f69ffd8b2511a5d570a78a162be0d0b5f6f8d2fe3f5e7",
+        "storedRoundtrip": true,
+        "existingWriterIsNotNewEditorialIntegration": true,
+        "newCustomerSentences": 0,
+        "newCustomerAllocations": 0,
+        "graphCalendarRecalculations": 0,
+        "strictMode": "STRICT_CUSTOMER_POLICY",
+        "customerSentences": 0,
+        "customerClaims": 0,
+        "customerAllocations": 0,
+        "customerPages": 0,
+        "bookReady": false,
+        "selectedMeaningDefinitions": 0,
+        "syntheticDefinitionPromotedToCustomer": false
+      }
+    ],
+    "nonCustomerCalculationFixtures": "C2028 actual-calculation address differs from the original transition-C2028 registration; ranged transition is structurally registered but registration grants no Meaning or customer approval. No fixture is renamed and the fact preview is never a customer Writer/Reader handoff."
+  },
+  "actualNegativeReceipts": [
+    {
+      "fixture": "fixture-annual-A",
+      "test": "ACTUAL_FACT_PREVIEW_REJECTS_CUSTOMER_PUBLICATION",
+      "passed": true
+    },
+    {
+      "fixture": "fixture-annual-A",
+      "test": "ACTUAL_FACT_PREVIEW_REJECTS_PLANNER_ASSIGNMENT",
+      "passed": true
+    },
+    {
+      "fixture": "fixture-annual-A",
+      "test": "ACTUAL_FUTURE_FOCUS_CANNOT_BECOME_CURRENT",
+      "passed": true,
+      "originalSentenceId": "annual-fact-sentence:v1:6c98edca40f111ae5c762f337a930a682ce8bd2e254f315a156e238f051c1d91"
+    },
+    {
+      "fixture": "fixture-annual-F",
+      "test": "ACTUAL_FACT_PREVIEW_REJECTS_CUSTOMER_PUBLICATION",
+      "passed": true
+    },
+    {
+      "fixture": "fixture-annual-F",
+      "test": "ACTUAL_FACT_PREVIEW_REJECTS_PLANNER_ASSIGNMENT",
+      "passed": true
+    },
+    {
+      "fixture": "fixture-annual-F",
+      "test": "ACTUAL_FUTURE_FOCUS_CANNOT_BECOME_CURRENT",
+      "passed": true,
+      "originalSentenceId": "annual-fact-sentence:v1:a029f9a3e8387f2dc15b23d9e88b76826173376faaa92c18193a3e56bfd7fd54"
+    },
+    {
+      "fixture": "fixture-annual-C2028",
+      "test": "ACTUAL_FACT_PREVIEW_REJECTS_CUSTOMER_PUBLICATION",
+      "passed": true
+    },
+    {
+      "fixture": "fixture-annual-C2028",
+      "test": "ACTUAL_FACT_PREVIEW_REJECTS_PLANNER_ASSIGNMENT",
+      "passed": true
+    },
+    {
+      "fixture": "fixture-annual-C2028",
+      "test": "ACTUAL_FUTURE_FOCUS_CANNOT_BECOME_CURRENT",
+      "passed": true,
+      "originalSentenceId": "annual-fact-sentence:v1:de2d5657027e9dadb95b0783dbd684e91ad5c418fd611c24ef05ba849e47842c"
+    },
+    {
+      "fixture": "fixture-annual-ranged-transition",
+      "test": "ACTUAL_FACT_PREVIEW_REJECTS_CUSTOMER_PUBLICATION",
+      "passed": true
+    },
+    {
+      "fixture": "fixture-annual-ranged-transition",
+      "test": "ACTUAL_FACT_PREVIEW_REJECTS_PLANNER_ASSIGNMENT",
+      "passed": true
+    },
+    {
+      "fixture": "fixture-annual-ranged-transition",
+      "test": "ACTUAL_CONDITIONAL_DAYUN_CANNOT_BECOME_CONFIRMED_OR_CONCURRENT",
+      "passed": true,
+      "originalSentenceId": "annual-fact-sentence:v1:219f329f5bf70369a933fdd892ed03f19a9c2b81432b209b8e5121cc777b0e72"
+    },
+    {
+      "fixture": "fixture-annual-ranged-transition",
+      "test": "ACTUAL_FUTURE_FOCUS_CANNOT_BECOME_CURRENT",
+      "passed": true,
+      "originalSentenceId": "annual-fact-sentence:v1:8843c7b718cd0654f02face312d7544a0df771634c5d181c333bd49b6a96de2e"
+    }
+  ],
+  "exactBaseNative703AndHistorical44Preserved": true,
+  "fullReceiptsDuplicated": false,
+  "determinism": {
+    "independentActualCalculations": 2,
+    "allArtifactsByteIdentical": true,
+    "files": {
+      "summary.json": "fbcc6b2b42487679fac06cc2e9e772baca737b163ea3a5af99173e01abd182bf",
+      "fixtures.json": "2ced9d365c39da927ce8bf53e9d62365090adb4a56f3c3a4cd97ef698bc23a02",
+      "historical-candidate-hashes.json": "ce2688886793212846549ba151ec941148bb9e087d216da421fd89daf8d26849",
+      "fact-previews.json": "f026b85c6b36b2f445fc70c96c6ac2e3eb7b9f18fc3c700a50f8c65d33e7aa12",
+      "strict-integration.json": "fce9e4e6146e09f0a485cb89f7006247cd8b70dcbb340ea9ea52b05f0595c7a2",
+      "actual-negative-receipts.json": "522fc1347b6960dba1624f2213ef367e32528b19d6feed808052b6f64c483402",
+      "twelve-month-factual-preview.html": "d099ee0fbf00aebdd6a92c7e9e857b1215f59f55c1a88ecb20da6b871c5168f5"
+    }
+  },
+  "privacy": {
+    "rawInputExported": false,
+    "namesAndBirthdatesAbsent": true,
+    "externalCalls": 0,
+    "syntheticMeaningFileReads": 0
+  },
+  "verification": {
+    "verification-summary.json": {
+      "newTests": {
+        "passed": 34,
+        "failed": 0
+      },
+      "relatedTests": {
+        "files": 24,
+        "passed": 1399,
+        "failed": 3
+      },
+      "exactBaseHashTests": {
+        "passed": 0,
+        "failed": 2,
+        "nameFilteredNotExecuted": 149
+      },
+      "exactBaseClockTest": {
+        "passed": 0,
+        "failed": 1,
+        "nameFilteredNotExecuted": 37
+      },
+      "baselineFailures": [
+        {
+          "name": "preserves all 4509 existing tracked files including Writer, Books and research",
+          "classification": "EXACT_BASE_SAME_FULL_NORMALIZED_FAILURE",
+          "failureMessages": [
+            "AssertionError: src/lib/interpretation-v4/compatibilityProductAdapter.ts: expected 'a02bfc2e1cfab018a8b1fa8ab43e679aec6a1…' to be 'bfc8e0844c7eb5bf0711c463745fda00b1cae…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/annualFortuneSpecialistEngine.test.ts:95:193\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64"
+          ]
+        },
+        {
+          "name": "rejects forged input clocks and focus before issuing an authentic context",
+          "classification": "EXACT_BASE_SAME_FULL_NORMALIZED_FAILURE",
+          "failureMessages": [
+            "Error: STACK_TRACE_ERROR\n    at task (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1784:27)\n    at Object.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1817:16)\n    at Object.<anonymous> (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1563:28)\n    at chain (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:599:14)\n    at <ROOT>/tests/unit/report-knowledge/annualOctoberFocus.test.ts:128:1\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at VitestModuleEvaluator._runInlinedModule (file://<ROOT>/node_modules/.pnpm/vitest@4.1.5_@types+node@20.19.39_vite@8.0.10_@types+node@20.19.39_jiti@2.6.1_/node_modules/vitest/dist/module-evaluator.js:206:4)\n    at VitestModuleRunner.directRequest (file://<ROOT>/node_modules/.pnpm/vite@8.0.10_@types+node@20.19.39_jiti@2.6.1/node_modules/vite/dist/node/module-runner.js:1247:59)\n    at VitestModuleRunner.cachedRequest (file://<ROOT>/node_modules/.pnpm/vite@8.0.10_@types+node@20.19.39_jiti@2.6.1/node_modules/vite/dist/node/module-runner.js:1154:73)\n    at VitestModuleRunner.import (file://<ROOT>/node_modules/.pnpm/vite@8.0.10_@types+node@20.19.39_jiti@2.6.1/node_modules/vite/dist/node/module-runner.js:1104:10)"
+          ]
+        },
+        {
+          "name": "X preserves every original research/runtime/Book source byte",
+          "classification": "EXACT_BASE_SAME_FULL_NORMALIZED_FAILURE",
+          "failureMessages": [
+            "AssertionError: src/lib/interpretation-v4/compatibilityProductAdapter.ts: expected 'a02bfc2e1cfab018a8b1fa8ab43e679aec6a1…' to be 'bfc8e0844c7eb5bf0711c463745fda00b1cae…' // Object.is equality\n    at <ROOT>/tests/unit/report-knowledge/majorFortuneSpecialistEngine.test.ts:95:182\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)\n    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@4.1.5/node_modules/@vitest/runner/dist/chunk-artifact.js:2955:64"
+          ]
+        }
+      ],
+      "newRegressions": [],
+      "wholeRepositorySuiteRun": false,
+      "testsDeletedSkippedOrTimeoutIncreased": false,
+      "timingSensitivityFixed": false,
+      "temporaryIdleAssertion": {
+        "purpose": "Avoid historical idle-sleep overlap during serial verification only",
+        "mode": "temporary process assertion",
+        "timeoutSeconds": 7200,
+        "ownerPid": 75500,
+        "assertionPid": 75508,
+        "persistentPowerSettingsChanged": false,
+        "released": true
+      }
+    },
+    "book-preservation.json": {
+      "books": 17,
+      "digests": 102,
+      "allMatch": true,
+      "rows": [
+        {
+          "id": "comprehensive/A",
+          "hashes": {
+            "draft": "4d82b1670b60d68a40cc91127b455e6e4932534fe3537de11ee42ce428582d1b",
+            "evidence": "26185b5ba4107b16cf516a1125db5d3a71d6ad31d99edc8fd78bf600fe925c84",
+            "calculations": "89e0559c46846256e5fcc6ea353e9d9d58380c865a0514aab87c00d54fd8f3b5",
+            "narrative": "555e5b77c1cbbd44b95d9e515763adc79419d290fe1e9f4d617f9af676e48b7b",
+            "snapshot": "ff9693346133067d08c07f0f96b54e3e1fa3431eeda86ea0f6da4db1cf9769ed",
+            "book": "a159ae6501c9f57cea682aa62a54cbecadfa8460022330ed812cf30e81d4e27f"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "comprehensive/F",
+          "hashes": {
+            "draft": "b71d4073f4dbef330b685f8db813f3ca1f09c7c472771db85151f6fe3130551c",
+            "evidence": "68ad2a420cc7a5b0801cbc72826fa3c1947b6a8f6090a8d72b91b4a3dce5e4b4",
+            "calculations": "eaacda485c5d1989132773fc94dda31f27d463d0df6b8362cc630b0f027126cd",
+            "narrative": "00062a59e44716cd5801b5705549f6831739d505dded0813f73117267083a255",
+            "snapshot": "3ad6eef86db61e26ff66e85da659aad134e67c10edacc20d9905d73cec7e85f5",
+            "book": "936b3e5fb0c45a007d933824729eafb49c0081e21afb1e3c371dd3c879e155fb"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "career/A",
+          "hashes": {
+            "draft": "d92465e712d834596a418afd7bcadbf172c73c0cf15f257ae0085bde78ee78a4",
+            "evidence": "a6c91341c12054bcd535736edd95b16b2581b1876b3bfd36608a4191a0d0bdab",
+            "calculations": "a40fe08474cc5f68c0a7100c05d795edfd105ab0fa68b403333e1b8a046b1731",
+            "narrative": "83fe3722462fa90ba36c82fc087fc0ad7fcfa323255dd6e745c58f6b3abdaba8",
+            "snapshot": "c1fb12b2240d506bb62b330feafdf56bda2febe9a9a171b6fe270bdb1d3234a4",
+            "book": "48886e58ce2b5290bada8407c462183bb756e0739a3c48a5de96f8d15fabe529"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "career/F",
+          "hashes": {
+            "draft": "8a97a7da508e861be9ba2282e9fb2dddc055ec4d8ef3392d5a5d7b65ea359169",
+            "evidence": "b8c05fcea2fa67154f51b1c5313ea1c276c03e148fbbb9d5f860f384cfdb8a0e",
+            "calculations": "ea7ca08540b599db720eec57b2ab9df99eb3c046e64370b9de6b1e3968a4d3db",
+            "narrative": "1bf47cc37476d063ee266300b39f7a7d71b3b348379bd29340431ffbe4e7bfcc",
+            "snapshot": "b63b3d53690943f6db7f35f6c4c27f8ef88b66ea32da685e6d50d69fb7be163d",
+            "book": "c81b59782d8c34739fe4b601c0865e2884797167ad9e02cbf39a44c60dcbd11f"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "love/A",
+          "hashes": {
+            "draft": "eea02ec4c81ee9e9331348b7cc62f76293db830d23ebd68dfcd7ff004e4f5e21",
+            "evidence": "fe824d4f890d2abe84b790d5d8ee0df0e0449a92ad6b0bf34428fbb9fe4d9b69",
+            "calculations": "1c46f577701e75dd77957c6b6043cd9a6bdc6197f0f0c66f2ee50e99e2e53b72",
+            "narrative": "a743defbb0ff4f93b08ae0388fdb554db8ac72fc1a868825997e866a042f3d4c",
+            "snapshot": "a92977e2b9667d12f351e2194a9d752f141be562cccda8971cf117c1af167cd6",
+            "book": "c2ea4d853b746d36983ecbaa5a6d92cad6b91dda5d4edd8c36361f6d4d20dc51"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "love/F",
+          "hashes": {
+            "draft": "f892c0cc60e341b4e98114f10a2af2731dffc87c9fa35884f17e6d5b250204b6",
+            "evidence": "951f1dc1a4fb2720daa39d3f872fc02533151b23a85fe96c429d163f41124baf",
+            "calculations": "0653c360334416c6b55bf7c9dfda4c3638e008d472f03539391b42a1a119367c",
+            "narrative": "21e43debb64075d448aa6895bcc9f61018ab3a122d9285a89ca985aaace1a135",
+            "snapshot": "5661daa43fb4b56f989a69f70bab7845011a839339cabe440741f35d68c954d4",
+            "book": "51dddc8ef1a4ed9cce3a4c8dc6bc2e7ad465cd47c33d7c333ced774b80c20534"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "compatibility/A",
+          "hashes": {
+            "draft": "cd4a84e0ea02a5b818a802823820cb17070f41512fa0c2200f84850c90a2d38a",
+            "evidence": "ad58a76a7abe2e65d084af211aaf6865c9482ba17b2c1d221672cfebb4876ef4",
+            "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+            "narrative": "c9057718210913e7c58b9eb7f00b4817773265ed61003e16935db7f5c396b5e0",
+            "snapshot": "eb76435b9fc295326bc8eb5f67010f1c3b27e3b3995d919ab08473a4382f2f9f",
+            "book": "fcb9657f7080887977310348b36bd9e029d453086d355078c3233a9aa85e7f1c"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "compatibility/marriage",
+          "hashes": {
+            "draft": "0f4f41aedbb2d24eb01d7c5f99cef26270fa77889abf3289144cbe81f1638bb2",
+            "evidence": "722d60bf839363c8273c32dab1b2444dd3ea5cfa034221aa8c21fb9a30bd110b",
+            "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+            "narrative": "cb1c88f746573a0362511e73e9ecb6d39e74e2a50b7bed6a46e218852bfa6474",
+            "snapshot": "8f89ff5e1d4f59c0ca613b06926b37f2edcaaa0391ef27d4f4507741543f5554",
+            "book": "61dcc6d04f3df80c28ade187982d1ae927cd8ebe16b745cdf70dc31dbe5a4ad2"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "compatibility/parentChild",
+          "hashes": {
+            "draft": "5fc00bdfe82b73c4db0e89e1d72a75413b32d07e1671139edc3e1c1e4ed52949",
+            "evidence": "51662b68b3829382f8d153d243bce7bc06805feff1450a1669583ba2abcebed6",
+            "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+            "narrative": "baf43c6155c3e1fccf2e05c9b0a7240c4c3cf51c4c9b25857763f2f8adce25d3",
+            "snapshot": "dac59d4929fd6f3fd9de4414caf7853abea23e6229123be69acea8ba30fdb54c",
+            "book": "c526051d096e8754fcb0f65935c91cbcca27e11c74d61020a82778b5e6cee248"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "compatibility/coworker",
+          "hashes": {
+            "draft": "726b73d5a390fbf62b4776811399de048e1d169d5f367e0697d2a62dd22e1260",
+            "evidence": "ee16495ddb8c04f565b1848554ba927d553730cd673cb7d4a8244efd40258323",
+            "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+            "narrative": "8eec611e7b2311c1e567a5a3a3feca42af6b7e3c43d4925d14918a9a5705cb1f",
+            "snapshot": "d24d78586ce5cac30f249c5bdaad92c2ba9e5d1aed81aabd76c684e8b4296a9b",
+            "book": "8b5d6dd927cefffef558956f561dd5d229a721c400977a732776670b1494a976"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "compatibility/managerReport",
+          "hashes": {
+            "draft": "4100e9d3bf6d87d5837a2a0e6712dbeff41a886299099e5299b089750f2cff30",
+            "evidence": "67dfce0f4e48025cc8befcdb568139dc378ea672e20d094c9ba8b2c4433e4851",
+            "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+            "narrative": "0fc8ef2ca03b5a6a2e1cfd49926a3c43d6c563e68294cb4e907be53c3b501944",
+            "snapshot": "16666b882ef4e7247801d58268fa03dbe9c8d26ae4f0dce7864a27bad674960e",
+            "book": "4a1142d9ac3f71416100b2d21d8ab05fe540c132222de08c188abd38352ded01"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "compatibility/businessPartner",
+          "hashes": {
+            "draft": "60e49262ce61516e1af7aca491a611ec75ca43fbf93171ce38faedb1a4f80b19",
+            "evidence": "d2820239e0f4716a89509a6809ae9d7256d1ace7ed3bb426ceeba0542f7fa1a4",
+            "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+            "narrative": "2bf2942055f8bd33b7a7e11a2aa9d7ddf894ca8a5dcfcb58fb43418cf6012479",
+            "snapshot": "cc354330df567045e0a7c61f9c3369ef83c2cbc8dba164fa7a0d868b67100bf3",
+            "book": "013774ee82ba034bca227e254b38f4dc472f88ea048a8af1dc98da1922682e97"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "compatibility/friendship",
+          "hashes": {
+            "draft": "8bd82055861572ddf58687fa0d466d7d5110b0cdc29b0a8992dda61b0224652b",
+            "evidence": "235ca43d7cec3efaddeac806979e8893824267360967a082457a0a27472e28e4",
+            "calculations": "65187d2b03fd97d84329d279238075696d7fd70e72254bd4a70d6fbeb6d1e0e1",
+            "narrative": "d0e41f88b12fdb8308c5bb555fb5659f9b1c7c5111e6d9b0730775dfa882ad59",
+            "snapshot": "1a8f46c473bd4474e017f05bf3599ce78b3facba0a5392a9c1b5571566f52b4b",
+            "book": "d993316c087489934c9a1ae52590dd1d0964314c0445e4132c4b9bed38160e1c"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "major/A",
+          "hashes": {
+            "draft": "8039bad6ac7fdfc47e025becdf78be5d8d11431ed230876401a72db4903ba4a1",
+            "evidence": "2b0adee44ca4c94e00c3b1a3d85bed1e564719e82364093a02a6dcd9f46f7ca5",
+            "calculations": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+            "narrative": "06e96c8ae11139e83bcdfe466e5aef41e5f3ee120e845401cb468e9606bf07b6",
+            "snapshot": "0c3ccfe38bd72ad00301302791cdf52fa1245e3e57107504bc5080bd4e64ad5a",
+            "book": "51e2e0d4e64a138d4ec30ba798b7eefe6eb82c2907f5ee99306e11fb98a15113"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "major/F",
+          "hashes": {
+            "draft": "1cf793a5adcd6a7ffee5e09a33c09cbc9a40f04af23ccf37b5f3ce66958d7f79",
+            "evidence": "10d0c0d916198e46c95b272442a9fe32fc8bb2194db27a99e3d6d1c9cc6f25fd",
+            "calculations": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+            "narrative": "b4b75c31c5f3c03b467c535b83d034148e4f213617a7b20547c701e845814587",
+            "snapshot": "afae0ac29574770cb3297eb0b6a78c85948828b131dd83ca812683e0ab3f65fd",
+            "book": "e2ddb6dcd946450afa4353ba9540f6171b5c8a7472c1db5639f8762e8bc7273c"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "annual/A",
+          "hashes": {
+            "draft": "3001a277e3a7023f5fb90d2b127ec2e18c9f34d8c6c8d05c4e485291be1ed1d6",
+            "evidence": "654c5764944af0a6f29bde9fb0c9dbeb437c77f1abdb87201a7cf5b47866613a",
+            "calculations": "087dc6b06e00e4fe6db2cc6481c6813edcbe38c1e69e550bd248e2fe2c3c8fdb",
+            "narrative": "ae2e50212d4c9ad426c01f5790d12a21b9bf87ec7fc6b42bace6f77396a52fd7",
+            "snapshot": "0ae425124bc4434fe6cefbc83e579c0518c7382f46fc959a45ac584a5d038a76",
+            "book": "da0bc604b4ded64cbfa83349cf8054fb8fef57102e4b2e6a6bfca21f45577944"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        },
+        {
+          "id": "annual/F",
+          "hashes": {
+            "draft": "a6cc76a7cf0bf784b782ceff09f55bca794352da069d5682693726ff64569c6e",
+            "evidence": "9e003508ed772c7d6cb82484d48633e9263069f44bd2790b860bdf1a6a5fe236",
+            "calculations": "eb3174160cfb8da3d08c5ec03ebbd780cb9d97314a894441706844c7c5d24c34",
+            "narrative": "aa84cdbb7eb55a78bff24be84954e784f32040677331d5afeb197298dc03bda3",
+            "snapshot": "ad72b675594bcdde8d38164dcca544870f3a6454d6d83c2799a45cd9379b12d1",
+            "book": "ee4a6cc847a0940c9d5f69ffd8b2511a5d570a78a162be0d0b5f6f8d2fe3f5e7"
+          },
+          "archivedMatch": true,
+          "storedReopen": true
+        }
+      ]
+    },
+    "publication-safety.json": {
+      "cases": 39,
+      "safe": 32,
+      "withheld": 7,
+      "rows": [
+        {
+          "id": "love/O/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "20e0120f2f248e4b26098d6e6b5be6b5ab27e1b5f83b087284933ebd49b92077",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "love/Q/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "6c12747b3735b44c9551ac27fb68bdc59ef17554aafcc818d2c3ffdae706f3cc",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "marriage/M/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "371cc78dc5a325d7266ac9c5b5b9a443309e7c2669e9b375b3fbc4a3f2b7fc14",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "marriage/N/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "371cc78dc5a325d7266ac9c5b5b9a443309e7c2669e9b375b3fbc4a3f2b7fc14",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "marriage/AB/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "16f2743872e1215169367d6678cc5c1b309533f72bfcebd7189e11f756436f51",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "parent-child/L/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "ece9d923afe316e2eac724cf80b2f942d0704861a8c20049f4c8b3260e187350",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "parent-child/M/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "ece9d923afe316e2eac724cf80b2f942d0704861a8c20049f4c8b3260e187350",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "parent-child/V/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "45cc1d0be26eec6dd08af6311e5a9cabcd2bd902deb56ddc03ecf2d53d8581bd",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "parent-child/A/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "54c4a05272b17179bb8812659d6938013e89daff107e747f6235eaca0d395a70",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "coworker/L/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "207f4198fcd9b5e44e873d46142ffec0ed51db7f16a3115611a9b61ff695a5d2",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "coworker/M/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "207f4198fcd9b5e44e873d46142ffec0ed51db7f16a3115611a9b61ff695a5d2",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "coworker/AG/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "207f4198fcd9b5e44e873d46142ffec0ed51db7f16a3115611a9b61ff695a5d2",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "coworker/W/0",
+          "status": "WITHHELD",
+          "bookHash": null,
+          "errors": [
+            "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+            "READER_9_36_144_REQUIRED",
+            "UNVERIFIED_LEGACY_FALLBACK"
+          ],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "manager-report/L/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "f2ff189f35e745ff9c413af22347807914f3a3b7c417a5d39ac98decbcece7a7",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "manager-report/M/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "f2ff189f35e745ff9c413af22347807914f3a3b7c417a5d39ac98decbcece7a7",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "manager-report/AL/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "f2ff189f35e745ff9c413af22347807914f3a3b7c417a5d39ac98decbcece7a7",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "manager-report/AJ/0",
+          "status": "WITHHELD",
+          "bookHash": null,
+          "errors": [
+            "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+            "READER_9_36_144_REQUIRED",
+            "UNVERIFIED_LEGACY_FALLBACK"
+          ],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "manager-report/AK/0",
+          "status": "WITHHELD",
+          "bookHash": null,
+          "errors": [
+            "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+            "READER_9_36_144_REQUIRED",
+            "UNVERIFIED_LEGACY_FALLBACK"
+          ],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "business-partner/L/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "1207adf33efca203818fb93974e3e8df96fcabe864e4c772ccb6ded0a09e5940",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "business-partner/M/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "1207adf33efca203818fb93974e3e8df96fcabe864e4c772ccb6ded0a09e5940",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "business-partner/AO/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "1207adf33efca203818fb93974e3e8df96fcabe864e4c772ccb6ded0a09e5940",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "business-partner/AM/0",
+          "status": "WITHHELD",
+          "bookHash": null,
+          "errors": [
+            "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+            "READER_9_36_144_REQUIRED",
+            "UNVERIFIED_LEGACY_FALLBACK"
+          ],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "business-partner/AN/0",
+          "status": "WITHHELD",
+          "bookHash": null,
+          "errors": [
+            "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+            "READER_9_36_144_REQUIRED",
+            "UNVERIFIED_LEGACY_FALLBACK"
+          ],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "friendship/L0/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "a810a019ff33da2b84b19d01ec5d8a3d4285afb7cf65a5f1aae0f31cb6540c50",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "friendship/M0/0",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "a810a019ff33da2b84b19d01ec5d8a3d4285afb7cf65a5f1aae0f31cb6540c50",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "friendship/A0/0",
+          "status": "WITHHELD",
+          "bookHash": null,
+          "errors": [
+            "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+            "READER_9_36_144_REQUIRED",
+            "UNVERIFIED_LEGACY_FALLBACK"
+          ],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "friendship/H0/0",
+          "status": "WITHHELD",
+          "bookHash": null,
+          "errors": [
+            "ACTUAL_REPAIR_PROBLEM_REQUIRED:CH08.P2",
+            "READER_9_36_144_REQUIRED",
+            "UNVERIFIED_LEGACY_FALLBACK"
+          ],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/comprehensive/A",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "a159ae6501c9f57cea682aa62a54cbecadfa8460022330ed812cf30e81d4e27f",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/career/A",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "48886e58ce2b5290bada8407c462183bb756e0739a3c48a5de96f8d15fabe529",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/love/A",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "c2ea4d853b746d36983ecbaa5a6d92cad6b91dda5d4edd8c36361f6d4d20dc51",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/compatibility/A",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "44bd3b3e235c574decbd3a1926bfa4e11a9f56e9799ac396fb0f692f0dea063b",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/compatibility/marriage",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "fb54eba33a3cb9408850deef0ee29a852fdf8e86dc3b0731e3b5cf515ee07cdb",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/compatibility/parentChild",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "97937941b05c8fadd19299a197f85bf366cb7ca07d58e4fa8366e307879482fe",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/compatibility/coworker",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "e5c23644ed8d034d50c87470b149bd241e43485ce7809d50ba2b54c4e4047068",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/compatibility/managerReport",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "6fa482274d5d0b0454867ca94465fdf83014dcd1d0ca84f312f837bd5b7a677b",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/compatibility/businessPartner",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "cb7cfc941965f9a5005748b7740c447aa0737cd5ecf522a99c8f38f7d1e6704e",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/compatibility/friendship",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "7365a364fe657f12715959ee6fdbb4c4d447975a59f3618c97671bb802b71f25",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/major/A",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "51e2e0d4e64a138d4ec30ba798b7eefe6eb82c2907f5ee99306e11fb98a15113",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        },
+        {
+          "id": "route/annual/A",
+          "status": "SAFE_OFFLINE",
+          "bookHash": "da0bc604b4ded64cbfa83349cf8054fb8fef57102e4b2e6a6bfca21f45577944",
+          "errors": [],
+          "calculationPreserved": true,
+          "reopenGateVerified": true
+        }
+      ]
+    },
+    "runtime-nft-comparison.json": {
+      "astRoots": 46,
+      "astModules": 700,
+      "astDigest": "06686f4615ebce6815a5310019c7f03e4c8060428919786476744d62cb152b67",
+      "astIdentical": true,
+      "nftTraces": 90,
+      "routeTraces": 88,
+      "nftSourceDependencySetsIdentical": true,
+      "newFeatureInRuntimeOrNft": false,
+      "excludedGeneratedNextArtifacts": true,
+      "buildLogSha256": "aed0f450aa0ba53abaf7be6072fd50f8c0b1c70b072cccf0afaf9d89865b8ade",
+      "warnings": []
+    },
+    "precommit-comparison.json": {
+      "phase": "precommit",
+      "oldWorktrees": 81,
+      "currentWorktrees": 82,
+      "oldPersistentPaths": 20,
+      "oldTemporaryPaths": 61,
+      "existingWorktreeChanges": [],
+      "originalCheckoutPreserved": true,
+      "originalDirty11Preserved": true,
+      "forensicFileHashes": 915,
+      "manifestRecordedMtimes": 914,
+      "gitCommonPersistent": true,
+      "existingUserRefChanges": [],
+      "originalWorktreeHeadObjectsPreserved": true,
+      "existingGitByteChanges": [],
+      "newGitFiles": [
+        "logs/refs/heads/v4/annual-actual-evidence-korean-vertical-slice-01",
+        "refs/heads/v4/annual-actual-evidence-korean-vertical-slice-01",
+        "worktrees/v4-annual-actual-evidence-korean-vertical-slice-01/HEAD",
+        "worktrees/v4-annual-actual-evidence-korean-vertical-slice-01/ORIG_HEAD",
+        "worktrees/v4-annual-actual-evidence-korean-vertical-slice-01/commondir",
+        "worktrees/v4-annual-actual-evidence-korean-vertical-slice-01/gitdir",
+        "worktrees/v4-annual-actual-evidence-korean-vertical-slice-01/index",
+        "worktrees/v4-annual-actual-evidence-korean-vertical-slice-01/logs/HEAD"
+      ],
+      "intentionalMetadataChanges": "New feature branch/worktree/index/objects/ref/upstream registration; not zero",
+      "codeXInternalTempRefChange": {
+        "refDeltas": [],
+        "fileDeltas": [],
+        "objectClosureProofs": [
+          {
+            "target": "d0718c020371b2252c1e98dd56e2263a58dfa989",
+            "type": "tree",
+            "accessibleObjects": 2086,
+            "allAccessible": true
+          }
+        ],
+        "previous2086ObjectSnapshotPreserved": true,
+        "actor": "UNATTRIBUTED; internal namespace is not proof of deletion actor",
+        "restorationOrCleanup": false
+      },
+      "activePersistentWorkspaceIntegrity": "PRESERVED",
+      "legacyTempWorktreeRisk": "Observed old temporary paths unchanged; historical ignored/unrecorded loss remains UNVERIFIED. No restoration/cleanup."
+    },
+    "implementation-review.json": {
+      "coreSourceFiles": 2,
+      "newTestFiles": 1,
+      "newCliFiles": 1,
+      "sourceSha256": {
+        "src/lib/report-knowledge/knowledge-integration-foundation/annual-actual-evidence-preview/contract.ts": "da6d93a8c4340df688b0d467e6354a8a0e092a6f3709c1cebc402907e3a58cad",
+        "src/lib/report-knowledge/knowledge-integration-foundation/annual-actual-evidence-preview/adapter.ts": "125285e5c32fa674a5d2a04d28ca87f9e4ec0d9ad9c5e71b33ce263e6ae151f3",
+        "tests/unit/report-knowledge/annualActualEvidencePreview.test.ts": "f44fbb0f1cbd4f8b9978a04c839d50566e968983129eb80732556922930778b0",
+        "tools/annual-actual-evidence-preview/verify.mjs": "ec53107141447f30968a25deca2d4881f056e20e51a3872340d16770401114e7"
+      },
+      "anyOrTsIgnore": false,
+      "runtimeConnected": false,
+      "sourceCodeFilesBeforeBuildFrozen": true,
+      "quotedHanjaPronunciationInferred": false,
+      "final34PassingCoreAndTestHashesRetained": true
+    },
+    "browser-review.json": {
+      "status": "PASS",
+      "url": "http://127.0.0.1:58390/preview",
+      "htmlSha256": "d099ee0fbf00aebdd6a92c7e9e857b1215f59f55c1a88ecb20da6b871c5168f5",
+      "basis": "Generated generation-1 actual factual HTML; final generation-2 equality required by main pipeline",
+      "browser": "Chrome",
+      "browserTabId": "1321220018",
+      "viewport": "default, no override",
+      "sections": 48,
+      "ledgerSpans": 1052,
+      "scripts": 0,
+      "horizontalOverflow": false,
+      "visualChecks": [
+        "Top navigation for all4 fixtures",
+        "A June role withhold with actual monthly glyphs",
+        "A November context timestamp absence",
+        "C2028 April exact21:42 dayun transition before/after",
+        "Ranged August conditional scope and old withhold states",
+        "Source disclosure expands to original pointer/producer/version/Evidence",
+        "Returned to A start; tab marked deliverable"
+      ],
+      "koreanAndHanjaVisible": true,
+      "customerUiIdenticalClaim": false,
+      "customerBookApproval": false,
+      "fileProtocolPolicy": "file:// refused by browser URL policy; no filesystem/browser permission changed",
+      "saferPreviewTransport": {
+        "host": "127.0.0.1",
+        "singleGeneratedHtmlInMemory": true,
+        "arbitraryFileAccess": false,
+        "directoryListing": false,
+        "writeMethodsAllowed": false,
+        "lifetimeSeconds": 7200
+      },
+      "independentFinalHtmlHashMustMatch": true
+    }
+  }
+}
