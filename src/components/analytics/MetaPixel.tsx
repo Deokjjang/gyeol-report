@@ -8,6 +8,7 @@ import styles from "./metaConsent.module.css";
 // Third-party SDK is confined to an opaque sandbox with no parent DOM/URL access.
 export default function MetaPixel() {
   const pathname = usePathname();
+  const bundleCallback = pathname?.startsWith("/account/tickets/checkout/") || pathname?.startsWith("/dev/account/tickets/");
   const [choice, setChoice] = useState<boolean | null>(null), [open, setOpen] = useState(false), [available, setAvailable] = useState(false);
   const [failed, setFailed] = useState(false), [busy, setBusy] = useState(false);
   const [ready, setReady] = useState(false);
@@ -28,11 +29,12 @@ export default function MetaPixel() {
     return () => { current = false; };
   }, []);
   useEffect(() => {
+    if (bundleCallback) return;
     if (pathname) pageView(pathname);
     void syncLocalFacts();
-  }, [pathname, choice]);
+  }, [pathname, choice, bundleCallback]);
   useEffect(() => {
-    if (choice !== true || !ready || !metaOrigin(window.location.origin)) return;
+    if (bundleCallback || choice !== true || !ready || !metaOrigin(window.location.origin)) return;
     const receive = (event: MessageEvent) => {
       if (event.source !== frame.current?.contentWindow || event.origin !== "null" || event.data?.type !== "gyeol:pixel-ready") return;
       setMetaFrame(frame.current.contentWindow); void syncMetaFacts();
@@ -40,7 +42,7 @@ export default function MetaPixel() {
     window.addEventListener("message", receive);
     const timer = setInterval(() => { if (document.visibilityState === "visible") void syncMetaFacts(); }, 5000);
     return () => { window.removeEventListener("message", receive); clearInterval(timer); setMetaFrame(null); };
-  }, [choice, ready]);
+  }, [choice, ready, bundleCallback]);
   useEffect(() => {
     if (typeof BroadcastChannel === "undefined") return;
     const channel = new BroadcastChannel("gyeol-meta-choice");
@@ -59,7 +61,7 @@ export default function MetaPixel() {
   }
   if (!available) return null;
   return <aside className={styles.root} aria-label="광고 성과 측정 설정">
-    {choice === true && ready && <iframe ref={frame} src="/api/analytics/meta/pixel" sandbox="allow-scripts" referrerPolicy="no-referrer" title="광고 성과 측정" hidden />}
+    {!bundleCallback && choice === true && ready && <iframe ref={frame} src="/api/analytics/meta/pixel" sandbox="allow-scripts" referrerPolicy="no-referrer" title="광고 성과 측정" hidden />}
     {open ? <div className={styles.panel}><strong>광고 성과 측정 (선택)</strong><p>{metaTrackingNotice}</p>
       <details><summary>Meta 제공·국외 이전 상세 고지</summary><p>{metaTransferNotice}</p><a href="https://www.facebook.com/legal/technology_terms" target="_blank" rel="noreferrer">Meta 비즈니스 도구 약관</a> · <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noreferrer">Meta 개인정보처리방침</a></details>
       <label><input type="checkbox" checked={consents.measurement} onChange={e => setConsents({ ...consents, measurement: e.target.checked })} /> [선택] 위 항목의 광고 측정 수집·이용에 동의</label>
