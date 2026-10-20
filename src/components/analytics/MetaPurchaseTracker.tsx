@@ -1,12 +1,12 @@
 "use client";
 import { useEffect } from "react";
-import { dispatchPurchase, localMeasurement, syncLocalFacts } from "../../lib/analytics/client";
+import { dispatchPurchase, localMeasurement, publicMetaAllowed, syncLocalFacts } from "../../lib/analytics/client";
 export default function MetaPurchaseTracker({ reportId, local = false }: { reportId: string; local?: boolean }) {
   useEffect(() => {
     let attempts = 0;
     const check = () => {
       if (++attempts > 50) { clearInterval(timer); return; }
-      if ((local && localMeasurement()) || typeof window.fbq === "function") {
+      if ((local && localMeasurement()) || publicMetaAllowed()) {
         clearInterval(timer);
         void dispatchPurchase(reportId, local);
         void syncLocalFacts();

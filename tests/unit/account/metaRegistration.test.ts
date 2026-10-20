@@ -10,7 +10,7 @@ let db: PGlite, h: ReturnType<typeof launchHelpers>;
 const browser = () => randomBytes(32).toString("hex");
 const sql = readFileSync("supabase/migrations/20261020062611_v4_meta_registration_delivery.sql", "utf8");
 async function consent(id: string | null, agreed = true, key = browser()) {
-  await db.query("select record_meta_consent($1,$2,$3,'meta-20261020-v1','192.0.2.1','isolated-test')", [id, key, agreed]); return key;
+  await db.query("select record_meta_consent($1,$2,$3,'meta-20261020-v2','192.0.2.1','isolated-test')", [id, key, agreed]); return key;
 }
 async function acquire(optIn = true, id?: string) {
   const hash = h.hash(); await h.campaign("capture", null, { slug: "gyeol-opening-2026", contextHash: hash });
@@ -26,6 +26,22 @@ beforeEach(async () => {
 });
 afterAll(async () => { await db?.close(); });
 describe("campaign-qualified Meta registration, isolated SQL only", () => {
+  it("only the authenticated grant browser claims one Pixel mirror across tabs, with the CAPI event ID", async () => {
+    const a=await acquire(); const row=(await db.query<{browser_key:string;event_id:string}>("select browser_key,event_id from meta_conversion_outbox")).rows[0];
+    const claim=async(key:string,user:string)=>(await db.query<{r:unknown[]}>("select claim_meta_browser_events($1,$2) r",[key,user])).rows[0].r;
+    expect(await claim(browser(),a.user)).toEqual([]); expect(await claim(row.browser_key,await h.user())).toEqual([]);
+    const claims=await Promise.all(Array.from({length:12},()=>claim(row.browser_key,a.user)));
+    expect(claims.flat()).toEqual([{event:"CompleteRegistration",eventId:row.event_id,params:{}}]);
+    expect((await batch() as Array<{event_id:string}>)[0].event_id).toBe(row.event_id);
+    expect(await claim(row.browser_key,a.user)).toEqual([]);
+    await consent(a.user,false,row.browser_key); expect(await claim(row.browser_key,a.user)).toEqual([]);
+    expect(await h.count("report_ticket_grants")).toBe(1);
+  });
+  it("180-day measurement cleanup removes local identifiers and receipts without touching rewards", async () => {
+    await acquire(); await h.clock(new Date(new Date(START).getTime()+181*86400000).toISOString()); await batch("cleanup");
+    expect(await count()).toBe(0);expect((await db.query("select * from meta_tracking_consents")).rows).toHaveLength(0);
+    expect(await h.count("report_ticket_grants")).toBe(1);
+  });
   it("grant and conversion commit atomically, 100 OAuth/consent retries and another browser share one opaque event", async () => {
     const a = await acquire(); expect(a.result.ok).toBe(true); expect(await count()).toBe(1);
     for (let i=0;i<100;i++) await h.campaign("attribute",a.user,{contextHash:a.hash,versions});
@@ -87,7 +103,7 @@ describe("campaign-qualified Meta registration, isolated SQL only", () => {
     expect(await batch("sent",first[0].event_id,first[0].lease)).toBe(false);
   });
   it("non-service roles cannot read identifiers, forge facts or use the delivery functions",async()=>{
-    for (const role of ["anon","authenticated"]) for(const query of ["select * from meta_conversion_outbox","select * from meta_tracking_consents","select meta_delivery_batch('claim')","select record_meta_consent(null,'"+browser()+"',true,'meta-20261020-v1')"])
+    for (const role of ["anon","authenticated"]) for(const query of ["select * from meta_conversion_outbox","select * from meta_tracking_consents","select meta_delivery_batch('claim')","select record_meta_consent(null,'"+browser()+"',true,'meta-20261020-v2')"])
       await expect(db.transaction(async tx=>{await tx.exec(`set local role ${role}`);await tx.query(query);})).rejects.toThrow(/permission denied/);
   });
   it("event expiration and 7-day cleanup do not change event/ticket deadlines",async()=>{

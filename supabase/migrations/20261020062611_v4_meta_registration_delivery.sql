@@ -4,7 +4,7 @@ set local lock_timeout='5s';
 create table public.meta_tracking_consents (
   browser_key text primary key check(browser_key ~ '^[a-f0-9]{64}$'),
   user_id uuid references auth.users(id), agreed boolean not null,
-  version text not null check(version='meta-20261020-v1'),
+  version text not null check(version='meta-20261020-v2'),
   recorded_at timestamptz not null default clock_timestamp(),
   ip text, agent text check(length(agent)<=512)
 );
@@ -19,7 +19,7 @@ create table public.meta_conversion_outbox (
   custom_data jsonb not null default '{}', ip text, agent text,
   state text not null default 'PENDING' check(state in ('PENDING','SENT','CANCELED','EXPIRED')),
   attempts integer not null default 0, next_at timestamptz not null default clock_timestamp(),
-  lease uuid, lease_until timestamptz, first_attempt_at timestamptz, sent_at timestamptz,
+  lease uuid, lease_until timestamptz, first_attempt_at timestamptz, sent_at timestamptz, browser_dispatched_at timestamptz,
   check((event_name='CompleteRegistration' and acquisition_id is not null and order_id is null and custom_data='{}') or
         (event_name='Purchase' and acquisition_id is null and order_id is not null)),
   check(event_id ~ '^(registration|purchase)_[a-f0-9]{32}$')
@@ -33,7 +33,7 @@ grant select,insert,update,delete on public.meta_tracking_consents,public.meta_c
 create function public.record_meta_consent(p_user uuid,p_browser text,p_agreed boolean,p_version text,p_ip text default null,p_agent text default null) returns boolean
 language plpgsql security invoker set search_path='' as $$
 begin
-  if p_browser is null or p_browser !~ '^[a-f0-9]{64}$' or p_version<>'meta-20261020-v1' then return false; end if;
+  if p_browser is null or p_browser !~ '^[a-f0-9]{64}$' or p_version<>'meta-20261020-v2' then return false; end if;
   -- Same user lock order as acquisition. Withdrawal cancels all this account's pending events.
   if p_user is not null then perform pg_catalog.pg_advisory_xact_lock(pg_catalog.hashtextextended(p_user::text,11)); end if;
   insert into public.meta_tracking_consents(browser_key,user_id,agreed,version,ip,agent)
@@ -61,7 +61,7 @@ begin
     or not exists(select 1 from public.new_user_acquisitions n where n.user_id=new.user_id and n.campaign_attribution_id=new.id)
     or not exists(select 1 from public.report_ticket_grants g where g.id=new.ticket_grant_id and g.user_id=new.user_id
       and g.quantity=1 and g.reward_family='ACQUISITION_REWARD' and g.reward_source='campaign') then return new; end if;
-  select * into consent from public.meta_tracking_consents where user_id=new.user_id and agreed and version='meta-20261020-v1'
+  select * into consent from public.meta_tracking_consents where user_id=new.user_id and agreed and version='meta-20261020-v2'
     and ip is not null and agent is not null and recorded_at>=new.acquired_at order by recorded_at desc limit 1;
   if not found then return new; end if;
   insert into public.meta_conversion_outbox(event_name,acquisition_id,browser_key,user_id,occurred_at,ip,agent)
@@ -76,7 +76,7 @@ create function public.queue_meta_purchase(p_report text,p_browser text,p_ip tex
 language plpgsql security invoker set search_path='' as $$
 declare o public.payment_orders%rowtype; event_key text; consent public.meta_tracking_consents%rowtype;
 begin
-  select * into consent from public.meta_tracking_consents where browser_key=p_browser and agreed and version='meta-20261020-v1';
+  select * into consent from public.meta_tracking_consents where browser_key=p_browser and agreed and version='meta-20261020-v2';
   if not found then return false; end if;
   select * into o from public.payment_orders where report_id=p_report and status='paid'
     and paid_at is not null and provider_payment_id is not null and provider='toss' and currency='KRW' and amount>0
@@ -102,12 +102,14 @@ begin
   update public.meta_conversion_outbox set ip=null,agent=null,state=case when state='PENDING' then 'EXPIRED' else state end
     where occurred_at<clock_timestamp()-interval '7 days' and (ip is not null or agent is not null or state='PENDING');
   update public.meta_tracking_consents set ip=null,agent=null where recorded_at<clock_timestamp()-interval '7 days' and (ip is not null or agent is not null);
+  delete from public.meta_conversion_outbox where occurred_at<clock_timestamp()-interval '180 days';
+  delete from public.meta_tracking_consents c where recorded_at<clock_timestamp()-interval '180 days' and not exists(select 1 from public.meta_conversion_outbox o where o.browser_key=c.browser_key);
   update public.meta_conversion_outbox set state='EXPIRED',ip=null,agent=null where state='PENDING' and first_attempt_at<clock_timestamp()-interval '24 hours';
   if p_action='cleanup' then return 'true'::jsonb; end if;
   if p_action='claim' then
     with ready as (
       select o.event_id from public.meta_conversion_outbox o join public.meta_tracking_consents c using(browser_key)
-      where o.state='PENDING' and c.agreed and c.version='meta-20261020-v1' and o.ip is not null and o.agent is not null
+      where o.state='PENDING' and c.agreed and c.version='meta-20261020-v2' and o.ip is not null and o.agent is not null
         and (o.first_attempt_at is null or o.first_attempt_at>clock_timestamp()-interval '24 hours')
         and o.occurred_at>clock_timestamp()-interval '6 days' and o.next_at<=clock_timestamp()
         and (o.lease_until is null or o.lease_until<clock_timestamp())
@@ -132,6 +134,26 @@ begin
   end if;
   return 'false'::jsonb;
 end $$;
-revoke all on function public.record_meta_consent(uuid,text,boolean,text,text,text),public.queue_meta_registration(),public.queue_meta_purchase(text,text,text,text),public.meta_delivery_batch(text,text,uuid) from public,anon,authenticated;
-grant execute on function public.record_meta_consent(uuid,text,boolean,text,text,text),public.queue_meta_registration(),public.queue_meta_purchase(text,text,text,text),public.meta_delivery_batch(text,text,uuid) to service_role;
+-- A browser may only mirror a fresh, server-verified fact once. A lost browser
+-- response does not lose the durable CAPI delivery. Never return account/order IDs.
+create function public.claim_meta_browser_events(p_browser text,p_user uuid default null) returns jsonb
+language plpgsql security invoker set search_path='' as $$
+declare result jsonb;
+begin
+  with ready as (
+    select o.event_id from public.meta_conversion_outbox o join public.meta_tracking_consents c using(browser_key)
+    where o.browser_key=p_browser and c.agreed and c.version='meta-20261020-v2'
+      and o.browser_dispatched_at is null and o.state in ('PENDING','SENT')
+      and o.occurred_at>clock_timestamp()-interval '10 minutes'
+      and (o.user_id=p_user or (o.event_name='Purchase' and o.user_id is null))
+      and (o.order_id is null or exists(select 1 from public.payment_orders p where p.payment_order_id=o.order_id and p.status='paid' and p.refunded_at is null and p.canceled_at is null and p.deleted_at is null))
+    order by o.occurred_at limit 5 for update of o skip locked
+  ), claimed as (
+    update public.meta_conversion_outbox o set browser_dispatched_at=clock_timestamp()
+      from ready where o.event_id=ready.event_id returning o.*
+  ) select coalesce(jsonb_agg(jsonb_build_object('event',event_name,'eventId',event_id,'params',custom_data)),'[]') into result from claimed;
+  return result;
+end $$;
+revoke all on function public.record_meta_consent(uuid,text,boolean,text,text,text),public.queue_meta_registration(),public.queue_meta_purchase(text,text,text,text),public.meta_delivery_batch(text,text,uuid),public.claim_meta_browser_events(text,uuid) from public,anon,authenticated;
+grant execute on function public.record_meta_consent(uuid,text,boolean,text,text,text),public.queue_meta_registration(),public.queue_meta_purchase(text,text,text,text),public.meta_delivery_batch(text,text,uuid),public.claim_meta_browser_events(text,uuid) to service_role;
 commit;

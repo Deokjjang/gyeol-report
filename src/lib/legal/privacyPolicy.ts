@@ -93,5 +93,4 @@ export const prePaymentPrivacyNoticeKo =
   "리포트 생성을 위해 이름 또는 닉네임, 생년월일, 출생시간, 성별, MBTI가 처리됩니다.";
 
 // Prepared disclosure. Transport remains disabled until the release/privacy approval gate.
-export { metaTrackingNotice as privacyPolicyMetaNoticeKo } from "../analytics/metaConsent";
-export const privacyPolicyMetaRetentionKo = "선택한 측정 설정은 브라우저에 최대 180일 보관됩니다. 결리포트의 전송 대기 기록에 포함된 IP·브라우저 정보는 전송 성공 또는 거부 시 삭제하며, 미전송 시에도 7일 후 정리합니다. 동의·전환 중복 방지를 위한 최소 기록은 별도 보관합니다. Meta의 수신 후 처리·보관 및 국외 이전 고지는 연결 활성화 전 확정하여 안내합니다. 해당 고지와 운영 승인이 완료되기 전에는 Meta로 전송하지 않습니다.";
+export { metaTrackingNotice as privacyPolicyMetaNoticeKo, metaTransferNotice as privacyPolicyMetaRetentionKo } from "../analytics/metaConsent";

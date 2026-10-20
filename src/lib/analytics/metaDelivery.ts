@@ -21,6 +21,14 @@ export function metaBrowserKey(request: NextRequest) {
   const value = request.cookies.get(META_CONSENT_COOKIE)?.value;
   return metaConsentValue(value) === null ? null : createHash("sha256").update(value!.split(":")[2]).digest("hex");
 }
+export async function metaRequestConsent(request: NextRequest) {
+  const choice = metaConsentValue(request.cookies.get(META_CONSENT_COOKIE)?.value);
+  if (choice !== true) return choice;
+  try {
+    const { data, error } = await createSupabaseServerClient().from("meta_tracking_consents").select("agreed,version").eq("browser_key", metaBrowserKey(request)).maybeSingle();
+    return !error && data?.agreed === true && data.version === META_CONSENT_VERSION;
+  } catch { return false; }
+}
 export async function recordMetaConsent(request: NextRequest, user: string | null) {
   const agreed = metaConsentValue(request.cookies.get(META_CONSENT_COOKIE)?.value);
   if (agreed === null) return true;
@@ -67,6 +75,10 @@ export async function transmitMeta(event: MetaDelivery, transport: typeof fetch 
     const result = await response.json();
     return response.ok && result.events_received === 1;
   } catch { return false; } // No token, provider response, URL or user data in logs.
+}
+export async function claimMetaBrowserEvents(request: NextRequest, user: string | null) {
+  const result = await createSupabaseServerClient().rpc("claim_meta_browser_events", { p_browser: metaBrowserKey(request), p_user: user });
+  return !result.error && Array.isArray(result.data) ? result.data : [];
 }
 export async function runMetaDeliveries() {
   const db = createSupabaseServerClient();

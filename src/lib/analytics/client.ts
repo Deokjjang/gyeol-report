@@ -11,7 +11,34 @@ export const manualReviewSilent = () => process.env.NODE_ENV !== "production" &&
   (/^\/dev\/content-review(?:\/|$)/.test(window.location.pathname ?? "") || process.env.NEXT_PUBLIC_LOCAL_REVIEW_SILENT === "1");
 export const localMeasurement = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
 let metaChoice = false;
-export function setMetaChoice(agreed: boolean) { metaChoice = agreed; lastPage = undefined; if (!agreed) { pending.clear(); if (retry) clearTimeout(retry); retry = undefined; } }
+let pixelFrame: Window | null = null;
+const pixelPending = new Map<string, MetaEvent>();
+export function setMetaChoice(agreed: boolean) { metaChoice = agreed; lastPage = undefined; if (!agreed) { pending.clear(); pixelPending.clear(); pixelFrame = null; if (retry) clearTimeout(retry); retry = undefined; } }
+export function setMetaFrame(frame: Window | null) {
+  pixelFrame = frame;
+  if (frame && metaChoice) for (const [id, event] of pixelPending) { frame.postMessage({ type: "gyeol:pixel", ...event }, "*"); pixelPending.delete(id); }
+}
+function mirrorMetaEvent(event: MetaEvent) {
+  if (!publicMetaAllowed() || !event.eventId) return;
+  if (pixelFrame) pixelFrame.postMessage({ type: "gyeol:pixel", ...event }, "*");
+  else if (pixelPending.size < 100) pixelPending.set(event.eventId, event);
+}
+export async function syncMetaFacts() {
+  if (!publicMetaAllowed() || !pixelFrame) return;
+  try {
+    const response = await fetch("/api/analytics/meta", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ poll: true, requestId: crypto.randomUUID() }), cache: "no-store" });
+    const body = await response.json();
+    if (body.choice === false) { setMetaChoice(false); window.dispatchEvent(new Event("gyeol:meta-withdrawn")); return; }
+    if (!response.ok || !Array.isArray(body.events)) return;
+    for (const fact of body.events) {
+      if (fact.event === "CompleteRegistration" && /^registration_[a-f0-9]{32}$/.test(fact.eventId)) mirrorMetaEvent({ event: "CompleteRegistration", params: {}, eventId: fact.eventId });
+      if (fact.event === "Purchase" && /^purchase_[a-f0-9]{32}$/.test(fact.eventId)) {
+        const event = metaPurchase({ eventId: fact.eventId, productType: fact.params?.content_ids?.[0], value: fact.params?.value, currency: fact.params?.currency });
+        if (event) mirrorMetaEvent(event);
+      }
+    }
+  } catch { /* Durable server delivery remains independent of browser availability. */ }
+}
 export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && metaOrigin(window.location.origin) && metaChoice;
 const publicPath = (path: string) => path === "/" || path === "/campaign/gyeol-opening-2026" || path === "/report/new" || path === "/checkout";
 
@@ -35,7 +62,12 @@ export function sendMeta(event: MetaEvent, key: string) {
   const productType = Array.isArray(event.params.content_ids) ? event.params.content_ids[0] : undefined;
   void fetch("/api/analytics/meta", { method: "POST", headers: { "content-type": "application/json" },
     body: JSON.stringify({ event: event.event, ...(typeof productType === "string" ? { productType } : {}), requestId: crypto.randomUUID() }), keepalive: true,
-  }).then(r => { if (r.ok) delivered.add(key); }).catch(() => {}).finally(() => pending.delete(key));
+  }).then(async r => {
+    if (!r.ok) return;
+    const result = await r.json();
+    if (result.pixel?.event === event.event && /^[a-f0-9-]{36}$/.test(result.pixel.eventId)) mirrorMetaEvent({ ...event, eventId: result.pixel.eventId });
+    if (result.ok) delivered.add(key);
+  }).catch(() => {}).finally(() => pending.delete(key));
 }
 export function flushMeta() { for (const [key, event] of pending) sendMeta(event, key); }
 let lastPage: string | undefined;
@@ -96,5 +128,6 @@ export async function dispatchPurchase(reportId: string, local = false) {
     const result = await response.json() as { purchase?: PurchaseFact };
     const event = response.ok && result.purchase ? metaPurchase(result.purchase) : null;
     if (event) sendMeta(event, event.eventId!);
+    if (!local && response.ok) void syncMetaFacts();
   } catch { /* No mutation to financial or publication state. */ }
 }
