@@ -22,7 +22,7 @@ export function campaignCountdown(ms: number) {
   return `${days ? `${days}일 ` : ""}${[Math.floor(s % 86400 / 3600), Math.floor(s % 3600 / 60), s % 60].map(n => String(n).padStart(2, "0")).join(":")}`;
 }
 export function campaignOffer(c: CampaignPresentation) {
-  if (c.offer === "REPORT_TICKET") return `처음 가입하고 필수 동의를 마치면 리포트 이용권 ${c.quantity}장을 받을 수 있어요.`;
+  if (c.offer === "REPORT_TICKET") return `이벤트 참여 후 처음 가입하고 필수 동의를 마치면 리포트 이용권 ${c.quantity}장 대상이 될 수 있어요.`;
   if (c.offer === "COUPON" && c.coupon) {
     const d=c.coupon;
     return `처음 가입하고 필수 동의를 마치면 ${d.type === "fixed_amount" ? `${d.value.toLocaleString("ko-KR")}원` : `${d.value}%`} 할인 쿠폰을 받을 수 있어요.${d.maxDiscount ? ` 최대 ${d.maxDiscount.toLocaleString("ko-KR")}원 할인.` : ""}`;

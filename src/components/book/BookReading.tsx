@@ -10,7 +10,7 @@ import { SaveToLibrary } from "../account/SaveToLibrary";
 import { BookShareActions } from "./BookShareActions";
 import { bookShareEvent } from "../../lib/book/shareEvents";
 import shareStyle from "./bookShare.module.css";
-import { canStartReadingGesture, hasReadingSelection, readingGestureDirection, type ReadingGesture } from "./readingGesture";
+import { canStartReadingGesture, hasReadingSelection, hasReadingHorizontalScroll, moveReadingGesture, readingGestureDirection, type ReadingGesture } from "./readingGesture";
 import { ReferralBookCta } from "./ReferralBookCta";
 import { interaction } from "../../lib/analytics/client";
 
@@ -22,6 +22,8 @@ export function BookReading({ data, share, home = "/", saveToLibrary, shareOwner
   const restoreTop = useRef(0), selectionActive = useRef(false);
   const pendingAnchor = useRef<string | undefined>(undefined);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null), gesture = useRef<ReadingGesture | null>(null);
+  const pointerDown = useRef<{ x: number; y: number; pointerId: number } | null>(null);
+  const swipeClick = useRef<{ x: number; y: number; at: number } | null>(null);
   const [turning, setTurning] = useState<number | null>(null);
   const book = BOOKS.find(b => b.id === data.bookId)!;
   useEffect(() => {
@@ -55,8 +57,26 @@ export function BookReading({ data, share, home = "/", saveToLibrary, shareOwner
   const contents = data.pages.findIndex(p => p.id === "contents");
   return <main className={s.root} data-book-report style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties} onKeyDown={e => { if ((e.target as Element).closest("dialog,input,select,textarea")) return; if (!hasReadingSelection(window.getSelection()) && (e.key === "ArrowRight" || e.key === "ArrowLeft")) { e.preventDefault(); turn(page + (e.key === "ArrowRight" ? 1 : -1)); } }}>
     <header className={s.header}><a className={s.wordmark} href={home}><b>결리포트</b><span>GYEOL REPORT</span></a><div className={s.readingTools}>{returnPoints.length ? <button onClick={returnToReading}>읽던 곳으로 ↶</button> : null}{contents >= 0 ? <button onClick={() => jump(contents)}>목차</button> : null}<a href={home} className={s.close}>닫기 ×</a></div></header>
-    <section className={`${s.bookShell} ${data.pages[page].kind === "back" ? s.backShell : ""}`} onPointerDown={e => { gesture.current = canStartReadingGesture(e.target as Element, selectionActive.current) ? { x: e.clientX, y: e.clientY, startedAt: e.timeStamp } : null; }} onPointerCancel={() => { gesture.current = null; }} onPointerUp={e => { const direction = readingGestureDirection(gesture.current, e.clientX, e.clientY, e.timeStamp, selectionActive.current || hasReadingSelection(window.getSelection())); gesture.current = null; if (direction) turn(page + direction); }}>
-      <div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 내용" data-page={data.pages[page].kind} data-page-number={page + 1} id={data.pages[page].id} data-chapter-id={data.pages[page].id}>
+    <section className={`${s.bookShell} ${data.pages[page].kind === "back" ? s.backShell : ""}`} onPointerDown={e => {
+      gesture.current = null;
+      pointerDown.current = e.isPrimary ? { x: e.clientX, y: e.clientY, pointerId: e.pointerId } : null;
+      // Leave OS edge navigation, zoom panning, mouse selection and controls alone.
+      if (!e.isPrimary || (e.pointerType === "mouse" && (e.target as Element).closest("p,h1,h2,h3,h4,span,strong,b,small,li,td,th,dt,dd,[data-selectable]")) || timer.current || note || e.clientX < 20 || e.clientX > document.documentElement.clientWidth - 20 || (window.visualViewport?.scale ?? 1) > 1) return;
+      if (canStartReadingGesture(e.target as Element, selectionActive.current) && !hasReadingHorizontalScroll(e.target as Element, e.currentTarget)) gesture.current = { x: e.clientX, y: e.clientY, startedAt: e.timeStamp, pointerId: e.pointerId, intent: "pending" };
+    }} onPointerMove={e => { if (gesture.current?.pointerId === e.pointerId) moveReadingGesture(gesture.current, e.clientX, e.clientY, e.timeStamp); }}
+      onPointerCancel={() => { gesture.current = null; pointerDown.current = null; }} onLostPointerCapture={() => { gesture.current = null; pointerDown.current = null; }}
+      onPointerUp={e => {
+        const origin = pointerDown.current; pointerDown.current = null;
+        if (origin?.pointerId === e.pointerId && Math.hypot(e.clientX - origin.x, e.clientY - origin.y) > 12) swipeClick.current = { x: e.clientX, y: e.clientY, at: e.timeStamp };
+        const start = gesture.current; gesture.current = null;
+        if (start?.pointerId !== e.pointerId) return;
+        const direction = readingGestureDirection(start, e.clientX, e.clientY, e.timeStamp, selectionActive.current || hasReadingSelection(window.getSelection()));
+        if (direction) { swipeClick.current = { x: e.clientX, y: e.clientY, at: e.timeStamp }; turn(page + direction); }
+      }} onClickCapture={e => {
+        const click = swipeClick.current; swipeClick.current = null;
+        if (click && e.detail && e.timeStamp - click.at < 500 && Math.abs(e.clientX - click.x) < 4 && Math.abs(e.clientY - click.y) < 4) { e.preventDefault(); e.stopPropagation(); }
+      }}>
+      <div className={s.pageScroll} ref={scroll} onScroll={() => { gesture.current = null; }} tabIndex={-1} role="region" aria-label="책 내용" data-page={data.pages[page].kind} data-page-number={page + 1} id={data.pages[page].id} data-chapter-id={data.pages[page].id}>
         <BookReader data={data} page={data.pages[page]} onNote={setNote} onPage={jump} onShare={() => { if (local) setMessage("미리보기입니다. 실제 공유나 복사는 실행하지 않습니다."); }}
           shareActions={shared || shareOwner ? <BookShareActions owner={shared ? undefined : shareOwner} model={shared ? share : undefined} local={local || shareOwner?.local} /> : local ? undefined : <p className={shareStyle.notice}>이 책은 공유할 수 없습니다.</p>}
           backAction={shared && share.referral ? <ReferralBookCta share={share} local={local} home={home} /> : shared ? <a className={shareStyle.cta} href={home} onClick={() => bookShareEvent("shared_cta_clicked", share.productType, local)}>나도 내 책 만들기 ↗</a>

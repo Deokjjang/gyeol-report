@@ -37,9 +37,9 @@ describe("launch display is not reward authority",()=>{
   it("stable SSR loading; no eligibility/CTA until authoritative response, accessible static summary",()=>{
     const html=renderToStaticMarkup(<LaunchCountdown/>);
     expect(html).toContain('data-launch-state="UNAVAILABLE"');expect(html).not.toContain('href="/campaign/');
-    expect(html).toContain("EVENT COUNTDOWN");expect(html).toContain("11월 1일 00:00 종료");
+    expect(html).toContain("EVENT COUNTDOWN");expect(html).toContain("11월 1일 0시 종료");
     expect(html).not.toMatch(/단 3일|3일 한정|72시간|10\.29|이벤트 진행 중/);
-    expect(html).toContain("기간·혜택 안내");expect(html).not.toContain('aria-live="assertive"');
+    expect(html).toContain("기간·혜택 자세히 보기");expect(html).not.toContain('aria-live="assertive"');
     expect(LAUNCH_NOTICE).toMatch(/평생 최대 1장.*평생 최대 1장/);expect(LAUNCH_NOTICE).toContain("처리 지연");
   });
   it.each(["https://gyeolreport.com","https://www.gyeolreport.com"])("exact same origin accepted at %s; cross-origin/preview/suffix/forwarded rejected",async origin=>{

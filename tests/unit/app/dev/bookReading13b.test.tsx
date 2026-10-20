@@ -75,15 +75,16 @@ describe("Phase13B stable chapter navigation and complete presentation", () => {
   });
 
 });
-describe("Text selection owns text; only deliberate empty-margin movement turns", () => {
+describe("Text selection owns text; deliberate horizontal movement turns", () => {
   const start = { x: 260, y: 240, startedAt: 100 };
-  it.each([[100, 240, 250, false, 1], [360, 245, 250, false, -1], [120, 350, 250, false, 0], [250, 500, 250, false, 0], [100, 240, 700, false, 0], [100, 240, 250, true, 0], [215, 240, 250, false, 0]] as const)("move %i/%i at %i; selected=%s → %i", (x, y, t, selected, expected) => {
+  it.each([[100, 240, 250, false, 1], [360, 245, 250, false, -1], [120, 350, 250, false, 0], [250, 500, 250, false, 0], [100, 240, 700, false, 1], [100, 240, 250, true, 0], [215, 240, 250, false, 0]] as const)("move %i/%i at %i; selected=%s → %i", (x, y, t, selected, expected) => {
     expect(readingGestureDirection(start, x, y, t, selected)).toBe(expected);
   });
-  it("paragraphs, controls and existing selections never begin swipe", () => {
+  it("paragraphs permit swipe while controls and selections remain protected", () => {
     const text = { closest: (selector: string) => selector.includes("p,") ? {} : null } as Element;
     const margin = { closest: () => null } as unknown as Element;
-    expect(canStartReadingGesture(text, false)).toBe(false);
+    expect(canStartReadingGesture(text, false)).toBe(true);
+    expect(canStartReadingGesture({ closest: () => ({}) } as unknown as Element, false)).toBe(false);
     expect(canStartReadingGesture(margin, true)).toBe(false);
     expect(canStartReadingGesture(margin, false)).toBe(true);
     expect(hasReadingSelection({ isCollapsed: false, toString: () => "선택한 문장" } as Selection)).toBe(true);
