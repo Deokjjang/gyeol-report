@@ -1,3 +1,4 @@
+import { inspectPublicationFoundation, type EvidenceFoundationReport } from "./evidenceFoundation";
 import { buildLegacyCompatibilityIndex } from "./compatibilityIndexLegacy";
 import "server-only";
 import { createHash } from "node:crypto";
@@ -40,6 +41,9 @@ export type V4RuntimeEvidence = {
   readonly generatedAt: string;
   /** New Book copy only; absent on immutable earlier editions. */
   readonly bookEditorialRevision?: "common-editorial-01";
+  /** Absent on historical snapshots; never retroactively required. */
+  readonly foundationRevision?: "foundation-engine-01";
+  readonly foundation?: EvidenceFoundationReport;
   readonly input: ReportGenerationInput;
   readonly composition: V4Composition;
   readonly calculations: Readonly<Record<string, SajuCalcResult>>;
@@ -98,6 +102,11 @@ export function validateV4Publication(product: string, draft: unknown, evidence:
     if (!same(draft, expected)) errors.push("V4_CUSTOMER_PROJECTION_MISMATCH");
     const { contentDigest, ...sealed } = e;
     if (v4Digest(sealed) !== contentDigest) errors.push("V4_SNAPSHOT_INTEGRITY");
+    if (e.foundationRevision !== undefined || e.foundation !== undefined) {
+      if (e.foundationRevision !== "foundation-engine-01" || !e.foundation ||
+        !same(e.foundation, inspectPublicationFoundation(c, e.input)) || e.foundation.issues.some(i => i.severity === "error"))
+        errors.push("V4_FOUNDATION_CONTRACT_INVALID");
+    }
     if (!textOK(n.headline) || !textOK(n.finalLine) || !n.opening.length || n.sections.length < 5 ||
       [...n.opening, ...n.sections.flatMap(s => s.blocks)].some(b => !textOK(b.text)) || n.sections.some(s => !textOK(s.title) || !s.blocks.length)) errors.push("V4_CONTENT_INCOMPLETE");
     if (new Set(n.sections.map(s => s.id)).size !== n.sections.length) errors.push("V4_SECTION_ORDER_INVALID");

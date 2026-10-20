@@ -1,3 +1,4 @@
+import { particle } from "../../../src/lib/interpretation-v4/copyRealizer";
 import { buildContentEvidencePool, createContentSelection, planChapter, fusionDomains } from "../../../src/lib/interpretation-v4/contentEvidence";
 import { collectComprehensiveCandidates } from "../../../src/lib/interpretation-v4/comprehensiveCandidateAdapter";
 import { schedulerInputs } from "./comprehensiveSchedulerFixtures";
@@ -70,5 +71,18 @@ describe("actual content selection consumes the foundation contract", () => {
     expect(row.evidenceIds).toContain("missing:actual-observation");
     expect(row.primaryEligible).toBe(false);
     expect(row.invalidReasons).toContain("UNRESOLVED_SOURCE_DEPENDENCY");
+  });
+});
+
+
+describe("existing Korean realization utility reuse", () => {
+  it("handles quoted phrases, digits and rieul without guessing foreign pronunciation", () => {
+    expect(particle("‘대화’", "을", "를")).toBe("‘대화’를");
+    expect(particle("‘제안’", "으로", "로")).toBe("‘제안’으로");
+    expect(particle("길", "으로", "로")).toBe("길로");
+    expect(particle("1", "으로", "로")).toBe("1로");
+    expect(particle("예린", "이", "가")).toBe("예린이");
+    expect(particle("Alex", "이", "가")).toBe("Alex이(가)");
+    expect(particle("상담", "에서", "에서")).toBe("상담에서");
   });
 });

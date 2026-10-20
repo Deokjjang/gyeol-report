@@ -1,3 +1,5 @@
+import type { V4Composition } from "./runtimeProjection";
+import type { ReportGenerationInput } from "../report-generation/reportInputAdapter";
 import type { ComprehensivePlanInputs } from "./comprehensivePlanCore";
 import { canonicalV4Feature } from "./materialRegistry";
 import { depthFeature } from "./materialDepth";
@@ -74,18 +76,18 @@ function basis(proof: NarrativeProof, references: readonly FoundationReference[]
   return "unbound";
 }
 
-function semanticSupport(proof: NarrativeProof): readonly string[] {
+function semanticSupport(proof: NarrativeProof, references: readonly FoundationReference[]): readonly string[] {
   // Seed IDs and opaque source refs explain where prose came from. Neither
   // constitutes an independent personality/relationship observation.
   return unique([
-    ...proof.features.map(id => "feature:" + id),
-    ...proof.fusionIds.map(id => "fusion:" + id),
+    ...references.flatMap(r => r.lineage),
+    ...proof.features.map(id => "feature:" + depthFeature(canonicalV4Feature(id))),
   ]);
 }
 
 export function inspectEvidenceFoundation(
   narrative: { readonly opening: readonly NarrativeBlock[]; readonly sections: readonly NarrativeSection[] },
-  options: { readonly knownFeatures?: readonly string[]; readonly knownFusionIds?: readonly string[]; readonly references?: readonly FoundationReference[] } = {},
+  options: { readonly knownFeatures?: readonly string[]; readonly knownFusionIds?: readonly string[]; readonly references?: readonly FoundationReference[]; readonly blockReferences?: Readonly<Record<string, readonly FoundationReference[]>> } = {},
 ): EvidenceFoundationReport {
   const parts = [
     { id: "core", domain: "identity", blocks: narrative.opening },
@@ -117,8 +119,8 @@ export function inspectEvidenceFoundation(
         code: "EMPTY_NARRATIVE", location, severity: "error",
       });
       const declared = unique([...block.proof.features, ...block.proof.fusionIds, ...block.proof.sourceRefs]);
-      const references = declared.flatMap(id => referenceIndex.get(id) ?? []);
-      traces.push({ location, references, unresolved: declared.filter(id => !referenceIndex.has(id)) });
+      const references = options.blockReferences?.[location] ?? declared.flatMap(id => referenceIndex.get(id) ?? []);
+      traces.push({ location, references, unresolved: declared.filter(id => !references.some(ref => ref.id === id)) });
       const info = { basis: basis(block.proof, references) };
       counts[info.basis]++;
       if (info.basis === "unbound") issues.push({
@@ -157,7 +159,7 @@ export function inspectEvidenceFoundation(
   for (const part of parts) for (const block of part.blocks) {
     const theme = block.editorial?.theme;
     if (!theme) continue;
-    const support = semanticSupport(block.proof);
+    const support = semanticSupport(block.proof, traces.find(t => t.location === part.id + "/" + block.id)?.references ?? []);
     if (!support.length) continue;
     const identity = part.domain + ":" + theme + ":" + (block.editorial?.sceneFamily ?? "");
     const before = previous.get(identity);
@@ -269,4 +271,88 @@ export function materialFoundationReferences(packet: MaterialPacket): Foundation
   return packet.selected.map(m => ({ id: m.feature, subject: packet.subject, scope: "natal", basis: "natal", support: "derived",
     domains: unique(m.material.seeds.flatMap(s => s.domains)), lineage: m.lineage, sourceRefs: m.sourceRefs,
     dependencies: m.evidence.map(d => d.evidence.id) }));
+}
+
+/** Frozen producer-output projection, shared by generation and snapshot
+ * validation. No recalculation, text inference, database or current clock. */
+export function inspectPublicationFoundation(c: V4Composition, input: ReportGenerationInput): EvidenceFoundationReport {
+  const references: FoundationReference[] = "foundationReferences" in c.result ? [...c.result.foundationReferences] : [];
+  const addPeriod = (id: string, scope: "major" | "annual" | "monthly", period: string, sourceRefs: readonly string[], dependencies: readonly string[] = []) => {
+    references.push({ id, subject: "person", scope, period, basis: "period", support: "calculated",
+      domains: ["success/fortune"], lineage: [`person:${scope}:${period}:${id}`], sourceRefs, dependencies });
+  };
+  const addMaterials = (packet: MaterialPacket) => {
+    references.push(...materialFoundationReferences(packet));
+    for (const f of packet.fusions) references.push({ id: f.ruleId, subject: packet.subject, scope: "natal", basis: "fusion", support: "conditional",
+      domains: [f.domain], lineage: unique(f.myeongliEvidence.flatMap(d => d.evidence.lineage)),
+      sourceRefs: f.provenanceRefs, dependencies: f.myeongliEvidence.map(d => d.evidence.id) });
+  };
+  if (c.product !== "saju_mbti_compatibility") addMaterials(c.result.materials);
+  if (input.kind !== "compatibility") for (const key of ["jobStatus", "detailJob", "relationshipStatus"] as const) {
+    if (!input.userContext[key] || input.userContext[key] === "unknown") continue;
+    references.push({ id: `input:${key}`, subject: "person", scope: "current-context", basis: "input", support: "direct-source",
+      domains: key === "relationshipStatus" ? ["love", "marriage", "relationships"] : ["work", "money", "study"],
+      lineage: [`person:input:${key}`], sourceRefs: [`normalizedInput:userContext:${key}`], dependencies: [] });
+  }
+  if (c.product === "major_fortune") {
+    const e = c.result.evidence;
+    const cycles = [e.horizon.activeCycle, ...e.years.flatMap(y => [y.cycle, y.beforeCycle])].filter(v => v !== null);
+    for (const cycle of new Map(cycles.map(cycle => [cycle.index, cycle])).values()) {
+      const boundaries = e.horizon.transitions.filter(t => t.before.index === cycle.index || t.after.index === cycle.index)
+        .map(t => ({ before: t.before.index, after: t.after.index, at: t.startSolarKst, range: t.startSolarRange }));
+      addPeriod(`dayun-cycle:${cycle.index}:${cycle.ganji}`, "major", JSON.stringify({ index: cycle.index, from: cycle.startYear, through: cycle.endYear, boundaries }), e.sourceRefs);
+    }
+    for (const y of e.years) for (const id of y.annual.evidenceIds) addPeriod(id, "annual",
+      JSON.stringify({ year: y.year, cycleIndex: y.cycle.index, beforeCycleIndex: y.beforeCycle?.index ?? null, transition: y.transitionDate }), e.sourceRefs, [y.annual.evidenceIds[0]]);
+    for (const relation of e.majorNatal.relations) addPeriod(relation.evidenceId, "major", `cycle:${e.majorNatal.cycleIndex}:${e.majorNatal.ganji}`, e.sourceRefs);
+    for (const t of e.horizon.transitions) addPeriod(`transition:${t.startSolarKst ?? t.dateLabel}`, "major",
+      JSON.stringify({ at: t.startSolarKst, range: t.startSolarRange }), e.sourceRefs);
+  }
+  if (c.product === "annual_fortune") {
+    const e = c.result.evidence;
+    addPeriod(`annual:${e.selectedYear}`, "annual", String(e.selectedYear), e.sourceRefs);
+    for (const segment of e.segments) {
+      const period = JSON.stringify({ start: segment.startKst, endExclusive: segment.endKstExclusive,
+        annualPillar: segment.effectiveAnnualPillar, dayun: segment.activeDayunContext });
+      for (const id of segment.evidenceIds) addPeriod(id, "monthly", period, [e.raw.monthlyCalculationVersion!], [segment.evidenceIds[0]]);
+    }
+    for (const month of e.months) for (const accepted of month.transit.accepted) for (const observation of accepted.observations)
+      addPeriod(observation.id, "monthly", JSON.stringify({ start: month.focus.startKst, endExclusive: month.focus.endKstExclusive }), observation.sourceRefs);
+  }
+  if (c.product !== "saju_mbti_compatibility") return inspectEvidenceFoundation(c.result.narrative, { references });
+
+  const e = c.result.evidence;
+  addMaterials(e.persons.personA.materials); addMaterials(e.persons.personB.materials);
+  const slot = (id: string) => id === e.persons.personA.personId ? "personA" : id === e.persons.personB.personId ? "personB" : undefined;
+  for (const direction of [e.directions.aToB, e.directions.bToA]) {
+    const subject = `${slot(direction.subjectPerson)}->${slot(direction.targetPerson)}`;
+    references.push({ id: direction.relationId, subject, scope: "pair", basis: "natal", support: "derived",
+      domains: [e.category], lineage: [`${subject}:day-stems`], sourceRefs: ["compatibilityDirectionEvidence"], dependencies: [] });
+    if (direction.mbtiPair) references.push({ id: direction.mbtiPair.evidenceId, subject, scope: "pair", basis: "mbti",
+      support: direction.mbtiPair.sourceCoverage === "direct" ? "direct-source" : "derived", domains: [e.category],
+      lineage: [`${subject}:${direction.mbtiPair.sourceType}:${direction.mbtiPair.targetType}`],
+      sourceRefs: [`mbti-pair:${direction.mbtiPair.sourceType}:${direction.mbtiPair.targetType}`], dependencies: [] });
+  }
+  for (const relation of e.relations) references.push({ id: relation.identity, subject: "personA+personB", scope: "pair", basis: "natal", support: "calculated",
+    domains: [e.category], lineage: relation.refs.map(ref => `${ref.person}:${ref.position}:${ref.branch}`), sourceRefs: ["compatibilityRelationRules"], dependencies: [] });
+  const blockReferences: Record<string, FoundationReference[]> = {};
+  const parts: { id: string; blocks: readonly NarrativeBlock[] }[] = [{ id: "core", blocks: c.result.narrative.opening }, ...c.result.narrative.sections];
+  const edition = "integration" in c.result ? c.result.integration.readerEdition : undefined;
+  for (const part of parts) for (const [index, block] of part.blocks.entries()) {
+    const declared = unique([...block.proof.features, ...block.proof.fusionIds, ...block.proof.sourceRefs]);
+    const paragraph = edition?.chapters.find(ch => ch.key === part.id)?.paragraphs[index];
+    blockReferences[`${part.id}/${block.id}`] = declared.flatMap(id => {
+      const matches = references.filter(r => r.id === id);
+      // Raw atom IDs are intentionally shared by profiles. Only the sentence's
+      // explicit author identity can disambiguate A/B; no name/prose guessing.
+      return matches.filter(ref => {
+        if (ref.scope === "pair") return true;
+        const owners = paragraph?.sentences.filter(s => [...s.individualEvidenceIds, ...s.mbtiSourceNodeIds, ...s.fusionIds].includes(id))
+          .flatMap(s => s.subjectPersonId ? [slot(s.subjectPersonId)] : []);
+        if (owners?.length) return owners.includes(ref.subject as "personA" | "personB");
+        return new Set(matches.map(m => m.subject)).size === 1;
+      });
+    });
+  }
+  return inspectEvidenceFoundation(c.result.narrative, { references, blockReferences });
 }
