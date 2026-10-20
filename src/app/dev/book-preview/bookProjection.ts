@@ -201,7 +201,7 @@ export function projectBook(e: V4RuntimeEvidence): BookData | null {
     overview.map = c.result.yearMap;
     overview.months = c.result.months.map(m => ({ month: m.month, title: m.title, theme: /[a-z]/i.test(m.strongestTheme) ? MAJOR_MEANINGS[m.god].theme : m.strongestTheme, time: timeLabel[m.time],
       ganji: m.focus.monthPillar.stem + m.focus.monthPillar.branch, gods: `${m.focus.stemTenGod} · ${m.focus.branchTenGod}`,
-      good: MAJOR_MEANINGS[m.god].gift, caution: m.action?.avoid, importance: m.plan?.importance, boundary: m.boundary,
+      good: MAJOR_MEANINGS[m.god].gift, ...(Object.hasOwn(m, "caution") ? m.caution ? { caution: m.caution } : {} : { caution: m.action?.avoid }), importance: m.plan?.importance, boundary: m.boundary,
       markers: unique(c.result.evidence.months.find(v => v.month === m.month)!.transit.accepted.flatMap(f => f.observations.map(o => o.label))), page: sectionPages.get(`month-${m.month}`)! }));
   }
   const used = new Set([...c.result.narrative.opening, ...Array.from(c.result.narrative.sections).flatMap(s => s.blocks)].flatMap(b => b.proof.features.map(featureKey)));

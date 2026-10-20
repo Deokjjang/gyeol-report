@@ -1,7 +1,6 @@
 import type { TenGod } from "../report-knowledge/annualFortuneTypes";
 import { withKoreanParticle } from "../report-knowledge/koreanCopyUtils";
 import { annualNarrativeEvidence, type AnnualClock, type AnnualEvidence } from "./annualEvidence";
-import { getAnnualFortuneSeoulDateParts } from "../report-knowledge/annualFortuneYearRules";
 import { annualMonthNarrative, type AnnualEditorialState } from "./annualMonthNarrative";
 import { majorContext } from "./majorContext";
 import { MAJOR_MEANINGS } from "./majorMaterials";
@@ -57,17 +56,16 @@ export async function composeAnnualFortuneNarrative(payload: unknown, clock: Ann
   if (longGod) opening.push(b("annual-long-view", `${e.time === "past" ? "그해 초반의 큰 배경을 돌아보면" : e.time === "future" ? "그해 초반의 긴 흐름에서는" : "지금의 더 큰 배경에서는"} ${mainPeriod.cycles[0].cycle.ganji} 대운의 ${withKoreanParticle(longGod, "object")} 읽습니다. 이 대운에서는 ${withKoreanParticle(`‘${MAJOR_MEANINGS[longGod].theme}’`, "object")} 중심에 놓습니다. ${god === longGod ? "한 해도 같은 주제를 비추니 오래 해온 선택을 더 선명하게 볼 만합니다." : `한 해의 ${particle(meaning.theme, "은", "는")} 그 길 안에서 새롭게 다뤄볼 부분입니다.`}`));
   const sections: NarrativeSection[] = [];
   const crossBlocks = e.crossPeriods.map((p, i) => {
-    const at = (kst: string) => `${Number(kst.slice(5, 7))}월 ${Number(kst.slice(8, 10))}일 ${kst.slice(11, 19)} KST`;
-    const end = getAnnualFortuneSeoulDateParts(new Date(Date.parse(p.endKstExclusive) - 1));
-    const range = p.endKstExclusive.slice(0, 4) === String(e.selectedYear)
-      ? `${at(p.startKst)}부터 ${at(p.endKstExclusive)} 직전까지`
-      : `${at(p.startKst)}부터 ${end.month}월 ${end.day}일까지`;
-    const label = `${range}${p.time === "past" ? "의 흐름을 돌아보면" : p.time === "future" ? "의 흐름을 내다보면" : " 이어지는 지금 흐름에서는"}`;
+    const effectiveBefore = e.crossPeriods[i - 1]?.segment.effectiveAnnualPillar;
+    const annualBoundary = effectiveBefore && (effectiveBefore.stem !== p.segment.effectiveAnnualPillar.stem || effectiveBefore.branch !== p.segment.effectiveAnnualPillar.branch);
+    const label = i === 0 ? "새해 달력을 펼친 초반에는"
+      : annualBoundary ? "입춘을 지난 뒤에는"
+      : `${Number(p.startKst.slice(5, 7))}월 ${Number(p.startKst.slice(8, 10))}일 무렵, 큰 배경이 바뀌는 때에는`;
     const effective = p.segment.effectiveAnnualPillar.stem + p.segment.effectiveAnnualPillar.branch;
     const carryover = effective !== e.raw.annualGanji.ganji;
     const text = carryover ? `새 달력을 펼쳐도 ${particle(MAJOR_MEANINGS[p.annualGod].theme, "을", "를")} 다루던 앞선 흐름이 잠시 이어집니다. ${p.cycles[0] ? `큰 배경인 ${particle(MAJOR_MEANINGS[p.cycles[0].god].theme, "도", "도")} 이 구간에서는 그대로입니다. ` : ""}2월 초를 지나며 한 해의 관심이 바뀌므로 1월부터 모든 것을 새로 정할 필요는 없습니다.` : crossText(p);
     const period = `${effective} 세운은 ${p.annualGod}${p.segment.activeDayunContext.status === "active" && p.cycles[0] ? `, ${p.cycles[0].cycle.ganji} 대운은 ${p.cycles[0].god}` : ""}의 흐름입니다.`;
-    return paragraph(`dayun-cross-${i}`, `${label}, ${period} ${text}`, proof([], [], [], p.sourceRefs));
+    return paragraph(`dayun-cross-${i}`, `${label} ${period} ${text}`, proof([], [], [], p.sourceRefs));
   });
   sections.push(section("dayun-cross", "오래 가는 흐름과 한 해의 욕심이 만나는 자리", crossBlocks));
   const branch = MAJOR_MEANINGS[branchGod];
@@ -91,14 +89,14 @@ export async function composeAnnualFortuneNarrative(payload: unknown, clock: Ann
     b("final-focus", `${e.input.name}님에게 ${e.selectedYear}년은 ${particle(meaning.theme, "을", "를")} 내 방식으로 다뤄보는 한 해입니다. ${particle(c.noun, "을", "를")} 남의 성적표와만 비교하지 않으면 내가 가진 실력의 쓰임도 더 넓게 보입니다.`),
     ...(pillar && strength ? [paragraph("final-natal", `${strength.text} 한 해의 분위기가 달라져도 이 바탕까지 새로 만들어야 하는 것은 아닙니다.`, proof([pillar], [strength]), "positive")] : []),
     b("final-release", `${particle(meaning.cost, "은", "는")} 알아두되 한 해 전체의 이름으로 삼을 필요는 없습니다. ${particle(meaning.gift, "을", "를")} 써볼 장면도 같은 시간 안에 있습니다.`),
-    b("final-carry", `${e.selectedYear + 1}년으로 가져갈 것은 더 긴 할 일 목록보다 ${particle(c.craft, "을", "를")} 어디에 쓰면 좋았는지 아는 경험입니다. 잘한 일과 나에게 편한 사람을 함께 남기면 다음 선택의 출발점도 달라집니다.`),
+    paragraph("final-carry", `3월의 ‘${MAJOR_MEANINGS[months[2].god].work}’, 6월의 ‘${MAJOR_MEANINGS[months[5].god].work}’, 12월의 ‘${MAJOR_MEANINGS[months[11].god].work}’는 서로 다른 질문입니다. 이 흐름에 ${withKoreanParticle(`‘${c.craft}’`, "object")} 써볼 장면이 있었다면, ${e.selectedYear + 1}년에는 어떤 방식이 나에게 편했는지 가져갈 수 있습니다. 모든 달을 같은 속도로 잘 보내야만 내 것이 남는 것은 아닙니다.`, proof([], [], [], [...e.sourceRefs, ...c.provenance, ...[months[2], months[5], months[11]].flatMap(m => m.provenance)])),
   ];
   sections.push(section("final", e.time === "past" ? `${e.selectedYear}년에서 가져갈 배움` : e.time === "future" ? `${e.selectedYear}년을 준비하는 기준` : "올해를 잘 쓰는 핵심", finalBlocks));
   const narrative = { version: "v4-annual-fortune-narrative-1" as const,
     headline: `${e.input.name}님의 ${e.selectedYear}년 — ${withKoreanParticle(meaning.theme, "object")} ${c.noun}에 담는 해`,
     opening, sections, finalLine: `${e.selectedYear}년, ${year.final}.`, finalProof: source };
   const allocated = composeEvidenceChapters(e.input, e.materials, narrative, "annual");
-  const composed = { ...allocated, narrative: { ...allocated.narrative,
+  const composed = { ...allocated, writerVersion: "annual-full-content-refinement-01-v2", narrative: { ...allocated.narrative,
     opening: separateAnnualChapter("core", allocated.narrative.opening, e.materials, c),
     sections: allocated.narrative.sections.map(s => ["dayun-cross", "fortune", "annual-relationship"].includes(s.id)
       ? { ...s, blocks: separateAnnualChapter(s.id, s.blocks, e.materials, c) } : s),

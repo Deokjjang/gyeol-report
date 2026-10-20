@@ -1,10 +1,11 @@
+import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { beforeAll, expect, it, vi } from "vitest";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 vi.mock("server-only", () => ({}));
 import locks from "./annualReaderQualityLocks.json";
 import { MAJOR_SAFETY_CASES, MAJOR_SAFETY_CLOCK as clock } from "./majorEditorialSafetyFixtures";
-import { RUNTIME_FIXTURES } from "./runtimeFixtures";
+import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "./runtimeFixtures";
 import { generateV4ShadowReport } from "../../../src/lib/interpretation-v4/runtimeShadow";
 import { v4Digest, validateV4Publication, type V4RuntimeEvidence } from "../../../src/lib/interpretation-v4/runtimeProjection";
 import { annualMonthInteractions } from "../../../src/lib/interpretation-v4/annualInteractionReading";
@@ -130,8 +131,9 @@ it("2025 is retrospective; 2027 is explicitly offline and still rejected operati
 
 it("the reader's year ranges meet at the exact Lichun instant without claiming an overlapping day", () => {
   const blocks = samples.get("H")!.r.narrative.sections.find(s => s.id === "dayun-cross")!.blocks;
-  expect(blocks.find(b => b.id === "dayun-cross-0")!.text).toContain("2월 4일 05:02:08 KST 직전까지");
-  expect(blocks.find(b => b.id === "dayun-cross-1")!.text).toMatch(/^2월 4일 05:02:08 KST부터/);
+  expect(blocks.find(b => b.id === "dayun-cross-0")!.text).toContain("앞선 흐름이 잠시 이어집니다");
+  expect(blocks.find(b => b.id === "dayun-cross-1")!.text).toMatch(/^입춘을 지난 뒤에는/);
+  expect(blocks.map(b => b.text).join(" ")).not.toMatch(/KST|직전|\+09:00/);
   const boundary = samples.get("H")!.r.evidence.months[1].segments.find(s => s.boundaryReason.some(r => r.startsWith("jie:")))!;
   expect(boundary.startKst).toBe("2026-02-04T05:02:08+09:00");
 });
@@ -150,9 +152,10 @@ it.each(["H", "A", "B", "C", "D", "E", "F"])("%s deterministic generation and lo
   if (id === "H") for (const page of book.pages) expect(renderToStaticMarkup(createElement(BookReader, { data: book, page, onPage() {}, onNote() {}, onShare() {} }))).not.toMatch(/NaN|undefined|sourceRefs|\[object Object\]/);
 }, 120000);
 
-it.each(locks.products)("protected $id exact base narrative, evidence and Book hashes", async lock => {
+it.each(locks.products)("protected $id current edition and original source foundations", async lock => {
   const f = RUNTIME_FIXTURES.find(f => f.id === lock.id)!;
-  const g = await generateV4ShadowReport(f.payload, clock);
+  const g = await generateV4ShadowReport(f.payload, SHADOW_CLOCK);
   if (!g.ok) return expect.unreachable();
-  expect([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))]).toEqual(lock.hashes);
+  expect([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
+  expectEditorialFoundations(g.evidencePacket as V4RuntimeEvidence, f.payload, SHADOW_CLOCK);
 }, 120000);

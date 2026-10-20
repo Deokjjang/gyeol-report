@@ -1,10 +1,10 @@
 {
-  "revision": "V4-SIX-PRODUCT-FULL-CONTENT-REFINEMENT-01-PHASE-E",
+  "revision": "V4-SIX-PRODUCT-FULL-CONTENT-REFINEMENT-01-PHASE-F",
   "groups": {
     "career": {
       "05-major-fortune": "c006c2999753e5456c3d7cb39b9e7fffc0f43cfd8ec0317cb5bc1a19f532ead2",
       "01-comprehensive": "529c4061ab0a85574497afad613be2af0df545612348967d64ac3f0be62fcb45",
-      "06-annual-fortune": "9b70bb5cfdd707995825f0236948a27fb4eaad0d09f07b4c2241f0bcd82205b4",
+      "06-annual-fortune": "cdbeff587f9156a7a8888d52b01300b4346d1c43e73de66e60d86d2be7cfc6dc",
       "04-compatibility": "e60af3410d1c1e4a9e9fa87a718197d8eccbe9e6e3b757dacd5c02107200913b",
       "03-love": "8883eb9d2ab5076f76f01dbd55477cb48d13f3ccdab5ca95c2f7ccd491ac2523"
     },
@@ -30,9 +30,9 @@
         "7d5e48122041e8a96a80f295e93be632355ddd320ad97aa312f48a86c724768a"
       ],
       "06-annual-fortune": [
-        "f7d71bcd8217fb336d0a22cf07b98d034c50969e1071573b34df4366c8be7318",
-        "fa8c1ef0294e4692dc514169a220e3cb07eb93b95f0bf5034241d7fc6890b5da",
-        "417f7d19f24290596553082972f70ad481a18dc73396c58bd4f9afd25bb391a4"
+        "1d06951465399af7b6ac06561d1d4cc48309052f68b924188023d0d0cfcec4e7",
+        "fba06e67a82058a9cb476c546c2ae4b4f6e5f95521861dd2fb2914e3d30fdfbc",
+        "e398a3eb479ba99e85b4734878bfb6de507c8740498d01baf6049a3cf7001061"
       ]
     },
     "compatibilityQuality": {
@@ -57,9 +57,9 @@
         "7d5e48122041e8a96a80f295e93be632355ddd320ad97aa312f48a86c724768a"
       ],
       "06-annual-fortune": [
-        "f7d71bcd8217fb336d0a22cf07b98d034c50969e1071573b34df4366c8be7318",
-        "fa8c1ef0294e4692dc514169a220e3cb07eb93b95f0bf5034241d7fc6890b5da",
-        "417f7d19f24290596553082972f70ad481a18dc73396c58bd4f9afd25bb391a4"
+        "1d06951465399af7b6ac06561d1d4cc48309052f68b924188023d0d0cfcec4e7",
+        "fba06e67a82058a9cb476c546c2ae4b4f6e5f95521861dd2fb2914e3d30fdfbc",
+        "e398a3eb479ba99e85b4734878bfb6de507c8740498d01baf6049a3cf7001061"
       ]
     },
     "compatibilityRelease": {
@@ -84,9 +84,9 @@
         "e3c84af6a67a9d90e88a1ee8dcaaa98afffd6e5d050dd8cae05784f2e390899c"
       ],
       "annual": [
-        "e1622dd6b0af9f5ddbc4c27a0e7847472a34c87093f5e3a2788313aa82dcf796",
-        "ad6985e6462cd1d234887d85e27802ae8c77a8a84dffc730bb16b935e187f8ab",
-        "d03ce392d43b29a9f3dbb4b187dea8c6b96fae3bed1ca977dae377c09f02460c"
+        "90c0e2ce5120b4580e08d49aeeaae79cf89f94296ebd7ab0401e6a27f5e75ba2",
+        "cfb96a0a7590292e7e1fbd3e625dc672429819009e6eb621ab50051e8efeda84",
+        "46b8a98a82e2b780de7e6999e07c58b31ef6b70ab8ba3afb6a517507b5040c0a"
       ]
     },
     "major": {
@@ -124,9 +124,9 @@
         "e3c84af6a67a9d90e88a1ee8dcaaa98afffd6e5d050dd8cae05784f2e390899c"
       ],
       "annual": [
-        "e1622dd6b0af9f5ddbc4c27a0e7847472a34c87093f5e3a2788313aa82dcf796",
-        "ad6985e6462cd1d234887d85e27802ae8c77a8a84dffc730bb16b935e187f8ab",
-        "d03ce392d43b29a9f3dbb4b187dea8c6b96fae3bed1ca977dae377c09f02460c"
+        "90c0e2ce5120b4580e08d49aeeaae79cf89f94296ebd7ab0401e6a27f5e75ba2",
+        "cfb96a0a7590292e7e1fbd3e625dc672429819009e6eb621ab50051e8efeda84",
+        "46b8a98a82e2b780de7e6999e07c58b31ef6b70ab8ba3afb6a517507b5040c0a"
       ]
     }
   },

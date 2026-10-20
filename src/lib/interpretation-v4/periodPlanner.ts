@@ -54,10 +54,15 @@ export function annualYearMap(e: AnnualEvidence) {
 export function monthBoundaryDescription(m: AnnualMonthEvidence) {
   const distinct = [...new Set(m.segments.map(s => s.monthPillar.stem + s.monthPillar.branch))];
   const next = m.segments.find(s => s.monthPillar.stem + s.monthPillar.branch !== distinct[0]);
-  return { label: `${m.month}월 운 · 절기 기준`, explanation: next
-    ? `${m.month}월 ${Number(next.startKst.slice(8, 10))}일 절기 전후로 ${distinct[0]}에서 ${next.monthPillar.stem}${next.monthPillar.branch}로 바뀝니다. 달력의 1일에 명리월이 바뀌는 것은 아니에요.`
-    : "이 달은 표시된 절기 구간의 흐름으로 읽습니다.",
+  const jie = next?.boundaryReason.find(reason => reason.startsWith("jie:"))?.slice(4);
+  const focusedBefore = next && Date.parse(m.focus.startKst) < Date.parse(next.startKst);
+  return { label: `${m.month}월 · 흐름이 바뀌는 때`, explanation: next
+    ? `${m.month}월 초에는 앞선 월운이 이어지고, ${jie || "월초의 절기"} 무렵부터 새 월운으로 넘어갑니다. ${focusedBefore ? "지금 이 장은 그 경계를 지나기 전의 흐름을 먼저 읽고 있어요." : "이 장에서는 그 경계를 지난 뒤의 흐름을 중심으로 읽습니다."}`
+    : "달력의 1일과 월운이 달라지는 날은 같지 않습니다. 이 장은 실제로 적용되는 흐름에 맞춰 읽습니다.",
+    // Exact instants remain in the original packet and saved diagnostic data.
+    // The reader does not enumerate this backend ledger.
     segments: m.segments.map(s => ({ start: s.startKst, end: s.endKstExclusive, ganji: s.monthPillar.stem + s.monthPillar.branch })) };
+
 }
 
 export function friendlyTransition(label: string) {

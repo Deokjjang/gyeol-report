@@ -1,7 +1,8 @@
+import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
 import { beforeAll, expect, it } from "vitest";
 import locks from "./annualEditorialQualityLocks.json";
 import { MAJOR_SAFETY_CASES, MAJOR_SAFETY_CLOCK } from "./majorEditorialSafetyFixtures";
-import { RUNTIME_FIXTURES } from "./runtimeFixtures";
+import { RUNTIME_FIXTURES, SHADOW_CLOCK } from "./runtimeFixtures";
 import { generateV4ShadowReport } from "../../../src/lib/interpretation-v4/runtimeShadow";
 import { v4Digest, validateV4Publication, type V4RuntimeEvidence } from "../../../src/lib/interpretation-v4/runtimeProjection";
 import { annualMonthInteractions } from "../../../src/lib/interpretation-v4/annualInteractionReading";
@@ -162,9 +163,10 @@ it.each([0, 1, 2, 3, 4, 5])("A-F %s deterministic publication and immutable JSON
   expect(v4Digest(saved)).toBe(digest);
 }, 120000);
 
-it.each(locks.products)("protected product $id matches the exact base text/evidence/Book", async lock => {
+it.each(locks.products)("protected product $id keeps current copy receipts and original source facts", async lock => {
   const f = RUNTIME_FIXTURES.find(f => f.id === lock.id)!;
-  const g = await generateV4ShadowReport(f.payload, MAJOR_SAFETY_CLOCK);
+  const g = await generateV4ShadowReport(f.payload, SHADOW_CLOCK);
   if (!g.ok) return expect.unreachable();
-  expect([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))]).toEqual(lock.hashes);
+  expect([v4Digest(g.draft), v4Digest(g.evidencePacket), v4Digest(projectBook(g.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.runtime[f.id as keyof typeof editorialLocks.groups.runtime]);
+  expectEditorialFoundations(g.evidencePacket as V4RuntimeEvidence, f.payload, SHADOW_CLOCK);
 }, 120000);
