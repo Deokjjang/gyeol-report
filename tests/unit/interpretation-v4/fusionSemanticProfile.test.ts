@@ -300,3 +300,21 @@ describe("source boundaries, circularity, determinism and product lock", () => {
     expect(FUSION_RANK_POLICY.specificity).toEqual({ REINFORCE: 1, TENSION: 1.15, COMPLEMENT: 1.1 });
   });
 });
+
+describe("foundation source identity at Fusion publication", () => {
+  it("rejects an existing source ID attached to a forged scope, contribution or proof list", () => {
+    const m = myProfile([myAtom("a", { PRECISION: 2 })]), b = realMbti("ISTJ");
+    const c = fuse(m, b).reinforce.find(c => c.primaryAxes.includes("PRECISION"))!;
+    expect(c).toBeDefined();
+    expect(validateFusionCandidates([c], m, b)).toEqual([]);
+    const changed = structuredClone(c);
+    changed.myeongli.side.score += 1;
+    expect(validateFusionCandidates([changed], m, b).map(e => e.code)).toContain("FUSION_SOURCE_SIDE_MISMATCH");
+    const wrongContext = structuredClone(c);
+    wrongContext.contextFit = .01;
+    expect(validateFusionCandidates([wrongContext], m, b).map(e => e.code)).toContain("FUSION_SOURCE_CONTEXT_MISMATCH");
+    const wrongProof = structuredClone(c);
+    wrongProof.mbti.actualSourceEvidenceIds = [];
+    expect(validateFusionCandidates([wrongProof], m, b).map(e => e.code)).toContain("FUSION_PROOF_IDENTITY_MISMATCH");
+  });
+});
