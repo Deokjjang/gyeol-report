@@ -4,6 +4,7 @@ import { analyzeV4Strength, structureContext } from "./strength";
 import { MATERIAL_BY_FEATURE } from "./materialRegistry";
 import { depthFeature } from "./materialDepth";
 import { FUSION_RULES } from "./fusionRules";
+import { compareMaterialIndependence } from "./evidenceFoundation";
 import type { SajuCalcResult } from "../saju/types";
 import type { MaterialPacket } from "./narrativeTypes";
 import type { BoundMaterial } from "./materialPacket";
@@ -64,9 +65,10 @@ export function assertionPermission(roots: readonly BoundMaterial[], fusion: Fus
   const supported = tags.map(theme => {
     const independent: BoundMaterial[] = [];
     for (const m of roots.filter(m => MATERIAL_BY_FEATURE.get(m.feature)?.semanticTags.includes(theme))) {
-      if (independent.some(p => p.feature === m.feature ||
-        (["dayMaster", "dayPillar"].includes(p.material.category) && ["dayMaster", "dayPillar"].includes(m.material.category)) ||
-        p.lineage.some(ref => m.lineage.includes(ref)))) continue;
+      if (independent.some(p => compareMaterialIndependence(
+        { feature: p.feature, category: p.material.category, lineage: p.lineage },
+        { feature: m.feature, category: m.material.category, lineage: m.lineage },
+      ) !== "independent")) continue;
       independent.push(m);
     }
     return { theme, independentFeatures: independent.map(m => m.feature) };
@@ -102,7 +104,16 @@ export function planChapter(pool: ContentEvidencePool, state: ContentSelectionSt
   const anchored = candidates.filter(m => anchors.includes(m.feature));
   const ordered = (anchors.length ? anchored : candidates).toSorted((a, b) => rank(a) - rank(b) || a.feature.localeCompare(b.feature));
   const first = ordered[0];
-  const second = ordered.find(m => m !== first && m.material.category !== first?.material.category) ?? ordered[1];
+  // Choose genuinely independent support when possible. A missing lineage is
+  // unknown, not evidence of independence; preserve the legacy fallback for
+  // chapters whose verified material pool provides no independent candidate.
+  const independentSecond = first && ordered.find(m => m !== first &&
+    compareMaterialIndependence(
+      { feature: first.feature, category: first.material.category, lineage: first.lineage },
+      { feature: m.feature, category: m.material.category, lineage: m.lineage },
+    ) === "independent" && m.material.category !== first.material.category);
+  const second = independentSecond ?? ordered.find(m => m !== first &&
+    m.material.category !== first?.material.category) ?? ordered[1];
   const roots = [first, second].filter((m): m is BoundMaterial => Boolean(m));
   const relevant = fusions.filter(f => f.kind === "complement" || f.myeongliEvidence.some(d => roots.some(m => m.feature === contentFeature(d.evidence.feature))));
   const fusion = relevant.toSorted((a, b) => (state.fusionUses.get(a.ruleId) ?? 0) - (state.fusionUses.get(b.ruleId) ?? 0) ||
