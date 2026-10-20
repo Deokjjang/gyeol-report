@@ -1,3 +1,6 @@
+import { buildContentEvidencePool, createContentSelection, planChapter, fusionDomains } from "../../../src/lib/interpretation-v4/contentEvidence";
+import { collectComprehensiveCandidates } from "../../../src/lib/interpretation-v4/comprehensiveCandidateAdapter";
+import { schedulerInputs } from "./comprehensiveSchedulerFixtures";
 import { describe, expect, it } from "vitest";
 import { buildFoundationReferences, materialFoundationReferences } from "../../../src/lib/interpretation-v4/evidenceFoundation";
 import { buildIntegratedMyeongliProfile } from "../../../src/lib/interpretation-v4/foundationIntegratedProfile";
@@ -41,5 +44,31 @@ describe("existing knowledge inventories at the real generation boundary", () =>
     const packet = buildMyeongliMaterialPacket(input), refs = materialFoundationReferences(packet);
     expect(refs.map(r => r.id)).toEqual(packet.selected.map(r => r.feature));
     expect(refs.every(r => r.dependencies.length && r.lineage.length && r.sourceRefs.length)).toBe(true);
+  });
+});
+
+describe("actual content selection consumes the foundation contract", () => {
+  it("keeps foreign-person and temporal observations out of natal chapter roots", () => {
+    const packet = buildMyeongliMaterialPacket(input), pool = buildContentEvidencePool(input.calculation, packet);
+    const normal = planChapter(pool, createContentSelection(), "work", "work");
+    expect(normal.roots.length).toBeGreaterThan(0);
+    const wrongPerson = { ...pool, materials: pool.materials.map(m => ({ ...m, evidence: m.evidence.map(d => ({ ...d, evidence: { ...d.evidence, subject: "personB" as const } })) })) };
+    expect(planChapter(wrongPerson, createContentSelection(), "work", "work").roots).toEqual([]);
+    const wrongTime = { ...pool, materials: pool.materials.map(m => ({ ...m, evidence: m.evidence.map(d => ({ ...d, evidence: { ...d.evidence, period: "2027" } })) })) };
+    expect(planChapter(wrongTime, createContentSelection(), "work", "work").roots).toEqual([]);
+    const fusion = packet.fusions[0];
+    expect(fusion).toBeDefined();
+    expect(fusionDomains({ ...fusion, ruleId: "unregistered-rule" })).toEqual([]);
+  });
+  it("retains unresolved upstream IDs and excludes their candidates instead of laundering the missing root", () => {
+    const profiles = schedulerInputs();
+    const baseline = collectComprehensiveCandidates(profiles);
+    expect(baseline.some(c => c.primaryEligible && !c.invalidReasons.length)).toBe(true);
+    const changed = structuredClone(profiles);
+    changed.claims.candidates[0].evidence.myeongliEvidenceIds.push("missing:actual-observation");
+    const row = collectComprehensiveCandidates(changed).find(c => c.sourceType === "CLAIM" && c.sourceId === changed.claims.candidates[0].id)!;
+    expect(row.evidenceIds).toContain("missing:actual-observation");
+    expect(row.primaryEligible).toBe(false);
+    expect(row.invalidReasons).toContain("UNRESOLVED_SOURCE_DEPENDENCY");
   });
 });
