@@ -1,6 +1,6 @@
 import type { Domain } from "./types";
 import type { RelationshipStatus } from "../report-generation/reportInputTypes";
-export const LOVE_RELEASE_VERSION = "love-editorial-quality-fix-01-v1" as const;
+export const LOVE_RELEASE_VERSION = "love-full-content-refinement-01-v2" as const;
 const chapter = (id: string, key: string, title: string, domain: Domain, rows: readonly (readonly [string, string, string, string, string])[]) => ({
   id, key, title, domain, paragraphs: rows.map(([purpose, ...sentences], i) => ({ id: `P${i + 1}`, purpose, sentences })),
 });

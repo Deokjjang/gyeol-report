@@ -46,4 +46,25 @@ describe("full content refinement uses the actual publication path", () => {
     expect(g.externalCalls).toEqual([]);
   }, 120000);
 
+  it("dating love keeps the whole book and separates first charm, private joy and recovery", async () => {
+    const payload = singleRuntimeInput("love_marriage_child", "love-marriage-child", NARRATIVE_FIXTURES[0]);
+    Object.assign(payload.person, { name: "검수 연애인", birthDate: "1998-07-21", birthTime: "22:15", mbtiType: "ESFP" });
+    Object.assign(payload.userContext, { jobStatus: "employee", detailJob: "문화행사 기획자", relationshipStatus: "dating" });
+    const g = await generateV4ShadowReport(payload, SHADOW_CLOCK);
+    expect(g.ok).toBe(true); if (!g.ok) return;
+    const e = g.evidencePacket as V4RuntimeEvidence;
+    if (e.composition.product !== "love_marriage_child" || !("integration" in e.composition.result)) return expect.unreachable();
+    const d = e.composition.result.integration.readerEdition;
+    expect(e.composition.result.integration.readerValidation.hardErrors).toEqual([]);
+    expect(d.chapters.flatMap(c => c.paragraphs)).toHaveLength(36);
+    const first = d.chapters.find(c => c.id === "CH02")!.paragraphs[0];
+    const privateSelf = d.chapters.find(c => c.id === "CH05")!.paragraphs[0];
+    expect(first.text).not.toBe(privateSelf.text);
+    expect(privateSelf.text).toMatch(/즐거|반가|기쁨|재미|친밀|설렘/);
+    const text = d.chapters.flatMap(c => c.paragraphs.map(p => p.text)).join("\n");
+    expect(text).not.toMatch(/지금 솔로|당신의 자녀는|당신의 배우자는/);
+    expect(d.chapters.find(c => c.id === "CH06")?.paragraphs).toHaveLength(4);
+    expect(projectBook(e)?.pages.at(-1)?.kind).toBe("back");
+  }, 120000);
+
 });

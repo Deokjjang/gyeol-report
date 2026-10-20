@@ -11,7 +11,7 @@ import { getMbtiSourceProfile } from "../report-knowledge/mbti/sourceRuntimeAdap
 import { fusionHumanSurface } from "./narrativeHumanSurface";
 import { mbtiHumanBehavior } from "./narrativeHumanOutcome";
 import { LOVE_PARENTING_RISK, LOVE_PARENTING_RISK_TRAITS, LOVE_PARENTING_STRENGTHS } from "./loveReleaseParenting";
-import { LOVE_RELATIONSHIP_SCENES, LOVE_QUESTION_DETAILS } from "./loveReleaseApplications";
+import { LOVE_RELATIONSHIP_SCENES, LOVE_QUESTION_DETAILS, LOVE_JOY_SCENES, LOVE_CLOSE_JOY, LOVE_AFFECTION_PORTRAIT } from "./loveReleaseApplications";
 type Refs = { source: string; roots?: string[]; nodes?: string[]; fusion?: string[]; theme: string; material: string; refs: readonly string[]; row?: LoveReleaseSource; recall?: boolean };
 type Line = { text: string; refs: Refs };
 type Material = (typeof LOVE_RELEASE_MATERIALS)[string];
@@ -27,6 +27,7 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
   const draft: LoveReleaseDraft = { version: LOVE_RELEASE_VERSION, chapters: [], bodyLength: 0, shortages: [] };
   const retained: Record<string, NarrativeProof> = {};
   const context = LOVE_RELEASE_CONTEXT[input.context.relationshipStatus], usedFusions = new Set<string>();
+  const usedMbtiNodes = new Set<string>();
   let current: LoveReleaseDraft["chapters"][number], main: LoveReleaseSource | undefined, risk: LoveReleaseSource | undefined;
   const refs = (r: LoveReleaseSource, key: string, recall = false): Refs => ({ source: r.candidate.id, roots: [r.atom.id], nodes: [], fusion: [], theme: r.candidate.semanticTheme, material: `love:${r.facet}:${key}`, refs: [r.candidate.sourceId], row: r, recall });
   const termKey = (r: LoveReleaseSource) => r.atom.easyMeaning;
@@ -46,7 +47,7 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
     const continuing = ["dating", "marriage_preparing", "married"].includes(input.context.relationshipStatus);
     const purpose = current.id === "CH04" && continuing ? ["지금의 관계에 관심을 전하는 나", contract.purpose, "익숙한 사이에서 생길 수 있는 오해", "지금의 관심을 새로 전할 때"][p] : contract.purpose;
     current.paragraphs.push({ id, purpose, text: actual.map(l => l.text).join(" "), sentences });
-    actual.forEach(l => seen.add(l.text)); return true;
+    actual.forEach(l => { seen.add(l.text); l.refs.nodes?.forEach(id => usedMbtiNodes.add(id)); }); return true;
   }
   function eligible(preferred: readonly string[], factBomb: boolean, recall: boolean, reuse = false) {
     return pool.filter(r => r.candidate.factBomb === factBomb && (!recall || chosen.some(s => s.atom.id === r.atom.id && s.facet === r.facet))
@@ -60,12 +61,34 @@ export function renderLoveRelease(input: NarrativeInput, view: RelationshipView,
         || (profiles.mbti.generalAxes[b.axis] ?? 0) * b.direction - (profiles.mbti.generalAxes[a.axis] ?? 0) * a.direction
         || (usedRoots.get(a.atom.id) ?? 0) - (usedRoots.get(b.atom.id) ?? 0) || b.atom.weight - a.atom.weight || a.candidate.id.localeCompare(b.candidate.id));
   }
+  const mbtiReading = (n: RelationshipView["nodes"][number]) => reviewedMbtiBehavior(n) ?? (typeof n.value === "string" ? loveSentences(n.value)[0] : undefined);
   function application(p: number, key: string, make: (m: Material, r: LoveReleaseSource) => string[], preferred: readonly string[] = [], factBomb = false, recall = false) {
     const fresh = eligible(preferred, factBomb, recall);
     // Novelty limits are not missing evidence. If they exhaust a supported
     // question, reuse a verified source with this question's existing copy.
     for (const r of fresh.length ? fresh : eligible(preferred, factBomb, recall, true)) {
-      const lines = make(LOVE_RELEASE_MATERIALS[r.facet], r).flatMap(text => loveSentences(text).map(text => ({ text, refs: refs(r, key, recall) })));
+      const texts = make(LOVE_RELEASE_MATERIALS[r.facet], r);
+      const scene = LOVE_JOY_SCENES[r.facet];
+      if (key === "expression") texts[0] = LOVE_AFFECTION_PORTRAIT[r.facet][0];
+      if (key === "intimate-need") texts[2] = LOVE_AFFECTION_PORTRAIT[r.facet][1];
+      if (key === "love-value") texts[texts.length - 1] = LOVE_AFFECTION_PORTRAIT[r.facet][2];
+      if (key === "start-choice") texts[0] = context.delight;
+      if (key === "first-charm") texts[2] = scene.first;
+      if (key === "close-charm") texts[2] = scene.private;
+      if (key === "charm-use") texts[2] = scene.joy;
+      if (key === "attracted") { texts[0] = scene.attraction; texts.push(LOVE_RELEASE_MATERIALS[r.facet].partner); }
+      if (key === "private-self") texts[2] = LOVE_CLOSE_JOY[r.facet][0];
+      if (key === "lasting-strength") texts[2] = LOVE_CLOSE_JOY[r.facet][1];
+      const emptyReason = texts.findIndex(t => !t.trim());
+      const node = !factBomb && !recall && usedMbtiNodes.size < 7 && emptyReason >= 0 ? view.nodes.find(n => !usedMbtiNodes.has(n.id)
+        && n.sourceDomain === "LOVE" && n.classification === "SCORING_SEMANTIC" && n.id.endsWith(":plainKo") && ["direct", "inferred"].includes(n.sourceCoverage ?? "") && mbtiReading(n)
+        && profiles.mbti.annotations.some(a => a.sourceNodeId === n.id && a.annotationConfidence !== "REFERENCE_ONLY" && (a.axes[r.axis] ?? 0) * r.direction > 0)) : undefined;
+      const reading = node && mbtiReading(node);
+      const mbtiText = reading ? `${profiles.mbti.mbtiType}의 연애 성향에서는 ${reading}` : undefined;
+      if (mbtiText) texts[emptyReason] = mbtiText;
+      const lines = texts.flatMap(text => loveSentences(text).map(text => ({ text, refs: node && text === mbtiText
+        ? { source: node.id, nodes: [node.id], theme: r.candidate.semanticTheme, material: `love:reviewed-mbti:${key}`, refs: [node.id] }
+        : refs(r, key, recall) })));
       if (!add(p, lines)) continue;
       used.set(r.facet, (used.get(r.facet) ?? 0) + 1); usedRoots.set(r.atom.id, (usedRoots.get(r.atom.id) ?? 0) + 1); terms.add(termKey(r)); chosen.push(r); return r;
     }

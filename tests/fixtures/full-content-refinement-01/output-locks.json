@@ -1,12 +1,12 @@
 {
-  "revision": "V4-SIX-PRODUCT-FULL-CONTENT-REFINEMENT-01:PHASE-B",
+  "revision": "V4-SIX-PRODUCT-FULL-CONTENT-REFINEMENT-01:PHASE-C",
   "groups": {
     "career": {
       "05-major-fortune": "7536fb94e0329d09ecf38a3fe3484cd7e7749ff5928417ba9eb56f9857801e1b",
       "01-comprehensive": "529c4061ab0a85574497afad613be2af0df545612348967d64ac3f0be62fcb45",
       "06-annual-fortune": "9b70bb5cfdd707995825f0236948a27fb4eaad0d09f07b4c2241f0bcd82205b4",
       "04-compatibility": "3fcec89bac986a6dc5209de0adaa6f8ad8057dd4e9fccace855df979eb161b41",
-      "03-love": "dcce55906db9d3a907bc666e2924863292604fcb8ce86e41ab1c57a8aad85720"
+      "03-love": "8883eb9d2ab5076f76f01dbd55477cb48d13f3ccdab5ca95c2f7ccd491ac2523"
     },
     "love": {
       "01-comprehensive": [
@@ -47,9 +47,9 @@
         "50aee8a923d826f028469d65f2ae9b5d78274c68fcd3a85750ef42ef36f6fd9f"
       ],
       "03-love": [
-        "eea02ec4c81ee9e9331348b7cc62f76293db830d23ebd68dfcd7ff004e4f5e21",
-        "fe824d4f890d2abe84b790d5d8ee0df0e0449a92ad6b0bf34428fbb9fe4d9b69",
-        "c2ea4d853b746d36983ecbaa5a6d92cad6b91dda5d4edd8c36361f6d4d20dc51"
+        "30acef96a3363baabd815203d6195d4b682bf6d8a9334c0ca9f7591c55462fa6",
+        "c49519ab85bc14d2e46fdbd2e4304727927f1d25469321732807fc1758a3f7b7",
+        "732ab94f4c739335c75a0bf83c19f13aeed66b2fcc9f4175465c24c2986197b6"
       ],
       "05-major-fortune": [
         "4e695f96492074aa37386a4fef49efa79399c946ecf8e6f19233c46da0869792",
@@ -74,9 +74,9 @@
         "fc40a07581a912fc4ae2e60219f1a6ffe0867b2da38169cc2589466e20b4e6f1"
       ],
       "love": [
-        "c31bc8ccfbfd7c384945286d254ce581cff01b3b5b8f6cdf5597c81bc83a4406",
-        "1af1bb6218f3a16bde0c180c2c15f3d8ea4b22a45f233b79ff938f8208fc3c4f",
-        "ba89007ce6d79f8729379701cded967f114448a9fd638a9241eafadc4e8a3516"
+        "39de1038c8d75e438f68160567bdb3a81780e2e13f79acff7174eb1bb91c81a3",
+        "56fdd906eed166484864135c19bad1dca1e695eb5f442a96106677d3149225c9",
+        "957be82a1dceb4aaa836fef0a5358dc2b2d1a11d4b576a3dcb8dcea604be2063"
       ],
       "major": [
         "d65e340cf8a92501e2a5d77eddb5fca7a3229a4e48f838f995cf24b7ff15f612",
