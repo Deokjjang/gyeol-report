@@ -21,7 +21,7 @@ import { buildV4LoveProduct } from "./loveProductAdapter";
 import { buildV4CompatibilityProduct } from "./compatibilityProductAdapter";
 import { buildV4MajorProduct } from "./majorProductAdapter";
 import { buildV4AnnualProduct } from "./annualProductAdapter";
-import { projectV4Composition, validateV4Publication, v4Digest, type V4Composition, type V4RuntimeEvidence } from "./runtimeProjection";
+import { projectV4Composition, validateV4Publication, v4Digest, stableV4Json, type V4Composition, type V4RuntimeEvidence } from "./runtimeProjection";
 import type { NarrativeInput } from "./narrativeTypes";
 import { inspectPublicationFoundation } from "./evidenceFoundation";
 
@@ -84,7 +84,7 @@ export async function generateV4ShadowReport(payload: unknown, clock: V4ShadowCl
     // New publications only: structural proof inspection does not recompute
     // historical Books or alter their stored snapshots. Review-only findings
     // remain offline diagnostics rather than customer-visible assertions.
-    const foundation = inspectPublicationFoundation(composition, input);
+    const foundation = inspectPublicationFoundation(composition, input, stableV4Json);
     if (foundation.issues.some(issue => issue.severity === "error")) return failure("V4_EVIDENCE_FOUNDATION_INVALID");
     const natalTableEvidence: Record<string, CanonicalNatalTableEvidence> = {};
     const mbtiTables: Record<string, MbtiCommonProfileTableData | null> = {};

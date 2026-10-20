@@ -1,3 +1,4 @@
+import { preFoundationEvidence } from "../../helpers/versionedEditorialLocks";
 import newIndexes from "../../fixtures/full-content-refinement-01/compatibility-indexes.json";
 import { buildLegacyCompatibilityIndex } from "../../../src/lib/interpretation-v4/compatibilityIndexLegacy";
 import { editorialLocks, expectEditorialFoundations } from "./productWideAssertions";
@@ -118,6 +119,6 @@ describe("Compatibility actual quality edition at c048218 base", () => {
   it.each(fixtures.otherProducts)("$id reviewed common manuscript/Book retains engine baseline",async f=>{
     const g=await generateV4ShadowReport(f.input,clock);if(!g.ok)return expect.unreachable();
     expectEditorialFoundations(g.evidencePacket as V4RuntimeEvidence,f.input,clock);
-    expect([g.draft,g.evidencePacket,projectBook(g.evidencePacket as V4RuntimeEvidence)].map(v4Digest)).toEqual(editorialLocks.groups.compatibilityQuality[f.id as keyof typeof editorialLocks.groups.compatibilityQuality]);
+    expect([g.draft,preFoundationEvidence(g.evidencePacket as V4RuntimeEvidence),projectBook(g.evidencePacket as V4RuntimeEvidence)].map(v4Digest)).toEqual(editorialLocks.groups.compatibilityQuality[f.id as keyof typeof editorialLocks.groups.compatibilityQuality]);
   },120000);
 });

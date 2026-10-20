@@ -1,0 +1,689 @@
+{
+  "fullRunComparisonsAreNotRewritten": true,
+  "focusedRechecks": {
+    "version-recheck": {
+      "numPassedTests": 33,
+      "numFailedTests": 6,
+      "numPendingTests": 5438
+    },
+    "annual-version-recheck": {
+      "numPassedTests": 4,
+      "numFailedTests": 1,
+      "numPendingTests": 26
+    },
+    "runtime-recheck": {
+      "numPassedTests": 104,
+      "numFailedTests": 2,
+      "numPendingTests": 0
+    },
+    "final-foundation": {
+      "numPassedTests": 61,
+      "numFailedTests": 0,
+      "numPendingTests": 0
+    }
+  },
+  "filteredTestsAreNotCountedAsPassed": true,
+  "newFailuresFromInitialFullRun": 39,
+  "newFailureResolution": [
+    {
+      "file": "tests/unit/account/library.test.tsx",
+      "test": "real six-product local generation + ownership fixtures A Full/Love/Annual; B Career; guest Major claims once; shared Compatibility read-only",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/measurement.test.ts",
+      "test": "12B server campaign and measurement authority ticket publication in all six products is real/complete, never Purchase; stable facts",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualEditorialQuality.test.ts",
+      "test": "protected product 'comprehensive' keeps current copy receipts and original source facts",
+      "latestStatus": "passed",
+      "recheck": "annual-version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualEditorialQuality.test.ts",
+      "test": "protected product 'career' keeps current copy receipts and original source facts",
+      "latestStatus": "passed",
+      "recheck": "annual-version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualEditorialQuality.test.ts",
+      "test": "protected product 'love' keeps current copy receipts and original source facts",
+      "latestStatus": "passed",
+      "recheck": "annual-version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualEditorialQuality.test.ts",
+      "test": "protected product 'compatibility' keeps current copy receipts and original source facts",
+      "latestStatus": "passed",
+      "recheck": "annual-version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualReaderQuality.test.ts",
+      "test": "protected 'comprehensive' current edition and original source foundations",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualReaderQuality.test.ts",
+      "test": "protected 'career' current edition and original source foundations",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualReaderQuality.test.ts",
+      "test": "protected 'love' current edition and original source foundations",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/annualReaderQuality.test.ts",
+      "test": "protected 'compatibility' current edition and original source foundations",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerProductLocks.test.ts",
+      "test": "'love' customer/evidence/Book stays frozen",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerQuality.test.ts",
+      "test": "career specialist questions, actual occupation and source boundaries '05-major-fortune' full result matches the reviewed common edition; engine baseline stays fixed",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerQuality.test.ts",
+      "test": "career specialist questions, actual occupation and source boundaries '01-comprehensive' full result matches the reviewed common edition; engine baseline stays fixed",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerQuality.test.ts",
+      "test": "career specialist questions, actual occupation and source boundaries '06-annual-fortune' full result matches the reviewed common edition; engine baseline stays fixed",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerQuality.test.ts",
+      "test": "career specialist questions, actual occupation and source boundaries '04-compatibility' full result matches the reviewed common edition; engine baseline stays fixed",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/careerQuality.test.ts",
+      "test": "career specialist questions, actual occupation and source boundaries '03-love' full result matches the reviewed common edition; engine baseline stays fixed",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityQuality.test.tsx",
+      "test": "Compatibility actual quality edition at c048218 base '01-comprehensive' reviewed common manuscript/Book retains engine baseline",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityQuality.test.tsx",
+      "test": "Compatibility actual quality edition at c048218 base '02-career' reviewed common manuscript/Book retains engine baseline",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityQuality.test.tsx",
+      "test": "Compatibility actual quality edition at c048218 base '03-love' reviewed common manuscript/Book retains engine baseline",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityQuality.test.tsx",
+      "test": "Compatibility actual quality edition at c048218 base '05-major-fortune' reviewed common manuscript/Book retains engine baseline",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityQuality.test.tsx",
+      "test": "Compatibility actual quality edition at c048218 base '06-annual-fortune' reviewed common manuscript/Book retains engine baseline",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityRelease.test.ts",
+      "test": "Compatibility reader release 'comprehensive' common edition keeps frozen foundations and reviewed Book",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityRelease.test.ts",
+      "test": "Compatibility reader release 'career' common edition keeps frozen foundations and reviewed Book",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityRelease.test.ts",
+      "test": "Compatibility reader release 'love' common edition keeps frozen foundations and reviewed Book",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/compatibilityRelease.test.ts",
+      "test": "Compatibility reader release 'annual' common edition keeps frozen foundations and reviewed Book",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/comprehensiveProduct.test.tsx",
+      "test": "13D-6B actual customer generation to persisted Book same input/key is deterministic and old comprehensive reopen never upgrades",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/loveQuality.test.ts",
+      "test": "Love quality edition: actual paid generator without external calls 01-comprehensive keeps engine baseline and reviewed common narrative/Book",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/loveQuality.test.ts",
+      "test": "Love quality edition: actual paid generator without external calls 02-career keeps engine baseline and reviewed common narrative/Book",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/loveQuality.test.ts",
+      "test": "Love quality edition: actual paid generator without external calls 04-compatibility keeps engine baseline and reviewed common narrative/Book",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/loveQuality.test.ts",
+      "test": "Love quality edition: actual paid generator without external calls 05-major-fortune keeps engine baseline and reviewed common narrative/Book",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/loveQuality.test.ts",
+      "test": "Love quality edition: actual paid generator without external calls 06-annual-fortune keeps engine baseline and reviewed common narrative/Book",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorReaderQuality.test.ts",
+      "test": "'comprehensive' other product current edition is pinned separately from original foundations",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorReaderQuality.test.ts",
+      "test": "'career' other product current edition is pinned separately from original foundations",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorReaderQuality.test.ts",
+      "test": "'love' other product current edition is pinned separately from original foundations",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorReaderQuality.test.ts",
+      "test": "'compatibility' other product current edition is pinned separately from original foundations",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/majorReaderQuality.test.ts",
+      "test": "'annual' other product current edition is pinned separately from original foundations",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/report-knowledge/annualProductKnowledge.test.ts",
+      "test": "'personal' preserves source status, file hash and explicit limits",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/report-knowledge/koreanEditorialPreservation.test.ts",
+      "test": "records existing grammar limitations without changing their implementation",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    },
+    {
+      "file": "tests/unit/report-knowledge/majorFortuneProductResearch.test.ts",
+      "test": "'personal' keeps source verification status separate from customer approval",
+      "latestStatus": "passed",
+      "recheck": "version-recheck"
+    }
+  ],
+  "newlyBlockedPreviousPassingTests": 70,
+  "newlyBlockedResolution": [
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider shared publication helper preserves returned generation audit on validator exception",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider grant source/key idempotency and ledger-only reconstruction; explicit no-expiry",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider balance 1 competing different requests: exactly one success, no overspend",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider same request concurrent/retry consumes once; changed product conflicts",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider FEFO, unexpired scope and no-expiry last",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider explicit expiry excludes tickets, emits EXPIRE; reversal never extends lot validity",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider same reversal retry restores once; another user cannot reverse",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider same source cannot be granted to another account; absent FK and expired grant fail",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider real first-publication ownership conflict rolls back snapshot and restores ticket",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider publish/reversal race yields exactly one outcome and a revoked/deleted book never refunds",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider worker crash lease reconciles, late publish is fenced, expired lot is not revived",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider append-only, nonnegative guard, anon/client isolation and no client RPC write",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider 'comprehensive' one ticket → same generator/validator → snapshot → 9C owner/library",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider 'career' one ticket → same generator/validator → snapshot → 9C owner/library",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider 'love' one ticket → same generator/validator → snapshot → 9C owner/library",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider 'compatibility' one ticket → same generator/validator → snapshot → 9C owner/library",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider 'major' one ticket → same generator/validator → snapshot → 9C owner/library",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider 'annual' one ticket → same generator/validator → snapshot → 9C owner/library",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider compatibility parentChild role remains canonical",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider compatibility managerReport role remains canonical",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider failure validation: either valid book consumed OR no book restored, never both",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider failure generation: either valid book consumed OR no book restored, never both",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider failure completeness: either valid book consumed OR no book restored, never both",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider failure persistence: either valid book consumed OR no book restored, never both",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider failure publish-conflict: either valid book consumed OR no book restored, never both",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider failure commit-ack-lost: either valid book consumed OR no book restored, never both",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket ledger: actual SQL, no provider 90-day report expiry/deletion is not a ticket reversal",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket HTTP authority guest/member isolation, client grant forbidden, forged identity/quantity rejected",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket HTTP authority cross-origin and logout during authorization cannot redeem",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket HTTP authority approved Book/Auth gates are ON; public redemption still checks both before Auth/DB",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/account/tickets.test.ts",
+      "test": "ticket HTTP authority Production cannot invoke the dev narrative flow even with a valid store",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 shadow: actual durable worker + SQL JSONB + server projection + share 'comprehensive' generation, full snapshot read and direct/share SSR parity",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 shadow: actual durable worker + SQL JSONB + server projection + share 'career' generation, full snapshot read and direct/share SSR parity",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 shadow: actual durable worker + SQL JSONB + server projection + share 'love' generation, full snapshot read and direct/share SSR parity",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 shadow: actual durable worker + SQL JSONB + server projection + share 'compatibility' generation, full snapshot read and direct/share SSR parity",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 shadow: actual durable worker + SQL JSONB + server projection + share 'major' generation, full snapshot read and direct/share SSR parity",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 shadow: actual durable worker + SQL JSONB + server projection + share 'annual' generation, full snapshot read and direct/share SSR parity",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 shadow: actual durable worker + SQL JSONB + server projection + share 14 years / 10 future / ages / transitions and 12 months / Jie provenance are frozen",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 shadow: actual durable worker + SQL JSONB + server projection + share existing job claim and first-publish stay idempotent",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 invalid packets fail closed final missing cannot pass the publication validator",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 invalid packets fail closed Major 13 cannot pass the publication validator",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 invalid packets fail closed Annual 11 cannot pass the publication validator",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 invalid packets fail closed role missing cannot pass the publication validator",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 invalid packets fail closed extra proof cannot pass the publication validator",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 invalid packets fail closed numeric pair cannot pass the publication validator",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 invalid packets fail closed invalid composer structure is rejected even with a refreshed corruption seal",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 invalid packets fail closed missing final reaches existing durable failure/attention rather than success or V3 rescue",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 invalid packets fail closed unsupported year, invalid context, missing clock are rejected without network",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "V4 invalid packets fail closed the public direct reader rejects a locally persisted V4; it cannot silently activate",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries '01-love': fixed roles and distinct direction survive JSON",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries '02-marriage': fixed roles and distinct direction survive JSON",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries '03-parent': fixed roles and distinct direction survive JSON",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries '04-coworker': fixed roles and distinct direction survive JSON",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries '05-manager': fixed roles and distinct direction survive JSON",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries '06-business': fixed roles and distinct direction survive JSON",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries '07-friend': fixed roles and distinct direction survive JSON",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries '08-love': fixed roles and distinct direction survive JSON",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries Love state  retained",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries Love state single retained",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries Love state some retained",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries Love state dating retained",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries Love state marriage_preparing retained",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries Love state married retained",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries MBTI unknown and approximate/unknown times retain canonical tables",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries 'comprehensive' public/default cannot select V4 from arbitrary client fields",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries 'career' public/default cannot select V4 from arbitrary client fields",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries 'love' public/default cannot select V4 from arbitrary client fields",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries 'compatibility' public/default cannot select V4 from arbitrary client fields",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries 'major' public/default cannot select V4 from arbitrary client fields",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    },
+    {
+      "file": "tests/unit/interpretation-v4/runtimeShadow.test.tsx",
+      "test": "roles, precision and customer/default boundaries 'annual' public/default cannot select V4 from arbitrary client fields",
+      "latestStatus": "passed",
+      "recheck": "runtime-recheck"
+    }
+  ],
+  "remainingNewFailures": [],
+  "remainingNewBlockedTests": [],
+  "scope": "Full runs followed by focused reruns of every detected new failure and affected contract; no claim of a second full-suite green run."
+}

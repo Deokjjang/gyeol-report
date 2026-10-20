@@ -1,0 +1,162 @@
+[
+  {
+    "type": "ENFJ",
+    "traits": 69,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 52,
+      "inferred": 17
+    }
+  },
+  {
+    "type": "ENFP",
+    "traits": 70,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 50,
+      "inferred": 20
+    }
+  },
+  {
+    "type": "ENTJ",
+    "traits": 78,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 63,
+      "inferred": 15
+    }
+  },
+  {
+    "type": "ENTP",
+    "traits": 78,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 59,
+      "inferred": 19
+    }
+  },
+  {
+    "type": "ESFJ",
+    "traits": 79,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 61,
+      "inferred": 18
+    }
+  },
+  {
+    "type": "ESFP",
+    "traits": 77,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 55,
+      "inferred": 22
+    }
+  },
+  {
+    "type": "ESTJ",
+    "traits": 79,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 62,
+      "inferred": 17
+    }
+  },
+  {
+    "type": "ESTP",
+    "traits": 75,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 54,
+      "inferred": 21
+    }
+  },
+  {
+    "type": "INFJ",
+    "traits": 81,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 66,
+      "inferred": 15
+    }
+  },
+  {
+    "type": "INFP",
+    "traits": 81,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 68,
+      "inferred": 13
+    }
+  },
+  {
+    "type": "INTJ",
+    "traits": 81,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 65,
+      "inferred": 16
+    }
+  },
+  {
+    "type": "INTP",
+    "traits": 81,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 68,
+      "inferred": 13
+    }
+  },
+  {
+    "type": "ISFJ",
+    "traits": 76,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 60,
+      "inferred": 16
+    }
+  },
+  {
+    "type": "ISFP",
+    "traits": 76,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 56,
+      "inferred": 20
+    }
+  },
+  {
+    "type": "ISTJ",
+    "traits": 65,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 48,
+      "inferred": 17
+    }
+  },
+  {
+    "type": "ISTP",
+    "traits": 67,
+    "domains": 16,
+    "pairs": 16,
+    "coverage": {
+      "direct": 51,
+      "inferred": 16
+    }
+  }
+]

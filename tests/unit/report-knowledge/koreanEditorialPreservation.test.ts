@@ -39,9 +39,11 @@ it.each(selected)("$product/$id preserves actual calculation, proof, complete na
     expect(observation).toEqual(base.find(b => b.id === observation.id));
   }
 }, 120000);
-it("records existing grammar limitations without changing their implementation", () => {
+it("preserves recorded grammar limitations while the common particle uses the reviewed utility", () => {
+  const historical = JSON.parse(readFileSync(doc + "baseline-generation.json", "utf8")) as { id: string; values?: { oldL: string; oldQuote: string } }[];
+  expect(historical.find(r => r.id === "existing-grammar-probes")?.values).toMatchObject({ oldL: "길으로", oldQuote: "‘제안’가" });
   const values = { oldL: particle("길", "으로", "로"), oldQuote: particle("‘제안’", "이", "가"), numericReading: withKoreanParticle("3", "subject"), decimal: normalizeKoreanSentenceSpacing("버전 3.14에서 확인합니다."), safeQuote: withKoreanParticle("‘대화’", "subject"), safeL: withKoreanParticle("‘길’", "to"), preservedMbti: renderCompatibilityTitle("MBTI: {{A:subject}} {{B}}에게", { personA: "예린", personB: "Alex $& {{A}}" }) };
-  expect(values.oldL).toBe("길으로"); expect(values.oldQuote).toBe("‘제안’가");
+  expect(values.oldL).toBe("길로"); expect(values.oldQuote).toBe("‘제안’이");
   expect(values.numericReading).toBe("3이"); expect(values.decimal).toBe("버전 3. 14에서 확인합니다.");
   expect(values.safeQuote).toBe("‘대화’가"); expect(values.safeL).toBe("‘길’로");
   expect(values.preservedMbti).toBe("MBTI: 예린이 Alex $& {{A}}에게");

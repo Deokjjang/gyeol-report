@@ -1,3 +1,4 @@
+import { preFoundationEvidence } from "../../helpers/versionedEditorialLocks";
 import { expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { generateV4ShadowReport } from "../../../src/lib/interpretation-v4/runtimeShadow";
@@ -31,7 +32,7 @@ it.each(RUNTIME_FIXTURES.filter(f => f.id !== "career"))("$id customer/evidence/
   // Keep pre-integration snapshot hashes, including time products switched in
   // 7C. Stored legacy reports must never be silently regenerated or upgraded.
   if (f.id !== "comprehensive") {
-    const e = result.evidencePacket as V4RuntimeEvidence;
+    const e = preFoundationEvidence(result.evidencePacket as V4RuntimeEvidence);
     const old = f.id === "major" ? await composeMajorFortuneNarrative(f.payload, SHADOW_CLOCK.evaluatedAt)
       : f.id === "annual" ? await composeAnnualFortuneNarrative(f.payload, { currentDate: SHADOW_CLOCK.evaluatedAt })
       : f.id === "compatibility" ? composeCompatibilityNarrative(f.payload) : e.input.kind === "loveMarriageChild"
@@ -50,6 +51,6 @@ it.each(RUNTIME_FIXTURES.filter(f => f.id !== "career"))("$id customer/evidence/
     expect(storedBook(saved, "https://gyeolreport.com/r/abcdefghijklmnopqrstuvwx")?.data).toEqual(projectBook(sealed));
     return;
   }
-  expect([v4Digest(result.draft), v4Digest(result.evidencePacket), v4Digest(projectBook(result.evidencePacket as V4RuntimeEvidence))]).toEqual(editionRow(editorialLocks.runtime, f.id).hashes);
+  expect([v4Digest(result.draft), v4Digest(preFoundationEvidence(result.evidencePacket as V4RuntimeEvidence)), v4Digest(projectBook(result.evidencePacket as V4RuntimeEvidence))]).toEqual(editionRow(editorialLocks.runtime, f.id).hashes);
   expect(result.externalCalls).toEqual([]);
 }, 120000);

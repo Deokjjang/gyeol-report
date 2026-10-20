@@ -104,7 +104,7 @@ export function validateV4Publication(product: string, draft: unknown, evidence:
     if (v4Digest(sealed) !== contentDigest) errors.push("V4_SNAPSHOT_INTEGRITY");
     if (e.foundationRevision !== undefined || e.foundation !== undefined) {
       if (e.foundationRevision !== "foundation-engine-01" || !e.foundation ||
-        !same(e.foundation, inspectPublicationFoundation(c, e.input)) || e.foundation.issues.some(i => i.severity === "error"))
+        !same(e.foundation, inspectPublicationFoundation(c, e.input, stableV4Json)) || e.foundation.issues.some(i => i.severity === "error"))
         errors.push("V4_FOUNDATION_CONTRACT_INVALID");
     }
     if (!textOK(n.headline) || !textOK(n.finalLine) || !n.opening.length || n.sections.length < 5 ||

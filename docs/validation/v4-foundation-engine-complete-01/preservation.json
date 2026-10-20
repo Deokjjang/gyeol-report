@@ -1,0 +1,28 @@
+{
+  "originalHeadUnchanged": true,
+  "originalStatusUnchanged": true,
+  "protectedFileCount": 11,
+  "protectedHashChanges": [],
+  "previousWorktreeCount": 88,
+  "currentWorktreeCount": 89,
+  "previousWorktreeRegistrationChangesExcludingTask": [],
+  "newWorktreePaths": [
+    "/Users/Deokmin/Developer/gyeol-worktrees/v4-foundation-engine-complete-01"
+  ],
+  "oldRefChanges": [
+    {
+      "ref": "refs/codex/turn-diffs/captures/1792496301120/5b903763-ba01-4d5b-b392-10c51acb1ffa/base",
+      "before": "d0718c020371b2252c1e98dd56e2263a58dfa989",
+      "after": null
+    },
+    {
+      "ref": "refs/codex/turn-diffs/checkpoints/5c98f3077f8527118f5c6eb773416448/772d4428bed2c8619ef1d70690b90c68/1792476651617/49f7de4d-0114-47d3-81b4-9e79ff2fab38",
+      "before": "d0718c020371b2252c1e98dd56e2263a58dfa989",
+      "after": null
+    }
+  ],
+  "priorObjectsChecked": 124,
+  "missingPriorObjects": [],
+  "fileByteVerificationScope": "11 original dirty files; old temporary worktree file contents were not rehashed",
+  "intendedGitChanges": "task branch commits and its persistent worktree metadata; remote branch update follows verification"
+}

@@ -274,8 +274,11 @@ export function materialFoundationReferences(packet: MaterialPacket): Foundation
 }
 
 /** Frozen producer-output projection, shared by generation and snapshot
- * validation. No recalculation, text inference, database or current clock. */
-export function inspectPublicationFoundation(c: V4Composition, input: ReportGenerationInput): EvidenceFoundationReport {
+ * validation. The existing snapshot serializer also canonicalizes period keys.
+ * No recalculation, text inference, database or current clock. */
+export function inspectPublicationFoundation(
+  c: V4Composition, input: ReportGenerationInput, serialize: (value: unknown) => string,
+): EvidenceFoundationReport {
   const references: FoundationReference[] = "foundationReferences" in c.result ? [...c.result.foundationReferences] : [];
   const addPeriod = (id: string, scope: "major" | "annual" | "monthly", period: string, sourceRefs: readonly string[], dependencies: readonly string[] = []) => {
     references.push({ id, subject: "person", scope, period, basis: "period", support: "calculated",
@@ -300,24 +303,24 @@ export function inspectPublicationFoundation(c: V4Composition, input: ReportGene
     for (const cycle of new Map(cycles.map(cycle => [cycle.index, cycle])).values()) {
       const boundaries = e.horizon.transitions.filter(t => t.before.index === cycle.index || t.after.index === cycle.index)
         .map(t => ({ before: t.before.index, after: t.after.index, at: t.startSolarKst, range: t.startSolarRange }));
-      addPeriod(`dayun-cycle:${cycle.index}:${cycle.ganji}`, "major", JSON.stringify({ index: cycle.index, from: cycle.startYear, through: cycle.endYear, boundaries }), e.sourceRefs);
+      addPeriod(`dayun-cycle:${cycle.index}:${cycle.ganji}`, "major", serialize({ index: cycle.index, from: cycle.startYear, through: cycle.endYear, boundaries }), e.sourceRefs);
     }
     for (const y of e.years) for (const id of y.annual.evidenceIds) addPeriod(id, "annual",
-      JSON.stringify({ year: y.year, cycleIndex: y.cycle.index, beforeCycleIndex: y.beforeCycle?.index ?? null, transition: y.transitionDate }), e.sourceRefs, [y.annual.evidenceIds[0]]);
+      serialize({ year: y.year, cycleIndex: y.cycle.index, beforeCycleIndex: y.beforeCycle?.index ?? null, transition: y.transitionDate }), e.sourceRefs, [y.annual.evidenceIds[0]]);
     for (const relation of e.majorNatal.relations) addPeriod(relation.evidenceId, "major", `cycle:${e.majorNatal.cycleIndex}:${e.majorNatal.ganji}`, e.sourceRefs);
     for (const t of e.horizon.transitions) addPeriod(`transition:${t.startSolarKst ?? t.dateLabel}`, "major",
-      JSON.stringify({ at: t.startSolarKst, range: t.startSolarRange }), e.sourceRefs);
+      serialize({ at: t.startSolarKst, range: t.startSolarRange }), e.sourceRefs);
   }
   if (c.product === "annual_fortune") {
     const e = c.result.evidence;
     addPeriod(`annual:${e.selectedYear}`, "annual", String(e.selectedYear), e.sourceRefs);
     for (const segment of e.segments) {
-      const period = JSON.stringify({ start: segment.startKst, endExclusive: segment.endKstExclusive,
+      const period = serialize({ start: segment.startKst, endExclusive: segment.endKstExclusive,
         annualPillar: segment.effectiveAnnualPillar, dayun: segment.activeDayunContext });
       for (const id of segment.evidenceIds) addPeriod(id, "monthly", period, [e.raw.monthlyCalculationVersion!], [segment.evidenceIds[0]]);
     }
     for (const month of e.months) for (const accepted of month.transit.accepted) for (const observation of accepted.observations)
-      addPeriod(observation.id, "monthly", JSON.stringify({ start: month.focus.startKst, endExclusive: month.focus.endKstExclusive }), observation.sourceRefs);
+      addPeriod(observation.id, "monthly", serialize({ start: month.focus.startKst, endExclusive: month.focus.endKstExclusive }), observation.sourceRefs);
   }
   if (c.product !== "saju_mbti_compatibility") return inspectEvidenceFoundation(c.result.narrative, { references });
 

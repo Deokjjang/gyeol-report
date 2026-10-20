@@ -1,3 +1,4 @@
+import { preFoundationEvidence } from "../../helpers/versionedEditorialLocks";
 import newIndexes from "../../fixtures/full-content-refinement-01/compatibility-indexes.json";
 import { buildLegacyCompatibilityIndex } from "../../../src/lib/interpretation-v4/compatibilityIndexLegacy";
 import { readableBookText } from "../../../src/lib/book/readerCopy";
@@ -164,7 +165,7 @@ describe("Compatibility reader release", () => {
     }
     const r=await generateV4ShadowReport(f.payload,SHADOW_CLOCK);if(!r.ok)return expect.unreachable();
     expectEditorialFoundations(r.evidencePacket as V4RuntimeEvidence,f.payload,SHADOW_CLOCK);
-    expect([v4Digest(r.draft),v4Digest(r.evidencePacket),v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.compatibilityRelease[f.id as keyof typeof editorialLocks.groups.compatibilityRelease]);
+    expect([v4Digest(r.draft),v4Digest(preFoundationEvidence(r.evidencePacket as V4RuntimeEvidence)),v4Digest(projectBook(r.evidencePacket as V4RuntimeEvidence))]).toEqual(editorialLocks.groups.compatibilityRelease[f.id as keyof typeof editorialLocks.groups.compatibilityRelease]);
   },120000);
   it.each(["parentChild", "managerReport"] as const)("%s swapped people keep fixed A/B responsibilities", relationshipType=>{
     const payload={...base,relationshipType}, a=build(payload),b=build({...payload,personA:payload.personB,personB:payload.personA});

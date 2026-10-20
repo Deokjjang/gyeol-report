@@ -1,0 +1,174 @@
+[
+  {
+    "product": "comprehensive",
+    "paragraph": "core/CH01.P1",
+    "exampleReference": {
+      "id": "natal:day:stem:甲",
+      "subject": "person",
+      "scope": "natal",
+      "basis": "natal",
+      "support": "derived",
+      "domains": [
+        "identity",
+        "work",
+        "learning"
+      ],
+      "lineage": [
+        "person:natal:day:stem:甲"
+      ],
+      "sourceRefs": [
+        "SajuCalcResult:pillars:day:stem:甲"
+      ],
+      "dependencies": []
+    },
+    "resolvedCount": 1,
+    "unresolvedMetadataCount": 0
+  },
+  {
+    "product": "compatibility",
+    "paragraph": "direction-ab/CH05.P1",
+    "exampleReference": {
+      "id": "fusion:COMPLEMENT:C073:love:CARE:1:STABILITY:1",
+      "subject": "personB",
+      "scope": "natal",
+      "basis": "fusion",
+      "support": "conditional",
+      "domains": [
+        "love"
+      ],
+      "lineage": [
+        "personB:day:MAIN:丙",
+        "personB:hour:MAIN:丙",
+        "personB:mbti:ESFJ:traits:identity:belonging_first_mind:plainKo",
+        "personB:mbti:ESFJ:traits:love:avoidant_partner_trigger:plainKo",
+        "personB:mbti:ESFJ:traits:marriage:domestic_spouse_pattern:plainKo",
+        "personB:natal:day:stem:己",
+        "personB:natal:hour:stem:己",
+        "personB:natal:year:stem:乙"
+      ],
+      "sourceRefs": [
+        "myeongli-mbti-fusion-13d-2b-v1",
+        "cross-system-complement-13d-2b-v1",
+        "C073"
+      ],
+      "dependencies": [
+        "mbti:ESFJ:traits:identity:belonging_first_mind:plainKo",
+        "mbti:ESFJ:traits:love:avoidant_partner_trigger:plainKo",
+        "mbti:ESFJ:traits:marriage:domestic_spouse_pattern:plainKo",
+        "natal:day:stem:己",
+        "natal:hour:stem:己",
+        "natal:ten-god:day:MAIN:丙",
+        "natal:ten-god:hour:MAIN:丙",
+        "natal:year:stem:乙"
+      ]
+    },
+    "resolvedCount": 2,
+    "unresolvedMetadataCount": 6
+  },
+  {
+    "product": "compatibility",
+    "paragraph": "direction-ba/CH06.P1",
+    "exampleReference": {
+      "id": "fusion:REINFORCE:AUTONOMY:love:AUTONOMY:1:AUTONOMY:1",
+      "subject": "personA",
+      "scope": "natal",
+      "basis": "fusion",
+      "support": "conditional",
+      "domains": [
+        "love"
+      ],
+      "lineage": [
+        "personA:hour:MAIN:壬",
+        "personA:hour:SUB:甲",
+        "personA:mbti:INTP:traits:identity:anti_authority_free_mind:plainKo",
+        "personA:mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+        "personA:mbti:INTP:traits:love:freedom_based_attachment:plainKo",
+        "personA:mbti:INTP:traits:marriage:household_support_need:plainKo",
+        "personA:mbti:INTP:traits:marriage:marriage_with_space:plainKo",
+        "personA:mbti:INTP:traits:thinkingStyle:ti_internal_model:plainKo",
+        "personA:month:visible:壬",
+        "personA:natal:day:stem:甲",
+        "personA:shinsal:GOSINSAL",
+        "personA:year:SUB:壬",
+        "personA:year:visible:壬"
+      ],
+      "sourceRefs": [
+        "myeongli-mbti-fusion-13d-2b-v1",
+        "cross-system-complement-13d-2b-v1"
+      ],
+      "dependencies": [
+        "mbti:INTP:traits:identity:anti_authority_free_mind:plainKo",
+        "mbti:INTP:traits:identity:self_sufficient_loneliness:plainKo",
+        "mbti:INTP:traits:love:freedom_based_attachment:plainKo",
+        "mbti:INTP:traits:marriage:household_support_need:plainKo",
+        "mbti:INTP:traits:marriage:marriage_with_space:plainKo",
+        "mbti:INTP:traits:thinkingStyle:ti_internal_model:plainKo",
+        "natal:day:stem:甲",
+        "natal:ten-god:hour:MAIN:壬",
+        "natal:ten-god:hour:SUB:甲",
+        "natal:ten-god:month:visible:壬",
+        "natal:ten-god:year:SUB:壬",
+        "natal:ten-god:year:visible:壬",
+        "supplement:marker:GOSIN"
+      ]
+    },
+    "resolvedCount": 2,
+    "unresolvedMetadataCount": 6
+  },
+  {
+    "product": "major",
+    "paragraph": "year-2031/2031-why",
+    "exampleReference": {
+      "id": "major:5:丙寅:year:2031:辛亥",
+      "subject": "person",
+      "scope": "annual",
+      "period": "{\"beforeCycleIndex\":4,\"cycleIndex\":5,\"transition\":\"2031-05-07 17:30 한국시간\",\"year\":2031}",
+      "basis": "period",
+      "support": "calculated",
+      "domains": [
+        "success/fortune"
+      ],
+      "lineage": [
+        "person:annual:{\"beforeCycleIndex\":4,\"cycleIndex\":5,\"transition\":\"2031-05-07 17:30 한국시간\",\"year\":2031}:major:5:丙寅:year:2031:辛亥"
+      ],
+      "sourceRefs": [
+        "majorFortuneV3Generation:createMajorFortuneV3:writer-disabled",
+        "majorFortuneHorizon:14-year-window",
+        "majorFortuneDecadeReading:major-decade-v2",
+        "calendar:saju-calendar-kst-v2",
+        "dayun:dayun-kst-sect2-v1"
+      ],
+      "dependencies": [
+        "major:5:丙寅:year:2031:辛亥"
+      ]
+    },
+    "resolvedCount": 8,
+    "unresolvedMetadataCount": 12
+  },
+  {
+    "product": "annual",
+    "paragraph": "month-2/month-2-meaning",
+    "exampleReference": {
+      "id": "month-v2:2026:2:2:annual",
+      "subject": "person",
+      "scope": "monthly",
+      "period": "{\"annualPillar\":{\"branch\":\"午\",\"stem\":\"丙\"},\"dayun\":{\"cycles\":[{\"ganji\":\"戊寅\",\"index\":4}],\"includesBeforeFirstCycle\":false,\"status\":\"active\",\"transitionRange\":null},\"endExclusive\":\"2026-03-01T00:00:00+09:00\",\"start\":\"2026-02-04T05:02:08+09:00\"}",
+      "basis": "period",
+      "support": "calculated",
+      "domains": [
+        "success/fortune"
+      ],
+      "lineage": [
+        "person:monthly:{\"annualPillar\":{\"branch\":\"午\",\"stem\":\"丙\"},\"dayun\":{\"cycles\":[{\"ganji\":\"戊寅\",\"index\":4}],\"includesBeforeFirstCycle\":false,\"status\":\"active\",\"transitionRange\":null},\"endExclusive\":\"2026-03-01T00:00:00+09:00\",\"start\":\"2026-02-04T05:02:08+09:00\"}:month-v2:2026:2:2:annual"
+      ],
+      "sourceRefs": [
+        "annual-month-jie-kst-v2"
+      ],
+      "dependencies": [
+        "month-v2:2026:2:2:month"
+      ]
+    },
+    "resolvedCount": 8,
+    "unresolvedMetadataCount": 2
+  }
+]
