@@ -13,11 +13,12 @@ import { GET, POST } from "../../../src/app/auth/[action]/route";
 import { GET as worker } from "../../../src/app/api/internal/report-ticket-jobs/route";
 afterEach(() => { vi.clearAllMocks(); vi.unstubAllEnvs(); setup.book = false; setup.account = false; });
 describe("public ticket gates before dependency construction", () => {
-  it("release config schedules both isolated workers once per minute", () => {
+  it("release config preserves both minute workers and adds the isolated Meta five-minute worker", () => {
     const config = JSON.parse(readFileSync("vercel.json", "utf8"));
     expect(config.crons).toEqual([
       { path: "/api/internal/report-jobs", schedule: "* * * * *" },
       { path: "/api/internal/report-ticket-jobs", schedule: "* * * * *" },
+      { path: "/api/internal/meta-events", schedule: "*/5 * * * *" },
     ]);
   });
   it.each([[false,false],[true,false],[false,true]])("Book %s / Account %s rejects redeem/status before Auth/DB", async (book, account) => {

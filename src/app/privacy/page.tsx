@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 
 import { GYEOL_BUSINESS_INFO } from "../../lib/legal/businessInfo";
 import {
+  privacyPolicyMetaNoticeKo, privacyPolicyMetaRetentionKo,
   privacyPolicyCollectionItems,
   privacyPolicyExternalServiceRows,
   privacyPolicyLegalRetentionKo,
@@ -123,6 +124,8 @@ export default function PrivacyPage() {
       <PolicySection titleKo="이용자의 권리">
         <p>{privacyPolicyUserRightsKo}</p>
       </PolicySection>
+
+      <PolicySection titleKo="광고 성과 측정 (선택)"><p>{privacyPolicyMetaNoticeKo}</p><p>{privacyPolicyMetaRetentionKo}</p></PolicySection>
 
       <PolicySection titleKo="개인정보 문의처">
         <div className={styles.contacts}>

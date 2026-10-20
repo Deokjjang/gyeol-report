@@ -1,4 +1,5 @@
 "use client";
+import { metaOrigin } from "./metaConsent";
 import { metaProduct, metaPurchase, type FunnelEvent, type Interaction, type MetaEvent, type PurchaseFact } from "./events";
 
 declare global { interface Window { fbq?: (...args: unknown[]) => void; _fbq?: unknown } }
@@ -9,7 +10,37 @@ let retry: ReturnType<typeof setTimeout> | undefined;
 export const manualReviewSilent = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" &&
   (/^\/dev\/content-review(?:\/|$)/.test(window.location.pathname ?? "") || process.env.NEXT_PUBLIC_LOCAL_REVIEW_SILENT === "1");
 export const localMeasurement = () => process.env.NODE_ENV !== "production" && typeof window !== "undefined" && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(window.location.hostname);
-export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && window.location.hostname === "gyeolreport.com";
+let metaChoice = false;
+let pixelFrame: Window | null = null;
+const pixelPending = new Map<string, MetaEvent>();
+export function setMetaChoice(agreed: boolean) { metaChoice = agreed; lastPage = undefined; if (!agreed) { pending.clear(); pixelPending.clear(); pixelFrame = null; if (retry) clearTimeout(retry); retry = undefined; } }
+export function setMetaFrame(frame: Window | null) {
+  pixelFrame = frame;
+  if (frame && metaChoice) for (const [id, event] of pixelPending) { frame.postMessage({ type: "gyeol:pixel", ...event }, "*"); pixelPending.delete(id); }
+}
+function mirrorMetaEvent(event: MetaEvent) {
+  if (!publicMetaAllowed() || !event.eventId) return;
+  if (pixelFrame) pixelFrame.postMessage({ type: "gyeol:pixel", ...event }, "*");
+  else if (pixelPending.size < 100) pixelPending.set(event.eventId, event);
+}
+export async function syncMetaFacts() {
+  if (!publicMetaAllowed() || !pixelFrame) return;
+  try {
+    const response = await fetch("/api/analytics/meta", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ poll: true, requestId: crypto.randomUUID() }), cache: "no-store" });
+    const body = await response.json();
+    if (body.choice === false) { setMetaChoice(false); window.dispatchEvent(new Event("gyeol:meta-withdrawn")); return; }
+    if (!response.ok || !Array.isArray(body.events)) return;
+    for (const fact of body.events) {
+      if (fact.event === "CompleteRegistration" && /^registration_[a-f0-9]{32}$/.test(fact.eventId)) mirrorMetaEvent({ event: "CompleteRegistration", params: {}, eventId: fact.eventId });
+      if (fact.event === "Purchase" && /^purchase_[a-f0-9]{32}$/.test(fact.eventId)) {
+        const event = metaPurchase({ eventId: fact.eventId, productType: fact.params?.content_ids?.[0], value: fact.params?.value, currency: fact.params?.currency });
+        if (event) mirrorMetaEvent(event);
+      }
+    }
+  } catch { /* Durable server delivery remains independent of browser availability. */ }
+}
+export const publicMetaAllowed = () => process.env.NODE_ENV === "production" && typeof window !== "undefined" && metaOrigin(window.location.origin) && metaChoice;
+const publicPath = (path: string) => path === "/" || path === "/campaign/gyeol-opening-2026" || path === "/report/new" || path === "/checkout";
 
 function capture(channel: "internal" | "meta", event: FunnelEvent | MetaEvent) {
   if (localMeasurement()) {
@@ -24,26 +55,26 @@ export function sendMeta(event: MetaEvent, key: string) {
   if (typeof window === "undefined" || delivered.has(key)) return;
   if (localMeasurement()) { delivered.add(key); capture("meta", event); return; }
   if (!publicMetaAllowed()) return;
+  // Business conversions are sent solely by server-verified durable facts.
+  if (!["PageView", "ViewContent", "InitiateCheckout"].includes(event.event) || !publicPath(window.location.pathname)) return;
+  if (pending.has(key)) return;
   pending.set(key, event);
-  const flush = () => {
-    if (retry) clearTimeout(retry);
-    retry = undefined;
-    if (!window.fbq) return;
-    for (const [id, message] of pending) {
-      window.fbq("track", message.event, message.params, ...(message.eventId ? [{ eventID: message.eventId }] : []));
-      delivered.add(id); pending.delete(id);
-    }
-  };
-  flush();
-  // SDK ready is also signalled by MetaPixel. No perpetual interval/background queue.
-  if (pending.size && !retry) retry = setTimeout(flush, 1000);
+  const productType = Array.isArray(event.params.content_ids) ? event.params.content_ids[0] : undefined;
+  void fetch("/api/analytics/meta", { method: "POST", headers: { "content-type": "application/json" },
+    body: JSON.stringify({ event: event.event, ...(typeof productType === "string" ? { productType } : {}), requestId: crypto.randomUUID() }), keepalive: true,
+  }).then(async r => {
+    if (!r.ok) return;
+    const result = await r.json();
+    if (result.pixel?.event === event.event && /^[a-f0-9-]{36}$/.test(result.pixel.eventId)) mirrorMetaEvent({ ...event, eventId: result.pixel.eventId });
+    if (result.ok) delivered.add(key);
+  }).catch(() => {}).finally(() => pending.delete(key));
 }
 export function flushMeta() { for (const [key, event] of pending) sendMeta(event, key); }
 let lastPage: string | undefined;
 let pageSequence = 0;
 export function pageView(path: string) {
   if (manualReviewSilent()) return;
-  if (!path || path === lastPage) return;
+  if (!path || path === lastPage || (!localMeasurement() && (!publicMetaAllowed() || !publicPath(path)))) return;
   lastPage = path;
   sendMeta({ event: "PageView", params: {} }, `page:${++pageSequence}`);
 }
@@ -90,12 +121,13 @@ export async function syncLocalFacts() {
 }
 export async function dispatchPurchase(reportId: string, local = false) {
   if (manualReviewSilent()) return;
-  if (!(local ? localMeasurement() : publicMetaAllowed() && typeof window.fbq === "function")) return;
+  if (!(local ? localMeasurement() : publicMetaAllowed())) return;
   try {
     // Claim only when the transport is ready. The SQL unique order wins across tabs.
-    const response = await fetch(local ? "/dev/measurement" : "/api/analytics/purchase", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ reportId }), keepalive: true });
+    const response = await fetch(local ? "/dev/measurement" : "/api/analytics/purchase", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ reportId, ...(!local ? { requestId: crypto.randomUUID() } : {}) }), keepalive: true });
     const result = await response.json() as { purchase?: PurchaseFact };
     const event = response.ok && result.purchase ? metaPurchase(result.purchase) : null;
     if (event) sendMeta(event, event.eventId!);
+    if (!local && response.ok) void syncMetaFacts();
   } catch { /* No mutation to financial or publication state. */ }
 }

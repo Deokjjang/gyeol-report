@@ -91,3 +91,6 @@ export const privacyPolicyUserRightsKo =
 
 export const prePaymentPrivacyNoticeKo =
   "리포트 생성을 위해 이름 또는 닉네임, 생년월일, 출생시간, 성별, MBTI가 처리됩니다.";
+
+// Prepared disclosure. Transport remains disabled until the release/privacy approval gate.
+export { metaTrackingNotice as privacyPolicyMetaNoticeKo, metaTransferNotice as privacyPolicyMetaRetentionKo } from "../analytics/metaConsent";

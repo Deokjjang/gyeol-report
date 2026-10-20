@@ -25,8 +25,12 @@ it("dedicated local review process also silences existing full experience routes
 });
 it("suppression flag cannot change production Meta behavior or enable anything", async () => {
   vi.stubEnv("NODE_ENV", "production"); vi.stubEnv("NEXT_PUBLIC_LOCAL_REVIEW_SILENT", "1");
-  Object.assign(window.location, { hostname: "gyeolreport.com", pathname: "/" });
+  Object.assign(window.location, { hostname: "gyeolreport.com", origin: "https://gyeolreport.com", pathname: "/" });
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ ok: true }) } as Response);
   const client = await import("../../../src/lib/analytics/client");
   expect(client.manualReviewSilent()).toBe(false);
-  client.pageView("/"); expect(window.fbq).toHaveBeenCalledTimes(1);
+  client.pageView("/"); expect(fetch).not.toHaveBeenCalled();
+  client.setMetaChoice(true); client.pageView("/");
+  expect(fetch).toHaveBeenCalledTimes(1); expect(window.fbq).not.toHaveBeenCalled();
+  expect(vi.mocked(fetch).mock.calls[0][0]).toBe("/api/analytics/meta");
 });
